@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import { site } from '../lib/site';
+import { site, analytics } from '../lib/site';
 
 interface Props {
   title: string;
@@ -32,6 +32,13 @@ const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="robots" content="index, follow, max-image-preview:large" />
+    {analytics.searchConsole && <meta name="google-site-verification" content={analytics.searchConsole} />}
+    {analytics.gaId && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${analytics.gaId}`}></script>
+        <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${analytics.gaId}');`}></script>
+      </>
+    )}
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />

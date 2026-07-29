@@ -14,6 +14,19 @@ export const site = {
   tagline: 'Agencia de diseño web en Panamá. Sitios de alto rendimiento respaldados por desarrollo a medida e inteligencia artificial.',
 };
 
+/* Analítica y verificación. Pega tus IDs aquí y funcionan en todo el sitio.
+   - gaId: ID de medición de Google Analytics 4 (formato G-XXXXXXXXXX).
+           Lo obtienes en analytics.google.com → Admin → Flujos de datos.
+   - searchConsole: código de verificación por etiqueta HTML de Search Console
+           (solo el valor del content="", no la etiqueta completa). Alternativa:
+           verifica en Search Console con el método "Google Analytics" una vez
+           que gaId esté activo, y puedes dejar esto vacío.
+   Vacío = no se carga nada (sin scripts de terceros). */
+export const analytics = {
+  gaId: '',          // ej: 'G-XXXXXXXXXX'
+  searchConsole: '', // ej: 'aBc123...'
+};
+
 /* Configuración del formulario de contacto. El sitio es estático (nginx), así que
    el envío se procesa fuera del servidor de archivos. Elige UNA opción:
    1) Web3Forms (recomendado, sin backend, gratis): crea una access key en

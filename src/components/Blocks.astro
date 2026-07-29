@@ -111,7 +111,7 @@ const { blocks } = Astro.props;
               <h3 class="font-display text-xl font-bold">{p.name}</h3>
               <div class="mt-6 flex items-end gap-1.5"><span class={`text-sm font-medium ${p.featured ? 'text-white/50' : 'text-ink/40'}`}>desde</span><span class="font-display text-5xl font-extrabold">{p.price}</span></div>
               <ul class="mt-7 flex flex-col gap-3">{p.features.map((f) => <li class="flex items-center gap-3 text-sm"><span class={`grid h-5 w-5 shrink-0 place-items-center rounded-full ${p.featured ? 'bg-teal text-ink' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={p.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>)}</ul>
-              <a href="/contacto/" class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${p.featured ? 'bg-teal text-ink hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
+              <a href="/contacto/" aria-label={`Empezar con el plan ${p.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${p.featured ? 'bg-teal text-ink hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
             </div>
           ))}
         </div>

@@ -1,8 +1,12 @@
-# Builder de Astro. Coolify (modo static) toma /app/dist y lo sirve con nginx.
-FROM node:20-alpine
+# --- Build: compila el sitio Astro estático ---
+FROM node:20-alpine AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
 RUN npm run build
-# El sitio queda en /app/dist — Coolify lo copia a su nginx.
+
+# --- Serve: nginx sirve el dist en el puerto 80 ---
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80

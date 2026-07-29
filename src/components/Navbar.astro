@@ -1,0 +1,153 @@
+---
+import { cols, marketing, url } from '../lib/site';
+interface Props { current?: string; dark?: boolean }
+const { current = '', dark = false } = Astro.props;
+---
+<header id="nav" data-dark={dark ? '1' : '0'} class="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
+  <div class="relative">
+    <nav id="navpill" class="relative flex items-center gap-1 rounded-full border border-transparent bg-transparent px-2 py-2 transition-all duration-500">
+      <a href="/" class="flex items-center gap-2 rounded-full px-3 py-1.5">
+        <span class="brand-sq grid h-7 w-7 place-items-center rounded-lg bg-ink"><svg width="15" height="15" viewBox="0 0 32 32"><path d="M9 22 16 9l7 13" stroke="#2dd4bf" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+        <span class="brand-tx font-display text-sm font-bold tracking-tight text-ink">elementoweb</span>
+      </a>
+
+      <div class="nav-links mx-1 hidden items-center gap-0.5 md:flex">
+        <button type="button" data-menu="servicios" aria-expanded="false" class="nav-trigger flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm font-medium text-ink/70 transition hover:bg-ink/5 hover:text-ink">
+          Servicios <svg class="chev h-3 w-3 opacity-50 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </button>
+        <button type="button" data-menu="marketing" aria-expanded="false" class="nav-trigger flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm font-medium text-ink/70 transition hover:bg-ink/5 hover:text-ink">
+          Marketing <svg class="chev h-3 w-3 opacity-50 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </button>
+        <a href="/saas/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'saas' ? 'bg-ink text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>SaaS</a>
+        <a href="/portafolio/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'portafolio' ? 'bg-ink text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Portafolio</a>
+        <a href="/industrias/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'industrias' ? 'bg-ink text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Industrias</a>
+        <a href="/blog/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'blog' ? 'bg-ink text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Blog</a>
+      </div>
+
+      <a href="/contacto/" data-magnetic="0.4" class="cta-pill ml-1 hidden items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-ink/20 transition-colors hover:bg-teal-deep sm:inline-flex">
+        Cotizar
+        <span class="grid h-4 w-4 place-items-center rounded-full bg-teal text-ink"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+      </a>
+
+      <button id="mnav-toggle" aria-label="Abrir menú" aria-expanded="false" class="ml-1 grid h-10 w-10 place-items-center rounded-full text-ink md:hidden">
+        <span class="relative block h-3.5 w-5"><span class="mline absolute left-0 top-0 h-0.5 w-5 rounded bg-current transition-all duration-300"></span><span class="mline absolute left-0 top-1.5 h-0.5 w-5 rounded bg-current transition-all duration-300"></span><span class="mline absolute left-0 top-3 h-0.5 w-5 rounded bg-current transition-all duration-300"></span></span>
+      </button>
+    </nav>
+
+    <!-- Panel Servicios -->
+    <div data-panel="servicios" class="pointer-events-none absolute left-1/2 top-full z-40 mt-3 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300">
+      <div class="menu-panel grid w-[min(95vw,1020px)] grid-cols-2 gap-x-10 gap-y-6 rounded-3xl p-8 lg:grid-cols-4">
+        {cols.map((col) => (
+          <div>
+            <div class="mb-3 flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-teal to-violet"></span><h4 class="font-display text-xs font-bold uppercase tracking-wide text-ink">{col.title}</h4></div>
+            <ul class="flex flex-col gap-1">
+              {col.links.map((l) => <li><a href={url(l.slug)} class="block whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">{l.label}</a></li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Panel Marketing -->
+    <div data-panel="marketing" class="pointer-events-none absolute left-1/2 top-full z-40 mt-3 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300">
+      <div class="menu-panel grid w-[min(92vw,600px)] grid-cols-2 gap-x-6 gap-y-1 rounded-3xl p-6">
+        {marketing.map((l) => <a href={url(l.slug)} class="whitespace-nowrap rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">{l.label}</a>)}
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Overlay móvil -->
+<div id="mnav" class="fixed inset-0 z-40 hidden flex-col overflow-y-auto bg-ink px-6 pb-12 pt-24 text-white md:!hidden" style="clip-path: inset(0 0 100% 0)">
+  <div class="absolute inset-0 mesh-dark opacity-40"></div>
+  <div class="relative flex flex-col gap-7">
+    <div class="m-row">
+      <div class="font-display text-2xl font-bold">Servicios</div>
+      <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-1">
+        {cols.flatMap((c) => c.links).map((l) => <a href={url(l.slug)} class="py-1 text-sm text-white/60">{l.label}</a>)}
+      </div>
+    </div>
+    <div class="m-row">
+      <div class="font-display text-2xl font-bold">Marketing</div>
+      <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-1">
+        {marketing.map((l) => <a href={url(l.slug)} class="py-1 text-sm text-white/60">{l.label}</a>)}
+      </div>
+    </div>
+    <a href="/saas/" class="m-row font-display text-2xl font-bold">SaaS</a>
+    <a href="/industrias/" class="m-row font-display text-2xl font-bold">Industrias</a>
+    <a href="/portafolio/" class="m-row font-display text-2xl font-bold">Portafolio</a>
+    <a href="/blog/" class="m-row font-display text-2xl font-bold">Blog</a>
+    <a href="/contacto/" class="m-row mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-4 text-base font-semibold text-ink">Cotizar mi proyecto</a>
+  </div>
+</div>
+
+<script>
+  import { gsap } from 'gsap';
+  const pill = document.getElementById('navpill');
+  const triggers = document.querySelectorAll<HTMLButtonElement>('.nav-trigger');
+  const panels = document.querySelectorAll<HTMLElement>('[data-panel]');
+  const header = document.getElementById('nav');
+  let closeTimer: ReturnType<typeof setTimeout>;
+  let scrolled = false, openKey: string | null = null;
+
+  const isDark = header?.dataset.dark === '1';
+  const applyPill = () => {
+    if (!pill) return;
+    const active = scrolled || openKey || document.getElementById('mnav')?.dataset.open === '1';
+    pill.classList.toggle('glass', !!active);
+    // hero oscuro y sin fondo glass → texto claro para que se lea sobre el hero
+    pill.classList.toggle('nav-light', !!isDark && !active);
+  };
+  const setPanel = (key: string | null) => {
+    openKey = key;
+    triggers.forEach((t) => {
+      const on = t.dataset.menu === key;
+      t.setAttribute('aria-expanded', String(on));
+      t.querySelector('.chev')?.classList.toggle('rotate-180', on);
+    });
+    panels.forEach((p) => {
+      const on = p.dataset.panel === key;
+      p.classList.toggle('opacity-100', on);
+      p.classList.toggle('translate-y-0', on);
+      p.classList.toggle('pointer-events-auto', on);
+      p.classList.toggle('opacity-0', !on);
+      p.classList.toggle('translate-y-2', !on);
+      p.classList.toggle('pointer-events-none', !on);
+    });
+    applyPill();
+  };
+  const open = (k: string) => { clearTimeout(closeTimer); setPanel(k); };
+  const leave = () => { closeTimer = setTimeout(() => setPanel(null), 180); };
+
+  triggers.forEach((t) => {
+    t.addEventListener('mouseenter', () => open(t.dataset.menu!));
+    t.addEventListener('click', () => setPanel(openKey === t.dataset.menu ? null : t.dataset.menu!));
+  });
+  panels.forEach((p) => { p.addEventListener('mouseenter', () => open(p.dataset.panel!)); p.addEventListener('mouseleave', leave); });
+  header?.addEventListener('mouseleave', leave);
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') setPanel(null); });
+
+  addEventListener('scroll', () => { scrolled = window.scrollY > 40; applyPill(); }, { passive: true });
+
+  // móvil
+  const mnav = document.getElementById('mnav')!;
+  const toggle = document.getElementById('mnav-toggle')!;
+  const lines = toggle.querySelectorAll('.mline');
+  let mopen = false;
+  toggle.addEventListener('click', () => {
+    mopen = !mopen; mnav.dataset.open = mopen ? '1' : '0';
+    toggle.setAttribute('aria-expanded', String(mopen));
+    document.documentElement.style.overflow = mopen ? 'hidden' : '';
+    (lines[0] as HTMLElement).style.cssText = mopen ? 'top:6px;transform:rotate(45deg)' : 'top:0';
+    (lines[1] as HTMLElement).style.opacity = mopen ? '0' : '1';
+    (lines[2] as HTMLElement).style.cssText = mopen ? 'top:6px;transform:rotate(-45deg)' : 'top:12px';
+    if (mopen) { gsap.set(mnav, { display: 'flex' }); gsap.fromTo(mnav, { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 0.6, ease: 'power4.inOut' }); gsap.fromTo(mnav.querySelectorAll('.m-row'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, stagger: 0.05, delay: 0.18, ease: 'power3.out' }); }
+    else gsap.to(mnav, { clipPath: 'inset(0 0 100% 0)', duration: 0.5, ease: 'power4.inOut', onComplete: () => gsap.set(mnav, { display: 'none' }) });
+    applyPill();
+  });
+  mnav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => toggle.click()));
+
+  // estado inicial (importante en internas con hero oscuro y al recargar con scroll)
+  scrolled = window.scrollY > 40;
+  applyPill();
+</script>

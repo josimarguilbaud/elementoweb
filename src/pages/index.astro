@@ -1,0 +1,622 @@
+---
+import Base from '../layouts/Base.astro';
+import Preloader from '../components/Preloader.astro';
+import { site, cols, marketing, saas, pricing, industrias, url, wa, clientLogos, portfolio, portfolioCats } from '../lib/site';
+import ContactForm from '../components/ContactForm.astro';
+import { orgNode } from '../lib/schema';
+
+const solutions = [
+  { n: '01', t: 'Diseño Web', d: 'Sitios corporativos, tiendas y landings que proyectan la solidez de tu empresa y convierten visitas en contratos.', tags: ['Astro', 'React', 'SEO técnico', 'Panel propio'], slug: 'servicios/diseno-web-corporativo-panama' },
+  { n: '02', t: 'E-commerce', d: 'Tiendas pensadas para vender en Panamá: catálogo, carrito, Yappy y pasarelas locales.', tags: ['Yappy', 'Shopify', 'Inventario', 'Envíos'], slug: 'servicios/tiendas-online-ecommerce-panama' },
+  { n: '03', t: 'Marketing y Pauta', d: 'Google Ads, Meta Ads y contenido que traen clientes, no solo visitas. Fee claro; tu inversión va directo a la plataforma.', tags: ['Google Ads', 'Meta Ads', 'Reels', 'Email'], slug: 'marketing' },
+  { n: '04', t: 'IA y Automatización', d: 'Chatbots entrenados con tu información y flujos con n8n que atienden y venden por ti las 24 horas.', tags: ['Chatbots IA', 'WhatsApp API', 'n8n', 'CRM'], slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama' },
+];
+const archCards = {
+  corporativo: { t: 'Diseño Web Corporativo', d: 'Para empresas que necesitan proyectar solidez: estructura clara, páginas optimizadas por servicio para Google (SEO) y panel autoadministrable.', tags: ['WordPress', 'SEO Técnico'], slug: 'servicios/diseno-web-corporativo-panama' },
+  landing: { t: 'Landing Pages de Conversión', d: 'Una sola página enfocada en una acción. El destino correcto para rentabilizar tus campañas de Meta y Google Ads.', slug: 'servicios/landing-pages-alta-conversion-panama' },
+  ecommerce: { t: 'E-Commerce & Yappy', d: 'Tiendas listas para vender en Panamá. Pasarelas locales, Shopify/WooCommerce y gestión de inventario.', slug: 'servicios/tiendas-online-ecommerce-panama' },
+  dev: { t: 'Desarrollo a Medida (Vue / React)', d: 'Cuando la plantilla se queda corta, programamos. Portales de clientes, conexiones vía API, integraciones con ERP y sistemas de reservas complejos.', slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama' },
+};
+const ecoSteps = [
+  { n: '01', t: 'Lead entra', d: 'Un cliente escribe por WhatsApp, tu web o Instagram.', teal: true },
+  { n: '02', t: 'IA interviene', d: 'El asistente responde, califica y resuelve lo básico al instante.', teal: false },
+  { n: '03', t: 'CRM agenda', d: 'Se registra el lead, se agenda la cita y se notifica a tu equipo.', teal: true },
+];
+const procSteps = [
+  { t: 'Diagnóstico', d: 'Entendemos tu negocio y objetivo. Sin costo ni compromiso.' },
+  { t: 'Diseño', d: 'Estructura y pantallas que apruebas antes de programar.' },
+  { t: 'Desarrollo', d: 'SEO técnico y velocidad desde el primer día, con demo online.' },
+  { t: 'Lanzamiento', d: 'Publicamos en tu dominio, medimos y capacitamos a tu equipo.' },
+];
+const folioCats = portfolioCats;
+const folioFeatured = portfolio.find((p) => p.featured)!;
+// Home: solo San Blas Full (destacado) + Remodelaciones JG + TramitaPa. El resto vive en /portafolio/.
+const homeFolioDomains = ['remodelacionesjg.com', 'tramitapa.com'];
+const folio = portfolio.filter((p) => !p.featured && homeFolioDomains.some((d) => p.href.includes(d)));
+const indIcons = ['M12 3 4 7v5c0 4 3.5 7 8 8 4.5-1 8-4 8-8V7l-8-4Z','M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z','M6 3v7a2 2 0 0 0 4 0V3M8 10v11M16 3c-1.5 0-2 2-2 4s0 4 2 4 2-2 2-4-.5-4-2-4Zm0 8v10','M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5','M12 5v14M5 12h14M7 5h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z','M2 20h20M4 20V8l6-4 6 4M9 20v-5h4v5M18 20v-9l3 2v7','M12 4 2 9l10 5 10-5-10-5ZM6 12v5c0 1 3 2 6 2s6-1 6-2v-5','M6 6h12l1 14H5L6 6Zm3 0a3 3 0 0 1 6 0','M4 9v6M20 9v6M7 7v10M17 7v10M7 12h10','M14 6a4 4 0 0 0-5 5l-6 6 2 2 6-6a4 4 0 0 0 5-5l-2 2-2-2 2-2Z','M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10Z','M1 7h13v10H1zM14 10h4l3 3v4h-7'];
+const services2 = ['Diseño web / Sitio corporativo', 'Tienda online / E-commerce', 'Landing page', 'Marketing / Pauta', 'IA / Automatización', 'Otro'];
+
+const title = 'Agencia de Diseño Web en Panamá | Elemento Web';
+const description = 'Software house en Panamá: diseño web de alto rendimiento, marketing con IA y automatización. Sitios que atraen, convierten y escalan.';
+
+const capCols = [...cols, { title: 'Marketing y Pauta', hub: 'marketing', links: marketing }, { title: 'Nuestros SaaS', hub: 'saas', links: saas.map((s) => ({ slug: s.slug, label: s.label })) }];
+
+const saasProducts = [
+  { n: 'ChatMantis', tag: 'Omnicanalidad con IA', d: 'WhatsApp, Instagram y el chat de tu web en una bandeja, con asistentes entrenados con tu información.', c: '#2dd4bf', slug: 'saas/chatmantis' },
+  { n: 'WapyCRM', tag: 'CRM de ventas', d: 'Construido alrededor de WhatsApp: embudos, seguimiento automático y cierre asistido.', c: '#8b5cf6', slug: 'saas/wapycrm' },
+  { n: 'Cifrao', tag: 'Software contable', d: 'Facturación, conciliación y cuentas por cobrar para empresas en Panamá.', c: '#f59e0b', slug: 'saas/cifrao' },
+];
+const tools = [
+  { name: 'Node.js', ic: 'node' }, { name: 'Next.js', ic: 'nextjs' }, { name: 'React', ic: 'react' },
+  { name: 'Vue.js', ic: 'vue' }, { name: 'Astro', ic: 'astro' }, { name: 'Vite', ic: 'vite' },
+  { name: 'TypeScript', ic: 'typescript' }, { name: 'JavaScript', ic: 'javascript' }, { name: 'Tailwind CSS', ic: 'tailwind' },
+  { name: 'Laravel', ic: 'laravel' }, { name: 'PHP', ic: 'php' }, { name: 'Python', ic: 'python' },
+  { name: 'PostgreSQL', ic: 'postgresql' }, { name: 'MySQL', ic: 'mysql' }, { name: 'WordPress', ic: 'wordpress' },
+  { name: 'Docker', ic: 'docker' },
+];
+const faqs = [
+  ['¿Cuánto cuesta una página web en Panamá?', 'Landing desde $550, corporativa desde $950 y e-commerce desde $1,500. Siempre con cotización cerrada antes de empezar.'],
+  ['¿Mi web va a aparecer en Google?', 'Se entrega con SEO técnico completo. Posicionar términos competitivos requiere además trabajo continuo de contenido, que ofrecemos por separado.'],
+  ['¿Cuánto tarda el desarrollo?', 'Una landing en 5 días hábiles; un sitio corporativo entre 2 y 3 semanas desde que recibimos tu contenido.'],
+  ['¿Cómo funciona el pago?', 'En tres etapas: 50% para iniciar, 30% al aprobar el demo online y 20% para publicar en tu dominio. Tarjeta, transferencia o Yappy.'],
+];
+---
+<Base title={title} description={description} current="home" image="/portfolio/sanblasfull.jpg" jsonld={orgNode()}>
+  <Preloader />
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-28">
+    <div class="absolute inset-0 mesh"></div>
+    <div class="sphere h-[520px] w-[520px] -left-40 -top-24" style="background:#2dd4bf;opacity:.35"></div>
+    <div class="sphere h-[440px] w-[440px] right-[-8rem] top-24" style="background:#8b5cf6;opacity:.28"></div>
+    <div class="relative mx-auto grid max-w-7xl grid-cols-12 items-center gap-y-14 px-6">
+      <div class="col-span-12 lg:col-span-7">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/60 px-4 py-1.5 text-xs font-semibold text-ink/70 backdrop-blur">
+          <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-70"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-teal-deep"></span></span>
+          Software house · Panamá
+        </div>
+        <h1 class="font-display text-[clamp(2.6rem,7vw,5.4rem)] font-extrabold leading-[0.98] text-ink">Webs que <span class="grad-text">piensan,</span><br />venden y <span class="grad-text">escalan.</span></h1>
+        <p class="mt-6 max-w-lg text-lg leading-relaxed text-ink/60">Diseño web de alto nivel, marketing con inteligencia artificial y automatización. Tu presencia digital, construida para atraer, convertir y escalar.</p>
+        <div class="mt-9 flex flex-wrap items-center gap-4">
+          <a href="/contacto/" data-magnetic="0.4" class="group inline-flex items-center gap-3 rounded-full bg-ink px-7 py-4 text-base font-semibold text-white shadow-xl shadow-ink/25 transition-colors hover:bg-teal-deep">Empezar proyecto <span class="grid h-6 w-6 place-items-center rounded-full bg-teal text-ink"><svg width="10" height="10" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span></a>
+          <a href="/portafolio/" data-magnetic="0.3" class="inline-flex items-center gap-2 rounded-full border border-ink/15 px-6 py-4 text-base font-semibold text-ink transition-colors hover:border-ink/40">Ver portafolio</a>
+        </div>
+        <div class="mt-12 flex items-center gap-8">
+          <div><div class="font-display text-3xl font-bold text-ink" data-count="50" data-prefix="+">+50</div><div class="text-sm text-ink/50">proyectos entregados</div></div>
+          <div class="h-10 w-px bg-ink/10"></div>
+          <div><div class="font-display text-3xl font-bold text-ink" data-count="3">3</div><div class="text-sm text-ink/50">SaaS en producción</div></div>
+          <div class="h-10 w-px bg-ink/10"></div>
+          <div><div class="font-display text-3xl font-bold text-ink">24/7</div><div class="text-sm text-ink/50">atención con IA</div></div>
+        </div>
+      </div>
+      <div class="reveal col-span-12 lg:col-span-5">
+        <div class="relative mx-auto aspect-square w-full max-w-[440px]">
+          <div class="spin-slow absolute inset-0 rounded-full border border-ink/10"></div>
+          <div class="spin-rev absolute inset-[12%] rounded-full border border-dashed border-teal-deep/30"></div>
+          <div class="spin-slow absolute inset-[26%] rounded-full border border-ink/10"></div>
+          <div class="absolute left-[8%] top-[14%] h-24 w-24 rounded-full bg-gradient-to-br from-teal to-teal-deep opacity-90 shadow-2xl shadow-teal-deep/40"></div>
+          <div class="absolute bottom-[10%] right-[10%] h-32 w-32 rounded-full bg-gradient-to-br from-violet to-violet-deep opacity-85 shadow-2xl shadow-violet/40"></div>
+          <div class="glass absolute left-1/2 top-1/2 grid h-28 w-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-3xl"><span class="grad-text font-display text-4xl font-extrabold">AI</span></div>
+          <div class="floaty glass absolute -left-6 top-[42%] w-52 rounded-2xl p-3.5" style="animation-delay:-1.5s"><div class="flex items-center gap-2"><span class="grid h-7 w-7 place-items-center rounded-lg bg-teal-deep text-xs font-bold text-white">IA</span><div class="text-[11px] font-semibold text-ink">Asistente · en línea</div><span class="ml-auto h-2 w-2 rounded-full bg-teal"></span></div><div class="mt-2.5 rounded-lg bg-ink/5 px-2.5 py-1.5 text-[11px] text-ink/70">Agendé tu cita para mañana 3pm ✓</div></div>
+          <div class="floaty glass absolute -right-4 bottom-[8%] w-44 rounded-2xl p-4" style="animation-delay:-3s"><div class="text-[11px] font-medium text-ink/50">Conversión</div><div class="mt-1 font-display text-3xl font-bold text-ink">+315%</div><div class="mt-2 flex h-8 items-end gap-1">{[30,45,38,60,52,78,92].map((h) => <span class="flex-1 rounded-sm bg-gradient-to-t from-teal-deep to-teal" style={`height:${h}%`}></span>)}</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS DE CLIENTES -->
+  <section class="border-y border-ink/8 bg-white py-11">
+    <p class="reveal mb-8 text-center text-xs font-semibold uppercase tracking-[0.22em] text-ink/40">Empresas que confían en nosotros</p>
+    <div class="marquee-mask overflow-hidden">
+      <div class="marquee-track items-center" style="animation-duration:60s">
+        {[...clientLogos, ...clientLogos].map((f) => (
+          <img src={`/logos/${f}`} alt="Cliente de Elemento Web" width="180" height="64" loading="lazy" class="mr-14 h-12 w-auto shrink-0 opacity-65 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 md:mr-16 md:h-14" style="mix-blend-mode:multiply" />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="relative overflow-hidden bg-ink py-28 text-white md:py-32">
+    <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(ellipse 60% 60% at 50% 40%, rgba(45,212,191,.14), transparent 70%)"></div>
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <p class="reveal mb-6 inline-block rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white/60">El problema</p>
+      <h2 class="reveal font-display text-[clamp(2rem,5vw,3.6rem)] font-extrabold leading-[1.05]">La mayoría de las webs en Panamá son <span class="grad-text">folletos digitales</span>.</h2>
+      <p class="reveal mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-white/60">Bonitas, pero mudas. No aparecen en Google, no responden fuera de horario y no convierten la visita en un cliente. La tuya puede ser un canal de ventas.</p>
+    </div>
+  </section>
+
+  <!-- SOLUCIONES -->
+  <section id="solutions" class="relative bg-paper py-28 md:py-32">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 lg:grid-cols-12 lg:gap-8">
+      <div class="lg:col-span-4">
+        <div class="lg:sticky lg:top-28">
+          <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/60">Soluciones</p>
+          <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Un solo equipo para toda tu <span class="grad-text">presencia digital</span>.</h2>
+          <p class="reveal mt-6 max-w-sm text-lg leading-relaxed text-ink/55">Del diseño al marketing y la automatización. Cerramos el círculo: atraemos, convertimos y medimos.</p>
+        </div>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="flex flex-col gap-4">
+          {solutions.map((s) => (
+            <details class="group reveal overflow-hidden rounded-3xl border border-ink/10 bg-white transition-colors duration-500 open:border-transparent open:bg-ink open:text-white open:shadow-2xl open:shadow-ink/30">
+              <summary class="flex cursor-pointer list-none items-center gap-5 p-7 [&::-webkit-details-marker]:hidden">
+                <span class="font-display text-sm font-bold text-ink/40 transition-colors group-open:text-teal">{s.n}</span>
+                <h3 class="font-display text-2xl font-bold text-ink transition-colors group-open:text-white md:text-3xl">{s.t}</h3>
+                <span class="ml-auto grid h-10 w-10 shrink-0 place-items-center rounded-full border border-ink/15 transition-all duration-300 group-open:rotate-45 group-open:border-teal group-open:bg-teal group-open:text-ink"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg></span>
+              </summary>
+              <div class="px-7 pb-8"><div class="ml-[2.4rem] max-w-xl">
+                <p class="text-base leading-relaxed text-white/70">{s.d}</p>
+                <div class="mt-5 flex flex-wrap gap-2">{s.tags.map((t) => <span class="rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/80">{t}</span>)}</div>
+                <a href={url(s.slug)} class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-teal">Ver servicio →</a>
+              </div></div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO -->
+  <section id="showcase" class="relative overflow-hidden bg-ink py-28 text-white md:py-32">
+    <div class="absolute inset-0 mesh-dark opacity-40"></div>
+    <div class="sphere sphere-dark h-[420px] w-[420px] right-[-8rem] -top-10" style="background:#6d28d9;opacity:.28"></div>
+    <div class="sphere sphere-dark h-[360px] w-[360px] left-[-6rem] bottom-0" style="background:#0f766e;opacity:.32"></div>
+
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-end">
+        <div>
+          <span class="reveal inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal"><span class="h-1.5 w-1.5 rounded-full bg-teal"></span>Nuestro trabajo</span>
+          <h2 class="reveal mt-5 font-display text-[clamp(2.2rem,5vw,4rem)] font-extrabold leading-[1.02]">Diseño que <span class="grad-text">desafía lo común</span>.</h2>
+        </div>
+        <p class="reveal text-lg leading-relaxed text-white/55">Creamos experiencias digitales que no solo se ven increíbles: <strong class="text-white/85">convierten y escalan</strong> el negocio de nuestros clientes.</p>
+      </div>
+
+      <div class="reveal mt-12 flex justify-center">
+        <div class="inline-flex flex-wrap justify-center gap-1 rounded-full border border-white/12 bg-white/[0.04] p-1.5">
+          {folioCats.map((c, i) => (
+            <button type="button" data-folio-filter={c.key} class={`folio-tab rounded-full px-5 py-2 text-sm font-medium transition-colors ${i === 0 ? 'bg-white text-ink' : 'text-white/60 hover:text-white'}`}>{c.label}</button>
+          ))}
+        </div>
+      </div>
+      <p class="reveal mt-6 text-center text-sm text-white/35">Proyectos reales, en vivo · haz clic para visitar cada sitio.</p>
+
+      <article class="folio-item reveal mt-8 grid overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] lg:grid-cols-2" data-cat={folioFeatured.cat}>
+        <div class="relative aspect-[4/3] overflow-hidden lg:aspect-auto">
+          <img src={folioFeatured.img} alt={`Sitio web de ${folioFeatured.t}`} loading="lazy" width="1200" height="900" class="h-full w-full object-cover object-top" />
+        </div>
+        <div class="flex flex-col justify-center p-8 md:p-12">
+          <div class="flex items-center gap-3"><span class="rounded-full bg-violet/20 px-3 py-1 text-xs font-semibold text-violet">{folioFeatured.catLabel}</span><span class="text-sm text-white/40">{folioFeatured.year}</span></div>
+          <h3 class="mt-4 font-display text-3xl font-extrabold">{folioFeatured.t}</h3>
+          <p class="mt-3 leading-relaxed text-white/55">{folioFeatured.desc}</p>
+          <a href={folioFeatured.href} target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal transition-colors hover:text-white">Visitar sitio en vivo <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <div class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
+        {folio.map((w) => (
+          <a href={w.href} target="_blank" rel="noopener" class="folio-item reveal group block overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] transition-transform duration-500 hover:-translate-y-1.5" data-cat={w.cat}>
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <img src={w.img} alt={`Sitio web de ${w.t}`} loading="lazy" width="1200" height="900" class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+              <span class="absolute right-4 top-4 rounded-full bg-black/45 px-3 py-1 text-xs font-semibold backdrop-blur">{w.tag}</span>
+            </div>
+            <div class="flex items-center justify-between p-6">
+              <div><div class="text-xs font-medium text-teal">{w.catLabel}</div><h3 class="mt-1 font-display text-lg font-bold">{w.t}</h3></div>
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/15 transition-colors group-hover:bg-teal group-hover:text-ink"><svg width="12" height="12" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="reveal mt-8 text-center">
+        <a href="/portafolio/" data-magnetic="0.3" class="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-teal hover:text-teal">Ver todo el portafolio <span aria-hidden="true">→</span></a>
+      </div>
+
+      <figure class="reveal relative mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-10 md:p-16">
+        <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(ellipse 50% 80% at 80% 20%, rgba(139,92,246,0.18), transparent 70%)"></div>
+        <div class="relative">
+          <div class="mb-6 font-display text-6xl leading-none text-teal">“</div>
+          <blockquote class="max-w-4xl font-display text-[clamp(1.5rem,3.4vw,2.6rem)] font-bold leading-[1.2]">Rehicieron nuestro sitio y las consultas por WhatsApp se <span class="grad-text">multiplicaron</span>. Entienden de negocio, no solo de diseño.</blockquote>
+          <figcaption class="mt-8 flex items-center gap-4"><span class="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-teal to-violet font-bold text-ink">JD</span><div><div class="font-semibold text-white">Jhair Davis</div><div class="text-sm text-white/50">Fundador de TRAMITAPA</div></div></figcaption>
+        </div>
+      </figure>
+    </div>
+
+    <script>
+      const tabs = document.querySelectorAll<HTMLButtonElement>('[data-folio-filter]');
+      const items = document.querySelectorAll<HTMLElement>('.folio-item');
+      tabs.forEach((t) => t.addEventListener('click', () => {
+        const k = t.dataset.folioFilter;
+        tabs.forEach((x) => {
+          const on = x === t;
+          x.classList.toggle('bg-white', on);
+          x.classList.toggle('text-ink', on);
+          x.classList.toggle('text-white/60', !on);
+        });
+        items.forEach((it) => { it.style.display = k === 'all' || it.dataset.cat === k ? '' : 'none'; });
+      }));
+    </script>
+  </section>
+
+  <!-- ARQUITECTURA (bento) -->
+  <section class="relative overflow-hidden bg-paper py-28 md:py-32">
+    <div class="absolute inset-0 mesh opacity-60"></div>
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="mb-16 max-w-2xl">
+        <h2 class="reveal font-display text-[clamp(2rem,4.8vw,3.6rem)] font-extrabold leading-[1.02] text-ink">Arquitectura a tu <span class="grad-text">medida</span>.</h2>
+        <p class="reveal mt-5 text-lg leading-relaxed text-ink/55">Un solo equipo cubre el diseño, la tecnología, las funcionalidades y el crecimiento. Así construimos soluciones reales.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div class="flex flex-col gap-5">
+          <a href={url(archCards.corporativo.slug)} class="reveal group relative overflow-hidden rounded-[1.75rem] border border-ink/10 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-ink/10 sm:p-10">
+            <div class="pointer-events-none absolute right-0 top-0 h-64 w-64 opacity-70"><div class="absolute right-8 top-6 h-40 w-40 rounded-full opacity-60 blur-3xl" style="background:radial-gradient(circle, rgba(45,212,191,0.5), transparent 70%)"></div><div class="spin-slow absolute right-2 top-0 h-56 w-56 rounded-full border border-ink/[0.06]"></div><div class="spin-rev absolute right-10 top-8 h-40 w-40 rounded-full border border-dashed border-teal-deep/15"></div></div>
+            <div class="relative">
+              <span class="grid h-14 w-14 place-items-center rounded-2xl border border-ink/10 bg-white text-teal-deep shadow-sm"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M6 21h12M9 7h1M9 11h1M14 7h1M14 11h1" /></svg></span>
+              <h3 class="mt-7 font-display text-2xl font-bold text-ink sm:text-3xl">{archCards.corporativo.t}</h3>
+              <p class="mt-4 max-w-md leading-relaxed text-ink/55">{archCards.corporativo.d}</p>
+              <div class="mt-7 flex flex-wrap gap-2">{archCards.corporativo.tags.map((t) => <span class="rounded-full bg-ink/[0.05] px-3.5 py-1.5 text-xs font-semibold text-ink/60">{t}</span>)}</div>
+            </div>
+          </a>
+          <a href={url(archCards.landing.slug)} class="reveal group relative overflow-hidden rounded-[1.75rem] border border-ink/10 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-ink/10 sm:p-10">
+            <h3 class="font-display text-2xl font-bold text-ink">{archCards.landing.t}</h3>
+            <p class="mt-4 max-w-sm leading-relaxed text-ink/55">{archCards.landing.d}</p>
+            <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal-deep">Cotizar Landing →</span>
+          </a>
+        </div>
+        <div class="flex flex-col gap-5">
+          <a href={url(archCards.ecommerce.slug)} class="reveal group relative overflow-hidden rounded-[1.75rem] border border-ink/10 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-ink/10 sm:p-10">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-teal to-teal-deep text-white shadow-lg shadow-teal-deep/30"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0" /></svg></span>
+            <h3 class="mt-7 font-display text-2xl font-bold text-ink">{archCards.ecommerce.t}</h3>
+            <p class="mt-4 max-w-sm leading-relaxed text-ink/55">{archCards.ecommerce.d}</p>
+          </a>
+          <a href={url(archCards.dev.slug)} class="reveal group relative flex-1 overflow-hidden rounded-[1.75rem] border border-ink/10 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-ink/10 sm:p-10">
+            <div class="pointer-events-none absolute right-8 top-1/2 -translate-y-1/2 select-none font-mono text-[7rem] font-bold leading-none text-ink/[0.05]">&lt;/&gt;</div>
+            <div class="relative">
+              <h3 class="font-display text-2xl font-bold text-ink sm:text-3xl">{archCards.dev.t}</h3>
+              <p class="mt-4 max-w-md leading-relaxed text-ink/55">{archCards.dev.d}</p>
+              <div class="mt-7 flex flex-wrap items-center gap-4 font-mono text-sm font-semibold"><span class="text-ink/50">React</span><span style="color:#42b883">Vue.js</span><span style="color:#ef4444">Laravel</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECOSISTEMA (terminal) -->
+  <section id="ecosystem" class="relative overflow-hidden bg-ink-2 py-28 text-white md:py-32">
+    <div class="absolute inset-0 mesh-dark opacity-60"></div>
+    <div class="sphere sphere-dark h-[420px] w-[420px] right-[-6rem] top-10" style="background:#0f766e;opacity:.4"></div>
+    <div class="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2">
+      <div>
+        <p class="reveal mb-5 inline-block rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white/60">Ecosistema de IA</p>
+        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.04]">Tu web deja de ser una página. Se vuelve un <span class="grad-text">sistema que vende</span>.</h2>
+        <p class="reveal mt-6 max-w-md text-lg leading-relaxed text-white/55">Conectamos diseño, inteligencia artificial y automatización en un solo flujo. Mientras duermes, tu negocio atiende, califica y agenda solo.</p>
+      </div>
+      <div class="reveal">
+        <div class="glass-dark rounded-3xl p-2">
+          <div class="flex items-center gap-2 px-4 py-3"><span class="h-3 w-3 rounded-full bg-[#ff5f57]"></span><span class="h-3 w-3 rounded-full bg-[#febc2e]"></span><span class="h-3 w-3 rounded-full bg-[#28c840]"></span><span class="ml-3 text-xs text-white/40">flujo-automatizacion.ts</span></div>
+          <div class="rounded-2xl bg-black/40 p-5">
+            <div class="flex flex-col gap-3">
+              {ecoSteps.map((s, i) => (
+                <div class="relative flex items-start gap-4">
+                  {i < ecoSteps.length - 1 && <span class="absolute left-[1.15rem] top-10 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-teal/50 to-transparent"></span>}
+                  <span class={`grid h-9 w-9 shrink-0 place-items-center rounded-xl font-display text-sm font-bold ${s.teal ? 'bg-teal-deep/30 text-teal' : 'bg-violet/25 text-violet'}`}>{s.n}</span>
+                  <div class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3"><div class="font-display text-base font-semibold text-white">{s.t}</div><div class="mt-0.5 text-sm text-white/50">{s.d}</div></div>
+                </div>
+              ))}
+            </div>
+            <div class="mt-5 rounded-xl border border-white/10 bg-black/50 px-4 py-3 font-mono text-[13px] leading-relaxed"><span class="text-white/40">$</span> <span class="text-teal">lead</span>.on(<span class="text-violet">'nuevo'</span>) <span class="text-white/40">→</span> <span class="text-teal">ia</span>.responder() <span class="text-white/40">→</span> <span class="text-teal">crm</span>.agendar()<span class="ml-1 inline-block h-4 w-2 translate-y-0.5 animate-pulse bg-teal"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="process" class="relative bg-paper py-28 md:py-32">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-16 max-w-2xl">
+        <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/60">Cómo trabajamos</p>
+        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Cuatro etapas con entregas <span class="grad-text">verificables</span>.</h2>
+        <p class="reveal mt-5 text-lg text-ink/55">Pago por etapas: 50% al iniciar, 30% al aprobar el demo, 20% para publicar. Sin misterio y sin desapariciones.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {procSteps.map((s, i) => (
+          <article class="reveal group relative overflow-hidden rounded-3xl border border-ink/10 bg-white p-7 transition-colors duration-500 hover:border-transparent hover:bg-ink hover:text-white">
+            <div class="font-display text-5xl font-extrabold text-ink/10 transition-colors duration-500 group-hover:text-teal">0{i + 1}</div>
+            <h3 class="mt-5 font-display text-xl font-bold text-ink transition-colors duration-500 group-hover:text-white">{s.t}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink/55 transition-colors duration-500 group-hover:text-white/60">{s.d}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SAAS -->
+  <section class="relative overflow-hidden bg-ink-2 py-28 text-white md:py-32">
+    <div class="absolute inset-0 mesh-dark opacity-50"></div>
+    <div class="sphere sphere-dark h-[440px] w-[440px] left-[-8rem] top-1/4" style="background:#0f766e;opacity:.35"></div>
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="mb-16 max-w-3xl">
+        <p class="reveal mb-5 inline-block rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white/60">Nuestros SaaS</p>
+        <h2 class="reveal font-display text-[clamp(2rem,4.8vw,3.6rem)] font-extrabold leading-[1.03]">No solo desarrollamos software. <span class="grad-text">Lo operamos.</span></h2>
+        <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-white/55">Tres productos propios en producción, con clientes reales. Si construimos y mantenemos nuestro propio software, imagina lo que hacemos con el tuyo.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+        {saasProducts.map((p) => (
+          <div data-tilt="6">
+            <a href={url(p.slug)} class="glass-dark group relative flex h-full flex-col overflow-hidden rounded-3xl p-8">
+              <span class="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-40 blur-3xl transition-opacity duration-500 group-hover:opacity-70" style={`background:${p.c}`}></span>
+              <div class="relative flex items-center justify-between">
+                <span class="grid h-12 w-12 place-items-center rounded-2xl font-display text-lg font-bold" style={`background:${p.c}22;color:${p.c}`}>{p.n[0]}</span>
+                <span class="inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-white/[0.04] px-3 py-1 text-[11px] font-semibold text-white/70"><span class="h-1.5 w-1.5 rounded-full" style={`background:${p.c}`}></span> En producción</span>
+              </div>
+              <h3 class="relative mt-6 font-display text-2xl font-bold">{p.n}</h3>
+              <p class="relative mt-1 text-sm font-medium" style={`color:${p.c}`}>{p.tag}</p>
+              <p class="relative mt-3 flex-1 text-sm leading-relaxed text-white/55">{p.d}</p>
+              <span class="relative mt-6 inline-flex items-center gap-2 text-sm font-semibold" style={`color:${p.c}`}>Conocer {p.n} →</span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ECOSISTEMA CONECTADO (píldoras) -->
+  <section class="relative overflow-hidden border-y border-ink/[0.06] bg-paper py-20">
+    <div class="mx-auto mb-12 max-w-2xl px-6 text-center">
+      <h2 class="font-display text-[clamp(1.7rem,3.8vw,2.8rem)] font-extrabold leading-tight text-ink">Construido con tecnología <span class="grad-text">de última generación</span>.</h2>
+      <p class="mt-4 text-lg text-ink/55">El mismo stack con el que desarrollamos software a escala está detrás de cada web que entregamos.</p>
+    </div>
+    <div class="marquee-mask overflow-hidden">
+      <div class="marquee-track" style="animation-duration:48s">
+        {[...tools, ...tools].map((t) => (
+          <span class="mr-3 inline-flex shrink-0 items-center gap-2.5 rounded-full border border-ink/[0.07] bg-white px-4 py-2.5 shadow-sm shadow-ink/5">
+            <img src={`/tech/${t.ic}.svg`} alt={t.name} width="22" height="22" loading="lazy" class="h-[22px] w-[22px] shrink-0" />
+            <span class="whitespace-nowrap text-sm font-semibold text-ink/70">{t.name}</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIAS -->
+  <section id="industries" class="relative overflow-hidden bg-ink py-28 text-white md:py-32">
+    <div class="absolute inset-0 mesh-dark opacity-50"></div>
+    <div class="sphere sphere-dark h-[400px] w-[400px] left-[-6rem] top-1/3" style="background:#0f766e;opacity:.35"></div>
+    <div class="sphere sphere-dark h-[340px] w-[340px] right-[-4rem] top-10" style="background:#6d28d9;opacity:.3"></div>
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="mb-14 max-w-2xl">
+        <p class="reveal mb-5 inline-block rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white/60">Industrias</p>
+        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03]">Diseño web pensado para <span class="grad-text">tu industria</span>.</h2>
+        <p class="reveal mt-5 text-lg text-white/55">Cada rubro busca distinto y decide distinto. Conocemos el dolor de cada uno.</p>
+      </div>
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        {industrias.slice(0, 12).map((ind, i) => (
+          <a href={url(ind.slug)} class="reveal group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-colors hover:border-teal/40 hover:bg-white/[0.06]">
+            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/[0.06] text-teal transition-colors group-hover:bg-teal group-hover:text-ink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d={indIcons[i % indIcons.length]} /></svg></span>
+            <span class="font-display text-sm font-semibold leading-tight">{ind.label}</span>
+          </a>
+        ))}
+      </div>
+      <div class="reveal mt-8">
+        <a href="/industrias/" data-magnetic="0.3" class="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-teal hover:text-teal">Ver las 24 industrias <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ INVERTIR -->
+  <section class="relative bg-paper py-28 md:py-32">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto mb-16 max-w-2xl text-center">
+        <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/60">Por qué invertir</p>
+        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Tu web no es un gasto. Es tu <span class="grad-text">canal de clientes más rentable</span>.</h2>
+        <p class="reveal mt-5 text-lg text-ink/55">La pregunta correcta no es cuánto cuesta una buena web, sino cuánto te cuesta cada mes no tenerla.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+        {[
+          { t: 'Trabaja 24/7', d: 'Tu mejor vendedor no duerme, no se enferma y atiende a todos a la vez. Tu web recibe, informa y capta mientras tú haces otra cosa.', ic: 'M12 6v6l4 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z' },
+          { t: 'Se paga sola', d: 'Un solo cliente nuevo suele cubrir la inversión completa. A partir de ahí, cada consulta que llega es ganancia neta.', ic: 'M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
+          { t: 'Un activo que crece', d: 'A diferencia de la pauta, el posicionamiento no se apaga cuando dejas de pagar. Se acumula y trabaja para ti durante años.', ic: 'M3 3v18h18M7 14l4-4 3 3 5-6' },
+        ].map((v) => (
+          <div class="reveal rounded-3xl border border-ink/10 bg-white p-8">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-teal-deep to-teal text-white"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d={v.ic} /></svg></span>
+            <h3 class="mt-5 font-display text-xl font-bold text-ink">{v.t}</h3>
+            <p class="mt-3 leading-relaxed text-ink/55">{v.d}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="reveal relative mt-6 overflow-hidden rounded-[2rem] bg-ink p-6 text-white md:p-10">
+        <div class="absolute inset-0 mesh-dark opacity-40"></div>
+        <div class="relative">
+          <h3 class="mb-7 font-display text-xl font-bold md:text-2xl">Por qué no es lo mismo que una plantilla o un freelancer</h3>
+          <div class="overflow-x-auto">
+            <div class="min-w-[560px]">
+              <div class="grid grid-cols-[1.1fr_1fr_1fr] border-b border-white/10 pb-3 text-xs font-semibold uppercase tracking-wide">
+                <span></span>
+                <span class="px-3 text-white/45">Plantilla / Freelancer</span>
+                <span class="rounded-t-xl bg-teal/15 px-3 py-1 text-teal">Elemento Web</span>
+              </div>
+              {[
+                ['Enfoque', 'Una plantilla bonita', 'Estructura pensada para vender'],
+                ['SEO', 'Improvisado o inexistente', 'Técnico + una página por servicio'],
+                ['Tecnología', 'Constructor pesado y lento', 'El mismo stack de nuestros SaaS'],
+                ['Al terminar', 'Desaparece', 'Equipo interno, acompañamiento real'],
+                ['Respaldo', 'Ninguno', 'Meta Verified + 3 SaaS en producción'],
+              ].map((r) => (
+                <div class="grid grid-cols-[1.1fr_1fr_1fr] items-center border-b border-white/8 py-3.5 text-sm">
+                  <span class="font-semibold text-white">{r[0]}</span>
+                  <span class="flex items-center gap-2 px-3 text-white/45"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round" /></svg>{r[1]}</span>
+                  <span class="flex items-center gap-2 bg-teal/[0.06] px-3 py-2 text-white/90"><span class="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-teal text-ink"><svg width="9" height="7" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></span>{r[2]}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section class="relative bg-white py-28 md:py-32">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-14 flex flex-wrap items-end justify-between gap-6">
+        <div class="max-w-2xl">
+          <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-paper px-4 py-1.5 text-xs font-semibold text-ink/60">Quiénes somos</p>
+          <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Detrás de cada proyecto, un <span class="grad-text">equipo panameño</span> de verdad.</h2>
+          <p class="reveal mt-5 max-w-xl text-lg text-ink/55">Equipo 100% interno. No subcontratamos tu proyecto ni te dejamos en una cola de tickets: hablas directo con quien lo construye.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-5 lg:grid-cols-4">
+        {[
+          { n: 'Nombre Apellido', r: 'Dirección y estrategia' },
+          { n: 'Nombre Apellido', r: 'Diseño de producto' },
+          { n: 'Nombre Apellido', r: 'Desarrollo' },
+          { n: 'Nombre Apellido', r: 'Marketing e IA' },
+        ].map((m) => (
+          <div class="reveal group rounded-3xl border border-ink/10 bg-paper p-6 text-center transition-transform duration-500 hover:-translate-y-1.5">
+            <div class="relative mx-auto grid h-24 w-24 place-items-center overflow-hidden rounded-full bg-gradient-to-br from-teal-deep/15 to-violet/15">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-ink/25"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" stroke-linecap="round" /></svg>
+              <span class="absolute bottom-1.5 rounded-full bg-white/80 px-2 py-0.5 text-[10px] font-semibold text-ink/40">Foto</span>
+            </div>
+            <h3 class="mt-4 font-display text-base font-bold text-ink">{m.n}</h3>
+            <p class="mt-1 text-sm text-ink/50">{m.r}</p>
+          </div>
+        ))}
+      </div>
+      <p class="reveal mt-6 text-sm text-ink/40">Marcadores de posición · reemplázalos con las fotos, nombres y cargos reales de tu equipo.</p>
+
+      <div class="reveal mt-8 flex flex-wrap gap-3">
+        {['Meta Verified Tech Provider', 'Equipo 100% interno', '3 SaaS propios en producción', 'Cotización cerrada por escrito'].map((b) => (
+          <span class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper px-4 py-2 text-sm font-medium text-ink/70"><span class="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-teal to-violet"></span>{b}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section id="precios" class="relative bg-paper py-28 md:py-32">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto mb-16 max-w-2xl text-center">
+        <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/60">Precios</p>
+        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Precios claros, sin <span class="grad-text">sorpresas después</span>.</h2>
+        <p class="reveal mt-5 text-lg text-ink/55">Cotización cerrada antes de empezar. Precios en USD, no incluyen ITBMS.</p>
+      </div>
+      <div class="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
+        {pricing.tiers.map((plan) => (
+          <div class={`reveal relative flex flex-col rounded-[1.75rem] p-8 ${plan.featured ? 'bg-gradient-to-b from-ink to-ink-2 text-white shadow-2xl shadow-teal-deep/25 md:-my-4 md:py-12' : 'border border-ink/10 bg-white text-ink'}`}>
+            {plan.featured && <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold text-ink">Recomendado</span>}
+            <h3 class="font-display text-xl font-bold">{plan.name}</h3>
+            <div class="mt-6 flex items-end gap-1.5"><span class={`text-sm font-medium ${plan.featured ? 'text-white/50' : 'text-ink/40'}`}>desde</span><span class="font-display text-5xl font-extrabold tracking-tight">{plan.price}</span></div>
+            <ul class="mt-7 flex flex-col gap-3">{plan.features.map((f) => (<li class="flex items-center gap-3 text-sm"><span class={`grid h-5 w-5 shrink-0 place-items-center rounded-full ${plan.featured ? 'bg-teal text-ink' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={plan.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>))}</ul>
+            <a href="/contacto/" class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${plan.featured ? 'bg-teal text-ink hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
+          </div>
+        ))}
+      </div>
+
+      <!-- Franja premium: corporativo a medida -->
+      <div class="reveal relative mt-6 overflow-hidden rounded-[2rem] bg-ink px-8 py-10 text-white md:px-12 md:py-12">
+        <div class="absolute inset-0 mesh-dark opacity-40"></div>
+        <div class="sphere sphere-dark h-[360px] w-[360px] right-[-6rem] -top-24" style="background:#8b5cf6;opacity:.35"></div>
+        <div class="sphere sphere-dark h-[300px] w-[300px] left-[-5rem] bottom-[-6rem]" style="background:#0f766e;opacity:.4"></div>
+        <div class="relative grid gap-10 lg:grid-cols-[1.55fr_1fr] lg:items-center">
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal"><span class="h-1.5 w-1.5 rounded-full bg-teal"></span>{pricing.custom.eyebrow}</span>
+            <h3 class="mt-4 font-display text-[clamp(1.7rem,3.4vw,2.6rem)] font-extrabold leading-[1.08]">Páginas web corporativas <span class="grad-text">a medida</span></h3>
+            <p class="mt-4 max-w-xl leading-relaxed text-white/60">{pricing.custom.text}</p>
+            <div class="mt-7 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+              {pricing.custom.features.map((f) => (
+                <div class="flex items-center gap-2.5 text-sm text-white/75"><span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal/15 text-teal"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></span>{f}</div>
+              ))}
+            </div>
+          </div>
+          <div class="lg:border-l lg:border-white/10 lg:pl-10">
+            <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-7 text-center">
+              <div class="text-sm font-medium text-white/45">desde</div>
+              <div class="font-display text-6xl font-extrabold leading-none">{pricing.custom.price}</div>
+              <p class="mx-auto mt-3 max-w-[16rem] text-sm text-white/50">Cotización cerrada por escrito tras el diagnóstico, sin compromiso.</p>
+              <a href={wa(pricing.custom.wa)} target="_blank" rel="noopener" data-magnetic="0.3" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-4 text-sm font-semibold text-ink transition-colors hover:bg-white">{pricing.custom.cta}<span class="grid h-5 w-5 place-items-center rounded-full bg-ink text-teal"><svg width="9" height="9" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="reveal mt-10 text-center text-sm text-ink/45" set:html={pricing.infra}></p>
+    </div>
+  </section>
+
+  <!-- GARANTÍA / CONFIANZA -->
+  <section class="relative bg-white py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="reveal relative overflow-hidden rounded-[2.5rem] border border-ink/10 bg-paper p-10 md:p-16">
+        <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p class="mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/60">Nuestro compromiso</p>
+            <h2 class="font-display text-[clamp(1.9rem,4vw,3rem)] font-extrabold leading-[1.05] text-ink">Sin letra chica. Sin <span class="grad-text">sorpresas</span>.</h2>
+            <p class="mt-5 max-w-md text-lg text-ink/55">Invertir en tu web no debería dar miedo. Por eso cada proyecto arranca con estas reglas claras, por escrito, desde el día uno.</p>
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2">
+            {[
+              ['Cotización cerrada por escrito', 'El precio final se acuerda antes de empezar. Cero cargos sorpresa a mitad del proyecto.'],
+              ['Entregas por hito', 'Apruebas cada etapa antes de avanzar a la siguiente. Siempre sabes en qué punto va tu web.'],
+              ['Revisiones incluidas', 'Ajustes contemplados en cada fase para que el resultado sea el que necesitas.'],
+              ['Todo a tu nombre', 'Dominio, hosting y accesos quedan a nombre de tu empresa. La web es tuya, sin ataduras.'],
+              ['Diagnóstico sin costo', 'Empezamos entendiendo tu negocio. El diagnóstico y la propuesta no cuestan ni comprometen.'],
+              ['Equipo que responde', 'Acompañamiento real después del lanzamiento, no un correo que nadie contesta.'],
+            ].map((g) => (
+              <div class="rounded-2xl border border-ink/8 bg-white p-5">
+                <div class="flex items-center gap-2.5"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gradient-to-br from-teal to-teal-deep text-white"><svg width="11" height="9" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></span><h3 class="font-display text-sm font-bold text-ink">{g[0]}</h3></div>
+                <p class="mt-2 text-sm leading-relaxed text-ink/55">{g[1]}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="relative bg-paper py-20 md:py-24">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="reveal mb-10 text-center font-display text-[clamp(1.8rem,4vw,3rem)] font-extrabold text-ink">Preguntas <span class="grad-text">frecuentes</span></h2>
+      <div class="flex flex-col gap-3">
+        {faqs.map(([q, a], i) => (
+          <details open={i === 0} class="group reveal rounded-2xl border border-ink/10 bg-white px-6 open:border-teal-deep/30">
+            <summary class="flex cursor-pointer list-none items-center gap-4 py-5 [&::-webkit-details-marker]:hidden">
+              <span class="font-display text-sm font-bold text-teal-deep">0{i + 1}</span>
+              <span class="flex-1 font-display text-lg font-semibold text-ink">{q}</span>
+              <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ink/15 transition-transform duration-300 group-open:rotate-45 group-open:border-teal-deep group-open:bg-teal-deep group-open:text-white"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg></span>
+            </summary>
+            <p class="pb-6 pl-9 leading-relaxed text-ink/60">{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="relative overflow-hidden bg-paper py-28 md:py-32">
+    <div class="absolute inset-0 mesh"></div>
+    <div class="sphere h-[420px] w-[420px] left-[-8rem] top-10" style="background:#2dd4bf;opacity:.28"></div>
+    <div class="sphere h-[360px] w-[360px] right-[-6rem] bottom-0" style="background:#8b5cf6;opacity:.22"></div>
+    <div class="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+      <div>
+        <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/60">Contacto</p>
+        <h2 class="reveal font-display text-[clamp(2rem,4.6vw,3.6rem)] font-extrabold leading-[1.02] text-ink">Cuéntanos de tu <span class="grad-text">proyecto</span>.</h2>
+        <p class="reveal mt-6 max-w-md text-lg leading-relaxed text-ink/55">Completa el formulario y te respondemos el mismo día hábil con los siguientes pasos. Mientras más contexto, más útil será la primera respuesta.</p>
+        <ul class="reveal mt-8 flex flex-col gap-3">
+          {['Respuesta el mismo día hábil', 'Diagnóstico sin costo', 'Cotización cerrada, por escrito'].map((t) => (
+            <li class="flex items-center gap-3 text-ink/70"><span class="grid h-6 w-6 place-items-center rounded-full bg-teal-deep text-white"><svg width="11" height="9" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>{t}</li>
+          ))}
+        </ul>
+        <p class="reveal mt-8 text-sm text-ink/50">¿Prefieres directo? <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="font-semibold text-teal-deep underline underline-offset-4">WhatsApp</a> o <a href="mailto:hola@elementoweb.com" class="font-semibold text-teal-deep underline underline-offset-4">hola@elementoweb.com</a>.</p>
+      </div>
+      <div class="reveal">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+</Base>

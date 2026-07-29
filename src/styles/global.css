@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* ============ Design tokens (Tailwind v4 @theme) ============ */
+@theme {
+  --color-paper: #f8f9fa;
+  --color-ink: #0f172a;
+  --color-ink-2: #111214;
+  --color-teal: #2dd4bf;
+  --color-teal-deep: #0f766e;
+  --color-violet: #8b5cf6;
+  --color-violet-deep: #6d28d9;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  * { -webkit-font-smoothing: antialiased; }
+  html, body { background: var(--color-paper); color: #1c2230; font-family: var(--font-body); }
+  /* Reserva el ancho de la barra de scroll SIEMPRE, para que al soltar el
+     preloader (que bloquea el scroll) no aparezca la barra y empuje la web. */
+  html { scrollbar-gutter: stable; }
+  body { overflow-x: hidden; }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.03em; line-height: 1.02; }
+  a { color: inherit; }
+  ::selection { background: var(--color-teal); color: #05201c; }
+  :focus-visible { outline: 2px solid var(--color-teal-deep); outline-offset: 3px; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+}
+
+@layer utilities {
+  .glass { background: rgba(255,255,255,.55); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.6); box-shadow: 0 20px 60px -24px rgba(15,23,42,.22); }
+  /* Panel del mega-menú: sólido (sin backdrop-filter) para máximo contraste y
+     para evitar el parpadeo que causa el cursor moviéndose sobre el blur. */
+  .menu-panel { background: #fff; border: 1px solid rgba(15,23,42,.08); box-shadow: 0 28px 80px -30px rgba(15,23,42,.42), 0 6px 18px -8px rgba(15,23,42,.14); }
+  .glass-dark { background: rgba(255,255,255,.06); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.12); box-shadow: 0 24px 70px -30px rgba(0,0,0,.6); }
+  .mesh { background-image: linear-gradient(to right, rgba(15,23,42,.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,.045) 1px, transparent 1px); background-size: 46px 46px; -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 78%); mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 78%); }
+  .mesh-dark { background-image: linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 46px 46px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%); }
+  .sphere { position: absolute; border-radius: 9999px; filter: blur(100px); mix-blend-mode: multiply; pointer-events: none; }
+  .sphere-dark { mix-blend-mode: screen; }
+  .grad-text { background: linear-gradient(105deg, var(--color-teal-deep), var(--color-teal) 45%, var(--color-violet)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .reveal { opacity: 0; transform: translateY(34px); }
+  .marquee-track { display: flex; width: max-content; animation: marquee 32s linear infinite; will-change: transform; }
+  .marquee-mask { -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+  @keyframes spin-slow { to { transform: rotate(360deg); } }
+  @keyframes spin-rev { to { transform: rotate(-360deg); } }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+  .spin-slow { animation: spin-slow 26s linear infinite; }
+  .spin-rev { animation: spin-rev 20s linear infinite; }
+  .floaty { animation: floaty 6s ease-in-out infinite; }
+
+  /* Cursor personalizado */
+  .cursor-ring, .cursor-dot { position: fixed; top: 0; left: 0; z-index: 95; border-radius: 9999px; pointer-events: none; will-change: transform; }
+  .cursor-ring-i { display: block; height: 36px; width: 36px; margin: -18px 0 0 -18px; border-radius: 9999px; border: 1.5px solid rgba(15,23,42,.35); transition: transform .2s ease, background .2s, border-color .2s; }
+  .cursor-dot { height: 6px; width: 6px; margin: -3px 0 0 -3px; background: var(--color-teal-deep); }
+  .cursor-ring.grow .cursor-ring-i { transform: scale(1.55); background: rgba(45,212,191,.12); border-color: transparent; }
+  @media (hover: none), (pointer: coarse) { .cursor-ring, .cursor-dot { display: none; } }
+}
+
+/* Nav sobre hero oscuro: texto claro mientras el pill no tiene fondo glass.
+   Al hacer scroll aparece el fondo glass y el nav vuelve a su color oscuro. */
+#navpill.nav-light .brand-tx { color: #fff; }
+#navpill.nav-light .brand-sq { background: rgba(255,255,255,.12); }
+#navpill.nav-light .nav-trigger { color: rgba(255,255,255,.82); }
+#navpill.nav-light .nav-trigger:hover { color: #fff; background: rgba(255,255,255,.1); }
+#navpill.nav-light .nav-links a { color: rgba(255,255,255,.82); }
+#navpill.nav-light .nav-links a:hover { color: #fff; background: rgba(255,255,255,.1); }
+#navpill.nav-light #mnav-toggle { color: #fff; }
+#navpill.nav-light .cta-pill { background: #2dd4bf; color: #0f172a; }
+#navpill.nav-light .cta-pill:hover { background: #fff; }
+
+/* Enlaces dentro del texto de una tarjeta: se elevan por encima del stretched
+   link (::after) para seguir siendo clicables, y se ven como enlaces. */
+.cardtext a { position: relative; z-index: 1; }
+
+/* Enlaces dentro de contenido rico (FAQ, prose, checklist, intros): deben
+   distinguirse claramente del texto. Teal + seminegrita + subrayado + hover. */
+.rt a, .cardtext a {
+  color: var(--color-teal-deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+  transition: color .15s, background-color .15s;
+}
+.rt a:hover, .cardtext a:hover { color: var(--color-ink); background: rgba(45,212,191,.14); border-radius: 3px; }
+/* Variante para contenido sobre fondo oscuro (hero interno). */
+.rt-dark a { color: var(--color-teal); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 2px; transition: color .15s; }
+.rt-dark a:hover { color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track, .spin-slow, .spin-rev, .floaty { animation: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .cursor-ring, .cursor-dot { display: none !important; }
+}

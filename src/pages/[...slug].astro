@@ -1,0 +1,94 @@
+---
+import Base from '../layouts/Base.astro';
+import Blocks from '../components/Blocks.astro';
+import { pages } from '../lib/pages';
+import { url, wa, site } from '../lib/site';
+import { pageJsonLd, articleJsonLd } from '../lib/schema';
+import { heroFor } from '../lib/img';
+
+export function getStaticPaths() {
+  // El home vive en index.astro; aquí van todas las demás páginas del registro.
+  return pages
+    .filter((p) => p.slug !== '')
+    .map((p) => ({ params: { slug: p.slug }, props: { page: p } }));
+}
+
+const { page } = Astro.props;
+const hero = heroFor(page, 1600, 0.7);
+const intro = page.lead.slice(1);
+const cta = page.cta ?? {};
+const ctaText = cta.wa ?? `Hola, me interesa ${page.h1}.`;
+const isBlog = page.parent?.slug === 'blog';
+const jsonld = isBlog
+  ? articleJsonLd({ title: page.title, description: page.description, slug: page.slug, date: new Date((page.date ?? '2026-01-15') + 'T12:00:00') })
+  : pageJsonLd(page, { localBusiness: !!page.service });
+const dateLabel = page.date
+  ? new Date(page.date + 'T12:00:00').toLocaleDateString('es-PA', { day: 'numeric', month: 'long', year: 'numeric' })
+  : '';
+---
+<Base title={page.title} description={page.description} dark image={hero.src} jsonld={jsonld}>
+  <!-- HERO interno -->
+  <section class="relative overflow-hidden bg-ink pt-36 pb-20 text-white md:pt-44 md:pb-24">
+    <div class="absolute inset-0 mesh-dark opacity-50"></div>
+    <div class="sphere sphere-dark h-[440px] w-[440px] -left-24 -top-16" style="background:#0f766e;opacity:.4"></div>
+    <div class="sphere sphere-dark h-[360px] w-[360px] right-[-6rem] top-20" style="background:#8b5cf6;opacity:.3"></div>
+
+    <div class="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[1.05fr_0.95fr]">
+      <div>
+        <nav aria-label="Ruta de navegación" class="reveal flex flex-wrap items-center gap-2 text-sm text-white/45">
+          <a href="/" class="transition hover:text-teal">Inicio</a>
+          <span>/</span>
+          {page.parent && (<><a href={url(page.parent.slug)} class="transition hover:text-teal">{page.parent.label}</a><span>/</span></>)}
+          <span class="text-white/75">{page.breadcrumb ?? page.h1}</span>
+        </nav>
+
+        {isBlog && (page.category || dateLabel) && (
+          <div class="reveal mt-5 flex flex-wrap items-center gap-3 text-sm">
+            {page.category && <span class="rounded-full bg-teal/15 px-3 py-1 font-semibold text-teal">{page.category}</span>}
+            {dateLabel && <span class="text-white/45">{dateLabel}</span>}
+          </div>
+        )}
+        <h1 class="reveal mt-5 font-display text-[clamp(2.1rem,5.2vw,3.6rem)] font-extrabold leading-[1.05]">{page.h1}</h1>
+        <p class="rt-dark reveal mt-6 max-w-xl text-lg leading-relaxed text-white/65" set:html={page.lead[0]}></p>
+
+        <div class="reveal mt-9 flex flex-wrap gap-3">
+          <a href={wa(ctaText)} target="_blank" rel="noopener" data-magnetic="0.35" class="inline-flex items-center gap-2.5 rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-ink shadow-xl shadow-teal/20 transition-colors hover:bg-white">
+            Hablar por WhatsApp
+            <span class="grid h-5 w-5 place-items-center rounded-full bg-ink text-teal"><svg width="9" height="9" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+          </a>
+          <a href="/contacto/" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/50">Cotizar por formulario</a>
+        </div>
+      </div>
+
+      <div class="reveal relative">
+        <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-teal/25 to-violet/25 blur-2xl"></div>
+        <img src={hero.src} alt={hero.alt} width="1600" height="1120" loading="eager" fetchpriority="high" decoding="async" class="relative aspect-[10/7] w-full rounded-[1.75rem] border border-white/10 object-cover shadow-2xl" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro (resto del lead) -->
+  {intro.length > 0 && (
+    <section class="rt mx-auto max-w-3xl px-6 pt-16">
+      {intro.map((p) => <p class="reveal mb-5 text-xl leading-relaxed text-ink/70" set:html={p}></p>)}
+    </section>
+  )}
+
+  <Blocks blocks={page.blocks} />
+
+  <!-- CTA de cierre -->
+  <section class="mx-auto max-w-7xl px-6 py-20">
+    <div class="reveal relative overflow-hidden rounded-[2.5rem] bg-ink px-8 py-16 text-center md:px-16">
+      <div class="absolute inset-0 mesh-dark opacity-40"></div>
+      <div class="sphere sphere-dark h-[300px] w-[300px] left-1/2 -top-24 -translate-x-1/2" style="background:#0f766e;opacity:.4"></div>
+      <div class="relative">
+        <h2 class="mx-auto max-w-2xl font-display text-[clamp(1.8rem,4.4vw,3rem)] font-extrabold leading-[1.08] text-white">{cta.h2 ?? '¿Empezamos tu proyecto?'}</h2>
+        <p class="mx-auto mt-5 max-w-lg text-lg text-white/60">{cta.text ?? 'Diagnóstico sin costo y propuesta con precio cerrado, por escrito. Sin compromiso.'}</p>
+        <div class="mt-9 flex flex-wrap justify-center gap-3">
+          <a href={wa(ctaText)} target="_blank" rel="noopener" data-magnetic="0.4" class="inline-flex items-center gap-2.5 rounded-full bg-teal px-8 py-4 text-base font-semibold text-ink shadow-2xl shadow-teal/25 transition-colors hover:bg-white">Escríbenos por WhatsApp</a>
+          <a href="/contacto/" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-4 text-base font-semibold text-white transition-colors hover:border-white/50">Ir al formulario</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

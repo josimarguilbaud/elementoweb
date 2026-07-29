@@ -1,0 +1,243 @@
+---
+import type { Block } from '../lib/types';
+import { pricing, url, wa, portfolio, portfolioCats } from '../lib/site';
+import ContactForm from './ContactForm.astro';
+interface Props { blocks: Block[] }
+const { blocks } = Astro.props;
+---
+{blocks.map((b) => (
+  <>
+    {b.type === 'prose' && (
+      <section class="reveal mx-auto max-w-3xl px-6 py-14">
+        <h2 class="font-display text-[clamp(1.7rem,3.6vw,2.6rem)] font-extrabold text-ink">{b.h2}</h2>
+        <div class="rt mt-6 flex flex-col gap-5">{b.paragraphs.map((p) => <p class="text-lg leading-relaxed text-ink/65" set:html={p}></p>)}</div>
+      </section>
+    )}
+
+    {b.type === 'cards' && (
+      <section class="mx-auto max-w-7xl px-6 py-16">
+        <h2 class="reveal font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>
+        {b.intro && <p class="rt reveal mt-3 max-w-2xl text-lg text-ink/55" set:html={b.intro}></p>}
+        <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {b.items.map((it) => (
+            <div class="reveal group relative rounded-3xl border border-ink/10 bg-white p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-transparent hover:shadow-2xl hover:shadow-ink/10">
+              <h3 class="font-display text-xl font-bold text-ink">{it.h3}</h3>
+              <p class="cardtext mt-3 leading-relaxed text-ink/55" set:html={it.text}></p>
+              {it.link && <a href={url(it.link.slug)} class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-teal-deep after:absolute after:inset-0 after:content-['']">{it.link.label} <span class="transition-transform group-hover:translate-x-1">→</span></a>}
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {b.type === 'catalog' && (
+      <section class="mx-auto max-w-7xl px-6 py-16">
+        <h2 class="reveal font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>
+        {b.intro && <p class="reveal mt-3 max-w-2xl text-lg text-ink/55">{b.intro}</p>}
+        <div class="mt-10 flex flex-col gap-10">
+          {b.groups.map((g) => (
+            <div class="reveal">
+              <div class="mb-4 flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-teal to-violet"></span><h3 class="font-display text-sm font-bold uppercase tracking-wide text-ink">{g.title}</h3></div>
+              <div class="grid grid-cols-1 gap-3 md:grid-cols-3">{g.items.map((it) => (
+                <a href={url(it.link.slug)} class="group rounded-2xl border border-ink/10 bg-white p-5 transition-colors hover:border-teal-deep/40"><h4 class="font-display font-bold text-ink">{it.h3}</h4><p class="mt-2 text-sm leading-relaxed text-ink/55" set:html={it.text}></p></a>
+              ))}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {b.type === 'checklist' && (
+      <section class="mx-auto max-w-5xl px-6 py-16">
+        <h2 class="reveal font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>
+        {b.intro && <p class="rt reveal mt-3 max-w-2xl text-lg text-ink/55" set:html={b.intro}></p>}
+        <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {b.items.map((it) => (
+            <div class="reveal flex items-center gap-3 rounded-2xl border border-ink/10 bg-white p-5"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-gradient-to-br from-teal to-teal-deep text-white"><svg width="12" height="10" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class="rt font-medium text-ink/70" set:html={it}></span></div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {b.type === 'steps' && (
+      <section class="mx-auto max-w-7xl px-6 py-16">
+        <h2 class="reveal font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>
+        {b.intro && <p class="reveal mt-3 max-w-2xl text-lg text-ink/55">{b.intro}</p>}
+        <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {b.items.map((it, i) => (
+            <article class="reveal group rounded-3xl border border-ink/10 bg-white p-7 transition-colors duration-500 hover:border-transparent hover:bg-ink hover:text-white">
+              <div class="font-display text-4xl font-extrabold text-ink/10 transition-colors duration-500 group-hover:text-teal">0{i + 1}</div>
+              <h3 class="mt-4 font-display text-lg font-bold text-ink transition-colors duration-500 group-hover:text-white">{it.h3}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink/55 transition-colors duration-500 group-hover:text-white/60" set:html={it.text}></p>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {b.type === 'statement' && (
+      <section class="mx-auto max-w-4xl px-6 py-14"><div class="reveal rounded-[2rem] bg-ink p-10 text-center md:p-14"><p class="font-display text-[clamp(1.5rem,3.4vw,2.4rem)] font-bold leading-[1.25] text-white">{b.text} {b.strong && <span class="grad-text">{b.strong}</span>}</p></div></section>
+    )}
+
+    {b.type === 'faq' && (
+      <section class="mx-auto max-w-4xl px-6 py-16">
+        <h2 class="reveal mb-8 text-center font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>
+        <div class="flex flex-col gap-3">
+          {b.items.map((it, i) => (
+            <details open={i === 0} class="group reveal rounded-2xl border border-ink/10 bg-white px-6 open:border-teal-deep/30">
+              <summary class="flex cursor-pointer list-none items-center gap-4 py-5 [&::-webkit-details-marker]:hidden"><span class="font-display text-sm font-bold text-teal-deep">0{i + 1}</span><span class="flex-1 font-display text-lg font-semibold text-ink">{it.q}</span><span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ink/15 transition-transform duration-300 group-open:rotate-45 group-open:border-teal-deep group-open:bg-teal-deep group-open:text-white"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg></span></summary>
+              <p class="rt pb-6 pl-9 leading-relaxed text-ink/60" set:html={it.a}></p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {b.type === 'related' && (
+      <section class="mx-auto max-w-7xl px-6 py-12">
+        {b.h2 && <h2 class="reveal mb-6 font-display text-xl font-bold text-ink">{b.h2}</h2>}
+        <div class="flex flex-wrap gap-3">{b.items.map((it) => <a href={url(it.slug)} class="reveal rounded-full border border-ink/12 bg-white px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-teal-deep/50 hover:text-teal-deep">{it.label} →</a>)}</div>
+      </section>
+    )}
+
+    {b.type === 'pricing' && (
+      <section class="mx-auto max-w-7xl px-6 py-16">
+        <h2 class="reveal font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>
+        {b.intro && <p class="rt reveal mt-3 max-w-2xl text-lg text-ink/55" set:html={b.intro}></p>}
+        <div class="mt-10 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
+          {pricing.tiers.map((p) => (
+            <div class={`reveal relative flex flex-col rounded-[1.75rem] p-8 ${p.featured ? 'bg-gradient-to-b from-ink to-ink-2 text-white shadow-2xl shadow-teal-deep/25' : 'border border-ink/10 bg-white text-ink'}`}>
+              {p.featured && <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold text-ink">Recomendado</span>}
+              <h3 class="font-display text-xl font-bold">{p.name}</h3>
+              <div class="mt-6 flex items-end gap-1.5"><span class={`text-sm font-medium ${p.featured ? 'text-white/50' : 'text-ink/40'}`}>desde</span><span class="font-display text-5xl font-extrabold">{p.price}</span></div>
+              <ul class="mt-7 flex flex-col gap-3">{p.features.map((f) => <li class="flex items-center gap-3 text-sm"><span class={`grid h-5 w-5 shrink-0 place-items-center rounded-full ${p.featured ? 'bg-teal text-ink' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={p.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>)}</ul>
+              <a href="/contacto/" class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${p.featured ? 'bg-teal text-ink hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
+            </div>
+          ))}
+        </div>
+
+        <div class="reveal relative mt-6 overflow-hidden rounded-[2rem] bg-ink px-8 py-10 text-white md:px-12 md:py-12">
+          <div class="absolute inset-0 mesh-dark opacity-40"></div>
+          <div class="sphere sphere-dark h-[360px] w-[360px] right-[-6rem] -top-24" style="background:#8b5cf6;opacity:.35"></div>
+          <div class="sphere sphere-dark h-[300px] w-[300px] left-[-5rem] bottom-[-6rem]" style="background:#0f766e;opacity:.4"></div>
+          <div class="relative grid gap-10 lg:grid-cols-[1.55fr_1fr] lg:items-center">
+            <div>
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal"><span class="h-1.5 w-1.5 rounded-full bg-teal"></span>{pricing.custom.eyebrow}</span>
+              <h3 class="mt-4 font-display text-[clamp(1.7rem,3.4vw,2.6rem)] font-extrabold leading-[1.08]">Páginas web corporativas <span class="grad-text">a medida</span></h3>
+              <p class="mt-4 max-w-xl leading-relaxed text-white/60">{pricing.custom.text}</p>
+              <div class="mt-7 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+                {pricing.custom.features.map((f) => (
+                  <div class="flex items-center gap-2.5 text-sm text-white/75"><span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal/15 text-teal"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></span>{f}</div>
+                ))}
+              </div>
+            </div>
+            <div class="lg:border-l lg:border-white/10 lg:pl-10">
+              <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-7 text-center">
+                <div class="text-sm font-medium text-white/45">desde</div>
+                <div class="font-display text-6xl font-extrabold leading-none">{pricing.custom.price}</div>
+                <p class="mx-auto mt-3 max-w-[16rem] text-sm text-white/50">Cotización cerrada por escrito tras el diagnóstico, sin compromiso.</p>
+                <a href={wa(pricing.custom.wa)} target="_blank" rel="noopener" data-magnetic="0.3" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-4 text-sm font-semibold text-ink transition-colors hover:bg-white">{pricing.custom.cta}<span class="grid h-5 w-5 place-items-center rounded-full bg-ink text-teal"><svg width="9" height="9" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="reveal mt-8 text-sm text-ink/45" set:html={pricing.infra}></p>
+      </section>
+    )}
+
+    {b.type === 'extras' && (
+      <section class="mx-auto max-w-7xl px-6 py-16">
+        <h2 class="reveal font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>
+        {b.intro && <p class="reveal mt-3 max-w-2xl text-lg text-ink/55">{b.intro}</p>}
+        <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {pricing.hosting.tiers.map((t) => (
+            <div class={`reveal rounded-3xl border p-7 ${t.featured ? 'border-teal-deep/40 bg-white shadow-xl shadow-teal-deep/10' : 'border-ink/10 bg-white'}`}>
+              {t.featured && <span class="mb-3 inline-block rounded-full bg-teal-deep/10 px-3 py-1 text-xs font-bold text-teal-deep">Recomendado</span>}
+              <h3 class="font-display text-lg font-bold text-ink">{t.name}</h3>
+              <div class="mt-1 font-display text-2xl font-extrabold text-ink">desde {t.price}<span class="text-sm font-medium text-ink/40">{t.unit}</span></div>
+              <p class="mt-2 text-sm text-ink/55">{t.for}</p>
+              <ul class="mt-4 flex flex-col gap-2 text-sm text-ink/60">{t.features.map((f) => <li class="flex gap-2"><span class="text-teal-deep">✓</span>{f}</li>)}</ul>
+            </div>
+          ))}
+        </div>
+        <div class="reveal mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {pricing.addons.items.map((it) => <div class="rounded-2xl border border-ink/10 bg-white p-5"><div class="flex items-baseline justify-between gap-3"><h4 class="font-display font-bold text-ink">{it.name}</h4><span class="shrink-0 text-sm font-semibold text-teal-deep">{it.price}</span></div><p class="mt-1.5 text-sm text-ink/55">{it.text}</p></div>)}
+        </div>
+      </section>
+    )}
+
+    {b.type === 'production' && (
+      <section class="mx-auto max-w-7xl px-6 py-16">
+        <h2 class="reveal font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>
+        <p class="reveal mt-3 max-w-2xl text-lg text-ink/55">{pricing.production.intro}</p>
+        <div class="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div class="reveal rounded-3xl border border-ink/10 bg-white p-7"><h3 class="font-display text-lg font-bold text-ink">{pricing.production.content.name}</h3><p class="mt-2 text-sm text-ink/55">{pricing.production.content.note}</p><ul class="mt-4 divide-y divide-ink/8">{pricing.production.content.tiers.map((t) => <li class="flex items-center justify-between py-2.5"><span class="text-sm text-ink/70">{t.label}</span><span class="text-sm font-bold text-ink">{t.price}</span></li>)}</ul></div>
+          <div class="flex flex-col gap-4">
+            <div class="reveal rounded-3xl border border-ink/10 bg-white p-7"><div class="flex items-baseline justify-between gap-4"><h3 class="font-display text-lg font-bold text-ink">{pricing.production.images.name}</h3><span class="text-2xl font-bold text-ink">{pricing.production.images.price}</span></div><p class="mt-2 text-sm text-ink/55">{pricing.production.images.note}</p></div>
+            <div class="reveal rounded-3xl border border-ink/10 bg-white p-7"><div class="flex items-baseline justify-between gap-4"><h3 class="font-display text-lg font-bold text-ink">{pricing.production.logo.name}</h3><span class="text-2xl font-bold text-ink">{pricing.production.logo.price}</span></div><p class="mt-2 text-sm text-ink/55">{pricing.production.logo.note}</p></div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    {b.type === 'projects' && (
+      <section class="mx-auto max-w-7xl px-6 py-16">
+        {b.h2 && <h2 class="reveal font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>}
+        {b.intro && <p class="rt reveal mt-3 max-w-2xl text-lg text-ink/55" set:html={b.intro}></p>}
+
+        <div class="reveal mt-8 flex w-fit flex-wrap gap-1 rounded-full border border-ink/10 bg-white p-1.5">
+          {portfolioCats.map((c, i) => (
+            <button type="button" data-folio-filter={c.key} class={`folio-tab rounded-full px-4 py-2 text-sm font-medium transition-colors ${i === 0 ? 'bg-ink text-white' : 'text-ink/55 hover:text-ink'}`}>{c.label}</button>
+          ))}
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {portfolio.map((p) => (
+            <a href={p.href} target="_blank" rel="noopener" class="folio-item reveal group block overflow-hidden rounded-[1.5rem] border border-ink/10 bg-white shadow-lg shadow-ink/5 transition-transform duration-500 hover:-translate-y-1.5" data-cat={p.cat}>
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img src={p.img} alt={`Sitio web de ${p.t}`} loading="lazy" width="1200" height="900" class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                <span class="absolute right-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-xs font-semibold text-white backdrop-blur">{p.tag}</span>
+              </div>
+              <div class="p-6">
+                <div class="text-xs font-medium text-teal-deep">{p.catLabel}</div>
+                <h3 class="mt-1 font-display text-lg font-bold text-ink">{p.t}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-ink/55">{p.desc}</p>
+                <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-deep">Visitar sitio <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <script is:inline>
+          (function () {
+            var tabs = document.querySelectorAll('[data-folio-filter]');
+            var items = document.querySelectorAll('.folio-item');
+            tabs.forEach(function (t) {
+              t.addEventListener('click', function () {
+                var k = t.dataset.folioFilter;
+                tabs.forEach(function (x) {
+                  var on = x === t;
+                  x.classList.toggle('bg-ink', on);
+                  x.classList.toggle('text-white', on);
+                  x.classList.toggle('text-ink/55', !on);
+                });
+                items.forEach(function (it) {
+                  it.style.display = k === 'all' || it.dataset.cat === k ? '' : 'none';
+                });
+              });
+            });
+          })();
+        </script>
+      </section>
+    )}
+
+    {b.type === 'form' && (
+      <section class="mx-auto max-w-2xl px-6 py-14">
+        {b.h2 && <h2 class="reveal text-center font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>}
+        {b.intro && <p class="reveal mx-auto mt-3 max-w-xl text-center text-lg text-ink/55">{b.intro}</p>}
+        <div class="reveal mt-8"><ContactForm /></div>
+      </section>
+    )}
+  </>
+))}

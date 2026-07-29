@@ -1,0 +1,76 @@
+---
+/* Formulario de contacto reutilizable (home + /contacto/), conectado a Web3Forms.
+   Para activarlo: pega tu Access Key gratis en site.ts → contactForm.web3formsKey
+   (se obtiene en https://web3forms.com con tu correo). Sin key, el formulario
+   avisa que falta configurar; con key, envía de verdad a tu correo. */
+import { contactForm } from '../lib/site';
+const { services, budgets, web3formsKey } = contactForm;
+---
+<div class="glass rounded-3xl p-6 sm:p-8">
+  <form id="cform" novalidate>
+    <input type="hidden" name="access_key" value={web3formsKey} />
+    <input type="hidden" name="subject" value="Nueva solicitud desde elementoweb.com" />
+    <input type="hidden" name="from_name" value="Elemento Web — Web" />
+    <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div><label class="mb-1.5 block text-sm font-semibold text-ink">Nombre <span class="text-teal-deep">*</span></label><input name="nombre" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /></div>
+      <div><label class="mb-1.5 block text-sm font-semibold text-ink">Empresa <span class="text-teal-deep">*</span></label><input name="empresa" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /></div>
+      <div><label class="mb-1.5 block text-sm font-semibold text-ink">Correo <span class="text-teal-deep">*</span></label><input name="email" type="email" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /></div>
+      <div><label class="mb-1.5 block text-sm font-semibold text-ink">Teléfono / WhatsApp</label><input name="telefono" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /></div>
+      <div><label class="mb-1.5 block text-sm font-semibold text-ink">Servicio de interés</label><select name="servicio" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"><option value="">Selecciona</option>{services.map((s) => <option>{s}</option>)}</select></div>
+      <div><label class="mb-1.5 block text-sm font-semibold text-ink">Presupuesto estimado</label><select name="presupuesto" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"><option value="">Selecciona</option>{budgets.map((b) => <option>{b}</option>)}</select></div>
+    </div>
+    <div class="mt-4"><label class="mb-1.5 block text-sm font-semibold text-ink">Cuéntanos de tu proyecto <span class="text-teal-deep">*</span></label><textarea name="mensaje" rows="4" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" placeholder="¿Qué necesitas resolver?"></textarea></div>
+
+    <button type="submit" data-magnetic="0.25" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-teal-deep disabled:opacity-60">Enviar solicitud</button>
+    <p id="cerr" class="mt-3 hidden text-center text-sm font-medium text-red-500"></p>
+    <p class="mt-3 text-center text-xs text-ink/40">Tus datos solo se usan para responderte.</p>
+  </form>
+
+  <div id="cok" class="hidden flex-col items-center py-10 text-center">
+    <span class="grid h-16 w-16 place-items-center rounded-full bg-teal-deep/15 text-teal-deep"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+    <h3 class="mt-5 font-display text-2xl font-bold text-ink">Solicitud recibida</h3>
+    <p class="mt-2 max-w-sm text-sm leading-relaxed text-ink/60">Gracias por escribirnos. Revisamos tu proyecto y te respondemos el mismo día hábil.</p>
+  </div>
+</div>
+
+<script define:vars={{ KEY: web3formsKey }}>
+  const form = document.getElementById('cform');
+  const errEl = document.getElementById('cerr');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      let ok = true;
+      for (const k of ['nombre', 'empresa', 'email', 'mensaje']) {
+        const el = form.elements.namedItem(k);
+        const val = String(fd.get(k) || '').trim();
+        const bad = !val || (k === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val));
+        el.classList.toggle('border-red-400', bad);
+        if (bad && ok) el.focus();
+        ok = ok && !bad;
+      }
+      if (!ok) return;
+      errEl.classList.add('hidden');
+      const btn = form.querySelector('button[type="submit"]');
+      const label = btn.textContent;
+      const fail = (msg) => { errEl.textContent = msg; errEl.classList.remove('hidden'); btn.disabled = false; btn.textContent = label; };
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+      if (!KEY) { fail('El formulario aún no está configurado (falta el Access Key de Web3Forms). Escríbenos por WhatsApp mientras tanto.'); return; }
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { Accept: 'application/json' }, body: fd });
+        const data = await res.json();
+        if (data.success) {
+          form.classList.add('hidden');
+          document.getElementById('cok').classList.replace('hidden', 'flex');
+        } else {
+          fail(data.message || 'No se pudo enviar. Intenta de nuevo o escríbenos por WhatsApp.');
+        }
+      } catch (err) {
+        fail('Error de conexión. Intenta de nuevo o escríbenos por WhatsApp.');
+      }
+    });
+  }
+</script>

@@ -1,0 +1,93 @@
+---
+import Base from '../../layouts/Base.astro';
+import { pages } from '../../lib/pages';
+import { url, site } from '../../lib/site';
+import { heroFor } from '../../lib/img';
+
+const articles = pages
+  .filter((p) => p.parent?.slug === 'blog')
+  .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
+const cats = ['Todos', ...Array.from(new Set(articles.map((a) => a.category).filter(Boolean)))] as string[];
+const fmt = (d?: string) =>
+  d ? new Date(d + 'T12:00:00').toLocaleDateString('es-PA', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+const jsonld = { '@context': 'https://schema.org', '@type': 'Blog', name: `Blog de ${site.name}`, url: `${site.domain}/blog/` };
+---
+<Base
+  title="Blog de Diseño Web, SEO y Marketing en Panamá | Elemento Web"
+  description="Guías prácticas sobre diseño web, e-commerce, SEO, marketing digital e inteligencia artificial para hacer crecer tu negocio en Panamá."
+  dark
+  current="blog"
+  jsonld={jsonld}
+>
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-ink pt-36 pb-16 text-white md:pt-44 md:pb-20">
+    <div class="absolute inset-0 mesh-dark opacity-50"></div>
+    <div class="sphere sphere-dark h-[440px] w-[440px] -left-24 -top-16" style="background:#0f766e;opacity:.4"></div>
+    <div class="sphere sphere-dark h-[360px] w-[360px] right-[-6rem] top-20" style="background:#8b5cf6;opacity:.3"></div>
+    <div class="relative mx-auto max-w-7xl px-6">
+      <nav aria-label="Ruta de navegación" class="reveal flex items-center gap-2 text-sm text-white/45">
+        <a href="/" class="transition hover:text-teal">Inicio</a><span>/</span><span class="text-white/75">Blog</span>
+      </nav>
+      <h1 class="reveal mt-5 max-w-3xl font-display text-[clamp(2.2rem,5.2vw,4rem)] font-extrabold leading-[1.03]">Aprende a hacer crecer tu negocio <span class="grad-text">en internet</span>.</h1>
+      <p class="reveal mt-6 max-w-2xl text-lg leading-relaxed text-white/60">Guías claras y sin relleno sobre diseño web, e-commerce, SEO, marketing digital e inteligencia artificial, escritas para el mercado panameño.</p>
+    </div>
+  </section>
+
+  <!-- LISTADO -->
+  <section class="bg-paper py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      {cats.length > 1 && (
+        <div class="mb-10 flex w-fit flex-wrap gap-1 rounded-full border border-ink/10 bg-white p-1.5">
+          {cats.map((c, i) => (
+            <button type="button" data-blog-filter={c} class={`blog-tab rounded-full px-4 py-2 text-sm font-medium transition-colors ${i === 0 ? 'bg-ink text-white' : 'text-ink/55 hover:text-ink'}`}>{c}</button>
+          ))}
+        </div>
+      )}
+
+      {articles.length === 0 ? (
+        <p class="text-ink/50">Pronto publicaremos nuestras primeras guías.</p>
+      ) : (
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {articles.map((a) => {
+            const img = heroFor(a, 800, 0.6);
+            return (
+              <a href={url(a.slug)} class="blog-item group flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-lg shadow-ink/5 transition-transform duration-500 hover:-translate-y-1.5" data-cat={a.category}>
+                <div class="relative aspect-[16/10] overflow-hidden">
+                  <img src={img.src} alt={img.alt} loading="lazy" width="800" height="480" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  {a.category && <span class="absolute left-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-xs font-semibold text-white backdrop-blur">{a.category}</span>}
+                </div>
+                <div class="flex flex-1 flex-col p-6">
+                  <div class="text-xs font-medium text-ink/40">{fmt(a.date)}</div>
+                  <h2 class="mt-2 font-display text-lg font-bold leading-snug text-ink">{a.h1}</h2>
+                  <p class="mt-2 line-clamp-3 text-sm leading-relaxed text-ink/55">{a.description}</p>
+                  <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-deep">Leer guía <span aria-hidden="true">→</span></span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      )}
+    </div>
+
+    <script is:inline>
+      (function () {
+        var tabs = document.querySelectorAll('[data-blog-filter]');
+        var items = document.querySelectorAll('.blog-item');
+        tabs.forEach(function (t) {
+          t.addEventListener('click', function () {
+            var k = t.dataset.blogFilter;
+            tabs.forEach(function (x) {
+              var on = x === t;
+              x.classList.toggle('bg-ink', on);
+              x.classList.toggle('text-white', on);
+              x.classList.toggle('text-ink/55', !on);
+            });
+            items.forEach(function (it) {
+              it.style.display = k === 'Todos' || it.dataset.cat === k ? '' : 'none';
+            });
+          });
+        });
+      })();
+    </script>
+  </section>
+</Base>

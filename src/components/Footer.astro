@@ -1,0 +1,49 @@
+---
+import { site, cols, marketing, saas, legal, url } from '../lib/site';
+const serviceCols = [...cols, { title: 'Nuestros SaaS', hub: 'saas', links: saas.map((s) => ({ slug: s.slug, label: s.label })) }];
+---
+<footer class="relative overflow-hidden bg-ink text-white">
+  <div class="absolute inset-0 mesh-dark opacity-50"></div>
+  <div class="sphere sphere-dark h-[380px] w-[380px] left-1/2 top-[-8rem] -translate-x-1/2" style="background:#0f766e;opacity:.35"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 pt-20 text-center">
+    <h2 class="reveal mx-auto max-w-3xl font-display text-[clamp(2rem,5vw,3.8rem)] font-extrabold leading-[1.04]">¿Listo para una web que <span class="grad-text">trabaje por tu negocio</span>?</h2>
+    <p class="reveal mx-auto mt-6 max-w-xl text-lg text-white/55">Diagnóstico sin costo. Propuesta con precio cerrado, por escrito.</p>
+    <a href="/contacto/" data-magnetic="0.4" class="reveal mt-9 inline-flex items-center gap-3 rounded-full bg-teal px-8 py-4 text-base font-semibold text-ink shadow-2xl shadow-teal/25 transition-colors hover:bg-white">
+      Empezar mi proyecto
+      <span class="grid h-6 w-6 place-items-center rounded-full bg-ink text-teal"><svg width="10" height="10" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+    </a>
+  </div>
+
+  <div class="relative mx-auto mt-16 grid max-w-7xl grid-cols-2 gap-x-8 gap-y-10 border-t border-white/10 px-6 py-12 md:grid-cols-3 lg:grid-cols-7">
+    <div class="col-span-2 lg:col-span-2">
+      <a href="/" class="flex items-center gap-2.5"><span class="grid h-8 w-8 place-items-center rounded-lg bg-white/10"><svg width="16" height="16" viewBox="0 0 32 32"><path d="M9 22 16 9l7 13" stroke="#2dd4bf" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class="font-display text-base font-bold">elementoweb<span class="text-teal">.com</span></span></a>
+      <p class="mt-4 max-w-xs text-sm leading-relaxed text-white/45">Agencia de diseño web en Panamá. Sitios de alto rendimiento respaldados por desarrollo a medida e inteligencia artificial.</p>
+      <span class="mt-5 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-3.5 py-2 text-xs font-semibold text-white/80"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2"><path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 3 4 6v6c0 4 3.5 6.5 8 8 4.5-1.5 8-4 8-8V6l-8-3Z" /></svg> Meta Verified Tech Provider</span>
+      <div class="mt-6 flex gap-2.5">{['Ig', 'In', 'Fb', 'Be'].map((s) => <a href="#" class="grid h-9 w-9 place-items-center rounded-full border border-white/12 text-xs font-semibold text-white/70 transition hover:border-teal hover:text-teal">{s}</a>)}</div>
+    </div>
+    {serviceCols.map((c) => (
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-white/40">{c.title}</h4>
+        <ul class="mt-4 flex flex-col gap-2.5">{c.links.map((l) => <li><a href={url(l.slug)} class="text-sm leading-snug text-white/60 transition hover:text-teal">{l.label}</a></li>)}</ul>
+      </div>
+    ))}
+  </div>
+
+  <div class="relative mx-auto max-w-7xl border-t border-white/10 px-6 py-6">
+    <h4 class="text-xs font-semibold uppercase tracking-wider text-white/40">Marketing digital y pauta</h4>
+    <div class="mt-4 flex flex-wrap gap-x-7 gap-y-2.5 text-sm">{marketing.map((m) => <a href={url(m.slug)} class="text-white/60 transition hover:text-teal">{m.label}</a>)}</div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl border-t border-white/10 px-6 py-6">
+    <a href="/industrias/" class="inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition hover:text-teal">Diseño web por industria <span aria-hidden="true" class="text-teal">→</span></a>
+  </div>
+
+  <div class="relative mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 px-6 py-7 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+    <span>© 2026 {site.name}. Todos los derechos reservados.</span>
+    <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href="/como-trabajamos/" class="transition hover:text-teal">Cómo trabajamos</a>
+      {legal.map((l) => <a href={url(l.slug)} class="transition hover:text-teal">{l.label}</a>)}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,56 @@
+---
+/* Preloader solo para el home. Revela "AI WEB STUDIO", completa una barra
+   de carga y sale deslizando hacia arriba. Bloquea el scroll mientras carga. */
+---
+<div id="preloader" class="fixed left-0 top-0 z-[100] h-full w-screen flex flex-col items-center justify-center bg-ink text-white">
+  <div class="absolute inset-0 mesh-dark opacity-40"></div>
+  <div class="sphere sphere-dark h-[420px] w-[420px] -left-24 top-10" style="background:#0f766e;opacity:.5"></div>
+  <div class="sphere sphere-dark h-[360px] w-[360px] -right-16 bottom-0" style="background:#8b5cf6;opacity:.4"></div>
+
+  <div id="pl-words" class="relative flex flex-wrap justify-center gap-x-4 overflow-hidden px-6">
+    {['AI', 'WEB', 'STUDIO'].map((w) => (
+      <span class="pl-word font-display text-[13vw] font-extrabold leading-none sm:text-7xl md:text-8xl">{w}</span>
+    ))}
+  </div>
+
+  <div class="relative mt-10 flex w-[min(78vw,420px)] items-center justify-between gap-4">
+    <div class="h-px flex-1 overflow-hidden bg-white/15"><div id="pl-bar" class="h-full origin-left scale-x-0 bg-gradient-to-r from-teal-deep via-teal to-violet"></div></div>
+    <span id="pl-pct" class="font-body text-xs tabular-nums text-white/60">000</span>
+  </div>
+</div>
+
+<script is:inline>
+  // bloquea el scroll de inmediato para evitar salto durante la carga
+  document.documentElement.style.overflow = 'hidden';
+</script>
+
+<script>
+  import { gsap } from 'gsap';
+  const root = document.getElementById('preloader');
+  if (root) {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const words = root.querySelectorAll('.pl-word');
+    const bar = document.getElementById('pl-bar');
+    const pct = document.getElementById('pl-pct');
+    const done = () => {
+      document.documentElement.style.overflow = '';
+      const lenis = (window as any).__lenis;
+      lenis?.scrollTo(0, { immediate: true });
+      lenis?.start();
+      root.remove();
+    };
+
+    if (reduce) {
+      gsap.timeline({ onComplete: done }).to(root, { autoAlpha: 0, duration: 0.3, delay: 0.3 });
+    } else {
+      (window as any).__lenis?.stop();
+      const c = { v: 0 };
+      gsap.timeline({ defaults: { ease: 'power3.out' }, onComplete: done })
+        .from(words, { yPercent: 120, opacity: 0, duration: 0.9, stagger: 0.08 }, 0.1)
+        .to(bar, { scaleX: 1, duration: 1.5, ease: 'power2.inOut' }, 0.15)
+        .to(c, { v: 100, duration: 1.5, ease: 'power2.inOut', onUpdate: () => { if (pct) pct.textContent = String(Math.round(c.v)).padStart(3, '0'); } }, 0.15)
+        .to(words, { yPercent: -120, opacity: 0, duration: 0.6, stagger: 0.04, ease: 'power3.in' }, '+=0.2')
+        .to(root, { yPercent: -100, duration: 0.9, ease: 'power4.inOut' }, '-=0.15');
+    }
+  }
+</script>

@@ -7,6 +7,10 @@
   <div class="sphere sphere-dark h-[420px] w-[420px] -left-24 top-10" style="background:#0f766e;opacity:.5"></div>
   <div class="sphere sphere-dark h-[360px] w-[360px] -right-16 bottom-0" style="background:#8b5cf6;opacity:.4"></div>
 
+  <div id="pl-icon" class="relative mb-8" style="filter:drop-shadow(0 0 18px rgba(45,212,191,.45))">
+    <svg width="72" height="72" viewBox="0 0 32 32" fill="none"><path d="M16 4 26.4 10V22L16 28 5.6 22V10Z" stroke="#2dd4bf" stroke-width="1.6" stroke-linejoin="round" /><path d="M16 16 5.6 10M16 16 26.4 10M16 16V28" stroke="#2dd4bf" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><circle cx="16" cy="16" r="1.6" fill="#2dd4bf" /></svg>
+  </div>
+
   <div id="pl-words" class="relative flex flex-wrap justify-center gap-x-4 overflow-hidden px-6">
     {['Elemento', 'Web'].map((w) => (
       <span class="pl-word font-display text-[13vw] font-extrabold leading-none sm:text-7xl md:text-8xl">{w}</span>
@@ -46,10 +50,12 @@
       (window as any).__lenis?.stop();
       const c = { v: 0 };
       gsap.timeline({ defaults: { ease: 'power3.out' }, onComplete: done })
-        .from(words, { yPercent: 120, opacity: 0, duration: 0.9, stagger: 0.08 }, 0.1)
-        .to(bar, { scaleX: 1, duration: 1.5, ease: 'power2.inOut' }, 0.15)
-        .to(c, { v: 100, duration: 1.5, ease: 'power2.inOut', onUpdate: () => { if (pct) pct.textContent = String(Math.round(c.v)).padStart(3, '0'); } }, 0.15)
+        .from('#pl-icon', { scale: 0.7, opacity: 0, duration: 0.7, ease: 'back.out(1.6)' }, 0)
+        .from(words, { yPercent: 120, opacity: 0, duration: 0.9, stagger: 0.08 }, 0.15)
+        .to(bar, { scaleX: 1, duration: 1.5, ease: 'power2.inOut' }, 0.2)
+        .to(c, { v: 100, duration: 1.5, ease: 'power2.inOut', onUpdate: () => { if (pct) pct.textContent = String(Math.round(c.v)).padStart(3, '0'); } }, 0.2)
         .to(words, { yPercent: -120, opacity: 0, duration: 0.6, stagger: 0.04, ease: 'power3.in' }, '+=0.2')
+        .to('#pl-icon', { scale: 0.9, opacity: 0, duration: 0.5, ease: 'power3.in' }, '<')
         .to(root, { yPercent: -100, duration: 0.9, ease: 'power4.inOut' }, '-=0.15');
     }
   }

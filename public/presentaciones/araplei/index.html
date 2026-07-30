@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Araplei · Tu ERP que se maneja por WhatsApp — Elemento Web</title>
+    <meta name="description" content="Presentación de Araplei: el ERP conversacional que convierte cada mensaje de WhatsApp en una orden ordenada, con tablero en tiempo real, control de presupuesto y aprobaciones con IA. Preparado por Elemento Web.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f172a'/%3E%3Cpath d='M16 6 25 11.2V21.8L16 27 7 21.8V11.2Z' fill='none' stroke='%232dd4bf' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M16 16.5 7 11.2M16 16.5 25 11.2M16 16.5V27' stroke='%232dd4bf' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <style>
+        :root {
+            --teal: #2dd4bf;
+            --teal-deep: #0f766e;
+            --violet: #8b5cf6;
+            --ink: #0f172a;
+        }
+        * { -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background: #f1f5f4;
+            background-image:
+                radial-gradient(60rem 60rem at 110% -10%, rgba(139,92,246,0.10), transparent 60%),
+                radial-gradient(50rem 50rem at -15% 10%, rgba(45,212,191,0.16), transparent 55%),
+                radial-gradient(45rem 45rem at 50% 120%, rgba(15,118,110,0.08), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1, h2, h3, h4, .display {
+            font-family: 'Outfit', 'Inter', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .gradient-text {
+            background: linear-gradient(100deg, #0f766e, #2dd4bf 45%, #8b5cf6);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .glass {
+            background: rgba(255,255,255,0.72);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 20px 40px -24px rgba(15,118,110,0.28);
+        }
+        .service-card { position: relative; transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; overflow: hidden; }
+        .service-card::before {
+            content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+            background: linear-gradient(135deg, rgba(45,212,191,.6), rgba(139,92,246,.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity .35s ease; pointer-events: none;
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(15,118,110,0.45); }
+        .service-card:hover::before { opacity: 1; }
+        .num-badge { background: linear-gradient(135deg, #2dd4bf, #0f766e 55%, #8b5cf6); box-shadow: 0 10px 22px -8px rgba(15,118,110,0.7); }
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+        .reveal.in { opacity: 1; transform: none; }
+        @keyframes float1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(20px,-16px) scale(1.08);} }
+        @keyframes float2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-24px,14px) scale(1.12);} }
+        .orb1 { animation: float1 11s ease-in-out infinite; }
+        .orb2 { animation: float2 14s ease-in-out infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .shine {
+            background: linear-gradient(90deg,#5eead4,#e0e7ff,#5eead4,#c4b5fd);
+            background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+        .pill { background: linear-gradient(135deg,#ecfdf5,#f5f3ff); border:1px solid #ccfbf1; }
+        .wa-float { box-shadow: 0 14px 30px -8px rgba(22,163,74,0.6); transition: transform .25s ease, box-shadow .25s ease; }
+        .wa-float:hover { transform: translateY(-3px) scale(1.04); }
+        @keyframes waPulse { 0%{ box-shadow:0 0 0 0 rgba(34,197,94,.5);} 70%{ box-shadow:0 0 0 16px rgba(34,197,94,0);} 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+        .wa-pulse { animation: waPulse 2.4s infinite; }
+        .btn-primary {
+            background: linear-gradient(135deg,#0f766e,#8b5cf6);
+            transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+            box-shadow: 0 14px 28px -10px rgba(15,118,110,0.7);
+        }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: 0 20px 34px -10px rgba(139,92,246,0.6); }
+        /* Línea de tiempo del flujo */
+        .flow-line { position: absolute; left: 27px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(#2dd4bf, #8b5cf6); opacity:.35; }
+        @media print {
+            body { background: #fff; }
+            .no-print { display: none !important; }
+            .reveal { opacity:1 !important; transform:none !important; }
+            main { box-shadow:none !important; margin: 0 !important; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 selection:bg-teal-200 selection:text-teal-900">
+
+    <main class="max-w-4xl mx-auto my-6 sm:my-10 glass rounded-[28px] overflow-hidden">
+
+        <!-- ============ HEADER ============ -->
+        <header class="relative overflow-hidden text-white px-7 sm:px-10 pt-8 pb-10"
+                style="background: linear-gradient(135deg,#0b1220 0%,#0f2f2b 45%,#0f766e 100%);">
+            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(139,92,246,.5),transparent 70%);"></div>
+            <div class="orb2 absolute -bottom-24 -left-10 w-72 h-72 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(45,212,191,.5),transparent 70%);"></div>
+            <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:32px 32px;"></div>
+
+            <div class="relative z-10">
+                <!-- Top bar -->
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-8 border-b border-white/15">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl grid place-items-center shrink-0" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);">
+                            <svg width="24" height="24" viewBox="0 0 32 32"><path d="M16 6 25 11.2V21.8L16 27 7 21.8V11.2Z" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round"/><path d="M16 16.5 7 11.2M16 16.5 25 11.2M16 16.5V27" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="display text-lg font-bold tracking-tight">Elemento Web</p>
+                            <p class="text-[11px] text-teal-200/80 tracking-wide">Diseño Web · IA · Automatización</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm sm:justify-end">
+                        <a href="mailto:hola@elementoweb.com" class="flex items-center gap-1.5 text-teal-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            hola@elementoweb.com
+                        </a>
+                        <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-teal-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                            6162-2787
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Title block -->
+                <div class="pt-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+                    <div>
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-teal-200 bg-white/10 border border-white/15 rounded-full px-3 py-1 mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-400 wa-pulse"></span> Sistema entregado · Guía de tu plataforma
+                        </span>
+                        <h1 class="text-4xl sm:text-5xl font-extrabold leading-none mb-3">
+                            <span class="shine">Araplei</span>
+                        </h1>
+                        <p class="text-teal-100/90 max-w-lg text-sm leading-relaxed">
+                            Tu <strong class="text-white">ERP que se maneja por WhatsApp</strong>. Convierte cada pedido de material de la obra en una orden ordenada, con tablero en tiempo real, control de presupuesto y aprobaciones de pago verificadas con IA. Este documento explica <strong class="text-white">qué hace y cómo lo hace</strong>.
+                        </p>
+                    </div>
+                    <div class="shrink-0 grid gap-3 text-sm">
+                        <div class="glass !bg-white/10 !border-white/15 rounded-xl px-4 py-3 text-white">
+                            <p class="text-[11px] text-teal-200 uppercase tracking-wider mb-0.5">Preparado para</p>
+                            <p class="font-semibold">Dirección · Empresa de Remodelaciones</p>
+                            <p class="text-teal-200 text-xs">Panamá</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-teal-200 text-xs justify-end">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            30 de julio de 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="px-7 sm:px-10 py-12">
+
+            <!-- ============ INTRO ============ -->
+            <section class="reveal mb-14 text-center max-w-2xl mx-auto">
+                <h2 class="display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">El pedido de la obra <span class="gradient-text">deja de perderse en el chat</span></h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Hoy los ingenieros piden material por WhatsApp, y esos mensajes se mezclan con todo lo demás: nadie sabe qué se pidió, cuánto va del presupuesto ni en qué va cada compra. <strong class="text-slate-800">Araplei toma ese mismo WhatsApp que ya usan</strong> (incluso una nota de voz o la foto de una libreta) y lo convierte, con inteligencia artificial, en una orden formal que avanza sola por su flujo hasta la entrega, mientras tú lo ves todo en un tablero.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mt-6">
+                    <span class="text-xs font-medium text-teal-800 pill rounded-full px-3 py-1.5">Pedidos por WhatsApp</span>
+                    <span class="text-xs font-medium text-teal-800 pill rounded-full px-3 py-1.5">IA que entiende el pedido</span>
+                    <span class="text-xs font-medium text-teal-800 pill rounded-full px-3 py-1.5">Tablero en tiempo real</span>
+                    <span class="text-xs font-medium text-teal-800 pill rounded-full px-3 py-1.5">Control de presupuesto</span>
+                    <span class="text-xs font-medium text-teal-800 pill rounded-full px-3 py-1.5">Aprobación de pagos con IA</span>
+                </div>
+            </section>
+
+            <!-- ============ QUÉ HACE — EL RECORRIDO ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-2">
+                    <h2 class="display text-2xl font-bold text-slate-900">Qué hace: el recorrido de un pedido</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-teal-200 to-transparent"></div>
+                </div>
+                <p class="reveal text-slate-600 text-sm mb-8 max-w-2xl">De la libreta del ingeniero hasta el material entregado en obra, sin planillas sueltas ni llamadas de "¿en qué va mi pedido?". Cada paso queda registrado con hora y responsable.</p>
+
+                <div class="relative pl-2">
+                    <div class="flow-line hidden sm:block"></div>
+
+                    <!-- Paso 1 -->
+                    <div class="reveal relative flex gap-4 sm:gap-5 mb-6">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0 z-10">1</div>
+                        <div class="service-card bg-white/70 rounded-2xl p-5 sm:p-6 border border-slate-100 flex-1">
+                            <h3 class="display text-base font-bold text-slate-900 mb-1">El ingeniero pide por WhatsApp</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Escribe, manda una <strong class="text-slate-800">nota de voz</strong> o una <strong class="text-slate-800">foto de la libreta manuscrita</strong>. No hay app nueva que aprender: usa el WhatsApp de siempre, en español panameño y tolerante a errores de tipeo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="reveal relative flex gap-4 sm:gap-5 mb-6">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0 z-10">2</div>
+                        <div class="service-card bg-white/70 rounded-2xl p-5 sm:p-6 border border-slate-100 flex-1">
+                            <h3 class="display text-base font-bold text-slate-900 mb-1">La IA entiende y ordena el pedido</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">La inteligencia artificial lee el mensaje, <strong class="text-slate-800">separa cada material con su cantidad</strong>, lo asocia al proyecto y al centro de costo correcto, y le devuelve al ingeniero un resumen para que confirme con un simple <strong class="text-slate-800">"Sí"</strong> antes de crear nada.</p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="reveal relative flex gap-4 sm:gap-5 mb-6">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0 z-10">3</div>
+                        <div class="service-card bg-white/70 rounded-2xl p-5 sm:p-6 border border-slate-100 flex-1">
+                            <h3 class="display text-base font-bold text-slate-900 mb-1">Aparece en tu tablero al instante</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">La orden aparece sola en el <strong class="text-slate-800">tablero (Kanban)</strong> en la columna "Solicitado", en tiempo real. Compras y Finanzas reciben además un aviso automático por WhatsApp de que entró un pedido nuevo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 4 -->
+                    <div class="reveal relative flex gap-4 sm:gap-5 mb-6">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0 z-10">4</div>
+                        <div class="service-card bg-white/70 rounded-2xl p-5 sm:p-6 border border-slate-100 flex-1">
+                            <h3 class="display text-base font-bold text-slate-900 mb-1">Compras cotiza y asigna proveedor</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Desde el tablero, Compras sube la cotización del proveedor (PDF, Excel o foto) y la IA <strong class="text-slate-800">lee el proveedor, el RUC y los montos</strong>. Si distintos proveedores cubren distintos materiales, el sistema <strong class="text-slate-800">parte la orden solo</strong> y cada parte sigue su camino.</p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 5 -->
+                    <div class="reveal relative flex gap-4 sm:gap-5 mb-6">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0 z-10">5</div>
+                        <div class="service-card bg-white/70 rounded-2xl p-5 sm:p-6 border border-slate-100 flex-1">
+                            <h3 class="display text-base font-bold text-slate-900 mb-1">Finanzas crea el pago y el Jefe aprueba</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Finanzas registra el pago; el Jefe <strong class="text-slate-800">aprueba desde su WhatsApp</strong>. Al mandar la foto del comprobante ACH, la IA lo <strong class="text-slate-800">verifica (OCR)</strong>: compara monto, beneficiario y cuenta contra la orden y avisa si algo no cuadra.</p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 6 -->
+                    <div class="reveal relative flex gap-4 sm:gap-5 mb-2">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0 z-10">6</div>
+                        <div class="service-card bg-white/70 rounded-2xl p-5 sm:p-6 border border-slate-100 flex-1">
+                            <h3 class="display text-base font-bold text-slate-900 mb-1">Logística entrega, con prueba de entrega</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Se asigna un chofer, que recibe la recogida en su WhatsApp. Al entregar responde <strong class="text-slate-800">"Entregado"</strong> con la <strong class="text-slate-800">foto de la entrega (PoD)</strong>. Si falta algo, marca "entrega parcial" y el sistema crea sola la orden de reposición. El residente puede rechazar material dañado y queda registrado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ CAPACIDADES ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-8">
+                    <h2 class="display text-2xl font-bold text-slate-900">Todo lo que Araplei hace por ti</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-teal-200 to-transparent"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Cap 1 -->
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center shrink-0 mb-3">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                        </div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1">Pedidos por WhatsApp (voz, foto o texto)</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">El canal que tu gente ya usa. Nota de voz, foto de libreta manuscrita o texto: todo se convierte en un pedido estructurado, sin instalar nada nuevo.</p>
+                    </div>
+
+                    <!-- Cap 2 -->
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center shrink-0 mb-3">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
+                        </div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1">IA que entiende el pedido</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Separa cada material y cantidad, lo asocia al proyecto y al centro de costo, y pide confirmación antes de crear la orden. Nada se crea "a ciegas".</p>
+                    </div>
+
+                    <!-- Cap 3 -->
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center shrink-0 mb-3">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25A2.25 2.25 0 0 1 13.5 8.25V6Z"/></svg>
+                        </div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1">Tablero en tiempo real (Kanban)</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Ves todas las órdenes moverse por columnas (Solicitado, Pago, Aprobado, Logística, Entregado) y actúas con un clic. Se actualiza solo, sin recargar.</p>
+                    </div>
+
+                    <!-- Cap 4 -->
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center shrink-0 mb-3">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/></svg>
+                        </div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1">Control de presupuesto por proyecto</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Subes el presupuesto (Excel, PDF o foto) y la IA lo carga por partida. Cada compra descuenta del centro de costo, así sabes cuánto llevas comprometido antes de aprobar el siguiente pago.</p>
+                    </div>
+
+                    <!-- Cap 5 -->
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center shrink-0 mb-3">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"/></svg>
+                        </div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1">Aprobación de pagos verificada con IA</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">El Jefe aprueba por WhatsApp y la IA revisa el comprobante ACH: coteja monto, beneficiario y cuenta contra la orden. Acepta foto, PDF, audio o texto según prefiera.</p>
+                    </div>
+
+                    <!-- Cap 6 -->
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center shrink-0 mb-3">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-6m0 0V3.375c0-.621-.504-1.125-1.125-1.125H3.375C2.754 2.25 2.25 2.754 2.25 3.375v11.25c0 .621.504 1.125 1.125 1.125h1.5m9-2.25h4.5m-4.5 0V6.75m0 6.75L14.25 12"/></svg>
+                        </div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1">Logística, entrega y devoluciones</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Varios choferes, cada uno con su propio hilo de WhatsApp. Prueba de entrega con foto, entregas parciales que se reponen solas y rechazos de material dañado, todo trazado.</p>
+                    </div>
+                </div>
+
+                <!-- Extra capabilities strip -->
+                <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
+                    <div class="pill rounded-xl px-4 py-3 text-center"><p class="text-xs font-semibold text-teal-900">Permisos por rol</p><p class="text-[11px] text-teal-800/70 mt-0.5">cada quien ve lo suyo</p></div>
+                    <div class="pill rounded-xl px-4 py-3 text-center"><p class="text-xs font-semibold text-teal-900">Avisos automáticos</p><p class="text-[11px] text-teal-800/70 mt-0.5">por WhatsApp y correo</p></div>
+                    <div class="pill rounded-xl px-4 py-3 text-center"><p class="text-xs font-semibold text-teal-900">Auditoría total</p><p class="text-[11px] text-teal-800/70 mt-0.5">hora y responsable</p></div>
+                    <div class="pill rounded-xl px-4 py-3 text-center"><p class="text-xs font-semibold text-teal-900">Alertas de SLA</p><p class="text-[11px] text-teal-800/70 mt-0.5">órdenes estancadas</p></div>
+                </div>
+            </div>
+
+            <!-- ============ ROLES ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-2">
+                    <h2 class="display text-2xl font-bold text-slate-900">Cada quien, en su lugar</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-teal-200 to-transparent"></div>
+                </div>
+                <p class="reveal text-slate-600 text-sm mb-6 max-w-2xl">El sistema sabe quién eres por tu número de WhatsApp o tu usuario, y te muestra solo lo que te toca. La obra vive en WhatsApp; la oficina, en el tablero.</p>
+
+                <div class="reveal glass rounded-2xl overflow-hidden border border-white/60">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="text-left text-[11px] uppercase tracking-wider text-slate-500 border-b border-slate-100">
+                                <th class="px-5 py-3 font-semibold">Rol</th>
+                                <th class="px-5 py-3 font-semibold">Canal</th>
+                                <th class="px-5 py-3 font-semibold">Qué hace</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-700">
+                            <tr><td class="px-5 py-3 font-semibold text-slate-900">Ingeniero de obra</td><td class="px-5 py-3"><span class="text-xs pill rounded-full px-2 py-0.5">WhatsApp</span></td><td class="px-5 py-3">Pide material, confirma, cancela y sigue su pedido.</td></tr>
+                            <tr><td class="px-5 py-3 font-semibold text-slate-900">Compras</td><td class="px-5 py-3"><span class="text-xs pill rounded-full px-2 py-0.5">Tablero</span></td><td class="px-5 py-3">Revisa inventario, cotiza, asigna proveedor y gestiona proyectos.</td></tr>
+                            <tr><td class="px-5 py-3 font-semibold text-slate-900">Finanzas</td><td class="px-5 py-3"><span class="text-xs pill rounded-full px-2 py-0.5">Tablero + WhatsApp</span></td><td class="px-5 py-3">Crea el pago y asigna la logística (elige chofer).</td></tr>
+                            <tr><td class="px-5 py-3 font-semibold text-slate-900">Jefe / Gerencia</td><td class="px-5 py-3"><span class="text-xs pill rounded-full px-2 py-0.5">WhatsApp</span></td><td class="px-5 py-3">Aprueba o rechaza pagos y recibe alertas.</td></tr>
+                            <tr><td class="px-5 py-3 font-semibold text-slate-900">Logística (chofer)</td><td class="px-5 py-3"><span class="text-xs pill rounded-full px-2 py-0.5">WhatsApp</span></td><td class="px-5 py-3">Recibe la recogida, entrega y manda la prueba de entrega.</td></tr>
+                            <tr><td class="px-5 py-3 font-semibold text-slate-900">Residente de obra</td><td class="px-5 py-3"><span class="text-xs pill rounded-full px-2 py-0.5">WhatsApp</span></td><td class="px-5 py-3">Confirma o rechaza el material recibido en sitio.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ============ BAJO EL CAPÓ (ARQUITECTURA) ============ -->
+            <div class="reveal rounded-[24px] p-7 sm:p-9 text-white shadow-2xl mb-14 relative overflow-hidden"
+                 style="background:linear-gradient(150deg,#0b1220,#0f2f2b 55%,#0f766e);">
+                <div class="orb2 absolute -bottom-20 -right-16 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(139,92,246,.4),transparent 70%);"></div>
+                <div class="relative z-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-teal-200 bg-white/10 border border-white/15 rounded-full px-3 py-1 mb-4">
+                        <span class="w-1.5 h-1.5 rounded-full bg-teal-300"></span> Cómo lo hace · Bajo el capó
+                    </span>
+                    <h2 class="display text-2xl font-bold mb-2">Tecnología seria, pensada para durar</h2>
+                    <p class="text-teal-100/85 text-sm max-w-2xl mb-8">No es un chatbot suelto: es un sistema completo montado en <strong class="text-white">tu propio servidor</strong>, con las piezas conectadas para que un mensaje de WhatsApp termine en una orden con presupuesto controlado. Estas son las piezas y qué hace cada una.</p>
+
+                    <!-- Flujo -->
+                    <div class="flex flex-wrap items-center gap-2 text-[11px] font-medium mb-8">
+                        <span class="rounded-lg px-3 py-2 bg-white/10 border border-white/15">📱 WhatsApp</span>
+                        <span class="text-teal-300">→</span>
+                        <span class="rounded-lg px-3 py-2 bg-white/10 border border-white/15">💬 Chatwoot</span>
+                        <span class="text-teal-300">→</span>
+                        <span class="rounded-lg px-3 py-2 bg-white/10 border border-white/15">⚙️ n8n (motor de flujo)</span>
+                        <span class="text-teal-300">→</span>
+                        <span class="rounded-lg px-3 py-2 bg-white/10 border border-white/15">🧠 IA (Claude / Dify)</span>
+                        <span class="text-teal-300">→</span>
+                        <span class="rounded-lg px-3 py-2 bg-white/10 border border-white/15">🗄️ Supabase (base de datos)</span>
+                        <span class="text-teal-300">→</span>
+                        <span class="rounded-lg px-3 py-2 bg-white/10 border border-white/15">📊 Tablero (Next.js)</span>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-5 text-sm">
+                        <div class="flex gap-3"><span class="text-teal-300 font-bold shrink-0">Chatwoot</span><span class="text-teal-100/80">Bandeja única de WhatsApp: recibe y envía los mensajes por la API oficial de Meta y guarda cada conversación.</span></div>
+                        <div class="flex gap-3"><span class="text-teal-300 font-bold shrink-0">n8n</span><span class="text-teal-100/80">El "motor": recibe cada mensaje, decide qué hacer según el rol y el estado, y coordina a todos los demás. Router de más de 60 pasos.</span></div>
+                        <div class="flex gap-3"><span class="text-teal-300 font-bold shrink-0">IA (Claude vía Dify)</span><span class="text-teal-100/80">Cuatro asistentes: estructura pedidos, lee comprobantes (OCR), extrae cotizaciones y extrae presupuestos de documentos.</span></div>
+                        <div class="flex gap-3"><span class="text-teal-300 font-bold shrink-0">Supabase</span><span class="text-teal-100/80">Base de datos, usuarios, archivos (fotos/PDF) y actualización en vivo del tablero. El corazón de datos del sistema.</span></div>
+                        <div class="flex gap-3"><span class="text-teal-300 font-bold shrink-0">Next.js</span><span class="text-teal-100/80">El tablero web moderno y rápido que usan Compras y Finanzas para ver y mover todo.</span></div>
+                        <div class="flex gap-3"><span class="text-teal-300 font-bold shrink-0">Seguridad por rol</span><span class="text-teal-100/80">Cada dato está protegido a nivel de base: el sistema garantiza que nadie vea ni cambie lo que no le corresponde, con auditoría de cada cambio.</span></div>
+                    </div>
+
+                    <div class="mt-8 rounded-2xl p-5 text-sm" style="background:linear-gradient(135deg,rgba(45,212,191,.18),rgba(139,92,246,.20));border:1px solid rgba(255,255,255,.15);">
+                        <p class="font-semibold text-white mb-1 flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-teal-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            En tu propio servidor, tus datos son tuyos
+                        </p>
+                        <p class="text-teal-100/80 leading-relaxed text-[13px]">Todo el sistema es <strong class="text-white">self-hosted</strong>: corre en tu propia infraestructura, no en una plataforma de terceros que pueda cerrarte la puerta o cobrarte por usuario. Los datos de tus proyectos, proveedores y pagos quedan bajo tu control.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ ESTADO ACTUAL ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-8">
+                <h3 class="display text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Estado actual: construido y en producción
+                </h3>
+                <p class="text-sm text-slate-600 mb-5">Araplei no es una maqueta: está <strong class="text-slate-800">desplegado y funcionando</strong>, probado de punta a punta con infraestructura real (WhatsApp real → IA real → base de datos real). Esto ya está listo y verificado:</p>
+                <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm text-slate-700">
+                    <p class="flex items-start gap-2"><span class="text-teal-500 mt-0.5 shrink-0">✓</span><span>Flujo completo de una orden: del pedido por WhatsApp a la entrega en obra.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-teal-500 mt-0.5 shrink-0">✓</span><span>Tablero en tiempo real con permisos por rol probados.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-teal-500 mt-0.5 shrink-0">✓</span><span>IA estructurando pedidos reales (20+ materiales en varias categorías).</span></p>
+                    <p class="flex items-start gap-2"><span class="text-teal-500 mt-0.5 shrink-0">✓</span><span>Verificación de comprobantes de pago con IA (foto y PDF reales).</span></p>
+                    <p class="flex items-start gap-2"><span class="text-teal-500 mt-0.5 shrink-0">✓</span><span>Cotizaciones multi-proveedor que parten la orden automáticamente.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-teal-500 mt-0.5 shrink-0">✓</span><span>Varios choferes en paralelo, cada uno con su hilo de WhatsApp.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-teal-500 mt-0.5 shrink-0">✓</span><span>Avisos por WhatsApp y correo, recuperación de contraseña y onboarding.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-teal-500 mt-0.5 shrink-0">✓</span><span>Presupuesto por proyecto cargado desde Excel/PDF con la IA.</span></p>
+                </div>
+            </div>
+
+            <!-- ============ ROADMAP ============ -->
+            <div class="mb-14">
+                <div class="reveal text-center max-w-2xl mx-auto mb-8">
+                    <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-violet-700 bg-violet-50 border border-violet-100 rounded-full px-3 py-1 mb-4">
+                        <span class="w-1.5 h-1.5 rounded-full bg-violet-500"></span> Hacia dónde puede crecer
+                    </span>
+                    <h2 class="display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Lo que viene <span class="gradient-text">cuando tú quieras</span></h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Con la base funcionando, estos son los siguientes pasos naturales para automatizar todavía más. No están incluidos aquí: te los dejamos como el camino de crecimiento del sistema.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <h3 class="display text-base font-bold text-slate-900 mb-1">WhatsApp Business API en vivo</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Conectar el número real de WhatsApp de la empresa (Meta), para que todo el flujo probado corra sobre el canal oficial del negocio.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <h3 class="display text-base font-bold text-slate-900 mb-1">Cotejo presupuesto vs. gasto real</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Una pantalla que cruza lo presupuestado con lo realmente pedido y pagado, por centro de costo, para ver desviaciones de un vistazo.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <h3 class="display text-base font-bold text-slate-900 mb-1">Consultar estado por WhatsApp</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Que cualquiera pregunte "¿en qué va la orden 124?" por chat y el asistente responda al instante, sin abrir el tablero.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <h3 class="display text-base font-bold text-slate-900 mb-1">Notas de voz transcritas (audio)</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Convertir las notas de voz a texto automáticamente para que el pedido hablado se estructure igual que el escrito, sin pasos manuales.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ CTA ============ -->
+            <div class="reveal text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden"
+                 style="background:linear-gradient(135deg,#ecfdf5,#f5f3ff);border:1px solid #ccfbf1;">
+                <h3 class="display text-2xl font-bold text-slate-900 mb-2">¿Lo vemos funcionando juntos?</h3>
+                <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">Con gusto te hacemos una demostración en vivo: mandas un pedido por WhatsApp y lo ves aparecer y avanzar en el tablero, paso a paso. Escríbenos y coordinamos.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center no-print">
+                    <a href="https://wa.me/50761622787?text=Hola%20Elemento%20Web%2C%20quiero%20una%20demo%20en%20vivo%20de%20Araplei."
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                        Pedir demo por WhatsApp
+                    </a>
+                    <a href="mailto:hola@elementoweb.com?subject=Demo%20de%20Araplei&body=Hola%2C%20quiero%20coordinar%20una%20demostraci%C3%B3n%20de%20Araplei."
+                       class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">
+                        <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Escribir por correo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="px-7 sm:px-10 py-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#0f2f2b);">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl grid place-items-center shrink-0" style="background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);">
+                        <svg width="20" height="20" viewBox="0 0 32 32"><path d="M16 6 25 11.2V21.8L16 27 7 21.8V11.2Z" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round"/><path d="M16 16.5 7 11.2M16 16.5 25 11.2M16 16.5V27" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div>
+                        <p class="display font-bold">Elemento Web</p>
+                        <p class="text-[11px] text-teal-200/70">Documento confidencial · Presentación de Araplei</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-teal-100">
+                    <a href="mailto:hola@elementoweb.com" class="hover:text-white transition">hola@elementoweb.com</a>
+                    <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="hover:text-white transition">+507 6162-2787</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/50761622787?text=Hola%20Elemento%20Web%2C%20tengo%20una%20consulta%20sobre%20Araplei."
+       target="_blank" rel="noopener"
+       class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse"
+       aria-label="Escríbenos por WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    </a>
+
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = Math.min(i * 40, 200) + 'ms';
+            io.observe(el);
+        });
+    </script>
+</body>
+</html>

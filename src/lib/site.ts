@@ -104,6 +104,7 @@ export const cols: { title: string; hub: string; links: NavLink[] }[] = [
     title: 'Funcionalidades',
     hub: 'funcionalidades',
     links: [
+      { slug: 'inteligencia-artificial-para-empresas-panama', label: 'Ecosistema de IA Empresarial' },
       { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y Pasarelas de Pago' },
       { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA para tu Web' },
       { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas y Citas Online' },

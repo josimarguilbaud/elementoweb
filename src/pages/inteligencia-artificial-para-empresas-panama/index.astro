@@ -1,0 +1,633 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site, url, wa } from '../../lib/site';
+import { orgNode } from '../../lib/schema';
+
+const slug = 'inteligencia-artificial-para-empresas-panama';
+const title = 'Inteligencia Artificial para Empresas en Panamá | Elemento Web';
+const description =
+  'Implementamos un ecosistema de IA privado para tu empresa: una base de conocimiento (RAG) y automatización de procesos que trabajan 24/7, siempre con control humano.';
+
+/* CTAs */
+const waDiag = wa('Hola, quiero un diagnóstico del ecosistema de IA para mi empresa.');
+
+/* Departamentos (tabs) */
+const departamentos = [
+  {
+    id: 'ventas',
+    label: 'Ventas y CRM',
+    icon: 'handshake',
+    h: 'Cierre de acuerdos sin fricción',
+    p: 'El equipo comercial pierde gran parte del día en tareas administrativas. El ecosistema se las quita de encima.',
+    rag: 'Lee el historial completo de correos y propuestas y sugiere la siguiente mejor acción basándose en acuerdos pasados que sí cerraron.',
+    accion: 'Genera la cotización o el contrato y lo mueve al CRM apenas la oportunidad cambia de etapa. Sin copiar y pegar.',
+    tags: ['HubSpot', 'Salesforce', 'WhatsApp'],
+  },
+  {
+    id: 'rrhh',
+    label: 'Recursos Humanos',
+    icon: 'users',
+    h: 'Onboarding y asistencia autónoma',
+    p: 'Libera a Recursos Humanos de las mismas preguntas de siempre y automatiza el ingreso de personal.',
+    rag: 'Un asistente que responde al instante sobre vacaciones, planilla o políticas internas leyendo el manual del empleado, con la cita exacta.',
+    accion: 'Coordina entrevistas, crea el correo y los accesos al software del nuevo empleado el primer día, sin intervención manual.',
+    tags: ['Slack', 'Google Workspace', 'Manual interno'],
+  },
+  {
+    id: 'finanzas',
+    label: 'Finanzas',
+    icon: 'invoice',
+    h: 'Extracción y conciliación inteligente',
+    p: 'Convierte documentos desordenados (fotos, facturas, recibos) en datos limpios dentro de tu sistema.',
+    rag: 'Lee facturas escaneadas y extrae montos, proveedores e impuestos sin plantillas rígidas de OCR.',
+    accion: 'Cruza el monto con la orden de compra y, si coincide, pre-aprueba el pago y notifica a quien decide. El pago final lo aprueba una persona.',
+    tags: ['ERP', 'Contabilidad', 'Visión IA'],
+  },
+  {
+    id: 'soporte',
+    label: 'Soporte e IT',
+    icon: 'headset',
+    h: 'Soporte de primer nivel autónomo',
+    p: 'Tus agentes intervienen solo cuando su criterio y empatía hacen la diferencia. El resto lo filtra la IA.',
+    rag: 'Analiza cada ticket entrante, entiende el problema consultando el historial y los manuales de producto.',
+    accion: 'Resuelve las consultas repetitivas al momento. Lo que necesita un humano, lo categoriza, prioriza y lo asigna al experto correcto.',
+    tags: ['Zendesk', 'Jira', 'Base de conocimiento'],
+  },
+];
+
+/* FAQ — fuente única: alimenta el bloque visible y el FAQPage JSON-LD */
+const faqs = [
+  {
+    q: '¿Mis datos quedan expuestos o se usan para entrenar modelos públicos?',
+    a: 'No. Trabajamos sobre un entorno privado y aislado. Tus documentos y datos se usan solo para responder a tu empresa; no se comparten con modelos públicos ni se usan para entrenarlos. El acceso respeta los permisos que cada persona ya tiene en tu organización.',
+  },
+  {
+    q: '¿Tengo que cambiar los sistemas que ya uso?',
+    a: 'No. El ecosistema se conecta a lo que ya tienes vía API o con automatización (n8n): correo, CRM, ERP, hojas de cálculo, Drive, WhatsApp y más. La idea es potenciar tu operación actual, no obligarte a migrar todo.',
+  },
+  {
+    q: '¿Y si la IA se equivoca en algo importante?',
+    a: 'Por diseño, las acciones sensibles (pagos, correos externos, cambios críticos) se detienen y esperan la aprobación de una persona. Es un copiloto, no un piloto automático a ciegas. Tú decides dónde poner esos puntos de control.',
+  },
+  {
+    q: '¿Cuánto tarda en implementarse?',
+    a: 'Empezamos con un diagnóstico y un piloto acotado a un proceso concreto, para que veas resultados sin comprometer toda la operación. A partir de ahí escalamos. El tiempo exacto depende del alcance, y lo definimos por escrito antes de empezar.',
+  },
+  {
+    q: '¿Cuánto cuesta?',
+    a: 'Es un proyecto a medida: la inversión depende de cuántos procesos automatizamos, qué integraciones necesita y el volumen de tu operación. Cerramos la cotización por escrito antes de arrancar, sin sorpresas a mitad de camino. El diagnóstico inicial no tiene costo.',
+  },
+  {
+    q: '¿Necesito un equipo técnico interno para mantenerlo?',
+    a: 'No es obligatorio. Somos una software house: construimos, operamos y mantenemos el ecosistema como un servicio. Si tu equipo quiere involucrarse, lo documentamos y los capacitamos.',
+  },
+];
+
+/* JSON-LD: organización + servicio + breadcrumb + FAQPage (derivado del mismo array) */
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    orgNode(),
+    {
+      '@type': 'Service',
+      '@id': `${site.domain}${url(slug)}#servicio`,
+      name: 'Ecosistema de Inteligencia Artificial Empresarial',
+      serviceType: 'Implementación de IA privada (RAG) y automatización de procesos',
+      description,
+      provider: { '@id': `${site.domain}/#organizacion` },
+      areaServed: { '@type': 'Country', name: 'Panamá' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${site.domain}/` },
+        { '@type': 'ListItem', position: 2, name: 'Inteligencia Artificial para Empresas', item: `${site.domain}${url(slug)}` },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    },
+  ],
+};
+---
+
+<Base title={title} description={description} current="funcionalidades" dark={true} jsonld={jsonld}>
+  <!-- ============ HERO ============ -->
+  <section class="relative overflow-hidden bg-ink pt-36 pb-24 text-white md:pt-44 md:pb-32">
+    <div class="absolute inset-0 mesh-dark opacity-60"></div>
+    <div class="sphere sphere-dark h-[560px] w-[560px] -left-40 -top-32" style="background:#0f766e;opacity:.5"></div>
+    <div class="sphere sphere-dark h-[460px] w-[460px] right-[-8rem] top-10" style="background:#8b5cf6;opacity:.45"></div>
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <p class="reveal mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-xs font-semibold tracking-wide text-white/80 backdrop-blur">
+        <span class="grid h-4 w-4 place-items-center rounded-full bg-teal text-ink"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z" stroke-linejoin="round" /></svg></span>
+        Inteligencia artificial para empresas · Panamá
+      </p>
+      <h1 class="reveal font-display text-[clamp(2.5rem,6.5vw,5rem)] font-extrabold leading-[0.98] tracking-tight">Tu empresa, ahora con un <span class="grad-text">cerebro propio</span>.</h1>
+      <p class="reveal mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-white/65 md:text-xl">No solo centralizamos tu información: la ponemos a trabajar. Unimos una IA privada que entiende tu negocio con automatización de procesos, para que tu equipo le deje el trabajo robótico a los robots.</p>
+      <div class="reveal mt-10 flex flex-wrap justify-center gap-3">
+        <a href="/contacto/" data-magnetic="0.4" class="group inline-flex items-center gap-3 rounded-full bg-teal px-7 py-4 text-base font-semibold text-ink shadow-2xl shadow-teal/25 transition-colors hover:bg-white">Agendar diagnóstico gratuito <span class="grid h-6 w-6 place-items-center rounded-full bg-ink/10 text-ink transition-transform group-hover:translate-x-0.5"><svg width="10" height="10" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span></a>
+        <a href="#flujo" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-base font-semibold text-white transition-colors hover:border-white/50">Ver cómo funciona</a>
+      </div>
+      <!-- Principios de arquitectura (honestos, no certificaciones) -->
+      <div class="reveal mx-auto mt-14 flex max-w-3xl flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm text-white/55">
+        <span class="inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke-linecap="round" /></svg> Entorno privado y aislado</span>
+        <span class="inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2"><path d="M12 3 4 6v6c0 4 3.5 6.5 8 8 4.5-1.5 8-4 8-8V6l-8-3Z" /><path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg> Tus datos no entrenan modelos públicos</span>
+        <span class="inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2"><path d="M12 3 4 6v6c0 4 3.5 6.5 8 8 4.5-1.5 8-4 8-8V6l-8-3Z" /></svg> Control humano en decisiones críticas</span>
+        <span class="inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2"><path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round" /><circle cx="12" cy="12" r="9" /></svg> Meta Verified Tech Provider</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLUJO: del dato a la acción ============ -->
+  <section id="flujo" class="relative bg-paper py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto mb-14 max-w-2xl text-center">
+        <p class="reveal mb-4 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/60">El poder del ecosistema</p>
+        <h2 class="reveal font-display text-[clamp(1.9rem,4.4vw,3.2rem)] font-extrabold leading-[1.04] text-ink">Del dato a la acción, <span class="grad-text">sin manos en el medio</span>.</h2>
+        <p class="reveal mt-5 text-lg text-ink/55">Un ejemplo real: entra un correo, la IA lo entiende, un humano aprueba y el sistema ejecuta.</p>
+      </div>
+
+      <div class="reveal relative grid grid-cols-1 gap-4 lg:grid-cols-4">
+        <!-- línea conectora desktop -->
+        <div class="pointer-events-none absolute left-[12%] right-[12%] top-[38px] hidden h-0.5 bg-ink/10 lg:block"></div>
+        <!-- 1 -->
+        <div class="relative z-10 flex flex-col rounded-2xl border border-ink/10 bg-white p-6 text-center shadow-sm">
+          <div class="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-full bg-ink/[0.04] text-ink/70"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+          <h3 class="mb-2 font-display text-base font-bold text-ink">1. El detonante</h3>
+          <p class="text-sm text-ink/55">Entra el correo de un cliente VIP pidiendo un reembolso.</p>
+        </div>
+        <!-- 2 -->
+        <div class="relative z-10 flex flex-col rounded-2xl border border-teal-deep/25 bg-white p-6 text-center" style="box-shadow:0 14px 40px -18px rgba(15,118,110,.35)">
+          <div class="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-full bg-teal-deep/10 text-teal-deep"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5a3 3 0 0 0-3 3 3 3 0 0 0-2 5.2A3 3 0 0 0 9 18a3 3 0 0 0 6 0 3 3 0 0 0 2-4.8A3 3 0 0 0 15 8a3 3 0 0 0-3-3Z" /></svg></div>
+          <h3 class="mb-2 font-display text-base font-bold text-ink">2. La IA entiende</h3>
+          <p class="text-sm text-ink/55">Lee tu política de devoluciones y valida el pedido en tu sistema.</p>
+        </div>
+        <!-- 3 -->
+        <div class="relative z-10 flex flex-col rounded-2xl border border-amber-400/40 bg-gradient-to-b from-white to-amber-50/60 p-6 text-center" style="box-shadow:0 14px 40px -18px rgba(245,158,11,.3)">
+          <div class="relative mx-auto mb-4 grid h-14 w-14 place-items-center rounded-full bg-amber-400/15 text-amber-500">
+            <span class="absolute -right-0.5 -top-0.5 flex h-3 w-3"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-70"></span><span class="relative inline-flex h-3 w-3 rounded-full border-2 border-white bg-amber-500"></span></span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 11V7a4 4 0 0 0-8 0v4" /><rect x="5" y="11" width="14" height="9" rx="2" /><path d="m9.5 15 1.5 1.5 3.5-3.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+          <h3 class="mb-2 font-display text-base font-bold text-ink">3. Aprobación humana</h3>
+          <p class="text-sm text-ink/55">Pausa inteligente: avisa al responsable con la opción de aprobar.</p>
+        </div>
+        <!-- 4 -->
+        <div class="relative z-10 flex flex-col rounded-2xl border border-violet/30 bg-white p-6 text-center" style="box-shadow:0 14px 40px -18px rgba(139,92,246,.3)">
+          <div class="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-full bg-violet/10 text-violet"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z" stroke-linejoin="round" /></svg></div>
+          <h3 class="mb-2 font-display text-base font-bold text-ink">4. Ejecución</h3>
+          <p class="text-sm text-ink/55">Con el visto bueno, genera la nota de crédito y redacta el correo final.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RAG: entendimiento ============ -->
+  <section class="relative bg-white py-24 md:py-28">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
+      <div class="order-2 lg:order-1 lg:pr-8">
+        <div class="reveal mb-6 inline-flex items-center gap-2 rounded-full bg-teal-deep/10 px-3 py-1 text-xs font-bold text-teal-deep">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" /></svg>
+          Entendimiento · Base de conocimiento (RAG)
+        </div>
+        <h2 class="reveal font-display text-[clamp(1.9rem,4vw,3rem)] font-extrabold leading-[1.05] text-ink">Una IA privada entrenada con el <span class="grad-text">ADN de tu empresa</span>.</h2>
+        <p class="reveal mt-6 text-lg text-ink/60">Despídete de los manuales que nadie lee y de las horas perdidas buscando en carpetas. Tu equipo pregunta en lenguaje natural y obtiene respuestas precisas, con la cita exacta al documento.</p>
+        <ul class="mt-8 space-y-6">
+          <li class="reveal flex items-start gap-4">
+            <div class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-teal-deep/10 text-teal-deep"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg></div>
+            <div><h4 class="font-display font-bold text-ink">De búsqueda a respuesta</h4><p class="text-sm text-ink/60">No busca: responde. En lenguaje natural y con citas exactas a tus propios documentos.</p></div>
+          </li>
+          <li class="reveal flex items-start gap-4">
+            <div class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-teal-deep/10 text-teal-deep"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 4 3.5 6.5 8 8 4.5-1.5 8-4 8-8V6l-8-3Z" /></svg></div>
+            <div><h4 class="font-display font-bold text-ink">Privacidad de grado empresarial</h4><p class="text-sm text-ink/60">Entorno cerrado. Tus manuales y hojas de cálculo nunca se comparten con modelos públicos.</p></div>
+          </li>
+          <li class="reveal flex items-start gap-4">
+            <div class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-teal-deep/10 text-teal-deep"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7L21 8" stroke-linecap="round" stroke-linejoin="round" /><path d="M21 3v5h-5" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+            <div><h4 class="font-display font-bold text-ink">Multi-formato y sincronizado</h4><p class="text-sm text-ink/60">PDF, Word, Drive y más. Actualizas un documento y la IA lo asimila al instante.</p></div>
+          </li>
+        </ul>
+        <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/" class="reveal mt-9 inline-flex items-center gap-2 rounded-lg border border-teal-deep/20 bg-teal-deep/10 px-6 py-3 font-medium text-teal-deep transition-colors hover:bg-teal-deep hover:text-white">Ver nuestra IA conversacional <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+      </div>
+
+      <!-- Mock: chat RAG -->
+      <div class="reveal order-1 flex h-[500px] flex-col overflow-hidden rounded-2xl border border-ink/10 bg-white shadow-xl lg:order-2">
+        <div class="flex items-center justify-between border-b border-ink/10 bg-paper p-4">
+          <div class="flex items-center gap-3">
+            <div class="grid h-8 w-8 place-items-center rounded bg-teal-deep/10 text-teal-deep"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="8" width="16" height="12" rx="2" /><path d="M12 8V4M9 4h6" stroke-linecap="round" /><circle cx="9" cy="14" r="1" fill="currentColor" stroke="none" /><circle cx="15" cy="14" r="1" fill="currentColor" stroke="none" /></svg></div>
+            <div><div class="text-sm font-bold text-ink">IA Corporativa</div><div class="flex items-center gap-1 text-xs text-emerald-600"><span class="h-2 w-2 animate-pulse rounded-full bg-emerald-500"></span> En línea</div></div>
+          </div>
+          <div class="rounded border border-ink/10 bg-white px-2 py-1 text-xs text-ink/50 shadow-sm">Privado y seguro</div>
+        </div>
+        <div class="flex flex-1 overflow-hidden">
+          <!-- fuentes -->
+          <div class="flex w-1/3 flex-col border-r border-ink/10 bg-paper p-4">
+            <div class="mb-3 text-[11px] font-semibold tracking-wider text-ink/45">FUENTES ACTIVAS</div>
+            <div class="flex-1 space-y-2.5">
+              <div class="flex items-center gap-2 rounded border border-ink/10 bg-white p-2 shadow-sm"><span class="text-red-500"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 2h9l5 5v15H6z" opacity=".15" /><path d="M14 2v6h6" fill="none" stroke="currentColor" stroke-width="1.5" /></svg></span><span class="truncate text-[11px] text-ink/70">Manual_Ventas.pdf</span></div>
+              <div id="ia-source" class="relative flex items-center gap-2 overflow-hidden rounded border border-ink/10 bg-white p-2 shadow-sm transition-colors"><span class="text-blue-500"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 2h9l5 5v15H6z" opacity=".15" /><path d="M14 2v6h6" fill="none" stroke="currentColor" stroke-width="1.5" /></svg></span><span class="truncate text-[11px] font-medium text-ink/80">Politicas_2025.docx</span></div>
+              <div class="flex items-center gap-2 rounded border border-ink/10 bg-white p-2 shadow-sm"><span class="text-emerald-600"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 2h9l5 5v15H6z" opacity=".15" /><path d="M14 2v6h6" fill="none" stroke="currentColor" stroke-width="1.5" /></svg></span><span class="truncate text-[11px] text-ink/70">Inventario_Q3.xlsx</span></div>
+            </div>
+            <div class="mt-3 rounded border border-emerald-100 bg-emerald-50 py-1 text-center text-[10px] text-emerald-700">Sincronizado hace 2m</div>
+          </div>
+          <!-- chat -->
+          <div class="flex w-2/3 flex-col justify-end bg-white p-4">
+            <div class="mb-4 space-y-3">
+              <div class="flex justify-end"><div class="max-w-[85%] rounded-2xl rounded-tr-none bg-ink px-3 py-2 text-sm text-white shadow-md">¿Cuál es la política de devoluciones para clientes VIP?</div></div>
+              <div id="ia-thinking" class="flex justify-start transition-opacity duration-300"><div class="flex items-center gap-2 rounded-lg border border-teal-deep/20 bg-teal-deep/5 p-2 text-xs text-teal-deep shadow-sm"><svg class="animate-spin" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 1 1-6.2-8.5" stroke-linecap="round" /></svg> Analizando 3 documentos…</div></div>
+              <div id="ia-answer" class="hidden justify-start opacity-0 transition-opacity duration-500">
+                <div class="max-w-[95%] rounded-2xl rounded-tl-none border border-ink/10 bg-white p-4 text-sm text-ink/80 shadow-md">
+                  <p id="ia-typed"></p>
+                  <div class="mt-3 border-t border-ink/[0.06] pt-3"><span class="inline-flex items-center gap-1 rounded border border-ink/10 bg-paper px-2 py-1 text-[10px] text-ink/60"><span class="text-blue-500"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 2h9l5 5v15H6z" opacity=".2" /></svg></span> Politicas_2025.docx · Pág. 14</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-auto flex items-center gap-2 rounded-full border border-ink/10 bg-paper p-2 shadow-inner">
+              <svg class="ml-2 text-ink/40" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg>
+              <input type="text" placeholder="Pregunta a tus documentos…" class="w-full border-none bg-transparent text-sm text-ink outline-none placeholder-ink/40" disabled />
+              <span class="grid h-7 w-7 place-items-center rounded-full bg-teal-deep text-white opacity-50"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AUTOMATIZACIÓN: acción ============ -->
+  <section class="relative bg-paper py-24 md:py-28">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
+      <!-- Mock: flujo de automatización -->
+      <div class="reveal relative order-1 flex h-[500px] items-center justify-center overflow-hidden rounded-2xl border border-ink/10 bg-white p-8 shadow-xl">
+        <div class="absolute inset-0 z-0 opacity-60" style="background-image:radial-gradient(rgba(15,23,42,.05) 1px,transparent 1px);background-size:20px 20px"></div>
+        <div class="relative z-10 flex w-full max-w-sm flex-col items-center">
+          <!-- trigger -->
+          <div class="flex w-full items-center gap-4 rounded-xl border-2 border-teal-deep/40 bg-white p-3" style="box-shadow:0 4px 20px rgba(15,118,110,.15)">
+            <div class="grid h-10 w-10 shrink-0 place-items-center rounded bg-teal-deep/10 text-teal-deep"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M7 9h10M7 13h6" stroke-linecap="round" /></svg></div>
+            <div><div class="text-sm font-bold text-ink">Nuevo lead recibido</div><div class="text-[10px] text-ink/50">Disparador: formulario web</div></div>
+            <span class="ml-auto h-2 w-2 animate-pulse rounded-full bg-teal-deep"></span>
+          </div>
+          <!-- conector 1 -->
+          <div class="relative h-11 w-0.5 bg-ink/10"><span class="flow-dot"></span></div>
+          <!-- IA -->
+          <div class="flex w-full items-center gap-4 rounded-xl border-2 border-violet/40 bg-white p-3" style="box-shadow:0 4px 20px rgba(139,92,246,.15)">
+            <div class="grid h-10 w-10 shrink-0 place-items-center rounded bg-violet/10 text-violet"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3v4M3 5h4M6 17v4M4 19h4" stroke-linecap="round" /><path d="M13 4l2.5 5.5L21 12l-5.5 2.5L13 20l-2.5-5.5L5 12l5.5-2.5L13 4Z" stroke-linejoin="round" /></svg></div>
+            <div><div class="text-sm font-bold text-ink">IA: analizar y clasificar</div><div class="text-[10px] text-ink/50">Extrae datos y asigna prioridad</div></div>
+          </div>
+          <!-- conector split -->
+          <div class="relative flex h-11 w-3/4 justify-center">
+            <div class="relative h-6 w-0.5 bg-ink/10"><span class="flow-dot" style="animation-delay:1.2s"></span></div>
+            <div class="absolute top-6 h-0.5 w-full bg-ink/10"></div>
+            <div class="absolute left-0 top-6 h-5 w-0.5 bg-ink/10"></div>
+            <div class="absolute right-0 top-6 h-5 w-0.5 bg-ink/10"></div>
+          </div>
+          <!-- acciones paralelas -->
+          <div class="flex w-full justify-between gap-4">
+            <div class="flex w-1/2 flex-col items-center rounded-xl border border-ink/10 bg-white p-3 text-center shadow-md">
+              <div class="mb-2 grid h-8 w-8 place-items-center rounded bg-blue-500/10 text-blue-500"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 18a4 4 0 0 0 .5-8 6 6 0 0 0-11.6-1.5A3.5 3.5 0 0 0 6 18h11Z" stroke-linejoin="round" /></svg></div>
+              <div class="text-xs font-bold text-ink">CRM</div><div class="text-[9px] text-ink/50">Crear oportunidad</div>
+            </div>
+            <div class="flex w-1/2 flex-col items-center rounded-xl border border-ink/10 bg-white p-3 text-center shadow-md">
+              <div class="mb-2 grid h-8 w-8 place-items-center rounded bg-violet/10 text-violet"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15a2 2 0 1 0 0-4h4v4a2 2 0 1 1-4 0Z" /><path d="M9 20a2 2 0 1 0-4 0M15 4a2 2 0 1 0 0 4h-4V4a2 2 0 1 1 4 0Z" /></svg></div>
+              <div class="text-xs font-bold text-ink">Notificar</div><div class="text-[9px] text-ink/50">Avisar al equipo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-2 lg:pl-8">
+        <div class="reveal mb-6 inline-flex items-center gap-2 rounded-full bg-violet/10 px-3 py-1 text-xs font-bold text-violet">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z" stroke-linejoin="round" /></svg>
+          Acción · Automatización de flujos
+        </div>
+        <h2 class="reveal font-display text-[clamp(1.9rem,4vw,3rem)] font-extrabold leading-[1.05] text-ink">El conocimiento sin acción es un <span class="grad-text">gasto</span>.</h2>
+        <p class="reveal mt-6 text-lg text-ink/60">Conectamos las decisiones de tu IA con las herramientas que ya usas y ejecutamos tareas en piloto automático, 24/7. Con puntos de control humano donde importa.</p>
+        <ul class="mt-8 space-y-6">
+          <li class="reveal flex items-start gap-4">
+            <div class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-violet/10 text-violet"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="12" height="12" rx="2" /><path d="M4 16V6a2 2 0 0 1 2-2h10" /></svg></div>
+            <div><h4 class="font-display font-bold text-ink">Cero "copiar y pegar"</h4><p class="text-sm text-ink/60">Entra un lead por la web y el sistema genera el documento, lo sube al CRM y avisa al equipo. Sin humanos moviendo datos a mano.</p></div>
+          </li>
+          <li class="reveal flex items-start gap-4">
+            <div class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-violet/10 text-violet"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2" /><circle cx="5" cy="19" r="2" /><circle cx="19" cy="19" r="2" /><path d="M12 7v4M12 11l-5.5 6M12 11l5.5 6" stroke-linecap="round" /></svg></div>
+            <div><h4 class="font-display font-bold text-ink">Decisiones con contexto</h4><p class="text-sm text-ink/60">No es solo mover datos. La IA analiza un caso, decide su urgencia y lo asigna al experto correcto.</p></div>
+          </li>
+          <li class="reveal flex items-start gap-4">
+            <div class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-violet/10 text-violet"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2v6M15 2v6M9 8h6a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h6" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+            <div><h4 class="font-display font-bold text-ink">Integración total (API first)</h4><p class="text-sm text-ink/60">Conectamos tu ecosistema con n8n y APIs: CRM, ERP, Google Workspace, WhatsApp y sistemas heredados.</p></div>
+          </li>
+        </ul>
+        <a href="/marketing/automatizaciones-n8n-panama/" class="reveal mt-9 inline-flex items-center gap-2 rounded-lg border border-violet/20 bg-violet/10 px-6 py-3 font-medium text-violet transition-colors hover:bg-violet hover:text-white">Ver automatizaciones con n8n <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEPARTAMENTOS (tabs) ============ -->
+  <section class="relative bg-white py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <p class="reveal mb-4 inline-block rounded-full border border-ink/10 bg-paper px-4 py-1.5 text-xs font-semibold text-ink/60">Adaptabilidad total</p>
+        <h2 class="reveal font-display text-[clamp(1.9rem,4.4vw,3.2rem)] font-extrabold leading-[1.04] text-ink">Un ecosistema, impacto en <span class="grad-text">toda la empresa</span>.</h2>
+        <p class="reveal mt-5 text-lg text-ink/55">Cómo la misma arquitectura convierte el cuello de botella de cada área en un flujo autónomo.</p>
+      </div>
+
+      <div class="reveal flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white p-2 shadow-xl md:flex-row md:p-3">
+        <!-- tab headers -->
+        <div class="flex shrink-0 flex-row gap-2 overflow-x-auto p-2 md:w-1/4 md:flex-col md:border-r md:border-ink/[0.06]">
+          {departamentos.map((d, i) => (
+            <button class:list={['dep-tab flex w-full items-center gap-3 whitespace-nowrap rounded-xl px-4 py-3 text-left text-sm font-medium transition-all', i === 0 ? 'is-active' : '']} data-target={`dep-${d.id}`}>
+              <span class="dep-ico grid h-5 w-5 place-items-center">
+                {d.icon === 'handshake' && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m11 17 2 2 8-8-3-3-7 7Z" /><path d="M3 11 8 6l4 4-3 3-4-1-2-1Z" stroke-linejoin="round" /></svg>}
+                {d.icon === 'users' && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3" /><path d="M3 20a6 6 0 0 1 12 0M16 6a3 3 0 0 1 0 6M18 20a6 6 0 0 0-3-5" stroke-linecap="round" /></svg>}
+                {d.icon === 'invoice' && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2Z" stroke-linejoin="round" /><path d="M9 7h6M9 11h6M9 15h3" stroke-linecap="round" /></svg>}
+                {d.icon === 'headset' && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 13v-1a8 8 0 0 1 16 0v1" /><rect x="2" y="13" width="4" height="7" rx="1.5" /><rect x="18" y="13" width="4" height="7" rx="1.5" /><path d="M20 20a4 4 0 0 1-4 3h-2" stroke-linecap="round" /></svg>}
+              </span>
+              {d.label}
+            </button>
+          ))}
+        </div>
+        <!-- tab panes -->
+        <div class="relative flex min-h-[360px] w-full items-center rounded-2xl bg-paper/60 p-6 md:w-3/4 md:p-10">
+          {departamentos.map((d, i) => (
+            <div id={`dep-${d.id}`} class:list={['dep-pane w-full', i === 0 ? 'is-active' : '']}>
+              <div class="flex flex-col items-start gap-8 md:flex-row md:items-center">
+                <div class="flex-1">
+                  <h3 class="font-display text-2xl font-bold text-ink">{d.h}</h3>
+                  <p class="mt-3 text-ink/60">{d.p}</p>
+                  <ul class="mt-6 space-y-3">
+                    <li class="flex gap-3 text-sm text-ink/75"><span class="mt-0.5 shrink-0 text-teal-deep"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9" /><path d="m8.5 12 2.5 2.5 4.5-5" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span><strong class="font-semibold text-ink">Entiende:</strong> {d.rag}</span></li>
+                    <li class="flex gap-3 text-sm text-ink/75"><span class="mt-0.5 shrink-0 text-violet"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9" /><path d="m8.5 12 2.5 2.5 4.5-5" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span><strong class="font-semibold text-ink">Ejecuta:</strong> {d.accion}</span></li>
+                  </ul>
+                  <div class="mt-6 flex flex-wrap gap-2">
+                    {d.tags.map((t) => <span class="rounded-full border border-ink/10 bg-white px-3 py-1 text-xs font-medium text-ink/60">{t}</span>)}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANTES / DESPUÉS ============ -->
+  <section class="relative bg-paper py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
+        <!-- pasado -->
+        <div class="reveal relative overflow-hidden rounded-3xl border border-ink/10 bg-white p-8 shadow-sm lg:p-10">
+          <div class="absolute inset-x-0 top-0 h-1 bg-red-400"></div>
+          <div class="mb-8 flex items-center gap-3">
+            <div class="grid h-10 w-10 place-items-center rounded-full border border-red-100 bg-red-50 text-red-500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 20h20L12 3Z" stroke-linejoin="round" /><path d="M12 10v4M12 17.5v.5" stroke-linecap="round" /></svg></div>
+            <h3 class="font-display text-xl font-bold text-ink md:text-2xl">El pasado (silos manuales)</h3>
+          </div>
+          <ul class="space-y-5">
+            <li class="flex items-start gap-4"><span class="mt-0.5 text-red-400"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round" /></svg></span><div><h4 class="text-sm font-semibold text-ink">Búsqueda interminable</h4><p class="text-sm text-ink/60">Horas cada día buscando información dispersa en Drive, correos y PDFs.</p></div></li>
+            <li class="flex items-start gap-4"><span class="mt-0.5 text-red-400"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round" /></svg></span><div><h4 class="text-sm font-semibold text-ink">Copiar y pegar constante</h4><p class="text-sm text-ink/60">Mover datos de un Excel al sistema a mano, con el error humano de siempre.</p></div></li>
+            <li class="flex items-start gap-4"><span class="mt-0.5 text-red-400"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round" /></svg></span><div><h4 class="text-sm font-semibold text-ink">Cuellos de botella personales</h4><p class="text-sm text-ink/60">Procesos estancados porque una sola persona tiene la información o no responde.</p></div></li>
+          </ul>
+        </div>
+        <!-- futuro -->
+        <div class="reveal relative overflow-hidden rounded-3xl border border-white/10 bg-ink p-8 text-white shadow-2xl lg:scale-[1.03] lg:p-10">
+          <div class="absolute inset-0 mesh-dark opacity-40"></div>
+          <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-teal to-violet"></div>
+          <div class="relative mb-8 flex items-center gap-3">
+            <div class="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.06] text-teal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15c0-4 3-9 7-11 4 2 7 7 7 11a5 5 0 0 1-14 0Z" stroke-linejoin="round" /><path d="M9 20c0 2 3 2 3 2s3 0 3-2" stroke-linecap="round" /></svg></div>
+            <h3 class="font-display text-xl font-bold md:text-2xl">El futuro (IA operativa)</h3>
+          </div>
+          <ul class="relative space-y-5">
+            <li class="flex items-start gap-4"><span class="mt-0.5 text-teal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11" stroke-linecap="round" stroke-linejoin="round" /></svg></span><div><h4 class="text-sm font-semibold text-white/90">Respuestas en segundos</h4><p class="text-sm text-white/50">Todo el conocimiento de la empresa disponible en un chat natural y seguro.</p></div></li>
+            <li class="flex items-start gap-4"><span class="mt-0.5 text-teal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11" stroke-linecap="round" stroke-linejoin="round" /></svg></span><div><h4 class="text-sm font-semibold text-white/90">Ejecución invisible</h4><p class="text-sm text-white/50">Los datos fluyen por APIs. Los sistemas se actualizan solos, sin errores de tipeo.</p></div></li>
+            <li class="flex items-start gap-4"><span class="mt-0.5 text-teal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 5 5 9-11" stroke-linecap="round" stroke-linejoin="round" /></svg></span><div><h4 class="text-sm font-semibold text-white/90">Escala sin contratar</h4><p class="text-sm text-white/50">La misma infraestructura procesa 10 o 10,000 solicitudes, operando 24/7.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ENTERPRISE ============ -->
+  <section class="relative bg-white py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto mb-14 max-w-2xl text-center">
+        <p class="reveal mb-4 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper px-4 py-1.5 text-xs font-semibold text-ink/60"><span class="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-teal to-violet"></span> Pensado para el entorno empresarial</p>
+        <h2 class="reveal font-display text-[clamp(1.9rem,4.4vw,3.2rem)] font-extrabold leading-[1.04] text-ink">Control y trazabilidad, <span class="grad-text">de principio a fin</span>.</h2>
+        <p class="reveal mt-5 text-lg text-ink/55">Más allá de la eficiencia, la IA se implementa bajo estándares serios de seguridad y gobernanza.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-6">
+        <div class="reveal group rounded-3xl border border-ink/10 bg-white p-8 shadow-sm transition-all hover:shadow-md lg:col-span-2">
+          <div class="mb-6 grid h-12 w-12 place-items-center rounded-xl border border-teal-deep/15 bg-teal-deep/10 text-teal-deep transition-transform group-hover:scale-110"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3" /><path d="M3 20a6 6 0 0 1 12 0M17 11l2 2 3-3" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+          <h4 class="mb-3 font-display text-lg font-bold text-ink">Gobernanza y permisos</h4>
+          <p class="text-sm leading-relaxed text-ink/60">La IA respeta la jerarquía de tu empresa. Valida el rol de cada usuario y limita las respuestas a lo que esa persona ya tiene permiso de ver.</p>
+        </div>
+        <div class="reveal group rounded-3xl border border-ink/10 bg-white p-8 shadow-sm transition-all hover:shadow-md lg:col-span-2">
+          <div class="mb-6 grid h-12 w-12 place-items-center rounded-xl border border-violet/15 bg-violet/10 text-violet transition-transform group-hover:scale-110"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V4M4 20h16" stroke-linecap="round" /><path d="M8 16l3-4 3 2 4-6" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+          <h4 class="mb-3 font-display text-lg font-bold text-ink">Panel de ROI y auditoría</h4>
+          <p class="text-sm leading-relaxed text-ink/60">Un tablero muestra horas ahorradas y tareas ejecutadas, con un registro de cada decisión y documento que la IA consultó.</p>
+        </div>
+        <div class="reveal group rounded-3xl border border-ink/10 bg-white p-8 shadow-sm transition-all hover:shadow-md lg:col-span-2">
+          <div class="mb-6 grid h-12 w-12 place-items-center rounded-xl border border-ink/10 bg-ink/[0.04] text-ink/70 transition-transform group-hover:scale-110"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" stroke-linejoin="round" /></svg></div>
+          <h4 class="mb-3 font-display text-lg font-bold text-ink">Omnicanal, sin apps nuevas</h4>
+          <p class="text-sm leading-relaxed text-ink/60">Tu equipo invoca al cerebro corporativo donde ya trabaja: WhatsApp, Slack o Microsoft Teams. Cero fricción.</p>
+        </div>
+        <div class="reveal group rounded-3xl border border-ink/10 bg-white p-8 shadow-sm transition-all hover:shadow-md lg:col-span-3">
+          <div class="flex items-start gap-6">
+            <div class="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal-deep/15 bg-teal-deep/10 text-teal-deep transition-transform group-hover:scale-110"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2" /><circle cx="9" cy="12" r="2" /><path d="M14 10h4M14 14h4" stroke-linecap="round" /></svg></div>
+            <div><h4 class="mb-3 font-display text-lg font-bold text-ink">Multimodal (visión y voz)</h4><p class="text-sm leading-relaxed text-ink/60">El mundo real no es solo texto. Envía la foto de un recibo o una nota de voz: la IA extrae los datos, los valida contra tus políticas y los carga en el sistema.</p></div>
+          </div>
+        </div>
+        <div class="reveal group rounded-3xl border border-amber-200 bg-amber-50/50 p-8 shadow-sm transition-all hover:shadow-md lg:col-span-3">
+          <div class="flex items-start gap-6">
+            <div class="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-amber-200 bg-amber-100 text-amber-600 transition-transform group-hover:scale-110"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4 6v6c0 4 3.5 6.5 8 8 4.5-1.5 8-4 8-8V6l-8-3Z" /><path d="M12 8v4M12 15.5v.5" stroke-linecap="round" /></svg></div>
+            <div><h4 class="mb-3 flex items-center gap-2 font-display text-lg font-bold text-ink">Human-in-the-loop <span class="rounded border border-amber-200 bg-amber-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-700">Clave</span></h4><p class="text-sm leading-relaxed text-ink/70">Un copiloto, no un piloto automático a ciegas. Diseñamos puntos de control donde la IA se detiene y pide el visto bueno de una persona antes de enviar pagos o correos externos.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO IMPLEMENTAMOS (fases) ============ -->
+  <section class="relative bg-paper py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto mb-14 max-w-2xl text-center">
+        <p class="reveal mb-4 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/60">Cómo trabajamos</p>
+        <h2 class="reveal font-display text-[clamp(1.9rem,4.4vw,3.2rem)] font-extrabold leading-[1.04] text-ink">Un proceso serio, <span class="grad-text">no un experimento</span>.</h2>
+        <p class="reveal mt-5 text-lg text-ink/55">Empezamos pequeño y demostramos valor antes de escalar. Sin comprometer toda tu operación de golpe.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div class="reveal rounded-2xl border border-ink/10 bg-white p-7 shadow-sm">
+          <div class="mb-5 font-display text-3xl font-extrabold text-teal-deep/25">01</div>
+          <h4 class="font-display text-lg font-bold text-ink">Diagnóstico</h4>
+          <p class="mt-2 text-sm text-ink/60">Mapeamos tus procesos y detectamos dónde una IA operativa ahorra más horas. Sin costo.</p>
+        </div>
+        <div class="reveal rounded-2xl border border-ink/10 bg-white p-7 shadow-sm">
+          <div class="mb-5 font-display text-3xl font-extrabold text-teal-deep/25">02</div>
+          <h4 class="font-display text-lg font-bold text-ink">Diseño y piloto</h4>
+          <p class="mt-2 text-sm text-ink/60">Definimos la arquitectura y lanzamos un piloto acotado a un proceso concreto, medible.</p>
+        </div>
+        <div class="reveal rounded-2xl border border-ink/10 bg-white p-7 shadow-sm">
+          <div class="mb-5 font-display text-3xl font-extrabold text-teal-deep/25">03</div>
+          <h4 class="font-display text-lg font-bold text-ink">Producción</h4>
+          <p class="mt-2 text-sm text-ink/60">Con el piloto validado, lo llevamos a producción con sus integraciones y controles humanos.</p>
+        </div>
+        <div class="reveal rounded-2xl border border-ink/10 bg-white p-7 shadow-sm">
+          <div class="mb-5 font-display text-3xl font-extrabold text-teal-deep/25">04</div>
+          <h4 class="font-display text-lg font-bold text-ink">Mejora continua</h4>
+          <p class="mt-2 text-sm text-ink/60">Operamos y afinamos el ecosistema como servicio, sumando procesos con el tiempo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACTO (honesto) ============ -->
+  <section class="relative bg-white py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="relative overflow-hidden rounded-[2rem] border border-ink/10 bg-white p-10 shadow-xl md:p-16">
+        <div class="sphere h-64 w-64 -right-10 -top-10" style="background:#2dd4bf;opacity:.4"></div>
+        <div class="sphere h-64 w-64 -bottom-10 -left-10" style="background:#8b5cf6;opacity:.35"></div>
+        <div class="relative mb-12 text-center">
+          <h2 class="reveal font-display text-[clamp(1.8rem,4vw,3rem)] font-extrabold leading-[1.05] text-ink">El impacto que buscamos en tu operación</h2>
+          <p class="reveal mx-auto mt-4 max-w-2xl text-ink/55">Metas realistas de un proyecto bien implementado. No son promesas cerradas: dependen de tus procesos y los definimos contigo desde el diagnóstico.</p>
+        </div>
+        <div class="relative grid grid-cols-1 gap-8 divide-y divide-ink/[0.06] md:grid-cols-3 md:gap-12 md:divide-x md:divide-y-0">
+          <div class="reveal pt-8 text-center md:pt-0">
+            <div class="mb-2 font-display text-5xl font-black lg:text-6xl"><span class="grad-text">horas</span></div>
+            <div class="font-display font-bold text-ink">De vuelta a tu equipo</div>
+            <p class="mt-1 text-sm text-ink/50">Menos tareas administrativas y búsquedas manuales, más tiempo estratégico.</p>
+          </div>
+          <div class="reveal pt-8 text-center md:pt-0">
+            <div class="mb-2 font-display text-5xl font-black text-ink lg:text-6xl">24/7</div>
+            <div class="font-display font-bold text-ink">Operación sin pausa</div>
+            <p class="mt-1 text-sm text-ink/50">Los flujos se ejecutan de noche, fines de semana y en picos de demanda.</p>
+          </div>
+          <div class="reveal pt-8 text-center md:pt-0">
+            <div class="mb-2 font-display text-5xl font-black lg:text-6xl"><span class="grad-text">privado</span></div>
+            <div class="font-display font-bold text-ink">Tus datos, en tu entorno</div>
+            <p class="mt-1 text-sm text-ink/50">Arquitectura cerrada: la información no sale a modelos públicos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="relative bg-paper py-24 md:py-28">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="mb-12 text-center">
+        <p class="reveal mb-4 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/60">Preguntas frecuentes</p>
+        <h2 class="reveal font-display text-[clamp(1.9rem,4.4vw,3rem)] font-extrabold leading-[1.04] text-ink">Lo que toda empresa <span class="grad-text">pregunta primero</span>.</h2>
+      </div>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="reveal group rounded-2xl border border-ink/10 bg-white px-6 py-1 shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-display font-semibold text-ink [&::-webkit-details-marker]:hidden">
+              {f.q}
+              <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-ink/10 text-ink/50 transition-transform group-open:rotate-45"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round" /></svg></span>
+            </summary>
+            <p class="pb-5 leading-relaxed text-ink/65">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="relative bg-white py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="reveal relative overflow-hidden rounded-[2.5rem] bg-ink px-8 py-16 text-center text-white shadow-2xl md:px-16 md:py-20">
+        <div class="absolute inset-0 mesh-dark opacity-40"></div>
+        <div class="sphere sphere-dark h-[340px] w-[340px] left-1/2 -top-24 -translate-x-1/2" style="background:#0f766e;opacity:.45"></div>
+        <div class="relative">
+          <h2 class="mx-auto max-w-2xl font-display text-[clamp(2rem,5vw,3.4rem)] font-extrabold leading-[1.06]">Deja de gestionar tareas. Empieza a gestionar <span class="grad-text">resultados</span>.</h2>
+          <p class="mx-auto mt-5 max-w-lg text-lg text-white/60">Agenda un diagnóstico de 30 minutos. Analizamos tus procesos y te mostramos dónde este ecosistema puede ahorrarte decenas de horas al mes.</p>
+          <div class="mt-9 flex flex-wrap justify-center gap-3">
+            <a href="/contacto/" data-magnetic="0.4" class="inline-flex items-center gap-2.5 rounded-full bg-teal px-8 py-4 text-base font-semibold text-ink shadow-2xl shadow-teal/25 transition-colors hover:bg-white">Agendar diagnóstico gratuito</a>
+            <a href={waDiag} target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-4 text-base font-semibold text-white transition-colors hover:border-white/50">Escríbenos por WhatsApp</a>
+          </div>
+          <p class="mt-6 text-sm text-white/40">Cotización cerrada por escrito antes de empezar. El diagnóstico no tiene costo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Tabs de departamentos */
+    .dep-tab { color: #64748b; }
+    .dep-tab:hover:not(.is-active) { background: rgba(15, 23, 42, 0.04); color: #334155; }
+    .dep-tab.is-active { background: #fff; color: var(--color-teal-deep); box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06); border: 1px solid rgba(15, 23, 42, 0.06); }
+    .dep-pane { display: none; }
+    .dep-pane.is-active { display: block; animation: depIn 0.4s ease; }
+    @keyframes depIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+    /* Highlight de la fuente en el chat RAG */
+    #ia-source.lit { border-color: rgba(15, 118, 110, 0.5); background: rgba(15, 118, 110, 0.08); }
+
+    /* Punto que fluye por los conectores del mock de automatización */
+    .flow-dot { position: absolute; left: 50%; top: -20%; width: 6px; height: 6px; margin-left: -3px; border-radius: 9999px; background: var(--color-violet); box-shadow: 0 0 10px var(--color-violet); animation: flowY 2.6s ease-in-out infinite; }
+    @keyframes flowY { 0% { top: -20%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { top: 120%; opacity: 0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .dep-pane.is-active { animation: none; }
+      .flow-dot { animation: none; opacity: 0; }
+    }
+  </style>
+
+  <script>
+    // ===== Tabs de departamentos =====
+    const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.dep-tab'));
+    const panes = Array.from(document.querySelectorAll<HTMLElement>('.dep-pane'));
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((t) => t.classList.remove('is-active'));
+        panes.forEach((p) => p.classList.remove('is-active'));
+        tab.classList.add('is-active');
+        const id = tab.getAttribute('data-target');
+        if (id) document.getElementById(id)?.classList.add('is-active');
+      });
+    });
+
+    // ===== Animación del chat RAG (en loop, respeta reduced-motion) =====
+    const thinking = document.getElementById('ia-thinking');
+    const answer = document.getElementById('ia-answer');
+    const typed = document.getElementById('ia-typed');
+    const source = document.getElementById('ia-source');
+    const fullText =
+      'Según Politicas_2025.docx (Pág. 14), los clientes VIP tienen un periodo de devolución extendido de 60 días, sin costo de envío ni preguntas.';
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function typeText(i: number) {
+      if (!typed) return;
+      if (i <= fullText.length) {
+        typed.textContent = fullText.slice(0, i);
+        setTimeout(() => typeText(i + 1), 28);
+      } else {
+        setTimeout(() => { source?.classList.remove('lit'); setTimeout(runChat, 3500); }, 4500);
+      }
+    }
+    function runChat() {
+      if (!thinking || !answer || !typed) return;
+      thinking.classList.remove('hidden');
+      thinking.style.opacity = '1';
+      answer.classList.add('hidden');
+      answer.style.opacity = '0';
+      typed.textContent = '';
+      source?.classList.remove('lit');
+      setTimeout(() => source?.classList.add('lit'), 700);
+      setTimeout(() => {
+        thinking.style.opacity = '0';
+        setTimeout(() => {
+          thinking.classList.add('hidden');
+          answer.classList.remove('hidden');
+          setTimeout(() => { answer.style.opacity = '1'; typeText(0); }, 60);
+        }, 300);
+      }, 1900);
+    }
+    if (thinking && answer && typed) {
+      if (reduce) {
+        thinking.classList.add('hidden');
+        answer.classList.remove('hidden');
+        answer.style.opacity = '1';
+        source?.classList.add('lit');
+        typed.textContent = fullText;
+      } else {
+        setTimeout(runChat, 900);
+      }
+    }
+  </script>
+</Base>

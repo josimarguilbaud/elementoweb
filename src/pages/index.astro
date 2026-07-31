@@ -91,33 +91,23 @@ const faqs = [
               <span class="h-2.5 w-2.5 rounded-full bg-ink/15"></span><span class="h-2.5 w-2.5 rounded-full bg-ink/15"></span><span class="h-2.5 w-2.5 rounded-full bg-ink/15"></span>
               <div class="ml-2 flex-1 rounded-md bg-ink/[0.04] px-3 py-1 text-center text-[11px] font-medium text-ink/45">◆ high-end-experience.dev</div>
             </div>
-            <div class="relative flex aspect-[4/3.3] flex-col overflow-hidden rounded-[1.25rem] bg-white">
-              <!-- mini nav del sitio renderizado -->
-              <div class="flex items-center justify-between px-4 pt-4">
-                <div class="flex items-center gap-1.5"><span class="h-4 w-4 rounded-md bg-gradient-to-br from-teal to-violet"></span><span class="text-[10px] font-bold tracking-tight text-ink">Studio</span></div>
-                <div class="hidden items-center gap-3 text-[8px] font-medium text-ink/45 sm:flex"><span>Trabajo</span><span>Servicios</span><span>Contacto</span></div>
-                <span class="rounded-full bg-ink px-2.5 py-1 text-[8px] font-semibold text-white">Cotizar</span>
+            <div class="relative flex aspect-[4/3.3] flex-col overflow-hidden rounded-[1.25rem] bg-ink">
+              <!-- imagen de fondo (sitio de estudio de diseño) -->
+              <img src="/hero/studio-gradient.jpg" alt="Vista previa de un sitio web de estudio de diseño" width="1400" height="1050" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-ink/25"></div>
+              <!-- mini nav sobre la imagen -->
+              <div class="relative flex items-center justify-between px-4 pt-4">
+                <div class="flex items-center gap-1.5"><span class="h-4 w-4 rounded-md bg-white/90"></span><span class="text-[10px] font-bold tracking-tight text-white">Studio</span></div>
+                <div class="hidden items-center gap-3 text-[8px] font-medium text-white/70 sm:flex"><span>Trabajo</span><span>Servicios</span><span>Contacto</span></div>
+                <span class="rounded-full bg-white/90 px-2.5 py-1 text-[8px] font-semibold text-ink">Cotizar</span>
               </div>
-              <!-- hero del sitio renderizado -->
-              <div class="px-4 pt-5">
-                <div class="text-[8px] font-bold uppercase tracking-[0.18em] text-teal-deep">Estudio de diseño</div>
-                <div class="mt-1.5 font-display text-[clamp(1rem,3.6vw,1.7rem)] font-extrabold leading-[1.02] text-ink">Diseño que <span class="grad-text">rinde</span><br />de verdad.</div>
+              <!-- titular sobre la imagen -->
+              <div class="relative mt-auto p-4">
+                <div class="text-[8px] font-bold uppercase tracking-[0.18em] text-white/80">Estudio de diseño</div>
+                <div class="mt-1.5 font-display text-[clamp(1.05rem,3.6vw,1.8rem)] font-extrabold leading-[1.02] text-white [text-shadow:0_1px_12px_rgba(15,23,42,.35)]">Diseño que rinde<br />de verdad.</div>
                 <div class="mt-2.5 flex gap-1.5">
-                  <span class="rounded-full bg-ink px-2.5 py-1 text-[8px] font-semibold text-white">Ver trabajo</span>
-                  <span class="rounded-full border border-ink/15 px-2.5 py-1 text-[8px] font-semibold text-ink/70">Sobre mí</span>
-                </div>
-              </div>
-              <!-- banda visual del sitio renderizado -->
-              <div class="relative mx-3 mb-3 mt-4 flex-1 overflow-hidden rounded-xl" style="background:linear-gradient(120deg,#1d4ed8,#22d3ee 46%,#8b5cf6)">
-                <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(120% 120% at 18% -10%,rgba(255,255,255,.3),transparent 48%)"></div>
-                <div class="absolute -right-6 -top-6 h-20 w-20 rounded-full border border-white/25"></div>
-                <div class="absolute right-4 bottom-4 h-12 w-12 rounded-2xl bg-white/15 backdrop-blur"></div>
-                <div class="absolute left-3 top-3 flex gap-1.5">
-                  <span class="rounded-md bg-white/90 px-2 py-1 text-[7px] font-bold text-ink shadow-sm">+50 proyectos</span>
-                  <span class="rounded-md bg-white/20 px-2 py-1 text-[7px] font-semibold text-white backdrop-blur">100 / 100</span>
-                </div>
-                <div class="absolute bottom-3 left-3 flex items-center gap-1.5">
-                  <span class="h-1.5 w-1.5 rounded-full bg-white/90"></span><span class="h-1.5 w-6 rounded-full bg-white/40"></span><span class="h-1.5 w-3 rounded-full bg-white/40"></span>
+                  <span class="rounded-full bg-white px-2.5 py-1 text-[8px] font-semibold text-ink">Ver trabajo</span>
+                  <span class="rounded-full border border-white/40 px-2.5 py-1 text-[8px] font-semibold text-white backdrop-blur">Sobre mí</span>
                 </div>
               </div>
             </div>

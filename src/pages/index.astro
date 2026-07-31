@@ -91,10 +91,45 @@ const faqs = [
               <span class="h-2.5 w-2.5 rounded-full bg-ink/15"></span><span class="h-2.5 w-2.5 rounded-full bg-ink/15"></span><span class="h-2.5 w-2.5 rounded-full bg-ink/15"></span>
               <div class="ml-2 flex-1 rounded-md bg-ink/[0.04] px-3 py-1 text-center text-[11px] font-medium text-ink/45">◆ high-end-experience.dev</div>
             </div>
-            <div class="relative aspect-[4/3.3] overflow-hidden rounded-[1.25rem] bg-ink">
-              <!-- imagen real dentro del navegador -->
-              <img src="/hero/studio-hero.jpg" alt="Portafolio de un estudio de diseño web premium" width="1400" height="1050" loading="lazy" class="h-full w-full object-cover" />
-              <div class="pointer-events-none absolute inset-0 rounded-[1.25rem] ring-1 ring-inset ring-white/10"></div>
+            <div class="relative flex aspect-[4/3.3] flex-col overflow-hidden rounded-[1.25rem] bg-white">
+              <!-- nav del sitio renderizado -->
+              <div class="flex items-center justify-between border-b border-ink/[0.06] px-4 py-2.5">
+                <div class="flex items-center gap-1.5"><span class="h-4 w-4 rounded-md bg-gradient-to-br from-teal to-violet"></span><span class="text-[10px] font-extrabold tracking-tight text-ink">Lumen</span></div>
+                <div class="hidden items-center gap-3 text-[8px] font-medium text-ink/45 sm:flex"><span>Trabajo</span><span>Servicios</span><span>Estudio</span></div>
+                <span class="rounded-full bg-ink px-2.5 py-1 text-[8px] font-semibold text-white">Hablemos</span>
+              </div>
+              <!-- hero del sitio renderizado -->
+              <div class="px-4 pt-4">
+                <div class="text-[7px] font-bold uppercase tracking-[0.2em] text-teal-deep">Diseño y desarrollo web</div>
+                <div class="mt-1.5 font-display text-[clamp(0.95rem,3.3vw,1.55rem)] font-extrabold leading-[1.04] text-ink">Interfaces que <span class="grad-text">convierten</span>.</div>
+                <div class="mt-2 flex items-center gap-1.5">
+                  <span class="rounded-md bg-ink px-2.5 py-1 text-[8px] font-semibold text-white">Empezar</span>
+                  <span class="rounded-md border border-ink/15 px-2.5 py-1 text-[8px] font-semibold text-ink/60">Ver casos</span>
+                  <span class="ml-0.5 text-[7px] font-medium text-ink/40">★★★★★ 4.9</span>
+                </div>
+              </div>
+              <!-- banda visual: mini-app de analítica dentro del sitio -->
+              <div class="relative mx-3 mb-3 mt-3 flex-1 overflow-hidden rounded-xl bg-gradient-to-br from-ink to-[#1b2440]">
+                <div class="absolute inset-0" style="background:radial-gradient(120% 90% at 12% 0%,rgba(45,212,191,.32),transparent 55%),radial-gradient(120% 90% at 100% 100%,rgba(139,92,246,.4),transparent 55%)"></div>
+                <div class="absolute inset-x-3 top-3 rounded-lg bg-white/95 p-2 shadow-lg">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1"><span class="h-1.5 w-1.5 rounded-full bg-ink/15"></span><span class="h-1.5 w-1.5 rounded-full bg-ink/15"></span><span class="h-1.5 w-1.5 rounded-full bg-ink/15"></span></div>
+                    <span class="text-[6px] font-semibold uppercase tracking-wider text-ink/35">Panel</span>
+                  </div>
+                  <div class="mt-1.5 flex items-end gap-1">
+                    <div class="h-6 flex-1 rounded-sm bg-gradient-to-t from-teal-deep/70 to-teal/40"></div>
+                    <div class="h-4 flex-1 rounded-sm bg-gradient-to-t from-teal-deep/70 to-teal/40"></div>
+                    <div class="h-8 flex-1 rounded-sm bg-gradient-to-t from-violet/70 to-violet/30"></div>
+                    <div class="h-5 flex-1 rounded-sm bg-gradient-to-t from-teal-deep/70 to-teal/40"></div>
+                    <div class="h-7 flex-1 rounded-sm bg-gradient-to-t from-violet/70 to-violet/30"></div>
+                    <div class="h-9 flex-1 rounded-sm bg-gradient-to-t from-teal-deep/70 to-teal/40"></div>
+                  </div>
+                </div>
+                <div class="absolute bottom-3 right-3 rounded-lg bg-white/95 px-2.5 py-1.5 shadow-lg">
+                  <div class="text-[6px] font-medium uppercase tracking-wide text-ink/40">Conversión</div>
+                  <div class="font-display text-xs font-extrabold leading-none text-ink">+38%</div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="floaty glass absolute -right-4 -top-7 w-56 rounded-2xl p-4" style="animation-delay:-1.5s">

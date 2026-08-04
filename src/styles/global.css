@@ -69,6 +69,13 @@
 #navpill.nav-light .cta-pill { background: #2dd4bf; color: #0f172a; }
 #navpill.nav-light .cta-pill:hover { background: #fff; }
 
+/* Nav con scroll: fondo casi sólido para que el contenido de la página no se
+   transparente por detrás del pill (antes se veía el texto del artículo y chocaba). */
+#navpill.glass { background: rgba(255, 255, 255, 0.92); border-color: rgba(15, 23, 42, 0.06); box-shadow: 0 12px 34px -14px rgba(15, 23, 42, 0.22); }
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  #navpill.glass { background: rgba(255, 255, 255, 0.82); }
+}
+
 /* Enlaces dentro del texto de una tarjeta: se elevan por encima del stretched
    link (::after) para seguir siendo clicables, y se ven como enlaces. */
 .cardtext a { position: relative; z-index: 1; }

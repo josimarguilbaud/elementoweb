@@ -16,8 +16,11 @@ por SMTP con la cuenta `lead@elementoweb.com`, con copia a `josimarguilbaud@gmai
    al nodo *"Enviar aviso"*. Datos:
    - **User:** `lead@elementoweb.com`
    - **Password:** la que me diste ⚠️ **pégala SOLO aquí, en n8n. Nunca en el código ni en GitHub.**
-   - **Host:** el SMTP de tu correo (con tu hosting suele ser `mail.elementoweb.com`). **Confírmalo con tu proveedor.**
-   - **Port / SSL:** `465` con SSL, o `587` con STARTTLS.
+   - **Host:** `mail.elementoweb.com` (confirmado: `elementoweb.com` a secas NO acepta SMTP).
+   - **Port / SSL:** `465` con SSL. Marcado "permitir certificados no verificados" por el cert de cPanel.
+
+   > ✅ Ya montado por API el 4/8/2026: credencial `SMTP Elemento Web`, workflow activo, webhook
+   > `https://n8n.aiwebstudio.co/webhook/elementoweb-contacto` y pegado en `site.ts`.
 
 3. **Activa** el workflow (toggle *Active* arriba a la derecha).
 

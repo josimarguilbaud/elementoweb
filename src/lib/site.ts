@@ -36,8 +36,8 @@ export const analytics = {
    3) Formspree u otro: pon su URL en `endpoint`.
    ⚠️ VACÍO = el formulario muestra un aviso; configúralo antes de publicar. */
 export const contactForm = {
-  web3formsKey: '', // ⚠️ pega aquí tu Web3Forms access key (opción recomendada)
-  endpoint: '',     // o la URL de tu webhook n8n / Formspree (si no usas Web3Forms)
+  web3formsKey: '', // (no se usa: el formulario va por n8n, ver endpoint)
+  endpoint: 'https://n8n.aiwebstudio.co/webhook/elementoweb-contacto', // Webhook n8n → correo por SMTP (docs/contacto-n8n)
   services: [
     'Diseño web / Sitio corporativo',
     'Tienda online / E-commerce',

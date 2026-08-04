@@ -1,0 +1,60 @@
+{
+  "name": "Elemento Web — Formulario de contacto",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "elementoweb-contacto",
+        "responseMode": "onReceived",
+        "options": {
+          "allowedOrigins": "https://elementoweb.com"
+        }
+      },
+      "id": "webhook-contacto",
+      "name": "Webhook (formulario web)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [260, 300],
+      "webhookId": "elementoweb-contacto"
+    },
+    {
+      "parameters": {
+        "fromEmail": "lead@elementoweb.com",
+        "toEmail": "lead@elementoweb.com",
+        "subject": "=Nuevo lead: {{ $json.body.nombre }} — {{ $json.body.empresa }}",
+        "emailFormat": "html",
+        "html": "=<!DOCTYPE html><html><body style='margin:0;background:#f8f9fa;font-family:Arial,Helvetica,sans-serif;color:#1c2230'><table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='background:#f8f9fa;padding:24px 0'><tr><td align='center'><table role='presentation' width='600' cellpadding='0' cellspacing='0' style='max-width:600px;width:100%;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 10px 40px rgba(15,23,42,.08)'><tr><td style='background:#0f172a;padding:22px 28px'><table role='presentation' width='100%'><tr><td style='color:#ffffff;font-size:17px;font-weight:bold;letter-spacing:-.3px'>Elemento Web</td><td align='right' style='color:#2dd4bf;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1.5px'>Nuevo lead</td></tr></table></td></tr><tr><td style='height:4px;background:#2dd4bf;background:linear-gradient(90deg,#0f766e,#2dd4bf,#8b5cf6)'></td></tr><tr><td style='padding:28px'><div style='font-size:13px;color:#64748b'>Recibiste una nueva solicitud desde tu página web</div><div style='font-size:23px;font-weight:bold;color:#0f172a;margin:6px 0 22px;letter-spacing:-.4px'>{{ $json.body.nombre }} &middot; {{ $json.body.empresa }}</div><table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='font-size:14px;border-collapse:collapse'><tr><td style='padding:10px 0;color:#64748b;width:130px;border-bottom:1px solid #eef1f4'>Correo</td><td style='padding:10px 0;color:#0f172a;font-weight:600;border-bottom:1px solid #eef1f4'><a href='mailto:{{ $json.body.email }}' style='color:#0f766e;text-decoration:none'>{{ $json.body.email }}</a></td></tr><tr><td style='padding:10px 0;color:#64748b;border-bottom:1px solid #eef1f4'>Tel&eacute;fono</td><td style='padding:10px 0;color:#0f172a;font-weight:600;border-bottom:1px solid #eef1f4'>{{ $json.body.telefono }}</td></tr><tr><td style='padding:10px 0;color:#64748b;border-bottom:1px solid #eef1f4'>Servicio</td><td style='padding:10px 0;color:#0f172a;font-weight:600;border-bottom:1px solid #eef1f4'>{{ $json.body.servicio }}</td></tr><tr><td style='padding:10px 0;color:#64748b'>Presupuesto</td><td style='padding:10px 0;color:#0f172a;font-weight:600'>{{ $json.body.presupuesto }}</td></tr></table><div style='margin:22px 0 8px;color:#64748b;font-size:13px'>Mensaje</div><div style='background:#f8f9fa;border-left:3px solid #2dd4bf;border-radius:8px;padding:14px 16px;font-size:14px;line-height:1.6;color:#334155'>{{ $json.body.mensaje }}</div><table role='presentation' cellpadding='0' cellspacing='0' style='margin-top:26px'><tr><td style='padding-right:10px'><a href='https://wa.me/{{ $json.body.telefono }}' style='display:inline-block;background:#0f766e;color:#ffffff;text-decoration:none;font-weight:bold;font-size:14px;padding:13px 24px;border-radius:999px'>Responder por WhatsApp</a></td><td><a href='mailto:{{ $json.body.email }}' style='display:inline-block;background:#f1f5f9;color:#0f172a;text-decoration:none;font-weight:bold;font-size:14px;padding:13px 24px;border-radius:999px'>Responder por correo</a></td></tr></table></td></tr><tr><td style='padding:16px 28px;background:#f8f9fa;border-top:1px solid #eef1f4;color:#94a3b8;font-size:12px'>Enviado el {{ $json.body.fecha }} desde <a href='{{ $json.body.origen }}' style='color:#64748b'>{{ $json.body.origen }}</a></td></tr></table></td></tr></table></body></html>",
+        "options": {
+          "ccEmail": "josimarguilbaud@gmail.com",
+          "replyTo": "={{ $json.body.email }}"
+        }
+      },
+      "id": "enviar-aviso",
+      "name": "Enviar aviso (equipo + copia a Gmail)",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [540, 300],
+      "credentials": {
+        "smtp": {
+          "id": "REEMPLAZAR_EN_N8N",
+          "name": "SMTP Elemento Web"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook (formulario web)": {
+      "main": [
+        [
+          {
+            "node": "Enviar aviso (equipo + copia a Gmail)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "active": false
+}

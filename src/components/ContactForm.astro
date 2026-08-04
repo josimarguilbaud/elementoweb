@@ -1,10 +1,12 @@
 ---
-/* Formulario de contacto reutilizable (home + /contacto/), conectado a Web3Forms.
-   Para activarlo: pega tu Access Key gratis en site.ts → contactForm.web3formsKey
-   (se obtiene en https://web3forms.com con tu correo). Sin key, el formulario
-   avisa que falta configurar; con key, envía de verdad a tu correo. */
+/* Formulario de contacto reutilizable (home + /contacto/).
+   Soporta DOS backends, en este orden de prioridad:
+   1) Webhook n8n  → site.ts → contactForm.endpoint  (control total del correo)
+   2) Web3Forms    → site.ts → contactForm.web3formsKey
+   Sin ninguno configurado, el formulario avisa y empuja a WhatsApp.
+   El workflow de n8n listo para importar está en docs/contacto-n8n/. */
 import { contactForm } from '../lib/site';
-const { services, budgets, web3formsKey } = contactForm;
+const { services, budgets, web3formsKey, endpoint } = contactForm;
 ---
 <div class="glass rounded-3xl p-6 sm:p-8">
   <form id="cform" novalidate>
@@ -35,7 +37,7 @@ const { services, budgets, web3formsKey } = contactForm;
   </div>
 </div>
 
-<script define:vars={{ KEY: web3formsKey }}>
+<script define:vars={{ KEY: web3formsKey, ENDPOINT: endpoint }}>
   const form = document.getElementById('cform');
   const errEl = document.getElementById('cerr');
   if (form) {
@@ -56,17 +58,39 @@ const { services, budgets, web3formsKey } = contactForm;
       const btn = form.querySelector('button[type="submit"]');
       const label = btn.textContent;
       const fail = (msg) => { errEl.textContent = msg; errEl.classList.remove('hidden'); btn.disabled = false; btn.textContent = label; };
+      const success = () => { form.classList.add('hidden'); document.getElementById('cok').classList.replace('hidden', 'flex'); };
+
+      // Honeypot anti-bots: si el campo oculto viene lleno, es un bot → fingimos éxito y no enviamos.
+      if (String(fd.get('botcheck') || '')) { success(); return; }
+
       btn.disabled = true;
       btn.textContent = 'Enviando…';
-      if (!KEY) { fail('El formulario aún no está configurado (falta el Access Key de Web3Forms). Escríbenos por WhatsApp mientras tanto.'); return; }
+
       try {
-        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { Accept: 'application/json' }, body: fd });
-        const data = await res.json();
-        if (data.success) {
-          form.classList.add('hidden');
-          document.getElementById('cok').classList.replace('hidden', 'flex');
+        if (ENDPOINT) {
+          // --- Backend 1: Webhook n8n (JSON) ---
+          const payload = {
+            nombre: String(fd.get('nombre') || '').trim(),
+            empresa: String(fd.get('empresa') || '').trim(),
+            email: String(fd.get('email') || '').trim(),
+            telefono: String(fd.get('telefono') || '').trim(),
+            servicio: String(fd.get('servicio') || '').trim(),
+            presupuesto: String(fd.get('presupuesto') || '').trim(),
+            mensaje: String(fd.get('mensaje') || '').trim(),
+            origen: location.href,
+            fecha: new Date().toLocaleString('es-PA'),
+          };
+          const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+          if (res.ok) success();
+          else fail('No se pudo enviar. Intenta de nuevo o escríbenos por WhatsApp.');
+        } else if (KEY) {
+          // --- Backend 2: Web3Forms ---
+          const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { Accept: 'application/json' }, body: fd });
+          const data = await res.json();
+          if (data.success) success();
+          else fail(data.message || 'No se pudo enviar. Intenta de nuevo o escríbenos por WhatsApp.');
         } else {
-          fail(data.message || 'No se pudo enviar. Intenta de nuevo o escríbenos por WhatsApp.');
+          fail('El formulario aún no está configurado. Escríbenos por WhatsApp mientras tanto.');
         }
       } catch (err) {
         fail('Error de conexión. Intenta de nuevo o escríbenos por WhatsApp.');

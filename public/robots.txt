@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Documentos privados de clientes (no indexar)
+Disallow: /presentaciones/
+Disallow: /propuestas/
+
+Sitemap: https://elementoweb.com/sitemap-index.xml

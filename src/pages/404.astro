@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/site';
+
+const enlaces = [
+  { slug: 'diseno-web-panama', label: 'Diseño web en Panamá' },
+  { slug: 'servicios', label: 'Servicios' },
+  { slug: 'portafolio', label: 'Portafolio' },
+  { slug: 'inteligencia-artificial-para-empresas-panama', label: 'IA para empresas' },
+  { slug: 'blog', label: 'Blog' },
+  { slug: 'contacto', label: 'Contacto' },
+];
+---
+<Base
+  title="Página no encontrada (404) | Elemento Web"
+  description="La página que buscas no existe o cambió de dirección. Vuelve al inicio o explora nuestros servicios de diseño web en Panamá."
+  dark
+>
+  <section class="relative flex min-h-[86vh] items-center overflow-hidden bg-ink text-white">
+    <div class="absolute inset-0 mesh-dark opacity-50"></div>
+    <div class="sphere sphere-dark h-[520px] w-[520px] -left-32 -top-24" style="background:#0f766e;opacity:.45"></div>
+    <div class="sphere sphere-dark h-[440px] w-[440px] right-[-8rem] top-16" style="background:#8b5cf6;opacity:.4"></div>
+    <div class="relative mx-auto max-w-3xl px-6 py-24 text-center">
+      <p class="reveal mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 backdrop-blur">Error 404</p>
+      <h1 class="reveal font-display text-[clamp(4rem,16vw,10rem)] font-extrabold leading-[0.9] tracking-tight"><span class="grad-text">404</span></h1>
+      <h2 class="reveal mt-4 font-display text-[clamp(1.6rem,4vw,2.6rem)] font-extrabold leading-[1.05]">Esta página se nos escapó.</h2>
+      <p class="reveal mx-auto mt-5 max-w-lg text-lg leading-relaxed text-white/60">La dirección no existe o cambió de lugar. No te preocupes: desde aquí vuelves al camino en un clic.</p>
+      <div class="reveal mt-9 flex flex-wrap justify-center gap-3">
+        <a href="/" data-magnetic="0.35" class="inline-flex items-center gap-2.5 rounded-full bg-teal px-7 py-4 text-base font-semibold text-ink shadow-2xl shadow-teal/25 transition-colors hover:bg-white">Volver al inicio</a>
+        <a href="/contacto/" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-base font-semibold text-white transition-colors hover:border-white/50">Escríbenos</a>
+      </div>
+      <div class="reveal mt-12">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">O explora</p>
+        <div class="flex flex-wrap justify-center gap-2.5">
+          {enlaces.map((e) => (
+            <a href={url(e.slug)} class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 text-sm font-medium text-white/75 transition-colors hover:border-teal/50 hover:text-white">{e.label}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

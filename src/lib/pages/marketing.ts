@@ -675,6 +675,7 @@ export const marketingPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'inteligencia-artificial-para-empresas-panama', label: 'Ecosistema de IA Empresarial' },
           { slug: 'marketing/email-marketing-panama', label: 'Email Marketing' },
           { slug: 'saas/wapycrm', label: 'WapyCRM' },
           { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Desarrollo a Medida' },

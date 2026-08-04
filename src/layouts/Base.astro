@@ -57,7 +57,7 @@ const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" /></noscript>
-    {schemas.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+    {schemas.map((s) => <script type="application/ld+json" set:html={typeof s === 'string' ? s : JSON.stringify(s)} />)}
   </head>
   <body>
     <!-- barra de progreso de scroll -->

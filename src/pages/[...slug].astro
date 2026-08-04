@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import Blocks from '../components/Blocks.astro';
 import { pages } from '../lib/pages';
 import { url, wa, site } from '../lib/site';
-import { pageJsonLd, articleJsonLd } from '../lib/schema';
+import { pageJsonLd, articleJsonLd, faqNode } from '../lib/schema';
 import { heroFor } from '../lib/img';
 
 export function getStaticPaths() {
@@ -19,8 +19,14 @@ const intro = page.lead.slice(1);
 const cta = page.cta ?? {};
 const ctaText = cta.wa ?? `Hola, me interesa ${page.h1}.`;
 const isBlog = page.parent?.slug === 'blog';
+/* Blog: Article + (si hay bloque faq) FAQPage, para ganar fragmentos en Google.
+   El resto de páginas usa el grafo completo de pageJsonLd. */
+const blogFaq = isBlog ? faqNode(page) : null;
 const jsonld = isBlog
-  ? articleJsonLd({ title: page.title, description: page.description, slug: page.slug, date: new Date((page.date ?? '2026-01-15') + 'T12:00:00') })
+  ? [
+      articleJsonLd({ title: page.title, description: page.description, slug: page.slug, date: new Date((page.date ?? '2026-01-15') + 'T12:00:00') }),
+      ...(blogFaq ? [{ '@context': 'https://schema.org', ...blogFaq }] : []),
+    ]
   : pageJsonLd(page, { localBusiness: !!page.service });
 const dateLabel = page.date
   ? new Date(page.date + 'T12:00:00').toLocaleDateString('es-PA', { day: 'numeric', month: 'long', year: 'numeric' })

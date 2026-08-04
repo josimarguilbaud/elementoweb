@@ -250,6 +250,7 @@ export const funcionalidades: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'inteligencia-artificial-para-empresas-panama', label: 'Ecosistema de IA Empresarial' },
           { slug: 'saas/chatmantis', label: 'ChatMantis (el producto)' },
           { slug: 'saas/wapycrm', label: 'WapyCRM' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' },

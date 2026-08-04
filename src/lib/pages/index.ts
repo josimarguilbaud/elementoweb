@@ -18,6 +18,7 @@ import { blog3 } from './blog-3';
 import { blog4 } from './blog-4';
 import { blog5 } from './blog-5';
 import { blog6 } from './blog-6';
+import { blog7 } from './blog-7';
 
 export const pages: PageData[] = [
   ...core,
@@ -38,6 +39,7 @@ export const pages: PageData[] = [
   ...blog4,
   ...blog5,
   ...blog6,
+  ...blog7,
 ];
 
 /* Guardia de build: slugs duplicados rompen la compilación aquí mismo. */

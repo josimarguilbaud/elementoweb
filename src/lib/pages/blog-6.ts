@@ -14,7 +14,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Hosting barato caro',
     category: 'Negocio',
     date: '2026-07-10',
-    heroImage: { src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Servidores de un centro de datos con luces indicando actividad' },
+    heroImage: { src: '/images/blog/hosting-panama-evitar-hosting-barato.jpg', alt: 'Servidores de un centro de datos con luces indicando actividad' },
     lead: [
       'El hosting es donde vive tu página web. Es lo que la mantiene encendida, rápida y accesible las 24 horas. Y es, casi siempre, la parte donde más gente intenta ahorrar de la manera equivocada.',
       'Ahorrar cuatro o cinco dólares al mes en hosting parece inteligente hasta el día que el sitio se cae en plena campaña, o carga tan lento que el cliente se va antes de ver tu teléfono. En esta guía te explicamos qué esconde el hosting barato y qué mirar de verdad antes de contratar.',
@@ -121,7 +121,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Elegir dominio web',
     category: 'Negocio',
     date: '2026-06-26',
-    heroImage: { src: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Persona escribiendo una dirección web en el teclado de una laptop' },
+    heroImage: { src: '/images/blog/como-elegir-el-dominio-web-perfecto.jpg', alt: 'Persona escribiendo una dirección web en el teclado de una laptop' },
     lead: [
       'El dominio es tu dirección en internet: eso que la gente escribe para encontrarte y que aparece en tu tarjeta, tu Instagram y tus correos. Es la primera impresión de tu marca antes de que abran siquiera tu página.',
       'Elegirlo bien parece sencillo hasta que te sientas a hacerlo y descubres que todo lo bueno "ya está tomado". En esta guía vas a decidir con criterio: qué extensión usar, cómo dar con un nombre que se recuerde y qué errores te pueden costar caro después.',
@@ -227,7 +227,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Necesitas una web',
     category: 'Negocio',
     date: '2026-06-12',
-    heroImage: { src: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Dueño de un pequeño negocio revisando su sitio web en una tablet' },
+    heroImage: { src: '/images/blog/por-que-tu-negocio-necesita-una-pagina-web.jpg', alt: 'Dueño de un pequeño negocio revisando su sitio web en una tablet' },
     lead: [
       '"Yo con mi Instagram tengo suficiente." Lo escuchamos todo el tiempo, y se entiende: las redes son gratis, rápidas y ahí está tu gente. Pero construir tu negocio solo sobre redes es levantar tu casa en un terreno alquilado.',
       'En 2026, una página web propia dejó de ser un lujo para volverse la base sobre la que se apoya todo lo demás. En este artículo te explicamos, sin humo, por qué tu negocio en Panamá la necesita y qué te da que las redes, por diseño, no pueden darte.',
@@ -330,7 +330,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Medir tu web',
     category: 'Negocio',
     date: '2026-05-29',
-    heroImage: { src: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Panel de analítica web con gráficos de visitas y conversiones en pantalla' },
+    heroImage: { src: '/images/blog/como-medir-los-resultados-de-tu-pagina-web.jpg', alt: 'Panel de analítica web con gráficos de visitas y conversiones en pantalla' },
     lead: [
       'Tienes tu página web publicada. Bien. Ahora viene la pregunta que casi nadie sabe responder con números: ¿está funcionando? ¿Te trae clientes o solo se ve bonita?',
       'La buena noticia es que una web se puede medir con precisión, a diferencia de un anuncio en radio o un volante. La mala es que la mayoría mira los datos equivocados y se emociona con cifras que no pagan facturas. En esta guía separamos las métricas que importan de las que solo alimentan el ego.',
@@ -437,7 +437,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Tendencias 2026',
     category: 'Negocio',
     date: '2026-05-15',
-    heroImage: { src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Pantallas mostrando interfaces de diseño web moderno y limpio' },
+    heroImage: { src: '/images/blog/tendencias-de-diseno-web-2026-panama.jpg', alt: 'Pantallas mostrando interfaces de diseño web moderno y limpio' },
     lead: [
       'Cada año aparece una nueva lista de tendencias de diseño web, y cada año hay negocios que gastan dinero persiguiendo modas que no les sirven de nada. Lo llamativo no siempre vende, y muchas veces estorba.',
       'Este artículo es distinto. En lugar de listar efectos de moda, separamos las tendencias 2026 que de verdad ayudan a tu negocio en Panamá de las que puedes ignorar con total tranquilidad. Diseño con criterio, no diseño para ganar premios que nadie te va a dar.',

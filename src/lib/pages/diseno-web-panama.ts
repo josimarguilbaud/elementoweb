@@ -15,7 +15,7 @@ export const disenoWebPanama: PageData[] = [
     service: { type: 'Diseño y desarrollo web' },
     creds: true,
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&h=1120&q=80&auto=format&fit=crop&crop=entropy',
+      src: '/images/hub/diseno-web-panama.jpg',
       alt: 'Equipo de diseño web en Panamá trabajando en un proyecto',
     },
     lead: [

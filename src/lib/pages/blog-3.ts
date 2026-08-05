@@ -16,7 +16,7 @@ export const blog3: PageData[] = [
     category: 'SEO',
     date: '2026-07-16',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/como-aparecer-primero-en-google-en-panama.jpg',
       alt: 'Persona analizando datos y posiciones de búsqueda en la pantalla de una laptop',
     },
     lead: [
@@ -137,7 +137,7 @@ export const blog3: PageData[] = [
     category: 'SEO',
     date: '2026-07-02',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/que-es-el-seo-local-y-google-maps-panama.jpg',
       alt: 'Mapa digital con marcadores de ubicación de negocios en una ciudad',
     },
     lead: [
@@ -243,7 +243,7 @@ export const blog3: PageData[] = [
     category: 'SEO',
     date: '2026-06-18',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/como-mejorar-la-velocidad-de-tu-pagina-web.jpg',
       alt: 'Velocímetro que representa la rapidez de carga de un sitio web',
     },
     lead: [
@@ -347,7 +347,7 @@ export const blog3: PageData[] = [
     category: 'SEO',
     date: '2026-06-04',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/seo-para-pymes-en-panama-guia.jpg',
       alt: 'Emprendedora de una pequeña empresa trabajando en su estrategia digital',
     },
     lead: [
@@ -452,7 +452,7 @@ export const blog3: PageData[] = [
     category: 'SEO',
     date: '2026-05-21',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/por-que-mi-pagina-no-aparece-en-google.jpg',
       alt: 'Persona frustrada frente a una laptop buscando su sitio web sin encontrarlo',
     },
     lead: [

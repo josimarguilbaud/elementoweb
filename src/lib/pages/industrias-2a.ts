@@ -15,7 +15,7 @@ export const industrias2a: PageData[] = [
     h1: 'Diseño web para contadores',
     breadcrumb: 'Contadores',
     service: { type: 'Diseño web para firmas contables' },
-    heroImage: { src: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Escritorio de un contador con estados financieros, calculadora y documentos fiscales' },
+    heroImage: { src: '/images/industrias/diseno-web-contadores-panama.jpg', alt: 'Escritorio de un contador con estados financieros, calculadora y documentos fiscales' },
     lead: [
       'Un cliente te va a entregar sus números, su planilla y su relación con la DGI. No contrata al primero que aparece: contrata al que se ve serio.',
       'En contabilidad la web no cierra la venta, construye la confianza que la hace posible. El empresario que busca contador llega con miedo a las multas, a los reparos y a que le manejen mal el ITBMS. Una web que transmite orden, idoneidad y cumplimiento lo convence de dar el primer paso; una improvisada lo manda al siguiente nombre de la lista.',
@@ -113,7 +113,7 @@ export const industrias2a: PageData[] = [
     h1: 'Diseño web para agencias de viajes y tours',
     breadcrumb: 'Agencias de Viajes',
     service: { type: 'Diseño web para agencias de viajes y tour operadores' },
-    heroImage: { src: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Viajera de espaldas con mochila mirando un mapa, lista para un tour' },
+    heroImage: { src: '/images/industrias/diseno-web-agencias-viajes-tours-panama.jpg', alt: 'Viajera de espaldas con mochila mirando un mapa, lista para un tour' },
     lead: [
       'El viajero sueña con San Blas o Bocas desde el celular, a las once de la noche. Si en ese momento no puede reservar contigo, mañana reserva con otro.',
       'Tu agencia trabaja el paquete, arma el itinerario y aún así muchas ventas se te van por depender del WhatsApp saturado o de intermediarios que se llevan margen. Una web propia con paquetes claros, disponibilidad y reserva con depósito convierte al viajero en el momento en que está más motivado, sin que nadie más se meta en medio.',
@@ -210,7 +210,7 @@ export const industrias2a: PageData[] = [
     h1: 'Diseño web para importadoras y distribuidoras',
     breadcrumb: 'Importadoras',
     service: { type: 'Diseño web para importadoras y distribuidoras B2B' },
-    heroImage: { src: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Almacén de distribución con estanterías de mercancía y montacargas' },
+    heroImage: { src: '/images/industrias/diseno-web-importadoras-distribuidoras-panama.jpg', alt: 'Almacén de distribución con estanterías de mercancía y montacargas' },
     lead: [
       'Panamá es el hub que redistribuye a media región, pero muchas importadoras siguen vendiendo con un catálogo en PDF que se manda por correo y ya nadie abre.',
       'Tu comprador B2B (el dueño de la ferretería, el gerente de compras del supermercado, el minorista que busca proveedor) investiga en línea antes de llamar. Si tu web no muestra las líneas que manejas y no transmite que eres un proveedor formal y con respaldo, ese cliente le compra al distribuidor que sí se lo dejó claro.',
@@ -307,7 +307,7 @@ export const industrias2a: PageData[] = [
     h1: 'Diseño web para dentistas y odontología',
     breadcrumb: 'Dentistas',
     service: { type: 'Diseño web para dentistas y odontología' },
-    heroImage: { src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Consultorio dental moderno con sillón odontológico y equipo limpio' },
+    heroImage: { src: '/images/industrias/diseno-web-dentistas-odontologia-panama.jpg', alt: 'Consultorio dental moderno con sillón odontológico y equipo limpio' },
     lead: [
       'El paciente que busca dentista tiene miedo: al dolor, al costo y a caer en malas manos. Tu web es lo que calma ese miedo antes de que agende.',
       'Nadie elige dentista por precio a ciegas. Compara consultorios, mira fotos del lugar, busca casos reales y decide por confianza. Una web con casos de antes y después, un equipo que se muestra y una cita que se agenda sin llamar convierte al que investiga en paciente sentado en tu sillón.',

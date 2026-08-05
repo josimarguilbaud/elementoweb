@@ -18,7 +18,7 @@ export const blog5: PageData[] = [
     category: 'IA y Automatización',
     date: '2026-07-12',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/chatbots-con-ia-para-negocios-en-panama.jpg',
       alt: 'Persona conversando por chat en un celular mientras trabaja',
     },
     lead: [
@@ -120,7 +120,7 @@ export const blog5: PageData[] = [
     category: 'IA y Automatización',
     date: '2026-06-28',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/automatizaciones-con-n8n-para-pymes.jpg',
       alt: 'Diagrama de flujo de trabajo conectando distintas aplicaciones',
     },
     lead: [
@@ -220,7 +220,7 @@ export const blog5: PageData[] = [
     category: 'IA y Automatización',
     date: '2026-06-14',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/inteligencia-artificial-para-pequenas-empresas-en-panama.jpg',
       alt: 'Dueña de una pequeña empresa usando una laptop en su local',
     },
     lead: [
@@ -322,7 +322,7 @@ export const blog5: PageData[] = [
     category: 'IA y Automatización',
     date: '2026-05-31',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/como-atender-clientes-24-7-con-un-asistente-de-ia.jpg',
       alt: 'Pantalla de un asistente de inteligencia artificial respondiendo mensajes',
     },
     lead: [
@@ -423,7 +423,7 @@ export const blog5: PageData[] = [
     category: 'IA y Automatización',
     date: '2026-05-17',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/crm-con-whatsapp-para-vender-mas-en-panama.jpg',
       alt: 'Equipo de ventas revisando conversaciones y datos de clientes',
     },
     lead: [

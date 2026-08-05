@@ -17,7 +17,7 @@ export const blog4: PageData[] = [
     category: 'Marketing',
     date: '2026-07-14',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/google-ads-vs-facebook-ads-en-panama.jpg',
       alt: 'Persona comparando resultados de campañas de Google y Facebook en dos pantallas',
     },
     lead: [
@@ -125,7 +125,7 @@ export const blog4: PageData[] = [
     category: 'Marketing',
     date: '2026-06-30',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/cuanto-invertir-en-publicidad-digital-en-panama.jpg',
       alt: 'Persona planificando presupuesto de publicidad digital con calculadora y laptop',
     },
     lead: [
@@ -232,7 +232,7 @@ export const blog4: PageData[] = [
     category: 'Marketing',
     date: '2026-06-16',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/como-hacer-campanas-de-whatsapp-masivo-en-panama.jpg',
       alt: 'Persona enviando mensajes de WhatsApp masivo desde una laptop y un celular',
     },
     lead: [
@@ -341,7 +341,7 @@ export const blog4: PageData[] = [
     category: 'Marketing',
     date: '2026-06-02',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/email-marketing-para-negocios-en-panama.jpg',
       alt: 'Persona revisando una campaña de email marketing en una laptop',
     },
     lead: [
@@ -440,7 +440,7 @@ export const blog4: PageData[] = [
     category: 'Marketing',
     date: '2026-05-19',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/marketing-de-contenidos-para-redes-sociales-panama.jpg',
       alt: 'Creador de contenido grabando un Reel con el celular para redes sociales',
     },
     lead: [

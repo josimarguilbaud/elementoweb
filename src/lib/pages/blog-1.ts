@@ -16,7 +16,7 @@ export const blog1: PageData[] = [
     category: 'Diseño web',
     date: '2026-07-22',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/cuanto-cuesta-diseno-web-panama.jpg',
       alt: 'Persona calculando el presupuesto de una página web en Panamá',
     },
     lead: [
@@ -144,7 +144,7 @@ export const blog1: PageData[] = [
     category: 'Diseño web',
     date: '2026-07-08',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/errores-comunes-diseno-web-empresas.jpg',
       alt: 'Empresario frustrado revisando una página web que no funciona',
     },
     lead: [
@@ -279,7 +279,7 @@ export const blog1: PageData[] = [
     category: 'Diseño web',
     date: '2026-06-24',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/diferencia-wordpress-shopify-diseno-web.jpg',
       alt: 'Comparación entre las plataformas WordPress y Shopify para diseño web',
     },
     lead: [
@@ -403,7 +403,7 @@ export const blog1: PageData[] = [
     category: 'Diseño web',
     date: '2026-06-10',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/como-elegir-agencia-diseno-web-panama.jpg',
       alt: 'Reunión para elegir una agencia de diseño web en Panamá',
     },
     lead: [
@@ -528,7 +528,7 @@ export const blog1: PageData[] = [
     category: 'Diseño web',
     date: '2026-05-27',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/cuanto-tiempo-toma-hacer-una-pagina-web.jpg',
       alt: 'Calendario y planificación del tiempo para desarrollar una página web',
     },
     lead: [

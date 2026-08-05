@@ -16,7 +16,7 @@ export const blog7: PageData[] = [
     category: 'Diseño web',
     date: '2026-07-31',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/diseno-web-responsive-mobile-first-panama.jpg',
       alt: 'Persona navegando una página web en su celular en Panamá',
     },
     lead: [
@@ -131,7 +131,7 @@ export const blog7: PageData[] = [
     category: 'Diseño web',
     date: '2026-07-30',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/cuando-hacer-rediseno-pagina-web.jpg',
       alt: 'Equipo revisando el rediseño de una página web',
     },
     lead: [
@@ -233,7 +233,7 @@ export const blog7: PageData[] = [
     category: 'Diseño web',
     date: '2026-07-29',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/landing-page-vs-sitio-web-cual-necesitas.jpg',
       alt: 'Comparación entre una landing page y un sitio web en dos pantallas',
     },
     lead: [
@@ -340,7 +340,7 @@ export const blog7: PageData[] = [
     category: 'E-commerce',
     date: '2026-07-28',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1556155092-490a1ba16284?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/como-aumentar-ventas-tienda-online-panama.jpg',
       alt: 'Dueño de una tienda online revisando sus ventas en Panamá',
     },
     lead: [
@@ -443,7 +443,7 @@ export const blog7: PageData[] = [
     category: 'E-commerce',
     date: '2026-07-27',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/carritos-abandonados-como-recuperar-ventas.jpg',
       alt: 'Carrito de compras abandonado en una tienda online',
     },
     lead: [
@@ -545,7 +545,7 @@ export const blog7: PageData[] = [
     category: 'SEO',
     date: '2026-07-26',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/como-elegir-palabras-clave-seo-panama.jpg',
       alt: 'Investigación de palabras clave para SEO en Panamá',
     },
     lead: [
@@ -645,7 +645,7 @@ export const blog7: PageData[] = [
     category: 'SEO',
     date: '2026-07-25',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/optimizar-google-business-profile-panama.jpg',
       alt: 'Negocio local apareciendo en Google Maps en Panamá',
     },
     lead: [
@@ -750,7 +750,7 @@ export const blog7: PageData[] = [
     category: 'Marketing',
     date: '2026-07-24',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/embudo-de-ventas-para-negocios-panama.jpg',
       alt: 'Diagrama de un embudo de ventas para un negocio en Panamá',
     },
     lead: [
@@ -848,7 +848,7 @@ export const blog7: PageData[] = [
     category: 'IA y Automatización',
     date: '2026-07-23',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/automatizar-seguimiento-clientes-panama.jpg',
       alt: 'Automatización del seguimiento de clientes con inteligencia artificial',
     },
     lead: [

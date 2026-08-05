@@ -14,7 +14,7 @@ export const industrias2b: PageData[] = [
     description: 'Diseño web para corredores y agencias de seguros en Panamá: ramos claros, solicitud de cotización que filtra, confianza y captación de asegurados en un mercado muy competido.',
     h1: 'Diseño web para seguros y corredores',
     breadcrumb: 'Seguros',
-    heroImage: { src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Corredor de seguros revisando una póliza con un cliente en su oficina' },
+    heroImage: { src: '/images/industrias/diseno-web-seguros-corredores-panama.jpg', alt: 'Corredor de seguros revisando una póliza con un cliente en su oficina' },
     service: { type: 'Diseño web para corredores de seguros' },
     lead: [
       'Quien busca un seguro no compra por impulso: compara coberturas, pide varias cotizaciones y decide por confianza. Tu web tiene que ganar esa comparación antes de que suene el teléfono.',
@@ -110,7 +110,7 @@ export const industrias2b: PageData[] = [
     description: 'Diseño web para concesionarios y venta de autos en Panamá: inventario con fotos que vende, financiamiento claro, captación de prospectos y agenda de test drive.',
     h1: 'Diseño web para concesionarios y venta de autos',
     breadcrumb: 'Concesionarios',
-    heroImage: { src: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Automóvil deportivo exhibido en el salón de ventas de un concesionario' },
+    heroImage: { src: '/images/industrias/diseno-web-concesionarios-autos-panama.jpg', alt: 'Automóvil deportivo exhibido en el salón de ventas de un concesionario' },
     service: { type: 'Diseño web para concesionarios de autos' },
     lead: [
       'El comprador de un auto lo elige en el celular mucho antes de pisar el salón. Ve las fotos, calcula la letra y decide a cuál concesionario visitar. Si tu inventario no está en línea, no estás en esa lista.',
@@ -206,7 +206,7 @@ export const industrias2b: PageData[] = [
     description: 'Diseño web para clínicas de estética y medicina estética en Panamá: resultados visibles, reserva de valoración, confianza médica y captación para tratamientos de ticket alto.',
     h1: 'Diseño web para clínicas estéticas',
     breadcrumb: 'Clínicas Estéticas',
-    heroImage: { src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Cabina de tratamiento en una clínica de medicina estética moderna' },
+    heroImage: { src: '/images/industrias/diseno-web-clinicas-esteticas-panama.jpg', alt: 'Cabina de tratamiento en una clínica de medicina estética moderna' },
     service: { type: 'Diseño web para clínicas estéticas' },
     lead: [
       'Un tratamiento estético se decide con dos preguntas: se ve bien el resultado y confío en quien me lo va a hacer. Tu web tiene que responder ambas antes de que el paciente pida una cita.',
@@ -302,7 +302,7 @@ export const industrias2b: PageData[] = [
     description: 'Diseño web para veterinarias en Panamá: citas en línea, servicios claros, recordatorios de vacunas y la confianza que busca quien cuida a un miembro más de la familia.',
     h1: 'Diseño web para veterinarias',
     breadcrumb: 'Veterinarias',
-    heroImage: { src: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Veterinaria revisando a un perro durante una consulta en la clínica' },
+    heroImage: { src: '/images/industrias/diseno-web-veterinarias-panama.jpg', alt: 'Veterinaria revisando a un perro durante una consulta en la clínica' },
     service: { type: 'Diseño web para veterinarias' },
     lead: [
       'Para tu cliente la mascota no es un animal: es de la familia. Elige veterinaria como elegiría pediatra, y la web es donde decide si te confía a su perro o a su gato.',

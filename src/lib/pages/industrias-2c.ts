@@ -14,7 +14,7 @@ export const industrias2c: PageData[] = [
     description: 'Diseño web para ferreterías y materiales de construcción en Panamá: catálogo con disponibilidad, venta en línea con Yappy y retiro en tienda.',
     h1: 'Diseño web para ferreterías y materiales',
     breadcrumb: 'Ferreterías y Materiales',
-    heroImage: { src: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Pasillo de una ferretería con estanterías de herramientas y materiales' },
+    heroImage: { src: '/images/industrias/diseno-web-ferreterias-materiales-panama.jpg', alt: 'Pasillo de una ferretería con estanterías de herramientas y materiales' },
     service: { type: 'Diseño web para ferreterías y materiales de construcción' },
     lead: [
       'Tu cliente ya no arranca en el mostrador: busca en el celular quién tiene el producto, a cuánto y si lo puede recoger hoy. Si tu ferretería no aparece con esa respuesta, compró en la de al lado.',
@@ -110,7 +110,7 @@ export const industrias2c: PageData[] = [
     description: 'Diseño web para eventos, catering y bodas en Panamá: portafolio visual que enamora, paquetes claros y captación de reservas para tu próxima fecha.',
     h1: 'Diseño web para eventos, catering y bodas',
     breadcrumb: 'Eventos y Bodas',
-    heroImage: { src: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Salón de bodas decorado y montado para una celebración elegante' },
+    heroImage: { src: '/images/industrias/diseno-web-eventos-catering-bodas-panama.jpg', alt: 'Salón de bodas decorado y montado para una celebración elegante' },
     service: { type: 'Diseño web para eventos, catering y bodas' },
     lead: [
       'En eventos nadie contrata por una lista de servicios: contrata por lo que ve. La foto de tu último montaje vende más que mil palabras, y tu web es donde esa foto trabaja para ti a toda hora.',
@@ -205,7 +205,7 @@ export const industrias2c: PageData[] = [
     description: 'Diseño web para consultoras, coaches y servicios profesionales en Panamá: autoridad, casos de éxito y captación de clientes de alto valor.',
     h1: 'Diseño web para consultoras y servicios profesionales',
     breadcrumb: 'Consultoras y Servicios',
-    heroImage: { src: 'https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Reunión de consultoría profesional en una sala de trabajo moderna' },
+    heroImage: { src: '/images/industrias/diseno-web-consultoras-servicios-profesionales-panama.jpg', alt: 'Reunión de consultoría profesional en una sala de trabajo moderna' },
     service: { type: 'Diseño web para consultoras y servicios profesionales' },
     lead: [
       'Vendes algo intangible: criterio, experiencia, resultados. Tu cliente no puede tocarlo antes de pagarlo, así que decide por las señales de autoridad que encuentra, y la primera es tu web.',
@@ -300,7 +300,7 @@ export const industrias2c: PageData[] = [
     description: 'Diseño web para arquitectos y diseñadores de interiores en Panamá: un portafolio que enamora, cada proyecto por página y clientes que compran con la vista.',
     h1: 'Diseño web para arquitectos y diseño de interiores',
     breadcrumb: 'Arquitectos e Interiores',
-    heroImage: { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&h=1000&q=80&auto=format&fit=crop', alt: 'Interior arquitectónico contemporáneo con líneas limpias y luz natural' },
+    heroImage: { src: '/images/industrias/diseno-web-arquitectos-diseno-interiores-panama.jpg', alt: 'Interior arquitectónico contemporáneo con líneas limpias y luz natural' },
     service: { type: 'Diseño web para arquitectos y diseño de interiores' },
     lead: [
       'Tu trabajo es visual por naturaleza, y tu web debería serlo aún más. Un cliente que ama un proyecto tuyo en pantalla ya llega convencido; uno que ve fotos apretadas en una plantilla genérica, se va.',

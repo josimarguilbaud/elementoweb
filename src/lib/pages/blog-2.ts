@@ -11,7 +11,7 @@ export const blog2: PageData[] = [
     category: 'E-commerce',
     date: '2026-07-18',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1556155092-490a1ba16284?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/como-integrar-yappy-tu-tienda-online.jpg',
       alt: 'Persona pagando desde su celular con una aplicacion de banca movil en Panama',
     },
     lead: [
@@ -109,7 +109,7 @@ export const blog2: PageData[] = [
     category: 'E-commerce',
     date: '2026-07-04',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/como-crear-una-tienda-online-en-panama.jpg',
       alt: 'Emprendedor preparando pedidos de una tienda online en Panama con laptop y cajas',
     },
     lead: [
@@ -212,7 +212,7 @@ export const blog2: PageData[] = [
     category: 'E-commerce',
     date: '2026-06-20',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/shopify-vs-woocommerce-panama.jpg',
       alt: 'Comparacion de dos plataformas de comercio electronico en la pantalla de una laptop',
     },
     lead: [
@@ -322,7 +322,7 @@ export const blog2: PageData[] = [
     category: 'E-commerce',
     date: '2026-06-06',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1611262588024-d12430b98920?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/como-vender-por-whatsapp-en-panama.jpg',
       alt: 'Comerciante panameno atendiendo pedidos de clientes por WhatsApp desde su telefono',
     },
     lead: [
@@ -424,7 +424,7 @@ export const blog2: PageData[] = [
     category: 'E-commerce',
     date: '2026-05-23',
     heroImage: {
-      src: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1600&h=1000&q=80&auto=format&fit=crop',
+      src: '/images/blog/metodos-de-pago-online-en-panama.jpg',
       alt: 'Distintos metodos de pago digital y tarjetas sobre un escritorio en Panama',
     },
     lead: [

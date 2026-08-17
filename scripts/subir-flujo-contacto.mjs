@@ -19,16 +19,20 @@ const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const N8N = 'https://n8n.aiwebstudio.co';
 const NOMBRE = 'Elemento Web - Leads Formulario Web';
 
-// Credencial SMTP ya existente en n8n. Es la que usan los flujos de Grupo Viesa,
-// Remodelaciones JG y TramitaPa, y sus ejecuciones salen en success desde este
-// mismo servidor. Se reutiliza a proposito: crear una credencial nueva obligaria
-// a meter una clave por la API, y las claves las pone Josimar en la UI.
-const CRED_SMTP = { id: 'HrDB86cX9bA613RS', name: 'SMTP TramitaPa' };
+// Se envia por la API HTTP de Brevo, no por SMTP. Dos razones: Hetzner bloquea
+// los puertos SMTP de salida (25/465/587), que fue lo que dejo muerto el
+// formulario la primera vez; y la credencial SMTP que hay en n8n se llama
+// "SMTP TramitaPa" y es de otro cliente. Este flujo no comparte nada con
+// TramitaPa: solo el buzon remitente de la agencia, que es el diseno acordado.
+//
+// La credencial ya existe en n8n y apunta a este mismo buzon, asi que no hay
+// que meter ninguna clave por API. Es la que uso el flujo de Grupo Viesa.
+const CRED_BREVO = { id: 'cf1FZJ8CcLA90GVs', name: 'Brevo API (avisos@mailweb.site)' };
 
 // mailweb.site esta verificado en Brevo como dominio de envio de la agencia.
 // El From es siempre el mismo buzon; lo que distingue al cliente es el nombre
 // visible y el Reply-To. Ver la nota "dominio-de-envios-mailweb-site".
-const REMITENTE = 'Sitio web Elemento Web <avisos@mailweb.site>';
+const REMITENTE = { name: 'Sitio web Elemento Web', email: 'avisos@mailweb.site' };
 const DESTINO = 'josimarguilbaud@gmail.com';
 
 const ORIGENES = [
@@ -86,23 +90,33 @@ const nodos = [
   },
   {
     parameters: {
-      fromEmail: REMITENTE,
-      toEmail: DESTINO,
-      subject: '={{ $json.asunto }}',
-      emailFormat: 'both',
-      html: '={{ $json.html }}',
-      text: '={{ $json.texto }}',
-      options: {
-        appendAttribution: false,
-        replyTo: '={{ $json.correo_cliente || undefined }}',
-      },
+      method: 'POST',
+      url: 'https://api.brevo.com/v3/smtp/email',
+      authentication: 'genericCredentialType',
+      genericAuthType: 'httpHeaderAuth',
+      sendBody: true,
+      specifyBody: 'json',
+      jsonBody: `={{ JSON.stringify({
+  sender: ${JSON.stringify(REMITENTE)},
+  to: [{ email: ${JSON.stringify(DESTINO)} }],
+  replyTo: { email: $json.correo_cliente, name: $json.nombre },
+  subject: $json.asunto,
+  htmlContent: $json.html,
+  textContent: $json.texto,
+  tags: ["elementoweb-lead"]
+}) }}`,
+      options: { timeout: 20000 },
     },
-    id: 'aviso-lead',
-    name: 'Aviso del lead',
-    type: 'n8n-nodes-base.emailSend',
-    typeVersion: 2,
+    id: 'enviar-brevo',
+    name: 'Enviar por Brevo',
+    type: 'n8n-nodes-base.httpRequest',
+    typeVersion: 4.2,
     position: [660, -100],
-    credentials: { smtp: CRED_SMTP },
+    credentials: { httpHeaderAuth: CRED_BREVO },
+    // Un lead perdido por un hipo de red cuesta mas que reintentar.
+    retryOnFail: true,
+    maxTries: 2,
+    waitBetweenTries: 1500,
   },
   {
     parameters: {
@@ -135,11 +149,11 @@ const connections = {
   'Armar correo': { main: [[{ node: 'Es un lead de verdad', type: 'main', index: 0 }]] },
   'Es un lead de verdad': {
     main: [
-      [{ node: 'Aviso del lead', type: 'main', index: 0 }],
+      [{ node: 'Enviar por Brevo', type: 'main', index: 0 }],
       [{ node: 'Responder OK', type: 'main', index: 0 }],
     ],
   },
-  'Aviso del lead': { main: [[{ node: 'Responder OK', type: 'main', index: 0 }]] },
+  'Enviar por Brevo': { main: [[{ node: 'Responder OK', type: 'main', index: 0 }]] },
 };
 
 const flujo = { name: NOMBRE, nodes: nodos, connections, settings: { executionOrder: 'v1' } };

@@ -67,31 +67,34 @@
     },
     {
       "parameters": {
-        "fromEmail": "Sitio web Elemento Web <avisos@mailweb.site>",
-        "toEmail": "josimarguilbaud@gmail.com",
-        "subject": "={{ $json.asunto }}",
-        "emailFormat": "both",
-        "html": "={{ $json.html }}",
-        "text": "={{ $json.texto }}",
+        "method": "POST",
+        "url": "https://api.brevo.com/v3/smtp/email",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  sender: {\"name\":\"Sitio web Elemento Web\",\"email\":\"avisos@mailweb.site\"},\n  to: [{ email: \"josimarguilbaud@gmail.com\" }],\n  replyTo: { email: $json.correo_cliente, name: $json.nombre },\n  subject: $json.asunto,\n  htmlContent: $json.html,\n  textContent: $json.texto,\n  tags: [\"elementoweb-lead\"]\n}) }}",
         "options": {
-          "appendAttribution": false,
-          "replyTo": "={{ $json.correo_cliente || undefined }}"
+          "timeout": 20000
         }
       },
-      "id": "aviso-lead",
-      "name": "Aviso del lead",
-      "type": "n8n-nodes-base.emailSend",
-      "typeVersion": 2,
+      "id": "enviar-brevo",
+      "name": "Enviar por Brevo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
         660,
         -100
       ],
       "credentials": {
-        "smtp": {
-          "id": "HrDB86cX9bA613RS",
-          "name": "SMTP TramitaPa"
+        "httpHeaderAuth": {
+          "id": "cf1FZJ8CcLA90GVs",
+          "name": "Brevo API (avisos@mailweb.site)"
         }
-      }
+      },
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 1500
     },
     {
       "parameters": {
@@ -145,7 +148,7 @@
       "main": [
         [
           {
-            "node": "Aviso del lead",
+            "node": "Enviar por Brevo",
             "type": "main",
             "index": 0
           }
@@ -159,7 +162,7 @@
         ]
       ]
     },
-    "Aviso del lead": {
+    "Enviar por Brevo": {
       "main": [
         [
           {

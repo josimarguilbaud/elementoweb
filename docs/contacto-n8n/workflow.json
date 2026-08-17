@@ -1,54 +1,169 @@
 {
-  "name": "Elemento Web — Formulario de contacto",
+  "name": "Elemento Web - Leads Formulario Web",
   "nodes": [
     {
       "parameters": {
         "httpMethod": "POST",
         "path": "elementoweb-contacto",
-        "responseMode": "onReceived",
+        "responseMode": "responseNode",
         "options": {
-          "allowedOrigins": "https://elementoweb.com"
+          "allowedOrigins": "https://elementoweb.com,https://www.elementoweb.com"
         }
       },
       "id": "webhook-contacto",
-      "name": "Webhook (formulario web)",
+      "name": "Webhook",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
-      "position": [260, 300],
+      "position": [
+        0,
+        0
+      ],
       "webhookId": "elementoweb-contacto"
     },
     {
       "parameters": {
-        "fromEmail": "lead@elementoweb.com",
-        "toEmail": "lead@elementoweb.com",
-        "subject": "=Nuevo lead: {{ $json.body.nombre }} — {{ $json.body.empresa }}",
-        "emailFormat": "html",
-        "html": "=<!DOCTYPE html><html><body style='margin:0;background:#f8f9fa;font-family:Arial,Helvetica,sans-serif;color:#1c2230'><table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='background:#f8f9fa;padding:24px 0'><tr><td align='center'><table role='presentation' width='600' cellpadding='0' cellspacing='0' style='max-width:600px;width:100%;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 10px 40px rgba(15,23,42,.08)'><tr><td style='background:#0f172a;padding:22px 28px'><table role='presentation' width='100%'><tr><td style='color:#ffffff;font-size:17px;font-weight:bold;letter-spacing:-.3px'>Elemento Web</td><td align='right' style='color:#2dd4bf;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1.5px'>Nuevo lead</td></tr></table></td></tr><tr><td style='height:4px;background:#2dd4bf;background:linear-gradient(90deg,#0f766e,#2dd4bf,#8b5cf6)'></td></tr><tr><td style='padding:28px'><div style='font-size:13px;color:#64748b'>Recibiste una nueva solicitud desde tu página web</div><div style='font-size:23px;font-weight:bold;color:#0f172a;margin:6px 0 22px;letter-spacing:-.4px'>{{ $json.body.nombre }} &middot; {{ $json.body.empresa }}</div><table role='presentation' width='100%' cellpadding='0' cellspacing='0' style='font-size:14px;border-collapse:collapse'><tr><td style='padding:10px 0;color:#64748b;width:130px;border-bottom:1px solid #eef1f4'>Correo</td><td style='padding:10px 0;color:#0f172a;font-weight:600;border-bottom:1px solid #eef1f4'><a href='mailto:{{ $json.body.email }}' style='color:#0f766e;text-decoration:none'>{{ $json.body.email }}</a></td></tr><tr><td style='padding:10px 0;color:#64748b;border-bottom:1px solid #eef1f4'>Tel&eacute;fono</td><td style='padding:10px 0;color:#0f172a;font-weight:600;border-bottom:1px solid #eef1f4'>{{ $json.body.telefono }}</td></tr><tr><td style='padding:10px 0;color:#64748b;border-bottom:1px solid #eef1f4'>Servicio</td><td style='padding:10px 0;color:#0f172a;font-weight:600;border-bottom:1px solid #eef1f4'>{{ $json.body.servicio }}</td></tr><tr><td style='padding:10px 0;color:#64748b'>Presupuesto</td><td style='padding:10px 0;color:#0f172a;font-weight:600'>{{ $json.body.presupuesto }}</td></tr></table><div style='margin:22px 0 8px;color:#64748b;font-size:13px'>Mensaje</div><div style='background:#f8f9fa;border-left:3px solid #2dd4bf;border-radius:8px;padding:14px 16px;font-size:14px;line-height:1.6;color:#334155'>{{ $json.body.mensaje }}</div><table role='presentation' cellpadding='0' cellspacing='0' style='margin-top:26px'><tr><td style='padding-right:10px'><a href='https://wa.me/{{ $json.body.telefono }}' style='display:inline-block;background:#0f766e;color:#ffffff;text-decoration:none;font-weight:bold;font-size:14px;padding:13px 24px;border-radius:999px'>Responder por WhatsApp</a></td><td><a href='mailto:{{ $json.body.email }}' style='display:inline-block;background:#f1f5f9;color:#0f172a;text-decoration:none;font-weight:bold;font-size:14px;padding:13px 24px;border-radius:999px'>Responder por correo</a></td></tr></table></td></tr><tr><td style='padding:16px 28px;background:#f8f9fa;border-top:1px solid #eef1f4;color:#94a3b8;font-size:12px'>Enviado el {{ $json.body.fecha }} desde <a href='{{ $json.body.origen }}' style='color:#64748b'>{{ $json.body.origen }}</a></td></tr></table></td></tr></table></body></html>",
+        "jsCode": "// Nodo Code del flujo \"Elemento Web - Leads Formulario Web\" (n8n).\n//\n// Vive en el repo a proposito: si solo existe dentro de n8n, nadie sabe que\n// cambio ni cuando. Al editarlo aqui hay que volver a subirlo con\n// scripts/subir-flujo-contacto.mjs.\n//\n// Campos que manda src/components/ContactForm.astro:\n//   nombre, empresa, email, telefono, servicio, presupuesto, mensaje,\n//   origen, fecha  +  botcheck (honeypot)\n\nconst b = $input.first().json.body || {};\n\n// Trampa antibots. Se responde ok y se descarta: decirle \"rechazado\" a un bot\n// solo le ensena a esquivarla la proxima vez. El formulario ya filtra en el\n// navegador, pero un bot que llame al webhook directo se salta esa parte.\nif (String(b.botcheck || '').trim() !== '') {\n  return [{ json: { spam: true } }];\n}\n\nconst h = (s) => String(s == null ? '' : s)\n  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')\n  .replace(/\"/g, '&quot;').replace(/'/g, '&#039;');\n\n// Quita saltos de linea (inyeccion de cabeceras) y recorta.\nconst limpio = (v) => String(v == null ? '' : v).replace(/[\\r\\n]/g, ' ').trim();\n\nconst nombre      = limpio(b.nombre);\nconst empresa     = limpio(b.empresa);\nconst telefono    = limpio(b.telefono);\nconst servicio    = limpio(b.servicio);\nconst presupuesto = limpio(b.presupuesto);\nconst origen      = limpio(b.origen);\nconst emailBruto  = limpio(b.email);\nconst email       = /^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(emailBruto) ? emailBruto : '';\nconst mensaje     = String(b.mensaje || '').trim();\n\n// El formulario del sitio exige nombre y correo. Sin correo no hay a quien\n// responderle, asi que ese si es motivo de rechazo (a diferencia de\n// Remodelaciones JG, que cierra por WhatsApp y ahi el correo es opcional).\nif (!nombre || !email) {\n  return [{ json: { invalido: true, motivo: 'faltan nombre o correo' } }];\n}\n\nconst nl = String.fromCharCode(10);\n\n// La fecha la manda el navegador del visitante, asi que puede venir vacia o\n// con la zona horaria de otro pais. Se recalcula del lado del servidor.\nconst fecha = new Date().toLocaleString('es-PA', {\n  timeZone: 'America/Panama', day: '2-digit', month: '2-digit', year: 'numeric',\n  hour: '2-digit', minute: '2-digit', hour12: true,\n});\n\nconst soloDigitos = telefono.replace(/\\D/g, '');\n// Los telefonos panamenos se escriben sin prefijo; para wa.me hace falta el 507.\nconst waNumero = soloDigitos.length === 8 ? '507' + soloDigitos : soloDigitos;\n\nconst fila = (label, valor, ultima) => {\n  const borde = ultima ? '' : 'border-bottom:1px solid #eef1f4;';\n  return '<tr>'\n    + '<td style=\"padding:10px 0;color:#64748b;width:130px;' + borde + '\">' + h(label) + '</td>'\n    + '<td style=\"padding:10px 0;color:#0f172a;font-weight:600;' + borde + '\">' + valor + '</td>'\n    + '</tr>';\n};\n\nconst filas = fila('Correo', '<a href=\"mailto:' + h(email) + '\" style=\"color:#0f766e;text-decoration:none\">' + h(email) + '</a>')\n  + (telefono    ? fila('Telefono', h(telefono)) : '')\n  + (servicio    ? fila('Servicio', h(servicio)) : '')\n  + (presupuesto ? fila('Presupuesto', h(presupuesto), true) : '');\n\nconst titulo = nombre + (empresa ? ' &middot; ' + empresa : '');\n\nconst html = ''\n+ '<!DOCTYPE html><html><body style=\"margin:0;background:#f8f9fa;font-family:Arial,Helvetica,sans-serif;color:#1c2230\">'\n+ '<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#f8f9fa;padding:24px 0\"><tr><td align=\"center\">'\n+ '<table role=\"presentation\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:600px;width:100%;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 10px 40px rgba(15,23,42,.08)\">'\n\n+ '<tr><td style=\"background:#0f172a;padding:22px 28px\"><table role=\"presentation\" width=\"100%\"><tr>'\n+ '<td style=\"color:#ffffff;font-size:17px;font-weight:bold;letter-spacing:-.3px\">Elemento Web</td>'\n+ '<td align=\"right\" style=\"color:#2dd4bf;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1.5px\">Nuevo lead</td>'\n+ '</tr></table></td></tr>'\n+ '<tr><td style=\"height:4px;background:#2dd4bf\"></td></tr>'\n\n+ '<tr><td style=\"padding:28px\">'\n+ '<div style=\"font-size:13px;color:#64748b\">Recibiste una nueva solicitud desde tu pagina web</div>'\n+ '<div style=\"font-size:23px;font-weight:bold;color:#0f172a;margin:6px 0 22px;letter-spacing:-.4px\">' + h(nombre) + (empresa ? ' &middot; ' + h(empresa) : '') + '</div>'\n+ '<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:14px;border-collapse:collapse\">' + filas + '</table>'\n\n+ (mensaje\n    ? '<div style=\"margin:22px 0 8px;color:#64748b;font-size:13px\">Mensaje</div>'\n      + '<div style=\"background:#f8f9fa;border-left:3px solid #2dd4bf;border-radius:8px;padding:14px 16px;font-size:14px;line-height:1.6;color:#334155;white-space:pre-wrap\">' + h(mensaje) + '</div>'\n    : '')\n\n+ '<table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-top:26px\"><tr>'\n+ (waNumero\n    ? '<td style=\"padding-right:10px\"><a href=\"https://wa.me/' + h(waNumero) + '\" style=\"display:inline-block;background:#0f766e;color:#ffffff;text-decoration:none;font-weight:bold;font-size:14px;padding:13px 24px;border-radius:999px\">Responder por WhatsApp</a></td>'\n    : '')\n+ '<td><a href=\"mailto:' + h(email) + '\" style=\"display:inline-block;background:#f1f5f9;color:#0f172a;text-decoration:none;font-weight:bold;font-size:14px;padding:13px 24px;border-radius:999px\">Responder por correo</a></td>'\n+ '</tr></table>'\n+ '</td></tr>'\n\n+ '<tr><td style=\"padding:16px 28px;background:#f8f9fa;border-top:1px solid #eef1f4;color:#94a3b8;font-size:12px\">'\n+ 'Enviado el ' + h(fecha) + (origen ? ' desde <a href=\"' + h(origen) + '\" style=\"color:#64748b\">' + h(origen) + '</a>' : '')\n+ '</td></tr>'\n\n+ '</table></td></tr></table></body></html>';\n\n// La otra mitad del multipart. Un correo solo-HTML pesa como sospechoso en los\n// filtros de spam, y ademas asi se lee en cualquier cliente.\nconst texto = 'NUEVO LEAD - elementoweb.com' + nl + nl\n  + 'Nombre:      ' + nombre + nl\n  + (empresa     ? 'Empresa:     ' + empresa + nl : '')\n  + 'Correo:      ' + email + nl\n  + (telefono    ? 'Telefono:    ' + telefono + nl : '')\n  + (servicio    ? 'Servicio:    ' + servicio + nl : '')\n  + (presupuesto ? 'Presupuesto: ' + presupuesto + nl : '')\n  + (mensaje     ? nl + 'Mensaje:' + nl + mensaje + nl : '')\n  + nl + 'Recibido el ' + fecha + (origen ? ' desde ' + origen : '') + '.' + nl;\n\nreturn [{ json: {\n  spam: false,\n  invalido: false,\n  asunto: 'Nuevo lead web - ' + nombre + (empresa ? ' (' + empresa + ')' : ''),\n  html,\n  texto,\n  correo_cliente: email,\n  nombre,\n} }];\n"
+      },
+      "id": "armar-correo",
+      "name": "Armar correo",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.spam || $json.invalido }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "es-lead",
+      "name": "Es un lead de verdad",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        440,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "Sitio web Elemento Web <avisos@mailweb.site>",
+        "toEmail": "josimarguilbaud@gmail.com",
+        "subject": "={{ $json.asunto }}",
+        "emailFormat": "both",
+        "html": "={{ $json.html }}",
+        "text": "={{ $json.texto }}",
         "options": {
-          "ccEmail": "josimarguilbaud@gmail.com",
-          "replyTo": "={{ $json.body.email }}",
-          "allowUnauthorizedCerts": true
+          "appendAttribution": false,
+          "replyTo": "={{ $json.correo_cliente || undefined }}"
         }
       },
-      "id": "enviar-aviso",
-      "name": "Enviar aviso (equipo + copia a Gmail)",
+      "id": "aviso-lead",
+      "name": "Aviso del lead",
       "type": "n8n-nodes-base.emailSend",
       "typeVersion": 2,
-      "position": [540, 300],
+      "position": [
+        660,
+        -100
+      ],
       "credentials": {
         "smtp": {
-          "id": "REEMPLAZAR_EN_N8N",
-          "name": "SMTP Elemento Web"
+          "id": "HrDB86cX9bA613RS",
+          "name": "SMTP TramitaPa"
         }
       }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\"ok\": true}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "={{ [\"https://elementoweb.com\",\"https://www.elementoweb.com\"].includes($('Webhook').first().json.headers.origin) ? $('Webhook').first().json.headers.origin : 'https://elementoweb.com' }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "responder-ok",
+      "name": "Responder OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        880,
+        0
+      ]
     }
   ],
   "connections": {
-    "Webhook (formulario web)": {
+    "Webhook": {
       "main": [
         [
           {
-            "node": "Enviar aviso (equipo + copia a Gmail)",
+            "node": "Armar correo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Armar correo": {
+      "main": [
+        [
+          {
+            "node": "Es un lead de verdad",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Es un lead de verdad": {
+      "main": [
+        [
+          {
+            "node": "Aviso del lead",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Responder OK",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aviso del lead": {
+      "main": [
+        [
+          {
+            "node": "Responder OK",
             "type": "main",
             "index": 0
           }
@@ -56,6 +171,7 @@
       ]
     }
   },
-  "settings": {},
-  "active": false
+  "settings": {
+    "executionOrder": "v1"
+  }
 }

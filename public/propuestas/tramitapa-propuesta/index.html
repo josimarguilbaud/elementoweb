@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Comercial · TRAMITAPA — elementoweb.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand: #3b82f6;
+            --brand-deep: #1e3a8a;
+            --violet: #7c3aed;
+            --ink: #0f172a;
+        }
+        * { -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background: #eef2fb;
+            background-image:
+                radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,0.10), transparent 60%),
+                radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,0.12), transparent 55%),
+                radial-gradient(45rem 45rem at 50% 120%, rgba(37,99,235,0.08), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1, h2, h3, h4, .display {
+            font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .gradient-text {
+            background: linear-gradient(100deg, #60a5fa, #3b82f6 45%, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Glass card */
+        .glass {
+            background: rgba(255,255,255,0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 20px 40px -24px rgba(30,58,138,0.28);
+        }
+        .service-card {
+            position: relative;
+            transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute; inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(96,165,250,.6), rgba(124,58,237,.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            opacity: 0; transition: opacity .35s ease;
+            pointer-events: none;
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(30,58,138,0.45); }
+        .service-card:hover::before { opacity: 1; }
+        /* Number badge */
+        .num-badge {
+            background: linear-gradient(135deg, #60a5fa, #3b82f6 55%, #7c3aed);
+            box-shadow: 0 10px 22px -8px rgba(59,130,246,0.7);
+        }
+        /* Scroll reveal */
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+        .reveal.in { opacity: 1; transform: none; }
+        /* Animated header orbs */
+        @keyframes float1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(20px,-16px) scale(1.08);} }
+        @keyframes float2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-24px,14px) scale(1.12);} }
+        .orb1 { animation: float1 11s ease-in-out infinite; }
+        .orb2 { animation: float2 14s ease-in-out infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .shine {
+            background: linear-gradient(90deg,#93c5fd,#e0e7ff,#93c5fd,#c4b5fd);
+            background-size: 200% auto;
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+        .price-pill { background: linear-gradient(135deg,#eff6ff,#eef2ff); border:1px solid #dbeafe; }
+        .wa-float {
+            box-shadow: 0 14px 30px -8px rgba(22,163,74,0.6);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .wa-float:hover { transform: translateY(-3px) scale(1.04); }
+        @keyframes waPulse { 0%{ box-shadow:0 0 0 0 rgba(34,197,94,.5);} 70%{ box-shadow:0 0 0 16px rgba(34,197,94,0);} 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+        .wa-pulse { animation: waPulse 2.4s infinite; }
+        .btn-primary {
+            background: linear-gradient(135deg,#3b82f6,#7c3aed);
+            transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+            box-shadow: 0 14px 28px -10px rgba(59,130,246,0.7);
+        }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 20px 34px -10px rgba(124,58,237,0.6); }
+        @media print {
+            body { background: #fff; }
+            .no-print { display: none !important; }
+            .reveal { opacity:1 !important; transform:none !important; }
+            main { box-shadow:none !important; margin: 0 !important; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 selection:bg-violet-200 selection:text-violet-900">
+
+    <main class="max-w-4xl mx-auto my-6 sm:my-10 glass rounded-[28px] overflow-hidden">
+
+        <!-- ============ HEADER ============ -->
+        <header class="relative overflow-hidden text-white px-7 sm:px-10 pt-8 pb-10"
+                style="background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);">
+            <!-- orbs -->
+            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.55),transparent 70%);"></div>
+            <div class="orb2 absolute -bottom-24 -left-10 w-72 h-72 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(59,130,246,.5),transparent 70%);"></div>
+            <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:32px 32px;"></div>
+
+            <div class="relative z-10">
+                <!-- Top bar: logo + contact -->
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-8 border-b border-white/15">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);">
+                            <svg width="26" height="26" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="25" cy="15" r="3.2" fill="#fff"/>
+                                <circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/>
+                            </svg>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="display text-lg font-bold tracking-tight">elementoweb<span class="text-violet-300">.com</span></p>
+                            <p class="text-[11px] text-blue-200/80 tracking-wide">Desarrollo Web · IA · Automatización</p>
+                        </div>
+                    </div>
+                    <!-- Contact -->
+                    <div class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm sm:justify-end">
+                        <a href="mailto:info@elementoweb.com" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            info@elementoweb.com
+                        </a>
+                        <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                            6162-2787
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Title block -->
+                <div class="pt-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+                    <div>
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-blue-200 bg-white/10 border border-white/15 rounded-full px-3 py-1 mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-400 wa-pulse"></span> Propuesta de Servicios Digitales
+                        </span>
+                        <h1 class="text-4xl sm:text-5xl font-extrabold leading-none mb-3">
+                            <span class="shine">TRAMITAPA</span>
+                        </h1>
+                        <p class="text-blue-100/90 max-w-lg text-sm leading-relaxed">
+                            Transformación digital, presencia web profesional y automatización de la atención al cliente con Inteligencia Artificial.
+                        </p>
+                    </div>
+                    <div class="shrink-0 grid gap-3 text-sm">
+                        <div class="glass !bg-white/10 !border-white/15 rounded-xl px-4 py-3 text-white">
+                            <p class="text-[11px] text-blue-200 uppercase tracking-wider mb-0.5">Preparado para</p>
+                            <p class="font-semibold">Jhair Salcedo</p>
+                            <p class="text-blue-200 text-xs">davistramitapty@gmail.com</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-blue-200 text-xs justify-end">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            22 de julio de 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="px-7 sm:px-10 py-12">
+
+            <!-- ============ INTRO / BENEFIT ============ -->
+            <section class="reveal mb-14 text-center max-w-2xl mx-auto">
+                <h2 class="display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Todo lo que tu negocio necesita, <span class="gradient-text">en un solo lugar</span></h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Página web profesional, dominio y hosting, un chatbot con IA que atiende 24/7 y un CRM que centraliza WhatsApp e Instagram. Deja de perder clientes por no responder a tiempo.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mt-6">
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🌐 Página Web</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🔒 Dominio + Hosting</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🤖 Chatbot con IA</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">📊 CRM Multicanal</span>
+                </div>
+            </section>
+
+            <!-- ============ SERVICES ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-8">
+                    <h2 class="display text-2xl font-bold text-slate-900">Detalle de Servicios</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+
+                <!-- Service 1 -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">1</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Infraestructura Web Anual</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Hosting, Dominio y Certificado SSL (1 año)</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0 pl-15 md:pl-0">
+                            <span class="text-2xl font-bold text-slate-900">$125</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">Pago Anual</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3 md:pl-15">La base de tu presencia en internet, funcionando 24/7 y de forma segura.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 md:pl-15">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Dominio:</strong> el nombre de tu empresa en internet (ej. www.tramitapa.com) para que tus clientes te encuentren fácilmente.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Hosting:</strong> espacio en servidores seguros donde vive tu página, siempre disponible.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Certificado SSL:</strong> el candado de seguridad que cifra la información y da confianza a tus visitantes.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">2</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Página Web que Vende tus Planes</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Diseño orientado a conversión · Contenido · SEO · Digitalización con IA</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">$550</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">Pago Único</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3 md:pl-15">Tu página no será un folleto: será un <strong class="text-slate-800">vendedor trabajando 24/7</strong>. Un <strong class="text-slate-800">diseño de primer nivel</strong>, a la altura de las mejores agencias del mundo, con una estructura de conversión pensada para que tus visitantes contraten tus planes de asesoría, no solo para informar.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 md:pl-15 mb-4">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Página de Planes y Precios</strong> con tus paquetes (Esencial / Completo / Premium) que convierte curiosos en clientes y <strong class="text-slate-800">sube el ticket promedio</strong> con el plan intermedio como ancla.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Botón directo a WhatsApp por cada plan</strong>, con el mensaje ya pre-armado: el cliente te llega listo para cerrar, no a preguntar el precio.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Páginas por servicio optimizadas para SEO</strong> (visa de turismo, estudiante, trabajo y Drop-Box) que atraen clientes desde Google buscando "tramitar visa USA en Panamá".</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Blog</strong> para posicionarte y captar tráfico orgánico gratis, mes a mes.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Diseño premium de primer nivel</strong>, moderno y totalmente adaptable a celulares (responsive), alineado a la identidad de TRAMITAPA.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-violet-700">Digitalización con IA:</strong> convertimos tus documentos actuales en formularios web interactivos. Adiós a los Word/PDF manuales.</span></li>
+                    </ul>
+                    <div class="md:pl-15 space-y-3">
+                        <div class="rounded-xl p-4 text-sm border" style="background:linear-gradient(135deg,#ecfdf5,#eff6ff);border-color:#bbf7d0;">
+                            <p class="font-semibold text-emerald-900 mb-1 flex items-center gap-1.5">
+                                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                                Diseñada para rentabilizar, no para verse bonita
+                            </p>
+                            <p class="text-emerald-900/80 leading-relaxed text-[13px]">El objetivo es que la web <strong>te genere ingresos</strong>. Con vender apenas <strong>2 o 3 planes Completo/Premium al mes</strong>, la inversión se paga sola y de ahí en adelante es ganancia. Cada búsqueda en Google es un cliente que hoy se te escapa.</p>
+                        </div>
+                        <span class="inline-flex items-center gap-2 text-xs text-blue-800 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2">
+                            <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span><strong>Entrega estimada:</strong> 5 días hábiles tras recibir el material.</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">3</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Asistente de IA que Capta y Cierra 24/7</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">WhatsApp Business API + WapyCRM · CRM Multicanal con IA</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">$550</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">Pago Único</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3 md:pl-15">La mayoría de tus clientes escribe por WhatsApp y <strong class="text-slate-800">contrata a quien le responde primero</strong>. Cada mensaje sin contestar (de noche, un fin de semana o mientras atiendes a otra persona) es un cliente que se va a la competencia. Esto lo resuelve:</p>
+                    <ul class="space-y-2 text-sm text-slate-600 md:pl-15 mb-4">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Respuesta instantánea 24/7:</strong> la IA contesta en segundos a cualquier hora, capta los datos del cliente y agenda. Nunca más un "te contesto mañana".</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Entrenamiento de IA (RAG):</strong> un asistente con la información real de TRAMITAPA que resuelve dudas de visas, filtra al cliente y da seguimiento solo.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">CRM que clasifica a tus clientes</strong> por etapa, para que tu equipo se enfoque en los que ya están listos para pagar y no se pierda ningún seguimiento.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong>WapyCRM multicanal:</strong> WhatsApp e Instagram en una sola pantalla, con la <strong>verificación oficial</strong> de tu número en la API de WhatsApp Business incluida.</span></li>
+                    </ul>
+                    <div class="md:pl-15 space-y-3">
+                        <div class="rounded-xl p-4 text-sm border" style="background:linear-gradient(135deg,#ecfdf5,#eff6ff);border-color:#bbf7d0;">
+                            <p class="font-semibold text-emerald-900 mb-1 flex items-center gap-1.5">
+                                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                                Vende mientras duermes
+                            </p>
+                            <p class="text-emerald-900/80 leading-relaxed text-[13px]">El cliente que recibe respuesta <strong>en segundos</strong> contrata; el que espera horas ya se fue con otro. La IA no duerme, no se enferma y atiende a decenas de personas a la vez. <strong>Recuperar un solo cliente al mes</strong> que hoy se pierde por falta de respuesta ya justifica el servicio.</p>
+                        </div>
+                        <div class="bg-amber-50 text-amber-900 p-4 rounded-xl text-xs border border-amber-200">
+                            <p class="font-semibold mb-1 flex items-center">
+                                <svg class="w-4 h-4 mr-1.5 text-amber-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                                Costos de terceros (APIs):
+                            </p>
+                            <p class="leading-relaxed">Para que la IA y la API de WhatsApp funcionen se requiere el consumo de servicios de terceros (Meta para mensajes de WhatsApp y OpenAI/Anthropic para el motor de IA). <strong>Estos consumos corren por cuenta del cliente</strong>, configurados en sus propias cuentas.</p>
+                        </div>
+                        <span class="inline-flex items-center gap-2 text-xs text-blue-800 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2">
+                            <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span><strong>Implementación estimada:</strong> 2 semanas (sujeto a aprobación de Meta).</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Recurring plans -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-9 h-9 rounded-lg bg-blue-50 grid place-items-center">
+                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <h3 class="display text-base font-bold text-slate-800">Mantenimiento Web</h3>
+                        </div>
+                        <p class="text-3xl font-bold text-slate-900 mb-2">$49 <span class="text-xs text-slate-500 font-medium">/ mes</span></p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Actualizaciones de seguridad, backups, monitoreo de caídas, ajustes menores de contenido y resolución de problemas técnicos.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 num-badge text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl">IA MULTICANAL</div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-9 h-9 rounded-lg bg-violet-50 grid place-items-center">
+                                <svg class="w-5 h-5 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.9 9.9 0 01-4-.8L3 20l1.3-3.9A7.9 7.9 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                            </div>
+                            <h3 class="display text-base font-bold text-slate-800">Licencia WapyCRM</h3>
+                        </div>
+                        <p class="text-3xl font-bold text-slate-900 mb-2">$39 <span class="text-xs text-slate-500 font-medium">/ mes</span></p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Uso de la plataforma, bandeja unificada, funcionamiento ininterrumpido del asistente de IA y soporte técnico.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ INVESTMENT SUMMARY ============ -->
+            <div class="reveal rounded-[24px] p-7 sm:p-9 text-white shadow-2xl mb-14 relative overflow-hidden"
+                 style="background:linear-gradient(150deg,#0b1220,#15254d 55%,#1e3a8a);">
+                <div class="orb2 absolute -bottom-20 -right-16 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.4),transparent 70%);"></div>
+                <div class="relative z-10">
+                    <h2 class="display text-2xl font-bold mb-6 flex items-center gap-3">Resumen de Inversión</h2>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Initial -->
+                        <div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Pagos Iniciales (únicos / anual)</h4>
+                            <div class="space-y-0.5 text-sm">
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Infraestructura Web (anual)</span><span class="font-semibold">$125.00</span></div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Página Web que Vende tus Planes</span><span class="font-semibold">$550.00</span></div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">WhatsApp API + WapyCRM</span><span class="font-semibold">$550.00</span></div>
+                                <div class="flex justify-between items-center py-3 mt-1"><span class="font-bold text-blue-200">Subtotal Inicial</span><span class="text-xl font-bold text-blue-300">$1,225.00</span></div>
+                            </div>
+                        </div>
+                        <!-- Recurring -->
+                        <div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Pagos Recurrentes (mensuales)</h4>
+                            <div class="space-y-0.5 text-sm">
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Mantenimiento Web y Hosting</span><span class="font-semibold">$49.00</span></div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Licencia WapyCRM (IA)</span><span class="font-semibold">$39.00</span></div>
+                                <div class="flex justify-between items-center py-3 mt-1"><span class="font-bold text-blue-200">Subtotal Mensual</span><span class="text-xl font-bold text-blue-300">$88.00 <span class="text-xs font-normal text-blue-300/70">/mes</span></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pay today highlight -->
+                    <div class="mt-8 rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+                         style="background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(124,58,237,.25));border:1px solid rgba(255,255,255,.18);">
+                        <div>
+                            <p class="text-blue-200 text-xs uppercase tracking-wider mb-1">Para iniciar hoy · anticipo 50%</p>
+                            <p class="display text-4xl font-extrabold shine">$612.50</p>
+                            <p class="text-blue-200 text-xs mt-1">El 50% restante ($612.50) se abona contra entrega final.</p>
+                        </div>
+                        <a href="https://wa.me/50761622787?text=Hola%2C%20quiero%20aceptar%20la%20propuesta%20de%20TRAMITAPA%20y%20arrancar%20el%20proyecto."
+                           target="_blank" rel="noopener"
+                           class="btn-primary text-white font-semibold rounded-xl px-6 py-3.5 text-sm text-center whitespace-nowrap no-print">
+                            Aceptar y comenzar →
+                        </a>
+                    </div>
+                    <p class="text-[11px] text-blue-300/70 mt-3">Precios en USD. No incluyen ITBMS (7%); se aplicará según corresponda.</p>
+                </div>
+            </div>
+
+            <!-- ============ TERMS ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-8">
+                <h3 class="display text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Condiciones Comerciales
+                </h3>
+                <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-700">
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Estructura de pago:</strong> anticipo del <strong>50% ($612.50)</strong> para iniciar; 50% restante contra entrega final y conformidad.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Formas de pago:</strong> tarjeta de crédito/débito, transferencia bancaria o Yappy.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Pagos recurrentes:</strong> los $88.00/mes inician un mes después de la entrega o al pasar los sistemas a producción.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Renovación anual:</strong> la infraestructura web ($125) se renueva cada año para mantener el sitio activo.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Garantía:</strong> 30 días de correcciones sin costo tras la entrega ante cualquier falla técnica.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Propiedad:</strong> el dominio, la web y los accesos quedan a nombre del cliente al completar el pago.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Alcance:</strong> incluye inicio + página de planes, páginas por servicio (turismo, estudiante, trabajo y Drop-Box), blog y hasta 2 rondas de revisión. Páginas o funciones adicionales se cotizan aparte.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Validez:</strong> esta cotización es válida por 30 días desde su emisión.</span></p>
+                </div>
+            </div>
+
+            <!-- ============ CTA ============ -->
+            <div class="reveal text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden"
+                 style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #e0e7ff;">
+                <h3 class="display text-2xl font-bold text-slate-900 mb-2">¿Comenzamos? 🚀</h3>
+                <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">Confirma la aceptación de esta propuesta y te enviaremos la factura del anticipo del 50% para arrancar. ¡Estamos listos para poner a TRAMITAPA en internet!</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center no-print">
+                    <a href="https://wa.me/50761622787?text=Hola%2C%20quiero%20aceptar%20la%20propuesta%20de%20TRAMITAPA%20y%20arrancar%20el%20proyecto."
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                        Aceptar por WhatsApp
+                    </a>
+                    <a href="mailto:info@elementoweb.com?subject=Aceptaci%C3%B3n%20propuesta%20TRAMITAPA&body=Hola%2C%20confirmo%20la%20aceptaci%C3%B3n%20de%20la%20propuesta%20para%20TRAMITAPA."
+                       class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Aceptar por Correo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="px-7 sm:px-10 py-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#122043);">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);">
+                        <svg width="22" height="22" viewBox="0 0 50 52" fill="none"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/></svg>
+                    </div>
+                    <div>
+                        <p class="display font-bold">elementoweb<span class="text-violet-300">.com</span></p>
+                        <p class="text-[11px] text-blue-200/70">Documento confidencial · Preparado para TRAMITAPA</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-blue-100">
+                    <a href="mailto:info@elementoweb.com" class="hover:text-white transition">info@elementoweb.com</a>
+                    <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="hover:text-white transition">+507 6162-2787</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/50761622787?text=Hola%2C%20tengo%20una%20consulta%20sobre%20la%20propuesta%20de%20TRAMITAPA."
+       target="_blank" rel="noopener"
+       class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse"
+       aria-label="Escríbenos por WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    </a>
+
+    <script>
+        // Scroll reveal
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = Math.min(i * 40, 200) + 'ms';
+            io.observe(el);
+        });
+    </script>
+</body>
+</html>

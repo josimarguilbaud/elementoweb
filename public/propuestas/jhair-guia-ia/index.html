@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía: Activar tus cuentas de IA — TRAMITAPA</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --ink: #1a1f2b;
+    --sub: #5b6472;
+    --line: #e7e9ee;
+    --paper: #fbfbfa;
+    --card: #ffffff;
+    --accent: #1e3a8a;
+    --accent-soft: #eef2ff;
+    --anthropic: #c15f3c;
+    --openai: #0f8a6f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 .6rem; }
+  h1 { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 .75rem; text-wrap: balance; }
+  .intro { color: var(--sub); font-size: .95rem; line-height: 1.65; max-width: 56ch; }
+  .intro strong { color: var(--ink); }
+  .why {
+    margin-top: 1.5rem; background: var(--accent-soft); border: 1px solid var(--line);
+    border-radius: 14px; padding: 1rem 1.2rem; font-size: .85rem; color: var(--ink); line-height: 1.6;
+  }
+  section.provider { margin-top: 2.75rem; }
+  .provider-head { display: flex; align-items: center; gap: .7rem; margin-bottom: 1.1rem; }
+  .badge { width: 2.1rem; height: 2.1rem; border-radius: .6rem; display: grid; place-items: center; font-weight: 800; font-size: .85rem; color: #fff; flex-shrink: 0; }
+  .badge.anthropic { background: var(--anthropic); }
+  .badge.openai { background: var(--openai); }
+  .provider-head h2 { font-size: 1.25rem; font-weight: 800; margin: 0; }
+  .provider-head .tag { font-size: .75rem; color: var(--sub); }
+  ol.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  ol.steps li {
+    counter-increment: step;
+    position: relative;
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: .95rem 1.1rem .95rem 3.3rem; margin-bottom: .6rem; font-size: .9rem;
+  }
+  ol.steps li::before {
+    content: counter(step);
+    position: absolute; left: .9rem; top: 50%; transform: translateY(-50%);
+    width: 1.6rem; height: 1.6rem; border-radius: 50%;
+    display: grid; place-items: center; font-size: .78rem; font-weight: 800; color: #fff;
+  }
+  .anthropic-steps li::before { background: var(--anthropic); }
+  .openai-steps li::before { background: var(--openai); }
+  ol.steps code {
+    background: var(--accent-soft); border-radius: 5px; padding: .1rem .4rem; font-size: .85em;
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  ol.steps b { color: var(--ink); }
+  .tip {
+    margin-top: .7rem; font-size: .82rem; padding: .7rem 1rem; border-radius: 10px;
+    background: var(--card); border: 1px dashed var(--line); color: var(--sub);
+  }
+  .warn {
+    margin-top: 2.75rem; background: #fff7ed; border: 1px solid #fed7aa;
+    border-radius: 14px; padding: 1rem 1.2rem;
+    font-size: .85rem; line-height: 1.6; color: #7c2d12;
+  }
+  .warn b { color: var(--ink); }
+  .final {
+    margin-top: 1.75rem; background: var(--accent-soft); border: 1px solid var(--line);
+    border-radius: 14px; padding: 1.2rem 1.3rem; font-size: .88rem; line-height: 1.65;
+  }
+  .final h3 { margin: 0 0 .4rem; font-size: 1rem; font-weight: 800; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: .75rem; color: var(--sub); text-align: center; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <p class="eyebrow">Guía para Jhair · TRAMITAPA</p>
+  <h1>Activar y recargar tus cuentas de IA</h1>
+  <p class="intro">
+    El chatbot de <strong>ChatMantis</strong> en tramitapa.com usa modelos de inteligencia artificial de <strong>Anthropic (Claude)</strong> y <strong>OpenAI (GPT)</strong> para responder los mensajes. Estas cuentas van a tu nombre, no al de elementoweb, así que necesitas crearlas y ponerles saldo tú mismo.
+  </p>
+  <div class="why">
+    💡 Esto es exactamente lo que se explicó en la propuesta original: el consumo de estas dos plataformas corre por tu cuenta, aparte de los $39/mes de la licencia de ChatMantis. Pagas solo por lo que el chatbot realmente consume respondiendo mensajes.
+  </div>
+
+  <section class="provider">
+    <div class="provider-head">
+      <div class="badge anthropic">A</div>
+      <div><h2>Anthropic (Claude)</h2><p class="tag">console.anthropic.com</p></div>
+    </div>
+    <ol class="steps anthropic-steps">
+      <li>Entra a <code>console.anthropic.com</code> desde tu navegador.</li>
+      <li>Crea una cuenta con tu correo (o con tu cuenta de Google); si ya tienes una, solo inicia sesión.</li>
+      <li>Confirma tu correo y, si te lo pide, verifica tu número de teléfono.</li>
+      <li>En el menú de la izquierda, entra a <b>Settings</b> → <b>Billing</b> (Facturación).</li>
+      <li>Agrega un método de pago (tarjeta de crédito o débito).</li>
+      <li>Compra créditos prepago: te recomendamos empezar con <b>$20</b> para tener margen mientras ves cuánto consume el chatbot al mes.</li>
+      <li>Activa <b>Auto Reload</b> (recarga automática) para que el chatbot nunca se quede sin saldo a mitad de una conversación con un cliente.</li>
+      <li>Ve a <b>API Keys</b>, crea una nueva llave y <b>guárdala en un lugar seguro</b>, la vas a necesitar para el siguiente paso.</li>
+    </ol>
+    <p class="tip">Anthropic funciona con saldo prepago: compras créditos y se van descontando según el uso. No es una suscripción mensual fija.</p>
+  </section>
+
+  <section class="provider">
+    <div class="provider-head">
+      <div class="badge openai">O</div>
+      <div><h2>OpenAI (GPT)</h2><p class="tag">platform.openai.com</p></div>
+    </div>
+    <ol class="steps openai-steps">
+      <li>Entra a <code>platform.openai.com</code> desde tu navegador.</li>
+      <li>Crea una cuenta con tu correo (o con tu cuenta de Google); si ya tienes una, solo inicia sesión.</li>
+      <li>En el menú de la izquierda, entra a <b>Settings</b> → <b>Billing</b> (Facturación).</li>
+      <li>Agrega un método de pago (tarjeta de crédito o débito).</li>
+      <li>Agrega saldo prepago: igual que con Anthropic, <b>$20</b> es un buen punto de partida.</li>
+      <li>Activa <b>Auto recharge</b> (recarga automática) con un monto y un límite mensual que te sea cómodo.</li>
+      <li>Ve a <b>API keys</b>, crea una nueva llave y <b>guárdala en un lugar seguro</b>.</li>
+    </ol>
+    <p class="tip">OpenAI también funciona con saldo prepago. El costo real depende de cuántos mensajes responda el chatbot cada mes.</p>
+  </section>
+
+  <div class="warn">
+    <b>⚠️ Importante:</b> las "API keys" que copiaste son como una contraseña ligada directamente a tu tarjeta. No las compartas por WhatsApp, correo abierto ni redes sociales; solo entrégalas directamente a soporte de ChatMantis (o a nosotros) para configurarlas.
+  </div>
+
+  <div class="final">
+    <h3>Último paso</h3>
+    <p>Con las dos llaves (API keys) de Anthropic y OpenAI ya generadas, avísanos o contacta directamente a soporte de ChatMantis para que las configuren en tu chatbot. Sin ese paso, las cuentas quedan creadas y con saldo, pero el chatbot todavía no las está usando.</p>
+  </div>
+
+  <footer>Preparado por elementoweb.com para TRAMITAPA · Cualquier duda, escríbenos por WhatsApp.</footer>
+</div>
+
+</body>
+</html>

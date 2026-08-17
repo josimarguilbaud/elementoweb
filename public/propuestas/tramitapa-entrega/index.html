@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrega del Proyecto · TRAMITAPA — elementoweb.com</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand: #3b82f6; --brand-deep: #1e3a8a; --violet: #7c3aed; --ink: #0f172a; }
+        * { -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background: #eef2fb;
+            background-image:
+                radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,0.10), transparent 60%),
+                radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,0.12), transparent 55%),
+                radial-gradient(45rem 45rem at 50% 120%, rgba(37,99,235,0.08), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1, h2, h3, h4, .display { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; letter-spacing: -0.02em; }
+        .gradient-text {
+            background: linear-gradient(100deg, #60a5fa, #3b82f6 45%, #7c3aed);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .glass {
+            background: rgba(255,255,255,0.72);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 20px 40px -24px rgba(30,58,138,0.28);
+        }
+        .item-card { position: relative; transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; overflow: hidden; }
+        .item-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -28px rgba(30,58,138,0.35); }
+        .num-badge { background: linear-gradient(135deg, #60a5fa, #3b82f6 55%, #7c3aed); box-shadow: 0 10px 22px -8px rgba(59,130,246,0.7); }
+        .check-badge { background: linear-gradient(135deg, #34d399, #10b981); box-shadow: 0 8px 18px -6px rgba(16,185,129,0.55); }
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+        .reveal.in { opacity: 1; transform: none; }
+        @keyframes float1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(20px,-16px) scale(1.08);} }
+        @keyframes float2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-24px,14px) scale(1.12);} }
+        .orb1 { animation: float1 11s ease-in-out infinite; }
+        .orb2 { animation: float2 14s ease-in-out infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .shine {
+            background: linear-gradient(90deg,#93c5fd,#e0e7ff,#93c5fd,#c4b5fd);
+            background-size: 200% auto;
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+        .price-pill { background: linear-gradient(135deg,#eff6ff,#eef2ff); border:1px solid #dbeafe; }
+        .wa-float { box-shadow: 0 14px 30px -8px rgba(22,163,74,0.6); transition: transform .25s ease, box-shadow .25s ease; }
+        .wa-float:hover { transform: translateY(-3px) scale(1.04); }
+        @keyframes waPulse { 0%{ box-shadow:0 0 0 0 rgba(34,197,94,.5);} 70%{ box-shadow:0 0 0 16px rgba(34,197,94,0);} 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+        .wa-pulse { animation: waPulse 2.4s infinite; }
+        @media print { body { background: #fff; } .no-print { display: none !important; } .reveal { opacity:1 !important; transform:none !important; } main { box-shadow:none !important; margin: 0 !important; } }
+    </style>
+</head>
+<body class="text-slate-800 selection:bg-violet-200 selection:text-violet-900">
+
+    <main class="max-w-4xl mx-auto my-6 sm:my-10 glass rounded-[28px] overflow-hidden">
+
+        <!-- ============ HEADER ============ -->
+        <header class="relative overflow-hidden text-white px-7 sm:px-10 pt-8 pb-10"
+                style="background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);">
+            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.55),transparent 70%);"></div>
+            <div class="orb2 absolute -bottom-24 -left-10 w-72 h-72 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(59,130,246,.5),transparent 70%);"></div>
+            <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:32px 32px;"></div>
+
+            <div class="relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-8 border-b border-white/15">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);">
+                            <svg width="26" height="26" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="25" cy="15" r="3.2" fill="#fff"/>
+                                <circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/>
+                            </svg>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="display text-lg font-bold tracking-tight">elementoweb<span class="text-violet-300">.com</span></p>
+                            <p class="text-[11px] text-blue-200/80 tracking-wide">Desarrollo Web · IA · Automatización</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm sm:justify-end">
+                        <a href="mailto:info@elementoweb.com" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            info@elementoweb.com
+                        </a>
+                        <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                            6162-2787
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+                    <div>
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-blue-200 bg-white/10 border border-white/15 rounded-full px-3 py-1 mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-400 wa-pulse"></span> Documento de Entrega · Checklist Final
+                        </span>
+                        <h1 class="text-4xl sm:text-5xl font-extrabold leading-none mb-3">
+                            <span class="shine">TRAMITAPA</span>
+                        </h1>
+                        <p class="text-blue-100/90 max-w-lg text-sm leading-relaxed">
+                            Tu sitio ya está en producción. Aquí el detalle de todo lo entregado, los pagos mensuales que lo mantienen activo, y las mejoras disponibles para cuando quieras seguir invirtiendo.
+                        </p>
+                    </div>
+                    <div class="shrink-0 grid gap-3 text-sm">
+                        <div class="glass !bg-white/10 !border-white/15 rounded-xl px-4 py-3 text-white">
+                            <p class="text-[11px] text-blue-200 uppercase tracking-wider mb-0.5">Preparado para</p>
+                            <p class="font-semibold">Jhair · TRAMITAPA</p>
+                            <p class="text-blue-200 text-xs">tramitapa.com</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-blue-200 text-xs justify-end">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            28 de julio de 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="px-7 sm:px-10 py-12">
+
+            <!-- ============ ESTADO ============ -->
+            <section class="reveal mb-14 text-center max-w-2xl mx-auto">
+                <span class="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold text-xs rounded-full px-3 py-1.5 mb-5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span> En producción — tramitapa.com
+                </span>
+                <h2 class="display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">El sitio está completo <span class="gradient-text">y funcionando</span></h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Diseño, contenido, formularios, chatbot y envío automático de correo: todo desplegado y probado en el dominio real.</p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
+                    <div class="glass rounded-xl py-4"><p class="display text-2xl font-extrabold text-blue-900">17</p><p class="text-[11px] text-slate-500 uppercase tracking-wide">Páginas</p></div>
+                    <div class="glass rounded-xl py-4"><p class="display text-2xl font-extrabold text-blue-900">8</p><p class="text-[11px] text-slate-500 uppercase tracking-wide">Servicios SEO</p></div>
+                    <div class="glass rounded-xl py-4"><p class="display text-2xl font-extrabold text-blue-900">32+</p><p class="text-[11px] text-slate-500 uppercase tracking-wide">Preguntas del Cuestionario</p></div>
+                    <div class="glass rounded-xl py-4"><p class="display text-2xl font-extrabold text-blue-900">24</p><p class="text-[11px] text-slate-500 uppercase tracking-wide">Fotos Reales</p></div>
+                </div>
+            </section>
+
+            <!-- ============ COMPLETADO ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-8">
+                    <h2 class="display text-2xl font-bold text-slate-900">✅ Completado y entregado</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <div class="space-y-4">
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-6 border border-slate-100 flex gap-4">
+                        <div class="check-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold shrink-0">✓</div>
+                        <div>
+                            <h3 class="display text-base font-bold text-slate-900 mb-1">Sitio web completo: 17 páginas</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Inicio, Precios y Planes, Documentos para Iniciar, Sobre Nosotros, Blog, Términos, Privacidad, y 8 páginas de servicio optimizadas para SEO: Turismo B1/B2, Estudiante F1/M1, Trabajo H/L, Renovación Drop-Box, Tripulante C1/D, Doméstica B1, Independientes y Entradas a Parques de Orlando.</p>
+                        </div>
+                    </div>
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-6 border border-slate-100 flex gap-4">
+                        <div class="check-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold shrink-0">✓</div>
+                        <div>
+                            <h3 class="display text-base font-bold text-slate-900 mb-1">Cuestionario interactivo de datos</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Wizard de 8 pasos con más de 32 preguntas (el mismo cuestionario real que usa TRAMITAPA), validación automática, y envío directo por WhatsApp, correo o copiar al portapapeles. Nada se guarda en el sitio.</p>
+                        </div>
+                    </div>
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-6 border border-slate-100 flex gap-4">
+                        <div class="check-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold shrink-0">✓</div>
+                        <div>
+                            <h3 class="display text-base font-bold text-slate-900 mb-1">Comunicación con clientes, conectada de verdad</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">El formulario de contacto y el cuestionario envían automáticamente un correo con diseño de marca a TRAMITAPA (además de WhatsApp), sin depender de que el visitante tenga su propio correo configurado. Chatbot ChatMantis con IA activo 24/7. Yappy habilitado como forma de pago.</p>
+                        </div>
+                    </div>
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-6 border border-slate-100 flex gap-4">
+                        <div class="check-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold shrink-0">✓</div>
+                        <div>
+                            <h3 class="display text-base font-bold text-slate-900 mb-1">Prueba social con clientes reales</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Sección de testimonios con fotos reales de clientes (visas aprobadas, familias, colaboraciones) y una galería de Instagram de 15 fotos enlazada al perfil real de @tramitapa.</p>
+                        </div>
+                    </div>
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-6 border border-slate-100 flex gap-4">
+                        <div class="check-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold shrink-0">✓</div>
+                        <div>
+                            <h3 class="display text-base font-bold text-slate-900 mb-1">SEO, identidad y despliegue automático</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Sitemap, meta descripciones y datos estructurados en cada página. Diseño responsive con la identidad de marca de TRAMITAPA aplicada en todo el sitio. Cada actualización se publica sola en minutos, sin intervención manual.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ YA INCLUIDO ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-8">
+                    <h2 class="display text-2xl font-bold text-slate-900">💳 Ya incluido en el proyecto</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <div class="reveal item-card bg-white/70 rounded-2xl p-6 sm:p-7 border border-slate-100">
+                    <div class="flex justify-between items-center py-3 border-b border-slate-100 text-sm"><span class="text-slate-600">Infraestructura Web Anual (dominio, hosting, SSL)</span><span class="font-semibold text-slate-900">$125.00 / año</span></div>
+                    <div class="flex justify-between items-center py-3 border-b border-slate-100 text-sm"><span class="text-slate-600">Página Web que Vende tus Planes</span><span class="font-semibold text-slate-900">$550.00 · pago único</span></div>
+                    <div class="flex justify-between items-center py-3 text-sm"><span class="text-slate-600">Asistente de IA WhatsApp (ChatMantis)</span><span class="font-semibold text-slate-900">$550.00 · pago único</span></div>
+                </div>
+            </div>
+
+            <!-- ============ MENSUALES ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-8">
+                    <h2 class="display text-2xl font-bold text-slate-900">🔁 Pagos mensuales para mantener todo activo</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <p class="text-xs text-slate-500 uppercase tracking-wide mb-1">Mantenimiento Web</p>
+                        <p class="display text-3xl font-extrabold text-slate-900 mb-2">$49 <span class="text-xs text-slate-500 font-medium">/ mes</span></p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Hosting, actualizaciones de seguridad, backups, monitoreo y ajustes menores.</p>
+                    </div>
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <p class="text-xs text-slate-500 uppercase tracking-wide mb-1">Chatbot ChatMantis (IA 24/7)</p>
+                        <p class="display text-3xl font-extrabold text-slate-900 mb-2">$39 <span class="text-xs text-slate-500 font-medium">/ mes</span></p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Licencia de la plataforma, bandeja del asistente y soporte técnico.</p>
+                    </div>
+                </div>
+                <div class="reveal bg-amber-50 text-amber-900 p-4 rounded-xl text-xs border border-amber-200 mt-4 leading-relaxed">
+                    <strong>Consumo de IA (OpenAI / Anthropic):</strong> variable según uso del chatbot, se factura directo en la cuenta de Jhair en OpenAI o Anthropic (no es un cargo fijo de elementoweb). Para un volumen normal de consultas suele ser un monto bajo mensual, pero depende del tráfico real.
+                </div>
+                <p class="reveal text-center text-sm text-slate-600 mt-5">Total fijo mensual: <strong class="text-slate-900">$88.00</strong> + consumo variable de IA.</p>
+            </div>
+
+            <!-- ============ MEJORAS ============ -->
+            <div>
+                <div class="reveal flex items-center gap-3 mb-2">
+                    <h2 class="display text-2xl font-bold text-slate-900">🚀 Mejoras para más adelante</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <p class="reveal text-sm text-slate-500 mb-6">Nada de esto es urgente: son opciones para cuando quieras seguir invirtiendo en el sitio. Precios sugeridos, ajustables.</p>
+                <div class="space-y-3">
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-5 border border-slate-100 flex justify-between items-center gap-4">
+                        <div><h3 class="font-bold text-slate-900 text-sm">8 artículos de blog para SEO</h3><p class="text-xs text-slate-500 mt-1">Contenido optimizado, enlazado a las páginas de servicio existentes.</p></div>
+                        <span class="price-pill text-sm font-bold text-blue-700 rounded-full px-4 py-1.5 whitespace-nowrap">$240</span>
+                    </div>
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-5 border border-slate-100 flex justify-between items-center gap-4">
+                        <div><h3 class="font-bold text-slate-900 text-sm">Analítica web (Google Analytics + Search Console)</h3><p class="text-xs text-slate-500 mt-1">Saber cuánta gente visita el sitio y desde dónde llega.</p></div>
+                        <span class="price-pill text-sm font-bold text-blue-700 rounded-full px-4 py-1.5 whitespace-nowrap">$60</span>
+                    </div>
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-5 border border-slate-100 flex justify-between items-center gap-4">
+                        <div><h3 class="font-bold text-slate-900 text-sm">Página 404 personalizada</h3><p class="text-xs text-slate-500 mt-1">Que un link roto no se vea como un error genérico del navegador.</p></div>
+                        <span class="price-pill text-sm font-bold text-blue-700 rounded-full px-4 py-1.5 whitespace-nowrap">$40</span>
+                    </div>
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-5 border border-slate-100 flex justify-between items-center gap-4">
+                        <div><h3 class="font-bold text-slate-900 text-sm">Feed de Instagram en vivo</h3><p class="text-xs text-slate-500 mt-1">Conecta la API oficial de Meta para que las fotos se actualicen solas (hoy son curadas a mano).</p></div>
+                        <span class="price-pill text-sm font-bold text-blue-700 rounded-full px-4 py-1.5 whitespace-nowrap">$180</span>
+                    </div>
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-5 border border-slate-100 flex justify-between items-center gap-4">
+                        <div><h3 class="font-bold text-slate-900 text-sm">Calendario de citas en vivo</h3><p class="text-xs text-slate-500 mt-1">Agendar consulta directo en Google Calendar, sin pasar por WhatsApp primero.</p></div>
+                        <span class="price-pill text-sm font-bold text-blue-700 rounded-full px-4 py-1.5 whitespace-nowrap">$90</span>
+                    </div>
+                    <div class="reveal item-card bg-white/70 rounded-2xl p-5 border border-slate-100 flex justify-between items-center gap-4">
+                        <div><h3 class="font-bold text-slate-900 text-sm">Reseñas verificadas con Schema.org</h3><p class="text-xs text-slate-500 mt-1">Cuando haya reseñas de Google confirmadas, marcarlas para que Google las muestre con estrellas en el buscador.</p></div>
+                        <span class="price-pill text-sm font-bold text-blue-700 rounded-full px-4 py-1.5 whitespace-nowrap">$30</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ CTA ============ -->
+            <div class="reveal text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden mt-14"
+                 style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #e0e7ff;">
+                <h3 class="display text-2xl font-bold text-slate-900 mb-2">¿Todo claro? 🚀</h3>
+                <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">Cualquier duda sobre lo entregado, los pagos mensuales o las mejoras disponibles, escríbenos.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center no-print">
+                    <a href="https://wa.me/50761622787?text=Hola%2C%20tengo%20una%20duda%20sobre%20la%20entrega%20de%20TRAMITAPA."
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                        Escribir por WhatsApp
+                    </a>
+                    <a href="mailto:info@elementoweb.com?subject=Duda%20sobre%20la%20entrega%20TRAMITAPA"
+                       class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Escribir por Correo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="px-7 sm:px-10 py-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#122043);">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);">
+                        <svg width="22" height="22" viewBox="0 0 50 52" fill="none"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/></svg>
+                    </div>
+                    <div>
+                        <p class="display font-bold">elementoweb<span class="text-violet-300">.com</span></p>
+                        <p class="text-[11px] text-blue-200/70">Documento confidencial · Preparado para TRAMITAPA</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-blue-100">
+                    <a href="mailto:info@elementoweb.com" class="hover:text-white transition">info@elementoweb.com</a>
+                    <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="hover:text-white transition">+507 6162-2787</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <a href="https://wa.me/50761622787?text=Hola%2C%20tengo%20una%20consulta%20sobre%20la%20entrega%20de%20TRAMITAPA."
+       target="_blank" rel="noopener"
+       class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse"
+       aria-label="Escríbenos por WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    </a>
+
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = Math.min(i * 40, 200) + 'ms';
+            io.observe(el);
+        });
+    </script>
+</body>
+</html>

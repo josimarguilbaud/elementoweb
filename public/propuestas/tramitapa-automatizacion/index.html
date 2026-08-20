@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ampliación del Sistema · TRAMITAPA — elementoweb.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand: #3b82f6;
+            --brand-deep: #1e3a8a;
+            --violet: #7c3aed;
+            --ink: #0f172a;
+        }
+        * { -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background: #eef2fb;
+            background-image:
+                radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,0.10), transparent 60%),
+                radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,0.12), transparent 55%),
+                radial-gradient(45rem 45rem at 50% 120%, rgba(37,99,235,0.08), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1, h2, h3, h4, .display {
+            font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .gradient-text {
+            background: linear-gradient(100deg, #60a5fa, #3b82f6 45%, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass {
+            background: rgba(255,255,255,0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 20px 40px -24px rgba(30,58,138,0.28);
+        }
+        .service-card {
+            position: relative;
+            transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute; inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(96,165,250,.6), rgba(124,58,237,.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            opacity: 0; transition: opacity .35s ease;
+            pointer-events: none;
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(30,58,138,0.45); }
+        .service-card:hover::before { opacity: 1; }
+        .num-badge {
+            background: linear-gradient(135deg, #60a5fa, #3b82f6 55%, #7c3aed);
+            box-shadow: 0 10px 22px -8px rgba(59,130,246,0.7);
+        }
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+        .reveal.in { opacity: 1; transform: none; }
+        @keyframes float1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(20px,-16px) scale(1.08);} }
+        @keyframes float2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-24px,14px) scale(1.12);} }
+        .orb1 { animation: float1 11s ease-in-out infinite; }
+        .orb2 { animation: float2 14s ease-in-out infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .shine {
+            background: linear-gradient(90deg,#93c5fd,#e0e7ff,#93c5fd,#c4b5fd);
+            background-size: 200% auto;
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+        .price-pill { background: linear-gradient(135deg,#eff6ff,#eef2ff); border:1px solid #dbeafe; }
+        .wa-float {
+            box-shadow: 0 14px 30px -8px rgba(22,163,74,0.6);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .wa-float:hover { transform: translateY(-3px) scale(1.04); }
+        @keyframes waPulse { 0%{ box-shadow:0 0 0 0 rgba(34,197,94,.5);} 70%{ box-shadow:0 0 0 16px rgba(34,197,94,0);} 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+        .wa-pulse { animation: waPulse 2.4s infinite; }
+        .btn-primary {
+            background: linear-gradient(135deg,#3b82f6,#7c3aed);
+            transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+            box-shadow: 0 14px 28px -10px rgba(59,130,246,0.7);
+        }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 20px 34px -10px rgba(124,58,237,0.6); }
+        @media print {
+            body { background: #fff; }
+            .no-print { display: none !important; }
+            .reveal { opacity:1 !important; transform:none !important; }
+            main { box-shadow:none !important; margin: 0 !important; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 selection:bg-violet-200 selection:text-violet-900">
+
+    <main class="max-w-4xl mx-auto my-6 sm:my-10 glass rounded-[28px] overflow-hidden">
+
+        <!-- ============ HEADER ============ -->
+        <header class="relative overflow-hidden text-white px-7 sm:px-10 pt-8 pb-10"
+                style="background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);">
+            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.55),transparent 70%);"></div>
+            <div class="orb2 absolute -bottom-24 -left-10 w-72 h-72 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(59,130,246,.5),transparent 70%);"></div>
+            <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:32px 32px;"></div>
+
+            <div class="relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-8 border-b border-white/15">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);">
+                            <svg width="26" height="26" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="25" cy="15" r="3.2" fill="#fff"/>
+                                <circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/>
+                            </svg>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="display text-lg font-bold tracking-tight">elementoweb<span class="text-violet-300">.com</span></p>
+                            <p class="text-[11px] text-blue-200/80 tracking-wide">Desarrollo Web · IA · Automatización</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm sm:justify-end">
+                        <a href="mailto:info@elementoweb.com" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            info@elementoweb.com
+                        </a>
+                        <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                            6162-2787
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+                    <div>
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-blue-200 bg-white/10 border border-white/15 rounded-full px-3 py-1 mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-400 wa-pulse"></span> Ampliación del Sistema · Automatización con IA
+                        </span>
+                        <h1 class="text-4xl sm:text-5xl font-extrabold leading-none mb-3">
+                            <span class="shine">TRAMITAPA</span>
+                        </h1>
+                        <p class="text-blue-100/90 max-w-lg text-sm leading-relaxed">
+                            De un asistente que responde preguntas, a un sistema que identifica el servicio, califica cada caso, agenda, captura los datos en tu CRM, te alerta al instante y persigue cada trámite hasta el final.
+                        </p>
+                    </div>
+                    <div class="shrink-0 grid gap-3 text-sm">
+                        <div class="glass !bg-white/10 !border-white/15 rounded-xl px-4 py-3 text-white">
+                            <p class="text-[11px] text-blue-200 uppercase tracking-wider mb-0.5">Preparado para</p>
+                            <p class="font-semibold">Jhair Salcedo</p>
+                            <p class="text-blue-200 text-xs">davistramitapty@gmail.com</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-blue-200 text-xs justify-end">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            20 de agosto de 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="px-7 sm:px-10 py-12">
+
+            <!-- ============ INTRO ============ -->
+            <section class="reveal mb-14 text-center max-w-2xl mx-auto">
+                <h2 class="display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Tu asistente deja de solo responder: <span class="gradient-text">ahora trabaja por ti</span></h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Analizamos punto por punto todo lo que pediste. Esta propuesta lo cubre completo, y además cierra las piezas que faltaban para que funcione de verdad en el día a día: las que hacen que un cliente no se pierda entre "me interesa" y "pagué".
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mt-6">
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🎯 Identifica y califica</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">📇 Captura al CRM</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🔔 Alertas al instante</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">📸 Ve comprobantes</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🔁 Seguimiento solo</span>
+                </div>
+            </section>
+
+            <!-- ============ ANTES / AHORA ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-8">
+                    <h2 class="display text-2xl font-bold text-slate-900">Esto no es una mejora del chatbot</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <div class="reveal grid md:grid-cols-2 gap-6">
+                    <div class="rounded-2xl p-6 sm:p-7 border border-slate-200 bg-white/50">
+                        <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-2">Lo que contrataste en julio</p>
+                        <h3 class="display text-lg font-bold text-slate-700 mb-4">Un asistente que atiende</h3>
+                        <ul class="space-y-2.5 text-sm text-slate-500">
+                            <li class="flex gap-2"><span class="mt-0.5">·</span><span>Responde preguntas 24/7 por WhatsApp</span></li>
+                            <li class="flex gap-2"><span class="mt-0.5">·</span><span>Agenda citas</span></li>
+                            <li class="flex gap-2"><span class="mt-0.5">·</span><span>Conversaciones centralizadas en tu CRM</span></li>
+                        </ul>
+                        <p class="text-xs text-slate-400 mt-4">Y cumplió: hoy atiende, responde y agenda. Esa base ya está pagada y funcionando.</p>
+                    </div>
+                    <div class="service-card rounded-2xl p-6 sm:p-7 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#1e3a8a 70%,#312e81);">
+                        <div class="orb1 absolute -top-10 -right-10 w-40 h-40 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.5),transparent 70%);"></div>
+                        <p class="text-[11px] font-semibold uppercase tracking-wider text-blue-300 mb-2 relative z-10">Lo que tendrás ahora</p>
+                        <h3 class="display text-lg font-bold mb-4 relative z-10">Un sistema que opera tu negocio</h3>
+                        <ul class="space-y-2.5 text-sm text-blue-100 relative z-10">
+                            <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span><span>Detecta qué servicio necesita cada cliente y responde con tus precios exactos</span></li>
+                            <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span><span>Sabe qué NO cotizar y te alerta para que cierres tú</span></li>
+                            <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span><span>Guarda nombre, cédula y correo en la ficha del cliente — no en el chat</span></li>
+                            <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span><span>Ve fotos de comprobantes y escucha notas de voz</span></li>
+                            <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span><span>Persigue solo al que confirmó y desapareció</span></li>
+                        </ul>
+                        <p class="text-xs text-blue-300/80 mt-4 relative z-10">Este nivel de automatización personalizada es otro producto — y otra liga.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ PUNTO POR PUNTO ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-3">
+                    <h2 class="display text-2xl font-bold text-slate-900">Lo que pediste, punto por punto</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <p class="reveal text-sm text-slate-500 mb-8 max-w-2xl">Cada punto trae lo que pediste <strong class="text-slate-700">y una mejora</strong> que le agregamos, porque conocemos dónde se pierden los clientes. Todo explicado sin tecnicismos — la ingeniería compleja va por dentro.</p>
+
+                <!-- 1 -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex gap-4 mb-3">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">1</div>
+                        <div>
+                            <h3 class="display text-lg font-bold text-slate-900">Identifica el servicio y responde tus precios exactos</h3>
+                            <p class="text-sm text-slate-500 font-medium mt-0.5">Pediste: precios cargados y que identifique qué necesita cada cliente</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Entregamos:</strong> desde el primer mensaje detecta si es trámite nuevo, renovación, corrección de DS-160, consulta u Orlando, y responde con tus tarifas exactas ($50 adulto, $35 menor, $25 DS-160, $185 MRV) aunque el cliente nunca haya visto tu web. La "renovación sí aplica" y la frase "sin extensión" quedó eliminada, como pediste.</span></li>
+                        <li class="flex gap-2"><span class="text-violet-500 mt-0.5">★</span><span><strong class="text-slate-800">Por qué es mejor:</strong> los precios viven en un panel que actualizamos al momento: cambias una tarifa y el asistente la responde bien en el mensaje siguiente, en WhatsApp, Instagram y tu web a la vez.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 2 -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex gap-4 mb-3">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">2</div>
+                        <div>
+                            <h3 class="display text-lg font-bold text-slate-900">Orlando: nunca cotiza, y tú te enteras al instante</h3>
+                            <p class="text-sm text-slate-500 font-medium mt-0.5">Pediste: no dar precios de hospedaje/transporte/parques y una alerta interna para ti</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Entregamos:</strong> ante hospedaje, transporte o parques el asistente jamás improvisa un precio: le dice al cliente que un asesor lo contactará con su cotización personalizada, y a ti te llega la alerta con el resumen del caso ("hospedaje para 4, fechas de octubre…").</span></li>
+                        <li class="flex gap-2"><span class="text-violet-500 mt-0.5">★</span><span><strong class="text-slate-800">Por qué es mejor:</strong> la alerta te llega también <strong>por WhatsApp a tu teléfono</strong>, no solo al correo. Tú vives en WhatsApp igual que tus clientes: un correo a las 8 p.m. se ve mañana; el trato se cierra hoy.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 3 -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex gap-4 mb-3">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">3</div>
+                        <div>
+                            <h3 class="display text-lg font-bold text-slate-900">La consulta de $15 se agenda sola — en un calendario real</h3>
+                            <p class="text-sm text-slate-500 font-medium mt-0.5">Pediste: ofrecer la consulta, un enlace para agendar y una alerta al agendarse</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Entregamos:</strong> el asistente ofrece la consulta ($15 · 20 min · por llamada) cuando el caso lo amerita, consulta la disponibilidad real y la agenda ahí mismo en la conversación. Te llega el aviso con nombre, fecha y hora.</span></li>
+                        <li class="flex gap-2"><span class="text-violet-500 mt-0.5">★</span><span><strong class="text-slate-800">Por qué es mejor:</strong> mejor que un enlace externo — agenda dentro de tu propio sistema, con copia a tu Google Calendar, recordatorio automático al cliente y sin choques de horario. Un enlace de terceros no te avisa ni protege tu agenda; esto sí.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 4 -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex gap-4 mb-3">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">4</div>
+                        <div>
+                            <h3 class="display text-lg font-bold text-slate-900">Casos legales: empatía primero, y el contacto de la abogada</h3>
+                            <p class="text-sm text-slate-500 font-medium mt-0.5">Pediste: respuestas respetuosas, sin sonar a rechazo, derivando a la abogada</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Entregamos:</strong> ante antecedentes o temas legales, el asistente responde con un guion empático diseñado para que el cliente se sienta ayudado, nunca juzgado ("queremos ayudarte, y tu caso merece una evaluación profesional adecuada") y le comparte el contacto de tu abogada aliada.</span></li>
+                        <li class="flex gap-2"><span class="text-violet-500 mt-0.5">★</span><span><strong class="text-slate-800">Por qué es mejor:</strong> el cliente recibe una mejor opción en vez de un "no podemos", y tu marca queda como la que ayudó — que es exactamente la reputación que construye referidos.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 5 -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex gap-4 mb-3">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">5</div>
+                        <div>
+                            <h3 class="display text-lg font-bold text-slate-900">Independientes: pregunta lo correcto y te pasa el caso</h3>
+                            <p class="text-sm text-slate-500 font-medium mt-0.5">Pediste: identificar si declara renta y alertarte cuando requiera revisión</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Entregamos:</strong> al detectar un trabajador por cuenta propia pregunta si declara renta. Si declara, el trámite sigue normal. Si no (o no sabe sustentar sus ingresos) te escala el caso con el contexto completo para que lo orientes con tu contadora.</span></li>
+                        <li class="flex gap-2"><span class="text-violet-500 mt-0.5">★</span><span><strong class="text-slate-800">Por qué es mejor:</strong> el filtro pasa antes de que pierdas tiempo: te llegan solo los casos que de verdad necesitan tu criterio, ya clasificados y con su historia.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 6 -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex gap-4 mb-3">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">6</div>
+                        <div>
+                            <h3 class="display text-lg font-bold text-slate-900">Tiempos claros, sin promesas que no dependen de ti</h3>
+                            <p class="text-sm text-slate-500 font-medium mt-0.5">Pediste: comunicar 15–20 días, citas desde septiembre y que la Embajada decide</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Entregamos:</strong> el asistente explica los tiempos con claridad y tiene <strong>prohibido</strong> garantizar o adelantar fechas de entrevista. Recomienda planificar con anticipación, tal como lo pediste.</span></li>
+                        <li class="flex gap-2"><span class="text-violet-500 mt-0.5">★</span><span><strong class="text-slate-800">Por qué es mejor:</strong> esa prohibición es una regla dura del sistema, no una sugerencia: el asistente no la puede "olvidar" ni con el cliente más insistente. Cero reclamos por promesas que nadie hizo.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 7 -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex gap-4 mb-3">
+                        <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">7</div>
+                        <div>
+                            <h3 class="display text-lg font-bold text-slate-900">Cliente confirmado: datos al CRM y requisitos al momento</h3>
+                            <p class="text-sm text-slate-500 font-medium mt-0.5">Pediste: pedir nombre, cédula y correo, y enviar los requisitos automáticamente</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Entregamos:</strong> al confirmar, el asistente pide nombre completo, cédula y correo y los <strong>guarda en la ficha del cliente en tu CRM</strong>, con tarjeta en tu embudo y aviso 📇 para ti. Acto seguido entrega los requisitos completos (foto tipo visa, pasaporte vigente, visa vencida si aplica, cuestionario web) y las instrucciones de pago y de envío de documentos por correo.</span></li>
+                        <li class="flex gap-2"><span class="text-violet-500 mt-0.5">★</span><span><strong class="text-slate-800">Por qué es mejor:</strong> un dato escrito en el chat se pierde con el scroll; en el CRM lo encuentras en 6 meses. Y aquí está la pieza que faltaba en el pedido: <strong>si a las 48 horas el cliente no envió nada, el sistema le recuerda solo y te avisa a ti.</strong> Ahí es donde se pierden los tratos: el que confirma y desaparece. Ya nadie desaparece sin que te enteres.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ============ LO QUE COMPLETAMOS ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-3">
+                    <h2 class="display text-2xl font-bold text-slate-900">Lo que no pediste, pero tu operación necesitaba</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <p class="reveal text-sm text-slate-500 mb-8 max-w-2xl">Al analizar tu solicitud encontramos huecos por donde se escapaban clientes reales. Los cerramos dentro de esta misma propuesta:</p>
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="reveal service-card glass rounded-2xl p-6 border border-slate-100">
+                        <p class="text-2xl mb-2">📸</p>
+                        <h3 class="display text-base font-bold text-slate-800 mb-1.5">El asistente VE los comprobantes</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Tus clientes pagan por Yappy y mandan la foto del comprobante. Hoy, una foto sin texto se pierde y el cliente cree que nadie lo atiende. Ahora el asistente la ve, acusa recibo y te la pasa para confirmar.</p>
+                    </div>
+                    <div class="reveal service-card glass rounded-2xl p-6 border border-slate-100">
+                        <p class="text-2xl mb-2">🎙️</p>
+                        <h3 class="display text-base font-bold text-slate-800 mb-1.5">Escucha notas de voz</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Media Panamá manda audios. Tu asistente los escucha, los entiende y responde como si fueran texto. Esto ya está activo — lo dejamos por escrito para que sepas todo lo que tienes.</p>
+                    </div>
+                    <div class="reveal service-card glass rounded-2xl p-6 border border-slate-100">
+                        <p class="text-2xl mb-2">🌐</p>
+                        <h3 class="display text-base font-bold text-slate-800 mb-1.5">Tu web y tu WhatsApp, un solo cliente</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">El chat de tramitapa.com ahora recuerda la conversación, y cuando alguien llena tu formulario web, aterriza en la <strong>misma ficha</strong> que su WhatsApp. Antes eran dos extraños; ahora es una sola historia.</p>
+                    </div>
+                    <div class="reveal service-card glass rounded-2xl p-6 border border-slate-100">
+                        <p class="text-2xl mb-2">📱</p>
+                        <h3 class="display text-base font-bold text-slate-800 mb-1.5">Instagram, mismo cerebro</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">El mismo asistente, con los mismos precios y reglas, atendiendo tu bandeja de Instagram. Solo necesitamos tu cuenta IG ligada a tu página de Facebook para conectarla.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ PAGOS CLAROS ============ -->
+            <div class="reveal mb-14 rounded-2xl p-6 sm:p-7 border border-emerald-200" style="background:linear-gradient(135deg,#ecfdf5,#f0fdfa);">
+                <h3 class="display text-lg font-bold text-slate-900 mb-2 flex items-center gap-2">💵 Pagos: exactamente como tú trabajas</h3>
+                <p class="text-sm text-slate-700 leading-relaxed">Tus cobros son por <strong>Yappy o transferencia bancaria</strong>, y así queda configurado: el asistente <strong>nunca envía enlaces de pago</strong>. Entrega tus datos de pago, pide el comprobante, lo ve cuando llega por foto y lo pasa a un asesor. <strong>La confirmación de cada pago siempre la hace una persona de tu equipo</strong> — el sistema organiza, tú controlas el dinero.</p>
+            </div>
+
+            <!-- ============ INVERSION ============ -->
+            <div class="reveal rounded-3xl p-7 sm:p-9 mb-14 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220 0%,#122043 50%,#1e3a8a 100%);">
+                <div class="orb1 absolute -top-16 -left-10 w-56 h-56 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(59,130,246,.45),transparent 70%);"></div>
+                <div class="orb2 absolute -bottom-20 -right-16 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.4),transparent 70%);"></div>
+                <div class="relative z-10">
+                    <h2 class="display text-2xl font-bold mb-2 flex items-center gap-3">Tu inversión</h2>
+                    <p class="text-blue-200/90 text-sm max-w-2xl mb-7 leading-relaxed">Una automatización de este nivel usa tecnologías de inteligencia artificial avanzadas: visión de imágenes, comprensión de voz, calificación automática de casos, seguimiento programado. Implementada desde cero, cuesta varias veces esto. Tú pagas este precio porque <strong class="text-white">la base ya la construimos juntos</strong>: esto la convierte en una máquina de operar tu negocio.</p>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Implementación (pago único)</h4>
+                            <div class="space-y-0.5 text-sm">
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Los 7 puntos de tu solicitud</span><span class="font-semibold text-green-400">✓ Incluido</span></div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Comprobantes por foto + notas de voz</span><span class="font-semibold text-green-400">✓ Incluido</span></div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Web + WhatsApp unificados · formulario al CRM</span><span class="font-semibold text-green-400">✓ Incluido</span></div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Seguimiento automático a las 48 h</span><span class="font-semibold text-green-400">✓ Incluido</span></div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Conexión de Instagram</span><span class="font-semibold text-green-400">✓ Incluido</span></div>
+                                <div class="flex justify-between items-center py-3 mt-1"><span class="font-bold text-blue-200">Total implementación</span><span class="text-xl font-bold text-blue-300">$850.00</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Mensualidad (pasa de $88 a $99)</h4>
+                            <p class="text-sm text-blue-100/90 leading-relaxed mb-3">Un sistema así no se instala y se abandona: la IA se supervisa, los guiones se afinan con las conversaciones reales, y cada mejora que desarrollamos te llega sin costo extra.</p>
+                            <div class="rounded-xl p-4 mb-3" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);">
+                                <p class="display text-3xl font-extrabold">$99<span class="text-base font-semibold text-blue-300">/mes</span></p>
+                                <p class="text-xs text-blue-200 mt-1">Los <strong class="text-white">$99 son tu garantía de que esto siga funcionando y mejorando día a día</strong>: monitoreo, ajustes y evolución continua incluidos.</p>
+                            </div>
+                            <p class="text-[11px] text-blue-300/70">Reemplaza tu mensualidad actual de $88. Aplica desde que el sistema ampliado entra en producción.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+                         style="background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(124,58,237,.25));border:1px solid rgba(255,255,255,.18);">
+                        <div>
+                            <p class="text-blue-200 text-xs uppercase tracking-wider mb-1">Para iniciar hoy · anticipo 50%</p>
+                            <p class="display text-4xl font-extrabold shine">$425.00</p>
+                            <p class="text-blue-200 text-xs mt-1">El 50% restante ($425.00) se abona contra entrega y conformidad.</p>
+                        </div>
+                        <a href="https://wa.me/50761622787?text=Hola%2C%20acepto%20la%20propuesta%20de%20automatizaci%C3%B3n%20de%20TRAMITAPA%20y%20quiero%20arrancar."
+                           target="_blank" rel="noopener"
+                           class="btn-primary text-white font-semibold rounded-xl px-6 py-3.5 text-sm text-center whitespace-nowrap no-print">
+                            Aceptar y comenzar →
+                        </a>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-[12px] text-blue-200">
+                        <span>⚡ <strong class="text-white">Primera entrega: 3 días hábiles</strong> desde que recibimos tus datos</span>
+                        <span>🏁 Sistema completo: 7–10 días hábiles</span>
+                    </div>
+                    <p class="text-[11px] text-blue-300/70 mt-3">Precios en USD. No incluyen ITBMS (7%); se aplicará según corresponda.</p>
+                </div>
+            </div>
+
+            <!-- ============ CHECKLIST JAHIR ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-8">
+                <h3 class="display text-lg font-bold text-slate-900 mb-2 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                    Lo único que necesitamos de ti
+                </h3>
+                <p class="text-sm text-slate-500 mb-5">Con estos datos en mano arranca el reloj de los 3 días. Nos los mandas por WhatsApp y listo:</p>
+                <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm text-slate-700">
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">1.</span><span>Precio de la <strong>renovación de visa</strong></span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">2.</span><span>Número de contacto de la <strong>abogada</strong></span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">3.</span><span>Tu <strong>cuenta Yappy</strong> y cuenta bancaria (banco, tipo, número, titular)</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">4.</span><span><strong>Correo</strong> donde recibes los documentos de los clientes</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">5.</span><span><strong>Enlace del cuestionario</strong> de tramitapa.com</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">6.</span><span><strong>Horario</strong> en que atiendes las consultas por llamada</span></p>
+                    <p class="flex items-start gap-2 sm:col-span-2"><span class="text-blue-500 mt-0.5 shrink-0">7.</span><span>Para Instagram: tu cuenta <strong>IG ligada a tu página de Facebook</strong> (te guiamos en 10 minutos)</span></p>
+                </div>
+            </div>
+
+            <!-- ============ COMPROMISOS HONESTOS ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-8">
+                <h3 class="display text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Compromisos claros (lo que el sistema hace y lo que no)
+                </h3>
+                <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-700">
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Fechas de embajada:</strong> el asistente nunca las promete — las asigna la Embajada. Esto te protege de reclamos.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Confirmación de pagos:</strong> siempre humana. El asistente recibe y organiza; tu equipo confirma.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Instagram:</strong> el asistente conversa, califica, captura y escala igual que en WhatsApp. Las campañas masivas y la baja por palabra clave son mecánicas exclusivas de WhatsApp.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Estructura de pago:</strong> 50% ($425) para iniciar; 50% contra entrega y conformidad. Tarjeta, transferencia o Yappy.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Garantía:</strong> 30 días de correcciones sin costo tras la entrega ante cualquier falla técnica.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Validez:</strong> esta propuesta es válida por 30 días desde su emisión.</span></p>
+                </div>
+            </div>
+
+            <!-- ============ CTA ============ -->
+            <div class="reveal text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden"
+                 style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #e0e7ff;">
+                <h3 class="display text-2xl font-bold text-slate-900 mb-2">¿Arrancamos, Jhair? 🚀</h3>
+                <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">Confirma por WhatsApp, envíanos el anticipo y los 7 datos del checklist — y en 3 días hábiles tu asistente responde precios, filtra Orlando, agenda consultas y guarda cada cliente confirmado en tu CRM.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center no-print">
+                    <a href="https://wa.me/50761622787?text=Hola%2C%20acepto%20la%20propuesta%20de%20automatizaci%C3%B3n%20de%20TRAMITAPA%20y%20quiero%20arrancar."
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                        Aceptar por WhatsApp
+                    </a>
+                    <a href="mailto:info@elementoweb.com?subject=Aceptaci%C3%B3n%20propuesta%20automatizaci%C3%B3n%20TRAMITAPA&body=Hola%2C%20confirmo%20la%20aceptaci%C3%B3n%20de%20la%20propuesta%20de%20automatizaci%C3%B3n%20para%20TRAMITAPA."
+                       class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Aceptar por Correo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="px-7 sm:px-10 py-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#122043);">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);">
+                        <svg width="22" height="22" viewBox="0 0 50 52" fill="none"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/></svg>
+                    </div>
+                    <div>
+                        <p class="display font-bold">elementoweb<span class="text-violet-300">.com</span></p>
+                        <p class="text-[11px] text-blue-200/70">Documento confidencial · Preparado para TRAMITAPA</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-blue-100">
+                    <a href="mailto:info@elementoweb.com" class="hover:text-white transition">info@elementoweb.com</a>
+                    <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="hover:text-white transition">+507 6162-2787</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/50761622787?text=Hola%2C%20tengo%20una%20consulta%20sobre%20la%20propuesta%20de%20automatizaci%C3%B3n%20de%20TRAMITAPA."
+       target="_blank" rel="noopener"
+       class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse"
+       aria-label="Escríbenos por WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    </a>
+
+    <script>
+        // Scroll reveal
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = Math.min(i * 40, 200) + 'ms';
+            io.observe(el);
+        });
+    </script>
+</body>
+</html>

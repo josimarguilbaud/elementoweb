@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual del Asistente · TRAMITA PA — elementoweb.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1e293b; --navy: #1e3a8a; --deep: #0b1220;
+    --blue: #3b82f6; --violet: #7c3aed;
+    --paper: #eef2fb; --card: rgba(255,255,255,.78); --line: #dbe3f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Inter', system-ui, sans-serif; color: var(--ink);
+    font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    background: var(--paper);
+    background-image:
+      radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,.10), transparent 60%),
+      radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,.12), transparent 55%);
+    background-attachment: fixed;
+  }
+  .page { max-width: 52rem; margin: 1.5rem auto 4rem; padding: 0 1.1rem; }
+  h1,h2,h3,h4 { font-family: 'Bricolage Grotesque','Inter',sans-serif; letter-spacing: -.02em; text-wrap: balance; }
+  header.ew {
+    background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);
+    color: #fff; border-radius: 22px; padding: 1.8rem 1.9rem; overflow: hidden; position: relative;
+  }
+  header.ew::after {
+    content:''; position:absolute; inset:0; opacity:.06; pointer-events:none;
+    background-image: linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),
+                      linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);
+    background-size: 32px 32px;
+  }
+  .brand { display:flex; align-items:center; gap:.65rem; padding-bottom:1.1rem; border-bottom:1px solid rgba(255,255,255,.15); }
+  .brand .mark {
+    width: 2.4rem; height: 2.4rem; border-radius: .8rem; display:grid; place-items:center; flex-shrink:0;
+    background: linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);
+    box-shadow: 0 10px 24px -8px rgba(59,130,246,.7);
+  }
+  .brand p { margin:0; line-height:1.25; }
+  .brand .n { font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:1.05rem; }
+  .brand .n span { color:#c4b5fd; }
+  .brand .s { font-size:.68rem; color:rgba(174,187,230,.9); letter-spacing:.08em; }
+  .eyebrow { margin:1.2rem 0 .4rem; font-size:.7rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase; color:#aebbe6; }
+  header.ew h1 {
+    margin:0; font-size:2rem; line-height:1.12; font-weight:800;
+    background: linear-gradient(90deg,#93c5fd,#e0e7ff,#c4b5fd);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  main.card {
+    margin-top: 1.4rem; background: var(--card); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.9); border-radius: 18px;
+    box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 20px 40px -24px rgba(30,58,138,.28);
+    padding: 1.6rem 1.8rem;
+  }
+  main h1 { display:none; }               /* el título ya vive en el header */
+  main h2 {
+    font-size: 1.2rem; color: var(--navy); margin: 1.9em 0 .7em;
+    padding-bottom: .35em; border-bottom: 1px solid var(--line);
+  }
+  main h2:first-child { margin-top: .2em; }
+  main h3 { font-size: 1rem; color: var(--navy); margin: 1.4em 0 .5em; }
+  main a { color: var(--blue); }
+  main blockquote {
+    margin: 1em 0; padding: .8em 1.05em; border: 1px solid #c9dcf8; background: #eef4fe;
+    border-radius: 12px; color: #24406e; font-size: .92em;
+  }
+  main blockquote p { margin: .25em 0; }
+  main code {
+    background: #e8edfb; border-radius: 6px; padding: .1em .4em;
+    font-size: .85em; color: #1e3a8a;
+  }
+  main pre { background: #0f172a; color: #e2e8f0; border-radius: 12px; padding: 1em 1.2em; overflow-x: auto; }
+  main pre code { background: none; color: inherit; padding: 0; }
+  main ul, main ol { padding-left: 1.3rem; }
+  main li { margin: .3rem 0; }
+  main li::marker { color: var(--blue); font-weight: 700; }
+  .tabla { overflow-x: auto; margin: 1em 0; }
+  main table { border-collapse: collapse; width: 100%; font-size: .9em; }
+  main th {
+    text-align: left; background: linear-gradient(135deg,#eff6ff,#eef2ff);
+    color: var(--navy); padding: .55em .8em; border: 1px solid var(--line);
+    font-family: 'Bricolage Grotesque',sans-serif; font-weight: 700; white-space: nowrap;
+  }
+  main td { padding: .55em .8em; border: 1px solid var(--line); vertical-align: top; background: rgba(255,255,255,.6); }
+  main hr { border: none; border-top: 1px solid var(--line); margin: 1.6em 0; }
+  main strong { color: var(--navy); }
+  footer.ew {
+    margin-top: 1.4rem; display:flex; flex-wrap:wrap; gap:.3rem 1.4rem;
+    font-size:.82rem; color:#5b6478; padding: 0 .4rem;
+  }
+  footer.ew b { color: var(--navy); }
+  @media print {
+    body { background:#fff; }
+    main.card { box-shadow:none; border-color:#e5e7eb; }
+    header.ew { border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="ew">
+    <div class="brand">
+      <div class="mark"><svg width="22" height="22" viewBox="0 0 50 52" fill="none"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/><circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/></svg></div>
+      <div>
+        <p class="n">elementoweb<span>.com</span></p>
+        <p class="s">DESARROLLO WEB · IA · AUTOMATIZACIÓN</p>
+      </div>
+    </div>
+    <p class="eyebrow">Manual de operación · Tu asistente con IA</p>
+    <h1>Manual del Asistente · TRAMITA PA</h1>
+  </header>
+  <main class="card">
+<h1>Manual de operación — Tu asistente de TRAMITA PA</h1>
+<blockquote>
+<p>Una página, tres partes: lo que tu asistente hace solo, los momentos en que entras tú, y tu rutina de 10 minutos. Guárdala donde la veas. 🙌</p>
+</blockquote>
+<h2>Lo que tu asistente hace SOLO (24/7, WhatsApp · Instagram · web)</h2>
+<ul>
+<li><strong>Responde tus precios exactos</strong> ($50 adulto, $35 menor, $25 DS-160, $185 MRV) y suma totales por grupo.</li>
+<li><strong>Identifica qué necesita cada persona</strong> (trámite nuevo, renovación, DS-160, consulta, Orlando) desde el primer mensaje.</li>
+<li><strong>Orlando</strong>: nunca da precios de hospedaje/transporte/parques — dice que un asesor cotizará y <strong>te alerta al instante</strong>.</li>
+<li><strong>Agenda la consulta de $15</strong> (20 min, por llamada) en tu calendario real, con recordatorio al cliente y aviso a ti.</li>
+<li><strong>Casos legales</strong>: responde con empatía y deriva a tu abogada aliada, sin sonar a rechazo.</li>
+<li><strong>Independientes</strong>: pregunta si declaran renta; si no, te pasa el caso.</li>
+<li><strong>Captura nombre, cédula y correo</strong> del que confirma, los guarda en su ficha del CRM y te avisa 📇. Luego entrega los requisitos completos.</li>
+<li><strong>Tiempos</strong>: explica los 15–20 días y que las citas las asigna la Embajada — jamás promete fechas.</li>
+<li><strong>Escucha notas de voz y ve fotos</strong> (un comprobante de Yappy por foto: lo ve, acusa recibo y te lo pasa).</li>
+<li><strong>Recuerda solo al que desapareció</strong>: si a las 48 h de dejar sus datos no envió nada, le escribe y te avisa.</li>
+<li><strong>Sabe quién ya llenó el cuestionario de la web</strong>: no vuelve a pedir lo que ya está.</li>
+<li><strong>Responde con calma</strong>: si te escriben varios mensajes seguidos, espera unos segundos y contesta UNA sola vez retomando todo — como una persona.</li>
+</ul>
+<h2>Lo que te toca a TI (el asistente organiza; tú decides)</h2>
+<ol>
+<li><strong>Confirmar los pagos — SIEMPRE tú.</strong> El asistente recibe el comprobante y lo acusa, pero nunca da un pago por confirmado. Verifícalo en tu Yappy/banco y responde tú en esa conversación.</li>
+<li><strong>Atender tus alertas.</strong> Te llegan por correo (y por WhatsApp cuando actives tu plantilla de alertas):</li>
+<li>🧳 <em>Cotización Orlando</em> → llama tú con la cotización.</li>
+<li>🧾 <em>Independiente sin renta</em> → oriéntalo con tu contadora.</li>
+<li>📇 <em>Datos capturados</em> → espera sus documentos al correo; si no llegan, el sistema lo recuerda solo a las 48 h.</li>
+<li>📝 <em>Formulario de la web</em> → ya está en tu embudo; revisa su ficha.</li>
+<li>🙋 <em>Pidió hablar con humano</em> → responde en la bandeja. El asistente se pausa en ESA conversación 3 horas; si no respondes, se reactiva y te vuelve a avisar.</li>
+<li><strong>Mover las tarjetas del embudo.</strong> Cuando un caso avanza (llegaron documentos, pagó, se ganó o se perdió), arrastra su tarjeta a la etapa que toca. No es decoración: mover la tarjeta <strong>apaga los recordatorios automáticos</strong> de esa persona y mantiene tus números reales.</li>
+<li><strong>Avisar lo que cambie.</strong> ¿Subió un precio? ¿Cambió un requisito o tu horario? Escríbenos y ese mismo día tu asistente responde lo nuevo — eso cubre tu mensualidad.</li>
+</ol>
+<h2>Tu rutina de 10 minutos al día</h2>
+<ol>
+<li><strong>Bandeja</strong> → ¿hay conversaciones escaladas esperándote? Respóndelas primero.</li>
+<li><strong>Embudo</strong> → ¿tarjetas nuevas? Revisa sus fichas (ahí están sus datos y lo que llenaron).</li>
+<li><strong>Agenda</strong> → ¿consultas de hoy? El cliente ya recibió recordatorio; tú solo llama a la hora.</li>
+</ol>
+<h2>Lo que tu asistente NO hace (a propósito)</h2>
+<ul>
+<li>No promete ni "consigue" fechas de entrevista: las asigna la Embajada.</li>
+<li>No confirma pagos ni envía enlaces de cobro: tus cobros son Yappy/transferencia y los confirma tu equipo.</li>
+<li>No inventa precios ni requisitos: si no lo sabe, escala a un humano.</li>
+<li>Campañas masivas y baja por palabra clave: solo existen en WhatsApp (limitación de Instagram, no del sistema).</li>
+</ul>
+<h2>Los dos interruptores que debes conocer</h2>
+<ul>
+<li><strong>Pausar el asistente</strong> (Tu Asistente IA → pausa): lo apaga en TODOS los canales a la vez. Úsalo solo si de verdad no quieres que responda a nadie; apagado, tus clientes escriben y nadie contesta.</li>
+<li><strong>Tus avisos</strong> (Configuración → Avisos): enciende o apaga cada tipo de alerta que te llega.</li>
+</ul>
+<h2>Soporte</h2>
+<p>Cualquier duda o cambio: <strong>ElementoWeb</strong> · info@elementoweb.com · WhatsApp +507 6162-2787.</p>
+  </main>
+  <footer class="ew">
+    <span>Preparado para <b>TRAMITA PA</b> por <b>ElementoWeb</b></span>
+    <span>info@elementoweb.com</span>
+    <span>+507 6162-2787</span>
+  </footer>
+</div>
+</body>
+</html>

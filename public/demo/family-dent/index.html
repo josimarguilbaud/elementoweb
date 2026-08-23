@@ -1,45 +1,68 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Dental Family Dent · Panamá — Vista previa</title>
-    <meta name="description" content="Clínica dental en Barriada Altos de La Calzada, Panamá. Odontología general, ortodoncia, limpieza y estética dental. Agenda tu cita por WhatsApp.">
+    <title>Family Dent | Clínica Dental · Vista previa</title>
+    <meta name="description" content="Clínica dental en Barriada Altos de La Calzada, Panamá. Odontología general, ortodoncia, odontopediatría y estética dental. Agenda tu cita por WhatsApp.">
     <meta name="robots" content="noindex, nofollow">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            teal: '#1cb2ab', /* Color del logo */
+                            tealDark: '#158f89',
+                            tealLight: '#e0f4f3',
+                            gray: '#8a8c8e', /* Color del logo */
+                            grayDark: '#4a4b4c',
+                            text: '#333333'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --teal: #0d9488;
-            --teal-light: #14b8a6;
-            --deep: #0b2b2b;
-            --sand: #f6f7f5;
+        /* Estilos personalizados para animaciones suaves */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        * { -webkit-font-smoothing: antialiased; }
-        body { font-family: 'DM Sans', sans-serif; color: #1c2b2b; background: #fff; }
-        h1, h2, h3, h4, .display { font-family: 'Outfit', sans-serif; letter-spacing: -0.02em; }
-
-        .tooth-grid {
-            background-image:
-                radial-gradient(circle at 20% 30%, rgba(20,184,166,.10), transparent 45%),
-                radial-gradient(circle at 85% 15%, rgba(13,148,136,.12), transparent 50%);
-        }
-        .soft-card { transition: transform .3s cubic-bezier(.2,.7,.3,1), box-shadow .3s ease; }
-        .soft-card:hover { transform: translateY(-5px); box-shadow: 0 24px 48px -28px rgba(11,43,43,.4); }
-        .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1); }
-        .reveal.in { opacity: 1; transform: none; }
-
-        /* Marca de agua discreta: esto es una vista previa, no el sitio publicado */
-        .demo-ribbon {
-            background: linear-gradient(90deg, #0d9488, #0f766e);
-            letter-spacing: .08em;
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Chat del asistente */
+        /* Estilo para el header al hacer scroll */
+        .header-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Campo pendiente de confirmar con el cliente. Se ve distinto a propósito:
+           el dueño tiene que notar qué falta por completar antes de publicar. */
+        .por-confirmar {
+            border: 1px dashed #cbd5e1;
+            background: repeating-linear-gradient(45deg, #fafafa, #fafafa 10px, #f4f4f5 10px, #f4f4f5 20px);
+        }
+
+        /* Panel del asistente */
         .chat-panel {
-            box-shadow: 0 30px 70px -20px rgba(11,43,43,.5);
+            box-shadow: 0 30px 70px -20px rgba(28,178,171,.45);
             transform-origin: bottom right;
             transition: opacity .25s ease, transform .25s cubic-bezier(.2,.7,.3,1);
         }
@@ -53,345 +76,618 @@
         .typing span:nth-child(2){ animation-delay:.2s } .typing span:nth-child(3){ animation-delay:.4s }
         @keyframes blink { 0%,60%,100%{opacity:.25} 30%{opacity:1} }
         .fab-pulse { animation: fabPulse 2.6s infinite; }
-        @keyframes fabPulse { 0%{box-shadow:0 0 0 0 rgba(13,148,136,.55)} 70%{box-shadow:0 0 0 18px rgba(13,148,136,0)} 100%{box-shadow:0 0 0 0 rgba(13,148,136,0)} }
+        @keyframes fabPulse { 0%{box-shadow:0 0 0 0 rgba(28,178,171,.55)} 70%{box-shadow:0 0 0 18px rgba(28,178,171,0)} 100%{box-shadow:0 0 0 0 rgba(28,178,171,0)} }
     </style>
 </head>
-<body class="bg-white">
+<body class="font-sans text-brand-text bg-gray-50 overflow-x-hidden">
 
     <!-- Cinta de vista previa. No forma parte del diseño final del sitio. -->
-    <div class="demo-ribbon text-white text-[11px] sm:text-xs font-semibold uppercase text-center py-2 px-4">
+    <div class="bg-brand-grayDark text-white text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-center py-2 px-4">
         Vista previa preparada por elementoweb.com para Clínica Dental Family Dent · No publicada
     </div>
 
-    <!-- ============ NAV ============ -->
-    <nav class="sticky top-0 z-40 bg-white/85 backdrop-blur-lg border-b border-slate-100">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between gap-4">
-            <a href="#inicio" class="flex items-center gap-2.5 shrink-0">
-                <div class="w-10 h-10 rounded-xl grid place-items-center" style="background:linear-gradient(135deg,#14b8a6,#0d9488);">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 5.5c-1.6-1.4-3.4-2-5-1.3C4.8 5.2 4 7.6 4.6 10.4c.5 2.3 1 3.6 1.6 6.2.4 1.8 1 3 2 3 1.2 0 1.4-1.6 1.8-3.4.3-1.4.7-2.2 2-2.2s1.7.8 2 2.2c.4 1.8.6 3.4 1.8 3.4 1 0 1.6-1.2 2-3 .6-2.6 1.1-3.9 1.6-6.2.6-2.8-.2-5.2-2.4-6.2-1.6-.7-3.4-.1-5 1.3Z"/>
-                    </svg>
-                </div>
-                <div class="leading-tight">
-                    <p class="display font-bold text-[15px] text-slate-900">Family Dent</p>
-                    <p class="text-[10px] text-teal-700 font-medium tracking-wide uppercase">Clínica Dental</p>
-                </div>
-            </a>
-            <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
-                <a href="#servicios" class="hover:text-teal-700 transition">Servicios</a>
-                <a href="#nosotros" class="hover:text-teal-700 transition">Nosotros</a>
-                <a href="#ubicacion" class="hover:text-teal-700 transition">Ubicación</a>
-                <a href="#preguntas" class="hover:text-teal-700 transition">Preguntas</a>
+    <!-- Top Bar (Información de contacto rápida) -->
+    <div class="hidden md:block bg-brand-teal text-white text-sm py-2">
+        <div class="container mx-auto px-4 lg:px-8 flex justify-between items-center">
+            <div class="flex space-x-6">
+                <a href="tel:+50768638040" class="hover:text-brand-tealLight transition"><i class="fas fa-phone-alt mr-2"></i> 6863-8040</a>
+                <a href="https://wa.me/50768638040" target="_blank" rel="noopener" class="hover:text-brand-tealLight transition"><i class="fab fa-whatsapp mr-2"></i> Escríbenos por WhatsApp</a>
+                <span><i class="fas fa-map-marker-alt mr-2"></i> Altos de La Calzada, Panamá</span>
             </div>
-            <div class="flex items-center gap-2 sm:gap-3">
-                <a href="tel:+50768638040" class="hidden sm:flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-teal-700 transition">
-                    <svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3l2 5-2.5 1.5a11 11 0 005 5L14 12l5 2v3a2 2 0 01-2 2A16 16 0 013 5z"/></svg>
-                    6863-8040
+            <div class="flex space-x-4">
+                <a href="#contacto" class="hover:text-brand-tealLight transition"><i class="fas fa-clock mr-2"></i>Lun a vie desde 9:00 a.m.</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header id="main-header" class="sticky w-full top-0 z-40 bg-white transition-all duration-300">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center space-x-2">
+                    <img src="logofamilydent.jpg" alt="Family Dent Logo" class="h-14 w-auto object-contain" onerror="this.src='https://placehold.co/150x60/ffffff/1cb2ab?text=Family+Dent'">
                 </a>
-                <button onclick="openChat()" class="text-sm font-semibold text-white rounded-xl px-4 sm:px-5 py-2.5 transition hover:brightness-110" style="background:linear-gradient(135deg,#14b8a6,#0d9488);">
-                    Agendar cita
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#inicio" class="text-brand-grayDark hover:text-brand-teal font-medium transition">Inicio</a>
+                    <a href="#servicios" class="text-brand-grayDark hover:text-brand-teal font-medium transition">Servicios</a>
+                    <a href="#nosotros" class="text-brand-grayDark hover:text-brand-teal font-medium transition">Nosotros</a>
+                    <a href="#testimonios" class="text-brand-grayDark hover:text-brand-teal font-medium transition">Testimonios</a>
+                    <a href="#contacto" class="text-brand-grayDark hover:text-brand-teal font-medium transition">Contacto</a>
+                    <button onclick="openChat()" class="bg-brand-teal hover:bg-brand-tealDark text-white px-6 py-2.5 rounded-full font-medium transition shadow-md shadow-brand-teal/30">
+                        Agendar Cita
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-brand-grayDark hover:text-brand-teal focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-    </nav>
 
-    <!-- ============ HERO ============ -->
-    <header id="inicio" class="tooth-grid relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8 pt-14 pb-16 sm:pt-20 sm:pb-24 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
-            <div>
-                <span class="inline-flex items-center gap-2 text-xs font-semibold text-teal-800 bg-teal-50 border border-teal-100 rounded-full px-3.5 py-1.5 mb-5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
-                    Barriada Altos de La Calzada · Panamá
-                </span>
-                <h1 class="text-[2.6rem] sm:text-6xl font-extrabold leading-[1.03] text-slate-900 mb-5">
-                    Tu sonrisa, en manos<br class="hidden sm:block"> de <span style="color:#0d9488;">quienes te conocen</span>
-                </h1>
-                <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-lg mb-8">
-                    Odontología general, ortodoncia y estética dental para toda la familia. Atención cercana, sin filas y con cita confirmada desde tu WhatsApp.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <button onclick="openChat()" class="inline-flex items-center justify-center gap-2 text-white font-semibold rounded-xl px-7 py-4 text-[15px] transition hover:brightness-110 shadow-lg shadow-teal-600/25" style="background:linear-gradient(135deg,#14b8a6,#0d9488);">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        Agendar mi cita ahora
-                    </button>
-                    <a href="#servicios" class="inline-flex items-center justify-center gap-2 bg-white text-slate-800 font-semibold rounded-xl px-7 py-4 text-[15px] border border-slate-200 hover:border-teal-300 hover:text-teal-700 transition">
-                        Ver tratamientos
-                    </a>
-                </div>
-                <div class="flex flex-wrap items-center gap-x-7 gap-y-3 mt-9 text-sm text-slate-500">
-                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Respuesta el mismo día</span>
-                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Toda la familia</span>
-                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Estacionamiento cerca</span>
-                </div>
-            </div>
-
-            <!-- Tarjeta de agenda: es el gancho visual, no una foto de stock -->
-            <div class="relative">
-                <div class="absolute -inset-4 rounded-[32px] blur-2xl opacity-40" style="background:linear-gradient(135deg,#5eead4,#14b8a6);"></div>
-                <div class="relative bg-white rounded-[28px] border border-slate-100 p-6 sm:p-7" style="box-shadow:0 30px 70px -35px rgba(11,43,43,.45);">
-                    <div class="flex items-center justify-between mb-5">
-                        <p class="display font-bold text-slate-900">Próximas citas disponibles</p>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-teal-700 bg-teal-50 rounded-full px-2.5 py-1">En vivo</span>
-                    </div>
-                    <div class="space-y-2.5">
-                        <div class="flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50/60 px-4 py-3.5">
-                            <div><p class="font-semibold text-sm text-slate-800">Lunes</p><p class="text-xs text-slate-500">Limpieza dental</p></div>
-                            <span class="text-sm font-bold text-teal-700">9:00 a.m.</span>
-                        </div>
-                        <div class="flex items-center justify-between rounded-xl border border-teal-200 bg-teal-50/70 px-4 py-3.5">
-                            <div><p class="font-semibold text-sm text-slate-800">Lunes</p><p class="text-xs text-slate-500">Evaluación general</p></div>
-                            <span class="text-sm font-bold text-teal-700">11:30 a.m.</span>
-                        </div>
-                        <div class="flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50/60 px-4 py-3.5">
-                            <div><p class="font-semibold text-sm text-slate-800">Martes</p><p class="text-xs text-slate-500">Ortodoncia</p></div>
-                            <span class="text-sm font-bold text-teal-700">2:00 p.m.</span>
-                        </div>
-                    </div>
-                    <button onclick="openChat()" class="w-full mt-5 text-white font-semibold rounded-xl py-3.5 text-sm transition hover:brightness-110" style="background:linear-gradient(135deg,#14b8a6,#0d9488);">
-                        Reservar por WhatsApp
-                    </button>
-                    <p class="text-[11px] text-slate-400 text-center mt-3">Te confirmamos al instante, sin llamadas ni esperas.</p>
-                </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="flex flex-col px-4 pt-2 pb-6 space-y-3">
+                <a href="#inicio" class="block text-brand-grayDark hover:text-brand-teal font-medium py-2 border-b border-gray-50">Inicio</a>
+                <a href="#servicios" class="block text-brand-grayDark hover:text-brand-teal font-medium py-2 border-b border-gray-50">Servicios</a>
+                <a href="#nosotros" class="block text-brand-grayDark hover:text-brand-teal font-medium py-2 border-b border-gray-50">Nosotros</a>
+                <a href="#testimonios" class="block text-brand-grayDark hover:text-brand-teal font-medium py-2 border-b border-gray-50">Testimonios</a>
+                <a href="#contacto" class="block text-brand-grayDark hover:text-brand-teal font-medium py-2 border-b border-gray-50">Contacto</a>
+                <button onclick="closeMobileMenu(); openChat();" class="w-full text-center bg-brand-teal text-white px-6 py-3 rounded-full font-medium mt-4">Agendar Cita</button>
             </div>
         </div>
     </header>
 
-    <!-- ============ BARRA DE DATOS ============ -->
-    <section class="border-y border-slate-100 bg-slate-50/70">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8 py-7 grid sm:grid-cols-3 gap-6 text-sm">
-            <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-teal-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <div><p class="font-semibold text-slate-800">Horario</p><p class="text-slate-500">Lunes a viernes, desde 9:00 a.m.</p></div>
-            </div>
-            <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-teal-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                <div><p class="font-semibold text-slate-800">Ubicación</p><p class="text-slate-500">Barriada Altos de La Calzada</p></div>
-            </div>
-            <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-teal-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3l2 5-2.5 1.5a11 11 0 005 5L14 12l5 2v3a2 2 0 01-2 2A16 16 0 013 5z"/></svg>
-                <div><p class="font-semibold text-slate-800">Teléfono</p><p class="text-slate-500">6863-8040</p></div>
-            </div>
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-16 pb-20 md:pt-24 md:pb-32 bg-brand-tealLight flex items-center">
+        <!-- Fondo Decorativo -->
+        <div class="absolute inset-0 overflow-hidden z-0">
+            <svg class="absolute right-0 top-0 h-full w-full md:w-1/2 text-white/50 transform translate-x-1/3" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor">
+                <polygon points="0,100 100,0 100,100"/>
+            </svg>
+            <div class="absolute top-20 left-10 w-32 h-32 bg-brand-teal/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-48 h-48 bg-brand-teal/20 rounded-full blur-3xl"></div>
         </div>
-    </section>
 
-    <!-- ============ SERVICIOS ============ -->
-    <section id="servicios" class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
-        <div class="reveal max-w-2xl mb-12">
-            <p class="text-xs font-bold uppercase tracking-[0.15em] text-teal-700 mb-3">Tratamientos</p>
-            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Todo lo que tu familia necesita, en un solo lugar</h2>
-            <p class="text-slate-600 leading-relaxed">Desde la limpieza de rutina hasta el tratamiento que llevabas tiempo posponiendo. Te explicamos cada paso antes de empezar, sin sorpresas.</p>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div class="reveal soft-card bg-white rounded-2xl p-6 border border-slate-100">
-                <div class="w-11 h-11 rounded-xl bg-teal-50 grid place-items-center mb-4"><span class="text-xl">🦷</span></div>
-                <h3 class="display font-bold text-slate-900 mb-1.5">Limpieza y profilaxis</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">La cita que previene todo lo demás. Elimina sarro y manchas, y detecta a tiempo lo que aún no duele.</p>
-            </div>
-            <div class="reveal soft-card bg-white rounded-2xl p-6 border border-slate-100">
-                <div class="w-11 h-11 rounded-xl bg-teal-50 grid place-items-center mb-4"><span class="text-xl">😁</span></div>
-                <h3 class="display font-bold text-slate-900 mb-1.5">Ortodoncia</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Brackets y alineadores para niños y adultos. Evaluamos tu caso y te decimos cuánto tiempo tomará de verdad.</p>
-            </div>
-            <div class="reveal soft-card bg-white rounded-2xl p-6 border border-slate-100">
-                <div class="w-11 h-11 rounded-xl bg-teal-50 grid place-items-center mb-4"><span class="text-xl">✨</span></div>
-                <h3 class="display font-bold text-slate-900 mb-1.5">Blanqueamiento</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Estética dental con productos de grado profesional, cuidando el esmalte y sin sensibilidad innecesaria.</p>
-            </div>
-            <div class="reveal soft-card bg-white rounded-2xl p-6 border border-slate-100">
-                <div class="w-11 h-11 rounded-xl bg-teal-50 grid place-items-center mb-4"><span class="text-xl">🔧</span></div>
-                <h3 class="display font-bold text-slate-900 mb-1.5">Resinas y restauraciones</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Caries y fracturas resueltas con material del color de tu diente. Se ve natural y dura.</p>
-            </div>
-            <div class="reveal soft-card bg-white rounded-2xl p-6 border border-slate-100">
-                <div class="w-11 h-11 rounded-xl bg-teal-50 grid place-items-center mb-4"><span class="text-xl">🩺</span></div>
-                <h3 class="display font-bold text-slate-900 mb-1.5">Endodoncia</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Tratamiento de conducto para salvar la pieza en vez de extraerla, con anestesia y seguimiento.</p>
-            </div>
-            <div class="reveal soft-card bg-white rounded-2xl p-6 border border-slate-100">
-                <div class="w-11 h-11 rounded-xl bg-teal-50 grid place-items-center mb-4"><span class="text-xl">👶</span></div>
-                <h3 class="display font-bold text-slate-900 mb-1.5">Odontopediatría</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Atención pensada para que los niños no le tengan miedo al dentista. La primera visita marca todas las demás.</p>
-            </div>
-        </div>
-        <p class="reveal text-xs text-slate-400 mt-8 text-center">Los tratamientos mostrados son una propuesta de contenido. Se ajustan a los servicios reales de la clínica antes de publicar.</p>
-    </section>
-
-    <!-- ============ NOSOTROS ============ -->
-    <section id="nosotros" class="bg-slate-50/70 border-y border-slate-100">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-14 items-center">
-            <div class="reveal">
-                <p class="text-xs font-bold uppercase tracking-[0.15em] text-teal-700 mb-3">Por qué Family Dent</p>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-5">Una clínica de barrio, con estándares de clínica grande</h2>
-                <p class="text-slate-600 leading-relaxed mb-7">Aquí no eres un número de expediente. Conocemos a las familias que atendemos, recordamos tu tratamiento anterior y te explicamos las opciones antes de que decidas.</p>
-                <div class="space-y-4">
-                    <div class="flex gap-3.5">
-                        <div class="w-9 h-9 rounded-lg bg-white border border-slate-200 grid place-items-center shrink-0 text-teal-600 font-bold">1</div>
-                        <div><p class="font-semibold text-slate-800 mb-0.5">Presupuesto antes de empezar</p><p class="text-sm text-slate-600">Sabes cuánto cuesta y en cuántas sesiones, desde la primera cita.</p></div>
-                    </div>
-                    <div class="flex gap-3.5">
-                        <div class="w-9 h-9 rounded-lg bg-white border border-slate-200 grid place-items-center shrink-0 text-teal-600 font-bold">2</div>
-                        <div><p class="font-semibold text-slate-800 mb-0.5">Sin esperas eternas</p><p class="text-sm text-slate-600">Agendamos por bloques reales para que tu hora sea tu hora.</p></div>
-                    </div>
-                    <div class="flex gap-3.5">
-                        <div class="w-9 h-9 rounded-lg bg-white border border-slate-200 grid place-items-center shrink-0 text-teal-600 font-bold">3</div>
-                        <div><p class="font-semibold text-slate-800 mb-0.5">Te recordamos tu cita</p><p class="text-sm text-slate-600">Un mensaje antes de tu visita, para que no se te pase.</p></div>
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Text Content -->
+                <div class="md:w-1/2 md:pr-12 text-center md:text-left mb-10 md:mb-0">
+                    <span class="inline-block py-1 px-3 rounded-full bg-white text-brand-teal font-semibold text-sm mb-4 shadow-sm">
+                        Tu Sonrisa, Nuestra Prioridad
+                    </span>
+                    <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-brand-grayDark">
+                        Donde tu Familia puede <span class="text-brand-teal relative inline-block">
+                            sonreír
+                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-brand-teal/30" viewBox="0 0 100 20" preserveAspectRatio="none">
+                                <path d="M0,10 Q50,20 100,10" stroke="currentColor" stroke-width="4" fill="none" />
+                            </svg>
+                        </span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+                        Cuidado dental integral para todas las edades, en Altos de La Calzada. Atención cercana y cita confirmada desde tu WhatsApp, a la hora que escribas.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button onclick="openChat()" class="bg-brand-teal hover:bg-brand-tealDark text-white px-8 py-3.5 rounded-full font-medium transition shadow-lg shadow-brand-teal/40 text-center">
+                            Agendar Evaluación
+                        </button>
+                        <a href="#servicios" class="bg-white hover:bg-gray-50 text-brand-teal border border-brand-teal px-8 py-3.5 rounded-full font-medium transition text-center">
+                            Nuestros Servicios
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="reveal grid grid-cols-2 gap-4">
-                <div class="rounded-2xl aspect-[4/5] border-2 border-dashed border-slate-200 bg-white grid place-items-center text-center px-4">
-                    <div><p class="text-3xl mb-2">📷</p><p class="text-xs text-slate-400 leading-relaxed">Aquí va una foto real<br>de tu consultorio</p></div>
-                </div>
-                <div class="rounded-2xl aspect-[4/5] border-2 border-dashed border-slate-200 bg-white grid place-items-center text-center px-4 mt-8">
-                    <div><p class="text-3xl mb-2">📷</p><p class="text-xs text-slate-400 leading-relaxed">Y aquí una del equipo<br>atendiendo</p></div>
+
+                <!-- Hero Image -->
+                <div class="md:w-1/2 relative fade-in-up">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl z-10">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Familia feliz sonriendo" class="w-full h-auto object-cover rounded-2xl">
+                    </div>
+                    <!-- Elementos flotantes -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl z-20 flex items-center space-x-4 animate-bounce" style="animation-duration: 3s;">
+                        <div class="bg-brand-tealLight p-3 rounded-full text-brand-teal">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800">5.0</p>
+                            <p class="text-xs text-gray-500">Calificación en Google</p>
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-xl z-0 md:z-20">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-tooth text-brand-teal text-xl"></i>
+                            <span class="font-bold text-gray-800">Toda la familia</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ AGENDAMIENTO / ASISTENTE ============ -->
-    <section class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
-        <div class="reveal rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b2b2b 0%,#0f766e 60%,#0d9488 100%);">
-            <div class="absolute -top-16 -right-12 w-64 h-64 rounded-full blur-3xl opacity-40" style="background:radial-gradient(circle,#5eead4,transparent 70%);"></div>
-            <div class="relative z-10 grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-center">
+    <!-- Features Section -->
+    <section class="py-12 bg-white relative z-20 -mt-10 mx-4 md:mx-auto md:w-11/12 max-w-7xl rounded-2xl shadow-xl">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                <div class="p-4 fade-in-up">
+                    <div class="mx-auto w-16 h-16 bg-brand-tealLight text-brand-teal rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-2 text-brand-grayDark">Profesionales Expertos</h3>
+                    <p class="text-gray-600 text-sm">Nuestro equipo está capacitado en diversas especialidades odontológicas.</p>
+                </div>
+                <div class="p-4 pt-8 md:pt-4 fade-in-up" style="transition-delay: 100ms;">
+                    <div class="mx-auto w-16 h-16 bg-brand-tealLight text-brand-teal rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-2 text-brand-grayDark">Equipamiento Moderno</h3>
+                    <p class="text-gray-600 text-sm">Tecnología al servicio de diagnósticos y tratamientos precisos.</p>
+                </div>
+                <div class="p-4 pt-8 md:pt-4 fade-in-up" style="transition-delay: 200ms;">
+                    <div class="mx-auto w-16 h-16 bg-brand-tealLight text-brand-teal rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-hands-holding-child"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-2 text-brand-grayDark">Ambiente Familiar</h3>
+                    <p class="text-gray-600 text-sm">Un espacio seguro y relajado, para que niños y adultos pierdan el miedo al dentista.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h4 class="text-brand-teal font-semibold tracking-wider uppercase mb-2">Especialidades</h4>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-grayDark mb-4">Nuestros Servicios Dentales</h2>
+                <div class="w-24 h-1 bg-brand-teal mx-auto rounded-full"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">Tratamientos para mantener y mejorar la salud bucal de toda su familia bajo un mismo techo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 group fade-in-up">
+                    <div class="w-14 h-14 bg-brand-tealLight text-brand-teal rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-teal group-hover:text-white transition duration-300">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">Odontología General</h3>
+                    <p class="text-gray-600 mb-4">Prevención, diagnóstico y tratamiento de problemas primarios. Limpiezas, extracciones y restauraciones de resina (calzas).</p>
+                    <button onclick="openChat()" class="text-brand-teal font-medium hover:text-brand-tealDark inline-flex items-center">Consultar <i class="fas fa-arrow-right ml-2 text-sm"></i></button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 group fade-in-up" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-brand-tealLight text-brand-teal rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-teal group-hover:text-white transition duration-300">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">Ortodoncia</h3>
+                    <p class="text-gray-600 mb-4">Corrección de la posición de los dientes y maxilares mediante brackets tradicionales, estéticos o alineadores.</p>
+                    <button onclick="openChat()" class="text-brand-teal font-medium hover:text-brand-tealDark inline-flex items-center">Consultar <i class="fas fa-arrow-right ml-2 text-sm"></i></button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 group fade-in-up" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-brand-tealLight text-brand-teal rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-teal group-hover:text-white transition duration-300">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">Odontopediatría</h3>
+                    <p class="text-gray-600 mb-4">Atención especializada para niños. Enfocada en la prevención y en que su visita sea tranquila y sin miedo.</p>
+                    <button onclick="openChat()" class="text-brand-teal font-medium hover:text-brand-tealDark inline-flex items-center">Consultar <i class="fas fa-arrow-right ml-2 text-sm"></i></button>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 group fade-in-up">
+                    <div class="w-14 h-14 bg-brand-tealLight text-brand-teal rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-teal group-hover:text-white transition duration-300">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">Estética Dental</h3>
+                    <p class="text-gray-600 mb-4">Diseño de sonrisa, blanqueamiento dental profesional y carillas para que luzcas una sonrisa radiante.</p>
+                    <button onclick="openChat()" class="text-brand-teal font-medium hover:text-brand-tealDark inline-flex items-center">Consultar <i class="fas fa-arrow-right ml-2 text-sm"></i></button>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 group fade-in-up" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-brand-tealLight text-brand-teal rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-teal group-hover:text-white transition duration-300">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">Implantes y Prótesis</h3>
+                    <p class="text-gray-600 mb-4">Reemplazo de dientes perdidos para recuperar la funcionalidad y estética de tu boca con materiales de alta calidad.</p>
+                    <button onclick="openChat()" class="text-brand-teal font-medium hover:text-brand-tealDark inline-flex items-center">Consultar <i class="fas fa-arrow-right ml-2 text-sm"></i></button>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 group fade-in-up" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-brand-tealLight text-brand-teal rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-teal group-hover:text-white transition duration-300">
+                        <i class="fas fa-notes-medical"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-gray-800 mb-3">Endodoncia</h3>
+                    <p class="text-gray-600 mb-4">Tratamientos de conducto para salvar piezas dentales dañadas, aliviando el dolor y previniendo infecciones.</p>
+                    <button onclick="openChat()" class="text-brand-teal font-medium hover:text-brand-tealDark inline-flex items-center">Consultar <i class="fas fa-arrow-right ml-2 text-sm"></i></button>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-xs text-gray-400 mb-5">Los tratamientos listados son una propuesta de contenido. Se ajustan a los servicios reales de la clínica antes de publicar.</p>
+                <button onclick="openChat()" class="inline-block bg-brand-gray hover:bg-brand-grayDark text-white px-8 py-3 rounded-full font-medium transition">
+                    Preguntar por otro tratamiento
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="nosotros" class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image Grid -->
+                <div class="lg:w-1/2 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dentista trabajando" class="rounded-2xl w-full h-64 object-cover fade-in-up">
+                        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Consultorio dental" class="rounded-2xl w-full h-64 object-cover mt-8 fade-in-up" style="transition-delay: 150ms;">
+                    </div>
+                    <!-- Decoración -->
+                    <div class="absolute -z-10 -left-10 -bottom-10 w-40 h-40 bg-brand-tealLight rounded-full"></div>
+                    <div class="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-full shadow-2xl flex flex-col items-center justify-center w-32 h-32">
+                        <span class="text-3xl font-bold text-brand-teal">5.0</span>
+                        <span class="text-xs text-gray-500 font-medium text-center leading-tight">Calificación<br>en Google</span>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="lg:w-1/2 fade-in-up">
+                    <h4 class="text-brand-teal font-semibold tracking-wider uppercase mb-2">Sobre Nosotros</h4>
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-grayDark mb-6">Tu Clínica de Confianza en Cada Etapa de la Vida</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        En <strong>Family Dent</strong>, entendemos que visitar al dentista puede generar ansiedad. Por eso, nuestra clínica es un entorno acogedor, donde pacientes de todas las edades se sientan cómodos y seguros.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Nuestro compromiso es brindar atención odontológica de alta calidad, con una comunicación clara y transparente. Porque tu sonrisa y la de tu familia es nuestra mejor carta de presentación.
+                    </p>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-brand-teal mt-1 mr-3 text-lg"></i>
+                            <span class="text-gray-700">Tratamientos personalizados según tus necesidades.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-brand-teal mt-1 mr-3 text-lg"></i>
+                            <span class="text-gray-700">Presupuesto claro antes de comenzar cualquier tratamiento.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-brand-teal mt-1 mr-3 text-lg"></i>
+                            <span class="text-gray-700">Estrictos protocolos de bioseguridad e higiene.</span>
+                        </li>
+                    </ul>
+
+                    <!-- Ficha del odontólogo: pendiente de los datos reales -->
+                    <div class="flex items-center p-4 rounded-xl por-confirmar">
+                        <div class="h-12 w-12 rounded-full bg-white border border-gray-200 flex items-center justify-center text-brand-gray">
+                            <i class="fas fa-user-md text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="font-bold text-brand-grayDark font-heading">Nombre del odontólogo</p>
+                            <p class="text-xs text-brand-gray">Pendiente de confirmar con la clínica</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3">Las fotos son de referencia y se reemplazan por imágenes reales del consultorio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonios" class="py-24 bg-brand-gray/5">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h4 class="text-brand-teal font-semibold tracking-wider uppercase mb-2">Ejemplo de sección</h4>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-brand-grayDark mb-4">Así se verán tus reseñas reales de Google</h2>
+                <div class="w-24 h-1 bg-brand-teal mx-auto rounded-full"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">
+                    Hoy la clínica tiene <strong>una sola reseña</strong> en Google. El sistema le pide la opinión a cada paciente al terminar su cita, y estas tarjetas se van llenando solas con lo que ellos escriban.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Ejemplo 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative fade-in-up">
+                    <span class="absolute -top-3 left-6 bg-brand-gray text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">Ejemplo</span>
+                    <i class="fas fa-quote-left text-4xl text-brand-tealLight absolute top-6 right-6"></i>
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 text-sm flex space-x-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 mb-6 italic">"Aquí aparecerá la reseña que deje un paciente de odontopediatría después de su cita."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-400"><i class="fas fa-user"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-brand-gray">Paciente de odontopediatría</h4>
+                            <p class="text-xs text-gray-400">Reseña verificada de Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejemplo 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative fade-in-up" style="transition-delay: 100ms;">
+                    <span class="absolute -top-3 left-6 bg-brand-gray text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">Ejemplo</span>
+                    <i class="fas fa-quote-left text-4xl text-brand-tealLight absolute top-6 right-6"></i>
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 text-sm flex space-x-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 mb-6 italic">"Aquí aparecerá la reseña de alguien que se hizo un tratamiento de estética dental."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-400"><i class="fas fa-user"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-brand-gray">Paciente de estética dental</h4>
+                            <p class="text-xs text-gray-400">Reseña verificada de Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejemplo 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative fade-in-up" style="transition-delay: 200ms;">
+                    <span class="absolute -top-3 left-6 bg-brand-gray text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">Ejemplo</span>
+                    <i class="fas fa-quote-left text-4xl text-brand-tealLight absolute top-6 right-6"></i>
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 text-sm flex space-x-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 mb-6 italic">"Aquí aparecerá la reseña de un paciente de odontología general o limpieza."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-400"><i class="fas fa-user"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-brand-gray">Paciente de odontología general</h4>
+                            <p class="text-xs text-gray-400">Reseña verificada de Google</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 bg-white relative">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                <!-- Info & Map -->
+                <div class="lg:w-2/5 bg-brand-teal text-white p-10 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-heading text-2xl font-bold mb-2">Información de Contacto</h3>
+                        <p class="text-brand-tealLight mb-8">Estamos listos para atenderte. Contáctanos o visítanos.</p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold">Ubicación</h4>
+                                    <p class="text-brand-tealLight text-sm mt-1">Barriada Altos de La Calzada,<br>Panamá</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold">Teléfono</h4>
+                                    <p class="text-brand-tealLight text-sm mt-1">6863-8040</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fab fa-whatsapp mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold">WhatsApp</h4>
+                                    <p class="text-brand-tealLight text-sm mt-1">Agenda tu cita a cualquier hora</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold">Horario de Atención</h4>
+                                    <p class="text-brand-tealLight text-sm mt-1">Lunes a viernes: desde 9:00 a.m.<br><span class="opacity-70">Horario completo por confirmar</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 pt-8 border-t border-white/20">
+                        <h4 class="font-semibold mb-4">Escríbenos</h4>
+                        <a href="https://wa.me/50768638040" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-white/10 hover:bg-white hover:text-brand-teal transition rounded-full px-5 py-3 font-medium">
+                            <i class="fab fa-whatsapp text-xl"></i> WhatsApp 6863-8040
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:w-3/5 p-10 lg:p-12">
+                    <h2 class="font-heading text-3xl font-bold text-brand-grayDark mb-2">Agendar una Cita</h2>
+                    <p class="text-gray-600 mb-8">Completa el formulario y te confirmamos tu cita. Si prefieres, el asistente de WhatsApp te agenda al instante.</p>
+
+                    <form onsubmit="event.preventDefault(); showMessage();" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre Completo</label>
+                                <input type="text" id="nombre" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-teal focus:border-brand-teal outline-none transition" placeholder="Ej. Juan Pérez" required>
+                            </div>
+                            <div>
+                                <label for="telefono" class="block text-sm font-medium text-gray-700 mb-2">Teléfono</label>
+                                <input type="tel" id="telefono" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-teal focus:border-brand-teal outline-none transition" placeholder="Ej. 6000-0000" required>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="servicio" class="block text-sm font-medium text-gray-700 mb-2">Servicio de Interés</label>
+                                <select id="servicio" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-teal focus:border-brand-teal outline-none transition bg-white">
+                                    <option>Consulta General</option>
+                                    <option>Ortodoncia</option>
+                                    <option>Odontopediatría</option>
+                                    <option>Limpieza Dental</option>
+                                    <option>Estética Dental</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="fecha" class="block text-sm font-medium text-gray-700 mb-2">Fecha Preferida</label>
+                                <input type="date" id="fecha" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-teal focus:border-brand-teal outline-none transition text-gray-600">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2">Mensaje (Opcional)</label>
+                            <textarea id="mensaje" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-teal focus:border-brand-teal outline-none transition resize-none" placeholder="Cuéntanos un poco sobre tu necesidad..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-teal hover:bg-brand-tealDark text-white font-semibold py-4 rounded-lg transition duration-300 shadow-md shadow-brand-teal/30">
+                            Solicitar Cita Ahora
+                        </button>
+                    </form>
+
+                    <!-- Aviso de envío (reemplaza al alert) -->
+                    <div id="formMessage" class="hidden mt-4 p-4 rounded-lg bg-green-50 text-green-800 border border-green-200">
+                        <p class="font-medium flex items-center"><i class="fas fa-check-circle mr-2"></i> ¡Gracias! En el sitio publicado, esta solicitud entra directo a la agenda de la clínica.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-grayDark text-white py-12 border-t-4 border-brand-teal">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Brand -->
                 <div>
-                    <p class="text-xs font-bold uppercase tracking-[0.15em] text-teal-300 mb-3">Agenda 24/7</p>
-                    <h2 class="text-3xl sm:text-4xl font-bold mb-4 leading-tight">¿Te duele hoy a las 9 de la noche?</h2>
-                    <p class="text-teal-50/90 leading-relaxed mb-7">No tienes que esperar a mañana para saber si hay campo. Escríbenos y nuestro asistente te da los horarios disponibles y te agenda al momento, a la hora que sea, incluso con la clínica cerrada.</p>
-                    <button onclick="openChat()" class="inline-flex items-center gap-2 bg-white text-teal-800 font-bold rounded-xl px-7 py-4 text-[15px] hover:bg-teal-50 transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                        Probar el asistente
-                    </button>
+                    <div class="bg-white inline-block p-2 rounded mb-4">
+                        <img src="logofamilydent.jpg" alt="Family Dent Logo" class="h-14 w-auto" onerror="this.src='https://placehold.co/150x60/ffffff/1cb2ab?text=Family+Dent'">
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">
+                        "Donde tu Familia puede sonreír". Atención odontológica integral con calidad y calidez humana, en Altos de La Calzada.
+                    </p>
                 </div>
-                <div class="space-y-3">
-                    <div class="flex items-center gap-3 bg-white/10 border border-white/15 rounded-xl px-4 py-3.5">
-                        <span class="text-xl">💬</span><p class="text-sm text-teal-50">Responde preguntas de precios y tratamientos</p>
-                    </div>
-                    <div class="flex items-center gap-3 bg-white/10 border border-white/15 rounded-xl px-4 py-3.5">
-                        <span class="text-xl">📅</span><p class="text-sm text-teal-50">Agenda la cita en tu calendario real</p>
-                    </div>
-                    <div class="flex items-center gap-3 bg-white/10 border border-white/15 rounded-xl px-4 py-3.5">
-                        <span class="text-xl">🔔</span><p class="text-sm text-teal-50">Recuerda la cita un día antes</p>
-                    </div>
-                    <div class="flex items-center gap-3 bg-white/10 border border-white/15 rounded-xl px-4 py-3.5">
-                        <span class="text-xl">🧑‍⚕️</span><p class="text-sm text-teal-50">Te pasa con una persona cuando hace falta</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ============ UBICACION ============ -->
-    <section id="ubicacion" class="bg-slate-50/70 border-y border-slate-100">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-20 grid lg:grid-cols-2 gap-10 items-center">
-            <div class="reveal">
-                <p class="text-xs font-bold uppercase tracking-[0.15em] text-teal-700 mb-3">Cómo llegar</p>
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">Estamos en Altos de La Calzada</h2>
-                <p class="text-slate-600 leading-relaxed mb-6">Fácil de encontrar y con dónde estacionar cerca. Si vienes por primera vez, escríbenos y te mandamos la ubicación exacta por WhatsApp.</p>
-                <div class="space-y-3 text-sm">
-                    <p class="flex items-start gap-3"><span class="text-teal-600 mt-0.5">📍</span><span class="text-slate-700"><strong>Dirección:</strong> Barriada Altos de La Calzada, Panamá</span></p>
-                    <p class="flex items-start gap-3"><span class="text-teal-600 mt-0.5">🕘</span><span class="text-slate-700"><strong>Horario:</strong> Lunes a viernes desde las 9:00 a.m.</span></p>
-                    <p class="flex items-start gap-3"><span class="text-teal-600 mt-0.5">📞</span><span class="text-slate-700"><strong>Teléfono:</strong> <a href="tel:+50768638040" class="text-teal-700 font-semibold hover:underline">6863-8040</a></span></p>
+                <!-- Links -->
+                <div>
+                    <h4 class="font-heading text-lg font-semibold mb-4 text-white">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#inicio" class="hover:text-brand-teal transition">Inicio</a></li>
+                        <li><a href="#nosotros" class="hover:text-brand-teal transition">Sobre Nosotros</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-teal transition">Nuestros Servicios</a></li>
+                        <li><a href="#testimonios" class="hover:text-brand-teal transition">Testimonios</a></li>
+                        <li><a href="#contacto" class="hover:text-brand-teal transition">Contacto</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="reveal rounded-2xl overflow-hidden border border-slate-200 bg-white aspect-[16/11] grid place-items-center">
-                <div class="text-center px-6">
-                    <p class="text-4xl mb-3">🗺️</p>
-                    <p class="text-sm font-semibold text-slate-700 mb-1">Mapa interactivo de Google</p>
-                    <p class="text-xs text-slate-400 leading-relaxed">En el sitio publicado se integra el mapa real<br>con la ficha de la clínica y el botón "Cómo llegar".</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ============ FAQ ============ -->
-    <section id="preguntas" class="max-w-3xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
-        <h2 class="reveal text-3xl font-bold text-slate-900 mb-9 text-center">Preguntas frecuentes</h2>
-        <div class="space-y-3">
-            <details class="reveal group bg-white rounded-xl border border-slate-200 px-5 py-4">
-                <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-800 text-[15px]">¿Necesito cita o puedo llegar directo?<span class="text-teal-600 group-open:rotate-45 transition">+</span></summary>
-                <p class="text-sm text-slate-600 mt-3 leading-relaxed">Trabajamos con cita para que no esperes. Puedes agendar por WhatsApp en menos de un minuto, a cualquier hora del día.</p>
-            </details>
-            <details class="reveal group bg-white rounded-xl border border-slate-200 px-5 py-4">
-                <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-800 text-[15px]">¿Atienden niños?<span class="text-teal-600 group-open:rotate-45 transition">+</span></summary>
-                <p class="text-sm text-slate-600 mt-3 leading-relaxed">Sí. Atendemos a toda la familia, con un enfoque especial para que la primera visita de los niños sea tranquila.</p>
-            </details>
-            <details class="reveal group bg-white rounded-xl border border-slate-200 px-5 py-4">
-                <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-800 text-[15px]">¿Cuánto cuesta una limpieza?<span class="text-teal-600 group-open:rotate-45 transition">+</span></summary>
-                <p class="text-sm text-slate-600 mt-3 leading-relaxed">Depende del estado de tus encías y de si hace falta destartraje. Escríbenos y te damos el precio exacto antes de que vengas.</p>
-            </details>
-            <details class="reveal group bg-white rounded-xl border border-slate-200 px-5 py-4">
-                <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-800 text-[15px]">¿Qué formas de pago aceptan?<span class="text-teal-600 group-open:rotate-45 transition">+</span></summary>
-                <p class="text-sm text-slate-600 mt-3 leading-relaxed">Consúltanos por WhatsApp las opciones disponibles y los planes de pago para tratamientos largos como ortodoncia.</p>
-            </details>
-        </div>
-        <p class="reveal text-xs text-slate-400 mt-7 text-center">Las respuestas son una propuesta de contenido y se ajustan con la información real de la clínica.</p>
-    </section>
+                <!-- Services -->
+                <div>
+                    <h4 class="font-heading text-lg font-semibold mb-4 text-white">Especialidades</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#servicios" class="hover:text-brand-teal transition">Odontología General</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-teal transition">Ortodoncia</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-teal transition">Odontopediatría</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-teal transition">Estética Dental</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-teal transition">Implantes</a></li>
+                    </ul>
+                </div>
 
-    <!-- ============ FOOTER ============ -->
-    <footer class="text-white" style="background:linear-gradient(135deg,#0b2b2b,#0f766e);">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8 py-12 grid sm:grid-cols-3 gap-8">
-            <div>
-                <div class="flex items-center gap-2.5 mb-3">
-                    <div class="w-9 h-9 rounded-xl grid place-items-center bg-white/15">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.6-1.4-3.4-2-5-1.3C4.8 5.2 4 7.6 4.6 10.4c.5 2.3 1 3.6 1.6 6.2.4 1.8 1 3 2 3 1.2 0 1.4-1.6 1.8-3.4.3-1.4.7-2.2 2-2.2s1.7.8 2 2.2c.4 1.8.6 3.4 1.8 3.4 1 0 1.6-1.2 2-3 .6-2.6 1.1-3.9 1.6-6.2.6-2.8-.2-5.2-2.4-6.2-1.6-.7-3.4-.1-5 1.3Z"/></svg>
-                    </div>
-                    <p class="display font-bold text-lg">Family Dent</p>
-                </div>
-                <p class="text-sm text-teal-100/80 leading-relaxed">Clínica dental para toda la familia en Barriada Altos de La Calzada, Panamá.</p>
-            </div>
-            <div>
-                <p class="font-semibold mb-3 text-sm">Contacto</p>
-                <div class="space-y-2 text-sm text-teal-100/80">
-                    <p><a href="tel:+50768638040" class="hover:text-white transition">6863-8040</a></p>
-                    <p>Barriada Altos de La Calzada</p>
-                    <p>Lunes a viernes, desde 9:00 a.m.</p>
+                <!-- Contacto -->
+                <div>
+                    <h4 class="font-heading text-lg font-semibold mb-4 text-white">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="tel:+50768638040" class="hover:text-brand-teal transition">6863-8040</a></li>
+                        <li>Barriada Altos de La Calzada</li>
+                        <li>Lunes a viernes desde 9:00 a.m.</li>
+                    </ul>
                 </div>
             </div>
-            <div>
-                <p class="font-semibold mb-3 text-sm">Agenda tu cita</p>
-                <button onclick="openChat()" class="w-full bg-white text-teal-800 font-semibold rounded-xl py-3 text-sm hover:bg-teal-50 transition">Escribir por WhatsApp</button>
-            </div>
-        </div>
-        <div class="border-t border-white/10">
-            <div class="max-w-6xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row justify-between gap-2 text-[11px] text-teal-200/60">
-                <p>© 2026 Clínica Dental Family Dent</p>
-                <p>Vista previa diseñada por <a href="https://elementoweb.com" class="underline hover:text-white">elementoweb.com</a></p>
+
+            <div class="mt-12 pt-8 border-t border-gray-600 text-center text-gray-400 text-sm">
+                <p>&copy; 2026 Family Dent Clínica Dental. Todos los derechos reservados.</p>
+                <p class="text-xs text-gray-500 mt-2">Vista previa diseñada por <a href="https://elementoweb.com" class="underline hover:text-brand-teal">elementoweb.com</a></p>
             </div>
         </div>
     </footer>
 
     <!-- ============ WIDGET DEL ASISTENTE ============ -->
-    <div id="chatPanel" class="chat-panel hidden-panel fixed bottom-24 right-5 sm:right-6 z-50 w-[calc(100vw-2.5rem)] sm:w-[380px] bg-white rounded-2xl overflow-hidden border border-slate-200">
-        <div class="px-5 py-4 text-white flex items-center justify-between" style="background:linear-gradient(135deg,#0f766e,#0d9488);">
+    <div id="chatPanel" class="chat-panel hidden-panel fixed bottom-24 right-5 sm:right-6 z-50 w-[calc(100vw-2.5rem)] sm:w-[380px] bg-white rounded-2xl overflow-hidden border border-gray-200">
+        <div class="px-5 py-4 bg-brand-teal text-white flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full bg-white/20 grid place-items-center text-lg">🦷</div>
+                <div class="w-9 h-9 rounded-full bg-white/20 grid place-items-center"><i class="fas fa-tooth"></i></div>
                 <div class="leading-tight">
                     <p class="font-semibold text-sm">Asistente Family Dent</p>
-                    <p class="text-[11px] text-teal-100 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> Responde al instante</p>
+                    <p class="text-[11px] text-brand-tealLight flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> Responde al instante</p>
                 </div>
             </div>
             <button onclick="closeChat()" class="text-white/70 hover:text-white transition text-xl leading-none">&times;</button>
         </div>
-        <div id="chatBody" class="p-4 space-y-3 h-[340px] overflow-y-auto bg-slate-50/60"></div>
-        <div class="px-4 py-3 border-t border-slate-100 bg-white">
-            <button onclick="replayChat()" class="w-full text-xs font-semibold text-teal-700 hover:text-teal-800 transition">↻ Ver la demostración otra vez</button>
+        <div id="chatBody" class="p-4 space-y-3 h-[340px] overflow-y-auto bg-gray-50"></div>
+        <div class="px-4 py-3 border-t border-gray-100 bg-white">
+            <button onclick="replayChat()" class="w-full text-xs font-semibold text-brand-teal hover:text-brand-tealDark transition">↻ Ver la demostración otra vez</button>
         </div>
     </div>
 
-    <button id="chatFab" onclick="toggleChat()" class="fab-pulse fixed bottom-6 right-5 sm:right-6 z-50 w-14 h-14 rounded-full grid place-items-center text-white transition hover:scale-105" style="background:linear-gradient(135deg,#14b8a6,#0d9488);" aria-label="Abrir asistente">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+    <!-- Botón del asistente -->
+    <button id="chatFab" onclick="toggleChat()" class="fab-pulse fixed bottom-6 right-5 sm:right-6 bg-brand-teal text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:scale-105 transition-transform duration-300 z-50" aria-label="Abrir asistente">
+        <i class="fas fa-comment-dots"></i>
     </button>
 
+    <!-- Botón de WhatsApp, al lado del asistente para que no se encimen -->
+    <a href="https://wa.me/50768638040" target="_blank" rel="noopener"
+       class="fixed bottom-6 right-24 sm:right-[6.5rem] bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 transition-transform duration-300 z-50"
+       aria-label="Escríbenos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
-        // Scroll reveal
-        const io = new IntersectionObserver((es) => {
-            es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-        }, { threshold: 0.12 });
-        document.querySelectorAll('.reveal').forEach((el, i) => {
-            el.style.transitionDelay = Math.min(i * 45, 220) + 'ms';
-            io.observe(el);
+        // Lógica del menú móvil
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        function closeMobileMenu() {
+            menu.classList.add('hidden');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
         });
+
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
+
+        // Efecto del Header al hacer scroll
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) header.classList.add('header-scrolled');
+            else header.classList.remove('header-scrolled');
+        });
+
+        // Animación de aparición (Fade In Up)
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); obs.unobserve(entry.target); }
+            });
+        }, { root: null, rootMargin: '0px', threshold: 0.1 });
+        document.querySelectorAll('.fade-in-up').forEach(elem => observer.observe(elem));
+
+        // Aviso del formulario, sin alert()
+        function showMessage() {
+            const msgBox = document.getElementById('formMessage');
+            msgBox.classList.remove('hidden');
+            setTimeout(() => {
+                msgBox.classList.add('hidden');
+                document.querySelector('form').reset();
+            }, 6000);
+        }
 
         /* Demostración del asistente. Es un guion grabado, no el bot real: sirve
            para que el dueño vea en 20 segundos qué hace el sistema cuando un
@@ -417,8 +713,8 @@
             const b = document.createElement('div');
             b.className = 'bubble-in max-w-[82%] text-sm leading-relaxed px-3.5 py-2.5 rounded-2xl ' +
                 (de === 'user'
-                    ? 'bg-teal-600 text-white rounded-br-sm'
-                    : 'bg-white text-slate-700 border border-slate-100 rounded-bl-sm');
+                    ? 'bg-brand-teal text-white rounded-br-sm'
+                    : 'bg-white text-gray-700 border border-gray-100 rounded-bl-sm');
             b.innerHTML = txt;
             wrap.appendChild(b);
             body.appendChild(wrap);
@@ -427,8 +723,8 @@
 
         function escribiendo() {
             const wrap = document.createElement('div');
-            wrap.className = 'flex justify-start typing-row';
-            wrap.innerHTML = '<div class="typing bg-white border border-slate-100 rounded-2xl rounded-bl-sm px-4 py-3"><span></span><span></span><span></span></div>';
+            wrap.className = 'flex justify-start';
+            wrap.innerHTML = '<div class="typing bg-white border border-gray-100 rounded-2xl rounded-bl-sm px-4 py-3"><span></span><span></span><span></span></div>';
             body.appendChild(wrap);
             body.scrollTop = body.scrollHeight;
             return wrap;
@@ -461,7 +757,7 @@
         function toggleChat() { panel.classList.contains('hidden-panel') ? openChat() : closeChat(); }
         function replayChat() { corriendo = false; correrGuion(); }
 
-        // Abre el asistente solo la primera vez, para que el dueño lo vea sin buscarlo.
+        // Se abre solo la primera vez, para que el dueño lo vea sin buscarlo.
         setTimeout(() => { if (panel.classList.contains('hidden-panel')) openChat(); }, 3500);
     </script>
 </body>

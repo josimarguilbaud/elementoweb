@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe del Asistente · TRAMITA PA — elementoweb.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1e293b; --navy: #1e3a8a; --deep: #0b1220;
+    --blue: #3b82f6; --violet: #7c3aed;
+    --paper: #eef2fb; --card: rgba(255,255,255,.78); --line: #dbe3f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Inter', system-ui, sans-serif; color: var(--ink);
+    font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    background: var(--paper);
+    background-image:
+      radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,.10), transparent 60%),
+      radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,.12), transparent 55%);
+    background-attachment: fixed;
+  }
+  .page { max-width: 52rem; margin: 1.5rem auto 4rem; padding: 0 1.1rem; }
+  h1,h2,h3,h4 { font-family: 'Bricolage Grotesque','Inter',sans-serif; letter-spacing: -.02em; text-wrap: balance; }
+  header.ew {
+    background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);
+    color: #fff; border-radius: 22px; padding: 1.8rem 1.9rem; overflow: hidden; position: relative;
+  }
+  header.ew::after {
+    content:''; position:absolute; inset:0; opacity:.06; pointer-events:none;
+    background-image: linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),
+                      linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);
+    background-size: 32px 32px;
+  }
+  .brand { display:flex; align-items:center; gap:.65rem; padding-bottom:1.1rem; border-bottom:1px solid rgba(255,255,255,.15); }
+  .brand .mark {
+    width: 2.4rem; height: 2.4rem; border-radius: .8rem; display:grid; place-items:center; flex-shrink:0;
+    background: linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);
+    box-shadow: 0 10px 24px -8px rgba(59,130,246,.7);
+  }
+  .brand p { margin:0; line-height:1.25; }
+  .brand .n { font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:1.05rem; }
+  .brand .n span { color:#c4b5fd; }
+  .brand .s { font-size:.68rem; color:rgba(174,187,230,.9); letter-spacing:.08em; }
+  .eyebrow { margin:1.2rem 0 .4rem; font-size:.7rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase; color:#aebbe6; }
+  header.ew h1 {
+    margin:0; font-size:2rem; line-height:1.12; font-weight:800;
+    background: linear-gradient(90deg,#93c5fd,#e0e7ff,#c4b5fd);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  header.ew .fecha { margin:.7rem 0 0; font-size:.82rem; color:rgba(174,187,230,.9); }
+  main.card {
+    margin-top: 1.4rem; background: var(--card); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.9); border-radius: 18px;
+    box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 20px 40px -24px rgba(30,58,138,.28);
+    padding: 1.6rem 1.8rem;
+  }
+  main h2 {
+    font-size: 1.2rem; color: var(--navy); margin: 1.9em 0 .7em;
+    padding-bottom: .35em; border-bottom: 1px solid var(--line);
+  }
+  main h2:first-child { margin-top: .2em; }
+  main h3 { font-size: 1rem; color: var(--navy); margin: 1.4em 0 .5em; }
+  main a { color: var(--blue); }
+  main blockquote {
+    margin: 1em 0; padding: .8em 1.05em; border: 1px solid #c9dcf8; background: #eef4fe;
+    border-radius: 12px; color: #24406e; font-size: .92em;
+  }
+  main blockquote p { margin: .25em 0; }
+  main ul, main ol { padding-left: 1.3rem; }
+  main li { margin: .3rem 0; }
+  main li::marker { color: var(--blue); font-weight: 700; }
+  .tabla { overflow-x: auto; margin: 1em 0; }
+  main table { border-collapse: collapse; width: 100%; font-size: .9em; }
+  main th {
+    text-align: left; background: linear-gradient(135deg,#eff6ff,#eef2ff);
+    color: var(--navy); padding: .55em .8em; border: 1px solid var(--line);
+    font-family: 'Bricolage Grotesque',sans-serif; font-weight: 700; white-space: nowrap;
+  }
+  main td { padding: .55em .8em; border: 1px solid var(--line); vertical-align: top; background: rgba(255,255,255,.6); }
+  main hr { border: none; border-top: 1px solid var(--line); margin: 1.6em 0; }
+  main strong { color: var(--navy); }
+
+  /* Cifras del periodo: lo primero que se lee, en un vistazo. */
+  .cifras { display:grid; grid-template-columns:repeat(auto-fit,minmax(9rem,1fr)); gap:.8rem; margin:1.2em 0; }
+  .cifra {
+    background:linear-gradient(135deg,#eff6ff,#eef2ff); border:1px solid var(--line);
+    border-radius:14px; padding:.9rem 1rem;
+  }
+  .cifra .n {
+    font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.7rem;
+    line-height:1.1; color:var(--navy);
+  }
+  .cifra .t { font-size:.78rem; color:#5b6478; margin-top:.15rem; }
+
+  /* Lo que le toca a Jahir: tiene que destacar sobre el resto del informe. */
+  .accion {
+    margin:1.2em 0; padding:1.1rem 1.3rem; border-radius:16px;
+    border:1px solid #c7b8f5; background:linear-gradient(135deg,#f5f3ff,#eef4fe);
+  }
+  .accion h3 { margin-top:0; color:#5b21b6; }
+  .accion p:last-child { margin-bottom:0; }
+
+  footer.ew {
+    margin-top: 1.4rem; display:flex; flex-wrap:wrap; gap:.3rem 1.4rem;
+    font-size:.82rem; color:#5b6478; padding: 0 .4rem;
+  }
+  footer.ew b { color: var(--navy); }
+  @media print {
+    body { background:#fff; }
+    main.card { box-shadow:none; border-color:#e5e7eb; }
+    header.ew { border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="ew">
+    <div class="brand">
+      <div class="mark"><svg width="22" height="22" viewBox="0 0 50 52" fill="none"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/><circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/></svg></div>
+      <div>
+        <p class="n">elementoweb<span>.com</span></p>
+        <p class="s">DESARROLLO WEB · IA · AUTOMATIZACIÓN</p>
+      </div>
+    </div>
+    <p class="eyebrow">Informe de seguimiento · Tu asistente con IA</p>
+    <h1>Informe · Asistente de TRAMITA PA</h1>
+    <p class="fecha">Primeros dos días en funcionamiento · 27 de agosto de 2026</p>
+  </header>
+
+  <main class="card">
+
+<blockquote>
+<p>Resumen en una línea: <strong>el asistente está trabajando bien</strong>, corregimos tres cosas —una que reportaste tú y dos que encontramos revisando— y hay un solo gesto que depende de ti. 👇</p>
+</blockquote>
+
+<h2>Cómo va</h2>
+
+<div class="cifras">
+  <div class="cifra"><div class="n">140</div><div class="t">conversaciones atendidas</div></div>
+  <div class="cifra"><div class="n">84</div><div class="t">tarjetas en tu embudo</div></div>
+  <div class="cifra"><div class="n">3</div><div class="t">seguimientos activados</div></div>
+  <div class="cifra"><div class="n">0</div><div class="t">fallos de envío</div></div>
+</div>
+
+<p>Tu plan incluye 800 conversaciones al mes, así que vas holgado.</p>
+
+<p>Tu embudo <strong>pasó de 18 a 84 tarjetas</strong> en estos dos días. Cada persona que escribe queda registrada sola, con su nombre y lo que necesita, sin que tengas que anotar nada.</p>
+
+<p>El seguimiento automático ya se activó en tres casos y completó uno, <strong>sin un solo fallo de envío</strong>.</p>
+
+<h2>Lo que corregimos</h2>
+
+<h3>1 · El asistente ya no le pide dinero a quien ya es cliente</h3>
+
+<p>Es el problema que reportaste el domingo. El asistente ofrecía la consulta de $15 a cualquiera que tuviera dudas, sin poder distinguir quién ya te había pagado.</p>
+
+<p>Ahora tiene una regla por encima de todas las demás: <strong>si la persona ya contrató, ya pagó o tiene cita, su consulta está incluida</strong>. Ante la duda te escala a ti en lugar de cobrar.</p>
+
+<h3>2 · Te cede el paso, contestes desde donde contestes</h3>
+
+<p>Antes solo se apartaba si respondías desde el portal. Si contestabas desde el celular, seguía respondiendo encima de ti. <strong>Ahora se calla en cuanto tú escribes</strong>, sin importar desde dónde.</p>
+
+<h3>3 · Y vuelve solo cuando la conversación se enfría</h3>
+
+<p>Este lo detectamos revisando, no lo habías notado todavía. Al apartarse, el asistente se quedaba callado en esa conversación <strong>para siempre</strong>. En dos días se había desactivado en 140 de tus 144 conversaciones: se estaba apagando solo, poco a poco.</p>
+
+<p>Ya está corregido. Ahora se aparta mientras tú atiendes y, <strong>si pasan tres horas sin movimiento, vuelve a estar disponible</strong> en esa conversación. Las 140 que se habían quedado mudas ya están activas otra vez.</p>
+
+<h2>Lo que necesito de ti</h2>
+
+<div class="accion">
+<h3>Mover las tarjetas en tu Embudo</h3>
+<p>Es una sola cosa, y es la que más impacto tiene. <strong>El Embudo es la única memoria permanente</strong> que el asistente tiene sobre cada persona: la conversación se le olvida, la columna no.</p>
+<p><strong>Cuando alguien te pague</strong> → arrastra su tarjeta a <strong>“Ganado”</strong>.<br>
+<strong>Cuando te confirme que quiere tramitar pero aún no pague</strong> → a <strong>“Pago pendiente”</strong>.</p>
+</div>
+
+<p>Con eso el asistente sabe quién es cliente tuyo <strong>para siempre</strong>, aunque el pago haya sido hace meses y aunque escriba desde otro chat.</p>
+
+<p>Esto es lo que significa cada columna <em>para el asistente</em>:</p>
+
+<div class="tabla">
+<table>
+<thead><tr><th>Columna</th><th>Qué entiende el asistente</th></tr></thead>
+<tbody>
+<tr><td><strong>Por contactar</strong></td><td>Llegó solo, aún no hablas con él.</td></tr>
+<tr><td><strong>Contactado</strong></td><td>Ya conversaron, todavía no contrata. Aquí sí puede ofrecerle la consulta de $15.</td></tr>
+<tr><td><strong>Pago pendiente</strong></td><td>Ya te dijo que sí, falta que pague. Aquí ya no le pide la consulta.</td></tr>
+<tr><td><strong>Ganado</strong></td><td>Ya pagó. Es cliente: no le vuelve a pedir un centavo.</td></tr>
+<tr><td><strong>Perdido</strong></td><td>No se dio.</td></tr>
+</tbody>
+</table>
+</div>
+
+<blockquote>
+<p><strong>Empieza por lo de hoy:</strong> tienes <strong>41 personas en “Contactado” y solo 1 en “Ganado”</strong>, sin cambios desde el 20 de agosto. Si varias de esas 41 ya te pagaron, muévelas — cada una es un cliente al que el asistente deja de tratar como desconocido.</p>
+<p>Mientras el embudo no lo refleje, el asistente solo puede saber que alguien ya pagó <em>si la propia persona se lo dice</em>. Y eso es justo lo que falló el domingo.</p>
+</blockquote>
+
+<h2>Dos recordatorios</h2>
+
+<ul>
+<li><strong>El asistente no contesta los mensajes viejos</strong> que quedaron esperando: solo responde a mensajes nuevos. Esos ciérralos tú.</li>
+<li><strong>Si en algún chat prometiste un precio o una fecha a mano</strong>, ciérralo tú también. El asistente lee esas respuestas como si las hubiera dicho él y va a seguir por ahí.</li>
+</ul>
+
+<hr>
+
+<p>Cualquier duda o cambio: <strong>ElementoWeb</strong> · info@elementoweb.com · WhatsApp +507 6162-2787.</p>
+
+  </main>
+  <footer class="ew">
+    <span>Preparado para <b>TRAMITA PA</b> por <b>ElementoWeb</b></span>
+    <span>info@elementoweb.com</span>
+    <span>+507 6162-2787</span>
+  </footer>
+</div>
+</body>
+</html>

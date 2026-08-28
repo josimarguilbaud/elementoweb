@@ -1,0 +1,67 @@
+# Publica la web en Netcup cuando se sube algo a `main`.
+#
+# Por que existe: el panel de Coolify de Netcup esta cerrado a internet a
+# proposito, asi que GitHub no puede llamarle a un webhook. Sin esto un push se
+# queda en GitHub sin llegar al servidor, y no falla nada visible.
+#
+# Esta era la ultima web del servidor que se desplegaba a mano, y ya costo lo
+# suyo: el informe de TramitaPa (`/propuestas/tramitapa-informe/`) llevaba un
+# dia commiteado y pusheado devolviendo 404, porque nadie le habia dado Deploy
+# en el panel. Parecia publicado y no lo estaba.
+#
+# Seguridad: la llave NO es la de administracion. Esta atada en el servidor a un
+# unico comando (`/usr/local/bin/coolify-deploy`) con `restrict`. No da shell,
+# no lee ficheros y no llega a Hetzner: lo maximo que consigue quien la robe es
+# reconstruir una de las webs de la lista. El token de Coolify ni siquiera esta
+# aqui, vive en el servidor.
+name: Desplegar en Netcup
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-elementoweb
+  cancel-in-progress: false
+
+env:
+  NETCUP_HOST: 159.195.234.239
+  APP_UUID: djignhkuyq5cphon7gdiznpg
+  DOMINIO: elementoweb.com
+
+jobs:
+  desplegar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Preparar la llave
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.NETCUP_DEPLOY_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -H "$NETCUP_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Desplegar y esperar el resultado
+        run: |
+          set -euo pipefail
+          # Se manda solo el UUID: el servidor ignora lo demas y decide el que
+          # ejecuta. Si el build falla, el script sale con error y este paso se
+          # pone rojo — el punto es que un build roto no pueda verse verde.
+          ssh -T -i ~/.ssh/id_deploy -o BatchMode=yes -o ConnectTimeout=20 \
+            "root@${NETCUP_HOST}" "${APP_UUID}"
+
+      - name: Comprobar que la web responde
+        run: |
+          set -euo pipefail
+          # Entre que Coolify levanta el contenedor nuevo y Traefik lo registra
+          # hay unos segundos de 502. Preguntar una sola vez daba rojo con la web
+          # sana, asi que se reintenta hasta un minuto.
+          for i in $(seq 1 12); do
+            COD=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "https://$DOMINIO/" || echo 000)
+            echo "[$i] https://$DOMINIO/ -> $COD"
+            [ "$COD" = "200" ] && exit 0
+            sleep 5
+          done
+          echo "La web sigue sin responder 200 un minuto despues de desplegar." >&2
+          exit 1

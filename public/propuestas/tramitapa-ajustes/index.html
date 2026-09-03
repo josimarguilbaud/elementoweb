@@ -119,6 +119,22 @@
   }
   .malo b { color:#991b1b; }
 
+  /* Conversación de prueba: que se lea como un chat, no como una cita. */
+  .chat { margin:1em 0; }
+  .chat .m {
+    max-width:82%; padding:.55em .8em; border-radius:13px; margin:.4em 0;
+    font-size:.9em; line-height:1.5; background:#fff; border:1px solid var(--line);
+  }
+  .chat .m.cli {
+    margin-left:auto; background:#e6f0ff; border-color:#c6dcfb; color:#1c3768;
+  }
+  .chat .m .quien {
+    display:block; font-size:.66em; letter-spacing:.09em; text-transform:uppercase;
+    font-weight:700; color:#7b8aa6; margin-bottom:.15em;
+  }
+  .chat .m.cli .quien { color:#5a7cb3; }
+  .largo { font-size:.78em; color:#7b8aa6; margin:.1em 0 .6em; }
+
   footer.ew {
     margin-top: 1.4rem; display:flex; flex-wrap:wrap; gap:.3rem 1.4rem;
     font-size:.82rem; color:#5b6478; padding: 0 .4rem;
@@ -150,8 +166,8 @@
 
 <div class="hecho">
   <div class="titulo">Listo, Jahir. Los cuatro puntos están aplicados.</div>
-  <p>Y uno más que no escribiste, pero dijiste en el audio.</p>
-  <p>Solo te pido una cosa: <strong>pruébalo desde tu número antes de confiar</strong>. Yo verifiqué que los cambios están cargados, pero quien tiene que dar el visto bueno al tono eres tú.</p>
+  <p>Más uno que no escribiste pero dijiste en el audio, y otro que encontramos nosotros al probarlo.</p>
+  <p><strong>Y esta vez lo probamos antes de avisarte.</strong> Más abajo está la conversación de prueba, tal cual salió.</p>
 </div>
 
 <h2>Punto por punto</h2>
@@ -194,6 +210,13 @@
   <p><span class="listo">Corregido.</span> Ahora tiene prohibido preguntar si tiene los requisitos justo después de habérselos mandado. Ese lo cazamos escuchando tus notas de voz, no leyendo la lista.</p>
 </div>
 
+<div class="punto">
+  <p class="pidio">“El cliente pregunta cuáles son los requisitos, y él le manda los requisitos.”</p>
+  <div class="titulo">6 · Da los requisitos de una vez</div>
+  <p><span class="listo">Corregido.</span> Antes, si alguien preguntaba por los requisitos, respondía con otra pregunta: <em>“¿es turismo, estudiante, trabajo…?”</em>. Ahora los manda directo y pregunta después, si hace falta.</p>
+  <p>Este no salió de tu lista: <strong>lo encontramos probándolo nosotros</strong> antes de avisarte.</p>
+</div>
+
 <h2>La conversación que mandaste</h2>
 
 <p>Esta fue la respuesta que subrayaste en verde:</p>
@@ -220,22 +243,40 @@
 </table>
 </div>
 
+<h2>Lo probamos antes de avisarte</h2>
+
+<p>Tenemos un banco de pruebas donde conversamos con tu asistente <strong>sin que le llegue nada a un cliente real</strong> y sin gastar conversaciones de tu plan. Esta es la conversación de prueba, tal cual salió:</p>
+
+<div class="chat">
+  <div class="m cli"><span class="quien">Cliente</span>buenas cuáles son los requisitos para la visa</div>
+  <div class="m"><span class="quien">Asistente</span>¡Hola! 👋 Mr. Jackson, de TRAMITA PA. Te ayudamos con tu visa americana.<br><br>Los requisitos dependen del tipo de visa. Los principales son:<br>1. Pasaporte vigente (mín. 6 meses).<br>2. Foto digital tipo visa (ropa oscura y formal).<br>3. Foto de la visa vencida (si aplica).<br>4. Llenar el cuestionario que te enviamos.<br>5. Pago por Yappy o transferencia.</div>
+  <div class="m cli"><span class="quien">Cliente</span>ok listo quiero tramitar</div>
+  <div class="m"><span class="quien">Asistente</span>Perfecto. Necesito tus <strong>tres datos</strong> para comenzar:<br>1. Nombre completo<br>2. Cédula (o pasaporte)<br>3. Correo electrónico</div>
+  <div class="m cli"><span class="quien">Cliente</span>Yissel Mercado Ortega 8-888-8888 yissel@gmail.com</div>
+  <div class="m"><span class="quien">Asistente</span>Gracias, Yissel. Confirmando:<br><strong>Nombre:</strong> Yissel Mercado Ortega<br><strong>Cédula:</strong> 8-888-8888<br><strong>Correo:</strong> yissel@gmail.com<br><br>¿Correcto?</div>
+</div>
+
+<p class="largo">Largo de cada respuesta: 418, 116 y 122 caracteres. La primera es la más larga porque lleva la lista de requisitos, que es la única lista que le dejamos mandar.</p>
+
+<p>También probamos la pregunta que te falló:</p>
+
+<div class="chat">
+  <div class="m cli"><span class="quien">Cliente</span>¿Sí tienen oficina? Me gustaría ir a una cita</div>
+  <div class="m"><span class="quien">Asistente</span>Somos 100% virtuales: no tenemos oficina presencial. Te atiendo por aquí sin costo, y si tu caso lo amerita, te paso con un asesor de TRAMITA PA.</div>
+</div>
+
 <div class="accion">
 <h3>Lo que necesito de ti</h3>
-<p><strong>Pruébalo.</strong> Escríbele desde tu número, dile que quieres tramitar, y mira tres cosas:</p>
-<ul>
-  <li>Que te pida los tres datos <strong>juntos</strong>, no de a uno.</li>
-  <li>Que cada respuesta te quepa en la pantalla <strong>sin hacer scroll</strong>.</li>
-  <li>Que <strong>cierre</strong> en vez de seguir preguntando.</li>
-</ul>
-<p>Si algo de eso no pasa, dímelo y lo ajusto el mismo día.</p>
+<p><strong>Escríbele una vez desde tu número.</strong> Nuestro banco de pruebas comprueba lo que <em>dice</em> el asistente, pero hay una cosa que solo se ve con un mensaje real: <strong>que la tarjeta del cliente aparezca en tu Embudo</strong> con el nombre, la cédula y el correo.</p>
+<p>Dile que quieres tramitar, dale los tres datos, y luego mira tu Embudo. Si la tarjeta está ahí, quedó completo.</p>
+<p>Y si el tono no te convence, sea porque quedó muy seco o todavía muy largo, dímelo y lo ajusto el mismo día. Esa parte es tuya, no mía.</p>
 </div>
 
 <h2>Una cosa que te quiero pedir</h2>
 
 <p>Dijiste que a veces manda <em>“información no correcta”</em>, en plural. Lo de la oficina ya lo cazamos porque me mandaste la captura. <strong>Si ves otra, mándamela igual.</strong></p>
 
-<p>Te lo pido porque ahora sé de dónde salen: cada dato equivocado que dice viene de algo que le cargamos nosotros al configurarlo. No son inventos suyos — son cosas nuestras mal puestas. Con la captura las encuentro en minutos.</p>
+<p>Te lo pido porque ahora sé de dónde salen: cada dato equivocado que dice viene de algo que le cargamos nosotros al configurarlo. No son inventos suyos, son cosas nuestras mal puestas. Con la captura las encuentro en minutos.</p>
 
 <hr>
 

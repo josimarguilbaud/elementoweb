@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajustes al asistente · TRAMITA PA — elementoweb.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1e293b; --navy: #1e3a8a; --deep: #0b1220;
+    --blue: #3b82f6; --violet: #7c3aed;
+    --paper: #eef2fb; --card: rgba(255,255,255,.78); --line: #dbe3f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Inter', system-ui, sans-serif; color: var(--ink);
+    font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    background: var(--paper);
+    background-image:
+      radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,.10), transparent 60%),
+      radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,.12), transparent 55%);
+    background-attachment: fixed;
+  }
+  .page { max-width: 52rem; margin: 1.5rem auto 4rem; padding: 0 1.1rem; }
+  h1,h2,h3,h4 { font-family: 'Bricolage Grotesque','Inter',sans-serif; letter-spacing: -.02em; text-wrap: balance; }
+  header.ew {
+    background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);
+    color: #fff; border-radius: 22px; padding: 1.8rem 1.9rem; overflow: hidden; position: relative;
+  }
+  header.ew::after {
+    content:''; position:absolute; inset:0; opacity:.06; pointer-events:none;
+    background-image: linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),
+                      linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);
+    background-size: 32px 32px;
+  }
+  .brand { display:flex; align-items:center; gap:.65rem; padding-bottom:1.1rem; border-bottom:1px solid rgba(255,255,255,.15); }
+  .brand .mark {
+    width: 2.4rem; height: 2.4rem; border-radius: .8rem; display:grid; place-items:center; flex-shrink:0;
+    background: linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);
+    box-shadow: 0 10px 24px -8px rgba(59,130,246,.7);
+  }
+  .brand p { margin:0; line-height:1.25; }
+  .brand .n { font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:1.05rem; }
+  .brand .n span { color:#c4b5fd; }
+  .brand .s { font-size:.68rem; color:rgba(174,187,230,.9); letter-spacing:.08em; }
+  .eyebrow { margin:1.2rem 0 .4rem; font-size:.7rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase; color:#aebbe6; }
+  header.ew h1 {
+    margin:0; font-size:2rem; line-height:1.12; font-weight:800;
+    background: linear-gradient(90deg,#93c5fd,#e0e7ff,#c4b5fd);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  header.ew .fecha { margin:.7rem 0 0; font-size:.82rem; color:rgba(174,187,230,.9); }
+  main.card {
+    margin-top: 1.4rem; background: var(--card); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.9); border-radius: 18px;
+    box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 20px 40px -24px rgba(30,58,138,.28);
+    padding: 1.6rem 1.8rem;
+  }
+  main h2 {
+    font-size: 1.2rem; color: var(--navy); margin: 1.9em 0 .7em;
+    padding-bottom: .35em; border-bottom: 1px solid var(--line);
+  }
+  main h2:first-child { margin-top: .2em; }
+  main h3 { font-size: 1rem; color: var(--navy); margin: 1.4em 0 .4em; }
+  main blockquote {
+    margin: 1em 0; padding: .8em 1.05em; border: 1px solid #c9dcf8; background: #eef4fe;
+    border-radius: 12px; color: #24406e; font-size: .92em;
+  }
+  main blockquote p { margin: .25em 0; }
+  main ul { padding-left: 1.3rem; }
+  main li { margin: .35rem 0; }
+  main li::marker { color: var(--blue); font-weight: 700; }
+  .tabla { overflow-x: auto; margin: 1em 0; }
+  main table { border-collapse: collapse; width: 100%; font-size: .9em; }
+  main th {
+    text-align: left; background: linear-gradient(135deg,#eff6ff,#eef2ff);
+    color: var(--navy); padding: .55em .8em; border: 1px solid var(--line);
+    font-family: 'Bricolage Grotesque',sans-serif; font-weight: 700; white-space: nowrap;
+  }
+  main td { padding: .55em .8em; border: 1px solid var(--line); vertical-align: top; background: rgba(255,255,255,.6); font-variant-numeric: tabular-nums; }
+  main hr { border: none; border-top: 1px solid var(--line); margin: 1.6em 0; }
+  main strong { color: var(--navy); }
+
+  .hecho {
+    margin: 0 0 .4em; padding: 1.15rem 1.35rem; border-radius: 16px;
+    border: 1px solid #a7d5b5; background: linear-gradient(135deg,#effaf3,#eef6fe);
+  }
+  .hecho .titulo {
+    font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.15rem;
+    color:#166534; margin-bottom:.3rem;
+  }
+  .hecho p { margin: .35em 0 0; color:#20452f; }
+  .hecho p:last-child { margin-bottom: 0; }
+
+  /* Cada punto de la lista de Jahir, con su respuesta debajo. */
+  .punto {
+    margin:.9em 0; padding:.95rem 1.15rem; border-radius:13px;
+    border:1px solid var(--line); background:rgba(255,255,255,.72);
+  }
+  .punto .pidio {
+    font-size:.92em; color:#4b5b78; font-style:italic; margin:0 0 .5em;
+    padding-left:.75em; border-left:3px solid #c7d5ee;
+  }
+  .punto .titulo { font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--navy); margin-bottom:.25em; }
+  .punto p:last-child { margin-bottom:0; }
+  .punto .listo { color:#166534; font-weight:600; }
+
+  .accion {
+    margin:1.2em 0; padding:1.1rem 1.3rem; border-radius:16px;
+    border:1px solid #c7b8f5; background:linear-gradient(135deg,#f5f3ff,#eef4fe);
+  }
+  .accion h3 { margin-top:0; color:#5b21b6; }
+  .accion p:last-child { margin-bottom:0; }
+
+  .malo {
+    margin:.8em 0; padding:.8em 1em; border-radius:12px; background:#fef2f2;
+    border:1px solid #f3c9c9; color:#7f1d1d; font-size:.93em;
+  }
+  .malo b { color:#991b1b; }
+
+  footer.ew {
+    margin-top: 1.4rem; display:flex; flex-wrap:wrap; gap:.3rem 1.4rem;
+    font-size:.82rem; color:#5b6478; padding: 0 .4rem;
+  }
+  footer.ew b { color: var(--navy); }
+  @media print {
+    body { background:#fff; }
+    main.card { box-shadow:none; border-color:#e5e7eb; }
+    header.ew { border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="ew">
+    <div class="brand">
+      <div class="mark"><svg width="22" height="22" viewBox="0 0 50 52" fill="none"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/><circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/></svg></div>
+      <div>
+        <p class="n">elementoweb<span>.com</span></p>
+        <p class="s">DESARROLLO WEB · IA · AUTOMATIZACIÓN</p>
+      </div>
+    </div>
+    <p class="eyebrow">Respuesta a lo que pediste hoy</p>
+    <h1>Más corto, y sin oficina</h1>
+    <p class="fecha">3 de septiembre de 2026 · Asistente de TRAMITA PA</p>
+  </header>
+
+  <main class="card">
+
+<div class="hecho">
+  <div class="titulo">Listo, Jahir. Los cuatro puntos están aplicados.</div>
+  <p>Y uno más que no escribiste, pero dijiste en el audio.</p>
+  <p>Solo te pido una cosa: <strong>pruébalo desde tu número antes de confiar</strong>. Yo verifiqué que los cambios están cargados, pero quien tiene que dar el visto bueno al tono eres tú.</p>
+</div>
+
+<h2>Punto por punto</h2>
+
+<div class="punto">
+  <p class="pidio">“Nosotros no tenemos oficina física, trabajamos virtual.”</p>
+  <div class="titulo">1 · Ya no dice que hay oficina</div>
+  <p><span class="listo">Corregido.</span> Y quiero ser claro en algo: <strong>el asistente no se lo inventó</strong>. En la información que le cargamos nosotros estaba escrito, textualmente, <em>“Ubicación: Ciudad de Panamá (con cita previa)”</em>. Él simplemente leyó lo que le dimos.</p>
+  <p>Fue un error nuestro al cargar sus datos, no del asistente. Ya dice que TRAMITA PA atiende 100% en línea, sin oficina ni atención presencial.</p>
+</div>
+
+<div class="punto">
+  <p class="pidio">“Que deje de mandar esos textos bíblicos muy enormes. El panameño odia leer.”</p>
+  <div class="titulo">2 · Respuestas cortas</div>
+  <p><span class="listo">Corregido, por dos lados.</span> El primero es obvio: le puse un tope de <strong>3 o 4 líneas por mensaje</strong>, una idea a la vez.</p>
+  <p>El segundo no se veía a simple vista y era la mitad del problema: <strong>sus respuestas guardadas eran larguísimas</strong>. El asistente las pega tal cual, así que por más que le pidiéramos ser breve, tenía párrafos enormes cargados. La más larga tenía 774 caracteres; ahora la más larga tiene 233.</p>
+</div>
+
+<div class="punto">
+  <p class="pidio">“Que consulte nombre y apellidos, cédula y correo. Si el cliente quiere tramitar le envía los precios y le indique los requisitos.”</p>
+  <div class="titulo">3 · Pide los datos de una vez</div>
+  <p><span class="listo">Corregido.</span> Ahora, en cuanto alguien dice que quiere tramitar, hace exactamente esto y nada más:</p>
+  <ul>
+    <li>Pide <strong>nombre completo, cédula y correo</strong> en un solo mensaje.</li>
+    <li>Los guarda en tu embudo.</li>
+    <li>Manda precios y requisitos.</li>
+    <li>Cierra.</li>
+  </ul>
+</div>
+
+<div class="punto">
+  <p class="pidio">“Que cierre de una vez e indique que el asesor se va a comunicar con ellos y le va a enviar todo al correo.”</p>
+  <div class="titulo">4 · Cierra y se calla</div>
+  <p><span class="listo">Corregido.</span> Termina con <em>“Un asesor te contacta y te envía todo a tu correo”</em>, y la instrucción que sigue es literal: <strong>“y deja de preguntar”</strong>.</p>
+</div>
+
+<div class="punto">
+  <p class="pidio">“Él le pregunta al cliente si tiene los requisitos, el cliente pregunta cuáles son, él le manda los requisitos, y después le pregunta ‘¿y tienes esto?’ — ¿cómo lo va a tener si te lo acabas de decir?”</p>
+  <div class="titulo">5 · Lo del audio, que no habías escrito</div>
+  <p><span class="listo">Corregido.</span> Ahora tiene prohibido preguntar si tiene los requisitos justo después de habérselos mandado. Ese lo cazamos escuchando tus notas de voz, no leyendo la lista.</p>
+</div>
+
+<h2>La conversación que mandaste</h2>
+
+<p>Esta fue la respuesta que subrayaste en verde:</p>
+
+<div class="malo">
+  <b>“Claro, tenemos oficina en Ciudad de Panamá (con cita previa).”</b>
+</div>
+
+<p>Fíjate que en esa misma captura hay dos problemas, no uno. El de la oficina, que ya está resuelto. Y el segundo: para contestar <em>“¿tienen oficina y me pueden hacer una cita?”</em> el asistente mandó <strong>cuatro párrafos</strong>. Esa pregunta se contesta en dos líneas.</p>
+
+<p>Los dos venían de la misma raíz: información de más y sin límite de largo.</p>
+
+<h2>En números</h2>
+
+<div class="tabla">
+<table>
+  <thead><tr><th>&nbsp;</th><th>Antes</th><th>Ahora</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Respuesta guardada más larga</strong></td><td>774 caracteres</td><td><strong>233</strong></td></tr>
+    <tr><td><strong>Promedio de sus respuestas</strong></td><td>—</td><td><strong>138</strong></td></tr>
+    <tr><td><strong>Saludo de bienvenida</strong></td><td>246 caracteres</td><td><strong>152</strong></td></tr>
+    <tr><td><strong>Trozos que dicen que hay oficina</strong></td><td>1</td><td><strong>0</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="accion">
+<h3>Lo que necesito de ti</h3>
+<p><strong>Pruébalo.</strong> Escríbele desde tu número, dile que quieres tramitar, y mira tres cosas:</p>
+<ul>
+  <li>Que te pida los tres datos <strong>juntos</strong>, no de a uno.</li>
+  <li>Que cada respuesta te quepa en la pantalla <strong>sin hacer scroll</strong>.</li>
+  <li>Que <strong>cierre</strong> en vez de seguir preguntando.</li>
+</ul>
+<p>Si algo de eso no pasa, dímelo y lo ajusto el mismo día.</p>
+</div>
+
+<h2>Una cosa que te quiero pedir</h2>
+
+<p>Dijiste que a veces manda <em>“información no correcta”</em>, en plural. Lo de la oficina ya lo cazamos porque me mandaste la captura. <strong>Si ves otra, mándamela igual.</strong></p>
+
+<p>Te lo pido porque ahora sé de dónde salen: cada dato equivocado que dice viene de algo que le cargamos nosotros al configurarlo. No son inventos suyos — son cosas nuestras mal puestas. Con la captura las encuentro en minutos.</p>
+
+<hr>
+
+<p>Cualquier duda: <strong>ElementoWeb</strong> · info@elementoweb.com · WhatsApp +507 6162-2787.</p>
+
+  </main>
+  <footer class="ew">
+    <span>Preparado para <b>TRAMITA PA</b> por <b>ElementoWeb</b></span>
+    <span>info@elementoweb.com</span>
+    <span>+507 6162-2787</span>
+  </footer>
+</div>
+</body>
+</html>

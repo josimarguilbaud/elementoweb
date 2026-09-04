@@ -158,15 +158,16 @@
       </div>
     </div>
     <p class="eyebrow">Respuesta a lo que pediste hoy</p>
-    <h1>Más corto, y sin oficina</h1>
+    <h1>Más corto, sin oficina<br>y sin recordarle nada a nadie</h1>
     <p class="fecha">3 de septiembre de 2026 · Asistente de TRAMITA PA</p>
   </header>
 
   <main class="card">
 
 <div class="hecho">
-  <div class="titulo">Listo, Jahir. Los cuatro puntos están aplicados.</div>
-  <p>Más uno que no escribiste pero dijiste en el audio, y otro que encontramos nosotros al probarlo.</p>
+  <div class="titulo">Listo, Jahir. Todo aplicado, en dos tandas.</div>
+  <p>La primera, tus cuatro puntos por escrito. Más uno que solo dijiste en el audio y otro que encontramos nosotros al probarlo.</p>
+  <p>La segunda, lo del recordatorio automático: <strong>el asistente ya no le escribe primero a nadie.</strong></p>
   <p><strong>Y esta vez lo probamos antes de avisarte.</strong> Más abajo está la conversación de prueba, tal cual salió.</p>
 </div>
 
@@ -264,6 +265,56 @@
   <div class="m cli"><span class="quien">Cliente</span>¿Sí tienen oficina? Me gustaría ir a una cita</div>
   <div class="m"><span class="quien">Asistente</span>Somos 100% virtuales: no tenemos oficina presencial. Te atiendo por aquí sin costo, y si tu caso lo amerita, te paso con un asesor de TRAMITA PA.</div>
 </div>
+
+<h2>Lo segundo que pediste: que no le recuerde nada</h2>
+
+<div class="punto">
+  <p class="pidio">“Hay cliente que yo no quiero responderle porque no está lista la vaina y él va y le calienta la cabeza al cliente. Simplemente que no le recuerde nada. Donde llegó la conversación llegó. Y tampoco hacerle ver que un asesor no se ha contactado con ellos.”</p>
+  <div class="titulo">7 · El asistente ya no escribe primero</div>
+  <p><span class="listo">Corregido.</span> Este era el mensaje que le llegó a tu cliente, <strong>a la 1:12 de la madrugada</strong>:</p>
+</div>
+
+<div class="malo">
+  <b>“Hola, sigo por aquí 👋 Todavía no ha podido responderte una persona del equipo. Mientras tanto puedo ayudarte yo…”</b>
+</div>
+
+<p>Tenías razón en las dos cosas que dijiste. El sistema tomó la iniciativa de escribirle a alguien que <em>tú habías decidido dejar reposar</em>, y de paso le anunció al cliente que nadie del equipo le había respondido. Ningún negocio quiere eso.</p>
+
+<p>Lo que hicimos:</p>
+
+<div class="tabla">
+<table>
+  <thead><tr><th>&nbsp;</th><th>Antes</th><th>Ahora</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Recordatorios al cliente</strong></td><td>Automáticos, a cualquier hora</td><td><strong>Ninguno</strong></td></tr>
+    <tr><td><strong>Ese mensaje de “nadie te ha respondido”</strong></td><td>Se enviaba solo</td><td><strong>Ya no existe</strong></td></tr>
+    <tr><td><strong>Gente en cola para recibir uno</strong></td><td><strong>16 personas</strong></td><td>0, las sacamos antes</td></tr>
+    <tr><td><strong>Si el cliente escribe</strong></td><td>Responde</td><td>Responde igual</td></tr>
+    <tr><td><strong>Tu aviso interno</strong></td><td>Llega</td><td>Llega igual</td></tr>
+    <tr><td><strong>Horario</strong></td><td>Sin configurar</td><td><strong>8:00 a.m. a 6:00 p.m.</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Ese último punto explica lo de la madrugada. El sistema ya comprobaba el horario antes de escribir, pero tu asistente no tenía ninguno configurado, así que esa comprobación pasaba siempre. Ya está puesto.</p>
+
+<div class="punto">
+  <div class="titulo">Y quedó como un interruptor tuyo</div>
+  <p>No lo dejamos fijo. En tu portal, dentro de <em>Reglas del asistente</em>, hay una casilla que dice <strong>“El asistente nunca escribe primero”</strong>. Está encendida.</p>
+  <p>Si algún día quieres que vuelva a recordar, la apagas tú. No hace falta que nos llames.</p>
+</div>
+
+<h2>Cómo comprobamos esta segunda parte</h2>
+
+<p>Te lo cuento porque es distinto de lo de arriba. La conversación de prueba sirve para ver <em>qué contesta</em> el asistente. Esto es lo contrario: es que <strong>no escriba cuando nadie le habla</strong>, y eso no se puede probar conversando.</p>
+
+<p>Se comprobó de otra forma, que para este caso es más fuerte:</p>
+
+<ul>
+  <li>Dos pruebas automáticas nuevas: una verifica que el asistente sigue quedando disponible pero <strong>sin escribir</strong>. La otra verifica que <strong>ningún otro cliente nuestro cambia de comportamiento</strong>.</li>
+  <li>Después de instalarlo, leímos el código directamente en el servidor en vez de fiarnos de que la instalación dijera “correcto”.</li>
+  <li>Y confirmamos en la base de datos que el ajuste quedó activo <strong>solo en tu cuenta</strong>.</li>
+</ul>
 
 <div class="accion">
 <h3>Lo que necesito de ti</h3>

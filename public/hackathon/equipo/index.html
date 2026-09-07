@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Equipo para 48 horas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@700;900&family=JetBrains+Mono:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --fondo:#0b0f14; --panel:#131a22; --panel2:#1a232d; --linea:#24313f;
+    --texto:#e8eef4; --gris:#8fa3b5; --tenue:#5d7286;
+    --cyan:#35e0d0; --ambar:#ffb020; --rojo:#ff5c5c;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--fondo); color:var(--texto);
+    font-family:'Source Sans 3',system-ui,sans-serif; font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(48rem 26rem at 92% -8%, rgba(53,224,208,.10), transparent 60%);
+    background-attachment:fixed;
+  }
+  .env{max-width:56rem;margin:0 auto;padding:1.4rem 1.1rem 5rem}
+  h1,h2{font-family:'Chivo',system-ui,sans-serif;font-weight:900;line-height:1.05;text-wrap:balance;letter-spacing:-.02em}
+  h3{font-family:'Chivo',system-ui,sans-serif;font-weight:700;letter-spacing:-.01em}
+  .mono{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums}
+
+  header.top{border:1px solid var(--linea);border-radius:16px;padding:1.9rem;background:var(--panel);position:relative;overflow:hidden}
+  header.top::before{content:'';position:absolute;inset:0 auto 0 0;width:5px;background:linear-gradient(180deg,var(--cyan),var(--ambar))}
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan)}
+  header.top h1{margin:.6rem 0 .5rem;font-size:2.4rem}
+  header.top p{margin:0;color:var(--gris);max-width:48ch}
+
+  .alerta{display:flex;gap:.8rem;align-items:flex-start;margin:1.2rem 0;padding:.9rem 1.1rem;border-radius:12px;
+    background:rgba(255,176,32,.09);border:1px solid rgba(255,176,32,.35)}
+  .alerta .q{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--ambar);white-space:nowrap}
+  .alerta p{margin:0;font-size:.95rem}
+  .alerta b{color:var(--ambar)}
+
+  h2{font-size:1.5rem;margin:2.6rem 0 .3rem}
+  .sub{color:var(--gris);margin:0 0 1rem;font-size:.95rem}
+
+  .datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:.7rem;margin:1.1rem 0}
+  .dato{border:1px solid var(--linea);border-radius:12px;padding:.85rem 1rem;background:var(--panel)}
+  .dato .n{font-family:'Chivo',sans-serif;font-weight:900;font-size:1.7rem;line-height:1.05;color:var(--cyan);font-variant-numeric:tabular-nums}
+  .dato .t{font-size:.76rem;color:var(--gris);margin-top:.25rem;font-family:'JetBrains Mono',monospace;
+    letter-spacing:.05em;text-transform:uppercase}
+
+  .tabla{overflow-x:auto;margin:1rem 0}
+  table{border-collapse:collapse;width:100%;font-size:.92rem}
+  th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gris);border-bottom:2px solid var(--cyan);padding:.5rem .7rem;white-space:nowrap}
+  td{padding:.6rem .7rem;border-bottom:1px solid var(--linea);vertical-align:top}
+  td b{color:var(--texto)}
+  td.mono{font-family:'JetBrains Mono',monospace;white-space:nowrap;color:var(--ambar);font-weight:700}
+
+  .peligro{border:1px solid rgba(255,92,92,.4);background:rgba(255,92,92,.07);border-radius:13px;padding:1.1rem 1.3rem;margin:1.1rem 0}
+  .peligro h3{margin:0 0 .5rem;color:var(--rojo);font-size:1.05rem}
+  .peligro p{margin:.4rem 0;font-size:.95rem}
+  .peligro p:last-child{margin-bottom:0}
+  .peligro code{font-family:'JetBrains Mono',monospace;font-size:.86em;color:var(--texto)}
+
+  .roles{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.1rem 0}
+  @media(max-width:44rem){.roles{grid-template-columns:1fr}}
+  .rol{border:1px solid var(--linea);border-radius:13px;padding:1.1rem 1.2rem;background:var(--panel)}
+  .rol.ella{background:linear-gradient(180deg,rgba(53,224,208,.09),var(--panel) 55%);border-color:rgba(53,224,208,.3)}
+  .rol h3{margin:0 0 .1rem;font-size:1.05rem}
+  .rol .peso{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--cyan);letter-spacing:.06em}
+  .rol ul{margin:.7rem 0 0;padding-left:1.1rem}
+  .rol li{margin:.4rem 0;font-size:.93rem}
+  .rol li::marker{color:var(--cyan)}
+
+  .listo{border:1px solid var(--linea);border-radius:13px;background:var(--panel2);padding:1rem 1.2rem;margin:1rem 0}
+  .listo h3{margin:0 0 .5rem;font-size:1rem;color:var(--cyan)}
+  .listo ul{margin:0;padding-left:1.1rem}
+  .listo li{margin:.3rem 0;font-size:.92rem;color:var(--gris)}
+  .listo li b{color:var(--texto)}
+
+  .fase{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--linea)}
+  @media(max-width:34rem){.fase{grid-template-columns:1fr;gap:.2rem}}
+  .fase .h{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--ambar);font-weight:700}
+  .fase .q{font-size:.93rem}
+  .fase .q b{color:var(--texto)}
+
+  .decidir{border:1px solid var(--linea);border-radius:14px;padding:1.2rem 1.4rem;margin-top:2.2rem;
+    background:linear-gradient(150deg,rgba(53,224,208,.08),rgba(255,176,32,.05))}
+  .decidir h3{margin:0 0 .6rem;font-size:1.1rem}
+  .decidir ol{margin:0;padding-left:1.2rem}
+  .decidir li{margin:.45rem 0;font-size:.95rem}
+  .decidir li::marker{color:var(--ambar);font-weight:700}
+
+  footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--linea);font-size:.85rem;color:var(--tenue)}
+</style>
+</head>
+<body>
+<div class="env">
+
+  <header class="top">
+    <div class="kicker">Decentralized AI Hackathon · ISD Summit · Panamá</div>
+    <h1>48 horas para construir<br>IA que corre sin nube</h1>
+    <p>Documento para decidir si entramos juntos, qué construimos y quién hace qué.
+       Escrito el 7 de septiembre.</p>
+  </header>
+
+  <div class="alerta">
+    <span class="q">⏱ MAÑANA</span>
+    <p><b>El registro cierra el 8 de septiembre a las 23:59</b> (hora de Panamá) y la composición del
+    equipo se congela el 9 a las 08:00. Después de esa hora no se admiten altas ni bajas.
+    Si entramos, hay que registrarse cada quien por separado antes de mañana en la noche.</p>
+  </div>
+
+  <h2>Qué es</h2>
+  <p class="sub">Competencia remota de 48 horas. Organiza ISD (Zona Franca de la Innovación), con Tether como socio técnico.</p>
+
+  <div class="datos">
+    <div class="dato"><div class="n">48 h</div><div class="t">seguidas</div></div>
+    <div class="dato"><div class="n">$12.000</div><div class="t">en premios USDT</div></div>
+    <div class="dato"><div class="n">1 a 4</div><div class="t">por equipo</div></div>
+    <div class="dato"><div class="n">100%</div><div class="t">remoto</div></div>
+  </div>
+
+  <p>Se construye a distancia, sin sede. El 11 hay una jornada presencial en el Summit, pero es
+     <b>voluntaria y no da puntaje</b>: se juzga solo el repositorio y el video.</p>
+
+  <div class="tabla">
+  <table>
+    <thead><tr><th>Cuándo</th><th>Qué pasa</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">8 sep · 08:00</td><td>Publican los 4 desafíos corporativos</td></tr>
+      <tr><td class="mono">8 sep · 23:59</td><td><b>Cierra el registro</b></td></tr>
+      <tr><td class="mono">9 sep · 08:00</td><td><b>Arranca el reloj</b> y se cierra el equipo</td></tr>
+      <tr><td class="mono">11 sep · 08:00</td><td>Cierre de entregas. Sin prórroga</td></tr>
+      <tr><td class="mono">11 sep · 14:00</td><td>Premiación en el MET, transmitida</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Los premios se acumulan</h2>
+  <p class="sub">Esto cambia la estrategia: no hay que elegir entre podio y desafío.</p>
+
+  <div class="tabla">
+  <table>
+    <thead><tr><th>Premio</th><th>Monto</th><th>Quién decide</th></tr></thead>
+    <tbody>
+      <tr><td>Primer lugar</td><td class="mono">3.000</td><td>Jurado principal</td></tr>
+      <tr><td>Segundo lugar</td><td class="mono">2.000</td><td>Jurado principal</td></tr>
+      <tr><td>Tercer lugar</td><td class="mono">1.000</td><td>Jurado principal</td></tr>
+      <tr><td><b>Desafío corporativo</b> (son 4)</td><td class="mono">1.500 c/u</td><td>La empresa que lo publica</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Un desafío corporativo <b>paga más que el tercer lugar</b>, cualquier equipo puede intentar
+     cualquiera sin inscripción previa, y un mismo proyecto puede ganar podio y varios desafíos a la vez.</p>
+
+  <h2>La regla que descalifica</h2>
+
+  <div class="peligro">
+    <h3>La inferencia corre en el dispositivo. Nunca en la nube.</h3>
+    <p>Hay que construir sobre <code>QVAC</code>, el SDK de IA local de Tether. Usar una API en la nube
+       —OpenAI, Claude, cualquiera— <b>descalifica la entrega de forma directa</b>, sin importar la
+       calidad del resto del trabajo.</p>
+    <p>Sí se puede usar la nube para lo que no sea inferencia: alojar una interfaz, guardar datos no
+       sensibles, autenticar.</p>
+    <p><b>Y otra que descalifica:</b> omitir en el README cualquier base de código preexistente que
+       usemos. Los asistentes de IA para programar sí están permitidos.</p>
+  </div>
+
+  <h2>Cómo se puntúa, y por qué importa para el reparto</h2>
+
+  <div class="tabla">
+  <table>
+    <thead><tr><th>Criterio</th><th>Qué mide</th><th>Peso</th></tr></thead>
+    <tbody>
+      <tr><td><b>Technical</b></td><td>Uso genuino de QVAC, inferencia local, calidad de implementación</td><td class="mono">35%</td></tr>
+      <tr><td><b>Innovation</b></td><td>Originalidad del enfoque</td><td class="mono">25%</td></tr>
+      <tr><td><b>Impact</b></td><td>Relevancia del problema y potencial de la solución</td><td class="mono">20%</td></tr>
+      <tr><td>Design</td><td>Experiencia de uso e interfaz</td><td class="mono">10%</td></tr>
+      <tr><td>Completion</td><td>Demostración funcional y grado de terminación</td><td class="mono">10%</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><b>Innovation e Impact suman 45%: más que Technical.</b> Eso no es un detalle de puntuación, es
+     el reparto del trabajo. Elegir bien el problema, entender a quién le duele y saber contarlo vale
+     más que la calidad del código.</p>
+
+  <h2>Propuesta de reparto</h2>
+  <p class="sub">Es una propuesta, no un reparto cerrado. La idea es ajustarla en la reunión con lo que cada quien hace mejor.</p>
+
+  <div class="roles">
+    <div class="rol ella">
+      <h3>Producto y entrega</h3>
+      <div class="peso">Innovation + Impact + Completion · 55%</div>
+      <ul>
+        <li><b>Leer los 4 desafíos</b> el día 8 y decidir cuál atacamos, con criterio de negocio y no de antojo técnico.</li>
+        <li><b>Definir el problema y a quién le duele.</b> El jurado premia relevancia, no funciones.</li>
+        <li><b>Guardar el alcance.</b> Lo que más mata en 48 horas no es el código difícil: es seguir agregando a la hora 40. Alguien tiene que decir «esto no entra».</li>
+        <li><b>El video de 5 minutos</b>, en español: guion, estructura, qué se enseña y en qué orden. Es <b>lo primero que mira el jurado</b>.</li>
+        <li><b>El README</b>, incluida la declaración de base preexistente que si falta nos descalifica.</li>
+        <li><b>El reloj.</b> Cortes fijos, y avisar cuando falten horas, porque quien programa pierde la noción del tiempo.</li>
+      </ul>
+    </div>
+
+    <div class="rol">
+      <h3>Construcción</h3>
+      <div class="peso">Technical + Design · 45%</div>
+      <ul>
+        <li>Montar y hacer funcionar <b>QVAC</b>: modelos locales, transcripción de voz, búsqueda semántica.</li>
+        <li>La aplicación: interfaz web con la inferencia corriendo en la misma máquina.</li>
+        <li>Que la demo <b>funcione de verdad</b> a la hora de grabar, no en la máquina de desarrollo únicamente.</li>
+        <li>Repositorio ordenado y accesible al jurado.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Lo que ya está hecho</h2>
+
+  <div class="listo">
+    <h3>Adelanto técnico, antes de que arranque el reloj</h3>
+    <ul>
+      <li>QVAC <b>instalado y verificado</b>: el host pasa todas las comprobaciones, con aceleración por GPU.</li>
+      <li><b>Búsqueda semántica funcionando</b> en español: 768 dimensiones, 448 ms por consulta, 5 de 5 aciertos recuperando el documento correcto.</li>
+      <li><b>Transcripción de voz</b> disponible y confirmada (Whisper local).</li>
+      <li>Los tropiezos de la API ya están pagados: modelos descargados y en caché.</li>
+    </ul>
+  </div>
+
+  <p>Traducido: el día 9 no empezamos instalando. Empezamos construyendo.</p>
+
+  <h2>Cómo se reparten las 48 horas</h2>
+
+  <div class="fase"><div class="h">8 sep · mañana</div><div class="q"><b>Leer los desafíos</b> y decidir. No se toca código: se decide qué problema resolvemos y por qué duele.</div></div>
+  <div class="fase"><div class="h">Horas 0–6</div><div class="q">Definir el alcance mínimo que ya sirve, y cerrar la lista. <b>Lo que no entre aquí, no entra.</b></div></div>
+  <div class="fase"><div class="h">Horas 6–24</div><div class="q">Construir el corazón: que la inferencia local funcione de punta a punta, aunque se vea feo.</div></div>
+  <div class="fase"><div class="h">Horas 24–34</div><div class="q">Interfaz y detalle. En paralelo, guion del video.</div></div>
+  <div class="fase"><div class="h">Horas 34–42</div><div class="q"><b>Congelar el código.</b> Grabar el video, escribir el README, dejar el repositorio accesible.</div></div>
+  <div class="fase"><div class="h">Horas 42–48</div><div class="q">Colchón. Entregar con horas de sobra, no con minutos. La plataforma cierra sola y no hay prórroga.</div></div>
+
+  <h2>Un dato que ordena las expectativas</h2>
+  <p>Al momento de escribir esto hay <b>159 personas inscritas y 2 proyectos publicados</b>. La mayoría
+     se registra y no entrega. Terminar algo que de verdad corra sin conexión ya nos pone en la
+     conversación, y el jurado puede declarar posiciones desiertas si nada cumple el requisito técnico.</p>
+  <p>Dicho de otra forma: <b>el rival no es el equipo brillante, es no terminar.</b></p>
+
+  <div class="decidir">
+    <h3>Qué hay que decidir en esta reunión</h3>
+    <ol>
+      <li><b>¿Entramos?</b> Son 48 horas seguidas, fin de semana incluido.</li>
+      <li><b>¿El reparto de arriba tiene sentido</b> con lo que cada quien hace mejor, o lo movemos?</li>
+      <li><b>¿Buscamos a alguien más?</b> Caben hasta 4. Un tercero fuerte en móvil abriría la puerta a demostrarlo en un teléfono.</li>
+      <li><b>Registrarse cada quien por separado</b> en trydojo.io, antes de mañana 23:59. Nadie puede aceptar los términos por otro.</li>
+      <li><b>¿Cómo repartimos el premio</b> si ganamos? Mejor acordarlo ahora que después: se paga a una sola billetera y el reparto interno queda a cargo del equipo.</li>
+    </ol>
+  </div>
+
+  <footer>
+    Fuentes: Términos y Condiciones de Participación y Reglas de la Competencia del Decentralized AI
+    Hackathon (ISD · Zona Franca de la Innovación S.A.), y la ficha del evento en trydojo.io.
+    Ante cualquier diferencia, mandan los Términos y Condiciones.
+  </footer>
+</div>
+</body>
+</html>

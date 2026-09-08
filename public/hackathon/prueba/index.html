@@ -36,7 +36,8 @@
   ol{list-style:none;counter-reset:p;padding:0;margin:0}
   li{counter-increment:p;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--linea)}
   li:last-child{border-bottom:1px solid var(--linea)}
-  li::before{content:counter(p);font-family:"Libre Caslon Text",Georgia,serif;font-size:30px;line-height:1;color:var(--sello-borde);padding-top:2px}
+  li::before{content:counter(p);font-family:"Libre Caslon Text",Georgia,serif;font-size:30px;line-height:1;color:var(--sello-borde);padding-top:2px;grid-column:1}
+  li > *{grid-column:2}
   li b{display:block;font-weight:700;margin-bottom:3px}
   li p{margin:0;color:var(--media);font-size:15.5px}
   .frase{

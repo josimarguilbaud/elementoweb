@@ -337,23 +337,25 @@
                 <div class="hidden lg:block lg:col-span-5 relative">
                     <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl bg-white p-2">
                          <img src="img/hero.jpg" alt="Prensa de impresión en producción con bobinas de papel" class="w-full h-full object-cover rounded-2xl">
+                    </div>
 
-                         <!-- Floating elements -->
-                         <div class="absolute -left-8 top-20 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4 border border-slate-100 animate-[blob_5s_ease-in-out_infinite]">
-                             <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-max-blue text-xl"><i class="fas fa-tshirt"></i></div>
-                             <div>
-                                 <p class="font-bold text-slate-800 text-sm">Bordados</p>
-                                 <p class="text-xs text-slate-500">Uniformes Corp.</p>
-                             </div>
-                         </div>
+                    <!-- Tarjetas flotantes. Van FUERA del marco de la foto: dentro,
+                         el overflow-hidden que redondea la imagen les cortaba el
+                         borde que sobresale (la de "Gran Formato" salía partida). -->
+                    <div class="absolute -left-8 top-20 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4 border border-slate-100 animate-[blob_5s_ease-in-out_infinite]">
+                        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-max-blue text-xl shrink-0"><i class="fas fa-tshirt"></i></div>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm whitespace-nowrap">Bordados</p>
+                            <p class="text-xs text-slate-500 whitespace-nowrap">Uniformes Corp.</p>
+                        </div>
+                    </div>
 
-                         <div class="absolute -right-8 bottom-32 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4 border border-slate-100 animate-[blob_6s_ease-in-out_infinite_reverse]">
-                             <div class="w-12 h-12 bg-pink-50 rounded-full flex items-center justify-center text-max-magenta text-xl"><i class="fas fa-layer-group"></i></div>
-                             <div>
-                                 <p class="font-bold text-slate-800 text-sm">Gran Formato</p>
-                                 <p class="text-xs text-slate-500">Con instalación</p>
-                             </div>
-                         </div>
+                    <div class="absolute -right-6 bottom-32 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4 border border-slate-100 animate-[blob_6s_ease-in-out_infinite_reverse]">
+                        <div class="w-12 h-12 bg-pink-50 rounded-full flex items-center justify-center text-max-magenta text-xl shrink-0"><i class="fas fa-layer-group"></i></div>
+                        <div>
+                            <p class="font-bold text-slate-800 text-sm whitespace-nowrap">Gran Formato</p>
+                            <p class="text-xs text-slate-500 whitespace-nowrap">Con instalación</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Impresiones | Planta de Producción Gráfica en Panamá</title>
+
+    <!--
+      ============================================================
+      DEMO PARA MAX IMPRESIONES  ·  preparado por Elemento Web
+      ============================================================
+      DATOS POR CONFIRMAR CON EL CLIENTE antes de publicar en su dominio.
+      Están marcados abajo con el comentario "DATO POR CONFIRMAR":
+        · años de operación y cantidad de equipos / clientes
+        · horario de atención
+        · tiempos de entrega por línea de producción
+        · tiraje mínimo de factureras
+        · cobertura de instalación en el interior del país
+      IMÁGENES: son fotos de referencia libres (Wikimedia Commons), NO son
+      trabajos de Max Impresiones. Ver img/CREDITOS.json. Deben reemplazarse
+      por fotos reales de su planta y sus trabajos antes de salir en vivo.
+      FORMULARIO: hoy solo simula el envío. Al aprobarse se conecta al correo
+      de ventas / WhatsApp.
+      ============================================================
+    -->
+
+    <meta name="description" content="Planta de producción gráfica en Panamá: gran formato, rotulación, bordado industrial, serigrafía, offset y ploteo de planos. Atención B2B con instalación a nivel nacional. Villa Zaita Mall.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Max Impresiones | Producción Gráfica B2B en Panamá">
+    <meta property="og:description" content="Gran formato, bordado industrial, serigrafía, offset y ploteo de planos. Cotización para empresas con instalación a nivel nacional.">
+    <meta property="og:image" content="https://elementoweb.com/demo/max-impresiones/img/offset.jpg">
+    <meta property="og:locale" content="es_PA">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0a0a'/><text y='73' x='50' text-anchor='middle' font-size='68' font-family='Helvetica,Arial' font-weight='bold' fill='%23fff'>M</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        max: {
+                            dark: '#0a0a0a',
+                            darker: '#000000',
+                            card: '#141414',
+                            border: '#2a2a2a',
+                            light: '#f8fafc',
+                            surface: '#ffffff',
+                            blue: '#0055ff',
+                            cyan: '#00b4d8',
+                            magenta: '#ff0055',
+                            muted: '#64748b'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'cmyk-gradient': 'linear-gradient(135deg, #00b4d8 0%, #0055ff 50%, #ff0055 100%)',
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'marquee': 'marquee 25s linear infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards'
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background-color: #00b4d8;
+            color: #fff;
+        }
+
+        /* El menú está fijo: sin esto, al saltar a una sección el título
+           queda escondido detrás de la barra. */
+        [id] { scroll-margin-top: 96px; }
+
+        .animation-delay-2000 { animation-delay: 2s; }
+
+        /* Nav states */
+        .nav-light {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: #0f172a;
+        }
+
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 20px -2px rgba(0,0,0,0.05);
+        }
+
+        .text-gradient-cmyk {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(135deg, #00b4d8, #0055ff);
+        }
+
+        /* Dropdown CSS */
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .group:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-hover-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+        }
+
+        .service-hover-card img {
+            transition: transform 0.7s ease;
+        }
+
+        .service-hover-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Dark mode sections */
+        .section-dark {
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Custom form inputs */
+        .form-input {
+            width: 100%;
+            background-color: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            padding: 1rem 1.25rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #00b4d8;
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        /* Acordeón de preguntas: <details> nativo, sin JavaScript que se rompa */
+        .faq-item summary { list-style: none; cursor: pointer; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary .chevron { transition: transform 0.3s ease; }
+        .faq-item[open] summary .chevron { transform: rotate(180deg); }
+        .faq-item[open] { border-color: #0055ff; }
+
+        .portfolio-item img { transition: transform 0.6s ease; }
+        .portfolio-item:hover img { transform: scale(1.06); }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-max-cyan selection:text-white">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 py-4 nav-light" id="navbar">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-max-darker rounded-lg flex items-center justify-center overflow-hidden relative shadow-md">
+                    <div class="absolute inset-0 bg-cmyk-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="font-display font-black text-xl z-10 text-white">M</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display font-black text-xl tracking-widest uppercase leading-none text-slate-900">Max<span class="text-max-blue">Impresiones</span></span>
+                    <span class="text-[9px] text-slate-500 tracking-[0.2em] uppercase mt-1 font-semibold">Producción Gráfica</span>
+                </div>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <!-- Dropdown: Impresión -->
+                <div class="relative group py-4">
+                    <button class="text-sm font-semibold text-slate-600 hover:text-max-blue transition-colors uppercase tracking-wider flex items-center gap-1">
+                        Impresión <i class="fas fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 w-64 bg-white rounded-xl shadow-xl border border-slate-100 p-2 z-50">
+                        <a href="#gran-formato" class="block px-4 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-max-blue rounded-lg transition-colors font-medium">Gran Formato y Vallas</a>
+                        <a href="#offset" class="block px-4 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-max-blue rounded-lg transition-colors font-medium">Offset y Factureras</a>
+                        <a href="#plotter" class="block px-4 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-max-blue rounded-lg transition-colors font-medium">Ploteo de Planos</a>
+                        <a href="#vinil" class="block px-4 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-max-blue rounded-lg transition-colors font-medium">Rotulación en Vinil</a>
+                    </div>
+                </div>
+
+                <!-- Dropdown: Textil -->
+                <div class="relative group py-4">
+                    <button class="text-sm font-semibold text-slate-600 hover:text-max-blue transition-colors uppercase tracking-wider flex items-center gap-1">
+                        Textil &amp; Merch <i class="fas fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 w-64 bg-white rounded-xl shadow-xl border border-slate-100 p-2 z-50">
+                        <a href="#bordado" class="block px-4 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-max-blue rounded-lg transition-colors font-medium">Bordados Corporativos</a>
+                        <a href="#sublimacion" class="block px-4 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-max-blue rounded-lg transition-colors font-medium">Sublimación de Uniformes</a>
+                        <a href="#tazas" class="block px-4 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-max-blue rounded-lg transition-colors font-medium">Promocionales (Tazas, Termos)</a>
+                    </div>
+                </div>
+
+                <a href="#portafolio" class="text-sm font-semibold text-slate-600 hover:text-max-blue transition-colors uppercase tracking-wider">Portafolio</a>
+                <a href="#infraestructura" class="text-sm font-semibold text-slate-600 hover:text-max-blue transition-colors uppercase tracking-wider">Nosotros</a>
+
+                <a href="#contacto" class="ml-4 relative inline-flex h-11 overflow-hidden rounded-full p-[1px] focus:outline-none shadow-md hover:shadow-lg transition-shadow">
+                    <span class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#cbd5e1_0%,#0055ff_50%,#cbd5e1_100%)]"></span>
+                    <span class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white px-6 py-1 text-sm font-bold uppercase tracking-wider text-slate-800 transition-all hover:bg-slate-50 gap-2">
+                         Cotizar Proyecto <i class="fas fa-arrow-right text-max-blue"></i>
+                    </span>
+                </a>
+            </div>
+
+            <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil" class="lg:hidden text-slate-800 p-2">
+                <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Menú móvil: antes el botón no abría nada y en el teléfono no había forma de navegar -->
+        <div id="menu-movil" class="hidden lg:hidden bg-white border-t border-slate-100 mt-4 max-h-[75vh] overflow-y-auto">
+            <div class="px-6 py-4 space-y-1">
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 pt-2 pb-1">Impresión</p>
+                <a href="#gran-formato" class="menu-link block py-3 text-slate-700 font-semibold border-b border-slate-50">Gran Formato y Vallas</a>
+                <a href="#offset" class="menu-link block py-3 text-slate-700 font-semibold border-b border-slate-50">Offset y Factureras</a>
+                <a href="#plotter" class="menu-link block py-3 text-slate-700 font-semibold border-b border-slate-50">Ploteo de Planos</a>
+                <a href="#vinil" class="menu-link block py-3 text-slate-700 font-semibold border-b border-slate-50">Rotulación en Vinil</a>
+
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 pt-4 pb-1">Textil &amp; Merch</p>
+                <a href="#bordado" class="menu-link block py-3 text-slate-700 font-semibold border-b border-slate-50">Bordados Corporativos</a>
+                <a href="#sublimacion" class="menu-link block py-3 text-slate-700 font-semibold border-b border-slate-50">Sublimación de Uniformes</a>
+                <a href="#tazas" class="menu-link block py-3 text-slate-700 font-semibold border-b border-slate-50">Promocionales</a>
+
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 pt-4 pb-1">La empresa</p>
+                <a href="#portafolio" class="menu-link block py-3 text-slate-700 font-semibold border-b border-slate-50">Portafolio</a>
+                <a href="#infraestructura" class="menu-link block py-3 text-slate-700 font-semibold border-b border-slate-50">Nosotros</a>
+                <a href="#proceso" class="menu-link block py-3 text-slate-700 font-semibold border-b border-slate-50">Cómo trabajamos</a>
+                <a href="#faq" class="menu-link block py-3 text-slate-700 font-semibold border-b border-slate-50">Preguntas frecuentes</a>
+                <a href="#ubicacion" class="menu-link block py-3 text-slate-700 font-semibold border-b border-slate-50">Ubicación</a>
+
+                <a href="#contacto" class="menu-link block mt-5 mb-2 bg-max-blue text-white text-center px-6 py-4 rounded-full font-bold uppercase tracking-wider">
+                    Cotizar Proyecto
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-max-light">
+        <!-- Light Abstract Background -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+            <div class="absolute top-[10%] right-[10%] w-[40%] h-[40%] bg-blue-100 rounded-full mix-blend-multiply filter blur-[80px] animate-blob opacity-60"></div>
+            <div class="absolute bottom-[20%] left-[-10%] w-[50%] h-[50%] bg-purple-100 rounded-full mix-blend-multiply filter blur-[100px] animate-blob animation-delay-2000 opacity-60"></div>
+            <!-- La cuadrícula llevaba un color inválido (#e1%e4%e8) y nunca se dibujaba -->
+            <div class="absolute inset-0 opacity-40 bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><path d=%22M60 0H0v60%22 fill=%22none%22 stroke=%22%23e2e8f0%22 stroke-width=%221%22/></svg>')]"></div>
+            <div class="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-slate-100 to-transparent"></div>
+        </div>
+
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-200 bg-white shadow-sm mb-8">
+                        <span class="w-2 h-2 rounded-full bg-max-blue animate-pulse"></span>
+                        <span class="text-xs font-bold tracking-[0.2em] uppercase text-max-blue">Producción propia en Panamá</span>
+                    </div>
+
+                    <h1 class="font-display font-black text-5xl md:text-6xl lg:text-[5rem] leading-[1.05] tracking-tighter mb-6 text-slate-900">
+                        IMPRESIÓN Y <br />
+                        <span class="text-gradient-cmyk">PRODUCCIÓN</span> B2B
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-slate-600 font-medium max-w-2xl mb-10 leading-relaxed">
+                        Soluciones gráficas integrales para marcas exigentes. Desde papelería corporativa y bordados, hasta gran formato monumental con instalación nacional.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="#contacto" class="bg-max-blue text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 transition-all flex items-center gap-3">
+                            Cotización Rápida
+                        </a>
+                        <a href="https://wa.me/50763492857" target="_blank" rel="noopener" class="px-8 py-4 rounded-full font-bold uppercase tracking-wider border-2 border-slate-200 text-slate-700 hover:border-green-500 hover:text-green-600 transition-all flex items-center gap-3 bg-white">
+                            <i class="fab fa-whatsapp text-xl"></i> +507 6349-2857
+                        </a>
+                    </div>
+
+                    <div class="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-slate-500 uppercase tracking-widest">
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Calidad Premium</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Villa Zaita Mall</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Instalación incluida</div>
+                    </div>
+                </div>
+
+                <div class="hidden lg:block lg:col-span-5 relative">
+                    <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl bg-white p-2">
+                         <img src="img/hero.jpg" alt="Prensa de impresión en producción con bobinas de papel" class="w-full h-full object-cover rounded-2xl">
+
+                         <!-- Floating elements -->
+                         <div class="absolute -left-8 top-20 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4 border border-slate-100 animate-[blob_5s_ease-in-out_infinite]">
+                             <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-max-blue text-xl"><i class="fas fa-tshirt"></i></div>
+                             <div>
+                                 <p class="font-bold text-slate-800 text-sm">Bordados</p>
+                                 <p class="text-xs text-slate-500">Uniformes Corp.</p>
+                             </div>
+                         </div>
+
+                         <div class="absolute -right-8 bottom-32 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4 border border-slate-100 animate-[blob_6s_ease-in-out_infinite_reverse]">
+                             <div class="w-12 h-12 bg-pink-50 rounded-full flex items-center justify-center text-max-magenta text-xl"><i class="fas fa-layer-group"></i></div>
+                             <div>
+                                 <p class="font-bold text-slate-800 text-sm">Gran Formato</p>
+                                 <p class="text-xs text-slate-500">Con instalación</p>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="border-y border-slate-200 bg-white py-12">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <p class="text-center text-sm font-bold uppercase tracking-widest text-slate-400 mb-8">Soluciones diseñadas para diversos sectores</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center justify-center text-center p-6 rounded-2xl hover:bg-slate-50 transition-colors">
+                    <i class="fas fa-building text-3xl text-max-blue mb-4"></i>
+                    <h4 class="font-bold text-slate-800">Corporativo</h4>
+                    <p class="text-xs text-slate-500 mt-2">Papelería, uniformes, branding interior.</p>
+                </div>
+                <div class="flex flex-col items-center justify-center text-center p-6 rounded-2xl hover:bg-slate-50 transition-colors">
+                    <i class="fas fa-graduation-cap text-3xl text-max-blue mb-4"></i>
+                    <h4 class="font-bold text-slate-800">Educativo</h4>
+                    <p class="text-xs text-slate-500 mt-2">Bordados escolares, anuarios, promocionales.</p>
+                </div>
+                <div class="flex flex-col items-center justify-center text-center p-6 rounded-2xl hover:bg-slate-50 transition-colors">
+                    <i class="fas fa-store text-3xl text-max-blue mb-4"></i>
+                    <h4 class="font-bold text-slate-800">Retail &amp; Comercial</h4>
+                    <p class="text-xs text-slate-500 mt-2">Letreros, viniles para vitrinas, material POP.</p>
+                </div>
+                <div class="flex flex-col items-center justify-center text-center p-6 rounded-2xl hover:bg-slate-50 transition-colors">
+                    <i class="fas fa-drafting-compass text-3xl text-max-blue mb-4"></i>
+                    <h4 class="font-bold text-slate-800">Ingeniería</h4>
+                    <p class="text-xs text-slate-500 mt-2">Impresión de planos y ploteo alta precisión.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="servicios" class="py-32 section-dark relative">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div class="mb-20 text-center max-w-3xl mx-auto">
+                <h2 class="font-display font-black text-4xl md:text-5xl uppercase tracking-tighter mb-4 text-white">Líneas de <span class="text-max-cyan">Producción</span></h2>
+                <p class="text-gray-400 text-lg">Capacidad industrial para materializar cualquier proyecto. Desde un flyer hasta el revestimiento de un edificio.</p>
+            </div>
+
+            <!-- Asymmetric Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[900px]">
+
+                <!-- Gran Formato (Large) -->
+                <div id="gran-formato" class="md:col-span-8 md:row-span-2 relative rounded-2xl overflow-hidden service-hover-card group border border-max-border bg-max-card shadow-2xl min-h-[420px]">
+                    <img src="img/gran-formato.jpg" alt="Impresora de gran formato imprimiendo un panel rígido" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="absolute inset-0 flex flex-col justify-end p-10">
+                        <div class="w-14 h-14 rounded-xl bg-max-blue text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30">
+                            <i class="fas fa-expand text-2xl"></i>
+                        </div>
+                        <h3 class="font-display font-black text-3xl md:text-4xl text-white mb-3 uppercase tracking-tight">Gran Formato &amp; Rotulación</h3>
+                        <p class="text-gray-300 max-w-lg text-base mb-6">Banners, lonas, roll-ups, gigantografías, vinil microperforado y rotulación de flotas corporativas. Equipos de instalación disponibles.</p>
+                        <a href="#contacto" class="inline-flex items-center text-white font-bold text-sm uppercase tracking-wider hover:text-max-cyan transition-colors w-max">Cotizar Gran Formato <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Bordados -->
+                <div id="bordado" class="md:col-span-4 relative rounded-2xl overflow-hidden service-hover-card group border border-max-border bg-max-card shadow-lg min-h-[340px]">
+                    <img src="img/bordado.jpg" alt="Máquina de bordado industrial multicabezal bordando prendas" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+                    <div class="absolute inset-0 flex flex-col justify-end p-8">
+                        <h3 class="font-display font-black text-2xl text-white mb-2 uppercase tracking-tight">Bordados Industriales</h3>
+                        <p class="text-gray-400 text-sm mb-4">Uniformes corporativos, escolares e institucionales con acabado premium.</p>
+                        <a href="https://wa.me/50763492857" target="_blank" rel="noopener" class="text-max-cyan text-sm uppercase tracking-widest font-bold">Ver Catálogo <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Impresión Comercial / Offset -->
+                <div id="offset" class="md:col-span-4 relative rounded-2xl overflow-hidden service-hover-card group border border-max-border bg-max-card shadow-lg min-h-[340px]">
+                    <img src="img/offset.jpg" alt="Prensa offset entregando pliegos impresos a todo color" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+                    <div class="absolute inset-0 flex flex-col justify-end p-8">
+                        <h3 class="font-display font-black text-2xl text-white mb-2 uppercase tracking-tight">Impresión Comercial</h3>
+                        <p class="text-gray-400 text-sm mb-4">Factureras, volantes, tarjetas, reciberas y papelería corporativa en grandes volúmenes.</p>
+                        <a href="https://wa.me/50763492857" target="_blank" rel="noopener" class="text-max-cyan text-sm uppercase tracking-widest font-bold">Cotizar Tiraje <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Additional Services Bar (Sublimation & More) -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
+                 <div id="sublimacion" class="p-6 rounded-2xl border border-max-border bg-max-card hover:bg-[#1a1a1a] transition-colors flex flex-col justify-center">
+                    <i class="fas fa-mug-hot text-max-magenta text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-1 text-sm">Sublimación y POP</h4>
+                    <p class="text-xs text-gray-500">Uniformes deportivos y material promocional.</p>
+                 </div>
+                 <div id="plotter" class="p-6 rounded-2xl border border-max-border bg-max-card hover:bg-[#1a1a1a] transition-colors flex flex-col justify-center">
+                    <i class="fas fa-map text-max-blue text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-1 text-sm">Impresión de Planos</h4>
+                    <p class="text-xs text-gray-500">Ploteo de alta precisión B/N y color.</p>
+                 </div>
+                 <div id="tazas" class="p-6 rounded-2xl border border-max-border bg-max-card hover:bg-[#1a1a1a] transition-colors flex flex-col justify-center">
+                    <i class="fas fa-gift text-max-cyan text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-1 text-sm">Promocionales</h4>
+                    <p class="text-xs text-gray-500">Tazas, termos, gorras y artículos de marca.</p>
+                 </div>
+                 <div id="vinil" class="p-6 rounded-2xl border border-max-border bg-max-card hover:bg-[#1a1a1a] transition-colors flex flex-col justify-center">
+                    <i class="fas fa-car-side text-green-500 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-1 text-sm">Rotulación en Vinil</h4>
+                    <p class="text-xs text-gray-500">Vehículos, vitrinas y señalización interior.</p>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ NUEVO: PORTAFOLIO ============
+         Una imprenta se vende por los ojos y la página no mostraba un solo
+         trabajo. Reemplazar estas fotos por trabajos reales de Max Impresiones. -->
+    <section id="portafolio" class="py-24 md:py-32 bg-white">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+                <div class="max-w-2xl">
+                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-max-blue">Trabajos realizados</span>
+                    <h2 class="font-display font-black text-4xl md:text-5xl uppercase tracking-tighter mt-3 mb-4 text-slate-900">Lo que sale <span class="text-gradient-cmyk">de la planta</span></h2>
+                    <p class="text-slate-600 text-lg">Una muestra de las líneas que producimos a diario para empresas, colegios y comercios de todo el país.</p>
+                </div>
+                <a href="https://www.instagram.com/maximpresionespty/" target="_blank" rel="noopener" class="shrink-0 inline-flex items-center gap-3 px-6 py-3 rounded-full border-2 border-slate-200 font-bold uppercase tracking-wider text-sm text-slate-700 hover:border-max-magenta hover:text-max-magenta transition-colors">
+                    <i class="fab fa-instagram text-lg"></i> Ver más en Instagram
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <article class="portfolio-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-sm hover:shadow-xl transition-shadow">
+                    <img src="img/porta-rigida.jpg" alt="Detalle de un panel rígido impreso en gran formato" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/5"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-max-cyan">Gran formato</span>
+                        <h3 class="font-display font-black text-xl text-white uppercase tracking-tight mt-1">Señalización rígida</h3>
+                        <p class="text-gray-300 text-sm mt-1">Impresión directa sobre PVC, acrílico y aluminio.</p>
+                    </div>
+                </article>
+
+                <article class="portfolio-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-sm hover:shadow-xl transition-shadow">
+                    <img src="img/porta-bordado.jpg" alt="Cabezales de bordado industrial trabajando sobre prendas" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/5"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-max-cyan">Textil</span>
+                        <h3 class="font-display font-black text-xl text-white uppercase tracking-tight mt-1">Uniformes bordados</h3>
+                        <p class="text-gray-300 text-sm mt-1">Logos institucionales con hilo de alta durabilidad.</p>
+                    </div>
+                </article>
+
+                <article class="portfolio-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-sm hover:shadow-xl transition-shadow">
+                    <img src="img/vinil.jpg" alt="Vehículo rotulado con vinil impreso de cobertura total" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/5"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-max-cyan">Rotulación</span>
+                        <h3 class="font-display font-black text-xl text-white uppercase tracking-tight mt-1">Vinil vehicular</h3>
+                        <p class="text-gray-300 text-sm mt-1">Cobertura total, media y letras recortadas.</p>
+                    </div>
+                </article>
+
+                <article class="portfolio-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-sm hover:shadow-xl transition-shadow">
+                    <img src="img/flota.jpg" alt="Vehículo comercial rotulado para una flota corporativa" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/5"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-max-cyan">Rotulación</span>
+                        <h3 class="font-display font-black text-xl text-white uppercase tracking-tight mt-1">Flotas corporativas</h3>
+                        <p class="text-gray-300 text-sm mt-1">Aplicación uniforme en toda la flota.</p>
+                    </div>
+                </article>
+
+                <article class="portfolio-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-sm hover:shadow-xl transition-shadow">
+                    <img src="img/serigrafia.jpg" alt="Pulpo de serigrafía para estampado textil" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/5"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-max-cyan">Textil</span>
+                        <h3 class="font-display font-black text-xl text-white uppercase tracking-tight mt-1">Serigrafía</h3>
+                        <p class="text-gray-300 text-sm mt-1">Suéteres y camisetas por volumen.</p>
+                    </div>
+                </article>
+
+                <article class="portfolio-item group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-sm hover:shadow-xl transition-shadow">
+                    <img src="img/planos.jpg" alt="Plóter de gran formato imprimiendo un plano" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/5"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-max-cyan">Ingeniería</span>
+                        <h3 class="font-display font-black text-xl text-white uppercase tracking-tight mt-1">Ploteo de planos</h3>
+                        <p class="text-gray-300 text-sm mt-1">Formatos hasta A0, blanco y negro o color.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ NUEVO: NOSOTROS / INFRAESTRUCTURA ============
+         El menú ya enlazaba a #infraestructura pero la sección no existía:
+         "Nosotros" no llevaba a ninguna parte. -->
+    <section id="infraestructura" class="py-24 md:py-32 section-dark relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-max-cyan/5 to-transparent pointer-events-none"></div>
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+                <div class="relative">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-max-border">
+                        <img src="img/planta.jpg" alt="Prensa offset de pliegos dentro de la planta de producción" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-4 md:right-8 bg-max-blue text-white px-8 py-6 rounded-2xl shadow-2xl shadow-blue-900/40">
+                        <p class="font-display font-black text-3xl leading-none">100%</p>
+                        <p class="text-[10px] uppercase tracking-[0.2em] font-bold mt-2 opacity-90">Producción propia</p>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-max-cyan">Nuestra planta</span>
+                    <h2 class="font-display font-black text-4xl md:text-5xl uppercase tracking-tighter mt-3 mb-6 text-white">Todo se produce <br class="hidden md:block"/>bajo un mismo techo</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        No somos intermediarios. Impresión, textil y acabados ocurren en nuestra planta de Villa Zaita,
+                        lo que nos permite controlar la calidad hoja por hoja y sostener los tiempos de entrega que
+                        comprometemos, incluso en pedidos grandes.
+                    </p>
+
+                    <div class="space-y-5 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-max-card border border-max-border flex items-center justify-center shrink-0 text-max-cyan"><i class="fas fa-industry"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Equipo propio para cada línea</h4>
+                                <p class="text-sm text-gray-500">Offset, gran formato, bordado multicabezal, serigrafía y ploteo, sin depender de terceros.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-max-card border border-max-border flex items-center justify-center shrink-0 text-max-cyan"><i class="fas fa-eye-dropper"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Prueba de color antes de producir</h4>
+                                <p class="text-sm text-gray-500">Usted aprueba una muestra física o digital antes de que la máquina arranque el tiraje.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-max-card border border-max-border flex items-center justify-center shrink-0 text-max-cyan"><i class="fas fa-truck"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Instalación con equipo propio</h4>
+                                <!-- DATO POR CONFIRMAR: hasta dónde llega la cobertura de instalación -->
+                                <p class="text-sm text-gray-500">Cuadrillas para montaje de vallas, letreros y rotulación, con cobertura a nivel nacional.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DATO POR CONFIRMAR: estas tres cifras son de ejemplo. Pedirle al
+                         cliente los números reales (años, clientes, m² producidos, etc.). -->
+                    <div class="grid grid-cols-3 gap-4 border-t border-max-border pt-8">
+                        <div>
+                            <p class="font-display font-black text-3xl md:text-4xl text-white leading-none">6</p>
+                            <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 font-bold mt-2">Líneas de producción</p>
+                        </div>
+                        <div>
+                            <p class="font-display font-black text-3xl md:text-4xl text-white leading-none">B2B</p>
+                            <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 font-bold mt-2">Atención por ejecutivo</p>
+                        </div>
+                        <div>
+                            <p class="font-display font-black text-3xl md:text-4xl text-white leading-none">PTY</p>
+                            <p class="text-[10px] uppercase tracking-[0.18em] text-gray-500 font-bold mt-2">Cobertura nacional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ NUEVO: PROCESO ============
+         El comprador B2B necesita saber cómo se pide antes de escribir. -->
+    <section id="proceso" class="py-24 md:py-32 bg-white">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div class="mb-16 max-w-3xl">
+                <span class="text-xs font-bold tracking-[0.25em] uppercase text-max-blue">Cómo trabajamos</span>
+                <h2 class="font-display font-black text-4xl md:text-5xl uppercase tracking-tighter mt-3 mb-4 text-slate-900">De su arte <span class="text-gradient-cmyk">a su puerta</span></h2>
+                <p class="text-slate-600 text-lg">Cuatro pasos, un solo responsable de cuenta. Sin sorpresas de última hora.</p>
+            </div>
+
+            <ol class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6">
+                <!-- Riel que une los pasos en escritorio -->
+                <div class="hidden lg:block absolute left-0 right-0 top-7 h-px bg-gradient-to-r from-max-cyan via-max-blue to-max-magenta opacity-25" aria-hidden="true"></div>
+
+                <li class="relative">
+                    <div class="w-14 h-14 rounded-2xl bg-white border-2 border-slate-900 text-slate-900 flex items-center justify-center text-xl shadow-sm relative z-10">
+                        <i class="fas fa-file-arrow-up"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mt-5 mb-2">Envíenos el arte</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Por WhatsApp o correo, en PDF, AI, CDR o PSD. ¿No tiene arte? Nuestro equipo de diseño lo prepara.</p>
+                </li>
+                <li class="relative">
+                    <div class="w-14 h-14 rounded-2xl bg-white border-2 border-slate-900 text-slate-900 flex items-center justify-center text-xl shadow-sm relative z-10">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mt-5 mb-2">Cotización formal</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Recibe medidas, materiales, tiempo de entrega y precio por escrito, listo para su orden de compra.</p>
+                </li>
+                <li class="relative">
+                    <div class="w-14 h-14 rounded-2xl bg-white border-2 border-slate-900 text-slate-900 flex items-center justify-center text-xl shadow-sm relative z-10">
+                        <i class="fas fa-eye-dropper"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mt-5 mb-2">Prueba y aprobación</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Le mostramos una prueba de color o una muestra física. La producción arranca solo con su visto bueno.</p>
+                </li>
+                <li class="relative">
+                    <div class="w-14 h-14 rounded-2xl bg-max-blue border-2 border-max-blue text-white flex items-center justify-center text-xl shadow-lg shadow-blue-500/25 relative z-10">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mt-5 mb-2">Entrega e instalación</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Retiro en Villa Zaita, entrega en su oficina o instalación en sitio con nuestra cuadrilla.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <div class="py-8 bg-max-blue overflow-hidden relative">
+        <div class="flex space-x-12 animate-marquee whitespace-nowrap items-center">
+            <!-- Repeated text -->
+            <span class="font-display font-black text-2xl uppercase tracking-widest text-white">INSTALACIÓN A NIVEL NACIONAL</span>
+            <span class="text-white/50"><i class="fas fa-bolt text-sm"></i></span>
+            <span class="font-display font-black text-2xl uppercase tracking-widest text-white">CALIDAD GARANTIZADA</span>
+            <span class="text-white/50"><i class="fas fa-bolt text-sm"></i></span>
+            <span class="font-display font-black text-2xl uppercase tracking-widest text-white">ATENCIÓN B2B</span>
+            <span class="text-white/50"><i class="fas fa-bolt text-sm"></i></span>
+            <span class="font-display font-black text-2xl uppercase tracking-widest text-white">VILLA ZAITA MALL</span>
+            <span class="text-white/50"><i class="fas fa-bolt text-sm"></i></span>
+            <span class="font-display font-black text-2xl uppercase tracking-widest text-white">INSTALACIÓN A NIVEL NACIONAL</span>
+            <span class="text-white/50"><i class="fas fa-bolt text-sm"></i></span>
+            <span class="font-display font-black text-2xl uppercase tracking-widest text-white">CALIDAD GARANTIZADA</span>
+        </div>
+    </div>
+
+    <!-- ============ NUEVO: FAQ + UBICACIÓN ============
+         Las preguntas que hoy se responden una por una por WhatsApp, y el mapa
+         que la versión anterior había quitado. -->
+    <section id="faq" class="py-24 md:py-32 bg-max-light">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+                <div class="lg:col-span-7">
+                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-max-blue">Preguntas frecuentes</span>
+                    <h2 class="font-display font-black text-4xl md:text-5xl uppercase tracking-tighter mt-3 mb-8 text-slate-900">Antes de <span class="text-gradient-cmyk">cotizar</span></h2>
+
+                    <div class="space-y-3">
+                        <!-- DATO POR CONFIRMAR: todos los tiempos, mínimos y coberturas de esta sección -->
+                        <details class="faq-item bg-white rounded-xl border border-slate-200 transition-colors" open>
+                            <summary class="flex items-center justify-between gap-4 p-5 font-bold text-slate-900">
+                                ¿En qué formato debo enviar mi arte?
+                                <i class="fas fa-chevron-down chevron text-max-blue text-sm shrink-0"></i>
+                            </summary>
+                            <div class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">
+                                Trabajamos con PDF, AI, CDR, PSD y EPS. Para gran formato pedimos el arte a escala con
+                                3 mm de sangrado y textos convertidos a curvas. Si solo tiene un logo o una idea, el
+                                equipo de diseño arma el arte por usted.
+                            </div>
+                        </details>
+
+                        <details class="faq-item bg-white rounded-xl border border-slate-200 transition-colors">
+                            <summary class="flex items-center justify-between gap-4 p-5 font-bold text-slate-900">
+                                ¿Cuánto tarda un pedido?
+                                <i class="fas fa-chevron-down chevron text-max-blue text-sm shrink-0"></i>
+                            </summary>
+                            <div class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">
+                                Depende de la línea y el volumen. Los trabajos de gran formato y rotulación suelen salir
+                                más rápido que un tiraje de offset o un lote grande de bordado. En la cotización le
+                                confirmamos por escrito la fecha exacta de entrega antes de que apruebe.
+                            </div>
+                        </details>
+
+                        <details class="faq-item bg-white rounded-xl border border-slate-200 transition-colors">
+                            <summary class="flex items-center justify-between gap-4 p-5 font-bold text-slate-900">
+                                ¿Manejan tirajes pequeños o solo volumen?
+                                <i class="fas fa-chevron-down chevron text-max-blue text-sm shrink-0"></i>
+                            </summary>
+                            <div class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">
+                                Ambos. Producimos desde una lona individual o un uniforme bordado, hasta tirajes grandes
+                                de factureras y material POP para cadenas. Algunas líneas, como el offset, tienen una
+                                cantidad mínima por razones de costo: se la indicamos al cotizar.
+                            </div>
+                        </details>
+
+                        <details class="faq-item bg-white rounded-xl border border-slate-200 transition-colors">
+                            <summary class="flex items-center justify-between gap-4 p-5 font-bold text-slate-900">
+                                ¿Instalan fuera de la ciudad de Panamá?
+                                <i class="fas fa-chevron-down chevron text-max-blue text-sm shrink-0"></i>
+                            </summary>
+                            <div class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">
+                                Sí. Coordinamos montaje de vallas, letreros y rotulación en el interior del país. El
+                                traslado de la cuadrilla se cotiza aparte según la provincia y la fecha.
+                            </div>
+                        </details>
+
+                        <details class="faq-item bg-white rounded-xl border border-slate-200 transition-colors">
+                            <summary class="flex items-center justify-between gap-4 p-5 font-bold text-slate-900">
+                                ¿Atienden empresas con orden de compra y crédito?
+                                <i class="fas fa-chevron-down chevron text-max-blue text-sm shrink-0"></i>
+                            </summary>
+                            <div class="px-5 pb-5 text-slate-600 text-sm leading-relaxed">
+                                Sí, trabajamos con empresas, colegios e instituciones bajo orden de compra y emitimos
+                                factura fiscal. Un ejecutivo de cuenta le da seguimiento a licitaciones y pedidos
+                                recurrentes.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div id="ubicacion" class="lg:col-span-5">
+                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-max-blue">Dónde estamos</span>
+                    <h2 class="font-display font-black text-4xl uppercase tracking-tighter mt-3 mb-8 text-slate-900">Villa Zaita</h2>
+
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                        <iframe
+                            title="Ubicación de Max Impresiones en Villa Zaita Mall, Panamá"
+                            src="https://maps.google.com/maps?q=Villa%20Zaita%20Mall%2C%20Panam%C3%A1&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                        <div class="p-6 space-y-5">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-map-marker-alt text-max-magenta mt-1 w-5 text-center"></i>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Planta y sala de ventas</h4>
+                                    <p class="text-sm text-slate-600">Villa Zaita Mall, al lado del Campeón.<br>Panamá, Rep. de Panamá.</p>
+                                </div>
+                            </div>
+                            <!-- DATO POR CONFIRMAR: horario real de atención al público -->
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-clock text-max-blue mt-1 w-5 text-center"></i>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Horario de atención</h4>
+                                    <p class="text-sm text-slate-600">Lunes a viernes, 8:00 a.m. – 5:00 p.m.<br>Sábados, 8:00 a.m. – 12:00 m.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-phone-alt text-max-blue mt-1 w-5 text-center"></i>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Teléfonos</h4>
+                                    <p class="text-sm text-slate-600">
+                                        <a href="tel:+5073944288" class="hover:text-max-blue transition-colors">394-4288</a> ·
+                                        <a href="https://wa.me/50763492857" target="_blank" rel="noopener" class="hover:text-green-600 transition-colors">6349-2857</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Villa+Zaita+Mall+Panam%C3%A1" target="_blank" rel="noopener"
+                               class="flex items-center justify-center gap-2 w-full bg-slate-900 text-white py-3 rounded-lg font-bold text-sm uppercase tracking-wider hover:bg-max-blue transition-colors">
+                                <i class="fas fa-diamond-turn-right"></i> Cómo llegar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 relative section-dark">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-max-blue/10 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+            <div class="bg-max-card border border-max-border rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+
+                <!-- Contact Info Side -->
+                <div class="lg:w-5/12 p-10 md:p-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-max-border relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-max-cyan to-max-blue"></div>
+
+                    <div>
+                        <h2 class="font-display font-black text-4xl uppercase tracking-tighter mb-4 text-white">INICIEMOS TU <br/><span class="text-max-cyan">PROYECTO</span></h2>
+                        <p class="text-gray-400 mb-12 text-sm leading-relaxed">Ejecutivos de cuenta especializados listos para cotizar volumen B2B, gestionar licitaciones y coordinar instalaciones.</p>
+
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-5">
+                                <div class="w-12 h-12 rounded-full border border-max-border bg-[#0a0a0a] flex items-center justify-center shrink-0">
+                                    <i class="fab fa-whatsapp text-green-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">WhatsApp B2B</h4>
+                                    <a href="https://wa.me/50763492857" target="_blank" rel="noopener" class="text-xl font-bold text-white hover:text-green-500 transition-colors">+507 6349-2857</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-5">
+                                <div class="w-12 h-12 rounded-full border border-max-border bg-[#0a0a0a] flex items-center justify-center shrink-0">
+                                    <i class="fas fa-phone-alt text-max-blue text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">Oficina Central</h4>
+                                    <a href="tel:+5073944288" class="text-xl font-bold text-white hover:text-max-blue transition-colors">394-4288</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-5">
+                                <div class="w-12 h-12 rounded-full border border-max-border bg-[#0a0a0a] flex items-center justify-center shrink-0">
+                                    <i class="fas fa-map-marker-alt text-max-magenta text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">Planta de Producción</h4>
+                                    <p class="text-white text-sm font-medium">Villa Zaita Mall, al lado del Campeón.<br/><span class="text-gray-400">Panamá, Rep. de Panamá.</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 pt-8 border-t border-max-border">
+                        <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-4">Redes Sociales</p>
+                        <a href="https://www.instagram.com/maximpresionespty/" target="_blank" rel="noopener" aria-label="Instagram de Max Impresiones" class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-max-border bg-[#0a0a0a] hover:bg-max-magenta hover:border-max-magenta transition-all text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quote Form Side -->
+                <div class="lg:w-7/12 p-10 md:p-16 bg-[#0f0f0f]">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-white mb-2">Solicitar Cotización Formal</h3>
+                        <p class="text-sm text-gray-400">Complete el formulario y un asesor le contactará en breve con tiempos de entrega y costos.</p>
+                    </div>
+
+                    <form id="form-cotizacion" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="f-nombre" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Nombre / Empresa *</label>
+                                <input id="f-nombre" name="nombre" type="text" required class="form-input" placeholder="Ej. Juan Pérez - Logística SA">
+                            </div>
+                            <div>
+                                <label for="f-tel" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Teléfono / Celular *</label>
+                                <input id="f-tel" name="telefono" type="tel" required class="form-input" placeholder="Su número de contacto">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="f-correo" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Correo Electrónico *</label>
+                            <input id="f-correo" name="correo" type="email" required class="form-input" placeholder="correo@empresa.com">
+                        </div>
+
+                        <div>
+                            <label for="f-servicio" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Servicio de Interés</label>
+                            <select id="f-servicio" name="servicio" class="form-input text-gray-300">
+                                <option>Gran Formato y Vallas</option>
+                                <option>Impresión Comercial / Factureras</option>
+                                <option>Bordados Uniformes</option>
+                                <option>Serigrafía / Sublimación</option>
+                                <option>Rotulación de Vehículos</option>
+                                <option>Ploteo de Planos</option>
+                                <option>Promocionales (tazas, termos)</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="f-detalle" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Detalles del Proyecto</label>
+                            <textarea id="f-detalle" name="detalle" rows="4" class="form-input resize-none" placeholder="Describa medidas, cantidad, materiales, fecha requerida..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-white text-black font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-max-blue hover:text-white transition-colors flex justify-center items-center gap-2">
+                            Enviar Solicitud <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <p id="form-aviso" class="hidden text-sm text-center rounded-lg border border-max-cyan/40 bg-max-cyan/10 text-max-cyan px-4 py-3"></p>
+                        <p class="text-[10px] text-gray-500 text-center mt-4">* Sus datos son confidenciales y solo se usarán para cotizar.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#050505] border-t border-max-border py-12 section-dark">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#" class="flex items-center gap-2 mb-4">
+                        <span class="font-display font-black text-xl tracking-widest uppercase text-white">Max<span class="text-max-blue">Impresiones</span></span>
+                    </a>
+                    <p class="text-gray-500 text-sm max-w-sm leading-relaxed mb-6">
+                        El socio estratégico en impresión y producción gráfica para empresas en Panamá. Calidad, velocidad y precisión técnica.
+                    </p>
+                    <p class="text-gray-400 text-sm"><i class="fas fa-map-marker-alt text-max-cyan mr-2"></i> Villa Zaita Mall, Panamá</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4">Servicios Principales</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#gran-formato" class="hover:text-max-cyan transition-colors">Gran Formato</a></li>
+                        <li><a href="#offset" class="hover:text-max-cyan transition-colors">Factureras Fiscales</a></li>
+                        <li><a href="#bordado" class="hover:text-max-cyan transition-colors">Bordado Corporativo</a></li>
+                        <li><a href="#plotter" class="hover:text-max-cyan transition-colors">Ploteo de Planos</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4">Atención al Cliente</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="https://wa.me/50763492857" target="_blank" rel="noopener" class="hover:text-max-cyan transition-colors">Ventas WhatsApp</a></li>
+                        <li><a href="tel:+5073944288" class="hover:text-max-cyan transition-colors">Llamar a Planta</a></li>
+                        <li><a href="#faq" class="hover:text-max-cyan transition-colors">Preguntas frecuentes</a></li>
+                        <li><a href="https://www.instagram.com/maximpresionespty/" target="_blank" rel="noopener" class="hover:text-max-cyan transition-colors">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-max-border pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-600 text-xs tracking-widest uppercase">
+                    &copy; <span id="year"></span> Max Impresiones.
+                </p>
+                <p class="text-gray-700 text-[10px] tracking-wider text-center md:text-right">
+                    Vista previa preparada por Elemento Web · fotografías de referencia bajo licencia Creative Commons / dominio público (Wikimedia Commons)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp: en Panamá es por donde entra la venta -->
+    <a href="https://wa.me/50763492857?text=Hola%2C%20quisiera%20cotizar%20un%20trabajo%20de%20impresi%C3%B3n."
+       target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"
+       class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 text-white shadow-xl shadow-green-500/30 flex items-center justify-center hover:bg-green-600 hover:scale-105 transition-all">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        // Set year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('nav-scrolled');
+                navbar.classList.remove('nav-light', 'py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('nav-scrolled', 'py-2');
+                navbar.classList.add('nav-light', 'py-4');
+            }
+        });
+
+        // Menú móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const menuMovil = document.getElementById('menu-movil');
+        const menuIcon = document.getElementById('menu-icon');
+
+        function cerrarMenu() {
+            menuMovil.classList.add('hidden');
+            menuIcon.classList.replace('fa-xmark', 'fa-bars');
+            menuBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        menuBtn.addEventListener('click', () => {
+            const abierto = !menuMovil.classList.contains('hidden');
+            if (abierto) {
+                cerrarMenu();
+            } else {
+                menuMovil.classList.remove('hidden');
+                menuIcon.classList.replace('fa-bars', 'fa-xmark');
+                menuBtn.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        // Al tocar un enlace el menú debe cerrarse solo, si no tapa la sección
+        document.querySelectorAll('.menu-link').forEach(a => a.addEventListener('click', cerrarMenu));
+
+        // Formulario: por ahora solo confirma en pantalla. Al aprobarse el diseño
+        // se conecta al correo de ventas / WhatsApp.
+        const form = document.getElementById('form-cotizacion');
+        const aviso = document.getElementById('form-aviso');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            aviso.textContent = 'Gracias. Esta es una vista previa: el envío real se activa al publicar el sitio. Mientras tanto, escríbanos por WhatsApp al 6349-2857.';
+            aviso.classList.remove('hidden');
+            form.querySelector('button[type="submit"]').disabled = true;
+        });
+    </script>
+</body>
+</html>

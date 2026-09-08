@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Consta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#F6F5F8;
+    --hoja:#FFFFFF;
+    --tinta:#16151C;
+    --tinta-media:#4B4857;
+    --tinta-suave:#6E6B7C;
+    --sello:#4A3AA8;
+    --sello-tenue:#EDEAF9;
+    --sello-borde:#CFC7F0;
+    --rechazo:#A8332B;
+    --rechazo-tenue:#F8EBEA;
+    --linea:#DEDAE6;
+    --linea-fuerte:#C6C0D4;
+    --sombra:0 1px 2px rgba(22,21,28,.05), 0 8px 24px -12px rgba(22,21,28,.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --papel:#131218;
+      --hoja:#1B1A23;
+      --tinta:#EFEDF4;
+      --tinta-media:#B4B0C2;
+      --tinta-suave:#8B8799;
+      --sello:#A395FF;
+      --sello-tenue:#241F3D;
+      --sello-borde:#3C3363;
+      --rechazo:#E08078;
+      --rechazo-tenue:#2C1B1A;
+      --linea:#2C2937;
+      --linea-fuerte:#413D50;
+      --sombra:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --papel:#131218;
+    --hoja:#1B1A23;
+    --tinta:#EFEDF4;
+    --tinta-media:#B4B0C2;
+    --tinta-suave:#8B8799;
+    --sello:#A395FF;
+    --sello-tenue:#241F3D;
+    --sello-borde:#3C3363;
+    --rechazo:#E08078;
+    --rechazo-tenue:#2C1B1A;
+    --linea:#2C2937;
+    --linea-fuerte:#413D50;
+    --sombra:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--papel);
+    color:var(--tinta);
+    font-family:"Public Sans","Segoe UI",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .env{max-width:1100px;margin:0 auto;padding:0 24px}
+  .col{max-width:660px;margin-left:auto;margin-right:auto}
+  p{margin:0 0 1.1em}
+  strong{font-weight:600}
+  a{color:var(--sello)}
+
+  /* ---------- portada ---------- */
+  header.portada{padding:64px 0 40px;border-bottom:1px solid var(--linea)}
+  .eyebrow{
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--tinta-suave);font-weight:600;margin-bottom:22px;
+  }
+  h1{
+    font-family:"Libre Caslon Text",Georgia,serif;
+    font-weight:400;font-size:clamp(58px,12vw,104px);
+    line-height:.92;letter-spacing:-.02em;margin:0 0 6px;
+    text-wrap:balance;
+  }
+  .lema{
+    font-family:"Libre Caslon Text",Georgia,serif;font-style:italic;
+    font-size:clamp(20px,3.6vw,27px);color:var(--sello);
+    line-height:1.3;margin:0 0 26px;
+  }
+  .resumen{font-size:19px;color:var(--tinta-media);max-width:620px;margin:0}
+  .resumen b{color:var(--tinta);font-weight:600}
+
+  /* ---------- aviso de reloj ---------- */
+  /* Aviso sellado, no tarjeta con riel de color: el borde entero lleva el tono
+     de alerta, como una notificación timbrada. */
+  .reloj{
+    margin:28px 0 0;padding:18px 22px;background:var(--rechazo-tenue);
+    border:1px solid var(--rechazo);border-radius:3px;max-width:620px;
+  }
+  .reloj .t{
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--rechazo);font-weight:700;margin-bottom:7px;
+  }
+  .reloj p{margin:0;font-size:15.5px;color:var(--tinta-media)}
+  .reloj p + p{margin-top:8px}
+
+  /* ---------- secciones ---------- */
+  section{padding:56px 0;border-bottom:1px solid var(--linea)}
+  section:last-of-type{border-bottom:0}
+  h2{
+    font-family:"Libre Caslon Text",Georgia,serif;font-weight:400;
+    font-size:clamp(30px,5vw,40px);line-height:1.12;letter-spacing:-.01em;
+    margin:0 0 20px;text-wrap:balance;
+  }
+  h3{
+    font-size:17px;font-weight:700;margin:34px 0 10px;
+    letter-spacing:-.005em;
+  }
+  .guia{
+    font-size:15px;color:var(--tinta-suave);font-style:italic;
+    border-left:2px solid var(--sello-borde);padding-left:14px;margin:0 0 26px;
+  }
+
+  /* ---------- maqueta del recibo ---------- */
+  .demo{
+    background:var(--hoja);border:1px solid var(--linea);border-radius:5px;
+    box-shadow:var(--sombra);overflow:hidden;margin:30px 0;
+  }
+  .demo-barra{
+    padding:11px 18px;border-bottom:1px solid var(--linea);
+    font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--tinta-suave);font-weight:600;
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  }
+  .sin-red{color:var(--sello)}
+  .demo-cuerpo{padding:22px 18px}
+  .pregunta{
+    font-size:17px;font-weight:600;margin:0 0 16px;padding-bottom:16px;
+    border-bottom:1px dashed var(--linea-fuerte);
+  }
+  .pregunta::before{content:"¿ ";color:var(--tinta-suave);font-weight:400}
+  .respuesta{margin:0 0 4px;font-size:16.5px}
+  mark{
+    background:var(--sello-tenue);color:inherit;
+    padding:1px 3px;border-radius:2px;
+    border-bottom:1.5px solid var(--sello-borde);
+  }
+
+  .recibos{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+  .recibo{
+    background:var(--papel);border:1px solid var(--linea);
+    border-radius:4px;padding:12px 14px;
+  }
+  .recibo-alto{
+    display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+    font-size:12.5px;font-weight:600;margin-bottom:7px;
+  }
+  .chapa{
+    font-family:"JetBrains Mono",monospace;font-size:10.5px;
+    background:var(--sello);color:#fff;padding:2px 7px;border-radius:3px;
+    letter-spacing:.04em;font-weight:500;
+  }
+  :root[data-theme="dark"] .chapa{color:#131218}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .chapa{color:#131218}}
+  .recibo-datos{
+    font-family:"JetBrains Mono",monospace;font-size:11.5px;
+    color:var(--tinta-suave);line-height:1.75;word-break:break-all;
+  }
+  .recibo-datos b{color:var(--tinta-media);font-weight:500}
+  .disenso{
+    margin-top:16px;padding:12px 14px;background:var(--sello-tenue);
+    border:1px solid var(--sello-borde);border-radius:4px;
+    font-size:14.5px;color:var(--tinta);
+  }
+  .disenso b{color:var(--sello)}
+
+  /* ---------- cadena / manipulación ---------- */
+  .cadenas{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px;margin:30px 0;
+  }
+  .cadena{
+    background:var(--hoja);border:1px solid var(--linea);
+    border-radius:5px;padding:18px;box-shadow:var(--sombra);
+  }
+  .cadena h4{
+    margin:0 0 14px;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:700;
+  }
+  .cadena.ok h4{color:var(--sello)}
+  .cadena.mal h4{color:var(--rechazo)}
+  .folio{
+    display:flex;align-items:center;gap:11px;
+    font-family:"JetBrains Mono",monospace;font-size:11.5px;
+    padding:8px 11px;border:1px solid var(--linea);border-radius:3px;
+    background:var(--papel);color:var(--tinta-media);
+  }
+  .eslabon{
+    width:1.5px;height:13px;margin-left:22px;background:var(--linea-fuerte);
+  }
+  .cadena.ok .eslabon{background:var(--sello)}
+  .cadena.mal .roto{
+    background:transparent;
+    border-left:1.5px dashed var(--rechazo);
+    height:16px;
+  }
+  .folio.alterado{border-color:var(--rechazo);background:var(--rechazo-tenue);color:var(--rechazo)}
+  .folio.caido{opacity:.55;border-style:dashed}
+  .veredicto{
+    margin-top:14px;font-size:13px;font-weight:600;line-height:1.45;
+  }
+  .cadena.ok .veredicto{color:var(--sello)}
+  .cadena.mal .veredicto{color:var(--rechazo)}
+
+  /* ---------- escenas ---------- */
+  .escenas{display:flex;flex-direction:column;gap:2px;margin:28px 0 0}
+  .escena{
+    background:var(--hoja);border:1px solid var(--linea);
+    padding:20px 22px;display:grid;grid-template-columns:44px 1fr;gap:18px;
+  }
+  .escena:first-child{border-radius:5px 5px 0 0}
+  .escena:last-child{border-radius:0 0 5px 5px}
+  .escena + .escena{border-top:0}
+  .escena-n{
+    font-family:"Libre Caslon Text",Georgia,serif;font-size:34px;
+    line-height:1;color:var(--sello-borde);
+  }
+  .escena h4{margin:0 0 3px;font-size:16.5px;font-weight:700}
+  .escena .dur{
+    font-family:"JetBrains Mono",monospace;font-size:11px;
+    color:var(--tinta-suave);margin-bottom:9px;
+  }
+  .escena p{margin:0;font-size:15.5px;color:var(--tinta-media)}
+  .escena .prueba{
+    margin-top:9px;font-size:13.5px;color:var(--sello);font-weight:600;
+  }
+
+  /* ---------- tablas ---------- */
+  .tabla-env{overflow-x:auto;margin:24px 0}
+  table{border-collapse:collapse;width:100%;font-size:15px;min-width:460px}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--linea);vertical-align:top}
+  th{
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--tinta-suave);font-weight:700;border-bottom:1px solid var(--linea-fuerte);
+  }
+  td b{font-weight:600}
+  .peso{font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr.suyo td{background:var(--sello-tenue)}
+  tr.suyo td:first-child{box-shadow:inset 3px 0 0 var(--sello)}
+  .pie-tabla{font-size:14px;color:var(--tinta-suave);margin-top:10px}
+
+  /* ---------- listas ---------- */
+  ul.limpia{list-style:none;padding:0;margin:0 0 1.1em}
+  ul.limpia li{
+    padding-left:22px;position:relative;margin-bottom:12px;
+    color:var(--tinta-media);
+  }
+  ul.limpia li::before{
+    content:"";position:absolute;left:2px;top:11px;
+    width:6px;height:6px;background:var(--sello-borde);border-radius:50%;
+  }
+  ul.limpia li b{color:var(--tinta)}
+
+  .aparte{
+    background:var(--hoja);border:1px solid var(--linea);border-radius:5px;
+    padding:22px;margin:26px 0;box-shadow:var(--sombra);
+  }
+  .aparte h4{
+    margin:0 0 10px;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--sello);font-weight:700;
+  }
+  .aparte p:last-child{margin-bottom:0}
+
+  /* Mismo tratamiento que el aviso de reloj: en este documento «esto es
+     crítico» se dice con el borde entero teñido, una sola vez y en todas. */
+  .intocable{background:var(--rechazo-tenue);border-color:var(--rechazo)}
+  .intocable h4{color:var(--rechazo)}
+
+  /* Cita de tesis con filetes arriba y abajo, como en la composición
+     editorial clásica — no un riel lateral. */
+  blockquote{
+    margin:34px 0;padding:24px 0;
+    border-top:1px solid var(--linea-fuerte);
+    border-bottom:1px solid var(--linea-fuerte);
+    font-family:"Libre Caslon Text",Georgia,serif;font-style:italic;
+    font-size:clamp(23px,4vw,29px);line-height:1.32;
+    color:var(--sello);text-align:center;text-wrap:balance;
+  }
+  blockquote p{margin:0}
+
+  footer{
+    padding:44px 0 64px;color:var(--tinta-suave);font-size:14px;
+  }
+  footer p{margin:0 0 6px}
+
+  @media (max-width:640px){
+    body{font-size:16px}
+    section{padding:44px 0}
+    .escena{grid-template-columns:1fr;gap:6px}
+    .escena-n{font-size:26px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="portada">
+  <div class="env col">
+    <div class="eyebrow">Decentralized AI Hackathon · ISD Summit · Panamá</div>
+    <h1>Consta</h1>
+    <p class="lema">Conste en acta.</p>
+    <p class="resumen">
+      La memoria de un grupo que <b>ningún miembro controla</b>: se escribe sola cuando se
+      reúnen, responde preguntas sin internet, y cada respuesta trae la firma de quien lo dijo.
+    </p>
+
+    <div class="reloj">
+      <div class="t">Hoy, 8 de septiembre</div>
+      <p><b>El registro cierra hoy a las 23:59.</b> Cada persona se registra por su cuenta:
+      nadie puede aceptar los términos por otro. El equipo se congela mañana a las 08:00 y
+      después no se admiten altas ni bajas.</p>
+      <p>Los desafíos se publicaban hoy en la mañana. Consta se diseñó antes de leerlos, así
+      que lo primero de la reunión es ver cuál encaja y qué hay que doblar.</p>
+    </div>
+  </div>
+</header>
+
+<div class="env col">
+
+<section>
+  <h2>El problema, sin una palabra técnica</h2>
+
+  <p>
+    Una asamblea de edificio aprueba subir la cuota de mantenimiento. Alguien se opone.
+    Seis meses después nadie se pone de acuerdo en qué se decidió realmente, quién votó qué,
+    ni si el acta que circula es la que se firmó ese día.
+  </p>
+  <p>
+    Esto pasa en juntas de vecinos, cooperativas, asociaciones y sindicatos todos los meses.
+    No es un problema de mala fe: es que <strong>el registro siempre queda en manos de
+    alguien</strong>, y ese alguien puede perderlo, editarlo o simplemente no estar cuando
+    hace falta.
+  </p>
+  <p>
+    Consta hace que la memoria de esa reunión no dependa de nadie en particular.
+  </p>
+</section>
+
+<section>
+  <h2>Cómo funciona, en tres imágenes</h2>
+
+  <h3>Un libro que se delata solo</h3>
+  <p class="guia">
+    Imagina un libro de actas donde cada página lleva impreso un resumen de la página
+    anterior.
+  </p>
+  <p>
+    Si alguien arranca o cambia una hoja del medio, todas las siguientes dejan de cuadrar.
+    No hace falta confiar en quien guarda el libro: <strong>el libro se delata solo</strong>.
+    Eso es, exactamente, lo que hacemos con las actas.
+  </p>
+
+  <h3>La memoria vive en la gente, no en un servidor</h3>
+  <p>
+    No hay una computadora central donde se guarde todo. La información vive en los equipos
+    de los que estuvieron presentes, y se copia entre ellos cuando están cerca. Si la
+    organización se disuelve, la memoria no se borra: cada quien conserva su copia y puede
+    probar qué se decidió mientras estuvo.
+  </p>
+  <p>
+    Tampoco hay cuentas, ni administrador, ni una factura mensual que alguien tenga que pagar
+    para que el pasado siga existiendo.
+  </p>
+
+  <h3>La inteligencia artificial corre dentro del equipo</h3>
+  <p>
+    Escucha la reunión, la transcribe, saca los acuerdos y después responde preguntas en
+    español normal. Todo dentro de la computadora, sin internet de por medio.
+  </p>
+  <p>
+    Eso no es una elección estética: <strong>el reglamento del hackathon descalifica a quien
+    use inteligencia artificial en la nube</strong>. Nuestra ventaja es que ya lo probamos
+    funcionando en la máquina de Josimar antes de inscribirnos.
+  </p>
+</section>
+
+<section>
+  <h2>Lo que nos hace distintos</h2>
+  <p class="guia">
+    Esta es la parte que hay que saber contar. Es donde está el 25 % de Innovación.
+  </p>
+
+  <p>
+    Cuando le preguntas algo a cualquier asistente de inteligencia artificial y te responde
+    <em>«según el acta de marzo…»</em>, esa cita <strong>es simplemente un texto que el
+    programa escribió</strong>. No hay manera de comprobarla. Tienes que confiar en el
+    programa y, además, en quien administra el servidor donde vive el acta, porque pudo
+    haberla cambiado.
+  </p>
+
+  <blockquote><p>Nosotros convertimos la cita en un recibo.</p></blockquote>
+
+  <p>
+    Cada respuesta viene acompañada de quién lo dijo, cuándo, y una prueba de que ese texto
+    no se ha tocado desde entonces. No es una promesa del programa: es verificable por
+    cualquiera. Así se ve:
+  </p>
+
+  <div class="demo">
+    <div class="demo-barra">
+      <span>Consta · Junta de Propietarios</span>
+      <span class="sin-red">◈ sin conexión</span>
+    </div>
+    <div class="demo-cuerpo">
+      <p class="pregunta">Cuándo se aprobó subir la cuota y quién se opuso?</p>
+      <p class="respuesta">
+        El aumento a <mark>B/. 85.00 mensuales se aprobó el 14 de marzo de 2026</mark> con
+        siete votos a favor. <mark>Dos propietarios dejaron constancia de su oposición</mark>
+        por el plazo de aplicación, no por el monto.
+      </p>
+
+      <div class="recibos">
+        <div class="recibo">
+          <div class="recibo-alto"><span class="chapa">FOLIO 447</span> Acta de asamblea ordinaria</div>
+          <div class="recibo-datos">
+            firmado por <b>M. Cedeño · secretaria</b><br>
+            14 mar 2026, 19:42<br>
+            huella <b>a3f7…c204</b> · verificada ✓
+          </div>
+        </div>
+        <div class="recibo">
+          <div class="recibo-alto"><span class="chapa">FOLIO 448</span> Constancia de oposición</div>
+          <div class="recibo-datos">
+            firmado por <b>R. Batista</b>, <b>L. Ortega</b><br>
+            14 mar 2026, 19:58<br>
+            huella <b>91be…7d10</b> · verificada ✓
+          </div>
+        </div>
+      </div>
+
+      <div class="disenso">
+        <b>Hay dos versiones firmadas de este punto.</b> Se muestran las dos, con nombre y
+        fecha. El sistema no elige una.
+      </div>
+    </div>
+  </div>
+
+  <h3>Y ese último detalle es el segundo hallazgo</h3>
+  <p>
+    Todos los programas de este tipo, cuando encuentran información contradictoria, eligen
+    una versión y descartan la otra. Pero en el registro de una discusión humana,
+    <strong>el desacuerdo es la información más valiosa que hay</strong>.
+  </p>
+  <p>
+    Consta guarda las dos versiones con nombre y firma, y lo dice. Un sistema que responde
+    <em>«sobre este punto hubo dos posiciones»</em> en lugar de promediar el desacuerdo hasta
+    convertirlo en una mentira.
+  </p>
+  <p>
+    Eso no sale de un truco de programación: sale de cómo está construido por dentro. Y es
+    justamente lo que un servidor tradicional <strong>no puede</strong> ofrecer.
+  </p>
+</section>
+
+<section>
+  <h2>El video de cinco minutos</h2>
+  <p class="guia">
+    Es lo primero que mira el jurado. Por eso está diseñado antes que el código, y por eso
+    es tuyo.
+  </p>
+  <p>
+    Cuatro escenas. Cada una demuestra <strong>una cosa que no se puede fingir</strong> con
+    un sistema normal, y ese es todo el criterio para incluirla o sacarla.
+  </p>
+
+  <div class="escenas">
+    <div class="escena">
+      <div class="escena-n">1</div>
+      <div>
+        <h4>La asamblea</h4>
+        <div class="dur">60 segundos</div>
+        <p>
+          Tres computadoras en una mesa. Alguien propone subir la cuota. El sistema
+          transcribe y saca el acuerdo en vivo; las tres pantallas muestran lo mismo. Un
+          asistente se opone y firma su objeción: quedan las dos cosas.
+        </p>
+        <p class="prueba">Prueba: desconectamos el internet en cámara y sigue funcionando.</p>
+      </div>
+    </div>
+
+    <div class="escena">
+      <div class="escena-n">2</div>
+      <div>
+        <h4>Seis meses después</h4>
+        <div class="dur">90 segundos</div>
+        <p>
+          Preguntamos en español normal qué se decidió. Responde, y cada afirmación se puede
+          abrir para ver quién la firmó y cuándo. Dice que hubo dos versiones, no una.
+        </p>
+        <p class="prueba">Prueba: la respuesta viene con recibos, no con promesas.</p>
+      </div>
+    </div>
+
+    <div class="escena">
+      <div class="escena-n">3</div>
+      <div>
+        <h4>El intento de fraude</h4>
+        <div class="dur">60 segundos</div>
+        <p>
+          Editamos un acta vieja en una de las computadoras. Las otras dos la rechazan solas:
+          la cadena se rompió.
+        </p>
+        <p class="prueba">Aquí es donde el jurado entiende de qué se trata, y por eso esta escena no se recorta.</p>
+      </div>
+    </div>
+
+    <div class="escena">
+      <div class="escena-n">4</div>
+      <div>
+        <h4>El vecino nuevo</h4>
+        <div class="dur">45 segundos</div>
+        <p>
+          Llega alguien que no estaba, se une, y recibe la memoria completa y verificada en
+          segundos, de los que están en la sala.
+        </p>
+        <p class="prueba">Prueba: sin servidor y sin que ningún administrador lo autorice.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cadenas">
+    <div class="cadena ok">
+      <h4>Cadena íntegra</h4>
+      <div class="folio">folio 446 · a3f7…</div>
+      <div class="eslabon"></div>
+      <div class="folio">folio 447 · c204…</div>
+      <div class="eslabon"></div>
+      <div class="folio">folio 448 · 91be…</div>
+      <p class="veredicto">✓ Las tres computadoras coinciden</p>
+    </div>
+    <div class="cadena mal">
+      <h4>Alguien editó el folio 447</h4>
+      <div class="folio">folio 446 · a3f7…</div>
+      <div class="eslabon"></div>
+      <div class="folio alterado">folio 447 · 8dd1… ✗</div>
+      <div class="eslabon roto"></div>
+      <div class="folio caido">folio 448 · no cuadra</div>
+      <p class="veredicto">✗ Rechazado por las otras dos, solas</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Cómo se gana, y por qué te necesitamos</h2>
+
+  <div class="tabla-env">
+    <table>
+      <thead>
+        <tr><th>Criterio</th><th class="peso">Peso</th><th>Quién lo mueve</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>Técnico</b></td><td class="peso">35 %</td><td>Josimar: que funcione de verdad</td></tr>
+        <tr class="suyo"><td><b>Innovación</b></td><td class="peso">25 %</td><td>Tú: que se entienda por qué es distinto</td></tr>
+        <tr class="suyo"><td><b>Impacto</b></td><td class="peso">20 %</td><td>Tú: a quién le sirve y por qué importa</td></tr>
+        <tr><td><b>Diseño</b></td><td class="peso">10 %</td><td>Los dos</td></tr>
+        <tr class="suyo"><td><b>Terminado</b></td><td class="peso">10 %</td><td>Tú: que se entregue completo y a tiempo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="pie-tabla">
+    Innovación, Impacto y Terminado suman <strong>55 %</strong>. Más que la parte técnica.
+    No entras como apoyo, sino a cargo de la mitad más grande del puntaje.
+  </p>
+
+  <h3>Lo que está en tus manos</h3>
+  <ul class="limpia">
+    <li><b>Elegir el caso.</b> ¿Edificio, cooperativa, junta comunal, sindicato? Cambia la
+    demo entera y es una decisión de negocio, no técnica.</li>
+    <li><b>Conseguir un caso real.</b> Un acta de verdad y un conflicto de verdad valen más
+    que diez ejemplos inventados. Eso es el 20 % de Impacto, y no lo puede fabricar el
+    código.</li>
+    <li><b>El guion y el video en español.</b> Lo primero que mira el jurado.</li>
+    <li><b>El documento de entrega.</b> Tiene que declarar qué existía antes de empezar, y
+    <strong>omitirlo descalifica</strong>. Es un requisito del reglamento, no un formalismo.</li>
+    <li><b>Guardar el alcance.</b> Lo que hunde un proyecto de 48 horas casi nunca es la
+    parte difícil, sino seguir agregando cosas en la hora 40.</li>
+    <li><b>El reloj.</b> Quien está programando siempre lo pierde de vista.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Qué puede salir mal</h2>
+  <p class="guia">
+    Prefiero que sepas los riesgos antes de decidir, no en la hora 30.
+  </p>
+
+  <div class="tabla-env">
+    <table>
+      <thead>
+        <tr><th>Riesgo</th><th>Qué hacemos</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Las piezas no encajan</b><br><span style="color:var(--tinta-suave)">Las dos tecnologías podrían no convivir</span></td>
+          <td>Se comprueba en 20 minutos. <b>Hoy</b>, antes de la reunión, no el día 9.</td>
+        </tr>
+        <tr>
+          <td><b>La transcripción en español falla</b></td>
+          <td>Se prueba con audio panameño real antes de comprometernos con esa escena.</td>
+        </tr>
+        <tr>
+          <td><b>Los desafíos no encajan</b><br><span style="color:var(--tinta-suave)">Se publicaron hoy</span></td>
+          <td>Leerlos juntos primero. La idea se dobla; el motor sirve igual.</td>
+        </tr>
+        <tr>
+          <td><b>Se acaba el tiempo</b></td>
+          <td>Lista de recortes ya decidida, aquí abajo. No se improvisa a la hora 40.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="aparte">
+    <h4>Si el reloj aprieta, se recorta en este orden</h4>
+    <p>
+      Primero, la transcripción en vivo pasa a ser «subimos un audio grabado». Después, la
+      respuesta redactada pasa a ser solo la lista de actas firmadas que contestan la
+      pregunta.
+    </p>
+    <p>
+      Las dos degradaciones se ven bien en cámara y ninguna rompe el argumento.
+    </p>
+  </div>
+
+  <div class="aparte intocable">
+    <h4>Lo que no se toca</h4>
+    <p>
+      <strong>La escena 3 y los recibos.</strong> Son la tesis del proyecto. Sin el intento
+      de fraude rechazado y sin la firma detrás de cada respuesta, esto se convierte en una
+      aplicación de notas, y de esas el jurado va a ver diez.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Las 48 horas</h2>
+
+  <div class="tabla-env">
+    <table>
+      <thead>
+        <tr><th>Cuándo</th><th>Qué pasa</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="peso"><b>Hoy, 23:59</b></td><td><b>Cierra el registro.</b> Cada quien por su cuenta. Sin esto, no hay nada más.</td></tr>
+        <tr><td class="peso">9 sep · 08:00</td><td>Arranca el reloj y <b>se congela el equipo</b>. No entra ni sale nadie más.</td></tr>
+        <tr><td class="peso">Horas 0–4</td><td>Elegir desafío, cerrar el caso, escribir el guion del video.</td></tr>
+        <tr><td class="peso">Horas 4–30</td><td>Construir. Tú trabajas el caso real, el guion y el documento en paralelo.</td></tr>
+        <tr><td class="peso">Horas 30–36</td><td>Grabar el video. No dejarlo para el final, porque al final nunca alcanza.</td></tr>
+        <tr><td class="peso"><b>Hora 42</b></td><td><b>Se congela el código.</b> Quedan 6 horas de colchón a propósito.</td></tr>
+        <tr><td class="peso">11 sep · 08:00</td><td>Cierra la entrega. No hay prórroga: la plataforma cierra sola.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="pie-tabla">
+    Congelar en la hora 42 suena conservador hasta que recuerdas que entregar tarde
+    descalifica igual que no entregar.
+  </p>
+</section>
+
+<section>
+  <h2>Para decidir en la reunión</h2>
+
+  <ul class="limpia">
+    <li><b>¿Entras?</b> Si sí, regístrate hoy antes de las 23:59. Es lo único con fecha
+    fatal.</li>
+    <li><b>¿Qué desafío?</b> Se publicaron hoy. Se leen juntos y se decide con criterio de
+    negocio, no de código.</li>
+    <li><b>¿Qué organización usamos de ejemplo?</b> Idealmente una a la que podamos pedirle
+    un acta real.</li>
+    <li><b>¿Buscamos a alguien más?</b> Si entra un tercero, hoy es el día. Mañana a las
+    08:00 el equipo se cierra.</li>
+    <li><b>Si ganamos, ¿cómo repartimos?</b> El premio se paga a una sola billetera y el
+    reparto queda entre nosotros. Acordarlo hoy es fácil; el día 11 no.</li>
+  </ul>
+
+  <div class="aparte">
+    <h4>Un dato que baja la ansiedad</h4>
+    <p>
+      Hay 159 inscritos y solo 2 proyectos entregados hasta ahora. El rival no es el equipo más brillante,
+      sino la posibilidad de no terminar a tiempo. Por eso la mitad de este documento habla de
+      recortes y de relojes.
+    </p>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="env col">
+    <p>Documento interno de trabajo · escrito el 8 de septiembre de 2026</p>
+    <p>Los premios y las reglas citadas salen de las bases oficiales del hackathon.</p>
+  </div>
+</footer>
+
+</body>
+</html>

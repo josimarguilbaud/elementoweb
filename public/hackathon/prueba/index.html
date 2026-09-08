@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Probar Consta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;1,400&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#F6F5F8; --hoja:#FFFFFF; --tinta:#16151C; --media:#4B4857; --suave:#6E6B7C;
+    --sello:#4A3AA8; --sello-tenue:#EDEAF9; --sello-borde:#CFC7F0;
+    --ambar:#8A5B00; --ambar-tenue:#FBF1DD; --ambar-borde:#E6CFA0; --linea:#DEDAE6;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --papel:#131218; --hoja:#1B1A23; --tinta:#EFEDF4; --media:#B4B0C2; --suave:#8B8799;
+      --sello:#A395FF; --sello-tenue:#241F3D; --sello-borde:#3C3363;
+      --ambar:#E2AE5A; --ambar-tenue:#2E2415; --ambar-borde:#4E3C1E; --linea:#2C2937;
+    }
+  }
+  :root[data-theme="dark"]{
+    --papel:#131218; --hoja:#1B1A23; --tinta:#EFEDF4; --media:#B4B0C2; --suave:#8B8799;
+    --sello:#A395FF; --sello-tenue:#241F3D; --sello-borde:#3C3363;
+    --ambar:#E2AE5A; --ambar-tenue:#2E2415; --ambar-borde:#4E3C1E; --linea:#2C2937;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--papel);color:var(--tinta);font:17px/1.6 "Public Sans","Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  main{max-width:600px;margin:0 auto;padding:48px 22px 64px}
+  .eyebrow{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--suave);font-weight:700;margin-bottom:14px}
+  h1{font-family:"Libre Caslon Text",Georgia,serif;font-weight:400;font-size:clamp(34px,7vw,46px);line-height:1.05;margin:0 0 10px;letter-spacing:-.01em;text-wrap:balance}
+  .intro{color:var(--media);margin:0 0 28px}
+  .intro b{color:var(--tinta);font-weight:600}
+  ol{list-style:none;counter-reset:p;padding:0;margin:0}
+  li{counter-increment:p;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--linea)}
+  li:last-child{border-bottom:1px solid var(--linea)}
+  li::before{content:counter(p);font-family:"Libre Caslon Text",Georgia,serif;font-size:30px;line-height:1;color:var(--sello-borde);padding-top:2px}
+  li b{display:block;font-weight:700;margin-bottom:3px}
+  li p{margin:0;color:var(--media);font-size:15.5px}
+  .frase{
+    display:block;margin-top:8px;padding:10px 14px;background:var(--sello-tenue);border:1px solid var(--sello-borde);
+    border-radius:4px;font-family:"Libre Caslon Text",Georgia,serif;font-style:italic;font-size:18px;color:var(--tinta);
+  }
+  .aviso{margin-top:22px;padding:12px 16px;background:var(--ambar-tenue);border:1px solid var(--ambar-borde);border-radius:4px;font-size:15px}
+  .aviso b{color:var(--ambar)}
+  .que{margin-top:34px;padding-top:22px;border-top:1px solid var(--linea);color:var(--media);font-size:15.5px}
+  .que b{color:var(--tinta);font-weight:600}
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Consta · prueba en vivo</div>
+  <h1>Cinco minutos, desde tu PC</h1>
+  <p class="intro">
+    Todo corre en la computadora de Josimar; tú entras por un enlace. <b>Usa Chrome</b> y ten el
+    micrófono de tu PC a mano. Nada de lo que digas sale de esa máquina.
+  </p>
+
+  <ol>
+    <li>
+      <b>Abre el enlace que Josimar te mande por WhatsApp</b>
+      <p>Empieza por <code>https://</code> y termina en <code>trycloudflare.com</code>. Cambia cada vez, así que espera el suyo.</p>
+    </li>
+    <li>
+      <b>Pon tu nombre en «Quién observa»</b>
+      <p>Así el sistema sabe que la observación es tuya y no de Josimar.</p>
+    </li>
+    <li>
+      <b>Elige tu micrófono y pulsa Grabar</b>
+      <p>Si Chrome pide permiso para el micrófono, acepta. Mientras hablas, la barra morada se mueve. Di esto y pulsa Detener:</p>
+      <span class="frase">Estoy en el hospital DemoCare Pacific en Panamá. Tienen tres resonadores y un tomógrafo.</span>
+    </li>
+    <li>
+      <b>Espera unos segundos y pulsa «Guardar observación»</b>
+      <p>Verás lo que entendió (equipo, cantidad, marca) y una pregunta de seguimiento. Si algo salió raro, corrige el texto y pulsa «Analizar texto».</p>
+    </li>
+    <li>
+      <b>Mira «Cliente 360» a la derecha</b>
+      <p>Josimar dijo <b>dos</b> resonadores; tú dijiste <b>tres</b>. La fila MR debe decir <b>«2 o 3 · Conflicto»</b>. Píchala: ahí está el rastro con tu nombre, el de él, la hora y lo que dijo cada uno.</p>
+    </li>
+  </ol>
+
+  <div class="aviso">
+    <b>Si el micrófono no responde:</b> escribe la frase en el cuadro grande y pulsa «Analizar texto». El resto es igual.
+  </div>
+
+  <p class="que">
+    <b>Lo que estás viendo</b> es la idea central del proyecto: dos personas reportan el mismo hospital
+    con números distintos y el sistema <b>no elige por ellas</b>. Guarda las dos versiones, marca el
+    conflicto, y deja registrado quién dijo qué. Eso es lo que Philips pide y casi nadie va a construir.
+  </p>
+</main>
+</body>
+</html>

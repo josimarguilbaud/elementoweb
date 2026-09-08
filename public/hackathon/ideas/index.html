@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Seis ideas para 48 horas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --fondo:#F3F5F5;
+    --tarjeta:#FFFFFF;
+    --texto:#12181A;
+    --texto-medio:#454F52;
+    --texto-suave:#6A7377;
+    --acento:#0D5C55;
+    --acento-tenue:#E2F0EE;
+    --acento-borde:#B4D8D3;
+    --medio:#8A5300;
+    --medio-tenue:#FBF0DE;
+    --medio-borde:#E5CFA4;
+    --nulo:#6A7377;
+    --nulo-tenue:#EBEDEE;
+    --nulo-borde:#D3D8D9;
+    --linea:#DCE1E2;
+    --linea-fuerte:#C2CACB;
+    --sombra:0 1px 2px rgba(18,24,26,.05), 0 10px 26px -14px rgba(18,24,26,.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --fondo:#101416;
+      --tarjeta:#181D1F;
+      --texto:#E9EDEE;
+      --texto-medio:#AFB8BA;
+      --texto-suave:#848E91;
+      --acento:#5FCBBE;
+      --acento-tenue:#12302D;
+      --acento-borde:#255049;
+      --medio:#E0AC5E;
+      --medio-tenue:#2E2415;
+      --medio-borde:#4E3C1E;
+      --nulo:#8B9497;
+      --nulo-tenue:#1E2325;
+      --nulo-borde:#333A3C;
+      --linea:#262D2F;
+      --linea-fuerte:#3A4244;
+      --sombra:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -14px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --fondo:#101416;
+    --tarjeta:#181D1F;
+    --texto:#E9EDEE;
+    --texto-medio:#AFB8BA;
+    --texto-suave:#848E91;
+    --acento:#5FCBBE;
+    --acento-tenue:#12302D;
+    --acento-borde:#255049;
+    --medio:#E0AC5E;
+    --medio-tenue:#2E2415;
+    --medio-borde:#4E3C1E;
+    --nulo:#8B9497;
+    --nulo-tenue:#1E2325;
+    --nulo-borde:#333A3C;
+    --linea:#262D2F;
+    --linea-fuerte:#3A4244;
+    --sombra:0 1px 2px rgba(0,0,0,.4), 0 10px 26px -14px rgba(0,0,0,.7);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--fondo);color:var(--texto);
+    font-family:"Public Sans","Segoe UI",system-ui,sans-serif;
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .env{max-width:1080px;margin:0 auto;padding:0 24px}
+  .col{max-width:680px;margin-left:auto;margin-right:auto}
+  p{margin:0 0 1.05em}
+  strong{font-weight:600}
+  a{color:var(--acento)}
+
+  h1,h2,h3,.rotulo{font-family:"Archivo","Segoe UI",system-ui,sans-serif}
+
+  /* ---------- cabecera ---------- */
+  header{padding:60px 0 38px}
+  .sobre{
+    font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--texto-suave);font-weight:600;margin-bottom:18px;
+  }
+  h1{
+    font-weight:700;font-size:clamp(38px,6.6vw,58px);line-height:1.03;
+    letter-spacing:-.025em;margin:0 0 18px;text-wrap:balance;
+  }
+  .entrada{font-size:19px;color:var(--texto-medio);max-width:600px;margin:0 0 22px}
+  .entrada b{color:var(--texto);font-weight:600}
+  .fecha-corta{
+    display:inline-block;font-family:"JetBrains Mono",monospace;font-size:12px;
+    background:var(--medio-tenue);color:var(--medio);
+    border:1px solid var(--medio-borde);border-radius:3px;padding:6px 11px;
+  }
+
+  /* ---------- el filtro ---------- */
+  .filtro{
+    background:var(--acento-tenue);border:1px solid var(--acento-borde);
+    border-radius:6px;padding:26px 28px;margin:0 0 8px;
+  }
+  .filtro .rotulo{
+    font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--acento);font-weight:700;margin-bottom:12px;
+  }
+  .filtro .frase{
+    font-family:"Archivo",sans-serif;font-weight:600;
+    font-size:clamp(20px,3.4vw,25px);line-height:1.28;
+    letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance;
+  }
+  .filtro p:last-child{margin-bottom:0;color:var(--texto-medio);font-size:16px}
+
+  section{padding:48px 0}
+  h2{
+    font-weight:700;font-size:clamp(25px,4.2vw,33px);line-height:1.15;
+    letter-spacing:-.02em;margin:0 0 14px;text-wrap:balance;
+  }
+  .bajada{color:var(--texto-medio);margin-bottom:30px}
+
+  /* ---------- fichas ---------- */
+  .fichas{display:flex;flex-direction:column;gap:16px}
+  .ficha{
+    background:var(--tarjeta);border:1px solid var(--linea);
+    border-radius:7px;padding:24px 26px;box-shadow:var(--sombra);
+  }
+  .ficha-alto{
+    display:flex;align-items:baseline;gap:13px;margin-bottom:6px;
+    flex-wrap:wrap;
+  }
+  .puesto{
+    font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:500;
+    color:var(--texto-suave);font-variant-numeric:tabular-nums;
+  }
+  .ficha h3{
+    margin:0;font-weight:700;font-size:21px;letter-spacing:-.015em;
+  }
+  .quees{color:var(--texto-medio);margin:0 0 18px}
+
+  .campos{
+    display:grid;gap:14px;border-top:1px solid var(--linea);padding-top:16px;
+  }
+  .campo{display:grid;grid-template-columns:132px 1fr;gap:16px;align-items:start}
+  .campo dt{
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--texto-suave);font-weight:700;padding-top:3px;
+  }
+  .campo dd{margin:0;font-size:15.5px;color:var(--texto-medio)}
+  .campo dd b{color:var(--texto);font-weight:600}
+
+  .fallo{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:12px;font-weight:700;letter-spacing:.03em;
+    padding:4px 10px;border-radius:3px;border:1px solid;
+    font-family:"Archivo",sans-serif;white-space:nowrap;
+  }
+  .fallo.si{background:var(--acento-tenue);color:var(--acento);border-color:var(--acento-borde)}
+  .fallo.mitad{background:var(--medio-tenue);color:var(--medio);border-color:var(--medio-borde)}
+  .fallo.no{background:var(--nulo-tenue);color:var(--nulo);border-color:var(--nulo-borde)}
+
+  .barra{display:flex;gap:3px;align-items:center;margin-top:4px}
+  .barra i{
+    width:20px;height:5px;border-radius:1px;background:var(--linea-fuerte);
+    display:block;
+  }
+  .barra i.on{background:var(--texto-medio)}
+  .barra span{
+    font-size:13px;color:var(--texto-medio);margin-left:7px;font-style:normal;
+  }
+
+  /* ---------- la elegida ---------- */
+  .elegida{
+    background:var(--tarjeta);border:2px solid var(--acento);
+    border-radius:7px;padding:30px 28px;box-shadow:var(--sombra);
+  }
+  .cinta{
+    display:inline-block;font-family:"Archivo",sans-serif;
+    font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;
+    font-weight:700;color:var(--acento);margin-bottom:14px;
+  }
+  .elegida h3{
+    font-weight:700;font-size:clamp(28px,4.6vw,36px);letter-spacing:-.025em;
+    margin:0 0 6px;
+  }
+  .elegida .lema{
+    color:var(--acento);font-size:17px;margin:0 0 18px;font-weight:500;
+  }
+  .elegida p{color:var(--texto-medio)}
+  .elegida p b{color:var(--texto);font-weight:600}
+  .boton{
+    display:inline-block;margin-top:10px;background:var(--acento);
+    color:var(--fondo);text-decoration:none;font-family:"Archivo",sans-serif;
+    font-weight:600;font-size:15px;padding:12px 22px;border-radius:5px;
+  }
+  .boton:hover{opacity:.88}
+  .boton:focus-visible{outline:2px solid var(--texto);outline-offset:3px}
+
+  .suma{
+    display:grid;grid-template-columns:1fr auto 1fr auto 1.3fr;gap:12px;
+    align-items:center;margin:0 0 24px;
+  }
+  .suma .pieza{
+    background:var(--fondo);border:1px solid var(--linea);border-radius:5px;
+    padding:12px 14px;font-size:14px;line-height:1.35;
+  }
+  .suma .pieza b{display:block;font-family:"Archivo",sans-serif;font-size:12px;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--texto-suave);
+    margin-bottom:4px;font-weight:700}
+  .suma .signo{
+    font-family:"Archivo",sans-serif;font-size:20px;font-weight:700;
+    color:var(--acento);text-align:center;
+  }
+  .suma .pieza.res{background:var(--acento-tenue);border-color:var(--acento-borde)}
+
+  /* ---------- tabla ---------- */
+  .tabla-env{overflow-x:auto;margin:26px 0 0}
+  table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+  th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--linea);vertical-align:middle}
+  th{
+    font-family:"Archivo",sans-serif;font-size:11px;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--texto-suave);font-weight:700;
+    border-bottom:1px solid var(--linea-fuerte);
+  }
+  td b{font-weight:600}
+  tr.top td{background:var(--acento-tenue)}
+  .nota-tabla{font-size:14px;color:var(--texto-suave);margin-top:12px}
+
+  ul.limpia{list-style:none;padding:0;margin:0}
+  ul.limpia li{
+    padding-left:20px;position:relative;margin-bottom:13px;color:var(--texto-medio);
+  }
+  ul.limpia li::before{
+    content:"";position:absolute;left:1px;top:10px;width:7px;height:7px;
+    border:1.5px solid var(--acento);border-radius:50%;
+  }
+  ul.limpia li b{color:var(--texto)}
+
+  footer{padding:36px 0 60px;color:var(--texto-suave);font-size:14px;border-top:1px solid var(--linea)}
+  footer p{margin:0 0 5px}
+
+  @media (max-width:660px){
+    body{font-size:16px}
+    section{padding:38px 0}
+    .campo{grid-template-columns:1fr;gap:5px}
+    .suma{grid-template-columns:1fr;gap:8px}
+    .suma .signo{text-align:left}
+    .ficha,.elegida,.filtro{padding:20px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="env col">
+    <div class="sobre">Decentralized AI Hackathon · ISD Summit · Panamá</div>
+    <h1>Seis ideas para 48&nbsp;horas</h1>
+    <p class="entrada">
+      Esto es lo que se me ocurrió antes de que salieran los desafíos. No hace falta que
+      entiendas de programación para opinar: <b>la decisión que hay que tomar es de negocio,
+      no de código</b>.
+    </p>
+    <span class="fecha-corta">Escrito el 8 de septiembre · el registro cierra hoy 23:59</span>
+  </div>
+</header>
+
+<div class="env col">
+
+  <div class="filtro">
+    <div class="rotulo">El criterio que descarta o salva a cualquiera de las seis</div>
+    <p class="frase">
+      Si un juez ve la demostración y piensa «eso mismo lo hago con un servidor normal»,
+      perdimos el 25&nbsp;% de Innovación.
+    </p>
+    <p>
+      El concurso premia inteligencia artificial que funciona <strong>dentro del
+      aparato</strong>, sin nube, y aplicaciones donde la información viaja de un equipo a
+      otro <strong>sin pasar por una computadora central</strong>. Eso solo vale puntos en
+      dos situaciones: cuando los datos <strong>no pueden salir</strong> del dispositivo por
+      ley o por confidencialidad, o cuando <strong>no hay señal ni servidor</strong> a mano.
+      Cualquier otra cosa es un servidor disfrazado, y se nota.
+    </p>
+  </div>
+
+<section>
+  <h2>Las cinco candidatas</h2>
+  <p class="bajada">
+    Están en el orden en que me convencen, de más a menos. La última la incluí a propósito
+    aunque la descarto: quiero que veas que la descartamos con los ojos abiertos y no por
+    olvido.
+  </p>
+
+  <div class="fichas">
+
+    <article class="ficha">
+      <div class="ficha-alto">
+        <span class="puesto">1.ª</span>
+        <h3>La reunión que se registra sola</h3>
+      </div>
+      <p class="quees">
+        Una asamblea de edificio o una junta de vecinos. Todos abren la aplicación, se graba
+        lo que se habla, aparecen los acuerdos redactados, y el acta firmada queda guardada
+        en el equipo de cada asistente. Sin anfitrión y sin cuentas.
+      </p>
+      <dl class="campos">
+        <div class="campo">
+          <dt>El filtro</dt>
+          <dd>
+            <span class="fallo si">Lo pasa</span>
+            <p style="margin:8px 0 0">
+              Todo el valor de un acta viene de que <b>ningún lado la controla</b>. Meter un
+              servidor destruye justo lo que la hace confiable.
+            </p>
+          </dd>
+        </div>
+        <div class="campo">
+          <dt>A quién le sirve</dt>
+          <dd>Edificios, cooperativas, juntas comunales y sindicatos. En una ciudad de torres
+          como Panamá, eso no es un nicho pequeño.</dd>
+        </div>
+        <div class="campo">
+          <dt>Punto flojo</dt>
+          <dd>Por sí sola se queda en una aplicación de actas. Le falta la segunda mitad:
+          <b>y seis meses después, ¿cómo encuentro lo que se decidió?</b></dd>
+        </div>
+        <div class="campo">
+          <dt>Dificultad</dt>
+          <dd><span class="barra"><i class="on"></i><i class="on"></i><i></i><span>media</span></span></dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="ficha">
+      <div class="ficha-alto">
+        <span class="puesto">2.ª</span>
+        <h3>Guna Yala sin señal</h3>
+      </div>
+      <p class="quees">
+        Una guía para turistas en San Blas que funciona con el teléfono en modo avión, y donde
+        los botes y las islas se pasan las novedades entre ellos (clima, salidas,
+        disponibilidad) cuando quedan cerca.
+      </p>
+      <dl class="campos">
+        <div class="campo">
+          <dt>El filtro</dt>
+          <dd>
+            <span class="fallo si">Lo pasa</span>
+            <p style="margin:8px 0 0">
+              Allá no hay infraestructura que usar aunque quisiéramos. <b>La red son los
+              botes.</b>
+            </p>
+          </dd>
+        </div>
+        <div class="campo">
+          <dt>Ventaja nuestra</dt>
+          <dd>Josimar tiene el negocio de tours de San Blas, o sea acceso real a guías y a
+          turistas de verdad. Eso pesa en la nota de Impacto.</dd>
+        </div>
+        <div class="campo">
+          <dt>Punto flojo</dt>
+          <dd>No podemos prometer traducción al idioma guna: no existen suficientes datos.
+          Y el jurado tendría que creernos que allá no hay señal, porque no lo vamos a poder
+          demostrar en vivo desde la ciudad.</dd>
+        </div>
+        <div class="campo">
+          <dt>Dificultad</dt>
+          <dd><span class="barra"><i class="on"></i><i class="on"></i><i></i><span>media</span></span></dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="ficha">
+      <div class="ficha-alto">
+        <span class="puesto">3.ª</span>
+        <h3>El archivo compartido que no está en ningún servidor</h3>
+      </div>
+      <p class="quees">
+        Un despacho de contadores o de abogados vuelca sus documentos. Todo el equipo puede
+        buscar y hacer preguntas sobre ellos en lenguaje normal, pero los expedientes nunca
+        salen de sus propias computadoras.
+      </p>
+      <dl class="campos">
+        <div class="campo">
+          <dt>El filtro</dt>
+          <dd>
+            <span class="fallo mitad">Lo pasa a medias</span>
+            <p style="margin:8px 0 0">
+              La necesidad es real y verificable, pero un juez puede responder que
+              <b>un servidor privado hace lo mismo</b>. Y tendría parte de razón.
+            </p>
+          </dd>
+        </div>
+        <div class="campo">
+          <dt>Ventaja nuestra</dt>
+          <dd>Es la más segura de terminar a tiempo. Josimar ya la probó funcionando en su
+          máquina antes de que existiera este documento.</dd>
+        </div>
+        <div class="campo">
+          <dt>Punto flojo</dt>
+          <dd>Es la menos vistosa de las seis. Gana la nota técnica y pierde la de
+          Innovación, que vale más.</dd>
+        </div>
+        <div class="campo">
+          <dt>Dificultad</dt>
+          <dd><span class="barra"><i class="on"></i><i></i><i></i><span>baja</span></span></dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="ficha">
+      <div class="ficha-alto">
+        <span class="puesto">4.ª</span>
+        <h3>Triaje de emergencia</h3>
+      </div>
+      <p class="quees">
+        Se cae la red por una inundación. Los teléfonos se encuentran entre sí sin internet,
+        la gente reporta lo que necesita, y el sistema ordena y agrupa los reportes para que
+        no lleguen mil mensajes repetidos diciendo lo mismo.
+      </p>
+      <dl class="campos">
+        <div class="campo">
+          <dt>El filtro</dt>
+          <dd>
+            <span class="fallo si">Lo pasa</span>
+            <p style="margin:8px 0 0">
+              Es la definición misma del problema: <b>la infraestructura no está</b>.
+            </p>
+          </dd>
+        </div>
+        <div class="campo">
+          <dt>Punto flojo</dt>
+          <dd>Las aplicaciones de desastre son un clásico de estos concursos y el jurado ya
+          las vio muchas veces. Además es muy difícil grabar un video creíble de una
+          emergencia que no está ocurriendo.</dd>
+        </div>
+        <div class="campo">
+          <dt>Dificultad</dt>
+          <dd><span class="barra"><i class="on"></i><i class="on"></i><i class="on"></i><span>alta</span></span></dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="ficha">
+      <div class="ficha-alto">
+        <span class="puesto">5.ª</span>
+        <h3>Cotización en obra</h3>
+      </div>
+      <p class="quees">
+        Un contratista recorre una casa sin señal, va dictando lo que ve, y al salir tiene la
+        cotización lista para el cliente.
+      </p>
+      <dl class="campos">
+        <div class="campo">
+          <dt>El filtro</dt>
+          <dd>
+            <span class="fallo no">No lo pasa</span>
+            <p style="margin:8px 0 0">
+              Un servidor haría esto igual de bien. Aquí lo de «sin servidor» sería solo
+              sincronizar información, y eso <b>no es una innovación, es una comodidad</b>.
+            </p>
+          </dd>
+        </div>
+        <div class="campo">
+          <dt>Además</dt>
+          <dd>Josimar ya la tiene empezada para otro cliente, y el reglamento obliga a
+          declarar todo lo que existía antes de empezar. <b>Omitir esa declaración
+          descalifica.</b> Declararla es lo correcto, pero nos resta puntos técnicos.</dd>
+        </div>
+        <div class="campo">
+          <dt>Veredicto</dt>
+          <dd>Descartada. La dejé escrita para que quede constancia de que la miramos.</dd>
+        </div>
+      </dl>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>La sexta salió de cruzar dos</h2>
+  <p class="bajada">
+    La primera tenía el problema de que se queda corta, y la tercera tenía el problema de
+    que no emociona. Puestas juntas se tapan los huecos la una a la otra, y aparece algo que
+    ninguna de las dos era por separado.
+  </p>
+
+  <div class="suma">
+    <div class="pieza"><b>Idea 1</b>Un registro firmado que nadie controla</div>
+    <div class="signo">+</div>
+    <div class="pieza"><b>Idea 3</b>Buscar y preguntar sin que salgan los datos</div>
+    <div class="signo">=</div>
+    <div class="pieza res"><b>Consta</b>Respuestas que se pueden comprobar</div>
+  </div>
+
+  <div class="elegida">
+    <div class="cinta">Mi recomendación</div>
+    <h3>Consta</h3>
+    <p class="lema">Conste en acta.</p>
+    <p>
+      Cuando le preguntas algo a cualquier asistente de inteligencia artificial y responde
+      «según el acta de marzo», esa cita <b>es solamente un texto que el programa
+      escribió</b>. Nadie puede comprobarla.
+    </p>
+    <p>
+      En Consta cada respuesta viene con quién lo dijo, cuándo, y una prueba de que ese texto
+      no se ha tocado desde entonces. <b>La cita deja de ser una promesa y se convierte en un
+      recibo.</b> Y cuando hubo desacuerdo, muestra las dos versiones firmadas en lugar de
+      inventarse que hubo consenso.
+    </p>
+    <p>
+      Eso es exactamente lo que un servidor no puede ofrecer, porque el que administra el
+      servidor siempre pudo haber cambiado el documento.
+    </p>
+    <a class="boton" href="/hackathon/consta/">Ver Consta explicada completa</a>
+  </div>
+</section>
+
+<section>
+  <h2>Las seis de un vistazo</h2>
+
+  <div class="tabla-env">
+    <table>
+      <thead>
+        <tr>
+          <th>Idea</th><th>¿Pasa el filtro?</th><th>Dificultad</th><th>Qué la frena</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="top">
+          <td><b>Consta</b></td>
+          <td><span class="fallo si">Sí</span></td>
+          <td>Media</td>
+          <td>Ninguna conocida todavía</td>
+        </tr>
+        <tr>
+          <td><b>La reunión que se registra sola</b></td>
+          <td><span class="fallo si">Sí</span></td>
+          <td>Media</td>
+          <td>Se queda corta por sí sola</td>
+        </tr>
+        <tr>
+          <td><b>Guna Yala sin señal</b></td>
+          <td><span class="fallo si">Sí</span></td>
+          <td>Media</td>
+          <td>No se puede demostrar la falta de señal</td>
+        </tr>
+        <tr>
+          <td><b>Archivo compartido</b></td>
+          <td><span class="fallo mitad">A medias</span></td>
+          <td>Baja</td>
+          <td>Poco vistosa</td>
+        </tr>
+        <tr>
+          <td><b>Triaje de emergencia</b></td>
+          <td><span class="fallo si">Sí</span></td>
+          <td>Alta</td>
+          <td>Idea muy vista, video difícil</td>
+        </tr>
+        <tr>
+          <td><b>Cotización en obra</b></td>
+          <td><span class="fallo no">No</span></td>
+          <td>Baja</td>
+          <td>Un servidor lo hace igual</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="nota-tabla">
+    «Dificultad» es cuánto trabajo de programación cuesta, no cuánta probabilidad hay de
+    ganar. La más fácil de terminar es también la que menos puntos daría.
+  </p>
+</section>
+
+<section>
+  <h2>Qué necesito de ti</h2>
+  <ul class="limpia">
+    <li><b>Que las leas y me contradigas.</b> Yo las ordené con criterio técnico y de
+    negocio mezclados. Si alguna te parece más vendible que Consta, quiero saberlo antes de
+    mañana, no después.</li>
+    <li><b>Que pienses en el video mientras lees.</b> Imagina que tienes que explicar cada
+    una en cinco minutos a alguien que no la conoce. La que te resulte más fácil de contar
+    probablemente sea la correcta.</li>
+    <li><b>Que traigas una organización de ejemplo.</b> Si conoces un edificio, una junta o
+    una cooperativa a la que podamos pedirle un acta real, eso vale más que cualquier cosa
+    que yo programe el fin de semana.</li>
+    <li><b>Que decidas hoy si entras.</b> El registro cierra a las 23:59 y cada persona se
+    inscribe por su cuenta. Todo lo demás se puede mover; esa fecha no.</li>
+  </ul>
+</section>
+
+</div>
+
+<footer>
+  <div class="env col">
+    <p>Documento interno de trabajo · 8 de septiembre de 2026</p>
+    <p>Los desafíos oficiales se publicaban esta mañana. Estas seis se pensaron antes de
+    leerlos, así que alguna tendrá que doblarse para encajar.</p>
+  </div>
+</footer>
+
+</body>
+</html>

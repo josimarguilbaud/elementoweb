@@ -20,6 +20,9 @@
     --sello-borde:#CFC7F0;
     --rechazo:#A8332B;
     --rechazo-tenue:#F8EBEA;
+    --ambar:#8A5B00;
+    --ambar-tenue:#FBF1DD;
+    --ambar-borde:#E6CFA0;
     --linea:#DEDAE6;
     --linea-fuerte:#C6C0D4;
     --sombra:0 1px 2px rgba(22,21,28,.05), 0 8px 24px -12px rgba(22,21,28,.14);
@@ -36,6 +39,9 @@
       --sello-borde:#3C3363;
       --rechazo:#E08078;
       --rechazo-tenue:#2C1B1A;
+      --ambar:#E2AE5A;
+      --ambar-tenue:#2E2415;
+      --ambar-borde:#4E3C1E;
       --linea:#2C2937;
       --linea-fuerte:#413D50;
       --sombra:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
@@ -52,6 +58,9 @@
     --sello-borde:#3C3363;
     --rechazo:#E08078;
     --rechazo-tenue:#2C1B1A;
+    --ambar:#E2AE5A;
+    --ambar-tenue:#2E2415;
+    --ambar-borde:#4E3C1E;
     --linea:#2C2937;
     --linea-fuerte:#413D50;
     --sombra:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
@@ -59,12 +68,9 @@
 
   *{box-sizing:border-box}
   body{
-    background:var(--papel);
-    color:var(--tinta);
+    background:var(--papel);color:var(--tinta);
     font-family:"Public Sans","Segoe UI",system-ui,sans-serif;
-    font-size:17px;
-    line-height:1.62;
-    -webkit-font-smoothing:antialiased;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
   }
   .env{max-width:1100px;margin:0 auto;padding:0 24px}
   .col{max-width:660px;margin-left:auto;margin-right:auto}
@@ -72,29 +78,23 @@
   strong{font-weight:600}
   a{color:var(--sello)}
 
-  /* ---------- portada ---------- */
   header.portada{padding:64px 0 40px;border-bottom:1px solid var(--linea)}
   .eyebrow{
     font-size:12px;letter-spacing:.14em;text-transform:uppercase;
     color:var(--tinta-suave);font-weight:600;margin-bottom:22px;
   }
   h1{
-    font-family:"Libre Caslon Text",Georgia,serif;
-    font-weight:400;font-size:clamp(58px,12vw,104px);
-    line-height:.92;letter-spacing:-.02em;margin:0 0 6px;
-    text-wrap:balance;
+    font-family:"Libre Caslon Text",Georgia,serif;font-weight:400;
+    font-size:clamp(58px,12vw,104px);line-height:.92;letter-spacing:-.02em;
+    margin:0 0 6px;text-wrap:balance;
   }
   .lema{
     font-family:"Libre Caslon Text",Georgia,serif;font-style:italic;
-    font-size:clamp(20px,3.6vw,27px);color:var(--sello);
-    line-height:1.3;margin:0 0 26px;
+    font-size:clamp(20px,3.6vw,27px);color:var(--sello);line-height:1.3;margin:0 0 26px;
   }
   .resumen{font-size:19px;color:var(--tinta-media);max-width:620px;margin:0}
   .resumen b{color:var(--tinta);font-weight:600}
 
-  /* ---------- aviso de reloj ---------- */
-  /* Aviso sellado, no tarjeta con riel de color: el borde entero lleva el tono
-     de alerta, como una notificación timbrada. */
   .reloj{
     margin:28px 0 0;padding:18px 22px;background:var(--rechazo-tenue);
     border:1px solid var(--rechazo);border-radius:3px;max-width:620px;
@@ -106,7 +106,6 @@
   .reloj p{margin:0;font-size:15.5px;color:var(--tinta-media)}
   .reloj p + p{margin-top:8px}
 
-  /* ---------- secciones ---------- */
   section{padding:56px 0;border-bottom:1px solid var(--linea)}
   section:last-of-type{border-bottom:0}
   h2{
@@ -114,16 +113,23 @@
     font-size:clamp(30px,5vw,40px);line-height:1.12;letter-spacing:-.01em;
     margin:0 0 20px;text-wrap:balance;
   }
-  h3{
-    font-size:17px;font-weight:700;margin:34px 0 10px;
-    letter-spacing:-.005em;
+  h3{font-size:17px;font-weight:700;margin:34px 0 10px;letter-spacing:-.005em}
+  .guia{font-size:15px;color:var(--tinta-suave);font-style:italic;margin:0 0 26px}
+
+  blockquote{
+    margin:34px 0;padding:24px 0;
+    border-top:1px solid var(--linea-fuerte);border-bottom:1px solid var(--linea-fuerte);
+    font-family:"Libre Caslon Text",Georgia,serif;font-style:italic;
+    font-size:clamp(23px,4vw,29px);line-height:1.32;color:var(--sello);
+    text-align:center;text-wrap:balance;
   }
-  .guia{
-    font-size:15px;color:var(--tinta-suave);font-style:italic;
-    border-left:2px solid var(--sello-borde);padding-left:14px;margin:0 0 26px;
+  blockquote p{margin:0}
+  .cita-fuente{
+    display:block;margin-top:10px;font-family:"Public Sans",sans-serif;
+    font-style:normal;font-size:13px;color:var(--tinta-suave);letter-spacing:.04em;
   }
 
-  /* ---------- maqueta del recibo ---------- */
+  /* ---------- maqueta Cliente 360 ---------- */
   .demo{
     background:var(--hoja);border:1px solid var(--linea);border-radius:5px;
     box-shadow:var(--sombra);overflow:hidden;margin:30px 0;
@@ -135,28 +141,40 @@
     display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
   }
   .sin-red{color:var(--sello)}
-  .demo-cuerpo{padding:22px 18px}
-  .pregunta{
-    font-size:17px;font-weight:600;margin:0 0 16px;padding-bottom:16px;
-    border-bottom:1px dashed var(--linea-fuerte);
+  .demo-cuerpo{padding:18px}
+  .c360-env{overflow-x:auto}
+  .c360{border-collapse:collapse;width:100%;font-size:14.5px;min-width:480px}
+  .c360 th{
+    text-align:left;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--tinta-suave);font-weight:700;padding:6px 10px 8px;
+    border-bottom:1px solid var(--linea-fuerte);
   }
-  .pregunta::before{content:"¿";color:var(--tinta-suave);font-weight:400}
-  .respuesta{margin:0 0 4px;font-size:16.5px}
-  mark{
-    background:var(--sello-tenue);color:inherit;
-    padding:1px 3px;border-radius:2px;
-    border-bottom:1.5px solid var(--sello-borde);
+  .c360 td{padding:10px;border-bottom:1px solid var(--linea);vertical-align:top}
+  .c360 tr.abierta td{background:var(--sello-tenue)}
+  .c360 td b{font-weight:600}
+  .num{font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums}
+  .pugna{
+    font-family:"JetBrains Mono",monospace;font-size:11px;
+    color:var(--ambar);background:var(--ambar-tenue);border:1px solid var(--ambar-borde);
+    border-radius:3px;padding:1px 6px;margin-left:5px;white-space:nowrap;
   }
+  .conf{
+    display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;
+    padding:2px 7px;border-radius:3px;margin-right:6px;border:1px solid;
+  }
+  .conf.alta{color:var(--sello);background:var(--sello-tenue);border-color:var(--sello-borde)}
+  .conf.media{color:var(--ambar);background:var(--ambar-tenue);border-color:var(--ambar-borde)}
+  .conf.nula{color:var(--tinta-suave);background:var(--papel);border-color:var(--linea-fuerte)}
+  .porque{font-size:13px;color:var(--tinta-suave)}
 
-  .recibos{display:flex;flex-direction:column;gap:10px;margin-top:18px}
-  .recibo{
-    background:var(--papel);border:1px solid var(--linea);
-    border-radius:4px;padding:12px 14px;
+  .rastro{margin-top:18px;padding-top:16px;border-top:1px dashed var(--linea-fuerte)}
+  .rastro-t{
+    font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--sello);font-weight:700;margin-bottom:10px;
   }
-  .recibo-alto{
-    display:flex;align-items:center;gap:8px;flex-wrap:wrap;
-    font-size:12.5px;font-weight:600;margin-bottom:7px;
-  }
+  .recibos{display:flex;flex-direction:column;gap:10px}
+  .recibo{background:var(--papel);border:1px solid var(--linea);border-radius:4px;padding:12px 14px}
+  .recibo-alto{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;font-weight:600;margin-bottom:7px}
   .chapa{
     font-family:"JetBrains Mono",monospace;font-size:10.5px;
     background:var(--sello);color:#fff;padding:2px 7px;border-radius:3px;
@@ -164,78 +182,52 @@
   }
   :root[data-theme="dark"] .chapa{color:#131218}
   @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .chapa{color:#131218}}
-  .recibo-datos{
-    font-family:"JetBrains Mono",monospace;font-size:11.5px;
-    color:var(--tinta-suave);line-height:1.75;word-break:break-all;
-  }
+  .recibo-datos{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--tinta-suave);line-height:1.75}
   .recibo-datos b{color:var(--tinta-media);font-weight:500}
+  .recibo-datos i{font-style:normal;color:var(--tinta-media)}
   .disenso{
-    margin-top:16px;padding:12px 14px;background:var(--sello-tenue);
-    border:1px solid var(--sello-borde);border-radius:4px;
-    font-size:14.5px;color:var(--tinta);
+    margin-top:12px;padding:12px 14px;background:var(--ambar-tenue);
+    border:1px solid var(--ambar-borde);border-radius:4px;font-size:14.5px;color:var(--tinta);
   }
-  .disenso b{color:var(--sello)}
+  .disenso b{color:var(--ambar)}
 
-  /* ---------- cadena / manipulación ---------- */
-  .cadenas{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:18px;margin:30px 0;
+  /* ---------- tres factores ---------- */
+  .factores{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:26px 0}
+  .factor{background:var(--hoja);border:1px solid var(--linea);border-radius:5px;padding:16px 18px;box-shadow:var(--sombra)}
+  .factor h4{
+    margin:0 0 6px;font-family:"Libre Caslon Text",Georgia,serif;font-weight:400;
+    font-size:22px;color:var(--sello);
   }
-  .cadena{
-    background:var(--hoja);border:1px solid var(--linea);
-    border-radius:5px;padding:18px;box-shadow:var(--sombra);
-  }
-  .cadena h4{
-    margin:0 0 14px;font-size:12px;letter-spacing:.12em;
-    text-transform:uppercase;font-weight:700;
-  }
-  .cadena.ok h4{color:var(--sello)}
-  .cadena.mal h4{color:var(--rechazo)}
-  .folio{
-    display:flex;align-items:center;gap:11px;
-    font-family:"JetBrains Mono",monospace;font-size:11.5px;
-    padding:8px 11px;border:1px solid var(--linea);border-radius:3px;
-    background:var(--papel);color:var(--tinta-media);
-  }
-  .eslabon{
-    width:1.5px;height:13px;margin-left:22px;background:var(--linea-fuerte);
-  }
-  .cadena.ok .eslabon{background:var(--sello)}
-  .cadena.mal .roto{
-    background:transparent;
-    border-left:1.5px dashed var(--rechazo);
-    height:16px;
-  }
-  .folio.alterado{border-color:var(--rechazo);background:var(--rechazo-tenue);color:var(--rechazo)}
-  .folio.caido{opacity:.55;border-style:dashed}
-  .veredicto{
-    margin-top:14px;font-size:13px;font-weight:600;line-height:1.45;
-  }
-  .cadena.ok .veredicto{color:var(--sello)}
-  .cadena.mal .veredicto{color:var(--rechazo)}
+  .factor p{margin:0;font-size:14.5px;color:var(--tinta-media)}
 
   /* ---------- escenas ---------- */
   .escenas{display:flex;flex-direction:column;gap:2px;margin:28px 0 0}
   .escena{
-    background:var(--hoja);border:1px solid var(--linea);
-    padding:20px 22px;display:grid;grid-template-columns:44px 1fr;gap:18px;
+    background:var(--hoja);border:1px solid var(--linea);padding:20px 22px;
+    display:grid;grid-template-columns:44px 1fr;gap:18px;
   }
   .escena:first-child{border-radius:5px 5px 0 0}
   .escena:last-child{border-radius:0 0 5px 5px}
   .escena + .escena{border-top:0}
-  .escena-n{
-    font-family:"Libre Caslon Text",Georgia,serif;font-size:34px;
-    line-height:1;color:var(--sello-borde);
-  }
+  .escena-n{font-family:"Libre Caslon Text",Georgia,serif;font-size:34px;line-height:1;color:var(--sello-borde)}
   .escena h4{margin:0 0 3px;font-size:16.5px;font-weight:700}
-  .escena .dur{
-    font-family:"JetBrains Mono",monospace;font-size:11px;
-    color:var(--tinta-suave);margin-bottom:9px;
-  }
+  .escena .dur{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--tinta-suave);margin-bottom:9px}
   .escena p{margin:0;font-size:15.5px;color:var(--tinta-media)}
-  .escena .prueba{
-    margin-top:9px;font-size:13.5px;color:var(--sello);font-weight:600;
+  .escena .prueba{margin-top:9px;font-size:13.5px;color:var(--sello);font-weight:600}
+
+  /* ---------- pruebas de Philips ---------- */
+  .pruebas{list-style:none;padding:0;margin:22px 0 0;counter-reset:p}
+  .pruebas li{
+    counter-increment:p;display:grid;grid-template-columns:30px 1fr;gap:12px;
+    padding:12px 0;border-bottom:1px solid var(--linea);
   }
+  .pruebas li::before{
+    content:counter(p);font-family:"JetBrains Mono",monospace;font-size:12px;
+    color:var(--tinta-suave);padding-top:3px;font-variant-numeric:tabular-nums;
+  }
+  .pruebas .voz{font-size:14.5px;color:var(--tinta);margin:0 0 3px;font-style:italic}
+  .pruebas .revisar{font-size:13.5px;color:var(--tinta-suave);margin:0}
+  .pruebas .revisar b{color:var(--tinta-media);font-weight:600}
 
   /* ---------- tablas ---------- */
   .tabla-env{overflow-x:auto;margin:24px 0}
@@ -248,51 +240,42 @@
   td b{font-weight:600}
   .peso{font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
   tr.suyo td{background:var(--sello-tenue)}
-  tr.suyo td:first-child{box-shadow:inset 3px 0 0 var(--sello)}
   .pie-tabla{font-size:14px;color:var(--tinta-suave);margin-top:10px}
 
-  /* ---------- listas ---------- */
-  ul.limpia{list-style:none;padding:0;margin:0 0 1.1em}
-  ul.limpia li{
-    padding-left:22px;position:relative;margin-bottom:12px;
-    color:var(--tinta-media);
+  /* ---------- niveles de alcance ---------- */
+  .nivel{margin:22px 0 0}
+  .nivel h4{
+    margin:0 0 10px;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;
+    display:flex;align-items:center;gap:10px;
   }
+  .nivel h4 .tag{
+    font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.04em;
+    padding:2px 7px;border-radius:3px;border:1px solid;
+  }
+  .nivel.obl h4{color:var(--tinta)}
+  .nivel.obl .tag{color:var(--rechazo);border-color:var(--rechazo);background:var(--rechazo-tenue)}
+  .nivel.dif h4{color:var(--sello)}
+  .nivel.dif .tag{color:var(--sello);border-color:var(--sello-borde);background:var(--sello-tenue)}
+  .nivel.ext h4{color:var(--tinta-suave)}
+  .nivel.ext .tag{color:var(--tinta-suave);border-color:var(--linea-fuerte);background:var(--papel)}
+
+  ul.limpia{list-style:none;padding:0;margin:0 0 1.1em}
+  ul.limpia li{padding-left:22px;position:relative;margin-bottom:11px;color:var(--tinta-media)}
   ul.limpia li::before{
-    content:"";position:absolute;left:2px;top:11px;
-    width:6px;height:6px;background:var(--sello-borde);border-radius:50%;
+    content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;
+    background:var(--sello-borde);border-radius:50%;
   }
   ul.limpia li b{color:var(--tinta)}
+  .nivel.obl ul.limpia li::before{background:var(--rechazo)}
+  .nivel.ext ul.limpia li::before{background:var(--linea-fuerte)}
 
-  .aparte{
-    background:var(--hoja);border:1px solid var(--linea);border-radius:5px;
-    padding:22px;margin:26px 0;box-shadow:var(--sombra);
-  }
-  .aparte h4{
-    margin:0 0 10px;font-size:12px;letter-spacing:.12em;
-    text-transform:uppercase;color:var(--sello);font-weight:700;
-  }
+  .aparte{background:var(--hoja);border:1px solid var(--linea);border-radius:5px;padding:22px;margin:26px 0;box-shadow:var(--sombra)}
+  .aparte h4{margin:0 0 10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sello);font-weight:700}
   .aparte p:last-child{margin-bottom:0}
-
-  /* Mismo tratamiento que el aviso de reloj: en este documento «esto es
-     crítico» se dice con el borde entero teñido, una sola vez y en todas. */
   .intocable{background:var(--rechazo-tenue);border-color:var(--rechazo)}
   .intocable h4{color:var(--rechazo)}
 
-  /* Cita de tesis con filetes arriba y abajo, como en la composición
-     editorial clásica — no un riel lateral. */
-  blockquote{
-    margin:34px 0;padding:24px 0;
-    border-top:1px solid var(--linea-fuerte);
-    border-bottom:1px solid var(--linea-fuerte);
-    font-family:"Libre Caslon Text",Georgia,serif;font-style:italic;
-    font-size:clamp(23px,4vw,29px);line-height:1.32;
-    color:var(--sello);text-align:center;text-wrap:balance;
-  }
-  blockquote p{margin:0}
-
-  footer{
-    padding:44px 0 64px;color:var(--tinta-suave);font-size:14px;
-  }
+  footer{padding:44px 0 64px;color:var(--tinta-suave);font-size:14px}
   footer p{margin:0 0 6px}
 
   @media (max-width:640px){
@@ -308,21 +291,21 @@
 
 <header class="portada">
   <div class="env col">
-    <div class="eyebrow">Decentralized AI Hackathon · ISD Summit · Panamá</div>
+    <div class="eyebrow">Reto corporativo de Philips · Decentralized AI Hackathon · Panamá</div>
     <h1>Consta</h1>
-    <p class="lema">Conste en acta.</p>
+    <p class="lema">Que conste quién lo vio.</p>
     <p class="resumen">
-      La memoria de un grupo que <b>ningún miembro controla</b>: se escribe sola cuando se
-      reúnen, responde preguntas sin internet, y cada respuesta trae la firma de quien lo dijo.
+      Un colaborador sale de un hospital, dicta lo que vio en treinta segundos, y eso se
+      convierte en datos ordenados. Pero con una diferencia: <b>cada número del tablero puede
+      decir quién lo observó, cuándo, y cuántas personas lo confirmaron por separado</b>.
     </p>
 
     <div class="reloj">
-      <div class="t">Hoy, 8 de septiembre</div>
-      <p><b>El registro cierra hoy a las 23:59.</b> Cada persona se registra por su cuenta:
-      nadie puede aceptar los términos por otro. El equipo se congela mañana a las 08:00 y
-      después no se admiten altas ni bajas.</p>
-      <p>Los desafíos se publicaban hoy en la mañana. Consta se diseñó antes de leerlos, así
-      que lo primero de la reunión es ver cuál encaja y qué hay que doblar.</p>
+      <div class="t">Hoy, 8 de septiembre · el reto ya está publicado</div>
+      <p><b>El equipo se congela mañana a las 08:00.</b> Después no entra ni sale nadie.</p>
+      <p>Sobre el registro hay una contradicción: las bases en PDF decían que cerraba hoy a
+      las 23:59, y la web ahora muestra «cuatro días». No dependas de la duda: regístrate hoy.
+      Cada persona por su cuenta.</p>
     </div>
   </div>
 </header>
@@ -330,319 +313,403 @@
 <div class="env col">
 
 <section>
-  <h2>El problema, sin una palabra técnica</h2>
+  <h2>Lo que pide Philips, sin jerga</h2>
 
   <p>
-    Una asamblea de edificio aprueba subir la cuota de mantenimiento. Alguien se opone.
-    Seis meses después nadie se pone de acuerdo en qué se decidió realmente, quién votó qué,
-    ni si el acta que circula es la que se firmó ese día.
+    Los ingenieros de servicio, los vendedores y los especialistas de Philips entran a
+    hospitales todos los días. Ven cuántos resonadores, tomógrafos o ecógrafos tiene cada
+    cliente, de qué marca y qué tan viejos parecen. <strong>Y ese conocimiento se queda en
+    la cabeza de cada uno</strong>: en notas personales, en conversaciones, o en ningún lado.
   </p>
   <p>
-    Esto pasa en juntas de vecinos, cooperativas, asociaciones y sindicatos todos los meses.
-    No es un problema de mala fe: es que <strong>el registro siempre queda en manos de
-    alguien</strong>, y ese alguien puede perderlo, editarlo o simplemente no estar cuando
-    hace falta.
+    Anotarlo a mano toma tiempo, cada quien lo describe distinto, varias personas reportan el
+    mismo equipo, y casi todo llega incompleto. Resultado: una empresa que no sabe con
+    certeza qué tienen sus propios clientes.
   </p>
   <p>
-    Consta hace que la memoria de esa reunión no dependa de nadie en particular.
+    Lo que quieren es que el colaborador, al salir del hospital, abra la aplicación y diga:
+  </p>
+  <blockquote>
+    <p>«Estoy en Hospital DemoCare Pacific, en Panamá. Tienen dos resonadores y un tomógrafo.
+    Uno de los resonadores parece de unos ocho años.»</p>
+    <span class="cita-fuente">ejemplo literal del enunciado del reto</span>
+  </blockquote>
+  <p>
+    Y que eso se convierta solo en datos ordenados: cliente, ciudad, tipo de equipo, cantidad,
+    marca, antigüedad. Que pregunte por lo que falta. Que detecte si alguien ya reportó lo
+    mismo. Y que con el tiempo se forme una vista viva de qué hay instalado en cada hospital
+    y en cada país.
+  </p>
+
+  <h3>La condición que no se negocia</h3>
+  <p>
+    Todo tiene que funcionar <strong>dentro del aparato, sin internet y sin mandar nada a un
+    servicio externo</strong>. El colaborador está dentro de un hospital, muchas veces sin
+    señal, y lo que ve es información sensible del cliente. Quien use inteligencia artificial
+    en la nube queda fuera del reto y del ranking general, sin importar qué tan bueno sea el
+    resultado. Nosotros ya probamos que esto funciona en la máquina de Josimar.
   </p>
 </section>
 
 <section>
-  <h2>Cómo funciona, en tres imágenes</h2>
+  <h2>Lo que van a construir los otros 232, y lo que gana</h2>
 
-  <h3>Un libro que se delata solo</h3>
-  <p class="guia">
-    Imagina un libro de actas donde cada página lleva impreso un resumen de la página
-    anterior.
+  <p>
+    El mínimo que pide el reto es claro: capturar en lenguaje natural, extraer los datos,
+    guardarlos, mostrar una vista por cliente y una agregada. Eso es <strong>un chatbot que
+    llena un formulario y un tablero</strong>. Es lo que van a entregar casi todos los
+    equipos, y va a estar bien hecho en muchos casos.
   </p>
   <p>
-    Si alguien arranca o cambia una hoja del medio, todas las siguientes dejan de cuadrar.
-    No hace falta confiar en quien guarda el libro: <strong>el libro se delata solo</strong>.
-    Eso es, exactamente, lo que hacemos con las actas.
+    Fui a buscar dónde está el problema difícil, y Philips lo escribió dos veces sin
+    subrayarlo. En la descripción del problema: <em>«varias personas reportan el mismo
+    equipo»</em>. Y entre las metas adicionales:
   </p>
-
-  <h3>La memoria vive en la gente, no en un servidor</h3>
+  <blockquote>
+    <p>«Asignar confianza según qué tan completa, reciente o confirmada de forma
+    independiente esté una observación.»</p>
+    <span class="cita-fuente">metas adicionales del reto</span>
+  </blockquote>
   <p>
-    No hay una computadora central donde se guarde todo. La información vive en los equipos
-    de los que estuvieron presentes, y se copia entre ellos cuando están cerca. Si la
-    organización se disuelve, la memoria no se borra: cada quien conserva su copia y puede
-    probar qué se decidió mientras estuvo.
-  </p>
-  <p>
-    Tampoco hay cuentas, ni administrador, ni una factura mensual que alguien tenga que pagar
-    para que el pasado siga existiendo.
-  </p>
-
-  <h3>La inteligencia artificial corre dentro del equipo</h3>
-  <p>
-    Escucha la reunión, la transcribe, saca los acuerdos y después responde preguntas en
-    español normal. Todo dentro de la computadora, sin internet de por medio.
+    Y en las consideraciones de diseño, esta pregunta: <em>«¿cómo puede el sistema distinguir
+    una observación de información verificada?»</em>. Y esta otra: <em>«los usuarios deben
+    entender de dónde vino la información y cuándo se observó por última vez»</em>.
   </p>
   <p>
-    Eso no es una elección estética: <strong>el reglamento del hackathon descalifica a quien
-    use inteligencia artificial en la nube</strong>. Nuestra ventaja es que ya lo probamos
-    funcionando en la máquina de Josimar antes de inscribirnos.
+    Ese es el problema de fondo. No es capturar datos: es <strong>saber cuánto creerles</strong>.
+    Y para eso hay que guardar quién dijo qué, cuándo, y no aplastar dos versiones distintas
+    en un solo número que parece seguro y no lo es.
+  </p>
+  <p>
+    Eso era exactamente el motor de Consta antes de que saliera el reto. El reto cambió el
+    tema, de asambleas a equipos médicos, pero el motor sirve igual.
   </p>
 </section>
 
 <section>
-  <h2>Lo que nos hace distintos</h2>
+  <h2>Qué es Consta ahora</h2>
   <p class="guia">
-    Esta es la parte que hay que saber contar. Es donde está el 25 % de Innovación.
-  </p>
-
-  <p>
-    Cuando le preguntas algo a cualquier asistente de inteligencia artificial y te responde
-    <em>«según el acta de marzo…»</em>, esa cita <strong>es simplemente un texto que el
-    programa escribió</strong>. No hay manera de comprobarla. Tienes que confiar en el
-    programa y, además, en quien administra el servidor donde vive el acta, porque pudo
-    haberla cambiado.
-  </p>
-
-  <blockquote><p>Nosotros convertimos la cita en un recibo.</p></blockquote>
-
-  <p>
-    Cada respuesta viene acompañada de quién lo dijo, cuándo, y una prueba de que ese texto
-    no se ha tocado desde entonces. No es una promesa del programa: es verificable por
-    cualquiera. Así se ve:
+    Un tablero que se ve como cualquier otro, hasta que le pinchas un número.
   </p>
 
   <div class="demo">
     <div class="demo-barra">
-      <span>Consta · Junta de Propietarios</span>
+      <span>Consta · Hospital DemoCare Pacific · Ciudad de Panamá</span>
       <span class="sin-red">◈ sin conexión</span>
     </div>
     <div class="demo-cuerpo">
-      <p class="pregunta">Cuándo se aprobó subir la cuota y quién se opuso?</p>
-      <p class="respuesta">
-        El aumento a <mark>B/. 85.00 mensuales se aprobó el 14 de marzo de 2026</mark> con
-        siete votos a favor. <mark>Dos propietarios dejaron constancia de su oposición</mark>
-        por el plazo de aplicación, no por el monto.
-      </p>
-
-      <div class="recibos">
-        <div class="recibo">
-          <div class="recibo-alto"><span class="chapa">FOLIO 447</span> Acta de asamblea ordinaria</div>
-          <div class="recibo-datos">
-            firmado por <b>M. Cedeño · secretaria</b><br>
-            14 mar 2026, 19:42<br>
-            huella <b>a3f7…c204</b> · verificada ✓
-          </div>
-        </div>
-        <div class="recibo">
-          <div class="recibo-alto"><span class="chapa">FOLIO 448</span> Constancia de oposición</div>
-          <div class="recibo-datos">
-            firmado por <b>R. Batista</b>, <b>L. Ortega</b><br>
-            14 mar 2026, 19:58<br>
-            huella <b>91be…7d10</b> · verificada ✓
-          </div>
-        </div>
+      <div class="c360-env">
+        <table class="c360">
+          <thead>
+            <tr><th>Equipo</th><th>Cantidad</th><th>Antigüedad</th><th>Confianza</th></tr>
+          </thead>
+          <tbody>
+            <tr class="abierta">
+              <td><b>Resonador</b> (MR)</td>
+              <td><span class="num">2</span><span class="pugna">o 3</span></td>
+              <td class="num">≈7 años</td>
+              <td><span class="conf media">Media</span><span class="porque">2 observadores, no coinciden</span></td>
+            </tr>
+            <tr>
+              <td><b>Tomógrafo</b> (CT)</td>
+              <td class="num">1</td>
+              <td class="num">≈5 años</td>
+              <td><span class="conf alta">Alta</span><span class="porque">confirmado por 2 personas</span></td>
+            </tr>
+            <tr>
+              <td><b>Ecógrafo</b></td>
+              <td class="num">—</td>
+              <td class="num">—</td>
+              <td><span class="conf nula">Sin datos</span><span class="porque">nadie lo ha reportado</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <div class="disenso">
-        <b>Hay dos versiones firmadas de este punto.</b> Se muestran las dos, con nombre y
-        fecha. El sistema no elige una.
+      <div class="rastro">
+        <div class="rastro-t">Rastro de la fila «Resonador»</div>
+        <div class="recibos">
+          <div class="recibo">
+            <div class="recibo-alto"><span class="chapa">OBS 001</span> Reportado · visto en persona</div>
+            <div class="recibo-datos">
+              <b>Field User 01</b> · 18 ago 2026 · NovaMed NM-MR 700<br>
+              <i>«dos resonadores, uno parece de unos ocho años»</i>
+            </div>
+          </div>
+          <div class="recibo">
+            <div class="recibo-alto"><span class="chapa">OBS 014</span> Estimado · le contaron</div>
+            <div class="recibo-datos">
+              <b>Sales User 02</b> · 6 sep 2026 · marca desconocida<br>
+              <i>«creo que tienen tres resonadores»</i>
+            </div>
+          </div>
+        </div>
+        <div class="disenso">
+          <b>Las dos observaciones no coinciden en la cantidad.</b> Se guardan las dos, no se
+          elige una. La próxima persona que visite el hospital recibe la pregunta: ¿son dos o
+          tres?
+        </div>
       </div>
     </div>
   </div>
 
-  <h3>Y ese último detalle es el segundo hallazgo</h3>
   <p>
-    Todos los programas de este tipo, cuando encuentran información contradictoria, eligen
-    una versión y descartan la otra. Pero en el registro de una discusión humana,
-    <strong>el desacuerdo es la información más valiosa que hay</strong>.
+    Fíjate en tres cosas de esa pantalla. La fila del resonador <strong>no esconde el
+    conflicto</strong>: dice «2 o 3» y explica por qué. La del tomógrafo dice «Alta» y dice
+    <strong>por qué</strong> es alta. Y la del ecógrafo no inventa un cero: dice que nadie lo
+    ha reportado, que es información distinta.
   </p>
   <p>
-    Consta guarda las dos versiones con nombre y firma, y lo dice. Un sistema que responde
-    <em>«sobre este punto hubo dos posiciones»</em> en lugar de promediar el desacuerdo hasta
-    convertirlo en una mentira.
+    Casi todos los demás prototipos van a mostrar un solo número en cada celda, probablemente
+    el más reciente, y van a estar callados y equivocados.
   </p>
+
+  <h3>De dónde sale la confianza</h3>
+  <p>Son los tres factores que pidió Philips, en palabras normales:</p>
+  <div class="factores">
+    <div class="factor">
+      <h4>Completa</h4>
+      <p>¿Tiene marca, modelo y antigüedad, o solo «hay dos»?</p>
+    </div>
+    <div class="factor">
+      <h4>Reciente</h4>
+      <p>¿Cuándo fue la última vez que alguien lo vio con sus ojos?</p>
+    </div>
+    <div class="factor">
+      <h4>Confirmada</h4>
+      <p>¿Cuántas personas distintas lo reportaron por su cuenta?</p>
+    </div>
+  </div>
   <p>
-    Eso no sale de un truco de programación: sale de cómo está construido por dentro. Y es
-    justamente lo que un servidor tradicional <strong>no puede</strong> ofrecer.
+    El tercero es el que nadie más va a poder calcular, porque para contarlo hay que haber
+    guardado quién dijo cada cosa desde el principio. En Consta eso viene incorporado desde el principio en la forma de guardar
+    cada observación, en lugar de agregarse después como una función aparte.
   </p>
 </section>
 
 <section>
   <h2>El video de cinco minutos</h2>
   <p class="guia">
-    Es lo primero que mira el jurado. Por eso está diseñado antes que el código, y por eso
-    es tuyo.
-  </p>
-  <p>
-    Cuatro escenas. Cada una demuestra <strong>una cosa que no se puede fingir</strong> con
-    un sistema normal, y ese es todo el criterio para incluirla o sacarla.
+    Es lo primero que mira el jurado. Cuatro escenas, y cada una prueba una cosa.
   </p>
 
   <div class="escenas">
     <div class="escena">
       <div class="escena-n">1</div>
       <div>
-        <h4>La asamblea</h4>
+        <h4>La visita</h4>
         <div class="dur">60 segundos</div>
         <p>
-          Tres computadoras en una mesa. Alguien propone subir la cuota. El sistema
-          transcribe y saca el acuerdo en vivo; las tres pantallas muestran lo mismo. Un
-          asistente se opone y firma su objeción: quedan las dos cosas.
+          Alguien sale de un hospital, abre la aplicación en el estacionamiento y dicta lo que
+          vio. El sistema entiende, pregunta por la marca que faltó, muestra el resumen
+          ordenado y lo guarda. Treinta segundos, sin escribir nada.
         </p>
-        <p class="prueba">Prueba: desconectamos el internet en cámara y sigue funcionando.</p>
+        <p class="prueba">Prueba: el teléfono está en modo avión, y se ve en cámara.</p>
       </div>
     </div>
-
     <div class="escena">
       <div class="escena-n">2</div>
       <div>
-        <h4>Seis meses después</h4>
-        <div class="dur">90 segundos</div>
+        <h4>El tablero</h4>
+        <div class="dur">60 segundos</div>
         <p>
-          Preguntamos en español normal qué se decidió. Responde, y cada afirmación se puede
-          abrir para ver quién la firmó y cuándo. Dice que hubo dos versiones, no una.
+          La vista del hospital y la vista por país: cuántos equipos de cada tipo, qué tan
+          viejos, dónde falta información. Se pincha un número y aparece de dónde salió.
         </p>
-        <p class="prueba">Prueba: la respuesta viene con recibos, no con promesas.</p>
+        <p class="prueba">Prueba: cada celda responde «¿quién lo vio y cuándo?».</p>
       </div>
     </div>
-
     <div class="escena">
       <div class="escena-n">3</div>
       <div>
-        <h4>El intento de fraude</h4>
-        <div class="dur">60 segundos</div>
+        <h4>El conflicto</h4>
+        <div class="dur">90 segundos</div>
         <p>
-          Editamos un acta vieja en una de las computadoras. Las otras dos la rechazan solas:
-          la cadena se rompió.
+          Una segunda persona visita el mismo hospital semanas después y reporta un número
+          distinto. El tablero muestra las dos versiones, marca el conflicto, y prepara la
+          pregunta para la siguiente visita, sin que nadie tenga que decidir por su cuenta
+          cuál de las dos es la verdad.
         </p>
-        <p class="prueba">Aquí es donde el jurado entiende de qué se trata, y por eso esta escena no se recorta.</p>
+        <p class="prueba">Aquí es donde el jurado entiende qué hace distinto a este proyecto.</p>
       </div>
     </div>
-
     <div class="escena">
       <div class="escena-n">4</div>
       <div>
-        <h4>El vecino nuevo</h4>
+        <h4>Dos aparatos, ninguna nube</h4>
         <div class="dur">45 segundos</div>
         <p>
-          Llega alguien que no estaba, se une, y recibe la memoria completa y verificada en
-          segundos, de los que están en la sala.
+          Las dos personas se encuentran en la oficina. Sus aparatos se ven entre sí y las
+          observaciones de uno pasan al otro, sin servidor de por medio. La vista del hospital
+          se completa sola.
         </p>
-        <p class="prueba">Prueba: sin servidor y sin que ningún administrador lo autorice.</p>
+        <p class="prueba">Prueba: la información nunca salió de los dos teléfonos.</p>
       </div>
-    </div>
-  </div>
-
-  <div class="cadenas">
-    <div class="cadena ok">
-      <h4>Cadena íntegra</h4>
-      <div class="folio">folio 446 · a3f7…</div>
-      <div class="eslabon"></div>
-      <div class="folio">folio 447 · c204…</div>
-      <div class="eslabon"></div>
-      <div class="folio">folio 448 · 91be…</div>
-      <p class="veredicto">✓ Las tres computadoras coinciden</p>
-    </div>
-    <div class="cadena mal">
-      <h4>Alguien editó el folio 447</h4>
-      <div class="folio">folio 446 · a3f7…</div>
-      <div class="eslabon"></div>
-      <div class="folio alterado">folio 447 · 8dd1… ✗</div>
-      <div class="eslabon roto"></div>
-      <div class="folio caido">folio 448 · no cuadra</div>
-      <p class="veredicto">✗ Rechazado por las otras dos, solas</p>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>Cómo se gana, y por qué te necesitamos</h2>
+  <h2>El regalo que viene en el Excel</h2>
+  <p>
+    Philips adjuntó una hoja de cálculo con datos de prueba. Casi nadie va a abrir las
+    pestañas de atrás, y ahí está lo más valioso.
+  </p>
+
+  <h3>Diez pruebas oficiales</h3>
+  <p>
+    La pestaña «Voice Test Prompts» trae diez frases dictadas, con la repregunta que el
+    sistema debería hacer y el resultado que debería producir. <strong>Es el criterio de
+    «funciona» escrito por el cliente antes de empezar.</strong> Están en inglés, así que se
+    dejan tal cual; el sistema tiene que entender los dos idiomas.
+  </p>
+  <p>
+    Esta lista es tuya. No hace falta programar para verificarla: se le dicta la frase, se
+    revisa que pregunte lo que debe y que guarde lo que debe.
+  </p>
+
+  <ol class="pruebas">
+    <li><p class="voz">"I am at Hospital DemoCare Pacific in Panama. They have two MR systems and one CT."</p>
+      <p class="revisar">Debe preguntar <b>marca y antigüedad</b> de cada tipo. Guarda: DemoCare Pacific · Panamá · MR=2 · CT=1.</p></li>
+    <li><p class="voz">"At Hospital DemoCare Horizon I saw three MR systems. Two seem old and one looks much newer."</p>
+      <p class="revisar">Debe pedir <b>edades por separado</b> para los viejos y el nuevo. Guarda: MR=3 · edades mixtas.</p></li>
+    <li><p class="voz">"Clinica DemoCare Light has two CT scanners, both Orion Imaging, around eleven years old."</p>
+      <p class="revisar">Debe preguntar si <b>conoce el modelo</b> y confirmar la cantidad. Guarda: CT=2 · Orion Imaging · 11 años.</p></li>
+    <li><p class="voz">"Centro Medico DemoCare Valley has one MR and two CTs. I do not know the brands."</p>
+      <p class="revisar">Debe <b>aceptar «marca desconocida»</b> sin insistir, y preguntar edad o modelo. Guarda: MR=1 · CT=2 · marca=Desconocida.</p></li>
+    <li><p class="voz">"Hospital DemoCare North has about six ultrasound units, mostly new."</p>
+      <p class="revisar">Debe preguntar la <b>cantidad exacta o estimada</b>, la marca, y qué significa «nuevo» en años. Guarda: Ecógrafos≈6 · edad cualitativa.</p></li>
+    <li><p class="voz">"Clinica DemoCare Andes has one very old CT and two MR systems from the same manufacturer."</p>
+      <p class="revisar">Debe preguntar marca, edad por tipo y confirmar cantidades. Guarda: CT=1 · MR=2.</p></li>
+    <li><p class="voz">"Hospital DemoCare Park has one MR, maybe ten years old, plus three CT scanners."</p>
+      <p class="revisar">Debe preguntar marca de los dos y la edad de los CT. Guarda: MR=1 ≈10 años · CT=3.</p></li>
+    <li><p class="voz">"Clinica DemoCare Central has many ultrasound systems, maybe eight, all Aurelia Health."</p>
+      <p class="revisar">Debe preguntar <b>qué tan seguro está</b> de la cantidad y la edad. Guarda: Ecógrafos≈8 · Aurelia Health.</p></li>
+    <li><p class="voz">"Instituto DemoCare Lima has two old CTs and one recently installed MR."</p>
+      <p class="revisar">Debe preguntar edades y marcas <b>por separado</b>. Guarda: CT=2 viejos · MR=1 reciente.</p></li>
+    <li><p class="voz">"Hospital DemoCare Metro North has two MR systems. I know the brand is Aurelia Health but not the model."</p>
+      <p class="revisar">Debe preguntar la edad y <b>aceptar modelo desconocido</b>. Guarda: MR=2 · Aurelia Health · modelo=Desconocido.</p></li>
+  </ol>
+
+  <h3>Doce pasos de conversación, ya diseñados</h3>
+  <p>
+    Otra pestaña trae el flujo completo de la conversación con la lógica de cada paso: qué es
+    obligatorio (hospital, ciudad, tipo, cantidad), qué es preferible (marca, edad), qué es
+    opcional (modelo, notas), y reglas como <em>«nunca forzar una marca: si no la sabe, se
+    guarda Desconocida»</em> o <em>«aceptar rangos como 5-7 años»</em>. El diálogo ya viene especificado
+    por el cliente, así que no hay que diseñarlo.
+  </p>
+
+  <h3>El primer hospital es panameño</h3>
+  <p>
+    La fila 1 de los veinte registros de ejemplo es <strong>Hospital DemoCare Pacific,
+    Ciudad de Panamá</strong>. Es el mismo del enunciado. Para un jurado sentado en Panamá,
+    el video empieza ahí.
+  </p>
+  <p>
+    Y un riesgo que se cerró solo: prohíben usar datos reales de clientes y entregan datos
+    ficticios. Eso resuelve el problema de la licencia perpetua que ISD y Tether se reservan
+    sobre el video.
+  </p>
+</section>
+
+<section>
+  <h2>Qué construimos</h2>
+  <p class="guia">
+    Tres niveles. El primero es obligatorio para no quedar fuera; el segundo es donde están
+    los puntos; el tercero solo si sobra tiempo.
+  </p>
+
+  <div class="nivel obl">
+    <h4><span class="tag">obligatorio</span> El mínimo del reto</h4>
+    <ul class="limpia">
+      <li><b>Capturar por texto y por voz.</b> El colaborador dicta y el sistema transcribe
+      dentro del aparato.</li>
+      <li><b>Entender y ordenar.</b> Sacar hospital, ciudad, país, tipo de equipo, cantidad,
+      marca, modelo y edad, y tolerar que falte la mitad.</li>
+      <li><b>Repreguntar.</b> Pedir lo que falta siguiendo los doce pasos de Philips, y
+      confirmar el resumen antes de guardar.</li>
+      <li><b>Guardar con estado.</b> Cada observación queda como Confirmada, Reportada,
+      Estimada o Desconocida.</li>
+      <li><b>Vista por hospital</b> y <b>vista agregada</b> por país, por tipo de equipo y
+      por antigüedad.</li>
+    </ul>
+  </div>
+
+  <div class="nivel dif">
+    <h4><span class="tag">nuestro diferencial</span> La capa de confianza</h4>
+    <ul class="limpia">
+      <li><b>Cada observación lleva quién, cuándo y cómo lo supo</b> (lo vio, se lo contaron,
+      lo estimó). Se guarda y nunca se sobreescribe.</li>
+      <li><b>Los conflictos se conservan.</b> Dos personas, dos números: se muestran los dos
+      y se marca. Nadie decide en silencio.</li>
+      <li><b>Confianza calculada</b> con los tres factores: completa, reciente, confirmada
+      por otros.</li>
+      <li><b>Pinchar cualquier número</b> del tablero y ver el rastro completo de
+      observaciones detrás.</li>
+      <li><b>Dos aparatos se sincronizan entre sí</b>, sin nube, cuando están cerca.</li>
+    </ul>
+  </div>
+
+  <div class="nivel ext">
+    <h4><span class="tag">si sobra tiempo</span> Metas adicionales del reto</h4>
+    <ul class="limpia">
+      <li>Preguntar en lenguaje normal sobre los datos: «hospitales en Brasil con resonadores
+      de más de siete años».</li>
+      <li>Avisar cuando un dato lleva demasiado tiempo sin que nadie lo verifique.</li>
+      <li>Señalar hospitales con equipos viejos como oportunidad de renovación.</li>
+      <li>Un mapa por país y ciudad, si el tablero en tabla ya está terminado.</li>
+    </ul>
+  </div>
+
+  <div class="aparte">
+    <h4>Lo que no vamos a intentar</h4>
+    <p>
+      <strong>Leer placas y etiquetas desde una foto.</strong> Está en las metas
+      adicionales, pero requiere un modelo de visión funcionando dentro del aparato, y eso
+      en 48 horas es un pozo sin fondo. En el video lo mencionamos como el paso siguiente natural,
+      pero no lo construimos.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Cómo suma puntos, y por qué te necesitamos</h2>
 
   <div class="tabla-env">
     <table>
-      <thead>
-        <tr><th>Criterio</th><th class="peso">Peso</th><th>Quién lo mueve</th></tr>
-      </thead>
+      <thead><tr><th>Criterio</th><th class="peso">Peso</th><th>Quién lo mueve</th></tr></thead>
       <tbody>
-        <tr><td><b>Técnico</b></td><td class="peso">35 %</td><td>Josimar: que funcione de verdad</td></tr>
-        <tr class="suyo"><td><b>Innovación</b></td><td class="peso">25 %</td><td>Tú: que se entienda por qué es distinto</td></tr>
-        <tr class="suyo"><td><b>Impacto</b></td><td class="peso">20 %</td><td>Tú: a quién le sirve y por qué importa</td></tr>
-        <tr><td><b>Diseño</b></td><td class="peso">10 %</td><td>Los dos</td></tr>
+        <tr><td><b>Técnico</b></td><td class="peso">35 %</td><td>Josimar: que funcione y que pase las diez pruebas</td></tr>
+        <tr class="suyo"><td><b>Innovación</b></td><td class="peso">25 %</td><td>Tú: que se entienda por qué la capa de confianza es distinta</td></tr>
+        <tr class="suyo"><td><b>Impacto</b></td><td class="peso">20 %</td><td>Tú: por qué un ingeniero de Philips lo usaría después de cada visita</td></tr>
+        <tr><td><b>Diseño</b></td><td class="peso">10 %</td><td>Los dos: el tablero tiene que verse bien</td></tr>
         <tr class="suyo"><td><b>Terminado</b></td><td class="peso">10 %</td><td>Tú: que se entregue completo y a tiempo</td></tr>
       </tbody>
     </table>
   </div>
-
   <p class="pie-tabla">
-    Innovación, Impacto y Terminado suman <strong>55 %</strong>. Más que la parte técnica.
-    No entras como apoyo, sino a cargo de la mitad más grande del puntaje.
+    Innovación, Impacto y Terminado suman <strong>55 %</strong>. No entras como apoyo, sino a
+    cargo de la mitad más grande del puntaje.
   </p>
 
   <h3>Lo que está en tus manos</h3>
   <ul class="limpia">
-    <li><b>Elegir el caso.</b> ¿Edificio, cooperativa, junta comunal, sindicato? Cambia la
-    demo entera y es una decisión de negocio, no técnica.</li>
-    <li><b>Conseguir un caso real.</b> Un acta de verdad y un conflicto de verdad valen más
-    que diez ejemplos inventados. Eso es el 20 % de Impacto, y no lo puede fabricar el
-    código.</li>
-    <li><b>El guion y el video en español.</b> Lo primero que mira el jurado.</li>
-    <li><b>El documento de entrega.</b> Tiene que declarar qué existía antes de empezar, y
-    <strong>omitirlo descalifica</strong>. Es un requisito del reglamento, no un formalismo.</li>
-    <li><b>Guardar el alcance.</b> Lo que hunde un proyecto de 48 horas casi nunca es la
-    parte difícil, sino seguir agregando cosas en la hora 40.</li>
-    <li><b>El reloj.</b> Quien está programando siempre lo pierde de vista.</li>
+    <li><b>Las diez pruebas.</b> Tú las corres y las marcas. Es control de calidad de verdad
+    y no requiere programar. En el video se dice «pasan las diez» y se muestra.</li>
+    <li><b>La pregunta de adopción.</b> Philips escribió: <em>«¿por qué un empleado usaría
+    esto después de cada visita?»</em>. Esa respuesta es tuya y va en el video: porque toma
+    treinta segundos, por voz, en el estacionamiento.</li>
+    <li><b>Los datos de la historia.</b> Qué hospitales salen en el video, quién visita cuál,
+    y cómo se arma el conflicto de la escena 3. Con los datos ficticios de Philips.</li>
+    <li><b>El guion y el video en español.</b> Las reglas lo exigen en español y es lo
+    primero que mira el jurado.</li>
+    <li><b>El documento de entrega.</b> Tiene que declarar lo que existía antes de empezar
+    (unas pruebas pequeñas que Josimar hizo la semana pasada). <strong>Omitirlo
+    descalifica.</strong></li>
+    <li><b>Guardar el alcance y el reloj.</b> Lo que hunde un proyecto de 48 horas casi nunca
+    es la parte difícil, sino seguir agregando cosas en la hora 40.</li>
   </ul>
-</section>
-
-<section>
-  <h2>Qué puede salir mal</h2>
-  <p class="guia">
-    Prefiero que sepas los riesgos antes de decidir, no en la hora 30.
-  </p>
-
-  <div class="tabla-env">
-    <table>
-      <thead>
-        <tr><th>Riesgo</th><th>Qué hacemos</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><b>Las piezas no encajan</b><br><span style="color:var(--tinta-suave)">Las dos tecnologías podrían no convivir</span></td>
-          <td>Se comprueba en 20 minutos. <b>Hoy</b>, antes de la reunión, no el día 9.</td>
-        </tr>
-        <tr>
-          <td><b>La transcripción en español falla</b></td>
-          <td>Se prueba con audio panameño real antes de comprometernos con esa escena.</td>
-        </tr>
-        <tr>
-          <td><b>Los desafíos no encajan</b><br><span style="color:var(--tinta-suave)">Se publicaron hoy</span></td>
-          <td>Leerlos juntos primero. La idea se dobla; el motor sirve igual.</td>
-        </tr>
-        <tr>
-          <td><b>Se acaba el tiempo</b></td>
-          <td>Lista de recortes ya decidida, aquí abajo. No se improvisa a la hora 40.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="aparte">
-    <h4>Si el reloj aprieta, se recorta en este orden</h4>
-    <p>
-      Primero, la transcripción en vivo pasa a ser «subimos un audio grabado». Después, la
-      respuesta redactada pasa a ser solo la lista de actas firmadas que contestan la
-      pregunta.
-    </p>
-    <p>
-      Las dos degradaciones se ven bien en cámara y ninguna rompe el argumento.
-    </p>
-  </div>
-
-  <div class="aparte intocable">
-    <h4>Lo que no se toca</h4>
-    <p>
-      <strong>La escena 3 y los recibos.</strong> Son la tesis del proyecto. Sin el intento
-      de fraude rechazado y sin la firma detrás de cada respuesta, esto se convierte en una
-      aplicación de notas, y de esas el jurado va a ver diez.
-    </p>
-  </div>
 </section>
 
 <section>
@@ -650,59 +717,91 @@
 
   <div class="tabla-env">
     <table>
-      <thead>
-        <tr><th>Cuándo</th><th>Qué pasa</th></tr>
-      </thead>
+      <thead><tr><th>Cuándo</th><th>Qué pasa</th></tr></thead>
       <tbody>
-        <tr><td class="peso"><b>Hoy, 23:59</b></td><td><b>Cierra el registro.</b> Cada quien por su cuenta. Sin esto, no hay nada más.</td></tr>
-        <tr><td class="peso">9 sep · 08:00</td><td>Arranca el reloj y <b>se congela el equipo</b>. No entra ni sale nadie más.</td></tr>
-        <tr><td class="peso">Horas 0–4</td><td>Elegir desafío, cerrar el caso, escribir el guion del video.</td></tr>
-        <tr><td class="peso">Horas 4–30</td><td>Construir. Tú trabajas el caso real, el guion y el documento en paralelo.</td></tr>
-        <tr><td class="peso">Horas 30–36</td><td>Grabar el video. No dejarlo para el final, porque al final nunca alcanza.</td></tr>
+        <tr><td class="peso"><b>Hoy</b></td><td><b>Registro</b> de cada uno. Y una prueba de 20 minutos de que las dos tecnologías conviven.</td></tr>
+        <tr><td class="peso">9 sep · 08:00</td><td>Arranca el reloj y <b>se congela el equipo</b>.</td></tr>
+        <tr><td class="peso">Horas 0–2</td><td>Cerrar alcance, elegir el modelo de lenguaje, montar las diez pruebas como lista de verificación.</td></tr>
+        <tr><td class="peso">Horas 2–12</td><td>Capturar, entender, repreguntar, guardar. <b>Meta: pasan las diez pruebas.</b></td></tr>
+        <tr><td class="peso">Horas 12–22</td><td>Vista por hospital y vista agregada. Tú preparas los datos de la historia y el guion.</td></tr>
+        <tr><td class="peso">Horas 22–30</td><td>Confianza, conflictos y rastro. Es lo que ya viene en la forma de guardar, así que es más corto de lo que suena.</td></tr>
+        <tr><td class="peso">Horas 30–34</td><td>Dos aparatos sincronizando en la mesa.</td></tr>
+        <tr><td class="peso">Horas 34–40</td><td><b>Grabar el video.</b> No dejarlo para el final, porque al final nunca alcanza.</td></tr>
         <tr><td class="peso"><b>Hora 42</b></td><td><b>Se congela el código.</b> Quedan 6 horas de colchón a propósito.</td></tr>
         <tr><td class="peso">11 sep · 08:00</td><td>Cierra la entrega. No hay prórroga: la plataforma cierra sola.</td></tr>
       </tbody>
     </table>
   </div>
 
-  <p class="pie-tabla">
-    Congelar en la hora 42 suena conservador hasta que recuerdas que entregar tarde
-    descalifica igual que no entregar.
-  </p>
+  <div class="aparte">
+    <h4>Si el reloj aprieta, se recorta en este orden</h4>
+    <p>
+      Primero cae todo el nivel «si sobra tiempo». Después la sincronización entre dos
+      aparatos: es nuestra apuesta de Innovación, pero el reto dice que lo P2P está
+      <em>permitido</em>, no exigido, así que se puede perder sin quedar fuera. Después la
+      voz pasa a ser solo texto.
+    </p>
+  </div>
+
+  <div class="aparte intocable">
+    <h4>Lo que no se toca</h4>
+    <p>
+      <strong>El mínimo obligatorio y la capa de confianza.</strong> Sin el mínimo no
+      calificamos. Sin la capa de confianza somos uno más de los 233, con un chatbot y un
+      tablero. Las dos cosas se defienden hasta el final, y todo lo demás se sacrifica antes.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Qué puede salir mal</h2>
+
+  <div class="tabla-env">
+    <table>
+      <thead><tr><th>Riesgo</th><th>Qué hacemos</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Las dos tecnologías no conviven</b><br><span style="color:var(--tinta-suave)">la inteligencia local y la sincronización entre aparatos</span></td>
+          <td>Se comprueba <b>hoy</b> en 20 minutos. Si no conviven, la sincronización se cae del plan y el resto sigue igual.</td>
+        </tr>
+        <tr>
+          <td><b>El modelo entiende mal</b><br><span style="color:var(--tinta-suave)">en inglés, en español, o los dos</span></td>
+          <td>Las diez pruebas lo dicen en la hora 12, no en la hora 40. Si falla, se prueba otro modelo pequeño; hay varios.</td>
+        </tr>
+        <tr>
+          <td><b>La voz no funciona</b></td>
+          <td>Falta instalar una pieza en la máquina de Josimar (se hace hoy). Si aun así falla, el video se hace escribiendo y se dice que la voz es el siguiente paso.</td>
+        </tr>
+        <tr>
+          <td><b>El tablero se come el tiempo</b><br><span style="color:var(--tinta-suave)">es obligatorio y no estaba en el plan original</span></td>
+          <td>Se hace en tabla, no en mapa. Una tabla bien hecha cumple el mínimo, y el mapa queda para si sobra tiempo.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 <section>
   <h2>Para decidir en la reunión</h2>
-
   <ul class="limpia">
-    <li><b>¿Entras?</b> Si sí, regístrate hoy antes de las 23:59. Es lo único con fecha
-    fatal.</li>
-    <li><b>¿Qué desafío?</b> Se publicaron hoy. Se leen juntos y se decide con criterio de
-    negocio, no de código.</li>
-    <li><b>¿Qué organización usamos de ejemplo?</b> Idealmente una a la que podamos pedirle
-    un acta real.</li>
-    <li><b>¿Buscamos a alguien más?</b> Si entra un tercero, hoy es el día. Mañana a las
-    08:00 el equipo se cierra.</li>
-    <li><b>Si ganamos, ¿cómo repartimos?</b> El premio se paga a una sola billetera y el
-    reparto queda entre nosotros. Acordarlo hoy es fácil; el día 11 no.</li>
+    <li><b>¿Entramos con este reto?</b> Hay cuatro retos corporativos y solo hemos visto
+    este. Mi recomendación es sí: encaja con lo que ya teníamos y con lo que ya está probado.
+    Pero si aparece otro, se compara con el mismo criterio.</li>
+    <li><b>¿Cuál es el guion del conflicto?</b> Quién visita DemoCare Pacific primero, quién
+    después, y qué número reporta cada uno. Es la escena que gana y se decide hoy.</li>
+    <li><b>¿Buscamos a un tercero?</b> Si el registro de verdad sigue abierto cuatro días, hay
+    margen. Un perfil de diseño de tablero aliviaría el nivel obligatorio.</li>
+    <li><b>Si ganamos, ¿cómo repartimos?</b> El premio del reto corporativo son 1.500 USDT
+    a una sola billetera, acumulables con el ranking general. Es más fácil acordarlo hoy que el día 11.</li>
   </ul>
-
-  <div class="aparte">
-    <h4>Un dato que baja la ansiedad</h4>
-    <p>
-      Hay 159 inscritos y solo 2 proyectos entregados hasta ahora. El rival no es el equipo más brillante,
-      sino la posibilidad de no terminar a tiempo. Por eso la mitad de este documento habla de
-      recortes y de relojes.
-    </p>
-  </div>
 </section>
 
 </div>
 
 <footer>
   <div class="env col">
-    <p>Documento interno de trabajo · escrito el 8 de septiembre de 2026</p>
-    <p>Los premios y las reglas citadas salen de las bases oficiales del hackathon.</p>
+    <p>Documento interno de trabajo · reescrito el 8 de septiembre de 2026 al salir el reto de Philips</p>
+    <p>Las citas del reto son traducción del enunciado oficial en inglés. Los hospitales, marcas y observadores son ficticios, tomados del dataset de prueba que entregó Philips.</p>
   </div>
 </footer>
 

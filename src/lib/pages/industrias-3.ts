@@ -114,6 +114,8 @@ export const industrias3: PageData[] = [
           { q: '¿Cómo dejo de recibir llamadas preguntando por el estado de un trámite?', a: 'Con una consulta de expediente por número de referencia. No hace falta integrar el sistema completo: basta con que el cliente vea el estado actual y el siguiente paso. Es lo que más horas libera al equipo.' },
           { q: '¿Debo publicar tarifas de mis servicios?', a: 'Los trámites de estructura estable pueden ir con un "desde". El resto se resuelve mejor con rapidez de cotización que con precio publicado, porque el importador decide más por tiempo de despacho y respuesta que por tarifa.' },
           { q: '¿Sirve la web si trabajo por referidos del gremio?', a: 'El referido igual te busca antes de llamar y compara lo que ve: licencia, años, cobertura. Y el contenido de trámites capta al importador primerizo, que no tiene quién lo refiera y que se queda años con quien le explica.' },
+          { q: '¿Cuánto cuesta la web de una agencia de aduanas o de Zona Libre?', a: 'El sitio institucional con servicios, cobertura y contacto entra en 8 a 12 páginas, desde $950. Si necesitas consulta de estatus de carga o conexión con tu sistema aduanero, es proyecto a medida desde $2,900, porque hay integración de por medio. El pago va 50% para arrancar, 30% al verlo funcionando en demo y 20% para publicar. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene invertir en la web de la agencia?', a: 'Si trabajas con tres o cuatro clientes grandes de siempre y no buscas nuevos, la web no te va a mover la aguja: con una página de presentación basta. Se justifica cuando quieres que un importador que no te conoce te encuentre buscando en Google, o cuando estás cansado de explicar por WhatsApp lo mismo que podría estar escrito.' },
         ],
       },
       {
@@ -234,6 +236,8 @@ export const industrias3: PageData[] = [
           { q: '¿Qué diferencia a un operador de un intermediario a ojos del cliente?', a: 'Los activos visibles. Fotos propias de lanchas, equipos, bodegas o talleres, con capacidad operativa descrita. Es una distinción que el comprador internacional busca activamente porque afecta su riesgo.' },
           { q: '¿Sirve mencionar el Canal y el registro de buques?', a: 'Es tu argumento y casi nadie lo usa. Pero traducido a lo concreto: atender un buque en tránsito sin desviarlo, resolver un cambio de tripulación entre océanos, abastecer en una escala que igual iba a ocurrir. El cliente que compara plazas necesita ese argumento escrito para justificarlo internamente.' },
           { q: '¿Qué dato me sorprenderá al medir?', a: 'El origen geográfico de las consultas. Muchos proveedores panameños descubren interés de países que no estaban trabajando comercialmente, información que ningún vendedor iba a traer por su cuenta.' },
+          { q: '¿Cuánto cuesta la web de una naviera o de servicios marítimos?', a: 'Un sitio institucional en español e inglés, con servicios y cobertura, entra en el rango de 8 a 12 páginas desde $950, y el segundo idioma suele llevarlo a proyecto a medida desde $2,900. Si además conectas con sistemas de agenciamiento o consulta de recaladas, es a medida sin discusión. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene la web de una naviera?', a: 'Si tu cliente es un armador extranjero que te contrata por relación y por agencia, la web no te trae contratos: te confirma que existes y que eres serio. Con un sitio institucional sobrio, en inglés, cumples. La inversión mayor se justifica cuando quieres captar clientes nuevos que no te conocen.' },
         ],
       },
       {
@@ -354,6 +358,8 @@ export const industrias3: PageData[] = [
           { q: '¿Debo publicar los estados financieros?', a: 'Es exactamente lo que un socio-dueño espera poder revisar antes de afiliarse. Publicar memorias, estados y convocatorias no es una obligación incómoda: es la prueba visible de que la cooperativa funciona como dice.' },
           { q: '¿Qué datos debe pedir la solicitud en línea?', a: 'El mínimo en el primer paso: nombre, monto, plazo y contacto. Un formulario que exige la vida completa antes de dar respuesta convierte mal y acumula información sensible bajo la Ley 81 de 2019 que después hay que custodiar.' },
           { q: '¿La web sirve también para el socio actual?', a: 'Es a quien menos atienden las webs del rubro y el que más la usaría: consultar estado, pagar, ver convocatorias y resolver trámites sin ir a la sucursal. Cada trámite resuelto en línea es tiempo de ejecutivo liberado.' },
+          { q: '¿Cuánto cuesta la web de una cooperativa de ahorro y crédito?', a: 'Un sitio institucional con productos, requisitos y afiliación entra en 8 a 12 páginas desde $950. Si necesitas simulador de préstamos, consulta de saldo o conexión con tu core financiero, es proyecto a medida desde $2,900. Infraestructura desde $350 al año y mantenimiento desde $59 al mes, que en una entidad financiera no es opcional. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene rehacer la web de la cooperativa?', a: 'Si el sitio actual funciona y lo que falta es que los requisitos estén claros y actualizados, eso es contenido, no rediseño: cuesta menos y rinde más. Rehacerlo se justifica cuando el asociado no encuentra lo que busca, cuando no se ve bien en celular, o cuando el sitio ya no se puede actualizar sin ayuda técnica.' },
         ],
       },
       {
@@ -474,6 +480,8 @@ export const industrias3: PageData[] = [
           { q: '¿Qué contenido trae clientes en este rubro?', a: 'El del consumo eléctrico. Cuánto consume un equipo según capacidad, qué diferencia hace un inverter, cuánto se ahorra de verdad, cada cuánto limpiar para no gastar de más. Mucho volumen de búsqueda y casi ninguna competencia bien hecha.' },
           { q: '¿Debo publicar el precio de la visita?', a: 'Al menos el de diagnóstico. Es la primera pregunta en una emergencia y no responderla hace que el cliente llame al siguiente. Además filtra al que buscaba una opinión gratis por teléfono.' },
           { q: '¿Cuál es la métrica más importante?', a: 'Qué porcentaje de los clientes de emergencia terminó firmando un contrato de mantenimiento. Casi nadie la tiene, y cuando es baja el problema casi nunca es el precio del plan: es que nadie volvió a contactar al cliente después de la reparación.' },
+          { q: '¿Cuánto cuesta la web de una empresa de aire acondicionado?', a: 'Este rubro se decide por urgencia: el cliente busca, llama y contrata. Para eso una landing enfocada en la llamada resuelve, desde $550. Si vendes equipos además del servicio, o das mantenimiento por contrato a empresas, conviene el sitio de 8 a 12 páginas desde $950 con una página por tipo de servicio. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO te conviene la web todavía?', a: 'Si no puedes atender más trabajos de los que ya tienes, no abras la llave: vas a generar llamadas que no contestas y reseñas malas de gente que nunca fue tu cliente. Primero capacidad, después visibilidad.' },
         ],
       },
       {
@@ -594,6 +602,8 @@ export const industrias3: PageData[] = [
           { q: '¿Qué debe pedir el formulario de solicitud de propuesta?', a: 'Tipo de instalación, cantidad de puestos, turnos y ubicación. Con eso se puede armar una propuesta seria. Pedir menos genera un ida y vuelta que enfría; pedir mucho más hace que abandonen.' },
           { q: '¿Publico tarifas por puesto?', a: 'No suele convenir, porque el precio depende de turnos, riesgo y requisitos. Lo que sí conviene publicar es cómo se estructura el costo y qué incluye —supervisión, reemplazos, equipo— que es lo que un comprador necesita para comparar propuestas de forma justa.' },
           { q: '¿Qué mido si tengo dos negocios en la misma web?', a: 'Dos embudos separados: solicitudes de propuesta por tipo de cliente, y aplicaciones de empleo por zona. Si tienes plazas descubiertas y la web no genera aplicaciones, eso cuesta contratos, no solo tiempo de recursos humanos.' },
+          { q: '¿Cuánto cuesta la web de una empresa de seguridad?', a: 'Servicios, cobertura, certificaciones y contacto: 8 a 12 páginas desde $950. Si quieres portal de cliente para reportes de ronda o monitoreo, es proyecto a medida desde $2,900. Infraestructura desde $350 al año y mantenimiento desde $59 al mes. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene la web de vigilancia?', a: 'Si trabajas solo con contratos corporativos ganados por licitación, la web es respaldo, no captación: con un sitio institucional serio y actualizado cumples. Se vuelve canal de venta cuando buscas residenciales, comercios pequeños o servicios de custodia puntual, que sí se buscan en Google.' },
         ],
       },
       {
@@ -714,6 +724,8 @@ export const industrias3: PageData[] = [
           { q: '¿Cómo recibo archivos pesados?', a: 'Con un enlace de carga en la web asociado a la solicitud, no por WhatsApp, que comprime y arruina la calidad. Evita además que un arte de 200 MB termine perdido en el chat de alguien.' },
           { q: '¿Conviene una página por línea de producción?', a: 'Sí. "Impresión de vallas", "factureras", "rotulación de vehículos" y "banderolas para evento" son búsquedas distintas con volumen propio y poca competencia. Una lista con todo junto no compite en ninguna.' },
           { q: '¿Qué me diferencia de otra imprenta?', a: 'Si tienes cuadrilla de instalación, eso. Un cliente corporativo que necesita vallas montadas o una flota rotulada prefiere no coordinar dos proveedores, y casi ninguna imprenta lo comunica en su web.' },
+          { q: '¿Cuánto cuesta la web de una imprenta o agencia de publicidad?', a: 'Catálogo de productos con cotización en línea: si el cliente compra directo, es tienda desde $1,500. Si todo se cotiza a la medida (tirajes, materiales, acabados), un sitio de 8 a 12 páginas desde $950 con formulario de cotización te resuelve mejor. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene poner precios en la web?', a: 'Cuando cada trabajo depende del tiraje y del material: publicar un precio suelto te obliga a explicar después por qué el real es otro. Publica rangos o «desde», o pide los datos mínimos para cotizar en el formulario. Precios cerrados solo donde de verdad son cerrados.' },
         ],
       },
       {

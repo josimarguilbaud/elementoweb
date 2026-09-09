@@ -6,7 +6,7 @@ export const core: PageData[] = [
   /* ---------- CÓMO TRABAJAMOS ---------- */
   {
     slug: 'como-trabajamos',
-    title: 'Cómo Trabajamos: Precios, Pagos y Alcance Claros | Elemento Web',
+    title: 'Cómo Trabajamos: Precios y Alcance Claros | Elemento Web',
     description: 'Reglas claras desde el primer día: estructura de pago, qué necesitamos de ti, costos de terceros que pagas directo y qué no incluimos. Sin sorpresas.',
     h1: 'Reglas claras desde el primer día',
     breadcrumb: 'Cómo Trabajamos',

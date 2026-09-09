@@ -7,7 +7,7 @@ export const crecimiento: PageData[] = [
   /* ---------- HUB ---------- */
   {
     slug: 'crecimiento',
-    title: 'Crecimiento Digital en Panamá | SEO, Google Maps y Mantenimiento',
+    title: 'Crecimiento Digital en Panamá | SEO, Google Maps y Soporte',
     description: 'Servicios de crecimiento para tu web en Panamá: posicionamiento SEO, SEO local en Google Maps y mantenimiento con hosting gestionado.',
     h1: 'Tu web se lanzó. Ahora tiene que crecer.',
     breadcrumb: 'Crecimiento',
@@ -36,6 +36,8 @@ export const crecimiento: PageData[] = [
           { q: '¿Por dónde conviene empezar?', a: 'Casi siempre por el mantenimiento, porque protege lo que ya invertiste. Si tu negocio depende de que te encuentren en Google, arrancamos en paralelo con <a href="/crecimiento/seo-local-google-maps-panama/">SEO local</a> (resultados más rápidos) y luego sumamos el <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO orgánico</a> para las búsquedas competidas.' },
           { q: '¿Reciben reportes o hay que pedirlos?', a: 'Cada servicio con componente mensual entrega un reporte que un dueño entiende: posiciones, tráfico, llamadas o estado del sitio según el caso. Nada de capturas sueltas ni jerga para justificar la factura.' },
           { q: '¿Trabajan con negocios fuera de la ciudad de Panamá?', a: 'Sí. Atendemos clientes en todo el país por WhatsApp y videollamada. Para el SEO local ajustamos la estrategia a tu zona de cobertura, sea Chitré, David, Coronado o el área metropolitana.' },
+          { q: '¿Cuánto cuesta mantener y hacer crecer un sitio al mes?', a: 'El mantenimiento arranca en $59 al mes e incluye actualizaciones, respaldos y monitoreo. La infraestructura (dominio, hosting cloud y SSL) va desde $350 al año, o $225 al año en el plan compartido. El SEO se cotiza por alcance, no por paquete cerrado, porque depende de cuántas búsquedas quieras disputar. Todos los precios son en dólares y no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO vale la pena invertir en crecimiento todavía?', a: 'Cuando el sitio aún no existe o está por rehacerse: posicionar una página que vas a botar en tres meses es tirar el trabajo. Tampoco conviene si tu negocio no tiene capacidad de atender más clientes; primero se arregla la operación y después se le abre la llave al tráfico. Y si todo tu negocio entra por referidos y no piensas cambiar eso, el mantenimiento sí, el SEO puede esperar.' },
         ],
       },
       {
@@ -74,6 +76,7 @@ export const crecimiento: PageData[] = [
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño Web' },
           { slug: 'blog', label: 'Blog' },
           { slug: 'servicios', label: 'Servicios de diseño web' },
+          { slug: 'blog/optimizar-google-business-profile-panama', label: 'Optimizar tu ficha de Google' },
         ],
       },
     ],
@@ -167,6 +170,8 @@ export const crecimiento: PageData[] = [
           { q: '¿Alguien puede garantizarme el primer lugar en Google?', a: 'No. Nadie fuera de Google decide ese orden. Lo que sí se puede comprometer es el trabajo y sus señales: qué se audita, qué se corrige, cuánto contenido se publica y qué se reporta. La alarma es quien no te explica qué va a hacer.' },
           { q: '¿Las respuestas de IA matan el SEO?', a: 'Cambian qué contenido rinde. Un texto que da vueltas antes de responder no se cita; una respuesta directa, cerrada y verificable sí. Por eso el formato de pregunta y respuesta, las comparativas con criterio y los datos concretos rinden más que el artículo largo que rodea el tema.' },
           { q: '¿Debo medir mi posición en Google?', a: 'Es la métrica más engañosa: varía por dispositivo, ubicación e historial de quien busca. Mide tráfico orgánico, de qué página vino cada contacto, y cuántas páginas distintas reciben visitas. Si todo entra por dos páginas, el sitio es frágil.' },
+          { q: '¿Qué gastos fijos hay que sostener además del SEO?', a: 'El SEO se cotiza por alcance porque no cuesta lo mismo disputar «diseño web Panamá» que «taller de aire acondicionado en David». Lo que sí es fijo: la infraestructura desde $350 al año y el mantenimiento desde $59 al mes, que es la base sobre la que el SEO se sostiene. Los precios no incluyen ITBMS (7%). Las posiciones competidas toman de 3 a 6 meses de trabajo constante.' },
+          { q: '¿Cuándo NO conviene contratar SEO?', a: 'Cuando necesitas ventas este mes: para eso está la pauta, que compra visibilidad hoy. El SEO la abarata después, no la reemplaza al inicio. Tampoco conviene sobre un sitio que vas a rehacer, ni cuando el negocio no puede atender más volumen del que ya tiene.' },
         ],
       },
       {
@@ -214,6 +219,8 @@ export const crecimiento: PageData[] = [
           { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local' },
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño Web' },
           { slug: 'blog', label: 'Blog' },
+          { slug: 'blog/como-elegir-palabras-clave-seo-panama', label: 'Elegir palabras clave' },
+          { slug: 'blog/por-que-mi-pagina-no-aparece-en-google', label: 'Por qué no apareces en Google' },
         ],
       },
     ],
@@ -311,6 +318,8 @@ export const crecimiento: PageData[] = [
           { q: '¿Puedo aparecer en el mapa en toda la ciudad?', a: 'Es muy difícil: la búsqueda local funciona por proximidad y compites contra los de tu radio, no contra todos. Si tienes varias sedes, cada una necesita ficha y página propias. Lo que extiende el radio es el contenido por zona.' },
           { q: '¿Sirve comprar reseñas?', a: 'Google detecta los patrones —muchas de golpe, cuentas sin historial, textos parecidos— y la consecuencia va desde borrarlas hasta suspender la ficha, lo que te deja fuera del mapa. Lo que funciona es pedirlas justo después de un servicio bien resuelto, con enlace directo.' },
           { q: '¿Qué mido en Google Business Profile?', a: 'Llamadas, solicitudes de ruta y clics a la web: los dos primeros son intención casi pura, porque nadie pide cómo llegar a un negocio que no piensa visitar. Y cuántos te encontraron buscando lo que vendes en vez de tu nombre, que es el cliente nuevo.' },
+          { q: '¿En cuánto tiempo se ve resultado en el mapa?', a: 'La ficha de Google Business Profile es gratis: el costo está en el trabajo de optimizarla y sostenerla. El SEO local suele mover el mapa antes que el SEO orgánico: las primeras señales aparecen en semanas, no en los 3 a 6 meses que toma competir por búsquedas nacionales. Ayuda tener el sitio rápido: Google mide LCP por debajo de 2,5 segundos, INP por debajo de 200 milisegundos y CLS por debajo de 0,1.' },
+          { q: '¿Cuándo NO te sirve el SEO local?', a: 'Si vendes en línea a todo el país o al exterior y no te importa de qué barrio viene el cliente, el mapa no es tu pelea: te conviene SEO orgánico y pauta. Tampoco funciona sin dirección física verificable o sin alguien que atienda el teléfono: Google Maps manda llamadas, y una llamada sin responder es peor que no aparecer.' },
         ],
       },
       {
@@ -349,6 +358,7 @@ export const crecimiento: PageData[] = [
           { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Web para Restaurantes' },
           { slug: 'industrias/diseno-web-clinicas-salud-panama', label: 'Web para Clínicas' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
+          { slug: 'blog/optimizar-google-business-profile-panama', label: 'Optimizar tu ficha de Google' },
         ],
       },
     ],
@@ -452,6 +462,7 @@ export const crecimiento: PageData[] = [
           { q: '¿Mi hosting ya hace respaldos, no basta con eso?', a: 'Solo si alguien lo ha restaurado alguna vez. Los fallos típicos: guarda archivos pero no la base de datos, vive en el mismo servidor que se cayó, o solo tiene el último día cuando el problema empezó hace dos semanas. Un respaldo sin probar es una suposición, no un seguro.' },
           { q: '¿Qué diferencia hay entre un hosting barato y uno bueno?', a: 'Menos la velocidad y más qué pasa cuando algo falla. En el compartido barato convives con cientos de sitios y el soporte responde en días. Un sitio caído un fin de semana largo son tres días sin un solo contacto, que suele valer más que la diferencia de precio anual.' },
           { q: '¿Cómo sé que el mantenimiento se está haciendo?', a: 'Con el registro de actualizaciones aplicadas al mes indicando cuáles eran de seguridad, el tiempo caído medido, la velocidad en celular y la fecha de la última restauración de prueba. Sin eso, es una factura mensual sin trabajo verificable detrás.' },
+          { q: '¿Cuándo NO necesitas contratar mantenimiento con nosotros?', a: 'Si tu sitio es estático, no tiene panel ni formularios y alguien de tu equipo sabe renovar el dominio y el certificado, puedes vivir sin plan mensual. También si tu proveedor actual ya lo cubre: pagar dos veces por lo mismo no mejora nada. Lo que no recomendamos es dejarlo sin dueño: un WordPress sin actualizar termina comprometido, y recuperarlo cuesta más que el plan de $59 al mes.' },
         ],
       },
       {
@@ -485,6 +496,7 @@ export const crecimiento: PageData[] = [
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño Web' },
           { slug: 'tecnologias/diseno-web-wordpress-panama', label: 'WordPress' },
           { slug: 'blog/hosting-panama-evitar-hosting-barato', label: 'Por qué evitar el hosting barato' },
+          { slug: 'blog/como-elegir-el-dominio-web-perfecto', label: 'Cómo elegir tu dominio' },
         ],
       },
     ],

@@ -9,8 +9,8 @@ export const industriasPages: PageData[] = [
   /* ---------- HUB ---------- */
   {
     slug: 'industrias',
-    title: 'Diseño Web por Industria en Panamá | 24 Especialistas por Nicho',
-    description: 'Diseño web especializado por industria en Panamá: abogados, contadores, bienes raíces, restaurantes, turismo, clínicas, dentistas, constructoras, seguros, retail y muchas más.',
+    title: 'Diseño Web por Industria en Panamá | 30 Nichos Cubiertos',
+    description: 'Diseño web por industria en Panamá: abogados, contadores, bienes raíces, restaurantes, turismo, clínicas, constructoras, retail y 22 nichos más.',
     h1: 'Diseño web por industria',
     breadcrumb: 'Industrias',
     lead: [
@@ -89,6 +89,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Los precios varían por industria?', a: 'No: los rangos son los mismos (landing desde $550, corporativa desde $950, e-commerce desde $1,500). Lo que varía es el alcance funcional que cada rubro suele necesitar.' },
           { q: '¿Cómo saben qué necesita mi industria si no me conocen todavía?', a: 'Partimos de lo acumulado en cada sector y lo afinamos contigo en el diagnóstico. Tú conoces tu negocio mejor que nadie; nosotros sabemos cómo se traduce eso en una web que posiciona y convierte. El cruce de ambos es lo que arma la estructura correcta.' },
           { q: '¿Y si mi negocio encaja en dos industrias a la vez?', a: 'Pasa seguido: una constructora que también vende como inmobiliaria, un spa que además tiene tienda de productos. Tomamos las funciones que cada faceta necesita y las combinamos en un solo sitio coherente, sin duplicar ni forzar plantillas.' },
+          { q: '¿Cuánto cuesta la web de mi rubro?', a: 'El rubro cambia el contenido y la estructura, no la lista de precios: landing desde $550, sitio de 8 a 12 páginas desde $950, tienda desde $1,500 y proyecto a medida desde $2,900. Lo que cambia entre una firma legal y un restaurante es qué páginas necesitas y en qué orden aparecen, no la tarifa. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Y si mi industria no está en la lista?', a: 'La atendemos igual. Estas treinta páginas son los rubros donde ya conocemos el terreno y podemos mostrarlo por escrito; no son un límite de a quién le trabajamos. En la primera conversación hacemos con tu rubro lo mismo que hicimos con estos: entender qué pregunta tu cliente antes de decidir.' },
         ],
       },
       {
@@ -237,6 +239,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Conviene publicar el precio de la consulta inicial?', a: 'Sí. Filtra a quien buscaba asesoría gratis y le da al cliente serio la expectativa clara que quiere antes de escribirle a un abogado que no conoce. Es el filtro más barato que existe.' },
           { q: '¿Dónde deben llegar los mensajes del formulario?', a: 'A un buzón de la firma con acceso controlado, nunca a un correo personal compartido. Al secreto profesional se le suma la Ley 81 de 2019, y una web que promete confidencialidad mientras manda los datos a un Gmail compartido no sostiene la promesa.' },
           { q: '¿Sirve una web si la firma capta por referidos?', a: 'El referido igual te busca antes de llamar: quiere ver quién eres, tu idoneidad y tu área. Una web floja no impide la llamada, pero le quita fuerza a la recomendación. Y el contenido de trámites capta a quien no tiene quién lo refiera.' },
+          { q: '¿Qué diferencia hay entre el sitio de un abogado solo y el de una firma?', a: 'Una firma necesita una página por área de práctica, y eso es un sitio de 8 a 12 páginas: desde $950. Si además quieres portal de clientes o intranet para expedientes, se va a proyecto a medida, desde $2,900. Súmale la infraestructura, desde $350 al año, y mantenimiento desde $59 al mes. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO le conviene una web a un abogado?', a: 'Si toda tu cartera llega por referidos de colegas y no piensas atender público nuevo, la web es tarjeta de presentación, no motor de clientes: con una landing de $550 cumples. La inversión completa se justifica cuando quieres que te encuentren por área de práctica, que es cuando el cliente busca «abogado de familia en Panamá» sin conocerte.' },
         ],
       },
       {
@@ -386,6 +390,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Debo publicar el precio de las propiedades?', a: 'Sí. "Precio a consultar" hace que la mayoría siga de largo, y los pocos que escriben lo hacen solo para preguntarlo, quemando el día de tu equipo. El precio filtra y atrae al comprador que sí está en rango.' },
           { q: '¿Sirve tener la web en inglés?', a: 'Para el comprador extranjero, que es el de mayor ticket, sí. Busca en inglés, decide a distancia y pregunta por el proceso —si puede comprar a su nombre, impuestos, fideicomiso, traspaso— más que por la propiedad. Casi ninguna inmobiliaria panameña compite ahí.' },
           { q: '¿Qué debe llevar una ficha de propiedad?', a: 'Precio visible, metraje desglosado, piso, orientación, cuota de mantenimiento, amenidades, estado de entrega, plano y muchas fotos con buena luz. La cuota de mantenimiento es la pregunta silenciosa de todo comprador de PH y casi nunca aparece.' },
+          { q: '¿Qué diferencia hay entre la web de un corredor y la de una inmobiliaria?', a: 'Un corredor independiente con propiedades destacadas y captación de contactos resuelve con 8 a 12 páginas desde $950. Una inmobiliaria con catálogo real, buscador por zona y precio, y fichas que se actualizan solas es proyecto a medida desde $2,900. El pago va 50/30/20 y los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene una web propia en bienes raíces?', a: 'Si publicas en Encuentra24 o Compreoalquile y de ahí te llega todo, la web no te va a traer más listados de inmediato. Se justifica cuando quieres que el comprador te busque a ti por nombre en vez de comparar tu anuncio contra veinte iguales, y cuando ya tienes cartera que mostrar.' },
         ],
       },
       {
@@ -535,6 +541,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Qué es más importante, la web o Google Maps?', a: 'El mapa trae y la web convierte. La búsqueda de restaurante ocurre casi siempre en Maps, mirando fotos, precio y reseñas sin entrar a ninguna web. Tu ficha con fotos propias recientes, horario real y reseñas respondidas pesa más que el sitio.' },
           { q: '¿Por qué no debo tener el menú en PDF?', a: 'Porque se ve en el celular y un PDF obliga a descargar, ampliar y arrastrar. Además no lo lee Google, así que ninguno de tus platos aparece en búsquedas. Un menú en la propia web carga rápido, se actualiza en minutos y sí posiciona.' },
           { q: '¿Vale la pena una página para grupos y eventos?', a: 'Es donde está el ticket alto sin comisión. Ese cliente busca "restaurante para grupos" y necesita saber capacidad, si hay salón privado, menús cerrados con precio por persona y si hay depósito. Casi ningún restaurante lo publica, y esas reservas se van a quien sí.' },
+          { q: '¿Cuándo NO conviene montar delivery propio?', a: 'Si tu volumen no paga a alguien que reparta, las plataformas te salen más baratas aunque cobren comisión: ellas ponen la flota y la demanda. El delivery propio empieza a convenir cuando ya tienes clientes que te piden directo y la comisión que pagas al mes supera lo que costaría manejarlo tú.' },
+          { q: '¿Cómo se paga y qué hay que mantener después?', a: 'El pago va 50% para arrancar, 30% al ver el sitio funcionando en demo y 20% para publicar, con 30 días de garantía por fallas técnicas. Después, infraestructura desde $350 al año y mantenimiento desde $59 al mes, que en un restaurante importa porque el menú y los precios cambian. Los precios no incluyen ITBMS (7%).' },
         ],
       },
       {
@@ -684,6 +692,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Cómo hago que reserven directo si el precio es el mismo?', a: 'Tiene que haber una razón concreta: mejor tarifa, salida tardía, algo incluido. Si tu web cuesta lo mismo que la OTA sin ninguna ventaja, el huésped reserva donde ya tiene la tarjeta guardada, y con razón.' },
           { q: '¿Importa responder las reseñas?', a: 'Es lo que más pesa cuando dos hoteles tienen la misma nota. Una respuesta calmada y concreta a una queja legítima comunica más sobre la gestión que veinte reseñas de cinco estrellas. Lo que resta es la respuesta de plantilla repetida quince veces.' },
           { q: '¿Cuándo publico las promociones de temporada?', a: 'Semanas antes, no durante. El viajero panameño del fin de semana largo busca con dos o tres semanas de anticipación, y publicar la promoción de carnaval en carnaval llega cuando el posicionamiento ya tenía que estar hecho.' },
+          { q: '¿Qué le agrega el motor de reservas propio?', a: 'Habitaciones, servicios, galería y solicitud de reserva: 8 a 12 páginas desde $950. Con motor de reservas propio, calendario de disponibilidad y cobro anticipado, es proyecto a medida desde $2,900, y ahí es donde dejas de pagar comisión por cada noche. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene el motor de reservas propio?', a: 'Si llenas por Booking y tu ocupación depende de esa visibilidad, quitarte de ahí te cuesta más de lo que ahorras en comisión. El motor propio se paga cuando ya tienes huéspedes que vuelven y te escriben directo: ahí cada reserva sin comisión es margen limpio.' },
         ],
       },
       {
@@ -833,6 +843,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Qué pasa con los datos que el paciente escribe en el formulario?', a: 'Son datos sensibles bajo la Ley 81 de 2019. Montamos el sitio en HTTPS, el formulario con aviso de privacidad y el almacenamiento con acceso controlado, en un buzón de la clínica y no en un correo personal. El texto legal lo revisa tu asesor.' },
           { q: 'Tenemos varias sedes, ¿una web o una por sede?', a: 'Una web con página propia por sede: dirección, horario, teléfono, especialidades que se atienden ahí y su ficha de Google. En salud la cercanía decide, y una página que mencione todas las sedes no posiciona en ninguna zona.' },
           { q: '¿Debemos publicar los precios de consulta?', a: 'Al menos el de la consulta inicial y la lista de seguros aceptados. Es la primera pregunta que hace el paciente panameño y esconderla hace que asuma lo peor y siga buscando. Los tratamientos que varían por caso pueden ir con un "desde".' },
+          { q: '¿Qué cambia entre la web de un consultorio y la de una clínica?', a: 'Un consultorio con especialidades, equipo médico y solicitud de cita entra en 8 a 12 páginas desde $950. Una clínica con varias especialidades, agenda por médico y recordatorios automáticos es proyecto a medida desde $2,900. Infraestructura desde $350 al año, mantenimiento desde $59 al mes, y los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene la web de una clínica?', a: 'Si atiendes solo por seguro y tu volumen te lo manda la aseguradora, la web es respaldo institucional, no captación. Ahí basta con algo simple y correcto. La inversión completa se paga cuando buscas paciente privado, que sí llega buscando en Google y compara antes de llamar.' },
         ],
       },
       {
@@ -982,6 +994,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Publico el plan de pagos?', a: 'Con porcentajes y fechas. El comprador de preventa evalúa flujo de caja, no precio total. Un plan claro filtra a quien no puede sostenerlo y acelera la decisión de quien sí, sobre todo si compra desde fuera del país.' },
           { q: '¿Qué hago con la web cuando el proyecto se vendió?', a: 'No la apagues. Los propietarios son tu mejor fuente de referidos para el próximo proyecto, y un área de propietario con documentos, garantías y postventa evita que todo termine en un grupo de WhatsApp donde nada queda registrado.' },
           { q: '¿Vale la pena tener contenido para el comprador extranjero?', a: 'Es el de mayor ticket en playa y zonas premium, y decide entero desde la web. Necesita video del avance, plano descargable, plan de pagos y una explicación del marco: compra a nombre propio, fideicomiso, financiamiento para no residentes y traspaso.' },
+          { q: '¿Cuándo NO le urge la web a una constructora?', a: 'Si trabajas solo por licitación pública, tu cliente te evalúa por expediente, no por página. Ahí la web es respaldo de seriedad y con algo sobrio cumples. Se vuelve importante cuando vas por obra privada, donde el dueño sí te busca, te compara y decide en buena parte por lo que ve.' },
+          { q: '¿Cómo se paga el proyecto y qué queda incluido?', a: 'Igual que una obra: por avance. 50% para arrancar, 30% al ver el sitio completo funcionando en demo y 20% para publicar. Incluye la estructura institucional y las páginas de proyecto, con 30 días de garantía por fallas técnicas. La infraestructura corre desde $350 al año y el mantenimiento desde $59 al mes. Los precios no incluyen ITBMS (7%).' },
         ],
       },
       {
@@ -1131,6 +1145,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Qué cuidado hay que tener con las fotos de los alumnos?', a: 'Son datos de menores y el consentimiento lo da el padre o tutor. Conviene que sea específico para publicación, renovable y revocable, no un párrafo firmado al matricular hace ocho años. Y que exista una forma simple de retirar a un alumno si la familia lo pide.' },
           { q: '¿Cuándo debe estar lista la web para admisiones?', a: 'Antes de que abra la ventana, no durante. Las solicitudes se concentran en pocas semanas del calendario y llegar tarde a esa ventana cuesta un año entero de matrícula.' },
           { q: '¿Conviene decir para qué tipo de familia es el colegio?', a: 'Sí, aunque asuste. Ser claro sobre el proyecto educativo atrae a las familias que encajan y evita las matrículas que se caen en el segundo trimestre, que salen mucho más caras que la que nunca llegó.' },
+          { q: '¿Qué le agrega al proyecto un portal de padres?', a: 'Oferta académica, admisiones, calendario y contacto: 8 a 12 páginas desde $950 cubren a la mayoría de los colegios. Si necesitas portal de padres, pago de matrícula en línea o inscripción con documentos, es proyecto a medida desde $2,900. El pago va 50% para arrancar, 30% al verlo en demo y 20% para publicar. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene rehacer la web del colegio?', a: 'A mitad del período de admisiones. Mover URLs justo cuando los padres están buscando es el peor momento posible: hazlo en temporada baja. Y si el problema es que la información está vieja, eso se arregla actualizando, no rediseñando.' },
         ],
       },
       {
@@ -1280,6 +1296,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Qué es lo que más frena una compra de ropa online?', a: '"¿Y si no me queda?". Se resuelve publicando la política de cambios de forma concreta —días, si es por talla o devolución, quién paga el envío, qué está excluido— y una guía de tallas con medidas reales en centímetros, no una tabla genérica.' },
           { q: '¿Es obligatorio tener Yappy?', a: 'En la práctica sí. Para buena parte del país es la forma natural de pagar, y su ausencia manda a la clienta de vuelta al mensaje directo, que es justo lo que la tienda venía a evitar. Con Yappy y tarjeta cubres casi todo el mercado.' },
           { q: '¿Qué hago con el costo de envío?', a: 'Mostrarlo antes del checkout, nunca al final. El envío que aparece de sorpresa en el último paso es una de las principales causas de carrito abandonado en Panamá, sobre todo en entregas a provincias sin plazo especificado.' },
+          { q: '¿Conviene arrancar con tienda completa o con catálogo?', a: 'Catálogo, carrito, Yappy, pasarelas locales, inventario y envíos: desde $1,500. Si tu catálogo es chico y vendes por Instagram, una landing con catálogo y botón de pago desde $550 te deja vendiendo antes. A eso súmale la infraestructura desde $350 al año. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene abrir tienda en línea?', a: 'Si no tienes fotos propias de producto ni quién despache los pedidos el mismo día, la tienda te va a generar reclamos, no ventas. Primero resuelve foto y logística; el carrito es la parte fácil.' },
         ],
       },
       {
@@ -1429,6 +1447,7 @@ export const industriasPages: PageData[] = [
           { q: '¿Cómo debe funcionar el pase de prueba?', a: 'Reservable desde la web con día y hora, sin hablar con nadie. Pedir que llame para "coordinar la visita" significa que un vendedor va a intentar cerrarlo antes de dejarlo entrenar, y mucha gente prefiere no ir. La venta convierte mejor después de la experiencia.' },
           { q: '¿Cuándo hay que preparar la temporada de enero?', a: 'En noviembre. Una página publicada el 2 de enero no compite en la búsqueda del 3: el posicionamiento tarda. El contenido que esa gente busca —planes, precios, cómo empezar sin experiencia— tiene que estar arriba antes de que arranque la temporada.' },
           { q: '¿Qué mido además de las inscripciones?', a: 'La permanencia a tres y seis meses, y el motivo de cancelación. Si la gente cancela por horario de clases o congestión a hora pico, eso se arregla operativamente y vale más que cualquier campaña. El negocio no está en captar, está en el mes seis.' },
+          { q: '¿Cuándo NO conviene la web del gimnasio?', a: 'Si tu captación es 100% del barrio y de gente que pasa por el frente, la web no te va a cambiar el mes: te sirve más una ficha de Google bien trabajada, que es gratis. El sitio se paga cuando vendes planes anuales, corporativos, o cuando compites contra cadenas por la misma búsqueda.' },
         ],
       },
       {
@@ -1578,6 +1597,7 @@ export const industriasPages: PageData[] = [
           { q: '¿Conviene explicar la diferencia entre repuesto original y alterno?', a: 'Es lo que más te diferencia. El cliente que entiende las opciones acepta mejor un presupuesto alto porque sabe qué paga; el que no entiende solo compara números y ahí gana el más barato. En un rubro donde nadie explica, ser el que explica vale más que la publicidad.' },
           { q: '¿Publico la garantía del trabajo?', a: 'Si la das y no la dices, estás regalando tu mejor argumento. Tiempo o kilometraje, y qué cubre exactamente. Es de las cosas que más separan a un taller serio de uno informal a ojos del cliente.' },
           { q: '¿Me conviene decir que atiendo todas las marcas?', a: 'Nadie busca "mecánica general". Buscan "taller Toyota Panamá", "especialista en cajas automáticas", "mecánico de diésel". Una página por especialidad captura esas búsquedas y trae clientes que comparan menos por precio, sin que dejes de atender todo lo demás.' },
+          { q: '¿Conviene una landing o un sitio con página por servicio?', a: 'La mayoría de los talleres resuelve con una landing enfocada en la llamada y la ubicación, desde $550. Si tienes varias especialidades (mecánica, latonería, aire, llantas) y quieres posicionar cada una, conviene el sitio de 8 a 12 páginas desde $950, con una página por servicio. Los precios no incluyen ITBMS (7%).' },
         ],
       },
       {
@@ -1727,6 +1747,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Pedir depósito para reservar no espanta clientas?', a: 'Espanta a la que iba a faltar, que es justo el objetivo. La que valora tu tiempo lo paga sin pensarlo. Conviene aplicarlo a los servicios largos o de ticket alto, donde el hueco de dos horas un sábado duele de verdad.' },
           { q: '¿Publico los precios de todos los servicios?', a: 'Al menos un "desde" en los principales. Es la primera pregunta que llega por mensaje y publicarla filtra a quien nunca iba a reservar, además de ahorrarle horas a tu equipo. Los servicios que varían mucho por caso pueden ir con rango.' },
           { q: '¿Conviene reservar por estilista o solo por servicio?', a: 'Por estilista siempre que se pueda: en belleza la clienta vuelve por la persona, no por el local. Poder elegir a quién la atiende sube la recurrencia y hace mucho más difícil que se vaya si esa persona tiene agenda llena.' },
+          { q: '¿Qué cambia el precio: las reservas o la cantidad de sedes?', a: 'Un sitio con servicios, precios y agenda en línea entra en 8 a 12 páginas desde $950. Si tienes varias sedes o profesionales con horarios distintos y cobro anticipado, es proyecto a medida desde $2,900. El mantenimiento arranca en $59 al mes, y los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO te conviene poner reservas en línea?', a: 'Si tu agenda ya se llena por WhatsApp y tu clienta prefiere escribirte, la reserva automática le agrega un paso que no pidió. La agenda en línea gana cuando pierdes citas fuera de horario, o cuando el ir y venir de mensajes para cuadrar una hora te está comiendo el día.' },
         ],
       },
       {
@@ -1876,6 +1898,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Necesito rastreo en tiempo real?', a: 'No hace falta integración con GPS. Basta con que el cliente entre con su referencia y vea estado y fecha estimada. Eso elimina la mayoría de los "¿dónde está mi carga?" que hoy consumen una persona completa, y te da recurrencia de visitas que el competidor no tiene.' },
           { q: '¿Qué pesa más que el precio para un comprador B2B?', a: 'La evidencia de respaldo. Si el seguro de carga está incluido, qué cubre y hasta qué monto, qué pasa en un siniestro y cuánto tarda. Casi ningún operador panameño lo explica en su web y es justo lo que se pregunta en la primera llamada.' },
           { q: '¿Cuál es el número más importante que puedo medir?', a: 'El tiempo hasta la primera respuesta de una cotización. En flete, responder en cuatro horas contra veinticuatro cambia la tasa de cierre de forma dramática, porque el comprador decide con las primeras cotizaciones que recibe.' },
+          { q: '¿Qué le agrega al proyecto el rastreo de envío?', a: 'Servicios, cobertura, flota y contacto: 8 a 12 páginas desde $950. Si necesitas rastreo de envío, cotizador por peso y destino o conexión con tu sistema de operaciones, es proyecto a medida desde $2,900. El pago va 50/30/20 con 30 días de garantía por fallas técnicas. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene invertir en la web logística?', a: 'Si operas B2B con contratos anuales y tu venta es de relación y licitación, la web es respaldo de seriedad, no canal de entrada. Se vuelve canal cuando quieres carga suelta, mudanzas o última milla, donde el cliente sí busca y compara en Google.' },
         ],
       },
       {

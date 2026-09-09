@@ -69,7 +69,7 @@ const { blocks } = Astro.props;
         <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {b.items.map((it, i) => (
             <article class="reveal group rounded-3xl border border-ink/10 bg-white p-7 transition-colors duration-500 hover:border-transparent hover:bg-night hover:text-white">
-              <div class="font-display text-4xl font-extrabold text-ink/10 transition-colors duration-500 group-hover:text-teal">0{i + 1}</div>
+              <div class="font-display text-4xl font-extrabold text-ink/10 transition-colors duration-500 group-hover:text-teal">{String(i + 1).padStart(2, '0')}</div>
               <h3 class="mt-4 font-display text-lg font-bold text-ink transition-colors duration-500 group-hover:text-white">{it.h3}</h3>
               <p class="mt-2 text-sm leading-relaxed text-ink/55 transition-colors duration-500 group-hover:text-white/60" set:html={it.text}></p>
             </article>
@@ -88,7 +88,7 @@ const { blocks } = Astro.props;
         <div class="flex flex-col gap-3">
           {b.items.map((it, i) => (
             <details open={i === 0} class="group reveal rounded-2xl border border-ink/10 bg-white px-6 open:border-teal-deep/30">
-              <summary class="flex cursor-pointer list-none items-center gap-4 py-5 [&::-webkit-details-marker]:hidden"><span class="font-display text-sm font-bold text-teal-deep">0{i + 1}</span><span class="flex-1 font-display text-lg font-semibold text-ink">{it.q}</span><span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ink/15 transition-transform duration-300 group-open:rotate-45 group-open:border-teal-deep group-open:bg-teal-deep group-open:text-white"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg></span></summary>
+              <summary class="flex cursor-pointer list-none items-center gap-4 py-5 [&::-webkit-details-marker]:hidden"><span class="font-display text-sm font-bold text-teal-deep">{String(i + 1).padStart(2, '0')}</span><span class="flex-1 font-display text-lg font-semibold text-ink">{it.q}</span><span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ink/15 transition-transform duration-300 group-open:rotate-45 group-open:border-teal-deep group-open:bg-teal-deep group-open:text-white"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg></span></summary>
               <p class="rt pb-6 pl-9 leading-relaxed text-ink/60" set:html={it.a}></p>
             </details>
           ))}

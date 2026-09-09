@@ -8,9 +8,8 @@ export const blog7: PageData[] = [
   {
     slug: 'blog/diseno-web-responsive-mobile-first-panama',
     parent: { slug: 'blog', label: 'Blog' },
-    title: 'Diseño web responsive: por qué tu web debe pensarse primero para el celular',
-    description:
-      'Qué es el diseño web responsive y por qué en Panamá tu página debe diseñarse primero para el celular. Errores típicos en móvil y cómo lograr una web que carga y convierte en cualquier pantalla.',
+    title: 'Diseño web responsive: primero el celular',
+    description: 'Qué es el diseño web responsive y por qué en Panamá tu página debe pensarse primero para el celular. Errores típicos en móvil.',
     h1: 'Diseño web responsive: por qué tu web debe pensarse primero para el celular',
     breadcrumb: 'Diseño web responsive',
     category: 'Diseño web',
@@ -128,9 +127,8 @@ export const blog7: PageData[] = [
   {
     slug: 'blog/cuando-hacer-rediseno-pagina-web',
     parent: { slug: 'blog', label: 'Blog' },
-    title: 'Rediseño de página web: 8 señales de que tu sitio ya necesita uno',
-    description:
-      'Cómo saber cuándo hacer un rediseño de página web: 8 señales claras de que tu sitio quedó atrás, qué se puede conservar y cómo rediseñar sin perder tu posicionamiento en Google.',
+    title: 'Rediseño web: 8 señales de que tu sitio ya lo necesita',
+    description: 'Ocho señales de que tu sitio necesita rediseño, qué conviene conservar y cómo rehacerlo sin perder tu posicionamiento.',
     h1: 'Rediseño de página web: 8 señales de que tu sitio ya necesita uno',
     breadcrumb: 'Cuándo rediseñar tu web',
     category: 'Diseño web',
@@ -234,8 +232,7 @@ export const blog7: PageData[] = [
     slug: 'blog/landing-page-vs-sitio-web-cual-necesitas',
     parent: { slug: 'blog', label: 'Blog' },
     title: 'Landing page vs sitio web: cuál necesita tu negocio en Panamá',
-    description:
-      'Diferencias entre una landing page y un sitio web completo, cuándo conviene cada uno y cuánto cuestan en Panamá. Guía para elegir bien y no gastar de más ni quedarte corto.',
+    description: 'Landing page o sitio web: en qué se diferencian, cuándo conviene cada uno y cuánto cuestan en Panamá. Guía para elegir bien.',
     h1: 'Landing page vs sitio web: cuál necesita tu negocio',
     breadcrumb: 'Landing page vs sitio web',
     category: 'Diseño web',
@@ -343,9 +340,8 @@ export const blog7: PageData[] = [
   {
     slug: 'blog/como-aumentar-ventas-tienda-online-panama',
     parent: { slug: 'blog', label: 'Blog' },
-    title: 'Cómo aumentar las ventas de tu tienda online en Panamá: 9 tácticas que funcionan',
-    description:
-      'Nueve tácticas prácticas para aumentar las ventas de tu tienda online en Panamá: velocidad, pagos locales como Yappy, WhatsApp, recuperación de carritos y confianza. Guía aplicable hoy.',
+    title: 'Cómo aumentar las ventas de tu tienda online en Panamá',
+    description: 'Nueve tácticas para vender más en tu tienda online en Panamá: velocidad, Yappy, WhatsApp y recuperación de carritos.',
     h1: 'Cómo aumentar las ventas de tu tienda online en Panamá',
     breadcrumb: 'Aumentar ventas online',
     category: 'E-commerce',
@@ -449,9 +445,8 @@ export const blog7: PageData[] = [
   {
     slug: 'blog/carritos-abandonados-como-recuperar-ventas',
     parent: { slug: 'blog', label: 'Blog' },
-    title: 'Carritos abandonados: por qué pierdes ventas y cómo recuperarlas',
-    description:
-      'Por qué los clientes abandonan el carrito en tu tienda online y cómo recuperar esas ventas con recordatorios por WhatsApp y correo, checkout simple y pagos locales. Guía para Panamá.',
+    title: 'Carritos abandonados: cómo recuperar esas ventas',
+    description: 'Por qué se abandonan los carritos en Panamá y cómo recuperar esas ventas: recordatorios, checkout simple y pagos locales.',
     h1: 'Carritos abandonados: por qué pierdes ventas y cómo recuperarlas',
     breadcrumb: 'Carritos abandonados',
     category: 'E-commerce',
@@ -555,8 +550,7 @@ export const blog7: PageData[] = [
     slug: 'blog/como-elegir-palabras-clave-seo-panama',
     parent: { slug: 'blog', label: 'Blog' },
     title: 'Cómo elegir las palabras clave que sí traen clientes en Panamá',
-    description:
-      'Guía práctica para elegir palabras clave de SEO en Panamá: intención de búsqueda, palabras locales y de cola larga, y cómo asignarlas a cada página para atraer clientes que compran.',
+    description: 'Cómo elegir palabras clave de SEO en Panamá: intención de búsqueda, términos locales y de cola larga, y cómo asignarlas.',
     h1: 'Cómo elegir las palabras clave que sí traen clientes',
     breadcrumb: 'Palabras clave',
     category: 'SEO',
@@ -657,9 +651,8 @@ export const blog7: PageData[] = [
   {
     slug: 'blog/optimizar-google-business-profile-panama',
     parent: { slug: 'blog', label: 'Blog' },
-    title: 'Google Business Profile: cómo optimizar tu ficha para vender más en Panamá',
-    description:
-      'Cómo crear y optimizar tu ficha de Google Business Profile en Panamá para aparecer en Google Maps, ganar reseñas y atraer clientes de tu zona. Guía paso a paso y errores a evitar.',
+    title: 'Google Business Profile: optimiza tu ficha en Panamá',
+    description: 'Cómo optimizar tu ficha de Google Business Profile en Panamá para aparecer en Maps, ganar reseñas y atraer clientes de tu zona.',
     h1: 'Google Business Profile: cómo optimizar tu ficha para vender más',
     breadcrumb: 'Google Business Profile',
     category: 'SEO',
@@ -767,9 +760,8 @@ export const blog7: PageData[] = [
   {
     slug: 'blog/embudo-de-ventas-para-negocios-panama',
     parent: { slug: 'blog', label: 'Blog' },
-    title: 'Embudo de ventas: cómo convertir visitas en clientes paso a paso',
-    description:
-      'Qué es un embudo de ventas y cómo construir uno para tu negocio en Panamá: de la atracción al cierre y la fidelización, con web, WhatsApp y automatización. Guía práctica con ejemplos.',
+    title: 'Embudo de ventas: de visita a cliente, paso a paso',
+    description: 'Qué es un embudo de ventas y cómo construir uno en Panamá: de la atracción al cierre, con web, WhatsApp y automatización.',
     h1: 'Embudo de ventas: cómo convertir visitas en clientes',
     breadcrumb: 'Embudo de ventas',
     category: 'Marketing',
@@ -870,9 +862,8 @@ export const blog7: PageData[] = [
   {
     slug: 'blog/automatizar-seguimiento-clientes-panama',
     parent: { slug: 'blog', label: 'Blog' },
-    title: 'Cómo automatizar el seguimiento de clientes y dejar de perder ventas',
-    description:
-      'Guía para automatizar el seguimiento (follow-up) de clientes en Panamá con WhatsApp, CRM y flujos automáticos. Deja de perder ventas por olvido y cierra más sin contratar más gente.',
+    title: 'Cómo automatizar el seguimiento de clientes en Panamá',
+    description: 'Cómo automatizar el seguimiento de clientes en Panamá con WhatsApp, CRM y flujos automáticos. Deja de perder ventas por olvido.',
     h1: 'Cómo automatizar el seguimiento de clientes y dejar de perder ventas',
     breadcrumb: 'Automatizar seguimiento',
     category: 'IA y Automatización',

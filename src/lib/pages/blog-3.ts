@@ -134,7 +134,7 @@ export const blog3: PageData[] = [
     slug: 'blog/que-es-el-seo-local-y-google-maps-panama',
     parent,
     title: 'Qué es el SEO local y cómo dominar Google Maps en Panamá',
-    description: 'Aprende qué es el SEO local, cómo optimizar tu Google Business Profile y aparecer en el mapa cuando buscan "cerca de mí" en Panamá. Guía práctica paso a paso.',
+    description: 'Qué es el SEO local y cómo aparecer en el mapa cuando alguien busca "cerca de mí" en Panamá. Guía práctica paso a paso.',
     h1: 'SEO local: cómo aparecer en Google Maps cuando te buscan cerca',
     breadcrumb: 'SEO local y Google Maps',
     category: 'SEO',
@@ -459,7 +459,7 @@ export const blog3: PageData[] = [
   {
     slug: 'blog/por-que-mi-pagina-no-aparece-en-google',
     parent,
-    title: '¿Por qué mi página no aparece en Google? 8 razones y soluciones',
+    title: '¿Por qué mi página no aparece en Google? 8 razones',
     description: 'Tu web no aparece en Google y no sabes por qué. Estas son las 8 causas más comunes, desde problemas de indexación hasta falta de SEO, y cómo resolver cada una.',
     h1: '¿Por qué mi página no aparece en Google? 8 razones y sus soluciones',
     breadcrumb: 'Mi página no aparece',

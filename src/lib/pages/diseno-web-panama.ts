@@ -7,9 +7,9 @@ import type { PageData } from '../types';
 export const disenoWebPanama: PageData[] = [
   {
     slug: 'diseno-web-panama',
-    title: 'Diseño Web en Panamá | Páginas que Consiguen Clientes — Elemento Web',
+    title: 'Diseño Web en Panamá | Páginas que Consiguen Clientes',
     description:
-      'Diseño web en Panamá para empresas y negocios que quieren vender: sitios corporativos, tiendas online, landing pages y desarrollo a medida. SEO, WhatsApp y panel autoadministrable. Cotización cerrada desde $950.',
+      'Diseño web en Panamá para empresas que quieren vender: sitios corporativos, tiendas online y landing pages. SEO, WhatsApp y precio cerrado desde $950.',
     h1: 'Diseño web en Panamá',
     breadcrumb: 'Diseño Web en Panamá',
     service: { type: 'Diseño y desarrollo web' },
@@ -120,6 +120,7 @@ export const disenoWebPanama: PageData[] = [
           { q: '¿Trabajan con negocios fuera de la Ciudad de Panamá?', a: 'Sí. Trabajamos con clientes de todo el país y con negocios panameños que venden al exterior. El proceso es 100% remoto, con reuniones por videollamada y WhatsApp.' },
           { q: '¿Incluye el dominio y el hosting?', a: 'Te asesoramos y configuramos ambos. El hosting y el mantenimiento se manejan con un <a href="/crecimiento/mantenimiento-hosting-web-panama/">plan mensual desde $59</a> que mantiene tu sitio actualizado, respaldado y monitoreado.' },
           { q: '¿Qué pasa si ya tengo una web pero no funciona?', a: 'Ese es exactamente el caso de nuestro servicio de <a href="/servicios/redisenio-web-panama/">rediseño web</a>: auditamos lo que tienes, reconstruimos lo que no funciona y conservamos el posicionamiento que ya ganaste.' },
+          { q: '¿Cuándo NO necesitas contratar una agencia?', a: 'Si vendes por Instagram, tu ticket es bajo y tu cliente decide en dos mensajes, una página propia no te va a cambiar el negocio todavía. La web se paga cuando el cliente te investiga antes de comprar, cuando compites por búsquedas en Google, o cuando contestar lo mismo veinte veces al día ya te está costando ventas.' },
         ],
       },
       {
@@ -130,6 +131,7 @@ export const disenoWebPanama: PageData[] = [
           { slug: 'industrias', label: 'Diseño web por industria' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y posicionamiento' },
           { slug: 'portafolio', label: 'Portafolio' },
+          { slug: 'blog/cuando-hacer-rediseno-pagina-web', label: 'Cuándo rediseñar tu web' },
           { slug: 'contacto', label: 'Cotizar mi proyecto' },
         ],
       },

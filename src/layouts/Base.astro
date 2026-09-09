@@ -18,7 +18,10 @@ const { title, description, current = '', jsonld, dark = false, image } = Astro.
 const canonical = new URL(Astro.url.pathname, site.domain).href;
 const schemas = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
 /* og:image: usa la imagen de la página; si no, una por defecto. Siempre absoluta. */
-const defaultImage = 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=630&q=80&auto=format&fit=crop';
+/* Imagen propia de marca, 1200x630. Antes era una foto de stock de Unsplash:
+   quien compartia un enlace del sitio por WhatsApp veia a unos desconocidos
+   en una oficina, no la marca. */
+const defaultImage = '/og-default.jpg';
 const rawImage = image || defaultImage;
 const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.domain).href;
 ---

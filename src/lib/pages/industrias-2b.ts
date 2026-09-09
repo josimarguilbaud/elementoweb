@@ -146,6 +146,8 @@ export const industrias2b: PageData[] = [
           { q: '¿Qué contenido trae clientes a un corredor?', a: 'El que explica de verdad: qué cubre cada ramo, qué exclusiones sorprenden, qué documentos piden, qué hacer al reclamar. El corredor que explica bien parece el que sabe, y ese es a quien la gente llama.' },
           { q: '¿Cómo evito perder cartera en las renovaciones?', a: 'Con recordatorios automáticos antes de cada vencimiento y un área donde el asegurado vea sus pólizas. Renovar es varias veces más barato que captar, y la mayoría de las fugas son por olvido, no por precio.' },
           { q: '¿Qué pasa con los datos que pide el cotizador?', a: 'Cédula, edad y a veces condición de salud caen bajo la Ley 81 de 2019, y los de salud con más exigencia. Conviene pedir el mínimo para una primera conversación y que lleguen a un buzón de la corredora con acceso controlado, no a un correo personal.' },
+          { q: '¿Cuándo NO conviene la web de un corredor?', a: 'Si toda tu cartera es de renovaciones y referidos y no buscas clientes nuevos, con una página de contacto cumples. La web trabaja cuando quieres captar a quien busca «seguro de auto en Panamá» sin tener corredor todavía, y ahí sí conviene una página por ramo.' },
+          { q: '¿Cómo se paga y qué queda como gasto fijo?', a: 'Tres pagos: 50% al inicio, 30% al ver el sitio funcionando en demo y 20% para publicar, con 30 días de garantía por fallas técnicas. Como gasto fijo quedan la infraestructura, desde $350 al año, y el mantenimiento, desde $59 al mes. Los precios no incluyen ITBMS (7%).' },
         ],
       },
       {
@@ -301,6 +303,8 @@ export const industrias2b: PageData[] = [
           { q: '¿Cuánto tiempo tengo para responder un lead de auto?', a: 'Minutos, no días. Quien consulta a las ocho de la noche está mirando cuatro concesionarios y responde al que conteste primero. Una respuesta automática por WhatsApp con la ficha y el enlace para agendar prueba mantiene la conversación abierta hasta que un vendedor pueda tomarla.' },
           { q: '¿Qué debe llevar la ficha de un usado?', a: 'Kilometraje real, año, dueños anteriores, si tuvo mantenimiento en agencia, historial de choques, estado de llantas y batería, y muchas fotos con luz de día incluyendo los detalles feos. Publicar un rayón cuesta menos que perder la confianza cuando el cliente lo ve en persona.' },
           { q: '¿Vale la pena una sección de postventa?', a: 'Es donde está el negocio recurrente. La venta ocurre una vez cada varios años; el taller y los repuestos, varias veces al año durante toda la vida del carro. Y el cliente que vuelve al taller es al que le puedes ofrecer el cambio de unidad cuando llegue el momento.' },
+          { q: '¿Cuándo se justifica un inventario que se actualiza solo?', a: 'Un inventario navegable con fichas por vehículo, filtros y solicitud de prueba de manejo es proyecto a medida desde $2,900, porque el inventario tiene que actualizarse solo. Si vendes pocas unidades y las publicas a mano, un sitio de 8 a 12 páginas desde $950 te sirve. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene el sitio propio con inventario?', a: 'Si tu rotación es baja y publicas dos o tres autos al mes, mantener un inventario en línea cuesta más trabajo del que devuelve: publica en los portales y usa la web para presentarte. El inventario propio se paga cuando el volumen hace que actualizar a mano sea imposible.' },
         ],
       },
       {
@@ -456,6 +460,8 @@ export const industrias2b: PageData[] = [
           { q: '¿Por qué me rechazan los anuncios de estética?', a: 'Meta y Google tratan salud y estética como categoría restringida: antes y después explícitos, promesas de resultado o textos que señalan una condición del usuario se rechazan. Por eso conviene no depender solo de la pauta: el tráfico orgánico de tu web no se rechaza.' },
           { q: '¿Publico precios o los dejo para la consulta?', a: 'Un "desde" por procedimiento y el precio de la valoración inicial. Filtra al que nunca iba a agendar, le da seguridad al que sí, y deja el precio final donde debe estar: después de evaluar el caso.' },
           { q: '¿Conviene una página por procedimiento?', a: 'Sí, al menos para los cuatro o cinco de mayor margen. El paciente de estética busca el procedimiento por su nombre, no la clínica, y una lista de viñetas no compite en esas búsquedas.' },
+          { q: '¿Cuándo NO conviene invertir en la web de la clínica?', a: 'Si tu agenda está llena tres semanas por delante, primero resuelve capacidad. Traer más consultas a una agenda saturada solo genera pacientes molestos. Tampoco conviene si no tienes material propio: en estética, fotos genéricas de banco de imágenes le dicen al paciente que no tienes resultados que mostrar.' },
+          { q: '¿Cómo se paga y qué incluye el precio de la web de la clínica?', a: 'El pago va en tres partes: 50% para arrancar, 30% cuando ya viste el sitio funcionando en un demo en línea y 20% para publicarlo en tu dominio. Incluye diseño, contenido estructurado por tratamiento y 30 días de garantía por fallas técnicas. Aparte y recurrente: infraestructura desde $350 al año y mantenimiento desde $59 al mes. Los precios no incluyen ITBMS (7%).' },
         ],
       },
       {
@@ -610,6 +616,7 @@ export const industrias2b: PageData[] = [
           { q: '¿Conviene una página por servicio o basta con una lista?', a: 'Una por servicio para los que más consulta generan. "Esterilización de gata", "vacunas cachorro" y "peluquería canina" son tres búsquedas de tres personas distintas, y una lista de viñetas no compite en ninguna.' },
           { q: '¿Qué hago con el WhatsApp de la clínica?', a: 'Sacarlo del celular personal de quien atiende. Un número de empresa con varios usuarios evita perder el historial cuando esa persona se va, y permite que otro conteste mientras ella está en consulta.' },
           { q: '¿Publico precios de consulta y procedimientos?', a: 'Al menos el de la consulta y un "desde" en los procedimientos más buscados, como esterilización. Es la pregunta que más llega por WhatsApp, y publicarla filtra al que nunca iba a agendar y te ahorra horas de equipo.' },
+          { q: '¿Cuándo NO conviene invertir en la web de la veterinaria?', a: 'Si tu clientela es del barrio y llega caminando, tu prioridad es la ficha de Google Business Profile, que es gratis, no el sitio. La web se paga cuando vendes servicios que la gente busca y compara antes de ir: cirugía, hospedaje de mascotas, planes de vacunación o urgencias 24 horas.' },
         ],
       },
       {

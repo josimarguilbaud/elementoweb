@@ -4,7 +4,7 @@ import Blocks from '../components/Blocks.astro';
 import { pages } from '../lib/pages';
 import { url, wa, site } from '../lib/site';
 import { pageJsonLd, articleJsonLd, faqNode } from '../lib/schema';
-import { heroFor } from '../lib/img';
+import { heroFor, ogFor } from '../lib/img';
 
 export function getStaticPaths() {
   // El home vive en index.astro; aquí van todas las demás páginas del registro.
@@ -32,7 +32,7 @@ const dateLabel = page.date
   ? new Date(page.date + 'T12:00:00').toLocaleDateString('es-PA', { day: 'numeric', month: 'long', year: 'numeric' })
   : '';
 ---
-<Base title={page.title} description={page.description} dark image={hero.src} jsonld={jsonld}>
+<Base title={page.title} description={page.description} dark image={ogFor(page.slug)} jsonld={jsonld}>
   <!-- HERO interno -->
   <section class="relative overflow-hidden bg-night pt-36 pb-20 text-white md:pt-44 md:pb-24">
     <div class="absolute inset-0 mesh-dark opacity-50"></div>

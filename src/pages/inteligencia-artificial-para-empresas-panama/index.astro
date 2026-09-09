@@ -2,11 +2,12 @@
 import Base from '../../layouts/Base.astro';
 import { site, url, wa } from '../../lib/site';
 import { orgNode } from '../../lib/schema';
+import { ogFor } from '../../lib/img';
 
 const slug = 'inteligencia-artificial-para-empresas-panama';
 const title = 'Inteligencia Artificial para Empresas en Panamá | Elemento Web';
 const description =
-  'Implementamos un ecosistema de IA privado para tu empresa: una base de conocimiento (RAG) y automatización de procesos que trabajan 24/7, siempre con control humano.';
+  'Ecosistema de IA privado para tu empresa en Panamá: base de conocimiento (RAG) y automatización de procesos 24/7, siempre con control humano.';
 
 /* CTAs */
 const waDiag = wa('Hola, quiero un diagnóstico del ecosistema de IA para mi empresa.');
@@ -75,7 +76,15 @@ const faqs = [
   },
   {
     q: '¿Cuánto cuesta?',
-    a: 'Es un proyecto a medida: la inversión depende de cuántos procesos automatizamos, qué integraciones necesita y el volumen de tu operación. Cerramos la cotización por escrito antes de arrancar, sin sorpresas a mitad de camino. El diagnóstico inicial no tiene costo.',
+    a: 'Arranca en el rango de proyecto a medida, desde $2,900, porque siempre hay integraciones con lo que ya usas. De ahí sube según cuántos procesos automaticemos y el volumen de tu operación. Aparte van los costos de consumo de los modelos, que se facturan por uso. El pago sigue el mismo esquema del resto: 50% para arrancar, 30% al ver el piloto funcionando y 20% para pasar a producción. Los precios no incluyen ITBMS (7%) y el diagnóstico inicial no tiene costo.',
+  },
+  {
+    q: '¿Cuándo NO conviene meter IA en la empresa?',
+    a: 'Cuando la información está desordenada. Una IA que lee documentos contradictorios responde con seguridad cosas equivocadas, y eso es peor que no tenerla: la gente le cree. Tampoco conviene sin un dueño interno, porque alguien tiene que decidir qué es verdad cuando el sistema se equivoca. Si nadie va a hacer ese trabajo, mejor ordenar primero y automatizar después.',
+  },
+  {
+    q: '¿Esto funciona en español de Panamá y con nuestros documentos locales?',
+    a: 'Sí. El sistema responde en el español que se habla aquí y trabaja sobre tus propios documentos: manuales, contratos, listas de precios, procedimientos. No inventa a partir de conocimiento general; cita de dónde sacó cada respuesta, y si no está en tus documentos, lo dice en vez de rellenar.',
   },
   {
     q: '¿Necesito un equipo técnico interno para mantenerlo?',
@@ -112,7 +121,7 @@ const jsonld = {
 };
 ---
 
-<Base title={title} description={description} current="funcionalidades" dark={true} jsonld={jsonld}>
+<Base image={ogFor('inteligencia-artificial-para-empresas-panama')} title={title} description={description} current="funcionalidades" dark={true} jsonld={jsonld}>
   <!-- ============ HERO ============ -->
   <section class="relative overflow-hidden bg-night pt-36 pb-24 text-white md:pt-44 md:pb-32">
     <div class="absolute inset-0 mesh-dark opacity-60"></div>
@@ -195,15 +204,15 @@ const jsonld = {
         <ul class="mt-8 space-y-6">
           <li class="reveal flex items-start gap-4">
             <div class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-teal-deep/10 text-teal-deep"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg></div>
-            <div><h4 class="font-display font-bold text-ink">De búsqueda a respuesta</h4><p class="text-sm text-ink/60">No busca: responde. En lenguaje natural y con citas exactas a tus propios documentos.</p></div>
+            <div><h3 class="font-display font-bold text-ink">De búsqueda a respuesta</h3><p class="text-sm text-ink/60">No busca: responde. En lenguaje natural y con citas exactas a tus propios documentos.</p></div>
           </li>
           <li class="reveal flex items-start gap-4">
             <div class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-teal-deep/10 text-teal-deep"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 4 3.5 6.5 8 8 4.5-1.5 8-4 8-8V6l-8-3Z" /></svg></div>
-            <div><h4 class="font-display font-bold text-ink">Privacidad de grado empresarial</h4><p class="text-sm text-ink/60">Entorno cerrado. Tus manuales y hojas de cálculo nunca se comparten con modelos públicos.</p></div>
+            <div><h3 class="font-display font-bold text-ink">Privacidad de grado empresarial</h3><p class="text-sm text-ink/60">Entorno cerrado. Tus manuales y hojas de cálculo nunca se comparten con modelos públicos.</p></div>
           </li>
           <li class="reveal flex items-start gap-4">
             <div class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-teal-deep/10 text-teal-deep"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7L21 8" stroke-linecap="round" stroke-linejoin="round" /><path d="M21 3v5h-5" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
-            <div><h4 class="font-display font-bold text-ink">Multi-formato y sincronizado</h4><p class="text-sm text-ink/60">PDF, Word, Drive y más. Actualizas un documento y la IA lo asimila al instante.</p></div>
+            <div><h3 class="font-display font-bold text-ink">Multi-formato y sincronizado</h3><p class="text-sm text-ink/60">PDF, Word, Drive y más. Actualizas un documento y la IA lo asimila al instante.</p></div>
           </li>
         </ul>
         <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/" class="reveal mt-9 inline-flex items-center gap-2 rounded-lg border border-teal-deep/20 bg-teal-deep/10 px-6 py-3 font-medium text-teal-deep transition-colors hover:bg-teal-deep hover:text-white">Ver nuestra IA conversacional <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
@@ -243,7 +252,7 @@ const jsonld = {
             </div>
             <div class="mt-auto flex items-center gap-2 rounded-full border border-ink/10 bg-paper p-2 shadow-inner">
               <svg class="ml-2 text-ink/40" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" stroke-linecap="round" /></svg>
-              <input type="text" placeholder="Pregunta a tus documentos…" class="w-full border-none bg-transparent text-sm text-ink outline-none placeholder-ink/40" disabled />
+              <input type="text" placeholder="Pregunta a tus documentos…" class="w-full border-none bg-transparent text-sm text-ink outline-none placeholder-ink/40" disabled aria-hidden="true" tabindex="-1" />
               <span class="grid h-7 w-7 place-items-center rounded-full bg-teal-deep text-white opacity-50"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
             </div>
           </div>
@@ -303,15 +312,15 @@ const jsonld = {
         <ul class="mt-8 space-y-6">
           <li class="reveal flex items-start gap-4">
             <div class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-violet/10 text-violet"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="12" height="12" rx="2" /><path d="M4 16V6a2 2 0 0 1 2-2h10" /></svg></div>
-            <div><h4 class="font-display font-bold text-ink">Cero "copiar y pegar"</h4><p class="text-sm text-ink/60">Entra un lead por la web y el sistema genera el documento, lo sube al CRM y avisa al equipo. Sin humanos moviendo datos a mano.</p></div>
+            <div><h3 class="font-display font-bold text-ink">Cero "copiar y pegar"</h3><p class="text-sm text-ink/60">Entra un lead por la web y el sistema genera el documento, lo sube al CRM y avisa al equipo. Sin humanos moviendo datos a mano.</p></div>
           </li>
           <li class="reveal flex items-start gap-4">
             <div class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-violet/10 text-violet"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2" /><circle cx="5" cy="19" r="2" /><circle cx="19" cy="19" r="2" /><path d="M12 7v4M12 11l-5.5 6M12 11l5.5 6" stroke-linecap="round" /></svg></div>
-            <div><h4 class="font-display font-bold text-ink">Decisiones con contexto</h4><p class="text-sm text-ink/60">No es solo mover datos. La IA analiza un caso, decide su urgencia y lo asigna al experto correcto.</p></div>
+            <div><h3 class="font-display font-bold text-ink">Decisiones con contexto</h3><p class="text-sm text-ink/60">No es solo mover datos. La IA analiza un caso, decide su urgencia y lo asigna al experto correcto.</p></div>
           </li>
           <li class="reveal flex items-start gap-4">
             <div class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-violet/10 text-violet"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2v6M15 2v6M9 8h6a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h6" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
-            <div><h4 class="font-display font-bold text-ink">Integración total (API first)</h4><p class="text-sm text-ink/60">Conectamos tu ecosistema con n8n y APIs: CRM, ERP, Google Workspace, WhatsApp y sistemas heredados.</p></div>
+            <div><h3 class="font-display font-bold text-ink">Integración total (API first)</h3><p class="text-sm text-ink/60">Conectamos tu ecosistema con n8n y APIs: CRM, ERP, Google Workspace, WhatsApp y sistemas heredados.</p></div>
           </li>
         </ul>
         <a href="/marketing/automatizaciones-n8n-panama/" class="reveal mt-9 inline-flex items-center gap-2 rounded-lg border border-violet/20 bg-violet/10 px-6 py-3 font-medium text-violet transition-colors hover:bg-violet hover:text-white">Ver automatizaciones con n8n <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
@@ -413,29 +422,29 @@ const jsonld = {
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-6">
         <div class="reveal group rounded-3xl border border-ink/10 bg-white p-8 shadow-sm transition-all hover:shadow-md lg:col-span-2">
           <div class="mb-6 grid h-12 w-12 place-items-center rounded-xl border border-teal-deep/15 bg-teal-deep/10 text-teal-deep transition-transform group-hover:scale-110"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3" /><path d="M3 20a6 6 0 0 1 12 0M17 11l2 2 3-3" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
-          <h4 class="mb-3 font-display text-lg font-bold text-ink">Gobernanza y permisos</h4>
+          <h3 class="mb-3 font-display text-lg font-bold text-ink">Gobernanza y permisos</h3>
           <p class="text-sm leading-relaxed text-ink/60">La IA respeta la jerarquía de tu empresa. Valida el rol de cada usuario y limita las respuestas a lo que esa persona ya tiene permiso de ver.</p>
         </div>
         <div class="reveal group rounded-3xl border border-ink/10 bg-white p-8 shadow-sm transition-all hover:shadow-md lg:col-span-2">
           <div class="mb-6 grid h-12 w-12 place-items-center rounded-xl border border-violet/15 bg-violet/10 text-violet transition-transform group-hover:scale-110"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V4M4 20h16" stroke-linecap="round" /><path d="M8 16l3-4 3 2 4-6" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
-          <h4 class="mb-3 font-display text-lg font-bold text-ink">Panel de ROI y auditoría</h4>
+          <h3 class="mb-3 font-display text-lg font-bold text-ink">Panel de ROI y auditoría</h3>
           <p class="text-sm leading-relaxed text-ink/60">Un tablero muestra horas ahorradas y tareas ejecutadas, con un registro de cada decisión y documento que la IA consultó.</p>
         </div>
         <div class="reveal group rounded-3xl border border-ink/10 bg-white p-8 shadow-sm transition-all hover:shadow-md lg:col-span-2">
           <div class="mb-6 grid h-12 w-12 place-items-center rounded-xl border border-ink/10 bg-ink/[0.04] text-ink/70 transition-transform group-hover:scale-110"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" stroke-linejoin="round" /></svg></div>
-          <h4 class="mb-3 font-display text-lg font-bold text-ink">Omnicanal, sin apps nuevas</h4>
+          <h3 class="mb-3 font-display text-lg font-bold text-ink">Omnicanal, sin apps nuevas</h3>
           <p class="text-sm leading-relaxed text-ink/60">Tu equipo invoca al cerebro corporativo donde ya trabaja: WhatsApp, Slack o Microsoft Teams. Cero fricción.</p>
         </div>
         <div class="reveal group rounded-3xl border border-ink/10 bg-white p-8 shadow-sm transition-all hover:shadow-md lg:col-span-3">
           <div class="flex items-start gap-6">
             <div class="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-teal-deep/15 bg-teal-deep/10 text-teal-deep transition-transform group-hover:scale-110"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2" /><circle cx="9" cy="12" r="2" /><path d="M14 10h4M14 14h4" stroke-linecap="round" /></svg></div>
-            <div><h4 class="mb-3 font-display text-lg font-bold text-ink">Multimodal (visión y voz)</h4><p class="text-sm leading-relaxed text-ink/60">El mundo real no es solo texto. Envía la foto de un recibo o una nota de voz: la IA extrae los datos, los valida contra tus políticas y los carga en el sistema.</p></div>
+            <div><h3 class="mb-3 font-display text-lg font-bold text-ink">Multimodal (visión y voz)</h3><p class="text-sm leading-relaxed text-ink/60">El mundo real no es solo texto. Envía la foto de un recibo o una nota de voz: la IA extrae los datos, los valida contra tus políticas y los carga en el sistema.</p></div>
           </div>
         </div>
         <div class="reveal group rounded-3xl border border-amber-200 bg-amber-50/50 p-8 shadow-sm transition-all hover:shadow-md lg:col-span-3">
           <div class="flex items-start gap-6">
             <div class="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-amber-200 bg-amber-100 text-amber-600 transition-transform group-hover:scale-110"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4 6v6c0 4 3.5 6.5 8 8 4.5-1.5 8-4 8-8V6l-8-3Z" /><path d="M12 8v4M12 15.5v.5" stroke-linecap="round" /></svg></div>
-            <div><h4 class="mb-3 flex items-center gap-2 font-display text-lg font-bold text-ink">Human-in-the-loop <span class="rounded border border-amber-200 bg-amber-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-700">Clave</span></h4><p class="text-sm leading-relaxed text-ink/70">Un copiloto, no un piloto automático a ciegas. Diseñamos puntos de control donde la IA se detiene y pide el visto bueno de una persona antes de enviar pagos o correos externos.</p></div>
+            <div><h3 class="mb-3 flex items-center gap-2 font-display text-lg font-bold text-ink">Human-in-the-loop <span class="rounded border border-amber-200 bg-amber-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-700">Clave</span></h3><p class="text-sm leading-relaxed text-ink/70">Un copiloto, no un piloto automático a ciegas. Diseñamos puntos de control donde la IA se detiene y pide el visto bueno de una persona antes de enviar pagos o correos externos.</p></div>
           </div>
         </div>
       </div>
@@ -453,22 +462,22 @@ const jsonld = {
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
         <div class="reveal rounded-2xl border border-ink/10 bg-white p-7 shadow-sm">
           <div class="mb-5 font-display text-3xl font-extrabold text-teal-deep/25">01</div>
-          <h4 class="font-display text-lg font-bold text-ink">Diagnóstico</h4>
+          <h3 class="font-display text-lg font-bold text-ink">Diagnóstico</h3>
           <p class="mt-2 text-sm text-ink/60">Mapeamos tus procesos y detectamos dónde una IA operativa ahorra más horas. Sin costo.</p>
         </div>
         <div class="reveal rounded-2xl border border-ink/10 bg-white p-7 shadow-sm">
           <div class="mb-5 font-display text-3xl font-extrabold text-teal-deep/25">02</div>
-          <h4 class="font-display text-lg font-bold text-ink">Diseño y piloto</h4>
+          <h3 class="font-display text-lg font-bold text-ink">Diseño y piloto</h3>
           <p class="mt-2 text-sm text-ink/60">Definimos la arquitectura y lanzamos un piloto acotado a un proceso concreto, medible.</p>
         </div>
         <div class="reveal rounded-2xl border border-ink/10 bg-white p-7 shadow-sm">
           <div class="mb-5 font-display text-3xl font-extrabold text-teal-deep/25">03</div>
-          <h4 class="font-display text-lg font-bold text-ink">Producción</h4>
+          <h3 class="font-display text-lg font-bold text-ink">Producción</h3>
           <p class="mt-2 text-sm text-ink/60">Con el piloto validado, lo llevamos a producción con sus integraciones y controles humanos.</p>
         </div>
         <div class="reveal rounded-2xl border border-ink/10 bg-white p-7 shadow-sm">
           <div class="mb-5 font-display text-3xl font-extrabold text-teal-deep/25">04</div>
-          <h4 class="font-display text-lg font-bold text-ink">Mejora continua</h4>
+          <h3 class="font-display text-lg font-bold text-ink">Mejora continua</h3>
           <p class="mt-2 text-sm text-ink/60">Operamos y afinamos el ecosistema como servicio, sumando procesos con el tiempo.</p>
         </div>
       </div>

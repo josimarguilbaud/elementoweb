@@ -122,7 +122,7 @@ export const blog4: PageData[] = [
     slug: 'blog/cuanto-invertir-en-publicidad-digital-en-panama',
     parent,
     title: '¿Cuánto invertir en publicidad digital en Panamá?',
-    description: 'Cómo definir tu presupuesto de publicidad digital en Panamá: costo por lead, fase de prueba, cuánto arriesgar al inicio y por qué no quemar dinero sin un buen destino.',
+    description: 'Cómo definir tu presupuesto de publicidad digital en Panamá: costo por lead, fase de prueba y cuánto arriesgar al inicio.',
     h1: '¿Cuánto invertir en publicidad digital en Panamá?',
     breadcrumb: 'Cuánto invertir en pauta',
     category: 'Marketing',

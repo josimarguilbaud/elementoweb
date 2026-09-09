@@ -148,6 +148,8 @@ export const industrias2a: PageData[] = [
           { q: '¿Publico honorarios en la web?', a: 'Al menos un rango por tipo de servicio o por tamaño de empresa. La contabilidad se compra con miedo a la sorpresa, y un rango da más tranquilidad de la que quita. Los trabajos que varían mucho pueden ir con un "desde".' },
           { q: '¿Está bien recibir los documentos del cliente por WhatsApp?', a: 'Funciona hasta que deja de funcionar. Ahí viajan planillas con salarios y cédulas, datos personales bajo la Ley 81 de 2019, guardados en el rollo de fotos de un teléfono personal. Un área de cliente con carpeta por empresa lo resuelve y de paso elimina el "¿ya me lo mandaste?".' },
           { q: '¿Sirve la web si la firma capta por referidos?', a: 'Sí, por dos motivos. El referido igual te busca antes de llamar y compara lo que ve. Y el contenido de calendario fiscal capta al que no tiene quién lo refiera, que en las semanas de vencimiento es mucha gente.' },
+          { q: '¿Cuándo NO conviene la web de un contador?', a: 'Si tu cartera está llena y solo atiendes por recomendación, con una página sobria de presentación cumples. La web trabaja de verdad cuando quieres captar al emprendedor que busca «cuánto cuesta llevar la contabilidad de una empresa en Panamá» y todavía no sabe a quién llamar.' },
+          { q: '¿Cómo se paga la web y qué gastos quedan después?', a: 'Tres pagos: 50% para arrancar, 30% al ver el sitio funcionando en demo y 20% para publicar, con 30 días de garantía por fallas técnicas. Lo recurrente, que conviene presupuestar desde el principio: infraestructura desde $350 al año y mantenimiento desde $59 al mes. Los precios no incluyen ITBMS (7%), que ya sabes mejor que nosotros cómo se declara.' },
         ],
       },
       {
@@ -304,6 +306,7 @@ export const industrias2a: PageData[] = [
           { q: '¿Debo publicar la política de cancelación?', a: 'Es la primera pregunta real del cliente, antes que el precio. Cuánto es el depósito, hasta cuándo se cancela y con qué penalidad, si se puede fraccionar el pago. Publicarlo evita que el cliente se enfríe esperando una respuesta por WhatsApp.' },
           { q: '¿Vale la pena tener la web en inglés?', a: 'Para el receptivo, que es el de mayor margen. El turista que viene a Panamá busca en inglés y hoy suele llegar a través de un operador extranjero que revende tu producto con margen encima. No hace falta traducir todo: bastan las páginas de los tours que vendes a extranjeros.' },
           { q: '¿Por qué tengo el WhatsApp lleno y cierro poco?', a: 'Casi siempre porque lo que decide —qué incluye, depósito, cancelación, fechas de salida— no está publicado, y el cliente pregunta, espera y se enfría. Publicarlo convierte consultas en reservas con depósito, que es la única métrica que cuenta.' },
+          { q: '¿Cuándo NO conviene tener web propia si vendes tours?', a: 'Si toda tu venta viene de una plataforma como Viator o Airbnb Experiences y estás cómodo con su comisión, la web propia es un proyecto paralelo, no urgente. Se vuelve urgente el día que quieres vender directo y dejar de pagar esa comisión: ahí la web deja de ser gasto y empieza a ser margen.' },
         ],
       },
       {
@@ -460,6 +463,7 @@ export const industrias2a: PageData[] = [
           { q: '¿Sigue sirviendo el catálogo en PDF?', a: 'Sirve como herramienta de trabajo, no como catálogo principal. El comprador B2B arma listas en hoja de cálculo, así que conviene tener el catálogo navegable en la web —que es lo que posiciona— más una descarga actualizada con códigos, empaque y unidad mínima. Con fecha visible.' },
           { q: '¿Vale la pena mencionar la Zona Libre y el stock local?', a: 'Es tu ventaja competitiva y casi nadie la comunica. Para el comprador regional que evalúa entre importar directo o comprarte, lo que decide es el tiempo y el riesgo. Ponlo con números: cuánto tarda un pedido a la ciudad, al interior y a la región.' },
           { q: '¿Qué dato de la web cambia decisiones de negocio?', a: 'Las consultas por línea de producto. Si una marca que apenas promocionas concentra un tercio de las consultas, conviene ampliarla o negociar mejores condiciones con ese proveedor. Y el origen geográfico, que suele revelar demanda de países que no estabas trabajando.' },
+          { q: '¿Cuándo NO conviene la web de una importadora?', a: 'Si vendes solo a una red cerrada de distribuidores que ya te conoce, un catálogo público te expone precios sin traerte clientes nuevos. Ahí conviene un portal privado, que es proyecto a medida desde $2,900. La web abierta se justifica cuando buscas nuevos puntos de venta o representar marcas nuevas.' },
         ],
       },
       {
@@ -617,6 +621,8 @@ export const industrias2a: PageData[] = [
           { q: '¿Puedo publicar fotos de antes y después de mis pacientes?', a: 'Con consentimiento del paciente por escrito y específico para publicación en internet, que no es lo mismo que el consentimiento del tratamiento. Conviene que ese permiso lo redacte tu asesor legal. Nosotros dejamos la galería preparada para que puedas retirar un caso en cualquier momento si el paciente cambia de opinión.' },
           { q: 'Tengo dos sedes, ¿una web o dos?', a: 'Una web con una página propia por sede: cada una con su dirección, su horario, su teléfono y su ficha de Google Business Profile. Una sola página que mencione ambas no posiciona en ninguna de las dos zonas, y en dental la cercanía decide.' },
           { q: '¿Debo poner precios en la web?', a: 'Un rango o un "desde" suele traer más pacientes de los que espanta: filtra al que nunca iba a agendar y le da seguridad al que sí. Esconderlo del todo hace que el paciente asuma lo peor y siga buscando. Si tu estructura varía mucho por caso, funciona bien publicar el precio de la valoración inicial.' },
+          { q: '¿Qué suma al precio: las sedes o la agenda por doctor?', a: 'Una página por tratamiento, con precios orientativos y solicitud de cita: 8 a 12 páginas desde $950. Con varias sedes, agenda por doctor y recordatorios automáticos, pasa a proyecto a medida desde $2,900. El mantenimiento arranca en $59 al mes y los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene invertir en la web dental?', a: 'Si tu agenda ya está copada, la web te va a generar solicitudes que no puedes atender, y una cita pedida y no respondida es una reseña mala esperando. Primero resuelve quién contesta y en cuánto tiempo; después abre la puerta.' },
         ],
       },
       {

@@ -1,5 +1,7 @@
-/* Imágenes de portada (Unsplash CDN, gratis, sin API key).
-   Todos los IDs verificados con HTTP 200. Uso: unsplash(pickImg(slug)). */
+/* Imágenes de portada. Primero las propias (public/images/hero/), y solo
+   como respaldo el CDN de Unsplash, cuyos IDs están verificados con HTTP 200. */
+
+import { HERO_SLUGS, OG_SLUGS } from './heroes';
 
 export const PHOTOS = {
   office: '1497366216548-37526070297c',
@@ -89,8 +91,37 @@ export function pickImg(slug: string): keyof typeof PHOTOS {
   return 'meeting';
 }
 
-/** Devuelve {src, alt} listo para <img>, usando heroImage propio si existe. */
+/**
+ * Devuelve {src, alt} listo para <img>.
+ *
+ * Orden de preferencia:
+ *   1. heroImage declarado en la página.
+ *   2. portada propia en /images/hero/ (ver HERO_SLUGS).
+ *   3. foto de stock de Unsplash, como último recurso.
+ *
+ * El paso 2 importa más de lo que parece: este src también alimenta el
+ * og:image, así que una página sin portada propia se comparte en WhatsApp y
+ * LinkedIn con la foto de stock de otro. Con imagen propia, la miniatura es
+ * nuestra y se sirve desde nuestro dominio.
+ */
 export function heroFor(page: { slug: string; h1: string; heroImage?: { src: string; alt: string } }, w = 1600, ar = 0.62) {
   if (page.heroImage?.src && !page.heroImage.src.includes('picsum')) return page.heroImage;
+  if (HERO_SLUGS.has(page.slug)) {
+    return { src: `/images/hero/${page.slug.replace(/\//g, '--')}.jpg`, alt: page.h1 };
+  }
   return { src: unsplash(PHOTOS[pickImg(page.slug)], w, ar), alt: page.h1 };
+}
+
+/**
+ * Imagen para compartir (og:image), 1200x630 de verdad.
+ *
+ * Antes se compartia la foto del hero, que mide 1600x1120, mientras el HTML
+ * declaraba 1200x630. WhatsApp y Facebook usan esas medidas para encuadrar la
+ * miniatura, asi que la recortaban mal. Ahora cada pagina tiene su recorte
+ * 1.91:1 en /images/og/ y las medidas declaradas son ciertas.
+ */
+export function ogFor(slug: string): string {
+  const clave = slug === '' ? 'home' : slug;
+  if (OG_SLUGS.has(clave)) return `/images/og/${clave.replace(/\//g, '--')}.jpg`;
+  return '/og-default.jpg';
 }

@@ -282,8 +282,7 @@ export const blog1: PageData[] = [
     slug: 'blog/diferencia-wordpress-shopify-diseno-web',
     parent: { slug: 'blog', label: 'Blog' },
     title: 'WordPress vs Shopify: cuál elegir para tu web en Panamá',
-    description:
-      'WordPress vs Shopify para tu web en Panamá: cuándo conviene cada uno, costos reales, control, casos de uso y el factor local (Yappy y WhatsApp) para decidir bien.',
+    description: 'WordPress vs Shopify en Panamá: cuándo conviene cada uno, costos reales, control y el factor local de Yappy y WhatsApp.',
     h1: 'WordPress vs Shopify: cuál elegir para tu web en Panamá',
     breadcrumb: 'WordPress vs Shopify',
     category: 'Diseño web',
@@ -408,9 +407,8 @@ export const blog1: PageData[] = [
   {
     slug: 'blog/como-elegir-agencia-diseno-web-panama',
     parent: { slug: 'blog', label: 'Blog' },
-    title: 'Cómo elegir una agencia de diseño web en Panamá sin arrepentirte',
-    description:
-      'Señales de una buena agencia de diseño web en Panamá, las preguntas que debes hacer antes de firmar y las banderas rojas que anuncian un proyecto que saldrá mal.',
+    title: 'Cómo elegir una agencia de diseño web en Panamá',
+    description: 'Señales de una buena agencia de diseño web en Panamá, qué preguntar antes de firmar y las banderas rojas que anuncian problemas.',
     h1: 'Cómo elegir una agencia de diseño web en Panamá sin arrepentirte',
     breadcrumb: 'Elegir agencia web',
     category: 'Diseño web',
@@ -539,8 +537,7 @@ export const blog1: PageData[] = [
     slug: 'blog/cuanto-tiempo-toma-hacer-una-pagina-web',
     parent: { slug: 'blog', label: 'Blog' },
     title: '¿Cuánto tiempo toma hacer una página web? Plazos reales',
-    description:
-      'Plazos reales para hacer una página web en Panamá según el tipo de proyecto, las etapas que atraviesa, qué la retrasa (tu contenido) y cómo acelerarla sin perder calidad.',
+    description: 'Plazos reales de una página web en Panamá por tipo de proyecto, sus etapas y qué la retrasa de verdad: tu contenido.',
     h1: '¿Cuánto tiempo toma hacer una página web? Plazos reales',
     breadcrumb: 'Plazos de una web',
     category: 'Diseño web',

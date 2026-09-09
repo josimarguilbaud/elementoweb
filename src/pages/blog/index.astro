@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { pages } from '../../lib/pages';
 import { url, site } from '../../lib/site';
 import { heroFor } from '../../lib/img';
+import { ogFor } from '../../lib/img';
 
 const articles = pages
   .filter((p) => p.parent?.slug === 'blog')
@@ -12,7 +13,7 @@ const fmt = (d?: string) =>
   d ? new Date(d + 'T12:00:00').toLocaleDateString('es-PA', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
 const jsonld = { '@context': 'https://schema.org', '@type': 'Blog', name: `Blog de ${site.name}`, url: `${site.domain}/blog/` };
 ---
-<Base
+<Base image={ogFor('blog')}
   title="Blog de Diseño Web, SEO y Marketing en Panamá | Elemento Web"
   description="Guías prácticas sobre diseño web, e-commerce, SEO, marketing digital e inteligencia artificial para hacer crecer tu negocio en Panamá."
   dark

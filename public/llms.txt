@@ -39,6 +39,25 @@ Estas páginas están escritas para responder preguntas concretas y son las más
 - [Funcionalidades](https://elementoweb.com/funcionalidades/): chatbots con IA, reservas y citas, pasarelas de pago.
 - [Inteligencia artificial para empresas](https://elementoweb.com/inteligencia-artificial-para-empresas-panama/): asistentes, automatización y base de conocimiento privada.
 
+## Productos propios (SaaS)
+
+- [SaaS](https://elementoweb.com/saas/): software propio que operamos y vendemos por suscripción.
+- [ChatMantis](https://elementoweb.com/saas/chatmantis/): CRM de WhatsApp con bot de IA, bandeja compartida y campañas.
+- [WapyCRM](https://elementoweb.com/saas/wapycrm/): CRM ligero para equipos que venden por WhatsApp.
+- [Cifrão](https://elementoweb.com/saas/cifrao/): facturación y control de cobros.
+
+## La empresa
+
+- [Nosotros](https://elementoweb.com/nosotros/): quiénes somos, desde cuándo y cómo trabajamos.
+- [Cómo trabajamos](https://elementoweb.com/como-trabajamos/): estructura de pago, qué necesitamos del cliente, costos de terceros y qué no se incluye.
+- [Portafolio](https://elementoweb.com/portafolio/): proyectos publicados, con el rubro y el objetivo de cada uno.
+- [Contacto](https://elementoweb.com/contacto/): formulario, correo y WhatsApp.
+
+## Legal
+
+- [Política de privacidad](https://elementoweb.com/politica-de-privacidad/): qué datos se recogen y bajo qué base legal, según la Ley 81 de 2019 de Panamá.
+- [Términos y condiciones](https://elementoweb.com/terminos/): alcance de los servicios, pagos y propiedad del trabajo.
+
 ## Industrias
 
 Treinta páginas con contenido específico por rubro, escritas una por una y no

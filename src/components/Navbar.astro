@@ -39,7 +39,7 @@ const { current = '', dark = false } = Astro.props;
       <div class="menu-panel grid w-[min(95vw,1020px)] grid-cols-2 gap-x-10 gap-y-6 rounded-3xl p-8 lg:grid-cols-4">
         {cols.map((col) => (
           <div>
-            <div class="mb-3 flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-teal to-violet"></span><h4 class="font-display text-xs font-bold uppercase tracking-wide text-ink">{col.title}</h4></div>
+            <div class="mb-3 flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-teal to-violet"></span><p class="font-display text-xs font-bold uppercase tracking-wide text-ink">{col.title}</p></div>
             <ul class="flex flex-col gap-1">
               {col.links.map((l) => <li><a href={url(l.slug)} class="block whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">{l.label}</a></li>)}
             </ul>

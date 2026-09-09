@@ -68,4 +68,32 @@ Disallow: /propuestas/
 Disallow: /demo/
 Disallow: /hackathon/
 
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /presentaciones/
+Disallow: /propuestas/
+Disallow: /demo/
+Disallow: /hackathon/
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+Disallow: /presentaciones/
+Disallow: /propuestas/
+Disallow: /demo/
+Disallow: /hackathon/
+
+User-agent: MistralAI-User
+Allow: /
+Disallow: /presentaciones/
+Disallow: /propuestas/
+Disallow: /demo/
+Disallow: /hackathon/
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /presentaciones/
+Disallow: /propuestas/
+Disallow: /demo/
+Disallow: /hackathon/
+
 Sitemap: https://elementoweb.com/sitemap-index.xml

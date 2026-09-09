@@ -146,6 +146,7 @@ export const industrias2c: PageData[] = [
           { q: '¿Tengo que publicar precios?', a: 'No todos. Los de alta rotación y precio estable sí conviene, porque son los que más se buscan. Para el resto, la ventaja competitiva no está en el precio publicado sino en cotizar rápido y ordenado, que es lo que decide una obra.' },
           { q: '¿Cómo atiendo al contratista y al cliente de fin de semana a la vez?', a: 'Con dos entradas, no dos webs. Una por categoría de producto para el que sabe qué busca, y otra por problema —"reparar una fuga", "instalar un abanico"— que lleve a la lista de lo que hace falta. Esa segunda casi ninguna ferretería la tiene y convierte muy bien.' },
           { q: '¿Qué es lo más útil que puedo medir?', a: 'Qué buscó la gente en tu catálogo y no encontró. Cada búsqueda sin resultado es una venta que se fue, y esa lista es mejor guía de compra de inventario que cualquier intuición.' },
+          { q: '¿Conviene vender en línea o solo mostrar el catálogo?', a: 'Si vas a vender en línea con carrito y pagos, es proyecto de tienda desde $1,500, e incluye Yappy y pasarelas locales. Si prefieres catálogo para consultar y que la venta se cierre por WhatsApp o en mostrador, un sitio de 8 a 12 páginas desde $950 alcanza. Los precios no incluyen ITBMS (7%).' },
         ],
       },
       {
@@ -300,6 +301,8 @@ export const industrias2c: PageData[] = [
           { q: '¿Vale la pena publicar disponibilidad de fechas?', a: 'Tu inventario son los días, y un sábado que no se vendió no se recupera. Un calendario simple de fechas libres, ocupadas y en opción hace que el cliente pase directo a apartar en vez de esperar respuesta mientras pregunta a otros tres.' },
           { q: '¿Cómo aprovecho a los proveedores que me refieren?', a: 'Con una página de aliados y material fácil de reenviar: galería por tipo de evento con precios de referencia. El referido entre proveedores es el mayor canal del rubro y casi nadie lo trabaja de forma deliberada, solo por costumbre.' },
           { q: '¿Qué debo medir además de las consultas?', a: 'La ocupación del calendario por mes. Ver en septiembre que noviembre está a media capacidad permite hacer algo; verlo en noviembre, no. Y la conversión de consulta a depósito, que dice si el problema está en captar o en la propuesta.' },
+          { q: '¿Cuándo NO conviene una web de eventos o catering?', a: 'Si tu agenda del año ya está cerrada y trabajas por recomendación de wedding planners, la web es portafolio, no captación: con algo simple y bien fotografiado cumples. Se vuelve inversión el día que quieres que la novia te encuentre directo y dejar de depender de quién te recomiende.' },
+          { q: '¿Cómo se paga y qué hay que renovar cada año?', a: 'El pago va 50% para arrancar, 30% al ver el sitio funcionando en demo y 20% para publicar, con 30 días de garantía por fallas técnicas. Cada año se renueva la infraestructura, desde $350, que cubre dominio, hosting y certificado. El mantenimiento arranca en $59 al mes. Los precios no incluyen ITBMS (7%).' },
         ],
       },
       {
@@ -454,6 +457,7 @@ export const industrias2c: PageData[] = [
           { q: '¿Publico mis honorarios?', a: 'No una lista de precios, sí un rango de inversión típica por tipo de proyecto. Filtra sin encasillarte. Si tu servicio es muy variable, publica el precio y el entregable del primer paso: un diagnóstico acotado convierte mucho mejor que "contáctanos para una propuesta".' },
           { q: 'Mi comprador no es quien decide, ¿eso cambia la web?', a: 'Bastante. Quien te contacta va a tener que defender la contratación ante su jefe o un comité. Necesita material reenviable: casos con números, credenciales del equipo y una propuesta de valor en una frase. Esa página trabaja en reuniones donde tú no estás.' },
           { q: '¿Vale la pena un blog en consultoría?', a: 'Es el mecanismo de captación principal del rubro, siempre que se mida. Un artículo técnico que genere tres consultas calificadas al año es el activo más rentable de la empresa; sin medir de qué contenido viene cada consulta, se escribe por intuición y se abandona a los seis meses.' },
+          { q: '¿Cómo se paga y qué hay que sostener después?', a: 'El pago va 50% al inicio, 30% al ver el sitio funcionando en demo y 20% para publicar, con 30 días de garantía por fallas técnicas. Después queda lo recurrente: infraestructura desde $350 al año y mantenimiento desde $59 al mes. Si tu venta depende de publicar análisis, el mantenimiento no es opcional: un blog abandonado dice más de lo que crees. Los precios no incluyen ITBMS (7%).' },
         ],
       },
       {
@@ -608,6 +612,8 @@ export const industrias2c: PageData[] = [
           { q: '¿Publico mis honorarios?', a: 'No hace falta la tarifa, sí el modelo. Explicar cómo se cobra en el rubro —por porcentaje de obra, por metro cuadrado o por fases— y qué incluye cada fase filtra mejor que cualquier precio, y evita el conflicto del cliente que creyó que la dirección de obra venía incluida.' },
           { q: '¿Puedo publicar las fotos de mis obras sin más?', a: 'Depende del contrato con el fotógrafo: salvo que se acordara lo contrario, los derechos de la imagen son suyos. Conviene acordar por escrito al contratar la sesión para qué se usarán y por cuánto tiempo. Y con el cliente, si la vivienda es privada e identificable.' },
           { q: '¿Cómo hago para que no me lleguen proyectos demasiado pequeños?', a: 'Publicar una referencia de escala mínima y curar el portafolio hacia arriba. En un rubro que se elige por afinidad estética, parecer especialista en cierto tipo y tamaño de encargo vale más que parecer versátil.' },
+          { q: '¿Cuándo se justifica pasar del portafolio a un proyecto a medida?', a: 'Aquí el sitio es el portafolio, así que pesa la calidad de las imágenes más que la cantidad de páginas: 8 a 12 páginas desde $950 alcanzan para proyectos, servicios y estudio. Si quieres recorridos, planos interactivos o portal de cliente, es proyecto a medida desde $2,900. La infraestructura arranca en $350 al año y los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuándo NO conviene lanzar la web de tu estudio?', a: 'Cuando todavía no tienes fotografía profesional de tus obras. Un portafolio de arquitectura con fotos de celular resta en vez de sumar: mejor esperar dos meses, fotografiar bien tres proyectos y salir con eso. El sitio no compensa material flojo, lo amplifica.' },
         ],
       },
       {

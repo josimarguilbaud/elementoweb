@@ -106,7 +106,7 @@ export const blog2: PageData[] = [
     slug: 'blog/como-crear-una-tienda-online-en-panama',
     parent: { slug: 'blog', label: 'Blog' },
     title: 'Cómo crear una tienda online en Panamá: guía completa 2026',
-    description: 'Guía paso a paso para crear tu tienda online en Panamá en 2026: plataforma, catálogo, pagos con Yappy, envíos y logística local. Todo lo que necesitas para vender.',
+    description: 'Guía paso a paso para crear tu tienda online en Panamá: plataforma, catálogo, pagos con Yappy, envíos y logística local.',
     h1: 'Cómo crear una tienda online en Panamá: guía completa 2026',
     breadcrumb: 'Crear tienda online',
     category: 'E-commerce',

@@ -147,6 +147,47 @@ export const marketingPages: PageData[] = [
           'Y sin medición de conversiones, todo es fe. Configuramos el seguimiento para saber qué anuncio, qué palabra y qué campaña genera clientes reales, no solo clics. Sobre eso se optimiza.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Búsqueda, Display y Performance Max: cuál sirve para qué',
+        paragraphs: [
+          'Google no vende un solo producto publicitario y confundirlos es la causa más común de presupuesto quemado en Panamá.',
+          'Las campañas de <strong>búsqueda</strong> muestran tu anuncio a quien ya está buscando lo que vendes. Es la que casi siempre conviene empezar, porque la intención de compra ya existe: alguien que escribe "plomero urgente Panamá" quiere un plomero ahora.',
+          'Las de <strong>Display</strong> ponen banners en sitios de terceros a gente que no te estaba buscando. Sirven para recordar a quien ya te visitó, y son terribles como primera campaña: mucho clic barato, casi ninguna venta.',
+          '<strong>Performance Max</strong> mezcla todos los canales y decide sola dónde gastar. Rinde cuando ya hay historial de conversiones que le enseñen qué buscar; arrancar con ella sin datos es entregarle el presupuesto a un sistema que todavía no sabe qué es un buen cliente para ti.',
+          '<strong>Regla corta:</strong> empieza en búsqueda, suma remarketing en Display cuando ya tengas visitas, y considera Performance Max solo cuando la cuenta tenga conversiones medidas de forma fiable.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Las palabras negativas son la mitad del trabajo',
+        paragraphs: [
+          'Google no solo muestra tu anuncio en la palabra exacta que elegiste: lo muestra en búsquedas que considera relacionadas. Ahí es donde se va el dinero sin que nadie lo note.',
+          'Un ejemplo real del rubro: una empresa que vende "diseño web" termina pagando clics por "diseño web gratis", "curso de diseño web", "diseño web empleo" y "diseño de uñas". Cada uno de esos clics cuesta lo mismo que uno bueno y no puede convertir jamás.',
+          'La lista de palabras negativas —los términos donde tu anuncio NO debe aparecer— es lo que corta esa fuga. Se arma revisando el informe de términos de búsqueda reales cada semana al principio, y se sigue puliendo mientras la campaña vive.',
+          '<strong>Es el trabajo menos vistoso y el que más ahorra.</strong> Una cuenta sin negativas suele estar desperdiciando entre un cuarto y un tercio del presupuesto en búsquedas que nunca iban a comprar.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Cuándo Google Ads no es tu mejor inversión',
+        paragraphs: [
+          'Hay negocios donde pagar por búsqueda es tirar dinero, y conviene saberlo antes de empezar.',
+          'Si tu producto no se busca porque la gente no sabe que existe, no hay demanda que capturar: ahí funciona mejor Meta, que muestra a quien no te estaba buscando. Si tu margen por venta es muy bajo y tu ticket también, el costo por clic se come la ganancia antes de la primera venta.',
+          'Y si el destino del anuncio es malo —una portada genérica en vez de una <a href="/servicios/landing-pages-alta-conversion-panama/">landing</a>, o un sitio lento en celular— la campaña va a fallar sin importar cuán bien esté armada. Arreglar el destino antes de pautar suele multiplicar el resultado sin subir el presupuesto.',
+          'También hay un piso práctico de presupuesto: con muy poca inversión diaria la campaña no acumula datos suficientes para optimizarse, y termina siendo un experimento caro sin conclusión. <strong>Es más honesto no empezar que empezar con la mitad de lo necesario.</strong>',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: costo por venta, no costo por clic',
+        paragraphs: [
+          'El costo por clic es la métrica que más se mira y la que menos importa. Un clic barato que nunca compra es más caro que uno caro que compra.',
+          'Lo que hay que medir es la cadena completa: clics, conversiones y de esas conversiones cuántas terminaron en venta real. Ese último eslabón casi nunca está conectado, y sin él se optimiza hacia el lead barato en vez de hacia el cliente rentable.',
+          'El segundo corte es por término de búsqueda, no por campaña. Dentro de una misma campaña suele haber tres o cuatro búsquedas que traen casi todo el negocio y una docena que solo consumen. Ese detalle es donde está la optimización real.',
+          'Y el presupuesto perdido: cuánto se gastó en términos que después se agregaron como negativos. Puesto en dólares al mes, es el número que más rápido justifica la gestión profesional de una cuenta.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -158,6 +199,10 @@ export const marketingPages: PageData[] = [
           { q: '¿Qué es el Quality Score y por qué me importa?', a: 'Es la nota del 1 al 10 que Google le pone a la relevancia de tu anuncio, tus palabras clave y tu página de destino. Un puntaje alto te hace pagar menos por cada clic y aparecer mejor posicionado. Por eso alineamos el anuncio con la palabra buscada y con una landing que responda exactamente a esa búsqueda: subir el Quality Score es bajar el costo.' },
           { q: '¿Puedo anunciarme solo en ciertas zonas de Panamá?', a: 'Sí. Segmentamos por ubicación para que solo pagues por clics de la ciudad, provincia o incluso el radio de kilómetros que te interesa. Si atiendes solo la ciudad de Panamá, no tiene sentido pagar por búsquedas de David o Colón, salvo que quieras expandirte.' },
           { q: '¿Sirve Google Ads si mi servicio es muy nuevo y nadie lo busca?', a: 'Si nadie escribe tu solución en Google, la búsqueda rinde poco porque se alimenta de la intención existente. En ese caso conviene empezar por <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a> y contenido para crear la demanda, y usar Google Ads más adelante para capturarla cuando la gente ya te busque.' },
+                  { q: '¿Con qué tipo de campaña de Google debo empezar?', a: 'Con búsqueda, casi siempre. Es la única donde la intención de compra ya existe: quien escribe "plomero urgente Panamá" quiere un plomero ahora. Display sirve para recordar a quien ya te visitó, y Performance Max solo rinde cuando la cuenta ya tiene conversiones medidas.' },
+          { q: '¿Por qué mi campaña gasta y no vende?', a: 'La causa más común son las palabras negativas ausentes. Google muestra tu anuncio en búsquedas que considera relacionadas: quien vende diseño web termina pagando por "diseño web gratis", "curso de diseño web" y hasta "diseño de uñas". Una cuenta sin negativas suele desperdiciar entre un cuarto y un tercio del presupuesto.' },
+          { q: '¿Cuándo NO conviene Google Ads?', a: 'Si tu producto no se busca porque nadie sabe que existe, no hay demanda que capturar y funciona mejor Meta. Si el margen y el ticket son muy bajos, el costo por clic se come la ganancia. Y si el destino del anuncio es lento o genérico, la campaña falla por bien armada que esté.' },
+          { q: '¿Qué métrica debo mirar?', a: 'El costo por venta, no el costo por clic. Un clic barato que nunca compra es más caro que uno caro que sí. Y el corte por término de búsqueda, no por campaña: dentro de una campaña suele haber tres o cuatro búsquedas que traen casi todo el negocio.' },
         ],
       },
       {
@@ -244,6 +289,46 @@ export const marketingPages: PageData[] = [
           'Y como el <a href="/marketing/contenido-redes-sociales-panama/">contenido orgánico</a> y la pauta se alimentan mutuamente, lo que mejor funciona en tus publicaciones suele ser el mejor punto de partida para un anuncio.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Por qué te rechazan anuncios, y qué hacer',
+        paragraphs: [
+          'El rechazo de anuncios es la frustración número uno de quien pauta en Meta, y casi siempre tiene causas concretas y evitables.',
+          'Las categorías restringidas son la primera: salud, estética, finanzas, empleo y vivienda tienen reglas especiales. En estética, por ejemplo, los antes y después demasiado explícitos y las promesas de resultado se rechazan de forma sistemática.',
+          'La segunda causa es más sutil y sorprende a mucha gente: los textos que señalan una característica personal del usuario. "¿Tienes sobrepeso?" o "¿Sufres de calvicie?" violan la política porque implican que la plataforma sabe algo personal de quien lo lee. La misma idea escrita en primera persona —"baja de peso con…"— sí pasa.',
+          '<strong>Y una cuenta con rechazos repetidos termina limitada</strong>, lo que deja la captación en cero de un día para otro. Por eso conviene no depender solo de la pauta: el tráfico orgánico de tu web no lo puede rechazar nadie.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Cuánto presupuesto hace falta para que Meta aprenda',
+        paragraphs: [
+          'Meta optimiza automáticamente, pero necesita datos para hacerlo. Una campaña con muy poco presupuesto diario nunca sale de la fase de aprendizaje y por tanto nunca rinde a su potencial.',
+          'La lógica es simple: el sistema necesita acumular una cantidad razonable de conversiones por semana para identificar patrones. Con un presupuesto que solo genera dos o tres conversiones semanales, no hay patrón que encontrar y el rendimiento se queda plano.',
+          'Eso lleva a una recomendación incómoda pero honesta: <strong>es mejor concentrar todo el presupuesto en una campaña bien armada que repartirlo entre cinco</strong>. Cinco campañas pequeñas es cinco veces la misma fase de aprendizaje sin completar.',
+          'Y hay un piso por debajo del cual conviene no empezar: si el presupuesto disponible no permite sostener varias semanas de prueba, el dinero rinde más arreglando el destino del anuncio o trabajando el orgánico primero.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El creativo se agota, y eso no es un error tuyo',
+        paragraphs: [
+          'Toda campaña de Meta que funciona termina bajando su rendimiento. No es que se rompa: es que la audiencia ya vio ese anuncio demasiadas veces y deja de reaccionar.',
+          'La señal es reconocible: el costo por resultado sube de forma sostenida sin que se haya cambiado nada. Cuando eso pasa, subirle presupuesto lo empeora, porque significa mostrar aún más el anuncio que ya cansó.',
+          'Lo que funciona es rotar creativos antes de que se agoten, no después. Tener tres o cuatro variantes en circulación y sumar una nueva de forma regular mantiene el costo estable, y de paso te dice qué tipo de creativo funciona con tu audiencia.',
+          '<strong>Por eso el creativo pesa más que la segmentación en Meta hoy.</strong> La plataforma ya sabe a quién mostrarle; lo que no puede hacer es inventar el anuncio que le va a interesar.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: costo por resultado y frecuencia',
+        paragraphs: [
+          'El costo por resultado es la métrica base: cuánto pagas por cada acción que te importa, sea un mensaje, un lead o una venta.',
+          'La segunda, y la que casi nadie mira, es la <strong>frecuencia</strong>: cuántas veces la misma persona vio tu anuncio. Cuando esa cifra sube y el costo por resultado sube con ella, el problema no es la segmentación ni el presupuesto: es que el creativo se agotó y toca rotarlo.',
+          'El tercero es la calidad del resultado. Meta es muy bueno consiguiendo mensajes baratos, y muchos de esos mensajes no compran. Si el costo por mensaje baja mientras el costo por venta sube, la campaña está optimizando hacia la métrica equivocada.',
+          'Por eso medimos hasta donde el negocio pueda seguir el rastro, y no solo hasta el clic. <strong>Sin ese último eslabón, optimizar en Meta es optimizar hacia el ruido barato.</strong>',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -255,6 +340,10 @@ export const marketingPages: PageData[] = [
           { q: '¿Qué es el remarketing y por qué lo recomiendan tanto?', a: 'Es volver a mostrarle anuncios a quien ya interactuó contigo: visitó tu web, vio tu video o abandonó un carrito. Es la parte más rentable de Meta, porque le hablas a gente que ya te conoce en lugar de a desconocidos. Para que funcione, el píxel de Meta debe estar bien instalado desde el inicio, y eso es de lo primero que revisamos.' },
           { q: '¿Cuántos creativos hacen falta para arrancar?', a: 'Recomendamos empezar con varios ángulos, no con un solo anuncio. El algoritmo aprende más rápido cuando tiene opciones para comparar, y así descubrimos con datos cuál mensaje conecta antes de escalar el presupuesto en el ganador.' },
           { q: '¿Necesito grabar videos o sirven fotos?', a: 'Las fotos funcionan, pero el video corto suele rendir más porque frena el scroll y el algoritmo lo empuja. No necesitas producción de estudio: muchas veces un clip auténtico grabado con celular convierte mejor que algo demasiado pulido. Si ya haces <a href="/marketing/contenido-redes-sociales-panama/">contenido para redes</a>, lo aprovechamos para la pauta.' },
+                  { q: '¿Por qué me rechazan los anuncios en Meta?', a: 'Por categorías restringidas —salud, estética, finanzas, empleo, vivienda— o por textos que señalan una característica personal del usuario. "¿Tienes sobrepeso?" viola la política; "baja de peso con…" sí pasa. Los rechazos repetidos terminan limitando la cuenta.' },
+          { q: '¿Cuánto presupuesto necesito en Meta?', a: 'El suficiente para que la campaña salga de la fase de aprendizaje, que requiere acumular conversiones cada semana. Por eso conviene concentrar el presupuesto en una campaña bien armada en vez de repartirlo entre cinco: cinco campañas pequeñas es cinco veces el mismo aprendizaje sin completar.' },
+          { q: '¿Por qué mi campaña funcionaba y dejó de funcionar?', a: 'Casi siempre porque el creativo se agotó: la audiencia ya lo vio demasiadas veces. La señal es que el costo por resultado sube sin haber cambiado nada. Subirle presupuesto lo empeora. Se resuelve rotando creativos antes de que se agoten, no después.' },
+          { q: '¿Qué métrica me avisa de que algo va mal?', a: 'La frecuencia, que casi nadie mira: cuántas veces la misma persona vio tu anuncio. Si sube junto con el costo por resultado, el problema es el creativo agotado, no la segmentación ni el presupuesto.' },
         ],
       },
       {
@@ -340,6 +429,46 @@ export const marketingPages: PageData[] = [
           'Y el contenido orgánico no vive aislado: lo que mejor funciona aquí se convierte en el mejor material para tu <a href="/marketing/facebook-instagram-ads-panama/">pauta en Meta</a>. Orgánico y pagado, trabajando juntos.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Cuánto contenido hace falta de verdad',
+        paragraphs: [
+          'La respuesta que circula —publicar todos los días— es la razón por la que la mayoría de las cuentas de negocio en Panamá se abandonan a los dos meses.',
+          'La constancia importa más que la frecuencia. Tres publicaciones semanales sostenidas durante un año rinden muchísimo más que publicaciones diarias durante seis semanas seguidas de tres meses de silencio. El algoritmo penaliza el abandono más de lo que premia el volumen.',
+          'Y no todo el contenido cuesta lo mismo de producir. Un Reel bien hecho toma tiempo; una foto de producto con buen texto, mucho menos. Una mezcla realista —un par de piezas de esfuerzo al mes y el resto ligero— es lo que se sostiene sin equipo dedicado.',
+          '<strong>La pregunta correcta no es cuánto publicar, sino cuánto puedes sostener doce meses seguidos.</strong> Ese número, sea el que sea, es tu frecuencia.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El contenido que caduca y el que sigue trabajando',
+        paragraphs: [
+          'Una publicación de redes vive horas. Un artículo en tu web vive años. Casi todos los negocios invierten en el primero y descuidan el segundo, y por eso sienten que empiezan de cero cada semana.',
+          'El contenido de redes es de alcance: sirve para que te descubran y para mantenerte presente. Pero muere rápido y no lo controlas: la cuenta no es tuya, el alcance lo decide otro y una suspensión te deja sin nada.',
+          'El contenido de tu web es de captación: sigue apareciendo en búsquedas meses o años después, sin pagar por alcance. Es más lento de arrancar y no se apaga.',
+          'La forma eficiente de trabajar los dos es que se alimenten. <strong>Un artículo de la web da material para cinco publicaciones</strong>, y esas publicaciones mandan tráfico al artículo. Lo trabajamos junto, no como dos servicios separados.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Cuándo NO conviene invertir en redes',
+        paragraphs: [
+          'Hay negocios donde el esfuerzo en redes rinde poco, y decirlo antes evita gastar meses en el canal equivocado.',
+          'Si vendes a otras empresas un servicio técnico y especializado, tu comprador no te va a encontrar en Instagram: te busca en Google cuando tiene el problema. Ahí el contenido de la web y el SEO rinden mucho más que el contenido social.',
+          'Si tu producto se compra por urgencia —un plomero, un cerrajero, una grúa— la búsqueda es el canal, no el descubrimiento. Nadie se acuerda de una cuenta bonita cuando tiene una tubería rota.',
+          'Y si no hay quién sostenga la producción, es mejor no empezar: una cuenta abandonada comunica peor que no tener cuenta. <strong>Un perfil con la última publicación de hace ocho meses le dice al cliente que quizá el negocio también cerró.</strong>',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: qué hizo la gente, no cuántos te siguen',
+        paragraphs: [
+          'El número de seguidores es la métrica más visible y la menos útil. Se puede comprar, se puede inflar y no paga nada.',
+          'Lo que hay que medir es qué pasó después de ver el contenido: cuántos entraron al perfil, cuántos hicieron clic al enlace, cuántos escribieron por mensaje directo. Ese último es el que más se parece a una venta en Panamá, donde casi todo se cierra por conversación.',
+          'El segundo corte es qué tipo de contenido genera esas acciones. Suele haber un formato que produce la mayoría de los mensajes, y descubrirlo cambia la producción entera del mes siguiente. Sin medirlo, se publica por costumbre.',
+          'Y cuánto tráfico de tu web viene de redes, que es lo que dice si el canal está alimentando al activo que sí es tuyo. <strong>Si las redes crecen y tu web no recibe nada de ellas, estás construyendo en terreno prestado.</strong>',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -351,6 +480,10 @@ export const marketingPages: PageData[] = [
           { q: '¿Cada cuánto se debe publicar?', a: 'Más que la cantidad, importa la consistencia. Preferimos un ritmo sostenible de piezas bien hechas antes que saturar una semana y desaparecer la siguiente. El algoritmo premia a las cuentas activas de forma constante, así que definimos una frecuencia que podamos mantener todos los meses, no solo el primero.' },
           { q: '¿El contenido en redes ayuda al SEO?', a: 'De forma indirecta. Las redes no posicionan en Google por sí solas, pero construyen marca y generan búsquedas de tu nombre, que sí son una señal positiva. El contenido que de verdad mueve tu posicionamiento vive en tu web; ahí entra nuestro trabajo de <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a>.' },
           { q: '¿Puedo usar el mismo contenido en todas las plataformas?', a: 'Se aprovecha la base, pero adaptamos el formato. Un Reel vertical funciona en Instagram y TikTok, pero el texto, el tono y el tamaño cambian entre una historia, un feed y un post de LinkedIn. Reciclar sin adaptar se nota y rinde menos.' },
+                  { q: '¿Cada cuánto debo publicar?', a: 'Lo que puedas sostener doce meses seguidos. Tres publicaciones semanales durante un año rinden más que publicaciones diarias durante seis semanas y luego tres meses de silencio: el algoritmo penaliza el abandono más de lo que premia el volumen.' },
+          { q: '¿Qué diferencia hay entre contenido de redes y contenido de web?', a: 'El de redes vive horas y sirve para que te descubran, pero no lo controlas: la cuenta no es tuya. El de tu web sigue apareciendo en búsquedas años después sin pagar alcance. Lo eficiente es que se alimenten: un artículo da material para cinco publicaciones.' },
+          { q: '¿Cuándo NO conviene invertir en redes sociales?', a: 'Si vendes a empresas un servicio técnico, tu comprador te busca en Google cuando tiene el problema, no en Instagram. Si tu producto se compra por urgencia, la búsqueda es el canal. Y si no hay quién sostenga la producción, mejor no empezar: una cuenta abandonada comunica peor que no tener cuenta.' },
+          { q: '¿Qué mido si no son los seguidores?', a: 'Qué hizo la gente: entradas al perfil, clics al enlace y mensajes directos, que es lo que más se parece a una venta en Panamá. Y cuánto tráfico llega a tu web desde redes: si crecen y tu web no recibe nada, estás construyendo en terreno prestado.' },
         ],
       },
       {
@@ -436,6 +569,46 @@ export const marketingPages: PageData[] = [
           'Para tiendas en línea, estas automatizaciones se conectan directo con tu catálogo y se potencian con nuestras <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones con n8n</a>.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Por qué tus correos caen en spam, y cómo se arregla',
+        paragraphs: [
+          'Es el problema más común y el peor entendido. Que un correo llegue a la bandeja de entrada no depende de lo que escribas: depende sobre todo de tres registros técnicos en tu dominio.',
+          'Son <strong>SPF, DKIM y DMARC</strong>. En resumen, le dicen al servidor que recibe el correo que tu plataforma de envío tiene permiso para enviar en nombre de tu dominio, que el mensaje no fue alterado, y qué hacer si algo no cuadra. Sin ellos, Gmail y Outlook desconfían por defecto.',
+          'Desde 2024 los grandes proveedores endurecieron esto: quien envía volumen sin autenticación configurada, sencillamente no entra. Muchos negocios en Panamá descubren el problema cuando su campaña tiene una tasa de apertura ridícula y culpan al contenido.',
+          '<strong>Es lo primero que revisamos, antes de escribir una sola línea de un correo.</strong> Configurarlo es un trabajo de una vez y sin él todo lo demás es inútil.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'La lista comprada no funciona, y además te quema el dominio',
+        paragraphs: [
+          'Aparece siempre la misma propuesta: comprar una base de miles de correos de empresas panameñas. Es tentador y es la forma más rápida de destruir la reputación de tu dominio.',
+          'El mecanismo es este: esa gente no te conoce, así que marca tu correo como spam. Los proveedores registran esa señal y empiezan a mandar todos tus correos a la carpeta de spam, incluidos los que van a tus clientes reales. El daño no se limita a la campaña: afecta a tu dominio entero, incluidos los correos que escribes uno a uno.',
+          'Recuperar la reputación de un dominio quemado toma meses de envíos limpios y no siempre se logra del todo. Es de los pocos errores de marketing digital que dejan cicatriz.',
+          'Lo que sí funciona es construir lista propia, más lenta pero tuya: un motivo real para suscribirse, permiso explícito y contenido que valga la pena abrir. <strong>Mil suscriptores que te dieron permiso rinden más que cincuenta mil comprados</strong>, y no ponen en riesgo tu correo de trabajo.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Los tres envíos automáticos que pagan el servicio solos',
+        paragraphs: [
+          'El email marketing tiene fama de trabajoso porque se piensa como boletín mensual. La parte que de verdad rinde no es esa: son unos pocos correos automáticos que se escriben una vez y trabajan solos durante años.',
+          'El primero es la <strong>bienvenida</strong>: el correo que se envía justo cuando alguien se suscribe. Es el momento de mayor interés de toda la relación y casi nadie lo aprovecha.',
+          'El segundo es el <strong>carrito abandonado</strong>, si vendes en línea. Recupera ventas que ya estaban prácticamente hechas y es, de lejos, el correo con mejor retorno del comercio electrónico.',
+          'El tercero es la <strong>reactivación</strong>: una secuencia para quien hace meses no te compra ni abre nada. Recuperar a alguien que ya te conoce es más barato que conseguir un cliente nuevo, y esa lista dormida suele ser más grande de lo que el negocio cree.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: entregas antes que aperturas',
+        paragraphs: [
+          'La tasa de apertura es la métrica más citada y hoy es la menos fiable: las protecciones de privacidad de Apple y otros clientes de correo marcan aperturas que no ocurrieron. Sirve para comparar campañas entre sí, no como número absoluto.',
+          'Lo que hay que mirar primero es la <strong>entregabilidad</strong>: qué porcentaje de tus correos llegó realmente a la bandeja, cuántos rebotaron y cuántas quejas de spam hubo. Si eso está mal, ninguna otra métrica significa nada.',
+          'Después, los clics y qué se hizo tras el clic. Un correo con muchas aperturas y ningún clic no está fallando en el asunto: está fallando en lo que promete adentro.',
+          'Y la evolución de la lista: cuántos entran y cuántos se dan de baja al mes. <strong>Una lista que crece pero pierde suscriptores más rápido de lo que suma está muriendo despacio</strong>, aunque el número total todavía se vea bien.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -447,6 +620,10 @@ export const marketingPages: PageData[] = [
           { q: '¿Cada cuánto debo enviar correos sin cansar a mi lista?', a: 'No hay un número mágico; depende de tu negocio y de tener algo que valga la pena decir. Más importante que la frecuencia es la relevancia: segmentamos la lista para que cada persona reciba lo que le interesa. Un correo útil cada dos semanas rinde más que uno vacío cada tres días, que solo genera bajas.' },
           { q: '¿Qué diferencia hay entre newsletter y automatización?', a: 'El newsletter lo envías tú a toda la lista en un momento (una promoción, una novedad). La automatización se dispara sola según lo que hace cada persona: se suscribió, abandonó un carrito, lleva meses sin comprar. El newsletter mantiene la relación; las automatizaciones son las que recuperan ventas de forma constante y sin trabajo manual.' },
           { q: '¿Puedo conectar el email con mi tienda o mi CRM?', a: 'Sí, y es donde el canal se vuelve poderoso. Conectamos tu plataforma de correo con tu <a href="/servicios/tiendas-online-ecommerce-panama/">tienda en línea</a> o tu CRM mediante <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones con n8n</a>, para que los correos reaccionen a compras reales, no a una lista estática.' },
+                  { q: '¿Por qué mis correos caen en spam?', a: 'Casi siempre por falta de SPF, DKIM y DMARC en tu dominio: los registros que autorizan a tu plataforma a enviar en tu nombre. Desde 2024 los grandes proveedores endurecieron esto y quien envía volumen sin autenticación no entra. Se configura una vez y sin eso lo demás es inútil.' },
+          { q: '¿Puedo comprar una base de correos?', a: 'Es la forma más rápida de quemar tu dominio. Esa gente no te conoce, te marca como spam, y los proveedores empiezan a mandar a spam todos tus correos, incluidos los que escribes uno a uno a tus clientes. Recuperarse toma meses y no siempre se logra.' },
+          { q: '¿Qué correos automáticos dan más retorno?', a: 'Tres: la bienvenida, que llega en el momento de mayor interés y casi nadie aprovecha; el carrito abandonado, el de mejor retorno del comercio electrónico; y la reactivación de quien hace meses no compra, que suele ser una lista más grande de lo que el negocio cree.' },
+          { q: '¿Sirve mirar la tasa de apertura?', a: 'Solo para comparar campañas entre sí. Las protecciones de privacidad marcan aperturas que no ocurrieron, así que como número absoluto engaña. Primero hay que mirar la entregabilidad: cuánto llegó de verdad, cuánto rebotó y cuántas quejas de spam hubo.' },
         ],
       },
       {
@@ -532,6 +709,46 @@ export const marketingPages: PageData[] = [
           'Y como las respuestas caen en <a href="/saas/chatmantis/">ChatMantis</a>, la conversación que abre una campaña la puede atender un asistente de IA o tu equipo, sin que un mensaje se quede sin respuesta.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'API oficial o aplicación no oficial: la decisión que evita el bloqueo',
+        paragraphs: [
+          'Existen dos formas de hacer envíos masivos por WhatsApp y solo una no pone en riesgo tu número.',
+          'Las <strong>aplicaciones no oficiales</strong> —esas que prometen enviar a mil contactos desde tu celular— funcionan conectándose a WhatsApp de una forma que la plataforma prohíbe expresamente. Son baratas, funcionan un tiempo, y terminan con el número bloqueado. Cuando ese número es el que usa tu negocio para vender, el daño no es la campaña: es quedarte sin canal de ventas de un día para otro.',
+          'La <strong>API oficial de WhatsApp Business</strong> es el camino permitido. Tiene reglas: los mensajes promocionales deben usar plantillas aprobadas previamente, hace falta consentimiento del destinatario, y cada envío tiene un costo. A cambio, tu número no corre riesgo y el volumen es legítimo.',
+          '<strong>La regla es simple:</strong> si el número que vas a usar es el de tu negocio, no existe la opción barata. El ahorro de la app no oficial se paga con el activo más valioso que tienes en el canal.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'La ventana de 24 horas y por qué existen las plantillas',
+        paragraphs: [
+          'WhatsApp separa dos situaciones y entenderlo explica casi todas las reglas del canal.',
+          'Cuando un cliente te escribe, se abre una <strong>ventana de 24 horas</strong> en la que puedes responderle lo que quieras, con el texto que quieras y sin costo por mensaje. Es una conversación normal.',
+          'Fuera de esa ventana, o cuando tú inicias el contacto, solo puedes enviar <strong>plantillas aprobadas</strong>: mensajes cuyo texto fue revisado por Meta de antemano. No se puede improvisar, y cada envío tiene costo.',
+          'De ahí sale la estrategia que funciona: usar la plantilla para abrir la conversación y resolver la venta dentro de la ventana. Y por eso importa que las plantillas estén bien redactadas y aprobadas antes de la campaña, no el mismo día. <strong>Una plantilla rechazada a último momento deja la campaña sin salida.</strong>',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El consentimiento no es un trámite: es lo que evita el reporte',
+        paragraphs: [
+          'La diferencia entre una campaña que vende y una que quema tu número casi nunca está en el mensaje: está en a quién se lo mandas.',
+          'WhatsApp exige consentimiento previo, y la razón es práctica antes que legal: cuando alguien recibe un mensaje que no pidió, lo reporta. Suficientes reportes y el número queda restringido o bloqueado, sin importar cuán bueno fuera el contenido.',
+          'El consentimiento válido es explícito y verificable: una casilla en tu formulario, un mensaje del propio cliente pidiendo información, una compra donde se indicó que se le escribiría. Una lista de teléfonos de clientes antiguos que nunca dieron permiso no es una lista de opt-in, por más que sean clientes reales.',
+          'Y hay que dejar salir con facilidad. <strong>Un cliente que puede darse de baja con una palabra no te reporta</strong>, y esa baja cuesta infinitamente menos que un número restringido. Los datos de esos contactos, además, son datos personales bajo la Ley 81 de 2019.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: respuestas, no entregas',
+        paragraphs: [
+          'En WhatsApp la métrica de entrega dice poco, porque casi todo se entrega. Lo que importa es qué pasó después.',
+          'El número central es la <strong>tasa de respuesta</strong>: cuántos de los que recibieron la plantilla contestaron algo. Es la que dice si el mensaje conectó, y es muchísimo más alta que en cualquier otro canal, lo que también significa que el mal uso se nota más rápido.',
+          'El segundo es la tasa de bajas y reportes. Es la señal temprana de que la lista o el mensaje están mal, y hay que vigilarla campaña a campaña, no al final del trimestre: para cuando el número está restringido, ya es tarde.',
+          'Y el costo por conversación iniciada frente al valor de lo que se vendió en ella. WhatsApp cobra por conversación, así que ese cálculo se puede hacer con precisión y es el que dice si el canal está rindiendo.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -543,6 +760,10 @@ export const marketingPages: PageData[] = [
           { q: '¿Qué es una plantilla aprobada y por qué la necesito?', a: 'Es un mensaje que Meta revisa y autoriza antes de que puedas enviarlo de forma masiva. Toda campaña que inicia una conversación (una promoción, un recordatorio) debe usar una plantilla aprobada; no puedes escribir texto libre a una lista fría. Nosotros redactamos y gestionamos la aprobación de esas plantillas ante Meta como parte del servicio.' },
           { q: '¿En qué se diferencia de mandar difusiones desde WhatsApp normal?', a: 'La lista de difusión del WhatsApp común solo llega a quien te tiene guardado como contacto, no escala y, en volumen, activa las alarmas de Meta. La API oficial de WhatsApp Business está hecha para envíos masivos con plantillas, métricas de entrega y lectura, e integración con tu CRM. Es la diferencia entre un truco casero y una herramienta de negocio.' },
           { q: '¿Cuánto cobra Meta por los mensajes?', a: 'Meta cobra por conversación iniciada, y la tarifa varía según el tipo (marketing, utilidad, servicio) y el país. Ese consumo se paga desde tu propia cuenta, aparte de nuestro fee. Te armamos un estimado según tu volumen antes de arrancar, para que no haya sorpresas.' },
+                  { q: '¿Puedo usar una app para enviar masivos desde mi celular?', a: 'Puedes, y terminas con el número bloqueado. Esas apps se conectan de una forma que WhatsApp prohíbe. Si el número es el que usa tu negocio para vender, el ahorro se paga quedándote sin canal de ventas de un día para otro.' },
+          { q: '¿Qué es la ventana de 24 horas?', a: 'Cuando un cliente te escribe, se abre una ventana de 24 horas en la que puedes responderle lo que quieras sin costo por mensaje. Fuera de ella, o cuando tú inicias, solo puedes enviar plantillas aprobadas previamente por Meta y cada envío tiene costo.' },
+          { q: '¿Sirve mi lista de clientes antiguos para una campaña?', a: 'Solo si dieron permiso explícito. Ser cliente no es consentimiento. Cuando alguien recibe un mensaje que no pidió, lo reporta, y suficientes reportes restringen el número por bueno que fuera el contenido.' },
+          { q: '¿Qué debo vigilar durante una campaña?', a: 'La tasa de respuesta, que dice si el mensaje conectó, y la tasa de bajas y reportes, que es la señal temprana de que la lista o el mensaje están mal. Hay que mirarla campaña a campaña: cuando el número ya está restringido, es tarde.' },
         ],
       },
       {
@@ -628,6 +849,46 @@ export const marketingPages: PageData[] = [
           'Empezamos por el proceso que más horas te consume y menos criterio requiere. Esa primera automatización libera tiempo real y financia las siguientes. Es la misma disciplina con la que operamos <a href="/saas/">nuestros propios SaaS</a>.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Qué NO conviene automatizar',
+        paragraphs: [
+          'Automatizar lo que no toca es la forma más rápida de que un proyecto de automatización se abandone a los tres meses.',
+          'No conviene automatizar un proceso que todavía cambia todas las semanas: la automatización se rompe cada vez que el proceso se mueve y termina generando más trabajo del que ahorra. Primero se estabiliza el proceso a mano, después se automatiza.',
+          'Tampoco conviene automatizar decisiones que requieren criterio. Aprobar un descuento, atender un reclamo delicado o decidir si un cliente es viable son cosas donde el error automático cuesta más que el tiempo humano que ahorra.',
+          'Y no conviene automatizar algo que ocurre tres veces al mes. La cuenta es simple: si el proceso toma diez minutos y ocurre tres veces al mes, son treinta minutos; montar y mantener la automatización cuesta más que eso. <strong>La automatización rinde en lo repetitivo y aburrido, no en lo importante y ocasional.</strong>',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Toda automatización se rompe alguna vez, y hay que planearlo',
+        paragraphs: [
+          'Es la parte que nadie menciona al vender automatización y la que decide si el proyecto sobrevive: los flujos se rompen. Una API cambia, una contraseña expira, un servicio cae, alguien renombra una columna en la hoja de cálculo.',
+          'Lo grave no es que se rompa: es que se rompa en silencio. Un flujo que dejó de mandar los leads al CRM y nadie se enteró significa dos semanas de contactos perdidos que ya no se recuperan.',
+          'Por eso lo primero que montamos no es el flujo: es el aviso de fallo. Si algo se cae, alguien se entera el mismo día por WhatsApp o correo, con el detalle de qué paso falló. Suena básico y es lo que separa una automatización que se puede confiar de una que hay que revisar a mano cada lunes.',
+          'También importa que quede documentado: qué hace cada flujo, qué lo dispara y a qué se conecta. <strong>Una automatización que solo entiende quien la montó es una dependencia, no una mejora.</strong>',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Dónde vive n8n y qué cuesta de verdad',
+        paragraphs: [
+          'n8n se puede usar de dos maneras y la diferencia de costo es grande, sobre todo cuando el volumen crece.',
+          'En la <strong>nube de n8n</strong> pagas una mensualidad y no te ocupas de nada. Es lo razonable para empezar o para volúmenes bajos, y el precio sube según cuántas ejecuciones tengas.',
+          'En un <strong>servidor propio</strong> el costo es el del servidor, y ese costo no cambia aunque multipliques las ejecuciones. Para un negocio con automatizaciones intensivas suele salir varias veces más barato, a cambio de que alguien se ocupe de mantener y respaldar el servidor.',
+          'Hay una tercera consideración que en Panamá pesa: los datos. Si tus flujos mueven información de clientes, tenerlos en tu propio servidor te da control sobre dónde vive esa información, lo que simplifica la conversación de protección de datos bajo la Ley 81 de 2019.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: horas devueltas y errores evitados',
+        paragraphs: [
+          'Una automatización se justifica con dos números y ninguno de los dos es técnico.',
+          'El primero son las <strong>horas devueltas</strong>: cuántas veces al mes corre el flujo, multiplicado por cuánto tomaba hacerlo a mano. Puesto en horas y en dinero, es lo que dice si valió la pena, y suele sorprender hacia arriba en procesos que nadie había cronometrado.',
+          'El segundo son los <strong>errores evitados</strong>. El dato que se copió mal, el lead que no se registró, el mensaje que nadie envió. Son costos invisibles porque nunca aparecen en una factura, pero un lead perdido por transcripción cuesta lo mismo que uno que nunca llegó.',
+          'Y la tasa de fallo del propio flujo: cuántas ejecuciones fallaron y por qué. <strong>Si ese número no se mira, la automatización deja de ser confiable sin que nadie lo note</strong>, que es exactamente como mueren la mayoría.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -639,6 +900,10 @@ export const marketingPages: PageData[] = [
           { q: '¿n8n conecta con las herramientas que uso en Panamá?', a: 'Casi siempre sí. n8n se integra con cientos de servicios listos (Google Sheets, WhatsApp, Gmail, Stripe, tu CRM) y, cuando una herramienta no tiene conector directo pero ofrece una API, la conectamos igual. Si algo no expone API, buscamos el punto intermedio: un formulario, un correo o un webhook que sí podamos enganchar.' },
           { q: '¿Necesito conocimientos técnicos para usar las automatizaciones?', a: 'No. Nosotros diseñamos, montamos y mantenemos los flujos; tú solo ves el resultado: el lead que ya llegó a tu CRM etiquetado, el reporte que apareció solo en tu correo. Si en algún momento quieres entender o ajustar algo, te explicamos cómo funciona sin tecnicismos.' },
           { q: '¿Las automatizaciones reemplazan a mi equipo?', a: 'No lo reemplazan, lo liberan. La idea es quitarle a tu gente las tareas repetitivas y sin criterio (copiar datos, reenviar avisos) para que dedique su tiempo a lo que sí requiere una persona: vender, atender y decidir. Menos trabajo mecánico, menos errores y el mismo equipo rindiendo más.' },
+                  { q: '¿Qué no conviene automatizar?', a: 'Un proceso que todavía cambia cada semana, porque el flujo se rompe cada vez. Decisiones que requieren criterio, donde el error automático cuesta más que el tiempo humano. Y cualquier cosa que ocurra tres veces al mes: montarla y mantenerla cuesta más que hacerla a mano.' },
+          { q: '¿Qué pasa cuando una automatización se rompe?', a: 'Se rompen todas alguna vez: una API cambia, una contraseña expira, alguien renombra una columna. Lo grave es que se rompa en silencio. Por eso lo primero que montamos es el aviso de fallo, para que alguien se entere el mismo día y no dos semanas de leads después.' },
+          { q: '¿Conviene n8n en la nube o en servidor propio?', a: 'En la nube pagas mensualidad y no te ocupas de nada; el precio sube con las ejecuciones. En servidor propio el costo es fijo aunque multipliques el volumen, y además controlas dónde viven los datos de tus clientes, lo que simplifica la conversación de protección de datos.' },
+          { q: '¿Cómo sé si la automatización valió la pena?', a: 'Con dos números: horas devueltas (cuántas veces corre por lo que tomaba a mano) y errores evitados (el dato mal copiado, el lead no registrado). Y la tasa de fallo del flujo: si nadie la mira, la automatización deja de ser confiable sin que se note.' },
         ],
       },
       {

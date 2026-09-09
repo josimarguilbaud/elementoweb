@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Cotejo · entrega 2 de 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --papel:#F1F4F4; --hoja:#FFFFFF; --tinta:#14181A; --media:#5E696D; --suave:#8A9498;
+    --linea:#D3DADC; --linea-f:#E4E9EA; --metal:#E7ECED;
+    --acento:#075A63; --acento-tenue:#E2EEEF;
+    --ambar:#8A5A00; --ambar-tenue:#FAF0DC;
+    --rojo:#8D3030; --rojo-tenue:#F9EBEA; --verde:#14603A;
+    --display:"Archivo","Arial Narrow",sans-serif;
+    --texto:"Public Sans","Segoe UI",system-ui,sans-serif;
+    --dato:"JetBrains Mono",Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-tema="claro"]){
+    --papel:#0F1315; --hoja:#171D1F; --tinta:#E6ECED; --media:#96A2A6; --suave:#6C787C;
+    --linea:#2A3437; --linea-f:#202829; --metal:#232B2D;
+    --acento:#4FC3CE; --acento-tenue:#103336;
+    --ambar:#D9A64E; --ambar-tenue:#2C2415;
+    --rojo:#E08A82; --rojo-tenue:#2E1A19; --verde:#5CC08C;
+  }}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.6 var(--texto);-webkit-font-smoothing:antialiased}
+  .hoja{max-width:720px;margin:0 auto;padding:clamp(28px,6vw,64px) 22px 96px;display:flex;flex-direction:column;gap:clamp(36px,6vw,52px)}
+  h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+  h1{font-size:clamp(34px,8vw,48px);font-weight:700;letter-spacing:-.022em;line-height:1.03}
+  h2{font-size:22px;font-weight:700;letter-spacing:-.01em}
+  p{margin:0;max-width:62ch}
+  .rotulo{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--suave)}
+  .num{font-family:var(--dato);font-variant-numeric:tabular-nums}
+
+  header{display:flex;flex-direction:column;gap:14px}
+  .entradilla{font-size:19px;line-height:1.5;color:var(--media);max-width:56ch}
+  .entradilla b{color:var(--tinta);font-weight:600}
+  .retos{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .reto{font-family:var(--dato);font-size:11px;letter-spacing:.05em;text-transform:uppercase;
+        padding:5px 9px;border-radius:3px;background:var(--metal);border:1px solid var(--linea);white-space:nowrap}
+
+  section{display:flex;flex-direction:column;gap:16px;padding-top:32px;border-top:1px solid var(--linea)}
+  .fila{display:grid;grid-template-columns:minmax(120px,26%) 1fr;gap:6px 20px;padding:13px 0;border-bottom:1px solid var(--linea-f);align-items:baseline}
+  .fila:last-of-type{border-bottom:0}
+  .fila dt{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--suave)}
+  .fila dd{margin:0;font-size:15.5px}
+  .fila dd .n{font-family:var(--dato);font-weight:700;font-size:17px}
+  .fila dd .porque{display:block;margin-top:3px;font-size:13.5px;color:var(--media)}
+  .fila dd .val{font-family:var(--dato);font-size:14.5px}
+  @media (max-width:520px){.fila{grid-template-columns:1fr;gap:3px}}
+
+  .marca{display:inline-flex;font-family:var(--dato);font-size:10px;font-weight:500;letter-spacing:.06em;
+         text-transform:uppercase;padding:3px 6px;border-radius:3px;white-space:nowrap;margin-left:6px}
+  .marca.leido{color:var(--tinta);background:var(--metal);border:1px solid var(--linea)}
+  .marca.nolegible{color:var(--ambar);background:var(--ambar-tenue);border:1px solid var(--ambar)}
+
+  .veredicto{border:1px solid;border-radius:3px;padding:13px 15px;display:flex;flex-direction:column;gap:5px}
+  .veredicto .est{font-family:var(--dato);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+  .veredicto p{font-size:15px}
+  .veredicto.vigente{border-color:var(--verde)} .veredicto.vigente .est{color:var(--verde)}
+  .veredicto.vencida{border-color:var(--rojo);background:var(--rojo-tenue)} .veredicto.vencida .est{color:var(--rojo)}
+  .veredicto.noev{border-color:var(--ambar);background:var(--ambar-tenue)} .veredicto.noev .est{color:var(--ambar)}
+
+  .pendiente > div{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--linea-f);font-size:15.5px}
+  .pendiente > div:last-child{border-bottom:0}
+  .pendiente .marca-p{font-family:var(--dato);font-size:10.5px;letter-spacing:.06em;color:var(--suave)}
+  .pendiente .hecho{color:var(--verde)}
+
+  .otra{margin-top:18px;font-size:14.5px}
+  .otra a{color:var(--acento);text-decoration:none;border-bottom:1px solid var(--acento);padding-bottom:1px}
+  .otra a:hover{opacity:.75}
+  footer{border-top:1px solid var(--linea);padding-top:22px;font-size:14.5px;color:var(--media)}
+</style>
+</head>
+<body>
+<div class="hoja">
+
+  <header>
+    <span class="rotulo">Entrega 2 de 2 · Decentralized AI Hackathon</span>
+    <h1>Cotejo</h1>
+    <p class="entradilla">
+      Lectura de la cédula de un cliente en la ventanilla del banco, con la IA corriendo
+      dentro de la propia computadora de la sucursal. <b>Un banco no puede aceptar
+      «probablemente».</b>
+    </p>
+    <div class="retos">
+      <span class="reto">Reto Caja de Ahorros</span>
+      <span class="reto">Ranking general</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>De dónde sale</h2>
+    <p>
+      Caja de Ahorros publicó el cuarto reto y una de las direcciones que sugiere es, literal,
+      «lectura y extracción de información de documentos de clientes procesada en el
+      dispositivo». Eso ya lo teníamos construido: el motor que lee la chapa de un resonador
+      en Consta es el mismo que lee una cédula. Cambian los campos, no la arquitectura.
+    </p>
+    <p>
+      Por eso Cotejo cuesta horas y no días, y por eso puede entregarse sin quitarle tiempo
+      a Consta. Son dos entregas separadas, con su repositorio y su video cada una, y la
+      organización confirmó que se puede.
+    </p>
+  </section>
+
+  <section>
+    <h2>Lo que descubrimos midiendo, y que se convirtió en el producto</h2>
+    <p>
+      Antes de escribir una línea de código le pedimos al modelo que leyera cuatro cédulas
+      sintéticas. Esto es lo que pasó con la más gastada:
+    </p>
+    <dl style="margin:0">
+      <div class="fila"><dt>Nombre</dt><dd><span class="val">JOSE MIGUEL CASTILLERO PINZON</span><span class="marca leido">leído</span></dd></div>
+      <div class="fila"><dt>Cédula</dt><dd><span class="val">4-155-8830</span><span class="marca leido">leído</span></dd></div>
+      <div class="fila"><dt>Nacimiento</dt><dd><span class="val">23-01-1966</span><span class="marca leido">leído</span></dd></div>
+      <div class="fila"><dt>Expedida</dt><dd><span class="val">08-10-2019</span><span class="marca leido">leído</span></dd></div>
+      <div class="fila"><dt>Expira</dt><dd><span class="val" style="color:var(--ambar)">—</span><span class="marca nolegible">no se pudo leer</span></dd></div>
+    </dl>
+    <p>
+      <b>El campo que más le importa a un banco es el primero que el modelo pierde.</b> Una
+      cédula vencida no abre una cuenta. Si el sistema enseña seis campos correctos y se come
+      el séptimo en silencio, es peor que no tener sistema: es un problema de cumplimiento
+      con cara de software que funciona.
+    </p>
+    <p>Así que Cotejo hace lo contrario de completar el hueco:</p>
+    <div class="veredicto noev">
+      <span class="est">No evaluable</span>
+      <p>No se pudo leer la fecha de expiración. El trámite no sigue hasta que lo confirme una persona.</p>
+    </div>
+    <p>
+      Y distingue eso de una cédula que sí se leyó y está vencida, que para un trámite es una
+      cosa muy distinta:
+    </p>
+    <div class="veredicto vencida">
+      <span class="est">Vencida</span>
+      <p>La cédula venció hace 576 días (11-02-2025). El trámite se detiene.</p>
+    </div>
+    <div class="veredicto vigente">
+      <span class="est">Vigente</span>
+      <p>Vigente hasta 02-06-2031. El trámite puede continuar.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Dos detalles que enseñan la idea</h2>
+    <p>
+      <b>No arregla un nombre.</b> En una cédula el modelo leyó «ANTONIOBERNAL», con las
+      letras pegadas. Cotejo lo deja tal cual y avisa de que hay que confirmarlo a mano.
+      Inventarle un espacio a un nombre es exactamente lo que un banco no puede permitirse.
+    </p>
+    <p>
+      <b>No adivina una fecha.</b> En otra cédula aparecieron dos fechas bajo una sola
+      etiqueta. Un lector normal le asigna una de las dos y acierta la mitad de las veces.
+      Cotejo no la asigna: la devuelve como «leída pero sin saber a qué campo pertenece» y
+      deja que la persona la coloque.
+    </p>
+  </section>
+
+  <section>
+    <h2>Lo que está medido</h2>
+    <dl style="margin:0">
+      <div class="fila"><dt>Campos leídos</dt><dd><span class="n">30</span><span class="porque">En cuatro cédulas sintéticas distintas.</span></dd></div>
+      <div class="fila"><dt>Campos mal</dt><dd><span class="n" style="color:var(--verde)">0</span><span class="porque">Ninguno. Lo que no pudo leer, lo dijo; lo que leyó, lo leyó bien.</span></dd></div>
+      <div class="fila"><dt>Trámites</dt><dd><span class="n">4 / 4</span><span class="porque">Decididos igual que los decidiría un operador humano con el documento delante.</span></dd></div>
+      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">34</span><span class="porque">Con el texto exacto que devolvió el modelo, sin cargarlo.</span></dd></div>
+    </dl>
+    <p>
+      Los documentos son sintéticos y lo dicen en la propia imagen. El reto prohíbe
+      expresamente usar datos reales de clientes de cualquier entidad financiera.
+    </p>
+  </section>
+
+  <section>
+    <h2>Dónde va</h2>
+    <div class="pendiente">
+      <div><span class="marca-p hecho">HECHO</span><span>El motor de lectura, medido, con su registro de rendimiento.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>Las cédulas sintéticas y el generador que las fabrica.</span></div>
+      <div><span class="marca-p">FALTA</span><span>La interfaz de ventanilla.</span></div>
+      <div><span class="marca-p">FALTA</span><span>Subir el repositorio a GitHub, público.</span></div>
+      <div><span class="marca-p">FALTA</span><span>El video de cinco minutos.</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      El jurado de Caja de Ahorros pondera tres cosas: que la solución se pueda aplicar de
+      verdad en la operación del banco, que <b>lo local sea una ventaja y no una
+      restricción</b>, y la calidad de la demostración. Las tres juegan a favor: aquí lo
+      local no es una limitación técnica, es lo que hace la solución admisible en un banco
+      regulado.
+    </p>
+    <p class="otra">La otra entrega: <a href="/hackathon/entrega/consta/">Consta, el reto de Philips</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>

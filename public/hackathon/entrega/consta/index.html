@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Consta · entrega 1 de 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --papel:#F1F4F4; --hoja:#FFFFFF; --tinta:#14181A; --media:#5E696D; --suave:#8A9498;
+    --linea:#D3DADC; --linea-f:#E4E9EA; --metal:#E7ECED;
+    --acento:#075A63; --acento-tenue:#E2EEEF;
+    --ambar:#8A5A00; --ambar-tenue:#FAF0DC;
+    --rojo:#8D3030; --rojo-tenue:#F9EBEA; --verde:#14603A;
+    --display:"Archivo","Arial Narrow",sans-serif;
+    --texto:"Public Sans","Segoe UI",system-ui,sans-serif;
+    --dato:"JetBrains Mono",Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-tema="claro"]){
+    --papel:#0F1315; --hoja:#171D1F; --tinta:#E6ECED; --media:#96A2A6; --suave:#6C787C;
+    --linea:#2A3437; --linea-f:#202829; --metal:#232B2D;
+    --acento:#4FC3CE; --acento-tenue:#103336;
+    --ambar:#D9A64E; --ambar-tenue:#2C2415;
+    --rojo:#E08A82; --rojo-tenue:#2E1A19; --verde:#5CC08C;
+  }}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.6 var(--texto);-webkit-font-smoothing:antialiased}
+  .hoja{max-width:720px;margin:0 auto;padding:clamp(28px,6vw,64px) 22px 96px;display:flex;flex-direction:column;gap:clamp(36px,6vw,52px)}
+  h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+  h1{font-size:clamp(34px,8vw,48px);font-weight:700;letter-spacing:-.022em;line-height:1.03}
+  h2{font-size:22px;font-weight:700;letter-spacing:-.01em}
+  h3{font-size:16px;font-weight:600}
+  p{margin:0;max-width:62ch}
+  .rotulo{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--suave)}
+  .num{font-family:var(--dato);font-variant-numeric:tabular-nums}
+
+  header{display:flex;flex-direction:column;gap:14px}
+  .entradilla{font-size:19px;line-height:1.5;color:var(--media);max-width:56ch}
+  .entradilla b{color:var(--tinta);font-weight:600}
+  .retos{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .reto{font-family:var(--dato);font-size:11px;letter-spacing:.05em;text-transform:uppercase;
+        padding:5px 9px;border-radius:3px;background:var(--metal);border:1px solid var(--linea);white-space:nowrap}
+
+  section{display:flex;flex-direction:column;gap:16px;padding-top:32px;border-top:1px solid var(--linea)}
+  .fila{display:grid;grid-template-columns:minmax(120px,26%) 1fr;gap:6px 20px;padding:13px 0;border-bottom:1px solid var(--linea-f);align-items:baseline}
+  .fila:last-of-type{border-bottom:0}
+  .fila dt{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--suave)}
+  .fila dd{margin:0;font-size:15.5px}
+  .fila dd .n{font-family:var(--dato);font-weight:700;font-size:17px}
+  .fila dd .porque{display:block;margin-top:3px;font-size:13.5px;color:var(--media)}
+  @media (max-width:520px){.fila{grid-template-columns:1fr;gap:3px}}
+
+  .marca{display:inline-flex;font-family:var(--dato);font-size:10px;font-weight:500;letter-spacing:.06em;
+         text-transform:uppercase;padding:3px 6px;border-radius:3px;white-space:nowrap}
+  .marca.dicho{color:var(--suave);border:1px solid var(--linea)}
+  .marca.leido{color:var(--tinta);background:var(--metal);border:1px solid var(--linea)}
+  .marca.deducido{color:var(--ambar);background:var(--ambar-tenue);border:1px solid var(--ambar)}
+
+  .caso{background:var(--hoja);border:1px solid var(--linea);border-radius:3px;overflow:hidden}
+  .caso > .cab{padding:11px 15px;border-bottom:1px solid var(--linea);background:var(--metal)}
+  .caso .cuerpo{padding:14px 15px}
+  .caso .cuerpo > * + *{margin-top:10px}
+  .frase{font-size:17px;line-height:1.5;position:relative;padding-left:30px}
+  .frase::before{content:"\201C";position:absolute;left:0;top:-6px;font-size:40px;line-height:1;color:var(--acento);opacity:.5}
+  .lineas{font-family:var(--dato);font-size:13px;line-height:1.8;overflow-x:auto;white-space:nowrap;color:var(--media)}
+  .lineas b{color:var(--tinta);font-weight:500}
+  .mal{color:var(--rojo)} .bien{color:var(--verde)}
+  .nota{background:var(--ambar-tenue);border:1px solid var(--ambar);border-radius:3px;padding:11px 13px;font-size:14px;line-height:1.5}
+  .nota b{color:var(--ambar)}
+
+  .pendiente > div{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--linea-f);font-size:15.5px}
+  .pendiente > div:last-child{border-bottom:0}
+  .pendiente .marca-p{font-family:var(--dato);font-size:10.5px;letter-spacing:.06em;color:var(--suave)}
+  .pendiente .hecho{color:var(--verde)}
+
+  .otra{margin-top:18px;font-size:14.5px}
+  .otra a{color:var(--acento);text-decoration:none;border-bottom:1px solid var(--acento);padding-bottom:1px}
+  .otra a:hover{opacity:.75}
+  footer{border-top:1px solid var(--linea);padding-top:22px;font-size:14.5px;color:var(--media)}
+</style>
+</head>
+<body>
+<div class="hoja">
+
+  <header>
+    <span class="rotulo">Entrega 1 de 2 · Decentralized AI Hackathon</span>
+    <h1>Consta</h1>
+    <p class="entradilla">
+      Un ingeniero de servicio sale de un hospital y cuenta lo que vio. Consta lo convierte
+      en datos de la base instalada, y guarda <b>quién lo vio y cuándo</b>. Todo dentro del
+      dispositivo, sin conexión.
+    </p>
+    <div class="retos">
+      <span class="reto">Reto Philips</span>
+      <span class="reto">Reto Tether · QVAC Psy</span>
+      <span class="reto">Ranking general</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Dos formas de capturar</h2>
+    <dl style="margin:0">
+      <div class="fila">
+        <dt>Hablando</dt>
+        <dd>Dicta lo que vio como se lo contaría a un compañero. No hay formulario.
+          <span class="porque">Whisper small transcribe y Qwen3 1.7B lo pasa a datos. Unos 9 segundos.</span></dd>
+      </div>
+      <div class="fila">
+        <dt>Fotografiando</dt>
+        <dd>La chapa atornillada al equipo, que trae marca, modelo, serie y año.
+          <span class="porque">VisionPsy-Nano-460M, un modelo de 460 millones de parámetros. Unos 18 segundos.</span></dd>
+      </div>
+    </dl>
+    <p>
+      La foto importa porque hablando <b>nunca</b> sale la marca ni el modelo: nadie se
+      acuerda del nombre comercial de un resonador. Y la chapa trae la fecha de fabricación,
+      así que la antigüedad deja de ser «parece de unos ocho años» y pasa a ser un número.
+    </p>
+  </section>
+
+  <section>
+    <h2>La idea: el modelo propone, el código comprueba</h2>
+    <p>
+      Los modelos que caben en un teléfono son buenos leyendo y malos contando. Así que en
+      Consta no cuenta el modelo: cuenta el código, sobre lo que la persona dijo literalmente.
+    </p>
+
+    <div class="caso">
+      <div class="cab"><span class="rotulo">Una grabación real, del 8 de septiembre</span></div>
+      <div class="cuerpo">
+        <p class="frase">Tienen dos resonadores y un tomógrafo. Uno de los resonadores parece de tener siete años.</p>
+        <div class="lineas">
+          <b class="mal">Lo que dio el modelo solo</b><br>
+          MR 1 unidad · 7 años &nbsp; CT 1 unidad &nbsp; CT 1 unidad<br>
+          <span class="mal">un resonador y dos tomógrafos: lo contrario de lo que se dijo</span>
+        </div>
+        <div class="lineas">
+          <b class="bien">Lo que guarda Consta</b><br>
+          MR 1 unidad · 7 años &nbsp; MR 1 unidad · edad sin saber &nbsp; CT 1 unidad
+        </div>
+        <div class="nota">
+          <b>El código corrigió 2 datos leyendo la frase, no al modelo.</b> Y lo dice en
+          pantalla. «No inventar» no es una promesa del prompt: es que no puede.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cada dato lleva de dónde salió</h2>
+    <p>Es la pieza central del diseño. Solo hay cuatro orígenes posibles, y son los cuatro que el código distingue:</p>
+    <dl style="margin:0">
+      <div class="fila"><dt>Dicho</dt><dd><span class="marca dicho">dicho</span> <span class="porque">Lo dijo una persona. Es lo normal, así que no grita.</span></dd></div>
+      <div class="fila"><dt>Leído</dt><dd><span class="marca leido">leído en la placa</span> <span class="porque">Estaba impreso en la chapa del equipo.</span></dd></div>
+      <div class="fila"><dt>Deducido</dt><dd><span class="marca deducido">lo corrigió el código</span> <span class="porque">Ámbar, y nunca se puede ocultar.</span></dd></div>
+      <div class="fila"><dt>Manual</dt><dd><span class="marca dicho" style="opacity:.5">manual, pág. 47</span> <span class="porque">Reservado para más adelante.</span></dd></div>
+    </dl>
+    <p>
+      Y cuando dos personas reportan cantidades distintas, <b>la celda enseña los dos
+      números</b>, con quién dijo cada uno. No se elige por ellas: la siguiente persona que
+      entre al hospital recibe la pregunta.
+    </p>
+  </section>
+
+  <section>
+    <h2>Lo que está medido</h2>
+    <p>Nada de esto es una impresión. Hay dos bancos de pruebas que se corren cuando se quiera.</p>
+    <dl style="margin:0">
+      <div class="fila"><dt>Extracción</dt><dd><span class="n">13 / 13</span><span class="porque">Las diez pruebas oficiales de Philips, la del enunciado en español y dos grabaciones de voz reales.</span></dd></div>
+      <div class="fila"><dt>Lectura de placas</dt><dd><span class="n">4 / 4</span><span class="porque">Tres corridas seguidas sin un campo mal, incluida una placa gastada con brillo y rayas.</span></dd></div>
+      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">45</span><span class="porque">Sin cargar ningún modelo: corren en milisegundos.</span></dd></div>
+      <div class="fila"><dt>Hardware</dt><dd><span class="num">Ryzen 5 5600G</span><span class="porque">Con gráficos integrados, sin tarjeta dedicada. A propósito: el escenario real es un portátil de campo.</span></dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Dónde va</h2>
+    <div class="pendiente">
+      <div><span class="marca-p hecho">HECHO</span><span>El motor, medido y con su registro de rendimiento.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>Repositorio público en GitHub, con licencia MIT y la base preexistente declarada.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>La interfaz, rediseñada. Ya no parece un laboratorio.</span></div>
+      <div><span class="marca-p">FALTA</span><span>Grabar el video de cinco minutos. El guion ya está escrito.</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      El video importa más de lo que parece: estará puesto <b>todo el viernes en la sala del
+      hackathon</b>, y por ahí pasan empresas, VCs e inversores. Tether dijo que puede dar
+      apoyo y hasta grants a los proyectos que despierten interés. Y el día 11 se presenta
+      en persona, con la computadora, directamente a Philips y al equipo de Tether.
+    </p>
+    <p class="otra">La otra entrega: <a href="/hackathon/entrega/cotejo/">Cotejo, el reto de Caja de Ahorros</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>

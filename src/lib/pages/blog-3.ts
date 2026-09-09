@@ -227,6 +227,8 @@ export const blog3: PageData[] = [
         
           { slug: 'industrias/diseno-web-dentistas-odontologia-panama', label: 'Diseño web para dentistas' },
           { slug: 'industrias/diseno-web-clinicas-salud-panama', label: 'Diseño web para clínicas y salud' },
+        
+          { slug: 'industrias/diseno-web-aire-acondicionado-refrigeracion-panama', label: 'Diseño web para aire acondicionado' },
         ],
       },
     ],

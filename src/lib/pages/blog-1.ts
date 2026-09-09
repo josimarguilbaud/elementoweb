@@ -127,6 +127,8 @@ export const blog1: PageData[] = [
         
           { slug: 'industrias/diseno-web-constructoras-panama', label: 'Diseño web para constructoras' },
           { slug: 'industrias/diseno-web-contadores-panama', label: 'Diseño web para contadores' },
+        
+          { slug: 'industrias/diseno-web-seguridad-vigilancia-panama', label: 'Diseño web para empresas de seguridad' },
         ],
       },
     ],
@@ -265,6 +267,8 @@ export const blog1: PageData[] = [
         
           { slug: 'industrias/diseno-web-ferreterias-materiales-panama', label: 'Diseño web para ferreterías' },
           { slug: 'industrias/diseno-web-talleres-automotriz-panama', label: 'Diseño web para talleres' },
+        
+          { slug: 'industrias/diseno-web-seguridad-vigilancia-panama', label: 'Diseño web para empresas de seguridad' },
         ],
       },
     ],
@@ -520,6 +524,8 @@ export const blog1: PageData[] = [
         
           { slug: 'industrias/diseno-web-constructoras-panama', label: 'Diseño web para constructoras' },
           { slug: 'industrias/diseno-web-consultoras-servicios-profesionales-panama', label: 'Diseño web para consultoras' },
+        
+          { slug: 'industrias/diseno-web-navieras-servicios-maritimos-panama', label: 'Diseño web para navieras' },
         ],
       },
     ],
@@ -647,6 +653,8 @@ export const blog1: PageData[] = [
         
           { slug: 'industrias/diseno-web-constructoras-panama', label: 'Diseño web para constructoras' },
           { slug: 'industrias/diseno-web-educacion-panama', label: 'Diseño web para educación' },
+        
+          { slug: 'industrias/diseno-web-imprentas-publicidad-panama', label: 'Diseño web para imprentas' },
         ],
       },
     ],

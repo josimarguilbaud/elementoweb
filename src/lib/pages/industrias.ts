@@ -553,7 +553,7 @@ export const industriasPages: PageData[] = [
   {
     slug: 'industrias/diseno-web-turismo-hoteles-panama',
     parent,
-    title: 'Diseño Web para Turismo y Hoteles en Panamá | Reservas Directas',
+    title: 'Diseño Web para Hoteles y Turismo en Panamá',
     description: 'Diseño web para hoteles, tours y operadores turísticos en Panamá: reservas directas sin comisión de OTAs y contenido que vende la experiencia.',
     h1: 'Diseño web para turismo y hoteles',
     breadcrumb: 'Turismo y Hoteles',
@@ -1596,7 +1596,7 @@ export const industriasPages: PageData[] = [
   {
     slug: 'industrias/diseno-web-belleza-spa-panama',
     parent,
-    title: 'Diseño Web para Belleza y Spas en Panamá | Reserva por Estilista',
+    title: 'Diseño Web para Salones y Spas en Panamá',
     description: 'Diseño web para salones, barberías y spas en Panamá: reserva de citas por estilista, portafolio visual de resultados y paquetes con tarjetas de regalo.',
     h1: 'Diseño web para belleza y spas',
     breadcrumb: 'Belleza y Spas',

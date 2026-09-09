@@ -535,6 +535,8 @@ export const blog4: PageData[] = [
         
           { slug: 'industrias/diseno-web-belleza-spa-panama', label: 'Diseño web para belleza y spas' },
           { slug: 'industrias/diseno-web-eventos-catering-bodas-panama', label: 'Diseño web para eventos y catering' },
+        
+          { slug: 'industrias/diseno-web-imprentas-publicidad-panama', label: 'Diseño web para imprentas' },
         ],
       },
     ],

@@ -10,8 +10,8 @@ export const industrias2b: PageData[] = [
   {
     slug: 'industrias/diseno-web-seguros-corredores-panama',
     parent,
-    title: 'Diseño Web para Seguros y Corredores en Panamá',
-    description: 'Diseño web para corredores y agencias de seguros en Panamá: ramos claros, solicitud de cotización que filtra, confianza y captación de asegurados en un mercado muy competido.',
+    title: 'Diseño Web para Corredores de Seguros en Panamá | Por Ramo',
+    description: 'Diseño web para corredores de seguros en Panamá: una página por ramo, contenido que explica coberturas y recordatorios que evitan perder la renovación.',
     h1: 'Diseño web para seguros y corredores',
     breadcrumb: 'Seguros',
     heroImage: { src: '/images/industrias/diseno-web-seguros-corredores-panama.jpg', alt: 'Corredor de seguros revisando una póliza con un cliente en su oficina' },
@@ -320,8 +320,8 @@ export const industrias2b: PageData[] = [
   {
     slug: 'industrias/diseno-web-clinicas-esteticas-panama',
     parent,
-    title: 'Diseño Web para Clínicas Estéticas en Panamá',
-    description: 'Diseño web para clínicas de estética y medicina estética en Panamá: resultados visibles, reserva de valoración, confianza médica y captación para tratamientos de ticket alto.',
+    title: 'Diseño Web para Clínicas Estéticas en Panamá | Antes y Después',
+    description: 'Diseño web para clínicas estéticas en Panamá: una página por procedimiento, galerías de antes y después que convierten y captación sin depender de la pauta.',
     h1: 'Diseño web para clínicas estéticas',
     breadcrumb: 'Clínicas Estéticas',
     heroImage: { src: '/images/industrias/diseno-web-clinicas-esteticas-panama.jpg', alt: 'Cabina de tratamiento en una clínica de medicina estética moderna' },
@@ -475,8 +475,8 @@ export const industrias2b: PageData[] = [
   {
     slug: 'industrias/diseno-web-veterinarias-panama',
     parent,
-    title: 'Diseño Web para Veterinarias en Panamá | Clínicas de Mascotas',
-    description: 'Diseño web para veterinarias en Panamá: citas en línea, servicios claros, recordatorios de vacunas y la confianza que busca quien cuida a un miembro más de la familia.',
+    title: 'Diseño Web para Veterinarias en Panamá | Citas y Urgencias',
+    description: 'Diseño web para veterinarias y clínicas de mascotas en Panamá: urgencias visibles, citas online y recordatorios que traen de vuelta al cliente.',
     h1: 'Diseño web para veterinarias',
     breadcrumb: 'Veterinarias',
     heroImage: { src: '/images/industrias/diseno-web-veterinarias-panama.jpg', alt: 'Veterinaria revisando a un perro durante una consulta en la clínica' },

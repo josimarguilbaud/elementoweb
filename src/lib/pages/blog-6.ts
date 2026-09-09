@@ -105,6 +105,8 @@ export const blog6: PageData[] = [
         
           { slug: 'industrias/diseno-web-contadores-panama', label: 'Diseño web para contadores' },
           { slug: 'industrias/diseno-web-consultoras-servicios-profesionales-panama', label: 'Diseño web para consultoras' },
+        
+          { slug: 'industrias/diseno-web-agencias-aduana-zona-libre-panama', label: 'Diseño web para agencias de aduana' },
         ],
       },
     ],
@@ -320,6 +322,8 @@ export const blog6: PageData[] = [
         
           { slug: 'industrias/diseno-web-ferreterias-materiales-panama', label: 'Diseño web para ferreterías' },
           { slug: 'industrias/diseno-web-veterinarias-panama', label: 'Diseño web para veterinarias' },
+        
+          { slug: 'industrias/diseno-web-agencias-aduana-zona-libre-panama', label: 'Diseño web para agencias de aduana' },
         ],
       },
     ],
@@ -430,6 +434,8 @@ export const blog6: PageData[] = [
         
           { slug: 'industrias/diseno-web-bienes-raices-panama', label: 'Diseño web para bienes raíces' },
           { slug: 'industrias/diseno-web-gimnasios-fitness-panama', label: 'Diseño web para gimnasios' },
+        
+          { slug: 'industrias/diseno-web-cooperativas-financieras-panama', label: 'Diseño web para cooperativas' },
         ],
       },
     ],

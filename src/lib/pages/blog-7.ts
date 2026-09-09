@@ -113,6 +113,8 @@ export const blog7: PageData[] = [
         
           { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Diseño web para restaurantes' },
           { slug: 'industrias/diseno-web-dentistas-odontologia-panama', label: 'Diseño web para dentistas' },
+        
+          { slug: 'industrias/diseno-web-navieras-servicios-maritimos-panama', label: 'Diseño web para navieras' },
         ],
       },
     ],
@@ -750,6 +752,8 @@ export const blog7: PageData[] = [
         
           { slug: 'industrias/diseno-web-dentistas-odontologia-panama', label: 'Diseño web para dentistas' },
           { slug: 'industrias/diseno-web-talleres-automotriz-panama', label: 'Diseño web para talleres' },
+        
+          { slug: 'industrias/diseno-web-aire-acondicionado-refrigeracion-panama', label: 'Diseño web para aire acondicionado' },
         ],
       },
     ],
@@ -851,6 +855,8 @@ export const blog7: PageData[] = [
         
           { slug: 'industrias/diseno-web-bienes-raices-panama', label: 'Diseño web para bienes raíces' },
           { slug: 'industrias/diseno-web-seguros-corredores-panama', label: 'Diseño web para corredores de seguros' },
+        
+          { slug: 'industrias/diseno-web-cooperativas-financieras-panama', label: 'Diseño web para cooperativas' },
         ],
       },
     ],

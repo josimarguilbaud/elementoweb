@@ -301,16 +301,137 @@
     </p>
 
     <div class="reloj">
-      <div class="t">Hoy, 8 de septiembre · el reto ya está publicado</div>
-      <p><b>El equipo se congela mañana a las 08:00.</b> Después no entra ni sale nadie.</p>
-      <p>Sobre el registro hay una contradicción: las bases en PDF decían que cerraba hoy a
-      las 23:59, y la web ahora muestra «cuatro días». No dependas de la duda: regístrate hoy.
-      Cada persona por su cuenta.</p>
+      <div class="t">9 de septiembre, de madrugada · el hackathon ya arrancó</div>
+      <p><b>Consta ya funciona de punta a punta.</b> Lo que sigue no es lo que vamos a hacer:
+      es lo que hace, con los números medidos esta madrugada.</p>
+      <p>Se entrega el <b>11 de septiembre a las 08:00</b>, hora de Panamá. Y se publicaron dos
+      retos más: además del de Philips, Consta compite también en el de Tether y en el general,
+      sin tener que elegir uno.</p>
     </div>
   </div>
 </header>
 
 <div class="env col">
+
+<section>
+  <h2>Lo que ya funciona</h2>
+  <p class="guia">
+    Dos formas de capturar lo que se vio en el hospital, y todo corre en el dispositivo.
+  </p>
+
+  <p>
+    Tres modelos, ninguna conexión: <b>Whisper small</b> escucha en español y en inglés,
+    <b>Qwen3 1.7B</b> convierte lo dicho en datos, y <b>VisionPsy-Nano-460M</b> lee la placa
+    del equipo cuando le tomas una foto. Nada sale de la máquina, que es la regla que
+    descalifica a quien la rompa.
+  </p>
+
+  <div class="factores">
+    <div class="factor">
+      <h4>Hablar</h4>
+      <p>Al salir de la visita, el colaborador dicta lo que vio como se lo contaría a un
+      compañero. No hay formulario que llenar.</p>
+    </div>
+    <div class="factor">
+      <h4>Fotografiar la placa</h4>
+      <p>Hablando casi nunca sale la marca ni el modelo. La placa los lleva impresos, y
+      además trae la fecha de fabricación.</p>
+    </div>
+  </div>
+
+  <p>
+    Esa fecha es la que cambia las cosas: la antigüedad deja de ser «parece de unos ocho
+    años» y pasa a ser un número exacto. La observación sube de <b>estimada</b> a
+    <b>confirmada</b>.
+  </p>
+
+  <h3>El modelo propone, el código comprueba</h3>
+  <p>
+    Los modelos que caben en un teléfono son buenos leyendo y nombrando, y malos contando,
+    repartiendo y atribuyendo. Así que las cantidades, el reparto por edad y qué número es
+    una edad los decide código que lee la propia frase. No es un prompt pidiéndole que no
+    invente: es que no puede.
+  </p>
+
+  <div class="rastro">
+    <div class="rastro-t">Una grabación real, del 8 de septiembre</div>
+    <div class="recibos">
+      <div class="recibo">
+        <div class="recibo-alto"><span class="chapa">ANTES</span> Lo que daba el modelo solo</div>
+        <div class="recibo-datos">
+          <i>«Tienen dos resonadores y un tomógrafo. Uno de los resonadores parece de tener
+          siete años.»</i><br>
+          MR 1 unidad · 7 años &nbsp;/&nbsp; CT 1 unidad &nbsp;/&nbsp; CT 1 unidad<br>
+          <b>Un resonador y dos tomógrafos: justo lo contrario de lo que se dijo.</b>
+        </div>
+      </div>
+      <div class="recibo">
+        <div class="recibo-alto"><span class="chapa">AHORA</span> Lo que guarda Consta</div>
+        <div class="recibo-datos">
+          MR 1 unidad · 7 años &nbsp;/&nbsp; MR 1 unidad · edad sin saber &nbsp;/&nbsp; CT 1 unidad<br>
+          <b>Dos resonadores, uno de siete años, y un tomógrafo.</b>
+        </div>
+      </div>
+    </div>
+    <div class="disenso">
+      <b>El código corrigió 2 datos leyendo la frase, no al modelo.</b> «MR: la frase dice 2 y
+      el modelo extrajo 1; el código añade 1.» «CT: la frase dice 1 y el modelo extrajo 2; el
+      código quita 1.» Cada corrección queda escrita: nadie tiene que creerle al sistema,
+      puede ver qué cambió y por qué.
+    </div>
+  </div>
+
+  <h3>Y cuando entra la foto</h3>
+  <p>
+    Se le toma la foto a la placa del resonador. Consta la aplica a <b>una sola</b> máquina,
+    porque un número de serie identifica una máquina y no un grupo. La otra unidad sigue sin
+    marca ni edad, y el sistema la sigue preguntando.
+  </p>
+
+  <div class="tabla-env">
+    <table>
+      <thead><tr><th>Campo</th><th>Antes de la foto</th><th>Después</th></tr></thead>
+      <tbody>
+        <tr><td><b>Marca y modelo</b></td><td>Unknown</td><td>Philips Ingenia Ambition 1.5T</td></tr>
+        <tr><td><b>Nº de serie</b></td><td>—</td><td class="peso">12345XY</td></tr>
+        <tr class="suyo"><td><b>Antigüedad</b></td><td class="peso">≈8 años <span class="porque">dicho</span></td><td class="peso">9 años <span class="porque">placa, fabricado en 2017</span></td></tr>
+        <tr><td><b>Siguiente pregunta</b></td><td>marca y edad de los resonadores y el tomógrafo</td><td>marca y edad del otro resonador y del tomógrafo</td></tr>
+      </tbody>
+    </table>
+    <p class="pie-tabla">La estimación de la persona no se borra: queda anotada al lado del dato de la placa, que la confirma.</p>
+  </div>
+
+  <h3>Lo que está medido</h3>
+  <p>
+    Nada de esto es una impresión. Hay dos bancos de pruebas que se corren cuando se quiera,
+    uno con los modelos y otro solo de código.
+  </p>
+
+  <div class="tabla-env">
+    <table>
+      <thead><tr><th>Qué</th><th class="peso">Resultado</th><th>Detalle</th></tr></thead>
+      <tbody>
+        <tr><td><b>Extracción de lo dictado</b></td><td class="peso">13 / 13</td><td>las diez pruebas oficiales de Philips, la del enunciado en español y dos grabaciones de voz reales</td></tr>
+        <tr><td><b>Tiempo por observación</b></td><td class="peso">7,7 s</td><td>era 9,5 s ayer</td></tr>
+        <tr><td><b>Lectura de placas</b></td><td class="peso">4 / 4</td><td>sin un solo campo mal, incluida una placa gastada con brillo y ruido</td></tr>
+        <tr><td><b>Tiempo por foto</b></td><td class="peso">18 s</td><td>6,5 s hasta la primera palabra · 57 tokens por segundo · en GPU integrada</td></tr>
+        <tr><td><b>Pruebas de código</b></td><td class="peso">42</td><td>sin cargar ningún modelo: corren en milisegundos</td></tr>
+      </tbody>
+    </table>
+    <p class="pie-tabla">Medido el 9 de septiembre de 2026. El registro de rendimiento que exige el reto de Tether sale de esa misma corrida.</p>
+  </div>
+
+  <div class="aparte">
+    <h4>Para probarlo tú misma</h4>
+    <p>
+      Josimar levanta el laboratorio y te pasa el enlace por WhatsApp, igual que la otra vez.
+      Los pasos siguen siendo los mismos, con uno nuevo al final: después de analizar lo que
+      dictaste, pulsa <b>📷 Foto de la placa</b>, sube una de las placas de ejemplo, y luego
+      <b>Aplicar a la observación</b>. Verás la antigüedad cambiar y la siguiente pregunta
+      cambiar con ella.
+    </p>
+  </div>
+</section>
 
 <section>
   <h2>Lo que pide Philips, sin jerga</h2>

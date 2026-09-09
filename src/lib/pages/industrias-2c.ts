@@ -422,6 +422,61 @@ export const industrias2c: PageData[] = [
         text: 'Un arquitecto que muestra su trabajo en una web mal diseñada envía el peor mensaje posible: que el diseño no le importa tanto. Tu sitio es tu primera obra visible.',
         strong: 'Tu sitio es tu primera obra visible',
       },
+            {
+        type: 'prose',
+        h2: 'El proyecto que publicas define el proyecto que te llega',
+        paragraphs: [
+          'Un portafolio no es un archivo de todo lo que hiciste: es una declaración de lo que quieres seguir haciendo. Si publicas veinte proyectos y quince son remodelaciones de cocina, te van a llegar remodelaciones de cocina, aunque tu ambición sea la obra completa.',
+          'Es la decisión estratégica más importante de la web de un estudio y casi siempre se toma por inercia, subiendo lo último terminado. Curar el portafolio hacia arriba —dejando fuera trabajos correctos pero pequeños— cambia el tipo de consulta que entra en cuestión de meses.',
+          'La otra cara es la especialización. Un estudio que publica solo residencial de alto nivel compite mejor por esos encargos que uno que muestra de todo un poco, aunque el segundo tenga más experiencia total. En un rubro que se elige por afinidad estética, parecer especialista vale más que parecer versátil.',
+          '<strong>Menos proyectos, mejor contados.</strong> Ocho obras con proceso, planta, materiales y fotografía profesional pesan más que treinta con dos fotos cada una.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Hablar de honorarios sin que el cliente se asuste',
+        paragraphs: [
+          'El cliente de arquitectura casi nunca sabe cómo se cobra. Cree que el arquitecto cobra por plano, no entiende la diferencia entre anteproyecto y proyecto ejecutivo, y no imagina que la dirección de obra se cobra aparte. Esa confusión es la causa de la mitad de las conversaciones que no llegan a nada.',
+          'Una página que explique cómo se estructuran los honorarios en el rubro —por porcentaje de obra, por metro cuadrado o por fases, según el tipo de encargo— hace más por filtrar clientes que cualquier lista de precios. No hace falta publicar tu tarifa: hace falta que el cliente entienda el modelo antes de la primera reunión.',
+          'Explicar también qué incluye cada fase evita el conflicto más común del rubro, que es el cliente que creyó que la dirección de obra venía incluida. Ponerlo por escrito en la web te ahorra esa conversación incómoda a mitad de proyecto.',
+          'Y ayuda dar una referencia de escala: el tamaño mínimo de proyecto que tomas. <strong>Decir que trabajas desde cierta escala te ahorra diez reuniones al año</strong> y te posiciona ante el cliente que sí calza.',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Lo que hace que un cliente no escriba a tu estudio',
+        intro: 'En un rubro que se elige con los ojos, estos detalles descartan estudios en segundos.',
+        items: [
+          'Fotos de obra tomadas con celular mezcladas con fotografía profesional',
+          'Proyectos sin ubicación, año, metraje ni tipo de encargo',
+          'Sin plantas ni cortes: solo renders bonitos, que cualquiera compra',
+          'Renders y fotos finales sin distinguir cuál es cuál',
+          'Sin decir qué fases del servicio se ofrecen ni qué incluye cada una',
+          'Estudio sin nombres, sin idoneidad y sin años de trayectoria',
+          'Galería que tarda en cargar porque son fotos de ocho megas sin optimizar',
+          'Sin ninguna referencia de escala ni de tipo de proyecto que se toma',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Las fotos de tus proyectos no siempre son tuyas',
+        paragraphs: [
+          'Es el punto ciego más común en las webs de arquitectura. La fotografía de obra la suele hacer un fotógrafo profesional, y salvo que el contrato diga otra cosa, los derechos de esa imagen son suyos. Publicarlas sin acordar el uso es un problema silencioso hasta que aparece.',
+          'La solución no es dejar de publicar: es acordar por escrito, al contratar la sesión, para qué se van a usar las fotos —web, redes, prensa, concursos— y por cuánto tiempo. Cuesta lo mismo y evita el reclamo tres años después.',
+          'Lo mismo con el cliente. Muchas viviendas privadas se publican sin permiso explícito del propietario, y hay clientes a los que no les hace gracia que su casa sea identificable en internet. Basta con acordarlo en el contrato del encargo y, si hace falta, publicar sin dirección ni exteriores reconocibles.',
+          'Y el crédito al fotógrafo, aunque tengas los derechos, es de las cosas más baratas que puedes hacer por tu reputación en un gremio pequeño donde todos se conocen. <strong>Publicar bien también es una señal de cómo trabajas.</strong>',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: consultas del tipo de proyecto que quieres',
+        paragraphs: [
+          'Un estudio de arquitectura no necesita volumen: necesita los encargos correctos. Medir visitas es especialmente engañoso aquí, porque el portafolio atrae a mucha gente que mira por inspiración y nunca va a contratar.',
+          'Lo que hay que mirar es cuántas consultas llegaron y de qué tipo de encargo: obra nueva, remodelación, interiorismo, comercial, y en qué escala. Ese corte dice si el portafolio está atrayendo lo que quieres o lo que ya no.',
+          'Es el número que conecta directo con la decisión de qué publicar. Si el ochenta por ciento de las consultas son remodelaciones pequeñas y tu objetivo es obra completa, el problema no es la captación: es qué proyectos están arriba en tu portafolio.',
+          'También vale medir qué proyecto concreto vio la gente antes de escribir. Suele haber uno o dos que generan la mayoría de las consultas, y ese hallazgo cambia cómo ordenas la galería. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -431,6 +486,10 @@ export const industrias2c: PageData[] = [
           { q: '¿Necesito fotografía profesional de mis proyectos?', a: 'Es lo más rentable que puedes invertir. Tu trabajo se juzga por cómo se ve, y una buena foto multiplica el efecto de todo lo demás. Si aún no la tienes, montamos la web con lo que hay y la vamos elevando a medida que fotografías tus proyectos.' },
           { q: '¿Puedo actualizar el portafolio cuando termino un proyecto?', a: 'Sí. Te dejamos un panel para agregar un proyecto nuevo con sus fotos y su historia en minutos. Un portafolio que se mantiene fresco muestra un estudio activo, y eso pesa cuando el cliente elige a quién confiarle su espacio.' },
           { q: '¿Sirve si trabajo residencial y comercial a la vez?', a: 'Sí. Organizamos el portafolio por tipología para que quien busca una remodelación de casa vea residencial y quien proyecta una oficina vea comercial. Cada cliente se reconoce sin tener que filtrar entre trabajos que no le hablan.' },
+                  { q: '¿Cuántos proyectos debe tener mi portafolio?', a: 'Menos de los que crees, mejor contados. Ocho obras con proceso, planta, materiales y fotografía profesional pesan más que treinta con dos fotos. Y el portafolio define lo que te llega: si publicas quince cocinas, te van a llegar cocinas.' },
+          { q: '¿Publico mis honorarios?', a: 'No hace falta la tarifa, sí el modelo. Explicar cómo se cobra en el rubro —por porcentaje de obra, por metro cuadrado o por fases— y qué incluye cada fase filtra mejor que cualquier precio, y evita el conflicto del cliente que creyó que la dirección de obra venía incluida.' },
+          { q: '¿Puedo publicar las fotos de mis obras sin más?', a: 'Depende del contrato con el fotógrafo: salvo que se acordara lo contrario, los derechos de la imagen son suyos. Conviene acordar por escrito al contratar la sesión para qué se usarán y por cuánto tiempo. Y con el cliente, si la vivienda es privada e identificable.' },
+          { q: '¿Cómo hago para que no me lleguen proyectos demasiado pequeños?', a: 'Publicar una referencia de escala mínima y curar el portafolio hacia arriba. En un rubro que se elige por afinidad estética, parecer especialista en cierto tipo y tamaño de encargo vale más que parecer versátil.' },
         ],
       },
       {

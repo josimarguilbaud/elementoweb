@@ -80,9 +80,19 @@ Ninguno de los doce tiene pantalla como protagonista, y ninguno se parece a otro
 
 1. **¿Apruebas los conceptos?** Si alguno no te convence, se cambia antes de
    generar, que es cuando sale gratis.
-2. **¿Qué modelo de fal?** Recomiendo el más nuevo de la familia FLUX para
-   fotografía realista. Al conectar el MCP puedo consultar el catálogo y los
-   precios reales en vez de suponerlos.
+2. **~~¿Qué modelo de fal?~~ Resuelto.** El MCP ya está conectado y los precios
+   son los reales del catálogo, no estimados. Para 1600 × 1067 (1,71 MP):
+
+   | Modelo | Por imagen | Las 12 |
+   |---|---|---|
+   | `fal-ai/flux-2/klein/9b` | $0,0102 | **$0,12** |
+   | `fal-ai/flux/dev` | $0,0427 | **$0,51** |
+   | `fal-ai/nano-banana-pro` | $0,1500 | **$1,80** |
+
+   El trabajo entero cuesta centavos con cualquiera de los tres. Como el precio
+   deja de ser el criterio, la propuesta es hacer una **prueba comparativa**:
+   el mismo concepto en los tres modelos, mirar cuál da la fotografía más
+   creíble, y con el ganador correr las 12. La prueba cuesta unos $0,20.
 3. **La paleta.** Si el color de marca va a aparecer en las fotos, hay que saber
    si es el teal `#2dd4bf` actual o el azul `#0099CC` que estás evaluando. Con la
    marca sin definir, mejor que el color no aparezca y las fotos queden neutras.

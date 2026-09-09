@@ -268,6 +268,61 @@ export const industrias2c: PageData[] = [
         text: 'En servicios profesionales el cliente no compra tu tiempo: compra la confianza de que sabes resolver su problema. Esa confianza empieza a construirse o a perderse en tu web.',
         strong: 'compra la confianza de que sabes resolver su problema',
       },
+            {
+        type: 'prose',
+        h2: 'El caso de estudio es lo único que de verdad vende',
+        paragraphs: [
+          'Una consultora puede escribir tres párrafos brillantes sobre su metodología y no mover a nadie. El comprador de consultoría no compra método: compra la evidencia de que ya resolviste un problema parecido al suyo en un contexto parecido al suyo.',
+          'Ahí está el problema del rubro. Casi ninguna consultora publica casos, casi siempre por confidencialidad. Y es una barrera real, pero no absoluta: un caso se puede contar sin nombrar al cliente. "Distribuidora de consumo masivo, 80 empleados, operación en Panamá y Costa Rica" identifica el contexto sin identificar a nadie.',
+          'La estructura que funciona es corta: cuál era la situación, qué se hizo, qué cambió y en cuánto tiempo. Con números si se pueden dar, con órdenes de magnitud si no. Sin números, un caso es una anécdota.',
+          '<strong>Tres casos bien contados hacen más que veinte logos en una fila.</strong> El logo prueba que trabajaste con alguien; el caso prueba que sirvió de algo.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'A una consultoría no la contrata una persona, la aprueba un comité',
+        paragraphs: [
+          'En consultoría B2B el que te contacta rara vez es el que firma. Suele ser un gerente que tiene el problema y que va a tener que defender la contratación ante su jefe, ante finanzas y a veces ante un comité. Tu web tiene dos audiencias: quien te encuentra y quien lo va a cuestionar.',
+          'Eso cambia qué debe contener. Además del contenido que capta —el que le habla al que tiene el problema— hace falta material que el interno pueda reenviar: una propuesta de valor en una frase, casos con números, credenciales del equipo, y algo descargable que sobreviva a un correo interno.',
+          'Ese material sirve exactamente donde tú no estás: en la reunión donde alguien pregunta "¿y estos quiénes son?". Si la respuesta es un enlace a una web con casos y equipo visible, la conversación avanza. Si es un PDF de veinte páginas o nada, se enfría.',
+          'Por eso conviene tener una página de credenciales pensada para eso: quién es el equipo, qué formación tiene, cuánto tiempo lleva, en qué industrias trabajó. <strong>No es vanidad, es munición para tu comprador interno.</strong>',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Lo que hace que una empresa descarte a una consultora',
+        intro: 'Señales que un comprador B2B lee en segundos y que casi ninguna web de consultoría cuida.',
+        items: [
+          'Ni un caso, ni un número, ni un resultado concreto en toda la web',
+          'Equipo sin nombres ni trayectoria: no se sabe quién va a hacer el trabajo',
+          'Servicios descritos en abstracto, sin decir qué entregable recibe el cliente',
+          'Fila de logos de clientes sin ninguna explicación de qué se hizo con cada uno',
+          'Ninguna señal de tamaño de proyecto: no se sabe si te puede pagar',
+          'Blog abandonado hace dos años en un rubro que se vende con criterio',
+          'Cero material descargable que el interno pueda reenviar',
+          'Correo genérico de Gmail como único contacto corporativo',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Publicar tarifas en consultoría: cuándo sí y cuándo no',
+        paragraphs: [
+          'Es la discusión eterna del rubro. Publicar honorarios espanta al cliente grande y no publicarlos hace perder tiempo con el que nunca podía pagarlo. Las dos cosas son ciertas, y por eso la respuesta no es una lista de precios.',
+          'Lo que funciona es publicar el <strong>rango de inversión típica de cada tipo de proyecto</strong>. No "la hora cuesta X", sino "un diagnóstico de este tipo suele ubicarse entre tanto y tanto, según el alcance". Eso filtra sin encasillar y deja el precio real donde debe estar: después de entender el problema.',
+          'La otra pieza que rinde es indicar el tamaño de cliente con el que trabajas. Decir que tu foco son empresas de cincuenta a trescientos empleados le ahorra la llamada al emprendedor de dos personas y te posiciona ante el que sí calza.',
+          'Si tu servicio es demasiado variable para dar rangos, hay un sustituto: publicar el precio o el formato del primer paso. Un diagnóstico inicial acotado, con precio cerrado y entregable claro, convierte muchísimo mejor que un "contáctanos para una propuesta a medida".',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: consultas calificadas y de qué contenido vinieron',
+        paragraphs: [
+          'Una consultora que mide visitas se está mintiendo. Su ciclo de venta es largo, el volumen es bajo por definición y un solo cliente bueno puede valer más que todo el tráfico del año.',
+          'Los números que sirven son tres: cuántas consultas llegaron, cuántas eran del perfil correcto en tamaño e industria, y de qué contenido venían. Ese tercero es el que cambia decisiones, porque en consultoría el contenido no es adorno: es el mecanismo de captación principal.',
+          'Si un artículo técnico que te costó una tarde escribir genera tres consultas calificadas al año, es el activo más rentable de la empresa y hay que escribir cinco más como ese. Sin ese dato, el contenido se escribe por intuición y se abandona a los seis meses porque "no se ve el resultado".',
+          'Vale la pena también medir el tiempo entre la primera visita y el contacto. En consultoría suele ser de semanas o meses, y saberlo evita conclusiones apresuradas sobre campañas que en realidad todavía están madurando. Lo dejamos medido; el planteamiento, en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -277,6 +332,10 @@ export const industrias2c: PageData[] = [
           { q: '¿Cómo hace la web para atraer clientes y no solo verse bien?', a: 'Con dos piezas: contenido que posiciona en las búsquedas de tu cliente ideal (<a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a>) y una llamada a la acción de alto valor que filtra y capta al que va en serio. Una web bonita sin esto es un folleto; con esto, es un canal de captación.' },
           { q: '¿Puedo mostrar clientes con los que trabajé si no puedo dar nombres?', a: 'Sí. Cuando hay confidencialidad, presentamos los casos por sector y resultado sin identificar a la empresa ("una fintech regional", "un grupo retail"). El cliente valora el resultado y el criterio; el nombre no siempre es lo que decide.' },
           { q: '¿Sirve para un profesional independiente y no una firma grande?', a: 'Sí, y suele rendir más. Para un consultor o coach solo, la web se centra en su marca personal, su enfoque y una oferta de entrada clara. Bien hecha, compite de igual a igual con firmas grandes por el cliente que busca cercanía y especialización.' },
+                  { q: '¿Cómo publico casos si mis clientes exigen confidencialidad?', a: 'Sin nombrarlos. "Distribuidora de consumo masivo, 80 empleados, operación regional" da el contexto sin identificar a nadie. Lo que hace útil un caso es la situación, lo que se hizo, qué cambió y en cuánto tiempo, no el logo.' },
+          { q: '¿Publico mis honorarios?', a: 'No una lista de precios, sí un rango de inversión típica por tipo de proyecto. Filtra sin encasillarte. Si tu servicio es muy variable, publica el precio y el entregable del primer paso: un diagnóstico acotado convierte mucho mejor que "contáctanos para una propuesta".' },
+          { q: 'Mi comprador no es quien decide, ¿eso cambia la web?', a: 'Bastante. Quien te contacta va a tener que defender la contratación ante su jefe o un comité. Necesita material reenviable: casos con números, credenciales del equipo y una propuesta de valor en una frase. Esa página trabaja en reuniones donde tú no estás.' },
+          { q: '¿Vale la pena un blog en consultoría?', a: 'Es el mecanismo de captación principal del rubro, siempre que se mida. Un artículo técnico que genere tres consultas calificadas al año es el activo más rentable de la empresa; sin medir de qué contenido viene cada consulta, se escribe por intuición y se abandona a los seis meses.' },
         ],
       },
       {

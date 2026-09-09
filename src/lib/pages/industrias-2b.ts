@@ -78,6 +78,61 @@ export const industrias2b: PageData[] = [
         text: 'En seguros nadie recuerda al corredor hasta que hay un siniestro. La web es lo que hace que te recuerden antes, cuando toca decidir a quién comprarle.',
         strong: 'la web es lo que hace que te recuerden antes',
       },
+            {
+        type: 'prose',
+        h2: 'El asegurado compara en internet y contrata por teléfono',
+        paragraphs: [
+          'Es el patrón del rubro y conviene entenderlo antes de diseñar nada. Casi nadie contrata una póliza directamente desde una web en Panamá. Lo que sí hace todo el mundo es investigar antes: qué cubre, qué no cubre, cuánto cuesta más o menos, y sobre todo a quién llamar.',
+          'Esa investigación decide la venta aunque no la cierre. Cuando el asegurado por fin levanta el teléfono, ya eligió a quién llamar, y lo eligió leyendo. La web no es el punto de venta: es el filtro previo que determina si tu teléfono suena o suena el de otro corredor.',
+          'Eso cambia qué debe contener. No un cotizador complejo que casi nadie termina, sino contenido que responda de verdad: qué cubre cada ramo, qué exclusiones sorprenden, qué documentos piden, qué pasa al reclamar. El corredor que explica bien parece el que sabe, y ese es con el que la gente quiere hablar.',
+          '<strong>El objetivo de tu web no es cerrar la póliza, es ganarte la llamada.</strong> Diseñarla como tienda online es diseñar para un comportamiento que no existe.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'La renovación es donde está el negocio, y casi nadie la trabaja',
+        paragraphs: [
+          'Un corredor de seguros vive de la cartera, no de la venta nueva. Y la cartera se pierde en silencio: el asegurado no avisa que se va, simplemente no renueva, y muchas veces ni recuerda quién era su corredor hasta que necesita reclamar.',
+          'Casi todas las webs del rubro están diseñadas solo para captar. No hay nada para el cliente que ya tienes, que es justamente el que más fácil se pierde y más barato se retiene.',
+          'Lo que funciona es sencillo: un área donde el asegurado consulte sus pólizas y vencimientos, instrucciones claras de qué hacer ante un siniestro —el momento en que más te necesita y peor lo atiende el rubro— y recordatorios automáticos antes de cada renovación.',
+          'Ese recordatorio es probablemente la automatización más rentable que puede montar un corredor. <strong>Renovar es varias veces más barato que captar</strong>, y una llamada a tiempo antes del vencimiento evita la mayoría de las fugas. Lo montamos con <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones</a> conectadas a tu cartera.',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Lo que hace que un asegurado llame a otro corredor',
+        intro: 'En un rubro donde la confianza lo es todo, cada uno de estos detalles cuesta llamadas.',
+        items: [
+          'Sin licencia de corredor ni número de registro visible',
+          'Sin decir con qué aseguradoras se trabaja, que es la primera pregunta',
+          'Ramos listados en jerga de póliza, sin traducir a qué te pasa si no lo tienes',
+          'Nada sobre qué hacer ante un siniestro, el momento de mayor angustia',
+          'Cotizador largo que pide veinte datos antes de dar cualquier referencia',
+          'Ni un rango de precio ni un ejemplo de prima en ningún ramo',
+          'Formulario que pide datos personales sin explicar quién los recibe',
+          'Sin teléfono directo visible, cuando el rubro se resuelve hablando',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El cotizador pide datos personales, y eso tiene reglas',
+        paragraphs: [
+          'Un formulario de cotización de seguros recoge más de lo que parece: cédula, edad, a veces condición de salud, datos del vehículo o de la vivienda. Varios de esos entran en lo que la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong> trata con más cuidado, especialmente los de salud.',
+          'La consecuencia práctica no es legal, es de diseño. Un formulario que pide veinte datos antes de dar nada convierte pésimo y encima acumula información sensible que después hay que custodiar. Pedir menos convierte mejor y reduce tu exposición: nombre, teléfono, ramo y poco más para una primera conversación.',
+          'Lo que sí hay que resolver bien es a dónde llega eso. No al correo personal del corredor ni a un WhatsApp compartido, sino a un buzón de la corredora con acceso controlado. Si trabajas con varios ejecutivos, con registro de quién atendió cada solicitud.',
+          'Montamos la parte técnica: HTTPS, formulario mínimo con aviso de privacidad y almacenamiento con acceso controlado. <strong>El texto legal lo revisa tu asesor</strong>; nosotros dejamos la web preparada para sostenerlo.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: llamadas y solicitudes por ramo',
+        paragraphs: [
+          'Como la venta se cierra por teléfono, medir solo los formularios enviados subestima el trabajo de la web. Hay que medir también las llamadas que salieron del botón del sitio y las conversaciones de WhatsApp, que en seguros suelen ser más que los formularios.',
+          'El corte que más sirve es por ramo. Auto, salud, vida, incendio y fianzas tienen comisiones y ciclos muy distintos, y saber de cuál viene cada contacto te dice qué página ampliar y en qué vale la pena pautar. Sin ese desglose, todo se ve igual de bien o igual de mal.',
+          'El segundo número es la tasa de renovación de la cartera. No sale de la web, pero la web influye directamente: si los recordatorios automáticos están funcionando, ese número sube, y es el que más impacta la facturación del año.',
+          'Y conviene separar el contacto de cliente nuevo del de cliente existente que viene a consultar algo. Son dos negocios distintos y mezclarlos esconde el problema. Lo dejamos medido en un tablero corto; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -87,6 +142,10 @@ export const industrias2b: PageData[] = [
           { q: '¿Puedo mostrar todas las aseguradoras con las que trabajo?', a: 'Sí, pero con criterio. En vez de un muro de logos que parece publicidad de ellas, las mostramos como respaldo dentro de cada ramo: quién asegura auto, quién salud. Así el logo suma confianza en lugar de robarte el protagonismo.' },
           { q: '¿Sirve para un corredor independiente o solo para agencias grandes?', a: 'Sirve especialmente al independiente. Un corredor solo que posiciona bien dos o tres ramos concretos capta de igual a igual con agencias grandes en esas búsquedas, sin el costo de una estructura completa.' },
           { q: '¿Cómo evito que me lleguen solicitudes que no puedo colocar?', a: 'Con el formulario correcto por ramo y, si lo activas, el asistente con IA que filtra antes. Recoge tipo de seguro, datos mínimos y expectativa, para que solo llegue a tu bandeja la solicitud que sí trabajas.' },
+                  { q: '¿Debo poner un cotizador en línea?', a: 'Uno corto, si acaso. En Panamá casi nadie contrata la póliza desde la web: investiga y después llama. Un cotizador que pide veinte datos convierte mal y acumula información sensible que hay que custodiar. Pedir nombre, teléfono y ramo convierte mejor.' },
+          { q: '¿Qué contenido trae clientes a un corredor?', a: 'El que explica de verdad: qué cubre cada ramo, qué exclusiones sorprenden, qué documentos piden, qué hacer al reclamar. El corredor que explica bien parece el que sabe, y ese es a quien la gente llama.' },
+          { q: '¿Cómo evito perder cartera en las renovaciones?', a: 'Con recordatorios automáticos antes de cada vencimiento y un área donde el asegurado vea sus pólizas. Renovar es varias veces más barato que captar, y la mayoría de las fugas son por olvido, no por precio.' },
+          { q: '¿Qué pasa con los datos que pide el cotizador?', a: 'Cédula, edad y a veces condición de salud caen bajo la Ley 81 de 2019, y los de salud con más exigencia. Conviene pedir el mínimo para una primera conversación y que lleguen a un buzón de la corredora con acceso controlado, no a un correo personal.' },
         ],
       },
       {

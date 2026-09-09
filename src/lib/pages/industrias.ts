@@ -161,6 +161,61 @@ export const industriasPages: PageData[] = [
           'Ese mismo cuidado aplica al tono. La estridencia (superlativos, "somos los mejores", promesas de ganar el caso) resta credibilidad y además roza lo que la ética profesional permite anunciar. <strong>La sobriedad no es una decisión estética: es lo que un cliente serio espera de un abogado serio.</strong>',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'El contenido que capta consultas no habla de leyes, habla de trámites',
+        paragraphs: [
+          'La web de una firma legal suele explicar sus áreas de práctica en el lenguaje del despacho: derecho corporativo, litigios, propiedad intelectual. Correcto y poco útil para captar, porque el cliente no busca así. Busca su problema: "cómo constituir una sociedad anónima en Panamá", "qué pasa si no firmo la liquidación", "cuánto cuesta un divorcio de mutuo acuerdo".',
+          'Ahí está el tráfico, y casi ninguna firma panameña lo trabaja. Un artículo que explique bien un trámite concreto —los pasos, los documentos, los plazos, el costo aproximado— capta a quien todavía está averiguando, que es cuando aún no eligió abogado.',
+          'La objeción habitual es que explicar el trámite hace que el cliente lo resuelva solo. En la práctica ocurre lo contrario: el que lee el detalle entiende lo que implica y llama, y llega mucho mejor informado, con menos preguntas básicas y más disposición a pagar por hacerlo bien.',
+          '<strong>Es el activo más rentable de una firma pequeña.</strong> Diez artículos sobre trámites que tu firma resuelve a diario compiten con despachos mucho más grandes, porque los grandes rara vez escriben para el que todavía no es cliente.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'La consulta inicial: cómo se agenda y por qué conviene cobrarla',
+        paragraphs: [
+          'El cuello de botella de casi toda firma no es captar, es filtrar. Llegan llamadas de consultas que no son del área, casos sin viabilidad y gente buscando asesoría gratis. Cada una consume tiempo de alguien que factura por hora.',
+          'La web filtra antes de que suene el teléfono, si se le deja. Un formulario de consulta que pida el área, un resumen del caso y la urgencia deja al abogado decidir a qué responder primero. Y dice de entrada qué áreas no se atienden, que ahorra más llamadas de las que uno espera.',
+          'El segundo filtro es cobrar la consulta inicial. Publicar su precio en la web hace dos cosas a la vez: elimina al que buscaba asesoría gratis y le da al cliente serio una expectativa clara, que es justo lo que quiere antes de escribir a un abogado que no conoce.',
+          'Y agendar sin llamar importa más de lo que parece: buena parte de las consultas legales las inicia alguien que no puede hablar del tema desde su oficina. <strong>Poder reservar a las nueve de la noche, sin explicarle nada a nadie por teléfono, convierte mucho mejor.</strong>',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Lo que hace que un cliente no escriba a tu firma',
+        intro: 'En un rubro que se compra por confianza, cada uno de estos detalles pesa más que en cualquier otro.',
+        items: [
+          'Abogados sin idoneidad, sin universidad y sin años de ejercicio',
+          'Áreas de práctica en jerga, sin traducir al problema del cliente',
+          'Fotos de banco con mazos de juez, que en Panamá ni se usan',
+          'Sin decir si la consulta inicial se cobra y cuánto',
+          'Formulario que pide el caso completo sin decir quién lo va a leer',
+          'Cero mención de idiomas de atención, decisivo con cliente extranjero',
+          'Última publicación o novedad de hace tres años',
+          'Web sin HTTPS: en legal es una señal de descuido difícil de perdonar',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Confidencialidad: lo que promete la web y lo que hace el servidor',
+        paragraphs: [
+          'Toda firma dice en su web que la confidencialidad es sagrada, y muchas de esas webs mandan el formulario de contacto a un correo gratuito compartido por tres personas. La promesa y la infraestructura no coinciden, y el cliente que sabe de esto lo nota.',
+          'Al secreto profesional se le suma la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong>: lo que el cliente escribe en tu formulario son datos personales, y a veces sensibles, que hay que tratar en consecuencia. Sitio en HTTPS, formulario que diga quién lo recibe, y almacenamiento con acceso controlado y trazable.',
+          'El punto flojo más frecuente que encontramos es el mismo de siempre: los correos del formulario aterrizan en la bandeja personal de alguien de la firma. No hay control de quién los leyó ni qué se hizo con ellos, y el día que alguien pregunte no hay respuesta.',
+          'Nosotros montamos esa parte: certificado, formulario con aviso de privacidad, buzón de la firma con acceso controlado. <strong>El texto legal lo redacta la propia firma</strong>, que para eso es la que sabe; nosotros dejamos dónde vive y que la infraestructura lo respalde.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: consultas calificadas, no visitas',
+        paragraphs: [
+          'Una firma legal no necesita tráfico, necesita consultas del área correcta y con caso viable. Medir visitas en este rubro es especialmente inútil, porque una web de abogados con mucho tráfico y ninguna consulta calificada solo está atrayendo a gente buscando asesoría gratis.',
+          'Lo que hay que mirar es cuántas consultas entraron, de qué área, y qué porcentaje se convirtió en caso. Ese último número, cruzado con el área, es la información más accionable que puede darte tu web: te dice qué área conviene trabajar más y cuál está atrayendo al cliente equivocado.',
+          'También vale medir de qué contenido venía cada consulta. Si tres artículos sobre trámites generan la mitad de tus consultas del año, ya sabes qué tipo de contenido escribir el próximo trimestre y cuál dejar de escribir.',
+          'Lo dejamos en un tablero corto que se revisa en dos minutos, no en un informe mensual. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -171,6 +226,10 @@ export const industriasPages: PageData[] = [
           { q: '¿Pueden mostrar resultados de casos ganados?', a: 'Con cuidado. La publicidad de resultados en servicios legales está limitada por la ética profesional, y prometer resultados es contraproducente. Trabajamos la autoridad de otra forma: áreas bien explicadas, credenciales verificables, artículos que demuestran dominio y testimonios en los términos que la normativa permite.' },
           { q: '¿Sirve para un abogado independiente, no solo para firmas grandes?', a: 'Sí, y muchas veces rinde más. Un abogado solo que posiciona bien dos o tres áreas concretas compite de igual a igual con firmas grandes en esas búsquedas específicas, sin el costo de una estructura completa.' },
           { q: '¿Cada abogado del equipo puede tener su perfil?', a: 'Sí, con formación, colegiatura, áreas e idiomas. Los perfiles verificables son de las páginas más visitadas: muchos clientes eligen a la persona antes que a la firma.' },
+                  { q: '¿Explicar un trámite en la web no hace que el cliente lo resuelva solo?', a: 'Ocurre lo contrario. Quien lee el detalle entiende lo que implica y llama mejor informado, con menos preguntas básicas y más dispuesto a pagar por hacerlo bien. El que iba a resolverlo solo nunca iba a contratarte.' },
+          { q: '¿Conviene publicar el precio de la consulta inicial?', a: 'Sí. Filtra a quien buscaba asesoría gratis y le da al cliente serio la expectativa clara que quiere antes de escribirle a un abogado que no conoce. Es el filtro más barato que existe.' },
+          { q: '¿Dónde deben llegar los mensajes del formulario?', a: 'A un buzón de la firma con acceso controlado, nunca a un correo personal compartido. Al secreto profesional se le suma la Ley 81 de 2019, y una web que promete confidencialidad mientras manda los datos a un Gmail compartido no sostiene la promesa.' },
+          { q: '¿Sirve una web si la firma capta por referidos?', a: 'El referido igual te busca antes de llamar: quiere ver quién eres, tu idoneidad y tu área. Una web floja no impide la llamada, pero le quita fuerza a la recomendación. Y el contenido de trámites capta a quien no tiene quién lo refiera.' },
         ],
       },
       {

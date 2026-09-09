@@ -80,6 +80,61 @@ export const industrias2a: PageData[] = [
         text: 'Un contador vende tranquilidad. Una web desordenada vende justo lo contrario: si tu sitio se ve improvisado, el cliente asume que así llevarás sus números.',
         strong: 'si tu sitio se ve improvisado, el cliente asume que así llevarás sus números',
       },
+            {
+        type: 'prose',
+        h2: 'El calendario fiscal es tu calendario editorial',
+        paragraphs: [
+          'La demanda de servicios contables en Panamá no es pareja: se dispara en fechas concretas. Declaración de renta, informes de ITBMS, planilla, declaración jurada de rentas de personas jurídicas, cierre fiscal. En cada una de esas fechas hay miles de personas buscando en Google qué les toca y hasta cuándo.',
+          'Casi ninguna firma contable panameña capta ese tráfico, porque publica sobre sus servicios en vez de sobre las fechas. Un artículo que explique bien un vencimiento —a quién aplica, qué documentos hacen falta, qué pasa si se presenta tarde— llega justo cuando el cliente potencial está preocupado y buscando.',
+          'La ventaja de este contenido es que se escribe una vez y sirve todos los años, actualizando fechas y montos. Un buen artículo sobre la declaración de renta trabaja cada marzo sin que nadie lo toque.',
+          '<strong>Y llega al cliente en el peor momento posible para él, que es el mejor para ti:</strong> cuando ya se dio cuenta de que no lo va a resolver solo. Ese es el que contrata, no el que investiga en agosto.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El cliente de enero y el de la semana del vencimiento no son el mismo',
+        paragraphs: [
+          'A una firma contable le llegan dos clientes muy distintos. El de enero busca ordenarse: quiere un contador para el año, compara, pregunta por servicios mensuales, decide con calma. El de la semana del vencimiento tiene un problema encima y necesita a alguien hoy.',
+          'La mayoría de las webs del rubro solo le hablan al primero. Explican los servicios, la trayectoria de la firma, la filosofía de trabajo. Todo correcto y todo inútil para el que llegó con la fecha en el cuello, que solo quiere saber si le pueden atender ahora y cuánto cuesta.',
+          'Se resuelve con dos caminos visibles desde la portada: uno para el que quiere asesoría continua y otro para el que necesita resolver un trámite puntual. Cada uno con su propia página, su propio tono y su propia forma de contacto: formulario para el primero, WhatsApp directo para el segundo.',
+          'El cliente de urgencia además suele convertirse en cliente fijo si lo sacas del apuro. <strong>Atenderlo bien es la puerta de entrada más barata que tiene una firma contable</strong>, y casi nadie la abre.',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Lo que hace que una empresa no confíe su contabilidad en ti',
+        intro: 'La contabilidad se compra con miedo a equivocarse. Cada uno de estos detalles alimenta ese miedo.',
+        items: [
+          'Contadores sin idoneidad, sin CPA y sin años de ejercicio visible',
+          'Sin decir con qué software se trabaja, cuando el cliente ya usa uno',
+          'Servicios listados en jerga contable, sin traducir a qué resuelve cada uno',
+          'Ni un rango de honorarios, ni por servicio ni por tamaño de empresa',
+          'Sin mención de si se atiende a persona natural, jurídica o ambas',
+          'Nada sobre cómo se entregan los documentos: correo, drive, sistema',
+          'Web sin HTTPS pidiendo datos financieros por formulario',
+          'Sin novedades desde la última reforma fiscal, que es lo que el cliente busca',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Los documentos del cliente no deberían viajar por WhatsApp',
+        paragraphs: [
+          'La operación real de casi toda firma contable panameña funciona así: el cliente manda las facturas por WhatsApp, a veces fotografiadas de mala manera, al celular personal de alguien del equipo. Funciona hasta que deja de funcionar.',
+          'El problema no es solo de orden. Ahí viajan datos financieros, planillas con salarios y cédulas de empleados: datos personales bajo la <strong>Ley 81 de 2019</strong>, y algunos de terceros que ni siquiera son tu cliente. Que vivan en el rollo de fotos de un teléfono personal es un riesgo que nadie ve hasta que hay un problema.',
+          'La web puede ser la puerta de una solución simple: un área de cliente donde cada empresa sube sus documentos a su propia carpeta, con acceso por usuario y registro de qué se subió y cuándo. No hace falta un sistema caro; hace falta que deje de ser un chat.',
+          'Eso además elimina la pregunta más repetida de la firma —"¿me mandaste ya la factura de tal cosa?"— porque queda registrado. <strong>Es de los pocos cambios que mejoran el cumplimiento y la operación diaria al mismo tiempo.</strong>',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: consultas por tipo de servicio y cuántas quedan',
+        paragraphs: [
+          'La métrica que importa en una firma contable no es el tráfico, es cuántas consultas llegaron y de qué tipo: asesoría mensual, trámite puntual, constitución de sociedad, auditoría. Son negocios distintos con márgenes muy distintos.',
+          'El dato que más falta hace es la proporción entre consultas de urgencia y de servicio continuo. Si el noventa por ciento son urgencias, la web está captando bien en las fechas fuertes pero no está construyendo cartera recurrente, que es donde está la estabilidad de la firma.',
+          'Vale la pena medir también cuántos clientes de trámite puntual se convirtieron después en clientes mensuales. Ese número dice si el seguimiento posterior funciona, y casi siempre se puede mejorar con un recordatorio automático antes del siguiente vencimiento.',
+          'Y de qué contenido venía cada consulta: si tus artículos de calendario fiscal generan la mitad de los contactos del año, ya sabes qué escribir. Lo dejamos medido en un tablero corto; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -89,6 +144,10 @@ export const industrias2a: PageData[] = [
           { q: '¿La web se conecta con Cifrao o con mi software contable?', a: 'La web es tu vitrina de confianza y captación, no reemplaza tu sistema contable. Cuando usas <a href="/saas/cifrao/">Cifrao</a> u otra plataforma, la web puede enlazar al portal del cliente y presentar ese respaldo como diferenciador. La integración concreta se evalúa en el diagnóstico.' },
           { q: '¿Cómo manejan la confidencialidad de la información?', a: 'Los formularios piden solo lo necesario para agendar una consulta, nunca cifras sensibles por canales abiertos. Para lo demás dejamos WhatsApp o correo directo, y la web transmite de forma explícita el manejo responsable de los datos que el cliente espera de un contador.' },
           { q: '¿Sirve para un contador independiente y no solo para una firma grande?', a: 'Sí, y muchas veces rinde más. Un CPA independiente que posiciona bien dos o tres servicios concretos (planilla, renta de PYME, constitución de empresas) capta clientes de esas búsquedas específicas sin competir de frente con las firmas grandes en todo a la vez.' },
+                  { q: '¿Qué contenido trae clientes a una firma contable?', a: 'El del calendario fiscal. Declaración de renta, ITBMS, planilla, cierre: en cada vencimiento hay miles de búsquedas de gente preocupada. Un artículo que explique a quién aplica, qué documentos hacen falta y qué pasa si se presenta tarde llega justo cuando el cliente decide contratar.' },
+          { q: '¿Publico honorarios en la web?', a: 'Al menos un rango por tipo de servicio o por tamaño de empresa. La contabilidad se compra con miedo a la sorpresa, y un rango da más tranquilidad de la que quita. Los trabajos que varían mucho pueden ir con un "desde".' },
+          { q: '¿Está bien recibir los documentos del cliente por WhatsApp?', a: 'Funciona hasta que deja de funcionar. Ahí viajan planillas con salarios y cédulas, datos personales bajo la Ley 81 de 2019, guardados en el rollo de fotos de un teléfono personal. Un área de cliente con carpeta por empresa lo resuelve y de paso elimina el "¿ya me lo mandaste?".' },
+          { q: '¿Sirve la web si la firma capta por referidos?', a: 'Sí, por dos motivos. El referido igual te busca antes de llamar y compara lo que ve. Y el contenido de calendario fiscal capta al que no tiene quién lo refiera, que en las semanas de vencimiento es mucha gente.' },
         ],
       },
       {

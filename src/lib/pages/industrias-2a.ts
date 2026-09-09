@@ -333,6 +333,61 @@ export const industrias2a: PageData[] = [
         text: 'En B2B el comprador ya te investigó antes de la primera llamada. Tu web decide si esa llamada ocurre o si se la hace a tu competencia.',
         strong: 'tu web decide si esa llamada ocurre o si se la hace a tu competencia',
       },
+            {
+        type: 'prose',
+        h2: 'El catálogo que un comprador B2B necesita poder descargar',
+        paragraphs: [
+          'El comprador de una distribuidora no navega tu web como un consumidor. Trabaja con listas: arma su pedido en una hoja de cálculo, lo pasa a su jefe, lo cruza con lo que ya tiene en bodega y después cotiza. Una web bonita que no se pueda exportar no le sirve de nada.',
+          'Por eso el catálogo descargable sigue siendo la pieza más pedida y la peor resuelta del rubro. Lo habitual es un PDF de sesenta páginas de hace dos años, con precios que ya no valen, que alguien manda por correo cuando lo piden.',
+          'Lo que funciona es tener las dos cosas: el catálogo navegable en la web, que es lo que posiciona en Google y lo que el comprador usa para descubrir; y una descarga actualizada —en PDF o mejor en hoja de cálculo— con códigos, empaque, unidad mínima y disponibilidad, que es lo que usa para trabajar.',
+          '<strong>Y con fecha visible de actualización.</strong> Un catálogo sin fecha se asume viejo, y el comprador que duda del catálogo duda del inventario.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Mostrar el producto sin publicar el precio mayorista',
+        paragraphs: [
+          'La razón por la que la mayoría de las distribuidoras no publica catálogo es siempre la misma: no quieren que la competencia vea sus precios, ni que el cliente final compare con el detallista al que ellos mismos surten. Es una preocupación legítima.',
+          'La confusión está en creer que publicar catálogo obliga a publicar precio. Son dos cosas distintas. El catálogo público muestra qué distribuyes, de qué marcas, en qué presentaciones y empaques. El precio vive detrás de un registro: el cliente B2B se registra, tú lo apruebas, y ve su lista con sus condiciones.',
+          'Ese registro tiene un beneficio adicional que compensa el trabajo: te dice quién está mirando tu catálogo. Nombre de la empresa, RUC, zona, qué líneas le interesan. Es una base de prospectos calificados que hoy no tienes, porque el que mira un PDF por correo es invisible.',
+          'Y permite precios por nivel de cliente sin que nadie vea los del otro. <strong>Publicar qué vendes es visibilidad; publicar a cuánto es una decisión aparte</strong>, y confundirlas deja a muchas distribuidoras sin ninguna de las dos.',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Lo que hace que un comprador B2B no te tome en serio',
+        intro: 'Señales que un comprador profesional lee en el primer minuto.',
+        items: [
+          'Sin catálogo ni lista de marcas que se distribuyen',
+          'Sin RUC, razón social ni años de operación visibles',
+          'Correo de contacto en Gmail o Hotmail en vez de dominio propio',
+          'Sin decir si se es distribuidor autorizado o exclusivo de las marcas',
+          'Nada sobre unidad mínima de compra ni condiciones de pedido',
+          'Sin información de cobertura: ciudad, interior, región',
+          'Ninguna mención de plazos de entrega ni de si hay stock local',
+          'Catálogo o novedades sin fecha, que se asumen desactualizados',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'La Zona Libre y el stock local son argumento de venta, no un dato interno',
+        paragraphs: [
+          'Panamá es hub, y eso da a las distribuidoras panameñas una ventaja competitiva concreta que casi ninguna comunica: la capacidad de tener producto disponible rápido, sin que el cliente tenga que importar y esperar semanas.',
+          'Para un comprador regional que evalúa entre importar directo o comprarte a ti, lo que decide es el tiempo y el riesgo, no solo el precio. Si tienes stock local, operación en Zona Libre de Colón, o capacidad de reexportación, eso vale y hay que decirlo con números: cuánto tarda un pedido a Ciudad de Panamá, cuánto al interior, cuánto a la región.',
+          'Lo mismo con la parte aburrida que a un comprador profesional le importa mucho: si manejas los trámites de importación, si el producto llega nacionalizado, qué documentación entregas, y si hay soporte o garantía local. Esa última pregunta decide compras completas en líneas técnicas.',
+          '<strong>Un comprador que puede llamar a alguien en Panamá cuando algo falla paga más</strong> que por un contenedor sin respaldo, y esa diferencia se comunica en la web o no se comunica en ningún lado.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: solicitudes calificadas y qué líneas se consultan',
+        paragraphs: [
+          'En B2B el volumen de tráfico dice poco. Lo que dice mucho es cuántas solicitudes llegaron de empresas reales, de qué tamaño, de qué zona y por qué línea de producto.',
+          'El corte por línea es el más accionable de todos. Si una marca que apenas promocionas concentra un tercio de las consultas, eso es información de negocio: puede que convenga ampliar esa línea, negociar mejores condiciones con ese proveedor o darle su propia página.',
+          'El segundo dato son los registros al área de clientes: cuántos se registraron, cuántos aprobaste y cuántos terminaron comprando. Ese embudo dice si tu catálogo está atrayendo compradores reales o curiosos, y suele revelar que el proceso de aprobación es demasiado lento.',
+          'Y de dónde vienen geográficamente. Muchas distribuidoras panameñas descubren aquí demanda de países que ni estaban trabajando, que es información que ningún vendedor iba a traer solo. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -342,6 +397,10 @@ export const industrias2a: PageData[] = [
           { q: '¿Necesito vender en línea o solo captar clientes?', a: 'La mayoría de importadoras no cobra en línea al consumidor final: su web capta y califica compradores B2B para el equipo comercial. Si además quieres que tus clientes registrados coloquen pedidos en línea, se puede montar; se define según tu modelo en el diagnóstico.' },
           { q: '¿Cómo actualizo el catálogo cuando cambian precios o llega mercancía?', a: 'Desde un panel simple: agregas productos, cambias precios y marcas agotados en minutos. Es justo el problema del PDF, que se desactualiza y da mala impresión. Un catálogo web siempre al día es parte de la credibilidad que vende.' },
           { q: '¿Sirve si distribuyo a toda la región y no solo a Panamá?', a: 'Sí. Panamá como hub comercial es un argumento fuerte: mostramos tu cobertura logística, los países o zonas que despachas y los plazos. Podemos servir el sitio en español e inglés si atiendes clientes de la región que negocian en otro idioma.' },
+                  { q: '¿Cómo publico catálogo sin que la competencia vea mis precios?', a: 'Son dos cosas distintas. El catálogo público muestra qué distribuyes, de qué marcas y en qué presentaciones; el precio vive detrás de un registro que tú apruebas. Además ese registro te dice quién está mirando: empresa, RUC, zona y líneas de interés.' },
+          { q: '¿Sigue sirviendo el catálogo en PDF?', a: 'Sirve como herramienta de trabajo, no como catálogo principal. El comprador B2B arma listas en hoja de cálculo, así que conviene tener el catálogo navegable en la web —que es lo que posiciona— más una descarga actualizada con códigos, empaque y unidad mínima. Con fecha visible.' },
+          { q: '¿Vale la pena mencionar la Zona Libre y el stock local?', a: 'Es tu ventaja competitiva y casi nadie la comunica. Para el comprador regional que evalúa entre importar directo o comprarte, lo que decide es el tiempo y el riesgo. Ponlo con números: cuánto tarda un pedido a la ciudad, al interior y a la región.' },
+          { q: '¿Qué dato de la web cambia decisiones de negocio?', a: 'Las consultas por línea de producto. Si una marca que apenas promocionas concentra un tercio de las consultas, conviene ampliarla o negociar mejores condiciones con ese proveedor. Y el origen geográfico, que suele revelar demanda de países que no estabas trabajando.' },
         ],
       },
       {

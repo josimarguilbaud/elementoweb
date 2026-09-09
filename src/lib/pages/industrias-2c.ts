@@ -78,6 +78,61 @@ export const industrias2c: PageData[] = [
         text: 'En ferretería no gana el que tiene la tienda más bonita, sino el que responde primero: sí lo tengo, cuesta esto, lo recoges hoy. Esa respuesta ahora se da en el celular.',
         strong: 'el que responde primero: sí lo tengo, cuesta esto, lo recoges hoy',
       },
+            {
+        type: 'prose',
+        h2: 'El maestro de obra y el de fin de semana no compran igual',
+        paragraphs: [
+          'Una ferretería atiende a dos clientes que no se parecen en nada. El profesional —maestro de obra, contratista, electricista— sabe exactamente qué quiere, lo pide por nombre técnico o por marca, compra volumen y le importa el precio y que esté disponible hoy. El particular llega el sábado con un problema, no con un producto: "se me está botando el lavamanos".',
+          'Casi todas las webs del rubro le hablan solo al primero, con un catálogo de códigos y referencias. El particular se pierde ahí, y es el que más margen deja.',
+          'Servir a los dos no exige dos webs, exige dos entradas. Una por categoría de producto, para el que sabe qué busca. Y otra por problema —"reparar una fuga", "instalar un abanico de techo", "pintar una habitación"— que lleve a la lista de lo que hace falta comprar para resolverlo.',
+          '<strong>Esa segunda entrada es tráfico que ninguna ferretería panameña está capturando</strong>, y convierte muy bien: quien busca cómo resolver algo termina comprando lo necesario a quien se lo explicó.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Cotizar rápido es la ventaja que decide una obra',
+        paragraphs: [
+          'La venta grande de una ferretería no es el cliente de mostrador: es la cotización de obra. Un contratista pide precio de cuarenta ítems a tres ferreterías, y muchas veces se decide por la que contestó primero con algo ordenado, no por la más barata.',
+          'Hoy eso suele funcionar por WhatsApp: llega una lista en foto o en audio, alguien la transcribe, busca precios uno por uno y arma la respuesta a mano. Toma horas y depende de que esa persona esté disponible.',
+          'La web puede recortar ese ciclo sin necesidad de una tienda online completa. Un formulario donde el contratista arme su lista desde el catálogo, indique cantidades y la envíe; y del otro lado, esa solicitud llega ordenada y lista para poner precios, no como un audio de tres minutos.',
+          'No hace falta publicar precios para que funcione. <strong>La ventaja no está en el precio, está en la velocidad y en el orden de la respuesta</strong>, que es lo que un contratista con obra parada valora de verdad.',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Lo que hace que un cliente compre en la ferretería de al lado',
+        intro: 'Cosas que decide alguien con una obra parada o una gotera en la casa.',
+        items: [
+          'Sin catálogo: no se sabe si tienes el producto sin ir o llamar',
+          'Precios ausentes incluso en los productos de mayor rotación',
+          'Sin decir qué marcas se manejan, cuando el profesional compra por marca',
+          'Horario de sábado sin especificar, que es el día del cliente particular',
+          'Sin forma de mandar una lista de cotización que no sea una foto por WhatsApp',
+          'Nada sobre entrega a obra ni desde qué monto es gratis',
+          'Sin mención de crédito para contratistas ni cómo se solicita',
+          'Ubicación sin indicación de dónde cargar ni si hay acceso para camión',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Publicar inventario sin tener un sistema de inventario',
+        paragraphs: [
+          'La objeción más frecuente del rubro es real: "no puedo publicar el catálogo porque el inventario cambia todos los días y no tengo sistema". Publicar disponibilidad falsa es peor que no publicar nada, así que la preocupación tiene sentido.',
+          'La salida no es esperar a tener un ERP. Es separar lo que cambia de lo que no. La ficha del producto —qué es, para qué sirve, marca, medidas, foto— no cambia nunca. La disponibilidad y el precio sí. Se puede publicar todo el catálogo con ficha completa y sin stock, y poner "consultar disponibilidad" con un botón a WhatsApp.',
+          'Eso ya resuelve el noventa por ciento del problema: el cliente descubre que tienes el producto, que es lo que hoy no puede saber sin ir. Y tú recibes una consulta concreta de un producto concreto, no un "¿tienen tubería?".',
+          'Los productos de alta rotación y precio estable sí conviene publicarlos con precio, aunque haya que revisarlos cada tanto. <strong>Empezar con cincuenta productos bien hechos vale más que esperar dos años al sistema perfecto.</strong>',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: cotizaciones y qué producto se busca y no tienes',
+        paragraphs: [
+          'La métrica que más rinde en una ferretería no es el pedido online, es la <strong>solicitud de cotización</strong>: cuántas entraron, de qué monto aproximado y cuántas se cerraron. Es donde está el volumen del negocio.',
+          'El segundo dato es oro y casi nadie lo mira: qué buscó la gente en tu catálogo y no encontró. Cada búsqueda sin resultado es un cliente que se fue a otra ferretería, y la lista de esas búsquedas es la mejor guía de compra de inventario que vas a tener, mucho mejor que la intuición.',
+          'También vale medir qué categorías generan más consultas de particulares y cuáles de profesionales, porque son dos negocios con márgenes distintos que conviene atender de forma distinta.',
+          'Y las consultas de disponibilidad por producto: si un artículo genera veinte consultas al mes, merece tener precio y stock publicados aunque el resto del catálogo no. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -87,6 +142,10 @@ export const industrias2c: PageData[] = [
           { q: '¿Puedo cobrar en línea con Yappy?', a: 'Sí. Integramos <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a> y tarjeta para que el cliente pague desde la obra o desde casa. También dejamos la opción de pagar al retirar en tienda, que en ferretería sigue siendo muy usada.' },
           { q: '¿Y si no quiero vender en línea, solo mostrar el catálogo?', a: 'Es válido y muy común al empezar. Montamos el catálogo con precios y disponibilidad y un botón de WhatsApp por producto para cerrar la venta por chat. Si más adelante quieres activar el pago en línea, la base ya queda lista.' },
           { q: '¿Cómo mantengo los precios al día si cambian seguido?', a: 'Con un panel simple hecho para eso: cambias un precio o marcas agotado en segundos, sin depender de nadie. Es la parte más importante del proyecto, porque un catálogo desactualizado hace perder la confianza del cliente.' },
+                  { q: 'No tengo sistema de inventario, ¿puedo publicar catálogo igual?', a: 'Sí. Separa lo que no cambia —qué es el producto, marca, medidas, foto— de lo que sí. Publica el catálogo completo con ficha y "consultar disponibilidad" a WhatsApp. El cliente descubre que tienes el producto, que hoy no puede saber sin ir, y tú recibes una consulta concreta.' },
+          { q: '¿Tengo que publicar precios?', a: 'No todos. Los de alta rotación y precio estable sí conviene, porque son los que más se buscan. Para el resto, la ventaja competitiva no está en el precio publicado sino en cotizar rápido y ordenado, que es lo que decide una obra.' },
+          { q: '¿Cómo atiendo al contratista y al cliente de fin de semana a la vez?', a: 'Con dos entradas, no dos webs. Una por categoría de producto para el que sabe qué busca, y otra por problema —"reparar una fuga", "instalar un abanico"— que lleve a la lista de lo que hace falta. Esa segunda casi ninguna ferretería la tiene y convierte muy bien.' },
+          { q: '¿Qué es lo más útil que puedo medir?', a: 'Qué buscó la gente en tu catálogo y no encontró. Cada búsqueda sin resultado es una venta que se fue, y esa lista es mejor guía de compra de inventario que cualquier intuición.' },
         ],
       },
       {

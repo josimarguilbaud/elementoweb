@@ -15,7 +15,7 @@ Estos archivos no se publican: Astro solo sirve `public/`.
 | `logo-horizontal-oscuro.svg` / `.png` | Sobre fondo oscuro (la palabra "elemento" en blanco) |
 | `logo-horizontal-1tinta-negro.svg` / `.png` | Una sola tinta o un solo hilo |
 | `logo-horizontal-1tinta-blanco.svg` | Una sola tinta, para prendas oscuras |
-| `isotipo-teal / negro / blanco .svg` | Solo el cubo, sin la palabra |
+| `isotipo-azul / negro / blanco .svg` | Solo el cubo, sin la palabra |
 | `elementoweb-logo.pdf` | Vectorial, por si el proveedor no abre SVG |
 
 **El texto ya está convertido a curvas.** El proveedor no necesita instalar la
@@ -24,13 +24,19 @@ con fondo transparente.
 
 ## La marca
 
-- Cubo y la palabra "web": **`#2dd4bf`**
-- La palabra "elemento": **`#0f172a`**
+- Cubo y la palabra "web": **`#0099CC`**
+- La palabra "elemento": **`#333333`**
+
+Estos son los colores del Manual de Estilos que adoptó el sitio el 09/09/2026.
+Antes eran teal `#2dd4bf` e ink `#0f172a`; si ves esos valores en algún archivo,
+está desactualizado. **El logo vive en el código** (`src/components/Navbar.astro`
+y `Footer.astro`): si la marca vuelve a cambiar, se cambia ahí y se reexporta
+esta carpeta, nunca al revés.
 - Tipografía original: **Outfit Bold** (Google Fonts, licencia OFL), tracking −0.025 em
 - Proporción del lockup horizontal: **6.196 : 1**
 
-En la web el navbar pone " web" en gris al 60 % y el footer lo pone en teal.
-Para producción física se eligió **la versión teal**: aguanta mejor la distancia
+En la web el navbar pone " web" en gris al 60 % y el footer lo pone en azul.
+Para producción física se eligió **la versión azul**: aguanta mejor la distancia
 y usa el color de marca.
 
 ## Para bordado, leer esto antes de mandarlo
@@ -70,10 +76,16 @@ Solo el cubo:
 - La palabra aguanta bien: a 80 mm la mayúscula mide 7,4 mm, por encima de los
   5 mm que se piden como mínimo para texto bordado.
 
-Los `#2dd4bf` y `#0f172a` son colores de pantalla (RGB). El bordador tiene que
-elegir el hilo más cercano de su carta (Madeira, Isacord) — pedirle que enseñe
-el carrete o una muestra antes de correr la producción, porque el teal es un
-color que se desvía fácil hacia verde o hacia azul.
+Los `#0099CC` y `#333333` son colores de pantalla (RGB). El Manual de Estilos da
+también el equivalente en CMYK, que es lo que de verdad necesita un imprentero:
+
+- Azul `#0099CC` → **C-78 / M-23 / Y-8 / K-0**
+- Gris `#333333` → **C-69 / M-60 / Y-56 / K-66**
+
+Para bordado no hay CMYK que valga: el bordador elige el hilo más cercano de su
+carta (Madeira, Isacord). Pedirle que enseñe el carrete o una muestra cosida
+antes de correr la producción, porque este azul cian se desvía fácil hacia
+turquesa o hacia azul rey según el hilo.
 
 ## Cómo se regeneran
 

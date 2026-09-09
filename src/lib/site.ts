@@ -38,6 +38,17 @@ export const analytics = {
 export const contactForm = {
   web3formsKey: '', // (no se usa: el formulario va por n8n, ver endpoint)
   endpoint: 'https://n8n.aiwebstudio.co/webhook/elementoweb-contacto', // Webhook n8n → correo por SMTP (docs/contacto-n8n)
+  /* Aviso paralelo a WazaCRM: crea la tarjeta en el CRM y, cuando esa persona
+     escriba por WhatsApp, el bot la reconoce por su teléfono y no le vuelve a
+     preguntar lo que ya puso. El correo por n8n sigue igual.
+     El secreto viaja en el navegador (el sitio es estático): sirve para
+     identificar al cliente, no es una credencial de administración. */
+  crm: {
+    endpoint: 'https://wazacrm.com/api/webhooks/forms',
+    clientId: '69f635e2-e5d5-40e1-bc46-83943fb210c0',
+    secret: 'a23a7e13-7e1e-441e-945e-92eccc02f1db',
+    formName: 'Cotización web',
+  },
   services: [
     'Diseño web / Sitio corporativo',
     'Tienda online / E-commerce',

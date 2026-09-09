@@ -6,7 +6,7 @@
    Sin ninguno configurado, el formulario avisa y empuja a WhatsApp.
    El workflow de n8n listo para importar está en docs/contacto-n8n/. */
 import { contactForm } from '../lib/site';
-const { services, budgets, web3formsKey, endpoint } = contactForm;
+const { services, budgets, web3formsKey, endpoint, crm } = contactForm;
 ---
 <div class="glass rounded-3xl p-6 sm:p-8">
   <form id="cform" novalidate>
@@ -19,7 +19,7 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
       <div><label class="mb-1.5 block text-sm font-semibold text-ink">Nombre <span class="text-teal-deep">*</span></label><input name="nombre" aria-label="Nombre" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /></div>
       <div><label class="mb-1.5 block text-sm font-semibold text-ink">Empresa <span class="text-teal-deep">*</span></label><input name="empresa" aria-label="Empresa" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /></div>
       <div><label class="mb-1.5 block text-sm font-semibold text-ink">Correo <span class="text-teal-deep">*</span></label><input name="email" aria-label="Correo electrónico" type="email" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /></div>
-      <div><label class="mb-1.5 block text-sm font-semibold text-ink">Teléfono / WhatsApp</label><input name="telefono" aria-label="Teléfono o WhatsApp" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /></div>
+      <div><label class="mb-1.5 block text-sm font-semibold text-ink">WhatsApp <span class="text-teal-deep">*</span></label><input name="telefono" aria-label="Teléfono o WhatsApp" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /></div>
       <div><label class="mb-1.5 block text-sm font-semibold text-ink">Servicio de interés</label><select name="servicio" aria-label="Servicio de interés" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"><option value="">Selecciona</option>{services.map((s) => <option>{s}</option>)}</select></div>
       <div><label class="mb-1.5 block text-sm font-semibold text-ink">Presupuesto estimado</label><select name="presupuesto" aria-label="Presupuesto estimado" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"><option value="">Selecciona</option>{budgets.map((b) => <option>{b}</option>)}</select></div>
     </div>
@@ -37,7 +37,7 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
   </div>
 </div>
 
-<script define:vars={{ KEY: web3formsKey, ENDPOINT: endpoint }}>
+<script define:vars={{ KEY: web3formsKey, ENDPOINT: endpoint, CRM: crm }}>
   const form = document.getElementById('cform');
   const errEl = document.getElementById('cerr');
   if (form) {
@@ -45,10 +45,12 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
       e.preventDefault();
       const fd = new FormData(form);
       let ok = true;
-      for (const k of ['nombre', 'empresa', 'email', 'mensaje']) {
+      for (const k of ['nombre', 'empresa', 'email', 'telefono', 'mensaje']) {
         const el = form.elements.namedItem(k);
         const val = String(fd.get(k) || '').trim();
-        const bad = !val || (k === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val));
+        const bad = !val
+          || (k === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val))
+          || (k === 'telefono' && val.replace(/\D/g, '').length < 8);
         el.classList.toggle('border-red-400', bad);
         if (bad && ok) el.focus();
         ok = ok && !bad;
@@ -65,6 +67,29 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
 
       btn.disabled = true;
       btn.textContent = 'Enviando…';
+
+      // Aviso al CRM en paralelo: crea la tarjeta y permite que el bot reconozca
+      // por su telefono a quien ya lleno el formulario. Si falla, el envio normal
+      // sigue igual: por eso va sin await y con catch vacio.
+      if (CRM && CRM.endpoint && CRM.clientId && CRM.secret) {
+        fetch(CRM.endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            clientId: CRM.clientId,
+            secret: CRM.secret,
+            formulario: CRM.formName,
+            nombre: String(fd.get('nombre') || '').trim(),
+            email: String(fd.get('email') || '').trim(),
+            telefono: String(fd.get('telefono') || '').trim(),
+            mensaje: String(fd.get('mensaje') || '').trim(),
+            empresa: String(fd.get('empresa') || '').trim(),
+            servicio: String(fd.get('servicio') || '').trim(),
+            presupuesto: String(fd.get('presupuesto') || '').trim(),
+            origen: location.pathname,
+          }),
+        }).catch(() => {});
+      }
 
       try {
         if (ENDPOINT) {

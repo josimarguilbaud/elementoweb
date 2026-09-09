@@ -232,6 +232,61 @@ export const industrias2c: PageData[] = [
         text: 'En eventos el cliente no compra lo que prometes: compra lo que ya lograste y puede ver. Una web sin portafolio de peso es una tarjeta de presentación cara.',
         strong: 'compra lo que ya lograste y puede ver',
       },
+            {
+        type: 'prose',
+        h2: 'Cuarenta propuestas al mes y tres eventos: el problema real del rubro',
+        paragraphs: [
+          'Un negocio de eventos gasta una cantidad enorme de tiempo cotizando. Llega una consulta, hay que preguntar fecha, cantidad de personas, tipo de evento y presupuesto, armar una propuesta, mandarla y hacer seguimiento. Buena parte no llega a nada, y ese trabajo no se factura.',
+          'La causa casi nunca es el precio: es que el cliente llegó sin ninguna referencia. No sabía si un evento de cien personas contigo cuesta tres mil o quince mil, y pidió propuesta para averiguarlo.',
+          'Publicar rangos por tipo de evento y tamaño corta eso de raíz. No la propuesta final, que siempre es a medida, sino el orden de magnitud: "una boda de cien personas con nuestro servicio completo suele ubicarse entre tanto y tanto". El que no está en rango no pide propuesta, y el que sí llega mucho más avanzado.',
+          '<strong>Es el cambio que más tiempo libera en todo el rubro</strong>, y el que más miedo da hacer. En la práctica no espanta clientes: espanta cotizaciones que nunca iban a cerrar.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Tu inventario no son los platos, son las fechas',
+        paragraphs: [
+          'Un negocio de eventos no vende comida ni decoración: vende días. Y los días son un inventario finito y perecedero, porque un sábado de noviembre que no se vendió no se recupera nunca.',
+          'Casi ninguna web del rubro trata la fecha como lo que es. El cliente pregunta si hay disponibilidad para el 15 de diciembre, alguien revisa una agenda y contesta horas después. En ese tiempo el cliente preguntó a otros tres.',
+          'Un calendario de disponibilidad, aunque sea simple —fechas libres, ocupadas y en opción— cambia esa conversación por completo. El cliente ve que su fecha está libre y pasa directo a apartar, sin intermediarios ni espera.',
+          'Y hace visible lo que de otro modo no se ve: las fechas flojas. Un martes de mayo vacío no se llena solo, pero sí se puede promocionar con un precio distinto si sabes con tiempo que está libre. <strong>Gestionar el calendario es gestionar el negocio</strong>, y hoy en la mayoría de los casos vive en la cabeza de una persona.',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Lo que hace que una pareja o una empresa elija a otro proveedor',
+        intro: 'Detalles que se revisan mientras se compara entre tres o cuatro opciones.',
+        items: [
+          'Ni un rango de precio en ningún tipo de evento',
+          'Sin decir capacidad mínima ni máxima de personas',
+          'Galería con fotos de eventos sin fecha ni tipo, todas mezcladas',
+          'Nada sobre qué incluye cada paquete: mesas, mantelería, personal, montaje',
+          'Sin política de depósito ni de cancelación por lluvia o fuerza mayor',
+          'Sin forma de consultar disponibilidad que no sea escribir y esperar',
+          'Fotos de banco de bodas que evidentemente no son tuyas',
+          'Sin mención de si se atiende el interior del país y con qué costo',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Los proveedores aliados son el canal que nadie trabaja',
+        paragraphs: [
+          'Un evento involucra a mucha gente: local, catering, fotógrafo, música, decoración, planificador, transporte. Cada uno de ellos recibe consultas que no son de lo suyo, y las refiere a quien conoce.',
+          'Ese flujo de referidos entre proveedores es probablemente el mayor canal de captación del rubro y casi nadie lo trabaja de forma deliberada. Ocurre por amistad y por costumbre, no por estrategia.',
+          'La web puede ordenarlo. Una página de aliados donde publiques con quién trabajas habitualmente hace tres cosas: le da tranquilidad al cliente que quiere todo resuelto, genera un enlace mutuo que ayuda a ambos a posicionar, y te mantiene presente en la mente del proveedor que refiere.',
+          'Y el material que le facilitas al aliado importa. Un enlace a tu galería por tipo de evento, con precios de referencia, es infinitamente más fácil de reenviar que un "yo conozco a alguien". <strong>Facilitarle el reenvío al que te refiere es lo que multiplica los referidos.</strong>',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: consultas por tipo de evento y cuántas se apartan',
+        paragraphs: [
+          'La métrica del rubro es cuántas consultas entraron, de qué tipo de evento y de qué tamaño, y cuántas terminaron con una fecha apartada y un depósito pagado.',
+          'El corte por tipo es el que ordena el negocio. Bodas, corporativo, quinceaños y cumpleaños tienen márgenes, ciclos y niveles de exigencia muy distintos. Si el corporativo cierra al triple y da menos trabajo, eso cambia dónde poner el esfuerzo comercial, y sin medirlo se decide por costumbre.',
+          'El segundo número es la ocupación del calendario por mes. Es el que anticipa el problema con tiempo de arreglarlo: ver en septiembre que noviembre está a media capacidad permite hacer algo; verlo en noviembre no.',
+          'Y la conversión de consulta a depósito. Si es baja y publicaste rangos, el problema está en la propuesta o en el tiempo de respuesta, no en la captación. Lo dejamos medido; el planteamiento en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -241,6 +296,10 @@ export const industrias2c: PageData[] = [
           { q: '¿Puedo recibir reservas o apartar fechas en línea?', a: 'Sí. Con un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas y citas</a> el cliente consulta disponibilidad de su fecha y agenda una cita para cotizar. Si quieres asegurar el compromiso, se puede pedir un anticipo con Yappy o tarjeta para bloquear el día.' },
           { q: '¿Sirve igual para bodas que para eventos corporativos?', a: 'Sí, y conviene separarlos. Montamos secciones distintas para que la pareja vea bodas y la empresa vea eventos corporativos, cada una con su tono, su portafolio y sus paquetes. Así ninguno siente que llegó al lugar equivocado.' },
           { q: '¿Puedo actualizar el portafolio después de cada evento?', a: 'Sí, y es clave hacerlo. Te dejamos un panel para subir las fotos de tu evento más reciente en minutos. Un portafolio que crece muestra que estás activo y en tendencia, algo que en este rubro pesa mucho.' },
+                  { q: '¿Publico precios si cada evento es distinto?', a: 'No la propuesta final, sí el orden de magnitud por tipo y tamaño: "una boda de cien personas suele ubicarse entre tanto y tanto". Es lo que más tiempo libera en todo el rubro. No espanta clientes: espanta cotizaciones que nunca iban a cerrar.' },
+          { q: '¿Vale la pena publicar disponibilidad de fechas?', a: 'Tu inventario son los días, y un sábado que no se vendió no se recupera. Un calendario simple de fechas libres, ocupadas y en opción hace que el cliente pase directo a apartar en vez de esperar respuesta mientras pregunta a otros tres.' },
+          { q: '¿Cómo aprovecho a los proveedores que me refieren?', a: 'Con una página de aliados y material fácil de reenviar: galería por tipo de evento con precios de referencia. El referido entre proveedores es el mayor canal del rubro y casi nadie lo trabaja de forma deliberada, solo por costumbre.' },
+          { q: '¿Qué debo medir además de las consultas?', a: 'La ocupación del calendario por mes. Ver en septiembre que noviembre está a media capacidad permite hacer algo; verlo en noviembre, no. Y la conversión de consulta a depósito, que dice si el problema está en captar o en la propuesta.' },
         ],
       },
       {

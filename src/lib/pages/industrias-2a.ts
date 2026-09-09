@@ -236,6 +236,61 @@ export const industrias2a: PageData[] = [
         text: 'El viajero decide cuando está motivado, no cuando tú puedes contestar. Una web que reserva y cobra sola vende en ese instante exacto.',
         strong: 'una web que reserva y cobra sola vende en ese instante exacto',
       },
+            {
+        type: 'prose',
+        h2: 'El que ya sabe a dónde va y el que todavía sueña compran distinto',
+        paragraphs: [
+          'A una agencia le llegan dos viajeros. Uno ya decidió el destino y busca precio y fecha: "paquete a Cartagena", "tour a San Blas desde Panamá". El otro no ha decidido nada, tiene una semana de vacaciones y busca ideas: "a dónde viajar en octubre", "destinos baratos desde Panamá".',
+          'El segundo es un tercio más difícil de captar y vale mucho más, porque quien te ayuda a decidir el destino suele quedarse con la venta completa. Y casi ninguna agencia panameña le habla: todas publican paquetes cerrados para el que ya sabe.',
+          'Atender al indeciso no exige más inventario, exige contenido: comparativas honestas entre destinos, qué se hace en cada uno, cuánto cuesta realmente una semana, en qué mes conviene ir y cuándo hay temporada de lluvia. Eso posiciona en búsquedas donde no compite nadie.',
+          '<strong>Y llega antes que el competidor.</strong> Cuando ese viajero por fin busque "paquete a Medellín", ya va a saber a quién escribirle, porque fuiste tú quien le ayudó a elegir Medellín.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El depósito y la política de cancelación deciden la reserva',
+        paragraphs: [
+          'Comprar un viaje es comprometer dinero por algo que ocurre en tres meses. La primera pregunta real del cliente nunca es el precio: es qué pasa si algo cambia.',
+          'Y la mayoría de las agencias no lo publica. El cliente pregunta por WhatsApp, la respuesta llega a media tarde, y para entonces ya se estaba mirando otra opción. Esa fricción cuesta más reservas que cualquier diferencia de precio.',
+          'Lo que hay que publicar es concreto: cuánto es el depósito para apartar, hasta cuándo se puede cancelar y con qué penalidad, si el pago se puede fraccionar y hasta qué fecha, y qué pasa si la aerolínea cambia el vuelo. Con eso resuelto, el cliente decide sin necesitar a nadie.',
+          'Y el depósito online, con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy o tarjeta</a>, es lo que convierte una conversación en una reserva. <strong>Una reserva sin depósito no es una reserva</strong>: es una intención que se cae con la primera oferta que aparezca.',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Lo que hace que un viajero reserve con otra agencia',
+        intro: 'Todo esto se decide mientras alguien compara tres agencias desde el celular.',
+        items: [
+          'Paquetes sin precio: "consultar disponibilidad"',
+          'Sin decir qué incluye y qué no: vuelo, traslados, comidas, entradas',
+          'Nada sobre depósito, cancelación ni fraccionamiento del pago',
+          'Fotos de banco del destino en vez de fotos de tus propios viajes',
+          'Sin licencia de operador turístico ni registro visible',
+          'Salidas publicadas sin fecha o con fechas del año pasado',
+          'Sin forma de apartar que no sea escribir y esperar respuesta',
+          'Nada sobre requisitos de entrada: visa, pasaporte, vacunas',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Dos negocios distintos: el panameño que sale y el turista que llega',
+        paragraphs: [
+          'Muchas agencias panameñas hacen las dos cosas —emisivo y receptivo— con la misma web, en español, apuntando al mismo público. Son negocios diferentes, con clientes que buscan distinto y pagan distinto.',
+          'El receptivo, el turista que viene a Panamá, es el de mayor margen y el peor atendido. Busca en inglés, compara con operadores internacionales, y necesita cosas que la web local no da: precios en dólares con todo incluido, políticas claras, pago con tarjeta internacional y respuesta en su huso horario.',
+          'Ese viajero además busca la experiencia, no el traslado: "San Blas tour from Panama City", "Panama Canal tour", "Boquete coffee tour". Son búsquedas con volumen y con competencia mayormente extranjera, que revende tu propio producto con un margen encima.',
+          '<strong>Una sección en inglés bien hecha te pone a competir por tu propio cliente</strong>, en vez de recibirlo a través de un intermediario que se lleva la diferencia. No hace falta traducir la web entera: bastan las páginas de los tours que sí vendes a extranjeros.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: reservas con depósito y de qué contenido vinieron',
+        paragraphs: [
+          'La métrica que cuenta no es la consulta, es la reserva con depósito. Una agencia puede tener el WhatsApp lleno todo el día y cerrar poco, y ese contraste es exactamente lo que hay que medir.',
+          'El corte más útil es por origen: cuántas reservas vinieron de una búsqueda del destino, cuántas de contenido de inspiración y cuántas de pauta. Si el contenido de "a dónde viajar en octubre" genera reservas meses después, ese es el activo a construir, y sin medirlo se abandona por parecer que no vende.',
+          'También conviene separar emisivo de receptivo, porque tienen márgenes y ciclos muy distintos y mezclarlos esconde cuál de los dos sostiene el año.',
+          'Y la tasa de conversión de consulta a depósito. Si es baja, el problema casi nunca es el precio: es que la política de cancelación y lo que incluye el paquete no están publicados y el cliente se enfría esperando respuesta. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -245,6 +300,10 @@ export const industrias2a: PageData[] = [
           { q: '¿Sirve para un tour operador pequeño, de uno o dos destinos?', a: 'Sí, y muchas veces rinde más. Dos o tres tours bien presentados, con reserva propia, te independizan de vender solo por WhatsApp o a través de intermediarios que se quedan con tu margen.' },
           { q: '¿Puedo manejar precios y cupos por temporada yo mismo?', a: 'Sí, es parte del diseño. Dejas configuradas tarifas por fecha, promociones de temporada y cupos que activas o cierras tú mismo desde el panel, sin depender de nadie para reaccionar a un feriado o a temporada baja.' },
           { q: '¿La web funciona en inglés para los turistas extranjeros?', a: 'Sí. Servimos el sitio en español e inglés con URLs y etiquetado por idioma, no con un traductor automático que rompe la confianza. Para el viajero internacional, poder leer el itinerario y reservar en su idioma es lo que cierra la venta.' },
+                  { q: '¿Qué contenido trae viajeros que todavía no eligieron destino?', a: 'Comparativas honestas entre destinos, qué se hace en cada uno, cuánto cuesta de verdad una semana y en qué mes conviene ir. Casi ninguna agencia panameña lo publica, y quien ayuda a decidir el destino suele quedarse con la venta completa.' },
+          { q: '¿Debo publicar la política de cancelación?', a: 'Es la primera pregunta real del cliente, antes que el precio. Cuánto es el depósito, hasta cuándo se cancela y con qué penalidad, si se puede fraccionar el pago. Publicarlo evita que el cliente se enfríe esperando una respuesta por WhatsApp.' },
+          { q: '¿Vale la pena tener la web en inglés?', a: 'Para el receptivo, que es el de mayor margen. El turista que viene a Panamá busca en inglés y hoy suele llegar a través de un operador extranjero que revende tu producto con margen encima. No hace falta traducir todo: bastan las páginas de los tours que vendes a extranjeros.' },
+          { q: '¿Por qué tengo el WhatsApp lleno y cierro poco?', a: 'Casi siempre porque lo que decide —qué incluye, depósito, cancelación, fechas de salida— no está publicado, y el cliente pregunta, espera y se enfría. Publicarlo convierte consultas en reservas con depósito, que es la única métrica que cuenta.' },
         ],
       },
       {

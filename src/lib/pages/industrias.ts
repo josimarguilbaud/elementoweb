@@ -608,6 +608,61 @@ export const industriasPages: PageData[] = [
           'Por eso dejamos las tarifas, la disponibilidad y los paquetes en tu control, editables al momento. Puedes lanzar una promoción de temporada baja, cerrar fechas ocupadas o destacar el paquete de feriado sin depender de nadie. <strong>El negocio que reacciona rápido a la temporada llena; el que no, deja habitaciones vacías.</strong>',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'La comisión de la OTA es el margen de tu mejor habitación',
+        paragraphs: [
+          'Las plataformas de reserva cobran comisiones que suelen ubicarse entre el quince y el veinte por ciento. En un hotel pequeño panameño, eso equivale a regalar una de cada cinco o seis noches vendidas.',
+          'Nadie sensato propone salirse: las OTA traen volumen y visibilidad que un hotel pequeño no consigue solo. Lo que sí tiene sentido es recuperar la reserva del huésped que ya te conoce, que es la más barata de todas y la que hoy se sigue yendo por comisión.',
+          'El patrón que funciona está probado: la OTA capta al huésped nuevo, y a partir de ahí el hotel trabaja la relación directa. Un correo antes de la llegada, un detalle en la habitación, y una razón concreta para reservar directo la próxima vez —mejor tarifa, salida tardía, algo incluido—.',
+          '<strong>Y la comparación de tarifa tiene que ser honesta.</strong> Si tu web cuesta lo mismo que la OTA sin ninguna ventaja, el huésped reserva donde ya tiene su tarjeta guardada, y con razón.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Las reseñas se responden, y esa respuesta la lee el próximo huésped',
+        paragraphs: [
+          'En turismo la reseña no es un comentario: es el principal argumento de venta de tu competencia si tú no la trabajas. Y lo que más pesa no es la cantidad de estrellas, es cómo responde el hotel a las malas.',
+          'Un viajero que compara dos hoteles con la misma nota se queda con el que contesta. Ver una respuesta calmada y concreta a una queja legítima —qué pasó, qué se hizo— comunica más sobre la gestión del lugar que veinte reseñas de cinco estrellas sin contexto.',
+          'Lo que no funciona es la respuesta genérica de plantilla. "Lamentamos su experiencia, valoramos su opinión" repetida quince veces se lee como automática y resta. Responder distinto a cada una, mencionando lo concreto, toma tiempo y es de las inversiones más rentables del rubro.',
+          'Y conviene pedirlas de forma sistemática, con un mensaje automático dos días después del checkout, cuando el recuerdo está fresco. <strong>Las reseñas no llegan solas: llegan a quien las pide.</strong>',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Lo que hace que un viajero reserve en otro lado',
+        intro: 'Decisiones que se toman en dos minutos comparando pestañas.',
+        items: [
+          'Tarifas sin publicar o desactualizadas respecto a las OTA',
+          'Fotos escasas: menos de diez por tipo de habitación',
+          'Sin decir qué incluye la tarifa: desayuno, impuestos, traslados',
+          'Nada sobre política de cancelación ni de check-in y check-out',
+          'Sin motor de reserva propio: solo "escríbenos para reservar"',
+          'Web en español únicamente cuando el huésped objetivo es extranjero',
+          'Sin información de cómo llegar desde el aeropuerto ni cuánto tarda',
+          'Nada sobre qué hacer en la zona, que es lo que el viajero busca antes',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El viajero panameño del fin de semana largo es un negocio aparte',
+        paragraphs: [
+          'Panamá tiene una cantidad notable de puentes y fines de semana largos, y alrededor de cada uno se mueve un flujo de turismo interno que llena hoteles de playa, montaña e interior. Es un cliente que busca distinto al extranjero y al que casi ninguna web le habla.',
+          'Ese viajero no planifica con seis meses: busca con dos o tres semanas de anticipación, compara precio total para la familia, y le importan cosas muy concretas —si hay piscina para niños, si se puede llevar mascota, cuánto se tarda manejando desde la ciudad, si hay parrilla—.',
+          'Y busca en español, con términos de temporada: "hoteles para el puente", "dónde ir en carnaval", "escapada de fin de semana desde Panamá". Ese contenido, publicado con anticipación, capta a alguien que todavía no eligió destino ni hotel.',
+          '<strong>El error de siempre es publicar la promoción de carnaval en carnaval.</strong> Cuando la búsqueda ocurre, el posicionamiento ya tenía que estar hecho: eso significa publicar con semanas de ventaja, no con días.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: reserva directa y cuánta comisión te ahorra',
+        paragraphs: [
+          'El número que justifica todo es qué porcentaje de tus reservas entró por canal directo y cuánta comisión representó eso en dinero. Puesto en dólares al mes, esa cifra ordena cualquier discusión sobre si la web vale lo que cuesta.',
+          'Después, la mezcla de canales: OTA, directo, agencia, repetido. Ver cómo se mueve esa mezcla mes a mes dice si el trabajo de fidelización está funcionando o si el hotel sigue dependiendo por completo de las plataformas.',
+          'El tercer dato es la tasa de huéspedes que repiten. En turismo el repetido es el más rentable de todos: no cuesta comisión, no cuesta pauta y suele gastar más. Si es baja, el problema está en el seguimiento posterior, no en la captación.',
+          'Y vale medir qué contenido del destino trae reservas. Si un artículo sobre qué hacer en la zona genera reservas cada mes, ese es el activo a ampliar. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -618,6 +673,10 @@ export const industriasPages: PageData[] = [
           { q: '¿Puedo manejar tarifas y paquetes por temporada?', a: 'Sí, es clave en este rubro. Dejas configuradas tarifas por fecha y paquetes de temporada que activas o cierras tú mismo, sin depender de la agencia para reaccionar a un feriado o a temporada baja.' },
           { q: '¿Sirve para un operador de tours como los de San Blas o Bocas?', a: 'Sí, y muy bien. Cada tour se arma como una página propia con fotos reales, qué incluye, punto de salida y reserva con anticipo. Es lo que te independiza de vender solo por WhatsApp o por intermediarios.' },
           { q: '¿Puedo mostrar reseñas de TripAdvisor o Google?', a: 'Sí, integramos reseñas verificables de las plataformas donde ya te califican. Para el viajero internacional, ver reseñas reales pesa más que cualquier texto de la web.' },
+                  { q: '¿Conviene salirse de Booking y las demás OTA?', a: 'No. Traen volumen y visibilidad que un hotel pequeño no consigue solo. Lo que conviene es recuperar la reserva del huésped que ya te conoce, que es la más barata y la que hoy se sigue yendo por comisión de quince a veinte por ciento.' },
+          { q: '¿Cómo hago que reserven directo si el precio es el mismo?', a: 'Tiene que haber una razón concreta: mejor tarifa, salida tardía, algo incluido. Si tu web cuesta lo mismo que la OTA sin ninguna ventaja, el huésped reserva donde ya tiene la tarjeta guardada, y con razón.' },
+          { q: '¿Importa responder las reseñas?', a: 'Es lo que más pesa cuando dos hoteles tienen la misma nota. Una respuesta calmada y concreta a una queja legítima comunica más sobre la gestión que veinte reseñas de cinco estrellas. Lo que resta es la respuesta de plantilla repetida quince veces.' },
+          { q: '¿Cuándo publico las promociones de temporada?', a: 'Semanas antes, no durante. El viajero panameño del fin de semana largo busca con dos o tres semanas de anticipación, y publicar la promoción de carnaval en carnaval llega cuando el posicionamiento ya tenía que estar hecho.' },
         ],
       },
       {

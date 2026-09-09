@@ -372,6 +372,61 @@ export const industrias2a: PageData[] = [
         text: 'El paciente elige dentista por confianza, y la confianza se construye antes de la primera cita. Todo pasa en tu web: los casos, el equipo, el consultorio y lo fácil que sea agendar.',
         strong: 'la confianza se construye antes de la primera cita',
       },
+            {
+        type: 'prose',
+        h2: 'Una página por tratamiento, no una lista de servicios',
+        paragraphs: [
+          'La mayoría de las webs dentales resuelven los tratamientos con una lista: ortodoncia, implantes, blanqueamiento, endodoncia, uno debajo del otro en la misma página. Es cómodo de armar y es el error que más pacientes cuesta, porque cada uno de esos tratamientos es una búsqueda distinta, hecha por una persona distinta, con un presupuesto distinto.',
+          'Quien busca "ortodoncia invisible" tiene veintitantos, quiere saber cuánto dura y cuánto cuesta al mes. Quien busca "implante dental" suele pasar de los cincuenta, ya perdió la pieza y necesita saber si duele y cuántas visitas son. Quien busca "endodoncia de urgencia" está con dolor ahora mismo y va a llamar al primero que le resuelva. Meterlos a los tres en la misma página obliga a hablarle a nadie en particular.',
+          'Una página por tratamiento le habla a cada uno en su idioma: el procedimiento explicado sin tecnicismos, cuánto suele tomar, qué se siente, cómo se paga y la galería de casos de ese tratamiento específico. Y de paso cada página compite por su propia búsqueda, que es como se gana volumen sin subirle el presupuesto a la pauta.',
+          '<strong>La regla es simple: si un paciente lo busca con esas palabras, merece su propia página.</strong> Cinco tratamientos bien trabajados rinden más que veinte mencionados de pasada.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El paciente te busca por barrio, no por "Panamá"',
+        paragraphs: [
+          'Nadie con dolor de muela busca "el mejor odontólogo de la República de Panamá". Busca "dentista cerca", "dentista en San Francisco", "ortodoncista Costa del Este", "endodoncia Bethania". La proximidad manda, porque un tratamiento dental no son dos visitas: son seis, ocho, a veces más, y nadie cruza la ciudad ocho veces si tiene algo decente a diez minutos.',
+          'Eso cambia dónde hay que pelear. No es contra todos los consultorios del país, es contra los que están en tu radio. Y esa pelea se gana con tres cosas que no dependen del tamaño de tu clínica: una ficha de <a href="/crecimiento/seo-local-google-maps-panama/">Google Business Profile</a> completa y con fotos reales, reseñas recientes de pacientes, y una web que diga con todas sus letras dónde estás, cómo se llega y dónde se estaciona.',
+          'El estacionamiento parece un detalle y no lo es. En Ciudad de Panamá, "¿dónde dejo el carro?" decide más citas de las que cualquiera admite. Ponlo en la página de contacto, con foto si hace falta.',
+          'Si tienes más de una sede, cada una necesita su propia página con su dirección, su horario y su teléfono. Una sola página que las mencione a todas no posiciona en ninguna de las dos zonas.',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Lo que espanta a un paciente antes de que agende',
+        intro: 'Todos estos los hemos visto en webs de consultorios reales. Cada uno manda pacientes al consultorio de al lado.',
+        items: [
+          'Fotos de banco: sonrisas perfectas de personas que nunca pisaron tu consultorio',
+          'Precios ocultos por completo, sin ni siquiera un rango ni un "desde"',
+          'Un formulario que pide historial médico sin explicar quién lo va a leer',
+          'El último caso publicado con dos años de antigüedad',
+          'Nombre del odontólogo sin idoneidad, sin especialidad y sin foto',
+          'Un mapa que cae en la esquina equivocada o una dirección sin punto de referencia',
+          'Web que en el celular obliga a hacer zoom para leer el teléfono',
+          'Seguros aceptados que no aparecen por ningún lado, cuando es la primera pregunta de media ciudad',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Los datos del paciente no son un detalle técnico',
+        paragraphs: [
+          'Una web dental recoge cosas que no son un correo cualquiera: motivo de consulta, historial, a veces fotos de la boca del paciente. En Panamá eso cae bajo la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong>, y los datos de salud entran en la categoría sensible, la que más cuidado exige.',
+          'En la práctica esto no es un trámite de abogados, son decisiones de cómo está hecha la web. Que el sitio vaya en HTTPS y no en HTTP. Que el formulario diga qué se va a hacer con lo que el paciente escribe y quién lo va a leer. Que las fotos de casos tengan consentimiento por escrito, no un permiso verbal de hace tres años. Que los datos no se queden dando vueltas en la bandeja de entrada de un correo personal.',
+          'También importa quién más los ve. Si el formulario dispara un correo a una cuenta compartida por cuatro personas del consultorio, ahí hay un problema que nadie nota hasta que lo hay. Un buzón propio del consultorio, con acceso controlado, cuesta lo mismo y cambia la respuesta si algún día alguien pregunta.',
+          'Nosotros montamos la parte técnica: certificado, formularios con aviso de privacidad, almacenamiento con acceso controlado. <strong>El texto legal y el consentimiento clínico los revisa tu asesor</strong>, que es quien conoce tu operación; nosotros dejamos la web preparada para que ese texto tenga dónde vivir.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: citas agendadas, no visitas',
+        paragraphs: [
+          'La pregunta que casi todo consultorio le hace a su web es cuántas visitas tuvo. Es la métrica más fácil de mirar y la que menos dice. Mil visitas al mes sin una sola cita agendada es una web que no está trabajando; doscientas visitas con quince citas es una web que se paga sola.',
+          'Lo que vale la pena mirar es corto: cuántas citas se agendaron online, cuántas conversaciones entraron por WhatsApp, cuántas llamadas salieron del botón de la web, y de qué tratamiento venía cada una. Ese último dato es el más útil de todos, porque te dice en qué tratamiento invertir tu tiempo y tu pauta, y cuál no vale la pena empujar.',
+          'El segundo número que casi nadie mira es la tasa de ausencia. Si de cada diez citas agendadas faltan tres, el problema no es de captación, es de recordatorios. Eso se arregla con automatización, no con más publicidad, y sale mucho más barato.',
+          'Lo dejamos medido desde el primer día, no como un informe que nadie abre sino como un tablero de tres o cuatro números que puedas revisar en dos minutos. El detalle de cómo lo planteamos está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -381,6 +436,10 @@ export const industrias2a: PageData[] = [
           { q: '¿Puedo mostrar casos de antes y después de mis pacientes?', a: 'Sí, y es de lo que más convierte, siempre con el consentimiento del paciente. Montamos galerías por tratamiento con las fotos reales de tu trabajo. Se maneja con cuidado para respetar la privacidad y la ética profesional.' },
           { q: '¿Podemos mostrar qué seguros y financiamiento aceptamos?', a: 'Sí, y conviene mucho. El costo es una de las primeras dudas del paciente dental. Dejar visibles los seguros, las formas de pago y el financiamiento (por ejemplo para ortodoncia o implantes) elimina una fricción que hace perder al paciente que, sin esa información, simplemente llama a otro consultorio.' },
           { q: '¿Sirve para un odontólogo independiente y no solo para una clínica grande?', a: 'Sí, y muchas veces rinde más. Para un odontólogo independiente el enfoque es su perfil, sus tratamientos estrella bien explicados con casos reales y la cita online. Eso compite de igual a igual con clínicas grandes en las búsquedas específicas de tu zona.' },
+                  { q: '¿Necesito una página por cada tratamiento o basta con una de servicios?', a: 'Una por tratamiento, al menos para los cuatro o cinco que más facturan. Cada tratamiento es una búsqueda distinta hecha por un paciente distinto, y una sola página de servicios no compite en ninguna de esas búsquedas. Los tratamientos secundarios sí pueden ir agrupados.' },
+          { q: '¿Puedo publicar fotos de antes y después de mis pacientes?', a: 'Con consentimiento del paciente por escrito y específico para publicación en internet, que no es lo mismo que el consentimiento del tratamiento. Conviene que ese permiso lo redacte tu asesor legal. Nosotros dejamos la galería preparada para que puedas retirar un caso en cualquier momento si el paciente cambia de opinión.' },
+          { q: 'Tengo dos sedes, ¿una web o dos?', a: 'Una web con una página propia por sede: cada una con su dirección, su horario, su teléfono y su ficha de Google Business Profile. Una sola página que mencione ambas no posiciona en ninguna de las dos zonas, y en dental la cercanía decide.' },
+          { q: '¿Debo poner precios en la web?', a: 'Un rango o un "desde" suele traer más pacientes de los que espanta: filtra al que nunca iba a agendar y le da seguridad al que sí. Esconderlo del todo hace que el paciente asuma lo peor y siga buscando. Si tu estructura varía mucho por caso, funciona bien publicar el precio de la valoración inicial.' },
         ],
       },
       {

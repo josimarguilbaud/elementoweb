@@ -102,6 +102,9 @@ export const blog6: PageData[] = [
           { slug: 'crecimiento/mantenimiento-hosting-web-panama', label: 'Mantenimiento y Hosting Web' },
           { slug: 'blog/como-elegir-el-dominio-web-perfecto', label: 'Cómo elegir tu dominio' },
           { slug: 'blog/errores-comunes-diseno-web-empresas', label: 'Errores comunes de diseño web' },
+        
+          { slug: 'industrias/diseno-web-contadores-panama', label: 'Diseño web para contadores' },
+          { slug: 'industrias/diseno-web-consultoras-servicios-profesionales-panama', label: 'Diseño web para consultoras' },
         ],
       },
     ],
@@ -208,6 +211,9 @@ export const blog6: PageData[] = [
           { slug: 'blog/hosting-panama-evitar-hosting-barato', label: 'Hosting barato te sale caro' },
           { slug: 'blog/por-que-tu-negocio-necesita-una-pagina-web', label: 'Por qué necesitas una web' },
           { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing Pages' },
+        
+          { slug: 'industrias/diseno-web-consultoras-servicios-profesionales-panama', label: 'Diseño web para consultoras' },
+          { slug: 'industrias/diseno-web-seguros-corredores-panama', label: 'Diseño web para corredores de seguros' },
         ],
       },
     ],
@@ -311,6 +317,9 @@ export const blog6: PageData[] = [
           { slug: 'diseno-web-panama', label: 'Diseño Web en Panamá' },
           { slug: 'blog/como-aparecer-primero-en-google-en-panama', label: 'Aparecer primero en Google' },
           { slug: 'blog/cuanto-cuesta-diseno-web-panama', label: 'Cuánto cuesta una web' },
+        
+          { slug: 'industrias/diseno-web-ferreterias-materiales-panama', label: 'Diseño web para ferreterías' },
+          { slug: 'industrias/diseno-web-veterinarias-panama', label: 'Diseño web para veterinarias' },
         ],
       },
     ],
@@ -418,6 +427,9 @@ export const blog6: PageData[] = [
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
           { slug: 'blog/como-aparecer-primero-en-google-en-panama', label: 'Aparecer primero en Google' },
           { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbots con IA' },
+        
+          { slug: 'industrias/diseno-web-bienes-raices-panama', label: 'Diseño web para bienes raíces' },
+          { slug: 'industrias/diseno-web-gimnasios-fitness-panama', label: 'Diseño web para gimnasios' },
         ],
       },
     ],
@@ -524,6 +536,9 @@ export const blog6: PageData[] = [
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño Web en Panamá' },
           { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbots con IA' },
           { slug: 'blog/errores-comunes-diseno-web-empresas', label: 'Errores comunes de diseño web' },
+        
+          { slug: 'industrias/diseno-web-arquitectos-diseno-interiores-panama', label: 'Diseño web para arquitectos' },
+          { slug: 'industrias/diseno-web-eventos-catering-bodas-panama', label: 'Diseño web para eventos y catering' },
         ],
       },
     ],

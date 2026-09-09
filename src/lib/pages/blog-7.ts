@@ -110,6 +110,9 @@ export const blog7: PageData[] = [
           { slug: 'blog/errores-comunes-diseno-web-empresas', label: '7 errores de diseño web' },
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño web' },
           { slug: 'diseno-web-panama', label: 'Diseño web en Panamá' },
+        
+          { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Diseño web para restaurantes' },
+          { slug: 'industrias/diseno-web-dentistas-odontologia-panama', label: 'Diseño web para dentistas' },
         ],
       },
     ],
@@ -212,6 +215,9 @@ export const blog7: PageData[] = [
           { slug: 'blog/errores-comunes-diseno-web-empresas', label: '7 errores de diseño web' },
           { slug: 'blog/como-elegir-agencia-diseno-web-panama', label: 'Cómo elegir una agencia' },
           { slug: 'diseno-web-panama', label: 'Diseño web en Panamá' },
+        
+          { slug: 'industrias/diseno-web-arquitectos-diseno-interiores-panama', label: 'Diseño web para arquitectos' },
+          { slug: 'industrias/diseno-web-importadoras-distribuidoras-panama', label: 'Diseño web para importadoras' },
         ],
       },
     ],
@@ -319,6 +325,9 @@ export const blog7: PageData[] = [
           { slug: 'blog/cuanto-cuesta-diseno-web-panama', label: '¿Cuánto cuesta una web?' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño web corporativo' },
           { slug: 'diseno-web-panama', label: 'Diseño web en Panamá' },
+        
+          { slug: 'industrias/diseno-web-eventos-catering-bodas-panama', label: 'Diseño web para eventos y catering' },
+          { slug: 'industrias/diseno-web-gimnasios-fitness-panama', label: 'Diseño web para gimnasios' },
         ],
       },
     ],
@@ -422,6 +431,9 @@ export const blog7: PageData[] = [
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },
           { slug: 'blog/metodos-de-pago-online-en-panama', label: 'Métodos de pago en Panamá' },
+        
+          { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Diseño web para retail y moda' },
+          { slug: 'industrias/diseno-web-ferreterias-materiales-panama', label: 'Diseño web para ferreterías' },
         ],
       },
     ],
@@ -524,6 +536,9 @@ export const blog7: PageData[] = [
           { slug: 'blog/como-vender-por-whatsapp-en-panama', label: 'Cómo vender por WhatsApp' },
           { slug: 'saas/wapycrm', label: 'CRM de ventas por WhatsApp' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },
+        
+          { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Diseño web para retail y moda' },
+          { slug: 'industrias/diseno-web-ferreterias-materiales-panama', label: 'Diseño web para ferreterías' },
         ],
       },
     ],
@@ -624,6 +639,9 @@ export const blog7: PageData[] = [
           { slug: 'blog/que-es-el-seo-local-y-google-maps-panama', label: 'SEO local y Google Maps' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y posicionamiento web' },
           { slug: 'blog/seo-para-pymes-en-panama-guia', label: 'SEO para pymes' },
+        
+          { slug: 'industrias/diseno-web-abogados-panama', label: 'Diseño web para abogados' },
+          { slug: 'industrias/diseno-web-clinicas-esteticas-panama', label: 'Diseño web para clínicas estéticas' },
         ],
       },
     ],
@@ -729,6 +747,9 @@ export const blog7: PageData[] = [
           { slug: 'crecimiento/seo-local-google-maps-panama', label: 'Servicio de SEO local' },
           { slug: 'blog/como-aparecer-primero-en-google-en-panama', label: 'Cómo aparecer primero en Google' },
           { slug: 'blog/como-elegir-palabras-clave-seo-panama', label: 'Cómo elegir palabras clave' },
+        
+          { slug: 'industrias/diseno-web-dentistas-odontologia-panama', label: 'Diseño web para dentistas' },
+          { slug: 'industrias/diseno-web-talleres-automotriz-panama', label: 'Diseño web para talleres' },
         ],
       },
     ],
@@ -827,6 +848,9 @@ export const blog7: PageData[] = [
           { slug: 'blog/crm-con-whatsapp-para-vender-mas-en-panama', label: 'CRM con WhatsApp para vender más' },
           { slug: 'inteligencia-artificial-para-empresas-panama', label: 'Ecosistema de IA empresarial' },
           { slug: 'diseno-web-panama', label: 'Diseño web en Panamá' },
+        
+          { slug: 'industrias/diseno-web-bienes-raices-panama', label: 'Diseño web para bienes raíces' },
+          { slug: 'industrias/diseno-web-seguros-corredores-panama', label: 'Diseño web para corredores de seguros' },
         ],
       },
     ],
@@ -927,6 +951,9 @@ export const blog7: PageData[] = [
           { slug: 'blog/automatizaciones-con-n8n-para-pymes', label: 'Automatizaciones con n8n para pymes' },
           { slug: 'inteligencia-artificial-para-empresas-panama', label: 'Ecosistema de IA empresarial' },
           { slug: 'blog/como-atender-clientes-24-7-con-un-asistente-de-ia', label: 'Atender clientes 24/7 con IA' },
+        
+          { slug: 'industrias/diseno-web-bienes-raices-panama', label: 'Diseño web para bienes raíces' },
+          { slug: 'industrias/diseno-web-seguros-corredores-panama', label: 'Diseño web para corredores de seguros' },
         ],
       },
     ],

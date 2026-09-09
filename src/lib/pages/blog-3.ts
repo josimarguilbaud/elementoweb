@@ -115,6 +115,9 @@ export const blog3: PageData[] = [
           { slug: 'blog/que-es-el-seo-local-y-google-maps-panama', label: 'Qué es el SEO local y Google Maps' },
           { slug: 'blog/por-que-mi-pagina-no-aparece-en-google', label: 'Por qué mi página no aparece en Google' },
           { slug: 'blog/seo-para-pymes-en-panama-guia', label: 'SEO para pymes en Panamá: guía' },
+        
+          { slug: 'industrias/diseno-web-abogados-panama', label: 'Diseño web para abogados' },
+          { slug: 'industrias/diseno-web-contadores-panama', label: 'Diseño web para contadores' },
         ],
       },
     ],
@@ -221,6 +224,9 @@ export const blog3: PageData[] = [
           { slug: 'blog/como-aparecer-primero-en-google-en-panama', label: 'Cómo aparecer primero en Google' },
           { slug: 'blog/seo-para-pymes-en-panama-guia', label: 'SEO para pymes en Panamá' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Sistemas de reservas y citas online' },
+        
+          { slug: 'industrias/diseno-web-dentistas-odontologia-panama', label: 'Diseño web para dentistas' },
+          { slug: 'industrias/diseno-web-clinicas-salud-panama', label: 'Diseño web para clínicas y salud' },
         ],
       },
     ],
@@ -325,6 +331,9 @@ export const blog3: PageData[] = [
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño web en Panamá' },
           { slug: 'crecimiento/mantenimiento-hosting-web-panama', label: 'Mantenimiento y hosting web' },
           { slug: 'blog/como-aparecer-primero-en-google-en-panama', label: 'Cómo aparecer primero en Google' },
+        
+          { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Diseño web para retail y moda' },
+          { slug: 'industrias/diseno-web-turismo-hoteles-panama', label: 'Diseño web para turismo y hoteles' },
         ],
       },
     ],
@@ -430,6 +439,9 @@ export const blog3: PageData[] = [
           { slug: 'blog/que-es-el-seo-local-y-google-maps-panama', label: 'Qué es el SEO local y Google Maps' },
           { slug: 'blog/como-aparecer-primero-en-google-en-panama', label: 'Cómo aparecer primero en Google' },
           { slug: 'diseno-web-panama', label: 'Diseño web en Panamá' },
+        
+          { slug: 'industrias/diseno-web-talleres-automotriz-panama', label: 'Diseño web para talleres' },
+          { slug: 'industrias/diseno-web-belleza-spa-panama', label: 'Diseño web para belleza y spas' },
         ],
       },
     ],
@@ -542,6 +554,9 @@ export const blog3: PageData[] = [
           { slug: 'blog/como-mejorar-la-velocidad-de-tu-pagina-web', label: 'Cómo mejorar la velocidad de tu web' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento Web' },
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño web en Panamá' },
+        
+          { slug: 'industrias/diseno-web-veterinarias-panama', label: 'Diseño web para veterinarias' },
+          { slug: 'industrias/diseno-web-ferreterias-materiales-panama', label: 'Diseño web para ferreterías' },
         ],
       },
     ],

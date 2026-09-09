@@ -90,6 +90,9 @@ export const blog2: PageData[] = [
           { slug: 'blog/metodos-de-pago-online-en-panama', label: 'Métodos de pago online en Panamá' },
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online en Panamá' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },
+        
+          { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Diseño web para retail y moda' },
+          { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Diseño web para restaurantes' },
         ],
       },
     ],
@@ -193,6 +196,9 @@ export const blog2: PageData[] = [
           { slug: 'blog/shopify-vs-woocommerce-panama', label: 'Shopify vs WooCommerce en Panamá' },
           { slug: 'blog/como-integrar-yappy-tu-tienda-online', label: 'Cómo integrar Yappy en tu tienda' },
           { slug: 'blog/metodos-de-pago-online-en-panama', label: 'Métodos de pago online en Panamá' },
+        
+          { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Diseño web para retail y moda' },
+          { slug: 'industrias/diseno-web-importadoras-distribuidoras-panama', label: 'Diseño web para importadoras' },
         ],
       },
     ],
@@ -303,6 +309,9 @@ export const blog2: PageData[] = [
           { slug: 'tecnologias/diseno-web-shopify-panama', label: 'Diseño web con Shopify' },
           { slug: 'tecnologias/diseno-web-wordpress-panama', label: 'Diseño web con WordPress' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },
+        
+          { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Diseño web para retail y moda' },
+          { slug: 'industrias/diseno-web-arquitectos-diseno-interiores-panama', label: 'Diseño web para arquitectos' },
         ],
       },
     ],
@@ -405,6 +414,9 @@ export const blog2: PageData[] = [
           { slug: 'marketing/whatsapp-marketing-masivo-panama', label: 'WhatsApp marketing masivo' },
           { slug: 'blog/chatbots-con-ia-para-negocios-en-panama', label: 'Chatbots con IA para negocios' },
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online en Panamá' },
+        
+          { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Diseño web para restaurantes' },
+          { slug: 'industrias/diseno-web-belleza-spa-panama', label: 'Diseño web para belleza y spas' },
         ],
       },
     ],
@@ -513,6 +525,9 @@ export const blog2: PageData[] = [
           { slug: 'blog/como-integrar-yappy-tu-tienda-online', label: 'Cómo integrar Yappy en tu tienda' },
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online en Panamá' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },
+        
+          { slug: 'industrias/diseno-web-agencias-viajes-tours-panama', label: 'Diseño web para agencias de viajes' },
+          { slug: 'industrias/diseno-web-turismo-hoteles-panama', label: 'Diseño web para turismo y hoteles' },
         ],
       },
     ],

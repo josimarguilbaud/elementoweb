@@ -105,6 +105,9 @@ export const blog4: PageData[] = [
           { slug: 'marketing/google-ads-panama', label: 'Google Ads en Panamá' },
           { slug: 'marketing/facebook-instagram-ads-panama', label: 'Facebook e Instagram Ads' },
           { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing pages de alta conversión' },
+        
+          { slug: 'industrias/diseno-web-clinicas-esteticas-panama', label: 'Diseño web para clínicas estéticas' },
+          { slug: 'industrias/diseno-web-concesionarios-autos-panama', label: 'Diseño web para concesionarios' },
         ],
       },
     ],
@@ -212,6 +215,9 @@ export const blog4: PageData[] = [
           { slug: 'blog/como-medir-los-resultados-de-tu-pagina-web', label: 'Cómo medir los resultados de tu web' },
           { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing pages de alta conversión' },
           { slug: 'marketing/google-ads-panama', label: 'Google Ads en Panamá' },
+        
+          { slug: 'industrias/diseno-web-clinicas-esteticas-panama', label: 'Diseño web para clínicas estéticas' },
+          { slug: 'industrias/diseno-web-concesionarios-autos-panama', label: 'Diseño web para concesionarios' },
         ],
       },
     ],
@@ -321,6 +327,9 @@ export const blog4: PageData[] = [
           { slug: 'blog/como-vender-por-whatsapp-en-panama', label: 'Cómo vender por WhatsApp en Panamá' },
           { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbots con IA para tu web' },
           { slug: 'saas/chatmantis', label: 'ChatMantis' },
+        
+          { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Diseño web para restaurantes' },
+          { slug: 'industrias/diseno-web-belleza-spa-panama', label: 'Diseño web para belleza y spas' },
         ],
       },
     ],
@@ -420,6 +429,9 @@ export const blog4: PageData[] = [
           { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones con n8n' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },
           { slug: 'blog/como-medir-los-resultados-de-tu-pagina-web', label: 'Cómo medir los resultados de tu web' },
+        
+          { slug: 'industrias/diseno-web-educacion-panama', label: 'Diseño web para educación' },
+          { slug: 'industrias/diseno-web-agencias-viajes-tours-panama', label: 'Diseño web para agencias de viajes' },
         ],
       },
     ],
@@ -520,6 +532,9 @@ export const blog4: PageData[] = [
           { slug: 'marketing/facebook-instagram-ads-panama', label: 'Facebook e Instagram Ads' },
           { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing pages de alta conversión' },
           { slug: 'blog/como-medir-los-resultados-de-tu-pagina-web', label: 'Cómo medir los resultados de tu web' },
+        
+          { slug: 'industrias/diseno-web-belleza-spa-panama', label: 'Diseño web para belleza y spas' },
+          { slug: 'industrias/diseno-web-eventos-catering-bodas-panama', label: 'Diseño web para eventos y catering' },
         ],
       },
     ],

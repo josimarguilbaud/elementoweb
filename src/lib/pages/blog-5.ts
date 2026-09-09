@@ -98,6 +98,9 @@ export const blog5: PageData[] = [
           { slug: 'saas/chatmantis', label: 'ChatMantis' },
           { slug: 'blog/como-atender-clientes-24-7-con-un-asistente-de-ia', label: 'Atender clientes 24/7 con IA' },
           { slug: 'blog/inteligencia-artificial-para-pequenas-empresas-en-panama', label: 'IA para pequeñas empresas' },
+        
+          { slug: 'industrias/diseno-web-clinicas-salud-panama', label: 'Diseño web para clínicas y salud' },
+          { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Diseño web para restaurantes' },
         ],
       },
     ],
@@ -198,6 +201,9 @@ export const blog5: PageData[] = [
           { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones con n8n' },
           { slug: 'blog/crm-con-whatsapp-para-vender-mas-en-panama', label: 'CRM con WhatsApp' },
           { slug: 'blog/inteligencia-artificial-para-pequenas-empresas-en-panama', label: 'IA para pequeñas empresas' },
+        
+          { slug: 'industrias/diseno-web-logistica-transporte-panama', label: 'Diseño web para logística' },
+          { slug: 'industrias/diseno-web-importadoras-distribuidoras-panama', label: 'Diseño web para importadoras' },
         ],
       },
     ],
@@ -300,6 +306,9 @@ export const blog5: PageData[] = [
           { slug: 'blog/automatizaciones-con-n8n-para-pymes', label: 'Automatizaciones con n8n' },
           { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbots con IA para tu web' },
           { slug: 'saas/chatmantis', label: 'ChatMantis' },
+        
+          { slug: 'industrias/diseno-web-veterinarias-panama', label: 'Diseño web para veterinarias' },
+          { slug: 'industrias/diseno-web-talleres-automotriz-panama', label: 'Diseño web para talleres' },
         ],
       },
     ],
@@ -401,6 +410,9 @@ export const blog5: PageData[] = [
           { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbots con IA para tu web' },
           { slug: 'blog/chatbots-con-ia-para-negocios-en-panama', label: 'Chatbots con IA para negocios' },
           { slug: 'blog/crm-con-whatsapp-para-vender-mas-en-panama', label: 'CRM con WhatsApp' },
+        
+          { slug: 'industrias/diseno-web-clinicas-salud-panama', label: 'Diseño web para clínicas y salud' },
+          { slug: 'industrias/diseno-web-talleres-automotriz-panama', label: 'Diseño web para talleres' },
         ],
       },
     ],
@@ -504,6 +516,9 @@ export const blog5: PageData[] = [
           { slug: 'blog/como-vender-por-whatsapp-en-panama', label: 'Cómo vender por WhatsApp' },
           { slug: 'blog/como-atender-clientes-24-7-con-un-asistente-de-ia', label: 'Atender clientes 24/7 con IA' },
           { slug: 'saas/chatmantis', label: 'ChatMantis' },
+        
+          { slug: 'industrias/diseno-web-bienes-raices-panama', label: 'Diseño web para bienes raíces' },
+          { slug: 'industrias/diseno-web-concesionarios-autos-panama', label: 'Diseño web para concesionarios' },
         ],
       },
     ],

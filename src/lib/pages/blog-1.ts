@@ -124,6 +124,9 @@ export const blog1: PageData[] = [
           { slug: 'blog/cuanto-tiempo-toma-hacer-una-pagina-web', label: '¿Cuánto tiempo toma hacer una web?' },
           { slug: 'diseno-web-panama', label: 'Diseño web en Panamá' },
           { slug: 'servicios', label: 'Todos los servicios' },
+        
+          { slug: 'industrias/diseno-web-constructoras-panama', label: 'Diseño web para constructoras' },
+          { slug: 'industrias/diseno-web-contadores-panama', label: 'Diseño web para contadores' },
         ],
       },
     ],
@@ -259,6 +262,9 @@ export const blog1: PageData[] = [
           { slug: 'blog/cuanto-cuesta-diseno-web-panama', label: '¿Cuánto cuesta una página web?' },
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño web en Panamá' },
           { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO local y Google Maps' },
+        
+          { slug: 'industrias/diseno-web-ferreterias-materiales-panama', label: 'Diseño web para ferreterías' },
+          { slug: 'industrias/diseno-web-talleres-automotriz-panama', label: 'Diseño web para talleres' },
         ],
       },
     ],
@@ -383,6 +389,9 @@ export const blog1: PageData[] = [
           { slug: 'blog/shopify-vs-woocommerce-panama', label: 'Shopify vs WooCommerce en Panamá' },
           { slug: 'tecnologias/diseno-web-wordpress-panama', label: 'Diseño web con WordPress' },
           { slug: 'tecnologias/diseno-web-shopify-panama', label: 'Diseño web con Shopify' },
+        
+          { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Diseño web para retail y moda' },
+          { slug: 'industrias/diseno-web-importadoras-distribuidoras-panama', label: 'Diseño web para importadoras' },
         ],
       },
     ],
@@ -508,6 +517,9 @@ export const blog1: PageData[] = [
           { slug: 'blog/errores-comunes-diseno-web-empresas', label: '7 errores de diseño web' },
           { slug: 'servicios', label: 'Todos los servicios' },
           { slug: 'portafolio', label: 'Ver portafolio' },
+        
+          { slug: 'industrias/diseno-web-constructoras-panama', label: 'Diseño web para constructoras' },
+          { slug: 'industrias/diseno-web-consultoras-servicios-profesionales-panama', label: 'Diseño web para consultoras' },
         ],
       },
     ],
@@ -632,6 +644,9 @@ export const blog1: PageData[] = [
           { slug: 'blog/como-elegir-agencia-diseno-web-panama', label: 'Cómo elegir una agencia de diseño web' },
           { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing pages de alta conversión' },
           { slug: 'diseno-web-panama', label: 'Diseño web en Panamá' },
+        
+          { slug: 'industrias/diseno-web-constructoras-panama', label: 'Diseño web para constructoras' },
+          { slug: 'industrias/diseno-web-educacion-panama', label: 'Diseño web para educación' },
         ],
       },
     ],

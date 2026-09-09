@@ -89,10 +89,19 @@ Ninguno de los doce tiene pantalla como protagonista, y ninguno se parece a otro
    | `fal-ai/flux/dev` | $0,0427 | **$0,51** |
    | `fal-ai/nano-banana-pro` | $0,1500 | **$1,80** |
 
-   El trabajo entero cuesta centavos con cualquiera de los tres. Como el precio
-   deja de ser el criterio, la propuesta es hacer una **prueba comparativa**:
-   el mismo concepto en los tres modelos, mirar cuál da la fotografía más
-   creíble, y con el ganador correr las 12. La prueba cuesta unos $0,20.
+   El trabajo entero cuesta centavos con cualquiera de los tres.
+
+   **Prueba comparativa hecha** (concepto del carrito abandonado, los tres
+   modelos, mismo prompt). Gana **`fal-ai/flux-2/klein/9b`**, y no por precio:
+
+   | Modelo | Resultado |
+   |---|---|
+   | **FLUX.2 Klein 9B** | ✅ 3:2 correcto, 4,2 s, sin texto inventado. Las etiquetas de los productos salen desenfocadas, que es justo lo que se pidió |
+   | FLUX.1 dev | ❌ Metió un letrero rojo tipo STOP y rótulos con letras falsas. Viola la regla de cero texto |
+   | Nano Banana Pro | ❌ Ignoró el tamaño pedido y devolvió 1024 × 1024 cuadrado. 22,7 s |
+
+   O sea que el más barato es además el que mejor obedece. Las 12 salen por
+   **$0,12**.
 3. **La paleta.** Si el color de marca va a aparecer en las fotos, hay que saber
    si es el teal `#2dd4bf` actual o el azul `#0099CC` que estás evaluando. Con la
    marca sin definir, mejor que el color no aparezca y las fotos queden neutras.

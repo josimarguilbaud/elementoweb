@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Consta · entrega 1 de 2</title>
+<title>Consta · lo que existe hoy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
@@ -51,6 +51,7 @@
   .fila dd{margin:0;font-size:15.5px}
   .fila dd .n{font-family:var(--dato);font-weight:700;font-size:17px}
   .fila dd .porque{display:block;margin-top:3px;font-size:13.5px;color:var(--media)}
+  .fila dd .val{font-family:var(--dato);font-size:14.5px}
   @media (max-width:520px){.fila{grid-template-columns:1fr;gap:3px}}
 
   .marca{display:inline-flex;font-family:var(--dato);font-size:10px;font-weight:500;letter-spacing:.06em;
@@ -86,112 +87,144 @@
 <div class="hoja">
 
   <header>
-    <span class="rotulo">Entrega 1 de 2 · Decentralized AI Hackathon</span>
+    <span class="rotulo">Lo que existe hoy &middot; Decentralized AI Hackathon</span>
     <h1>Consta</h1>
     <p class="entradilla">
-      Un ingeniero de servicio sale de un hospital y cuenta lo que vio. Consta lo convierte
-      en datos de la base instalada, y guarda <b>quién lo vio y cuándo</b>. Todo dentro del
-      dispositivo, sin conexión.
+      Un representante sale de un hospital y <b>cuenta lo que vio</b>: hablando, o con una
+      foto de la placa del equipo. Consta lo convierte en datos que Philips puede usar, y
+      <b>cada número sabe de dónde salió</b>. Todo dentro de la computadora, sin conexión.
     </p>
     <div class="retos">
       <span class="reto">Reto Philips</span>
-      <span class="reto">Reto Tether · QVAC Psy</span>
+      <span class="reto">Reto Tether Psy</span>
       <span class="reto">Ranking general</span>
+      <span class="reto">Nombre por decidir</span>
     </div>
   </header>
 
   <section>
-    <h2>Dos formas de capturar</h2>
-    <dl style="margin:0">
-      <div class="fila">
-        <dt>Hablando</dt>
-        <dd>Dicta lo que vio como se lo contaría a un compañero. No hay formulario.
-          <span class="porque">Whisper small transcribe y Qwen3 1.7B lo pasa a datos. Unos 9 segundos.</span></dd>
-      </div>
-      <div class="fila">
-        <dt>Fotografiando</dt>
-        <dd>La chapa atornillada al equipo, que trae marca, modelo, serie y año.
-          <span class="porque">VisionPsy-Nano-460M, un modelo de 460 millones de parámetros. Unos 18 segundos.</span></dd>
-      </div>
-    </dl>
+    <h2>Nicole: esto es lo que ya está construido</h2>
     <p>
-      La foto importa porque hablando <b>nunca</b> sale la marca ni el modelo: nadie se
-      acuerda del nombre comercial de un resonador. Y la chapa trae la fecha de fabricación,
-      así que la antigüedad deja de ser «parece de unos ocho años» y pasa a ser un número.
+      La gemela de la página de Alcancía, con el mismo propósito: que el próximo documento
+      de marca salga de lo que hay. Todo lo de abajo está escrito, corriendo y medido; lo
+      que falta está marcado como falta.
+    </p>
+    <p>
+      <b>Sobre el nombre.</b> El concepto de <b>Lumia</b> tiene lo mejor de los tres
+      documentos: «luz sobre la caja negra» describe el problema exactamente y funciona en
+      un video sin sonido. Pero las cinco letras tienen dos choques: <b>Lumify es un
+      producto real de Philips</b> (su ecógrafo portátil) y <b>Lumia es la línea de
+      teléfonos de Nokia</b>. Presentarse ante Philips el día 11 con un nombre a una letra
+      del suyo es una conversación que preferimos no tener. El marco se queda; el nombre
+      hay que cambiarlo.
     </p>
   </section>
 
   <section>
-    <h2>La idea: el modelo propone, el código comprueba</h2>
-    <p>
-      Los modelos que caben en un teléfono son buenos leyendo y malos contando. Así que en
-      Consta no cuenta el modelo: cuenta el código, sobre lo que la persona dijo literalmente.
-    </p>
-
-    <div class="caso">
-      <div class="cab"><span class="rotulo">Una grabación real, del 8 de septiembre</span></div>
-      <div class="cuerpo">
-        <p class="frase">Tienen dos resonadores y un tomógrafo. Uno de los resonadores parece de tener siete años.</p>
-        <div class="lineas">
-          <b class="mal">Lo que dio el modelo solo</b><br>
-          MR 1 unidad · 7 años &nbsp; CT 1 unidad &nbsp; CT 1 unidad<br>
-          <span class="mal">un resonador y dos tomógrafos: lo contrario de lo que se dijo</span>
-        </div>
-        <div class="lineas">
-          <b class="bien">Lo que guarda Consta</b><br>
-          MR 1 unidad · 7 años &nbsp; MR 1 unidad · edad sin saber &nbsp; CT 1 unidad
-        </div>
-        <div class="nota">
-          <b>El código corrigió 2 datos leyendo la frase, no al modelo.</b> Y lo dice en
-          pantalla. «No inventar» no es una promesa del prompt: es que no puede.
-        </div>
-      </div>
-    </div>
+    <h2>Qué hace, exactamente</h2>
+    <dl style="margin:0">
+      <div class="fila"><dt>La voz</dt><dd>El representante <b>cuenta la visita</b> en español o en inglés. Whisper la transcribe en el equipo y de ahí sale una observación estructurada: hospital, ciudad, y por cada modalidad cuántos equipos hay, de qué marca y de qué edad.<span class="porque">Whisper rellena el silencio con subtítulos inventados. Antes de extraer nada, el código avisa si la transcripción parece ruido.</span></dd></div>
+      <div class="fila"><dt>La placa</dt><dd>Una foto de la placa del equipo. VisionPsy la transcribe y el código saca marca, modelo, número de serie y año de fabricación.<span class="porque">La voz casi nunca da marca ni modelo. La placa además trae el año, o sea una edad exacta en vez de estimada.</span></dd></div>
+      <div class="fila"><dt>El Cliente 360</dt><dd>Todas las observaciones agrupadas por hospital y modalidad, con su nivel de confianza.<span class="porque">Cuando dos representantes no coinciden en cuántos equipos hay, se enseñan <b>los dos números</b> y se marca conflicto. Nadie decide en silencio cuál es la verdad.</span></dd></div>
+    </dl>
   </section>
 
   <section>
-    <h2>Cada dato lleva de dónde salió</h2>
-    <p>Es la pieza central del diseño. Solo hay cuatro orígenes posibles, y son los cuatro que el código distingue:</p>
+    <h2>El modelo propone, el código comprueba</h2>
+    <p>
+      Es la misma arquitectura que en Alcancía, y nació aquí. El modelo entiende la frase;
+      las cantidades, las edades y los matices los decide el código leyendo esa misma
+      frase. Estos son casos reales que hoy tienen prueba:
+    </p>
     <dl style="margin:0">
-      <div class="fila"><dt>Dicho</dt><dd><span class="marca dicho">dicho</span> <span class="porque">Lo dijo una persona. Es lo normal, así que no grita.</span></dd></div>
-      <div class="fila"><dt>Leído</dt><dd><span class="marca leido">leído en la placa</span> <span class="porque">Estaba impreso en la chapa del equipo.</span></dd></div>
-      <div class="fila"><dt>Deducido</dt><dd><span class="marca deducido">lo corrigió el código</span> <span class="porque">Ámbar, y nunca se puede ocultar.</span></dd></div>
-      <div class="fila"><dt>Manual</dt><dd><span class="marca dicho" style="opacity:.5">manual, pág. 47</span> <span class="porque">Reservado para más adelante.</span></dd></div>
+      <div class="fila"><dt>Una cantidad</dt><dd>«dos resonadores y un tomógrafo»<span class="porque">Pero en «uno de los dos resonadores tiene 8 años», ese «uno» no es una cantidad: es un partitivo. El código lo separa en dos filas, una con edad y otra sin ella.</span></dd></div>
+      <div class="fila"><dt>Una edad</dt><dd>«ocho años» sí<span class="porque">«about six units» no son seis años. Un número solo es una edad si va seguido de una palabra de tiempo. Antes de esta regla el modelo se inventaba edades a partir de cualquier número de la frase.</span></dd></div>
+      <div class="fila"><dt>Una edad sin número</dt><dd>«one very old CT»<span class="porque">Si la frase describe la edad con palabras y no con cifras, ese es el único dato de edad que hay, y el código lo recupera cuando el modelo lo suelta.</span></dd></div>
+      <div class="fila"><dt>Un aproximado</dt><dd>«unos cinco ecógrafos»<span class="porque">El número se guarda, y se guarda también que fue aproximado. Después el sistema pregunta si son exactamente cinco.</span></dd></div>
     </dl>
     <p>
-      Y cuando dos personas reportan cantidades distintas, <b>la celda enseña los dos
-      números</b>, con quién dijo cada uno. No se elige por ellas: la siguiente persona que
-      entre al hospital recibe la pregunta.
+      Cuando el código corrige al modelo, <b>lo deja escrito</b>. La pantalla enseña el
+      rastro: qué propuso el modelo, qué se descartó y por qué.
+    </p>
+  </section>
+
+  <section>
+    <h2>Lo que nunca hace</h2>
+    <p>
+      <b>No inventa una cantidad ni una edad.</b> Si la frase no la dice, no está. Un dato
+      de flota inventado no es un error de software: es una decisión de inversión tomada
+      sobre humo.
+    </p>
+    <p>
+      <b>No adivina una marca.</b> Si la visita no la menciona, queda como desconocida y
+      pasa a ser lo primero que el sistema pregunta.
+    </p>
+    <p>
+      <b>No elige entre dos personas.</b> Si un representante dijo dos resonadores y otro
+      dijo tres, el Cliente 360 enseña <b>dos o tres</b> y marca conflicto. Promediar ahí
+      sería inventar un hospital que no existe.
+    </p>
+    <p>
+      <b>No se calla lo que le falta.</b> Con lo capturado calcula qué falta y hace <b>una
+      sola pregunta</b>, la más valiosa, en el idioma en que le hablaron.
     </p>
   </section>
 
   <section>
     <h2>Lo que está medido</h2>
-    <p>Nada de esto es una impresión. Hay dos bancos de pruebas que se corren cuando se quiera.</p>
     <dl style="margin:0">
-      <div class="fila"><dt>Extracción</dt><dd><span class="n">13 / 13</span><span class="porque">Las diez pruebas oficiales de Philips, la del enunciado en español y dos grabaciones de voz reales.</span></dd></div>
-      <div class="fila"><dt>Lectura de placas</dt><dd><span class="n">4 / 4</span><span class="porque">Tres corridas seguidas sin un campo mal, incluida una placa gastada con brillo y rayas.</span></dd></div>
-      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">45</span><span class="porque">Sin cargar ningún modelo: corren en milisegundos.</span></dd></div>
-      <div class="fila"><dt>Hardware</dt><dd><span class="num">Ryzen 5 5600G</span><span class="porque">Con gráficos integrados, sin tarjeta dedicada. A propósito: el escenario real es un portátil de campo.</span></dd></div>
+      <div class="fila"><dt>Observaciones</dt><dd><span class="n">13 / 13</span><span class="porque">Trece frases de campo, en español y en inglés, extraídas correctamente. 8,9 s de media por observación.</span></dd></div>
+      <div class="fila"><dt>Placas</dt><dd><span class="n">4 / 4</span><span class="porque">Marca, modelo, serie y año correctos en las cuatro, incluida una gastada. 18,6 s cada una, en dos pasadas: primero la cabecera, luego las filas.</span></dd></div>
+      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">45</span><span class="porque">Corren en milisegundos, sin modelo. Cada regla de arriba tiene la suya.</span></dd></div>
+      <div class="fila"><dt>Primera palabra</dt><dd><span class="n">1,8 s</span><span class="porque">Y 22,8 palabras por segundo, en la GPU integrada de una computadora normal.</span></dd></div>
     </dl>
+    <p>
+      Los hospitales de las pruebas son ficticios. Las placas llevan nombres de fabricante
+      reales &mdash; Philips, GE, Siemens &mdash; porque la base instalada de un hospital es
+      justamente mixta, y leer la del competidor es parte del trabajo.
+    </p>
+  </section>
+
+  <section>
+    <h2>Qué corre dentro del equipo</h2>
+    <dl style="margin:0">
+      <div class="fila"><dt>Voz</dt><dd><span class="val">Whisper small</span><span class="porque">Español e inglés, detectando el idioma solo.</span></dd></div>
+      <div class="fila"><dt>Observación</dt><dd><span class="val">Qwen3 1.7B</span><span class="porque">Y si el verificador detecta que omitió un equipo que la frase menciona, se reintenta con el 4B.</span></dd></div>
+      <div class="fila"><dt>Placa</dt><dd><span class="val">VisionPsy-Nano-460M</span><span class="porque">Se carga con la primera foto, no al arrancar.</span></dd></div>
+    </dl>
+    <p>
+      <b>Cero llamadas de red.</b> Ninguna dependencia fuera de Node y QVAC. Un
+      representante en una gira sin señal sigue capturando, y los datos del hospital no
+      salen del portátil.
+    </p>
   </section>
 
   <section>
     <h2>Dónde va</h2>
     <div class="pendiente">
-      <div><span class="marca-p hecho">HECHO</span><span>El motor, medido y con su registro de rendimiento.</span></div>
-      <div><span class="marca-p hecho">HECHO</span><span>Repositorio público en GitHub, con licencia MIT y la base preexistente declarada.</span></div>
-      <div><span class="marca-p hecho">HECHO</span><span>La interfaz, rediseñada. Ya no parece un laboratorio.</span></div>
-      <div><span class="marca-p">FALTA</span><span>Grabar el video de cinco minutos. El guion ya está escrito.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>La extracción de la observación y su verificador, medidos.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>La lectura de la placa con VisionPsy, medida.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>El Cliente 360 que conserva el desacuerdo, y la repregunta.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>La interfaz, con el sistema de diseño y las tipografías empaquetadas.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>Repositorio público con licencia MIT.</span></div>
+      <div><span class="marca-p">FALTA</span><span>El nombre definitivo.</span></div>
+      <div><span class="marca-p">FALTA</span><span>El README de entrega.</span></div>
+      <div><span class="marca-p">FALTA</span><span>El video de cinco minutos.</span></div>
     </div>
   </section>
 
   <footer>
     <p>
-      El video importa más de lo que parece: estará puesto <b>todo el viernes en la sala del
-      hackathon</b>, y por ahí pasan empresas, VCs e inversores. Tether dijo que puede dar
-      apoyo y hasta grants a los proyectos que despierten interés. Y el día 11 se presenta
-      en persona, con la computadora, directamente a Philips y al equipo de Tether.
+      Una nota de alcance, por si ayuda al próximo documento: esto <b>no se conecta a la
+      telemetría</b> de los equipos, no predice fallas y no genera órdenes de
+      mantenimiento. La luz sobre la base instalada la enciende <b>lo que reporta una
+      persona</b>, no un sensor. Y esa es justamente la parte que hoy no existe en ningún
+      sistema, porque vive en la cabeza del equipo de campo.
+    </p>
+    <p>
+      La telemetría es un buen siguiente paso y va en el video como tal, separada de lo
+      demostrado. Un jurado premia la visión cuando la distingues; lo que castiga es que
+      se la mezcles.
     </p>
     <p class="otra">La otra entrega: <a href="/hackathon/entrega/cotejo/">Alcancía, el reto de Caja de Ahorros</a>.</p>
   </footer>

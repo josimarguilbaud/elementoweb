@@ -221,6 +221,9 @@
     counter-increment:p;display:grid;grid-template-columns:30px 1fr;gap:12px;
     padding:12px 0;border-bottom:1px solid var(--linea);
   }
+  /* La frase y la revision van las dos a la columna ancha: sin esto, la segunda
+     cae en la de 30px y el texto se apila palabra por palabra. */
+  .pruebas li > *{grid-column:2}
   .pruebas li::before{
     content:counter(p);font-family:"JetBrains Mono",monospace;font-size:12px;
     color:var(--tinta-suave);padding-top:3px;font-variant-numeric:tabular-nums;

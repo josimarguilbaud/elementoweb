@@ -49,15 +49,31 @@
   .aviso b{color:var(--ambar)}
   .que{margin-top:34px;padding-top:22px;border-top:1px solid var(--linea);color:var(--media);font-size:15.5px}
   .que b{color:var(--tinta);font-weight:600}
+  .placas{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+  .placas figure{margin:0;border:1px solid var(--linea);border-radius:4px;overflow:hidden;background:var(--hoja)}
+  .placas img{display:block;width:100%;height:auto}
+  .placas figcaption{padding:9px 12px;font-size:13.5px;color:var(--suave);border-top:1px solid var(--linea);line-height:1.45}
+  .placas a{display:inline-block;margin-top:3px;color:var(--sello);font-weight:700;text-decoration:none}
+  .placas a:hover{text-decoration:underline}
+  .placas a:focus-visible{outline:2px solid var(--sello);outline-offset:2px;border-radius:2px}
+  @media (max-width:520px){.placas{grid-template-columns:1fr}}
+  .esperado{
+    display:block;margin-top:8px;padding:11px 14px;background:var(--hoja);border:1px solid var(--linea);
+    border-radius:4px;font-family:ui-monospace,"Cascadia Mono","Consolas",monospace;
+    font-size:13px;line-height:1.85;color:var(--suave);overflow-x:auto;white-space:nowrap;
+  }
+  .esperado b{color:var(--tinta);font-weight:600}
 </style>
 </head>
 <body>
 <main>
   <div class="eyebrow">Consta · prueba en vivo</div>
-  <h1>Cinco minutos, desde tu PC</h1>
+  <h1>Ocho minutos, desde tu PC</h1>
   <p class="intro">
     Todo corre en la computadora de Josimar; tú entras por un enlace. <b>Usa Chrome</b> y ten el
-    micrófono de tu PC a mano. Nada de lo que digas sale de esa máquina.
+    micrófono de tu PC a mano. Nada de lo que digas ni de lo que subas sale de esa máquina.
+    Vas a probar las dos formas de capturar: <b>hablando</b> y <b>con la foto de la placa</b> del
+    equipo.
   </p>
 
   <ol>
@@ -75,11 +91,43 @@
       <span class="frase">Estoy en el hospital DemoCare Pacific en Panamá. Tienen tres resonadores y un tomógrafo.</span>
     </li>
     <li>
-      <b>Espera unos segundos y pulsa «Guardar observación»</b>
-      <p>Verás lo que entendió (equipo, cantidad, marca) y una pregunta de seguimiento. Si algo salió raro, corrige el texto y pulsa «Analizar texto».</p>
+      <b>Espera unos segundos y mira lo que entendió</b>
+      <p>Debe salir esto:</p>
+      <span class="esperado"><b>MR</b>  3 unidades   marca Unknown   modelo Unknown<br><b>CT</b>  1 unidad     marca Unknown   modelo Unknown</span>
+      <p style="margin-top:8px">Fíjate en las dos columnas vacías. Hablando casi nunca sale la marca ni el modelo: nadie se acuerda del nombre comercial de un resonador. Eso es lo que arregla la foto.</p>
     </li>
     <li>
-      <b>Mira «Cliente 360» a la derecha</b>
+      <b>Descarga una de estas dos placas</b>
+      <p>Son la placa de identificación de un equipo, la chapa metálica que todo resonador lleva atornillada. Guarda una en tu PC.</p>
+      <div class="placas">
+        <figure>
+          <img src="placas/philips-mr.png" alt="Placa metálica de un resonador Philips Ingenia Ambition 1.5T, con modelo, número de serie y fecha de fabricación">
+          <figcaption>
+            Limpia, bien iluminada.<br>
+            <a href="placas/philips-mr.png" download>Descargar</a>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="placas/philips-gastada.png" alt="Placa metálica gastada de un resonador Philips Achieva 3.0T, con brillo, rayas y ruido">
+          <figcaption>
+            Gastada, con brillo y rayas.<br>
+            <a href="placas/philips-gastada.png" download>Descargar</a>
+          </figcaption>
+        </figure>
+      </div>
+      <p style="margin-top:10px">La segunda está sucia a propósito: brillo de flash, rayas y ruido, como una foto real hecha de pie en un pasillo. También la lee.</p>
+    </li>
+    <li>
+      <b>Pulsa «📷 Foto de la placa» y sube la que descargaste</b>
+      <p>Tarda unos veinte segundos. La primera vez tarda cuatro más, porque ahí carga el modelo que lee imágenes. Verás la marca, el modelo, el número de serie y el año de fabricación, y abajo lo que leyó tal cual, por si quieres comprobarlo contra la imagen.</p>
+    </li>
+    <li>
+      <b>Pulsa «Aplicar a la observación» y mira la tabla otra vez</b>
+      <span class="esperado"><b>MR</b>  1 unidad     Philips   Ingenia Ambition 1.5T   SN 12345XY   9 años (placa, 2017)<br><b>MR</b>  2 unidades   Unknown   Unknown                              —<br><b>CT</b>  1 unidad     Unknown   Unknown                              —</span>
+      <p style="margin-top:8px">Esto es lo importante: la placa fue a <b>un</b> resonador, no a los tres. Un número de serie identifica una máquina, no un grupo. Los otros dos siguen sin marca ni edad, y el sistema los sigue preguntando. Y la antigüedad no es una estimación: sale de la fecha impresa en la chapa.</p>
+    </li>
+    <li>
+      <b>Pulsa «Guardar observación» y mira «Cliente 360» a la derecha</b>
       <p>Josimar dijo <b>dos</b> resonadores; tú dijiste <b>tres</b>. La fila MR debe decir <b>«2 o 3 · Conflicto»</b>. Píchala: ahí está el rastro con tu nombre, el de él, la hora y lo que dijo cada uno.</p>
     </li>
   </ol>
@@ -89,9 +137,11 @@
   </div>
 
   <p class="que">
-    <b>Lo que estás viendo</b> es la idea central del proyecto: dos personas reportan el mismo hospital
-    con números distintos y el sistema <b>no elige por ellas</b>. Guarda las dos versiones, marca el
-    conflicto, y deja registrado quién dijo qué. Eso es lo que Philips pide y casi nadie va a construir.
+    <b>Lo que estás viendo</b> son las dos mitades del proyecto. Una: dos personas reportan el mismo
+    hospital con números distintos y el sistema <b>no elige por ellas</b>; guarda las dos versiones,
+    marca el conflicto y deja registrado quién dijo qué. Otra: cuando entra un dato duro —la placa—
+    el sistema lo aplica <b>solo donde le consta</b>, y deja lo demás en «no sé» para preguntarlo.
+    Eso es lo que Philips pide y casi nadie va a construir.
   </p>
 </main>
 </body>

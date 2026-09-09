@@ -126,6 +126,36 @@ export const saasPages: PageData[] = [
           'Y la conexión con WhatsApp e Instagram usa las APIs oficiales de Meta: somos Meta Verified Tech Provider, así que la verificación de tu número la gestionamos nosotros, por el canal oficial.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Cuándo un asistente no es la solución',
+        paragraphs: [
+          'Vale más decirlo antes: hay negocios donde montar un asistente de IA no compensa, y conviene reconocerlo para no gastar en la herramienta equivocada.',
+          'Si recibes pocas consultas al mes, el trabajo de armar y mantener el contenido cuesta más que las horas que ahorra. Si cada consulta es distinta y requiere criterio —proyectos a medida, casos técnicos complejos— el asistente va a derivar casi todo a una persona y solo añade un paso.',
+          'Y si tu problema real no es el volumen de preguntas sino que nadie contesta, un asistente lo tapa sin resolverlo: la conversación va a llegar igual a un equipo que no responde.',
+          '<strong>Donde sí rinde es en el patrón opuesto:</strong> muchas consultas repetidas, con respuestas que ya existen, llegando a toda hora. Ahí un asistente devuelve horas reales desde la primera semana.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Por qué admitir "no sé" es una función, no una carencia',
+        paragraphs: [
+          'La diferencia entre un asistente útil y uno peligroso no está en cuánto sabe: está en qué hace cuando no sabe.',
+          'Un modelo de lenguaje suelto tiende a completar: si no tiene el dato, produce algo plausible. En una conversación de ventas eso significa inventar un precio, prometer un plazo o afirmar que se atiende una zona donde no se llega. El cliente lo toma como compromiso del negocio.',
+          'ChatMantis responde a partir de tu contenido, no de lo que el modelo cree recordar. Cuando la pregunta sale de ese contenido, lo dice y ofrece pasar a una persona. Es una decisión de diseño incómoda en una demo y correcta en producción.',
+          '<strong>El costo de una respuesta inventada no es la conversación perdida:</strong> es el cliente que llega esperando un precio que nadie le va a poder sostener.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué hay que preparar antes de encenderlo',
+        paragraphs: [
+          'El proyecto no es técnico, es de contenido, y esa parte la conoce el negocio mejor que nadie.',
+          'Hace falta reunir las respuestas a lo que de verdad se pregunta: precios o rangos, horarios, ubicación, qué incluye cada servicio, plazos, formas de pago, cobertura, política de cambios. No en formato de folleto, sino como respuestas directas.',
+          'También hay que definir los límites: qué temas no debe tocar, cuándo debe pasar a una persona, y qué tono usa. Y quién recibe las conversaciones derivadas, con qué horario, porque una derivación que nadie atiende es peor que no derivar.',
+          'La forma más rápida de armar todo eso es revisar las últimas conversaciones reales del negocio. <strong>Ahí está, con las palabras exactas de los clientes, todo lo que el asistente necesita saber.</strong>',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -137,6 +167,9 @@ export const saasPages: PageData[] = [
           { q: '¿La IA responde sola o siempre hay un humano detrás?', a: 'Las dos cosas. La IA resuelve lo repetitivo y frecuente por sí sola, y escala a tu equipo con el historial completo cuando el caso lo amerita o cuando el cliente lo pide. Tú defines dónde está esa línea.' },
           { q: '¿Qué pasa si el cliente pregunta algo que la IA no sabe?', a: 'Lo dice con claridad y deriva a una persona; no inventa. El asistente solo responde desde los documentos que apruebas, así que un dato que no cargaste nunca se convierte en una respuesta falsa.' },
           { q: '¿Se conecta con el chat de mi sitio web?', a: 'Sí. El chat de tu web entra a la misma bandeja que WhatsApp e Instagram, con historial unificado por cliente. Puedes verlo en detalle en <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbot con IA para tu web</a>.' },
+                  { q: '¿Cuándo NO conviene un asistente de IA?', a: 'Si recibes pocas consultas al mes, mantener el contenido cuesta más que las horas que ahorra. Si cada consulta requiere criterio, el asistente deriva casi todo y solo añade un paso. Y si el problema real es que nadie contesta, el asistente lo tapa sin resolverlo.' },
+          { q: '¿Qué pasa si le preguntan algo que no sabe?', a: 'Lo dice y ofrece pasar a una persona. Es una decisión de diseño: un modelo suelto tiende a completar, y en una conversación de ventas eso significa inventar un precio o prometer un plazo que el cliente toma como compromiso del negocio.' },
+          { q: '¿Qué tengo que preparar antes de encenderlo?', a: 'Las respuestas a lo que de verdad se pregunta —precios, horarios, cobertura, plazos, formas de pago— más los límites: qué no debe tocar, cuándo pasar a una persona y quién recibe las derivaciones. La mejor fuente son tus conversaciones reales.' },
         ],
       },
       {
@@ -210,6 +243,36 @@ export const saasPages: PageData[] = [
           'Para el gerente, el cambio es visibilidad: cuántas oportunidades hay, en qué etapa, quién las atiende y dónde se caen. Decisiones con datos, no con memoria.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Cuándo todavía no necesitas un CRM',
+        paragraphs: [
+          'Un CRM que nadie usa es peor que no tenerlo, porque cuesta dinero y además genera la falsa sensación de que el problema está resuelto.',
+          'Si vendes pocas veces al mes y una sola persona lleva todas las conversaciones, probablemente no lo necesitas todavía. La memoria de esa persona y una lista ordenada alcanzan, y montar un CRM añade trabajo sin quitar ninguno.',
+          'Las señales de que sí hace falta son concretas: hay más de una persona atendiendo, se pierden seguimientos, nadie sabe en qué quedó una conversación de hace dos semanas, o alguien se fue de la empresa y se llevó sus clientes en su celular.',
+          '<strong>Esa última es la que más duele y la que menos se anticipa.</strong> Cuando las conversaciones viven en el WhatsApp personal de un vendedor, la cartera es suya, no de la empresa.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El problema no es el CRM: es que el equipo lo use',
+        paragraphs: [
+          'La mayoría de los proyectos de CRM fracasan por adopción, no por software. Se compra, se configura, y a los dos meses el equipo volvió a su celular porque el CRM le daba más trabajo del que le quitaba.',
+          'La causa casi siempre es la misma: el CRM obliga a duplicar. El vendedor conversa por WhatsApp y después tiene que ir a otro lado a registrar lo que pasó. Nadie sostiene eso mucho tiempo, y con razón.',
+          'Por eso WapyCRM se construyó alrededor de WhatsApp en vez de al lado. La conversación ocurre donde ya ocurría y el registro se genera solo. El vendedor no cambia de herramienta y la empresa igual se queda con el historial.',
+          '<strong>La prueba de si un CRM va a funcionar es simple:</strong> ¿le quita trabajo al vendedor o se lo añade? Si se lo añade, el equipo lo va a abandonar sin importar lo bueno que sea.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: seguimientos que no se caen',
+        paragraphs: [
+          'El valor de un CRM no está en los informes bonitos: está en las ventas que no se pierden por olvido.',
+          'El primer número es cuántas conversaciones llevan más de X días sin respuesta. Es la fuga más común y la más fácil de tapar: casi siempre son clientes interesados que nadie volvió a contactar, no clientes que dijeron que no.',
+          'El segundo es el tiempo de primera respuesta. En Panamá, donde casi todo se vende por WhatsApp, responder en minutos contra responder al día siguiente cambia la tasa de cierre de forma notable.',
+          'Y el tercero es la tasa de cierre por vendedor y por origen del contacto. Ese cruce dice dos cosas a la vez: quién necesita apoyo y qué canal está trayendo gente que compra de verdad, que no siempre es el que trae más volumen.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -221,6 +284,10 @@ export const saasPages: PageData[] = [
           { q: '¿Cómo ayuda la IA dentro de WapyCRM?', a: 'Clasifica los clientes según la conversación para que priorices a quien está más cerca de comprar. No reemplaza el criterio del vendedor: le ordena la lista de a quién escribir primero.' },
           { q: '¿El gerente puede ver el trabajo del equipo sin revisar cada chat?', a: 'Sí. Hay métricas de conversión por etapa y por vendedor, más la vista del embudo completo: cuántas oportunidades hay, en qué etapa están y dónde se caen. Decisiones con datos, no con memoria.' },
           { q: '¿Sirve para preventa inmobiliaria o proyectos de construcción?', a: 'Sí, es uno de los usos más fuertes: ciclos largos con muchos seguimientos donde perder el hilo cuesta caro. Se conecta bien con webs de proyectos como las que hacemos para <a href="/industrias/">distintas industrias</a>.' },
+                  { q: '¿Cuándo necesito un CRM?', a: 'Cuando hay más de una persona atendiendo, se pierden seguimientos, nadie sabe en qué quedó una conversación de hace dos semanas, o alguien se fue y se llevó sus clientes en su celular. Si vendes pocas veces al mes y una sola persona lleva todo, todavía no.' },
+          { q: '¿Por qué fracasan la mayoría de los CRM?', a: 'Por adopción, no por software. El CRM obliga a duplicar: el vendedor conversa por WhatsApp y luego tiene que registrar lo mismo en otro lado. Nadie sostiene eso. La prueba es simple: ¿le quita trabajo al vendedor o se lo añade?' },
+          { q: '¿Qué pasa si un vendedor se va?', a: 'Si las conversaciones viven en su WhatsApp personal, la cartera es suya y se va con él. Es el riesgo que menos se anticipa y el que más duele. Con el historial en la empresa, quien entre puede retomar donde se quedó.' },
+          { q: '¿Qué mido en un CRM?', a: 'Cuántas conversaciones llevan días sin respuesta, que es la fuga más común y casi siempre son interesados que nadie volvió a contactar. El tiempo de primera respuesta. Y la tasa de cierre por vendedor y por origen del contacto, que dice qué canal trae gente que compra de verdad.' },
         ],
       },
       {
@@ -298,6 +365,36 @@ export const saasPages: PageData[] = [
           'Y si vendes en línea, se integra con tu tienda para que cada venta se registre sola. Teclear dos veces la misma factura es el error contable más caro y más evitable.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Lo que un software contable no reemplaza',
+        paragraphs: [
+          'Conviene decirlo de entrada porque evita una expectativa que termina en frustración: Cifrao no sustituye a tu contador.',
+          'Un software ordena, registra y calcula. Lo que no hace es interpretar. Decidir cómo se clasifica una operación poco común, cómo se aprovecha un tratamiento fiscal, o qué conviene ante un requerimiento son cosas de criterio profesional, y equivocarse ahí cuesta bastante más que la licencia de cualquier programa.',
+          'Lo que sí cambia es el trabajo que llega al contador. En vez de una caja de facturas y una hoja de cálculo con errores, recibe información ya ordenada y consistente. Eso reduce sus horas, reduce lo que te cobra y reduce los errores que se descubren tarde.',
+          '<strong>La forma correcta de verlo:</strong> el software es para el trabajo repetitivo, el contador para el criterio. Quien intenta reemplazar al segundo con el primero suele descubrir el problema en el peor momento del año.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'La migración de datos es la parte que se subestima',
+        paragraphs: [
+          'Cambiar de sistema contable no falla por el sistema nuevo: falla por lo que había en el viejo.',
+          'Los saldos iniciales tienen que cuadrar, el catálogo de cuentas suele necesitar limpieza, y casi siempre aparecen datos históricos incompletos o inconsistentes que nadie había mirado en años. Ese trabajo de ordenamiento es real y hay que contarlo en el plan.',
+          'También hay que decidir cuánta historia se migra. Traer diez años de movimientos suele ser innecesario y caro; lo habitual es migrar saldos y el ejercicio en curso, y dejar lo anterior accesible como archivo de consulta.',
+          'Y el momento importa. <strong>El inicio de un periodo fiscal es el mejor momento para cambiar</strong>; hacerlo a mitad de año obliga a mantener dos sistemas en paralelo y duplica el trabajo justo cuando menos tiempo hay.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir cuando el sistema ya está funcionando',
+        paragraphs: [
+          'La pregunta correcta no es cuántas facturas registró, sino cuánto tiempo devolvió y cuántos errores dejaron de ocurrir.',
+          'El primer número es el tiempo de cierre mensual: cuántos días tardaba antes en cerrarse el mes y cuántos tarda ahora. Es la medida más directa del beneficio y casi siempre mejora de forma visible.',
+          'El segundo son las correcciones: cuántos asientos hubo que corregir después de registrados. Si ese número no baja, el problema no es el sistema, es el proceso de captura o quién lo hace.',
+          'Y el tercero, el más fácil de olvidar: cuánta información se sigue llevando fuera del sistema, en hojas de cálculo paralelas. <strong>Esas hojas son la señal de que algo no está resuelto</strong>, y suelen ser la fuente de las diferencias que aparecen al cierre.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -309,6 +406,9 @@ export const saasPages: PageData[] = [
           { q: '¿Cifrao presenta impuestos o reemplaza a mi contador?', a: 'No. Cifrao ordena y mantiene al día tu información contable para que tu contador ejerza su criterio sin perseguir documentos. La declaración y el criterio fiscal siguen siendo de tu profesional.' },
           { q: '¿Varias personas pueden usarlo a la vez sin pisarse?', a: 'Sí, y es una de las razones para salir de la hoja de cálculo. Cada usuario entra con su rol y sus permisos, y cada movimiento queda auditado: se sabe quién cambió qué y cuándo.' },
           { q: '¿Me avisa antes de que se me acumulen las cuentas por cobrar?', a: 'Sí. Las cuentas por cobrar se ordenan por antigüedad de saldos y el sistema avisa cuando una factura vence. Dejas de descubrir tarde que un cliente te debe desde hace meses.' },
+                  { q: '¿Cifrao reemplaza a mi contador?', a: 'No. Un software ordena, registra y calcula; no interpreta. Clasificar una operación poco común, aprovechar un tratamiento fiscal o responder un requerimiento son cosas de criterio profesional. Lo que sí cambia es que el contador recibe información ordenada en vez de una caja de facturas.' },
+          { q: '¿Qué tan complicado es migrar desde otro sistema?', a: 'Lo complicado no es el sistema nuevo, es lo que había en el viejo: saldos que deben cuadrar, catálogo de cuentas que suele necesitar limpieza y datos históricos inconsistentes que nadie miró en años. Ese ordenamiento hay que contarlo en el plan.' },
+          { q: '¿Cuándo conviene hacer el cambio?', a: 'Al inicio de un periodo fiscal. Hacerlo a mitad de año obliga a mantener dos sistemas en paralelo y duplica el trabajo justo cuando menos tiempo hay. Y conviene migrar saldos y el ejercicio en curso, dejando lo anterior como archivo de consulta.' },
         ],
       },
       {

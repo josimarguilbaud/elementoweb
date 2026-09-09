@@ -137,9 +137,27 @@ export function articleJsonLd(a: { title: string; description: string; slug: str
 /* Portada. Antes pasaba orgNode() suelto, que se serializaba SIN @context y por
    tanto no era JSON-LD valido: la pagina mas importante del sitio tenia los
    datos estructurados rotos. Aqui va el grafo completo. */
-export function homeJsonLd() {
+/**
+ * Datos estructurados del home.
+ *
+ * Recibe las preguntas visibles de la portada porque eran las unicas del sitio
+ * que no llegaban al JSON-LD: las 108 paginas restantes si emiten FAQPage y el
+ * home, que trae justo las preguntas que la gente busca ("cuanto cuesta una
+ * pagina web en Panama"), se quedaba fuera.
+ */
+export function homeJsonLd(faqs: [string, string][] = []) {
+  const faqNodeHome = faqs.length
+    ? {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(([q, a]) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() },
+        })),
+      }
+    : null;
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@graph': [orgNode(), webSiteNode(), localBusinessNode()],
+    '@graph': [orgNode(), webSiteNode(), localBusinessNode(), faqNodeHome].filter(Boolean),
   });
 }

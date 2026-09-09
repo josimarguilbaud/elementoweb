@@ -217,8 +217,9 @@
     </div>
 
     <div class="escena">
-      <div class="cabeza"><span class="tiempo">1:25 – 2:25</span><span class="que"><b>La cédula responde.</b> La foto. Deja que se vea el reloj mientras lee.</span></div>
-      <span class="rot">Modelo de visión de 460 MB. Dentro del equipo.</span>
+      <div class="cabeza"><span class="tiempo">1:25 – 2:25</span><span class="que"><b>La cédula responde.</b> La foto. Deja que se vea el reloj mientras lee: tarda el doble a propósito.</span></div>
+      <span class="rot">Se lee dos veces. Solo entra lo que coincide.</span>
+      <blockquote>El modelo no es determinista ni a temperatura 0: la misma cédula puede dar dos lecturas distintas. Así que se lee dos veces, y un campo que no se confirma a sí mismo se trata como uno que no se pudo leer.</blockquote>
       <p class="que">Cuando cargue, ve directo a las dos columnas.</p>
       <span class="rot">Lo que dijo el cliente. Lo que dice su cédula.</span>
       <blockquote>Aquí están las dos fuentes, una al lado de la otra. Y aquí está lo que casi nadie hace.</blockquote>
@@ -244,8 +245,11 @@
 
     <div class="escena">
       <div class="cabeza"><span class="tiempo">3:20 – 4:20</span><span class="que"><b>Cómo se sostiene.</b> La terminal: <code>npm run prueba</code>.</span></div>
-      <span class="rot">83 pruebas. 30 campos leídos. 0 mal.</span>
-      <blockquote>Ochenta y tres pruebas deterministas, sin cargar un modelo, en milisegundos.</blockquote>
+      <span class="rot">102 pruebas. 30 campos leídos. 0 mal.</span>
+      <blockquote>Ciento dos pruebas deterministas, sin cargar un modelo, en milisegundos.</blockquote>
+      <p class="que">Abre el desplegable «Lo que leyó el modelo, tal cual» y enseña la huella al final.</p>
+      <span class="rot">Qué modelo, qué prompt, qué imagen. Firmado.</span>
+      <blockquote>Y cada lectura guarda qué la produjo. En banca eso tiene nombre: gobernanza de modelos. Es la pregunta que hace un auditor un año después, cuando el modelo ya se actualizó dos veces.</blockquote>
       <blockquote>Treinta campos leídos en cuatro cédulas distintas y <b>ninguno mal</b>. Lo que no pudo leer, lo dijo; lo que leyó, lo leyó bien. Y los cuatro trámites decididos igual que los decidiría un operador con el documento delante.</blockquote>
       <p class="que">Enseña <code>rendimiento/cedulas.json</code> un segundo.</p>
       <span class="rot">Documentos sintéticos. El reto prohíbe datos reales.</span>

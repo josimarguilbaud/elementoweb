@@ -164,12 +164,56 @@
   </section>
 
   <section>
+    <h2>Se lee dos veces</h2>
+    <p>
+      Esto salió de medir, no de planificar. <b>VisionPsy no es determinista ni a
+      temperatura 0</b>: la misma cédula, el mismo modelo y el mismo prompt pueden dar dos
+      lecturas distintas. En otro producto sería una nota al pie. En un banco es el
+      problema entero, porque un campo puede salir bien una vez y mal la siguiente sin que
+      nadie se entere.
+    </p>
+    <p>
+      Así que <b>se lee dos veces y solo entra lo que las dos lecturas dicen igual.</b>
+    </p>
+    <dl style="margin:0">
+      <div class="fila"><dt>Coinciden</dt><dd>El campo entra.</dd></div>
+      <div class="fila"><dt>No coinciden</dt><dd>El campo <b>no entra</b>, y se dice con qué salió cada vez.<span class="porque">Se trata igual que uno que no se pudo leer: si es obligatorio, detiene el trámite.</span></dd></div>
+      <div class="fila"><dt>Una lo vio, la otra no</dt><dd>Tampoco entra.<span class="porque">Visto una sola vez no es visto. Es el fallo que más duele, porque un campo a medias parece un campo leído.</span></dd></div>
+      <div class="fila"><dt>Una fecha huérfana de una sola lectura</dt><dd>Se descarta.<span class="porque">Preguntarle al operador por un dato que quizá inventó el modelo es peor que no preguntarle nada.</span></dd></div>
+    </dl>
+    <p>
+      Cuesta el doble de tiempo. Treinta segundos de más para no abrir una cuenta con un
+      dato que el modelo no sostiene dos veces seguidas es un intercambio que cualquier
+      banco firma.
+    </p>
+  </section>
+
+  <section>
+    <h2>La huella</h2>
+    <p>
+      Cada lectura guarda <b>qué la produjo</b>: qué modelo, con qué cuantización, con qué
+      prompt y sobre qué imagen. En banca eso tiene nombre, gobernanza de modelos, y
+      responde la pregunta que hace un auditor un año después, cuando el modelo ya se
+      actualizó dos veces: <b>¿quién decidió que este documento estaba vigente?</b>
+    </p>
+    <p>
+      Los digest son de la entrada, no de la persona: no identifican a nadie y no permiten
+      reconstruir la imagen.
+    </p>
+    <p>
+      Las dos cosas se sostienen entre sí. La huella dice exactamente qué modelo y qué
+      prompt produjeron el dato; y como ese mismo modelo con la misma entrada no siempre
+      dice lo mismo, se lee dos veces y solo se acepta lo que coincide.
+    </p>
+  </section>
+
+  <section>
     <h2>Lo que está medido</h2>
     <dl style="margin:0">
       <div class="fila"><dt>Campos leídos</dt><dd><span class="n">30</span><span class="porque">En cuatro cédulas sintéticas distintas.</span></dd></div>
       <div class="fila"><dt>Campos mal</dt><dd><span class="n" style="color:var(--verde)">0</span><span class="porque">Ninguno. Lo que no pudo leer, lo dijo; lo que leyó, lo leyó bien.</span></dd></div>
       <div class="fila"><dt>Trámites</dt><dd><span class="n">4 / 4</span><span class="porque">Decididos igual que los decidiría un operador humano con el documento delante.</span></dd></div>
-      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">83</span><span class="porque">Corren en milisegundos, sin modelo, con el texto exacto que devolvió VisionPsy.</span></dd></div>
+      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">102</span><span class="porque">Corren en milisegundos, sin modelo, con el texto exacto que devolvió VisionPsy.</span></dd></div>
     </dl>
     <p>
       Los documentos son sintéticos y lo dicen en la propia imagen. El reto prohíbe
@@ -182,7 +226,7 @@
     <dl style="margin:0">
       <div class="fila"><dt>Voz</dt><dd><span class="val">Whisper small</span><span class="porque">Transcribe lo que dicta el oficial.</span></dd></div>
       <div class="fila"><dt>Entrevista</dt><dd><span class="val">Qwen3 1.7B</span><span class="porque">Propone los campos de texto libre. El resto lo decide el código.</span></dd></div>
-      <div class="fila"><dt>Documento</dt><dd><span class="val">VisionPsy-Nano-460M</span><span class="porque">Lee la cédula. Se carga con la primera foto, no al arrancar.</span></dd></div>
+      <div class="fila"><dt>Documento</dt><dd><span class="val">VisionPsy-Nano-460M</span><span class="porque">Lee la cédula, dos veces. Se carga con la primera foto, no al arrancar.</span></dd></div>
     </dl>
     <p>
       <b>Cero llamadas de red.</b> No es una promesa de marketing: el servidor no tiene una
@@ -197,7 +241,8 @@
     <div class="pendiente">
       <div><span class="marca-p hecho">HECHO</span><span>El motor de lectura del documento, medido, con su registro de rendimiento.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>La entrevista por voz y el expediente KYC, con la cédula, el teléfono y el ingreso leídos por código.</span></div>
-      <div><span class="marca-p hecho">HECHO</span><span>El cotejo, la regla que detiene el trámite y sus 83 pruebas.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>El cotejo, la regla que detiene el trámite y sus 102 pruebas.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>El consenso de dos lecturas y la huella del modelo.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>El servidor y la interfaz de ventanilla, con cuatro casos medidos.</span></div>
       <div><span class="marca-p">FALTA</span><span>Probar el servidor con los tres modelos cargados de verdad.</span></div>
       <div><span class="marca-p">FALTA</span><span>Subir el repositorio a GitHub, público.</span></div>

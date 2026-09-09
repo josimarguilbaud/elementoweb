@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Los dos guiones · para grabar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --papel:#F1F4F4; --hoja:#FFFFFF; --tinta:#14181A; --media:#5E696D; --suave:#8A9498;
+    --linea:#D3DADC; --linea-f:#E4E9EA; --metal:#E7ECED;
+    --acento:#075A63; --acento-tenue:#E2EEEF;
+    --ambar:#8A5A00; --ambar-tenue:#FAF0DC;
+    --rojo:#8D3030; --rojo-tenue:#F9EBEA; --verde:#14603A;
+    --display:"Archivo","Arial Narrow",sans-serif;
+    --texto:"Public Sans","Segoe UI",system-ui,sans-serif;
+    --dato:"JetBrains Mono",Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-tema="claro"]){
+    --papel:#0F1315; --hoja:#171D1F; --tinta:#E6ECED; --media:#96A2A6; --suave:#6C787C;
+    --linea:#2A3437; --linea-f:#202829; --metal:#232B2D;
+    --acento:#4FC3CE; --acento-tenue:#103336;
+    --ambar:#D9A64E; --ambar-tenue:#2C2415;
+    --rojo:#E08A82; --rojo-tenue:#2E1A19; --verde:#5CC08C;
+  }}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.6 var(--texto);-webkit-font-smoothing:antialiased}
+  .hoja{max-width:760px;margin:0 auto;padding:clamp(28px,6vw,64px) 22px 96px;display:flex;flex-direction:column;gap:clamp(32px,5vw,44px)}
+  h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+  h1{font-size:clamp(32px,7vw,44px);font-weight:700;letter-spacing:-.022em;line-height:1.05}
+  h2{font-size:24px;font-weight:700;letter-spacing:-.012em}
+  h3{font-size:18px;font-weight:700}
+  p{margin:0;max-width:64ch}
+  .rotulo{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--suave)}
+
+  header{display:flex;flex-direction:column;gap:14px}
+  .entradilla{font-size:19px;line-height:1.5;color:var(--media);max-width:56ch}
+  .entradilla b{color:var(--tinta);font-weight:600}
+
+  section{display:flex;flex-direction:column;gap:16px;padding-top:30px;border-top:1px solid var(--linea)}
+  section.guion{border-top:3px solid var(--acento)}
+
+  ol,ul{margin:0;padding-left:1.15em;display:flex;flex-direction:column;gap:9px}
+  li{max-width:62ch}
+  li::marker{color:var(--suave)}
+  code{font-family:var(--dato);font-size:.88em;background:var(--metal);border:1px solid var(--linea-f);border-radius:3px;padding:1px 5px}
+
+  .escena{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px solid var(--linea-f)}
+  .escena:last-of-type{border-bottom:0}
+  .cabeza{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+  .tiempo{font-family:var(--dato);font-size:11px;font-weight:700;letter-spacing:.06em;
+          color:var(--acento);background:var(--acento-tenue);border-radius:3px;padding:3px 8px;white-space:nowrap}
+  .que{font-size:14.5px;color:var(--media)}
+  .que b{color:var(--tinta);font-weight:600}
+
+  .rot{display:block;font-family:var(--dato);font-size:13px;font-weight:700;letter-spacing:.03em;
+       background:#14181A;color:#F1F4F4;border-radius:4px;padding:13px 16px;text-align:center;text-wrap:balance}
+  .rot::before{content:"EN PANTALLA";display:block;font-size:9px;letter-spacing:.18em;
+               font-weight:500;color:#8A9498;margin-bottom:6px}
+
+  blockquote{margin:0;padding-left:16px;border-left:2px solid var(--linea);color:var(--media);font-size:15.5px}
+  blockquote b{color:var(--tinta);font-weight:600}
+  blockquote + blockquote{margin-top:10px}
+  .dicho{font-style:italic;color:var(--tinta)}
+
+  .aviso{background:var(--ambar-tenue);border:1px solid var(--ambar);color:var(--ambar);
+         border-radius:4px;padding:14px 16px;font-size:15px}
+  .aviso b{font-weight:700}
+
+  footer{border-top:1px solid var(--linea);padding-top:22px;font-size:14.5px;color:var(--media)}
+  .otra{margin-top:16px}
+  .otra a{color:var(--acento);text-decoration:none;border-bottom:1px solid var(--acento)}
+  .otra a:hover{opacity:.75}
+</style>
+</head>
+<body>
+<div class="hoja">
+
+  <header>
+    <span class="rotulo">Para grabar &middot; Decentralized AI Hackathon</span>
+    <h1>Los dos guiones</h1>
+    <p class="entradilla">
+      Se graban <b>seguidos</b>, en la misma sesión, con el mismo encuadre y la misma voz.
+      Cinco minutos cada uno como máximo; el objetivo es 4:50. Pasarse descalifica el
+      entregable y nadie te va a avisar.
+    </p>
+  </header>
+
+  <section>
+    <h2>La regla que manda sobre todas las demás</h2>
+    <p>
+      El video no se ve en una sala en silencio con un jurado atento. <b>Se exhibe todo el
+      viernes</b> ante empresas, VCs e inversores que pasan por delante. La mayoría lo va a
+      ver <b>sin sonido</b>, de reojo, durante quince segundos.
+    </p>
+    <ol>
+      <li><b>Cada escena lleva un rótulo en pantalla</b> que dice el argumento en menos de
+        diez palabras. Si alguien ve veinte segundos sin audio, tiene que entender qué hace esto.</li>
+      <li><b>El gancho va en los primeros cinco segundos</b>, y es visual. Nada de presentarse.</li>
+      <li><b>Los números van escritos</b>, grandes, no dichos. «0 campos mal» en pantalla
+        vale más que treinta segundos de narración.</li>
+    </ol>
+    <p>
+      La narración es para quien sí tenga audio. El video tiene que funcionar entero sin ella.
+    </p>
+    <div class="aviso">
+      <b>Subtítulos en inglés.</b> El reto corporativo es local, pero el ranking general y
+      Tether son internacionales. Si solo da tiempo a una cosa: subtítulos antes que doblaje.
+    </div>
+  </section>
+
+  <!-- ============================ CONSTA ============================ -->
+
+  <section class="guion">
+    <span class="rotulo">Guion 1</span>
+    <h2>Consta &middot; reto Philips</h2>
+
+    <h3>Antes de grabar</h3>
+    <ul>
+      <li><b>Modo avión encendido desde el principio</b>, con el icono visible en la barra
+        de tareas durante todo el video. Es la prueba del requisito que descalifica a quien
+        lo incumpla, y no cuesta nada dejarla a la vista.</li>
+      <li>Arranca el laboratorio y haz <b>una pasada completa en seco</b>. La primera foto
+        carga VisionPsy y tarda de más: que ese coste no salga en la toma buena.</li>
+      <li>Borra las observaciones para que se siembren las dos de ejemplo, las que no coinciden.</li>
+      <li>Ten a mano <code>placas/philips-gastada.png</code>. La sucia convence más que la limpia.</li>
+      <li>Graba a 1080p o más. El jurado tiene que poder leer la tabla.</li>
+    </ul>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">0:00 – 0:25</span><span class="que"><b>El gancho.</b> Primer plano del icono de modo avión, y al lado la app abierta. Sin cara, sin presentación, sin logo.</span></div>
+      <span class="rot">Sin internet. Todo esto corre en esta computadora.</span>
+      <blockquote>Un ingeniero de Philips entra a cuatro hospitales al día y ve cuántos equipos tiene cada uno, de qué marca, qué tan viejos. Todo eso se queda en su cabeza.</blockquote>
+      <p class="que">Corte seco. No expliques el modo avión: que se vea.</p>
+    </div>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">0:25 – 1:30</span><span class="que"><b>Hablar.</b> Pulsas Grabar y hablas de verdad, sin leer un papel.</span></div>
+      <blockquote class="dicho">«Estoy en el hospital DemoCare Pacific, en Panamá. Tienen dos resonadores y un tomógrafo. Uno de los resonadores parece de unos ocho años.»</blockquote>
+      <span class="rot">Siete segundos hablando, sin conexión.</span>
+      <p class="que">Deja que se vea el reloj mientras transcribe y extrae. Después señala el rastro con el cursor, <b>sin leerlo entero</b>.</p>
+      <span class="rot">El modelo se equivocó. El código lo corrigió — y lo dice.</span>
+      <blockquote>Fíjense: el modelo repartió mal las cantidades. El código lo corrigió leyendo la frase literal, y deja escrito qué cambió y por qué.</blockquote>
+      <blockquote>Un modelo de 1.700 millones de parámetros, de los que caben en un teléfono, es bueno leyendo y malo contando. Así que aquí no cuenta él: cuenta el código, sobre lo que la persona dijo. <b>«No inventar» no es una promesa del prompt, es una propiedad del sistema.</b></blockquote>
+    </div>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">1:30 – 2:40</span><span class="que"><b>La placa.</b> La tabla con marca y modelo en <code>Unknown</code>. Detente ahí un segundo entero.</span></div>
+      <span class="rot">Hablando nunca sale la marca. Ese hueco no se llenaba nunca.</span>
+      <p class="que">Pulsas la foto y subes la placa gastada, con brillos y rayas.</p>
+      <span class="rot">Modelo de visión de 460 MB. También dentro del equipo.</span>
+      <p class="que"><b>Este es el momento del video.</b> Cuando se aplique:</p>
+      <span class="rot">Dijo «unos ocho años». La placa dice 2017.</span>
+      <blockquote>La estimación acaba de convertirse en un dato con fecha, y el sistema anota las dos cosas: lo que se dijo y lo que se leyó.</blockquote>
+      <blockquote>Y miren dónde se aplicó: a <b>un</b> resonador, no a los dos. Un número de serie identifica una máquina, no un grupo. El otro sigue sin marca y el sistema lo sigue preguntando. Completar un dato es una cosa; inventar dos es otra.</blockquote>
+    </div>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">2:40 – 3:35</span><span class="que"><b>El desacuerdo.</b> El Cliente 360, la fila en conflicto. Pínchala y abre el rastro.</span></div>
+      <span class="rot">Uno dijo dos. Otro dijo tres. No elegimos.</span>
+      <blockquote>Dos personas visitaron este hospital y no coinciden.</blockquote>
+      <blockquote>Casi cualquier sistema se queda con el último y enseña un número. Este enseña los dos, marca el conflicto y guarda quién dijo qué y cuándo. Porque <b>un tablero que no sabe de dónde salió su número no es información: es una opinión con tipografía.</b></blockquote>
+      <blockquote>Y esa es exactamente la pregunta que Philips le hará a la siguiente persona que entre.</blockquote>
+    </div>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">3:35 – 4:35</span><span class="que"><b>Cómo se sostiene.</b> La terminal. Corre las pruebas en vivo, sin cortes.</span></div>
+      <span class="rot">45 pruebas. 13/13 extracciones. 4/4 placas.</span>
+      <blockquote>Cuarenta y cinco pruebas deterministas de la capa de código, sin cargar un solo modelo. Cada regla que acaban de ver tiene la suya.</blockquote>
+      <blockquote>Trece de trece en los casos de campo, incluidas grabaciones de voz reales. Cuatro de cuatro en las placas: marca, modelo, serie y año, incluida la gastada.</blockquote>
+      <p class="que">Enseña <code>rendimiento/texto.json</code> un segundo.</p>
+      <span class="rot">Primera palabra en 1,8 s. GPU integrada. Sin tarjeta dedicada.</span>
+      <blockquote>El registro está en el repositorio: modelo, cuantización, carga, tokens, TTFT y throughput. Medido en un Ryzen con gráficos integrados, a propósito, porque el escenario real es un portátil de campo.</blockquote>
+    </div>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">4:35 – 4:50</span><span class="que"><b>Cierre.</b> A cámara, o la pantalla quieta con el rótulo.</span></div>
+      <span class="rot">Que conste quién lo vio.</span>
+      <blockquote>Esto no es un tablero más bonito. Es un tablero que puede decir de dónde salió cada número, y que corre entero dentro del dispositivo del que nunca debió salir esa información.</blockquote>
+    </div>
+  </section>
+
+  <!-- ============================ ALCANCIA ============================ -->
+
+  <section class="guion">
+    <span class="rotulo">Guion 2</span>
+    <h2>Alcancía &middot; reto Caja de Ahorros</h2>
+
+    <h3>Antes de grabar</h3>
+    <ul>
+      <li><b>Modo avión</b>, igual, visible todo el video.</li>
+      <li><code>npm start</code> y una pasada en seco completa. La primera foto carga VisionPsy.</li>
+      <li>Ten los cuatro casos a mano. El botón 2 es el del conflicto y el 4 el del freno.</li>
+      <li>Si subes una foto de cédula, usa <code>documentos/gastada.png</code>.</li>
+      <li><b>No enseñes la fecha huérfana.</b> Está construida y probada, pero ninguno de
+        los cuatro casos la produce. Enseñar una función que no aparece obliga a explicarla,
+        y explicar cuesta segundos que no tienes.</li>
+    </ul>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">0:00 – 0:25</span><span class="que"><b>El gancho.</b> La banda roja de VENCIDA, grande, y el botón «Continuar con el trámite» apagado. Empieza ahí, sin contexto.</span></div>
+      <span class="rot">Una cédula vencida no abre una cuenta.</span>
+      <blockquote>En una ventanilla de banco, el error caro no es teclear despacio. Es abrir una cuenta con un documento que no servía.</blockquote>
+    </div>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">0:25 – 1:25</span><span class="que"><b>El oficial habla.</b> Vuelves al principio, pulsas Grabar y dictas como si el cliente estuviera enfrente.</span></div>
+      <blockquote class="dicho">«Rodrigo Bernal Sánchez, cédula 3-701-2288, quiere un préstamo personal. Gana como 900 al mes y vive en Colón.»</blockquote>
+      <span class="rot">El expediente se llena hablando. Nada sale del equipo.</span>
+      <p class="que">Cuando aparezca el expediente, para el cursor en la fila del ingreso.</p>
+      <span class="rot">Dijo «como 900». Eso no es una cifra: es un estimado.</span>
+      <blockquote>El modelo solo propone el texto libre. La cédula, el teléfono y el ingreso los saca el código de la propia frase, porque son los que un banco no puede dejar que un modelo invente.</blockquote>
+      <blockquote>Y fíjense en el matiz: el cliente dijo «como novecientos». El número se guarda, y se guarda también que <b>no lo afirmó</b>. En un expediente de crédito eso no da lo mismo.</blockquote>
+    </div>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">1:25 – 2:25</span><span class="que"><b>La cédula responde.</b> La foto. Deja que se vea el reloj mientras lee.</span></div>
+      <span class="rot">Modelo de visión de 460 MB. Dentro del equipo.</span>
+      <p class="que">Cuando cargue, ve directo a las dos columnas.</p>
+      <span class="rot">Lo que dijo el cliente. Lo que dice su cédula.</span>
+      <blockquote>Aquí están las dos fuentes, una al lado de la otra. Y aquí está lo que casi nadie hace.</blockquote>
+      <p class="que">Ahora la fila roja, marcada en las dos columnas a la vez.</p>
+      <span class="rot">Dijo Sánchez. La cédula dice Saavedra.</span>
+      <blockquote>El cliente dio un apellido y su documento dice otro. Un lector normal se queda con uno de los dos en silencio y acierta la mitad de las veces.</blockquote>
+      <blockquote>Alcancía <b>no elige</b>. Enseña los dos, marca el conflicto, y detiene el trámite hasta que lo resuelva una persona.</blockquote>
+      <p class="que">Ahora pulsa el caso 3.</p>
+      <span class="rot">Y sabe cuándo NO es un conflicto.</span>
+      <blockquote>Esta clienta dijo «Ana Lucía Ferreira» y su cédula dice «Ferreira Dos Santos». Eso no es una discrepancia: es un nombre incompleto, que pasa todo el tiempo en ventanilla. Gana el del documento y se deja escrito de dónde salió.</blockquote>
+      <blockquote>Si el aviso saltara también aquí, en una semana nadie lo leería.</blockquote>
+    </div>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">2:25 – 3:20</span><span class="que"><b>El freno.</b> Caso 4, la cédula gastada.</span></div>
+      <span class="rot">El campo que más importa es el primero que se pierde.</span>
+      <blockquote>Esta cédula está desgastada, como las de verdad. El modelo lee seis campos bien y pierde justo el séptimo: la fecha de expiración.</blockquote>
+      <p class="que">Señala la fila de EXPIRA, en ámbar, que <b>no desaparece</b>.</p>
+      <span class="rot">«No evaluable» y «vencida» son cosas distintas.</span>
+      <blockquote>Un lector ingenuo enseñaría seis campos correctos y se comería el séptimo en silencio. Eso no es un error de software: <b>es un problema de cumplimiento con cara de software que funciona.</b></blockquote>
+      <blockquote>Alcancía dice lo que no pudo leer y detiene el trámite. Y lo distingue de una cédula que sí se leyó y está vencida, que para un banco es una situación completamente distinta.</blockquote>
+    </div>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">3:20 – 4:20</span><span class="que"><b>Cómo se sostiene.</b> La terminal: <code>npm run prueba</code>.</span></div>
+      <span class="rot">83 pruebas. 30 campos leídos. 0 mal.</span>
+      <blockquote>Ochenta y tres pruebas deterministas, sin cargar un modelo, en milisegundos.</blockquote>
+      <blockquote>Treinta campos leídos en cuatro cédulas distintas y <b>ninguno mal</b>. Lo que no pudo leer, lo dijo; lo que leyó, lo leyó bien. Y los cuatro trámites decididos igual que los decidiría un operador con el documento delante.</blockquote>
+      <p class="que">Enseña <code>rendimiento/cedulas.json</code> un segundo.</p>
+      <span class="rot">Documentos sintéticos. El reto prohíbe datos reales.</span>
+      <blockquote>Las cuatro cédulas son sintéticas y lo dicen en la propia imagen. Ningún dato de ninguna persona real.</blockquote>
+    </div>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">4:20 – 4:50</span><span class="que"><b>Cierre.</b> Las dos columnas con el conflicto marcado, quietas.</span></div>
+      <span class="rot">Un banco no puede aceptar «probablemente».</span>
+      <blockquote>Caja de Ahorros existe desde 1934 para que Panamá ahorre. Alcancía es la puerta de entrada: los primeros cinco minutos de alguien que llega a abrir su primera cuenta, resueltos rápido y sin que su documento salga de la sucursal.</blockquote>
+      <blockquote>La inteligencia va a donde están los datos. No al revés.</blockquote>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lo que no debe salir en ninguno de los dos</h2>
+    <ul>
+      <li><b>Ningún dato real</b> de ningún hospital, banco o persona. Todo es sintético y se dice.</li>
+      <li><b>La palabra «prototipo» en tono de disculpa.</b> Funciona, está medido, y se cuenta así.</li>
+      <li><b>Leer la pantalla en voz alta.</b> Si está escrito, se señala; no se narra.</li>
+      <li><b>Pedir perdón por la interfaz.</b> Si algo no te gusta, arréglalo antes o no lo enseñes.</li>
+      <li><b>Promesas de lo que no hay.</b> Nada de telemetría, mantenimiento predictivo,
+        redondeos ni sincronización.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Una lámina opcional de roadmap</h2>
+    <p>Diez segundos, al final, y solo si sobra tiempo.</p>
+    <span class="rot">Roadmap — la organización confirmó que esta arquitectura es la que el reto pide.</span>
+    <blockquote>La inferencia corre en el equipo. A un servidor solo subiría el hecho ya verificado, con su procedencia. El audio y la foto nunca salen.</blockquote>
+  </section>
+
+  <footer>
+    <p>
+      Si algo de lo que aquí se afirma deja de ser cierto al grabar &mdash; un número, un
+      tiempo, un caso &mdash; se cambia el guion, no el número. Todo lo de arriba está
+      verificado contra los registros de rendimiento de cada repositorio.
+    </p>
+    <p class="otra">
+      Qué hace cada app:
+      <a href="/hackathon/entrega/consta/">Consta</a> &middot;
+      <a href="/hackathon/entrega/cotejo/">Alcancía</a>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>

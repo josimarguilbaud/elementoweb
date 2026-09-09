@@ -112,6 +112,46 @@ export const crecimiento: PageData[] = [
           'En Panamá la ventana sigue abierta: la mayoría de los competidores tiene webs técnicas débiles y cero estrategia de contenido. Quien haga el trabajo serio primero, se queda con las posiciones.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Cuánto tarda el SEO de verdad, y por qué',
+        paragraphs: [
+          'Es la pregunta que más se evita responder en el rubro, y la falta de respuesta honesta es lo que hace que la mayoría abandone antes de ver resultados.',
+          'El SEO no tarda por capricho: tarda porque Google necesita rastrear las páginas nuevas, evaluarlas, compararlas con lo que ya tiene posicionado y observar cómo se comporta la gente que llega. Ese ciclo toma meses, no semanas, y no se acelera pagando más.',
+          'Lo que sí cambia el plazo es de dónde partes. Un dominio nuevo, sin historial y sin enlaces, tarda bastante más que uno con años y contenido existente. Una palabra clave muy competida tarda más que una específica y local. Y un sitio con problemas técnicos no avanza hasta que se arreglan, por mucho contenido que se publique encima.',
+          '<strong>La expectativa realista es de meses, con señales tempranas antes que resultados.</strong> Las primeras suelen ser páginas nuevas empezando a aparecer para búsquedas largas y específicas, mucho antes de competir por las principales.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Lo que ningún SEO honesto te puede prometer',
+        paragraphs: [
+          'Si alguien te garantiza el primer lugar en Google, está vendiendo algo que no controla. Nadie fuera de Google decide ese orden, y quien lo promete o desconoce cómo funciona o cuenta con que no lo verifiques.',
+          'Tampoco se puede prometer un plazo exacto. Se puede estimar con base en la competencia de las palabras y el estado del sitio, y se debe explicar en qué se basa esa estimación, pero un "en tres meses estarás primero" no tiene fundamento.',
+          'Lo que sí se puede comprometer es el trabajo y sus señales: qué se va a auditar, qué se va a corregir, cuánto contenido se va a publicar, y qué métricas se van a reportar. Eso es verificable mes a mes.',
+          '<strong>La señal de alarma más clara es quien no te explica qué va a hacer.</strong> Si el trabajo no se puede describir, normalmente es porque no hay trabajo o porque es de los que traen problemas: enlaces comprados, contenido generado en masa, trucos que Google termina castigando.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El SEO para respuestas de IA cambia qué contenido funciona',
+        paragraphs: [
+          'Buena parte de las búsquedas ya no terminan en un clic: terminan en un resumen generado por IA, sea en Google, en ChatGPT o en Perplexity. Eso no elimina el SEO, pero sí cambia qué tipo de contenido rinde.',
+          'Un texto que da vueltas antes de responder no se cita. Lo que un motor generativo puede extraer y atribuir es una respuesta directa, cerrada y verificable: una definición clara, una comparación con criterio explícito, un número concreto, una regla de decisión.',
+          'Por eso el formato de pregunta y respuesta, las comparativas con reglas y los datos concretos rinden hoy más que el artículo largo que rodea el tema. Y por eso los datos estructurados dejaron de ser un detalle técnico: son la forma de decirle a una máquina qué es cada cosa en tu página.',
+          '<strong>Lo que no cambió es lo de fondo:</strong> hay que decir algo que valga la pena citar. El contenido que solo repite lo que ya está en otros diez sitios no lo cita nadie, ni una persona ni un modelo.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: posiciones no, negocio sí',
+        paragraphs: [
+          'La posición en Google es la métrica más pedida y la más engañosa. Varía por dispositivo, por ubicación y por historial de quien busca, así que dos personas ven cosas distintas el mismo día.',
+          'Lo que hay que mirar es el tráfico orgánico y, sobre todo, qué hizo esa gente: cuántos contactaron, de qué página vinieron y cuántos terminaron en cliente. Un sitio que sube de posición y no genera un solo contacto está posicionando para las palabras equivocadas.',
+          'El segundo dato es cuántas páginas distintas reciben visitas. Si todo el tráfico entra por dos páginas, el sitio es frágil; si entra por cuarenta, es un activo. Esa distribución dice más sobre la salud del SEO que cualquier ranking.',
+          'Y las búsquedas por las que apareces sin haberlas trabajado. <strong>Suelen revelar demanda que nadie en el negocio sospechaba</strong>, y son la mejor guía de qué escribir el próximo trimestre.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -123,6 +163,10 @@ export const crecimiento: PageData[] = [
           { q: '¿El SEO sirve si mi web es lenta o vieja?', a: 'Sirve poco: Google prioriza sitios rápidos y bien construidos, así que invertir en contenido sobre una base frágil es remar contra corriente. Si ese es tu caso, primero conviene un <a href="/servicios/redisenio-web-panama/">rediseño</a> o migrar a una base sólida, y de ahí el SEO rinde.' },
           { q: '¿Compito contra webs de otros países o solo de Panamá?', a: 'Para búsquedas locales ("abogado en Panamá", "clínica dental en Costa del Este") compites contra negocios panameños, y ahí la ventaja es tuya con el trabajo bien hecho. En temas más generales sí aparece contenido internacional, y por eso enfocamos las keywords donde tu negocio realmente puede ganar.' },
           { q: '¿Qué pasa con el SEO si dejo de pagarlo?', a: 'Las posiciones ya ganadas no desaparecen de un día para otro: el contenido publicado sigue trabajando. Lo que se detiene es el avance: sin contenido nuevo ni mantenimiento de autoridad, la competencia que sí sigue empujando termina pasándote con el tiempo.' },
+                  { q: '¿Cuánto tarda el SEO en dar resultados?', a: 'Meses, no semanas, y no se acelera pagando más: Google necesita rastrear, evaluar, comparar y observar cómo se comporta quien llega. El plazo depende de si tu dominio tiene historial, de qué tan competida sea la palabra y del estado técnico del sitio.' },
+          { q: '¿Alguien puede garantizarme el primer lugar en Google?', a: 'No. Nadie fuera de Google decide ese orden. Lo que sí se puede comprometer es el trabajo y sus señales: qué se audita, qué se corrige, cuánto contenido se publica y qué se reporta. La alarma es quien no te explica qué va a hacer.' },
+          { q: '¿Las respuestas de IA matan el SEO?', a: 'Cambian qué contenido rinde. Un texto que da vueltas antes de responder no se cita; una respuesta directa, cerrada y verificable sí. Por eso el formato de pregunta y respuesta, las comparativas con criterio y los datos concretos rinden más que el artículo largo que rodea el tema.' },
+          { q: '¿Debo medir mi posición en Google?', a: 'Es la métrica más engañosa: varía por dispositivo, ubicación e historial de quien busca. Mide tráfico orgánico, de qué página vino cada contacto, y cuántas páginas distintas reciben visitas. Si todo entra por dos páginas, el sitio es frágil.' },
         ],
       },
       {
@@ -213,6 +257,46 @@ export const crecimiento: PageData[] = [
           'Responderlas todas (las buenas y las malas) pesa doble: Google lo mide y tu próximo cliente lo lee.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Nombre, dirección y teléfono: los tres datos que no pueden variar',
+        paragraphs: [
+          'Es la base del SEO local y el error más común y más silencioso. Tu nombre comercial, tu dirección y tu teléfono tienen que aparecer exactamente iguales en todas partes: tu web, tu ficha de Google, tus redes, los directorios donde estés listado.',
+          'Cuando varían —"Av. Balboa" en un lado y "Avenida Balboa" en otro, un teléfono con el código de país en un sitio y sin él en otro— Google no puede confirmar que se trata del mismo negocio, y esa duda le resta confianza a tu ficha frente a competidores cuyos datos sí cuadran.',
+          'El caso peor es el negocio que se mudó o cambió de teléfono y actualizó unos sitios y otros no. Quedan versiones contradictorias circulando durante años, y algunas siguen mandando clientes a una dirección donde ya no estás.',
+          '<strong>La corrección es aburrida y barata:</strong> definir una versión oficial de los tres datos y hacer que coincida en todos lados, empezando por tu web y tu ficha de Google.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El radio real de tu negocio no es la ciudad entera',
+        paragraphs: [
+          'La búsqueda local funciona con proximidad: Google le muestra a cada persona lo que está cerca de donde está. Eso significa que no compites contra todos los negocios de Panamá, compites contra los de tu radio.',
+          'Es una buena noticia y una limitación. La buena: un negocio pequeño puede dominar su zona sin pelear contra las cadenas. La limitación: por bien optimizada que esté tu ficha, es muy difícil aparecer para alguien que está a veinte kilómetros y tiene diez opciones más cerca.',
+          'De ahí salen dos decisiones prácticas. Si tienes varias sedes, cada una necesita su propia ficha y su propia página con dirección y horario propios; una sola página que las mencione a todas no posiciona en ninguna zona. Y si atiendes a domicilio sin local visitable, conviene configurar el área de servicio en lugar de una dirección.',
+          '<strong>El contenido por zona es lo que extiende ese radio.</strong> Páginas que hablen de las zonas donde trabajas atraen búsquedas que la sola proximidad no te daría.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Las reseñas falsas se notan y salen caras',
+        paragraphs: [
+          'La tentación es evidente cuando un competidor tiene cuarenta reseñas y tú seis. Y es de las peores decisiones que puede tomar un negocio local.',
+          'Google detecta patrones: muchas reseñas de golpe, cuentas sin historial, textos parecidos, todas de cinco estrellas sin detalle. La consecuencia va desde eliminar las reseñas hasta suspender la ficha, y una ficha suspendida deja al negocio fuera del mapa mientras se resuelve.',
+          'Lo que sí funciona es pedirlas de forma sistemática y en el momento correcto: justo después de un servicio bien resuelto, con un enlace directo que le ahorre al cliente buscar dónde escribir. La mayoría de la gente contenta no deja reseña simplemente porque nadie se la pidió.',
+          'Y responderlas todas, sobre todo las malas. <strong>Una respuesta calmada y concreta a una queja legítima convence más que diez reseñas de cinco estrellas</strong>, porque el que compara está midiendo cómo reaccionas cuando algo sale mal.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: llamadas y rutas, no impresiones',
+        paragraphs: [
+          'La ficha de Google reporta cuántas veces se mostró, y ese número es el menos accionable de todos. Lo que importa es qué hizo la gente.',
+          'Los tres números que valen son cuántos pulsaron para llamar, cuántos pidieron cómo llegar y cuántos entraron a la web desde la ficha. Los dos primeros son intención de compra casi pura: nadie pide la ruta a un negocio que no piensa visitar.',
+          'El segundo corte es por tipo de búsqueda: cuántos te encontraron buscando tu nombre y cuántos buscando lo que vendes. El primero es gente que ya te conocía; el segundo es cliente nuevo, y es el que dice si el trabajo local está funcionando.',
+          'Y el ritmo de reseñas: cuántas entran al mes y cuántas se respondieron. <strong>Es el factor que más mueve la posición en el mapa</strong> y el que más se descuida cuando el negocio está ocupado.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -223,6 +307,10 @@ export const crecimiento: PageData[] = [
           { q: '¿Cada cuánto hay que pedir reseñas?', a: 'De forma constante, no en tandas. Un negocio que junta veinte reseñas en una semana y luego nada durante meses se ve raro ante Google y ante el cliente. Lo que funciona es un flujo natural: pedir la reseña en el momento justo del servicio, cada semana, con el enlace directo listo.' },
           { q: '¿Puedo tener varias fichas si tengo varias sucursales?', a: 'Sí, y debes: cada local con dirección física propia lleva su ficha de Google Business Profile, con sus fotos, horario y reseñas. Las trabajamos por separado para que cada sucursal aparezca en el mapa de su zona.' },
           { q: '¿Qué hago con una reseña falsa o injusta?', a: 'Primero se responde con calma y profesionalismo, porque tu próximo cliente la va a leer. Si viola las políticas de Google (spam, competencia, contenido ofensivo) se puede reportar para que la revisen, aunque no siempre la quitan. Nunca conviene ignorarla ni contestar a la defensiva.' },
+                  { q: '¿Por qué importa que mi nombre y dirección sean idénticos en todos lados?', a: 'Porque si varían, Google no puede confirmar que se trata del mismo negocio y eso le resta confianza a tu ficha. "Av. Balboa" en un sitio y "Avenida Balboa" en otro basta para generar la duda. El caso peor es el negocio que se mudó y actualizó unos sitios y otros no.' },
+          { q: '¿Puedo aparecer en el mapa en toda la ciudad?', a: 'Es muy difícil: la búsqueda local funciona por proximidad y compites contra los de tu radio, no contra todos. Si tienes varias sedes, cada una necesita ficha y página propias. Lo que extiende el radio es el contenido por zona.' },
+          { q: '¿Sirve comprar reseñas?', a: 'Google detecta los patrones —muchas de golpe, cuentas sin historial, textos parecidos— y la consecuencia va desde borrarlas hasta suspender la ficha, lo que te deja fuera del mapa. Lo que funciona es pedirlas justo después de un servicio bien resuelto, con enlace directo.' },
+          { q: '¿Qué mido en Google Business Profile?', a: 'Llamadas, solicitudes de ruta y clics a la web: los dos primeros son intención casi pura, porque nadie pide cómo llegar a un negocio que no piensa visitar. Y cuántos te encontraron buscando lo que vendes en vez de tu nombre, que es el cliente nuevo.' },
         ],
       },
       {
@@ -309,6 +397,46 @@ export const crecimiento: PageData[] = [
           'La infraestructura anual (dominio, hosting y SSL) más el mantenimiento mensual cubren todo lo que tu web necesita para operar sin sustos. Y el dominio queda a tu nombre, siempre.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Qué pasa exactamente cuando un sitio no se actualiza',
+        paragraphs: [
+          'La respuesta corta es que no pasa nada durante meses, y después pasa todo de golpe. Esa demora es la razón por la que tanta gente cancela el mantenimiento justo antes de necesitarlo.',
+          'El mecanismo es conocido: cuando se descubre una vulnerabilidad en WordPress o en un plugin popular, se publica el arreglo. A partir de ese momento, la vulnerabilidad es información pública y hay sistemas automáticos recorriendo internet buscando sitios que todavía no la corrigieron. No te eligen a ti: te encuentran.',
+          'Lo que sigue rara vez es un ataque dramático. Lo habitual es que el sitio empiece a redirigir a páginas de apuestas o farmacias, o que se le inyecten enlaces ocultos. El dueño se entera semanas después, cuando Google ya marcó el sitio como peligroso y el tráfico se desplomó.',
+          '<strong>Y limpiar cuesta más que mantener.</strong> Hay que encontrar todo lo inyectado, cerrar la puerta de entrada, pedirle a Google que revise el sitio y esperar a que el tráfico vuelva, si vuelve.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Un respaldo que nadie ha restaurado no es un respaldo',
+        paragraphs: [
+          'Casi todos los hostings incluyen respaldo automático y casi nadie ha probado restaurarlo. El día que hace falta es un mal día para descubrir que no funciona.',
+          'Los fallos que aparecen en ese momento son siempre los mismos: el respaldo guarda los archivos pero no la base de datos, o al revés. O se guarda en el mismo servidor, así que si el servidor cae se va con él. O existe pero solo del último día, y el problema empezó hace dos semanas sin que nadie lo notara.',
+          'Un respaldo utilizable tiene tres condiciones: incluye archivos y base de datos, vive en un lugar distinto del servidor, y guarda varias versiones hacia atrás para poder volver a antes de que empezara el problema.',
+          '<strong>Y la cuarta, la que casi nadie cumple: haberlo restaurado alguna vez a modo de prueba.</strong> Un respaldo sin probar es una suposición, no un seguro.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El hosting barato no es más lento: es más frágil',
+        paragraphs: [
+          'La comparación de precios entre hostings es engañosa porque compara el precio y no lo que se recibe. La diferencia real no está tanto en la velocidad como en qué pasa cuando algo sale mal.',
+          'En el hosting compartido más barato tu sitio convive con cientos de otros en el mismo servidor. Si uno de esos recibe un pico de tráfico o es atacado, tu sitio se ve afectado. Y el soporte, cuando existe, responde en días.',
+          'El costo real aparece en la caída. Un sitio caído un fin de semana largo son tres días sin recibir un solo contacto, y eso suele valer bastante más que la diferencia de precio anual entre un hosting barato y uno decente.',
+          'Lo que hay que mirar antes de contratar: si hay respaldo diario y dónde se guarda, si incluye certificado, en cuánto tiempo responde el soporte, y si te puedes llevar tu sitio a otro lado cuando quieras. <strong>Esa última pregunta descarta a más proveedores de los que uno espera.</strong> El desarrollo completo está en <a href="/blog/hosting-panama-evitar-hosting-barato/">por qué el hosting barato sale caro</a>.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: tiempo caído y velocidad en celular',
+        paragraphs: [
+          'El primer número es el <strong>tiempo caído</strong>: cuántos minutos al mes el sitio no respondió. Sin monitoreo, un sitio puede estar cayéndose cada semana de madrugada y nadie enterarse, mientras el posicionamiento se erosiona en silencio.',
+          'El segundo es la velocidad medida en celular con conexión móvil, no en la computadora de la oficina con fibra. Es como llega la mayoría de los visitantes en Panamá y es la medición que usa Google.',
+          'El tercero, y el que nadie mira hasta que hay problema, es cuándo se restauró un respaldo por última vez a modo de prueba. Es la única forma de saber que el seguro existe.',
+          'Y las actualizaciones aplicadas al mes, con nota de cuáles eran de seguridad. <strong>Ese registro es lo que separa un mantenimiento real de una factura mensual sin trabajo detrás.</strong>',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -320,6 +448,10 @@ export const crecimiento: PageData[] = [
           { q: 'Mi sitio funciona bien. ¿Para qué pago mantenimiento?', a: 'Precisamente porque funciona bien hoy. El mantenimiento es como el cambio de aceite del carro: no lo notas hasta que dejas de hacerlo. Los componentes de tu web reciben parches de seguridad todo el tiempo, y un sitio sin actualizar durante meses se vuelve el objetivo fácil que los robots de ataque buscan.' },
           { q: '¿El hosting está incluido o se paga aparte?', a: 'La infraestructura anual (dominio, hosting y SSL) se cotiza según tu proyecto y va por separado del mantenimiento mensual desde $59. Te lo mostramos todo desglosado desde el inicio, con cotización cerrada por escrito. El dominio siempre queda a tu nombre.' },
           { q: '¿Y si mi sitio ya fue hackeado?', a: 'Primero hay que sanearlo: limpiar el código malicioso, cerrar la puerta por donde entraron y pedir a Google que lo revise si te marcó como inseguro. Eso es un trabajo puntual, no mantenimiento normal. Después sí entra el plan mensual para que no vuelva a pasar. Si la base es muy frágil, a veces sale mejor un <a href="/servicios/redisenio-web-panama/">rediseño</a>.' },
+                  { q: '¿Qué pasa si no actualizo mi sitio?', a: 'Nada durante meses y después todo de golpe. Cuando se publica el arreglo de una vulnerabilidad, esa vulnerabilidad es información pública y hay sistemas automáticos buscando sitios sin corregir. No te eligen: te encuentran. Lo habitual es que el sitio empiece a redirigir a páginas de apuestas y te enteres cuando Google ya lo marcó.' },
+          { q: '¿Mi hosting ya hace respaldos, no basta con eso?', a: 'Solo si alguien lo ha restaurado alguna vez. Los fallos típicos: guarda archivos pero no la base de datos, vive en el mismo servidor que se cayó, o solo tiene el último día cuando el problema empezó hace dos semanas. Un respaldo sin probar es una suposición, no un seguro.' },
+          { q: '¿Qué diferencia hay entre un hosting barato y uno bueno?', a: 'Menos la velocidad y más qué pasa cuando algo falla. En el compartido barato convives con cientos de sitios y el soporte responde en días. Un sitio caído un fin de semana largo son tres días sin un solo contacto, que suele valer más que la diferencia de precio anual.' },
+          { q: '¿Cómo sé que el mantenimiento se está haciendo?', a: 'Con el registro de actualizaciones aplicadas al mes indicando cuáles eran de seguridad, el tiempo caído medido, la velocidad en celular y la fecha de la última restauración de prueba. Sin eso, es una factura mensual sin trabajo verificable detrás.' },
         ],
       },
       {

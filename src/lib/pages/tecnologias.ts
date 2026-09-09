@@ -121,6 +121,46 @@ export const tecnologias: PageData[] = [
           'El panel que recibe tu equipo queda limpio: los campos exactos de tu contenido, sin cien opciones que nadie pidió.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Cuándo NO conviene WordPress',
+        paragraphs: [
+          'WordPress mueve una porción enorme de la web y eso no lo convierte en la respuesta correcta para todo.',
+          'No conviene cuando el sitio es pequeño y no va a cambiar: una landing o un sitio de cinco páginas estáticas funciona más rápido y sin mantenimiento si se construye con tecnología estática. Poner WordPress ahí es asumir actualizaciones mensuales de por vida a cambio de nada.',
+          'Tampoco cuando nadie va a mantenerlo. WordPress necesita cuidado continuo, y un WordPress abandonado no se queda quieto: se vuelve un problema de seguridad. Si no hay presupuesto ni intención de mantenimiento, es mejor otra tecnología.',
+          'Y no conviene cuando el proyecto es realmente una aplicación —lógica compleja, cálculos, roles de usuario, integraciones profundas—. Forzar eso dentro de WordPress con plugins produce algo frágil que cuesta más mantener que un <a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">desarrollo a medida</a>.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Cada plugin es una deuda que se paga todos los meses',
+        paragraphs: [
+          'Un plugin resuelve un problema hoy y crea una obligación permanente: actualizarlo, verificar que no rompa nada al actualizarse, y confiar en que su autor siga manteniéndolo dentro de tres años.',
+          'El problema no es tener plugins, es tener treinta. Cada uno multiplica las combinaciones posibles de fallo, y llega un punto donde nadie se atreve a actualizar por miedo a romper el sitio. Ese es exactamente el estado en el que un sitio termina hackeado.',
+          'También pesa en velocidad: muchos plugins cargan sus propios archivos en todas las páginas, incluso donde no se usan. Un sitio con demasiados plugins es lento por acumulación, no por una causa concreta que se pueda arreglar.',
+          '<strong>La regla que aplicamos es preguntar si vale su costo anual de mantenimiento</strong>, no si resuelve el problema. Muchos se sustituyen por unas líneas de código que no hay que actualizar nunca.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Por dónde entran los sitios de WordPress que se caen',
+        paragraphs: [
+          'Casi ninguna intrusión en WordPress es un ataque dirigido. Son sistemas automáticos que recorren internet probando lo mismo en millones de sitios, y entran por unas pocas puertas conocidas.',
+          'La primera es un plugin o tema desactualizado con una vulnerabilidad ya publicada. La segunda son contraseñas débiles en la administración, probadas por fuerza bruta. La tercera son temas o plugins descargados de sitios que regalan versiones de pago, que muchas veces vienen con código malicioso incluido: es la forma más eficiente de infectarse a propósito.',
+          'Las defensas son proporcionalmente simples: actualizar, contraseñas fuertes con doble factor, limitar los intentos de acceso, no instalar nada de origen dudoso y tener respaldo fuera del servidor.',
+          '<strong>Nada de eso es sofisticado y por eso funciona:</strong> los sistemas automáticos buscan lo fácil, y un sitio que cumple lo básico deja de ser lo fácil.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir en un WordPress',
+        paragraphs: [
+          'Además del tráfico y los contactos, un WordPress tiene métricas de salud que conviene vigilar porque avisan antes del problema.',
+          'La velocidad en celular es la primera, y hay que medirla cada cierto tiempo, no solo al lanzar. Los sitios de WordPress se degradan: se suman plugins, se cargan imágenes sin optimizar, y un sitio que arrancó rápido puede estar lento un año después sin que nadie lo notara.',
+          'La segunda es el número de plugins activos y cuántos están desactualizados. Es el mejor indicador anticipado de riesgo que existe en esta plataforma.',
+          'Y los intentos de acceso fallidos. Un pico repentino indica que alguien está probando entrar, y detectarlo a tiempo permite cerrar la puerta antes de que la encuentren abierta.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -131,6 +171,10 @@ export const tecnologias: PageData[] = [
           { q: '¿WordPress sirve para SEO en Panamá?', a: 'Muy bien, si se implementa liviano. WordPress da control total sobre metadatos, estructura de URLs, schema y un blog para contenido orgánico. Sobre esa base montamos tu <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a> y, si atiendes clientes por zona, el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Google Maps</a>.' },
           { q: '¿Puedo administrar el sitio yo mismo sin saber programar?', a: 'Ese es justo el punto fuerte de WordPress. Dejamos el panel limpio, con los campos exactos de tu contenido, y te entregamos una capacitación grabada. Publicas, editas y subes fotos sin abrir un ticket ni pagarnos por cada cambio.' },
           { q: '¿Puedo vender por WhatsApp desde mi WordPress?', a: 'Sí. Sumamos botón flotante de WhatsApp, enlaces con mensaje prellenado por producto o servicio y formularios que te llegan directo al chat. Es la vía más usada para cerrar en Panamá y la dejamos lista de serie.' },
+                  { q: '¿Cuándo NO conviene WordPress?', a: 'Cuando el sitio es pequeño y no va a cambiar (una estática funciona más rápido y sin mantenimiento), cuando nadie va a mantenerlo (un WordPress abandonado se vuelve un problema de seguridad), y cuando el proyecto es realmente una aplicación con lógica compleja.' },
+          { q: '¿Cuántos plugins son demasiados?', a: 'El problema no es tener plugins, es tener treinta: cada uno multiplica las combinaciones de fallo hasta que nadie se atreve a actualizar por miedo a romper el sitio, que es el estado en el que se termina hackeado. La regla es preguntar si vale su costo anual de mantenimiento.' },
+          { q: '¿Por qué hackean los sitios de WordPress?', a: 'Casi nunca es dirigido: son sistemas automáticos probando lo mismo en millones de sitios. Entran por plugins desactualizados con vulnerabilidad publicada, contraseñas débiles, y temas de pago descargados gratis de sitios dudosos, que suelen venir con código malicioso.' },
+          { q: '¿Qué debo vigilar en mi WordPress?', a: 'La velocidad en celular medida cada cierto tiempo, porque los sitios se degradan al sumar plugins e imágenes sin optimizar. El número de plugins desactualizados, que es el mejor indicador anticipado de riesgo. Y los intentos de acceso fallidos.' },
         ],
       },
       {
@@ -202,6 +246,46 @@ export const tecnologias: PageData[] = [
           'Y sí: <strong>Shopify funciona en Panamá</strong>, con dólares, envíos locales e internacionales, y pasarelas compatibles con bancos panameños. Configurarlo bien es nuestro trabajo.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'El costo real de Shopify no es la mensualidad',
+        paragraphs: [
+          'Comparar Shopify con otras plataformas por su precio mensual es el error de cálculo más común, porque la mensualidad es solo una de tres partidas.',
+          'La segunda es la <strong>comisión por transacción</strong>. Shopify cobra un porcentaje de cada venta si no usas su propia pasarela de pago, y en Panamá, donde se suele necesitar una pasarela local o Yappy, esa comisión aplica. Es un costo que crece exactamente al ritmo de tu facturación.',
+          'La tercera son las <strong>aplicaciones</strong>. Shopify base no hace todo, y cada función extra —reseñas, suscripciones, envíos avanzados, informes— suele ser una app con su propia mensualidad. Una tienda con seis apps puede duplicar su costo mensual sin darse cuenta.',
+          '<strong>La cuenta correcta es mensualidad + comisión estimada sobre tu facturación + apps.</strong> Con volumen bajo Shopify suele salir a cuenta; con volumen alto y margen ajustado, la comisión empieza a pesar más que todo lo demás junto.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Lo que hay que resolver para vender en Panamá desde Shopify',
+        paragraphs: [
+          'Shopify está pensado para mercados donde todo el mundo paga con tarjeta y los envíos los resuelve un operador nacional. Panamá no funciona exactamente así, y esas diferencias hay que configurarlas a mano.',
+          'El pago es la primera. Hay que resolver cómo se cobra con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a>, que para buena parte del país es la forma natural de pagar, además de la tarjeta. Sin esa opción, una porción del mercado no completa la compra.',
+          'La segunda son los impuestos: el ITBMS tiene que quedar bien configurado y mostrarse con claridad, no como una sorpresa en el último paso.',
+          'Y la tercera es el envío, que en Panamá se comporta distinto dentro y fuera de la ciudad. Hay que definir zonas con costos y plazos realistas, y activar el retiro en tienda, que en la práctica funciona mejor de lo que muchos esperan.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué pasa si algún día quieres salirte',
+        paragraphs: [
+          'Es la pregunta que nadie hace al empezar y la que más cuesta cuando llega. Shopify es un servicio alquilado: la tienda vive en su infraestructura y funciona con su lenguaje de plantillas.',
+          'Lo que sí puedes llevarte son tus datos: productos, clientes y pedidos se exportan. Lo que no se lleva es el diseño, que está construido para Shopify y hay que rehacer, ni las personalizaciones hechas con sus apps.',
+          'El punto delicado son las direcciones de las páginas. Shopify impone su propia estructura de URLs, y al migrar esa estructura cambia. Sin un mapa de redirecciones bien hecho, se pierde el posicionamiento acumulado, que suele ser el activo más valioso de una tienda con años.',
+          '<strong>No es un argumento contra Shopify:</strong> es un argumento para elegir a conciencia, sabiendo que la salida tiene un costo. Si el volumen y las necesidades son estables, ese costo puede no llegar nunca.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir en una tienda Shopify',
+        paragraphs: [
+          'Shopify reporta mucho y casi todo el mundo mira lo mismo: ventas totales. Es el número que menos ayuda a decidir.',
+          'Lo que dice dónde actuar es el embudo: cuántos vieron producto, cuántos agregaron al carrito, cuántos iniciaron el pago y cuántos terminaron. La caída entre iniciar el pago y terminar es la más cara de todas y casi siempre se explica por el envío o por la falta de la forma de pago que la gente esperaba.',
+          'El segundo número es el costo real por venta, sumando comisión y apps. Es el que dice si la plataforma sigue siendo la correcta a tu volumen actual, y conviene recalcularlo cada año.',
+          'Y el ticket promedio, que orienta si conviene trabajar en vender más por pedido en vez de conseguir más pedidos, casi siempre más barato de lograr.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -212,6 +296,10 @@ export const tecnologias: PageData[] = [
           { q: '¿Cómo cobra el ITBMS mi tienda Shopify?', a: 'Configuramos el impuesto en las zonas de envío para que el ITBMS se calcule y muestre correctamente al pagar. También dejamos las tarifas de envío por zona para que el cliente vea el total real antes de confirmar, sin sorpresas que abandonen el carrito.' },
           { q: '¿Puedo recuperar los carritos que se abandonan?', a: 'Sí. Shopify permite correos automáticos de recuperación de carrito, y los dejamos activados de serie. Recuperar una parte de esos carritos suele ser de las acciones más rentables de una tienda, porque son clientes que ya estaban por comprar.' },
           { q: '¿Mi tienda Shopify sirve para pauta en Facebook e Instagram?', a: 'Sí. Instalamos los píxeles y la analítica de ventas para que tus campañas de <a href="/marketing/facebook-instagram-ads-panama/">Facebook e Instagram Ads</a> midan compras reales. Sin ese seguimiento bien puesto, estás pautando a ciegas.' },
+                  { q: '¿Cuánto cuesta realmente Shopify?', a: 'Mensualidad más comisión por transacción más apps. La comisión aplica si no usas su propia pasarela, y en Panamá suele hacer falta una local o Yappy. Las apps se acumulan: una tienda con seis puede duplicar su costo mensual. Con volumen alto y margen ajustado, la comisión pesa más que todo lo demás.' },
+          { q: '¿Qué hay que configurar para vender en Panamá?', a: 'Yappy además de la tarjeta, porque sin él una porción del mercado no completa la compra. El ITBMS bien configurado y visible, no como sorpresa al final. Y zonas de envío con costos y plazos realistas para ciudad e interior, más retiro en tienda.' },
+          { q: '¿Puedo salirme de Shopify si un día quiero?', a: 'Puedes llevarte los datos —productos, clientes, pedidos— pero no el diseño ni las personalizaciones hechas con apps. Lo delicado son las URLs: Shopify impone su estructura y al migrar cambia. Sin un mapa de redirecciones se pierde el posicionamiento acumulado.' },
+          { q: '¿Qué mido en mi tienda?', a: 'El embudo, no las ventas totales. La caída entre iniciar el pago y terminarlo es la más cara y casi siempre se explica por el envío o por faltar la forma de pago esperada. Y el costo real por venta sumando comisión y apps, recalculado cada año.' },
         ],
       },
       {
@@ -281,6 +369,46 @@ export const tecnologias: PageData[] = [
           'Todo se entrega documentado y con el repositorio a tu nombre. <strong>La continuidad no puede depender de nosotros</strong>: ese es el diseño, no una promesa.',
         ],
       },
+            {
+        type: 'prose',
+        h2: 'Cuándo NO necesitas código a medida',
+        paragraphs: [
+          'El desarrollo a medida es la opción más cara y más lenta, y por eso conviene descartarla antes de elegirla.',
+          'No lo necesitas si lo que quieres ya existe como producto. Una tienda estándar, un sitio corporativo, un blog, un sistema de reservas común: hay plataformas que hacen eso bien, y construir tu versión propia significa pagar por reinventar algo que además tendrás que mantener solo.',
+          'Tampoco lo necesitas si la diferencia con lo estándar es cosmética. "Quiero que el carrito se vea distinto" no justifica un desarrollo; "necesito que el carrito calcule precios según un contrato por cliente" sí, porque eso ninguna plataforma lo hace.',
+          '<strong>La pregunta que decide es si tu proceso es realmente distinto o solo te acostumbraste a hacerlo distinto.</strong> Muchas veces adaptar el proceso a una herramienta existente sale mucho más barato que construir una herramienta para el proceso.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El software propio no se termina: se mantiene',
+        paragraphs: [
+          'Es la parte que casi nadie presupuesta y la que decide si el proyecto sobrevive. Un desarrollo a medida no acaba el día que se entrega: empieza ahí.',
+          'Las dependencias que usa se actualizan, y quedarse atrás demasiados años convierte una actualización sencilla en una reescritura. Los navegadores cambian. Aparecen requisitos nuevos, y cada cambio en el negocio se traduce en trabajo de desarrollo, porque no hay un proveedor que lo saque en su próxima versión.',
+          'Por eso, antes de empezar, hay que responder quién va a mantener esto y con qué presupuesto anual. Si no hay respuesta, el proyecto va a funcionar dos años y después se va a volver un problema del que nadie quiere hacerse cargo.',
+          '<strong>Un software a medida sin plan de mantenimiento es una deuda con fecha diferida.</strong> Y esa deuda vence siempre en el peor momento.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'De quién es el código, y por qué preguntarlo antes',
+        paragraphs: [
+          'Es la pregunta más incómoda de hacerle a un proveedor y la que más problemas evita. Cuando alguien construye software para tu empresa, hay que dejar por escrito quién es dueño del resultado.',
+          'Si el código es tuyo, puedes cambiar de proveedor, contratar a otro para ampliarlo o llevártelo internamente. Si es del proveedor y solo tienes licencia de uso, dependes de él para siempre, incluidos sus plazos y sus precios.',
+          'Hay tres cosas concretas que conviene tener claras desde el inicio: dónde vive el código y si tienes acceso al repositorio, quién controla los servidores y los dominios, y qué documentación se entrega al final. La respuesta a la tercera suele ser "ninguna", y es lo que hace que cambiar de proveedor cueste tanto.',
+          'Nosotros entregamos el código y los accesos, y documentamos. <strong>No por generosidad: porque un cliente atrapado es un cliente que se va en cuanto puede</strong>, y porque un proyecto que solo entiende quien lo escribió es frágil.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir en un desarrollo a medida',
+        paragraphs: [
+          'Un desarrollo a medida no se mide en visitas: se mide en si resolvió el problema que lo justificó.',
+          'Por eso el número que hay que definir es antes de empezar, no después: qué proceso se va a acortar, cuántas horas se van a devolver al mes, cuántos errores manuales se van a evitar. Sin esa línea base, al final no hay forma de decir si valió la pena y la discusión se vuelve una cuestión de opinión.',
+          'Durante la operación, lo que se vigila es distinto: cuántos errores registra el sistema, qué funciones se usan de verdad y cuáles nadie tocó nunca. Esa segunda lista suele ser larga y es información valiosa: son las funciones que se pidieron, se pagaron y no hacían falta.',
+          'Y el tiempo de respuesta ante un fallo. <strong>En software propio no hay un proveedor externo que lo resuelva</strong>, así que ese número depende enteramente del acuerdo de mantenimiento que tengas.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -291,6 +419,10 @@ export const tecnologias: PageData[] = [
           { q: '¿Pueden integrar Yappy y WhatsApp en un desarrollo a medida?', a: 'Sí, y es de lo que más pedimos. Conectamos el <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Botón de Pago Yappy</a>, pasarelas de tarjeta y flujos de WhatsApp directo en tu plataforma. Al ser código propio, la integración se hace exactamente como tu operación la necesita, sin las limitaciones de un plugin genérico.' },
           { q: '¿Un sitio a medida es mejor para SEO?', a: 'Puede serlo cuando la velocidad manda: con generación estática, las páginas se sirven como archivos y cargan más rápido que cualquier CMS tradicional. Eso ayuda al <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento</a>, siempre acompañado de estructura y contenido bien trabajados.' },
           { q: '¿Puedo empezar pequeño y crecer después?', a: 'Es la vía recomendada. Dividimos el proyecto en entregas funcionales: arrancas con lo esencial en producción y sumas módulos por etapas, cada uno con su cotización cerrada por escrito. Así inviertes a medida que el proyecto prueba su valor.' },
+                  { q: '¿Cuándo NO necesito desarrollo a medida?', a: 'Si lo que quieres ya existe como producto: tienda estándar, sitio corporativo, blog, reservas comunes. Y si la diferencia con lo estándar es cosmética. "Quiero que se vea distinto" no lo justifica; "necesito que calcule precios según un contrato por cliente" sí, porque eso ninguna plataforma lo hace.' },
+          { q: '¿Qué costo se olvida presupuestar?', a: 'El mantenimiento. Un desarrollo no acaba al entregarse: las dependencias se actualizan, los navegadores cambian y cada cambio del negocio es trabajo de desarrollo, porque no hay proveedor que lo saque en su próxima versión. Sin plan de mantenimiento, funciona dos años y se vuelve un problema.' },
+          { q: '¿De quién es el código que me desarrollan?', a: 'Hay que dejarlo por escrito antes de empezar. Si es tuyo, puedes cambiar de proveedor o ampliarlo con otro. Si solo tienes licencia de uso, dependes de él para siempre. Pregunta también dónde vive el repositorio, quién controla servidores y dominios, y qué documentación se entrega.' },
+          { q: '¿Cómo mido si el desarrollo valió la pena?', a: 'Definiendo la línea base antes de empezar: qué proceso se acorta, cuántas horas se devuelven al mes, cuántos errores manuales se evitan. Sin eso, al final la discusión es de opinión. Después, qué funciones se usan de verdad: la lista de las que nadie tocó suele ser larga.' },
         ],
       },
       {

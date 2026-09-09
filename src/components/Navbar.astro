@@ -7,7 +7,7 @@ const { current = '', dark = false } = Astro.props;
   <div class="relative">
     <nav id="navpill" class="relative flex items-center gap-1 rounded-full border border-transparent bg-transparent px-2 py-2 transition-all duration-500">
       <a href="/" class="flex items-center gap-2 rounded-full px-3 py-1.5">
-        <span class="brand-sq grid h-7 w-7 place-items-center rounded-lg bg-ink"><svg width="17" height="17" viewBox="0 0 32 32" fill="none"><path d="M16 4 26.4 10V22L16 28 5.6 22V10Z" stroke="#0099cc" stroke-width="2.3" stroke-linejoin="round" /><path d="M16 16 5.6 10M16 16 26.4 10M16 16V28" stroke="#0099cc" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" /><circle cx="16" cy="16" r="1.7" fill="#0099cc" /></svg></span>
+        <span class="brand-sq grid h-7 w-7 place-items-center rounded-lg bg-night"><svg width="17" height="17" viewBox="0 0 32 32" fill="none"><path d="M16 4 26.4 10V22L16 28 5.6 22V10Z" stroke="#0099cc" stroke-width="2.3" stroke-linejoin="round" /><path d="M16 16 5.6 10M16 16 26.4 10M16 16V28" stroke="#0099cc" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" /><circle cx="16" cy="16" r="1.7" fill="#0099cc" /></svg></span>
         <span class="brand-tx font-display text-sm font-bold tracking-tight text-ink">elemento<span class="font-medium opacity-60"> web</span></span>
       </a>
 
@@ -18,13 +18,13 @@ const { current = '', dark = false } = Astro.props;
         <button type="button" data-menu="marketing" aria-expanded="false" class="nav-trigger flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm font-medium text-ink/70 transition hover:bg-ink/5 hover:text-ink">
           Marketing <svg class="chev h-3 w-3 opacity-50 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" /></svg>
         </button>
-        <a href="/saas/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'saas' ? 'bg-ink text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>SaaS</a>
-        <a href="/portafolio/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'portafolio' ? 'bg-ink text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Portafolio</a>
-        <a href="/industrias/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'industrias' ? 'bg-ink text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Industrias</a>
-        <a href="/blog/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'blog' ? 'bg-ink text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Blog</a>
+        <a href="/saas/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'saas' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>SaaS</a>
+        <a href="/portafolio/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'portafolio' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Portafolio</a>
+        <a href="/industrias/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'industrias' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Industrias</a>
+        <a href="/blog/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'blog' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Blog</a>
       </div>
 
-      <a href="/contacto/" data-magnetic="0.4" class="cta-pill ml-1 hidden items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-ink/20 transition-colors hover:bg-teal-deep sm:inline-flex">
+      <a href="/contacto/" data-magnetic="0.4" class="cta-pill ml-1 hidden items-center gap-2 rounded-full bg-night px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-ink/20 transition-colors hover:bg-teal-deep sm:inline-flex">
         Cotizar
         <span class="grid h-4 w-4 place-items-center rounded-full bg-teal text-ink"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
       </a>
@@ -58,7 +58,7 @@ const { current = '', dark = false } = Astro.props;
 </header>
 
 <!-- Overlay móvil -->
-<div id="mnav" class="fixed inset-0 z-40 hidden flex-col overflow-y-auto bg-ink px-6 pb-12 pt-24 text-white md:!hidden" style="clip-path: inset(0 0 100% 0)">
+<div id="mnav" class="fixed inset-0 z-40 hidden flex-col overflow-y-auto bg-night px-6 pb-12 pt-24 text-white md:!hidden" style="clip-path: inset(0 0 100% 0)">
   <div class="absolute inset-0 mesh-dark opacity-40"></div>
   <div class="relative flex flex-col gap-7">
     <div class="m-row">

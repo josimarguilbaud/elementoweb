@@ -5,6 +5,12 @@
   --color-paper: #f8f9fa;
   --color-ink: #333333;
   --color-ink-2: #2a2a2a;
+  /* Fondos oscuros grandes. El #333333 del manual esta pensado para TEXTO;
+     usado como fondo aplana y el degradado le saca un velo verdoso. Estos dos
+     son el mismo gris llevado hacia el azul de marca, para devolver profundidad
+     sin salirse de la paleta. El texto sigue en --color-ink. */
+  --color-night: #14232b;
+  --color-night-2: #0e1a20;
   --color-teal: #0099cc;
   --color-teal-deep: #00688c;
   --color-violet: #5ec8e8;

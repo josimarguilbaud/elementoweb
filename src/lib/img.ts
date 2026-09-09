@@ -45,30 +45,46 @@ export function unsplash(id: string, w = 1600, ar = 0.62): string {
   return `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&q=80&auto=format&fit=crop&crop=entropy`;
 }
 
-/** Elige una foto temática según el slug de la página (palabras clave). */
+/**
+ * Elige una foto temática según el slug de la página.
+ *
+ * Compara por PALABRA, no por substring suelto. La versión anterior usaba
+ * `slug.includes(clave)` y eso reventaba en silencio:
+ *
+ *   'auto'  casaba dentro de  automatizaciones  -> la página de n8n salía con
+ *                                                  la foto de un motor de carro
+ *   'ia'    casaba dentro de  industrias, tecnologias
+ *   'app'   casaba dentro de  whatsapp, yappy
+ *
+ * Ahora una clave casa solo si algún trozo del slug EMPIEZA por ella, así
+ * 'abogad' sigue casando 'abogados' pero 'ia' ya no casa 'industrias'. Además
+ * la regla de automatización va antes que la de automotriz, porque
+ * 'automatizaciones' sí empieza por 'auto'.
+ */
 export function pickImg(slug: string): keyof typeof PHOTOS {
-  const s = slug.toLowerCase();
-  const has = (...k: string[]) => k.some((x) => s.includes(x));
+  const partes = slug.toLowerCase().split(/[/\-_.]+/).filter(Boolean);
+  const has = (...k: string[]) => k.some((x) => partes.some((p) => p.startsWith(x)));
   if (has('legal', 'abogad', 'juridic', 'notari')) return 'legal';
-  if (has('inmobiliar', 'bienes-raices', 'propiedad', 'real-estate')) return 'realEstate';
+  if (has('inmobiliar', 'bienes', 'propiedad', 'real')) return 'realEstate';
   if (has('restaurant', 'gastronom', 'comida', 'cafe')) return 'restaurant';
   if (has('hotel', 'hospedaj', 'turismo', 'turistic')) return 'hotel';
   if (has('clinic', 'medic', 'salud', 'dental', 'odontolog')) return 'medical';
   if (has('construc', 'inmobili', 'arquitect', 'obra')) return 'construction';
   if (has('educac', 'colegio', 'escuela', 'academi', 'instituto')) return 'education';
-  if (has('retail', 'moda', 'ropa', 'tienda-de')) return 'fashion';
+  if (has('retail', 'moda', 'ropa')) return 'fashion';
   if (has('gimnasio', 'fitness', 'gym', 'deporte')) return 'gym';
-  if (has('taller', 'automotr', 'mecanic', 'auto')) return 'automotive';
   if (has('belleza', 'spa', 'estetica', 'salon')) return 'spa';
+  // Antes que 'automotriz': 'automatizaciones' también empieza por 'auto'.
+  if (has('email', 'automatiz', 'n8n', 'chatbot', 'chatmantis', 'inteligencia', 'ia')) return 'ai';
+  if (has('taller', 'automotr', 'mecanic', 'auto')) return 'automotive';
   if (has('logistic', 'transport', 'envio', 'delivery')) return 'logistics';
-  if (has('ecommerce', 'tienda-online', 'tienda-virtual', 'ecomm')) return 'ecommerce';
+  if (has('ecommerce', 'ecomm', 'tienda', 'yappy', 'pasarela', 'pago')) return 'ecommerce';
   if (has('landing', 'campaña', 'campana')) return 'analytics';
   if (has('corporativ', 'empresa', 'institucional')) return 'office';
-  if (has('wordpress', 'shopify', 'astro', 'react', 'next', 'desarrollo', 'app', 'saas', 'software', 'codigo', 'sistema')) return 'code';
+  if (has('wordpress', 'shopify', 'astro', 'react', 'next', 'desarrollo', 'saas', 'software', 'codigo', 'sistema')) return 'code';
   if (has('seo', 'posicionamiento', 'analitic', 'crecimiento', 'growth')) return 'analytics';
-  if (has('google-ads', 'facebook-ads', 'instagram-ads', 'pauta', 'ads', 'publicidad')) return 'content';
-  if (has('redes-sociales', 'social', 'community', 'contenido')) return 'social';
-  if (has('email', 'automatiz', 'n8n', 'chatbot', 'chatmantis', 'ia', 'inteligencia')) return 'ai';
+  if (has('google', 'facebook', 'instagram', 'pauta', 'ads', 'publicidad')) return 'content';
+  if (has('redes', 'social', 'community', 'contenido', 'whatsapp')) return 'social';
   if (has('mantenimiento', 'hosting', 'seguridad', 'infraestructura')) return 'tech';
   return 'meeting';
 }

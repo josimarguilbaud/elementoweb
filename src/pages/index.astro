@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import Preloader from '../components/Preloader.astro';
 import { site, cols, marketing, saas, pricing, industrias, url, wa, clientLogos, portfolio, portfolioCats } from '../lib/site';
 import ContactForm from '../components/ContactForm.astro';
-import { orgNode } from '../lib/schema';
+import { homeJsonLd } from '../lib/schema';
 
 const solutions = [
   { n: '01', t: 'Diseño Web', d: 'Sitios corporativos, tiendas y landings que proyectan la solidez de tu empresa y convierten visitas en contratos.', tags: ['Astro', 'React', 'SEO técnico', 'Panel propio'], slug: 'servicios/diseno-web-corporativo-panama' },
@@ -61,7 +61,7 @@ const faqs = [
   ['¿Cómo funciona el pago?', 'En tres etapas: 50% para iniciar, 30% al aprobar el demo online y 20% para publicar en tu dominio. Tarjeta, transferencia o Yappy.'],
 ];
 ---
-<Base title={title} description={description} current="home" image="/portfolio/sanblasfull.jpg" jsonld={orgNode()}>
+<Base title={title} description={description} current="home" image="/portfolio/sanblasfull.jpg" jsonld={homeJsonLd()}>
   <Preloader />
 
   <!-- HERO -->

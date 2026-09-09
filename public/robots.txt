@@ -5,5 +5,67 @@ Allow: /
 Disallow: /presentaciones/
 Disallow: /propuestas/
 Disallow: /demo/
+Disallow: /hackathon/
+
+# Rastreadores de IA. Se permiten a propósito: el objetivo es que ChatGPT,
+# Claude, Perplexity y los resúmenes de IA de Google puedan leer y CITAR este
+# sitio. Bloquearlos ahorra ancho de banda y cuesta menciones.
+# Los documentos privados quedan igualmente fuera para todos.
+
+User-agent: GPTBot
+Allow: /
+Disallow: /presentaciones/
+Disallow: /propuestas/
+Disallow: /demo/
+Disallow: /hackathon/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /presentaciones/
+Disallow: /propuestas/
+Disallow: /demo/
+Disallow: /hackathon/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /presentaciones/
+Disallow: /propuestas/
+Disallow: /demo/
+Disallow: /hackathon/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /presentaciones/
+Disallow: /propuestas/
+Disallow: /demo/
+Disallow: /hackathon/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /presentaciones/
+Disallow: /propuestas/
+Disallow: /demo/
+Disallow: /hackathon/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /presentaciones/
+Disallow: /propuestas/
+Disallow: /demo/
+Disallow: /hackathon/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /presentaciones/
+Disallow: /propuestas/
+Disallow: /demo/
+Disallow: /hackathon/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /presentaciones/
+Disallow: /propuestas/
+Disallow: /demo/
+Disallow: /hackathon/
 
 Sitemap: https://elementoweb.com/sitemap-index.xml

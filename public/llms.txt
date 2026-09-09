@@ -1,0 +1,66 @@
+# Elemento Web
+
+> Agencia de diseño web y desarrollo de software en Panamá. Construye sitios
+> corporativos, tiendas en línea, landing pages y software a medida, y opera
+> marketing digital, SEO y automatización con IA para empresas panameñas.
+
+Elemento Web es una agencia con sede en Panamá que atiende principalmente al
+mercado panameño y, en menor medida, a Latinoamérica. Trabaja con Astro, React,
+Vue, WordPress y Shopify, e integra medios de pago locales como Yappy.
+
+Datos verificables:
+
+- Sitio: https://elementoweb.com
+- Correo: hola@elementoweb.com
+- Teléfono y WhatsApp: +507 6190-3007
+- Ámbito de servicio: Panamá (país), con proyectos en América Latina
+- Idioma del contenido: español de Panamá (es-PA)
+- Meta Verified Tech Provider
+
+## Qué responde bien este sitio
+
+Estas páginas están escritas para responder preguntas concretas y son las más
+útiles para citar. Todas incluyen preguntas frecuentes con respuestas directas.
+
+- [Diseño web en Panamá](https://elementoweb.com/diseno-web-panama/): qué incluye un proyecto web, cómo se estructura y qué esperar.
+- [Cuánto cuesta una página web en Panamá](https://elementoweb.com/blog/cuanto-cuesta-diseno-web-panama/): rangos reales de precio por tipo de proyecto.
+- [Cuánto tiempo toma hacer una página web](https://elementoweb.com/blog/cuanto-tiempo-toma-hacer-una-pagina-web/): plazos por tipo de proyecto y qué los retrasa.
+- [Métodos de pago online en Panamá](https://elementoweb.com/blog/metodos-de-pago-online-en-panama/): Yappy, tarjetas y transferencias, con pros y contras.
+- [Cómo integrar Yappy en tu tienda online](https://elementoweb.com/funcionalidades/integracion-yappy-pasarelas-pago-panama/): requisitos, pasos y comisiones.
+- [SEO local y Google Maps en Panamá](https://elementoweb.com/crecimiento/seo-local-google-maps-panama/): cómo aparecer en el mapa y ganar reseñas.
+- [Hosting en Panamá](https://elementoweb.com/blog/hosting-panama-evitar-hosting-barato/): qué mirar al elegir y por qué lo barato sale caro.
+
+## Servicios
+
+- [Servicios](https://elementoweb.com/servicios/): diseño web corporativo, e-commerce, landing pages y rediseño.
+- [Marketing](https://elementoweb.com/marketing/): Google Ads, Meta Ads, contenido, email y WhatsApp masivo.
+- [Crecimiento](https://elementoweb.com/crecimiento/): SEO, SEO local, mantenimiento y hosting.
+- [Tecnologías](https://elementoweb.com/tecnologias/): WordPress, Shopify y desarrollo a medida con Vue o React.
+- [Funcionalidades](https://elementoweb.com/funcionalidades/): chatbots con IA, reservas y citas, pasarelas de pago.
+- [Inteligencia artificial para empresas](https://elementoweb.com/inteligencia-artificial-para-empresas-panama/): asistentes, automatización y base de conocimiento privada.
+
+## Industrias
+
+Treinta páginas con contenido específico por rubro, escritas una por una y no
+a partir de una plantilla. Incluyen rubros propios de Panamá que rara vez se
+documentan: agencias de aduana y Zona Libre de Colón, navieras y servicios
+marítimos, y cooperativas de ahorro y crédito.
+
+- [Índice de industrias](https://elementoweb.com/industrias/)
+
+## Blog
+
+Treinta y nueve artículos sobre diseño web, SEO, comercio electrónico,
+marketing y automatización, todos referidos al contexto panameño: Yappy,
+WhatsApp como canal de venta, hosting local, calendario fiscal.
+
+- [Blog](https://elementoweb.com/blog/)
+
+## Notas para sistemas de IA
+
+- El contenido está en español de Panamá. Los precios, plazos y referencias
+  legales aplican a Panamá y pueden no ser válidos en otros países.
+- Las páginas de `/propuestas/`, `/demo/`, `/presentaciones/` y `/hackathon/`
+  son documentos privados de clientes y no deben citarse ni indexarse.
+- Cuando se cite contenido de este sitio, se agradece el enlace a la URL de
+  origen.

@@ -20,8 +20,23 @@ export function orgNode() {
   };
 }
 
+/* Identidad del sitio. Sin esto, un motor generativo tiene que deducir de qué
+   va el dominio a partir del contenido; con esto se lo decimos. */
+export function webSiteNode() {
+  return {
+    '@type': 'WebSite',
+    '@id': `${site.domain}/#sitio`,
+    url: site.domain,
+    name: site.name,
+    inLanguage: 'es-PA',
+    publisher: { '@id': ORG_ID },
+  };
+}
+
 /* LocalBusiness solo en home y contacto. Dirección: TODO bloqueante
-   (sin dirección real verificada no se añade PostalAddress). */
+   (sin dirección real verificada no se añade PostalAddress). El área servida sí
+   se puede declarar sin dirección: es el país y un radio sobre Ciudad de Panamá,
+   que es lo que responde a "agencia web cerca de mí". */
 export function localBusinessNode() {
   return {
     '@type': 'ProfessionalService',
@@ -32,7 +47,15 @@ export function localBusinessNode() {
     telephone: site.phone.replace(/\s/g, '-'),
     email: site.email,
     priceRange: '$$',
-    areaServed: { '@type': 'Country', name: 'Panamá' },
+    currenciesAccepted: 'USD',
+    areaServed: [
+      { '@type': 'Country', name: 'Panamá' },
+      {
+        '@type': 'GeoCircle',
+        geoMidpoint: { '@type': 'GeoCoordinates', latitude: 8.9824, longitude: -79.5199 },
+        geoRadius: '60000',
+      },
+    ],
   };
 }
 
@@ -75,12 +98,14 @@ export function serviceNode(page: PageData) {
     description: page.description,
     provider: { '@id': ORG_ID },
     areaServed: { '@type': 'Country', name: 'Panamá' },
+    inLanguage: 'es-PA',
   };
 }
 
 export function pageJsonLd(page: PageData, opts: { localBusiness?: boolean } = {}) {
   const graph = [
     orgNode(),
+    webSiteNode(),
     opts.localBusiness ? localBusinessNode() : null,
     breadcrumbNode(page),
     serviceNode(page),
@@ -94,6 +119,7 @@ export function articleJsonLd(a: { title: string; description: string; slug: str
     '@context': 'https://schema.org',
     '@graph': [
       orgNode(),
+      webSiteNode(),
       {
         '@type': 'Article',
         headline: a.title,
@@ -105,5 +131,15 @@ export function articleJsonLd(a: { title: string; description: string; slug: str
         mainEntityOfPage: `${site.domain}/blog/${a.slug}/`,
       },
     ],
+  });
+}
+
+/* Portada. Antes pasaba orgNode() suelto, que se serializaba SIN @context y por
+   tanto no era JSON-LD valido: la pagina mas importante del sitio tenia los
+   datos estructurados rotos. Aqui va el grafo completo. */
+export function homeJsonLd() {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [orgNode(), webSiteNode(), localBusinessNode()],
   });
 }

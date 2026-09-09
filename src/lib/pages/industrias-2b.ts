@@ -233,6 +233,61 @@ export const industrias2b: PageData[] = [
         text: 'El comprador ya vio el auto en su celular antes de estacionarse en tu salón. Tu web no es el catálogo: es la primera prueba de manejo.',
         strong: 'tu web es la primera prueba de manejo',
       },
+            {
+        type: 'prose',
+        h2: 'El usado deja más margen y casi siempre está peor publicado',
+        paragraphs: [
+          'En un concesionario, el auto nuevo llega con el material de la marca: fotos de estudio, fichas técnicas, campañas. El usado no llega con nada, y suele publicarse con tres fotos tomadas de prisa en el patio, sin detalle y sin historia.',
+          'Es al revés de lo que conviene. El comprador de nuevo ya decidió el modelo y compara precio y disponibilidad. El de usado no ha decidido nada: compara unidades concretas, y cada duda que no le resuelvas la resuelve descartando.',
+          'Una ficha de usado que convierte tiene lo que ninguna tiene: kilometraje real, año, dueños anteriores, si tuvo mantenimiento en agencia, historial de choques, estado de llantas y batería, y muchas fotos con luz de día, incluidos los detalles feos. Publicar un rayón cuesta menos que perder la confianza cuando el cliente lo ve en persona.',
+          '<strong>La transparencia en usados no baja el precio, sube la conversión.</strong> El comprador que llega sabiendo exactamente qué va a ver llega a comprar, no a inspeccionar.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Un lead de auto se enfría en minutos, no en días',
+        paragraphs: [
+          'La compra de un vehículo es de las decisiones más largas que toma una familia, y sin embargo el contacto inicial tiene una ventana cortísima. Quien llena un formulario a las ocho de la noche está mirando cuatro concesionarios a la vez, y responde el que conteste primero.',
+          'La realidad de casi todos los concesionarios es otra: el lead llega a un correo, alguien lo revisa al día siguiente, lo asigna a un vendedor, y ese vendedor llama dos días después. Para entonces el cliente ya visitó otro patio.',
+          'La solución no es tener gente de guardia. Es automatizar la primera respuesta —un mensaje inmediato por WhatsApp confirmando qué unidad consultó, con la ficha y el enlace para agendar prueba de manejo— y que el lead entre directo al CRM asignado, no a un correo compartido.',
+          'Eso no cierra la venta, pero mantiene la conversación abierta hasta que un humano pueda tomarla. <strong>Y en este rubro, seguir en la conversación es la mitad del trabajo.</strong> Lo montamos con <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones y CRM</a>.',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Lo que hace que un comprador se vaya a otro patio',
+        intro: 'En una compra de este tamaño, cada dato que falta se interpreta como algo que se esconde.',
+        items: [
+          'Unidades sin precio: "consultar" en un patio de usados',
+          'Fotos insuficientes o tomadas de noche bajo luz artificial',
+          'Kilometraje ausente o redondeado sospechosamente',
+          'Sin decir si el vehículo tuvo mantenimiento en agencia',
+          'Nada sobre financiamiento: bancos con los que se trabaja, abono mínimo',
+          'Unidades vendidas que siguen publicadas semanas después',
+          'Sin forma de agendar prueba de manejo que no sea llamar',
+          'Nada sobre si se recibe el carro del cliente como parte de pago',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'La postventa es el negocio que no se acaba cuando entregas el carro',
+        paragraphs: [
+          'La venta de un vehículo ocurre una vez cada varios años. El taller, los repuestos y el mantenimiento ocurren varias veces al año, durante toda la vida del carro, y con márgenes que a menudo superan los de la venta.',
+          'Casi ninguna web de concesionario trabaja eso. Toda la comunicación apunta a captar comprador nuevo, y el cliente que ya compró queda sin canal, hasta que necesita servicio y descubre que es más fácil ir al taller de la esquina.',
+          'Lo que hace falta es una sección propia de servicio: agendar cita de mantenimiento en línea, precios de los servicios programados por kilometraje, disponibilidad de repuestos y estado de la garantía. Nada de eso es complejo y cambia la retención por completo.',
+          'Y el mantenimiento agendado es la mejor puerta a la siguiente venta: el cliente que vuelve al taller cada seis meses es al que le puedes ofrecer el cambio de unidad cuando llegue el momento. <strong>Perder al cliente después de entregarle el carro es perder dos negocios, no uno.</strong>',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué medir: leads por unidad y tiempo hasta la primera respuesta',
+        paragraphs: [
+          'El primer número es el más incómodo y el más útil: cuánto tarda tu equipo en responder un lead. Medido en minutos, no en días. Casi ningún concesionario lo tiene medido, y casi todos descubren al medirlo que ahí se les va la mitad de las oportunidades.',
+          'El segundo es leads por unidad publicada. Una unidad con muchas visitas y ningún contacto tiene un problema de precio o de fotos, no de difusión, y esa distinción evita gastar en pauta para tapar un problema de publicación.',
+          'También conviene separar el interés en nuevo del interés en usado, porque son dos negocios distintos con dos ciclos distintos, y mezclarlos esconde cuál de los dos está funcionando.',
+          'Y las citas de prueba de manejo agendadas, que en este rubro es el paso que mejor predice la venta. Lo dejamos medido en un tablero corto; el planteamiento en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+        ],
+      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -242,6 +297,10 @@ export const industrias2b: PageData[] = [
           { q: '¿La web calcula el financiamiento?', a: 'Podemos poner un simulador que dé una letra estimada según monto, inicial y plazo, para que el prospecto se haga una idea. La aprobación y la tasa real dependen del banco o financiera, así que lo dejamos claro para no generar falsas expectativas.' },
           { q: '¿Sirve para vender también seminuevos y recibir usados?', a: 'Sí. Manejamos secciones separadas para nuevos y seminuevos, con filtros distintos, y un formulario de valoración para el cliente que quiere entregar su usado como inicial. Es una de las funciones que más prospectos genera.' },
           { q: '¿Cómo llegan los prospectos a mi equipo de ventas?', a: 'Cada ficha tiene botón de WhatsApp, agenda de test drive y solicitud de financiamiento. Todo eso llega con los datos del auto de interés y del cliente, para que tu vendedor tome la conversación sabiendo qué modelo lo movió.' },
+                  { q: '¿Publico el precio de los usados?', a: 'Sí. En un patio de usados, "consultar precio" hace que la mayoría siga de largo y los pocos que escriben solo preguntan precio. La transparencia en usados no baja el margen, sube la conversión: el que llega sabiendo qué va a ver llega a comprar.' },
+          { q: '¿Cuánto tiempo tengo para responder un lead de auto?', a: 'Minutos, no días. Quien consulta a las ocho de la noche está mirando cuatro concesionarios y responde al que conteste primero. Una respuesta automática por WhatsApp con la ficha y el enlace para agendar prueba mantiene la conversación abierta hasta que un vendedor pueda tomarla.' },
+          { q: '¿Qué debe llevar la ficha de un usado?', a: 'Kilometraje real, año, dueños anteriores, si tuvo mantenimiento en agencia, historial de choques, estado de llantas y batería, y muchas fotos con luz de día incluyendo los detalles feos. Publicar un rayón cuesta menos que perder la confianza cuando el cliente lo ve en persona.' },
+          { q: '¿Vale la pena una sección de postventa?', a: 'Es donde está el negocio recurrente. La venta ocurre una vez cada varios años; el taller y los repuestos, varias veces al año durante toda la vida del carro. Y el cliente que vuelve al taller es al que le puedes ofrecer el cambio de unidad cuando llegue el momento.' },
         ],
       },
       {

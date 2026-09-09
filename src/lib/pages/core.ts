@@ -233,7 +233,7 @@ export const core: PageData[] = [
     ],
     heroCtas: [
       { label: 'Llenar el formulario', href: '#formulario', primary: true },
-      { label: 'Escribir por WhatsApp', href: 'https://wa.me/50761622787?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web.' },
+      { label: 'Escribir por WhatsApp', href: 'https://wa.me/50761903007?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web.' },
     ],
     blocks: [
       {

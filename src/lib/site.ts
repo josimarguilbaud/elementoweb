@@ -8,8 +8,8 @@ export const site = {
   name: 'Elemento Web',
   domain: 'https://elementoweb.com',
   email: 'hola@elementoweb.com',
-  phone: '+507 6162-2787',
-  phoneRaw: '50761622787',
+  phone: '+507 6190-3007',
+  phoneRaw: '50761903007',
   locale: 'es_PA',
   tagline: 'Agencia de diseño web en Panamá. Sitios de alto rendimiento respaldados por desarrollo a medida e inteligencia artificial.',
 };

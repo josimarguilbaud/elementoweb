@@ -46,6 +46,13 @@ export const industriasPages: PageData[] = [
           { h3: 'Eventos, catering y bodas', text: 'Portafolio visual, paquetes y captación de reservas para un rubro donde se compra con los ojos.', link: { slug: 'industrias/diseno-web-eventos-catering-bodas-panama', label: 'Web para Eventos' } },
           { h3: 'Consultoras y servicios profesionales', text: 'Autoridad, casos y captación de clientes de alto valor para consultores, coaches y agencias.', link: { slug: 'industrias/diseno-web-consultoras-servicios-profesionales-panama', label: 'Web para Consultoras' } },
           { h3: 'Arquitectos y diseño de interiores', text: 'Portafolio que enamora, proyectos por página y captación de clientes que compran con la vista.', link: { slug: 'industrias/diseno-web-arquitectos-diseno-interiores-panama', label: 'Web para Arquitectos' } },
+        
+          { h3: 'Aduanas y Zona Libre', text: 'Cotización de trámites, seguimiento de expedientes y el contenido que capta al importador primerizo que hoy nadie atiende.', link: { slug: 'industrias/diseno-web-agencias-aduana-zona-libre-panama', label: 'Ver industria' } },
+          { h3: 'Navieras y marítimo', text: 'Credenciales verificables y versión en inglés, para competir por el cliente internacional que hoy llega vía agencias de fuera.', link: { slug: 'industrias/diseno-web-navieras-servicios-maritimos-panama', label: 'Ver industria' } },
+          { h3: 'Cooperativas y financieras', text: 'Simulador de cuota, tasas publicadas y la transparencia que un socio-dueño espera poder revisar antes de afiliarse.', link: { slug: 'industrias/diseno-web-cooperativas-financieras-panama', label: 'Ver industria' } },
+          { h3: 'Aire acondicionado y refrigeración', text: 'La emergencia que te encuentra hoy y el contrato de mantenimiento que sostiene el año, separados como los negocios distintos que son.', link: { slug: 'industrias/diseno-web-aire-acondicionado-refrigeracion-panama', label: 'Ver industria' } },
+          { h3: 'Seguridad y vigilancia', text: 'Credenciales para el comité que decide, y una sección de empleo que captura el reclutamiento que el rubro entero hace por referidos.', link: { slug: 'industrias/diseno-web-seguridad-vigilancia-panama', label: 'Ver industria' } },
+          { h3: 'Imprentas y publicidad', text: 'Cotización guiada que llega completa, especificaciones de arte publicadas y una página por línea de producción.', link: { slug: 'industrias/diseno-web-imprentas-publicidad-panama', label: 'Ver industria' } },
         ],
       },
       {

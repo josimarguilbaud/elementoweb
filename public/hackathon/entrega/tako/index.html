@@ -125,6 +125,7 @@
       <div class="fila"><dt>La placa</dt><dd>Una foto de la placa del equipo. VisionPsy la transcribe y el código saca marca, modelo, número de serie y año de fabricación.<span class="porque">La voz casi nunca da marca ni modelo. La placa además trae el año, o sea una edad exacta en vez de estimada. Cada lectura guarda su <b>huella</b>: qué modelo, con qué prompts y sobre qué imagen se produjo.</span></dd></div>
       <div class="fila"><dt>El Cliente 360</dt><dd>Todas las observaciones agrupadas por hospital y modalidad, con su nivel de confianza.<span class="porque">Cuando dos representantes no coinciden en cuántos equipos hay, se enseñan <b>los dos números</b> y se marca conflicto. Nadie decide en silencio cuál es la verdad.</span></dd></div>
       <div class="fila"><dt>Quién lo vio</dt><dd>Se entra con un <b>PIN de cuatro dígitos</b> comprobado dentro del equipo, y cada observación queda firmada con quién y cuándo.<span class="porque">Antes esto era un campo de texto con «Field User 01» ya escrito dentro: el lema prometía «quién lo vio» y el quién no lo sabía nadie. El PIN se guarda como <b>sha256(sal + pin)</b>, con sal por persona, sin una sola llamada de red.</span></dd></div>
+      <div class="fila"><dt>Dos libros, uno</dt><dd>El libro de un equipo se <b>exporta a un archivo</b>, el archivo viaja como quiera y otro equipo lo <b>funde</b> con el suyo. Sin servidor y sin nube.<span class="porque">Correr dentro del dispositivo no es lo mismo que ser descentralizado. El desacuerdo entre dos personas solo aparecía si las dos observaciones habían nacido en el mismo equipo; en campo no se habrían encontrado nunca. La identidad de una observación es su contenido, así que fundir es unir: nada se pisa, nada se pierde y fundir dos veces no duplica.</span></dd></div>
       <div class="fila"><dt>El contraste</dt><dd>Antes de guardar, Tako dice <b>qué número puso otra persona</b> en ese mismo hospital y esa misma modalidad, con nombre, fecha y la frase textual.<span class="porque">Es la respuesta a por qué un ingeniero abriría esto: un formulario solo le quita tiempo; esto le devuelve lo que la cuenta ya sabe, mientras todavía está parado en el pasillo y puede ir a contar.</span></dd></div>
     </dl>
   </section>
@@ -175,7 +176,7 @@
     <dl style="margin:0">
       <div class="fila"><dt>Observaciones</dt><dd><span class="n">13 / 13</span><span class="porque">Trece frases de campo, en español y en inglés, extraídas correctamente. 8,9 s de media por observación.</span></dd></div>
       <div class="fila"><dt>Placas</dt><dd><span class="n">4 / 4</span><span class="porque">Marca, modelo, serie y año correctos en las cuatro, incluida una gastada. 18,6 s cada una, en dos pasadas: primero la cabecera, luego las filas.</span></dd></div>
-      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">115</span><span class="porque">Corren en milisegundos, sin modelo. Cada regla de arriba tiene la suya; 70 de ellas son del PIN, el contraste y el panel.</span></dd></div>
+      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">168</span><span class="porque">Corren en milisegundos, sin modelo. Cada regla de arriba tiene la suya: 74 del PIN, el contraste y el panel, y 49 de fundir dos libros sin perder ni duplicar nada.</span></dd></div>
       <div class="fila"><dt>Primera palabra</dt><dd><span class="n">1,8 s</span><span class="porque">Y 22,8 palabras por segundo, en la GPU integrada de una computadora normal.</span></dd></div>
     </dl>
     <p>
@@ -212,6 +213,7 @@
       <div class="fila"><dt>Del padrón</dt><dd>Quien ya venía en la lista de la cuadrilla.<span class="porque">Es la garantía más fuerte que hay en el equipo.</span></dd></div>
       <div class="fila"><dt>Alta local</dt><dd>Quien se registró él mismo en esta tablet.<span class="porque">Vale para trabajar, pero el panel no lo pinta igual: no es la misma garantía.</span></dd></div>
       <div class="fila"><dt>Sin verificar</dt><dd>Las observaciones guardadas antes, cuando el nombre se tecleaba.<span class="porque">Siguen ahí, marcadas. No se borran ni se disimulan: son parte del historial de la cuenta.</span></dd></div>
+      <div class="fila"><dt>El sello del libro</dt><dd>Dice que el archivo llegó <b>entero</b>, no quién lo escribió.<span class="porque">Es integridad, no autoría: detecta un libro cortado o editado por el camino. Firmar cada observación de forma que se pueda probar la autoría es otra cosa y todavía no está hecha.</span></dd></div>
     </dl>
   </section>
 
@@ -222,6 +224,7 @@
       <div><span class="marca-p hecho">HECHO</span><span>La lectura de la placa con VisionPsy, medida, y la huella del modelo que la produjo.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>El Cliente 360 que conserva el desacuerdo, y la repregunta.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>La identidad del técnico con PIN en el equipo, el contraste antes de guardar y el panel de cobertura.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>Fundir el libro de otro equipo: identidad por contenido, unión sin pérdidas y el desacuerdo que aparece al juntarlos.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>La interfaz, con el sistema de diseño y las tipografías empaquetadas.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>Repositorio público con licencia MIT.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>El nombre: <b>Tako</b>, y el repositorio ya renombrado.</span></div>

@@ -98,7 +98,6 @@
       <span class="reto">Reto Philips</span>
       <span class="reto">Reto Tether Psy</span>
       <span class="reto">Ranking general</span>
-      <span class="reto">Nombre por decidir</span>
     </div>
   </header>
 
@@ -110,13 +109,12 @@
       que falta está marcado como falta.
     </p>
     <p>
-      <b>Sobre el nombre.</b> El concepto de <b>Lumia</b> tiene lo mejor de los tres
-      documentos: «luz sobre la caja negra» describe el problema exactamente y funciona en
-      un video sin sonido. Pero las cinco letras tienen dos choques: <b>Lumify es un
-      producto real de Philips</b> (su ecógrafo portátil) y <b>Lumia es la línea de
+      <b>El nombre ya está: Tako.</b> Se descartó <b>Lumia</b>, que era el concepto más
+      fuerte de los tres documentos, por dos choques que no se podían ignorar: <b>Lumify es
+      un producto real de Philips</b> (su ecógrafo portátil) y <b>Lumia es la línea de
       teléfonos de Nokia</b>. Presentarse ante Philips el día 11 con un nombre a una letra
-      del suyo es una conversación que preferimos no tener. El marco se queda; el nombre
-      hay que cambiarlo.
+      del suyo era una conversación que preferimos no tener. El marco de «luz sobre la caja
+      negra» se quedó; el nombre es Tako y el repositorio ya se llama así.
     </p>
   </section>
 
@@ -126,6 +124,8 @@
       <div class="fila"><dt>La voz</dt><dd>El representante <b>cuenta la visita</b> en español o en inglés. Whisper la transcribe en el equipo y de ahí sale una observación estructurada: hospital, ciudad, y por cada modalidad cuántos equipos hay, de qué marca y de qué edad.<span class="porque">Whisper rellena el silencio con subtítulos inventados. Antes de extraer nada, el código avisa si la transcripción parece ruido.</span></dd></div>
       <div class="fila"><dt>La placa</dt><dd>Una foto de la placa del equipo. VisionPsy la transcribe y el código saca marca, modelo, número de serie y año de fabricación.<span class="porque">La voz casi nunca da marca ni modelo. La placa además trae el año, o sea una edad exacta en vez de estimada. Cada lectura guarda su <b>huella</b>: qué modelo, con qué prompts y sobre qué imagen se produjo.</span></dd></div>
       <div class="fila"><dt>El Cliente 360</dt><dd>Todas las observaciones agrupadas por hospital y modalidad, con su nivel de confianza.<span class="porque">Cuando dos representantes no coinciden en cuántos equipos hay, se enseñan <b>los dos números</b> y se marca conflicto. Nadie decide en silencio cuál es la verdad.</span></dd></div>
+      <div class="fila"><dt>Quién lo vio</dt><dd>Se entra con un <b>PIN de cuatro dígitos</b> comprobado dentro del equipo, y cada observación queda firmada con quién y cuándo.<span class="porque">Antes esto era un campo de texto con «Field User 01» ya escrito dentro: el lema prometía «quién lo vio» y el quién no lo sabía nadie. El PIN se guarda como <b>sha256(sal + pin)</b>, con sal por persona, sin una sola llamada de red.</span></dd></div>
+      <div class="fila"><dt>El contraste</dt><dd>Antes de guardar, Tako dice <b>qué número puso otra persona</b> en ese mismo hospital y esa misma modalidad, con nombre, fecha y la frase textual.<span class="porque">Es la respuesta a por qué un ingeniero abriría esto: un formulario solo le quita tiempo; esto le devuelve lo que la cuenta ya sabe, mientras todavía está parado en el pasillo y puede ir a contar.</span></dd></div>
     </dl>
   </section>
 
@@ -175,7 +175,7 @@
     <dl style="margin:0">
       <div class="fila"><dt>Observaciones</dt><dd><span class="n">13 / 13</span><span class="porque">Trece frases de campo, en español y en inglés, extraídas correctamente. 8,9 s de media por observación.</span></dd></div>
       <div class="fila"><dt>Placas</dt><dd><span class="n">4 / 4</span><span class="porque">Marca, modelo, serie y año correctos en las cuatro, incluida una gastada. 18,6 s cada una, en dos pasadas: primero la cabecera, luego las filas.</span></dd></div>
-      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">45</span><span class="porque">Corren en milisegundos, sin modelo. Cada regla de arriba tiene la suya.</span></dd></div>
+      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">115</span><span class="porque">Corren en milisegundos, sin modelo. Cada regla de arriba tiene la suya; 70 de ellas son del PIN, el contraste y el panel.</span></dd></div>
       <div class="fila"><dt>Primera palabra</dt><dd><span class="n">1,8 s</span><span class="porque">Y 22,8 palabras por segundo, en la GPU integrada de una computadora normal.</span></dd></div>
     </dl>
     <p>
@@ -200,15 +200,32 @@
   </section>
 
   <section>
+    <h2>Lo que el PIN no es</h2>
+    <p>
+      Cuatro dígitos comprobados en la tablet no son el directorio corporativo de Philips,
+      y conviene decirlo antes de que lo pregunten: en un despliegue real esto lo firma el
+      SSO de la empresa. Es la prueba más fuerte que se puede dar <b>sin salir del
+      equipo</b>, que es la condición de todo el sistema. Y como en el resto de Tako, lo
+      que no se sabe no se aparenta:
+    </p>
+    <dl style="margin:0">
+      <div class="fila"><dt>Del padrón</dt><dd>Quien ya venía en la lista de la cuadrilla.<span class="porque">Es la garantía más fuerte que hay en el equipo.</span></dd></div>
+      <div class="fila"><dt>Alta local</dt><dd>Quien se registró él mismo en esta tablet.<span class="porque">Vale para trabajar, pero el panel no lo pinta igual: no es la misma garantía.</span></dd></div>
+      <div class="fila"><dt>Sin verificar</dt><dd>Las observaciones guardadas antes, cuando el nombre se tecleaba.<span class="porque">Siguen ahí, marcadas. No se borran ni se disimulan: son parte del historial de la cuenta.</span></dd></div>
+    </dl>
+  </section>
+
+  <section>
     <h2>Dónde va</h2>
     <div class="pendiente">
       <div><span class="marca-p hecho">HECHO</span><span>La extracción de la observación y su verificador, medidos.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>La lectura de la placa con VisionPsy, medida, y la huella del modelo que la produjo.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>El Cliente 360 que conserva el desacuerdo, y la repregunta.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>La identidad del técnico con PIN en el equipo, el contraste antes de guardar y el panel de cobertura.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>La interfaz, con el sistema de diseño y las tipografías empaquetadas.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>Repositorio público con licencia MIT.</span></div>
-      <div><span class="marca-p">FALTA</span><span>El nombre definitivo.</span></div>
-      <div><span class="marca-p">FALTA</span><span>El README de entrega.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>El nombre: <b>Tako</b>, y el repositorio ya renombrado.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>El README de entrega.</span></div>
       <div><span class="marca-p">FALTA</span><span>El video de cinco minutos.</span></div>
     </div>
   </section>

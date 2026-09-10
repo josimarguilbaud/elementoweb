@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrao: qué es y por qué le conviene a una firma legal — elementoweb.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand:#3b82f6; --brand-deep:#1e3a8a; --violet:#7c3aed; }
+        * { -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background: #eef2fb;
+            background-image:
+                radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,0.10), transparent 60%),
+                radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,0.12), transparent 55%),
+                radial-gradient(45rem 45rem at 50% 120%, rgba(37,99,235,0.08), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1,h2,h3,h4,.display { font-family:'Bricolage Grotesque','Inter',sans-serif; letter-spacing:-0.02em; }
+        .gradient-text {
+            background: linear-gradient(100deg,#60a5fa,#3b82f6 45%,#7c3aed);
+            -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+        }
+        .glass {
+            background: rgba(255,255,255,0.72);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 20px 40px -24px rgba(30,58,138,0.28);
+        }
+        .service-card { position:relative; transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; overflow:hidden; }
+        .service-card::before {
+            content:''; position:absolute; inset:0; border-radius:inherit; padding:1px;
+            background: linear-gradient(135deg, rgba(96,165,250,.6), rgba(124,58,237,.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            opacity:0; transition: opacity .35s ease; pointer-events:none;
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(30,58,138,0.45); }
+        .service-card:hover::before { opacity:1; }
+        .num-badge { background: linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed); box-shadow: 0 10px 22px -8px rgba(59,130,246,0.7); }
+        .reveal { opacity:0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+        .reveal.in { opacity:1; transform:none; }
+        @keyframes float1 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(20px,-16px) scale(1.08);} }
+        @keyframes float2 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-24px,14px) scale(1.12);} }
+        .orb1 { animation: float1 11s ease-in-out infinite; }
+        .orb2 { animation: float2 14s ease-in-out infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .shine {
+            background: linear-gradient(90deg,#93c5fd,#e0e7ff,#93c5fd,#c4b5fd);
+            background-size:200% auto;
+            -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+            animation: shine 5s linear infinite;
+        }
+        .price-pill { background: linear-gradient(135deg,#eff6ff,#eef2ff); border:1px solid #dbeafe; }
+        .wa-float { box-shadow: 0 14px 30px -8px rgba(22,163,74,0.6); transition: transform .25s ease, box-shadow .25s ease; }
+        .wa-float:hover { transform: translateY(-3px) scale(1.04); }
+        @keyframes waPulse { 0%{box-shadow:0 0 0 0 rgba(34,197,94,.5);} 70%{box-shadow:0 0 0 16px rgba(34,197,94,0);} 100%{box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+        .wa-pulse { animation: waPulse 2.4s infinite; }
+        .btn-primary {
+            background: linear-gradient(135deg,#3b82f6,#7c3aed);
+            transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+            box-shadow: 0 14px 28px -10px rgba(59,130,246,0.7);
+        }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 20px 34px -10px rgba(124,58,237,0.6); }
+        .ledger td { padding:.55rem 0; border-bottom:1px solid #e2e8f0; font-variant-numeric: tabular-nums; }
+        .ledger tr:last-child td { border-bottom:0; }
+        @media print {
+            body { background:#fff; }
+            .no-print { display:none !important; }
+            .reveal { opacity:1 !important; transform:none !important; }
+            main { box-shadow:none !important; margin:0 !important; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 selection:bg-violet-200 selection:text-violet-900">
+
+    <main class="max-w-4xl mx-auto my-6 sm:my-10 glass rounded-[28px] overflow-hidden">
+
+        <!-- ============ HEADER ============ -->
+        <header class="relative overflow-hidden text-white px-7 sm:px-10 pt-8 pb-10"
+                style="background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);">
+            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.55),transparent 70%);"></div>
+            <div class="orb2 absolute -bottom-24 -left-10 w-72 h-72 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(59,130,246,.5),transparent 70%);"></div>
+            <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:32px 32px;"></div>
+
+            <div class="relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-8 border-b border-white/15">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);">
+                            <svg width="26" height="26" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="25" cy="15" r="3.2" fill="#fff"/>
+                                <circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/>
+                            </svg>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="display text-lg font-bold tracking-tight">elementoweb<span class="text-violet-300">.com</span></p>
+                            <p class="text-[11px] text-blue-200/80 tracking-wide">Desarrollo Web · IA · Automatización</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm sm:justify-end">
+                        <a href="mailto:info@elementoweb.com" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            info@elementoweb.com
+                        </a>
+                        <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                            6162-2787
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+                    <div>
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-blue-200 bg-white/10 border border-white/15 rounded-full px-3 py-1 mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-400 wa-pulse"></span> Copiloto contable con IA
+                        </span>
+                        <h1 class="text-4xl sm:text-5xl font-extrabold leading-none mb-3">
+                            <span class="shine">Cifrao</span>
+                        </h1>
+                        <p class="text-blue-100/90 max-w-lg text-sm leading-relaxed">
+                            Las facturas de la firma se digitan solas. Llegan por WhatsApp, la IA las lee y las registra, y al cierre el ITBMS a pagar sale calculado, no estimado.
+                        </p>
+                    </div>
+                    <div class="shrink-0 grid gap-3 text-sm">
+                        <div class="glass !bg-white/10 !border-white/15 rounded-xl px-4 py-3 text-white">
+                            <p class="text-[11px] text-blue-200 uppercase tracking-wider mb-0.5">Preparado para</p>
+                            <p class="font-semibold">Firmas legales de Panamá</p>
+                            <p class="text-blue-200 text-xs">Su contabilidad y la de sus sociedades</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-blue-200 text-xs justify-end">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            10 de septiembre de 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="px-7 sm:px-10 py-12">
+
+            <!-- ============ INTRO ============ -->
+            <section class="reveal mb-14 text-center max-w-2xl mx-auto">
+                <h2 class="display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">¿Qué es <span class="gradient-text">Cifrao?</span></h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Es un sistema que recibe las facturas de la firma (por foto, PDF o WhatsApp) y las convierte en registros contables con Inteligencia Artificial: proveedor, RUC, fecha, monto, ITBMS y el detalle de líneas. Usted revisa y aprueba; el sistema hace la digitación, los reportes y el cálculo fiscal.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mt-6">
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">📸 La factura entra por foto</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🧾 ITBMS calculado, no estimado</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">✅ Nada se registra sin su aprobación</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">📤 Exporta a Excel y QuickBooks</span>
+                </div>
+            </section>
+
+            <!-- ============ DIFERENCIADOR ============ -->
+            <div class="reveal mb-14 rounded-[24px] p-7 sm:p-9 relative overflow-hidden border-2"
+                 style="background:linear-gradient(135deg,#fffbeb,#fff7ed);border-color:#fcd34d;">
+                <div class="absolute top-0 right-0 text-white text-[11px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-2xl" style="background:linear-gradient(135deg,#d97706,#b45309);">La gran diferencia</div>
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-14 h-14 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#fbbf24,#d97706);box-shadow:0 10px 22px -8px rgba(217,119,6,.6);">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="display text-xl sm:text-2xl font-bold text-slate-900 mb-2">Nadie tiene que aprender un sistema nuevo</h2>
+                        <p class="text-slate-700 text-sm leading-relaxed mb-3">El motivo por el que un gasto se pierde casi nunca es que sea complicado: es que la factura viaja en el bolsillo de un socio hasta fin de mes. Cualquier programa que exija entrar a un portal, recordar una contraseña y llenar un formulario reproduce el mismo problema con otra pantalla.</p>
+                        <p class="text-slate-800 text-sm leading-relaxed font-medium">Con Cifrao, el socio le manda la <strong>foto por WhatsApp</strong> (la aplicación que ya usa todos los días) y a los segundos la factura está registrada y esperando revisión. El hábito no cambia; cambia lo que pasa después de la foto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ QUE HACE ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-8">
+                    <h2 class="display text-2xl font-bold text-slate-900">Qué hace, en la práctica</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">1</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Digita la factura por usted</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Lee proveedor, RUC, número de factura, fecha, moneda, monto, ITBMS y el detalle de líneas. Da igual si llega como foto de mostrador o como PDF adjunto.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">2</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Separa el ITBMS que cobró del que pagó</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Los honorarios facturados por un lado, las compras por el otro, y el saldo a pagar a la DGI calculado sobre los documentos reales del periodo.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">3</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Nada se contabiliza sin una persona</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Todo lo capturado entra en una bandeja de «Por revisar». La IA propone; alguien de la firma corrige lo que haga falta y aprueba. Queda registrado quién y cuándo.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">4</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Cada sociedad, su propio expediente</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Una firma que administra varias sociedades las lleva todas en el mismo panel, cada una con sus documentos, su cierre y sus permisos de acceso por persona.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">5</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Cierra el mes y lo deja cerrado</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">El cierre bloquea la edición retroactiva del periodo. Lo que se aprobó en septiembre no se puede tocar en noviembre sin que quede constancia.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">6</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Si no lo dice el documento, no lo inventa</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Cuando un dato no aparece en la factura (un RUC borroso, un ITBMS que no está desglosado) lo deja vacío para que usted lo complete, en vez de rellenarlo por su cuenta.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ EL NUMERO QUE IMPORTA ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-14">
+                <h2 class="display text-2xl font-bold text-slate-900 mb-2">El ITBMS deja de ser una estimación</h2>
+                <p class="text-sm text-slate-600 leading-relaxed mb-5">Así se ve un mes cerrado en el panel. Las cifras son de un expediente de demostración, no de un cliente real:</p>
+                <table class="w-full text-sm ledger">
+                    <tbody>
+                        <tr>
+                            <td class="text-slate-700">ITBMS débito <span class="text-slate-400">· honorarios facturados</span></td>
+                            <td class="text-right font-semibold text-slate-900">$1,347.50</td>
+                        </tr>
+                        <tr>
+                            <td class="text-slate-700">ITBMS crédito <span class="text-slate-400">· compras y servicios</span></td>
+                            <td class="text-right font-semibold text-slate-900">−$455.87</td>
+                        </tr>
+                        <tr>
+                            <td class="display font-bold text-slate-900 pt-3">A pagar a la DGI</td>
+                            <td class="text-right pt-3"><span class="display text-2xl font-bold gradient-text">$891.63</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-xs text-slate-500 leading-relaxed mt-4">Sobre 38 documentos del mes. Combustible, agua, transporte de pasajeros, planilla y tasas municipales entran sin ITBMS: el cálculo respeta las exenciones en lugar de aplicarle 7% a todo.</p>
+            </div>
+
+            <!-- ============ POR QUE CONVIENE ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-14">
+                <h2 class="display text-2xl font-bold text-slate-900 mb-4">¿Por qué le conviene a una firma legal?</h2>
+                <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm text-slate-700">
+                    <p class="flex items-start gap-2"><span class="text-blue-500 shrink-0">◆</span><span><strong>El crédito fiscal se cuenta desde el día uno.</strong> La factura que se registra en octubre ya no sirve para el ITBMS de septiembre: eso se paga de más, y no se recupera.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 shrink-0">◆</span><span><strong>Nadie cambia de hábito.</strong> El socio manda una foto por WhatsApp desde donde esté. No hay portal, ni contraseña, ni formulario.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 shrink-0">◆</span><span><strong>Trazabilidad.</strong> Cada documento guarda su imagen original, quién lo aprobó y cuándo. Si alguien pregunta por un gasto de hace ocho meses, la respuesta está en una pantalla.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 shrink-0">◆</span><span><strong>Su contador recibe el mes en un archivo.</strong> Excel, CSV o formato QuickBooks, en vez de una carpeta de papeles y un mensaje pidiendo lo que falta.</span></p>
+                </div>
+            </div>
+
+            <!-- ============ PRECIOS ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-8">
+                    <h2 class="display text-2xl font-bold text-slate-900">Precios</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <p class="reveal text-sm text-slate-600 leading-relaxed mb-6 max-w-2xl">Se paga por documentos al mes, no por usuario: pueden entrar todos los socios y asistentes sin que cambie el precio. El plan lo decide cuántas sociedades administra la firma.</p>
+                <div class="grid sm:grid-cols-3 gap-5">
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <h3 class="display text-base font-bold text-slate-800 mb-1">Freelance</h3>
+                        <p class="text-3xl font-bold text-slate-900 mb-2">$39 <span class="text-xs text-slate-500 font-medium">/ mes</span></p>
+                        <p class="text-xs text-slate-600 leading-relaxed">500 documentos al mes · hasta 15 empresas · $0.15 por documento adicional.</p>
+                        <p class="text-xs text-slate-500 mt-2">Para llevar solo los libros de la firma, sobra.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 num-badge text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl">RECOMENDADO</div>
+                        <h3 class="display text-base font-bold text-slate-800 mb-1">Estudio Pro</h3>
+                        <p class="text-3xl font-bold text-slate-900 mb-2">$99 <span class="text-xs text-slate-500 font-medium">/ mes</span></p>
+                        <p class="text-xs text-slate-600 leading-relaxed">2,000 documentos al mes · hasta 50 empresas · $0.12 por documento adicional.</p>
+                        <p class="text-xs text-slate-500 mt-2">El estándar cuando además se administran sociedades de clientes.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <h3 class="display text-base font-bold text-slate-800 mb-1">Corporativo</h3>
+                        <p class="text-3xl font-bold text-slate-900 mb-2">$249 <span class="text-xs text-slate-500 font-medium">/ mes</span></p>
+                        <p class="text-xs text-slate-600 leading-relaxed">8,000 documentos al mes · empresas ilimitadas · $0.10 por documento adicional.</p>
+                        <p class="text-xs text-slate-500 mt-2">Soporte prioritario.</p>
+                    </div>
+                </div>
+                <div class="reveal rounded-2xl p-5 border border-slate-200 bg-white/70 mt-6">
+                    <p class="text-sm font-bold text-slate-800 mb-1">Enterprise · a medida</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">Integración con el sistema contable que la firma ya usa, acuerdo de nivel de servicio y soporte dedicado. Se cotiza según volumen.</p>
+                </div>
+                <p class="reveal text-[12px] text-slate-500 mt-4 text-center">Sin cargo de implementación · Prueba de 14 días sin tarjeta · Precios en USD, no incluyen ITBMS (7%).</p>
+            </div>
+
+            <!-- ============ COMO EMPEZAR ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-10">
+                <h3 class="display text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    Cómo es empezar
+                </h3>
+                <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-700">
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">1.</span><span>Se abre la cuenta de la firma con sus sociedades cargadas y las personas que la van a usar, cada una con lo que puede ver y aprobar.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">2.</span><span>Se conecta el WhatsApp sobre el número de la firma. La verificación ante Meta la tramitamos nosotros y toma unos días; mientras tanto se captura desde el panel.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">3.</span><span>Se sube el plan de cuentas de la firma, para que los asientos que proponga la IA hablen su catálogo y no uno genérico.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">4.</span><span>El primer mes se lleva en paralelo con el método actual. Si al cierre los números no cuadran con los suyos, no se sigue.</span></p>
+                </div>
+            </div>
+
+            <!-- ============ LO QUE TODAVIA NO HACE ============ -->
+            <div class="reveal rounded-2xl p-6 border border-amber-200 bg-amber-50 mb-10">
+                <p class="text-sm text-amber-900 leading-relaxed"><strong>Lo que todavía no hace:</strong> Cifrao no emite factura electrónica ante la DGI, no genera estados financieros formales (balance y estado de resultados) y la conciliación bancaria muestra el cruce contra el estado de cuenta sin guardarlo. Las tres están en la lista de trabajo, en ese orden. Se dice por delante, porque una propuesta que promete de más se cobra después.</p>
+            </div>
+
+            <!-- ============ CTA ============ -->
+            <div class="reveal text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden"
+                 style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #e0e7ff;">
+                <h3 class="display text-2xl font-bold text-slate-900 mb-2">¿Lo probamos con las facturas de este mes? 🚀</h3>
+                <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">Catorce días sin tarjeta. Se abre la cuenta con una sola sociedad y en una tarde se ve si el ITBMS que calcula coincide con el que la firma ya tenía estimado.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center no-print">
+                    <a href="https://wa.me/50761622787?text=Hola%2C%20quiero%20probar%20Cifrao%20en%20mi%20firma."
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                        Escribir por WhatsApp
+                    </a>
+                    <a href="mailto:info@elementoweb.com?subject=Prueba%20de%20Cifrao"
+                       class="inline-flex items-center justify-center gap-2 btn-primary text-white font-semibold rounded-xl px-6 py-3.5 text-sm">
+                        Escribir por correo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="px-7 sm:px-10 py-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#122043);">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);">
+                        <svg width="22" height="22" viewBox="0 0 50 52" fill="none"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/></svg>
+                    </div>
+                    <div>
+                        <p class="display font-bold">elementoweb<span class="text-violet-300">.com</span></p>
+                        <p class="text-[11px] text-blue-200/70">Documento confidencial · Cifras de ejemplo, de un expediente de demostración</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-blue-100">
+                    <a href="mailto:info@elementoweb.com" class="hover:text-white transition">info@elementoweb.com</a>
+                    <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="hover:text-white transition">+507 6162-2787</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <a href="https://wa.me/50761622787?text=Hola%2C%20tengo%20una%20consulta%20sobre%20Cifrao."
+       target="_blank" rel="noopener"
+       class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse"
+       aria-label="Escríbenos por WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    </a>
+
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = Math.min(i * 40, 200) + 'ms';
+            io.observe(el);
+        });
+    </script>
+</body>
+</html>

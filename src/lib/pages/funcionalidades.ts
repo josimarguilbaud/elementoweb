@@ -22,6 +22,7 @@ export const funcionalidades: PageData[] = [
         h2: 'Qué puedes integrar',
         items: [
           { h3: 'Yappy y pasarelas de pago', text: 'Cobra en tu web como pagan los panameños: Botón de Pago Yappy oficial más tarjetas. Sin transferencias por captura de pantalla.', link: { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y Pasarelas' } },
+          { h3: 'Integración de CyberSource', text: 'Si tu banco te dio las llaves de CyberSource, dejamos tu web cobrando con tarjeta de verdad: firma en el servidor, 3-D Secure 2 y confirmación por webhook.', link: { slug: 'funcionalidades/integracion-cybersource-panama', label: 'Integración CyberSource' } },
           { h3: 'Chatbot con IA', text: 'Un asistente entrenado con tu información que responde en tu web, WhatsApp e Instagram las 24 horas. Con ChatMantis, nuestro producto.', link: { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' } },
           { h3: 'Reservas y citas online', text: 'Tu cliente agenda solo, con disponibilidad real, recordatorios automáticos y pago anticipado si lo necesitas.', link: { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' } },
         ],
@@ -219,6 +220,7 @@ export const funcionalidades: PageData[] = [
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas Online' },
           { slug: 'tecnologias/diseno-web-shopify-panama', label: 'Shopify' },
           { slug: 'blog/como-integrar-yappy-tu-tienda-online', label: 'Guía: integrar Yappy' },
+          { slug: 'funcionalidades/integracion-cybersource-panama', label: 'Integración CyberSource' },
         ],
       },
     ],

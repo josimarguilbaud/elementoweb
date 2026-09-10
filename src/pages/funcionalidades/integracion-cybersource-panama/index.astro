@@ -1,0 +1,566 @@
+---
+/* Página de SERVICIO para la integración de CyberSource Unified Checkout.
+ *
+ * Nace de una propuesta comercial (el HTML que trajo Josimar) y se convierte en
+ * página pública: fuera los marcadores de cliente, la validez de la oferta y el
+ * bloque de firmas, que solo tienen sentido en un documento dirigido a una
+ * empresa concreta. Dentro lo que una página de servicio necesita y la
+ * propuesta no traía: qué es CyberSource para quien no lo conoce, cuándo NO
+ * conviene, preguntas frecuentes con datos estructurados y una forma de
+ * contactar.
+ *
+ * El esquema de pago se alineó al del resto del sitio (50/30/20 y ITBMS 7%,
+ * ver /como-trabajamos/). La propuesta original decía 50/50, que contradecía
+ * lo que publica el sitio.
+ *
+ * Vive como página propia y no en el registro de src/lib/pages porque tiene
+ * maqueta a medida, igual que /inteligencia-artificial-para-empresas-panama/.
+ */
+import Base from '../../../layouts/Base.astro';
+import { site, url, wa } from '../../../lib/site';
+import { orgNode } from '../../../lib/schema';
+import { heroFor, ogFor } from '../../../lib/img';
+
+const slug = 'funcionalidades/integracion-cybersource-panama';
+const title = 'Integración CyberSource en Panamá | Pasarela de Pago';
+const description =
+  'Integramos CyberSource Unified Checkout en tu web en Panamá: tarjetas con 3-D Secure 2, webhooks y alcance PCI-DSS SAQ A. Desde $1,050, precio cerrado.';
+
+const hero = heroFor({ slug, h1: 'Integración de CyberSource Unified Checkout' }, 1600, 0.7);
+const waCotizar = wa('Hola, quiero cotizar la integración de CyberSource en mi web.');
+
+/* Los tres alcances. Los precios son los del sitio: en dólares y sin ITBMS. */
+const planes = [
+  {
+    tier: 'Alcance 1',
+    nombre: 'Esencial',
+    etiqueta: 'Cobro directo',
+    precio: '$1,050',
+    plazo: '5 a 7 días hábiles',
+    para: 'Cobros inmediatos en los que el cliente paga y ve el resultado en la misma pantalla. Sin estados diferidos ni sincronización con otros sistemas.',
+    soporte: '15 días de soporte tras el lanzamiento',
+    incluye: [
+      'Generación del <strong>capture context</strong> y las llaves de un solo uso en tu servidor.',
+      'Firma de cada petición con <strong>HMAC-SHA256</strong>, para que nadie pueda alterar el monto.',
+      'Checkout embebido en tu página de cobro, con los campos de tarjeta alojados por CyberSource.',
+      'Pantallas de pago aprobado y pago rechazado, con el mensaje que corresponde a cada caso.',
+      'Pruebas completas en el ambiente de <strong>sandbox</strong> antes de tocar producción.',
+    ],
+    fuera: ['Webhooks en el servidor', 'Módulo de reembolsos', 'Tarjetas guardadas'],
+  },
+  {
+    tier: 'Alcance 2',
+    nombre: 'Profesional',
+    etiqueta: 'El que recomendamos',
+    destacado: true,
+    precio: '$2,150',
+    plazo: '10 a 14 días hábiles',
+    para: 'Tiendas y portales donde perder una orden cuesta dinero. El servidor confirma cada pago por su cuenta, aunque el cliente cierre la ventana antes de volver.',
+    soporte: '30 días de soporte tras el lanzamiento',
+    incluye: [
+      'Todo lo del alcance Esencial.',
+      '<strong>Webhook verificado:</strong> tu servidor recibe la confirmación de CyberSource y actualiza la orden solo, sin depender del navegador.',
+      '<strong>Registro en base de datos:</strong> identificador de transacción, código de autorización, monto y estado, para que puedas auditar y conciliar.',
+      '<strong>3-D Secure 2 configurado:</strong> la autenticación del banco emisor, que traslada la responsabilidad del contracargo por fraude al emisor cuando se aprueba.',
+      'Manejo de los casos que casi nadie prueba: pago duplicado, timeout y reintento.',
+      'Acompañamiento en el paso a producción y en el primer cobro real.',
+    ],
+    fuera: ['Reembolsos desde tu panel', 'Integración con ERP o CRM'],
+  },
+  {
+    tier: 'Alcance 3',
+    nombre: 'Avanzado',
+    etiqueta: 'Operación completa',
+    precio: '$3,850',
+    plazo: '18 a 25 días hábiles',
+    para: 'Empresas con volumen, donde alguien de administración necesita resolver reembolsos y consultar cobros sin entrar al portal de CyberSource ni pedirle nada a un programador.',
+    soporte: '60 días de soporte prioritario',
+    incluye: [
+      'Todo lo del alcance Profesional.',
+      '<strong>Reembolsos y anulaciones</strong> totales o parciales desde tu propio panel, con registro de quién los hizo.',
+      '<strong>Tarjetas guardadas:</strong> tokenización del cliente para cobros de un clic y suscripciones, sin que la tarjeta pase nunca por tu base de datos.',
+      '<strong>Conexión con tu ERP o CRM:</strong> el cobro dispara el recibo, la factura o la tarjeta en el sistema que ya usas.',
+      'Panel de conciliación: lo cobrado en CyberSource contra lo registrado en tu sistema.',
+      '<strong>Documentación técnica:</strong> diagramas del flujo y manual de mantenimiento, para que no dependas de nosotros.',
+    ],
+    fuera: [],
+  },
+];
+
+/* Matriz comparativa. null = no incluido. */
+const matriz = [
+  ['Firma criptográfica HMAC-SHA256 en el servidor', true, true, true],
+  ['Checkout embebido con el SDK de Unified Checkout', true, true, true],
+  ['Respuesta capturada en el navegador (síncrona)', true, true, true],
+  ['Webhook verificado en el servidor (confirmación asíncrona)', null, true, true],
+  ['Orden, código de autorización e ID de transacción en base de datos', null, true, true],
+  ['3-D Secure 2 (EMV 3DS)', 'Básico', 'Completo', 'Completo'],
+  ['Reembolsos y anulaciones sin entrar al portal de CyberSource', null, null, true],
+  ['Tarjetas guardadas y cobros recurrentes', null, null, true],
+  ['Conexión con ERP, CRM o sistema contable', null, null, true],
+  ['Soporte tras salir a producción', '15 días', '30 días', '60 días'],
+];
+
+const fases = [
+  { n: '01', t: 'Credenciales y ambiente', d: 'Recibimos tu merchant ID y las llaves de sandbox, y montamos las variables de entorno donde deben estar: en el servidor, nunca en el código del navegador.', dias: 'Días 1 y 2' },
+  { n: '02', t: 'Servidor y seguridad', d: 'La firma HMAC, la generación del capture context y el endpoint que recibe y verifica los webhooks de CyberSource.', dias: 'Días 3 a 6' },
+  { n: '03', t: 'Checkout y pruebas', d: 'El checkout embebido en tu página de cobro, las pantallas de respuesta y la batería de tarjetas de prueba, incluidas las que deben fallar.', dias: 'Días 7 a 9' },
+  { n: '04', t: 'Paso a producción', d: 'Cambio a credenciales reales, primer cobro de verdad con monto mínimo, y te entregamos accesos y guía de operación.', dias: 'Días 10 a 12', fin: true },
+];
+
+const faqs = [
+  {
+    q: '¿Qué es CyberSource y en qué se diferencia de Yappy?',
+    a: 'CyberSource es la pasarela de pagos de Visa: procesa tarjetas de crédito y débito y es la que varios bancos adquirentes ofrecen a sus comercios. Yappy es un botón de pago local que mueve dinero entre cuentas panameñas. No compiten, se complementan: lo habitual en una tienda en Panamá es tener los dos, Yappy para quien paga desde su banco y tarjeta para quien paga con crédito o desde el exterior.',
+  },
+  {
+    q: '¿Cuánto cuesta integrar CyberSource en mi web?',
+    a: 'Desde $1,050 para el cobro directo, $2,150 para la versión con webhooks y base de datos, que es la que recomendamos para una tienda, y $3,850 cuando además necesitas reembolsos desde tu panel y tarjetas guardadas. Precio cerrado por escrito antes de arrancar, en dólares y sin incluir ITBMS (7%). Las comisiones por transacción las cobra CyberSource o tu banco y van aparte de nuestros honorarios.',
+  },
+  {
+    q: '¿Qué necesito tener antes de que empecemos?',
+    a: 'Tres cosas: la cuenta de comercio ya aprobada con tu banco adquirente, el merchant ID con sus llaves de sandbox y producción, y acceso al servidor o repositorio de tu sitio. Si todavía no tienes la cuenta de comercio, ese trámite va primero y lo lleva el banco, no nosotros. Podemos ayudarte a entender qué te van a pedir.',
+  },
+  {
+    q: '¿Mi servidor va a guardar números de tarjeta?',
+    a: 'No, y ese es el punto del checkout embebido. Los campos donde se escribe el número, la fecha y el código de seguridad los sirve CyberSource dentro de tu página: los datos viajan directo a ellos y tu servidor nunca los ve ni los almacena. Eso mantiene tu cumplimiento PCI-DSS en el cuestionario más simple, el SAQ A, en vez de obligarte a la certificación completa.',
+  },
+  {
+    q: '¿Por qué hace falta un webhook si el navegador ya me dice si el pago pasó?',
+    a: 'Porque el navegador se puede cerrar. Si el cliente paga y cierra la pestaña antes de volver a tu sitio, la respuesta síncrona nunca llega y tú tienes un cobro en CyberSource sin orden registrada. El webhook lo manda el servidor de CyberSource al tuyo, así que la orden se actualiza igual. Es la diferencia principal entre el alcance Esencial y el Profesional, y es la razón por la que para una tienda recomendamos el segundo.',
+  },
+  {
+    q: '¿Qué es 3-D Secure y me conviene activarlo?',
+    a: 'Es la verificación que hace el banco que emitió la tarjeta, normalmente un código al celular del cliente. Suma un paso al pago, y en cambio traslada al emisor la responsabilidad del contracargo por fraude cuando la autenticación se aprueba. Con la versión 2 ese paso muchas veces es invisible, porque el banco decide no pedir nada si la operación le parece de bajo riesgo. Para vender en línea en Panamá, sí conviene.',
+  },
+  {
+    q: '¿Cuándo NO conviene esta integración?',
+    a: 'Cuatro casos. Si tu banco no te ofreció CyberSource, hay que integrar la pasarela que sí te dio. Si tu volumen es bajo y el ticket alto, cobrar por Yappy o transferencia te sale gratis y funciona. Si tu tienda es Shopify o WooCommerce y existe un módulo oficial de tu pasarela, ese módulo puede alcanzarte sin desarrollo a medida. Y si todavía no tienes cuenta de comercio, primero el banco. Te lo decimos antes de cotizar, no después.',
+  },
+  {
+    q: '¿Funciona sobre la web que ya tengo?',
+    a: 'Sí, siempre que tenga un servidor donde podamos correr la firma y recibir los webhooks. Trabajamos sobre WordPress, WooCommerce, desarrollos en Vue o React y sitios a medida. Lo primero es una revisión técnica sin costo: si tu sitio actual no da para hacerlo bien, te lo decimos antes de facturarte, no a mitad del proyecto.',
+  },
+];
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    orgNode(),
+    {
+      '@type': 'Service',
+      '@id': `${site.domain}${url(slug)}#servicio`,
+      name: 'Integración de CyberSource Unified Checkout',
+      serviceType: 'Integración de pasarela de pago con tarjeta',
+      description,
+      provider: { '@id': `${site.domain}/#organizacion` },
+      areaServed: { '@type': 'Country', name: 'Panamá' },
+      inLanguage: 'es-PA',
+      offers: planes.map((p) => ({
+        '@type': 'Offer',
+        name: `Integración CyberSource · ${p.nombre}`,
+        price: p.precio.replace(/[$,]/g, ''),
+        priceCurrency: 'USD',
+        description: p.para,
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${site.domain}/` },
+        { '@type': 'ListItem', position: 2, name: 'Funcionalidades', item: `${site.domain}/funcionalidades/` },
+        { '@type': 'ListItem', position: 3, name: 'Integración CyberSource', item: `${site.domain}${url(slug)}` },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    },
+  ],
+};
+
+const marca = (v: boolean | string | null) =>
+  v === true ? 'si' : v === null ? 'no' : 'texto';
+---
+
+<Base title={title} description={description} current="funcionalidades" dark image={ogFor(slug)} jsonld={jsonld}>
+
+  <!-- ============ HERO ============ -->
+  <section class="relative overflow-hidden bg-night pt-36 pb-20 text-white md:pt-44 md:pb-24">
+    <div class="absolute inset-0 mesh-dark opacity-50"></div>
+    <div class="sphere sphere-dark h-[440px] w-[440px] -left-24 -top-16" style="background:#00688c;opacity:.4"></div>
+    <div class="sphere sphere-dark h-[360px] w-[360px] right-[-6rem] top-20" style="background:#5ec8e8;opacity:.3"></div>
+
+    <div class="relative mx-auto max-w-7xl px-6">
+      <nav aria-label="Ruta de navegación" class="mb-7 text-sm text-white/45">
+        <a href="/" class="transition-colors hover:text-teal">Inicio</a>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <a href="/funcionalidades/" class="transition-colors hover:text-teal">Funcionalidades</a>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <span class="text-white/70">Integración CyberSource</span>
+      </nav>
+
+      <div class="grid items-center gap-12 lg:grid-cols-[1.15fr_1fr]">
+        <div>
+          <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-1.5 text-xs font-semibold text-white/70">
+            <span class="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-teal to-violet"></span>
+            Integración de pasarela de pago
+          </p>
+          <h1 class="font-display text-[clamp(2rem,5vw,3.6rem)] font-extrabold leading-[1.04]">
+            Integración de <span class="grad-text">CyberSource</span> Unified Checkout
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/60">
+            Dejamos tu web cobrando con tarjeta de crédito y débito de verdad: firma en el servidor,
+            autenticación 3-D Secure 2 y confirmación por webhook, para que ninguna orden se pierda
+            porque alguien cerró la ventana.
+          </p>
+
+          <div class="mt-9 flex flex-wrap items-center gap-4">
+            <a href={waCotizar} target="_blank" rel="noopener" data-magnetic="0.35"
+               class="inline-flex items-center gap-2.5 rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-ink shadow-2xl shadow-teal/25 transition-colors hover:bg-white">
+              Cotizar la integración
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="19" x2="19" y2="5" /><polyline points="5 5 19 5 19 19" /></svg>
+            </a>
+            <a href="#alcances" class="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white/85 transition-colors hover:border-teal hover:text-teal">Ver alcances y precios</a>
+          </div>
+
+          <ul class="mt-9 flex flex-wrap gap-2.5">
+            {['PCI-DSS SAQ A', '3-D Secure 2 (EMV 3DS)', 'HMAC-SHA256', 'Sandbox antes de producción'].map((t) => (
+              <li class="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-3.5 py-2 text-xs font-medium text-white/75">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0099cc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-11" /></svg>
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <img src={hero.src} alt="Una mano sostiene una tarjeta bancaria sobre un celular, a punto de pagar en línea" width="1600" height="1120" loading="eager" fetchpriority="high" decoding="async" class="relative aspect-[10/7] w-full rounded-[1.75rem] border border-white/10 object-cover shadow-2xl" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUÉ ES ============ -->
+  <section class="bg-paper py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl">
+        <p class="mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/60">Antes de los precios</p>
+        <h2 class="font-display text-[clamp(1.9rem,4.2vw,3rem)] font-extrabold leading-[1.05] text-ink">Qué es CyberSource y qué es Unified Checkout</h2>
+        <p class="mt-6 text-lg leading-relaxed text-ink/60">
+          <strong class="font-semibold text-ink">CyberSource es la pasarela de pagos de Visa.</strong> Es la
+          plataforma que varios bancos adquirentes le ofrecen a sus comercios para procesar tarjetas de
+          crédito y débito. Si tu banco en Panamá te habló de CyberSource al aprobarte la cuenta de
+          comercio, esta es la integración que te toca.
+        </p>
+        <p class="mt-5 text-lg leading-relaxed text-ink/60">
+          <strong class="font-semibold text-ink">Unified Checkout es su formulario de pago embebido.</strong>
+          Los campos donde tu cliente escribe la tarjeta se ven dentro de tu página, pero los sirve
+          CyberSource: el número viaja directo a ellos y tu servidor nunca lo toca. Tu cliente no sale de tu
+          web y tú no cargas con el riesgo de guardar tarjetas.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-5 md:grid-cols-3">
+        <div class="rounded-3xl border border-ink/10 bg-white p-7 shadow-sm shadow-ink/[0.03]">
+          <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-teal-deep/10 text-teal-deep">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20" /></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-ink">Tarjetas de verdad</h3>
+          <p class="mt-2.5 text-sm leading-relaxed text-ink/60">
+            Crédito y débito, locales y del exterior. Es lo que te falta si hoy solo puedes cobrar por
+            transferencia o por Yappy y estás perdiendo al cliente que paga con tarjeta.
+          </p>
+        </div>
+        <div class="rounded-3xl border border-ink/10 bg-white p-7 shadow-sm shadow-ink/[0.03]">
+          <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-teal-deep/10 text-teal-deep">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4 3.5 6.5 8 8 4.5-1.5 8-4 8-8V6l-8-3Z" /><path d="m9 12 2 2 4-4" /></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-ink">Sin cargar con los datos</h3>
+          <p class="mt-2.5 text-sm leading-relaxed text-ink/60">
+            Los campos de tarjeta los aloja CyberSource. Tu servidor no ve ni guarda el número, así que tu
+            cumplimiento PCI-DSS se queda en el cuestionario más simple, el SAQ A.
+          </p>
+        </div>
+        <div class="rounded-3xl border border-ink/10 bg-white p-7 shadow-sm shadow-ink/[0.03]">
+          <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-teal-deep/10 text-teal-deep">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v6l4 2" /><circle cx="12" cy="12" r="9" /></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-ink">Ninguna orden perdida</h3>
+          <p class="mt-2.5 text-sm leading-relaxed text-ink/60">
+            El webhook confirma cada cobro servidor a servidor. Si tu cliente cierra la pestaña justo
+            después de pagar, la orden se registra igual. Es el error silencioso más común de estas
+            integraciones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ALCANCES Y PRECIOS ============ -->
+  <section id="alcances" class="relative overflow-hidden bg-white py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="font-display text-[clamp(1.9rem,4.2vw,3rem)] font-extrabold leading-[1.05] text-ink">Tres alcances, precio cerrado</h2>
+        <p class="mt-5 text-lg leading-relaxed text-ink/60">
+          La diferencia entre uno y otro no es de calidad: es cuánto tiene que hacer tu sistema solo
+          después del cobro. Elige por volumen de operaciones, no por presupuesto.
+        </p>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        {planes.map((p) => (
+          <div class={`relative flex flex-col rounded-3xl border p-7 ${p.destacado ? 'border-teal-deep/50 bg-white shadow-xl shadow-teal-deep/10 lg:-mt-3 lg:mb-3' : 'border-ink/10 bg-paper'}`}>
+            {p.destacado && (
+              <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-teal-deep px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white">{p.etiqueta}</span>
+            )}
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <span class={`text-xs font-bold uppercase tracking-wider ${p.destacado ? 'text-teal-deep' : 'text-ink/45'}`}>{p.tier}</span>
+                <h3 class="mt-1 font-display text-2xl font-bold text-ink">{p.nombre}</h3>
+              </div>
+              {!p.destacado && (
+                <span class="shrink-0 rounded-md bg-ink/[0.06] px-2.5 py-1 text-xs font-semibold text-ink/60">{p.etiqueta}</span>
+              )}
+            </div>
+
+            <p class="mt-3.5 text-sm leading-relaxed text-ink/55">{p.para}</p>
+
+            <div class="mt-7">
+              <div class="flex items-baseline gap-1.5">
+                <span class="font-display text-4xl font-extrabold text-ink">{p.precio}</span>
+                <span class="text-sm font-semibold text-ink/40">USD</span>
+              </div>
+              <p class="mt-1.5 text-xs font-medium text-ink/50">Pago único · Entrega en {p.plazo}</p>
+            </div>
+
+            <hr class="my-6 border-ink/[0.08]" />
+
+            <ul class="flex flex-1 flex-col gap-3 text-sm">
+              {p.incluye.map((t) => (
+                <li class="flex items-start gap-2.5 text-ink/70">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00688c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-1 shrink-0" aria-hidden="true"><path d="m5 12 5 5 9-11" /></svg>
+                  <span set:html={t}></span>
+                </li>
+              ))}
+              {p.fuera.map((t) => (
+                <li class="flex items-start gap-2.5 text-ink/30">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" class="mt-1 shrink-0" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+                  <span class="line-through">{t}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p class={`mt-7 border-t pt-4 text-center text-[11px] font-semibold ${p.destacado ? 'border-ink/[0.08] text-teal-deep' : 'border-ink/[0.08] text-ink/50'}`}>{p.soporte}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="mx-auto mt-9 max-w-3xl text-center text-sm leading-relaxed text-ink/50">
+        Precios en dólares, no incluyen ITBMS (7%). El pago va en tres partes, igual que el resto de
+        nuestros proyectos: 50% para arrancar, 30% al aprobar la demostración en sandbox y 20% al pasar a
+        producción. Las comisiones por transacción las cobra CyberSource o tu banco adquirente y son
+        independientes de estos honorarios.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ MATRIZ COMPARATIVA ============ -->
+  <section class="bg-paper py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <h2 class="font-display text-[clamp(1.9rem,4.2vw,2.8rem)] font-extrabold leading-[1.05] text-ink">Qué entra en cada alcance</h2>
+      <p class="mt-4 max-w-2xl text-lg text-ink/55">La misma información de arriba, tarea por tarea, para que la puedas comparar sin volver a subir.</p>
+
+      <div class="mt-10 overflow-x-auto rounded-3xl border border-ink/10 bg-white shadow-sm shadow-ink/[0.03]">
+        <table class="w-full min-w-[720px] border-collapse text-left text-sm">
+          <caption class="sr-only">Comparación de tareas técnicas incluidas en los tres alcances de integración</caption>
+          <thead>
+            <tr class="border-b border-ink/10 bg-ink/[0.02]">
+              <th scope="col" class="px-6 py-4 font-display font-bold text-ink">Tarea técnica</th>
+              <th scope="col" class="px-4 py-4 text-center font-display font-bold text-ink/70">Esencial<span class="mt-0.5 block text-xs font-medium text-ink/40">$1,050</span></th>
+              <th scope="col" class="bg-teal-deep/[0.04] px-4 py-4 text-center font-display font-bold text-teal-deep">Profesional<span class="mt-0.5 block text-xs font-medium text-teal-deep/60">$2,150</span></th>
+              <th scope="col" class="px-4 py-4 text-center font-display font-bold text-ink/70">Avanzado<span class="mt-0.5 block text-xs font-medium text-ink/40">$3,850</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {matriz.map(([tarea, a, b, c]) => (
+              <tr class="border-b border-ink/[0.06] last:border-0">
+                <th scope="row" class="px-6 py-3.5 text-left font-medium text-ink/80">{tarea}</th>
+                {[a, b, c].map((v, i) => (
+                  <td class={`px-4 py-3.5 text-center ${i === 1 ? 'bg-teal-deep/[0.03]' : ''}`}>
+                    {marca(v) === 'si' && (
+                      <>
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#00688c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="inline-block" aria-hidden="true"><path d="m5 12 5 5 9-11" /></svg>
+                        <span class="sr-only">Incluido</span>
+                      </>
+                    )}
+                    {marca(v) === 'no' && (
+                      <>
+                        <span class="text-ink/20" aria-hidden="true">—</span>
+                        <span class="sr-only">No incluido</span>
+                      </>
+                    )}
+                    {marca(v) === 'texto' && <span class="text-sm font-semibold text-ink/70">{v}</span>}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEGURIDAD ============ -->
+  <section class="relative overflow-hidden bg-night py-24 text-white md:py-28">
+    <div class="absolute inset-0 mesh-dark opacity-40"></div>
+    <div class="sphere sphere-dark h-[380px] w-[380px] left-1/2 -top-24 -translate-x-1/2" style="background:#00688c;opacity:.35"></div>
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="max-w-2xl">
+        <h2 class="font-display text-[clamp(1.9rem,4.2vw,2.8rem)] font-extrabold leading-[1.05]">Dónde está el riesgo y cómo se cierra</h2>
+        <p class="mt-5 text-lg leading-relaxed text-white/60">
+          Una integración de pagos mal hecha no falla con un error visible. Falla cobrando de menos,
+          registrando de más, o dejando abierta la puerta para que alguien cambie el precio desde el
+          navegador.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-6 md:grid-cols-2">
+        <div class="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
+          <div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-teal/15 text-teal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>
+          </div>
+          <h3 class="font-display text-xl font-bold">Alcance PCI-DSS: SAQ A</h3>
+          <p class="mt-3 text-sm leading-relaxed text-white/60">
+            Con el checkout embebido, el número de tarjeta, la fecha y el código de seguridad los captura
+            CyberSource en campos que ellos controlan. Tu servidor nunca los recibe. Eso te deja en el
+            cuestionario de autoevaluación más corto, el SAQ A, en lugar de la certificación completa que
+            exige guardar datos de tarjeta. Es una diferencia de miles de dólares al año en auditoría.
+          </p>
+        </div>
+        <div class="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
+          <div class="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-teal/15 text-teal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 12 2 2 4-4" /><path d="M12 3 4 6v6c0 4 3.5 6.5 8 8 4.5-1.5 8-4 8-8V6l-8-3Z" /></svg>
+          </div>
+          <h3 class="font-display text-xl font-bold">Firma en el servidor, no en el navegador</h3>
+          <p class="mt-3 text-sm leading-relaxed text-white/60">
+            Cada petición a la API se firma con HMAC-SHA256 usando la llave secreta del comercio, y esa
+            llave vive solo en el servidor. Sin esto, cualquiera con las herramientas de desarrollo del
+            navegador puede cambiar el monto, la moneda o el número de pedido antes de enviarlo. Es el
+            fallo que más veces encontramos al revisar integraciones hechas a la carrera.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FASES ============ -->
+  <section class="bg-paper py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <h2 class="font-display text-[clamp(1.9rem,4.2vw,2.8rem)] font-extrabold leading-[1.05] text-ink">Cómo se ejecuta, día por día</h2>
+      <p class="mt-4 max-w-2xl text-lg text-ink/55">
+        El cronograma del alcance Profesional. Los otros dos se acortan o se alargan sobre esta misma
+        secuencia, y en todos los casos apruebas en sandbox antes de que se toque producción.
+      </p>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {fases.map((f) => (
+          <div class="rounded-3xl border border-ink/10 bg-white p-6 shadow-sm shadow-ink/[0.03]">
+            <div class={`mb-4 grid h-9 w-9 place-items-center rounded-lg font-display text-sm font-bold text-white ${f.fin ? 'bg-teal-deep' : 'bg-ink/80'}`}>{f.n}</div>
+            <h3 class="font-display text-base font-bold text-ink">{f.t}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink/55">{f.d}</p>
+            <span class={`mt-4 inline-block text-[11px] font-bold uppercase tracking-wider ${f.fin ? 'text-teal-deep' : 'text-ink/40'}`}>{f.dias}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONDICIONES ============ -->
+  <section class="bg-white py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="rounded-[2rem] bg-night p-8 text-white sm:p-12">
+        <div class="max-w-3xl">
+          <h2 class="font-display text-[clamp(1.7rem,3.6vw,2.4rem)] font-extrabold leading-[1.06]">Condiciones y qué necesitamos de ti</h2>
+          <dl class="mt-8 grid gap-6 sm:grid-cols-2">
+            <div>
+              <dt class="font-display text-base font-bold text-teal">Forma de pago</dt>
+              <dd class="mt-1.5 text-sm leading-relaxed text-white/60">50% para arrancar, 30% al aprobar la demostración en sandbox y 20% al pasar a producción. Los precios no incluyen ITBMS (7%).</dd>
+            </div>
+            <div>
+              <dt class="font-display text-base font-bold text-teal">Lo que aportas</dt>
+              <dd class="mt-1.5 text-sm leading-relaxed text-white/60">Tu cuenta de comercio aprobada por el banco, el merchant ID con llaves de sandbox y producción, y acceso al servidor o repositorio del sitio.</dd>
+            </div>
+            <div>
+              <dt class="font-display text-base font-bold text-teal">Qué no incluye</dt>
+              <dd class="mt-1.5 text-sm leading-relaxed text-white/60">Las comisiones por transacción de CyberSource y de tu banco adquirente, y el trámite de la cuenta de comercio, que lo lleva el banco.</dd>
+            </div>
+            <div>
+              <dt class="font-display text-base font-bold text-teal">Garantía</dt>
+              <dd class="mt-1.5 text-sm leading-relaxed text-white/60">30 días por fallas técnicas en todos los alcances, más el período de soporte de cada uno: 15, 30 o 60 días.</dd>
+            </div>
+          </dl>
+          <p class="mt-9 text-sm leading-relaxed text-white/45">
+            CyberSource es una marca registrada de Visa Inc. No somos distribuidores ni representantes de
+            CyberSource: integramos su API en tu sitio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="bg-paper py-24 md:py-28">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-center font-display text-[clamp(1.9rem,4.2vw,2.8rem)] font-extrabold leading-[1.05] text-ink">Preguntas frecuentes</h2>
+      <div class="mt-12 flex flex-col gap-3">
+        {faqs.map((f, i) => (
+          <details open={i === 0} class="group rounded-2xl border border-ink/10 bg-white px-6 transition-colors open:border-teal-deep/30">
+            <summary class="flex cursor-pointer list-none items-center gap-4 py-5 [&::-webkit-details-marker]:hidden">
+              <span class="font-display text-sm font-bold text-teal-deep">{String(i + 1).padStart(2, '0')}</span>
+              <span class="flex-1 font-display text-lg font-semibold text-ink">{f.q}</span>
+              <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ink/15 transition-transform duration-300 group-open:rotate-45 group-open:border-teal-deep group-open:bg-teal-deep group-open:text-white">
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+              </span>
+            </summary>
+            <p class="pb-6 pl-9 pr-2 text-base leading-relaxed text-ink/60">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RELACIONADOS + CTA ============ -->
+  <section class="bg-white py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <h2 class="font-display text-[clamp(1.7rem,3.6vw,2.4rem)] font-extrabold leading-[1.05] text-ink">Antes de decidir, mira también</h2>
+      <div class="mt-9 flex flex-wrap gap-3">
+        {[
+          { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y pasarelas locales' },
+          { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },
+          { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Desarrollo a medida' },
+          { slug: 'blog/metodos-de-pago-online-en-panama', label: 'Métodos de pago en Panamá' },
+          { slug: 'como-trabajamos', label: 'Cómo trabajamos' },
+        ].map((r) => (
+          <a href={url(r.slug)} class="inline-flex items-center gap-2 rounded-full border border-ink/12 bg-paper px-5 py-2.5 text-sm font-semibold text-ink/75 transition-colors hover:border-teal-deep/40 hover:text-teal-deep">
+            {r.label}<span aria-hidden="true" class="text-teal-deep">→</span>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-16 rounded-[2rem] border border-ink/10 bg-paper p-8 text-center sm:p-12">
+        <h2 class="mx-auto max-w-2xl font-display text-[clamp(1.6rem,3.4vw,2.3rem)] font-extrabold leading-[1.08] text-ink">¿Tu banco ya te dio las llaves de CyberSource?</h2>
+        <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink/55">
+          Cuéntanos qué plataforma tiene tu sitio y qué te pidió el banco. Te decimos qué alcance necesitas
+          y qué va a costar, por escrito y antes de arrancar. La revisión técnica no tiene costo.
+        </p>
+        <div class="mt-9 flex flex-wrap items-center justify-center gap-4">
+          <a href={waCotizar} target="_blank" rel="noopener" data-magnetic="0.35"
+             class="inline-flex items-center gap-2.5 rounded-full bg-night px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-teal-deep">
+            Hablar por WhatsApp
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="19" x2="19" y2="5" /><polyline points="5 5 19 5 19 19" /></svg>
+          </a>
+          <a href="/contacto/" class="inline-flex items-center gap-2.5 rounded-full border border-ink/15 px-7 py-3.5 text-sm font-semibold text-ink/75 transition-colors hover:border-teal-deep hover:text-teal-deep">Cotizar por formulario</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

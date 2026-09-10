@@ -406,6 +406,7 @@ export const servicios: PageData[] = [
           { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },
           { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Web para Restaurantes' },
           { slug: 'blog/como-aumentar-ventas-tienda-online-panama', label: 'Cómo vender más online' },
+          { slug: 'funcionalidades/integracion-cybersource-panama', label: 'Integración CyberSource' },
         ],
       },
     ],

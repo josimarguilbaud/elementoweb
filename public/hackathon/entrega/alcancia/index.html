@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Alcancía · lo que existe hoy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --papel:#F1F4F4; --hoja:#FFFFFF; --tinta:#14181A; --media:#5E696D; --suave:#8A9498;
+    --linea:#D3DADC; --linea-f:#E4E9EA; --metal:#E7ECED;
+    --acento:#075A63; --acento-tenue:#E2EEEF;
+    --ambar:#8A5A00; --ambar-tenue:#FAF0DC;
+    --rojo:#8D3030; --rojo-tenue:#F9EBEA; --verde:#14603A;
+    --display:"Archivo","Arial Narrow",sans-serif;
+    --texto:"Public Sans","Segoe UI",system-ui,sans-serif;
+    --dato:"JetBrains Mono",Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-tema="claro"]){
+    --papel:#0F1315; --hoja:#171D1F; --tinta:#E6ECED; --media:#96A2A6; --suave:#6C787C;
+    --linea:#2A3437; --linea-f:#202829; --metal:#232B2D;
+    --acento:#4FC3CE; --acento-tenue:#103336;
+    --ambar:#D9A64E; --ambar-tenue:#2C2415;
+    --rojo:#E08A82; --rojo-tenue:#2E1A19; --verde:#5CC08C;
+  }}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.6 var(--texto);-webkit-font-smoothing:antialiased}
+  .hoja{max-width:720px;margin:0 auto;padding:clamp(28px,6vw,64px) 22px 96px;display:flex;flex-direction:column;gap:clamp(36px,6vw,52px)}
+  h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+  h1{font-size:clamp(34px,8vw,48px);font-weight:700;letter-spacing:-.022em;line-height:1.03}
+  h2{font-size:22px;font-weight:700;letter-spacing:-.01em}
+  p{margin:0;max-width:62ch}
+  .rotulo{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--suave)}
+  .num{font-family:var(--dato);font-variant-numeric:tabular-nums}
+
+  header{display:flex;flex-direction:column;gap:14px}
+  .entradilla{font-size:19px;line-height:1.5;color:var(--media);max-width:56ch}
+  .entradilla b{color:var(--tinta);font-weight:600}
+  .retos{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .reto{font-family:var(--dato);font-size:11px;letter-spacing:.05em;text-transform:uppercase;
+        padding:5px 9px;border-radius:3px;background:var(--metal);border:1px solid var(--linea);white-space:nowrap}
+
+  section{display:flex;flex-direction:column;gap:16px;padding-top:32px;border-top:1px solid var(--linea)}
+  .fila{display:grid;grid-template-columns:minmax(120px,26%) 1fr;gap:6px 20px;padding:13px 0;border-bottom:1px solid var(--linea-f);align-items:baseline}
+  .fila:last-of-type{border-bottom:0}
+  .fila dt{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--suave)}
+  .fila dd{margin:0;font-size:15.5px}
+  .fila dd .n{font-family:var(--dato);font-weight:700;font-size:17px}
+  .fila dd .porque{display:block;margin-top:3px;font-size:13.5px;color:var(--media)}
+  .fila dd .val{font-family:var(--dato);font-size:14.5px}
+  @media (max-width:520px){.fila{grid-template-columns:1fr;gap:3px}}
+
+  .marca{display:inline-flex;font-family:var(--dato);font-size:10px;font-weight:500;letter-spacing:.06em;
+         text-transform:uppercase;padding:3px 6px;border-radius:3px;white-space:nowrap;margin-left:6px}
+  .marca.leido{color:var(--tinta);background:var(--metal);border:1px solid var(--linea)}
+  .marca.nolegible{color:var(--ambar);background:var(--ambar-tenue);border:1px solid var(--ambar)}
+
+  .veredicto{border:1px solid;border-radius:3px;padding:13px 15px;display:flex;flex-direction:column;gap:5px}
+  .veredicto .est{font-family:var(--dato);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+  .veredicto p{font-size:15px}
+  .veredicto.vigente{border-color:var(--verde)} .veredicto.vigente .est{color:var(--verde)}
+  .veredicto.vencida{border-color:var(--rojo);background:var(--rojo-tenue)} .veredicto.vencida .est{color:var(--rojo)}
+  .veredicto.noev{border-color:var(--ambar);background:var(--ambar-tenue)} .veredicto.noev .est{color:var(--ambar)}
+
+  .pendiente > div{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--linea-f);font-size:15.5px}
+  .pendiente > div:last-child{border-bottom:0}
+  .pendiente .marca-p{font-family:var(--dato);font-size:10.5px;letter-spacing:.06em;color:var(--suave)}
+  .pendiente .hecho{color:var(--verde)}
+
+  .otra{margin-top:18px;font-size:14.5px}
+  .otra a{color:var(--acento);text-decoration:none;border-bottom:1px solid var(--acento);padding-bottom:1px}
+  .otra a:hover{opacity:.75}
+  footer{border-top:1px solid var(--linea);padding-top:22px;font-size:14.5px;color:var(--media)}
+</style>
+</head>
+<body>
+<div class="hoja">
+
+  <header>
+    <span class="rotulo">Lo que existe hoy &middot; Decentralized AI Hackathon</span>
+    <h1>Alcancía</h1>
+    <p class="entradilla">
+      La ventanilla de Caja de Ahorros que <b>no puede inventar un dato del cliente</b>.
+      El oficial habla, la cédula confirma, y lo que no cuadra se marca en vez de
+      resolverse solo. La IA corre dentro de la computadora de la sucursal.
+    </p>
+    <div class="retos">
+      <span class="reto">Reto Caja de Ahorros</span>
+      <span class="reto">Ranking general</span>
+      <span class="reto">Antes se llamaba Cotejo</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Nicole: esto es lo que ya está construido</h2>
+    <p>
+      Esta página existe para una cosa concreta: que el próximo documento de marca
+      salga de lo que hay, y no de lo que se podría hacer. Todo lo que aparece abajo
+      está escrito, corriendo y medido. Lo que falta está marcado como falta.
+    </p>
+    <p>
+      El nombre <b>Alcancía</b> ya está aplicado en todo el código. Lo que cambió no
+      es el producto, es cómo se llama.
+    </p>
+  </section>
+
+  <section>
+    <h2>Qué hace, exactamente</h2>
+    <p>
+      Son dos mitades y el cotejo entre ellas. Un ejecutivo de cuentas atiende a alguien
+      que viene a abrir su primera cuenta de ahorros.
+    </p>
+    <dl style="margin:0">
+      <div class="fila"><dt>La voz</dt><dd>El oficial <b>dicta la atención</b> en vez de teclear un formulario. Whisper la transcribe en el equipo y de ahí sale el expediente: nombre, cédula, producto, ingreso, domicilio, teléfono, ocupación.<span class="porque">El modelo solo propone el texto libre. La cédula, el teléfono y el ingreso los saca el código de la propia frase, porque son los que un banco no puede dejar que un modelo invente.</span></dd></div>
+      <div class="fila"><dt>El documento</dt><dd>Una foto de la cédula. VisionPsy transcribe cada línea y el código empareja etiqueta con valor.<span class="porque">Lo que no tiene etiqueta no se asigna: queda huérfano y lo confirma una persona.</span></dd></div>
+      <div class="fila"><dt>El cotejo</dt><dd>Lo dicho contra lo leído, campo por campo.<span class="porque">Es la pieza nueva, y es la que le da nombre a la función.</span></dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Los tres desenlaces del cotejo</h2>
+    <p>
+      No son dos. La diferencia entre el segundo y el tercero es lo que evita que el
+      aviso se vuelva ruido, y un aviso que salta siempre deja de leerse.
+    </p>
+    <dl style="margin:0">
+      <div class="fila"><dt>Coincide</dt><dd><span class="val">María Isabel Quintero Arjona</span><span class="marca leido">confirmado</span><span class="porque">Dijo lo mismo que dice la cédula. El dato queda confirmado.</span></dd></div>
+      <div class="fila"><dt>Contenido</dt><dd><span class="val">Ana Lucía Ferreira</span> &rarr; <span class="val">ANA LUCIA FERREIRA DOS SANTOS</span><span class="marca leido">confirmado</span><span class="porque">Dijo un apellido de menos. No es un conflicto: gana el nombre del documento y se deja escrito de dónde salió.</span></dd></div>
+      <div class="fila"><dt>Discrepa</dt><dd><span class="val">Rodrigo Bernal Sánchez</span> vs <span class="val">RODRIGO ANTONIO BERNAL SAAVEDRA</span><span class="marca nolegible">no coincide</span><span class="porque">Hay un apellido que el documento no respalda. <b>El trámite se detiene</b> hasta que lo resuelva una persona.</span></dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Lo que nunca hace</h2>
+    <p>
+      Esto es el producto. Todo lo demás es la forma de llegar aquí.
+    </p>
+    <div class="veredicto noev">
+      <span class="est">No evaluable</span>
+      <p>No se pudo leer la fecha de expiración. El trámite no sigue hasta que lo confirme una persona.</p>
+    </div>
+    <p>
+      <b>No rellena el hueco.</b> En la cédula más gastada el modelo pierde justo el campo
+      que más le importa al banco. Enseñar seis campos correctos y comerse el séptimo en
+      silencio es peor que no tener sistema: es un problema de cumplimiento con cara de
+      software que funciona.
+    </p>
+    <p>
+      <b>No arregla un nombre.</b> Si el modelo lee las letras pegadas, se dejan pegadas y
+      se avisa. Inventarle un espacio a un nombre es lo que un banco no puede permitirse.
+    </p>
+    <p>
+      <b>No adivina una fecha.</b> Si aparece una fecha sin etiqueta, se devuelve como
+      «leída pero sin saber a qué campo pertenece», con dos botones para que la persona
+      la coloque.
+    </p>
+    <p>
+      <b>No elige entre dos fuentes.</b> Cuando lo dicho y lo leído no cuadran, las enseña
+      las dos, una al lado de la otra, y para.
+    </p>
+  </section>
+
+  <section>
+    <h2>Se lee dos veces</h2>
+    <p>
+      Esto salió de medir, no de planificar. <b>VisionPsy no es determinista ni a
+      temperatura 0</b>: la misma cédula, el mismo modelo y el mismo prompt pueden dar dos
+      lecturas distintas. En otro producto sería una nota al pie. En un banco es el
+      problema entero, porque un campo puede salir bien una vez y mal la siguiente sin que
+      nadie se entere.
+    </p>
+    <p>
+      Así que <b>se lee dos veces y solo entra lo que las dos lecturas dicen igual.</b>
+    </p>
+    <dl style="margin:0">
+      <div class="fila"><dt>Coinciden</dt><dd>El campo entra.</dd></div>
+      <div class="fila"><dt>No coinciden</dt><dd>El campo <b>no entra</b>, y se dice con qué salió cada vez.<span class="porque">Se trata igual que uno que no se pudo leer: si es obligatorio, detiene el trámite.</span></dd></div>
+      <div class="fila"><dt>Una lo vio, la otra no</dt><dd>Tampoco entra.<span class="porque">Visto una sola vez no es visto. Es el fallo que más duele, porque un campo a medias parece un campo leído.</span></dd></div>
+      <div class="fila"><dt>Una fecha huérfana de una sola lectura</dt><dd>Se descarta.<span class="porque">Preguntarle al operador por un dato que quizá inventó el modelo es peor que no preguntarle nada.</span></dd></div>
+    </dl>
+    <p>
+      Cuesta el doble de tiempo. Treinta segundos de más para no abrir una cuenta con un
+      dato que el modelo no sostiene dos veces seguidas es un intercambio que cualquier
+      banco firma.
+    </p>
+  </section>
+
+  <section>
+    <h2>La huella</h2>
+    <p>
+      Cada lectura guarda <b>qué la produjo</b>: qué modelo, con qué cuantización, con qué
+      prompt y sobre qué imagen. En banca eso tiene nombre, gobernanza de modelos, y
+      responde la pregunta que hace un auditor un año después, cuando el modelo ya se
+      actualizó dos veces: <b>¿quién decidió que este documento estaba vigente?</b>
+    </p>
+    <p>
+      Los digest son de la entrada, no de la persona: no identifican a nadie y no permiten
+      reconstruir la imagen.
+    </p>
+    <p>
+      Las dos cosas se sostienen entre sí. La huella dice exactamente qué modelo y qué
+      prompt produjeron el dato; y como ese mismo modelo con la misma entrada no siempre
+      dice lo mismo, se lee dos veces y solo se acepta lo que coincide.
+    </p>
+  </section>
+
+  <section>
+    <h2>Lo que está medido</h2>
+    <dl style="margin:0">
+      <div class="fila"><dt>Campos leídos</dt><dd><span class="n">30</span><span class="porque">En cuatro cédulas sintéticas distintas.</span></dd></div>
+      <div class="fila"><dt>Campos mal</dt><dd><span class="n" style="color:var(--verde)">0</span><span class="porque">Ninguno. Lo que no pudo leer, lo dijo; lo que leyó, lo leyó bien.</span></dd></div>
+      <div class="fila"><dt>Trámites</dt><dd><span class="n">4 / 4</span><span class="porque">Decididos igual que los decidiría un operador humano con el documento delante.</span></dd></div>
+      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">102</span><span class="porque">Corren en milisegundos, sin modelo, con el texto exacto que devolvió VisionPsy.</span></dd></div>
+    </dl>
+    <p>
+      Los documentos son sintéticos y lo dicen en la propia imagen. El reto prohíbe
+      expresamente usar datos reales de clientes de cualquier entidad financiera.
+    </p>
+  </section>
+
+  <section>
+    <h2>Qué corre dentro del equipo</h2>
+    <dl style="margin:0">
+      <div class="fila"><dt>Voz</dt><dd><span class="val">Whisper small</span><span class="porque">Transcribe lo que dicta el oficial.</span></dd></div>
+      <div class="fila"><dt>Entrevista</dt><dd><span class="val">Qwen3 1.7B</span><span class="porque">Propone los campos de texto libre. El resto lo decide el código.</span></dd></div>
+      <div class="fila"><dt>Documento</dt><dd><span class="val">VisionPsy-Nano-460M</span><span class="porque">Lee la cédula, dos veces. Se carga con la primera foto, no al arrancar.</span></dd></div>
+    </dl>
+    <p>
+      <b>Cero llamadas de red.</b> No es una promesa de marketing: el servidor no tiene una
+      sola dependencia fuera de Node y QVAC. Si se desenchufa el cable, la ventanilla sigue
+      atendiendo. Por eso el argumento de privacidad aquí no es un adorno: la cédula de un
+      cliente nunca sale del equipo porque no hay a dónde mandarla.
+    </p>
+  </section>
+
+  <section>
+    <h2>Dónde va</h2>
+    <div class="pendiente">
+      <div><span class="marca-p hecho">HECHO</span><span>El motor de lectura del documento, medido, con su registro de rendimiento.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>La entrevista por voz y el expediente KYC, con la cédula, el teléfono y el ingreso leídos por código.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>El cotejo, la regla que detiene el trámite y sus 102 pruebas.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>El consenso de dos lecturas y la huella del modelo.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>El servidor y la interfaz de ventanilla, con cuatro casos medidos.</span></div>
+      <div><span class="marca-p">FALTA</span><span>Probar el servidor con los tres modelos cargados de verdad.</span></div>
+      <div><span class="marca-p">FALTA</span><span>Subir el repositorio a GitHub, público.</span></div>
+      <div><span class="marca-p">FALTA</span><span>El video de cinco minutos.</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      Una nota sobre el alcance, por si ayuda al próximo documento: esto no mueve dinero,
+      no toca transacciones y no acompaña un hábito. Es <b>la puerta de entrada</b>: los
+      primeros cinco minutos de alguien que llega a abrir su primera cuenta, resueltos
+      rápido y sin que su documento salga de la sucursal. Los no bancarizados de los que
+      habla la marca son justo los que hoy se van sin cuenta porque el trámite se traba.
+    </p>
+    <p class="otra">La otra entrega: <a href="/hackathon/entrega/tako/">el reto de Philips</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>

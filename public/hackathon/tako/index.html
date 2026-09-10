@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Tako</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#F6F5F8;
+    --hoja:#FFFFFF;
+    --tinta:#16151C;
+    --tinta-media:#4B4857;
+    --tinta-suave:#6E6B7C;
+    --sello:#4A3AA8;
+    --sello-tenue:#EDEAF9;
+    --sello-borde:#CFC7F0;
+    --rechazo:#A8332B;
+    --rechazo-tenue:#F8EBEA;
+    --ambar:#8A5B00;
+    --ambar-tenue:#FBF1DD;
+    --ambar-borde:#E6CFA0;
+    --linea:#DEDAE6;
+    --linea-fuerte:#C6C0D4;
+    --sombra:0 1px 2px rgba(22,21,28,.05), 0 8px 24px -12px rgba(22,21,28,.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --papel:#131218;
+      --hoja:#1B1A23;
+      --tinta:#EFEDF4;
+      --tinta-media:#B4B0C2;
+      --tinta-suave:#8B8799;
+      --sello:#A395FF;
+      --sello-tenue:#241F3D;
+      --sello-borde:#3C3363;
+      --rechazo:#E08078;
+      --rechazo-tenue:#2C1B1A;
+      --ambar:#E2AE5A;
+      --ambar-tenue:#2E2415;
+      --ambar-borde:#4E3C1E;
+      --linea:#2C2937;
+      --linea-fuerte:#413D50;
+      --sombra:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --papel:#131218;
+    --hoja:#1B1A23;
+    --tinta:#EFEDF4;
+    --tinta-media:#B4B0C2;
+    --tinta-suave:#8B8799;
+    --sello:#A395FF;
+    --sello-tenue:#241F3D;
+    --sello-borde:#3C3363;
+    --rechazo:#E08078;
+    --rechazo-tenue:#2C1B1A;
+    --ambar:#E2AE5A;
+    --ambar-tenue:#2E2415;
+    --ambar-borde:#4E3C1E;
+    --linea:#2C2937;
+    --linea-fuerte:#413D50;
+    --sombra:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--papel);color:var(--tinta);
+    font-family:"Public Sans","Segoe UI",system-ui,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .env{max-width:1100px;margin:0 auto;padding:0 24px}
+  .col{max-width:660px;margin-left:auto;margin-right:auto}
+  p{margin:0 0 1.1em}
+  strong{font-weight:600}
+  a{color:var(--sello)}
+
+  header.portada{padding:64px 0 40px;border-bottom:1px solid var(--linea)}
+  .eyebrow{
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--tinta-suave);font-weight:600;margin-bottom:22px;
+  }
+  h1{
+    font-family:"Libre Caslon Text",Georgia,serif;font-weight:400;
+    font-size:clamp(58px,12vw,104px);line-height:.92;letter-spacing:-.02em;
+    margin:0 0 6px;text-wrap:balance;
+  }
+  .lema{
+    font-family:"Libre Caslon Text",Georgia,serif;font-style:italic;
+    font-size:clamp(20px,3.6vw,27px);color:var(--sello);line-height:1.3;margin:0 0 26px;
+  }
+  .resumen{font-size:19px;color:var(--tinta-media);max-width:620px;margin:0}
+  .resumen b{color:var(--tinta);font-weight:600}
+
+  .reloj{
+    margin:28px 0 0;padding:18px 22px;background:var(--rechazo-tenue);
+    border:1px solid var(--rechazo);border-radius:3px;max-width:620px;
+  }
+  .reloj .t{
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--rechazo);font-weight:700;margin-bottom:7px;
+  }
+  .reloj p{margin:0;font-size:15.5px;color:var(--tinta-media)}
+  .reloj p + p{margin-top:8px}
+
+  section{padding:56px 0;border-bottom:1px solid var(--linea)}
+  section:last-of-type{border-bottom:0}
+  h2{
+    font-family:"Libre Caslon Text",Georgia,serif;font-weight:400;
+    font-size:clamp(30px,5vw,40px);line-height:1.12;letter-spacing:-.01em;
+    margin:0 0 20px;text-wrap:balance;
+  }
+  h3{font-size:17px;font-weight:700;margin:34px 0 10px;letter-spacing:-.005em}
+  .guia{font-size:15px;color:var(--tinta-suave);font-style:italic;margin:0 0 26px}
+
+  blockquote{
+    margin:34px 0;padding:24px 0;
+    border-top:1px solid var(--linea-fuerte);border-bottom:1px solid var(--linea-fuerte);
+    font-family:"Libre Caslon Text",Georgia,serif;font-style:italic;
+    font-size:clamp(23px,4vw,29px);line-height:1.32;color:var(--sello);
+    text-align:center;text-wrap:balance;
+  }
+  blockquote p{margin:0}
+  .cita-fuente{
+    display:block;margin-top:10px;font-family:"Public Sans",sans-serif;
+    font-style:normal;font-size:13px;color:var(--tinta-suave);letter-spacing:.04em;
+  }
+
+  /* ---------- maqueta Cliente 360 ---------- */
+  .demo{
+    background:var(--hoja);border:1px solid var(--linea);border-radius:5px;
+    box-shadow:var(--sombra);overflow:hidden;margin:30px 0;
+  }
+  .demo-barra{
+    padding:11px 18px;border-bottom:1px solid var(--linea);
+    font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--tinta-suave);font-weight:600;
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  }
+  .sin-red{color:var(--sello)}
+  .demo-cuerpo{padding:18px}
+  .c360-env{overflow-x:auto}
+  .c360{border-collapse:collapse;width:100%;font-size:14.5px;min-width:480px}
+  .c360 th{
+    text-align:left;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--tinta-suave);font-weight:700;padding:6px 10px 8px;
+    border-bottom:1px solid var(--linea-fuerte);
+  }
+  .c360 td{padding:10px;border-bottom:1px solid var(--linea);vertical-align:top}
+  .c360 tr.abierta td{background:var(--sello-tenue)}
+  .c360 td b{font-weight:600}
+  .num{font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums}
+  .pugna{
+    font-family:"JetBrains Mono",monospace;font-size:11px;
+    color:var(--ambar);background:var(--ambar-tenue);border:1px solid var(--ambar-borde);
+    border-radius:3px;padding:1px 6px;margin-left:5px;white-space:nowrap;
+  }
+  .conf{
+    display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;
+    padding:2px 7px;border-radius:3px;margin-right:6px;border:1px solid;
+  }
+  .conf.alta{color:var(--sello);background:var(--sello-tenue);border-color:var(--sello-borde)}
+  .conf.media{color:var(--ambar);background:var(--ambar-tenue);border-color:var(--ambar-borde)}
+  .conf.nula{color:var(--tinta-suave);background:var(--papel);border-color:var(--linea-fuerte)}
+  .porque{font-size:13px;color:var(--tinta-suave)}
+
+  .rastro{margin-top:18px;padding-top:16px;border-top:1px dashed var(--linea-fuerte)}
+  .rastro-t{
+    font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--sello);font-weight:700;margin-bottom:10px;
+  }
+  .recibos{display:flex;flex-direction:column;gap:10px}
+  .recibo{background:var(--papel);border:1px solid var(--linea);border-radius:4px;padding:12px 14px}
+  .recibo-alto{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;font-weight:600;margin-bottom:7px}
+  .chapa{
+    font-family:"JetBrains Mono",monospace;font-size:10.5px;
+    background:var(--sello);color:#fff;padding:2px 7px;border-radius:3px;
+    letter-spacing:.04em;font-weight:500;
+  }
+  :root[data-theme="dark"] .chapa{color:#131218}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .chapa{color:#131218}}
+  .recibo-datos{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--tinta-suave);line-height:1.75}
+  .recibo-datos b{color:var(--tinta-media);font-weight:500}
+  .recibo-datos i{font-style:normal;color:var(--tinta-media)}
+  .disenso{
+    margin-top:12px;padding:12px 14px;background:var(--ambar-tenue);
+    border:1px solid var(--ambar-borde);border-radius:4px;font-size:14.5px;color:var(--tinta);
+  }
+  .disenso b{color:var(--ambar)}
+
+  /* ---------- tres factores ---------- */
+  .factores{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:26px 0}
+  .factor{background:var(--hoja);border:1px solid var(--linea);border-radius:5px;padding:16px 18px;box-shadow:var(--sombra)}
+  .factor h4{
+    margin:0 0 6px;font-family:"Libre Caslon Text",Georgia,serif;font-weight:400;
+    font-size:22px;color:var(--sello);
+  }
+  .factor p{margin:0;font-size:14.5px;color:var(--tinta-media)}
+
+  /* ---------- escenas ---------- */
+  .escenas{display:flex;flex-direction:column;gap:2px;margin:28px 0 0}
+  .escena{
+    background:var(--hoja);border:1px solid var(--linea);padding:20px 22px;
+    display:grid;grid-template-columns:44px 1fr;gap:18px;
+  }
+  .escena:first-child{border-radius:5px 5px 0 0}
+  .escena:last-child{border-radius:0 0 5px 5px}
+  .escena + .escena{border-top:0}
+  .escena-n{font-family:"Libre Caslon Text",Georgia,serif;font-size:34px;line-height:1;color:var(--sello-borde)}
+  .escena h4{margin:0 0 3px;font-size:16.5px;font-weight:700}
+  .escena .dur{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--tinta-suave);margin-bottom:9px}
+  .escena p{margin:0;font-size:15.5px;color:var(--tinta-media)}
+  .escena .prueba{margin-top:9px;font-size:13.5px;color:var(--sello);font-weight:600}
+
+  /* ---------- pruebas de Philips ---------- */
+  .pruebas{list-style:none;padding:0;margin:22px 0 0;counter-reset:p}
+  .pruebas li{
+    counter-increment:p;display:grid;grid-template-columns:30px 1fr;gap:12px;
+    padding:12px 0;border-bottom:1px solid var(--linea);
+  }
+  /* La frase y la revision van las dos a la columna ancha: sin esto, la segunda
+     cae en la de 30px y el texto se apila palabra por palabra. */
+  .pruebas li > *{grid-column:2}
+  .pruebas li::before{
+    content:counter(p);font-family:"JetBrains Mono",monospace;font-size:12px;
+    color:var(--tinta-suave);padding-top:3px;font-variant-numeric:tabular-nums;
+  }
+  .pruebas .voz{font-size:14.5px;color:var(--tinta);margin:0 0 3px;font-style:italic}
+  .pruebas .revisar{font-size:13.5px;color:var(--tinta-suave);margin:0}
+  .pruebas .revisar b{color:var(--tinta-media);font-weight:600}
+
+  /* ---------- tablas ---------- */
+  .tabla-env{overflow-x:auto;margin:24px 0}
+  table{border-collapse:collapse;width:100%;font-size:15px;min-width:460px}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--linea);vertical-align:top}
+  th{
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--tinta-suave);font-weight:700;border-bottom:1px solid var(--linea-fuerte);
+  }
+  td b{font-weight:600}
+  .peso{font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr.suyo td{background:var(--sello-tenue)}
+  .pie-tabla{font-size:14px;color:var(--tinta-suave);margin-top:10px}
+
+  /* ---------- niveles de alcance ---------- */
+  .nivel{margin:22px 0 0}
+  .nivel h4{
+    margin:0 0 10px;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;
+    display:flex;align-items:center;gap:10px;
+  }
+  .nivel h4 .tag{
+    font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.04em;
+    padding:2px 7px;border-radius:3px;border:1px solid;
+  }
+  .nivel.obl h4{color:var(--tinta)}
+  .nivel.obl .tag{color:var(--rechazo);border-color:var(--rechazo);background:var(--rechazo-tenue)}
+  .nivel.dif h4{color:var(--sello)}
+  .nivel.dif .tag{color:var(--sello);border-color:var(--sello-borde);background:var(--sello-tenue)}
+  .nivel.ext h4{color:var(--tinta-suave)}
+  .nivel.ext .tag{color:var(--tinta-suave);border-color:var(--linea-fuerte);background:var(--papel)}
+
+  ul.limpia{list-style:none;padding:0;margin:0 0 1.1em}
+  ul.limpia li{padding-left:22px;position:relative;margin-bottom:11px;color:var(--tinta-media)}
+  ul.limpia li::before{
+    content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;
+    background:var(--sello-borde);border-radius:50%;
+  }
+  ul.limpia li b{color:var(--tinta)}
+  .nivel.obl ul.limpia li::before{background:var(--rechazo)}
+  .nivel.ext ul.limpia li::before{background:var(--linea-fuerte)}
+
+  .aparte{background:var(--hoja);border:1px solid var(--linea);border-radius:5px;padding:22px;margin:26px 0;box-shadow:var(--sombra)}
+  .aparte h4{margin:0 0 10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sello);font-weight:700}
+  .aparte p:last-child{margin-bottom:0}
+  .intocable{background:var(--rechazo-tenue);border-color:var(--rechazo)}
+  .intocable h4{color:var(--rechazo)}
+
+  footer{padding:44px 0 64px;color:var(--tinta-suave);font-size:14px}
+  footer p{margin:0 0 6px}
+
+  @media (max-width:640px){
+    body{font-size:16px}
+    section{padding:44px 0}
+    .escena{grid-template-columns:1fr;gap:6px}
+    .escena-n{font-size:26px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="portada">
+  <div class="env col">
+    <div class="eyebrow">Reto corporativo de Philips · Decentralized AI Hackathon · Panamá</div>
+    <h1>Tako</h1>
+    <p class="lema">Quién lo vio, y cuándo.</p>
+    <p class="resumen">
+      Un colaborador sale de un hospital, dicta lo que vio en treinta segundos, y eso se
+      convierte en datos ordenados. Pero con una diferencia: <b>cada número del tablero puede
+      decir quién lo observó, cuándo, y cuántas personas lo confirmaron por separado</b>.
+    </p>
+
+    <div class="reloj">
+      <div class="t">9 de septiembre, de madrugada · el hackathon ya arrancó</div>
+      <p><b>Tako ya funciona de punta a punta.</b> Lo que sigue no es lo que vamos a hacer:
+      es lo que hace, con los números medidos esta madrugada.</p>
+      <p>Se entrega el <b>11 de septiembre a las 08:00</b>, hora de Panamá. Y se publicaron dos
+      retos más: además del de Philips, Tako compite también en el de Tether y en el general,
+      sin tener que elegir uno.</p>
+    </div>
+  </div>
+</header>
+
+<div class="env col">
+
+<section>
+  <h2>Lo que ya funciona</h2>
+  <p class="guia">
+    Dos formas de capturar lo que se vio en el hospital, y todo corre en el dispositivo.
+  </p>
+
+  <p>
+    Tres modelos, ninguna conexión: <b>Whisper small</b> escucha en español y en inglés,
+    <b>Qwen3 1.7B</b> convierte lo dicho en datos, y <b>VisionPsy-Nano-460M</b> lee la placa
+    del equipo cuando le tomas una foto. Nada sale de la máquina, que es la regla que
+    descalifica a quien la rompa.
+  </p>
+
+  <div class="factores">
+    <div class="factor">
+      <h4>Hablar</h4>
+      <p>Al salir de la visita, el colaborador dicta lo que vio como se lo contaría a un
+      compañero. No hay formulario que llenar.</p>
+    </div>
+    <div class="factor">
+      <h4>Fotografiar la placa</h4>
+      <p>Hablando casi nunca sale la marca ni el modelo. La placa los lleva impresos, y
+      además trae la fecha de fabricación.</p>
+    </div>
+  </div>
+
+  <p>
+    Esa fecha es la que cambia las cosas: la antigüedad deja de ser «parece de unos ocho
+    años» y pasa a ser un número exacto. La observación sube de <b>estimada</b> a
+    <b>confirmada</b>.
+  </p>
+
+  <h3>El modelo propone, el código comprueba</h3>
+  <p>
+    Los modelos que caben en un teléfono son buenos leyendo y nombrando, y malos contando,
+    repartiendo y atribuyendo. Así que las cantidades, el reparto por edad y qué número es
+    una edad los decide código que lee la propia frase. No es un prompt pidiéndole que no
+    invente: es que no puede.
+  </p>
+
+  <div class="rastro">
+    <div class="rastro-t">Una grabación real, del 8 de septiembre</div>
+    <div class="recibos">
+      <div class="recibo">
+        <div class="recibo-alto"><span class="chapa">ANTES</span> Lo que daba el modelo solo</div>
+        <div class="recibo-datos">
+          <i>«Tienen dos resonadores y un tomógrafo. Uno de los resonadores parece de tener
+          siete años.»</i><br>
+          MR 1 unidad · 7 años &nbsp;/&nbsp; CT 1 unidad &nbsp;/&nbsp; CT 1 unidad<br>
+          <b>Un resonador y dos tomógrafos: justo lo contrario de lo que se dijo.</b>
+        </div>
+      </div>
+      <div class="recibo">
+        <div class="recibo-alto"><span class="chapa">AHORA</span> Lo que guarda Tako</div>
+        <div class="recibo-datos">
+          MR 1 unidad · 7 años &nbsp;/&nbsp; MR 1 unidad · edad sin saber &nbsp;/&nbsp; CT 1 unidad<br>
+          <b>Dos resonadores, uno de siete años, y un tomógrafo.</b>
+        </div>
+      </div>
+    </div>
+    <div class="disenso">
+      <b>El código corrigió 2 datos leyendo la frase, no al modelo.</b> «MR: la frase dice 2 y
+      el modelo extrajo 1; el código añade 1.» «CT: la frase dice 1 y el modelo extrajo 2; el
+      código quita 1.» Cada corrección queda escrita: nadie tiene que creerle al sistema,
+      puede ver qué cambió y por qué.
+    </div>
+  </div>
+
+  <h3>Y cuando entra la foto</h3>
+  <p>
+    Se le toma la foto a la placa del resonador. Tako la aplica a <b>una sola</b> máquina,
+    porque un número de serie identifica una máquina y no un grupo. La otra unidad sigue sin
+    marca ni edad, y el sistema la sigue preguntando.
+  </p>
+
+  <div class="tabla-env">
+    <table>
+      <thead><tr><th>Campo</th><th>Antes de la foto</th><th>Después</th></tr></thead>
+      <tbody>
+        <tr><td><b>Marca y modelo</b></td><td>Unknown</td><td>Philips Ingenia Ambition 1.5T</td></tr>
+        <tr><td><b>Nº de serie</b></td><td>—</td><td class="peso">12345XY</td></tr>
+        <tr class="suyo"><td><b>Antigüedad</b></td><td class="peso">≈8 años <span class="porque">dicho</span></td><td class="peso">9 años <span class="porque">placa, fabricado en 2017</span></td></tr>
+        <tr><td><b>Siguiente pregunta</b></td><td>marca y edad de los resonadores y el tomógrafo</td><td>marca y edad del otro resonador y del tomógrafo</td></tr>
+      </tbody>
+    </table>
+    <p class="pie-tabla">La estimación de la persona no se borra: queda anotada al lado del dato de la placa, que la confirma.</p>
+  </div>
+
+  <h3>Lo que está medido</h3>
+  <p>
+    Nada de esto es una impresión. Hay dos bancos de pruebas que se corren cuando se quiera,
+    uno con los modelos y otro solo de código.
+  </p>
+
+  <div class="tabla-env">
+    <table>
+      <thead><tr><th>Qué</th><th class="peso">Resultado</th><th>Detalle</th></tr></thead>
+      <tbody>
+        <tr><td><b>Extracción de lo dictado</b></td><td class="peso">13 / 13</td><td>las diez pruebas oficiales de Philips, la del enunciado en español y dos grabaciones de voz reales</td></tr>
+        <tr><td><b>Tiempo por observación</b></td><td class="peso">7,7 s</td><td>era 9,5 s ayer</td></tr>
+        <tr><td><b>Lectura de placas</b></td><td class="peso">4 / 4</td><td>sin un solo campo mal, incluida una placa gastada con brillo y ruido</td></tr>
+        <tr><td><b>Tiempo por foto</b></td><td class="peso">18 s</td><td>6,5 s hasta la primera palabra · 57 tokens por segundo · en GPU integrada</td></tr>
+        <tr><td><b>Pruebas de código</b></td><td class="peso">42</td><td>sin cargar ningún modelo: corren en milisegundos</td></tr>
+      </tbody>
+    </table>
+    <p class="pie-tabla">Medido el 9 de septiembre de 2026. El registro de rendimiento que exige el reto de Tether sale de esa misma corrida.</p>
+  </div>
+
+  <div class="aparte">
+    <h4>Para probarlo tú misma</h4>
+    <p>
+      Josimar levanta el laboratorio y te pasa el enlace por WhatsApp, igual que la otra vez.
+      Los pasos siguen siendo los mismos, con uno nuevo al final: después de analizar lo que
+      dictaste, pulsa <b>📷 Foto de la placa</b>, sube una de las placas de ejemplo, y luego
+      <b>Aplicar a la observación</b>. Verás la antigüedad cambiar y la siguiente pregunta
+      cambiar con ella.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Lo que pide Philips, sin jerga</h2>
+
+  <p>
+    Los ingenieros de servicio, los vendedores y los especialistas de Philips entran a
+    hospitales todos los días. Ven cuántos resonadores, tomógrafos o ecógrafos tiene cada
+    cliente, de qué marca y qué tan viejos parecen. <strong>Y ese conocimiento se queda en
+    la cabeza de cada uno</strong>: en notas personales, en conversaciones, o en ningún lado.
+  </p>
+  <p>
+    Anotarlo a mano toma tiempo, cada quien lo describe distinto, varias personas reportan el
+    mismo equipo, y casi todo llega incompleto. Resultado: una empresa que no sabe con
+    certeza qué tienen sus propios clientes.
+  </p>
+  <p>
+    Lo que quieren es que el colaborador, al salir del hospital, abra la aplicación y diga:
+  </p>
+  <blockquote>
+    <p>«Estoy en Hospital DemoCare Pacific, en Panamá. Tienen dos resonadores y un tomógrafo.
+    Uno de los resonadores parece de unos ocho años.»</p>
+    <span class="cita-fuente">ejemplo literal del enunciado del reto</span>
+  </blockquote>
+  <p>
+    Y que eso se convierta solo en datos ordenados: cliente, ciudad, tipo de equipo, cantidad,
+    marca, antigüedad. Que pregunte por lo que falta. Que detecte si alguien ya reportó lo
+    mismo. Y que con el tiempo se forme una vista viva de qué hay instalado en cada hospital
+    y en cada país.
+  </p>
+
+  <h3>La condición que no se negocia</h3>
+  <p>
+    Todo tiene que funcionar <strong>dentro del aparato, sin internet y sin mandar nada a un
+    servicio externo</strong>. El colaborador está dentro de un hospital, muchas veces sin
+    señal, y lo que ve es información sensible del cliente. Quien use inteligencia artificial
+    en la nube queda fuera del reto y del ranking general, sin importar qué tan bueno sea el
+    resultado. Nosotros ya probamos que esto funciona en la máquina de Josimar.
+  </p>
+</section>
+
+<section>
+  <h2>Lo que van a construir los otros 232, y lo que gana</h2>
+
+  <p>
+    El mínimo que pide el reto es claro: capturar en lenguaje natural, extraer los datos,
+    guardarlos, mostrar una vista por cliente y una agregada. Eso es <strong>un chatbot que
+    llena un formulario y un tablero</strong>. Es lo que van a entregar casi todos los
+    equipos, y va a estar bien hecho en muchos casos.
+  </p>
+  <p>
+    Fui a buscar dónde está el problema difícil, y Philips lo escribió dos veces sin
+    subrayarlo. En la descripción del problema: <em>«varias personas reportan el mismo
+    equipo»</em>. Y entre las metas adicionales:
+  </p>
+  <blockquote>
+    <p>«Asignar confianza según qué tan completa, reciente o confirmada de forma
+    independiente esté una observación.»</p>
+    <span class="cita-fuente">metas adicionales del reto</span>
+  </blockquote>
+  <p>
+    Y en las consideraciones de diseño, esta pregunta: <em>«¿cómo puede el sistema distinguir
+    una observación de información verificada?»</em>. Y esta otra: <em>«los usuarios deben
+    entender de dónde vino la información y cuándo se observó por última vez»</em>.
+  </p>
+  <p>
+    Ese es el problema de fondo. No es capturar datos: es <strong>saber cuánto creerles</strong>.
+    Y para eso hay que guardar quién dijo qué, cuándo, y no aplastar dos versiones distintas
+    en un solo número que parece seguro y no lo es.
+  </p>
+  <p>
+    Eso era exactamente el motor de Tako antes de que saliera el reto. El reto cambió el
+    tema, de asambleas a equipos médicos, pero el motor sirve igual.
+  </p>
+</section>
+
+<section>
+  <h2>Qué es Tako ahora</h2>
+  <p class="guia">
+    Un tablero que se ve como cualquier otro, hasta que le pinchas un número.
+  </p>
+
+  <div class="demo">
+    <div class="demo-barra">
+      <span>Tako · Hospital DemoCare Pacific · Ciudad de Panamá</span>
+      <span class="sin-red">◈ sin conexión</span>
+    </div>
+    <div class="demo-cuerpo">
+      <div class="c360-env">
+        <table class="c360">
+          <thead>
+            <tr><th>Equipo</th><th>Cantidad</th><th>Antigüedad</th><th>Confianza</th></tr>
+          </thead>
+          <tbody>
+            <tr class="abierta">
+              <td><b>Resonador</b> (MR)</td>
+              <td><span class="num">2</span><span class="pugna">o 3</span></td>
+              <td class="num">≈7 años</td>
+              <td><span class="conf media">Media</span><span class="porque">2 observadores, no coinciden</span></td>
+            </tr>
+            <tr>
+              <td><b>Tomógrafo</b> (CT)</td>
+              <td class="num">1</td>
+              <td class="num">≈5 años</td>
+              <td><span class="conf alta">Alta</span><span class="porque">confirmado por 2 personas</span></td>
+            </tr>
+            <tr>
+              <td><b>Ecógrafo</b></td>
+              <td class="num">—</td>
+              <td class="num">—</td>
+              <td><span class="conf nula">Sin datos</span><span class="porque">nadie lo ha reportado</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="rastro">
+        <div class="rastro-t">Rastro de la fila «Resonador»</div>
+        <div class="recibos">
+          <div class="recibo">
+            <div class="recibo-alto"><span class="chapa">OBS 001</span> Reportado · visto en persona</div>
+            <div class="recibo-datos">
+              <b>Field User 01</b> · 18 ago 2026 · NovaMed NM-MR 700<br>
+              <i>«dos resonadores, uno parece de unos ocho años»</i>
+            </div>
+          </div>
+          <div class="recibo">
+            <div class="recibo-alto"><span class="chapa">OBS 014</span> Estimado · le contaron</div>
+            <div class="recibo-datos">
+              <b>Sales User 02</b> · 6 sep 2026 · marca desconocida<br>
+              <i>«creo que tienen tres resonadores»</i>
+            </div>
+          </div>
+        </div>
+        <div class="disenso">
+          <b>Las dos observaciones no coinciden en la cantidad.</b> Se guardan las dos, no se
+          elige una. La próxima persona que visite el hospital recibe la pregunta: ¿son dos o
+          tres?
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Fíjate en tres cosas de esa pantalla. La fila del resonador <strong>no esconde el
+    conflicto</strong>: dice «2 o 3» y explica por qué. La del tomógrafo dice «Alta» y dice
+    <strong>por qué</strong> es alta. Y la del ecógrafo no inventa un cero: dice que nadie lo
+    ha reportado, que es información distinta.
+  </p>
+  <p>
+    Casi todos los demás prototipos van a mostrar un solo número en cada celda, probablemente
+    el más reciente, y van a estar callados y equivocados.
+  </p>
+
+  <h3>De dónde sale la confianza</h3>
+  <p>Son los tres factores que pidió Philips, en palabras normales:</p>
+  <div class="factores">
+    <div class="factor">
+      <h4>Completa</h4>
+      <p>¿Tiene marca, modelo y antigüedad, o solo «hay dos»?</p>
+    </div>
+    <div class="factor">
+      <h4>Reciente</h4>
+      <p>¿Cuándo fue la última vez que alguien lo vio con sus ojos?</p>
+    </div>
+    <div class="factor">
+      <h4>Confirmada</h4>
+      <p>¿Cuántas personas distintas lo reportaron por su cuenta?</p>
+    </div>
+  </div>
+  <p>
+    El tercero es el que nadie más va a poder calcular, porque para contarlo hay que haber
+    guardado quién dijo cada cosa desde el principio. En Tako eso viene incorporado desde el principio en la forma de guardar
+    cada observación, en lugar de agregarse después como una función aparte.
+  </p>
+</section>
+
+<section>
+  <h2>El video de cinco minutos</h2>
+  <p class="guia">
+    Es lo primero que mira el jurado. Cuatro escenas, y cada una prueba una cosa.
+  </p>
+
+  <div class="escenas">
+    <div class="escena">
+      <div class="escena-n">1</div>
+      <div>
+        <h4>La visita</h4>
+        <div class="dur">60 segundos</div>
+        <p>
+          Alguien llega a un hospital, abre la aplicación y ve lo que ya se sabe de ese
+          cliente y qué falta por confirmar. A la salida, en el estacionamiento, dicta lo que
+          vio. El sistema entiende, pregunta por la marca que faltaba, muestra el resumen
+          ordenado y lo guarda. Treinta segundos, sin escribir nada.
+        </p>
+        <p class="prueba">Prueba: el teléfono está en modo avión, y se ve en cámara.</p>
+      </div>
+    </div>
+    <div class="escena">
+      <div class="escena-n">2</div>
+      <div>
+        <h4>El tablero</h4>
+        <div class="dur">60 segundos</div>
+        <p>
+          La vista del hospital y la vista por país: cuántos equipos de cada tipo, qué tan
+          viejos, dónde falta información. Se pincha un número y aparece de dónde salió.
+        </p>
+        <p class="prueba">Prueba: cada celda responde «¿quién lo vio y cuándo?».</p>
+      </div>
+    </div>
+    <div class="escena">
+      <div class="escena-n">3</div>
+      <div>
+        <h4>El conflicto</h4>
+        <div class="dur">90 segundos</div>
+        <p>
+          Una segunda persona visita el mismo hospital semanas después y reporta un número
+          distinto. El tablero muestra las dos versiones, marca el conflicto, y prepara la
+          pregunta para la siguiente visita, sin que nadie tenga que decidir por su cuenta
+          cuál de las dos es la verdad.
+        </p>
+        <p class="prueba">Aquí es donde el jurado entiende qué hace distinto a este proyecto.</p>
+      </div>
+    </div>
+    <div class="escena">
+      <div class="escena-n">4</div>
+      <div>
+        <h4>Dos aparatos, ninguna nube</h4>
+        <div class="dur">45 segundos</div>
+        <p>
+          Las dos personas se encuentran en la oficina. Sus aparatos se ven entre sí y las
+          observaciones de uno pasan al otro, sin servidor de por medio. La vista del hospital
+          se completa sola.
+        </p>
+        <p class="prueba">Prueba: la información nunca salió de los dos teléfonos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>El regalo que viene en el Excel</h2>
+  <p>
+    Philips adjuntó una hoja de cálculo con datos de prueba. Casi nadie va a abrir las
+    pestañas de atrás, y ahí está lo más valioso.
+  </p>
+
+  <h3>Diez pruebas oficiales</h3>
+  <p>
+    La pestaña «Voice Test Prompts» trae diez frases dictadas, con la repregunta que el
+    sistema debería hacer y el resultado que debería producir. <strong>Es el criterio de
+    «funciona» escrito por el cliente antes de empezar.</strong> Están en inglés, así que se
+    dejan tal cual; el sistema tiene que entender los dos idiomas.
+  </p>
+  <p>
+    Esta lista es tuya. No hace falta programar para verificarla: se le dicta la frase, se
+    revisa que pregunte lo que debe y que guarde lo que debe.
+  </p>
+
+  <ol class="pruebas">
+    <li><p class="voz">"I am at Hospital DemoCare Pacific in Panama. They have two MR systems and one CT."</p>
+      <p class="revisar">Debe preguntar <b>marca y antigüedad</b> de cada tipo. Guarda: DemoCare Pacific · Panamá · MR=2 · CT=1.</p></li>
+    <li><p class="voz">"At Hospital DemoCare Horizon I saw three MR systems. Two seem old and one looks much newer."</p>
+      <p class="revisar">Debe pedir <b>edades por separado</b> para los viejos y el nuevo. Guarda: MR=3 · edades mixtas.</p></li>
+    <li><p class="voz">"Clinica DemoCare Light has two CT scanners, both Orion Imaging, around eleven years old."</p>
+      <p class="revisar">Debe preguntar si <b>conoce el modelo</b> y confirmar la cantidad. Guarda: CT=2 · Orion Imaging · 11 años.</p></li>
+    <li><p class="voz">"Centro Medico DemoCare Valley has one MR and two CTs. I do not know the brands."</p>
+      <p class="revisar">Debe <b>aceptar «marca desconocida»</b> sin insistir, y preguntar edad o modelo. Guarda: MR=1 · CT=2 · marca=Desconocida.</p></li>
+    <li><p class="voz">"Hospital DemoCare North has about six ultrasound units, mostly new."</p>
+      <p class="revisar">Debe preguntar la <b>cantidad exacta o estimada</b>, la marca, y qué significa «nuevo» en años. Guarda: Ecógrafos≈6 · edad cualitativa.</p></li>
+    <li><p class="voz">"Clinica DemoCare Andes has one very old CT and two MR systems from the same manufacturer."</p>
+      <p class="revisar">Debe preguntar marca, edad por tipo y confirmar cantidades. Guarda: CT=1 · MR=2.</p></li>
+    <li><p class="voz">"Hospital DemoCare Park has one MR, maybe ten years old, plus three CT scanners."</p>
+      <p class="revisar">Debe preguntar marca de los dos y la edad de los CT. Guarda: MR=1 ≈10 años · CT=3.</p></li>
+    <li><p class="voz">"Clinica DemoCare Central has many ultrasound systems, maybe eight, all Aurelia Health."</p>
+      <p class="revisar">Debe preguntar <b>qué tan seguro está</b> de la cantidad y la edad. Guarda: Ecógrafos≈8 · Aurelia Health.</p></li>
+    <li><p class="voz">"Instituto DemoCare Lima has two old CTs and one recently installed MR."</p>
+      <p class="revisar">Debe preguntar edades y marcas <b>por separado</b>. Guarda: CT=2 viejos · MR=1 reciente.</p></li>
+    <li><p class="voz">"Hospital DemoCare Metro North has two MR systems. I know the brand is Aurelia Health but not the model."</p>
+      <p class="revisar">Debe preguntar la edad y <b>aceptar modelo desconocido</b>. Guarda: MR=2 · Aurelia Health · modelo=Desconocido.</p></li>
+  </ol>
+
+  <h3>Doce pasos de conversación, ya diseñados</h3>
+  <p>
+    Otra pestaña trae el flujo completo de la conversación con la lógica de cada paso: qué es
+    obligatorio (hospital, ciudad, tipo, cantidad), qué es preferible (marca, edad), qué es
+    opcional (modelo, notas), y reglas como <em>«nunca forzar una marca: si no la sabe, se
+    guarda Desconocida»</em> o <em>«aceptar rangos como 5-7 años»</em>. El diálogo ya viene especificado
+    por el cliente, así que no hay que diseñarlo.
+  </p>
+
+  <h3>El primer hospital es panameño</h3>
+  <p>
+    La fila 1 de los veinte registros de ejemplo es <strong>Hospital DemoCare Pacific,
+    Ciudad de Panamá</strong>. Es el mismo del enunciado. Para un jurado sentado en Panamá,
+    el video empieza ahí.
+  </p>
+  <p>
+    Y un riesgo que se cerró solo: prohíben usar datos reales de clientes y entregan datos
+    ficticios. Eso resuelve el problema de la licencia perpetua que ISD y Tether se reservan
+    sobre el video.
+  </p>
+</section>
+
+<section>
+  <h2>Qué construimos</h2>
+  <p class="guia">
+    Tres niveles. El primero es obligatorio para no quedar fuera; el segundo es donde están
+    los puntos; el tercero solo si sobra tiempo.
+  </p>
+
+  <div class="nivel obl">
+    <h4><span class="tag">obligatorio</span> El mínimo del reto</h4>
+    <ul class="limpia">
+      <li><b>Capturar por texto y por voz.</b> El colaborador dicta y el sistema transcribe
+      dentro del aparato.</li>
+      <li><b>Entender y ordenar.</b> Sacar hospital, ciudad, país, tipo de equipo, cantidad,
+      marca, modelo y edad, y tolerar que falte la mitad.</li>
+      <li><b>Repreguntar.</b> Pedir lo que falta siguiendo los doce pasos de Philips, y
+      confirmar el resumen antes de guardar.</li>
+      <li><b>Guardar con estado.</b> Cada observación queda como Confirmada, Reportada,
+      Estimada o Desconocida.</li>
+      <li><b>Vista por hospital</b> y <b>vista agregada</b> por país, por tipo de equipo y
+      por antigüedad.</li>
+    </ul>
+  </div>
+
+  <div class="nivel dif">
+    <h4><span class="tag">nuestro diferencial</span> La capa de confianza</h4>
+    <ul class="limpia">
+      <li><b>Cada observación lleva quién, cuándo y cómo lo supo</b> (lo vio, se lo contaron,
+      lo estimó). Se guarda y nunca se sobreescribe.</li>
+      <li><b>Los conflictos se conservan.</b> Dos personas, dos números: se muestran los dos
+      y se marca. Nadie decide en silencio.</li>
+      <li><b>Confianza calculada</b> con los tres factores: completa, reciente, confirmada
+      por otros.</li>
+      <li><b>Pinchar cualquier número</b> del tablero y ver el rastro completo de
+      observaciones detrás.</li>
+      <li><b>La app da antes de pedir.</b> Al nombrar el hospital muestra lo que ya se sabe,
+      cuándo se vio por última vez y qué falta. Es la meta adicional de Philips «preguntar por
+      el dato faltante más valioso», puesta donde sirve para que la gente vuelva a usarla.</li>
+      <li><b>Dos aparatos se sincronizan entre sí</b>, sin nube, cuando están cerca.</li>
+    </ul>
+  </div>
+
+  <div class="nivel ext">
+    <h4><span class="tag">si sobra tiempo</span> Metas adicionales del reto</h4>
+    <ul class="limpia">
+      <li>Preguntar en lenguaje normal sobre los datos: «hospitales en Brasil con resonadores
+      de más de siete años».</li>
+      <li>Avisar cuando un dato lleva demasiado tiempo sin que nadie lo verifique.</li>
+      <li>Señalar hospitales con equipos viejos como oportunidad de renovación.</li>
+      <li>Un mapa por país y ciudad, si el tablero en tabla ya está terminado.</li>
+    </ul>
+  </div>
+
+  <div class="aparte">
+    <h4>Lo que no vamos a intentar</h4>
+    <p>
+      <strong>Leer placas y etiquetas desde una foto.</strong> Está en las metas
+      adicionales, pero requiere un modelo de visión funcionando dentro del aparato, y eso
+      en 48 horas es un pozo sin fondo. En el video lo mencionamos como el paso siguiente natural,
+      pero no lo construimos.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Cómo suma puntos, y por qué te necesitamos</h2>
+
+  <div class="tabla-env">
+    <table>
+      <thead><tr><th>Criterio</th><th class="peso">Peso</th><th>Quién lo mueve</th></tr></thead>
+      <tbody>
+        <tr><td><b>Técnico</b></td><td class="peso">35 %</td><td>Josimar: que funcione y que pase las diez pruebas</td></tr>
+        <tr class="suyo"><td><b>Innovación</b></td><td class="peso">25 %</td><td>Tú: que se entienda por qué la capa de confianza es distinta</td></tr>
+        <tr class="suyo"><td><b>Impacto</b></td><td class="peso">20 %</td><td>Tú: por qué un ingeniero de Philips lo usaría después de cada visita</td></tr>
+        <tr><td><b>Diseño</b></td><td class="peso">10 %</td><td>Los dos: el tablero tiene que verse bien</td></tr>
+        <tr class="suyo"><td><b>Terminado</b></td><td class="peso">10 %</td><td>Tú: que se entregue completo y a tiempo</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="pie-tabla">
+    Innovación, Impacto y Terminado suman <strong>55 %</strong>. No entras como apoyo, sino a
+    cargo de la mitad más grande del puntaje.
+  </p>
+
+  <h3>Lo que está en tus manos</h3>
+  <ul class="limpia">
+    <li><b>Las diez pruebas.</b> Tú las corres y las marcas. Es control de calidad de verdad
+    y no requiere programar. En el video se dice «pasan las diez» y se muestra.</li>
+    <li><b>La pregunta de adopción.</b> Philips escribió: <em>«¿por qué un empleado usaría
+    esto después de cada visita?»</em>. La respuesta no es un sistema de puntos (premiaría
+    cantidad, y el problema de Philips es calidad). Es que <b>la app misma sea el
+    incentivo</b>: al nombrar el hospital, <em>da antes de pedir</em>, mostrando lo que ya se
+    sabe y qué falta; pone el nombre de quien aportó cada dato (crédito, no ranking); y hace
+    una pregunta exacta en vez de un formulario. Esa respuesta es tuya y va en el video.</li>
+    <li><b>Los datos de la historia.</b> Qué hospitales salen en el video, quién visita cuál,
+    y cómo se arma el conflicto de la escena 3. Con los datos ficticios de Philips.</li>
+    <li><b>El guion y el video en español.</b> Las reglas lo exigen en español y es lo
+    primero que mira el jurado.</li>
+    <li><b>El documento de entrega.</b> Tiene que declarar lo que existía antes de empezar
+    (unas pruebas pequeñas que Josimar hizo la semana pasada). <strong>Omitirlo
+    descalifica.</strong></li>
+    <li><b>Guardar el alcance y el reloj.</b> Lo que hunde un proyecto de 48 horas casi nunca
+    es la parte difícil, sino seguir agregando cosas en la hora 40.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Las 48 horas</h2>
+
+  <div class="tabla-env">
+    <table>
+      <thead><tr><th>Cuándo</th><th>Qué pasa</th></tr></thead>
+      <tbody>
+        <tr><td class="peso"><b>Hoy</b></td><td><b>Registro</b> de cada uno. Y una prueba de 20 minutos de que las dos tecnologías conviven.</td></tr>
+        <tr><td class="peso">9 sep · 08:00</td><td>Arranca el reloj y <b>se congela el equipo</b>.</td></tr>
+        <tr><td class="peso">Horas 0–2</td><td>Cerrar alcance, elegir el modelo de lenguaje, montar las diez pruebas como lista de verificación.</td></tr>
+        <tr><td class="peso">Horas 2–12</td><td>Capturar, entender, repreguntar, guardar. <b>Meta: pasan las diez pruebas.</b></td></tr>
+        <tr><td class="peso">Horas 12–22</td><td>Vista por hospital y vista agregada. Tú preparas los datos de la historia y el guion.</td></tr>
+        <tr><td class="peso">Horas 22–30</td><td>Confianza, conflictos y rastro. Es lo que ya viene en la forma de guardar, así que es más corto de lo que suena.</td></tr>
+        <tr><td class="peso">Horas 30–34</td><td>Dos aparatos sincronizando en la mesa.</td></tr>
+        <tr><td class="peso">Horas 34–40</td><td><b>Grabar el video.</b> No dejarlo para el final, porque al final nunca alcanza.</td></tr>
+        <tr><td class="peso"><b>Hora 42</b></td><td><b>Se congela el código.</b> Quedan 6 horas de colchón a propósito.</td></tr>
+        <tr><td class="peso">11 sep · 08:00</td><td>Cierra la entrega. No hay prórroga: la plataforma cierra sola.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="aparte">
+    <h4>Si el reloj aprieta, se recorta en este orden</h4>
+    <p>
+      Primero cae todo el nivel «si sobra tiempo». Después la sincronización entre dos
+      aparatos: es nuestra apuesta de Innovación, pero el reto dice que lo P2P está
+      <em>permitido</em>, no exigido, así que se puede perder sin quedar fuera. Después la
+      voz pasa a ser solo texto.
+    </p>
+  </div>
+
+  <div class="aparte intocable">
+    <h4>Lo que no se toca</h4>
+    <p>
+      <strong>El mínimo obligatorio y la capa de confianza.</strong> Sin el mínimo no
+      calificamos. Sin la capa de confianza somos uno más de los 233, con un chatbot y un
+      tablero. Las dos cosas se defienden hasta el final, y todo lo demás se sacrifica antes.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Qué puede salir mal</h2>
+
+  <div class="tabla-env">
+    <table>
+      <thead><tr><th>Riesgo</th><th>Qué hacemos</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Las dos tecnologías no conviven</b><br><span style="color:var(--tinta-suave)">la inteligencia local y la sincronización entre aparatos</span></td>
+          <td>Se comprueba <b>hoy</b> en 20 minutos. Si no conviven, la sincronización se cae del plan y el resto sigue igual.</td>
+        </tr>
+        <tr>
+          <td><b>El modelo entiende mal</b><br><span style="color:var(--tinta-suave)">en inglés, en español, o los dos</span></td>
+          <td>Las diez pruebas lo dicen en la hora 12, no en la hora 40. Si falla, se prueba otro modelo pequeño; hay varios.</td>
+        </tr>
+        <tr>
+          <td><b>La voz no funciona</b></td>
+          <td>Falta instalar una pieza en la máquina de Josimar (se hace hoy). Si aun así falla, el video se hace escribiendo y se dice que la voz es el siguiente paso.</td>
+        </tr>
+        <tr>
+          <td><b>El tablero se come el tiempo</b><br><span style="color:var(--tinta-suave)">es obligatorio y no estaba en el plan original</span></td>
+          <td>Se hace en tabla, no en mapa. Una tabla bien hecha cumple el mínimo, y el mapa queda para si sobra tiempo.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Para decidir en la reunión</h2>
+  <ul class="limpia">
+    <li><b>¿Entramos con este reto?</b> Hay cuatro retos corporativos y solo hemos visto
+    este. Mi recomendación es sí: encaja con lo que ya teníamos y con lo que ya está probado.
+    Pero si aparece otro, se compara con el mismo criterio.</li>
+    <li><b>¿Cuál es el guion del conflicto?</b> Quién visita DemoCare Pacific primero, quién
+    después, y qué número reporta cada uno. Es la escena que gana y se decide hoy.</li>
+    <li><b>¿Buscamos a un tercero?</b> Si el registro de verdad sigue abierto cuatro días, hay
+    margen. Un perfil de diseño de tablero aliviaría el nivel obligatorio.</li>
+    <li><b>Si ganamos, ¿cómo repartimos?</b> El premio del reto corporativo son 1.500 USDT
+    a una sola billetera, acumulables con el ranking general. Es más fácil acordarlo hoy que el día 11.</li>
+  </ul>
+</section>
+
+</div>
+
+<footer>
+  <div class="env col">
+    <p>Documento interno de trabajo · reescrito el 8 de septiembre de 2026 al salir el reto de Philips</p>
+    <p>Las citas del reto son traducción del enunciado oficial en inglés. Los hospitales, marcas y observadores son ficticios, tomados del dataset de prueba que entregó Philips.</p>
+  </div>
+</footer>
+
+</body>
+</html>

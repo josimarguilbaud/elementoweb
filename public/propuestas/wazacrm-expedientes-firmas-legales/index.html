@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WazaCRM Expedientes: el agente que consulta los expedientes de la firma — elementoweb.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand:#3b82f6; --brand-deep:#1e3a8a; --violet:#7c3aed; }
+        * { -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background: #eef2fb;
+            background-image:
+                radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,0.10), transparent 60%),
+                radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,0.12), transparent 55%),
+                radial-gradient(45rem 45rem at 50% 120%, rgba(37,99,235,0.08), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1,h2,h3,h4,.display { font-family:'Bricolage Grotesque','Inter',sans-serif; letter-spacing:-0.02em; }
+        .gradient-text {
+            background: linear-gradient(100deg,#60a5fa,#3b82f6 45%,#7c3aed);
+            -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+        }
+        .glass {
+            background: rgba(255,255,255,0.72);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 20px 40px -24px rgba(30,58,138,0.28);
+        }
+        .service-card { position:relative; transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; overflow:hidden; }
+        .service-card::before {
+            content:''; position:absolute; inset:0; border-radius:inherit; padding:1px;
+            background: linear-gradient(135deg, rgba(96,165,250,.6), rgba(124,58,237,.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            opacity:0; transition: opacity .35s ease; pointer-events:none;
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(30,58,138,0.45); }
+        .service-card:hover::before { opacity:1; }
+        .num-badge { background: linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed); box-shadow: 0 10px 22px -8px rgba(59,130,246,0.7); }
+        .reveal { opacity:0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+        .reveal.in { opacity:1; transform:none; }
+        @keyframes float1 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(20px,-16px) scale(1.08);} }
+        @keyframes float2 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-24px,14px) scale(1.12);} }
+        .orb1 { animation: float1 11s ease-in-out infinite; }
+        .orb2 { animation: float2 14s ease-in-out infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .shine {
+            background: linear-gradient(90deg,#93c5fd,#e0e7ff,#93c5fd,#c4b5fd);
+            background-size:200% auto;
+            -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+            animation: shine 5s linear infinite;
+        }
+        .price-pill { background: linear-gradient(135deg,#eff6ff,#eef2ff); border:1px solid #dbeafe; }
+        .wa-float { box-shadow: 0 14px 30px -8px rgba(22,163,74,0.6); transition: transform .25s ease, box-shadow .25s ease; }
+        .wa-float:hover { transform: translateY(-3px) scale(1.04); }
+        @keyframes waPulse { 0%{box-shadow:0 0 0 0 rgba(34,197,94,.5);} 70%{box-shadow:0 0 0 16px rgba(34,197,94,0);} 100%{box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+        .wa-pulse { animation: waPulse 2.4s infinite; }
+        .btn-primary {
+            background: linear-gradient(135deg,#3b82f6,#7c3aed);
+            transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+            box-shadow: 0 14px 28px -10px rgba(59,130,246,0.7);
+        }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 20px 34px -10px rgba(124,58,237,0.6); }
+        .chat { background:#e5ded8; background-image:radial-gradient(rgba(0,0,0,.035) 1px, transparent 1px); background-size:14px 14px; }
+        .bubble-in { background:#fff; border-radius:14px 14px 14px 4px; }
+        .bubble-out { background:#dcf8c6; border-radius:14px 14px 4px 14px; }
+        .phase-line { background: linear-gradient(180deg,#bfdbfe,#ddd6fe); }
+        @media print {
+            body { background:#fff; }
+            .no-print { display:none !important; }
+            .reveal { opacity:1 !important; transform:none !important; }
+            main { box-shadow:none !important; margin:0 !important; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 selection:bg-violet-200 selection:text-violet-900">
+
+    <main class="max-w-4xl mx-auto my-6 sm:my-10 glass rounded-[28px] overflow-hidden">
+
+        <!-- ============ HEADER ============ -->
+        <header class="relative overflow-hidden text-white px-7 sm:px-10 pt-8 pb-10"
+                style="background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);">
+            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.55),transparent 70%);"></div>
+            <div class="orb2 absolute -bottom-24 -left-10 w-72 h-72 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(59,130,246,.5),transparent 70%);"></div>
+            <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:32px 32px;"></div>
+
+            <div class="relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-8 border-b border-white/15">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);">
+                            <svg width="26" height="26" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="25" cy="15" r="3.2" fill="#fff"/>
+                                <circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/>
+                            </svg>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="display text-lg font-bold tracking-tight">elementoweb<span class="text-violet-300">.com</span></p>
+                            <p class="text-[11px] text-blue-200/80 tracking-wide">Desarrollo Web · IA · Automatización</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm sm:justify-end">
+                        <a href="mailto:info@elementoweb.com" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            info@elementoweb.com
+                        </a>
+                        <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                            6162-2787
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+                    <div>
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-amber-200 bg-amber-400/10 border border-amber-300/25 rounded-full px-3 py-1 mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-300"></span> Propuesta de proyecto · aún no construido
+                        </span>
+                        <h1 class="text-4xl sm:text-5xl font-extrabold leading-none mb-3">
+                            <span class="shine">WazaCRM Expedientes</span>
+                        </h1>
+                        <p class="text-blue-100/90 max-w-lg text-sm leading-relaxed">
+                            Un segundo agente de WhatsApp, solo para los abogados y el personal de la firma, que consulta expedientes, clientes y facturas y responde citando la fuente. Va aparte del agente que atiende clientes: esos datos no se exponen ahí.
+                        </p>
+                    </div>
+                    <div class="shrink-0 grid gap-3 text-sm">
+                        <div class="glass !bg-white/10 !border-white/15 rounded-xl px-4 py-3 text-white">
+                            <p class="text-[11px] text-blue-200 uppercase tracking-wider mb-0.5">Preparado para</p>
+                            <p class="font-semibold">Firmas legales de Panamá</p>
+                            <p class="text-blue-200 text-xs">Segundo servicio, aparte de Cifrao</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-blue-200 text-xs justify-end">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            10 de septiembre de 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="px-7 sm:px-10 py-12">
+
+            <!-- ============ ADVERTENCIA HONESTA ============ -->
+            <div class="reveal mb-14 rounded-[24px] p-7 sm:p-9 relative overflow-hidden border-2"
+                 style="background:linear-gradient(135deg,#fffbeb,#fff7ed);border-color:#fcd34d;">
+                <div class="absolute top-0 right-0 text-white text-[11px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-2xl" style="background:linear-gradient(135deg,#d97706,#b45309);">Léase primero</div>
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-14 h-14 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#fbbf24,#d97706);box-shadow:0 10px 22px -8px rgba(217,119,6,.6);">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M5 19h14a2 2 0 001.84-2.75L13.74 4a2 2 0 00-3.5 0l-7.1 12.25A2 2 0 004.98 19z"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="display text-xl sm:text-2xl font-bold text-slate-900 mb-2">Esto todavía no existe. Es un proyecto a construir.</h2>
+                        <p class="text-slate-700 text-sm leading-relaxed mb-3">WazaCRM ya está en producción y el agente de WhatsApp funciona hoy: contesta a los clientes, ordena las conversaciones y consulta los documentos que se le suben. Todo eso se puede ver funcionando esta semana.</p>
+                        <p class="text-slate-800 text-sm leading-relaxed font-medium">Lo que este documento propone es <strong>un segundo agente, interno</strong>: uno con el que solo hablan los abogados y el personal de la firma, y que consulta los expedientes, los clientes y las facturas con permisos por persona. Esa parte está diseñada, no construida. Se dice por delante para que nadie espere verla en una demo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ SON DOS AGENTES ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-3">
+                    <h2 class="display text-2xl font-bold text-slate-900">Son dos agentes, y no se tocan</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <p class="reveal text-sm text-slate-600 leading-relaxed mb-7 max-w-2xl">Es lo primero que hay que entender. A nadie se le enchufan los expedientes al bot que atiende clientes. Son dos agentes distintos, con dos números, dos audiencias y dos conjuntos de datos que no se cruzan.</p>
+
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border-2 border-blue-100">
+                        <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-100 rounded-full px-2.5 py-1 mb-3">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M17 20h5v-2a3 3 0 00-5.36-1.86M17 20H7m10 0v-2c0-.66-.13-1.3-.36-1.86M7 20H2v-2a3 3 0 015.36-1.86M7 20v-2c0-.66.13-1.3.36-1.86m0 0a5 5 0 019.28 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            Hacia afuera
+                        </span>
+                        <h3 class="display text-base font-bold text-slate-900 mb-3">El agente de clientes</h3>
+                        <dl class="text-sm space-y-2.5">
+                            <div><dt class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Le escriben</dt><dd class="text-slate-700">Clientes y quien llegue por el número público de la firma.</dd></div>
+                            <div><dt class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Sabe</dt><dd class="text-slate-700">Lo que la firma decida publicar: servicios, horarios, cómo agendar, a quién derivar.</dd></div>
+                            <div><dt class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Nunca</dt><dd class="text-slate-700 font-semibold">Toca un expediente, un contrato ni una factura. No los tiene.</dd></div>
+                            <div><dt class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Estado</dt><dd class="text-green-700 font-semibold">Ya existe y funciona</dd></div>
+                        </dl>
+                    </div>
+
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border-2 border-violet-100">
+                        <span class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-violet-700 bg-violet-50 border border-violet-100 rounded-full px-2.5 py-1 mb-3">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                            Puertas adentro
+                        </span>
+                        <h3 class="display text-base font-bold text-slate-900 mb-3">El agente interno</h3>
+                        <dl class="text-sm space-y-2.5">
+                            <div><dt class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Le escriben</dt><dd class="text-slate-700">Solo abogados y personal de la firma, desde números dados de alta uno por uno.</dd></div>
+                            <div><dt class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Sabe</dt><dd class="text-slate-700">Expedientes, clientes, plazos, contratos y facturación, hasta donde llegue el permiso de quien pregunta.</dd></div>
+                            <div><dt class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Nunca</dt><dd class="text-slate-700 font-semibold">Atiende a un cliente. Un número que no esté en la lista no recibe respuesta.</dd></div>
+                            <div><dt class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Estado</dt><dd class="text-amber-700 font-semibold">Propuesto, por construir</dd></div>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="reveal mt-5 rounded-2xl p-6 text-white" style="background:linear-gradient(135deg,#0b1220,#122043);">
+                    <p class="display font-bold mb-1.5">La regla que no se rompe</p>
+                    <p class="text-sm text-blue-100/90 leading-relaxed">Los expedientes, los clientes y las facturas viven <strong class="text-white">solo</strong> dentro del agente interno. No se publican en internet, no se copian al agente de clientes y no hay pregunta que un cliente pueda hacer para llegar a ellos: sencillamente no tiene por dónde escribirle. Si mañana se apaga el agente de clientes, el interno sigue igual, y al revés.</p>
+                </div>
+            </div>
+
+            <!-- ============ LO QUE YA FUNCIONA ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-3">
+                    <h2 class="display text-2xl font-bold text-slate-900">El agente de clientes, que ya funciona</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <p class="reveal text-sm text-slate-600 leading-relaxed mb-7 max-w-2xl">La base sobre la que se construye lo demás. Está en producción con clientes reales y es lo que se puede demostrar sin ninguna promesa de por medio.</p>
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Atiende por WhatsApp, a cualquier hora</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Responde las preguntas que se repiten, ordena cada conversación con su etapa y avisa cuando toca dar seguimiento. Un cliente que escribe un domingo no espera al lunes.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Sin perder el WhatsApp del celular</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Somos <strong>Meta Verified Tech Provider</strong> y conectamos el número por coexistencia oficial: la app del teléfono sigue funcionando igual mientras el agente atiende en paralelo desde la misma línea.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Ya responde con documentos de la firma</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Se le suben documentos y el agente busca dentro de ellos por significado, no por palabra exacta. Es búsqueda vectorial, la misma técnica sobre la que se monta lo que viene después.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Un documento no puede darle órdenes</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Lo que el agente recupera va encerrado entre marcas de seguridad antes de llegar al modelo. Si alguien esconde instrucciones dentro de un PDF para manipularlo, no las obedece. Esto ya está construido.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ QUE SE PROPONE ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-3">
+                    <h2 class="display text-2xl font-bold text-slate-900">El agente interno, que es lo que se propone</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-violet-200 to-transparent"></div>
+                </div>
+                <p class="reveal text-sm text-slate-600 leading-relaxed mb-7 max-w-2xl">Seis piezas, todas puertas adentro. Las tres primeras son el buscador; las tres últimas son lo que hace que un bufete pueda usarlo sin perder el sueño.</p>
+
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">1</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Se pregunta como se le habla a un colega</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Nada de códigos ni de filtros. «¿Qué vence esta semana en el caso Mendoza?» es una consulta válida, escrita por WhatsApp desde una audiencia.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">2</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Busca en documentos y en datos a la vez</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">El texto de los escritos y contratos por significado; los expedientes, clientes, plazos y facturas como datos exactos. Un saldo no se adivina buscando parecidos: se consulta.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">3</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Responde citando de dónde lo sacó</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Cada respuesta trae el expediente, el documento y la página. Sin cita no hay respuesta: si no puede señalar la fuente, dice que no lo encontró.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">4</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Cada quien ve lo suyo</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">El permiso se aplica <strong>antes</strong> de buscar, no filtrando la respuesta después. Un asistente asignado a tres expedientes pregunta y el buscador solo mira esos tres. Los muros internos se respetan.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">5</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Queda registro de cada consulta</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Quién preguntó, qué preguntó, qué expedientes se tocaron y qué se respondió. Para una firma eso no es un extra: es la diferencia entre poder usarlo y no poder.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">6</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Si no está en sus datos, no lo inventa</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">No opina de derecho ni rellena huecos con lo que aprendió en internet. Responde con lo que hay en los expedientes de la firma, o dice que no está.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ EJEMPLOS ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-14">
+                <h2 class="display text-2xl font-bold text-slate-900 mb-2">Cómo se vería en el chat de un colaborador</h2>
+                <p class="text-sm text-slate-600 leading-relaxed mb-6">Esta conversación es del <strong>agente interno</strong>, en el WhatsApp de alguien de la firma. Un cliente no ve nada de esto ni puede provocarlo. Ejemplos ilustrativos, con nombres ficticios.</p>
+                <div class="chat rounded-2xl p-4 sm:p-5 space-y-3">
+                    <div class="flex justify-end"><div class="bubble-out max-w-[85%] px-3.5 py-2.5 text-sm text-slate-800 shadow-sm">¿Cuánto nos debe Constructora Bahía Norte y desde cuándo?</div></div>
+                    <div class="flex"><div class="bubble-in max-w-[90%] px-3.5 py-2.5 text-sm text-slate-700 shadow-sm">Tiene 2 facturas pendientes por <strong>$4,815.00</strong>. La más antigua venció hace 38 días.<br><span class="text-[11px] text-slate-500">Fuente: facturas H-2026-0451 y H-2026-0455</span></div></div>
+                    <div class="flex justify-end"><div class="bubble-out max-w-[85%] px-3.5 py-2.5 text-sm text-slate-800 shadow-sm">Pásame el poder del expediente 2024-118</div></div>
+                    <div class="flex"><div class="bubble-in max-w-[90%] px-3.5 py-2.5 text-sm text-slate-700 shadow-sm">Poder especial otorgado el 14/03/2024, vigente.<br><span class="text-[11px] text-slate-500">Fuente: expediente 2024-118, documento «Poder especial», pág. 2</span></div></div>
+                    <div class="flex justify-end"><div class="bubble-out max-w-[85%] px-3.5 py-2.5 text-sm text-slate-800 shadow-sm">¿Qué vence esta semana en el caso Mendoza?</div></div>
+                    <div class="flex"><div class="bubble-in max-w-[90%] px-3.5 py-2.5 text-sm text-slate-700 shadow-sm">Un término de contestación el jueves 12. No tengo nada más registrado para esa semana en ese expediente.<br><span class="text-[11px] text-slate-500">Fuente: expediente 2025-042, plazos</span></div></div>
+                    <div class="flex justify-end"><div class="bubble-out max-w-[85%] px-3.5 py-2.5 text-sm text-slate-800 shadow-sm">¿Y el caso de la sucesión Herrera?</div></div>
+                    <div class="flex"><div class="bubble-in max-w-[90%] px-3.5 py-2.5 text-sm text-slate-700 shadow-sm">No tengo acceso a ese expediente con su usuario. Si debería tenerlo, el administrador de la firma puede asignárselo.</div></div>
+                </div>
+            </div>
+
+            <!-- ============ CONFIDENCIALIDAD ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-14">
+                <h2 class="display text-2xl font-bold text-slate-900 mb-4">Lo que un bufete pregunta antes de decir que sí</h2>
+                <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm text-slate-700">
+                    <p class="flex items-start gap-2"><span class="text-blue-500 shrink-0">◆</span><span><strong>¿Esto queda expuesto en internet?</strong> No. El agente interno no tiene web, ni enlace, ni número público. Solo responde a los números que la firma da de alta uno por uno.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 shrink-0">◆</span><span><strong>¿Quién ve qué?</strong> El permiso se resuelve antes de la búsqueda, por persona y por expediente. Lo que no puede ver, el buscador ni siquiera lo mira.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 shrink-0">◆</span><span><strong>¿Cómo sé que no inventa?</strong> Toda respuesta lleva su cita. Sin fuente que señalar, la respuesta es «no lo encontré».</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 shrink-0">◆</span><span><strong>¿Quién preguntó qué?</strong> Registro de auditoría de cada consulta, exportable, con la identidad de quien la hizo.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 shrink-0">◆</span><span><strong>¿Y si alguien esconde instrucciones en un PDF?</strong> Lo recuperado va encerrado entre marcas antes de llegar al modelo. Esa defensa ya está construida y funcionando en WazaCRM.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 shrink-0">◆</span><span><strong>¿Dónde viven los datos?</strong> En el servidor que la firma decida, incluido uno propio. Se define en el levantamiento, por escrito.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 shrink-0">◆</span><span><strong>¿Se puede apagar?</strong> Por persona, por expediente o entero, sin tocar el resto de WazaCRM.</span></p>
+                </div>
+            </div>
+
+            <!-- ============ QUE HACE FALTA ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-14">
+                <h2 class="display text-2xl font-bold text-slate-900 mb-2">Qué hace falta de su parte</h2>
+                <p class="text-sm text-slate-600 leading-relaxed mb-5">Nada de esto se puede cotizar en serio sin verlo primero. El levantamiento existe para responder estas cuatro:</p>
+                <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-700">
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">1.</span><span><strong>Dónde viven los expedientes hoy.</strong> Un software de gestión, carpetas en un servidor, Drive, o las tres cosas a la vez.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">2.</span><span><strong>En qué formato.</strong> Un PDF con texto se indexa solo; uno escaneado hay que pasarlo por reconocimiento de texto, y eso cambia el trabajo.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">3.</span><span><strong>Quién puede ver qué.</strong> Si ya existe esa matriz de permisos, se reutiliza. Si no, hay que construirla, y es la pieza más delicada.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">4.</span><span><strong>Cuántos expedientes y cuánto crecen.</strong> Define el tamaño del índice y el costo mensual de consultas.</span></p>
+                </div>
+            </div>
+
+            <!-- ============ FASES ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-8">
+                    <h2 class="display text-2xl font-bold text-slate-900">Cómo se construiría</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">1</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Levantamiento</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Se revisan las fuentes, los formatos y los permisos. Sale un alcance cerrado y una cotización firme. Sin esto no hay número serio que dar.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">2</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Piloto con un puñado de expedientes</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Se indexa un grupo pequeño y real, y la firma pregunta lo que preguntaría de verdad. Si las respuestas no sirven, se para aquí y se ha gastado poco.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">3</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Permisos e identidad</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Se conecta cada número de WhatsApp con una persona de la firma y su alcance. Hasta que esto esté, el piloto no sale del grupo de prueba.</p>
+                    </div>
+                    <div class="reveal service-card bg-white/70 rounded-2xl p-6 border border-slate-100">
+                        <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold mb-3">4</div>
+                        <h3 class="display text-base font-bold text-slate-900 mb-1.5">Despliegue y auditoría</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Se indexa el resto, se enciende el registro de consultas y se entrega el procedimiento para dar de alta y de baja a las personas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ CTA ============ -->
+            <div class="reveal text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden"
+                 style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #e0e7ff;">
+                <h3 class="display text-2xl font-bold text-slate-900 mb-2">Empecemos por lo que ya funciona 🚀</h3>
+                <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">Lo sensato es arrancar WazaCRM con la firma, que se puede ver funcionando esta semana, y en paralelo hacer el levantamiento de los expedientes. Cuando el agente ya sea parte del día a día, la capa de búsqueda se monta encima.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center no-print">
+                    <a href="https://wa.me/50761622787?text=Hola%2C%20quiero%20hablar%20de%20WazaCRM%20con%20b%C3%BAsqueda%20de%20expedientes."
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                        Agendar el levantamiento
+                    </a>
+                    <a href="mailto:info@elementoweb.com?subject=WazaCRM%20Expedientes"
+                       class="inline-flex items-center justify-center gap-2 btn-primary text-white font-semibold rounded-xl px-6 py-3.5 text-sm">
+                        Escribir por correo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="px-7 sm:px-10 py-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#122043);">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);">
+                        <svg width="22" height="22" viewBox="0 0 50 52" fill="none"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/></svg>
+                    </div>
+                    <div>
+                        <p class="display font-bold">elementoweb<span class="text-violet-300">.com</span></p>
+                        <p class="text-[11px] text-blue-200/70">Documento confidencial · La capa de expedientes es un proyecto propuesto, no un producto en venta hoy</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-blue-100">
+                    <a href="mailto:info@elementoweb.com" class="hover:text-white transition">info@elementoweb.com</a>
+                    <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="hover:text-white transition">+507 6162-2787</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <a href="https://wa.me/50761622787?text=Hola%2C%20tengo%20una%20consulta%20sobre%20WazaCRM%20Expedientes."
+       target="_blank" rel="noopener"
+       class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse"
+       aria-label="Escríbenos por WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    </a>
+
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = Math.min(i * 40, 200) + 'ms';
+            io.observe(el);
+        });
+    </script>
+</body>
+</html>

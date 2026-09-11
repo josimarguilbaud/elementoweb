@@ -220,6 +220,7 @@
     <dl style="margin:0">
       <div class="fila"><dt>El PIN</dt><dd>El oficial abre la ventanilla con <b>cuatro dígitos comprobados en el equipo</b>, contra <b>sha256(sal + pin)</b> con sal por persona.<span class="porque">Sin una sola llamada de red, igual que el resto. Tras tres fallos la espera sube a 5 s, 15 s, 60 s y 5 min, y se cuenta por oficial: si fuera por equipo, el primero que se equivoca deja sin atender a la sucursal.</span></dd></div>
       <div class="fila"><dt>La firma</dt><dd>La pone el <b>servidor desde la sesión</b>, nunca el cuerpo de la petición.<span class="porque">Mandar el nombre de otra persona en la petición no hace nada: el acta sale firmada por quien abrió la ventanilla. Está probado, no supuesto.</span></dd></div>
+      <div class="fila"><dt>El libro</dt><dd>Debajo de la ventanilla, <b>qué firmó cada quien</b>: actas, cuántas siguieron, cuántas se detuvieron y cuándo fue la última.<span class="porque">Sale del propio libro y no de un contador aparte, así que cualquier número se puede seguir hasta un folio. Un oficial en cero también es un dato.</span></dd></div>
       <div class="fila"><dt>Lo que no es</dt><dd>Cuatro dígitos <b>no</b> son el directorio del banco, ni la doble firma que un banco exige de verdad.<span class="porque">Es la prueba más fuerte que se puede dar sin salir del equipo. Quien venía en la lista sale como «del padrón» y quien se registró aquí como «alta local»; las actas de antes siguen ahí marcadas «sin verificar», con su «ventanilla» y todo. A un libro de actas al que se le corrige el pasado se le acabó lo único para lo que sirve.</span></dd></div>
     </dl>
   </section>
@@ -260,6 +261,7 @@
       <div><span class="marca-p hecho">HECHO</span><span>La entrevista por voz y el expediente KYC, con la cédula, el teléfono y el ingreso leídos por código.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>El cotejo, la regla que detiene el trámite y sus pruebas.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>Quién firma el acta: PIN en el equipo, la firma puesta por el servidor desde la sesión, y las actas viejas marcadas «sin verificar».</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>El libro de actas: qué firmó cada oficial, cuántos trámites siguieron y cuántos se detuvieron.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>El consenso de dos lecturas y la huella del modelo.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>El servidor y la interfaz de ventanilla, con cuatro casos medidos.</span></div>
       <div><span class="marca-p">FALTA</span><span>Probar el servidor con los tres modelos cargados de verdad.</span></div>

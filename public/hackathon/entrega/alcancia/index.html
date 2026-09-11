@@ -208,12 +208,29 @@
   </section>
 
   <section>
+    <h2>Quién firma el acta</h2>
+    <p>
+      Alcancía no abre la cuenta: entrega un expediente cerrado con folio que dice si el
+      trámite sigue o se detiene. Es el documento que alguien va a leer dentro de seis
+      meses cuando pregunten por qué esta cuenta se abrió, o por qué aquella no. Durante un
+      tiempo <b>todas las actas salían firmadas «ventanilla»</b>, porque el nombre venía en
+      el cuerpo de la petición y la interfaz ni siquiera lo mandaba. Un acta que no sabe
+      quién la firmó no es un acta: es una nota.
+    </p>
+    <dl style="margin:0">
+      <div class="fila"><dt>El PIN</dt><dd>El oficial abre la ventanilla con <b>cuatro dígitos comprobados en el equipo</b>, contra <b>sha256(sal + pin)</b> con sal por persona.<span class="porque">Sin una sola llamada de red, igual que el resto. Tras tres fallos la espera sube a 5 s, 15 s, 60 s y 5 min, y se cuenta por oficial: si fuera por equipo, el primero que se equivoca deja sin atender a la sucursal.</span></dd></div>
+      <div class="fila"><dt>La firma</dt><dd>La pone el <b>servidor desde la sesión</b>, nunca el cuerpo de la petición.<span class="porque">Mandar el nombre de otra persona en la petición no hace nada: el acta sale firmada por quien abrió la ventanilla. Está probado, no supuesto.</span></dd></div>
+      <div class="fila"><dt>Lo que no es</dt><dd>Cuatro dígitos <b>no</b> son el directorio del banco, ni la doble firma que un banco exige de verdad.<span class="porque">Es la prueba más fuerte que se puede dar sin salir del equipo. Quien venía en la lista sale como «del padrón» y quien se registró aquí como «alta local»; las actas de antes siguen ahí marcadas «sin verificar», con su «ventanilla» y todo. A un libro de actas al que se le corrige el pasado se le acabó lo único para lo que sirve.</span></dd></div>
+    </dl>
+  </section>
+
+  <section>
     <h2>Lo que está medido</h2>
     <dl style="margin:0">
       <div class="fila"><dt>Campos leídos</dt><dd><span class="n">30</span><span class="porque">En cuatro cédulas sintéticas distintas.</span></dd></div>
       <div class="fila"><dt>Campos mal</dt><dd><span class="n" style="color:var(--verde)">0</span><span class="porque">Ninguno. Lo que no pudo leer, lo dijo; lo que leyó, lo leyó bien.</span></dd></div>
       <div class="fila"><dt>Trámites</dt><dd><span class="n">4 / 4</span><span class="porque">Decididos igual que los decidiría un operador humano con el documento delante.</span></dd></div>
-      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">102</span><span class="porque">Corren en milisegundos, sin modelo, con el texto exacto que devolvió VisionPsy.</span></dd></div>
+      <div class="fila"><dt>Pruebas de código</dt><dd><span class="n">214</span><span class="porque">Corren en milisegundos, sin modelo, con el texto exacto que devolvió VisionPsy. 55 de ellas son de quién firma el acta.</span></dd></div>
     </dl>
     <p>
       Los documentos son sintéticos y lo dicen en la propia imagen. El reto prohíbe
@@ -241,7 +258,8 @@
     <div class="pendiente">
       <div><span class="marca-p hecho">HECHO</span><span>El motor de lectura del documento, medido, con su registro de rendimiento.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>La entrevista por voz y el expediente KYC, con la cédula, el teléfono y el ingreso leídos por código.</span></div>
-      <div><span class="marca-p hecho">HECHO</span><span>El cotejo, la regla que detiene el trámite y sus 102 pruebas.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>El cotejo, la regla que detiene el trámite y sus pruebas.</span></div>
+      <div><span class="marca-p hecho">HECHO</span><span>Quién firma el acta: PIN en el equipo, la firma puesta por el servidor desde la sesión, y las actas viejas marcadas «sin verificar».</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>El consenso de dos lecturas y la huella del modelo.</span></div>
       <div><span class="marca-p hecho">HECHO</span><span>El servidor y la interfaz de ventanilla, con cuatro casos medidos.</span></div>
       <div><span class="marca-p">FALTA</span><span>Probar el servidor con los tres modelos cargados de verdad.</span></div>

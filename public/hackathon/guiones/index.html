@@ -232,19 +232,27 @@
       <li><code>npm start</code> y una pasada en seco completa. La primera foto carga VisionPsy.</li>
       <li>Ten los cuatro casos a mano. El botón 2 es el del conflicto y el 4 el del freno.</li>
       <li>Si subes una foto de cédula, usa <code>documentos/gastada.png</code>.</li>
+      <li>Cierra la sesión antes de la toma buena: el video empieza en <b>¿Quién abre la ventanilla?</b>. Entras como <b>Ricardo Him</b>, PIN <b>8024</b>.</li>
       <li><b>No enseñes la fecha huérfana.</b> Está construida y probada, pero ninguno de
         los cuatro casos la produce. Enseñar una función que no aparece obliga a explicarla,
         y explicar cuesta segundos que no tienes.</li>
     </ul>
 
     <div class="escena">
-      <div class="cabeza"><span class="tiempo">0:00 – 0:25</span><span class="que"><b>El gancho.</b> La banda roja de VENCIDA, grande, y el botón «Continuar con el trámite» apagado. Empieza ahí, sin contexto.</span></div>
+      <div class="cabeza"><span class="tiempo">0:00 – 0:20</span><span class="que"><b>El gancho.</b> La banda roja de VENCIDA, grande, y el botón «Continuar con el trámite» apagado. Empieza ahí, sin contexto.</span></div>
       <span class="rot">Una cédula vencida no abre una cuenta.</span>
       <blockquote>En una ventanilla de banco, el error caro no es teclear despacio. Es abrir una cuenta con un documento que no servía.</blockquote>
     </div>
 
     <div class="escena">
-      <div class="cabeza"><span class="tiempo">0:25 – 1:25</span><span class="que"><b>El oficial habla.</b> Vuelves al principio, pulsas Grabar y dictas como si el cliente estuviera enfrente.</span></div>
+      <div class="cabeza"><span class="tiempo">0:20 – 0:30</span><span class="que"><b>Quién abre la ventanilla.</b> Eliges a Ricardo Him y tecleas cuatro dígitos. Diez segundos.</span></div>
+      <span class="rot">El PIN se comprueba aquí. Nada sale del equipo.</span>
+      <blockquote>Antes de atender a nadie, el oficial se identifica. El acta que salga al final va a llevar su nombre.</blockquote>
+      <p class="que">No lo expliques todavía: su peso se cobra en el minuto 4:20.</p>
+    </div>
+
+    <div class="escena">
+      <div class="cabeza"><span class="tiempo">0:30 – 1:25</span><span class="que"><b>El oficial habla.</b> Vuelves al principio, pulsas Grabar y dictas como si el cliente estuviera enfrente.</span></div>
       <blockquote class="dicho">«Rodrigo Bernal Sánchez, cédula 3-701-2288, quiere un préstamo personal. Gana como 900 al mes y vive en Colón.»</blockquote>
       <span class="rot">El expediente se llena hablando. Nada sale del equipo.</span>
       <p class="que">Cuando aparezca el expediente, para el cursor en la fila del ingreso.</p>
@@ -282,8 +290,8 @@
 
     <div class="escena">
       <div class="cabeza"><span class="tiempo">3:20 – 4:20</span><span class="que"><b>Cómo se sostiene.</b> La terminal: <code>npm run prueba</code>.</span></div>
-      <span class="rot">102 pruebas. 30 campos leídos. 0 mal.</span>
-      <blockquote>Ciento dos pruebas deterministas, sin cargar un modelo, en milisegundos.</blockquote>
+      <span class="rot">214 pruebas. 30 campos leídos. 0 mal.</span>
+      <blockquote>Doscientas catorce pruebas deterministas, sin cargar un modelo, en milisegundos.</blockquote>
       <p class="que">Abre el desplegable «Lo que leyó el modelo, tal cual» y enseña la huella al final.</p>
       <span class="rot">Qué modelo, qué prompt, qué imagen. Firmado.</span>
       <blockquote>Y cada lectura guarda qué la produjo. En banca eso tiene nombre: gobernanza de modelos. Es la pregunta que hace un auditor un año después, cuando el modelo ya se actualizó dos veces.</blockquote>
@@ -298,6 +306,10 @@
       <span class="rot">No abre la cuenta. Entrega un expediente que se puede auditar.</span>
       <blockquote>Alcancía no abre la cuenta: entrega un expediente cerrado, con folio, con lo que dijo el cliente, lo que dice su cédula, el cotejo entre los dos y la huella del modelo que lo leyó.</blockquote>
       <blockquote>Y ese botón no autoriza nada por su cuenta. <b>El servidor vuelve a decidir antes de escribir.</b> Si la regla dice que el trámite se detiene, no hay botón que lo pase.</blockquote>
+      <p class="que">Señala el pie del acta, donde está la firma.</p>
+      <span class="rot">Firmada por Ricardo Him. Identidad comprobada con PIN.</span>
+      <blockquote>Y va firmada por quien la cerró. Esto lo pone el servidor desde la sesión, no el navegador: mandar el nombre de otro en la petición no cambia nada, el acta sale con el de quien abrió la ventanilla.</blockquote>
+      <blockquote>Es la diferencia entre un expediente y una nota. Dentro de seis meses, cuando alguien pregunte por qué esta cuenta se abrió, la respuesta tiene un nombre y una hora.</blockquote>
       <p class="que">Si te sobra un segundo, enseña el caso 2: ahí el botón está apagado y en su lugar aparece <b>Dejar constancia y detener</b>. Un banco necesita el registro de por qué algo NO siguió tanto como el de por qué sí.</p>
     </div>
 

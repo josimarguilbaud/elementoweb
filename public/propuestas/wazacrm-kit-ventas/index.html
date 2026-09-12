@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Ventas WazaCRM · Para Nicol — elementoweb.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f5; --surface:#ffffff; --surface-2:#f3f0ea; --border:#e6e1d8;
+    --text:#1c1a17; --text-dim:#6b6459;
+    --accent:#e85f1c; --accent-2:#c94f14; --accent-soft:#fdece0;
+    --purple:#6d5bd0; --purple-soft:#efecfc;
+    --good:#16a34a; --good-soft:#e8f7ee;
+    --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0a0e15; --surface:#12161f; --surface-2:#171c27; --border:#242b3a;
+      --text:#f2efe9; --text-dim:#9aa3b5;
+      --accent:#ff7a33; --accent-2:#ffb37a; --accent-soft:#2a1c12;
+      --purple:#a698ff; --purple-soft:#1e1a34;
+      --good:#34d399; --good-soft:#0f2419;
+    }
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Public Sans', system-ui, -apple-system, sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{ font-family:'Sora', system-ui, sans-serif; text-wrap:balance; letter-spacing:-0.01em; }
+  .num{ font-variant-numeric: tabular-nums; }
+
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 24px 96px; }
+  a{ color:inherit; text-decoration:none; }
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 24px; max-width:1120px; margin:0 auto;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:'Sora'; font-weight:800; font-size:20px; }
+  .brand .dot{ width:11px; height:11px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-soft); }
+  .kicker-top{ font-size:13px; color:var(--text-dim); font-weight:600; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:28px 0 44px; border-bottom:1px solid var(--border);
+    margin-bottom:44px;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--accent-soft); color:var(--accent); border:1px solid var(--accent);
+    border-radius:999px; padding:6px 14px; font-size:12.5px; font-weight:700;
+    margin-bottom:18px;
+  }
+  h1.title{ font-size:clamp(32px,5vw,50px); font-weight:800; margin:0 0 16px; max-width:16ch; }
+  h1.title em{ font-style:normal; color:var(--accent); }
+  .lede{ font-size:18px; color:var(--text-dim); max-width:62ch; margin:0 0 28px; }
+  .trustrow{ display:flex; flex-wrap:wrap; gap:10px; }
+  .trust{
+    font-size:13px; font-weight:600; color:var(--text-dim);
+    background:var(--surface-2); border:1px solid var(--border);
+    padding:8px 13px; border-radius:10px; display:flex; align-items:center; gap:7px;
+  }
+  .trust svg{ width:14px; height:14px; color:var(--good); flex:none; }
+
+  /* ---------- pitch line ---------- */
+  .pitchline{
+    background:linear-gradient(135deg, var(--accent-soft), transparent);
+    border:1px solid var(--accent); border-radius:var(--radius);
+    padding:24px 28px; margin:0 0 56px;
+  }
+  .pitchline .label{ font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); margin-bottom:8px; }
+  .pitchline p{ margin:0; font-size:20px; font-weight:600; font-family:'Sora'; line-height:1.4; }
+
+  /* ---------- section header ---------- */
+  section{ margin-bottom:64px; }
+  .sec-head{ margin-bottom:26px; }
+  .sec-eyebrow{ font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); margin-bottom:8px; }
+  h2.sec-title{ font-size:clamp(24px,3vw,32px); font-weight:800; margin:0 0 10px; }
+  .sec-sub{ color:var(--text-dim); font-size:15.5px; max-width:68ch; margin:0; }
+
+  /* ---------- coaching callout ---------- */
+  .coach{
+    background:var(--purple-soft); border:1px solid var(--purple);
+    border-radius:12px; padding:16px 20px; margin:18px 0;
+    display:flex; gap:12px; align-items:flex-start;
+  }
+  .coach svg{ width:20px; height:20px; color:var(--purple); flex:none; margin-top:2px; }
+  .coach .t{ font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--purple); margin-bottom:4px; }
+  .coach p{ margin:0; font-size:14.5px; color:var(--text); }
+
+  /* ---------- ICP chips ---------- */
+  .chiprow{ display:flex; flex-wrap:wrap; gap:10px; }
+  .chip{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:12px 16px; font-size:14px; font-weight:600; display:flex; align-items:center; gap:9px;
+  }
+  .chip .ic{ font-size:17px; }
+
+  /* ---------- feature grid ---------- */
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:14px; }
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:18px 18px 16px;
+  }
+  .card .ic{
+    width:36px; height:36px; border-radius:10px; background:var(--accent-soft); color:var(--accent);
+    display:flex; align-items:center; justify-content:center; margin-bottom:12px;
+  }
+  .card .ic svg{ width:19px; height:19px; }
+  .card h3{ font-size:15px; font-weight:700; margin:0 0 6px; }
+  .card p{ font-size:13.5px; color:var(--text-dim); margin:0; line-height:1.5; }
+
+  /* ---------- addon groups ---------- */
+  .addon-group{ margin-bottom:22px; }
+  .addon-group h3{
+    font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+    color:var(--text-dim); margin:0 0 12px; display:flex; align-items:center; gap:8px;
+  }
+  .addon-group h3::after{ content:""; flex:1; height:1px; background:var(--border); }
+  .addon-list{ display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:10px; }
+  .addon{
+    background:var(--surface-2); border:1px solid var(--border); border-radius:10px;
+    padding:12px 14px; font-size:13.5px; font-weight:600; display:flex; align-items:center; gap:10px;
+  }
+  .addon .plus{
+    width:22px; height:22px; border-radius:6px; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; flex:none;
+  }
+
+  /* ---------- pricing ---------- */
+  .plans{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:820px){ .plans{ grid-template-columns:1fr; } }
+  .plan{
+    background:var(--surface); border:1px solid var(--border); border-radius:18px;
+    padding:26px 24px; display:flex; flex-direction:column;
+  }
+  .plan.feat{ border-color:var(--accent); box-shadow:0 0 0 1px var(--accent); position:relative; }
+  .plan.feat .ribbon{
+    position:absolute; top:-12px; left:24px; background:var(--accent); color:#fff;
+    font-size:11px; font-weight:800; padding:5px 12px; border-radius:999px; letter-spacing:.03em;
+  }
+  .plan .pname{ font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--text-dim); margin-bottom:6px; }
+  .plan h3{ font-size:19px; font-weight:800; margin:0 0 14px; font-family:'Sora'; }
+  .plan .price{ font-family:'Sora'; font-weight:800; font-size:38px; margin-bottom:2px; }
+  .plan .price span{ font-size:15px; font-weight:600; color:var(--text-dim); }
+  .plan .conv{ font-size:13px; color:var(--text-dim); margin-bottom:18px; }
+  .plan ul{ list-style:none; margin:0 0 20px; padding:0; display:flex; flex-direction:column; gap:9px; flex:1; }
+  .plan li{ font-size:13.5px; display:flex; gap:9px; align-items:flex-start; }
+  .plan li svg{ width:15px; height:15px; color:var(--good); flex:none; margin-top:2px; }
+  .plan .impl{
+    border-top:1px solid var(--border); padding-top:14px; margin-top:auto;
+  }
+  .plan .impl .lbl{ font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--text-dim); font-weight:700; margin-bottom:4px; }
+  .plan .impl .amt{ font-size:16px; font-weight:800; font-family:'Sora'; }
+  .plan .impl .note{ font-size:11.5px; color:var(--text-dim); margin-top:3px; }
+
+  .pricenote{ font-size:13px; color:var(--text-dim); margin-top:16px; }
+
+  /* ---------- objections table ---------- */
+  .obj{ display:flex; flex-direction:column; gap:10px; }
+  .obj-row{
+    display:grid; grid-template-columns:1fr 1.3fr; gap:18px;
+    background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 18px;
+  }
+  @media (max-width:700px){ .obj-row{ grid-template-columns:1fr; } }
+  .obj-row .q{ font-size:14px; font-weight:700; }
+  .obj-row .q .tag{ display:block; font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:.05em; margin-bottom:5px; }
+  .obj-row .a{ font-size:13.5px; color:var(--text-dim); }
+
+  /* ---------- close ---------- */
+  .close{
+    background:var(--surface-2); border:1px solid var(--border); border-radius:20px;
+    padding:36px 32px; text-align:center;
+  }
+  .close h2{ font-size:26px; margin:0 0 10px; }
+  .close p{ color:var(--text-dim); font-size:15px; max-width:52ch; margin:0 auto 22px; }
+  .cta-row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .btn{
+    font-family:'Sora'; font-weight:700; font-size:14.5px; padding:13px 24px; border-radius:11px;
+    border:1px solid var(--border); background:var(--surface); color:var(--text); display:inline-block;
+  }
+  .btn.primary{ background:var(--accent); color:#fff; border-color:var(--accent); }
+  .contactline{ margin-top:20px; font-size:13px; color:var(--text-dim); }
+  .contactline b{ color:var(--text); }
+  .contactline a{ text-decoration:underline; text-underline-offset:2px; }
+
+  footer{ text-align:center; color:var(--text-dim); font-size:12.5px; padding:28px 24px 0; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="dot"></span>WazaCRM</div>
+  <div class="kicker-top">Kit de ventas — uso interno</div>
+</div>
+
+<div class="wrap">
+
+  <section class="hero" style="margin-bottom:0">
+    <div class="eyebrow">Para Nicol · Equipo comercial de Elemento Web</div>
+    <h1 class="title">Todo lo que necesitas para vender <em>WazaCRM</em></h1>
+    <p class="lede">Qué es, qué incluye cada plan, qué módulos se pueden sumar y cómo responder las preguntas que más hacen los prospectos. Ningún precio de aquí está inventado: son los mismos que cobra el sistema.</p>
+    <div class="trustrow">
+      <span class="trust"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>API oficial de WhatsApp (Meta Tech Provider)</span>
+      <span class="trust"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sin riesgo de baneo del número</span>
+      <span class="trust"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Producto propio de Elemento Web</span>
+      <span class="trust"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>14 días gratis, sin tarjeta</span>
+    </div>
+  </section>
+
+  <div class="pitchline" style="margin-top:36px">
+    <div class="label">El pitch de 10 segundos</div>
+    <p>"WazaCRM es el CRM y chatbot con IA para WhatsApp que hacemos nosotros mismos en Elemento Web: tu negocio responde, cotiza y da seguimiento las 24 horas, con la línea oficial de Meta, sin riesgo de que te baneen el número."</p>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-eyebrow">Qué es</div>
+      <h2 class="sec-title">Un CRM de WhatsApp con IA, no un bot suelto</h2>
+      <p class="sec-sub">WazaCRM le da a un negocio una bandeja de equipo, un embudo de ventas y un asistente con inteligencia artificial que atiende por WhatsApp: todo sobre la API oficial de Meta, nunca herramientas no oficiales que arriesgan el número del cliente.</p>
+    </div>
+    <div class="coach">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 00-3.5 10.9c.3.2.5.6.5 1v.6h6v-.6c0-.4.2-.8.5-1A6 6 0 0010 2z" stroke="currentColor" stroke-width="1.6"/><path d="M8 17h4M8.5 15h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <div><div class="t">Para vender</div><p>Es el mismo sistema que usa Elemento Web con sus propios clientes reales. Si te preguntan "¿esto ya lo usa alguien?" — sí, lo usamos nosotros mismos.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-eyebrow">A quién se lo vendes</div>
+      <h2 class="sec-title">Funciona para casi cualquier negocio que atienda por WhatsApp</h2>
+      <p class="sec-sub">El asistente se entrena con la información real de cada negocio: no hay una versión genérica que sirva para todos, pero el sistema base es el mismo.</p>
+    </div>
+    <div class="chiprow">
+      <span class="chip"><span class="ic">🍽️</span>Restaurantes y delivery</span>
+      <span class="chip"><span class="ic">🏠</span>Inmobiliarias</span>
+      <span class="chip"><span class="ic">💊</span>Clínicas y estética</span>
+      <span class="chip"><span class="ic">🚗</span>Automotriz</span>
+      <span class="chip"><span class="ic">🛒</span>E-commerce</span>
+      <span class="chip"><span class="ic">🎓</span>Educación y cursos</span>
+      <span class="chip"><span class="ic">🏝️</span>Turismo y hospedaje</span>
+      <span class="chip"><span class="ic">📋</span>Servicios profesionales</span>
+      <span class="chip"><span class="ic">📦</span>Mudanzas y servicios del hogar</span>
+      <span class="chip"><span class="ic">🏋️</span>Gimnasios</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-eyebrow">Funciones incluidas</div>
+      <h2 class="sec-title">Lo que trae cualquier plan</h2>
+      <p class="sec-sub">Es el núcleo del producto, no son extras que se cobran aparte.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="ic"><svg viewBox="0 0 20 20" fill="none"><path d="M3 5h14v9H7l-4 3V5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><h3>Bandeja de equipo</h3><p>Cada chat de WhatsApp con su dueño, asignación y avisos cuando algo necesita atención.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15V9m5 6V5m5 10v-3m5 3V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h3>Embudo de ventas (CRM)</h3><p>Etapas de la oportunidad y seguimiento del prospecto de principio a fin.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 4.6L17 8l-4.6 1.8L10 14l-1.8-4.2L4 8l5.2-1.4L10 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div><h3>Asistente con IA</h3><p>Responde preguntas frecuentes, cotiza, agenda citas y guarda los datos del cliente.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="6" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M4 17c0-3 2.7-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h3>Traspaso a agente humano</h3><p>Cuando el caso lo necesita, pasa la conversación a una persona del equipo sin perder el hilo.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 20 20" fill="none"><path d="M4 4h12v9l-3 3H4V4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 8h6M7 11h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div><h3>Entrenamiento con datos propios</h3><p>El asistente aprende del catálogo, precios y documentos reales del negocio.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 20 20" fill="none"><path d="M3 8l7-5 7 5-7 5-7-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 8v5l7 5 7-5V8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div><h3>Formularios conversacionales</h3><p>Pide los datos como una conversación natural, no un formulario rígido.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 8h14" stroke="currentColor" stroke-width="1.6"/></svg></div><h3>Etiquetado automático</h3><p>Clasifica conversaciones solo, sin que alguien del equipo tenga que hacerlo a mano.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 8h14M7 2v4m6-4v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h3>Sistema de reservas</h3><p>Agenda con cupos por franja horaria, sin choques ni sobrecupo.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 20 20" fill="none"><path d="M3 17l4-4 3 3 7-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Calificación predictiva</h3><p>Marca qué tan listo está un prospecto para comprar, antes de que un humano lo revise.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 20 20" fill="none"><path d="M4 15V8m4 7V4m4 11v-5m4 5V6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h3>Reportes</h3><p>Conversaciones, ventas y desempeño del equipo, siempre a la mano.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-eyebrow">Módulos opcionales</div>
+      <h2 class="sec-title">Add-ons que se pueden sumar</h2>
+      <p class="sec-sub">Se activan según el plan y lo que el negocio necesite: son el argumento para "empieza simple y crece con nosotros".</p>
+    </div>
+
+    <div class="addon-group">
+      <h3>Core y atención al cliente</h3>
+      <div class="addon-list">
+        <div class="addon"><span class="plus">+</span>Chat proactivo (triggers automáticos)</div>
+      </div>
+    </div>
+    <div class="addon-group">
+      <h3>Ventas y e-commerce</h3>
+      <div class="addon-list">
+        <div class="addon"><span class="plus">+</span>Pasarela de pago integrada</div>
+      </div>
+    </div>
+    <div class="addon-group">
+      <h3>Canales y audiencia</h3>
+      <div class="addon-list">
+        <div class="addon"><span class="plus">+</span>Campañas masivas de WhatsApp</div>
+        <div class="addon"><span class="plus">+</span>Omnicanalidad: Instagram y Facebook</div>
+      </div>
+    </div>
+    <div class="addon-group">
+      <h3>Automatizaciones y flujos</h3>
+      <div class="addon-list">
+        <div class="addon"><span class="plus">+</span>Asignación round robin del equipo</div>
+        <div class="addon"><span class="plus">+</span>Condicionales avanzados</div>
+        <div class="addon"><span class="plus">+</span>Secuencias de goteo (drip)</div>
+      </div>
+    </div>
+    <div class="addon-group">
+      <h3>Inteligencia artificial premium</h3>
+      <div class="addon-list">
+        <div class="addon"><span class="plus">+</span>IA de voz y notas de audio</div>
+      </div>
+    </div>
+    <div class="addon-group" style="margin-bottom:0">
+      <h3>Gestión y enterprise</h3>
+      <div class="addon-list">
+        <div class="addon"><span class="plus">+</span>Analíticas premium</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-eyebrow">Precios</div>
+      <h2 class="sec-title">Tres planes, precios reales</h2>
+      <p class="sec-sub">Los mismos que se ven en wazacrm.com/#precios. Nunca cites uno distinto.</p>
+    </div>
+
+    <div class="plans">
+      <div class="plan">
+        <div class="pname">Llave en mano</div>
+        <h3>Nosotros lo configuramos todo</h3>
+        <div class="price">$59<span>/mes</span></div>
+        <div class="conv">800 conversaciones incluidas · $0.12 c/u extra</div>
+        <ul>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bandeja, CRM y reservas</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Asistente con IA de plataforma</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>5 usuarios incluidos</li>
+        </ul>
+        <div class="impl">
+          <div class="lbl">Implementación de referencia</div>
+          <div class="amt num">$650 <span style="font-weight:600;font-size:12.5px;color:var(--text-dim)">pago único</span></div>
+          <div class="note">Se acuerda aparte, nunca un cargo automático.</div>
+        </div>
+      </div>
+
+      <div class="plan feat">
+        <div class="ribbon">Más pedido</div>
+        <div class="pname">IA Total</div>
+        <h3>Con IA entrenada a su negocio</h3>
+        <div class="price">$99<span>/mes</span></div>
+        <div class="conv">2,000 conversaciones incluidas · $0.10 c/u extra</div>
+        <ul>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Todo lo de Llave en mano</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Asistente entrenado con sus documentos</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>5 usuarios incluidos</li>
+        </ul>
+        <div class="impl">
+          <div class="lbl">Implementación de referencia</div>
+          <div class="amt num">$1,250 <span style="font-weight:600;font-size:12.5px;color:var(--text-dim)">pago único</span></div>
+          <div class="note">Se acuerda aparte, nunca un cargo automático.</div>
+        </div>
+      </div>
+
+      <div class="plan">
+        <div class="pname">Automatizaciones a medida</div>
+        <h3>Flujos hechos para su negocio</h3>
+        <div class="price">$189<span>/mes</span></div>
+        <div class="conv">4,000 conversaciones incluidas · $0.10 c/u extra</div>
+        <ul>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Todo lo de IA Total</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Automatizaciones construidas a medida</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-8.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>5 usuarios incluidos</li>
+        </ul>
+        <div class="impl">
+          <div class="lbl">Implementación de referencia</div>
+          <div class="amt num">desde $2,500 <span style="font-weight:600;font-size:12.5px;color:var(--text-dim)">pago único</span></div>
+          <div class="note">Se acuerda aparte, nunca un cargo automático.</div>
+        </div>
+      </div>
+    </div>
+    <p class="pricenote">Los tres planes tienen 14 días gratis, sin tarjeta al inicio. Si se pasan del cupo de conversaciones, se cobra el excedente por conversación. Nunca se corta el servicio de golpe.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-eyebrow">Objeciones frecuentes</div>
+      <h2 class="sec-title">Qué responder cuando preguntan esto</h2>
+    </div>
+    <div class="obj">
+      <div class="obj-row">
+        <div class="q"><span class="tag">Objeción</span>¿Y si me banean el número de WhatsApp?</div>
+        <div class="a">No con WazaCRM. Trabajamos solo con la API oficial de Meta (somos Tech Provider verificado) y plantillas aprobadas. El riesgo de baneo es de las herramientas no oficiales que simulan WhatsApp Web. Por la vía oficial, el número queda protegido.</div>
+      </div>
+      <div class="obj-row">
+        <div class="q"><span class="tag">Objeción</span>¿Puedo usar mi número actual?</div>
+        <div class="a">Sí, se puede migrar a la API oficial (ojo: se pierde el historial de chats anteriores, regla de Meta). Muchos prefieren activar un número nuevo exclusivo para ventas y dejar el actual como está.</div>
+      </div>
+      <div class="obj-row">
+        <div class="q"><span class="tag">Objeción</span>Ya tengo WhatsApp Business normal, ¿para qué esto?</div>
+        <div class="a">WhatsApp Business es solo la app. WazaCRM le suma el equipo trabajando ordenado (bandeja compartida), el embudo de ventas, el asistente con IA respondiendo cuando nadie está, y reportes: todo lo que la app sola no da.</div>
+      </div>
+      <div class="obj-row">
+        <div class="q"><span class="tag">Objeción</span>¿Cuánto tarda en estar listo?</div>
+        <div class="a">Llave en mano: unos días tras la consultoría inicial. IA Total: un poco más porque hay que entrenar y calibrar el modelo con sus documentos. Se puede dar un rango exacto en la videollamada de diagnóstico.</div>
+      </div>
+      <div class="obj-row">
+        <div class="q"><span class="tag">Objeción</span>No sé nada de tecnología</div>
+        <div class="a">No hace falta. En Llave en mano e IA Total, el equipo hace toda la configuración técnica y entrega el sistema listo para chatear y vender.</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-bottom:0">
+    <div class="close">
+      <h2>El siguiente paso siempre es el mismo</h2>
+      <p>No hay que cerrar la venta en el primer chat. El objetivo es agendar la demo en vivo. Ahí WazaCRM se vende solo mostrando el caso real del negocio del prospecto.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://wazacrm.com" target="_blank" rel="noopener">Agendar demo en wazacrm.com</a>
+        <a class="btn" href="https://wazacrm.com" target="_blank" rel="noopener">14 días gratis, sin tarjeta</a>
+      </div>
+      <div class="contactline">WhatsApp de ventas: <a href="https://wa.me/50761903007" target="_blank" rel="noopener"><b>+507 6190-3007</b></a> · <a href="https://wazacrm.com" target="_blank" rel="noopener"><b>wazacrm.com</b></a></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>Kit de ventas interno de WazaCRM (producto de Elemento Web). Precios y cupos vigentes al momento de generarlo; verifica en wazacrm.com/#precios si pasó tiempo.</footer>
+</body>
+</html>

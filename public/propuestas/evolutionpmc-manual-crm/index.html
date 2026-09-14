@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Guía del CRM — Evolution PMC</title>
+<style>
+  :root{
+    --tinta:#1a1d21;
+    --suave:#5b6470;
+    --linea:#e4e7eb;
+    --fondo:#ffffff;
+    --papel:#f7f8fa;
+    --acento:#0f766e;
+    --acento-claro:#e6f4f1;
+    --aviso:#fef6e7;
+    --aviso-linea:#e8b931;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--papel);
+    color:var(--tinta);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .hoja{max-width:760px;margin:0 auto;background:var(--fondo);padding:0 0 72px}
+  @media(min-width:800px){
+    .hoja{margin:32px auto;border:1px solid var(--linea);border-radius:6px}
+  }
+  .cabecera{
+    padding:56px 40px 40px;
+    border-bottom:1px solid var(--linea);
+    background:linear-gradient(180deg,var(--acento-claro) 0%,#fff 100%);
+  }
+  @media(max-width:600px){.cabecera{padding:40px 24px 32px}}
+  .sello{
+    display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--acento);font-weight:600;margin-bottom:14px;
+  }
+  h1{margin:0 0 10px;font-size:34px;line-height:1.2;letter-spacing:-.02em;font-weight:700}
+  @media(max-width:600px){h1{font-size:27px}}
+  .entradilla{margin:0;color:var(--suave);font-size:17px;max-width:52ch}
+  main{padding:0 40px}
+  @media(max-width:600px){main{padding:0 24px}}
+  h2{
+    margin:48px 0 4px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--acento);font-weight:700;
+  }
+  h2 + .titulo{margin:0 0 18px;font-size:23px;line-height:1.3;font-weight:700;letter-spacing:-.01em}
+  h3{margin:30px 0 8px;font-size:17px;font-weight:650}
+  p{margin:0 0 16px}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:9px}
+  a{color:var(--acento)}
+  code{
+    background:var(--papel);border:1px solid var(--linea);border-radius:4px;
+    padding:2px 6px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  .acceso{
+    background:var(--papel);border:1px solid var(--linea);border-radius:6px;
+    padding:22px 24px;margin:8px 0 20px;
+  }
+  .acceso dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;align-items:baseline}
+  @media(max-width:520px){.acceso dl{grid-template-columns:1fr;gap:2px 0}}
+  .acceso dt{font-size:13px;color:var(--suave);font-weight:600}
+  .acceso dd{margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;word-break:break-all}
+  @media(max-width:520px){.acceso dd{margin-bottom:12px}}
+  .aviso{
+    background:var(--aviso);border:1px solid var(--aviso-linea);
+    padding:18px 22px;margin:20px 0;border-radius:6px;
+  }
+  .aviso p:last-child{margin-bottom:0}
+  .aviso strong{font-weight:650}
+  .pasos{counter-reset:paso;list-style:none;padding:0;margin:20px 0}
+  .pasos li{
+    counter-increment:paso;position:relative;padding-left:44px;margin-bottom:22px;
+  }
+  .pasos li::before{
+    content:counter(paso);position:absolute;left:0;top:-1px;
+    width:28px;height:28px;border-radius:50%;background:var(--acento);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:650;
+  }
+  .pasos strong{display:block;margin-bottom:2px;font-weight:650}
+  .tabla-envoltorio{overflow-x:auto;margin:18px 0 22px}
+  table{border-collapse:collapse;width:100%;font-size:15px;min-width:460px}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--linea);vertical-align:top}
+  th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--suave);font-weight:650}
+  td:first-child{font-weight:600;white-space:nowrap}
+  .lista-marcada{list-style:none;padding:0}
+  .lista-marcada li{padding-left:26px;position:relative}
+  .lista-marcada li::before{
+    content:"";position:absolute;left:4px;top:9px;width:7px;height:7px;
+    border-radius:50%;background:var(--acento);
+  }
+  .cierre{
+    margin-top:52px;padding:26px 28px;background:var(--acento-claro);
+    border-radius:6px;
+  }
+  .cierre p:last-child{margin-bottom:0}
+  footer{
+    margin-top:56px;padding:26px 40px 0;border-top:1px solid var(--linea);
+    color:var(--suave);font-size:14px;
+  }
+  @media(max-width:600px){footer{padding:26px 24px 0}}
+</style>
+</head>
+<body>
+<div class="hoja">
+
+<header class="cabecera">
+  <span class="sello">Guía de uso</span>
+  <h1>Tu CRM de cotizaciones y facturación</h1>
+  <p class="entradilla">Todo lo que necesitas para empezar a usarlo hoy mismo. No hace falta saber de sistemas: si sabes hacer una cotización en papel, esto te va a resultar familiar.</p>
+</header>
+
+<main>
+
+<h2>Empezar</h2>
+<p class="titulo">Tus accesos</p>
+
+<div class="acceso">
+  <dl>
+    <dt>Dirección</dt>
+    <dd>https://crm.elementoweb.com</dd>
+    <dt>Usuario</dt>
+    <dd>nicole@evolutionpmc.com</dd>
+    <dt>Contraseña</dt>
+    <dd>La que te envié por aparte</dd>
+  </dl>
+</div>
+
+<div class="aviso">
+  <p><strong>Lo primero, antes que nada:</strong> entra a <em>Configuración → Mi cuenta</em> y cambia la contraseña. La que te di es temporal y yo la conozco; la nueva será solo tuya.</p>
+</div>
+
+<h2>Lo esencial</h2>
+<p class="titulo">Qué es y qué no es</p>
+
+<p>Es el sistema donde llevas tus clientes, armas cotizaciones, las conviertes en facturas y registras los pagos que te van entrando. Sustituye la hoja de cálculo y el documento de Word que se copia y se pega.</p>
+
+<p>Tu empresa, <strong>Evolution PMC</strong>, está completamente separada del resto. Tus clientes, tus documentos y tus montos no los ve nadie más que tú.</p>
+
+<h3>Tus documentos van numerados solos</h3>
+<p>No tienes que llevar la cuenta. Las cotizaciones salen como <code>COT-EVO-0001</code> y las facturas como <code>EVO-0001</code>, y el número siguiente se asigna solo cada vez que emites uno.</p>
+
+<h2>El recorrido</h2>
+<p class="titulo">Qué hay en cada sección</p>
+
+<div class="tabla-envoltorio">
+<table>
+  <thead><tr><th>Sección</th><th>Para qué sirve</th></tr></thead>
+  <tbody>
+    <tr><td>Dashboard</td><td>El resumen al entrar: qué te deben, qué está por vencer, cómo va el mes.</td></tr>
+    <tr><td>Clientes</td><td>Tu directorio. Nombre, RUC, correo, teléfono. Se carga una vez y se reutiliza en todos los documentos.</td></tr>
+    <tr><td>Cotizaciones</td><td>Las propuestas que mandas. Se editan mientras están en borrador y se convierten en factura cuando te las aprueban.</td></tr>
+    <tr><td>Facturas</td><td>Lo que ya facturaste. Cada una lleva su saldo al día.</td></tr>
+    <tr><td>Servicios</td><td>Tu catálogo de partidas frecuentes con su precio. Te evita reescribir lo mismo en cada cotización.</td></tr>
+    <tr><td>Pagos y Abonos</td><td>El dinero que entra. Admite pagos parciales sobre una misma factura.</td></tr>
+    <tr><td>Configuración</td><td>Los datos de tu empresa, tu logo y colores, los impuestos, y a quién le das acceso.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>El flujo</h2>
+<p class="titulo">De la cotización al cobro</p>
+
+<ol class="pasos">
+  <li><strong>Carga el cliente</strong> En <em>Clientes → Nuevo</em>. Con el nombre basta para empezar; el RUC y la dirección los puedes completar después, pero hacen falta si la factura es formal.</li>
+  <li><strong>Arma la cotización</strong> En <em>Cotizaciones → Nueva</em>. Eliges el cliente, agregas las partidas con su cantidad y precio, y marcas cuáles llevan ITBMS. Los totales se calculan solos.</li>
+  <li><strong>Revísala y mándala</strong> Descargas el PDF o compartes el enlace. Mientras esté en borrador la puedes seguir corrigiendo.</li>
+  <li><strong>El cliente responde</strong> Marcas la cotización como aceptada o rechazada. Queda el registro de qué pasó con cada propuesta.</li>
+  <li><strong>Conviértela en factura</strong> Con un botón, y las partidas pasan tal cual sin que tengas que volver a escribirlas.</li>
+  <li><strong>Registra los pagos</strong> Cada vez que te abonen, lo anotas en <em>Pagos y Abonos</em>. Puede ser el total o una parte.</li>
+</ol>
+
+<h3>Una cotización, varios precios</h3>
+<p>Si ofreces el mismo trabajo con distintos materiales o marcas, no hagas tres cotizaciones. Una partida admite hasta tres opciones de precio, y el documento le muestra al cliente las tres con su total calculado. El total de la propuesta corresponde a la primera opción, así que pon de primera la que quieras destacar.</p>
+
+<h2>Detalle importante</h2>
+<p class="titulo">El estado de cobro no se marca: se calcula</p>
+
+<p>En muchos sistemas uno tiene que acordarse de marcar la factura como pagada, y ahí es donde se cometen los errores. Este sistema se ahorra ese paso por completo.</p>
+
+<p>El estado sale del saldo y de la fecha sin que tengas que tocarlo. Si registras un abono parcial, la factura queda en <strong>parcial</strong> por sí sola. Cuando los abonos alcanzan el total, pasa a <strong>pagada</strong>. Si se vence sin cubrirse, aparece como <strong>vencida</strong>. Nunca vas a tener una factura marcada como pagada con dinero pendiente.</p>
+
+<h3>Cómo lee los estados</h3>
+<div class="tabla-envoltorio">
+<table>
+  <thead><tr><th>Estado</th><th>Qué significa</th></tr></thead>
+  <tbody>
+    <tr><td>Borrador</td><td>La estás armando. No cuenta para nada todavía y la puedes editar libremente.</td></tr>
+    <tr><td>Enviada</td><td>Ya salió al cliente. Para una cotización, es la que está esperando respuesta.</td></tr>
+    <tr><td>Aceptada</td><td>El cliente aprobó la cotización. Lista para convertirse en factura.</td></tr>
+    <tr><td>Rechazada</td><td>El cliente dijo que no. Queda archivada con su historial.</td></tr>
+    <tr><td>Sin pagar</td><td>Factura emitida, todavía sin abonos.</td></tr>
+    <tr><td>Parcial</td><td>Tiene abonos, pero aún queda saldo.</td></tr>
+    <tr><td>Pagada</td><td>Los abonos cubren el total.</td></tr>
+    <tr><td>Vencida</td><td>Pasó la fecha y sigue con saldo.</td></tr>
+    <tr><td>Anulada</td><td>Se dejó sin efecto, pero queda registrada con todo su historial.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Antes de empezar en serio</h2>
+<p class="titulo">Configura tu empresa una sola vez</p>
+
+<ul class="lista-marcada">
+  <li><strong>Tus datos fiscales.</strong> Nombre legal, RUC y DV. Es lo que sale impreso en cada documento, así que conviene revisarlo bien la primera vez.</li>
+  <li><strong>Tu logo y tus colores.</strong> Tus cotizaciones y facturas salen con tu identidad, no con una plantilla genérica.</li>
+  <li><strong>El ITBMS.</strong> Ya viene configurado al 7%. Solo eliges en cada partida si lo lleva o no.</li>
+  <li><strong>Los accesos.</strong> Si alguien más de tu equipo va a usarlo, lo invitas desde ahí. Puedes darle permiso completo o solo de consulta, y esa persona pone su propia contraseña: tú nunca la sabes.</li>
+</ul>
+
+<h2>Para la prueba</h2>
+<p class="titulo">Lo que me ayudaría que hagas</p>
+
+<p>Lo más útil sería que lo uses con trabajo real en lugar de datos de prueba, porque un caso verdadero saca a la luz detalles que una prueba inventada nunca muestra.</p>
+
+<ol class="pasos">
+  <li><strong>Configura tu empresa</strong> Datos fiscales, logo y colores.</li>
+  <li><strong>Carga dos o tres clientes reales</strong> De los que ya tienes.</li>
+  <li><strong>Arma una cotización de verdad</strong> Una que hayas hecho hace poco por otro medio, y compara el resultado.</li>
+  <li><strong>Llévala hasta el final</strong> Conviértela en factura y registra un abono parcial, para ver cómo se comporta el saldo.</li>
+  <li><strong>Ábrelo en el teléfono</strong> Funciona en celular; quiero saber si se te hace cómodo desde ahí.</li>
+</ol>
+
+<h2>Si algo falla</h2>
+<p class="titulo">Cómo avisarme</p>
+
+<p>Lo que más sirve es esto: <strong>qué estabas haciendo, qué esperabas que pasara y qué pasó en su lugar</strong>. Si puedes, una captura de pantalla. Con eso se arregla rápido.</p>
+
+<p>Y no te guardes las cosas pequeñas. Un botón que no se encuentra o una palabra que confunde valen tanto como un error grande: son las que hacen que un sistema se sienta cómodo o incómodo de usar todos los días.</p>
+
+<div class="cierre">
+  <p><strong>Una última cosa.</strong> No tengas miedo de romper algo. Todo lo que hagas es tuyo y reversible: las facturas se anulan sin borrarse, las cotizaciones se editan mientras son borrador, y nada de lo que toques afecta a nadie más.</p>
+</div>
+
+</main>
+
+<footer>
+  <p>Documento preparado para Evolution PMC · Elemento Web · Septiembre 2026</p>
+</footer>
+
+</div>
+</body>
+</html>

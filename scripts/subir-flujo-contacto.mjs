@@ -41,6 +41,14 @@ const ORIGENES = [
 ];
 
 const jsCode = readFileSync(join(RAIZ, 'docs/contacto-n8n/armar-correo.js'), 'utf8');
+const jsCrm = readFileSync(join(RAIZ, 'docs/contacto-n8n/armar-lead-crm.js'), 'utf8');
+
+// El lead tambien entra al CRM de WazaCRM. Hasta el 16-sep-2026 esta llamada la
+// hacia el navegador, con el secreto escrito en src/lib/site.ts y por tanto en
+// el HTML publico. Ahora sale de aqui: el clientId va en una cabecera normal
+// (es publico) y el secreto en una credencial de n8n que este repo no conoce.
+const CRM_CLIENTE = '69f635e2-e5d5-40e1-bc46-83943fb210c0';
+const CRED_CRM = { id: 'eZlh1Ygrccu87DF2', name: 'WazaCRM formularios ElementoWeb (x-waza-secret)' };
 
 // El nodo Webhook responde el preflight OPTIONS con estos origenes. Sin esto el
 // navegador ni siquiera llega a mandar el POST: el formulario usa
@@ -140,6 +148,40 @@ const nodos = [
     typeVersion: 1,
     position: [880, 0],
   },
+  {
+    parameters: { jsCode: jsCrm },
+    id: 'armar-lead-crm',
+    name: 'Armar el lead para el CRM',
+    type: 'n8n-nodes-base.code',
+    typeVersion: 2,
+    position: [660, 140],
+  },
+  {
+    parameters: {
+      method: 'POST',
+      url: 'https://wazacrm.com/api/webhooks/forms',
+      authentication: 'genericCredentialType',
+      genericAuthType: 'httpHeaderAuth',
+      sendHeaders: true,
+      headerParameters: { parameters: [{ name: 'x-waza-client', value: CRM_CLIENTE }] },
+      sendBody: true,
+      specifyBody: 'json',
+      jsonBody: '={{ JSON.stringify($json) }}',
+      options: { timeout: 10000 },
+    },
+    id: 'guardar-wazacrm',
+    name: 'Guardar en WazaCRM',
+    type: 'n8n-nodes-base.httpRequest',
+    typeVersion: 4.2,
+    position: [880, 140],
+    credentials: { httpHeaderAuth: CRED_CRM },
+    // Si WazaCRM se cae, el correo del lead sale igual. El correo es lo que no
+    // se puede perder; la ficha del CRM se suma.
+    onError: 'continueRegularOutput',
+    retryOnFail: true,
+    maxTries: 2,
+    waitBetweenTries: 1500,
+  },
 ];
 
 // El spam y los invalidos caen por la rama falsa del IF: igual se responde ok
@@ -149,14 +191,26 @@ const connections = {
   'Armar correo': { main: [[{ node: 'Es un lead de verdad', type: 'main', index: 0 }]] },
   'Es un lead de verdad': {
     main: [
-      [{ node: 'Enviar por Brevo', type: 'main', index: 0 }],
+      [
+        { node: 'Enviar por Brevo', type: 'main', index: 0 },
+        { node: 'Armar el lead para el CRM', type: 'main', index: 0 },
+      ],
       [{ node: 'Responder OK', type: 'main', index: 0 }],
     ],
   },
   'Enviar por Brevo': { main: [[{ node: 'Responder OK', type: 'main', index: 0 }]] },
+  'Armar el lead para el CRM': { main: [[{ node: 'Guardar en WazaCRM', type: 'main', index: 0 }]] },
 };
 
-const flujo = { name: NOMBRE, nodes: nodos, connections, settings: { executionOrder: 'v1' } };
+// `errorWorkflow` NO es decorativo y este script lo estaba tirando: el flujo
+// vivo lo tenia puesto (alguien lo anadio por el panel) y cada subida lo
+// borraba en silencio, dejando los fallos sin avisar a nadie.
+const flujo = {
+  name: NOMBRE,
+  nodes: nodos,
+  connections,
+  settings: { executionOrder: 'v1', callerPolicy: 'workflowsFromSameOwner', errorWorkflow: 'sanblasErrorAlert01' },
+};
 
 writeFileSync(join(RAIZ, 'docs/contacto-n8n/workflow.json'), JSON.stringify(flujo, null, 2) + '\n');
 console.log('workflow.json escrito');

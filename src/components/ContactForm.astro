@@ -6,7 +6,7 @@
    Sin ninguno configurado, el formulario avisa y empuja a WhatsApp.
    El workflow de n8n listo para importar está en docs/contacto-n8n/. */
 import { contactForm } from '../lib/site';
-const { services, budgets, web3formsKey, endpoint, crm } = contactForm;
+const { services, budgets, web3formsKey, endpoint } = contactForm;
 ---
 <div class="glass rounded-3xl p-6 sm:p-8">
   <form id="cform" novalidate>
@@ -37,7 +37,7 @@ const { services, budgets, web3formsKey, endpoint, crm } = contactForm;
   </div>
 </div>
 
-<script define:vars={{ KEY: web3formsKey, ENDPOINT: endpoint, CRM: crm }}>
+<script define:vars={{ KEY: web3formsKey, ENDPOINT: endpoint }}>
   const form = document.getElementById('cform');
   const errEl = document.getElementById('cerr');
   if (form) {
@@ -68,28 +68,10 @@ const { services, budgets, web3formsKey, endpoint, crm } = contactForm;
       btn.disabled = true;
       btn.textContent = 'Enviando…';
 
-      // Aviso al CRM en paralelo: crea la tarjeta y permite que el bot reconozca
-      // por su telefono a quien ya lleno el formulario. Si falla, el envio normal
-      // sigue igual: por eso va sin await y con catch vacio.
-      if (CRM && CRM.endpoint && CRM.clientId && CRM.secret) {
-        fetch(CRM.endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            clientId: CRM.clientId,
-            secret: CRM.secret,
-            formulario: CRM.formName,
-            nombre: String(fd.get('nombre') || '').trim(),
-            email: String(fd.get('email') || '').trim(),
-            telefono: String(fd.get('telefono') || '').trim(),
-            mensaje: String(fd.get('mensaje') || '').trim(),
-            empresa: String(fd.get('empresa') || '').trim(),
-            servicio: String(fd.get('servicio') || '').trim(),
-            presupuesto: String(fd.get('presupuesto') || '').trim(),
-            origen: location.pathname,
-          }),
-        }).catch(() => {});
-      }
+      // El lead entra al CRM desde n8n, no desde aqui. Antes este bloque llamaba
+      // directo a wazacrm.com con el clientId y el secreto, que por tanto vivian
+      // en el HTML publico de esta pagina. Un sitio estatico no puede guardar un
+      // secreto: lo que manda el navegador, `curl` lo repite.
 
       try {
         if (ENDPOINT) {

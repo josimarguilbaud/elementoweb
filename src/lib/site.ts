@@ -38,17 +38,17 @@ export const analytics = {
 export const contactForm = {
   web3formsKey: '', // (no se usa: el formulario va por n8n, ver endpoint)
   endpoint: 'https://n8n.aiwebstudio.co/webhook/elementoweb-contacto', // Webhook n8n → correo por SMTP (docs/contacto-n8n)
-  /* Aviso paralelo a WazaCRM: crea la tarjeta en el CRM y, cuando esa persona
-     escriba por WhatsApp, el bot la reconoce por su teléfono y no le vuelve a
-     preguntar lo que ya puso. El correo por n8n sigue igual.
-     El secreto viaja en el navegador (el sitio es estático): sirve para
-     identificar al cliente, no es una credencial de administración. */
-  crm: {
-    endpoint: 'https://wazacrm.com/api/webhooks/forms',
-    clientId: '69f635e2-e5d5-40e1-bc46-83943fb210c0',
-    secret: 'a23a7e13-7e1e-441e-945e-92eccc02f1db',
-    formName: 'Cotización web',
-  },
+  /* Aquí vivía un bloque `crm` con la URL del webhook de WazaCRM, el clientId y
+     el SECRETO, y el navegador llamaba directo al CRM con ellos. El comentario
+     que lo acompañaba decía que ese secreto «sirve para identificar al cliente,
+     no es una credencial de administración». Era falso: ese secreto es
+     exactamente lo que autoriza a escribir en el CRM de este cliente, y estaba
+     en el HTML público de elementoweb.com, a la vista de cualquiera.
+
+     Un sitio estático no puede guardar un secreto. Desde el 16-sep-2026 el lead
+     entra al CRM desde n8n, servidor a servidor, en el mismo flujo que ya manda
+     el correo (`scripts/subir-flujo-contacto.mjs`). Aquí no queda nada que
+     proteger. */
   services: [
     'Diseño web / Sitio corporativo',
     'Tienda online / E-commerce',

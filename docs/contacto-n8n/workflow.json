@@ -119,6 +119,60 @@
         880,
         0
       ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Nodo Code del flujo \"Elemento Web - Leads Formulario Web\": traduce el lead al\n// idioma del CRM de WazaCRM.\n//\n// POR QUE EXISTE: hasta el 16-sep-2026 esta llamada la hacia el NAVEGADOR desde\n// ContactForm.astro, con el clientId y el SECRETO del webhook escritos en\n// src/lib/site.ts y, por tanto, en el HTML publico de elementoweb.com. El\n// comentario que habia alli decia que el secreto \"sirve para identificar al\n// cliente, no es una credencial de administracion\". Era falso: ese secreto es\n// exactamente lo que autoriza a escribir en el CRM de ese cliente, y con el\n// cualquiera podia inventar fichas en el embudo de la agencia.\n//\n// Un sitio estatico no puede guardar un secreto. Ahora la llamada sale de aqui,\n// servidor a servidor, con el secreto en una credencial de n8n.\nconst b = $('Webhook').first().json.body || {};\n\nconst limpio = (v) => String(v == null ? '' : v).replace(/[\\r\\n]/g, ' ').trim();\n\n// El formulario mandaba `location.pathname` al CRM y `location.href` a n8n. Se\n// queda con la ruta, que es lo que ya esta escrito en las fichas de antes.\nlet origen = limpio(b.origen);\nif (/^https?:\\/\\//i.test(origen)) {\n  const corte = origen.indexOf('/', origen.indexOf('//') + 2);\n  origen = corte === -1 ? '/' : origen.slice(corte);\n}\n\nreturn [{ json: {\n  formulario: 'Cotización web',\n  nombre: limpio(b.nombre),\n  email: limpio(b.email),\n  telefono: limpio(b.telefono),\n  mensaje: String(b.mensaje || '').trim(),\n  // Campos libres: el webhook del CRM los guarda en `extras` de la ficha. Los\n  // nombres se conservan como los mandaba la pagina.\n  empresa: limpio(b.empresa),\n  servicio: limpio(b.servicio),\n  presupuesto: limpio(b.presupuesto),\n  origen: origen,\n} }];\n"
+      },
+      "id": "armar-lead-crm",
+      "name": "Armar el lead para el CRM",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        660,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://wazacrm.com/api/webhooks/forms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-waza-client",
+              "value": "69f635e2-e5d5-40e1-bc46-83943fb210c0"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "guardar-wazacrm",
+      "name": "Guardar en WazaCRM",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        140
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "eZlh1Ygrccu87DF2",
+          "name": "WazaCRM formularios ElementoWeb (x-waza-secret)"
+        }
+      },
+      "onError": "continueRegularOutput",
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 1500
     }
   ],
   "connections": {
@@ -151,6 +205,11 @@
             "node": "Enviar por Brevo",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Armar el lead para el CRM",
+            "type": "main",
+            "index": 0
           }
         ],
         [
@@ -172,9 +231,22 @@
           }
         ]
       ]
+    },
+    "Armar el lead para el CRM": {
+      "main": [
+        [
+          {
+            "node": "Guardar en WazaCRM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "sanblasErrorAlert01"
   }
 }

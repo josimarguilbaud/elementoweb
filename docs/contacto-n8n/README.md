@@ -1,11 +1,34 @@
 # Formulario de contacto → n8n → correo bonito
 
 El sitio es **estático** (nginx), así que no puede enviar correo por sí mismo. El
-formulario hace un `POST` con JSON a un **webhook de n8n**, y n8n envía el correo
-por SMTP con la cuenta `lead@elementoweb.com`, con copia a `josimarguilbaud@gmail.com`.
+formulario hace un `POST` con JSON a un **webhook de n8n**, y n8n manda el correo
+por la **API HTTP de Brevo** desde `avisos@mailweb.site` (SMTP no: Hetzner bloquea
+los puertos de salida 25/465/587, y eso ya dejó el formulario muerto una vez —
+los pasos de SMTP de más abajo son del montaje viejo).
+
+> El flujo **no se edita a mano en n8n**: se reconstruye desde este repo con
+> `node scripts/subir-flujo-contacto.mjs`. Lo que se toque por el panel se pierde
+> en la siguiente subida.
+
+## El lead también entra al CRM
+
+El mismo flujo guarda la ficha en el CRM de WazaCRM, en paralelo al correo. El
+nodo del CRM lleva `onError: continueRegularOutput`: **si WazaCRM se cae, el
+correo sale igual**.
+
+**Esto antes lo hacía el navegador, y era un agujero.** `site.ts` llevaba un
+bloque `crm` con el clientId **y el secreto** del webhook, así que viajaban en el
+HTML público de `elementoweb.com`. El comentario que los acompañaba decía que ese
+secreto «no es una credencial de administración» — falso: es justo lo que
+autoriza a escribir en el CRM de este cliente. Corregido el 16-sep-2026: la
+llamada sale de n8n con el secreto en la credencial
+`WazaCRM formularios ElementoWeb (x-waza-secret)` y el clientId en la cabecera
+`x-waza-client`. Un sitio estático no puede guardar un secreto.
 
 ## Archivos
-- `workflow.json` — flujo de n8n listo para importar (Webhook → Enviar correo).
+- `workflow.json` — el flujo tal como quedó (lo escribe el script; no se edita a mano).
+- `armar-correo.js` — el nodo Code que arma el correo.
+- `armar-lead-crm.js` — el nodo Code que traduce el lead al idioma del CRM.
 - `email-aviso.html` — vista previa del correo (ábrelo en el navegador para verlo).
 
 ## Pasos (una sola vez)

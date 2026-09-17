@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NimbusCRM · Kit de ventas | elementoweb.com</title>
+    <meta name="description" content="Qué es NimbusCRM, qué hace, qué lo diferencia en Panamá, qué NO hace, y cómo demostrarlo en siete minutos.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: light dark;
+    --bg:#f8fafc; --surface:#ffffff; --surface-2:#f1f5f9; --border:#e2e8f0;
+    --text:#0f172a; --text-dim:#64748b;
+    --accent:#2563eb; --accent-2:#1d4ed8; --accent-soft:#eff6ff;
+    --purple:#7c3aed; --purple-soft:#f5f3ff;
+    --good:#059669; --good-soft:#ecfdf5;
+    --warn:#b45309; --warn-soft:#fffbeb;
+    --bad:#e11d48; --bad-soft:#fff1f2;
+    --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#080c14; --surface:#101725; --surface-2:#161f30; --border:#233047;
+      --text:#eef2f8; --text-dim:#94a3b8;
+      --accent:#60a5fa; --accent-2:#93c5fd; --accent-soft:#11213c;
+      --purple:#a78bfa; --purple-soft:#1d1733;
+      --good:#34d399; --good-soft:#0c2a1e;
+      --warn:#fbbf24; --warn-soft:#2a2010;
+      --bad:#fb7185; --bad-soft:#2d1119;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#080c14; --surface:#101725; --surface-2:#161f30; --border:#233047;
+    --text:#eef2f8; --text-dim:#94a3b8;
+    --accent:#60a5fa; --accent-2:#93c5fd; --accent-soft:#11213c;
+    --purple:#a78bfa; --purple-soft:#1d1733;
+    --good:#34d399; --good-soft:#0c2a1e;
+    --warn:#fbbf24; --warn-soft:#2a2010;
+    --bad:#fb7185; --bad-soft:#2d1119;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Public Sans', system-ui, -apple-system, sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{ font-family:'Sora', system-ui, sans-serif; text-wrap:balance; letter-spacing:-0.01em; }
+  .num{ font-variant-numeric: tabular-nums; }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding-inline:24px; padding-block:0 96px; }
+  a{ color:inherit; }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:4px; }
+
+  /* ---------- barra superior ---------- */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    padding-inline:24px; padding-block:22px; max-width:1080px; margin:0 auto;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:'Sora'; font-weight:800; font-size:20px; }
+  .brand .bolt{
+    width:34px; height:34px; border-radius:10px; background:var(--accent); color:#fff;
+    display:grid; place-items:center; flex:0 0 auto;
+  }
+  .brand small{ font-weight:600; color:var(--text-dim); font-size:13px; display:block; letter-spacing:0; }
+  .topbar .meta{ font-size:13px; color:var(--text-dim); text-align:right; }
+  .theme{
+    background:var(--surface); border:1px solid var(--border); color:var(--text-dim);
+    border-radius:999px; padding:7px 14px; font:inherit; font-size:13px; font-weight:600; cursor:pointer;
+  }
+  .theme:hover{ color:var(--text); border-color:var(--accent); }
+
+  /* ---------- portada ---------- */
+  .hero{
+    background:var(--surface); border:1px solid var(--border); border-radius:24px;
+    padding:44px 40px; margin-bottom:28px;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.09em; color:var(--accent);
+    background:var(--accent-soft); border-radius:999px; padding:6px 13px; margin-bottom:18px;
+  }
+  .hero h1{ font-size:clamp(30px,4.6vw,46px); line-height:1.08; margin:0 0 16px; font-weight:800; }
+  .hero .lead{ font-size:clamp(17px,2vw,19px); color:var(--text-dim); max-width:66ch; margin:0; }
+  .hero .lead strong{ color:var(--text); font-weight:600; }
+
+  .pitch{
+    margin-top:28px; padding:22px 24px; background:var(--accent-soft);
+    border:1px solid color-mix(in srgb, var(--accent) 22%, transparent); border-radius:var(--radius);
+  }
+  .pitch .rot{ font-size:11px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; color:var(--accent); margin-bottom:9px; }
+  .pitch p{ margin:0; font-size:18px; font-family:'Sora'; font-weight:600; line-height:1.4; }
+
+  /* ---------- secciones ---------- */
+  section{ margin-top:52px; }
+  .sec-head{ margin-bottom:22px; }
+  .sec-head .kicker{
+    font-size:12px; font-weight:800; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--text-dim); margin-bottom:7px;
+  }
+  .sec-head h2{ font-size:clamp(23px,3vw,31px); margin:0 0 9px; font-weight:800; }
+  .sec-head p{ margin:0; color:var(--text-dim); max-width:72ch; }
+
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px;
+  }
+  .grid{ display:grid; gap:16px; }
+  @media (min-width:760px){
+    .g2{ grid-template-columns:repeat(2,1fr); }
+    .g3{ grid-template-columns:repeat(3,1fr); }
+  }
+
+  .mod h3{ font-size:17px; margin:0 0 4px; display:flex; align-items:center; gap:9px; }
+  .mod .tag{
+    font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    padding:3px 8px; border-radius:999px; white-space:nowrap;
+  }
+  .tag.on{ background:var(--good-soft); color:var(--good); }
+  .tag.addon{ background:var(--purple-soft); color:var(--purple); }
+  .tag.off{ background:var(--warn-soft); color:var(--warn); }
+  .mod p{ margin:8px 0 0; font-size:15px; color:var(--text-dim); }
+  .mod .say{
+    margin-top:12px; padding-top:12px; border-top:1px dashed var(--border);
+    font-size:14px; color:var(--text);
+  }
+  .mod .say b{ color:var(--accent); font-weight:700; }
+
+  /* ---------- diferenciadores ---------- */
+  .dif{ display:flex; gap:18px; padding:22px 24px; }
+  .dif .n{
+    flex:0 0 auto; width:38px; height:38px; border-radius:11px;
+    background:var(--accent); color:#fff; font-family:'Sora'; font-weight:800;
+    display:grid; place-items:center; font-size:17px;
+  }
+  .dif h3{ margin:2px 0 7px; font-size:18px; }
+  .dif p{ margin:0 0 10px; color:var(--text-dim); font-size:15px; }
+  .dif p:last-child{ margin-bottom:0; }
+  .dif .contra{
+    font-size:14px; background:var(--surface-2); border-radius:10px; padding:11px 14px; color:var(--text);
+  }
+  .dif .contra b{ color:var(--bad); }
+
+  /* ---------- tabla ---------- */
+  .tablewrap{ overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); }
+  table{ border-collapse:collapse; width:100%; min-width:680px; font-size:14.5px; }
+  th,td{ text-align:left; padding:13px 16px; border-bottom:1px solid var(--border); vertical-align:top; }
+  thead th{
+    background:var(--surface-2); font-family:'Sora'; font-weight:700; font-size:13px;
+    position:sticky; top:0;
+  }
+  tbody tr:last-child td{ border-bottom:none; }
+  td.si{ color:var(--good); font-weight:600; }
+  td.no{ color:var(--text-dim); }
+  .first{ font-weight:600; }
+
+  /* ---------- limites ---------- */
+  .limite{
+    background:var(--bad-soft); border:1px solid color-mix(in srgb, var(--bad) 28%, transparent);
+    border-radius:var(--radius); padding:24px;
+  }
+  .limite h3{ margin:0 0 6px; font-size:17px; color:var(--bad); }
+  .limite ul{ margin:14px 0 0; padding-left:20px; }
+  .limite li{ margin-bottom:11px; font-size:15px; }
+  .limite li:last-child{ margin-bottom:0; }
+  .limite li b{ font-weight:700; }
+
+  /* ---------- objeciones ---------- */
+  .obj{ padding:20px 24px; }
+  .obj .q{
+    font-family:'Sora'; font-weight:700; font-size:16px; margin:0 0 10px;
+    display:flex; gap:10px; align-items:flex-start;
+  }
+  .obj .q::before{ content:'«'; color:var(--text-dim); font-size:22px; line-height:1; }
+  .obj .a{ margin:0; font-size:15px; color:var(--text-dim); }
+  .obj .a strong{ color:var(--text); font-weight:600; }
+
+  /* ---------- demo ---------- */
+  ol.demo{ counter-reset:paso; list-style:none; margin:0; padding:0; }
+  ol.demo li{
+    counter-increment:paso; position:relative; padding:0 0 22px 52px; margin:0;
+  }
+  ol.demo li::before{
+    content:counter(paso); position:absolute; left:0; top:-2px;
+    width:32px; height:32px; border-radius:9px; background:var(--surface-2);
+    border:1px solid var(--border); color:var(--accent);
+    font-family:'Sora'; font-weight:800; font-size:14px; display:grid; place-items:center;
+  }
+  ol.demo li::after{
+    content:''; position:absolute; left:15.5px; top:34px; bottom:2px; width:1px; background:var(--border);
+  }
+  ol.demo li:last-child{ padding-bottom:0; }
+  ol.demo li:last-child::after{ display:none; }
+  ol.demo h4{ font-family:'Sora'; font-size:16px; margin:3px 0 5px; font-weight:700; }
+  ol.demo p{ margin:0; font-size:15px; color:var(--text-dim); }
+  ol.demo .reloj{ font-size:12px; font-weight:700; color:var(--accent); }
+
+  /* ---------- precio ---------- */
+  .porllenar{
+    border:2px dashed color-mix(in srgb, var(--accent) 40%, transparent);
+    background:var(--accent-soft); border-radius:var(--radius); padding:24px;
+  }
+  .porllenar h3{ margin:0 0 8px; font-size:17px; }
+  .porllenar p{ margin:0 0 12px; font-size:15px; color:var(--text-dim); }
+  .porllenar .hueco{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:14px 16px; font-size:14px; color:var(--text-dim);
+  }
+  .porllenar .hueco + .hueco{ margin-top:10px; }
+
+  /* ---------- ficha ---------- */
+  .ficha dl{ margin:0; display:grid; gap:0; }
+  @media (min-width:700px){ .ficha dl{ grid-template-columns:200px 1fr; } }
+  .ficha dt{
+    font-family:'Sora'; font-weight:700; font-size:14px; padding:13px 0 4px;
+    border-top:1px solid var(--border);
+  }
+  .ficha dd{
+    margin:0; font-size:14.5px; color:var(--text-dim); padding:13px 0 4px;
+  }
+  @media (min-width:700px){ .ficha dd{ border-top:1px solid var(--border); } }
+  .ficha dl > dt:first-of-type, .ficha dl > dt:first-of-type + dd{ border-top:none; }
+
+  footer.pie{
+    margin-top:64px; padding-top:26px; border-top:1px solid var(--border);
+    font-size:13.5px; color:var(--text-dim); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  .nota{
+    margin-top:14px; font-size:13.5px; color:var(--text-dim);
+    background:var(--surface-2); border-radius:10px; padding:12px 15px;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <span class="bolt" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+    </span>
+    <span>NimbusCRM<small>Kit de ventas · uso interno</small></span>
+  </div>
+  <div class="meta">
+    Elemento Web · Panamá<br>
+    Revisado el 17 de septiembre de 2026
+  </div>
+  <button class="theme" type="button" id="tema">Cambiar tema</button>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <span class="eyebrow">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+      Para vender, no para el cliente
+    </span>
+    <h1>El CRM de facturación para el dueño que tiene tres negocios y cobra por WhatsApp</h1>
+    <p class="lead">
+      NimbusCRM cotiza, factura, cobra y persigue la mora de <strong>varias empresas distintas
+      con una sola cuenta</strong>: cada marca sale con su logo, sus colores, su RUC y su propia
+      serie de numeración. El cliente final abre su factura desde el chat, <strong>sin cuenta y sin
+      contraseña</strong>. Y todo lo que hace la pantalla lo puede hacer un agente de IA, porque las
+      33 operaciones del CRM están expuestas como herramientas.
+    </p>
+
+    <div class="pitch">
+      <div class="rot">La frase de arranque</div>
+      <p>
+        «¿Cuántos negocios facturas hoy, y con qué los facturas?» Si la respuesta es más de uno,
+        o es «Excel y WhatsApp», estás en la conversación correcta.
+      </p>
+    </div>
+
+    <div class="nota">
+      <b>Este documento es interno y no se le manda al cliente.</b> Tiene precios en blanco,
+      límites del producto escritos sin maquillaje y respuestas a objeciones. Lo que recibe el
+      cliente es la propuesta, que se arma con esto en la mano.
+    </div>
+  </div>
+
+  <!-- ============================================ QUE ES -->
+  <section>
+    <div class="sec-head">
+      <div class="kicker">Lo primero que hay que entender</div>
+      <h2>Qué es, en una frase que el cliente reconozca</h2>
+      <p>
+        No vendas «un CRM». En Panamá «CRM» suena a software gringo caro que nadie llegó a usar.
+        Vende lo que el cliente hace el lunes por la mañana.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 14px; font-size:18px;">El lunes de tu cliente, con NimbusCRM</h3>
+      <ol class="demo">
+        <li>
+          <h4>Cotiza desde el catálogo</h4>
+          <p>Elige el cliente, mete las partidas del catálogo de esa marca (o escribe una línea
+          libre), el ITBMS del 7 % se calcula solo. Sale un PDF con su logo y sus datos fiscales.</p>
+        </li>
+        <li>
+          <h4>Manda la cotización por WhatsApp</h4>
+          <p>Un botón. El mensaje ya viene redactado con el número, el monto y un enlace. El
+          cliente lo abre y ve el PDF: no le pide cuenta ni contraseña.</p>
+        </li>
+        <li>
+          <h4>Cuando la aprueban, la convierte en factura</h4>
+          <p>No se vuelve a escribir nada. La factura hereda las líneas, toma el siguiente número
+          de la serie de esa marca y queda ligada a su cotización.</p>
+        </li>
+        <li>
+          <h4>Registra el abono que le cayó</h4>
+          <p>Con su fecha, su método y su número de comprobante. Si fue parcial, la factura queda
+          <em>parcial</em> y el saldo baja. No hay ningún botón de «marcar como pagada».</p>
+        </li>
+        <li>
+          <h4>Y lo que se le pasó de la fecha, lo persigue el sistema</h4>
+          <p>Las facturas vencen solas según el plazo de la marca. El agente de cobranza puede
+          mandar el recordatorio con el saldo y el enlace, sin repetirle al mismo cliente dos
+          noches seguidas.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================================ QUE HACE -->
+  <section>
+    <div class="sec-head">
+      <div class="kicker">El inventario completo</div>
+      <h2>Qué hace, módulo por módulo</h2>
+      <p>
+        Todo lo marcado <span class="tag on" style="display:inline-block">incluido</span> está en
+        producción y probado. Lo marcado <span class="tag addon" style="display:inline-block">módulo aparte</span>
+        se cobra por separado. Lo marcado <span class="tag off" style="display:inline-block">bajo llave</span>
+        está construido pero apagado: se enciende cuando el cliente lo pide, no antes.
+      </p>
+    </div>
+
+    <div class="grid g2">
+      <div class="card mod">
+        <h3>Varias marcas, una cuenta <span class="tag on">incluido</span></h3>
+        <p>Cada empresa lleva su nombre legal, RUC con dígito verificador, dirección, moneda,
+        colores, tipografías, logo, pie de documento y su propia serie de numeración. Se cambia de
+        marca desde el encabezado, sin salir de la sesión.</p>
+        <div class="say">Di: <b>«Tus tres negocios facturan cada uno con su cara, y tú entras una vez.»</b></div>
+      </div>
+
+      <div class="card mod">
+        <h3>Cotizaciones y facturas <span class="tag on">incluido</span></h3>
+        <p>Líneas con cantidad, unidad (m², hora, mes, global…), precio, impuesto por línea y
+        varios precios por partida. Conversión de cotización a factura sin recapturar. Anulación
+        con motivo. Bitácora por documento de todo lo que le pasó.</p>
+        <div class="say">Di: <b>«La cotización aprobada se vuelve factura en un clic, con el mismo texto que aprobó el cliente.»</b></div>
+      </div>
+
+      <div class="card mod">
+        <h3>Enlace público del documento <span class="tag on">incluido</span></h3>
+        <p>Cada documento tiene un enlace propio que abre el PDF sin cuenta. Vive 90 días y se
+        puede desactivar en cualquier momento si se mandó al número equivocado. Es lo que hace que
+        cobrar por WhatsApp funcione de verdad.</p>
+        <div class="say">Di: <b>«Tu cliente no se registra en nada. Pulsa y ve su factura.»</b></div>
+      </div>
+
+      <div class="card mod">
+        <h3>Cobros y abonos parciales <span class="tag on">incluido</span></h3>
+        <p>El estado de cobro (sin pagar, parcial, pagada, vencida) <em>se deriva</em> del saldo y
+        de la fecha: nadie lo marca a mano, así que no existe una factura «pagada» con saldo
+        abierto. El dinero se guarda en centavos enteros, sin decimales que se pierdan.</p>
+        <div class="say">Di: <b>«Aquí no se puede mentir sobre lo cobrado, porque no hay un botón para marcarlo.»</b></div>
+      </div>
+
+      <div class="card mod">
+        <h3>Mensualidades <span class="tag on">incluido</span></h3>
+        <p>Plantillas que dicen qué se cobra cada mes, a quién y qué día. El sistema calcula los
+        periodos que están sin facturar comparando las plantillas con las facturas que ya existen,
+        así que no se puede desfasar. Se emiten con un botón o solas cada noche.</p>
+        <div class="say">Di: <b>«El mantenimiento de tus 14 clientes se factura sin que te acuerdes.»</b></div>
+      </div>
+
+      <div class="card mod">
+        <h3>Informes <span class="tag on">incluido</span></h3>
+        <p>Facturado contra cobrado mes a mes en una misma escala, eficacia de cobro, ingreso
+        recurrente al mes con impuesto incluido, quién le factura más y la variación contra el
+        periodo anterior. Periodos: este año, últimos doce meses, año anterior.</p>
+        <div class="say">Di: <b>«Cuánto facturaste y cuánto de eso entró de verdad. Son dos números distintos.»</b></div>
+      </div>
+
+      <div class="card mod">
+        <h3>Accesos por rol <span class="tag on">incluido</span></h3>
+        <p>Dueño, administrador y solo-lectura, por marca. El contable externo entra a ver sin
+        poder tocar; el asistente factura sin poder repartir accesos. Se invita por enlace y cada
+        persona pone <em>su</em> contraseña: el dueño nunca la conoce.</p>
+        <div class="say">Di: <b>«Tu contador ve lo que necesita y nada más, y sin compartir tu clave.»</b></div>
+      </div>
+
+      <div class="card mod">
+        <h3>Catálogo de servicios y clientes <span class="tag on">incluido</span></h3>
+        <p>Directorio de clientes con RUC, teléfono, correo y notas, y catálogo de precios por
+        marca. Buscador global. Exportación a CSV de clientes, facturas, cotizaciones y abonos
+        para el contador.</p>
+        <div class="say">Di: <b>«Lo que le mandas al contador sale en un clic, en Excel.»</b></div>
+      </div>
+
+      <div class="card mod">
+        <h3>Opera por conversación (MCP) <span class="tag addon">módulo aparte</span></h3>
+        <p>Las 33 operaciones del CRM están expuestas como herramientas de IA. Con eso, un asistente
+        conectado puede cotizar, facturar, registrar un abono o contestar «¿cuánto me deben?»
+        hablando, con los mismos permisos y los mismos límites que la pantalla.</p>
+        <div class="say">Di: <b>«Le preguntas al CRM en lugar de buscar en el CRM.»</b></div>
+      </div>
+
+      <div class="card mod">
+        <h3>Agente de cobranza <span class="tag off">bajo llave</span></h3>
+        <p>Barre las facturas vencidas cada noche y manda el recordatorio con el número, el saldo,
+        los días de mora y el enlace. Espacia los avisos para no repetirle al mismo cliente, y deja
+        constancia de cada mensaje que salió, a dónde y cuándo.</p>
+        <div class="say">Di: <b>«Lo enciendes cuando quieras. Y lo apagas igual de rápido.»</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ DIFERENCIADORES -->
+  <section>
+    <div class="sec-head">
+      <div class="kicker">Lo que hay que decir y nadie más dice</div>
+      <h2>Los seis diferenciadores en el mercado panameño</h2>
+      <p>
+        Cada uno lleva debajo <b>contra qué compites</b> en ese punto concreto. Eso es lo que
+        convierte una característica en una razón para pagar.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card dif">
+        <div class="n">1</div>
+        <div>
+          <h3>Está hecho para el dueño de varios negocios</h3>
+          <p>En Panamá es lo normal: el mismo dueño tiene la constructora, la tienda y el
+          alquiler. Cada uno necesita facturar con su propia identidad y su propio correlativo,
+          porque son empresas distintas ante la DGI. NimbusCRM lo hace desde una cuenta, y las
+          marcas están separadas <em>en la base de datos</em>: ni un error de programación puede
+          mostrarle los clientes de una marca a otra.</p>
+          <div class="contra"><b>Contra qué compites:</b> un SaaS por empresa, o sea pagar tres
+          suscripciones y entrar tres veces. O una sola carpeta de Excel donde los tres negocios
+          se mezclan y el contador reclama.</div>
+        </div>
+      </div>
+
+      <div class="card dif">
+        <div class="n">2</div>
+        <div>
+          <h3>Cobra por donde de verdad se cobra aquí: WhatsApp</h3>
+          <p>El botón no abre WhatsApp vacío: el mensaje viene redactado con el número, el monto,
+          el saldo, la fecha de vencimiento y un enlace que el cliente abre <em>sin cuenta</em>.
+          Eso último es la diferencia entera: casi todos los sistemas mandan un enlace que pide
+          iniciar sesión, y el cliente que ya se sentía perseguido abandona ahí.</p>
+          <div class="contra"><b>Contra qué compites:</b> el PDF adjunto por correo que nadie abre,
+          y el «te lo mando ahora» escrito a mano cuarenta veces al mes.</div>
+        </div>
+      </div>
+
+      <div class="card dif">
+        <div class="n">3</div>
+        <div>
+          <h3>Habla panameño de fábrica</h3>
+          <p>ITBMS del 7 % por línea, RUC con su dígito verificador impreso aparte como va en el
+          documento, balboa a la par, y las fechas y el vencimiento en la zona horaria de Panamá,
+          que no es un detalle: un sistema en UTC marca vencida a las 7 de la tarde una factura que
+          vence hoy.</p>
+          <div class="contra"><b>Contra qué compites:</b> productos españoles o mexicanos con IVA
+          del 16 % o del 21 %, «NIF» donde debería decir RUC, y un campo de impuesto que hay que
+          configurar a mano en cada línea.</div>
+        </div>
+      </div>
+
+      <div class="card dif">
+        <div class="n">4</div>
+        <div>
+          <h3>Es agéntico, y eso no es una palabra de moda aquí</h3>
+          <p>Las 33 operaciones del CRM son herramientas que una IA puede usar, con los mismos
+          permisos que una persona. Un asistente puede emitir y consultar de verdad, no solo resumir lo que ya
+          está en pantalla. Y el agente de cobranza trabaja de noche sin que nadie abra la pantalla.</p>
+          <div class="contra"><b>Contra qué compites:</b> nadie en el mercado local vende esto
+          todavía. Es la ventaja que caduca: úsala este año.</div>
+        </div>
+      </div>
+
+      <div class="card dif">
+        <div class="n">5</div>
+        <div>
+          <h3>No se le puede mentir sobre el dinero</h3>
+          <p>El estado de cobro se deriva del saldo, no se marca. El dinero se guarda en centavos
+          enteros. La numeración se toma bajo bloqueo, así que dos personas facturando a la vez no
+          pueden sacar el mismo número ni dejar un hueco en la serie. Y cada documento tiene su
+          bitácora de quién le hizo qué y cuándo.</p>
+          <div class="contra"><b>Contra qué compites:</b> Excel, donde una celda mal pegada cambia
+          un total sin que quede rastro; y sistemas donde «pagada» es una casilla que alguien
+          marca antes de que entre la plata.</div>
+        </div>
+      </div>
+
+      <div class="card dif">
+        <div class="n">6</div>
+        <div>
+          <h3>Lo hicimos nosotros, aquí, y se cambia el jueves</h3>
+          <p>Lo pidió un cliente el martes y está el jueves. No hay que abrir un ticket en un
+          soporte en otra zona horaria ni esperar la hoja de ruta de un producto que atiende a
+          cuarenta países. El plazo de pago por marca, las unidades de medida panameñas y el pie
+          de documento salieron así.</p>
+          <div class="contra"><b>Contra qué compites:</b> un formulario de soporte en inglés, y la
+          respuesta «lo pasamos al equipo de producto».</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ CONTRA QUE COMPETIMOS -->
+  <section>
+    <div class="sec-head">
+      <div class="kicker">La conversación que sí ocurre</div>
+      <h2>Contra qué compites de verdad</h2>
+      <p>
+        Casi nunca vas a competir con otro CRM, sino con lo que el cliente ya hace hoy. Ubica al
+        prospecto en una de estas tres columnas antes de abrir la boca.
+      </p>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:26%"></th>
+            <th>Excel + WhatsApp<br><span style="font-weight:400;color:var(--text-dim)">el 70 % de tus prospectos</span></th>
+            <th>SaaS importado<br><span style="font-weight:400;color:var(--text-dim)">Zoho, QuickBooks, Alegra</span></th>
+            <th>NimbusCRM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="first">Varias empresas</td>
+            <td class="no">Un archivo por negocio, y se mezclan</td>
+            <td class="no">Una suscripción por empresa</td>
+            <td class="si">Una cuenta, marcas separadas en la base</td>
+          </tr>
+          <tr>
+            <td class="first">ITBMS 7 % y RUC+DV</td>
+            <td class="no">A mano, y a veces mal</td>
+            <td class="no">Se configura; el DV rara vez cabe</td>
+            <td class="si">De fábrica</td>
+          </tr>
+          <tr>
+            <td class="first">El cliente abre su factura</td>
+            <td class="no">Si el PDF pesa poco y no se pierde en el chat</td>
+            <td class="no">Casi siempre pide iniciar sesión</td>
+            <td class="si">Enlace sin cuenta, revocable</td>
+          </tr>
+          <tr>
+            <td class="first">Persigue la mora</td>
+            <td class="no">Cuando al dueño le da el domingo</td>
+            <td class="no">Correo automático, y va a spam</td>
+            <td class="si">Agente nocturno por WhatsApp o correo</td>
+          </tr>
+          <tr>
+            <td class="first">Se opera hablando</td>
+            <td class="no">No</td>
+            <td class="no">No</td>
+            <td class="si">33 herramientas de IA</td>
+          </tr>
+          <tr>
+            <td class="first">Documento con su marca</td>
+            <td class="no">Una plantilla de Word que alguien desalineó</td>
+            <td class="no">Plantilla con logo; los colores no</td>
+            <td class="si">Colores, tipografías, logo y pie por marca</td>
+          </tr>
+          <tr>
+            <td class="first">Quién lo arregla</td>
+            <td class="no">Nadie</td>
+            <td class="no">Un ticket en otro país</td>
+            <td class="si">Nosotros, en Panamá</td>
+          </tr>
+          <tr>
+            <td class="first">Factura electrónica DGI</td>
+            <td class="no">No</td>
+            <td class="si">Algunos sí, vía PAC</td>
+            <td class="no">No todavía. Ver los límites</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="nota">
+      <b>La tercera columna de la última fila es a propósito.</b> Si el prospecto necesita factura
+      electrónica autorizada por la DGI hoy, NimbusCRM no es su sistema de emisión fiscal y hay
+      que decirlo en la primera reunión. Sigue leyendo: el caso no está perdido, pero se vende
+      distinto.
+    </div>
+  </section>
+
+  <!-- ============================================ LIMITES -->
+  <section>
+    <div class="sec-head">
+      <div class="kicker">Lo más importante de este documento</div>
+      <h2>Qué no hace, para que no lo prometas</h2>
+      <p>
+        Una venta cerrada prometiendo algo que no existe cuesta el cliente, la referencia y el
+        tiempo de implementación. Esta lista está para que digas «eso no lo hace» con la misma
+        seguridad con la que dices lo que sí hace.
+      </p>
+    </div>
+
+    <div class="limite">
+      <h3>Los siete «no» de NimbusCRM</h3>
+      <ul>
+        <li>
+          <b>No emite factura electrónica autorizada por la DGI.</b> Produce documentos en PDF con
+          todos los datos fiscales, y son válidos como cotización, factura interna y comprobante de
+          cobro. Pero NimbusCRM no es un proveedor autorizado de facturación electrónica y no
+          genera CUFE. Si el cliente ya está obligado a FE, el encaje es: NimbusCRM lleva el
+          negocio (cotizaciones, cobros, mora, mensualidades) y la emisión fiscal sigue por donde
+          va hoy. <em>Dilo tú antes de que lo pregunte.</em>
+        </li>
+        <li>
+          <b>No lleva inventario.</b> No hay existencias, ni costo de venta, ni almacenes. El
+          catálogo es una lista de precios, no un inventario. Una tienda con stock no es cliente
+          de esto.
+        </li>
+        <li>
+          <b>No hace nómina ni planilla.</b> Nada de CSS, décimo, ni vacaciones.
+        </li>
+        <li>
+          <b>No es punto de venta.</b> No hay caja, ni lector de código de barras, ni turnos.
+        </li>
+        <li>
+          <b>No se conecta al banco.</b> Los abonos se registran a mano (con su comprobante). No
+          hay conciliación bancaria automática ni pasarela de pago en línea: el cliente paga por
+          donde ya paga y el abono se anota.
+        </li>
+        <li>
+          <b>No contesta el WhatsApp del cliente.</b> El agente de cobranza <em>manda</em>
+          recordatorios. Leer y responder lo que el cliente conteste es otra cosa, y eso es WazaCRM.
+          Si el prospecto quiere conversación de ida y vuelta, ahí cambia el producto y cambia el
+          precio.
+        </li>
+        <li>
+          <b>No hay app móvil.</b> Funciona en el navegador del teléfono, y está pensado para eso.
+          Pero no hay nada que instalar desde la tienda.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================ OBJECIONES -->
+  <section>
+    <div class="sec-head">
+      <div class="kicker">Lo que te van a decir</div>
+      <h2>Objeciones, y qué contestar</h2>
+      <p>Respuestas cortas. Si te extiendes, pareces a la defensiva.</p>
+    </div>
+
+    <div class="grid g2">
+      <div class="card obj">
+        <p class="q">Yo con mi Excel estoy bien.»</p>
+        <p class="a"><strong>«¿Cuánto te deben hoy?»</strong> Casi nadie lo sabe de memoria, y
+        buscarlo toma diez minutos. Ahí está la venta: no es el Excel, es que cobrar depende de
+        que alguien se acuerde. Pídele que abra el archivo y cuéntalo con él.</p>
+      </div>
+
+      <div class="card obj">
+        <p class="q">¿Y esto es factura fiscal?»</p>
+        <p class="a">Directo: <strong>«Es tu documento con tus datos fiscales, y sirve para cotizar,
+        cobrar y llevar el control. La factura electrónica de la DGI sigue por donde la haces
+        hoy.»</strong> Después pregúntale cuánto tiempo pierde cotizando y persiguiendo pagos: ahí
+        es donde NimbusCRM devuelve el dinero.</p>
+      </div>
+
+      <div class="card obj">
+        <p class="q">Es muy caro para lo que facturo.»</p>
+        <p class="a">No defiendas el precio: <strong>cuéntale una factura olvidada.</strong> «¿Cuántas
+        veces al año se te pasa una mensualidad?» Una sola mensualidad de las suyas que no se
+        facturó suele pagar varios meses del sistema. Y el agente de cobranza no olvida ninguna.</p>
+      </div>
+
+      <div class="card obj">
+        <p class="q">Ya probé un sistema y no lo usé.»</p>
+        <p class="a"><strong>Esa es la objeción honesta y hay que tomarla en serio.</strong> Pregunta
+        cuál y en qué se atascó. Casi siempre es una de dos: había que configurar demasiado antes
+        de emitir el primer documento, o el cliente final no podía abrir lo que le mandaban.
+        Demuéstrale las dos: marca nueva con su ITBMS y su numeración puestos, y el enlace
+        abriéndose en su propio teléfono.</p>
+      </div>
+
+      <div class="card obj">
+        <p class="q">¿Y mis datos dónde quedan?»</p>
+        <p class="a">Servidor propio, respaldo diario cifrado y fuera del servidor, y las marcas
+        separadas por la propia base de datos. Puede exportar todo a CSV cuando quiera:
+        <strong>«tus datos salen de aquí el día que tú digas.»</strong></p>
+      </div>
+
+      <div class="card obj">
+        <p class="q">¿Esto es WazaCRM?»</p>
+        <p class="a">No, y conviene tenerlo claro: <strong>NimbusCRM cotiza, factura y cobra.
+        WazaCRM conversa con el cliente por WhatsApp.</strong> Son dos productos y dos precios. Un
+        cliente puede querer solo facturar y no pagar una implementación de agentes. Vende uno,
+        no los dos a la vez.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ DEMO -->
+  <section>
+    <div class="sec-head">
+      <div class="kicker">El guion</div>
+      <h2>La demostración de siete minutos</h2>
+      <p>
+        Con el teléfono del prospecto en la mano desde el minuto tres. Si sólo te dejan mostrar
+        una cosa, muestra el paso 4.
+      </p>
+    </div>
+
+    <div class="card">
+      <ol class="demo">
+        <li>
+          <span class="reloj">0:00 a 1:00</span>
+          <h4>Cambia de marca delante de él</h4>
+          <p>Abre el selector del encabezado y pasa de una empresa a otra. Los colores, el nombre y
+          los números cambian. Se entiende sin explicarlo.</p>
+        </li>
+        <li>
+          <span class="reloj">1:00 a 3:00</span>
+          <h4>Cotiza algo suyo</h4>
+          <p>Que te diga un trabajo real y un precio real. Métele el ITBMS. Fíjate en que escribes
+          el precio con coma o con punto y da lo mismo.</p>
+        </li>
+        <li>
+          <span class="reloj">3:00 a 4:00</span>
+          <h4>Convierte la cotización en factura</h4>
+          <p>Un clic. Señala el número: «esta es la serie de <em>esta</em> marca, y no se repite ni
+          se salta».</p>
+        </li>
+        <li>
+          <span class="reloj">4:00 a 5:30</span>
+          <h4>Mándale la factura a SU teléfono</h4>
+          <p><b>Este es el momento que cierra la venta.</b> Pulsa «Enviar por WhatsApp», que le
+          llegue a él, y que la abra en su pantalla. Sin cuenta, sin contraseña, con su logo. Deja
+          que lo toque.</p>
+        </li>
+        <li>
+          <span class="reloj">5:30 a 6:30</span>
+          <h4>Registra un abono parcial</h4>
+          <p>Abona la mitad. La factura queda <em>parcial</em> y el saldo baja solo. Di: «no hay
+          ningún botón para marcarla pagada, y por eso el número de arriba es verdad».</p>
+        </li>
+        <li>
+          <span class="reloj">6:30 a 7:00</span>
+          <h4>Cierra con Informes</h4>
+          <p>Facturado contra cobrado. «Estas dos barras nunca son iguales, y la diferencia es tu
+          dinero en la calle. Eso es lo que persigue el agente de cobranza.»</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="nota">
+      <b>Lo que NO se muestra en la demo:</b> la configuración de la marca (aburrido y hace pensar
+      que hay mucho que configurar), el MCP si el prospecto no preguntó por IA (confunde), y los
+      informes de un año vacío. Si la cuenta de demostración está sin datos, muestra los informes
+      de una marca que sí los tenga.
+    </div>
+  </section>
+
+  <!-- ============================================ PRECIO -->
+  <section>
+    <div class="sec-head">
+      <div class="kicker">Para completar antes de usarlo</div>
+      <h2>Precio y empaquetado</h2>
+      <p>
+        Estos huecos van en blanco a propósito: los precios los fija Josimar y no deben salir de
+        un documento que se copia. Pídelos y escríbelos aquí antes de la primera reunión.
+      </p>
+    </div>
+
+    <div class="porllenar">
+      <h3>Lo que hay que tener decidido</h3>
+      <p>Sin estos cinco números no se puede cerrar nada:</p>
+      <div class="hueco"><b>Implementación / arranque:</b> _______ · ¿Incluye cargar sus clientes y su catálogo? ¿Cuántas marcas?</div>
+      <div class="hueco"><b>Mensualidad del CRM:</b> _______ · ¿Por cuenta o por marca? ¿Cuántos usuarios entran?</div>
+      <div class="hueco"><b>Marca adicional:</b> _______ al mes</div>
+      <div class="hueco"><b>Módulo de agente de cobranza:</b> _______ · ¿Tope de mensajes al mes?</div>
+      <div class="hueco"><b>Módulo MCP / operar por conversación:</b> _______ · Va aparte porque el valor y el costo son otros</div>
+      <div class="hueco"><b>Prueba:</b> _______ días · Al terminar, la cuenta queda en solo lectura: el cliente sigue viendo todo lo suyo y no puede emitir. No se borra nada.</div>
+    </div>
+  </section>
+
+  <!-- ============================================ FICHA -->
+  <section>
+    <div class="sec-head">
+      <div class="kicker">Para el cliente que pregunta de más</div>
+      <h2>Ficha técnica</h2>
+      <p>
+        No la saques tú. Es para cuando enfrente hay un informático, un contador exigente o el
+        hijo del dueño que estudió sistemas.
+      </p>
+    </div>
+
+    <div class="card ficha">
+      <dl>
+        <dt>Dónde corre</dt>
+        <dd>Servidor propio en Europa (Netcup), con TLS y dominio propio. No hay reventa de
+        infraestructura de terceros.</dd>
+
+        <dt>Separación de datos</dt>
+        <dd>Cada marca está aislada por <em>row level security</em> de PostgreSQL, forzada sobre
+        15 tablas. El usuario con el que corre la aplicación no puede saltársela. La separación no
+        depende de que el código recuerde filtrar.</dd>
+
+        <dt>Contraseñas</dt>
+        <dd>scrypt con sal por usuario. Nunca se guardan ni se muestran. Quien invita a un
+        compañero no conoce su contraseña: la pone la propia persona. Freno por intentos fallidos.</dd>
+
+        <dt>Enlaces al cliente</dt>
+        <dd>Token de 256 bits por documento, 90 días de vida, revocable por documento. Da acceso a
+        <em>un</em> documento y a ninguno más, y no abre sesión.</dd>
+
+        <dt>El dinero</dt>
+        <dd>Centavos enteros de punta a punta; no hay coma flotante en ningún cálculo. El estado de
+        cobro es derivado, no almacenado. La numeración se toma bajo bloqueo de fila en la misma
+        transacción que el documento: sin huecos y sin repetidos.</dd>
+
+        <dt>Respaldos</dt>
+        <dd>Diarios, cifrados, fuera del servidor, con verificación de que el último respaldo
+        terminó bien. Incluye la base y los logos de las marcas.</dd>
+
+        <dt>Auditoría</dt>
+        <dd>Bitácora por documento: quién lo emitió, lo editó, lo convirtió, lo anuló o le registró
+        un abono, y cuándo. También lo que emitió el sistema solo.</dd>
+
+        <dt>Salida de datos</dt>
+        <dd>Exportación a CSV de clientes, facturas, cotizaciones y abonos, y los PDF de cada
+        documento. El cliente se lleva lo suyo cuando quiera.</dd>
+
+        <dt>Pruebas</dt>
+        <dd>614 pruebas automáticas, incluidas las de aislamiento entre marcas y las de
+        concurrencia en la numeración. Corren en cada cambio antes de desplegar.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer class="pie">
+    <div>
+      <b>NimbusCRM · Kit de ventas interno</b><br>
+      Elemento Web · elementoweb.com
+    </div>
+    <div style="text-align:right">
+      Revisado el 17 de septiembre de 2026<br>
+      Si algo de aquí ya no calza con el producto, dilo y se corrige el documento.
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var boton = document.getElementById('tema');
+    var raiz = document.documentElement;
+    var GUARDADO = 'nimbus-kit-tema';
+    try {
+      var previo = localStorage.getItem(GUARDADO);
+      if (previo === 'dark' || previo === 'light') raiz.setAttribute('data-theme', previo);
+    } catch (e) { /* navegacion privada: el tema sigue al del sistema */ }
+
+    boton.addEventListener('click', function () {
+      var oscuroAhora =
+        raiz.getAttribute('data-theme') === 'dark' ||
+        (!raiz.getAttribute('data-theme') &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches);
+      var siguiente = oscuroAhora ? 'light' : 'dark';
+      raiz.setAttribute('data-theme', siguiente);
+      try { localStorage.setItem(GUARDADO, siguiente); } catch (e) { /* sin guardar, funciona igual */ }
+    });
+  })();
+</script>
+
+</body>
+</html>

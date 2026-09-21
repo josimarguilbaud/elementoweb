@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Diagnóstico de la plataforma actual · Propuesta para MGI Chambonett y Asociados — elementoweb.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#f6f8fc; --card:#ffffff; --ink:#0f172a; --ink-2:#1e293b; --muted:#475569; --soft:#64748b;
+  --rule:rgba(15,23,42,.12); --rule-2:rgba(15,23,42,.07);
+  --navy:#0b1220; --navy-2:#122043; --brand:#3b82f6; --brand-deep:#1e3a8a; --brand-tint:#eff6ff;
+  --violet:#7c3aed; --violet-tint:#f5f3ff; --ok:#047857; --ok-tint:#ecfdf5;
+  --display:'Bricolage Grotesque','Inter',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'Geist Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.6 var(--body);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:920px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.015em}
+p{margin:0 0 .9em}
+a{color:var(--brand-deep)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.eyebrow{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:0 0 12px}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding-block:28px 0}
+.brandrow{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:56px}
+.wordmark{display:flex;align-items:center;gap:10px;font:700 17px/1 var(--display);letter-spacing:-.01em}
+.wordmark i{width:20px;height:20px;border-radius:5px;background:linear-gradient(135deg,var(--brand),var(--violet));display:block}
+.doctype{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#93c5fd}
+.hero h1{font-weight:800;font-size:clamp(32px,6vw,54px);line-height:1.02;max-width:16ch}
+.hero .sub{font-size:clamp(15px,2.2vw,18px);color:#cbd5e1;max-width:58ch;margin:18px 0 0}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border-top:1px solid rgba(255,255,255,.14)}
+.facts div{padding:16px 16px 20px 0}
+.facts dt{font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#93c5fd;margin-bottom:8px}
+.facts dd{margin:0;font:600 14px/1.35 var(--body);color:#fff}
+@media(max-width:640px){.facts{grid-template-columns:1fr 1fr}}
+
+/* secciones */
+section{padding-block:52px 4px}
+section h2{font-weight:700;font-size:clamp(24px,3.6vw,34px);line-height:1.1;margin-bottom:14px;max-width:24ch}
+.lede{font-size:17px;color:var(--ink-2);max-width:64ch}
+.prose{max-width:66ch;color:var(--ink-2)}
+.figure{margin:26px 0 8px}
+.figure svg{display:block;width:100%;height:auto}
+.scroll-x{overflow-x:auto}
+.scroll-x svg{min-width:640px}
+.caption{font-size:13px;color:var(--soft);max-width:70ch;margin-top:8px}
+
+/* razones */
+.reasons{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:22px}
+.reasons div{border-top:1px solid var(--rule);padding:16px 0 10px}
+.reasons h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.reasons p{font-size:14.5px;color:var(--muted);margin:0}
+@media(max-width:640px){.reasons{grid-template-columns:1fr}}
+
+/* paquetes */
+.pkgs{display:grid;grid-template-columns:1fr 1.14fr 1fr;gap:16px;margin-top:26px;align-items:stretch}
+.pkg{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:22px 20px;display:flex;flex-direction:column;break-inside:avoid}
+.pkg.rec{background:var(--navy);color:#fff;border-color:var(--navy);position:relative}
+.pkg .tag{font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:10px}
+.pkg.rec .tag{color:#c4b5fd}
+.pkg h3{font-size:21px;font-weight:700;margin-bottom:4px}
+.pkg .for{font-size:13.5px;color:var(--muted);margin-bottom:16px;min-height:2.9em}
+.pkg.rec .for{color:#cbd5e1}
+.price{font:800 40px/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.price small{font:500 12px/1.3 var(--body);color:var(--soft);display:block;margin-top:6px;letter-spacing:0}
+.pkg.rec .price small{color:#cbd5e1}
+.pkg ul{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--rule);font-size:13.5px;display:grid;gap:8px}
+.pkg.rec ul{border-color:rgba(255,255,255,.18)}
+.pkg li{padding-left:18px;position:relative}
+.pkg li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:2px;background:var(--brand)}
+.pkg.rec li::before{background:#a78bfa}
+.pkg .lic{margin-top:auto;padding-top:16px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--rule)}
+.pkg.rec .lic{color:#cbd5e1;border-color:rgba(255,255,255,.2)}
+.pkg ul+.lic{margin-top:18px}
+.badge{position:absolute;top:-11px;left:20px;background:var(--violet);color:#fff;font:600 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:4px}
+@media(max-width:820px){.pkgs{grid-template-columns:1fr}}
+
+/* tablas */
+.tbl{overflow-x:auto;margin-top:22px}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px;background:var(--card);border:1px solid var(--rule)}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--rule-2);vertical-align:top}
+thead th{font:600 12px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);background:#f1f5f9;border-bottom:1px solid var(--rule)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+th.rec,td.rec{background:var(--violet-tint)}
+thead th.rec{color:var(--violet);background:#ede9fe}
+tr.grp td{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-deep);background:var(--brand-tint);padding-block:9px}
+.yes{color:var(--ok);font-weight:600}
+.no{color:var(--soft)}
+tfoot td{font-weight:700;background:#f1f5f9}
+tr.total td{font-weight:700;border-top:2px solid var(--ink)}
+
+/* opciones de licencia */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.opt{border:1px solid var(--rule);background:var(--card);border-radius:8px;padding:20px;break-inside:avoid}
+.opt h3{font-size:18px;margin-bottom:6px}
+.opt .k{font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:10px}
+.opt p{font-size:14px;color:var(--muted);margin:0 0 .6em}
+.opt ul{margin:8px 0 0;padding-left:18px;font-size:14px;color:var(--ink-2)}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+
+/* listas de accion */
+.checks{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:0;max-width:70ch}
+.checks li{padding:12px 0 12px 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:200px 1fr;gap:16px;font-size:14.5px}
+.checks li b{font-weight:600;color:var(--ink)}
+.checks li span{color:var(--muted)}
+@media(max-width:640px){.checks li{grid-template-columns:1fr;gap:2px}}
+.terms{columns:2;column-gap:40px;font-size:14px;color:var(--ink-2);margin-top:14px}
+.terms p{break-inside:avoid;margin-bottom:.8em}
+@media(max-width:700px){.terms{columns:1}}
+.note{border-left:3px solid var(--violet);background:var(--violet-tint);padding:12px 16px;border-radius:0 6px 6px 0;font-size:14px;color:var(--ink-2);margin-top:18px;max-width:70ch}
+
+/* CTA + pie */
+.cta{margin-top:56px;background:var(--navy);color:#fff;border-radius:10px;padding:32px clamp(20px,4vw,40px);display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center}
+.cta h2{color:#fff;font-size:clamp(24px,3.4vw,32px);max-width:18ch;margin-bottom:8px}
+.cta p{color:#cbd5e1;margin:0;font-size:14.5px}
+.cta .btns{display:grid;gap:10px}
+.btn{display:block;text-align:center;text-decoration:none;font:600 15px/1 var(--body);padding:15px 18px;border-radius:6px;background:var(--brand);color:#fff}
+.btn.alt{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff}
+@media(max-width:700px){.cta{grid-template-columns:1fr}}
+footer{padding:36px 0 56px;font-size:12.5px;color:var(--soft)}
+footer .src{max-width:80ch;margin-top:10px;line-height:1.5}
+footer .src a{color:var(--soft)}
+.legalrow{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--rule);padding-top:14px;margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.04em}
+
+/* severidad y estadisticas */
+.sev{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:4px;white-space:nowrap}
+.sev.crit{background:#fef2f2;color:#b91c1c}
+.sev.alto{background:#fff7ed;color:#c2410c}
+.sev.medio{background:#fefce8;color:#854d0e}
+.sev.bajo{background:#f1f5f9;color:#475569}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:22px;border-top:1px solid var(--rule)}
+.stats div{padding:16px 16px 6px 0}
+.stats b{display:block;font:800 42px/1 var(--display);letter-spacing:-.02em;margin-bottom:6px}
+.stats span{font:500 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.stats .c b{color:#b91c1c}.stats .a b{color:#c2410c}.stats .m b{color:#854d0e}
+@media(max-width:640px){.stats{grid-template-columns:1fr 1fr}}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.cols3 .opt h3{font-size:16px}
+@media(max-width:820px){.cols3{grid-template-columns:1fr}}
+td small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+code{font:500 .9em var(--mono);background:#eef2f7;padding:1px 5px;border-radius:3px}
+td:first-child code{white-space:nowrap}
+
+/* impresion: Carta */
+@page{size:Letter;margin:.5in}
+@media print{
+  body{background:#fff;font-size:12.5px}
+  .wrap{max-width:none;padding-inline:0}
+  .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;margin:-.5in -.5in 0;padding-inline:.5in}
+  section{padding-block:26px 0;break-inside:auto}
+  section h2{break-after:avoid}
+  .figure,.pkg,.opt,.tbl,.reasons div,.checks li,.note,.cta{break-inside:avoid}
+  .scroll-x svg{min-width:0}
+  .cta{margin-top:30px}
+  .btn{border:1px solid #fff}
+  .pdfhide{display:none}
+  .eyebrow{break-after:avoid}
+  section h2{break-inside:avoid;break-after:avoid}
+  .prose,.lede{break-after:avoid}
+  section.newpage{break-before:page;padding-top:0}
+  .pkg.rec{position:static}
+  .badge{position:static;display:inline-block;align-self:flex-start;margin-bottom:12px}
+  .pkgs{grid-template-columns:1fr 1.14fr 1fr;gap:12px}
+  .pkg{padding:18px 15px}
+  .pkg ul{font-size:11.5px}
+  .price{font-size:32px}
+  .two{grid-template-columns:1fr 1fr}
+  .reasons{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:repeat(4,1fr)}
+  .terms{columns:2}
+  .checks li{grid-template-columns:170px 1fr}
+  .cta{grid-template-columns:1.3fr 1fr}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .cols3{grid-template-columns:repeat(3,1fr)}
+  tr{break-inside:avoid}
+  table{min-width:0;font-size:12px}
+  th,td{padding:8px 10px}
+}
+</style></head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brandrow"><div class="wordmark"><i aria-hidden="true"></i>Elemento Web</div><div class="doctype">Informe · Resumen ejecutivo</div></div>
+  <h1>Diagnóstico de la plataforma actual</h1>
+  <p class="sub">Cómo está hoy el portal y el hosting, qué tan urgente es cada riesgo, por qué ocurre y cómo se estabiliza en las primeras 72 horas.</p>
+  <dl class="facts">
+    <div><dt>Preparada para</dt><dd>MGI Chambonett y Asociados</dd></div>
+    <div><dt>Fecha</dt><dd>21 de septiembre de 2026</dd></div>
+    <div><dt>Válida hasta</dt><dd>21 de octubre de 2026</dd></div>
+    <div><dt>Referencia</dt><dd>EW-CHA-2026-03A-R</dd></div>
+  </dl>
+</div></header>
+<main class="wrap">
+
+<section>
+  <p class="eyebrow">Resumen</p>
+  <h2>Funciona y guarda valor de negocio, pero necesita estabilizarse</h2>
+  <p class="lede">La plataforma cubre horas, cobros, expedientes legales, avisos y seguimiento de trámites, y sus reglas de negocio están bien pensadas. Fue construida rápido, sin un marco de seguridad y de calidad que la sostenga. Revisamos su código y el hosting y agrupamos los hallazgos por nivel de riesgo.</p>
+  <div class="stats">
+    <div class="c"><b>5</b><span>Críticos</span></div>
+    <div class="a"><b>10</b><span>Altos</span></div>
+    <div class="m"><b>11</b><span>Medios</span></div>
+    <div><b>6</b><span>Bajos</span></div>
+  </div>
+  <div class="note"><b>Conclusión.</b> Corregir cada pieza por separado cuesta más que reconstruir sobre una base que ya trae seguridad, permisos y auditoría. Lo urgente es reducir la exposición en 72 horas mientras se planifica la migración. El informe técnico detallado es confidencial y se entrega por separado al responsable de TI.</div>
+</section>
+
+<section class="newpage">
+  <p class="eyebrow">Panorama</p>
+  <h2>Lo que existe hoy</h2>
+  <p class="prose">Todo vive en un solo hosting compartido: el sitio público, tres instalaciones de WordPress, el portal interno a medida y una segunda aplicación con su propio acceso y su propia base de datos. No hay aislamiento entre ellos.</p>
+  <div class="figure scroll-x"><svg viewBox="0 0 880 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d1s-a-title d1s-a-desc"><title id="d1s-a-title">Lo que existe hoy en el hosting compartido</title><desc id="d1s-a-desc">Arquitectura actual: un solo hosting compartido aloja el sitio público, tres instalaciones de WordPress, un portal a medida y una aplicación de control de instituciones con login y base de datos propios.</desc><defs><marker id="d1s-a-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#475569"/></marker><marker id="d1s-a-ac" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#7c3aed"/></marker><marker id="d1s-a-lk" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1d4ed8"/></marker></defs><rect width="100%" height="100%" fill="#f6f8fc"/><rect x="216" y="56" width="616" height="392" rx="8" fill="rgba(15,23,42,0.02)" stroke="rgba(15,23,42,0.14)" stroke-width="0.8"/><rect x="228" y="60" width="168" height="12" rx="2" fill="#f6f8fc"/><text x="312.0" y="69" fill="#64748b" font-size="8.5" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.12em">UN SOLO HOSTING COMPARTIDO</text><path d="M176,120 H248" fill="none" stroke="#475569" stroke-width="1.2" marker-end="url(#d1s-a-a)"/><path d="M176,208 H248" fill="none" stroke="#475569" stroke-width="1.2" marker-end="url(#d1s-a-a)"/><path d="M176,300 H248" fill="none" stroke="#475569" stroke-width="1.2" marker-end="url(#d1s-a-a)"/><rect x="186.0" y="278" width="52.0" height="12" rx="2" fill="#f6f8fc"/><text x="212.0" y="287" fill="#64748b" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">LOGIN 1</text><path d="M176,392 H248" fill="none" stroke="#475569" stroke-width="1.2" marker-end="url(#d1s-a-a)"/><rect x="186.0" y="370" width="52.0" height="12" rx="2" fill="#f6f8fc"/><text x="212.0" y="379" fill="#64748b" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">LOGIN 2</text><path d="M480,300 H600" fill="none" stroke="#475569" stroke-width="1.2" marker-end="url(#d1s-a-a)"/><path d="M480,392 H600" fill="none" stroke="#475569" stroke-width="1.2" marker-end="url(#d1s-a-a)"/><rect x="24" y="100" width="152" height="128" rx="6" fill="#f6f8fc"/><rect x="24" y="100" width="152" height="128" rx="6" fill="rgba(71,85,105,0.10)" stroke="#64748b" stroke-width="1"/><text x="100.0" y="163.0" fill="#0f172a" font-size="12.5" font-weight="600" font-family="'Inter', system-ui, sans-serif" text-anchor="middle">Visitantes</text><text x="100.0" y="179.0" fill="#475569" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">web · vacantes · contacto</text><rect x="24" y="280" width="152" height="124" rx="6" fill="#f6f8fc"/><rect x="24" y="280" width="152" height="124" rx="6" fill="rgba(71,85,105,0.10)" stroke="#64748b" stroke-width="1"/><text x="100.0" y="341.0" fill="#0f172a" font-size="12.5" font-weight="600" font-family="'Inter', system-ui, sans-serif" text-anchor="middle">Equipo de la firma</text><text x="100.0" y="357.0" fill="#475569" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">portal interno</text><rect x="248" y="88" width="232" height="64" rx="6" fill="#f6f8fc"/><rect x="248" y="88" width="232" height="64" rx="6" fill="rgba(15,23,42,0.03)" stroke="rgba(15,23,42,0.30)" stroke-width="1"/><text x="364.0" y="119.0" fill="#0f172a" font-size="12.5" font-weight="600" font-family="'Inter', system-ui, sans-serif" text-anchor="middle">Sitio público</text><text x="364.0" y="135.0" fill="#475569" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">constructor web</text><rect x="248" y="176" width="232" height="64" rx="6" fill="#f6f8fc"/><rect x="248" y="176" width="232" height="64" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1"/><text x="364.0" y="207.0" fill="#0f172a" font-size="12.5" font-weight="600" font-family="'Inter', system-ui, sans-serif" text-anchor="middle">WordPress × 3</text><text x="364.0" y="223.0" fill="#475569" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">tres instalaciones</text><rect x="248" y="264" width="232" height="72" rx="6" fill="#f6f8fc"/><rect x="248" y="264" width="232" height="72" rx="6" fill="rgba(124,58,237,0.08)" stroke="#7c3aed" stroke-width="1"/><rect x="256" y="270" width="73" height="12" rx="2" fill="transparent" stroke="#7c3aed" stroke-opacity="0.45" stroke-width="0.8"/><text x="292.4" y="279" fill="#7c3aed" font-size="7.5" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">16.6k LÍNEAS</text><text x="364.0" y="302.0" fill="#7c3aed" font-size="12.5" font-weight="600" font-family="'Inter', system-ui, sans-serif" text-anchor="middle">Portal a medida</text><text x="364.0" y="317.0" fill="#475569" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">horas · legal · cobros · avisos · RR.HH.</text><rect x="248" y="360" width="232" height="64" rx="6" fill="#f6f8fc"/><rect x="248" y="360" width="232" height="64" rx="6" fill="#ffffff" stroke="#0f172a" stroke-width="1"/><text x="364.0" y="391.0" fill="#0f172a" font-size="12.5" font-weight="600" font-family="'Inter', system-ui, sans-serif" text-anchor="middle">Control de Instituciones</text><text x="364.0" y="407.0" fill="#475569" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">login y BD propios</text><rect x="600" y="176" width="200" height="64" rx="6" fill="#f6f8fc"/><rect x="600" y="176" width="200" height="64" rx="6" fill="rgba(15,23,42,0.02)" stroke="rgba(15,23,42,0.28)" stroke-width="1" stroke-dasharray="4,3"/><text x="700.0" y="207.0" fill="#0f172a" font-size="12.5" font-weight="600" font-family="'Inter', system-ui, sans-serif" text-anchor="middle">Archivos y respaldos</text><text x="700.0" y="223.0" fill="#475569" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">en el mismo servidor</text><rect x="600" y="264" width="200" height="72" rx="6" fill="#f6f8fc"/><rect x="600" y="264" width="200" height="72" rx="6" fill="rgba(15,23,42,0.05)" stroke="#475569" stroke-width="1"/><text x="700.0" y="299.0" fill="#0f172a" font-size="12.5" font-weight="600" font-family="'Inter', system-ui, sans-serif" text-anchor="middle">Base de datos principal</text><text x="700.0" y="315.0" fill="#475569" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">≈ 28 tablas</text><rect x="600" y="360" width="200" height="64" rx="6" fill="#f6f8fc"/><rect x="600" y="360" width="200" height="64" rx="6" fill="rgba(15,23,42,0.05)" stroke="#475569" stroke-width="1"/><text x="700.0" y="391.0" fill="#0f172a" font-size="12.5" font-weight="600" font-family="'Inter', system-ui, sans-serif" text-anchor="middle">Base de datos aparte</text><text x="700.0" y="407.0" fill="#475569" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">4 tablas</text><line x1="30" y1="460" x2="850" y2="460" stroke="rgba(15,23,42,0.12)" stroke-width="0.8"/><text x="30" y="477" fill="#475569" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">LEYENDA</text><rect x="100" y="468" width="14" height="10" rx="2" fill="rgba(124,58,237,0.08)" stroke="#7c3aed"/><text x="122" y="477" fill="#475569" font-size="10.5" font-family="'Inter', system-ui, sans-serif">Portal a medida</text><line x1="240.5" y1="473" x2="262.5" y2="473" stroke="#475569" stroke-width="1.2"/><text x="270.5" y="477" fill="#475569" font-size="10.5" font-family="'Inter', system-ui, sans-serif">Acceso o consulta</text></svg></div>
+</section>
+
+<section>
+  <p class="eyebrow">Nivel de riesgo</p>
+  <h2>Cuántos hallazgos y qué tan urgentes</h2>
+  <div class="figure scroll-x"><svg viewBox="0 0 960 348" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d1s-b-title d1s-b-desc"><title id="d1s-b-title">Hallazgos por nivel de riesgo</title><desc id="d1s-b-desc">Barras horizontales: 5 hallazgos críticos, 10 altos, 11 medios y 6 bajos.</desc><defs><marker id="d1s-b-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#475569"/></marker><marker id="d1s-b-ac" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#7c3aed"/></marker><marker id="d1s-b-lk" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1d4ed8"/></marker></defs><rect width="100%" height="100%" fill="#f6f8fc"/><line x1="200" y1="44" x2="200" y2="260" stroke="rgba(15,23,42,0.25)" stroke-width="1"/><text x="200" y="278" fill="#64748b" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">0</text><line x1="355" y1="44" x2="355" y2="260" stroke="rgba(15,23,42,0.08)" stroke-width="0.8"/><text x="355" y="278" fill="#64748b" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">3</text><line x1="510" y1="44" x2="510" y2="260" stroke="rgba(15,23,42,0.08)" stroke-width="0.8"/><text x="510" y="278" fill="#64748b" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">6</text><line x1="665" y1="44" x2="665" y2="260" stroke="rgba(15,23,42,0.08)" stroke-width="0.8"/><text x="665" y="278" fill="#64748b" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">9</text><line x1="820" y1="44" x2="820" y2="260" stroke="rgba(15,23,42,0.08)" stroke-width="0.8"/><text x="820" y="278" fill="#64748b" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">12</text><text x="510" y="298" fill="#64748b" font-size="8.5" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">NÚMERO DE HALLAZGOS</text><text x="184" y="68" fill="#7c3aed" font-size="12.5" font-weight="700" font-family="'Inter', system-ui, sans-serif" text-anchor="end">Críticos</text><text x="184" y="83" fill="#64748b" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">requieren acción en 72 horas</text><rect x="200" y="54" width="258.3" height="28" fill="rgba(124,58,237,0.08)" stroke="#7c3aed" stroke-width="1"/><text x="468.3" y="73" fill="#7c3aed" font-size="12" font-weight="600" font-family="'Geist Mono', ui-monospace, monospace">5</text><text x="184" y="120" fill="#0f172a" font-size="12.5" font-weight="600" font-family="'Inter', system-ui, sans-serif" text-anchor="end">Altos</text><text x="184" y="135" fill="#64748b" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">programar en las fases 0 y 1</text><rect x="200" y="106" width="516.7" height="28" fill="rgba(71,85,105,0.15)" stroke="#475569" stroke-width="1"/><text x="726.7" y="125" fill="#475569" font-size="12" font-weight="400" font-family="'Geist Mono', ui-monospace, monospace">10</text><text x="184" y="172" fill="#0f172a" font-size="12.5" font-weight="600" font-family="'Inter', system-ui, sans-serif" text-anchor="end">Medios</text><text x="184" y="187" fill="#64748b" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">mejorar al reconstruir</text><rect x="200" y="158" width="568.3" height="28" fill="rgba(71,85,105,0.15)" stroke="#475569" stroke-width="1"/><text x="778.3" y="177" fill="#475569" font-size="12" font-weight="400" font-family="'Geist Mono', ui-monospace, monospace">11</text><text x="184" y="224" fill="#0f172a" font-size="12.5" font-weight="600" font-family="'Inter', system-ui, sans-serif" text-anchor="end">Bajos</text><text x="184" y="239" fill="#64748b" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">orden y mantenimiento</text><rect x="200" y="210" width="310.0" height="28" fill="rgba(71,85,105,0.15)" stroke="#475569" stroke-width="1"/><text x="520.0" y="229" fill="#475569" font-size="12" font-weight="400" font-family="'Geist Mono', ui-monospace, monospace">6</text><line x1="30" y1="314" x2="930" y2="314" stroke="rgba(15,23,42,0.12)" stroke-width="0.8"/><text x="30" y="331" fill="#475569" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">LEYENDA</text><rect x="100" y="322" width="14" height="10" rx="2" fill="rgba(124,58,237,0.08)" stroke="#7c3aed"/><text x="122" y="331" fill="#475569" font-size="10.5" font-family="'Inter', system-ui, sans-serif">Prioridad inmediata</text><rect x="264.1" y="322" width="22" height="10" rx="2" fill="rgba(71,85,105,0.15)" stroke="#475569"/><text x="294.1" y="331" fill="#475569" font-size="10.5" font-family="'Inter', system-ui, sans-serif">Programar</text></svg></div>
+  <p class="caption">Los hallazgos críticos son los que pueden afectar datos personales o el funcionamiento del sistema y deben atenderse primero. Ninguno se detalla en este documento.</p>
+</section>
+
+<section>
+  <p class="eyebrow">Áreas de riesgo</p>
+  <h2>Dónde están los riesgos</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Área</th><th>Nivel</th><th>Qué significa</th></tr></thead>
+    <tbody>
+      <tr><td>Control de acceso y permisos</td><td><span class="sev crit">Crítico</span></td><td>La decisión de quién puede ver o modificar cada dato está repartida en muchas partes del código y no se aplica de forma uniforme.</td></tr>
+      <tr><td>Datos personales</td><td><span class="sev crit">Crítico</span></td><td>El portal maneja datos de postulantes y clientes que requieren protección reforzada bajo la Ley 81 de 2019.</td></tr>
+      <tr><td>Carga y descarga de archivos</td><td><span class="sev crit">Crítico</span></td><td>Los mecanismos para recibir y entregar documentos necesitan validaciones y controles adicionales.</td></tr>
+      <tr><td>Credenciales y configuración</td><td><span class="sev crit">Crítico</span></td><td>La forma en que se guardan y se comparten las claves de acceso debe rehacerse y rotarse.</td></tr>
+      <tr><td>Información legal</td><td><span class="sev alto">Alto</span></td><td>Los expedientes se almacenan de una forma que no soporta bien que varias personas trabajen a la vez y no deja historial de cambios.</td></tr>
+      <tr><td>Autenticación de usuarios</td><td><span class="sev alto">Alto</span></td><td>Faltan medidas modernas: método actual de protección de contraseñas, límites de intentos y segundo factor.</td></tr>
+      <tr><td>Protección de la aplicación web</td><td><span class="sev alto">Alto</span></td><td>Faltan las defensas estándar contra los ataques más comunes de las aplicaciones web.</td></tr>
+      <tr><td>Registros y mensajes de error</td><td><span class="sev alto">Alto</span></td><td>El sistema muestra más información técnica de la necesaria y acumula registros sin control.</td></tr>
+      <tr><td>Hosting, respaldos y mantenimiento</td><td><span class="sev medio">Medio</span></td><td>Servidor compartido sin aislamiento, respaldos en el mismo servidor y componentes de WordPress desactualizados.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <p class="eyebrow">Causas de raíz</p>
+  <h2>Por qué ocurre, en cinco puntos</h2>
+  <div class="reasons">
+    <div><h3>Sin control central de permisos</h3><p>Cada pantalla decide por su cuenta quién entra. Agregar permisos granulares implica tocar todas.</p></div>
+    <div><h3>Sin modelo único de datos</h3><p>Cada módulo tiene su propia lista de clientes, sin identificador común. No se pueden conectar departamentos ni cruzar reportes.</p></div>
+    <div><h3>Información legal en un solo bloque</h3><p>Los expedientes no están organizados por campos, lo que impide el trabajo simultáneo, la búsqueda y el historial.</p></div>
+    <div><h3>Sin ingeniería de soporte</h3><p>No hay repositorio, pruebas ni esquema versionado. Cambiar algo sin romper otra cosa es un riesgo permanente.</p></div>
+  </div>
+  <p class="prose">Y una quinta: <b>el hosting</b>. Un servidor compartido, respaldos en el mismo equipo y componentes sin actualizar.</p>
+</section>
+
+<section>
+  <p class="eyebrow">Qué salió bien</p>
+  <h2>Lo que sí se hizo correctamente</h2>
+  <div class="reasons">
+    <div><h3>Buena base en el acceso a datos</h3><p>Las consultas a la base de datos están escritas de forma segura en el portal. Es de lo más costoso de corregir después y aquí está bien.</p></div>
+    <div><h3>Buenas prácticas puntuales</h3><p>Algunos módulos, como Control de Instituciones, Calendario y Facturación, aplican controles sólidos que se pueden tomar de referencia.</p></div>
+    <div><h3>Sin código malicioso</h3><p>No encontramos código malicioso en los archivos propios revisados.</p></div>
+    <div><h3>Reglas de negocio sólidas</h3><p>Aprobación de horas por jerarquía, cartera con semáforo y expedientes con instituciones son la especificación que conviene conservar.</p></div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Las primeras 72 horas</p>
+  <h2>Plan de estabilización</h2>
+  <p class="prose">Se hace antes de reconstruir y sobre el sistema en producción, así que empieza con una <b>copia de seguridad completa</b>. Deja el sistema menos expuesto, no seguro: la reconstrucción es la solución de fondo.</p>
+  <ul class="checks">
+    <li><b>1 · Respaldo</b><span>Copia completa de archivos y bases de datos antes de tocar nada.</span></li>
+    <li><b>2 · Credenciales</b><span>Renovar las claves de la base de datos y del acceso al servidor, y centralizarlas fuera del sitio.</span></li>
+    <li><b>3 · Archivos</b><span>Reforzar las validaciones de carga y revisar el contenido de las carpetas de documentos.</span></li>
+    <li><b>4 · Acceso a datos personales</b><span>Revisar y restringir el acceso a las funciones que manejan datos personales.</span></li>
+    <li><b>5 · Permisos</b><span>Aplicar el permiso de cada módulo en todas sus pantallas y revisar las cuentas de usuario.</span></li>
+    <li><b>6 · Registros</b><span>Limpiar registros y archivos de prueba, y dejar de mostrar información técnica al usuario.</span></li>
+    <li><b>7 · Servidor</b><span>Reforzar la conexión al servidor y las cabeceras de seguridad del sitio.</span></li>
+  </ul>
+</section>
+
+<section>
+  <p class="eyebrow">Datos personales</p>
+  <h2>Cumplimiento y verificación</h2>
+  <p class="prose">Las postulaciones y los expedientes contienen datos de personas. La <b>Ley 81 de 2019</b> de protección de datos personales de Panamá puede tener implicaciones; la asesoría legal de la firma debe evaluar si corresponde algún aviso. Recomendamos revisar los registros de acceso y las cuentas de usuario para confirmar que no hubo uso indebido.</p>
+</section>
+
+<section>
+  <p class="eyebrow">Límites del análisis</p>
+  <h2>Lo que aún no pudimos verificar</h2>
+  <div class="terms">
+    <p><b>Bases de datos.</b> Falta el volcado con esquema; el modelo se infirió del código.</p>
+    <p><b>Versión de PHP.</b> Define cómo se contenedoriza el legado.</p>
+    <p><b>WordPress.</b> Parte de sus archivos base no se descargaron, así que su integridad queda sin comprobar.</p>
+    <p><b>Uso real.</b> No sabemos cuántas personas usan cada módulo; define la estrategia de corte.</p>
+    <p><b>Pruebas en vivo.</b> No se ejecutó ninguna prueba de intrusión. Los hallazgos salen de leer el código y de consultas de solo lectura.</p>
+  </div>
+  <div class="note"><b>Siguiente paso.</b> Compartimos el informe técnico detallado, de forma confidencial, con la persona responsable de TI, y acordamos el plan de estabilización y la propuesta de reconstrucción por fases.</div>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="src"><b>Fuentes y supuestos.</b> Basado en la lectura del código y del hosting, en modo de solo lectura, el 21-sep-2026. No se ejecutaron pruebas de intrusión. Ley 81 de 2019 de la República de Panamá. El detalle técnico se entrega por separado y de forma confidencial.</div>
+  <div class="legalrow"><span>elementoweb.com · info@elementoweb.com · +507 6162-2787</span><span>Documento confidencial · Preparado para MGI Chambonett y Asociados · EW-CHA-2026-03A-R</span></div>
+</div></footer>
+</body></html>

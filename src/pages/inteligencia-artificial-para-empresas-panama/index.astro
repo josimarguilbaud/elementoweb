@@ -3,6 +3,8 @@ import Base from '../../layouts/Base.astro';
 import { site, url, wa } from '../../lib/site';
 import { orgNode } from '../../lib/schema';
 import { ogFor } from '../../lib/img';
+import InfraReliability from '../../components/InfraReliability.astro';
+import type { InfraColumn } from '../../lib/types';
 
 const slug = 'inteligencia-artificial-para-empresas-panama';
 const title = 'Inteligencia Artificial para Empresas en Panamá | Elemento Web';
@@ -53,6 +55,51 @@ const departamentos = [
     rag: 'Analiza cada ticket entrante, entiende el problema consultando el historial y los manuales de producto.',
     accion: 'Resuelve las consultas repetitivas al momento. Lo que necesita un humano, lo categoriza, prioriza y lo asigna al experto correcto.',
     tags: ['Zendesk', 'Jira', 'Base de conocimiento'],
+  },
+];
+
+/* Confiabilidad del ecosistema: mismo componente que usa la página de Hosting
+   e Infraestructura, adaptado a lo que de verdad importa en un asistente de
+   IA (disponibilidad, respaldo de conversaciones, monitoreo del modelo) en
+   vez de hosting literal. */
+const infraColumnasIA: InfraColumn[] = [
+  {
+    eyebrow: '01',
+    title: 'Disponible cuando tu equipo lo necesita',
+    text: 'El ecosistema no tiene horario de oficina. Corre en infraestructura dedicada, no en el mismo servidor compartido que cientos de otros proyectos.',
+    bullets: [
+      'Infraestructura dedicada, no compartida con otros clientes',
+      'Escalable si sumas más departamentos o volumen',
+      'Failover automático si un proveedor de modelo falla',
+    ],
+    visual: 'usage',
+  },
+  {
+    eyebrow: '02',
+    title: 'Ninguna conversación se pierde',
+    text: 'Cada conversación, documento consultado y acción ejecutada queda respaldado. Si algo falla, se recupera el estado exacto de antes de la falla.',
+    bullets: [
+      'Respaldo continuo del historial y la base de conocimiento',
+      'Restauración verificada, no solo prometida',
+      'Auditoría completa de qué consultó y qué respondió la IA',
+    ],
+    visual: 'uptime',
+    stat: '99.9',
+    statLabel: 'disponibilidad objetivo',
+  },
+  {
+    eyebrow: '03',
+    title: 'Monitoreo del modelo, no solo del servidor',
+    text: 'Vigilamos algo que un hosting normal no mide: si el modelo empieza a responder mal o más lento, no solo si el servidor sigue encendido.',
+    bullets: [
+      'Alertas si el tiempo de respuesta se degrada',
+      'Revisión periódica de la calidad de las respuestas',
+      'Reporte mensual de uso, costo y estado real',
+    ],
+    link: { slug: 'crecimiento/mantenimiento-web-panama', label: 'Así vigilamos también tu sitio web' },
+    visual: 'monitor',
+    stat: '4',
+    statLabel: 'minutos de respuesta promedio',
   },
 ];
 
@@ -448,6 +495,18 @@ const jsonld = {
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ CONFIABILIDAD (infra adaptada) ============ -->
+  <section class="relative bg-paper py-24 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto mb-14 max-w-2xl text-center">
+        <p class="reveal mb-4 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/60"><span class="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-teal to-violet"></span> La base técnica también la llevamos nosotros</p>
+        <h2 class="reveal font-display text-[clamp(1.9rem,4.4vw,3.2rem)] font-extrabold leading-[1.04] text-ink">Un asistente de IA <span class="grad-text">también necesita infraestructura</span>.</h2>
+        <p class="reveal mt-5 text-lg text-ink/55">No es solo un prompt bien escrito. Es un sistema que tiene que seguir respondiendo bien el día 200, no solo en la demo del día uno.</p>
+      </div>
+      <InfraReliability columns={infraColumnasIA} />
     </div>
   </section>
 

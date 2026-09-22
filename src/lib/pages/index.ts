@@ -20,6 +20,15 @@ import { blog4 } from './blog-4';
 import { blog5 } from './blog-5';
 import { blog6 } from './blog-6';
 import { blog7 } from './blog-7';
+import { blog8 } from './blog-8';
+import { blog9 } from './blog-9';
+import { blog10 } from './blog-10';
+import { blog11 } from './blog-11';
+import { blog12 } from './blog-12';
+import { blog13 } from './blog-13';
+import { blog14 } from './blog-14';
+import { blog15 } from './blog-15';
+import { blog16 } from './blog-16';
 
 export const pages: PageData[] = [
   ...core,
@@ -42,6 +51,15 @@ export const pages: PageData[] = [
   ...blog5,
   ...blog6,
   ...blog7,
+  ...blog8,
+  ...blog9,
+  ...blog10,
+  ...blog11,
+  ...blog12,
+  ...blog13,
+  ...blog14,
+  ...blog15,
+  ...blog16,
 ];
 
 /* Guardia de build: slugs duplicados rompen la compilación aquí mismo. */

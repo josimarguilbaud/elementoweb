@@ -467,6 +467,7 @@ export const industrias2b: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-clinicas-esteticas-panama', label: 'Guía: diseño web para clínicas estéticas' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Sistemas de Reservas' },
           { slug: 'industrias/diseno-web-belleza-spa-panama', label: 'Web para Belleza y Spas' },
           { slug: 'marketing/facebook-instagram-ads-panama', label: 'Instagram Ads' },

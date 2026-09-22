@@ -95,6 +95,21 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'related',
+        h2: 'Guías por industria en el blog',
+        items: [
+          { slug: 'blog/diseno-web-para-abogados-panama', label: 'Guía para abogados' },
+          { slug: 'blog/diseno-web-para-clinicas-salud-panama', label: 'Guía para clínicas' },
+          { slug: 'blog/diseno-web-para-restaurantes-panama', label: 'Guía para restaurantes' },
+          { slug: 'blog/diseno-web-para-bienes-raices-panama', label: 'Guía para bienes raíces' },
+          { slug: 'blog/diseno-web-para-contadores-panama', label: 'Guía para contadores' },
+          { slug: 'blog/diseno-web-para-constructoras-panama', label: 'Guía para constructoras' },
+          { slug: 'blog/diseno-web-para-clinicas-esteticas-panama', label: 'Guía para clínicas estéticas' },
+          { slug: 'blog/diseno-web-para-dentistas-panama', label: 'Guía para dentistas' },
+          { slug: 'blog/diseno-web-para-talleres-automotrices-panama', label: 'Guía para talleres' },
+        ],
+      },
+      {
+        type: 'related',
         items: [
           { slug: 'servicios', label: 'Servicios de diseño web' },
           { slug: 'funcionalidades', label: 'Funcionalidades' },
@@ -246,6 +261,7 @@ export const industriasPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-abogados-panama', label: 'Guía: diseño web para abogados' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
           { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },
@@ -397,6 +413,7 @@ export const industriasPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-bienes-raices-panama', label: 'Guía: diseño web para bienes raíces' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Catálogos y E-commerce' },
           { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local' },
           { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },
@@ -548,6 +565,7 @@ export const industriasPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-restaurantes-panama', label: 'Guía: diseño web para restaurantes' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' },
           { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Pagos con Yappy' },
           { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local y Google Maps' },
@@ -850,6 +868,7 @@ export const industriasPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-clinicas-salud-panama', label: 'Guía: diseño web para clínicas' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Citas Online' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
           { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local' },
@@ -1001,6 +1020,7 @@ export const industriasPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-constructoras-panama', label: 'Guía: diseño web para constructoras' },
           { slug: 'industrias/diseno-web-bienes-raices-panama', label: 'Web para Bienes Raíces' },
           { slug: 'saas/wapycrm', label: 'WapyCRM' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
@@ -1603,6 +1623,7 @@ export const industriasPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-talleres-automotrices-panama', label: 'Guía: diseño web para talleres' },
           { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local y Google Maps' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' },
           { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing Pages' },

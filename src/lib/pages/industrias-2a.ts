@@ -155,6 +155,7 @@ export const industrias2a: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-contadores-panama', label: 'Guía: diseño web para contadores' },
           { slug: 'industrias/diseno-web-consultoras-servicios-profesionales-panama', label: 'Web para Consultoras' },
           { slug: 'industrias/diseno-web-abogados-panama', label: 'Web para Abogados' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
@@ -628,6 +629,7 @@ export const industrias2a: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-dentistas-panama', label: 'Guía: diseño web para dentistas' },
           { slug: 'industrias/diseno-web-clinicas-salud-panama', label: 'Web para Clínicas y Salud' },
           { slug: 'industrias/diseno-web-clinicas-esteticas-panama', label: 'Web para Clínicas Estéticas' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Citas Online' },

@@ -331,7 +331,7 @@ export const blog3: PageData[] = [
         items: [
           { slug: 'blog/hosting-panama-evitar-hosting-barato', label: 'Hosting en Panamá: evita el hosting barato' },
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño web en Panamá' },
-          { slug: 'crecimiento/mantenimiento-hosting-web-panama', label: 'Mantenimiento y hosting web' },
+          { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento web' },
           { slug: 'blog/como-aparecer-primero-en-google-en-panama', label: 'Cómo aparecer primero en Google' },
         
           { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Diseño web para retail y moda' },

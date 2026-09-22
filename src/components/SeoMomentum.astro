@@ -1,0 +1,111 @@
+---
+/* Widget "SEO con movimiento": buscador simulado con búsquedas reales rotando
+   (efecto máquina de escribir) + línea de tiempo honesta de cómo avanza el
+   SEO. Contenido fijo (no recibe props de datos) porque es específico de la
+   página de SEO; solo el encabezado es configurable. */
+interface Props { h2: string; intro?: string }
+const { h2, intro } = Astro.props;
+
+const QUERIES = [
+  'abogado corporativo en panamá',
+  'clínica dental costa del este',
+  'taller de aire acondicionado en david',
+  'diseño web panamá',
+];
+
+const STAGES = [
+  { n: '01', h3: 'Primeras semanas', text: 'Auditoría técnica y corrección de lo que frena la indexación. Por fuera casi no se nota todavía.' },
+  { n: '02', h3: 'Primeros meses', text: 'Empiezan a aparecer búsquedas largas y específicas, de poca competencia. Son las señales tempranas antes del resultado grande.' },
+  { n: '03', h3: '3 a 6 meses', text: 'Tráfico orgánico en aumento constante y primeras consultas que sí puedes atribuir al posicionamiento.' },
+  { n: '04', h3: 'Con autoridad construida', text: 'Se compite por las búsquedas más disputadas, las que de verdad mueven el negocio.' },
+];
+---
+<section class="mx-auto max-w-7xl px-6 py-16">
+  <h2 class="reveal font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{h2}</h2>
+  {intro && <p class="rt reveal mt-3 max-w-2xl text-lg text-ink/55" set:html={intro}></p>}
+
+  <div class="reveal mt-10 overflow-hidden rounded-[1.75rem] border border-ink/10 bg-night p-8 md:p-10">
+    <div class="mx-auto max-w-xl">
+      <div class="flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-5 py-4">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81Z" fill="#fff" fill-opacity=".9"/></svg>
+        <span class="min-w-0 flex-1 truncate text-left font-body text-sm text-white/85"><span id="seo-typewriter"></span><span class="typewriter-caret">|</span></span>
+        <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-teal text-ink"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" stroke-linecap="round" /></svg></span>
+      </div>
+      <p class="mt-3 text-center text-xs text-white/35">Búsquedas reales que hace tu cliente. Ninguna es un caso inventado.</p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-4">
+      {STAGES.map((s, i) => (
+        <div class="stage-item relative flex flex-col gap-3" style={`transition-delay:${i * 90}ms`}>
+          <div class="flex items-center gap-2">
+            <span class="font-display text-xs font-bold text-teal">{s.n}</span>
+            <div class="stage-line h-[3px] flex-1 rounded-full bg-white/10">
+              <div class="stage-fill h-full rounded-full bg-gradient-to-r from-teal-deep to-teal" style={`animation-delay:${i * 250}ms`}></div>
+            </div>
+          </div>
+          <h3 class="font-display text-base font-bold text-white">{s.h3}</h3>
+          <p class="text-sm leading-relaxed text-white/55">{s.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes stage-fill {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+  .stage-fill {
+    width: 0%;
+    animation: stage-fill 0.9s ease-out forwards;
+    animation-play-state: paused;
+  }
+  .stage-line.in-view .stage-fill { animation-play-state: running; }
+
+  .typewriter-caret {
+    animation: caret-blink 0.9s step-end infinite;
+    color: var(--color-teal);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stage-fill { animation: none; width: 100%; }
+    .typewriter-caret { animation: none; }
+  }
+  @keyframes caret-blink { 50% { opacity: 0; } }
+</style>
+
+<script define:vars={{ QUERIES }}>
+  /* Máquina de escribir: escribe una búsqueda, pausa, borra, sigue con la
+     siguiente. Se detiene sola si el usuario prefiere menos movimiento. */
+  const el = document.getElementById('seo-typewriter');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (el) {
+    if (reduce) {
+      el.textContent = QUERIES[0];
+    } else {
+      let qi = 0, ci = 0, deleting = false;
+      const tick = () => {
+        const q = QUERIES[qi];
+        ci += deleting ? -1 : 1;
+        el.textContent = q.slice(0, ci);
+        let delay = deleting ? 28 : 55;
+        if (!deleting && ci === q.length) { delay = 1600; deleting = true; }
+        else if (deleting && ci === 0) { deleting = false; qi = (qi + 1) % QUERIES.length; delay = 300; }
+        setTimeout(tick, delay);
+      };
+      tick();
+    }
+  }
+
+  /* Dispara el llenado de la línea de progreso solo cuando el widget entra
+     en pantalla. */
+  const lines = document.querySelectorAll('.stage-line');
+  if (lines.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
+    lines.forEach((l) => io.observe(l));
+  }
+</script>

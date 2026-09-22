@@ -42,7 +42,7 @@ const catalogGroups = [
     items: [
       { h3: 'SEO y posicionamiento', text: 'Contenido y autoridad para competir por las búsquedas que traen clientes, no solo visitas.', link: { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' } },
       { h3: 'SEO local y Google Maps', text: 'Aparecer en el mapa cuando buscan tu servicio cerca. Para negocios con puerta abierta, es el canal número uno.', link: { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local' } },
-      { h3: 'Mantenimiento y hosting', text: 'Actualizaciones, respaldos verificados y monitoreo desde $59/mes. Tu sitio no se cae ni envejece.', link: { slug: 'crecimiento/mantenimiento-hosting-web-panama', label: 'Mantenimiento y Hosting' } },
+      { h3: 'Mantenimiento web', text: 'Actualizaciones, respaldos verificados y monitoreo desde $59/mes. Tu sitio no se cae ni envejece.', link: { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' } },
     ],
   },
   {
@@ -104,7 +104,7 @@ export const servicios: PageData[] = [
         h2: 'Preguntas frecuentes',
         items: [
           { q: '¿Qué incluye cada servicio?', a: 'Cada página de servicio detalla su alcance exacto. En todos los casos: diseño a medida (sin plantillas compradas), responsive verificado, SEO técnico, formularios conectados a WhatsApp y capacitación para tu equipo.' },
-          { q: '¿El dominio y el hosting van incluidos?', a: 'La infraestructura anual parte desde $350 (hosting cloud) e incluye dominio y certificado SSL; el compartido desde $225 y el VPS desde $550, según el proyecto. El dominio y todos los accesos quedan a nombre de tu empresa. Ver <a href="/crecimiento/mantenimiento-hosting-web-panama/">mantenimiento y hosting</a>.' },
+          { q: '¿El dominio y el hosting van incluidos?', a: 'La infraestructura anual parte desde $350 (hosting cloud) e incluye dominio y certificado SSL; el compartido desde $225 y el VPS desde $550, según el proyecto. El dominio y todos los accesos quedan a nombre de tu empresa. Ver <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura</a>.' },
           { q: '¿Trabajan con empresas fuera de la ciudad?', a: 'Sí. El proceso es 100% digital: reuniones por videollamada, entregas en ambientes de prueba y pagos por transferencia, tarjeta o Yappy.' },
           { q: '¿Puedo ver avances durante el proyecto?', a: 'Siempre. Cada etapa termina en algo que puedes revisar: la estructura, el diseño de pantallas y el sitio en un ambiente de prueba antes de publicar.' },
         ],
@@ -215,7 +215,7 @@ export const servicios: PageData[] = [
           { q: '¿Con qué tecnología lo construyen?', a: 'Depende de tu caso: <a href="/tecnologias/diseno-web-wordpress-panama/">WordPress</a> cuando el cliente edita contenido con frecuencia, o <a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">desarrollo a medida</a> cuando el rendimiento o las integraciones lo exigen. Te recomendamos con argumentos, no por comodidad nuestra.' },
           { q: '¿Necesito tener listo el contenido antes de empezar?', a: 'Ayuda tenerlo, pero no es obligatorio. Trabajamos la estructura y los textos contigo en la etapa de contenido. Si necesitas fotografía profesional o redacción, lo producimos como servicio adicional con precio cerrado.' },
           { q: '¿El sitio va a funcionar bien en celular?', a: 'Sí, y es una prioridad, no un extra. En Panamá la mayoría de tus visitantes llega desde el celular. Diseñamos primero para móvil y verificamos en dispositivos reales antes de publicar.' },
-          { q: '¿Qué pasa después de entregar la web?', a: 'No desaparecemos. Te capacitamos para administrarla y ofrecemos <a href="/crecimiento/mantenimiento-hosting-web-panama/">planes de mantenimiento</a> que mantienen tu sitio actualizado, respaldado y seguro. Muchos clientes también suman <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO continuo</a> para seguir creciendo.' },
+          { q: '¿Qué pasa después de entregar la web?', a: 'No desaparecemos. Te capacitamos para administrarla y ofrecemos <a href="/crecimiento/mantenimiento-web-panama/">planes de mantenimiento</a> que mantienen tu sitio actualizado, respaldado y seguro. Muchos clientes también suman <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO continuo</a> para seguir creciendo.' },
                   { q: '¿Cuándo NO me conviene un sitio corporativo?', a: 'Si tienes una sola oferta y una sola campaña, te conviene una landing page. Si vendes producto con inventario y cobras en línea, una tienda. Si ya tienes un sitio que funciona pero se ve viejo, casi siempre sale mejor un rediseño que empezar de cero.' },
           { q: '¿Qué encarece más un sitio corporativo?', a: 'En orden: la cantidad de páginas de servicio, si hay que redactar el contenido desde cero, el panel autoadministrable, las integraciones con CRM o sistemas internos, y la versión en otro idioma.' },
           { q: '¿Qué es lo que más retrasa un proyecto web?', a: 'El contenido, no el diseño ni la programación. Un proyecto con textos, fotos y logos listos avanza según lo previsto; uno donde el contenido se escribe sobre la marcha se alarga. Es la causa número uno de retraso y no depende de la agencia.' },
@@ -301,7 +301,7 @@ export const servicios: PageData[] = [
         h2: 'Shopify o WooCommerce: te decimos cuál',
         paragraphs: [
           'Las dos plataformas venden bien; la decisión correcta depende de tu operación. <a href="/tecnologias/diseno-web-shopify-panama/">Shopify</a> conviene cuando quieres vender rápido sin administrar infraestructura: la plataforma se encarga de servidores, seguridad y actualizaciones a cambio de una suscripción mensual.',
-          '<strong>WooCommerce</strong> conviene cuando necesitas control total: reglas de precio propias, integración con tu inventario o cero comisiones de plataforma. El costo es que la infraestructura corre por tu cuenta, y por eso lo entregamos con <a href="/crecimiento/mantenimiento-hosting-web-panama/">hosting gestionado</a>.',
+          '<strong>WooCommerce</strong> conviene cuando necesitas control total: reglas de precio propias, integración con tu inventario o cero comisiones de plataforma. El costo es que la infraestructura corre por tu cuenta, y por eso lo entregamos con <a href="/crecimiento/hosting-infraestructura-panama/">hosting gestionado</a>.',
           'Evaluamos tu catálogo, tu volumen y tus integraciones antes de recomendar. La respuesta honesta a veces es la plataforma que nos deja menos trabajo recurrente, y te lo decimos igual.',
         ],
       },
@@ -687,7 +687,8 @@ export const servicios: PageData[] = [
         type: 'related',
         items: [
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
-          { slug: 'crecimiento/mantenimiento-hosting-web-panama', label: 'Mantenimiento y Hosting' },
+          { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' },
+          { slug: 'crecimiento/hosting-infraestructura-panama', label: 'Hosting e Infraestructura' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
           { slug: 'blog/errores-comunes-diseno-web-empresas', label: 'Errores comunes de diseño web' },
           { slug: 'blog/cuando-hacer-rediseno-pagina-web', label: 'Cuándo rediseñar tu web' },

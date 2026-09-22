@@ -82,7 +82,7 @@ export const blog6: PageData[] = [
         paragraphs: [
           'En Elemento Web manejamos la infraestructura anual (dominio, hosting y certificado SSL) desde $350 al año, todo a nombre del cliente. A eso puedes sumar mantenimiento gestionado desde $59 al mes, que incluye actualizaciones, respaldos verificados y monitoreo para que el sitio no se caiga ni envejezca.',
           'Sí, es más que un plan de dos dólares. Pero compara: un plan barato que se cae un día de campaña te puede costar más en ventas perdidas que un año entero de hosting serio. Y rehacer un sitio hackeado cuesta muchísimo más que haberlo protegido. Todo lo cerramos por escrito, con cotización cerrada, para que sepas exactamente qué pagas.',
-          'Si quieres que revisemos tu hosting actual o migremos tu sitio a uno estable, escríbenos por WhatsApp. También puedes ver nuestro servicio de <a href="/crecimiento/mantenimiento-hosting-web-panama/">mantenimiento y hosting web en Panamá</a> con el detalle completo.',
+          'Si quieres que revisemos tu hosting actual o migremos tu sitio a uno estable, escríbenos por WhatsApp. También puedes ver nuestro servicio de <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura en Panamá</a> con el detalle completo.',
         ],
       },
       {
@@ -99,7 +99,7 @@ export const blog6: PageData[] = [
       {
         type: 'related',
         items: [
-          { slug: 'crecimiento/mantenimiento-hosting-web-panama', label: 'Mantenimiento y Hosting Web' },
+          { slug: 'crecimiento/hosting-infraestructura-panama', label: 'Hosting e Infraestructura' },
           { slug: 'blog/como-elegir-el-dominio-web-perfecto', label: 'Cómo elegir tu dominio' },
           { slug: 'blog/errores-comunes-diseno-web-empresas', label: 'Errores comunes de diseño web' },
         

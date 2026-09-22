@@ -2,6 +2,8 @@
 import type { Block } from '../lib/types';
 import { pricing, url, wa, portfolio, portfolioCats } from '../lib/site';
 import ContactForm from './ContactForm.astro';
+import InfraReliability from './InfraReliability.astro';
+import SeoMomentum from './SeoMomentum.astro';
 interface Props { blocks: Block[] }
 const { blocks } = Astro.props;
 ---
@@ -240,6 +242,34 @@ const { blocks } = Astro.props;
         {b.h2 && <h2 class="reveal text-center font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>}
         {b.intro && <p class="reveal mx-auto mt-3 max-w-xl text-center text-lg text-ink/55">{b.intro}</p>}
         <div class="reveal mt-8"><ContactForm /></div>
+      </section>
+    )}
+
+    {b.type === 'infra' && (
+      <section class="mx-auto max-w-7xl px-6 py-16">
+        <InfraReliability h2={b.h2} intro={b.intro} columns={b.columns} />
+      </section>
+    )}
+
+    {b.type === 'seo-momentum' && <SeoMomentum h2={b.h2} intro={b.intro} />}
+
+    {b.type === 'plans' && (
+      <section class="mx-auto max-w-7xl px-6 py-16">
+        <h2 class="reveal font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>
+        {b.intro && <p class="rt reveal mt-3 max-w-2xl text-lg text-ink/55" set:html={b.intro}></p>}
+        <div class="mt-10 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
+          {b.tiers.map((t) => (
+            <div class={`reveal relative flex flex-col rounded-[1.75rem] p-8 ${t.featured ? 'bg-gradient-to-b from-night to-night-2 text-white shadow-2xl shadow-teal-deep/25' : 'border border-ink/10 bg-white text-ink'}`}>
+              {t.featured && <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold text-ink">Recomendado</span>}
+              <h3 class="font-display text-xl font-bold">{t.name}</h3>
+              {t.for && <p class={`mt-2 text-sm ${t.featured ? 'text-white/50' : 'text-ink/45'}`}>{t.for}</p>}
+              <div class="mt-6 flex items-end gap-1.5"><span class={`text-sm font-medium ${t.featured ? 'text-white/50' : 'text-ink/40'}`}>desde</span><span class="font-display text-5xl font-extrabold">{t.price}</span>{t.unit && <span class={`text-sm font-medium ${t.featured ? 'text-white/50' : 'text-ink/40'}`}>{t.unit}</span>}</div>
+              <ul class="mt-7 flex flex-1 flex-col gap-3">{t.features.map((f) => <li class="flex items-start gap-3 text-sm"><span class={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${t.featured ? 'bg-teal text-ink' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={t.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>)}</ul>
+              <a href="/contacto/" aria-label={`Empezar con el plan ${t.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${t.featured ? 'bg-teal text-ink hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
+            </div>
+          ))}
+        </div>
+        {b.note && <p class="reveal mt-8 text-sm text-ink/45" set:html={b.note}></p>}
       </section>
     )}
   </>

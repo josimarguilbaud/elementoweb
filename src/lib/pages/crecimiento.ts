@@ -23,7 +23,7 @@ export const crecimiento: PageData[] = [
         items: [
           { h3: 'SEO y posicionamiento', text: 'Contenido y autoridad para competir por las búsquedas que traen clientes, no solo visitas.', link: { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' } },
           { h3: 'SEO local y Google Maps', text: 'Aparecer en el mapa cuando buscan tu servicio cerca. Para negocios con puerta abierta, es el canal número uno.', link: { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local' } },
-          { h3: 'Mantenimiento y hosting', text: 'Actualizaciones, respaldos verificados y monitoreo desde $59/mes. Tu sitio no se cae ni envejece.', link: { slug: 'crecimiento/mantenimiento-hosting-web-panama', label: 'Mantenimiento y Hosting' } },
+          { h3: 'Mantenimiento web', text: 'Actualizaciones, respaldos verificados y monitoreo desde $59/mes. Tu sitio no se cae ni envejece.', link: { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' } },
         ],
       },
       {
@@ -58,7 +58,7 @@ export const crecimiento: PageData[] = [
         items: [
           { h3: 'Tu cliente te googlea', text: 'Si la gente busca tu servicio en Google antes de decidir, el SEO orgánico te pone en esa conversación mes a mes sin pagar por clic.', link: { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' } },
           { h3: 'Tienes puerta abierta', text: 'Restaurantes, clínicas, talleres y locales con dirección física viven del "cerca de mí". Ahí el mapa de Google es el buscador.', link: { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local' } },
-          { h3: 'No quieres sustos', text: 'Si tu web factura, agenda o vende, no puede caerse ni envejecer. El mantenimiento la mantiene rápida, segura y respaldada.', link: { slug: 'crecimiento/mantenimiento-hosting-web-panama', label: 'Mantenimiento y Hosting' } },
+          { h3: 'No quieres sustos', text: 'Si tu web factura, agenda o vende, no puede caerse ni envejecer. El mantenimiento la mantiene rápida, segura y respaldada.', link: { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' } },
         ],
       },
       {
@@ -73,6 +73,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'crecimiento/hosting-infraestructura-panama', label: 'Hosting e Infraestructura' },
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño Web' },
           { slug: 'blog', label: 'Blog' },
           { slug: 'servicios', label: 'Servicios de diseño web' },
@@ -124,6 +125,11 @@ export const crecimiento: PageData[] = [
           'Lo que sí cambia el plazo es de dónde partes. Un dominio nuevo, sin historial y sin enlaces, tarda bastante más que uno con años y contenido existente. Una palabra clave muy competida tarda más que una específica y local. Y un sitio con problemas técnicos no avanza hasta que se arreglan, por mucho contenido que se publique encima.',
           '<strong>La expectativa realista es de meses, con señales tempranas antes que resultados.</strong> Las primeras suelen ser páginas nuevas empezando a aparecer para búsquedas largas y específicas, mucho antes de competir por las principales.',
         ],
+      },
+      {
+        type: 'seo-momentum',
+        h2: 'Así se ve el avance real',
+        intro: 'Tu cliente ya está buscando esto ahora mismo. La pregunta es cuánto tarda tu sitio en aparecer, y eso sí lo podemos explicar con honestidad.',
       },
       {
         type: 'prose',
@@ -205,7 +211,7 @@ export const crecimiento: PageData[] = [
         paragraphs: [
           'Mucha gente cree que el SEO es "meter palabras clave" en la web y esperar. Esa época terminó hace años. Hoy Google premia el contenido que de verdad responde lo que la persona buscaba: una guía clara, una comparación honesta, una respuesta a la duda que frena la compra.',
           'Por eso cada mes producimos páginas y artículos con intención real, no relleno. <strong>Un artículo que responde bien una búsqueda concreta puede traer clientes durante años</strong>, mientras la pauta se apaga en cuanto cortas el presupuesto. Esa es la diferencia entre gastar y construir un activo.',
-          'El trabajo se hace de la mano tuya: nadie conoce tu negocio como tú. Tú aportas el criterio y las respuestas que solo un experto del sector da; nosotros los convertimos en contenido que posiciona y que se lee como escrito por un humano, no por una máquina. Cuando el contenido y el <a href="/crecimiento/mantenimiento-hosting-web-panama/">mantenimiento técnico</a> van juntos, el sitio crece parejo.',
+          'El trabajo se hace de la mano tuya: nadie conoce tu negocio como tú. Tú aportas el criterio y las respuestas que solo un experto del sector da; nosotros los convertimos en contenido que posiciona y que se lee como escrito por un humano, no por una máquina. Cuando el contenido y el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento técnico</a> van juntos, el sitio crece parejo.',
         ],
       },
       {
@@ -367,36 +373,67 @@ export const crecimiento: PageData[] = [
 
   /* ---------- MANTENIMIENTO ---------- */
   {
-    slug: 'crecimiento/mantenimiento-hosting-web-panama',
+    slug: 'crecimiento/mantenimiento-web-panama',
     parent,
-    title: 'Mantenimiento Web y Hosting en Panamá | desde $59/mes',
-    description: 'Mantenimiento web y hosting gestionado en Panamá: actualizaciones, respaldos verificados, monitoreo y soporte desde $59 al mes.',
-    h1: 'Mantenimiento web y hosting gestionado',
-    breadcrumb: 'Mantenimiento y Hosting',
-    service: { type: 'Mantenimiento web y hosting gestionado' },
+    title: 'Mantenimiento Web en Panamá | Planes desde $59/mes',
+    description: 'Mantenimiento web en Panamá: 3 planes según cuánto necesitas, con respaldos verificados, monitoreo y respuesta que se ajusta a tu negocio.',
+    h1: 'Mantenimiento web que se ajusta a tu negocio',
+    breadcrumb: 'Mantenimiento Web',
+    service: { type: 'Mantenimiento web' },
     lead: [
       'Un sitio web es software conectado a internet: sin mantenimiento envejece, se vuelve lento y termina comprometido.',
       'Los ataques no eligen empresas grandes: son robots que escanean internet buscando sitios sin actualizar. Un año sin mantenimiento convierte tu web en un objetivo fácil, y recuperar un sitio hackeado (y el posicionamiento que Google le quita) cuesta mucho más que prevenirlo.',
     ],
     blocks: [
       {
-        type: 'checklist',
-        h2: 'Qué incluye desde $59/mes',
-        items: [
-          'Actualizaciones de seguridad del sitio y sus componentes',
-          'Respaldos automáticos con restauración verificada',
-          'Monitoreo de caídas con alerta inmediata',
-          'Hosting cloud con recursos dedicados',
-          'Certificado SSL con renovación automática',
-          'Ajustes menores de contenido (textos e imágenes)',
-          'Revisión periódica de velocidad',
-          'Reporte mensual del estado del sitio',
+        type: 'plans',
+        h2: 'Tres planes según cuánto necesitas',
+        intro: 'Los tres incluyen la base completa: actualizaciones, respaldos verificados y monitoreo. Lo que cambia es qué tan rápido respondemos y cuánto tiempo de cambios incluye cada mes.',
+        tiers: [
+          {
+            name: 'Básico',
+            price: '$59',
+            unit: '/mes',
+            for: 'El piso: nunca contratamos por debajo de esto.',
+            features: [
+              'Actualizaciones de seguridad del sitio y sus componentes',
+              'Respaldos automáticos con restauración verificada',
+              'Monitoreo de caídas con alerta inmediata',
+              'Certificado SSL con renovación automática',
+              'Ajustes menores de contenido (textos e imágenes)',
+              'Reporte mensual del estado del sitio',
+              'Respuesta el siguiente día hábil',
+            ],
+          },
+          {
+            name: 'Prioritario',
+            price: '$99',
+            unit: '/mes',
+            featured: true,
+            for: 'Para sitios que ya facturan o agendan y no pueden esperar.',
+            features: [
+              'Todo lo del plan Básico',
+              'Respuesta el mismo día hábil',
+              'Reporte mensual más detallado (velocidad, seguridad, uptime)',
+              '1 hora al mes de cambios o ajustes',
+              'Revisión de velocidad prioritaria',
+            ],
+          },
+          {
+            name: 'Empresarial',
+            price: '$189',
+            unit: '/mes',
+            for: 'Para operaciones que no se pueden dar el lujo de una caída.',
+            features: [
+              'Todo lo del plan Prioritario',
+              'Respuesta el mismo día incluso fuera de horario si el sitio está caído',
+              '3 horas al mes de cambios o ajustes',
+              'Llamada mensual de seguimiento',
+              'Prioridad máxima en la cola de soporte',
+            ],
+          },
         ],
-      },
-      {
-        type: 'extras',
-        h2: 'Hosting y servicios adicionales',
-        intro: 'El hosting depende del proyecto y hay servicios que se cotizan aparte. Aquí está todo claro, desde el inicio.',
+        note: 'Precios en USD, no incluyen ITBMS (7%). La infraestructura (dominio, hosting y SSL) se cotiza aparte: ver <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura</a>.',
       },
       {
         type: 'prose',
@@ -404,7 +441,7 @@ export const crecimiento: PageData[] = [
         paragraphs: [
           'La palabra "backup" aparece en todos los planes de hosting baratos. La pregunta correcta es otra: ¿alguien ha probado restaurarlo? Un respaldo nunca verificado es una suposición, y lo descubres el peor día posible.',
           'Nosotros probamos restauraciones periódicamente y conservamos varias versiones: si un problema pasó desapercibido dos semanas, el respaldo de ayer ya lo incluye. <strong>Poder volver más atrás es lo que salva el sitio.</strong>',
-          'La infraestructura anual (dominio, hosting y SSL) más el mantenimiento mensual cubren todo lo que tu web necesita para operar sin sustos. Y el dominio queda a tu nombre, siempre.',
+          'La <a href="/crecimiento/hosting-infraestructura-panama/">infraestructura anual</a> (dominio, hosting y SSL) más el mantenimiento mensual cubren todo lo que tu web necesita para operar sin sustos. Y el dominio queda a tu nombre, siempre.',
         ],
       },
             {
@@ -429,16 +466,6 @@ export const crecimiento: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El hosting barato no es más lento: es más frágil',
-        paragraphs: [
-          'La comparación de precios entre hostings es engañosa porque compara el precio y no lo que se recibe. La diferencia real no está tanto en la velocidad como en qué pasa cuando algo sale mal.',
-          'En el hosting compartido más barato tu sitio convive con cientos de otros en el mismo servidor. Si uno de esos recibe un pico de tráfico o es atacado, tu sitio se ve afectado. Y el soporte, cuando existe, responde en días.',
-          'El costo real aparece en la caída. Un sitio caído un fin de semana largo son tres días sin recibir un solo contacto, y eso suele valer bastante más que la diferencia de precio anual entre un hosting barato y uno decente.',
-          'Lo que hay que mirar antes de contratar: si hay respaldo diario y dónde se guarda, si incluye certificado, en cuánto tiempo responde el soporte, y si te puedes llevar tu sitio a otro lado cuando quieras. <strong>Esa última pregunta descarta a más proveedores de los que uno espera.</strong> El desarrollo completo está en <a href="/blog/hosting-panama-evitar-hosting-barato/">por qué el hosting barato sale caro</a>.',
-        ],
-      },
-      {
-        type: 'prose',
         h2: 'Qué medir: tiempo caído y velocidad en celular',
         paragraphs: [
           'El primer número es el <strong>tiempo caído</strong>: cuántos minutos al mes el sitio no respondió. Sin monitoreo, un sitio puede estar cayéndose cada semana de madrugada y nadie enterarse, mientras el posicionamiento se erosiona en silencio.',
@@ -451,18 +478,18 @@ export const crecimiento: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Qué cuenta como "ajuste menor"?', a: 'Cambiar textos, reemplazar imágenes, actualizar datos de contacto, publicar una entrada. Páginas nuevas o funciones se cotizan aparte, y te lo decimos antes, no en la factura.' },
+          { q: '¿Cuál es la diferencia real entre los tres planes?', a: 'Los tres incluyen la misma base: actualizaciones, respaldos verificados y monitoreo. Lo que sube es la velocidad de respuesta y cuánto tiempo de cambios incluye cada mes. Básico responde al siguiente día hábil y no incluye horas de cambios. Prioritario responde el mismo día hábil y suma 1 hora mensual. Empresarial responde el mismo día incluso fuera de horario si el sitio está caído, con 3 horas mensuales y una llamada de seguimiento.' },
+          { q: '¿Puedo cambiar de plan cuando quiera?', a: 'Sí, sin permanencia. Si un mes necesitas más horas de cambios subes de plan, y si no las necesitas el siguiente, bajas. El ajuste aplica desde el siguiente ciclo de facturación.' },
+          { q: '¿Qué cuenta como "ajuste menor"?', a: 'Cambiar textos, reemplazar imágenes, actualizar datos de contacto, publicar una entrada: es el tipo de trabajo que consumen las horas mensuales de los planes Prioritario y Empresarial. Páginas nuevas o funciones se cotizan aparte, y te lo decimos antes, no en la factura.' },
           { q: '¿Es obligatorio contratarlo con ustedes?', a: 'No. Puedes encargarte tú o tu equipo técnico. Lo innegociable es que alguien lo haga: el sitio abandonado termina comprometido, y Google penaliza sitios hackeados.' },
           { q: '¿Cubren sitios que no construyeron ustedes?', a: 'Sí, previa auditoría. Si el sitio ya está comprometido o su base es frágil, primero hay que sanearlo (ver <a href="/servicios/redisenio-web-panama/">rediseño</a>).' },
-          { q: '¿Qué pasa si mi sitio se cae un domingo?', a: 'El monitoreo nos alerta automáticamente, casi siempre antes de que lo notes. Restauramos desde el respaldo o corregimos el origen, según la causa.' },
+          { q: '¿Qué pasa si mi sitio se cae un domingo?', a: 'El monitoreo nos alerta automáticamente, casi siempre antes de que lo notes. En Básico y Prioritario respondemos el siguiente o el mismo día hábil; en Empresarial respondemos el mismo día así sea fin de semana o feriado, porque el sitio está caído.' },
           { q: 'Mi sitio funciona bien. ¿Para qué pago mantenimiento?', a: 'Precisamente porque funciona bien hoy. El mantenimiento es como el cambio de aceite del carro: no lo notas hasta que dejas de hacerlo. Los componentes de tu web reciben parches de seguridad todo el tiempo, y un sitio sin actualizar durante meses se vuelve el objetivo fácil que los robots de ataque buscan.' },
-          { q: '¿El hosting está incluido o se paga aparte?', a: 'La infraestructura anual (dominio, hosting y SSL) se cotiza según tu proyecto y va por separado del mantenimiento mensual desde $59. Te lo mostramos todo desglosado desde el inicio, con cotización cerrada por escrito. El dominio siempre queda a tu nombre.' },
           { q: '¿Y si mi sitio ya fue hackeado?', a: 'Primero hay que sanearlo: limpiar el código malicioso, cerrar la puerta por donde entraron y pedir a Google que lo revise si te marcó como inseguro. Eso es un trabajo puntual, no mantenimiento normal. Después sí entra el plan mensual para que no vuelva a pasar. Si la base es muy frágil, a veces sale mejor un <a href="/servicios/redisenio-web-panama/">rediseño</a>.' },
-                  { q: '¿Qué pasa si no actualizo mi sitio?', a: 'Nada durante meses y después todo de golpe. Cuando se publica el arreglo de una vulnerabilidad, esa vulnerabilidad es información pública y hay sistemas automáticos buscando sitios sin corregir. No te eligen: te encuentran. Lo habitual es que el sitio empiece a redirigir a páginas de apuestas y te enteres cuando Google ya lo marcó.' },
+          { q: '¿Qué pasa si no actualizo mi sitio?', a: 'Nada durante meses y después todo de golpe. Cuando se publica el arreglo de una vulnerabilidad, esa vulnerabilidad es información pública y hay sistemas automáticos buscando sitios sin corregir. No te eligen: te encuentran. Lo habitual es que el sitio empiece a redirigir a páginas de apuestas y te enteres cuando Google ya lo marcó.' },
           { q: '¿Mi hosting ya hace respaldos, no basta con eso?', a: 'Solo si alguien lo ha restaurado alguna vez. Los fallos típicos: guarda archivos pero no la base de datos, vive en el mismo servidor que se cayó, o solo tiene el último día cuando el problema empezó hace dos semanas. Un respaldo sin probar es una suposición, no un seguro.' },
-          { q: '¿Qué diferencia hay entre un hosting barato y uno bueno?', a: 'Menos la velocidad y más qué pasa cuando algo falla. En el compartido barato convives con cientos de sitios y el soporte responde en días. Un sitio caído un fin de semana largo son tres días sin un solo contacto, que suele valer más que la diferencia de precio anual.' },
           { q: '¿Cómo sé que el mantenimiento se está haciendo?', a: 'Con el registro de actualizaciones aplicadas al mes indicando cuáles eran de seguridad, el tiempo caído medido, la velocidad en celular y la fecha de la última restauración de prueba. Sin eso, es una factura mensual sin trabajo verificable detrás.' },
-          { q: '¿Cuándo NO necesitas contratar mantenimiento con nosotros?', a: 'Si tu sitio es estático, no tiene panel ni formularios y alguien de tu equipo sabe renovar el dominio y el certificado, puedes vivir sin plan mensual. También si tu proveedor actual ya lo cubre: pagar dos veces por lo mismo no mejora nada. Lo que no recomendamos es dejarlo sin dueño: un WordPress sin actualizar termina comprometido, y recuperarlo cuesta más que el plan de $59 al mes.' },
+          { q: '¿Cuándo NO necesitas contratar mantenimiento con nosotros?', a: 'Si tu sitio es estático, no tiene panel ni formularios y alguien de tu equipo sabe renovar el dominio y el certificado, puedes vivir sin plan mensual. También si tu proveedor actual ya lo cubre: pagar dos veces por lo mismo no mejora nada. Lo que no recomendamos es dejarlo sin dueño: un WordPress sin actualizar termina comprometido, y recuperarlo cuesta más que el plan Básico.' },
         ],
       },
       {
@@ -493,6 +520,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'crecimiento/hosting-infraestructura-panama', label: 'Hosting e Infraestructura' },
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño Web' },
           { slug: 'tecnologias/diseno-web-wordpress-panama', label: 'WordPress' },
           { slug: 'blog/hosting-panama-evitar-hosting-barato', label: 'Por qué evitar el hosting barato' },
@@ -501,5 +529,117 @@ export const crecimiento: PageData[] = [
       },
     ],
     cta: { h2: 'Protege tu inversión', wa: 'Hola, quiero el plan de mantenimiento web.' },
+  },
+
+  /* ---------- HOSTING E INFRAESTRUCTURA ---------- */
+  {
+    slug: 'crecimiento/hosting-infraestructura-panama',
+    parent,
+    title: 'Hosting e Infraestructura Web en Panamá | Cloud, VPS y Correo',
+    description: 'Hosting cloud, VPS dedicado y correo empresarial en Panamá. Dominio y SSL incluidos, infraestructura que se ajusta a tu proyecto, sin letra pequeña.',
+    h1: 'Hosting e infraestructura, sin letra pequeña',
+    breadcrumb: 'Hosting e Infraestructura',
+    service: { type: 'Hosting e infraestructura web' },
+    lead: [
+      'Un sitio necesita dónde vivir: dominio, hosting y correo empresarial. Elegir mal ahí no se nota el primer mes, se nota el día que el sitio se cae o el correo deja de llegar.',
+      'Nosotros configuramos y administramos esa infraestructura como parte del proyecto, no como una casilla que marcas aparte: el nivel correcto depende de tu tráfico y tus integraciones, y te lo explicamos antes de cotizar, no después.',
+    ],
+    blocks: [
+      {
+        type: 'infra',
+        h2: 'La infraestructura también la llevamos nosotros',
+        intro: 'Tres piezas que sostienen tu sitio todos los días, no solo el día que lo publicamos.',
+        columns: [
+          {
+            eyebrow: '01',
+            title: 'Hosting y correo empresarial',
+            text: 'Recursos según tu proyecto y correo profesional con tu propio dominio, no una cuenta gratuita disfrazada.',
+            bullets: [
+              'Hosting compartido, cloud o VPS según tu tráfico',
+              'Correo profesional (info@tuempresa.com)',
+              'Certificado SSL con renovación automática',
+              'Dominio siempre a tu nombre',
+            ],
+            visual: 'usage',
+          },
+          {
+            eyebrow: '02',
+            title: 'Servidores estables',
+            text: 'Cloud o VPS dedicado según cuánto tráfico y control necesites. Nada de compartir servidor con cientos de sitios ajenos si tu negocio no puede permitírselo.',
+            bullets: [
+              'Recursos garantizados, no de "mejor esfuerzo"',
+              'Escalable si tu tráfico crece',
+              'Mismo entorno que probamos antes de migrar',
+            ],
+            visual: 'uptime',
+            stat: '99.9',
+            statLabel: 'uptime objetivo',
+          },
+          {
+            eyebrow: '03',
+            title: 'Soporte y monitoreo',
+            text: 'El monitoreo de caídas y las alertas son trabajo de mantenimiento, no de hosting: por eso van de la mano y por eso los vendemos juntos, no como promesas sueltas.',
+            bullets: [
+              'Alertas automáticas de caída',
+              'Tiempo de respuesta medido, no prometido',
+              'Reporte mensual del estado real',
+            ],
+            link: { slug: 'crecimiento/mantenimiento-web-panama', label: 'Ver planes de mantenimiento' },
+            visual: 'monitor',
+            stat: '4',
+            statLabel: 'minutos de respuesta promedio',
+          },
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El hosting barato no es más lento: es más frágil',
+        paragraphs: [
+          'La comparación de precios entre hostings es engañosa porque compara el precio y no lo que se recibe. La diferencia real no está tanto en la velocidad como en qué pasa cuando algo sale mal.',
+          'En el hosting compartido más barato tu sitio convive con cientos de otros en el mismo servidor. Si uno de esos recibe un pico de tráfico o es atacado, tu sitio se ve afectado. Y el soporte, cuando existe, responde en días.',
+          'El costo real aparece en la caída. Un sitio caído un fin de semana largo son tres días sin recibir un solo contacto, y eso suele valer bastante más que la diferencia de precio anual entre un hosting barato y uno decente.',
+          'Lo que hay que mirar antes de contratar: si hay respaldo diario y dónde se guarda, si incluye certificado, en cuánto tiempo responde el soporte, y si te puedes llevar tu sitio a otro lado cuando quieras. <strong>Esa última pregunta descarta a más proveedores de los que uno espera.</strong> El desarrollo completo está en <a href="/blog/hosting-panama-evitar-hosting-barato/">por qué el hosting barato sale caro</a>.',
+        ],
+      },
+      {
+        type: 'extras',
+        h2: 'Planes de hosting según tu proyecto',
+        intro: 'El hosting no es único: depende de tu proyecto. Cuánto tráfico esperas, qué integraciones necesita y cuánto control quieres definen el nivel correcto. Todos incluyen dominio y certificado SSL.',
+      },
+      {
+        type: 'steps',
+        h2: 'Cómo migramos tu hosting sin drama',
+        intro: 'Si ya tienes un sitio funcionando, cambiar de hosting es el paso que más miedo da. Así lo hacemos sin que se note.',
+        items: [
+          { h3: 'Auditamos lo que tienes', text: 'Revisamos tu hosting actual: qué corre ahí, qué integraciones tiene y qué se necesita replicar exacto.' },
+          { h3: 'Preparamos el entorno nuevo en paralelo', text: 'Configuramos y probamos todo en el servidor nuevo mientras el sitio actual sigue funcionando normal para tus visitantes.' },
+          { h3: 'Verificamos antes de apuntar el dominio', text: 'Comparamos que todo se vea y funcione igual: formularios, velocidad, correo. Solo entonces cambiamos el DNS.' },
+          { h3: 'Confirmamos y monitoreamos', text: 'Las primeras 48 horas vigilamos de cerca que la propagación del DNS y el nuevo entorno respondan bien.' },
+        ],
+      },
+      {
+        type: 'faq',
+        h2: 'Preguntas frecuentes',
+        items: [
+          { q: '¿El dominio queda a mi nombre?', a: 'Sí, siempre. El dominio se registra a tu nombre o al de tu empresa, nunca al nuestro. Puedes verificarlo tú mismo en cualquier momento en el registrador correspondiente.' },
+          { q: '¿Qué diferencia hay entre compartido, cloud y VPS?', a: 'El compartido conviene a sitios corporativos y landing pages con tráfico moderado. El cloud es la opción recomendada para la mayoría: recursos garantizados y mejor estabilidad. El VPS es un servidor dedicado a tu proyecto, para e-commerce grande o alta demanda.' },
+          { q: '¿Puedo empezar en un plan y subir después?', a: 'Sí. Si tu tráfico crece o sumas una tienda online, migramos de compartido a cloud o VPS sin perder el histórico ni el posicionamiento ganado.' },
+          { q: '¿El correo empresarial cuesta aparte?', a: 'Sí, desde $60 al año por dominio con las cuentas que necesites. Va aparte porque no todos los proyectos lo piden: algunos ya tienen Google Workspace o Microsoft 365 y solo necesitan que apuntemos los registros.' },
+          { q: '¿Puedo traer mi hosting actual o tengo que migrar?', a: 'Puedes traer el tuyo si funciona bien: no te obligamos a migrar. Si migramos, lo hacemos sin downtime perceptible: preparamos el entorno nuevo, probamos que todo funcione igual, y solo entonces apuntamos el dominio.' },
+          { q: '¿Cuándo NO conviene el VPS?', a: 'Si tu sitio es una landing page o una web corporativa de tráfico moderado, el VPS es gastar de más: el hosting cloud rinde igual por una fracción del precio. El VPS se justifica con tráfico alto, integraciones pesadas o necesidad de control total del servidor.' },
+          { q: '¿Qué pasa si mi sitio se cae?', a: 'La infraestructura (dónde vive tu sitio) y el monitoreo de caídas son dos cosas distintas, y por separado no sirven de mucho. Nosotros las vendemos juntas: ve los <a href="/crecimiento/mantenimiento-web-panama/">planes de mantenimiento</a> para el detalle de tiempos de respuesta.' },
+        ],
+      },
+      {
+        type: 'related',
+        items: [
+          { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' },
+          { slug: 'servicios/redisenio-web-panama', label: 'Rediseño Web' },
+          { slug: 'blog/hosting-panama-evitar-hosting-barato', label: 'Por qué evitar el hosting barato' },
+          { slug: 'blog/como-elegir-el-dominio-web-perfecto', label: 'Cómo elegir tu dominio' },
+        ],
+      },
+    ],
+    cta: { h2: 'Infraestructura que no falla cuando más importa', wa: 'Hola, quiero cotizar hosting e infraestructura para mi sitio.' },
   },
 ];

@@ -169,7 +169,7 @@ export const tecnologias: PageData[] = [
         h2: 'Preguntas frecuentes',
         items: [
           { q: '¿Cuánto cuesta un sitio WordPress en Panamá?', a: 'Los rangos de <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> aplican: desde $950 con hasta 6 páginas. WordPress es la tecnología, no un servicio aparte.' },
-          { q: '¿WordPress es seguro?', a: 'Sí, mantenido correctamente. Los sitios comprometidos son casi siempre instalaciones abandonadas con plugins sin actualizar. Nuestro <a href="/crecimiento/mantenimiento-hosting-web-panama/">plan de mantenimiento</a> cubre actualizaciones, respaldos verificados y monitoreo.' },
+          { q: '¿WordPress es seguro?', a: 'Sí, mantenido correctamente. Los sitios comprometidos son casi siempre instalaciones abandonadas con plugins sin actualizar. Nuestro <a href="/crecimiento/mantenimiento-web-panama/">plan de mantenimiento</a> cubre actualizaciones, respaldos verificados y monitoreo.' },
           { q: '¿Puedo seguir usando mi WordPress actual?', a: 'Si la base es sana, sí: lo auditamos y modernizamos encima. Si está construido sobre una plantilla pesada, suele ser más barato reconstruir el tema que pelear contra él. La auditoría lo determina.' },
           { q: '¿WordPress sirve para SEO en Panamá?', a: 'Muy bien, si se implementa liviano. WordPress da control total sobre metadatos, estructura de URLs, schema y un blog para contenido orgánico. Sobre esa base montamos tu <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a> y, si atiendes clientes por zona, el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Google Maps</a>.' },
           { q: '¿Puedo administrar el sitio yo mismo sin saber programar?', a: 'Ese es justo el punto fuerte de WordPress. Dejamos el panel limpio, con los campos exactos de tu contenido, y te entregamos una capacitación grabada. Publicas, editas y subes fotos sin abrir un ticket ni pagarnos por cada cambio.' },
@@ -206,7 +206,8 @@ export const tecnologias: PageData[] = [
         type: 'related',
         items: [
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
-          { slug: 'crecimiento/mantenimiento-hosting-web-panama', label: 'Mantenimiento y Hosting' },
+          { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' },
+          { slug: 'crecimiento/hosting-infraestructura-panama', label: 'Hosting e Infraestructura' },
           { slug: 'blog/diferencia-wordpress-shopify-diseno-web', label: 'WordPress vs Shopify' },
         ],
       },

@@ -84,7 +84,8 @@ export const contactForm = {
    industrias/* ......... diseño web para [nicho] panamá
    seo .................. posicionamiento web panamá
    seo-local ............ google maps / seo local panamá
-   mantenimiento ........ mantenimiento web y hosting panamá
+   mantenimiento ........ mantenimiento web panamá
+   hosting-infra ........ hosting e infraestructura web panamá
    blog/cuanto-cuesta ... cuánto cuesta una página web en panamá (informacional)
    ------------------------------------------------------------ */
 
@@ -127,7 +128,8 @@ export const cols: { title: string; hub: string; links: NavLink[] }[] = [
     links: [
       { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
       { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local y Google Maps' },
-      { slug: 'crecimiento/mantenimiento-hosting-web-panama', label: 'Mantenimiento y Hosting' },
+      { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' },
+      { slug: 'crecimiento/hosting-infraestructura-panama', label: 'Hosting e Infraestructura' },
     ],
   },
 ];

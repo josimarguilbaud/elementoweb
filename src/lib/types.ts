@@ -13,7 +13,34 @@ export type Block =
   | { type: 'faq'; h2: string; items: { q: string; a: string }[] }
   | { type: 'related'; h2?: string; items: { slug: string; label: string }[] }
   | { type: 'form'; h2?: string; intro?: string }
-  | { type: 'statement'; text: string; strong?: string };
+  | { type: 'statement'; text: string; strong?: string }
+  | { type: 'infra'; h2: string; intro?: string; columns: InfraColumn[] }
+  | { type: 'plans'; h2: string; intro?: string; tiers: PlanTier[]; note?: string }
+  | { type: 'seo-momentum'; h2: string; intro?: string };
+
+/** Columna del widget de infraestructura/confiabilidad (3 columnas animadas). */
+export interface InfraColumn {
+  eyebrow: string;
+  title: string;
+  text: string;
+  bullets: string[];
+  link?: { slug: string; label: string };
+  /** Qué visual animado renderiza: barras de uso, estado en línea, o monitor con pulso. */
+  visual: 'usage' | 'uptime' | 'monitor';
+  /** Dato clave que acompaña al visual (p.ej. "99.9" o "4"). No aplica al visual 'usage'. */
+  stat?: string;
+  statLabel?: string;
+}
+
+/** Nivel de un plan (mantenimiento, etc.) con features y CTA propios. */
+export interface PlanTier {
+  name: string;
+  price: string;
+  unit?: string;
+  for?: string;
+  features: string[];
+  featured?: boolean;
+}
 
 export interface PageData {
   slug: string;

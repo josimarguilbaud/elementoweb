@@ -1,0 +1,150 @@
+---
+/* Widget de 3 columnas "la infraestructura también la llevamos nosotros":
+   hosting/correo, servidores y monitoreo, cada uno con un visual animado.
+   Reutilizado tal cual (mismo componente, copy distinto) en la página de
+   Hosting e Infraestructura y en la de IA Empresarial (uptime del asistente,
+   respaldo de conversaciones, monitoreo del modelo). */
+import { url } from '../lib/site';
+import type { InfraColumn } from '../lib/types';
+
+/** h2/intro se omiten cuando la página anfitriona ya pone su propio
+ *  encabezado alrededor (p.ej. inteligencia-artificial-para-empresas-panama,
+ *  que usa su propio patrón de eyebrow + h2 + intro centrado). */
+interface Props { h2?: string; intro?: string; columns: InfraColumn[] }
+const { h2, intro, columns } = Astro.props;
+
+const USAGE_BARS = [
+  { label: 'Almacenamiento', pct: 34 },
+  { label: 'Ancho de banda', pct: 58 },
+  { label: 'Cuentas de correo', pct: 22 },
+];
+
+/* El contador compartido (data-count, en effects.ts) redondea a entero: con
+   "99.9" mostraría "100%". Separamos la parte entera (la que anima) del
+   decimal (texto fijo) para que el número final sea el real. */
+function splitStat(stat?: string): { whole: string; rest: string } {
+  if (!stat) return { whole: '0', rest: '' };
+  const i = stat.indexOf('.');
+  return i === -1 ? { whole: stat, rest: '' } : { whole: stat.slice(0, i), rest: stat.slice(i) };
+}
+---
+<Fragment>
+  {h2 && <h2 class="reveal font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{h2}</h2>}
+  {intro && <p class="rt reveal mt-3 max-w-2xl text-lg text-ink/55" set:html={intro}></p>}
+
+  <div class="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-3">
+    {columns.map((c, i) => (
+      <article class="reveal group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-night p-7 text-white transition-transform duration-500 hover:-translate-y-1.5" style={`transition-delay:${i * 60}ms`}>
+        <div class="absolute inset-0 mesh-dark opacity-30"></div>
+        <div class="relative flex flex-1 flex-col">
+          <span class="font-display text-xs font-bold uppercase tracking-wide text-teal">{c.eyebrow}</span>
+          <h3 class="mt-2 font-display text-xl font-bold text-white">{c.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-white/55">{c.text}</p>
+
+          <div class="infra-visual mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+            {c.visual === 'usage' && (
+              <div class="flex flex-col gap-3.5">
+                {USAGE_BARS.map((bar, j) => (
+                  <div>
+                    <div class="mb-1.5 flex items-center justify-between text-xs text-white/50"><span>{bar.label}</span></div>
+                    <div class="h-2 w-full overflow-hidden rounded-full bg-white/10">
+                      <div class="usage-bar h-full rounded-full" style={`--pct:${bar.pct}%; animation-delay:${j * 220}ms`}></div>
+                    </div>
+                  </div>
+                ))}
+                <div class="mt-1 flex items-center gap-2 text-xs font-medium text-teal"><span class="status-dot h-1.5 w-1.5 rounded-full bg-teal"></span>Recursos dedicados, sin sorpresas</div>
+              </div>
+            )}
+
+            {c.visual === 'uptime' && (
+              <div class="flex flex-col items-center py-1 text-center">
+                <span class="relative flex h-3 w-3">
+                  <span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-teal opacity-75"></span>
+                  <span class="relative inline-flex h-3 w-3 rounded-full bg-teal"></span>
+                </span>
+                <div class="mt-3 font-display text-4xl font-extrabold text-white"><span data-count={splitStat(c.stat).whole}>0</span>{splitStat(c.stat).rest}%</div>
+                <div class="mt-1 text-xs font-medium text-white/45">{c.statLabel}</div>
+              </div>
+            )}
+
+            {c.visual === 'monitor' && (
+              <div class="flex flex-col items-center py-1 text-center">
+                <svg viewBox="0 0 160 40" class="h-10 w-full overflow-visible" preserveAspectRatio="none">
+                  <path d="M0 22 L28 22 L36 8 L46 34 L56 22 L70 22 L78 14 L86 22 L160 22" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sparkline" />
+                </svg>
+                <div class="mt-2 font-display text-4xl font-extrabold text-white">&lt;<span data-count={c.stat}>0</span></div>
+                <div class="mt-1 text-xs font-medium text-white/45">{c.statLabel}</div>
+              </div>
+            )}
+          </div>
+
+          <ul class="mt-6 flex flex-1 flex-col gap-2.5">
+            {c.bullets.map((b) => (
+              <li class="flex items-start gap-2.5 text-sm text-white/70">
+                <span class="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-teal/15 text-teal"><svg width="9" height="7" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+                {b}
+              </li>
+            ))}
+          </ul>
+
+          {c.link && (
+            <a href={url(c.link.slug)} class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-teal transition-colors hover:text-white">
+              {c.link.label} <span class="transition-transform group-hover:translate-x-1">→</span>
+            </a>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
+</Fragment>
+
+<style>
+  @keyframes usage-fill {
+    from { width: 0%; }
+    to { width: var(--pct); }
+  }
+  .usage-bar {
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-teal-deep), var(--color-teal));
+    animation: usage-fill 1.4s cubic-bezier(.16,.8,.3,1) forwards;
+    animation-play-state: paused;
+  }
+  .infra-visual.in-view .usage-bar { animation-play-state: running; }
+
+  @keyframes ping-ring {
+    75%, 100% { transform: scale(2.4); opacity: 0; }
+  }
+  .ping-ring { animation: ping-ring 1.8s cubic-bezier(0,0,.2,1) infinite; }
+
+  @keyframes sparkline-draw {
+    from { stroke-dashoffset: 240; }
+    to { stroke-dashoffset: 0; }
+  }
+  .sparkline {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 240;
+    animation: sparkline-draw 2.2s ease-out forwards;
+    animation-play-state: paused;
+  }
+  .infra-visual.in-view .sparkline { animation-play-state: running; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .usage-bar { animation: none; width: var(--pct); }
+    .ping-ring { animation: none; opacity: 0; }
+    .sparkline { animation: none; stroke-dashoffset: 0; }
+  }
+</style>
+
+<script>
+  /* Arranca las animaciones de barra/sparkline solo cuando el widget entra en
+     pantalla (si no, ya habrían terminado de correr antes de que alguien las vea). */
+  const visuals = document.querySelectorAll<HTMLElement>('.infra-visual');
+  if (visuals.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.35 });
+    visuals.forEach((v) => io.observe(v));
+  }
+</script>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guion de Venta WazaCRM · Para Nicol — elementoweb.com</title>
+    <meta name="description" content="Guion interno para el equipo comercial: como abrir la llamada, las siete palabras que suben el precio, las cuatro objeciones mas comunes y como cerrar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: light dark;
+    --bg:#faf8f5; --surface:#ffffff; --surface-2:#f3f0ea; --border:#e6e1d8;
+    --text:#1c1a17; --text-dim:#6b6459;
+    --accent:#e85f1c; --accent-2:#c94f14; --accent-soft:#fdece0;
+    --purple:#6d5bd0; --purple-soft:#efecfc;
+    --good:#16a34a; --good-soft:#e8f7ee;
+    --warn:#b45309; --warn-soft:#fdf3e3;
+    --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0a0e15; --surface:#12161f; --surface-2:#171c27; --border:#242b3a;
+      --text:#f2efe9; --text-dim:#9aa3b5;
+      --accent:#ff7a33; --accent-2:#ffb37a; --accent-soft:#2a1c12;
+      --purple:#a698ff; --purple-soft:#1e1a34;
+      --good:#34d399; --good-soft:#0f2419;
+      --warn:#fbbf24; --warn-soft:#2a2010;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0a0e15; --surface:#12161f; --surface-2:#171c27; --border:#242b3a;
+    --text:#f2efe9; --text-dim:#9aa3b5;
+    --accent:#ff7a33; --accent-2:#ffb37a; --accent-soft:#2a1c12;
+    --purple:#a698ff; --purple-soft:#1e1a34;
+    --good:#34d399; --good-soft:#0f2419;
+    --warn:#fbbf24; --warn-soft:#2a2010;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Public Sans', system-ui, -apple-system, sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{ font-family:'Sora', system-ui, sans-serif; text-wrap:balance; letter-spacing:-0.01em; }
+  .num{ font-variant-numeric: tabular-nums; }
+
+  .wrap{ max-width:1120px; margin:0 auto; padding-inline:24px; padding-block:0 96px; }
+  a{ color:inherit; }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:4px; }
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    padding-inline:24px; padding-block:22px; max-width:1120px; margin:0 auto;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:'Sora'; font-weight:800; font-size:20px; }
+  .brand .dot{ width:11px; height:11px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-soft); }
+  .kicker-top{ font-size:13px; color:var(--text-dim); font-weight:600; }
+
+  /* ---------- jump nav: se lee en vivo durante una llamada, hace falta saltar rapido ---------- */
+  .jumpnav{
+    position:sticky; top:0; z-index:5; display:flex; gap:8px; overflow-x:auto;
+    padding-block:12px; margin:0 0 8px; background:var(--bg); border-bottom:1px solid var(--border);
+    scrollbar-width:none;
+  }
+  .jumpnav::-webkit-scrollbar{ display:none }
+  .jumpnav a{
+    flex:0 0 auto; font-family:'Sora'; font-weight:700; font-size:12.5px; color:var(--text-dim);
+    text-decoration:none; background:var(--surface); border:1px solid var(--border);
+    border-radius:999px; padding:7px 14px; white-space:nowrap;
+  }
+  .jumpnav a:hover{ color:var(--accent); border-color:var(--accent); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding-block:28px 44px; border-bottom:1px solid var(--border);
+    margin-bottom:0;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--accent-soft); color:var(--accent); border:1px solid var(--accent);
+    border-radius:999px; padding:6px 14px; font-size:12.5px; font-weight:700;
+    margin-bottom:18px;
+  }
+  h1.title{ font-size:clamp(32px,5vw,50px); font-weight:800; margin:0 0 16px; max-width:16ch; }
+  h1.title em{ font-style:normal; color:var(--accent); }
+  .lede{ font-size:18px; color:var(--text-dim); max-width:62ch; margin:0; }
+
+  /* ---------- pitch line ---------- */
+  .pitchline{
+    background:linear-gradient(135deg, var(--accent-soft), transparent);
+    border:1px solid var(--accent); border-radius:var(--radius);
+    padding:24px 28px; margin:36px 0 56px;
+  }
+  .pitchline .label{ font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); margin-bottom:8px; }
+  .pitchline p{ margin:0; font-size:20px; font-weight:600; font-family:'Sora'; line-height:1.4; }
+  .pitchline .sub{ display:block; margin-top:10px; font-size:14px; font-weight:500; color:var(--text-dim); font-family:'Public Sans'; }
+
+  /* ---------- section header ---------- */
+  section{ margin-bottom:64px; scroll-margin-top:64px; }
+  section:last-child{ margin-bottom:0; }
+  .sec-head{ margin-bottom:26px; }
+  .sec-eyebrow{ font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); margin-bottom:8px; }
+  h2.sec-title{ font-size:clamp(24px,3vw,32px); font-weight:800; margin:0 0 10px; }
+  .sec-sub{ color:var(--text-dim); font-size:15.5px; max-width:68ch; margin:0; }
+
+  /* ---------- prose (parrafos corridos dentro de una seccion) ---------- */
+  .prose{ max-width:70ch; }
+  .prose h3{ font-size:16px; font-weight:700; margin:22px 0 6px; }
+  .prose h3:first-child{ margin-top:0; }
+  .prose p{ font-size:14.5px; color:var(--text); margin:0 0 14px; }
+  .prose p:last-child{ margin-bottom:0; }
+  .prose strong{ font-weight:700; }
+
+  /* ---------- callouts ---------- */
+  .coach{
+    background:var(--purple-soft); border:1px solid var(--purple);
+    border-radius:12px; padding:16px 20px; margin:18px 0 0;
+    display:flex; gap:12px; align-items:flex-start;
+  }
+  .coach svg{ width:20px; height:20px; color:var(--purple); flex:none; margin-top:2px; }
+  .coach .t{ font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--purple); margin-bottom:4px; }
+  .coach p{ margin:0; font-size:14.5px; color:var(--text); }
+
+  .warnbox{
+    background:var(--warn-soft); border:1px solid var(--warn);
+    border-radius:12px; padding:16px 20px; margin:18px 0 0;
+    display:flex; gap:12px; align-items:flex-start;
+  }
+  .warnbox svg{ width:20px; height:20px; color:var(--warn); flex:none; margin-top:2px; }
+  .warnbox .t{ font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--warn); margin-bottom:4px; }
+  .warnbox p{ margin:0; font-size:14.5px; color:var(--text); }
+
+  /* ---------- lo que dices (script en vivo) ---------- */
+  .script{
+    background:var(--surface); border:1px solid var(--accent); border-radius:14px;
+    padding:20px 22px; margin:0 0 14px; box-shadow:0 1px 2px rgba(16,25,27,.05);
+  }
+  .script:last-child{ margin-bottom:0; }
+  .script .tag{
+    font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.07em;
+    color:var(--accent); display:block; margin-bottom:10px;
+  }
+  .script p{ font-family:'Sora'; font-weight:600; font-size:17px; line-height:1.4; margin:0 0 8px; }
+  .script p:last-child{ margin-bottom:0; }
+  .script .beat{ font-family:'Public Sans'; font-style:italic; font-size:13px; color:var(--text-dim); font-weight:400; }
+  .why-works{ font-size:13.5px; color:var(--text-dim); line-height:1.55; max-width:66ch; margin:10px 0 0; }
+  .why-works b{ color:var(--text); font-weight:700; margin-right:6px; }
+
+  .thesis{
+    margin-top:0;
+  }
+
+  /* ---------- las palabras (di / no) ---------- */
+  .saydont{ display:flex; gap:8px; align-items:baseline; font-size:14px; font-weight:700; margin-bottom:7px; }
+  .saydont:last-child{ margin-bottom:0; }
+  .saydont .tag{ font-size:11px; font-weight:800; letter-spacing:.05em; flex:none; }
+  .saydont.say{ color:var(--good); }
+  .saydont.dont{ color:var(--warn); }
+
+  /* ---------- filas de 2 columnas (palabras / objeciones) ---------- */
+  .rowlist{ display:flex; flex-direction:column; gap:10px; }
+  .obj-row{
+    display:grid; grid-template-columns:1fr 1.3fr; gap:18px;
+    background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 18px;
+  }
+  @media (max-width:700px){ .obj-row{ grid-template-columns:1fr; } }
+  .obj-row .q{ font-size:14px; font-weight:700; }
+  .obj-row .q .tag{ display:block; font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:.05em; margin-bottom:5px; }
+  .obj-row .a{ font-size:13.5px; color:var(--text-dim); }
+
+  /* ---------- caja de matematica (roi) ---------- */
+  .mathbox{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:24px 22px 20px; margin-top:6px; box-shadow:0 1px 2px rgba(16,25,27,.05);
+  }
+  .math-line{
+    display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+    padding-bottom:11px; margin-bottom:11px; border-bottom:1px dashed var(--border);
+  }
+  .math-line:last-child{ border-bottom:0; margin-bottom:0; padding-bottom:0; }
+  .math-line em{ font-style:normal; color:var(--text-dim); font-size:14px; }
+  .math-line b{ font-family:'Sora'; font-weight:700; font-size:16px; }
+  .math-line b.hi{ font-size:27px; color:var(--accent); }
+  .math-note{ font-size:13.5px; color:var(--text-dim); margin-top:14px; }
+
+  /* ---------- pruebas (grid de tarjetas) ---------- */
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:14px; }
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:18px 18px 16px;
+  }
+  .card .n{
+    width:26px; height:26px; border-radius:8px; background:var(--accent-soft); color:var(--accent);
+    display:flex; align-items:center; justify-content:center; margin-bottom:12px;
+    font-family:'Sora'; font-weight:800; font-size:12.5px;
+  }
+  .card h3{ font-size:15px; font-weight:700; margin:0 0 6px; }
+  .card p{ font-size:13.5px; color:var(--text-dim); margin:0; line-height:1.5; }
+  .card .how{ margin-top:10px; padding-top:10px; border-top:1px dashed var(--border); font-size:12.5px; color:var(--text-dim); }
+  .card .how b{ color:var(--accent); font-weight:700; text-transform:uppercase; font-size:10.5px; letter-spacing:.06em; display:block; margin-bottom:3px; }
+
+  /* ---------- tabla de planes ---------- */
+  .tablewrap{ background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden; }
+  .planstable{ margin-top:6px; overflow-x:auto; }
+  table{ border-collapse:collapse; width:100%; min-width:460px; font-size:13.5px; }
+  th,td{ text-align:left; padding:11px 14px; border-bottom:1px solid var(--border); }
+  th{ font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-dim); font-weight:700; }
+  tbody tr:last-child td{ border-bottom:none; }
+  td.si{ color:var(--text); font-weight:600; }
+  .pricenote{ font-size:13px; color:var(--text-dim); margin-top:16px; }
+
+  /* ---------- close ---------- */
+  .close{
+    background:var(--surface-2); border:1px solid var(--border); border-radius:20px;
+    padding:36px 32px; text-align:center;
+  }
+  .close h2{ font-size:26px; margin:0 0 10px; }
+  .close p{ color:var(--text-dim); font-size:15px; max-width:56ch; margin:0 auto 22px; }
+
+  footer{ text-align:center; color:var(--text-dim); font-size:12.5px; padding-inline:24px; padding-block:28px 0; max-width:1120px; margin:0 auto; }
+</style>
+
+</head>
+<body>
+<div class="topbar">
+  <div class="brand"><span class="dot"></span>WazaCRM</div>
+  <div class="kicker-top">Guion de venta — uso interno · versión 2 · 22 de septiembre</div>
+</div>
+
+<nav class="jumpnav" aria-label="Saltar a una sección">
+  <a href="#abres">Cómo abres</a>
+  <a href="#categoria">La categoría</a>
+  <a href="#palabras">Las palabras</a>
+  <a href="#objeciones">Objeciones</a>
+  <a href="#precio">El precio</a>
+  <a href="#pruebas">Las pruebas</a>
+  <a href="#planes">Los planes</a>
+</nav>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Para Nicol · Equipo comercial de Elemento Web</div>
+    <h1 class="title">No vendemos un <em>chatbot</em>.</h1>
+    <p class="lede">Vendemos un agente de inteligencia artificial que trabaja dentro del WhatsApp y el Instagram del cliente. Aquí está qué decir, con qué palabras, y qué contestar cuando te lo discutan.</p>
+  </section>
+
+  <section id="abres">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Cómo abres la llamada</div>
+      <h2 class="sec-title">No le des estadísticas. Hazlo mirar su propio teléfono.</h2>
+      <p class="sec-sub">Nadie cambia de sistema por un número de una presentación. Cambia cuando ve el problema en su propia pantalla. Son dos preguntas y las haces al principio, antes de explicar nada.</p>
+    </div>
+
+    <div class="rowlist">
+      <div class="script">
+        <span class="tag">Lo que dices — pregunta 1</span>
+        <p>«Ábreme tu WhatsApp del negocio un segundo. ¿Cuántos chats sin leer tienes ahí ahora mismo?»</p>
+        <span class="beat">Cállate. Deja que cuente. El número lo dice él, no tú.</span>
+      </div>
+
+      <div class="script">
+        <span class="tag">Lo que dices — pregunta 2</span>
+        <p>«Ahora mira la hora del último mensaje que te entró anoche. ¿Había alguien de tu equipo despierto a esa hora?»</p>
+        <span class="beat">Aquí casi siempre se ríen. Esa risa es el negocio.</span>
+      </div>
+    </div>
+
+    <p class="why-works"><b>Por qué funciona</b>El problema no son los chats sin leer: son los clientes que escribieron, no recibieron respuesta y se fueron con otro sin avisar. Esos no aparecen en ninguna lista, y por eso nunca los ha contado.</p>
+
+    <div class="rowlist" style="margin-top:14px">
+      <div class="script">
+        <span class="tag">Lo que dices — el cierre de la apertura</span>
+        <p>«Los que ves ahí todavía están. Por los que me preocupo yo es por los que escribieron el sábado a las nueve de la noche y ya no volvieron.»</p>
+      </div>
+    </div>
+
+    <div class="pitchline thesis">
+      <div class="label">La tesis</div>
+      <p>Un chatbot contesta. Este atiende, reserva, cobra y da seguimiento.<span class="sub">Y a las once de la noche también.</span></p>
+    </div>
+  </section>
+
+  <section id="categoria">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Contra quién te comparan</div>
+      <h2 class="sec-title">Si te comparan con un chatbot, pierdes por precio. Si te comparan con contratar a alguien, ganas.</h2>
+    </div>
+
+    <div class="prose">
+      <h3>Lo que somos</h3>
+      <p>Un agente de IA que vive dentro del WhatsApp e Instagram del negocio. Entrenado con su catálogo, sus PDFs y sus reglas. Atiende, cotiza, agenda, manda el enlace de pago, deja el seguimiento apuntado y le pasa el caso a una persona cuando toca.</p>
+
+      <h3>Lo que no somos</h3>
+      <p>Un árbol de «presione 1». Un flujo de respuestas armadas a mano. Una herramienta de mensajes automáticos. Todo eso existe, cuesta entre 30 y 60 dólares al mes, y el prospecto probablemente ya lo probó y lo abandonó.</p>
+
+      <h3>La comparación que sí nos conviene</h3>
+      <p>Media vendedora a medio tiempo en Panamá pasa de 500 dólares al mes. Trabaja ocho horas, cinco días, y se va de vacaciones. El agente cubre las otras dieciséis horas y los fines de semana, y no se va.</p>
+    </div>
+
+    <div class="warnbox">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M10 3l7.5 13H2.5L10 3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M10 8v4M10 14.2v.1" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      <div><div class="t">La trampa que hay que evitar</div><p>Nunca digas que reemplaza a su equipo. <strong>No lo hace, y el producto mismo lo desmiente:</strong> tiene bandeja compartida, reparto por turnos y traspaso a una persona. El día que el cliente vea el primer traspaso, esa promesa te cuesta la cuenta.</p></div>
+    </div>
+  </section>
+
+  <section id="palabras">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Las palabras</div>
+      <h2 class="sec-title">Siete cambios de vocabulario que mueven el precio.</h2>
+      <p class="sec-sub">Cada línea vale plata. La de arriba te posiciona arriba; la de abajo te mete en la categoría de los baratos.</p>
+    </div>
+
+    <div class="rowlist">
+      <div class="obj-row">
+        <div class="q">
+          <div class="saydont say"><span class="tag">DI</span>Agente de inteligencia artificial</div>
+          <div class="saydont dont"><span class="tag">NO</span>Chatbot, bot, robot</div>
+        </div>
+        <div class="a">«Chatbot» ancla el precio donde están los de 30 dólares. Es la única palabra del guion que por sí sola te cambia de competencia.</div>
+      </div>
+      <div class="obj-row">
+        <div class="q">
+          <div class="saydont say"><span class="tag">DI</span>Atiende, reserva, cobra y da seguimiento</div>
+          <div class="saydont dont"><span class="tag">NO</span>Responde mensajes automáticamente</div>
+        </div>
+        <div class="a">Verbos de venta, no de soporte. Cuatro cosas que un chatbot no hace, dichas en cuatro palabras.</div>
+      </div>
+      <div class="obj-row">
+        <div class="q">
+          <div class="saydont say"><span class="tag">DI</span>Cubre las horas que nadie cubre</div>
+          <div class="saydont dont"><span class="tag">NO</span>Reemplaza a tu equipo de ventas</div>
+        </div>
+        <div class="a">La promesa de reemplazo se cae la primera semana y suena a amenaza para el dueño que tiene tres vendedoras. «No se te cae ningún cliente» vende igual de bien y además es cierto.</div>
+      </div>
+      <div class="obj-row">
+        <div class="q">
+          <div class="saydont say"><span class="tag">DI</span>Puedes revisar todo lo que hizo</div>
+          <div class="saydont dont"><span class="tag">NO</span>Nunca se equivoca</div>
+        </div>
+        <div class="a">Nadie te cree, y te lo van a probar. «Se puede auditar» es una promesa que sí puedes cumplir, y es la que ningún competidor local puede copiar.</div>
+      </div>
+      <div class="obj-row">
+        <div class="q">
+          <div class="saydont say"><span class="tag">DI</span>Entrenado con tu catálogo y tus documentos</div>
+          <div class="saydont dont"><span class="tag">NO</span>Tecnología de punta, IA avanzada</div>
+        </div>
+        <div class="a">Ningún dueño de pyme compra tecnología. Compra que el asistente sepa cuánto cuesta una endodoncia en <em>su</em> clínica.</div>
+      </div>
+      <div class="obj-row">
+        <div class="q">
+          <div class="saydont say"><span class="tag">DI</span>Cero de implementación</div>
+          <div class="saydont dont"><span class="tag">NO</span>Es económico, es barato</div>
+        </div>
+        <div class="a">Barato se oye a malo en una venta premium. El gancho no es que cueste poco: es que <strong>no hay costo de entrada</strong> mientras la competencia cobra el montaje aparte.</div>
+      </div>
+      <div class="obj-row">
+        <div class="q">
+          <div class="saydont say"><span class="tag">DI</span>Menos de doce dólares al día</div>
+          <div class="saydont dont"><span class="tag">NO</span>Son 349 al mes, pero vale la pena</div>
+        </div>
+        <div class="a">Nunca defiendas el precio: divídelo. En el momento en que dices «pero vale la pena», ya aceptaste que es caro.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="objeciones">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Las cuatro que siempre salen</div>
+      <h2 class="sec-title">Objeciones, y qué contestar.</h2>
+    </div>
+
+    <div class="rowlist" style="margin-bottom:18px">
+      <div class="obj-row">
+        <div class="q"><span class="tag">Objeción</span>«Eso es un chatbot. Yo ya probé uno.»</div>
+        <div class="a">
+          «Perfecto, entonces hazme un favor: abre una conversación donde ese bot se equivocó y dime de dónde sacó el dato.» <em>(No va a poder. Ninguno guarda eso. Espera a que lo diga él.)</em> «El nuestro sí. Por cada respuesta ves qué consultó y qué le devolvieron. Cuando un precio sale raro, en dos minutos sabes si el dato estaba mal en tu catálogo o si se equivocó él.»
+        </div>
+      </div>
+    </div>
+    <p class="why-works" style="margin:0 0 22px"><b>Por qué funciona</b>Un chatbot no se audita. Un agente sí, y esa es la diferencia completa entre las dos categorías.</p>
+
+    <div class="rowlist" style="margin-bottom:18px">
+      <div class="obj-row">
+        <div class="q"><span class="tag">Objeción</span>«¿Y si le inventa un precio a mi cliente?»</div>
+        <div class="a">
+          «No da una cifra que no esté en tu información. Esa regla está escrita en su cerebro, no es una promesa mía.» «Y con los datos del cliente va un paso más allá: lo que la persona dijo entra a la ficha, pero lo que el agente <em>dedujo</em> no se guarda, te lo pregunta. Una ficha con un correo inventado es peor que una vacía: la vacía la llenas, la inventada nadie la vuelve a revisar.»
+        </div>
+      </div>
+    </div>
+    <div class="coach" style="margin:0 0 22px">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 00-3.5 10.9c.3.2.5.6.5 1v.6h6v-.6c0-.4.2-.8.5-1A6 6 0 0010 2z" stroke="currentColor" stroke-width="1.6"/><path d="M8 17h4M8.5 15h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <div><div class="t">Demuéstralo en vivo</div><p>Pregúntale al agente de demo algo que no esté en el catálogo. Mira cómo dice que no lo tiene en vez de improvisar.</p></div>
+    </div>
+
+    <div class="rowlist" style="margin-bottom:18px">
+      <div class="obj-row">
+        <div class="q"><span class="tag">Objeción</span>«349 es mucho. Vi uno de 49.»</div>
+        <div class="a">
+          «El de 49 contesta mensajes. Este atiende, reserva, cobra y deja el seguimiento apuntado.» «Y hay una diferencia que no está en la etiqueta: el de 49 te cobra el montaje aparte, o lo montas tú y te toma tres fines de semana. Aquí la implementación es cero.» «Dime una cosa: ¿cuánto te deja un cliente nuevo?» <em>(Esa pregunta es el cierre. No hables hasta que conteste.)</em>
+        </div>
+      </div>
+    </div>
+    <p class="why-works" style="margin:0 0 22px"><b>Después de que conteste</b>Haz la cuenta en voz alta con su número, no con el tuyo. Si un cliente le deja 300, el plan se paga con uno al mes. Si le deja 1.500, se paga con uno al trimestre.</p>
+
+    <div class="rowlist">
+      <div class="obj-row">
+        <div class="q"><span class="tag">Objeción</span>«¿Entonces hay costos escondidos?»</div>
+        <div class="a">
+          «Hay dos costos aparte y son lo contrario de escondidos: los mensajes de Meta y el consumo de la IA. Se los cobran Meta y Anthropic directo a tu tarjeta, a precio de costo. No les ponemos margen encima.» «Es el único modelo en el que puedes auditar lo que pagas, en vez de creerte el número que te pasa el proveedor. Los que lo meten todo incluido te están cobrando ese margen sin decírtelo.»
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="precio">
+    <div class="sec-head">
+      <div class="sec-eyebrow">El precio</div>
+      <h2 class="sec-title">No es un gasto de software. Es un cliente al mes.</h2>
+      <p class="sec-sub">La venta se cierra cuando el dueño deja de comparar el plan con otro software y empieza a compararlo con lo que pierde. Tú no le das ese número: se lo sacas con una pregunta y después haces la cuenta con lo que él dijo.</p>
+    </div>
+
+    <div class="mathbox">
+      <div class="math-line"><em>Plan Starter, al mes</em><b class="num">$349</b></div>
+      <div class="math-line"><em>Al día</em><b class="hi num">$11,63</b></div>
+      <div class="math-line"><em>Implementación</em><b class="num">$0</b></div>
+      <div class="math-line"><em>Si un cliente le deja $300</em><b class="num">1 al mes</b></div>
+      <div class="math-line"><em>Si un cliente le deja $1.500</em><b class="num">1 al trimestre</b></div>
+      <p class="math-note">Un café con sándwich en Vía Argentina cuesta más que un día de agente. Esa comparación la entiende cualquiera y no suena a vendedor.</p>
+    </div>
+  </section>
+
+  <section id="pruebas">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Las pruebas</div>
+      <h2 class="sec-title">Cosas que se demuestran, no se afirman.</h2>
+      <p class="sec-sub">Todo competidor dice que su IA es confiable. Nosotros somos los únicos que podemos enseñarlo en una llamada de dos minutos. Úsalo: la demostración vale más que el argumento.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="n">1</div>
+        <h3>Ves qué hizo, no solo qué dijo</h3>
+        <p>Por cada respuesta queda el rastro de qué consultó y qué le devolvieron.</p>
+        <div class="how"><b>Cómo</b>Abre una conversación y muestra de dónde salió el precio que dio.</div>
+      </div>
+      <div class="card">
+        <div class="n">2</div>
+        <h3>No afirma lo que supuso</h3>
+        <p>Lo que el cliente dijo entra a la ficha. Lo que el agente dedujo queda como una pregunta de un toque.</p>
+        <div class="how"><b>Cómo</b>Enseña una sugerencia pendiente en la ficha, con sus dos botones.</div>
+      </div>
+      <div class="card">
+        <div class="n">3</div>
+        <h3>Apunta cuándo volver, y por qué</h3>
+        <p>Si el cliente dice «lo hablo con mi esposa el viernes», el seguimiento queda agendado con el motivo en sus propias palabras.</p>
+        <div class="how"><b>Cómo</b>Muestra un seguimiento en la agenda con la frase textual del cliente.</div>
+      </div>
+      <div class="card">
+        <div class="n">4</div>
+        <h3>Reconoce a quien llenó tu formulario</h3>
+        <p>Si la persona cotizó en la web y después escribe por WhatsApp, el agente ya sabe qué pidió y no lo vuelve a preguntar.</p>
+        <div class="how"><b>Cómo</b>Llena el formulario de la web delante del cliente y escribe al WhatsApp desde ese mismo número.</div>
+      </div>
+      <div class="card">
+        <div class="n">5</div>
+        <h3>Sabe cuándo no le toca contestar</h3>
+        <p>Ante un reclamo, un caso sensible o un cliente molesto, escala a una persona en vez de improvisar una respuesta enlatada.</p>
+        <div class="how"><b>Cómo</b>Escríbele algo molesto al agente de demo y mira cómo pide una persona.</div>
+      </div>
+      <div class="card">
+        <div class="n">6</div>
+        <h3>No duerme, y eso sí es literal</h3>
+        <p>Buena parte de las conversaciones de un negocio de servicios entra fuera de horario. Esas hoy se contestan al día siguiente, o nunca.</p>
+        <div class="how"><b>Cómo</b>Es la pregunta 2 de la apertura. Ya la hiciste: vuelve a ella aquí.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="planes">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Los planes</div>
+      <h2 class="sec-title">Lo que cotizas.</h2>
+    </div>
+    <div class="planstable">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>Plan</th><th>Al mes</th><th>Conversaciones</th><th>Conversación extra</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="si">Starter</td><td class="num">$349</td><td class="num">800</td><td class="num">$0,17</td></tr>
+            <tr><td class="si">Growth</td><td class="num">$549</td><td class="num">2.000</td><td class="num">$0,14</td></tr>
+            <tr><td class="si">Scale</td><td class="num">$849</td><td class="num">4.000</td><td class="num">$0,10</td></tr>
+            <tr><td class="si">Enterprise</td><td class="num">desde $1.299</td><td>a medida</td><td>se cotiza</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="pricenote">Cero de implementación en los cuatro. Catorce días de prueba. Pagando anual se ahorran dos meses. Sin tope de usuarios en los planes estándar: todo el equipo entra. Los mensajes de Meta y el consumo de la IA se facturan aparte, directo con ellos y a precio de costo.</p>
+  </section>
+
+  <section>
+    <div class="warnbox" style="margin-bottom:14px">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M10 3l7.5 13H2.5L10 3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M10 8v4M10 14.2v.1" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      <div><div class="t">Lo primero que no puedes hacer</div><p>Prometer que reemplaza a su equipo. El producto tiene bandeja compartida, reparto de conversaciones por turnos, roles con permisos y traspaso a una persona. Está construido <em>alrededor</em> del equipo del cliente, no en contra. La venta no es «te quito el equipo», es «no se te vuelve a caer un cliente por no estar disponible».</p></div>
+    </div>
+    <div class="warnbox">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M10 3l7.5 13H2.5L10 3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M10 8v4M10 14.2v.1" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      <div><div class="t">Lo segundo que no puedes hacer</div><p>Hablar de otros clientes. Nunca cites números, nombres ni resultados de otros clientes de WazaCRM en una llamada. Ni para bien. Lo que pasa dentro del sistema de un cliente es suyo, y el prospecto que te oiga contarlo va a asumir, con razón, que mañana cuentas lo de él. Si necesitas un número, saca el del prospecto con las dos preguntas de la apertura.</p></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>Guion de venta interno de WazaCRM (producto de Elemento Web) — versión 2, 22 de septiembre de 2026. Precios y planes vigentes a esa fecha: verifica en wazacrm.com/#precios si pasó tiempo.</footer>
+</body>
+</html>

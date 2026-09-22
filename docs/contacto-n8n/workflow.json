@@ -73,7 +73,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({\n  sender: {\"name\":\"Sitio web Elemento Web\",\"email\":\"avisos@mailweb.site\"},\n  to: [{ email: \"josimarguilbaud@gmail.com\" }],\n  replyTo: { email: $json.correo_cliente, name: $json.nombre },\n  subject: $json.asunto,\n  htmlContent: $json.html,\n  textContent: $json.texto,\n  tags: [\"elementoweb-lead\"]\n}) }}",
+        "jsonBody": "={{ JSON.stringify({\n  sender: {\"name\":\"Sitio web Elemento Web\",\"email\":\"avisos@mailweb.site\"},\n  to: [{\"email\":\"josimarguilbaud@gmail.com\"}, {\"email\":\"nicole@evolutionpmc.com\"}],\n  replyTo: { email: $json.correo_cliente, name: $json.nombre },\n  subject: $json.asunto,\n  htmlContent: $json.html,\n  textContent: $json.texto,\n  tags: [\"elementoweb-lead\"]\n}) }}",
         "options": {
           "timeout": 20000
         }

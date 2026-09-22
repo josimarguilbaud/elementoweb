@@ -33,7 +33,9 @@ const CRED_BREVO = { id: 'cf1FZJ8CcLA90GVs', name: 'Brevo API (avisos@mailweb.si
 // El From es siempre el mismo buzon; lo que distingue al cliente es el nombre
 // visible y el Reply-To. Ver la nota "dominio-de-envios-mailweb-site".
 const REMITENTE = { name: 'Sitio web Elemento Web', email: 'avisos@mailweb.site' };
-const DESTINO = 'josimarguilbaud@gmail.com';
+// Desde el 22-sep-2026 el lead tambien le llega a Nicole (evolutionpmc), que
+// atiende parte de las consultas comerciales del sitio.
+const DESTINOS = ['josimarguilbaud@gmail.com', 'nicole@evolutionpmc.com'];
 
 const ORIGENES = [
   'https://elementoweb.com',
@@ -106,7 +108,7 @@ const nodos = [
       specifyBody: 'json',
       jsonBody: `={{ JSON.stringify({
   sender: ${JSON.stringify(REMITENTE)},
-  to: [{ email: ${JSON.stringify(DESTINO)} }],
+  to: [${DESTINOS.map((email) => JSON.stringify({ email })).join(', ')}],
   replyTo: { email: $json.correo_cliente, name: $json.nombre },
   subject: $json.asunto,
   htmlContent: $json.html,

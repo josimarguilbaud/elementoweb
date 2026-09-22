@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Lo nuevo en WazaCRM · Septiembre 2026 · elementoweb.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#14203A; --navy-soft:#1d2d4f; --ink:#1b2333; --muted:#5c6780;
+    --orange:#E88344; --orange-deep:#C9691F; --orange-pale:#FDF1E7;
+    --paper:#FBF9F6; --card:#FFFFFF; --line:#E7E2DA;
+    --green:#1f7a52; --green-pale:#EAF6F0;
+  }
+  *{box-sizing:border-box;-webkit-font-smoothing:antialiased}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:17px/1.68 "Source Serif 4",Georgia,"Times New Roman",serif}
+  h1,h2,h3,.display{font-family:"Bricolage Grotesque",Georgia,serif;letter-spacing:-.02em;text-wrap:balance;margin:0}
+  a{color:var(--orange-deep)}
+  .wrap{max-width:880px;margin:0 auto;padding-inline:20px}
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+
+  /* ---- cabecera ---- */
+  header{background:var(--navy);color:#fff;padding-block:56px 64px}
+  header .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+  header h1{font-size:clamp(30px,5.2vw,50px);font-weight:800;margin-top:14px;line-height:1.08}
+  header h1 em{font-style:normal;color:var(--orange)}
+  header p{margin:18px 0 0;font-size:clamp(16px,2.2vw,19px);line-height:1.6;color:#c3cbdb;max-width:62ch}
+  .meta{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+  .meta span{font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;
+             background:rgba(255,255,255,.08);color:#dfe5ef;border:1px solid rgba(255,255,255,.14)}
+
+  /* ---- indice ---- */
+  nav.toc{background:var(--card);border:1px solid var(--line);border-radius:16px;
+          padding:22px 24px;margin-top:-34px;box-shadow:0 18px 40px -30px rgba(20,32,58,.5)}
+  nav.toc h2{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  nav.toc ol{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:9px}
+  nav.toc a{display:flex;gap:10px;text-decoration:none;color:var(--ink);font-weight:400;font-size:16px}
+  nav.toc a:hover{color:var(--orange-deep)}
+  nav.toc .n{color:var(--orange);font-variant-numeric:tabular-nums;font-weight:700;flex:none}
+
+  /* ---- secciones ---- */
+  section{padding-block:48px}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--orange-deep)}
+  h2.sec{font-size:clamp(24px,3.6vw,33px);font-weight:800;margin-top:10px}
+  .lead{font-size:19.5px;line-height:1.62;color:var(--muted);margin-top:16px;max-width:64ch}
+
+  .item{border-top:1px solid var(--line);padding-top:30px;margin-top:34px}
+  .item:first-of-type{border-top:0;padding-top:0}
+  .item h3{font-size:21px;font-weight:700;display:flex;gap:12px;align-items:baseline}
+  .item h3 .n{color:var(--orange);font-size:14px;font-weight:800;font-variant-numeric:tabular-nums;flex:none;transform:translateY(-2px)}
+  .item p{margin:12px 0 0;max-width:68ch}
+  .item p.tight{margin-top:8px}
+
+  figure{margin:24px 0 0}
+  figure img{display:block;width:100%;max-width:100%;height:auto;border-radius:12px;
+             border:1px solid var(--line);background:#fff}
+  figcaption{margin-top:11px;font-size:15px;font-style:italic;color:var(--muted);line-height:1.55;max-width:64ch}
+
+  /* `white-space:nowrap` NO es opcional: estas cajas imitan una pantalla y su
+     sangria lleva significado. Sin el, en un telefono cada linea se parte por la
+     mitad y el bloque deja de parecer una pantalla. Con el, se desliza a lo
+     ancho, que es como se leen los bloques de codigo en movil. */
+  .screen{background:var(--navy);color:#e8edf6;border-radius:12px;padding:18px 20px;margin-top:18px;
+          font:13.5px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+          white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .screen b{color:#fff;font-weight:600}
+  .screen .o{color:#F0A874}
+  .screen .g{color:#7fd3aa}
+  .screen .dim{color:#93a0ba}
+
+  .note{border:1px solid #EBD3BF;background:var(--orange-pale);
+        padding:17px 20px;border-radius:12px;margin-top:20px}
+  .note p{margin:0;font-size:16px;line-height:1.6}
+  .note strong{color:var(--orange-deep)}
+
+  .ok{border:1px solid #C6E3D4;background:var(--green-pale);
+      padding:17px 20px;border-radius:12px;margin-top:20px}
+  .ok p{margin:0;font-size:16px;line-height:1.6}
+
+  .grid{display:grid;gap:14px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .mini{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:17px 18px}
+  .mini h4{margin:0;font-size:16px;font-weight:700;font-family:"Bricolage Grotesque",Georgia,serif}
+  .mini p{margin:8px 0 0;font-size:15.5px;line-height:1.55;color:var(--muted)}
+
+  /* ---- ventas ---- */
+  .sell{background:var(--navy);color:#e8edf6;border-radius:18px;padding:30px 28px;margin-top:30px}
+  .sell h3{color:#fff;font-size:20px;font-weight:700}
+  .sell .say{margin-top:14px;padding:16px 18px;background:rgba(232,131,68,.13);
+             border:1px solid rgba(232,131,68,.3);border-radius:11px;font-size:16.5px;line-height:1.6;color:#fff}
+  .sell .why{margin:16px 0 0;font-size:15px;color:#b9c3d6;line-height:1.65}
+  .sell .why strong{color:var(--orange)}
+
+  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .tablewrap{overflow-x:auto}
+
+  footer{background:var(--navy);color:#9fabc2;padding-block:34px;margin-top:56px;font-size:14px}
+  footer strong{color:#fff}
+  @media (max-width:560px){
+    header{padding-block:40px 52px}
+    section{padding-block:38px}
+    .sell{padding:24px 20px}
+    .screen{font-size:12px;padding:16px 16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">WazaCRM · Notas de versión</p>
+    <h1>Tu asistente ahora <em>enseña su trabajo.</em></h1>
+    <p>Lo que cambió en el CRM de WhatsApp durante septiembre, en orden de lo que vas a notar
+       primero. Todo lo que está aquí ya está publicado y funcionando.</p>
+    <div class="meta">
+      <span>21 y 22 de septiembre de 2026</span>
+      <span>34 cambios</span>
+      <span>Sin acción de tu parte</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc">
+    <h2>Lo que vas a encontrar</h2>
+    <ol>
+      <li><a href="#rastro"><span class="n">1</span> Puedes ver qué hizo tu asistente, turno por turno</a></li>
+      <li><a href="#evidencia"><span class="n">2</span> Dejó de afirmar lo que solo supuso</a></li>
+      <li><a href="#seguimiento"><span class="n">3</span> Apunta cuándo hay que volver, y por qué</a></li>
+      <li><a href="#inicio"><span class="n">4</span> Inicio contesta «¿está funcionando?»</a></li>
+      <li><a href="#bandeja"><span class="n">5</span> La Bandeja se parece a WhatsApp</a></li>
+      <li><a href="#ficha"><span class="n">6</span> La ficha se llena sola</a></li>
+      <li><a href="#chicas"><span class="n">7</span> Ocho cosas pequeñas que estorbaban</a></li>
+      <li><a href="#vender"><span class="n">8</span> Qué te deja vender esto</a></li>
+      <li><a href="#planes"><span class="n">9</span> Planes nuevos, y qué pasa si ya eres cliente</a></li>
+      <li><a href="#no"><span class="n">10</span> Lo que todavía NO se puede prometer</a></li>
+    </ol>
+  </nav>
+</div>
+
+<div class="wrap">
+
+<section>
+  <p class="kicker">El hilo que une todo</p>
+  <h2 class="sec">Un asistente que no puede demostrar lo que hizo no es de fiar.</h2>
+  <p class="lead">
+    Hasta ahora, cuando alguien decía «el bot le contestó mal a mi cliente», no quedaba nada
+    que mirar. Las respuestas se generaban y se perdían: para averiguar de dónde había salido
+    un precio había que leer la conversación entera y adivinar.
+  </p>
+  <p class="lead">
+    Todo lo de septiembre sale de ahí. El asistente ahora deja constancia de lo que hizo,
+    distingue entre lo que le dijeron y lo que dedujo, y cuando no está seguro te lo pregunta
+    en vez de inventarlo. Es la diferencia entre una herramienta que usas y una en la que confías.
+  </p>
+</section>
+
+<hr class="rule">
+
+<section id="rastro">
+  <p class="kicker">Parte 1 · Lo que vas a ver al entrar</p>
+  <h2 class="sec">1 · Puedes ver qué hizo tu asistente, turno por turno</h2>
+  <p class="lead">
+    En cualquier conversación de la Bandeja, en el menú <b>⋯ Más</b>, aparece el rastro completo:
+    qué consultó, qué le devolvió esa consulta, qué contestó, cuánto tardó y por qué escaló.
+  </p>
+
+  <div class="screen">
+<span class="o">🟠 Pasó a una persona</span> <span class="dim">· tardó 1.4 s</span><br>
+&nbsp;&nbsp;&nbsp;<b>Tu cliente:</b> Necesito hablar con la doctora directamente<br>
+&nbsp;&nbsp;&nbsp;<b>Tu asistente:</b> Claro, le aviso ahora mismo al equipo.<br>
+&nbsp;&nbsp;&nbsp;<span class="dim">Motivo: el cliente pidió hablar con una persona</span><br><br>
+<span class="g">🟢 Contestó</span> <span class="dim">· tardó 2.1 s</span><br>
+&nbsp;&nbsp;&nbsp;<span class="dim">consultó lo que le enseñaste (4) · consultar_servicios · 142 ms</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>le pidió:</b> endodoncia<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>le respondió:</b> Endodoncia unirradicular $180 / multirradicular $260
+  </div>
+
+  <p>
+    Esa última línea es el punto entero: se ve <b>de dónde salió un número</b>, y si el asistente
+    dijo algo distinto de lo que su propia consulta le devolvió. Antes eso era imposible de
+    comprobar.
+  </p>
+
+  <div class="note">
+    <p><strong>Tres decisiones que van con esto.</strong> El rastro no es una copia de la
+    conversación: los mensajes siguen donde siempre. Se borra solo a los 90 días, porque son
+    datos de los clientes de tu negocio y no tienen por qué vivir para siempre. Y lo sensible
+    (cédula, pasaporte) se tacha antes de guardarse: ya está en la ficha con su control de
+    acceso, copiarlo a un diagnóstico solo ampliaba la exposición.</p>
+  </div>
+
+  <p class="tight" style="margin-top:18px">
+    El <b>costo de IA de cada turno lo ve solo el dueño</b>. Para quien atiende es ruido, y no
+    le sirve de nada mientras contesta. El rastro sí lo ve todo el equipo: ya leen la
+    conversación entera, esconderles por qué el asistente contestó lo que contestó solo les
+    quita contexto.
+  </p>
+</section>
+
+<hr class="rule">
+
+<section id="evidencia">
+  <h2 class="sec">2 · Dejó de afirmar lo que solo supuso</h2>
+  <p class="lead">
+    Antes, todo lo que el asistente entendía durante una conversación entraba a la ficha sin
+    distinguir entre «la persona lo escribió» y «me lo imaginé». Ahora tiene que declarar de
+    dónde sacó cada dato, y el sistema decide qué hacer con él.
+  </p>
+
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>De dónde salió</th><th>Qué pasa con el dato</th></tr></thead>
+      <tbody>
+        <tr><td class="n"><b>La persona lo dijo</b><br>o vino de un formulario</td><td>Entra a la ficha, como siempre.</td></tr>
+        <tr><td class="n"><b>Lo dedujo</b></td><td>Queda como sugerencia bajo el campo vacío: «Tu asistente no pudo confirmar esto», con el valor, el motivo y dos botones.</td></tr>
+        <tr><td class="n"><b>Se contradice</b></td><td>No entra. Un correo en el chat y otro distinto en el formulario no es «medio verdadero», es <b>sin resolver</b>, y tienes que verlo así.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    La regla de fondo: <b>el asistente nunca califica su propia seguridad.</b> A un modelo al
+    que le pides puntuar cuánta confianza tiene, se pone nota alta, y se equivoca justo en la
+    dirección que lo hace parecer útil. Solo declara qué vio; la decisión es del sistema y la
+    última palabra es tuya.
+  </p>
+
+  <div class="ok">
+    <p>Una sugerencia no es un fallo: muchas veces es <b>el resultado correcto</b>. Cuatro
+    personas llamadas «Ana Pérez» las distingue un humano en tres segundos y un modelo no las
+    distingue nunca.</p>
+  </div>
+
+  <p style="margin-top:20px">
+    Y hay un caso que rechaza la captura entera: <b>un nombre deducido</b>. Una ficha se llama
+    por su nombre, y crearla con uno adivinado es el peor escenario posible, porque nadie que la
+    abra después puede saber que está mal. Cuando pasa, el asistente sabe que tiene que
+    preguntarlo.
+  </p>
+</section>
+
+<hr class="rule">
+
+<section id="seguimiento">
+  <h2 class="sec">3 · Apunta cuándo hay que volver, y por qué</h2>
+  <p class="lead">
+    Cuando alguien dice «lo hablo con mi esposa y te aviso el viernes», eso ya no se pierde en
+    el chat. El asistente lo apunta en la ficha con fecha, y el motivo escrito con las palabras
+    de esa persona.
+  </p>
+  <p>
+    El motivo es obligatorio de verdad. <span style="color:var(--muted)">Mal: «seguimiento
+    programado». Bien: «dijo que decide el viernes cuando hable con su esposa».</span> Queda
+    firmado como <b>Asistente</b> en el historial, así que se sabe quién lo puso.
+  </p>
+
+  <div class="note">
+    <p><strong>El asistente NO manda nada solo.</strong> Apunta el seguimiento en la ficha y
+    ese día te aparece en «Para hoy». Escribir o no escribir lo decides tú. Programar envíos
+    automáticos cuesta dinero en cada plantilla y llega al teléfono de alguien que no lo pidió:
+    un error ahí no se deshace. El asistente aporta el criterio y el motivo, no el envío.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="inicio">
+  <h2 class="sec">4 · Inicio contesta «¿está funcionando mi asistente?»</h2>
+  <p class="lead">
+    La única señal que había era la tarjeta de «clientes esperando respuesta», y esa desaparece
+    cuando vale cero, y con razón: es un pendiente. El efecto era que la pantalla callaba sobre
+    el asistente el 90 % de los días, justo cuando te preguntas si aquello sirve para algo.
+  </p>
+
+  <div class="screen">
+<span class="g">✅ Tu asistente atendió 14 conversaciones hoy</span><br>
+&nbsp;&nbsp;&nbsp;Pasó 2 a una persona, y ninguna quedó sin contestar.
+  </div>
+
+  <p>
+    Ahora siempre dice algo, porque es un <b>estado</b>, no un pendiente. Con dos reglas que
+    importan más de lo que parecen:
+  </p>
+
+  <div class="grid">
+    <div class="mini">
+      <h4>Un día sin mensajes no es un día bueno</h4>
+      <p>Decir «0 atendidas ✅» se lee como «todo en orden» y escondería un canal caído, que es
+      el fallo más caro que existe. Dice «no ha tenido conversaciones hoy», en tono neutro.</p>
+    </div>
+    <div class="mini">
+      <h4>«Ninguna quedó sin contestar» solo si es verdad</h4>
+      <p>Con gente esperando sería mentira, y contradiría la tarjeta de arriba, que habla del
+      mismo hecho. Las dos cuentan los mismos traspasos, no dos consultas distintas.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:22px">
+    Y el interruptor del asistente bajó a Inicio, pegado a esa línea: <b>enterarte y poder
+    actuar, en el mismo sitio.</b> De paso salió de Inicio el inventario de módulos («Sabe
+    hacer: Calificación Predictiva · Etiquetado Automático…»), que era la lista con la que la
+    agencia cotiza, no algo que le diga nada a un dueño de negocio.
+  </p>
+</section>
+
+<hr class="rule">
+
+<section id="bandeja">
+  <h2 class="sec">5 · La Bandeja se parece a WhatsApp</h2>
+  <p class="lead">
+    Tu equipo vive en WhatsApp Web todo el día. La curva de aprendizaje empieza en si
+    <b>reconoce</b> la pantalla, así que la Bandeja adoptó su gramática visual: avatar grande,
+    nombre y hora arriba, el mensaje y el globito verde abajo. Y nada más en esas dos líneas.
+  </p>
+
+  <figure>
+    <img src="bandeja.webp" alt="La Bandeja de WazaCRM: la lista de conversaciones de WhatsApp a la izquierda y el hilo abierto a la derecha, con el asistente respondiendo en inglés">
+    <figcaption>La Bandeja real, con una cuenta de demostración. El hilo abierto es de una
+    paciente que escribe en inglés. El asistente atiende en el idioma en que le escriban, y
+    cada mensaje tiene su botón de «Traducir».</figcaption>
+  </figure>
+
+  <p style="margin-top:26px">
+    Antes esa fila apilaba hasta <b>siete cosas</b>: no leídos, Resuelta o Pendiente, tiempo de
+    espera, si lo lleva un humano, el responsable y dos etiquetas. Siete, en una lista de
+    cuarenta conversaciones. No se borró nada; se ordenó:
+  </p>
+
+  <div class="grid">
+    <div class="mini">
+      <h4>«Resuelta» dejó de ser una pastilla</h4>
+      <p>La fila se atenúa y le sale un doble check gris, que es como WhatsApp dice «esto ya
+      está».</p>
+    </div>
+    <div class="mini">
+      <h4>Lo urgente baja a una tercera línea</h4>
+      <p>El tiempo de espera y quién lo lleva aparecen solo cuando hay algo que decir.</p>
+    </div>
+    <div class="mini">
+      <h4>Las etiquetas salieron de la lista</h4>
+      <p>Se ven enteras al abrir la conversación. En la lista solo competían con el mensaje.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:22px">
+    Y el cuadro de escribir es uno solo. «Nota interna» pasó al menú <b>+</b>, que es donde
+    WhatsApp pone lo que no es escribir. Se contesta cien veces por cada nota que se toma.
+    Como el interruptor ya no está a la vista, <b>el modo nota ahora se anuncia en una barra
+    ámbar con su propia salida</b>: lo único que separa «esto lo lee mi equipo» de «esto le
+    llega al cliente» es verlo.
+  </p>
+</section>
+
+<hr class="rule">
+
+<section id="ficha">
+  <h2 class="sec">6 · La ficha se llena sola</h2>
+  <p class="lead">
+    Cada persona tiene su ficha: qué pidió, en qué etapa está, quién la atiende, cuándo toca
+    volver y todo lo que se habló. El asistente la va llenando mientras conversa, sin que nadie
+    transcriba nada de un chat a una hoja de cálculo.
+  </p>
+
+  <figure>
+    <img src="ficha.webp" alt="La ficha de una clienta abierta sobre el embudo, con su contacto, etiquetas, nota, próxima acción con fecha, etapa, responsable e historial">
+    <figcaption>La ficha, con la próxima acción y su fecha. El teléfono sale enmascarado en
+    esta captura; en tu cuenta lo ves completo.</figcaption>
+  </figure>
+
+  <figure style="margin-top:34px">
+    <img src="embudo.webp" alt="El tablero Kanban de WazaCRM con las columnas Por contactar, Contactado, Pago pendiente, Ganado y Perdido">
+    <figcaption>Y el embudo detrás: cada oportunidad en su etapa, con su valor.</figcaption>
+  </figure>
+</section>
+
+<hr class="rule">
+
+<section id="chicas">
+  <h2 class="sec">7 · Ocho cosas pequeñas que estorbaban</h2>
+  <p class="lead">Ninguna es titular. Todas se notan.</p>
+
+  <div class="grid">
+    <div class="mini">
+      <h4>El mensaje del cliente ya se lee</h4>
+      <p>En modo claro, el texto de la burbuja del cliente era del mismo color que su fondo:
+      había que seleccionarlo con el ratón para verlo.</p>
+    </div>
+    <div class="mini">
+      <h4>Tu foto de perfil</h4>
+      <p>Antes solo había iniciales sobre un color. Se recorta y se reduce en tu propio
+      navegador, así que sube ya pequeña.</p>
+    </div>
+    <div class="mini">
+      <h4>Los contactos sin nombre</h4>
+      <p>Once contactos se llamaban literalmente «.», y el punto ordena antes que las letras:
+      era lo primero que se veía al abrir Contactos. Ahora manda el teléfono, que sí identifica
+      a alguien. Los emoji siguen valiendo: es el nombre que esa persona eligió.</p>
+    </div>
+    <div class="mini">
+      <h4>La Guía solo enseña tus pantallas</h4>
+      <p>El manual se mostraba entero para todos y mandaba a secciones que tu cuenta no tiene.
+      Un manual que te manda a un sitio inexistente es peor que no tener manual.</p>
+    </div>
+    <div class="mini">
+      <h4>Botones que no hacían nada</h4>
+      <p>«1 seguimiento vencido» aparecía como lo primero de Inicio y el clic no llevaba a
+      ninguna parte si tu cuenta no tenía Embudo. Ahora lleva a Contactos, que siempre existe.</p>
+    </div>
+    <div class="mini">
+      <h4>Chrome dejó de rellenar mal</h4>
+      <p>El navegador metía un correo ajeno en «Mi perfil» al autocompletar.</p>
+    </div>
+    <div class="mini">
+      <h4>Inicio dejó de ser un muro</h4>
+      <p>Cuatro frases cortas ocupaban media pantalla. Inicio existe para contestar «qué tengo
+      que hacer hoy», y todo lo que no conteste eso sobra.</p>
+    </div>
+    <div class="mini">
+      <h4>«Mi cuenta», en dos pestañas</h4>
+      <p>El perfil y lo de la cuenta estaban repartidos. Ahora viven juntos.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="vender">
+  <p class="kicker">Parte 2 · Para el equipo comercial</p>
+  <h2 class="sec">8 · Qué te deja vender esto</h2>
+  <p class="lead">
+    Todo prospecto que evalúa un asistente de IA llega con el mismo miedo, y casi nunca lo dice
+    en voz alta: <b>«le va a inventar un precio a mi cliente».</b> Hasta septiembre, la
+    respuesta a eso era una promesa. Ahora es algo que se enseña en pantalla.
+  </p>
+
+  <div class="sell">
+    <h3>El argumento nuevo</h3>
+    <div class="say">
+      «Mi asistente no te va a decir que está seguro de algo. Te dice qué vio. Si la persona lo
+      escribió, entra. Si lo dedujo, te lo pregunta. Y si hay dos versiones distintas, no entra
+      ninguna hasta que tú decidas.»
+    </div>
+    <p class="why">
+      <strong>Por qué cierra.</strong> Es verificable en dos minutos en una demo: abres una
+      ficha y se ven las sugerencias con sus dos botones. No estás pidiendo un acto de fe, que
+      es lo que pide todo el resto del mercado local.
+    </p>
+  </div>
+
+  <div class="sell" style="margin-top:20px">
+    <h3>El respaldo</h3>
+    <div class="say">
+      «Y si algún día el asistente contesta algo raro, entras a esa conversación y ves
+      exactamente qué consultó y qué le respondió su consulta. No tienes que creerme a mí.»
+    </div>
+    <p class="why">
+      <strong>Por qué importa.</strong> Es la objeción de segundo nivel, la que llega después
+      de «¿y si se equivoca?», y la tiene el prospecto más serio, el que ya usó otra
+      herramienta y se quemó. <strong>Ningún competidor local enseña esto.</strong>
+    </p>
+  </div>
+
+  <div class="note" style="margin-top:26px">
+    <p><strong>Una regla al demostrarlo:</strong> usa siempre la cuenta de demostración, nunca
+    la de un cliente real. Las conversaciones de un cliente son de sus clientes, y eso no se
+    enseña en una reunión de ventas.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="planes">
+  <h2 class="sec">9 · Planes nuevos, y qué pasa si ya eres cliente</h2>
+  <p class="lead">
+    La estructura cambió a <b>Starter, Growth y Scale</b>, y cambian dos cosas a la vez: la
+    mensualidad sube y <b>la implementación pasa a cero</b>. La mensualidad se come lo que antes
+    se cobraba de montaje, y ese cero es ahora el argumento: llave en mano, sin desembolso
+    inicial.
+  </p>
+
+  <div class="ok">
+    <p><b>Si ya eres cliente, no te cambia nada.</b> Tu plan y tu precio son los que pactaste.
+    Los planes anteriores se archivaron (dejan de ofrecerse a clientes nuevos), pero quien está
+    en ellos sigue exactamente donde estaba. No es un gesto: son filas nuevas en la base, no
+    una reescritura de las viejas, justamente para que nadie amanezca con un precio que no
+    firmó.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="no">
+  <h2 class="sec">10 · Lo que todavía NO se puede prometer</h2>
+  <p class="lead">
+    Va aquí para que nadie lo prometa en una reunión y haya que retractarse después.
+  </p>
+
+  <div class="grid">
+    <div class="mini">
+      <h4>Cobrar con tarjeta</h4>
+      <p>El enlace de pago, el checkout y los recordatorios están construidos, pero cobrar
+      depende de una pasarela a nombre del negocio del cliente y del trámite con su banco. Es un
+      add-on que se cotiza aparte, y <b>no se activa el día uno</b>.</p>
+    </div>
+    <div class="mini">
+      <h4>Instagram automático</h4>
+      <p>Funciona de punta a punta, pero se conecta caso por caso a mano hasta que Meta apruebe
+      la revisión. Se vende como implementación asistida, no como una línea más del plan.</p>
+    </div>
+    <div class="mini">
+      <h4>Avisos por WhatsApp al dueño</h4>
+      <p>El canal existe en el sistema, pero exige el teléfono del dueño y una plantilla
+      aprobada por Meta en su propia cuenta. Hasta que eso esté, el aviso va por correo.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0"><strong>WazaCRM</strong> · Notas de versión de septiembre de 2026 ·
+    Preparado por Elemento Web</p>
+    <p style="margin:8px 0 0">Documento interno. No se indexa ni se comparte públicamente.</p>
+  </div>
+</footer>
+
+</body>
+</html>

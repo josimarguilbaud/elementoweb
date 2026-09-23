@@ -120,6 +120,7 @@ export const blog1: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/mejor-plataforma-para-crear-una-pagina-web', label: 'Wix, WordPress o a medida: cuál conviene' },
           { slug: 'blog/como-elegir-agencia-diseno-web-panama', label: 'Cómo elegir una agencia de diseño web' },
           { slug: 'blog/cuanto-tiempo-toma-hacer-una-pagina-web', label: '¿Cuánto tiempo toma hacer una web?' },
           { slug: 'diseno-web-panama', label: 'Diseño web en Panamá' },
@@ -388,6 +389,7 @@ export const blog1: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/mejor-plataforma-para-crear-una-pagina-web', label: 'Wix, WordPress o a medida: cuál conviene' },
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online en Panamá' },
           { slug: 'blog/shopify-vs-woocommerce-panama', label: 'Shopify vs WooCommerce en Panamá' },
           { slug: 'tecnologias/diseno-web-wordpress-panama', label: 'Diseño web con WordPress' },
@@ -515,6 +517,7 @@ export const blog1: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/mejor-plataforma-para-crear-una-pagina-web', label: 'Wix, WordPress o a medida: cuál conviene' },
           { slug: 'blog/cuanto-cuesta-diseno-web-panama', label: '¿Cuánto cuesta una página web?' },
           { slug: 'blog/errores-comunes-diseno-web-empresas', label: '7 errores de diseño web' },
           { slug: 'servicios', label: 'Todos los servicios' },

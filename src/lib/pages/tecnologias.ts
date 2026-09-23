@@ -462,6 +462,7 @@ export const tecnologias: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/mejor-plataforma-para-crear-una-pagina-web', label: 'Guía: cuál plataforma conviene' },
           { slug: 'saas', label: 'Nuestros SaaS' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Sistemas de Reservas' },
           { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },

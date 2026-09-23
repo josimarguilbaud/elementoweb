@@ -50,6 +50,7 @@ import { blog34 } from './blog-34';
 import { blog35 } from './blog-35';
 import { blog36 } from './blog-36';
 import { blog37 } from './blog-37';
+import { blog38 } from './blog-38';
 
 export const pages: PageData[] = [
   ...core,
@@ -102,6 +103,7 @@ export const pages: PageData[] = [
   ...blog35,
   ...blog36,
   ...blog37,
+  ...blog38,
 ];
 
 /* Guardia de build: slugs duplicados rompen la compilación aquí mismo. */

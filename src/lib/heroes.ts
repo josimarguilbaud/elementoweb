@@ -126,6 +126,7 @@ export const OG_SLUGS = new Set<string>([
   'blog/inteligencia-artificial-para-pequenas-empresas-en-panama',
   'blog/landing-page-vs-sitio-web-cual-necesitas',
   'blog/marketing-de-contenidos-para-redes-sociales-panama',
+  'blog/mejor-plataforma-para-crear-una-pagina-web',
   'blog/metodos-de-pago-online-en-panama',
   'blog/optimizar-google-business-profile-panama',
   'blog/por-que-mi-pagina-no-aparece-en-google',

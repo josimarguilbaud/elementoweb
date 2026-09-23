@@ -152,6 +152,7 @@ export const industrias2c: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-ferreterias-panama', label: 'Guía: diseño web para ferreterías' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas Online y E-commerce' },
           { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Pagos con Yappy' },
           { slug: 'industrias/diseno-web-importadoras-distribuidoras-panama', label: 'Web para Importadoras' },
@@ -308,6 +309,7 @@ export const industrias2c: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-eventos-catering-panama', label: 'Guía: diseño web para eventos y catering' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas y Citas Online' },
           { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Web para Restaurantes' },
           { slug: 'industrias/diseno-web-turismo-hoteles-panama', label: 'Web para Turismo y Hoteles' },
@@ -463,6 +465,7 @@ export const industrias2c: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-consultoras-panama', label: 'Guía: diseño web para consultoras' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
           { slug: 'industrias/diseno-web-contadores-panama', label: 'Web para Contadores' },
@@ -619,6 +622,7 @@ export const industrias2c: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-arquitectos-panama', label: 'Guía: diseño web para arquitectos' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
           { slug: 'portafolio', label: 'Nuestro Portafolio' },
           { slug: 'industrias/diseno-web-constructoras-panama', label: 'Web para Constructoras' },

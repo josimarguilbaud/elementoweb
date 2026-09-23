@@ -313,6 +313,7 @@ export const industrias2a: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-agencias-de-viajes-panama', label: 'Guía: diseño web para agencias de viajes' },
           { slug: 'industrias/diseno-web-turismo-hoteles-panama', label: 'Web para Turismo y Hoteles' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' },
           { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Pagos con Yappy' },
@@ -470,6 +471,7 @@ export const industrias2a: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-importadoras-panama', label: 'Guía: diseño web para importadoras' },
           { slug: 'industrias/diseno-web-logistica-transporte-panama', label: 'Web para Logística' },
           { slug: 'industrias/diseno-web-ferreterias-materiales-panama', label: 'Web para Ferreterías' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },

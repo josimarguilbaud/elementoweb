@@ -121,6 +121,7 @@ export const industrias3: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-agencias-aduaneras-panama', label: 'Guía: diseño web para agencias de aduana' },
           { slug: 'industrias/diseno-web-logistica-transporte-panama', label: 'Web para Logística y Transporte' },
           { slug: 'industrias/diseno-web-importadoras-distribuidoras-panama', label: 'Web para Importadoras' },
           { slug: 'industrias/diseno-web-navieras-servicios-maritimos-panama', label: 'Web para Navieras y Marítimo' },
@@ -243,6 +244,7 @@ export const industrias3: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-navieras-panama', label: 'Guía: diseño web para navieras' },
           { slug: 'industrias/diseno-web-agencias-aduana-zona-libre-panama', label: 'Web para Agencias de Aduana' },
           { slug: 'industrias/diseno-web-logistica-transporte-panama', label: 'Web para Logística y Transporte' },
           { slug: 'industrias/diseno-web-importadoras-distribuidoras-panama', label: 'Web para Importadoras' },
@@ -365,6 +367,7 @@ export const industrias3: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-cooperativas-panama', label: 'Guía: diseño web para cooperativas' },
           { slug: 'industrias/diseno-web-seguros-corredores-panama', label: 'Web para Corredores de Seguros' },
           { slug: 'industrias/diseno-web-contadores-panama', label: 'Web para Contadores' },
           { slug: 'industrias/diseno-web-consultoras-servicios-profesionales-panama', label: 'Web para Consultoras' },
@@ -487,6 +490,7 @@ export const industrias3: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-aire-acondicionado-panama', label: 'Guía: diseño web para aire acondicionado' },
           { slug: 'industrias/diseno-web-ferreterias-materiales-panama', label: 'Web para Ferreterías' },
           { slug: 'industrias/diseno-web-constructoras-panama', label: 'Web para Constructoras' },
           { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Web para Restaurantes' },
@@ -609,6 +613,7 @@ export const industrias3: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-seguridad-vigilancia-panama', label: 'Guía: diseño web para seguridad y vigilancia' },
           { slug: 'industrias/diseno-web-constructoras-panama', label: 'Web para Constructoras' },
           { slug: 'industrias/diseno-web-logistica-transporte-panama', label: 'Web para Logística' },
           { slug: 'industrias/diseno-web-consultoras-servicios-profesionales-panama', label: 'Web para Consultoras' },
@@ -731,6 +736,7 @@ export const industrias3: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-imprentas-panama', label: 'Guía: diseño web para imprentas' },
           { slug: 'industrias/diseno-web-eventos-catering-bodas-panama', label: 'Web para Eventos y Catering' },
           { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Web para Retail y Moda' },
           { slug: 'industrias/diseno-web-ferreterias-materiales-panama', label: 'Web para Ferreterías' },

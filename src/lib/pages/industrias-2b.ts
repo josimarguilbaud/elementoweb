@@ -153,6 +153,7 @@ export const industrias2b: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-seguros-panama', label: 'Guía: diseño web para seguros' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
           { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },
@@ -310,6 +311,7 @@ export const industrias2b: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-concesionarios-autos-panama', label: 'Guía: diseño web para concesionarios' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Plataformas con Catálogo' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Agenda de Test Drive' },
           { slug: 'marketing/google-ads-panama', label: 'Google Ads' },
@@ -623,6 +625,7 @@ export const industrias2b: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-veterinarias-panama', label: 'Guía: diseño web para veterinarias' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Citas en Línea' },
           { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local y Google Maps' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },

@@ -106,6 +106,27 @@ export const industriasPages: PageData[] = [
           { slug: 'blog/diseno-web-para-clinicas-esteticas-panama', label: 'Guía para clínicas estéticas' },
           { slug: 'blog/diseno-web-para-dentistas-panama', label: 'Guía para dentistas' },
           { slug: 'blog/diseno-web-para-talleres-automotrices-panama', label: 'Guía para talleres' },
+          { slug: 'blog/diseno-web-para-turismo-hoteles-panama', label: 'Guía para hoteles y turismo' },
+          { slug: 'blog/diseno-web-para-educacion-panama', label: 'Guía para educación' },
+          { slug: 'blog/diseno-web-para-retail-moda-panama', label: 'Guía para retail y moda' },
+          { slug: 'blog/diseno-web-para-gimnasios-panama', label: 'Guía para gimnasios' },
+          { slug: 'blog/diseno-web-para-belleza-spa-panama', label: 'Guía para belleza y spas' },
+          { slug: 'blog/diseno-web-para-logistica-transporte-panama', label: 'Guía para logística' },
+          { slug: 'blog/diseno-web-para-agencias-de-viajes-panama', label: 'Guía para agencias de viajes' },
+          { slug: 'blog/diseno-web-para-importadoras-panama', label: 'Guía para importadoras' },
+          { slug: 'blog/diseno-web-para-seguros-panama', label: 'Guía para seguros' },
+          { slug: 'blog/diseno-web-para-concesionarios-autos-panama', label: 'Guía para concesionarios' },
+          { slug: 'blog/diseno-web-para-veterinarias-panama', label: 'Guía para veterinarias' },
+          { slug: 'blog/diseno-web-para-ferreterias-panama', label: 'Guía para ferreterías' },
+          { slug: 'blog/diseno-web-para-eventos-catering-panama', label: 'Guía para eventos y catering' },
+          { slug: 'blog/diseno-web-para-consultoras-panama', label: 'Guía para consultoras' },
+          { slug: 'blog/diseno-web-para-arquitectos-panama', label: 'Guía para arquitectos' },
+          { slug: 'blog/diseno-web-para-agencias-aduaneras-panama', label: 'Guía para agencias de aduana' },
+          { slug: 'blog/diseno-web-para-navieras-panama', label: 'Guía para navieras' },
+          { slug: 'blog/diseno-web-para-cooperativas-panama', label: 'Guía para cooperativas' },
+          { slug: 'blog/diseno-web-para-aire-acondicionado-panama', label: 'Guía para aire acondicionado' },
+          { slug: 'blog/diseno-web-para-seguridad-vigilancia-panama', label: 'Guía para seguridad' },
+          { slug: 'blog/diseno-web-para-imprentas-panama', label: 'Guía para imprentas' },
         ],
       },
       {
@@ -717,6 +738,7 @@ export const industriasPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-turismo-hoteles-panama', label: 'Guía: diseño web para hoteles y turismo' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' },
           { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Pasarelas de Pago' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
@@ -1172,6 +1194,7 @@ export const industriasPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-educacion-panama', label: 'Guía: diseño web para educación' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas y Citas Online' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
           { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Desarrollo a Medida' },
@@ -1323,6 +1346,7 @@ export const industriasPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-retail-moda-panama', label: 'Guía: diseño web para retail y moda' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas Online' },
           { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y Pasarelas' },
           { slug: 'tecnologias/diseno-web-shopify-panama', label: 'Shopify' },
@@ -1473,6 +1497,7 @@ export const industriasPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-gimnasios-panama', label: 'Guía: diseño web para gimnasios' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' },
           { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Pagos con Yappy' },
           { slug: 'industrias/diseno-web-belleza-spa-panama', label: 'Web para Belleza y Spas' },
@@ -1775,6 +1800,7 @@ export const industriasPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-belleza-spa-panama', label: 'Guía: diseño web para belleza y spas' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' },
           { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Pagos con Yappy' },
           { slug: 'industrias/diseno-web-gimnasios-fitness-panama', label: 'Web para Gimnasios' },
@@ -1926,6 +1952,7 @@ export const industriasPages: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/diseno-web-para-logistica-transporte-panama', label: 'Guía: diseño web para logística' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
           { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Desarrollo a Medida' },
           { slug: 'industrias/diseno-web-constructoras-panama', label: 'Web para Constructoras' },

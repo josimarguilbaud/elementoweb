@@ -29,6 +29,27 @@ import { blog13 } from './blog-13';
 import { blog14 } from './blog-14';
 import { blog15 } from './blog-15';
 import { blog16 } from './blog-16';
+import { blog17 } from './blog-17';
+import { blog18 } from './blog-18';
+import { blog19 } from './blog-19';
+import { blog20 } from './blog-20';
+import { blog21 } from './blog-21';
+import { blog22 } from './blog-22';
+import { blog23 } from './blog-23';
+import { blog24 } from './blog-24';
+import { blog25 } from './blog-25';
+import { blog26 } from './blog-26';
+import { blog27 } from './blog-27';
+import { blog28 } from './blog-28';
+import { blog29 } from './blog-29';
+import { blog30 } from './blog-30';
+import { blog31 } from './blog-31';
+import { blog32 } from './blog-32';
+import { blog33 } from './blog-33';
+import { blog34 } from './blog-34';
+import { blog35 } from './blog-35';
+import { blog36 } from './blog-36';
+import { blog37 } from './blog-37';
 
 export const pages: PageData[] = [
   ...core,
@@ -60,6 +81,27 @@ export const pages: PageData[] = [
   ...blog14,
   ...blog15,
   ...blog16,
+  ...blog17,
+  ...blog18,
+  ...blog19,
+  ...blog20,
+  ...blog21,
+  ...blog22,
+  ...blog23,
+  ...blog24,
+  ...blog25,
+  ...blog26,
+  ...blog27,
+  ...blog28,
+  ...blog29,
+  ...blog30,
+  ...blog31,
+  ...blog32,
+  ...blog33,
+  ...blog34,
+  ...blog35,
+  ...blog36,
+  ...blog37,
 ];
 
 /* Guardia de build: slugs duplicados rompen la compilación aquí mismo. */

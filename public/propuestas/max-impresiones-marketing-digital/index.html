@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de Marketing Digital · MAX IMPRESIONES — elementoweb.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand: #3b82f6;
+            --brand-deep: #1e3a8a;
+            --violet: #7c3aed;
+            --ink: #0f172a;
+        }
+        * { -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background: #eef2fb;
+            background-image:
+                radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,0.10), transparent 60%),
+                radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,0.12), transparent 55%),
+                radial-gradient(45rem 45rem at 50% 120%, rgba(37,99,235,0.08), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1, h2, h3, h4, .display {
+            font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .gradient-text {
+            background: linear-gradient(100deg, #60a5fa, #3b82f6 45%, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass {
+            background: rgba(255,255,255,0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 20px 40px -24px rgba(30,58,138,0.28);
+        }
+        .service-card {
+            position: relative;
+            transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute; inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(96,165,250,.6), rgba(124,58,237,.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            opacity: 0; transition: opacity .35s ease;
+            pointer-events: none;
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(30,58,138,0.45); }
+        .service-card:hover::before { opacity: 1; }
+        .num-badge {
+            background: linear-gradient(135deg, #60a5fa, #3b82f6 55%, #7c3aed);
+            box-shadow: 0 10px 22px -8px rgba(59,130,246,0.7);
+        }
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+        .reveal.in { opacity: 1; transform: none; }
+        @keyframes float1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(20px,-16px) scale(1.08);} }
+        @keyframes float2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-24px,14px) scale(1.12);} }
+        .orb1 { animation: float1 11s ease-in-out infinite; }
+        .orb2 { animation: float2 14s ease-in-out infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .shine {
+            background: linear-gradient(90deg,#93c5fd,#e0e7ff,#93c5fd,#c4b5fd);
+            background-size: 200% auto;
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+        .price-pill { background: linear-gradient(135deg,#eff6ff,#eef2ff); border:1px solid #dbeafe; }
+        .wa-float {
+            box-shadow: 0 14px 30px -8px rgba(22,163,74,0.6);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .wa-float:hover { transform: translateY(-3px) scale(1.04); }
+        @keyframes waPulse { 0%{ box-shadow:0 0 0 0 rgba(34,197,94,.5);} 70%{ box-shadow:0 0 0 16px rgba(34,197,94,0);} 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+        .wa-pulse { animation: waPulse 2.4s infinite; }
+        .btn-primary {
+            background: linear-gradient(135deg,#3b82f6,#7c3aed);
+            transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+            box-shadow: 0 14px 28px -10px rgba(59,130,246,0.7);
+        }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 20px 34px -10px rgba(124,58,237,0.6); }
+        .section-tag { background: linear-gradient(135deg,#0b1220,#1e3a8a); }
+        @media print {
+            body { background: #fff; }
+            .no-print { display: none !important; }
+            .reveal { opacity:1 !important; transform:none !important; }
+            main { box-shadow:none !important; margin: 0 !important; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 selection:bg-violet-200 selection:text-violet-900">
+
+    <main class="max-w-4xl mx-auto my-6 sm:my-10 glass rounded-[28px] overflow-hidden">
+
+        <!-- ============ HEADER ============ -->
+        <header class="relative overflow-hidden text-white px-7 sm:px-10 pt-8 pb-10"
+                style="background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);">
+            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.55),transparent 70%);"></div>
+            <div class="orb2 absolute -bottom-24 -left-10 w-72 h-72 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(59,130,246,.5),transparent 70%);"></div>
+            <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:32px 32px;"></div>
+
+            <div class="relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-8 border-b border-white/15">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);">
+                            <svg width="26" height="26" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="25" cy="15" r="3.2" fill="#fff"/>
+                                <circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/>
+                            </svg>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="display text-lg font-bold tracking-tight">elementoweb<span class="text-violet-300">.com</span></p>
+                            <p class="text-[11px] text-blue-200/80 tracking-wide">Desarrollo Web · IA · Automatización</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm sm:justify-end">
+                        <a href="mailto:info@elementoweb.com" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            info@elementoweb.com
+                        </a>
+                        <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                            6162-2787
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+                    <div>
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-blue-200 bg-white/10 border border-white/15 rounded-full px-3 py-1 mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-400 wa-pulse"></span> Propuesta de Marketing Digital
+                        </span>
+                        <h1 class="text-4xl sm:text-5xl font-extrabold leading-none mb-3">
+                            <span class="shine">MAX IMPRESIONES</span>
+                        </h1>
+                        <p class="text-blue-100/90 max-w-lg text-sm leading-relaxed">
+                            Ya tienen dónde aterrizar al cliente. Ahora toca llevarles tráfico: Google Ads para quien ya busca imprenta, Meta Ads para quien tiene que ver la cabaña para querer reservarla.
+                        </p>
+                    </div>
+                    <div class="shrink-0 grid gap-3 text-sm">
+                        <div class="glass !bg-white/10 !border-white/15 rounded-xl px-4 py-3 text-white">
+                            <p class="text-[11px] text-blue-200 uppercase tracking-wider mb-0.5">Preparado para</p>
+                            <p class="font-semibold">Max Impresiones</p>
+                            <p class="text-blue-200 text-xs">Villa Zaita Mall · Panamá</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-blue-200 text-xs justify-end">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            23 de septiembre de 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="px-7 sm:px-10 py-12">
+
+            <!-- ============ INTRO ============ -->
+            <section class="reveal mb-14 text-center max-w-2xl mx-auto">
+                <h2 class="display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Dos negocios, <span class="gradient-text">dos formas distintas de comprar</span></h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    La imprenta se vende cuando alguien la busca con una necesidad concreta: Google Ads captura esa demanda en el momento exacto. La cabaña se vende con fotos que dan ganas de reservar: Meta Ads la pone frente a quien no la estaba buscando. Un canal por negocio, cada uno donde rinde más.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mt-6">
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🎯 Landing Page</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🔍 Google Ads</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">📸 Meta Ads (FB + IG)</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🎨 Creativos</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">📊 Reporte mensual</span>
+                </div>
+            </section>
+
+            <!-- ============ DIFERENCIADOR: NO EMPIEZAN DE CERO ============ -->
+            <div class="reveal mb-14 rounded-[24px] p-7 sm:p-9 relative overflow-hidden border-2"
+                 style="background:linear-gradient(135deg,#fffbeb,#fff7ed);border-color:#fcd34d;">
+                <div class="absolute top-0 right-0 text-white text-[11px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-2xl" style="background:linear-gradient(135deg,#d97706,#b45309);">La ventaja que ya tienen</div>
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-14 h-14 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#fbbf24,#d97706);box-shadow:0 10px 22px -8px rgba(217,119,6,.6);">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="display text-xl sm:text-2xl font-bold text-slate-900 mb-2">El tráfico no va a caer en un vacío</h2>
+                        <p class="text-slate-700 text-sm leading-relaxed mb-3">La mayoría de los negocios que empiezan a pautar mandan el clic a una web genérica y las conversaciones a un WhatsApp que alguien revisa "cuando puede". Ahí es donde se pierden los leads que sí costaron dinero conseguir.</p>
+                        <p class="text-slate-800 text-sm leading-relaxed font-medium">Max Impresiones ya no tiene ese problema: cada clic de Google llega a una <strong>landing enfocada en la oferta del anuncio</strong>, cada mensaje de WhatsApp o Instagram lo atiende <strong>WazaCRM al instante</strong>, y cada visita interesada en la cabaña puede reservar directo en el <strong>sistema de reservas en línea</strong> que ya tienen. La pauta funciona mejor porque el destino ya está resuelto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ FASE 1 ============ -->
+            <div class="mb-10">
+                <div class="reveal flex items-center gap-3 mb-6">
+                    <span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Fase 1 · Max Impresiones</span>
+                    <h2 class="display text-2xl font-bold text-slate-900">Capturar la demanda que ya existe</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <p class="reveal text-sm text-slate-600 mb-6 max-w-2xl">Quien necesita gran formato, serigrafía, rotulación o ploteo de planos ya lo escribe en Google cuando lo necesita. Google Ads pone a Max Impresiones justo ahí, en el momento de mayor intención de compra.</p>
+
+                <!-- Item 1: Landing -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">1</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Landing Page de Conversión</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Una oferta, una acción: el destino correcto para la pauta</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">$550</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">Pago Único</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3 md:pl-15">Nada de mandar el clic a la página de inicio. Una sola página, con el mismo mensaje del anuncio, para que quien llega desde Google entienda, confíe y escriba sin distraerse con el resto del sitio.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 md:pl-15">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Estructura de conversión</strong>: promesa, prueba, oferta y una sola acción clara.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Botón de WhatsApp</strong> con el mensaje de la campaña ya escrito, conectado a WazaCRM.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Medición de conversiones</strong> lista para Google Ads desde el primer clic.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Item 2: Gestión Google Ads -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">2</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Gestión de Google Ads</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Búsqueda, remarketing y optimización continua</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">$300</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">/ mes</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3 md:pl-15">El primer mes incluye toda la configuración inicial, sin cobro aparte por arrancar la cuenta.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 md:pl-15">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Investigación de palabras clave</strong> con intención de compra real: "impresión gran formato Panamá", "serigrafía industrial", "rotulación de vehículos" y similares.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Palabras clave negativas</strong> desde el día uno, para no pagar clics de quien busca "curso" o "gratis".</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Seguimiento de conversiones</strong> conectado a la landing, para optimizar hacia cotizaciones reales, no hacia clics baratos.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Optimización semanal</strong> de pujas y presupuesto, más reporte mensual claro.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Item 3: Inversión Google -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 border border-slate-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 num-badge text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl">INVERSIÓN, NO FEE</div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">3</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Inversión Publicitaria Recomendada</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Lo que se muestra en anuncios: va directo a su cuenta de Google</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">$350</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">/ mes recomendado</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed md:pl-15">No hay un número mágico que sirva para cualquier negocio: el presupuesto correcto sale de cuánto vale un cliente nuevo para Max Impresiones, no de una tabla. <strong class="text-slate-800">$350/mes es el punto de partida honesto</strong> para una fase de prueba de 4 a 8 semanas (lo que tarda el sistema en aprender qué palabra y qué anuncio traen clientes reales). Con esos datos, ajustamos el número hacia arriba o hacia abajo.</p>
+                </div>
+            </div>
+
+            <!-- ============ FASE 2 ============ -->
+            <div class="mb-14">
+                <div class="reveal flex items-center gap-3 mb-6">
+                    <span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Fase 2 · Cabaña Aires de Chica</span>
+                    <h2 class="display text-2xl font-bold text-slate-900">Generar demanda con contenido visual</h2>
+                    <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                </div>
+                <p class="reveal text-sm text-slate-600 mb-6 max-w-2xl">Nadie busca "Cabaña Aires de Chica" por nombre todavía. Meta Ads no espera a que la busquen: le muestra la cabaña a quien encaja con el perfil de quien ya reserva, con una foto o video que detiene el scroll.</p>
+
+                <!-- Item 4: Creativos -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">4</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Producción de Creativos</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Fotos, carrusel y video corto: el primer set para arrancar</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">$250</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">Puesta en marcha</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3 md:pl-15">En Meta el creativo pesa más que la segmentación: el algoritmo encuentra al público solo, lo que decide el resultado es lo que detiene el pulgar en el primer segundo.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 md:pl-15 mb-4">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">3 a 4 ángulos distintos</strong> (imagen, carrusel, Reel) para que el sistema aprenda cuál conecta antes de escalar presupuesto.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Formato vertical</strong> pensado para Reels e Historias, no solo fotos horizontales de catálogo.</span></li>
+                    </ul>
+                    <div class="md:pl-15">
+                        <span class="inline-flex items-center gap-2 text-xs text-blue-800 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2">
+                            <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span><strong>Por confirmar:</strong> si las fotos ya tomadas para la web de la cabaña sirven como base, este costo baja o se elimina. Se define en el diagnóstico inicial, antes de facturarlo.</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Item 5: Gestión Meta -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">5</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Gestión de Meta Ads (Facebook + Instagram)</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Segmentación, rotación de creativos y reporte mensual</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">$255</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">/ mes</p>
+                            <p class="text-[11px] text-emerald-700 font-medium mt-0.5">15% off por combo (regular $300)</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600 md:pl-15">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Tráfico directo al sistema de reservas</strong> ya construido, no solo mensajes sueltos de WhatsApp.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Públicos fríos, tibios y de remarketing</strong>, más públicos similares (lookalike) a quien ya reservó.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Píxel de Meta y API de conversiones</strong> conectados al sistema de reservas, para medir reservas reales, no solo mensajes.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Rotación de creativos</strong> antes de que se agoten, para que el costo por resultado no suba con el tiempo.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Mensajes e Instagram Direct</strong> conectados a la misma bandeja de WazaCRM que ya usan para la imprenta, así ningún interesado se pierde por llegar a un canal distinto.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Item 6: Inversión Meta -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 border border-slate-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 num-badge text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl">INVERSIÓN, NO FEE</div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">6</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Inversión Publicitaria Recomendada</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Lo que se muestra en anuncios: va directo a su cuenta de Meta</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">$300</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">/ mes recomendado</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed md:pl-15">Meta necesita datos para aprender: con muy poco presupuesto diario, la campaña nunca sale de la fase de aprendizaje. <strong class="text-slate-800">$300/mes concentrados en una sola campaña bien armada</strong> rinden más que repartir esa misma plata entre varias campañas chicas. Se ajusta con datos reales después de las primeras semanas.</p>
+                </div>
+            </div>
+
+            <!-- ============ COMO SE COBRA LA PAUTA ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-14">
+                <h2 class="display text-2xl font-bold text-slate-900 mb-2">Cómo se cobra la pauta</h2>
+                <p class="text-slate-600 text-sm leading-relaxed mb-5">Dos costos distintos, y conviene no confundirlos.</p>
+                <div class="grid sm:grid-cols-2 gap-4 mb-5">
+                    <div class="rounded-xl p-4 border border-slate-100 bg-white/80">
+                        <p class="text-sm font-bold text-slate-800 mb-1">💼 Nuestro fee de gestión</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">Lo que nos pagan a nosotros por crear, optimizar y reportar las campañas. Es lo único que factura Elemento Web.</p>
+                    </div>
+                    <div class="rounded-xl p-4 border border-slate-100 bg-white/80">
+                        <p class="text-sm font-bold text-slate-800 mb-1">📢 La inversión publicitaria</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">El dinero que se muestra en anuncios. Va directo a Google o Meta desde la cuenta propia de Max Impresiones. No la intermediamos ni le aplicamos margen.</p>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-500">Las cuentas publicitarias de Google Ads y Meta Business quedan a nombre de Max Impresiones desde el día uno. Si algún día cambian de agencia, se llevan la cuenta completa con su historial y aprendizaje. No quedan de rehén de nadie.</p>
+            </div>
+
+            <!-- ============ RECOMENDACION SIN COSTO ============ -->
+            <div class="reveal rounded-2xl p-6 sm:p-7 mb-14 border" style="background:linear-gradient(135deg,#ecfdf5,#eff6ff);border-color:#bbf7d0;">
+                <p class="text-[11px] font-bold text-emerald-800 uppercase tracking-wider mb-2">Recomendación sin costo</p>
+                <h3 class="display text-lg font-bold text-slate-900 mb-2">Ficha de Google Business Profile de la imprenta</h3>
+                <p class="text-emerald-900/80 text-sm leading-relaxed">Es gratis y potencia tanto Google Ads como el posicionamiento (SEO) que ya tienen contratado: mapa, horario, fotos y reseñas de Max Impresiones apareciendo junto al anuncio pagado dan más confianza y bajan el costo por clic. Lo dejamos optimizado como parte del arranque de la Fase 1, sin cargo aparte.</p>
+            </div>
+
+            <!-- ============ INVESTMENT SUMMARY ============ -->
+            <div class="reveal rounded-[24px] p-7 sm:p-9 text-white shadow-2xl mb-14 relative overflow-hidden"
+                 style="background:linear-gradient(150deg,#0b1220,#15254d 55%,#1e3a8a);">
+                <div class="orb2 absolute -bottom-20 -right-16 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.4),transparent 70%);"></div>
+                <div class="relative z-10">
+                    <h2 class="display text-2xl font-bold mb-6">Resumen de Inversión</h2>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">A Elemento Web · pagos únicos</h4>
+                            <div class="space-y-0.5 text-sm">
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Landing page (imprenta)</span><span class="font-semibold">$550.00</span></div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Producción de creativos (cabaña)</span><span class="font-semibold">$250.00</span></div>
+                                <div class="flex justify-between items-center py-3 mt-1"><span class="font-bold text-blue-200">Subtotal único</span><span class="text-xl font-bold text-blue-300">$800.00</span></div>
+                                <p class="text-[11px] text-blue-300/70">El costo de creativos baja o se elimina si las fotos de la web de la cabaña sirven como base.</p>
+                            </div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3 mt-6">A Elemento Web · gestión mensual</h4>
+                            <div class="space-y-0.5 text-sm">
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Gestión Google Ads (imprenta)</span><span class="font-semibold">$300.00</span></div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Gestión Meta Ads (cabaña, con combo)</span><span class="font-semibold">$255.00</span></div>
+                                <div class="flex justify-between items-center py-3 mt-1"><span class="font-bold text-blue-200">Subtotal gestión</span><span class="text-xl font-bold text-blue-300">$555.00 <span class="text-xs font-normal text-blue-300/70">/mes</span></span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Inversión publicitaria recomendada</h4>
+                            <p class="text-[11px] text-blue-300/70 mb-3">No la facturamos nosotros: se carga directo en las cuentas propias de Max Impresiones en Google y Meta.</p>
+                            <div class="space-y-0.5 text-sm">
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Google Ads (imprenta)</span><span class="font-semibold">$350.00</span></div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Meta Ads (cabaña)</span><span class="font-semibold">$300.00</span></div>
+                                <div class="flex justify-between items-center py-3 mt-1"><span class="font-bold text-blue-200">Subtotal inversión</span><span class="text-xl font-bold text-blue-300">$650.00 <span class="text-xs font-normal text-blue-300/70">/mes</span></span></div>
+                                <p class="text-[11px] text-blue-300/70">Cifra de arranque para la fase de prueba (4-8 semanas). Se ajusta con datos reales, hacia arriba o hacia abajo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+                         style="background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(124,58,237,.25));border:1px solid rgba(255,255,255,.18);">
+                        <div>
+                            <p class="text-blue-200 text-xs uppercase tracking-wider mb-1">Para arrancar hoy · a Elemento Web</p>
+                            <p class="display text-4xl font-extrabold shine">$1,355.00</p>
+                            <p class="text-blue-200 text-xs mt-1">Setup ($800) + primer mes de gestión ($555). Más $650 que cargan directo en sus propias cuentas para encender las campañas.</p>
+                        </div>
+                        <a href="https://wa.me/50761622787?text=Hola%2C%20quiero%20aceptar%20la%20propuesta%20de%20marketing%20digital%20de%20MAX%20IMPRESIONES%20y%20arrancar%20el%20proyecto."
+                           target="_blank" rel="noopener"
+                           class="btn-primary text-white font-semibold rounded-xl px-6 py-3.5 text-sm text-center whitespace-nowrap no-print">
+                            Aceptar y comenzar →
+                        </a>
+                    </div>
+                    <p class="text-[11px] text-blue-300/70 mt-3">Precios en USD. Los fees de gestión no incluyen ITBMS (7%); se aplicará según corresponda. La inversión publicitaria no pasa por nosotros, por lo que no le aplicamos ITBMS de nuestra parte.</p>
+                </div>
+            </div>
+
+            <!-- ============ TERMS ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-8">
+                <h3 class="display text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Condiciones Comerciales
+                </h3>
+                <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-700">
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Estructura de pago:</strong> los pagos únicos ($800) y el primer mes de gestión ($555) se pagan para arrancar. Los meses siguientes se facturan por adelantado cada mes.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Sin permanencia:</strong> el servicio es mensual y cancelable. La pauta necesita entre 4 y 8 semanas para dar señal real. Cancelar en la segunda semana no es una prueba justa del canal.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Cuentas publicitarias propias:</strong> Google Ads y Meta Business quedan a nombre de Max Impresiones desde el día uno, con acceso completo.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Sin margen sobre la inversión:</strong> no intermediamos ni cobramos comisión sobre lo que se invierte en anuncios. Se carga directo en la tarjeta o cuenta que Max Impresiones conecte a Google o Meta.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Descuento combo:</strong> el precio de $255/mes en Meta Ads aplica mientras ambas gestiones (Google y Meta) estén activas a nombre de Max Impresiones.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Producción de creativos:</strong> el costo de $250 se confirma o se ajusta en el diagnóstico inicial, según si las fotos de la web de la cabaña sirven como base.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Reporte mensual:</strong> qué se invirtió y qué resultados dio cada canal, en un lenguaje claro, no en jerga de plataforma.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Integración con WazaCRM:</strong> los mensajes que lleguen desde los anuncios (WhatsApp e Instagram Direct) entran a la misma bandeja que Max Impresiones ya tiene contratada, sin costo de integración adicional.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Formas de pago:</strong> tarjeta de crédito/débito, transferencia bancaria o Yappy.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Validez:</strong> esta cotización es válida por 30 días desde su emisión.</span></p>
+                </div>
+            </div>
+
+            <!-- ============ CTA ============ -->
+            <div class="reveal text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden"
+                 style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #e0e7ff;">
+                <h3 class="display text-2xl font-bold text-slate-900 mb-2">¿Encendemos la pauta? 🚀</h3>
+                <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">Confirma la aceptación de esta propuesta y arrancamos con la configuración de ambas campañas.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center no-print">
+                    <a href="https://wa.me/50761622787?text=Hola%2C%20quiero%20aceptar%20la%20propuesta%20de%20marketing%20digital%20de%20MAX%20IMPRESIONES%20y%20arrancar%20el%20proyecto."
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                        Aceptar por WhatsApp
+                    </a>
+                    <a href="mailto:info@elementoweb.com?subject=Aceptaci%C3%B3n%20propuesta%20marketing%20MAX%20IMPRESIONES&body=Hola%2C%20confirmo%20la%20aceptaci%C3%B3n%20de%20la%20propuesta%20de%20marketing%20digital%20para%20MAX%20IMPRESIONES."
+                       class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Aceptar por Correo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="px-7 sm:px-10 py-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#122043);">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);">
+                        <svg width="22" height="22" viewBox="0 0 50 52" fill="none"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/></svg>
+                    </div>
+                    <div>
+                        <p class="display font-bold">elementoweb<span class="text-violet-300">.com</span></p>
+                        <p class="text-[11px] text-blue-200/70">Documento confidencial · Preparado para Max Impresiones</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-blue-100">
+                    <a href="mailto:info@elementoweb.com" class="hover:text-white transition">info@elementoweb.com</a>
+                    <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="hover:text-white transition">+507 6162-2787</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <a href="https://wa.me/50761622787?text=Hola%2C%20tengo%20una%20consulta%20sobre%20la%20propuesta%20de%20marketing%20digital%20de%20MAX%20IMPRESIONES."
+       target="_blank" rel="noopener"
+       class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse"
+       aria-label="Escríbenos por WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    </a>
+
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = Math.min(i * 40, 200) + 'ms';
+            io.observe(el);
+        });
+    </script>
+</body>
+</html>

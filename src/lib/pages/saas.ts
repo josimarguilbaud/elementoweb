@@ -8,8 +8,8 @@ export const saasPages: PageData[] = [
   /* ---------- HUB ---------- */
   {
     slug: 'saas',
-    title: 'Nuestros SaaS | ChatMantis, WapyCRM y Cifrao',
-    description: 'Tres productos SaaS propios en producción: ChatMantis (omnicanalidad con IA), WapyCRM (ventas por WhatsApp) y Cifrao (contabilidad).',
+    title: 'Nuestros SaaS | ChatMantis, WapyCRM, Cifrao y NousCRM',
+    description: 'Cuatro productos SaaS propios en producción: ChatMantis (omnicanalidad con IA), WapyCRM (ventas por WhatsApp), Cifrao (contabilidad) y NousCRM (facturación y cobros multiempresa).',
     h1: 'Software propio, en producción',
     breadcrumb: 'Nuestros SaaS',
     heroImage: { src: 'https://picsum.photos/seed/software-dashboard-laptop-panama/1200/675', alt: 'Panel de control de software mostrado en una laptop moderna' },
@@ -19,17 +19,18 @@ export const saasPages: PageData[] = [
       { label: 'Ver servicios web', href: '/servicios/' },
     ],
     lead: [
-      'No solo diseñamos webs: operamos tres productos SaaS con clientes reales. Esa es la vara técnica con la que construimos lo tuyo.',
+      'No solo diseñamos webs: operamos cuatro productos SaaS con clientes reales. Esa es la vara técnica con la que construimos lo tuyo.',
       'Una agencia entrega y se va; si la arquitectura era frágil, el costo lo descubre el cliente meses después. Cuando operas tu propio software, cada atajo técnico te cobra factura a ti: el servidor caído, la madrugada de soporte, el cliente molesto. Esa disciplina aprendida a golpes es la que aplicamos en cada proyecto de diseño web.',
     ],
     blocks: [
       {
         type: 'cards',
-        h2: 'Los tres productos',
+        h2: 'Los cuatro productos',
         items: [
           { h3: 'ChatMantis', text: 'Omnicanalidad con IA: WhatsApp, Instagram y el chat de tu web en una sola bandeja, con asistentes entrenados con tu información.', link: { slug: 'saas/chatmantis', label: 'Conocer ChatMantis' } },
           { h3: 'WapyCRM', text: 'CRM de ventas construido alrededor de WhatsApp: embudos, seguimiento automático y cierre asistido.', link: { slug: 'saas/wapycrm', label: 'Conocer WapyCRM' } },
           { h3: 'Cifrao', text: 'Software contable para empresas en Panamá: facturación, conciliación y cuentas por cobrar que avisan solas.', link: { slug: 'saas/cifrao', label: 'Conocer Cifrao' } },
+          { h3: 'NousCRM', text: 'CRM de facturación para el dueño de varios negocios: cotiza, factura y cobra por WhatsApp en cada empresa, con su logo y su RUC, desde una sola cuenta.', link: { slug: 'saas/nouscrm', label: 'Conocer NousCRM' } },
         ],
       },
       {
@@ -41,7 +42,7 @@ export const saasPages: PageData[] = [
           { q: '¿Cómo se cobra la licencia?', a: 'Mensual, por producto. El consumo de APIs de terceros (Meta, motores de IA) se paga por uso desde tus propias cuentas, con visibilidad total y sin margen nuestro.' },
           { q: '¿Los datos de mi negocio quedan expuestos a la agencia?', a: 'No. Cada cliente opera en su propia cuenta, con su información y sus credenciales de Meta y de IA. Nosotros configuramos y damos soporte; la operación diaria y los datos son tuyos.' },
           { q: '¿Puedo empezar con un solo producto y sumar los demás después?', a: 'Sí, y es lo más común. Muchos arrancan con WapyCRM o ChatMantis para ordenar la venta por WhatsApp, y luego suman Cifrao cuando la contabilidad se vuelve el cuello de botella. No hay que contratarlos todos de golpe.' },
-          { q: '¿Y si ya tengo una web hecha por otra agencia?', a: 'No hay problema. Los tres SaaS se conectan a cualquier web moderna. Si tu sitio actual complica la integración o ya pide un cambio, podemos revisarlo desde <a href="/servicios/redisenio-web-panama/">rediseño web</a>, pero no es requisito para empezar.' },
+          { q: '¿Y si ya tengo una web hecha por otra agencia?', a: 'No hay problema. Nuestros SaaS se conectan a cualquier web moderna. Si tu sitio actual complica la integración o ya pide un cambio, podemos revisarlo desde <a href="/servicios/redisenio-web-panama/">rediseño web</a>, pero no es requisito para empezar.' },
           { q: '¿Cuánto cuestan y qué diferencia hay con contratar un desarrollo?', a: 'Son productos por suscripción mensual, así que arrancas sin proyecto de por medio. Un desarrollo a medida empieza en $2,900 y te deja algo tuyo; una suscripción te deja operando esta semana. La regla simple: si tu necesidad es la de siempre, suscripción; si tu proceso es raro y es tu ventaja, desarrollo. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene un SaaS nuestro?', a: 'Cuando ya tienes una herramienta que tu equipo domina y usa. Cambiar de sistema cuesta semanas de adaptación, y ese costo rara vez lo paga una mejora de funciones. Cámbiate cuando lo que tienes te está frenando de verdad, no por probar.' },
           { q: '¿Qué se paga aparte de la suscripción?', a: 'Los costos de terceros que consuma el producto: la API de WhatsApp Business la factura Meta, y el consumo de modelos de IA se cobra por uso. Nosotros no los intermediamos ni les cargamos comisión. Las suscripciones no incluyen ITBMS (7%). Si en vez de suscripción prefieres algo tuyo, un desarrollo a medida arranca en $2,900.' },
@@ -50,11 +51,12 @@ export const saasPages: PageData[] = [
       {
         type: 'cards',
         h2: 'Para quién es cada producto',
-        intro: 'Los tres resuelven problemas distintos. Esta es la forma corta de saber por dónde empezar.',
+        intro: 'Cada uno resuelve un problema distinto. Esta es la forma corta de saber por dónde empezar.',
         items: [
           { h3: 'Te escriben más de lo que puedes atender', text: 'Si WhatsApp e Instagram se te llenan de las mismas preguntas y pierdes mensajes, empieza por ChatMantis: la IA responde lo repetitivo y tu equipo atiende lo que vale.', link: { slug: 'saas/chatmantis', label: 'Ver ChatMantis' } },
           { h3: 'Vendes bien pero se te caen los seguimientos', text: 'Si el problema no es recibir consultas sino cerrarlas, WapyCRM ordena cada chat en un embudo con etapa y responsable para que nada quede sin respuesta.', link: { slug: 'saas/wapycrm', label: 'Ver WapyCRM' } },
           { h3: 'No sabes cuánto te deben ni cuánto ganas', text: 'Si la contabilidad vive en una hoja de cálculo que nadie concilia, Cifrao pone facturación, gastos y cuentas por cobrar en un sistema que sí avisa.', link: { slug: 'saas/cifrao', label: 'Ver Cifrao' } },
+          { h3: 'Tienes varios negocios y cobras por WhatsApp', text: 'Si facturas dos o tres empresas con Excel y persigues pagos de memoria, NousCRM te deja cotizar y facturar cada una con su identidad y ver lo vencido de todas en una sola lista.', link: { slug: 'saas/nouscrm', label: 'Ver NousCRM' } },
         ],
       },
       {
@@ -456,5 +458,110 @@ export const saasPages: PageData[] = [
       },
     ],
     cta: { h2: 'Pide una demo de Cifrao', wa: 'Hola, quiero una demo de Cifrao.' },
+  },
+
+  /* ---------- NOUSCRM ----------
+     Fuente: kit de ventas interno (public/propuestas/nimbuscrm-kit-ventas/).
+     No emite factura electrónica DGI, no lleva inventario, no es POS, no se
+     conecta al banco ni envía mensajes solo. No prometer nada de eso. */
+  {
+    slug: 'saas/nouscrm',
+    parent,
+    title: 'NousCRM | Facturación y Cobros por WhatsApp para Varias Empresas en Panamá',
+    description: 'NousCRM: cotiza, factura y cobra por WhatsApp en varias empresas con una sola cuenta. Cada marca con su logo, su RUC y su numeración. ITBMS del 7% de fábrica.',
+    h1: 'NousCRM',
+    breadcrumb: 'NousCRM',
+    heroCtas: [
+      { label: 'Agendar demostración', href: '/contacto/', primary: true },
+      { label: 'Visitar nouscrm.app', href: 'https://nouscrm.app' },
+    ],
+    lead: [
+      'El CRM de facturación para el dueño que tiene tres negocios y cobra por WhatsApp.',
+      'En Panamá es lo normal: el mismo dueño tiene la constructora, la tienda y el alquiler, y cada una factura con su propia identidad. NousCRM cotiza, factura y te dice quién te debe en todas ellas <strong>con una sola cuenta</strong>: cada marca sale con su logo, sus colores, su RUC y su propia serie de numeración, y tu cliente abre su factura desde el chat, sin cuenta y sin contraseña.',
+    ],
+    blocks: [
+      {
+        type: 'checklist',
+        h2: 'Qué hace NousCRM',
+        items: [
+          'Varias empresas en una cuenta, cada una con su logo, RUC y numeración',
+          'Cotizaciones que se convierten en factura sin volver a escribir',
+          'ITBMS del 7% por línea y RUC con dígito verificador',
+          'Enlace del documento que el cliente abre sin cuenta, y que puedes desactivar',
+          'Abonos parciales: el estado de cobro sale del saldo, no de una casilla',
+          'Lista de cobro con lo vencido de todas tus marcas y el recordatorio listo para WhatsApp',
+          'Mensualidades que se facturan solas cada periodo',
+          'Informes de facturado contra cobrado, mes a mes',
+          'Accesos por rol: dueño, administrador y solo lectura para tu contador',
+          'Exportación a CSV de clientes, facturas, cotizaciones y abonos',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Cobrar por donde de verdad se cobra aquí',
+        paragraphs: [
+          'El botón de WhatsApp no abre un chat vacío: el mensaje ya viene redactado con el número del documento, el monto, el saldo, la fecha de vencimiento y un enlace. Tu cliente lo toca y ve el PDF. No le pide registrarse ni iniciar sesión.',
+          'Esa es la diferencia entera. Casi todos los sistemas mandan un enlace que pide cuenta, y el cliente que ya se sentía perseguido abandona ahí. El PDF adjunto por correo, por su parte, nadie lo abre.',
+          'En la pantalla <strong>Cobrar</strong> ves lo vencido de todas tus marcas, lo más viejo primero, con el saldo y los días de mora. Un toque abre tu WhatsApp con el recordatorio escrito, y lo mandas tú, desde tu número.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'No se le puede mentir sobre el dinero',
+        paragraphs: [
+          'En NousCRM no existe el botón de «marcar como pagada». El estado de cada factura (sin pagar, parcial, pagada, vencida) se deriva del saldo y de la fecha, así que no puede haber una factura pagada con saldo abierto.',
+          'El dinero se guarda en centavos enteros, sin decimales que se pierdan. La numeración se toma bajo bloqueo: dos personas facturando a la vez no pueden sacar el mismo número ni dejar un hueco en la serie. Y cada documento guarda su bitácora de quién le hizo qué y cuándo.',
+          'Las fechas y los vencimientos van en la hora de Panamá. Parece un detalle hasta que un sistema configurado en otra zona marca vencida a las 7 de la noche una factura que vence hoy.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Se opera también hablando',
+        paragraphs: [
+          'Las operaciones del CRM están expuestas como herramientas que un asistente de IA puede usar, con los mismos permisos y los mismos límites que la pantalla. Un asistente conectado puede cotizar, facturar, registrar un abono o contestar «¿cuánto me deben?».',
+          'Es un módulo aparte: no hace falta para usar NousCRM, pero está ahí cuando prefieras preguntarle al CRM en vez de buscar en el CRM.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Lo que NousCRM no hace',
+        paragraphs: [
+          'Preferimos decirlo antes de la demo. <strong>NousCRM no emite factura electrónica autorizada por la DGI</strong>: produce documentos en PDF con todos tus datos fiscales, válidos como cotización, factura interna y comprobante de cobro. Si ya estás obligado a factura electrónica, NousCRM lleva el negocio (cotizaciones, cobros, mora, mensualidades) y la emisión fiscal sigue por donde va hoy.',
+          'Tampoco lleva inventario, ni planilla, ni es punto de venta, ni se conecta al banco: los abonos se anotan con su comprobante. Y no le escribe a nadie por su cuenta: deja el recordatorio listo y lo mandas tú. Si lo que necesitas es conversar con tus clientes por WhatsApp de ida y vuelta, eso lo resuelve <a href="https://wazacrm.com" target="_blank" rel="noopener">WazaCRM</a>.',
+        ],
+      },
+      {
+        type: 'faq',
+        h2: 'Preguntas frecuentes',
+        items: [
+          { q: '¿NousCRM es factura fiscal?', a: 'Es tu documento con tus datos fiscales, y sirve para cotizar, cobrar y llevar el control. No es un proveedor autorizado de facturación electrónica y no genera CUFE: la factura electrónica de la DGI sigue por donde la haces hoy.' },
+          { q: '¿Cuántas empresas puedo llevar?', a: 'Varias, desde una sola cuenta. Cada marca tiene su nombre legal, RUC con dígito verificador, logo, colores, pie de documento y su propia serie de numeración, y se cambia de marca desde el encabezado sin salir de la sesión. Los datos de cada marca están separados en la base de datos.' },
+          { q: '¿Mi cliente tiene que crear una cuenta para ver la factura?', a: 'No. Cada documento tiene un enlace propio que abre el PDF sin cuenta. Vive 90 días y lo puedes desactivar en cualquier momento si lo mandaste al número equivocado.' },
+          { q: '¿Manda los recordatorios de cobro solo?', a: 'No. NousCRM deja el recordatorio escrito, con el saldo, los días de mora y el enlace, y lo mandas tú desde tu WhatsApp. No hay envíos automáticos ni de noche ni de día.' },
+          { q: '¿Mi contador puede entrar?', a: 'Sí, con acceso de solo lectura: ve lo que necesita sin poder tocar nada. Se invita por enlace y cada persona pone su propia contraseña, así que nunca compartes la tuya. Además puedes exportar clientes, facturas, cotizaciones y abonos a CSV.' },
+          { q: '¿Hay que instalar una app?', a: 'No. Funciona en el navegador del teléfono y de la computadora, y está pensado para usarse desde el celular. No hay nada que descargar de la tienda.' },
+          { q: '¿Cuánto cuesta?', a: 'Suscripción mensual. El módulo para operarlo con IA se cobra aparte. Pide una demostración y te damos el precio según cuántas marcas llevas. Los precios no incluyen ITBMS (7%).' },
+        ],
+      },
+      {
+        type: 'cards',
+        h2: 'Para quién es NousCRM',
+        intro: 'Para el dueño que hoy factura con Excel y cobra de memoria.',
+        items: [
+          { h3: 'Dueños de varios negocios', text: 'La constructora, la tienda y el alquiler, cada uno facturando con su propia cara y su propio correlativo, sin pagar tres suscripciones ni entrar tres veces.' },
+          { h3: 'Servicios con mensualidad', text: 'Mantenimientos, alquileres, igualas: las plantillas dicen qué se cobra cada mes, a quién y qué día, y los periodos sin facturar se detectan solos.' },
+          { h3: 'Quien cobra por WhatsApp', text: 'Si tus clientes pagan por transferencia o Yappy después de que les escribes, NousCRM te dice a quién escribirle hoy y te deja el mensaje listo.' },
+        ],
+      },
+      {
+        type: 'related',
+        items: [
+          { slug: 'saas/cifrao', label: 'Cifrao' },
+          { slug: 'saas/wapycrm', label: 'WapyCRM' },
+          { slug: 'saas', label: 'Todos los SaaS' },
+        ],
+      },
+    ],
+    cta: { h2: 'Pide una demo de NousCRM', wa: 'Hola, quiero una demo de NousCRM.' },
   },
 ];

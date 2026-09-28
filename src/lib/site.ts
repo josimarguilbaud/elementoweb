@@ -174,6 +174,7 @@ export const saas: (NavLink & { blurb: string })[] = [
   { slug: 'saas/chatmantis', label: 'ChatMantis', blurb: 'Omnicanalidad con IA: WhatsApp, Instagram y web en una bandeja.' },
   { slug: 'saas/wapycrm', label: 'WapyCRM', blurb: 'CRM de ventas construido alrededor de WhatsApp.' },
   { slug: 'saas/cifrao', label: 'Cifrao', blurb: 'Software contable para empresas en Panamá.' },
+  { slug: 'saas/nouscrm', label: 'NousCRM', blurb: 'Cotiza, factura y cobra por WhatsApp en varias empresas con una sola cuenta.' },
 ];
 
 /* Enlaces de texto del header (además de los 4 desplegables). Portafolio salió
@@ -317,6 +318,7 @@ export const portfolioCats = [
   { key: 'corporativo', label: 'Web corporativa' },
   { key: 'landing', label: 'Landing' },
   { key: 'turismo', label: 'Turismo' },
+  { key: 'saas', label: 'SaaS propios' },
 ];
 export const portfolio = [
   { t: 'San Blas Full', cat: 'turismo', catLabel: 'Turismo · Tours', tag: 'Turismo', year: '2025', featured: true, img: '/portfolio/sanblasfull.jpg', href: 'https://sanblasfull.com', desc: 'Sitio multi-idioma para tours de un día a San Blas: selector de tour, reserva con depósito y soporte por WhatsApp. Diseñado para convertir al viajero en minutos.' },
@@ -328,7 +330,8 @@ export const portfolio = [
   { t: 'La Vida es Bella', cat: 'turismo', catLabel: 'Turismo · Hospedaje', tag: 'Hospedaje', year: '2026', img: '/portfolio/lavidaesbella.jpg', href: 'https://lavidaesbellapanama.com', desc: 'Sitio para una cabaña de montaña en Aires de Chicá, Chame, con calculadora de estadía, tarifas claras por día de la semana y reservas directas por WhatsApp.' },
   { t: 'Panamá Worldwide Express', cat: 'corporativo', catLabel: 'Web corporativa', tag: 'Logística', year: '2026', img: '/portfolio/panamaworldwideexpress.jpg', href: 'https://panamaworldwideexpress.com/es/', desc: 'Sitio para una empresa de mudanzas y carga internacional en Panamá, con once servicios (mudanzas, carga aérea, marítima y terrestre, aduana, relocation) y corredores por destino con tiempos estimados.' },
   { t: 'Grupo Viesa', cat: 'corporativo', catLabel: 'Web corporativa', tag: 'Consultoría', year: '2025', img: '/portfolio/grupoviesa.jpg', href: 'https://grupoviesa.com', desc: 'Web corporativa para una firma de consultoría estratégica y administrativa en Panamá, con 20 años de experiencia y seis servicios: estrategia, finanzas, contabilidad, planillas, RRHH y outsourcing.' },
-  { t: 'WazaCRM', cat: 'corporativo', catLabel: 'SaaS propio', tag: 'CRM', year: '2026', img: '/portfolio/wazacrm.jpg', href: 'https://wazacrm.com', desc: 'Sitio del CRM de WhatsApp con IA que desarrollamos nosotros mismos: agente que atiende, cotiza y cobra sobre la API oficial de Meta, con bandeja compartida y pipeline de ventas.' },
+  { t: 'WazaCRM', cat: 'saas', catLabel: 'SaaS propio', tag: 'CRM', year: '2026', img: '/portfolio/wazacrm.jpg', href: 'https://wazacrm.com', desc: 'Sitio del CRM de WhatsApp con IA que desarrollamos nosotros mismos: agente que atiende, cotiza y cobra sobre la API oficial de Meta, con bandeja compartida y pipeline de ventas.' },
+  { t: 'NousCRM', cat: 'saas', catLabel: 'SaaS propio', tag: 'Facturación', year: '2026', img: '/portfolio/nouscrm.jpg', href: 'https://nouscrm.app', desc: 'CRM de facturación que desarrollamos nosotros para el dueño de varios negocios: cada marca cotiza y factura con su logo, su RUC y su numeración desde una sola cuenta, y el cliente abre su factura desde WhatsApp sin crear cuenta.' },
 ];
 
 export const url = (slug: string) => (slug === '' ? '/' : `/${slug}/`);

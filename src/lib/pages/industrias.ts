@@ -945,7 +945,7 @@ export const industriasPages: PageData[] = [
           { h3: 'Una página por proyecto', text: 'Cada desarrollo recibe su propia página con identidad, ubicación, renders y modelos disponibles. Los proyectos no se amontonan en una sola sección.' },
           { h3: 'Fichas por modelo', text: 'Detallamos cada modelo con plano, metraje, acabados y precio desde, para que el comprador entienda exactamente qué está separando.' },
           { h3: 'Bitácora de avance', text: 'Montamos la bitácora de obra con fotos fechadas que tu equipo actualiza en minutos. Es la prueba de que el proyecto avanza y tu mejor razón para reactivar interesados.' },
-          { h3: 'Captación conectada a ventas', text: 'Los formularios de preventa y el WhatsApp con el proyecto ya referenciado entregan el lead directo a tu equipo o a WapyCRM para el seguimiento.' },
+          { h3: 'Captación conectada a ventas', text: 'Los formularios de preventa y el WhatsApp con el proyecto ya referenciado entregan el lead directo a tu equipo o a ChatMantis para el seguimiento.' },
         ],
       },
       {
@@ -1027,7 +1027,7 @@ export const industriasPages: PageData[] = [
         items: [
           { q: '¿Cuánto cuesta la web de una constructora?', a: 'Depende del número de proyectos activos. La estructura típica (sitio institucional más una página completa por proyecto) parte del rango corporativo ($950) y crece con cada proyecto y sus fichas.' },
           { q: '¿Podemos actualizar el avance de obra nosotros?', a: 'Sí, es el diseño: tu equipo sube fotos y notas desde el panel en minutos. Una bitácora que depende de la agencia termina abandonada, y abandonada es peor que no tenerla.' },
-          { q: '¿Manejan la captación de preventa?', a: 'La web capta y filtra: formularios por proyecto, WhatsApp con el proyecto ya referenciado y entrega directa a tu CRM o a <a href="/saas/wapycrm/">WapyCRM</a> para el seguimiento comercial.' },
+          { q: '¿Manejan la captación de preventa?', a: 'La web capta y filtra: formularios por proyecto, WhatsApp con el proyecto ya referenciado y entrega directa a tu CRM o a <a href="/saas/chatmantis/">ChatMantis</a> para el seguimiento comercial.' },
           { q: '¿Qué pasa con la página del proyecto cuando se vende todo?', a: 'La convertimos en pieza de trayectoria: pasa a "proyectos entregados" con fecha, ubicación y fotos de lo construido. Ese historial es lo que da confianza para vender el siguiente desarrollo.' },
           { q: '¿Sirve para una constructora que hace obra a la medida, no promociones?', a: 'Sí, cambia el enfoque: en vez de fichas de modelos, el peso va al portafolio de obras entregadas, el proceso de trabajo y el cotizador de proyecto. La confianza sigue construyéndose con obra documentada.' },
           { q: '¿Pueden incluir recorridos virtuales de los modelos?', a: 'Sí, cuando el proyecto los tiene. En preventa un recorrido 360 de un apartamento modelo ayuda al comprador a imaginarse el espacio antes de que exista físicamente.' },
@@ -1044,7 +1044,7 @@ export const industriasPages: PageData[] = [
         items: [
           { slug: 'blog/diseno-web-para-constructoras-panama', label: 'Guía: diseño web para constructoras' },
           { slug: 'industrias/diseno-web-bienes-raices-panama', label: 'Web para Bienes Raíces' },
-          { slug: 'saas/wapycrm', label: 'WapyCRM' },
+          { slug: 'saas/chatmantis', label: 'ChatMantis' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
         ],
       },

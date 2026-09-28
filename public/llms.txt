@@ -44,7 +44,7 @@ Estas páginas están escritas para responder preguntas concretas y son las más
 
 - [SaaS](https://elementoweb.com/saas/): software propio que operamos y vendemos por suscripción.
 - [ChatMantis](https://elementoweb.com/saas/chatmantis/): CRM de WhatsApp con bot de IA, bandeja compartida y campañas.
-- [WapyCRM](https://elementoweb.com/saas/wapycrm/): CRM ligero para equipos que venden por WhatsApp.
+- [NousCRM](https://elementoweb.com/saas/nouscrm/): cotizaciones y facturas con tu logo, cobros por WhatsApp sin que el cliente cree cuenta.
 - [Cifrão](https://elementoweb.com/saas/cifrao/): facturación y control de cobros.
 
 ## La empresa

@@ -279,7 +279,7 @@ export const blog5: PageData[] = [
         h2: 'Cuánto cuesta y cómo no gastar de más',
         paragraphs: [
           'La regla de oro es no comprar tecnología por moda. Antes de invertir, definí qué problema concreto vas a resolver y cómo vas a saber si funcionó. Si no puedes medir el resultado, probablemente no lo necesitas todavía.',
-          'Nuestras plataformas propias están pensadas justo para pymes: <a href="/saas/chatmantis/">ChatMantis</a> para atención con IA en web y WhatsApp, <a href="/saas/wapycrm/">WapyCRM</a> para ordenar y dar seguimiento a tus ventas por WhatsApp, y <a href="/saas/cifrao/">Cifrao</a> para la parte contable. La idea no es que uses todo, sino lo que resuelve tu dolor de hoy.',
+          'Nuestras plataformas propias están pensadas justo para pymes: <a href="/saas/chatmantis/">ChatMantis</a> para atención con IA en web y WhatsApp, <a href="/saas/nouscrm/">NousCRM</a> para cotizar, facturar y cobrar por WhatsApp, y <a href="/saas/cifrao/">Cifrao</a> para la parte contable completa. La idea no es que uses todo, sino lo que resuelve tu dolor de hoy.',
           'Si no tienes claro por dónde empezar, esa conversación es gratis. Escríbenos desde <a href="/contacto/">contacto</a> y, con honestidad, a veces la respuesta es "todavía no necesitas IA para esto, arregla primero aquello". Preferimos eso a venderte algo que no vas a aprovechar.',
         ],
       },
@@ -489,7 +489,7 @@ export const blog5: PageData[] = [
         h2: 'Cuándo dar el paso a un CRM',
         paragraphs: [
           'No todo negocio necesita un CRM desde el día uno. Si atiendes pocos clientes y los tienes todos en la cabeza, quizá aún no. La señal de que ya lo necesitas es clara: cuando empiezas a olvidar seguimientos, cuando dos personas responden al mismo cliente sin saberlo, o cuando la pregunta "¿en qué quedamos con este?" no tiene respuesta rápida.',
-          'Para eso construimos <a href="/saas/wapycrm/">WapyCRM</a>, un CRM de ventas pensado para WhatsApp y para el mercado panameño: ordena tus conversaciones en un embudo, no pierde el historial y te ayuda a dar seguimiento sin que se te escape nadie. Y si además quieres atención automática con IA, <a href="/saas/chatmantis/">ChatMantis</a> suma el chatbot y el CRM en uno.',
+          'Para eso construimos <a href="/saas/chatmantis/">ChatMantis</a>: guarda cada conversación de WhatsApp como un contacto con su historial, permite que varios agentes atiendan el mismo número sin pisarse y escala a tu equipo con todo el contexto cuando el caso lo pide. Y cuando además necesitas cotizar y cobrar, <a href="/saas/nouscrm/">NousCRM</a> arma la cotización con tu logo y la convierte en factura con un clic.',
           'Si quieres profundizar en el método de venta por chat, tenemos las guías de <a href="/blog/como-vender-por-whatsapp-en-panama/">cómo vender por WhatsApp en Panamá</a>. Y si no sabes cuál herramienta te conviene, escríbenos desde <a href="/contacto/">contacto</a> y lo vemos con calma según tu volumen real.',
         ],
       },
@@ -512,7 +512,7 @@ export const blog5: PageData[] = [
       {
         type: 'related',
         items: [
-          { slug: 'saas/wapycrm', label: 'WapyCRM' },
+          { slug: 'saas/nouscrm', label: 'NousCRM' },
           { slug: 'blog/como-vender-por-whatsapp-en-panama', label: 'Cómo vender por WhatsApp' },
           { slug: 'blog/como-atender-clientes-24-7-con-un-asistente-de-ia', label: 'Atender clientes 24/7 con IA' },
           { slug: 'saas/chatmantis', label: 'ChatMantis' },

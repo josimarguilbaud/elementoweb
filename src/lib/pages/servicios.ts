@@ -59,7 +59,7 @@ const catalogGroups = [
     hub: 'saas',
     items: [
       { h3: 'ChatMantis', text: 'Omnicanalidad con IA: WhatsApp, Instagram y el chat de tu web en una sola bandeja, con asistentes entrenados con tu información.', link: { slug: 'saas/chatmantis', label: 'Conocer ChatMantis' } },
-      { h3: 'WapyCRM', text: 'CRM de ventas construido alrededor de WhatsApp: embudos, seguimiento automático y cierre asistido.', link: { slug: 'saas/wapycrm', label: 'Conocer WapyCRM' } },
+      { h3: 'NousCRM', text: 'Cotizaciones y facturas con tu logo, que tu cliente abre y paga desde WhatsApp sin crear cuenta.', link: { slug: 'saas/nouscrm', label: 'Conocer NousCRM' } },
       { h3: 'Cifrao', text: 'Software contable para empresas en Panamá: facturación, conciliación y cuentas por cobrar que avisan solas.', link: { slug: 'saas/cifrao', label: 'Conocer Cifrao' } },
     ],
   },

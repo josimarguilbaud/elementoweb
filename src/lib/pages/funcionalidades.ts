@@ -341,7 +341,7 @@ export const funcionalidades: PageData[] = [
         items: [
           { h3: 'Negocios que agendan citas', text: 'El asistente responde dudas y agenda directo en tu sistema de reservas, sin que nadie coordine por chat.', link: { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' } },
           { h3: 'Tiendas y catálogos', text: 'Responde por talla, precio y disponibilidad, y deriva al cobro con Yappy cuando el cliente decide comprar.', link: { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Cobro con Yappy' } },
-          { h3: 'Equipos que quieren un CRM ordenado', text: 'Cada conversación queda registrada con su historial. Si necesitas más gestión comercial, se integra con nuestro CRM.', link: { slug: 'saas/wapycrm', label: 'WapyCRM' } },
+          { h3: 'Negocios que necesitan cobrar', text: 'Cada conversación queda registrada con su historial. Si además necesitas cotizar y cobrar, se integra con NousCRM.', link: { slug: 'saas/nouscrm', label: 'NousCRM' } },
         ],
       },
       {
@@ -354,7 +354,7 @@ export const funcionalidades: PageData[] = [
         items: [
           { slug: 'inteligencia-artificial-para-empresas-panama', label: 'Ecosistema de IA Empresarial' },
           { slug: 'saas/chatmantis', label: 'ChatMantis (el producto)' },
-          { slug: 'saas/wapycrm', label: 'WapyCRM' },
+          { slug: 'saas/nouscrm', label: 'NousCRM' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' },
         ],
       },

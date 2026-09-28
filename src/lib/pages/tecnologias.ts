@@ -353,7 +353,7 @@ export const tecnologias: PageData[] = [
     service: { type: 'Desarrollo web a medida con Vue y React' },
     lead: [
       'Cuando la plantilla se queda corta, se programa. Plataformas, portales de clientes e integraciones con el stack que sostiene nuestros propios productos.',
-      'La credencial importa: no vendemos tecnología que solo conocemos de talleres. ChatMantis, WapyCRM y Cifrao (nuestros tres SaaS) corren en producción sobre Vue, React y Laravel, con clientes reales y datos que no se pueden perder. Ese es el estándar con el que construimos lo tuyo.',
+      'La credencial importa: no vendemos tecnología que solo conocemos de talleres. ChatMantis, NousCRM y Cifrao (nuestros tres SaaS) corren en producción sobre Vue, React y Laravel, con clientes reales y datos que no se pueden perder. Ese es el estándar con el que construimos lo tuyo.',
     ],
     blocks: [
       {

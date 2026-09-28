@@ -102,7 +102,7 @@ export const marketingPages: PageData[] = [
         items: [
           { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing Pages' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
-          { slug: 'saas/wapycrm', label: 'WapyCRM' },
+          { slug: 'saas/chatmantis', label: 'ChatMantis' },
           { slug: 'blog/marketing-de-contenidos-para-redes-sociales-panama', label: 'Marketing de contenidos' },
         ],
       },
@@ -674,7 +674,7 @@ export const marketingPages: PageData[] = [
         items: [
           { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones n8n' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas Online' },
-          { slug: 'saas/wapycrm', label: 'WapyCRM' },
+          { slug: 'saas/chatmantis', label: 'ChatMantis' },
           { slug: 'blog/email-marketing-para-negocios-en-panama', label: 'Guía de email marketing' },
         ],
       },
@@ -959,7 +959,7 @@ export const marketingPages: PageData[] = [
         items: [
           { slug: 'inteligencia-artificial-para-empresas-panama', label: 'Ecosistema de IA Empresarial' },
           { slug: 'marketing/email-marketing-panama', label: 'Email Marketing' },
-          { slug: 'saas/wapycrm', label: 'WapyCRM' },
+          { slug: 'saas/chatmantis', label: 'ChatMantis' },
           { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Desarrollo a Medida' },
           { slug: 'blog/automatizar-seguimiento-clientes-panama', label: 'Automatizar el seguimiento' },
           { slug: 'blog/email-marketing-para-negocios-en-panama', label: 'Guía de email marketing' },

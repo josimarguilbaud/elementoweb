@@ -368,7 +368,7 @@ export const industrias2a: PageData[] = [
         h2: 'Captar clientes B2B, no vender al consumidor final',
         paragraphs: [
           'Una importadora no vende como una tienda: rara vez cobra en línea al consumidor final. Su web tiene otro trabajo, más valioso: captar al comprador mayorista y darle todo para decidir contactarte. Por eso el objetivo no es un carrito, sino una solicitud de cotización o de apertura de cuenta bien filtrada, que llegue a tu equipo comercial con el cliente ya calificado.',
-          'Cuando el modelo lo pide, montamos una zona privada para clientes registrados: precios mayoristas, disponibilidad y pedidos visibles solo para quien ya tiene cuenta, protegiendo tus condiciones de la competencia y del consumidor final. El resto del sitio hace de vitrina pública que atrae y filtra. Para el seguimiento de esos prospectos, la web puede entregar el lead directo a un CRM y, si quieres automatizar respuestas, sumar un <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">asistente con IA</a> que atiende las consultas repetidas de disponibilidad y líneas.',
+          'Cuando el modelo lo pide, montamos una zona privada para clientes registrados: precios mayoristas, disponibilidad y pedidos visibles solo para quien ya tiene cuenta, protegiendo tus condiciones de la competencia y del consumidor final. El resto del sitio hace de vitrina pública que atrae y filtra. Para el seguimiento de esos prospectos, la web puede entregar el lead directo a un CRM y, si quieres automatizar respuestas, sumar un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">asistente con IA</a> que atiende las consultas repetidas de disponibilidad y líneas.',
         ],
       },
       {

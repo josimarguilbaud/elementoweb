@@ -172,7 +172,7 @@ export const core: PageData[] = [
     creds: true,
     lead: [
       'Somos una software house panameña que diseña webs. La diferencia se nota en cómo construimos: con la disciplina de quien mantiene su propio producto.',
-      'Tres credenciales nos definen y las tres son verificables. Somos Meta Verified Tech Provider: Meta validó oficialmente nuestra capacidad técnica para integrar las APIs de WhatsApp e Instagram. Operamos tres SaaS propios (ChatMantis, NousCRM y Cifrao) con clientes reales. Y todo el desarrollo es de equipo interno: lo que te vendemos, lo hacemos nosotros.',
+      'Tres credenciales nos definen y las tres son verificables. Somos Meta Verified Tech Provider: Meta validó oficialmente nuestra capacidad técnica para integrar las APIs de WhatsApp e Instagram. Operamos tres SaaS propios (WazaCRM, NousCRM y Cifrao) con clientes reales. Y todo el desarrollo es de equipo interno: lo que te vendemos, lo hacemos nosotros.',
     ],
     heroCtas: [
       { label: 'Agendar una llamada', href: '/contacto/', primary: true },

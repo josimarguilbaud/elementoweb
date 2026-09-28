@@ -118,7 +118,7 @@ export const cols: { title: string; hub: string; links: NavLink[] }[] = [
     links: [
       { slug: 'inteligencia-artificial-para-empresas-panama', label: 'Ecosistema de IA Empresarial' },
       { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y Pasarelas de Pago' },
-      { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA para tu Web' },
+      { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA para tu Web' },
       { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas y Citas Online' },
     ],
   },
@@ -171,7 +171,7 @@ export const marketing: NavLink[] = [
 ];
 
 export const saas: (NavLink & { blurb: string })[] = [
-  { slug: 'saas/chatmantis', label: 'ChatMantis', blurb: 'Omnicanalidad con IA: WhatsApp, Instagram y web en una bandeja.' },
+  { slug: 'saas/wazacrm', label: 'WazaCRM', blurb: 'CRM de WhatsApp con IA: atiende, cotiza, agenda y cobra en piloto automático.' },
   { slug: 'saas/nouscrm', label: 'NousCRM', blurb: 'Cotizaciones y facturas con tu logo, cobros por WhatsApp.' },
   { slug: 'saas/cifrao', label: 'Cifrao', blurb: 'Software contable para empresas en Panamá.' },
 ];

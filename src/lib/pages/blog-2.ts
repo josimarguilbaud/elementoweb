@@ -380,7 +380,7 @@ export const blog2: PageData[] = [
         h2: 'Automatiza con un chatbot de IA sin perder el trato humano',
         paragraphs: [
           'Llega un punto en que responder todo a mano es insostenible. Ahí entra un <strong>chatbot con inteligencia artificial</strong>, que atiende las preguntas frecuentes al instante, a cualquier hora, y solo te pasa la conversación cuando de verdad hace falta una persona.',
-          'Un buen chatbot no reemplaza el trato humano, lo protege. Se ocupa del "¿cuánto cuesta?", "¿hacen envíos?" y "¿aceptan Yappy?" para que tú te concentres en cerrar las ventas que importan. Eso es justo lo que hace <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">ChatMantis, nuestro chatbot de IA</a>: responde en tu tono, con tu información, y no deja a nadie esperando de madrugada.',
+          'Un buen chatbot no reemplaza el trato humano, lo protege. Se ocupa del "¿cuánto cuesta?", "¿hacen envíos?" y "¿aceptan Yappy?" para que tú te concentres en cerrar las ventas que importan. Eso es justo lo que hace <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">WazaCRM, nuestro chatbot de IA</a>: responde en tu tono, con tu información, y no deja a nadie esperando de madrugada.',
           'Cuando ya vendes en volumen, también puedes dar el salto a campañas: enviar promociones y novedades a tus clientes por el canal que más abren. Eso lo cubrimos en <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp marketing masivo</a>, siempre con las reglas del juego claras para no caer en spam.',
         ],
       },
@@ -410,7 +410,7 @@ export const blog2: PageData[] = [
       {
         type: 'related',
         items: [
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbots con IA para tu web' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbots con IA para tu web' },
           { slug: 'marketing/whatsapp-marketing-masivo-panama', label: 'WhatsApp marketing masivo' },
           { slug: 'blog/chatbots-con-ia-para-negocios-en-panama', label: 'Chatbots con IA para negocios' },
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online en Panamá' },

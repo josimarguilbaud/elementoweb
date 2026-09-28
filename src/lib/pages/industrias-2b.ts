@@ -61,7 +61,7 @@ export const industrias2b: PageData[] = [
         items: [
           { h3: 'Mapeo de ramos y aseguradoras', text: 'Listamos los ramos que colocas y con qué compañías. Decidimos cuáles merecen página propia posicionable y cómo mostrar el respaldo sin convertir la web en un muro de logos.' },
           { h3: 'Redacción que aclara, no que asusta', text: 'Explicamos cada ramo en el idioma del cliente: qué cubre, qué no, cuándo conviene. Sin promesas de "el más barato" y sin jerga de póliza que espanta.' },
-          { h3: 'Solicitud de cotización que filtra', text: 'Armamos el formulario por ramo pidiendo solo lo mínimo para responder. Y si lo activas, el <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">asistente con IA</a> resuelve las dudas básicas y solo te pasa la solicitud lista para cotizar.' },
+          { h3: 'Solicitud de cotización que filtra', text: 'Armamos el formulario por ramo pidiendo solo lo mínimo para responder. Y si lo activas, el <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">asistente con IA</a> resuelve las dudas básicas y solo te pasa la solicitud lista para cotizar.' },
           { h3: 'Publicación y contenido continuo', text: 'Dejamos el blog listo para que cada pregunta frecuente se vuelva un artículo que capta clientes, y conectamos WhatsApp para la duda rápida que no espera un formulario.' },
         ],
       },
@@ -156,7 +156,7 @@ export const industrias2b: PageData[] = [
           { slug: 'blog/diseno-web-para-seguros-panama', label: 'Guía: diseño web para seguros' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño Web Corporativo' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' },
           { slug: 'industrias/diseno-web-contadores-panama', label: 'Web para Contadores' },
         ],
       },

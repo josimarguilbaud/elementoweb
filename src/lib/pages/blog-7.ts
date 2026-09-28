@@ -194,7 +194,7 @@ export const blog7: PageData[] = [
         h2: 'Qué esperar de un rediseño bien planteado',
         paragraphs: [
           'Un rediseño ordenado empieza por entender el negocio y el cliente, no por elegir colores. Se define qué debe lograr la web, se revisa qué contenido conservar, se rediseña la estructura para que cada servicio importante tenga su lugar y se construye pensando primero en el celular y en la velocidad.',
-          'El resultado no es solo "más bonito". Es una web que aparece en Google, carga rápido, guía al visitante hacia la acción y se puede administrar sin depender de nadie. Muchos negocios aprovechan el rediseño para sumar piezas que antes no tenían, como un <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbot con IA</a> o un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas</a>.',
+          'El resultado no es solo "más bonito". Es una web que aparece en Google, carga rápido, guía al visitante hacia la acción y se puede administrar sin depender de nadie. Muchos negocios aprovechan el rediseño para sumar piezas que antes no tenían, como un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> o un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas</a>.',
           'Sobre todo, un buen rediseño se cierra con una cotización por escrito y un plazo claro, para que sepas exactamente qué recibirás y cuándo. Si tienes dudas sobre a quién confiárselo, revisa nuestra guía para <a href="/blog/como-elegir-agencia-diseno-web-panama/">elegir una agencia de diseño web</a> sin arrepentirte.',
         ],
       },
@@ -408,8 +408,8 @@ export const blog7: PageData[] = [
         h2: 'Automatiza lo que hoy haces a mano',
         paragraphs: [
           'A medida que la tienda crece, hay tareas que empiezan a comerse el día: responder las mismas preguntas, recordarle al cliente su carrito, confirmar pedidos, avisar de envíos. Hacer todo eso a mano no escala, y cada mensaje que se enfría por demora es una venta que se apaga.',
-          'Aquí es donde la automatización paga sola. Un <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbot con IA</a> responde las dudas frecuentes al instante y filtra a quien está listo para comprar. Los recordatorios de carrito y las confirmaciones de pedido salen solos, sin que nadie tenga que acordarse.',
-          'Y cuando quieres vender a los clientes que ya te compraron, un buen seguimiento automatizado hace el trabajo pesado. Si te interesa, cuéntamos cómo <a href="/saas/chatmantis/">ChatMantis</a> guarda el historial de cada conversación por WhatsApp para que ningún cliente se pierda entre chats.',
+          'Aquí es donde la automatización paga sola. Un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> responde las dudas frecuentes al instante y filtra a quien está listo para comprar. Los recordatorios de carrito y las confirmaciones de pedido salen solos, sin que nadie tenga que acordarse.',
+          'Y cuando quieres vender a los clientes que ya te compraron, un buen seguimiento automatizado hace el trabajo pesado. Si te interesa, cuéntamos cómo <a href="/saas/wazacrm/">WazaCRM</a> guarda el historial de cada conversación por WhatsApp para que ningún cliente se pierda entre chats.',
         ],
       },
       {
@@ -499,7 +499,7 @@ export const blog7: PageData[] = [
         paragraphs: [
           'Aquí está la parte más rentable: rescatar al que ya se fue. Cuando alguien deja el carrito lleno, un recordatorio oportuno puede traerlo de vuelta. La herramienta más poderosa en Panamá es el WhatsApp, porque es donde la gente realmente lee y responde, seguido del correo para quienes dejaron su email.',
           'El recordatorio funciona mejor cuando es rápido, amable y útil: un mensaje a las pocas horas recordando lo que quedó en el carrito, resolviendo la posible duda y facilitando el pago con un enlace directo. A veces basta con eso; otras veces un pequeño incentivo —envío gratis, un descuento moderado— termina de convencer.',
-          'Hacer esto a mano no escala. Por eso conviene automatizarlo: un flujo que detecta el carrito abandonado y dispara el recordatorio solo, sin que nadie tenga que acordarse. <a href="/saas/chatmantis/">ChatMantis</a> o una <a href="/marketing/automatizaciones-n8n-panama/">automatización</a> hacen ese trabajo día y noche.',
+          'Hacer esto a mano no escala. Por eso conviene automatizarlo: un flujo que detecta el carrito abandonado y dispara el recordatorio solo, sin que nadie tenga que acordarse. <a href="/saas/wazacrm/">WazaCRM</a> o una <a href="/marketing/automatizaciones-n8n-panama/">automatización</a> hacen ese trabajo día y noche.',
         ],
       },
       {
@@ -531,7 +531,7 @@ export const blog7: PageData[] = [
         items: [
           { slug: 'blog/como-aumentar-ventas-tienda-online-panama', label: 'Cómo aumentar tus ventas online' },
           { slug: 'blog/como-vender-por-whatsapp-en-panama', label: 'Cómo vender por WhatsApp' },
-          { slug: 'saas/chatmantis', label: 'ChatMantis' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },
         
           { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Diseño web para retail y moda' },
@@ -810,7 +810,7 @@ export const blog7: PageData[] = [
         paragraphs: [
           'Los embudos se rompen casi siempre en dos lugares. El primero es entre el interés y la decisión: llega gente interesada, pero la web no convence, el WhatsApp tarda en responder o no hay un camino claro a la acción, y el interesado se enfría. Se repara con una web que convierta y una respuesta rápida a cada consulta.',
           'El segundo punto de fuga es después de la primera consulta. Alguien escribe, pide precio, dice "lo pienso" y desaparece. Sin un seguimiento, esa venta casi cerrada se pierde para siempre. La mayoría de las ventas no se cierran en el primer contacto, sino en el segundo o el tercero, y ahí es donde el seguimiento lo cambia todo.',
-          'Aquí la automatización marca la diferencia. Responder al instante con un <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbot con IA</a>, no dejar ninguna consulta sin seguimiento con <a href="/saas/chatmantis/">ChatMantis</a> y recordar sin ser pesado convierte fugas en ventas, sin contratar más gente.',
+          'Aquí la automatización marca la diferencia. Responder al instante con un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a>, no dejar ninguna consulta sin seguimiento con <a href="/saas/wazacrm/">WazaCRM</a> y recordar sin ser pesado convierte fugas en ventas, sin contratar más gente.',
         ],
       },
       {
@@ -912,9 +912,9 @@ export const blog7: PageData[] = [
         type: 'prose',
         h2: 'Las herramientas: WhatsApp, CRM y flujos',
         paragraphs: [
-          'En Panamá, el seguimiento vive en WhatsApp, porque es donde la gente lee y responde de verdad. Por eso el corazón de un buen sistema es <a href="/saas/chatmantis/">ChatMantis</a>: guarda el historial de cada conversación y dispara recordatorios para que ninguna venta se caiga por olvido.',
+          'En Panamá, el seguimiento vive en WhatsApp, porque es donde la gente lee y responde de verdad. Por eso el corazón de un buen sistema es <a href="/saas/wazacrm/">WazaCRM</a>: guarda el historial de cada conversación y dispara recordatorios para que ninguna venta se caiga por olvido.',
           'Alrededor de ese CRM se suman los flujos automáticos. Con <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones (n8n)</a> conectas tu web, tu tienda, tu calendario y tu WhatsApp, de modo que un evento —una consulta, una compra, una cita— dispare solo la acción correcta. Es la fontanería invisible que hace que todo fluya sin intervención.',
-          'Y para responder al instante y filtrar interesados, un <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbot con IA</a> atiende la primera línea. Junto, este trío —IA que responde, CRM que ordena y flujos que ejecutan— es lo que llamamos un <a href="/inteligencia-artificial-para-empresas-panama/">ecosistema de IA empresarial</a>: seguimiento que trabaja solo, 24/7.',
+          'Y para responder al instante y filtrar interesados, un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> atiende la primera línea. Junto, este trío —IA que responde, CRM que ordena y flujos que ejecutan— es lo que llamamos un <a href="/inteligencia-artificial-para-empresas-panama/">ecosistema de IA empresarial</a>: seguimiento que trabaja solo, 24/7.',
         ],
       },
       {

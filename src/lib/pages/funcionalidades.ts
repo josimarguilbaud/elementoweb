@@ -23,7 +23,7 @@ export const funcionalidades: PageData[] = [
         items: [
           { h3: 'Yappy y pasarelas de pago', text: 'Cobra en tu web como pagan los panameños: Botón de Pago Yappy oficial más tarjetas. Sin transferencias por captura de pantalla.', link: { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y Pasarelas' } },
           { h3: 'Integración de CyberSource', text: 'Si tu banco te dio las llaves de CyberSource, dejamos tu web cobrando con tarjeta de verdad: firma en el servidor, 3-D Secure 2 y confirmación por webhook.', link: { slug: 'funcionalidades/integracion-cybersource-panama', label: 'Integración CyberSource' } },
-          { h3: 'Chatbot con IA', text: 'Un asistente entrenado con tu información que responde en tu web, WhatsApp e Instagram las 24 horas. Con ChatMantis, nuestro producto.', link: { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' } },
+          { h3: 'Chatbot con IA', text: 'Un asistente entrenado con tu información que responde en tu web, WhatsApp e Instagram las 24 horas. Con WazaCRM, nuestro producto.', link: { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' } },
           { h3: 'Reservas y citas online', text: 'Tu cliente agenda solo, con disponibilidad real, recordatorios automáticos y pago anticipado si lo necesitas.', link: { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' } },
         ],
       },
@@ -58,7 +58,7 @@ export const funcionalidades: PageData[] = [
         intro: 'No todas las webs necesitan las tres. Este es el punto de partida más común por tipo de operación.',
         items: [
           { h3: 'Vendes productos o servicios', text: 'Si cobras en línea, empieza por el pago: es la funcionalidad que se paga sola. Yappy y tarjeta directo en tu web o tienda.', link: { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y Pasarelas' } },
-          { h3: 'Recibes muchas consultas', text: 'Si tu WhatsApp e Instagram no dan abasto y pierdes mensajes fuera de horario, un asistente con IA responde y califica 24/7.', link: { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' } },
+          { h3: 'Recibes muchas consultas', text: 'Si tu WhatsApp e Instagram no dan abasto y pierdes mensajes fuera de horario, un asistente con IA responde y califica 24/7.', link: { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' } },
           { h3: 'Trabajas con citas', text: 'Si tu operación vive de agenda (clínica, barbería, spa, consultoría), las reservas online liberan a tu equipo del teléfono.', link: { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' } },
         ],
       },
@@ -202,7 +202,7 @@ export const funcionalidades: PageData[] = [
         items: [
           { h3: 'Tiendas online', text: 'Cobro dentro del carrito, sin sacar al cliente de la compra. La integración viene incluida en nuestras tiendas nuevas.', link: { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas Online' } },
           { h3: 'Landing pages de un solo producto', text: 'Una página de venta con botón de pago directo convierte mejor que mandar al cliente a otro lado a pagar.', link: { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing Pages' } },
-          { h3: 'Servicios y pedidos por WhatsApp', text: 'Enlaces de pago Yappy para cerrar la venta por chat, sin tienda completa. Ideal para encargos y servicios.', link: { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Ventas por chat' } },
+          { h3: 'Servicios y pedidos por WhatsApp', text: 'Enlaces de pago Yappy para cerrar la venta por chat, sin tienda completa. Ideal para encargos y servicios.', link: { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Ventas por chat' } },
         ],
       },
       {
@@ -229,16 +229,16 @@ export const funcionalidades: PageData[] = [
 
   /* ---------- CHATBOT IA ---------- */
   {
-    slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama',
+    slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama',
     parent,
-    title: 'Chatbot con IA para tu Página Web | ChatMantis Panamá',
-    description: 'Chatbot con inteligencia artificial para tu web: responde con tu información real, capta datos y deriva a WhatsApp. Con ChatMantis, nuestro producto.',
+    title: 'Chatbot con IA para tu Página Web | WazaCRM Panamá',
+    description: 'Chatbot con inteligencia artificial para tu web: responde con tu información real, capta datos y deriva a WhatsApp. Con WazaCRM, nuestro producto.',
     h1: 'Un chatbot con IA que sí sabe de tu negocio',
     breadcrumb: 'Chatbot con IA',
     service: { type: 'Implementación de chatbots con inteligencia artificial' },
     lead: [
       'No es el robot de "presiona 1": es un asistente entrenado con tu información real que responde en tu web, WhatsApp e Instagram, a toda hora.',
-      'El visitante que pregunta y no recibe respuesta se va al competidor que sí contesta. Un asistente con IA responde en segundos, califica al interesado y entrega la conversación a tu equipo con todo el contexto. Corre sobre ChatMantis, nuestro propio producto: lo operamos, no lo revendemos.',
+      'El visitante que pregunta y no recibe respuesta se va al competidor que sí contesta. Un asistente con IA responde en segundos, califica al interesado y entrega la conversación a tu equipo con todo el contexto. Corre sobre WazaCRM, nuestro propio producto: lo operamos, no lo revendemos.',
     ],
     blocks: [
       {
@@ -308,10 +308,10 @@ export const funcionalidades: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta un chatbot con IA?', a: 'La implementación (entrenamiento con tu información, conexión de canales y pruebas) se cotiza cerrada; la licencia de ChatMantis es mensual. El consumo de la API de Meta y del motor de IA se paga por uso desde tus propias cuentas, sin margen nuestro.' },
+          { q: '¿Cuánto cuesta un chatbot con IA?', a: 'La implementación (entrenamiento con tu información, conexión de canales y pruebas) se cotiza cerrada; la licencia de WazaCRM es mensual. El consumo de la API de Meta y del motor de IA se paga por uso desde tus propias cuentas, sin margen nuestro.' },
           { q: '¿Cuánto tarda en estar funcionando?', a: 'Alrededor de 2 semanas, incluida la verificación oficial de tu número en WhatsApp (los tiempos de aprobación de Meta no dependen de nosotros, por eso los iniciamos primero).' },
           { q: '¿El cliente sabe que habla con una IA?', a: 'Sí, y es deliberado: el asistente se identifica y ofrece pasar a una persona cuando se lo piden. Ocultarlo genera desconfianza cuando el usuario lo descubre, y siempre lo descubre.' },
-          { q: '¿Qué pasa con las conversaciones?', a: 'Quedan en la bandeja de <a href="/saas/chatmantis/">ChatMantis</a> con historial único por cliente, sin importar si escribió por la web, WhatsApp o Instagram. Tu equipo retoma cualquier conversación con el contexto completo.' },
+          { q: '¿Qué pasa con las conversaciones?', a: 'Quedan en la bandeja de <a href="/saas/wazacrm/">WazaCRM</a> con historial único por cliente, sin importar si escribió por la web, WhatsApp o Instagram. Tu equipo retoma cualquier conversación con el contexto completo.' },
           { q: '¿En qué idiomas responde?', a: 'Principalmente en español de Panamá, con el tono que definas para tu marca. También puede responder en inglés si tu público lo necesita (turismo, clientes extranjeros). El idioma se ajusta al del visitante dentro de la misma conversación.' },
           { q: '¿Puedo editar lo que sabe el asistente?', a: 'Sí, y es tu responsabilidad y tu ventaja. Tú apruebas los documentos que alimentan al asistente (precios, requisitos, políticas) y los actualizas cuando cambian. Si subes un precio nuevo, el asistente responde con ese; no repite información vieja que quedó en su cabeza, porque no funciona así.' },
           { q: '¿Reemplaza a mi equipo de atención?', a: 'No, lo libera. El asistente absorbe las preguntas repetitivas y el primer contacto a toda hora; tu equipo dedica su tiempo a las conversaciones que de verdad cierran ventas. Cuando el caso lo amerita, el asistente entrega la conversación a una persona con todo el contexto ya cargado.' },
@@ -319,7 +319,7 @@ export const funcionalidades: PageData[] = [
           { q: '¿La gente no prefiere hablar con una persona?', a: 'Prefiere saber que puede. Por eso el traspaso a humano es la función más importante: siempre disponible, llevando el contexto para que nadie repita lo que ya escribió, y honesto sobre el horario si nadie va a responder hasta mañana.' },
           { q: '¿Con qué se entrena el asistente?', a: 'Con respuestas concretas a lo que la gente pregunta de verdad: precios o rangos, horarios, ubicación, qué incluye cada servicio, plazos, formas de pago. La mejor fuente son tus últimas doscientas conversaciones de WhatsApp, mucho más útil que un manual redactado desde cero.' },
           { q: '¿Cómo mido si el asistente sirve?', a: 'Por el porcentaje de conversaciones que terminó sin intervención humana, y por la lista de preguntas que no supo responder: cada una es un hueco que se puede llenar. Revisarla cada semana al principio hace que mejore rápido.' },
-          { q: '¿Qué se paga aparte del chatbot?', a: 'El bot corre sobre ChatMantis, que es producto propio y se cobra por suscripción mensual según el volumen de conversaciones. El trabajo de montarlo (entrenarlo con tu información, definir cuándo pasa a un humano, conectarlo al sitio) se cotiza una vez. Aparte van los costos de Meta por la API de WhatsApp, que factura Meta y no la agencia. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Qué se paga aparte del chatbot?', a: 'El bot corre sobre WazaCRM, que es producto propio y se cobra por suscripción mensual según el volumen de conversaciones. El trabajo de montarlo (entrenarlo con tu información, definir cuándo pasa a un humano, conectarlo al sitio) se cotiza una vez. Aparte van los costos de Meta por la API de WhatsApp, que factura Meta y no la agencia. Los precios no incluyen ITBMS (7%).' },
           { q: '¿El bot atiende los fines de semana y de madrugada?', a: 'Sí: responde los 7 días de la semana, a cualquier hora, y esa es buena parte del argumento. La mayoría de las consultas que se pierden llegan fuera de horario de oficina, cuando el cliente por fin tuvo tiempo de escribir. Lo que no hace solo es cerrar: las conversaciones que requieren decisión quedan marcadas para que una persona las retome al día siguiente.' },
         ],
       },
@@ -331,7 +331,7 @@ export const funcionalidades: PageData[] = [
           { h3: 'Reunimos tu información', text: 'Partimos de tus documentos reales: precios, requisitos, preguntas frecuentes, políticas. Solo lo que tú apruebas entra a la base de conocimiento.' },
           { h3: 'Entrenamos y afinamos el tono', text: 'Configuramos el asistente con técnica RAG y definimos su tono, sus límites y cuándo debe derivar a una persona. Probamos con preguntas reales de tu negocio.' },
           { h3: 'Conectamos tus canales', text: 'Enlazamos web, WhatsApp e Instagram con las APIs oficiales de Meta e iniciamos la verificación de tu número, que depende de los tiempos de Meta.' },
-          { h3: 'Publicamos y monitoreamos', text: 'Ponemos el asistente a atender y revisamos las primeras conversaciones para ajustar respuestas. Tú ves todo en la bandeja de ChatMantis.' },
+          { h3: 'Publicamos y monitoreamos', text: 'Ponemos el asistente a atender y revisamos las primeras conversaciones para ajustar respuestas. Tú ves todo en la bandeja de WazaCRM.' },
         ],
       },
       {
@@ -353,7 +353,7 @@ export const funcionalidades: PageData[] = [
         type: 'related',
         items: [
           { slug: 'inteligencia-artificial-para-empresas-panama', label: 'Ecosistema de IA Empresarial' },
-          { slug: 'saas/chatmantis', label: 'ChatMantis (el producto)' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM (el producto)' },
           { slug: 'saas/nouscrm', label: 'NousCRM' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' },
         ],
@@ -471,7 +471,7 @@ export const funcionalidades: PageData[] = [
         items: [
           { h3: 'Clínicas y consultorios', text: 'Dejan de perder horas coordinando citas por teléfono y reducen las ausencias con recordatorios y pago anticipado.', link: { slug: 'industrias', label: 'Diseño web por industria' } },
           { h3: 'Barberías, spas y estudios', text: 'Donde la agenda es el negocio, cada hueco cuenta. El cliente reserva a la hora que le convenga, incluso de madrugada.', link: { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Cobro anticipado' } },
-          { h3: 'Consultores y firmas', text: 'Sesiones agendadas sin ida y vuelta de correos. Si además atiendes muchas consultas previas, súmale un asistente con IA.', link: { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' } },
+          { h3: 'Consultores y firmas', text: 'Sesiones agendadas sin ida y vuelta de correos. Si además atiendes muchas consultas previas, súmale un asistente con IA.', link: { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' } },
         ],
       },
       {
@@ -488,7 +488,7 @@ export const funcionalidades: PageData[] = [
         items: [
           { slug: 'industrias/diseno-web-clinicas-salud-panama', label: 'Web para Clínicas' },
           { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Web para Restaurantes' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' },
         ],
       },
     ],

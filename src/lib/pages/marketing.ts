@@ -102,7 +102,7 @@ export const marketingPages: PageData[] = [
         items: [
           { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing Pages' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
-          { slug: 'saas/chatmantis', label: 'ChatMantis' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
           { slug: 'blog/marketing-de-contenidos-para-redes-sociales-panama', label: 'Marketing de contenidos' },
         ],
       },
@@ -485,7 +485,7 @@ export const marketingPages: PageData[] = [
           { q: '¿Cuánto cuesta manejar mis redes sociales?', a: 'Los paquetes parten desde $250 al mes según la cantidad de piezas, si incluye video y cuántas plataformas manejamos. Definimos el paquete correcto según tus objetivos, no un número al azar.' },
           { q: '¿Incluye el diseño gráfico o solo los textos?', a: 'Incluye ambos: diseño de las piezas con tu identidad visual y la redacción. El diseño gráfico es parte del servicio, no un cobro aparte.' },
           { q: '¿Producen los videos o los grabo yo?', a: 'Editamos y producimos Reels con el material que acordemos. Para algunas marcas grabamos nosotros; para otras, tú envías clips crudos y nosotros los convertimos en Reels listos. Lo definimos según tu caso.' },
-          { q: '¿Manejan también los mensajes y comentarios?', a: 'El community management (responder comentarios y mensajes) es opcional. Muchos negocios prefieren manejar la conversación con su equipo o con un <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">asistente de IA</a>; nosotros nos concentramos en el contenido.' },
+          { q: '¿Manejan también los mensajes y comentarios?', a: 'El community management (responder comentarios y mensajes) es opcional. Muchos negocios prefieren manejar la conversación con su equipo o con un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">asistente de IA</a>; nosotros nos concentramos en el contenido.' },
           { q: '¿Cada cuánto se debe publicar?', a: 'Más que la cantidad, importa la consistencia. Preferimos un ritmo sostenible de piezas bien hechas antes que saturar una semana y desaparecer la siguiente. El algoritmo premia a las cuentas activas de forma constante, así que definimos una frecuencia que podamos mantener todos los meses, no solo el primero.' },
           { q: '¿El contenido en redes ayuda al SEO?', a: 'De forma indirecta. Las redes no posicionan en Google por sí solas, pero construyen marca y generan búsquedas de tu nombre, que sí son una señal positiva. El contenido que de verdad mueve tu posicionamiento vive en tu web; ahí entra nuestro trabajo de <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a>.' },
           { q: '¿Puedo usar el mismo contenido en todas las plataformas?', a: 'Se aprovecha la base, pero adaptamos el formato. Un Reel vertical funciona en Instagram y TikTok, pero el texto, el tono y el tamaño cambian entre una historia, un feed y un post de LinkedIn. Reciclar sin adaptar se nota y rinde menos.' },
@@ -531,8 +531,8 @@ export const marketingPages: PageData[] = [
         type: 'related',
         items: [
           { slug: 'marketing/facebook-instagram-ads-panama', label: 'Meta Ads' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },
-          { slug: 'saas/chatmantis', label: 'ChatMantis' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
           { slug: 'blog/marketing-de-contenidos-para-redes-sociales-panama', label: 'Marketing de contenidos' },
         ],
       },
@@ -674,7 +674,7 @@ export const marketingPages: PageData[] = [
         items: [
           { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones n8n' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas Online' },
-          { slug: 'saas/chatmantis', label: 'ChatMantis' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
           { slug: 'blog/email-marketing-para-negocios-en-panama', label: 'Guía de email marketing' },
         ],
       },
@@ -708,7 +708,7 @@ export const marketingPages: PageData[] = [
           'Segmentación de tu base de contactos por interés',
           'Campañas de promociones, novedades y recordatorios',
           'Gestión del consentimiento (opt-in) y las bajas',
-          'Integración con ChatMantis para las respuestas',
+          'Integración con WazaCRM para las respuestas',
           'Métricas de entrega, lectura y respuesta',
           'Buenas prácticas para no saturar ni molestar a tu cliente',
         ],
@@ -719,7 +719,7 @@ export const marketingPages: PageData[] = [
         paragraphs: [
           'WhatsApp tiene tasas de apertura que ningún otro canal alcanza: la gente sí lee sus mensajes. Eso lo hace tentador y peligroso a la vez, porque usado mal, satura al cliente y activa las alarmas de Meta.',
           'La clave está en dos cosas: <strong>usar la API oficial</strong> y <strong>enviar solo a quien aceptó recibir</strong>. Las plantillas se aprueban previamente, los envíos respetan las reglas de Meta y cada contacto puede darse de baja. Así el canal se mantiene sano y tu número, seguro.',
-          'Y como las respuestas caen en <a href="/saas/chatmantis/">ChatMantis</a>, la conversación que abre una campaña la puede atender un asistente de IA o tu equipo, sin que un mensaje se quede sin respuesta.',
+          'Y como las respuestas caen en <a href="/saas/wazacrm/">WazaCRM</a>, la conversación que abre una campaña la puede atender un asistente de IA o tu equipo, sin que un mensaje se quede sin respuesta.',
         ],
       },
             {
@@ -789,7 +789,7 @@ export const marketingPages: PageData[] = [
           { h3: '2. Opt-in', text: 'Construimos o revisamos tu base de contactos que aceptaron recibir mensajes. Solo se envía a quien dio permiso: es la regla de Meta y también la lista que mejor responde.' },
           { h3: '3. Plantillas', text: 'Redactamos los mensajes y gestionamos su aprobación ante Meta. Una plantilla clara y bien categorizada se aprueba rápido y evita que la campaña se caiga por incumplir reglas.' },
           { h3: '4. Segmentación y envío', text: 'Dividimos tu base por interés para que cada grupo reciba lo relevante, no un mensaje genérico. Enviamos respetando frecuencia y horarios para no saturar ni molestar.' },
-          { h3: '5. Respuestas y métricas', text: 'Las respuestas caen en <a href="/saas/chatmantis/">ChatMantis</a>, donde tu equipo o un asistente de IA las atiende. Medimos entrega, lectura y respuesta para afinar la siguiente campaña.' },
+          { h3: '5. Respuestas y métricas', text: 'Las respuestas caen en <a href="/saas/wazacrm/">WazaCRM</a>, donde tu equipo o un asistente de IA las atiende. Medimos entrega, lectura y respuesta para afinar la siguiente campaña.' },
         ],
       },
       {
@@ -814,8 +814,8 @@ export const marketingPages: PageData[] = [
       {
         type: 'related',
         items: [
-          { slug: 'saas/chatmantis', label: 'ChatMantis' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' },
           { slug: 'marketing/email-marketing-panama', label: 'Email Marketing' },
           { slug: 'blog/como-hacer-campanas-de-whatsapp-masivo-en-panama', label: 'Guía: campañas de WhatsApp' },
         ],
@@ -959,7 +959,7 @@ export const marketingPages: PageData[] = [
         items: [
           { slug: 'inteligencia-artificial-para-empresas-panama', label: 'Ecosistema de IA Empresarial' },
           { slug: 'marketing/email-marketing-panama', label: 'Email Marketing' },
-          { slug: 'saas/chatmantis', label: 'ChatMantis' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
           { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Desarrollo a Medida' },
           { slug: 'blog/automatizar-seguimiento-clientes-panama', label: 'Automatizar el seguimiento' },
           { slug: 'blog/email-marketing-para-negocios-en-panama', label: 'Guía de email marketing' },

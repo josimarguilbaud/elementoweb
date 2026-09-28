@@ -71,8 +71,8 @@ export const blog5: PageData[] = [
         h2: 'Cómo se integra con tu web y tu WhatsApp',
         paragraphs: [
           'Un chatbot con IA vive donde está tu cliente. En la web aparece como una burbuja de chat en la esquina; en <strong>WhatsApp</strong> responde en el mismo número por el que la gente ya te escribe. Lo ideal es que sea el mismo asistente en ambos lados, con la misma información y el mismo tono.',
-          'Nuestra plataforma <a href="/saas/chatmantis/">ChatMantis</a> es un chatbot con IA omnicanal con CRM de WhatsApp incluido: atiende en la web y en WhatsApp, y guarda cada conversación como un contacto con su historial. Así el bot no solo responde: deja el terreno ordenado para dar seguimiento y vender.',
-          'Si quieres los detalles técnicos de la integración en tu sitio, los tienes en <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbots con IA para tu web</a>. Y si aún no tienes una web sólida donde vivir el chat, ahí empieza el trabajo: mira nuestros <a href="/diseno-web-panama/">servicios de diseño web en Panamá</a>.',
+          'Nuestra plataforma <a href="/saas/wazacrm/">WazaCRM</a> es un chatbot con IA omnicanal con CRM de WhatsApp incluido: atiende en la web y en WhatsApp, y guarda cada conversación como un contacto con su historial. Así el bot no solo responde: deja el terreno ordenado para dar seguimiento y vender.',
+          'Si quieres los detalles técnicos de la integración en tu sitio, los tienes en <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbots con IA para tu web</a>. Y si aún no tienes una web sólida donde vivir el chat, ahí empieza el trabajo: mira nuestros <a href="/diseno-web-panama/">servicios de diseño web en Panamá</a>.',
         ],
       },
       {
@@ -88,14 +88,14 @@ export const blog5: PageData[] = [
           { q: '¿Se puede equivocar y decir algo incorrecto?', a: 'Puede, si lo dejas responder sobre cosas que no sabe. Por eso se le acota a tu información (precios, horarios, servicios) y se le enseña a decir "eso lo confirma un asesor" en vez de inventar. La honestidad también se configura: preferimos un bot que deriva a un humano antes que uno que improvisa datos.' },
           { q: '¿Sirve para mi negocio si es pequeño?', a: 'Sí, y muchas veces es donde más rinde: si eres tú solo o un equipo chico, el asistente responde mientras trabajas, duermes o atiendes a otro cliente. No necesitas ser una empresa grande para dejar de perder mensajes fuera de horario.' },
           { q: '¿Reemplaza a mi personal de atención?', a: 'No. Se encarga de las preguntas repetidas y del primer contacto fuera de horario; tu equipo se queda con las conversaciones que requieren criterio, negociación o trato humano. Es un filtro que libera tiempo, no un sustituto.' },
-          { q: '¿Funciona en el WhatsApp que ya uso?', a: 'Funciona sobre WhatsApp Business con la conexión adecuada. Con ChatMantis atiende en tu número y guarda cada chat como contacto en el CRM, así no pierdes el historial ni el seguimiento. Escríbenos por WhatsApp o desde /contacto/ y revisamos tu caso.' },
+          { q: '¿Funciona en el WhatsApp que ya uso?', a: 'Funciona sobre WhatsApp Business con la conexión adecuada. Con WazaCRM atiende en tu número y guarda cada chat como contacto en el CRM, así no pierdes el historial ni el seguimiento. Escríbenos por WhatsApp o desde /contacto/ y revisamos tu caso.' },
         ],
       },
       {
         type: 'related',
         items: [
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbots con IA para tu web' },
-          { slug: 'saas/chatmantis', label: 'ChatMantis' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbots con IA para tu web' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
           { slug: 'blog/como-atender-clientes-24-7-con-un-asistente-de-ia', label: 'Atender clientes 24/7 con IA' },
           { slug: 'blog/inteligencia-artificial-para-pequenas-empresas-en-panama', label: 'IA para pequeñas empresas' },
         
@@ -279,7 +279,7 @@ export const blog5: PageData[] = [
         h2: 'Cuánto cuesta y cómo no gastar de más',
         paragraphs: [
           'La regla de oro es no comprar tecnología por moda. Antes de invertir, definí qué problema concreto vas a resolver y cómo vas a saber si funcionó. Si no puedes medir el resultado, probablemente no lo necesitas todavía.',
-          'Nuestras plataformas propias están pensadas justo para pymes: <a href="/saas/chatmantis/">ChatMantis</a> para atención con IA en web y WhatsApp, <a href="/saas/nouscrm/">NousCRM</a> para cotizar, facturar y cobrar por WhatsApp, y <a href="/saas/cifrao/">Cifrao</a> para la parte contable completa. La idea no es que uses todo, sino lo que resuelve tu dolor de hoy.',
+          'Nuestras plataformas propias están pensadas justo para pymes: <a href="/saas/wazacrm/">WazaCRM</a> para atención con IA en web y WhatsApp, <a href="/saas/nouscrm/">NousCRM</a> para cotizar, facturar y cobrar por WhatsApp, y <a href="/saas/cifrao/">Cifrao</a> para la parte contable completa. La idea no es que uses todo, sino lo que resuelve tu dolor de hoy.',
           'Si no tienes claro por dónde empezar, esa conversación es gratis. Escríbenos desde <a href="/contacto/">contacto</a> y, con honestidad, a veces la respuesta es "todavía no necesitas IA para esto, arregla primero aquello". Preferimos eso a venderte algo que no vas a aprovechar.',
         ],
       },
@@ -304,8 +304,8 @@ export const blog5: PageData[] = [
         items: [
           { slug: 'blog/chatbots-con-ia-para-negocios-en-panama', label: 'Chatbots con IA para negocios' },
           { slug: 'blog/automatizaciones-con-n8n-para-pymes', label: 'Automatizaciones con n8n' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbots con IA para tu web' },
-          { slug: 'saas/chatmantis', label: 'ChatMantis' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbots con IA para tu web' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
         
           { slug: 'industrias/diseno-web-veterinarias-panama', label: 'Diseño web para veterinarias' },
           { slug: 'industrias/diseno-web-talleres-automotriz-panama', label: 'Diseño web para talleres' },
@@ -375,7 +375,7 @@ export const blog5: PageData[] = [
         paragraphs: [
           'Un asistente bien montado tiene claros sus límites. <strong>Sí debe</strong> responder preguntas frecuentes, dar información de precios y horarios, encaminar reservas y ventas, captar datos y responder al instante fuera de horario. Eso lo hace mejor que cualquier persona cansada a las 11 de la noche.',
           '<strong>No debe</strong> inventar datos que no tiene, cerrar negociaciones delicadas por su cuenta, prometer lo que tu negocio no cumple ni fingir que es humano si le preguntan directamente. Un asistente honesto que deriva a una persona genera más confianza que uno que improvisa para parecer listo.',
-          'Ese equilibrio es justo lo que configura una buena implementación. Si quieres ver cómo se conecta a tu sitio, míralo en <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbots con IA para tu web</a>.',
+          'Ese equilibrio es justo lo que configura una buena implementación. Si quieres ver cómo se conecta a tu sitio, míralo en <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbots con IA para tu web</a>.',
         ],
       },
       {
@@ -383,7 +383,7 @@ export const blog5: PageData[] = [
         h2: 'Web y WhatsApp: el mismo asistente en los dos lados',
         paragraphs: [
           'Tu cliente no distingue canales: a veces te escribe desde la web, a veces por WhatsApp, y espera la misma respuesta en ambos. Lo ideal es un solo asistente con la misma información atendiendo en los dos lugares.',
-          'Con <a href="/saas/chatmantis/">ChatMantis</a> el asistente atiende en tu web y en tu WhatsApp, y guarda cada conversación como un contacto con su historial. Así, cuando tu equipo retoma en la mañana, no empieza de cero: ve todo lo que el cliente ya conversó durante la noche.',
+          'Con <a href="/saas/wazacrm/">WazaCRM</a> el asistente atiende en tu web y en tu WhatsApp, y guarda cada conversación como un contacto con su historial. Así, cuando tu equipo retoma en la mañana, no empieza de cero: ve todo lo que el cliente ya conversó durante la noche.',
           'Ese historial es oro para el seguimiento. Un mensaje respondido a tiempo capta al cliente; un buen seguimiento al día siguiente lo cierra. Sobre eso trata nuestra guía de <a href="/blog/crm-con-whatsapp-para-vender-mas-en-panama/">CRM con WhatsApp</a>.',
         ],
       },
@@ -406,8 +406,8 @@ export const blog5: PageData[] = [
       {
         type: 'related',
         items: [
-          { slug: 'saas/chatmantis', label: 'ChatMantis' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbots con IA para tu web' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbots con IA para tu web' },
           { slug: 'blog/chatbots-con-ia-para-negocios-en-panama', label: 'Chatbots con IA para negocios' },
           { slug: 'blog/crm-con-whatsapp-para-vender-mas-en-panama', label: 'CRM con WhatsApp' },
         
@@ -489,7 +489,7 @@ export const blog5: PageData[] = [
         h2: 'Cuándo dar el paso a un CRM',
         paragraphs: [
           'No todo negocio necesita un CRM desde el día uno. Si atiendes pocos clientes y los tienes todos en la cabeza, quizá aún no. La señal de que ya lo necesitas es clara: cuando empiezas a olvidar seguimientos, cuando dos personas responden al mismo cliente sin saberlo, o cuando la pregunta "¿en qué quedamos con este?" no tiene respuesta rápida.',
-          'Para eso construimos <a href="/saas/chatmantis/">ChatMantis</a>: guarda cada conversación de WhatsApp como un contacto con su historial, permite que varios agentes atiendan el mismo número sin pisarse y escala a tu equipo con todo el contexto cuando el caso lo pide. Y cuando además necesitas cotizar y cobrar, <a href="/saas/nouscrm/">NousCRM</a> arma la cotización con tu logo y la convierte en factura con un clic.',
+          'Para eso construimos <a href="/saas/wazacrm/">WazaCRM</a>: guarda cada conversación de WhatsApp como un contacto con su historial, permite que varios agentes atiendan el mismo número sin pisarse y escala a tu equipo con todo el contexto cuando el caso lo pide. Y cuando además necesitas cotizar y cobrar, <a href="/saas/nouscrm/">NousCRM</a> arma la cotización con tu logo y la convierte en factura con un clic.',
           'Si quieres profundizar en el método de venta por chat, tenemos las guías de <a href="/blog/como-vender-por-whatsapp-en-panama/">cómo vender por WhatsApp en Panamá</a>. Y si no sabes cuál herramienta te conviene, escríbenos desde <a href="/contacto/">contacto</a> y lo vemos con calma según tu volumen real.',
         ],
       },
@@ -505,7 +505,7 @@ export const blog5: PageData[] = [
           { q: '¿No me alcanza con WhatsApp Business y sus etiquetas?', a: 'Para muy pocos clientes, quizá. Cuando el volumen crece, las etiquetas de WhatsApp Business se quedan cortas: no te dan embudo, ni recordatorios de seguimiento, ni buen trabajo en equipo sobre el mismo número. Ahí un CRM cambia el juego.' },
           { q: '¿Un CRM sirve si vendo yo solo, sin equipo?', a: 'Sí. Aunque seas uno, el problema del olvido existe igual: prometes escribir y se te pasa entre otros chats. El CRM te hace de memoria y te muestra a quién le toca seguimiento hoy, para que no dependas de acordarte.' },
           { q: '¿Puedo tener varios agentes en el mismo número?', a: 'Con un CRM de WhatsApp, sí: varios agentes atienden el mismo número sin pisarse, con notas y contexto compartido. Cada quien sabe qué se conversó y quién está a cargo de cada cliente, sin duplicar respuestas.' },
-          { q: '¿Se conecta con mi chatbot de atención?', a: 'Debería. Lo ideal es que lo que el chatbot capta fuera de horario entre ya ordenado al CRM como contacto con su historial. Con ChatMantis eso viene integrado: el bot atiende y el CRM guarda y ordena para el seguimiento.' },
+          { q: '¿Se conecta con mi chatbot de atención?', a: 'Debería. Lo ideal es que lo que el chatbot capta fuera de horario entre ya ordenado al CRM como contacto con su historial. Con WazaCRM eso viene integrado: el bot atiende y el CRM guarda y ordena para el seguimiento.' },
           { q: '¿Es complicado de usar o mi equipo se va a perder?', a: 'Un buen CRM de WhatsApp se parece a chatear, con orden encima. La curva es corta si se configura bien y se acompaña al equipo los primeros días. Escríbenos desde /contacto/ y te mostramos cómo se vería con tu operación.' },
         ],
       },
@@ -515,7 +515,7 @@ export const blog5: PageData[] = [
           { slug: 'saas/nouscrm', label: 'NousCRM' },
           { slug: 'blog/como-vender-por-whatsapp-en-panama', label: 'Cómo vender por WhatsApp' },
           { slug: 'blog/como-atender-clientes-24-7-con-un-asistente-de-ia', label: 'Atender clientes 24/7 con IA' },
-          { slug: 'saas/chatmantis', label: 'ChatMantis' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
         
           { slug: 'industrias/diseno-web-bienes-raices-panama', label: 'Diseño web para bienes raíces' },
           { slug: 'industrias/diseno-web-concesionarios-autos-panama', label: 'Diseño web para concesionarios' },

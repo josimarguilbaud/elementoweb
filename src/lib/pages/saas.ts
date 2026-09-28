@@ -8,8 +8,8 @@ export const saasPages: PageData[] = [
   /* ---------- HUB ---------- */
   {
     slug: 'saas',
-    title: 'Nuestros SaaS | ChatMantis, NousCRM y Cifrao',
-    description: 'Tres productos SaaS propios en producción: ChatMantis (omnicanalidad con IA), NousCRM (cotizaciones y cobros por WhatsApp) y Cifrao (contabilidad).',
+    title: 'Nuestros SaaS | WazaCRM, NousCRM y Cifrao',
+    description: 'Tres productos SaaS propios en producción: WazaCRM (CRM de WhatsApp con IA y pipeline de ventas), NousCRM (cotizaciones y cobros por WhatsApp) y Cifrao (contabilidad).',
     h1: 'Software propio, en producción',
     breadcrumb: 'Nuestros SaaS',
     heroImage: { src: 'https://picsum.photos/seed/software-dashboard-laptop-panama/1200/675', alt: 'Panel de control de software mostrado en una laptop moderna' },
@@ -27,7 +27,7 @@ export const saasPages: PageData[] = [
         type: 'cards',
         h2: 'Los tres productos',
         items: [
-          { h3: 'ChatMantis', text: 'Omnicanalidad con IA: WhatsApp, Instagram y el chat de tu web en una sola bandeja, con asistentes entrenados con tu información.', link: { slug: 'saas/chatmantis', label: 'Conocer ChatMantis' } },
+          { h3: 'WazaCRM', text: 'CRM de WhatsApp con IA: atiende, cotiza, agenda y cobra dentro del chat, con embudo de ventas y bandeja compartida detrás.', link: { slug: 'saas/wazacrm', label: 'Conocer WazaCRM' } },
           { h3: 'NousCRM', text: 'Cotizaciones y facturas con tu logo que el cliente abre desde WhatsApp, con abonos y cobros pendientes en una sola lista.', link: { slug: 'saas/nouscrm', label: 'Conocer NousCRM' } },
           { h3: 'Cifrao', text: 'Software contable para empresas en Panamá: facturación, conciliación y cuentas por cobrar que avisan solas.', link: { slug: 'saas/cifrao', label: 'Conocer Cifrao' } },
         ],
@@ -36,11 +36,11 @@ export const saasPages: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Los SaaS se venden por separado del diseño web?', a: 'Sí. Puedes usar ChatMantis, NousCRM o Cifrao sin contratar diseño web, y viceversa. Donde brillan es juntos: la web capta, la IA atiende y el sistema cobra.' },
+          { q: '¿Los SaaS se venden por separado del diseño web?', a: 'Sí. Puedes usar WazaCRM, NousCRM o Cifrao sin contratar diseño web, y viceversa. Donde brillan es juntos: la web capta, la IA atiende y el sistema cobra.' },
           { q: '¿Qué significa Meta Verified Tech Provider?', a: 'Es la validación oficial de Meta que nos acredita para integrar las APIs de WhatsApp Business e Instagram. En la práctica: verificamos tu número oficialmente, sin soluciones improvisadas que Meta bloquea.' },
           { q: '¿Cómo se cobra la licencia?', a: 'Mensual, por producto. El consumo de APIs de terceros (Meta, motores de IA) se paga por uso desde tus propias cuentas, con visibilidad total y sin margen nuestro.' },
           { q: '¿Los datos de mi negocio quedan expuestos a la agencia?', a: 'No. Cada cliente opera en su propia cuenta, con su información y sus credenciales de Meta y de IA. Nosotros configuramos y damos soporte; la operación diaria y los datos son tuyos.' },
-          { q: '¿Puedo empezar con un solo producto y sumar los demás después?', a: 'Sí, y es lo más común. Muchos arrancan con NousCRM para cotizar y cobrar, o con ChatMantis para atender WhatsApp, y luego suman Cifrao cuando la contabilidad completa se vuelve el cuello de botella. No hay que contratarlos todos de golpe.' },
+          { q: '¿Puedo empezar con un solo producto y sumar los demás después?', a: 'Sí, y es lo más común. Muchos arrancan con NousCRM para cotizar y cobrar, o con WazaCRM para atender WhatsApp, y luego suman Cifrao cuando la contabilidad completa se vuelve el cuello de botella. No hay que contratarlos todos de golpe.' },
           { q: '¿Y si ya tengo una web hecha por otra agencia?', a: 'No hay problema. Los tres SaaS se conectan a cualquier web moderna. Si tu sitio actual complica la integración o ya pide un cambio, podemos revisarlo desde <a href="/servicios/redisenio-web-panama/">rediseño web</a>, pero no es requisito para empezar.' },
           { q: '¿Cuánto cuestan y qué diferencia hay con contratar un desarrollo?', a: 'Son productos por suscripción mensual, así que arrancas sin proyecto de por medio. Un desarrollo a medida empieza en $2,900 y te deja algo tuyo; una suscripción te deja operando esta semana. La regla simple: si tu necesidad es la de siempre, suscripción; si tu proceso es raro y es tu ventaja, desarrollo. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene un SaaS nuestro?', a: 'Cuando ya tienes una herramienta que tu equipo domina y usa. Cambiar de sistema cuesta semanas de adaptación, y ese costo rara vez lo paga una mejora de funciones. Cámbiate cuando lo que tienes te está frenando de verdad, no por probar.' },
@@ -52,7 +52,7 @@ export const saasPages: PageData[] = [
         h2: 'Para quién es cada producto',
         intro: 'Los tres resuelven problemas distintos. Esta es la forma corta de saber por dónde empezar.',
         items: [
-          { h3: 'Te escriben más de lo que puedes atender', text: 'Si WhatsApp e Instagram se te llenan de las mismas preguntas y pierdes mensajes, empieza por ChatMantis: la IA responde lo repetitivo y tu equipo atiende lo que vale.', link: { slug: 'saas/chatmantis', label: 'Ver ChatMantis' } },
+          { h3: 'Te escriben más de lo que puedes atender', text: 'Si WhatsApp e Instagram se te llenan de las mismas preguntas y pierdes mensajes, empieza por WazaCRM: la IA responde lo repetitivo y tu equipo atiende lo que vale.', link: { slug: 'saas/wazacrm', label: 'Ver WazaCRM' } },
           { h3: 'Cotizas en Word y cobras de memoria', text: 'Si armas cada cotización desde cero y no sabes quién te debe, NousCRM la convierte en factura con un clic y ordena los cobros pendientes en una lista.', link: { slug: 'saas/nouscrm', label: 'Ver NousCRM' } },
           { h3: 'No sabes cuánto ganas ni cómo cierra el mes', text: 'Si la contabilidad completa vive en una hoja de cálculo que nadie concilia, Cifrao pone gastos, conciliación bancaria e informes en un sistema que sí avisa.', link: { slug: 'saas/cifrao', label: 'Ver Cifrao' } },
         ],
@@ -61,7 +61,7 @@ export const saasPages: PageData[] = [
         type: 'prose',
         h2: 'Software propio y diseño web: por qué van juntos',
         paragraphs: [
-          'Una web bien hecha capta la atención, pero la atención sin proceso se evapora. El visitante pregunta, nadie responde a tiempo y la venta se enfría. Por eso construimos productos que continúan lo que la web empieza: la página trae al cliente, ChatMantis lo atiende, NousCRM cotiza y cobra, y Cifrao lleva la contabilidad completa.',
+          'Una web bien hecha capta la atención, pero la atención sin proceso se evapora. El visitante pregunta, nadie responde a tiempo y la venta se enfría. Por eso construimos productos que continúan lo que la web empieza: la página trae al cliente, WazaCRM lo atiende, NousCRM cotiza y cobra, y Cifrao lleva la contabilidad completa.',
           'Cuando la misma casa diseña tu sitio y opera tu software, las piezas encajan sin parches. El chat de la web habla el mismo idioma que tu CRM, y las integraciones no dependen de un plugin de terceros que se rompe en la próxima actualización.',
           'No es obligatorio contratarlo todo. Puedes tomar solo el <a href="/servicios/">servicio de diseño web</a>, solo un SaaS, o combinarlos a tu ritmo. Lo que no cambia es la vara: el mismo cuidado técnico con el que mantenemos software en producción es el que va en cada línea de tu proyecto.',
         ],
@@ -80,7 +80,7 @@ export const saasPages: PageData[] = [
       {
         type: 'related',
         items: [
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA para tu web' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA para tu web' },
           { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Desarrollo a medida' },
           { slug: 'servicios', label: 'Servicios de diseño web' },
         ],
@@ -89,35 +89,35 @@ export const saasPages: PageData[] = [
     cta: { h2: 'Agenda una demostración', wa: 'Hola, quiero una demo de sus productos SaaS.' },
   },
 
-  /* ---------- CHATMANTIS ---------- */
+  /* ---------- WAZACRM ---------- */
   {
-    slug: 'saas/chatmantis',
+    slug: 'saas/wazacrm',
     parent,
-    title: 'ChatMantis | Omnicanalidad con IA para WhatsApp e Instagram',
-    description: 'ChatMantis unifica WhatsApp, Instagram y el chat de tu web en una bandeja, con agentes de IA entrenados con tu información. Producto de Elemento Web.',
-    h1: 'ChatMantis',
-    breadcrumb: 'ChatMantis',
+    title: 'WazaCRM | El CRM para WhatsApp que Vende en Piloto Automático',
+    description: 'WazaCRM no es un chatbot: es un agente de IA que atiende, cotiza, agenda y cobra dentro de tu WhatsApp, con el embudo de ventas y la bandeja compartida de un CRM de verdad detrás. Producto de Elemento Web.',
+    h1: 'WazaCRM',
+    breadcrumb: 'WazaCRM',
     heroCtas: [
       { label: 'Agendar demostración', href: '/contacto/', primary: true },
-      { label: 'Verlo en tu web', href: '/funcionalidades/chatbots-ia-web-chatmantis-panama/' },
+      { label: 'Ver el panel en vivo', href: 'https://wazacrm.com' },
     ],
     lead: [
-      'Todos tus canales en una bandeja, con agentes de IA que responden en segundos y escalan a tu equipo cuando el caso lo pide.',
-      'Un cliente te escribe por Instagram, sigue por WhatsApp y termina llenando el formulario de la web. Para él es una sola conversación; para tu equipo son tres pantallas inconexas. ChatMantis las une con historial único por cliente, y pone la IA a resolver lo repetitivo.',
+      'No es un chatbot: es un agente de IA que atiende, cotiza, agenda y cobra dentro de tu WhatsApp, con el embudo de ventas y la bandeja compartida de un CRM de verdad detrás.',
+      'Un cliente te escribe por Instagram, sigue por WhatsApp y termina llenando el formulario de la web. Para él es una sola conversación; para tu equipo son tres pantallas inconexas. WazaCRM las une en una bandeja compartida, y un tablero Kanban ordena cada oportunidad hasta que paga.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué hace ChatMantis',
+        h2: 'Qué hace WazaCRM',
         items: [
-          'Bandeja unificada: WhatsApp, Instagram y chat web',
-          'Historial único por cliente entre canales',
-          'Agentes de IA entrenados con tus documentos (RAG)',
-          'Escalamiento a humano con el contexto completo',
-          'Varios agentes atendiendo el mismo número',
-          'Plantillas aprobadas por Meta y respuestas rápidas',
-          'Asignación de conversaciones por equipo o turno',
-          'Métricas de tiempo de respuesta y volumen',
+          'Bandeja unificada: WhatsApp (API oficial de Meta), Instagram, Facebook y chat web',
+          'Agente de IA (Claude, de Anthropic) entrenado con tus documentos (RAG)',
+          'CRM con embudo de ventas Kanban: etapas configurables y ficha por cliente',
+          'La ficha del cliente se llena sola mientras conversa: nombre, cédula, correo',
+          'Agenda citas en tu Google Calendar respetando cupos y horarios',
+          'Automatizaciones: bienvenida, recordatorio, cobranza y reactivación de inactivos',
+          'Campañas masivas por WhatsApp dentro de las políticas de Meta, sin riesgo de baneo',
+          'Panel con vendido del mes, tasa de cierre y rendimiento por agente',
         ],
       },
       {
@@ -145,7 +145,7 @@ export const saasPages: PageData[] = [
         paragraphs: [
           'La diferencia entre un asistente útil y uno peligroso no está en cuánto sabe: está en qué hace cuando no sabe.',
           'Un modelo de lenguaje suelto tiende a completar: si no tiene el dato, produce algo plausible. En una conversación de ventas eso significa inventar un precio, prometer un plazo o afirmar que se atiende una zona donde no se llega. El cliente lo toma como compromiso del negocio.',
-          'ChatMantis responde a partir de tu contenido, no de lo que el modelo cree recordar. Cuando la pregunta sale de ese contenido, lo dice y ofrece pasar a una persona. Es una decisión de diseño incómoda en una demo y correcta en producción.',
+          'WazaCRM responde a partir de tu contenido, no de lo que el modelo cree recordar. Cuando la pregunta sale de ese contenido, lo dice y ofrece pasar a una persona. Es una decisión de diseño incómoda en una demo y correcta en producción.',
           '<strong>El costo de una respuesta inventada no es la conversación perdida:</strong> es el cliente que llega esperando un precio que nadie le va a poder sostener.',
         ],
       },
@@ -163,36 +163,37 @@ export const saasPages: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta ChatMantis?', a: 'Implementación única (entrenamiento, conexión de canales, pruebas) más licencia mensual. El consumo de Meta y del motor de IA se paga por uso desde tus cuentas. Pide una demo y te armamos el estimado según tu volumen.' },
-          { q: '¿En qué se diferencia de NousCRM?', a: 'ChatMantis se enfoca en atención omnicanal con IA; <a href="/saas/nouscrm/">NousCRM</a> en cotizar, facturar y cobrar. Se integran, y muchas operaciones usan ambos.' },
+          { q: '¿Cuánto cuesta WazaCRM?', a: 'Desde $349/mes (plan Starter), sin costo de implementación: te lo entregamos montado y entrenado. El plan Growth ($549/mes) es el más elegido porque suma Instagram, notas de voz y agenda automática. Los mensajes de Meta y el consumo de IA se facturan aparte, a precio de costo. Precios y planes exactos en <a href="https://wazacrm.com">wazacrm.com</a>.' },
+          { q: '¿En qué se diferencia de NousCRM?', a: 'WazaCRM atiende, vende y hace seguimiento por WhatsApp con IA y un CRM de pipeline detrás; <a href="/saas/nouscrm/">NousCRM</a> se enfoca en cotizar, facturar y cobrar. Se integran, y muchas operaciones usan ambos.' },
+          { q: '¿WazaCRM es solo un chatbot?', a: 'No. Un chatbot responde preguntas; WazaCRM además ordena cada conversación en un embudo de ventas (tablero Kanban), llena la ficha del cliente sola, agenda citas en tu calendario y dispara automatizaciones de cobranza y reactivación. El chat es la puerta de entrada, no todo el producto.' },
           { q: '¿Cuánto tarda la implementación?', a: 'Alrededor de 2 semanas, incluida la verificación oficial del número en Meta, cuyo tiempo de aprobación no depende de nosotros.' },
           { q: '¿Puedo conservar mi número de WhatsApp actual?', a: 'Sí. Trabajamos con la API oficial de WhatsApp Business sobre tu número real. La verificación la gestionamos nosotros como Meta Verified Tech Provider, sin números prestados ni conexiones que Meta pueda bloquear.' },
           { q: '¿La IA responde sola o siempre hay un humano detrás?', a: 'Las dos cosas. La IA resuelve lo repetitivo y frecuente por sí sola, y escala a tu equipo con el historial completo cuando el caso lo amerita o cuando el cliente lo pide. Tú defines dónde está esa línea.' },
           { q: '¿Qué pasa si el cliente pregunta algo que la IA no sabe?', a: 'Lo dice con claridad y deriva a una persona; no inventa. El asistente solo responde desde los documentos que apruebas, así que un dato que no cargaste nunca se convierte en una respuesta falsa.' },
-          { q: '¿Se conecta con el chat de mi sitio web?', a: 'Sí. El chat de tu web entra a la misma bandeja que WhatsApp e Instagram, con historial unificado por cliente. Puedes verlo en detalle en <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbot con IA para tu web</a>.' },
+          { q: '¿Se conecta con el chat de mi sitio web?', a: 'Sí. El chat de tu web entra a la misma bandeja que WhatsApp e Instagram, con historial unificado por cliente. Puedes verlo en detalle en <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA para tu web</a>.' },
                   { q: '¿Cuándo NO conviene un asistente de IA?', a: 'Si recibes pocas consultas al mes, mantener el contenido cuesta más que las horas que ahorra. Si cada consulta requiere criterio, el asistente deriva casi todo y solo añade un paso. Y si el problema real es que nadie contesta, el asistente lo tapa sin resolverlo.' },
           { q: '¿Qué pasa si le preguntan algo que no sabe?', a: 'Lo dice y ofrece pasar a una persona. Es una decisión de diseño: un modelo suelto tiende a completar, y en una conversación de ventas eso significa inventar un precio o prometer un plazo que el cliente toma como compromiso del negocio.' },
           { q: '¿Qué tengo que preparar antes de encenderlo?', a: 'Las respuestas a lo que de verdad se pregunta —precios, horarios, cobertura, plazos, formas de pago— más los límites: qué no debe tocar, cuándo pasar a una persona y quién recibe las derivaciones. La mejor fuente son tus conversaciones reales.' },
-          { q: '¿Qué se paga aparte de la suscripción de ChatMantis?', a: 'Es suscripción mensual según el volumen de conversaciones y la cantidad de agentes. Aparte van los costos que cobra Meta por la API de WhatsApp Business, que se facturan directo y no pasan por nosotros. La implementación (entrenar al bot con tu información y conectar tus canales) se cotiza una vez. Los precios no incluyen ITBMS (7%).' },
-          { q: '¿ChatMantis sirve fuera de Panamá?', a: 'Sí. Está hecho en Panamá y pensado para cómo se vende aquí (WhatsApp como canal principal, Yappy, español panameño), pero funciona en cualquier país con WhatsApp Business API. La ventaja local es el soporte: en tu zona horaria y en tu idioma.' },
-          { q: '¿Qué pasa con mis conversaciones si dejo de usar ChatMantis?', a: 'Te las llevas. Puedes exportar contactos y conversaciones antes de cerrar la cuenta, sin trámites ni permanencia mínima. Preferimos retenerte por resultados que por contrato, igual que con el resto de los servicios mensuales. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Qué se paga aparte de la suscripción de WazaCRM?', a: 'Es suscripción mensual según el volumen de conversaciones y la cantidad de agentes. Aparte van los costos que cobra Meta por la API de WhatsApp Business, que se facturan directo y no pasan por nosotros. La implementación (entrenar al bot con tu información y conectar tus canales) se cotiza una vez. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿WazaCRM sirve fuera de Panamá?', a: 'Sí. Está hecho en Panamá y pensado para cómo se vende aquí (WhatsApp como canal principal, Yappy, español panameño), pero funciona en cualquier país con WhatsApp Business API. La ventaja local es el soporte: en tu zona horaria y en tu idioma.' },
+          { q: '¿Qué pasa con mis conversaciones si dejo de usar WazaCRM?', a: 'Te las llevas. Puedes exportar contactos y conversaciones antes de cerrar la cuenta, sin trámites ni permanencia mínima. Preferimos retenerte por resultados que por contrato, igual que con el resto de los servicios mensuales. Los precios no incluyen ITBMS (7%).' },
         ],
       },
       {
         type: 'cards',
-        h2: 'Para quién es ChatMantis',
+        h2: 'Para quién es WazaCRM',
         intro: 'Funciona mejor cuando el volumen de mensajes ya supera lo que un equipo pequeño puede atender a mano.',
         items: [
           { h3: 'Comercios y tiendas', text: 'Reciben las mismas preguntas todo el día: precio, disponibilidad, horario, ubicación. La IA las responde al instante y libera al equipo para vender.' },
-          { h3: 'Servicios y consultorios', text: 'Clientes que escriben por Instagram, siguen por WhatsApp y esperan respuesta ya. El historial único evita repetir lo mismo tres veces.' },
-          { h3: 'Equipos de atención con turnos', text: 'Varios agentes sobre el mismo número, con asignación por turno y métricas de tiempo de respuesta. Se acaba el chat que solo maneja una persona desde su celular.' },
+          { h3: 'Equipos de ventas por WhatsApp', text: 'Si vendes bien pero se te caen los seguimientos, el embudo Kanban de WazaCRM muestra a quién le toca escribir hoy y qué oportunidad lleva días sin moverse.' },
+          { h3: 'Negocios con agenda', text: 'Clínicas, spas y consultorios: el asistente agenda la cita en tu Google Calendar sin pisar horarios y manda el recordatorio solo.' },
         ],
       },
       {
         type: 'prose',
         h2: 'Cómo se integra con tu web',
         paragraphs: [
-          'ChatMantis no vive aislado del sitio. El widget de chat se coloca en tu web y comparte bandeja e historial con WhatsApp e Instagram, así que una conversación que empieza en la página no se pierde cuando el cliente pasa al teléfono.',
+          'WazaCRM no vive aislado del sitio. El widget de chat se coloca en tu web y comparte bandeja e historial con WhatsApp e Instagram, así que una conversación que empieza en la página no se pierde cuando el cliente pasa al teléfono.',
           'Para negocios que ya trabajan con nosotros, esto significa que la web deja de ser un folleto y se vuelve un canal de atención real. Si tu sitio todavía no tiene un punto de contacto claro, lo resolvemos como parte del <a href="/servicios/diseno-web-corporativo-panama/">diseño web corporativo</a> o de una <a href="/servicios/landing-pages-alta-conversion-panama/">landing de alta conversión</a>.',
           '<strong>La atención rápida es lo que separa una cotización ganada de una perdida.</strong> Con la IA cubriendo lo repetitivo y tu equipo enfocado en lo que decide la venta, el tiempo de respuesta deja de ser tu punto débil.',
         ],
@@ -200,14 +201,14 @@ export const saasPages: PageData[] = [
       {
         type: 'related',
         items: [
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA en tu web' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA en tu web' },
           { slug: 'saas/nouscrm', label: 'NousCRM' },
           { slug: 'saas', label: 'Todos los SaaS' },
           { slug: 'blog/como-hacer-campanas-de-whatsapp-masivo-en-panama', label: 'Guía: campañas de WhatsApp' },
         ],
       },
     ],
-    cta: { h2: 'Pide una demo de ChatMantis', wa: 'Hola, quiero una demo de ChatMantis.' },
+    cta: { h2: 'Pide una demo de WazaCRM', wa: 'Hola, quiero una demo de WazaCRM.' },
   },
 
   /* ---------- NOUSCRM ---------- */
@@ -296,7 +297,7 @@ export const saasPages: PageData[] = [
         type: 'related',
         items: [
           { slug: 'saas/cifrao', label: 'Cifrao' },
-          { slug: 'saas/chatmantis', label: 'ChatMantis' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
           { slug: 'saas', label: 'Todos los SaaS' },
         ],
       },

@@ -261,7 +261,7 @@ export const blog4: PageData[] = [
         paragraphs: [
           'La API oficial de WhatsApp Business es la vía que Meta habilita para que las empresas envíen mensajes a escala sin romper las reglas. Con ella tu número queda verificado, puedes mandar campañas grandes y tener varias personas atendiendo el mismo número, todo de forma legítima y estable.',
           'En Elemento Web somos <strong>Meta Verified Tech Provider</strong>, así que montamos tu WhatsApp masivo por la vía oficial, sin el riesgo de bloqueo de las herramientas piratas. Eso significa que tu número está protegido y tus campañas corren sin sustos. Puedes ver el detalle del servicio en <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp marketing masivo en Panamá</a>.',
-          'La API además se integra con lo demás: puedes conectar el WhatsApp a tu web, a un <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbot con IA</a> que responda al instante y a un CRM que ordene las conversaciones. El mensaje masivo abre la puerta; la atención cierra la venta.',
+          'La API además se integra con lo demás: puedes conectar el WhatsApp a tu web, a un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> que responda al instante y a un CRM que ordene las conversaciones. El mensaje masivo abre la puerta; la atención cierra la venta.',
         ],
       },
       {
@@ -316,7 +316,7 @@ export const blog4: PageData[] = [
           { q: '¿Puedo usar mi WhatsApp normal para mandar masivos?', a: 'No es recomendable. El WhatsApp normal o Business común no está pensado para envíos masivos y te arriesgas al bloqueo. Para campañas se usa la API oficial, que es la vía que Meta habilita para eso.' },
           { q: '¿De dónde saco los contactos con opt-in?', a: 'De tu propia operación: formularios en la web, casillas de suscripción, compras, reservas o gente que te escribió primero. Lo que no debes hacer es comprar bases de datos: además de ilegal, es la vía directa al reporte de spam.' },
           { q: '¿Cuánto tarda en aprobarse una plantilla?', a: 'Meta suele revisar las plantillas en poco tiempo si están bien redactadas y no parecen spam. Las que se rechazan casi siempre es por lenguaje demasiado comercial o engañoso; ajustando el texto se vuelven a enviar.' },
-          { q: '¿Somos nosotros o ustedes los que responden los mensajes?', a: 'Como quieras. Puedes atender tú, tu equipo, o conectar un <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbot con IA</a> que responda al instante y pase a un humano cuando haga falta. La campaña abre la conversación; alguien tiene que estar para cerrarla.' },
+          { q: '¿Somos nosotros o ustedes los que responden los mensajes?', a: 'Como quieras. Puedes atender tú, tu equipo, o conectar un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> que responda al instante y pase a un humano cuando haga falta. La campaña abre la conversación; alguien tiene que estar para cerrarla.' },
           { q: '¿Qué pasa si alguien se quiere dar de baja?', a: 'Debe poder hacerlo fácil, y hay que respetarlo de inmediato. Facilitar la baja protege tu número: es mejor que alguien se vaya tranquilo a que te reporte como spam y afecte la calidad de todos tus envíos.' },
         ],
       },
@@ -325,8 +325,8 @@ export const blog4: PageData[] = [
         items: [
           { slug: 'marketing/whatsapp-marketing-masivo-panama', label: 'WhatsApp marketing masivo en Panamá' },
           { slug: 'blog/como-vender-por-whatsapp-en-panama', label: 'Cómo vender por WhatsApp en Panamá' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbots con IA para tu web' },
-          { slug: 'saas/chatmantis', label: 'ChatMantis' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbots con IA para tu web' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
         
           { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Diseño web para restaurantes' },
           { slug: 'industrias/diseno-web-belleza-spa-panama', label: 'Diseño web para belleza y spas' },

@@ -83,7 +83,7 @@ export const blog9: PageData[] = [
         h2: 'Reducir la fricción del paciente sin ocupar a recepción todo el día',
         paragraphs: [
           'Antes de escribir, el paciente ya se hizo las mismas cuatro o cinco preguntas: ¿aceptan mi seguro?, ¿a qué hora abren?, ¿dónde queda exactamente?, ¿necesito cita o puedo llegar directo? Si tu web no responde eso a simple vista, buena parte simplemente no escribe: llama a la siguiente clínica que sí lo aclaró. Muchos, de hecho, ni siquiera llegan a tu web: te encuentran primero en el mapa cuando buscan "cerca de mí", terreno de tu <a href="/crecimiento/seo-local-google-maps-panama/">ficha de Google y el SEO local</a>, y una ficha con el horario viejo manda pacientes a la clínica de al lado aunque tu sitio esté impecable.',
-          'Una sección de preguntas frecuentes bien pensada resuelve parte del problema, pero no todo: alguien va a preguntar un domingo a las nueve de la noche, cuando recepción lleva horas cerrada. Ahí es donde un <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbot con IA</a> rinde de verdad: responde con la información real de tu clínica —seguros, horario, ubicación, qué llevar a la primera cita— a cualquier hora, y cuando la pregunta ya es clínica, la deriva a una persona en vez de improvisar.',
+          'Una sección de preguntas frecuentes bien pensada resuelve parte del problema, pero no todo: alguien va a preguntar un domingo a las nueve de la noche, cuando recepción lleva horas cerrada. Ahí es donde un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> rinde de verdad: responde con la información real de tu clínica —seguros, horario, ubicación, qué llevar a la primera cita— a cualquier hora, y cuando la pregunta ya es clínica, la deriva a una persona en vez de improvisar.',
           'Esa distinción no es opcional: un asistente de este tipo debe tener prohibido dar diagnósticos o interpretar síntomas, y decirlo con todas sus letras cuando corresponde. Su trabajo es absorber las preguntas repetidas del día para que tu equipo se dedique a las que sí necesitan criterio médico, no a competir con él.',
         ],
       },
@@ -113,7 +113,7 @@ export const blog9: PageData[] = [
         items: [
           { slug: 'industrias/diseno-web-clinicas-salud-panama', label: 'Diseño web para clínicas y salud' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas y citas online' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' },
           { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO local y Google Maps' },
           { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento web' },
 

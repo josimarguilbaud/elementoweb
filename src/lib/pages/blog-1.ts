@@ -228,7 +228,7 @@ export const blog1: PageData[] = [
         h2: 'Cómo se ve una web que sí convierte',
         paragraphs: [
           'La contraparte de estos errores es sencilla de describir. Una web que convierte aparece en Google para las búsquedas que hacen tus clientes, carga rápido en cualquier celular y deja claro en los primeros segundos qué haces y a quién ayudas. No hace falta adivinar nada.',
-          'Tiene un siguiente paso obvio en cada pantalla —escribir por WhatsApp, cotizar, comprar, agendar— y un contenido que habla del problema real del cliente en lugar de repetir frases de catálogo. Cuando el volumen de consultas empieza a crecer, muchas empresas suman un <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbot con IA</a> que responde al instante y filtra a los interesados de verdad.',
+          'Tiene un siguiente paso obvio en cada pantalla —escribir por WhatsApp, cotizar, comprar, agendar— y un contenido que habla del problema real del cliente en lugar de repetir frases de catálogo. Cuando el volumen de consultas empieza a crecer, muchas empresas suman un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> que responde al instante y filtra a los interesados de verdad.',
           'Si al leer esto reconociste tu propia web en varios de los siete errores, la solución no siempre es empezar de cero. A menudo un <a href="/servicios/redisenio-web-panama/">rediseño</a> ordenado corrige lo que falla y conserva —o recupera— el posicionamiento que ya tenías ganado en Google.',
         ],
       },

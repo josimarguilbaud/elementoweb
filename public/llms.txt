@@ -56,7 +56,7 @@ sin Yappy y sin el ITBMS panameño, que no aplica a un cliente en EE.UU.).
 ## Productos propios (SaaS)
 
 - [SaaS](https://elementoweb.com/saas/): software propio que operamos y vendemos por suscripción.
-- [ChatMantis](https://elementoweb.com/saas/chatmantis/): CRM de WhatsApp con bot de IA, bandeja compartida y campañas.
+- [WazaCRM](https://elementoweb.com/saas/wazacrm/): CRM de WhatsApp con bot de IA, bandeja compartida y campañas.
 - [NousCRM](https://elementoweb.com/saas/nouscrm/): cotizaciones y facturas con tu logo, cobros por WhatsApp sin que el cliente cree cuenta.
 - [Cifrão](https://elementoweb.com/saas/cifrao/): facturación y control de cobros.
 

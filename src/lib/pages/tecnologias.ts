@@ -199,7 +199,7 @@ export const tecnologias: PageData[] = [
         items: [
           { h3: 'Equipos que publican seguido', text: 'Si tu empresa saca noticias, artículos o novedades cada semana, la autonomía del panel de WordPress paga su peso en oro.', link: { slug: 'servicios/diseno-web-corporativo-panama', label: 'Web corporativa' } },
           { h3: 'Marcas que quieren blog', text: 'El contenido orgánico es de los canales más rentables a largo plazo. WordPress trae el blog listo y se lleva bien con una estrategia de SEO.', link: { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO' } },
-          { h3: 'Negocios que crecerán por etapas', text: 'Empiezas con una web sólida y luego sumas reservas, pagos o un chatbot sin reconstruir todo desde cero.', link: { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' } },
+          { h3: 'Negocios que crecerán por etapas', text: 'Empiezas con una web sólida y luego sumas reservas, pagos o un chatbot sin reconstruir todo desde cero.', link: { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' } },
         ],
       },
       {
@@ -353,7 +353,7 @@ export const tecnologias: PageData[] = [
     service: { type: 'Desarrollo web a medida con Vue y React' },
     lead: [
       'Cuando la plantilla se queda corta, se programa. Plataformas, portales de clientes e integraciones con el stack que sostiene nuestros propios productos.',
-      'La credencial importa: no vendemos tecnología que solo conocemos de talleres. ChatMantis, NousCRM y Cifrao (nuestros tres SaaS) corren en producción sobre Vue, React y Laravel, con clientes reales y datos que no se pueden perder. Ese es el estándar con el que construimos lo tuyo.',
+      'La credencial importa: no vendemos tecnología que solo conocemos de talleres. WazaCRM, NousCRM y Cifrao (nuestros tres SaaS) corren en producción sobre Vue, React y Laravel, con clientes reales y datos que no se pueden perder. Ese es el estándar con el que construimos lo tuyo.',
     ],
     blocks: [
       {
@@ -450,7 +450,7 @@ export const tecnologias: PageData[] = [
         intro: 'Cuando la plantilla se queda corta, esto es lo que programamos.',
         items: [
           { h3: 'Portales de cliente', text: 'Un espacio donde tus clientes consultan estados, suben documentos o gestionan sus trámites sin llamarte. Menos correos, más autoservicio.', link: { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas y citas' } },
-          { h3: 'Plataformas con IA', text: 'Chatbots y flujos inteligentes conectados a tu operación, el mismo tipo de producto que corre en nuestro ChatMantis.', link: { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' } },
+          { h3: 'Plataformas con IA', text: 'Chatbots y flujos inteligentes conectados a tu operación, el mismo tipo de producto que corre en nuestro WazaCRM.', link: { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' } },
           { h3: 'Automatizaciones internas', text: 'Conectar los sistemas que hoy no se hablan entre sí para que la información fluya sola, sin hojas de cálculo paralelas.', link: { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones' } },
         ],
       },
@@ -465,7 +465,7 @@ export const tecnologias: PageData[] = [
           { slug: 'blog/mejor-plataforma-para-crear-una-pagina-web', label: 'Guía: cuál plataforma conviene' },
           { slug: 'saas', label: 'Nuestros SaaS' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Sistemas de Reservas' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' },
           { slug: 'blog/diseno-web-responsive-mobile-first-panama', label: 'Diseño responsive' },
         ],
       },

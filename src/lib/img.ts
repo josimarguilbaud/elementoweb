@@ -77,7 +77,7 @@ export function pickImg(slug: string): keyof typeof PHOTOS {
   if (has('gimnasio', 'fitness', 'gym', 'deporte')) return 'gym';
   if (has('belleza', 'spa', 'estetica', 'salon')) return 'spa';
   // Antes que 'automotriz': 'automatizaciones' también empieza por 'auto'.
-  if (has('email', 'automatiz', 'n8n', 'chatbot', 'chatmantis', 'inteligencia', 'ia')) return 'ai';
+  if (has('email', 'automatiz', 'n8n', 'chatbot', 'wazacrm', 'inteligencia', 'ia')) return 'ai';
   if (has('taller', 'automotr', 'mecanic', 'auto')) return 'automotive';
   if (has('logistic', 'transport', 'envio', 'delivery')) return 'logistics';
   if (has('ecommerce', 'ecomm', 'tienda', 'yappy', 'pasarela', 'pago')) return 'ecommerce';

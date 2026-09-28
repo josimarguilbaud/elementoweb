@@ -32,7 +32,7 @@ const catalogGroups = [
     hub: 'funcionalidades',
     items: [
       { h3: 'Yappy y pasarelas de pago', text: 'Cobra en tu web como pagan los panameños: Botón de Pago Yappy oficial más tarjetas. Sin transferencias por captura de pantalla.', link: { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y Pasarelas' } },
-      { h3: 'Chatbot con IA', text: 'Un asistente entrenado con tu información que responde en tu web, WhatsApp e Instagram las 24 horas. Con ChatMantis, nuestro producto.', link: { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' } },
+      { h3: 'Chatbot con IA', text: 'Un asistente entrenado con tu información que responde en tu web, WhatsApp e Instagram las 24 horas. Con WazaCRM, nuestro producto.', link: { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' } },
       { h3: 'Reservas y citas online', text: 'Tu cliente agenda solo, con disponibilidad real, recordatorios automáticos y pago anticipado si lo necesitas.', link: { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' } },
     ],
   },
@@ -58,7 +58,7 @@ const catalogGroups = [
     title: 'Nuestros SaaS',
     hub: 'saas',
     items: [
-      { h3: 'ChatMantis', text: 'Omnicanalidad con IA: WhatsApp, Instagram y el chat de tu web en una sola bandeja, con asistentes entrenados con tu información.', link: { slug: 'saas/chatmantis', label: 'Conocer ChatMantis' } },
+      { h3: 'WazaCRM', text: 'Omnicanalidad con IA: WhatsApp, Instagram y el chat de tu web en una sola bandeja, con asistentes entrenados con tu información.', link: { slug: 'saas/wazacrm', label: 'Conocer WazaCRM' } },
       { h3: 'NousCRM', text: 'Cotizaciones y facturas con tu logo, que tu cliente abre y paga desde WhatsApp sin crear cuenta.', link: { slug: 'saas/nouscrm', label: 'Conocer NousCRM' } },
       { h3: 'Cifrao', text: 'Software contable para empresas en Panamá: facturación, conciliación y cuentas por cobrar que avisan solas.', link: { slug: 'saas/cifrao', label: 'Conocer Cifrao' } },
     ],
@@ -257,7 +257,7 @@ export const servicios: PageData[] = [
         items: [
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño Web' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' },
           { slug: 'industrias', label: 'Diseño web por industria' },
           { slug: 'blog/landing-page-vs-sitio-web-cual-necesitas', label: 'Landing o sitio web' },
           { slug: 'blog/diseno-web-responsive-mobile-first-panama', label: 'Diseño responsive' },
@@ -403,7 +403,7 @@ export const servicios: PageData[] = [
         items: [
           { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y Pasarelas' },
           { slug: 'tecnologias/diseno-web-shopify-panama', label: 'Shopify' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbot con IA' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' },
           { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Web para Restaurantes' },
           { slug: 'blog/como-aumentar-ventas-tienda-online-panama', label: 'Cómo vender más online' },
           { slug: 'funcionalidades/integracion-cybersource-panama', label: 'Integración CyberSource' },

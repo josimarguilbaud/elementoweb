@@ -278,7 +278,7 @@ export const blog6: PageData[] = [
         h2: 'Tu vendedor que no duerme: el canal 24/7',
         paragraphs: [
           'Tu negocio tiene horario; tu web no. A las once de la noche, un domingo o mientras atiendes a otro cliente, tu página sigue mostrando tus servicios, resolviendo dudas y dejando que alguien te escriba por WhatsApp con un clic. Cada visita es una oportunidad que no tuviste que atender en persona.',
-          'Y puedes ir más allá de la vitrina estática. Una web hoy integra botón de WhatsApp, <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reservas y citas en línea</a> para que agenden solos, <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">pagos con Yappy</a> y hasta un <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbot con inteligencia artificial</a> que responde preguntas frecuentes cuando tú no puedes. Tu web trabaja mientras tú descansas.',
+          'Y puedes ir más allá de la vitrina estática. Una web hoy integra botón de WhatsApp, <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reservas y citas en línea</a> para que agenden solos, <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">pagos con Yappy</a> y hasta un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con inteligencia artificial</a> que responde preguntas frecuentes cuando tú no puedes. Tu web trabaja mientras tú descansas.',
           'Ese es el salto de mentalidad: la web no es un folleto digital que se cuelga y se olvida, es un canal activo que atrae, convence y convierte todos los días. Para muchos negocios en Panamá es, de hecho, su mejor vendedor.',
         ],
       },
@@ -388,7 +388,7 @@ export const blog6: PageData[] = [
         paragraphs: [
           'En Panamá, buena parte de las ventas empiezan por WhatsApp, así que medir cuánta gente pasa de tu web a escribirte es de las métricas más valiosas que tienes. No basta con poner el botón: hay que saber cuántos lo pulsan y desde qué página lo hacen.',
           'Esto se configura marcando el clic al botón de WhatsApp como una conversión en Analytics. Así sabes si tu web realmente está generando conversaciones o solo visitas que no llaman. Y descubres qué página convierte mejor: quizá tu landing de un servicio específico genera más chats que la página de inicio, y eso te dice dónde poner el foco.',
-          'Si además usas un <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbot con IA</a> o un CRM, puedes ir más allá y medir cuántas de esas conversaciones terminan en venta. Ahí cierras el círculo completo: de la visita al chat, y del chat al cliente. Ese es el dato que de verdad manda.',
+          'Si además usas un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> o un CRM, puedes ir más allá y medir cuántas de esas conversaciones terminan en venta. Ahí cierras el círculo completo: de la visita al chat, y del chat al cliente. Ese es el dato que de verdad manda.',
         ],
       },
       {
@@ -430,7 +430,7 @@ export const blog6: PageData[] = [
         items: [
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
           { slug: 'blog/como-aparecer-primero-en-google-en-panama', label: 'Aparecer primero en Google' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbots con IA' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbots con IA' },
         
           { slug: 'industrias/diseno-web-bienes-raices-panama', label: 'Diseño web para bienes raíces' },
           { slug: 'industrias/diseno-web-gimnasios-fitness-panama', label: 'Diseño web para gimnasios' },
@@ -484,7 +484,7 @@ export const blog6: PageData[] = [
         type: 'prose',
         h2: 'La IA en el diseño web: útil con criterio',
         paragraphs: [
-          'La inteligencia artificial es la gran protagonista de 2026, pero conviene separar el uso útil del humo. Lo que sí aporta valor real a tu negocio son los <a href="/funcionalidades/chatbots-ia-web-chatmantis-panama/">chatbots con IA</a> que responden preguntas frecuentes a cualquier hora, califican al cliente y lo pasan a WhatsApp cuando hace falta. Eso es la IA trabajando para ti mientras duermes.',
+          'La inteligencia artificial es la gran protagonista de 2026, pero conviene separar el uso útil del humo. Lo que sí aporta valor real a tu negocio son los <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbots con IA</a> que responden preguntas frecuentes a cualquier hora, califican al cliente y lo pasan a WhatsApp cuando hace falta. Eso es la IA trabajando para ti mientras duermes.',
           'También ayuda la IA como herramienta de trabajo interno: para agilizar textos, generar imágenes de apoyo o automatizar tareas repetidas con flujos como los de <a href="/marketing/automatizaciones-n8n-panama/">n8n</a>. Bien usada, te ahorra horas y hace tu operación más ágil.',
           'Lo que no recomendamos es la IA como truco de venta vacío: webs generadas de golpe sin estrategia, textos genéricos que suenan a robot o "efectos de IA" que solo suman peso y confunden. La pregunta de siempre: ¿esto le sirve a mi cliente o solo suena moderno? Si es lo segundo, sáltalo.',
         ],
@@ -540,7 +540,7 @@ export const blog6: PageData[] = [
         type: 'related',
         items: [
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño Web en Panamá' },
-          { slug: 'funcionalidades/chatbots-ia-web-chatmantis-panama', label: 'Chatbots con IA' },
+          { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbots con IA' },
           { slug: 'blog/errores-comunes-diseno-web-empresas', label: 'Errores comunes de diseño web' },
         
           { slug: 'industrias/diseno-web-arquitectos-diseno-interiores-panama', label: 'Diseño web para arquitectos' },

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VPS Evolution PMC · elementoweb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f8f9fa;
+    --ink:#333333;
+    --ink-2:#2a2a2a;
+    --night:#14232b;
+    --night-2:#0e1a20;
+    --teal:#0099cc;
+    --teal-deep:#00688c;
+    --violet:#5ec8e8;
+    --card:#ffffff;
+    --line:#e4e6e8;
+    --font-display:"Outfit", ui-sans-serif, system-ui, sans-serif;
+    --font-body:"Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; background:var(--paper); color:var(--ink); }
+  body{
+    font-family:var(--font-body);
+    line-height:1.6;
+    padding-inline:20px;
+    padding-block:0 64px;
+  }
+  .doc{ max-width:760px; margin-inline:auto; }
+  h1,h2,h3{ font-family:var(--font-display); letter-spacing:-0.02em; color:var(--night); margin:0; }
+  code,.mono,.val{ font-family:var(--font-mono); }
+
+  /* Letterhead */
+  .letterhead{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    padding-block:28px 22px; border-bottom:1px solid var(--line);
+  }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand-sq{
+    display:grid; place-items:center; width:34px; height:34px; border-radius:9px; background:var(--night); flex-shrink:0;
+  }
+  .brand-tx{ font-family:var(--font-display); font-size:16px; font-weight:700; color:var(--night); letter-spacing:-0.02em; }
+  .brand-tx span{ font-weight:500; opacity:.55; }
+  .doc-meta{ font-size:12.5px; color:var(--ink); opacity:.55; text-align:right; }
+
+  h1{ font-size:clamp(1.7rem,4vw,2.3rem); line-height:1.12; margin:28px 0 8px; text-wrap:balance; }
+  .subtitle{ font-size:1.02rem; color:var(--ink); opacity:.72; max-width:58ch; margin:0 0 30px; }
+
+  .brief{
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:18px 20px; margin-bottom:38px; display:grid; gap:12px;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  }
+  .brief div{ display:flex; flex-direction:column; gap:3px; }
+  .brief .k{ font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink); opacity:.5; font-weight:600; }
+  .brief .v{ font-size:14.5px; font-weight:600; color:var(--night); }
+
+  section.step{ margin-bottom:40px; }
+  .step-head{ display:flex; gap:15px; align-items:center; margin-bottom:14px; }
+  .step-num{
+    font-family:var(--font-mono); font-size:13px; color:#fff; background:var(--night);
+    border-radius:999px; width:30px; height:30px;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:600;
+  }
+  h2{ font-size:1.2rem; }
+  .step-body{ padding-left:45px; }
+  .step-body > p{ color:var(--ink); opacity:.75; margin:0 0 14px; max-width:62ch; }
+  .step-body > p:last-child{ margin-bottom:0; }
+
+  table.spec{ width:100%; border-collapse:collapse; margin:14px 0 6px; font-size:14.5px; }
+  table.spec th{
+    text-align:left; font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink); opacity:.5; font-weight:600; padding:0 12px 8px 0; border-bottom:1px solid var(--line);
+  }
+  table.spec td{ padding:10px 12px 10px 0; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.spec tr:last-child td{ border-bottom:none; }
+  table.spec td.min{ opacity:.6; }
+  table.spec td.rec{ font-weight:600; color:var(--night); }
+
+  ul.plain{ margin:0; padding:0; list-style:none; display:grid; gap:10px; }
+  ul.plain li{ display:flex; gap:10px; align-items:flex-start; font-size:14.5px; }
+  ul.plain li::before{
+    content:""; width:6px; height:6px; border-radius:50%; background:var(--teal);
+    margin-top:8px; flex-shrink:0;
+  }
+  ul.plain b{ font-weight:600; color:var(--night); }
+  ul.plain .sub{ opacity:.7; }
+
+  .code{
+    background:var(--night-2); color:#c9f3ff; border-radius:9px;
+    padding:14px 16px; font-family:var(--font-mono); font-size:13px; overflow-x:auto; margin:12px 0;
+    white-space:pre; line-height:1.55;
+  }
+  .code .cmt{ color:#5b7986; }
+
+  .callout{
+    border:1px solid var(--line); border-left:3px solid var(--teal); background:#eef8fb;
+    border-radius:0 10px 10px 0; padding:12px 16px; font-size:13.5px; margin-top:14px;
+  }
+  .callout b{ color:var(--teal-deep); }
+
+  .no-list{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .no-list span{
+    font-size:13px; padding:5px 11px; border-radius:999px; border:1px solid var(--line);
+    opacity:.55; text-decoration:line-through;
+  }
+
+  .checklist{ background:var(--night); color:#fff; border-radius:14px; padding:24px 26px; }
+  .checklist h2{ color:#fff; margin-bottom:4px; }
+  .checklist p{ margin:0; color:#cfe6ee; font-size:14.5px; }
+  .checklist ol{ margin:16px 0 0; padding-left:20px; display:grid; gap:11px; font-size:14.5px; color:#eaf6fa; }
+  .checklist ol li::marker{ color:var(--violet); font-weight:700; }
+  .checklist code{ color:#8fe0ff; }
+
+  footer.sign{
+    margin-top:44px; padding-top:20px; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:13px; opacity:.6;
+  }
+
+  @media (max-width:520px){ .step-body{ padding-left:0; } .step-head{ flex-wrap:wrap; } }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <header class="letterhead">
+    <a href="https://elementoweb.com" style="text-decoration:none" class="brand">
+      <span class="brand-sq"><svg width="17" height="17" viewBox="0 0 32 32" fill="none"><path d="M16 4 26.4 10V22L16 28 5.6 22V10Z" stroke="#0099cc" stroke-width="2.3" stroke-linejoin="round" /><path d="M16 16 5.6 10M16 16 26.4 10M16 16V28" stroke="#0099cc" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" /><circle cx="16" cy="16" r="1.7" fill="#0099cc" /></svg></span>
+      <span class="brand-tx">elemento<span>web</span></span>
+    </a>
+    <div class="doc-meta">Evolution PMC, infraestructura<br>28 sept 2026</div>
+  </header>
+
+  <h1>Requisitos del VPS para evolutionpmc.com</h1>
+  <p class="subtitle">Documento técnico para quien prepare el servidor. Al final hay un checklist con exactamente lo que debe quedar listo para entregar el acceso a Josimar.</p>
+
+  <div class="brief">
+    <div><span class="k">Dominio</span><span class="v mono">evolutionpmc.com</span></div>
+    <div><span class="k">Sitio</span><span class="v">Astro (estático)</span></div>
+    <div><span class="k">Backend / DB</span><span class="v">Ninguno</span></div>
+    <div><span class="k">Despliegue</span><span class="v">Docker + Coolify</span></div>
+  </div>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">1</span><h2>Qué se va a alojar</h2></div>
+    <div class="step-body">
+      <p>evolutionpmc.com es un sitio estático hecho en Astro: se compila a HTML/CSS/JS plano, no corre un servidor de aplicación ni usa base de datos. Se empaqueta en un contenedor Docker (Node para el build, Nginx para servirlo) y se administra con <b>Coolify</b>, un panel de despliegue autohospedado. Por eso el VPS solo necesita correr contenedores Docker, nada de PHP, Apache ni MySQL.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">2</span><h2>Especificaciones mínimas del servidor</h2></div>
+    <div class="step-body">
+      <p>Es un sitio de bajo tráfico sin base de datos, así que no necesita un servidor grande. Estos números ya incluyen margen para correr Coolify (su panel también usa Docker) sin quedarse corto.</p>
+      <table class="spec">
+        <tr><th>Recurso</th><th>Mínimo</th><th>Recomendado</th></tr>
+        <tr><td>CPU</td><td class="min">1 vCPU</td><td class="rec">2 vCPU</td></tr>
+        <tr><td>RAM</td><td class="min">2 GB</td><td class="rec">4 GB</td></tr>
+        <tr><td>Disco</td><td class="min">25 GB SSD</td><td class="rec">40 GB SSD</td></tr>
+        <tr><td>Transferencia</td><td class="min">1 TB/mes</td><td class="rec">2 TB/mes o ilimitada</td></tr>
+        <tr><td>IP pública</td><td colspan="2">IPv4 fija (necesaria para el DNS y el SSL)</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">3</span><h2>Sistema operativo</h2></div>
+    <div class="step-body">
+      <p><b>Ubuntu 22.04 LTS o 24.04 LTS</b>, instalación limpia (sin cPanel, Plesk ni panel de hosting preinstalado: Coolify hace ese trabajo). Acceso root o un usuario con privilegios <span class="mono">sudo</span> completos para la instalación inicial.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">4</span><h2>Software a instalar</h2></div>
+    <div class="step-body">
+      <p>Docker Engine + el plugin de Docker Compose, y luego Coolify sobre eso. Con el VPS ya accesible por SSH, la instalación de Coolify es un solo script oficial:</p>
+      <div class="code"><span class="cmt"># Como root, en el VPS ya provisionado</span>
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash</div>
+      <p>Ese script instala Docker si hace falta y deja el panel de Coolify corriendo en el puerto <span class="mono">8000</span>. No requiere configuración manual adicional de Nginx ni de certificados: Coolify se encarga de ambos por cada aplicación que se despliegue.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">5</span><h2>Red y firewall</h2></div>
+    <div class="step-body">
+      <ul class="plain">
+        <li><b>22</b> <span class="sub">SSH. Idealmente cambiar al puerto por defecto una vez confirmado el acceso.</span></li>
+        <li><b>80</b> <span class="sub">HTTP (Coolify redirige a HTTPS automáticamente).</span></li>
+        <li><b>443</b> <span class="sub">HTTPS.</span></li>
+        <li><b>8000</b> <span class="sub">Panel de Coolify. Debe quedar <b>cerrado a internet</b> (bloqueado en el firewall) y accesible solo por túnel SSH, mismo criterio de seguridad del resto de nuestra infraestructura.</span></li>
+      </ul>
+      <div class="callout"><b>Importante:</b> ningún otro puerto necesita estar abierto. Si el proveedor trae un firewall administrado (ej. Security Groups), replicar esta misma regla ahí.</div>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">6</span><h2>Dominio y SSL</h2></div>
+    <div class="step-body">
+      <p>El dominio <span class="mono">evolutionpmc.com</span> debe apuntar por registro <span class="mono">A</span> (y <span class="mono">www</span> como <span class="mono">CNAME</span> o segundo registro <span class="mono">A</span>) a la IP pública del VPS. El certificado SSL se emite solo (Let's Encrypt, vía Coolify) en cuanto el DNS propague, sin necesidad de comprar ni instalar nada de SSL a mano.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">7</span><h2>Acceso para desplegar (llave SSH)</h2></div>
+    <div class="step-body">
+      <p>Para subir el sitio hace falta acceso por SSH con llave pública, sin contraseña. El flujo más simple:</p>
+      <ul class="plain">
+        <li><b>Crear un usuario</b> <span class="sub">con permisos sudo (puede ser el mismo root, o uno dedicado, cualquiera funciona).</span></li>
+        <li><b>Agregar la llave pública</b> <span class="sub">al archivo <code>~/.ssh/authorized_keys</code> de ese usuario. Se envía por un canal seguro aparte (no por este documento).</span></li>
+        <li><b>Confirmar</b> <span class="sub">la IP del VPS y el usuario a usar (ej. <code>root@IP</code> o <code>deploy@IP</code>).</span></li>
+      </ul>
+      <div class="callout">No hace falta compartir contraseñas de root ni credenciales del proveedor del VPS: con la llave SSH agregada es suficiente para desplegar.</div>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">8</span><h2>Lo que NO hace falta instalar</h2></div>
+    <div class="step-body">
+      <p>El sitio es 100% estático, así que sobra cualquier stack pensado para PHP/WordPress u otras apps con backend:</p>
+      <div class="no-list">
+        <span>cPanel / Plesk</span><span>Apache</span><span>PHP</span><span>MySQL / MariaDB</span><span>PostgreSQL</span><span>FTP</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="checklist">
+    <h2>Checklist de entrega</h2>
+    <p>Con estos 5 puntos listos, el sitio queda en condiciones de desplegarse.</p>
+    <ol>
+      <li>VPS con Ubuntu 22.04/24.04 LTS, 2 vCPU / 4 GB RAM / 40 GB SSD (o el mínimo de la tabla arriba).</li>
+      <li>Docker + Coolify instalados y el panel accesible por SSH en el puerto 8000 (cerrado a internet).</li>
+      <li>Puertos 22, 80 y 443 abiertos; 8000 bloqueado desde fuera.</li>
+      <li>DNS de evolutionpmc.com apuntando a la IP del VPS (registro A, más www).</li>
+      <li>Usuario con sudo, IP y nombre de usuario confirmados para agregar la llave SSH.</li>
+    </ol>
+  </div>
+
+  <footer class="sign">
+    <span>Cualquier duda técnica, con gusto la resolvemos por WhatsApp o llamada.</span>
+    <span>elementoweb.com</span>
+  </footer>
+
+</div>
+</body>
+</html>

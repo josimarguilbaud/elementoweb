@@ -11,6 +11,8 @@ import { industrias2b } from './industrias-2b';
 import { industrias2c } from './industrias-2c';
 import { industrias3 } from './industrias-3';
 import { crecimiento } from './crecimiento';
+import { miamiPages } from './miami';
+import { miamiPages2 } from './miami-2';
 import { saasPages } from './saas';
 import { marketingPages } from './marketing';
 import { blog1 } from './blog-1';
@@ -64,6 +66,8 @@ export const pages: PageData[] = [
   ...industrias2c,
   ...industrias3,
   ...crecimiento,
+  ...miamiPages,
+  ...miamiPages2,
   ...saasPages,
   ...marketingPages,
   ...blog1,

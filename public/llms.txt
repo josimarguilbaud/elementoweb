@@ -4,17 +4,19 @@
 > corporativos, tiendas en línea, landing pages y software a medida, y opera
 > marketing digital, SEO y automatización con IA para empresas panameñas.
 
-Elemento Web es una agencia con sede en Panamá que atiende principalmente al
-mercado panameño y, en menor medida, a Latinoamérica. Trabaja con Astro, React,
-Vue, WordPress y Shopify, e integra medios de pago locales como Yappy.
+Elemento Web es una agencia con sede en Panamá que atiende al mercado panameño
+y, de forma remota, a negocios hispanos de Miami-Dade (Florida, EE.UU.) y en
+menor medida al resto de Latinoamérica. Trabaja con Astro, React, Vue,
+WordPress y Shopify, e integra medios de pago locales como Yappy en Panamá y
+tarjeta/transferencia internacional para clientes de EE.UU.
 
 Datos verificables:
 
 - Sitio: https://elementoweb.com
 - Correo: hola@elementoweb.com
 - Teléfono y WhatsApp: +507 6190-3007
-- Ámbito de servicio: Panamá (país), con proyectos en América Latina
-- Idioma del contenido: español de Panamá (es-PA)
+- Ámbito de servicio: Panamá (sede) y Miami-Dade, Florida (remoto), con proyectos en América Latina
+- Idioma del contenido: español de Panamá (es-PA) y español latinoamericano
 - Meta Verified Tech Provider
 
 ## Qué responde bien este sitio
@@ -39,6 +41,17 @@ Estas páginas están escritas para responder preguntas concretas y son las más
 - [Funcionalidades](https://elementoweb.com/funcionalidades/): chatbots con IA, reservas y citas, pasarelas de pago.
 - [Integración de CyberSource](https://elementoweb.com/funcionalidades/integracion-cybersource-panama/): qué es Unified Checkout, alcances con precio, PCI-DSS SAQ A y 3-D Secure 2.
 - [Inteligencia artificial para empresas](https://elementoweb.com/inteligencia-artificial-para-empresas-panama/): asistentes, automatización y base de conocimiento privada.
+
+## Miami (servicio remoto desde Panamá)
+
+Elemento Web atiende negocios hispanos de Miami-Dade de forma 100% remota
+desde Panamá: mismo huso horario (0-1 hora de diferencia), precios en USD,
+facturación desde la empresa panameña (tarjeta o transferencia internacional,
+sin Yappy y sin el ITBMS panameño, que no aplica a un cliente en EE.UU.).
+
+- [Diseño web en Miami](https://elementoweb.com/miami/): hub con las 13 zonas de Miami-Dade cubiertas.
+- [Diseño web en Miami en español](https://elementoweb.com/miami/diseno-web-en-miami-en-espanol/): página ancla del mercado.
+- [Doral](https://elementoweb.com/miami/diseno-web-doral/), [Hialeah](https://elementoweb.com/miami/diseno-web-hialeah/), [Kendall](https://elementoweb.com/miami/diseno-web-kendall/), [Westchester](https://elementoweb.com/miami/diseno-web-westchester/), [Brickell](https://elementoweb.com/miami/diseno-web-brickell/), [Coral Gables](https://elementoweb.com/miami/diseno-web-coral-gables/), [Homestead](https://elementoweb.com/miami/diseno-web-homestead/), [Sweetwater](https://elementoweb.com/miami/diseno-web-sweetwater/), [Hialeah Gardens](https://elementoweb.com/miami/diseno-web-hialeah-gardens/), [Miami Lakes](https://elementoweb.com/miami/diseno-web-miami-lakes/), [Cutler Bay](https://elementoweb.com/miami/diseno-web-cutler-bay/) y [North Miami](https://elementoweb.com/miami/diseno-web-north-miami/).
 
 ## Productos propios (SaaS)
 

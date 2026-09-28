@@ -14,7 +14,7 @@ export function orgNode() {
     email: site.email,
     telephone: site.phone.replace(/\s/g, '-'),
     logo: `${site.domain}/favicon.svg`,
-    areaServed: [{ '@type': 'Country', name: 'Panamá' }, { '@type': 'Place', name: 'América Latina' }],
+    areaServed: [{ '@type': 'Country', name: 'Panamá' }, { '@type': 'Place', name: 'América Latina' }, { '@type': 'Place', name: 'Miami-Dade County, Florida' }],
     // ⚠️ Completar con perfiles sociales reales antes de publicar.
     sameAs: ['https://www.instagram.com/elementoweb.com'],
   };
@@ -41,7 +41,7 @@ export function localBusinessNode() {
   return {
     '@type': 'ProfessionalService',
     '@id': `${site.domain}/#negocio`,
-    name: `${site.name}: Diseño Web en Panamá`,
+    name: `${site.name}: Diseño Web en Panamá y Miami`,
     url: site.domain,
     parentOrganization: { '@id': ORG_ID },
     telephone: site.phone.replace(/\s/g, '-'),
@@ -55,6 +55,9 @@ export function localBusinessNode() {
         geoMidpoint: { '@type': 'GeoCoordinates', latitude: 8.9824, longitude: -79.5199 },
         geoRadius: '60000',
       },
+      // Miami-Dade: servicio 100% remoto, sin oficina física — sin GeoCircle,
+      // solo la declaración del área. Ver /miami/ para el detalle por zona.
+      { '@type': 'Place', name: 'Miami-Dade County, Florida' },
     ],
   };
 }

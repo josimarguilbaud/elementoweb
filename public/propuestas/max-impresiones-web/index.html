@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Sitio Web · MAX IMPRESIONES — elementoweb.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand: #3b82f6;
+            --brand-deep: #1e3a8a;
+            --violet: #7c3aed;
+            --ink: #0f172a;
+        }
+        * { -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background: #eef2fb;
+            background-image:
+                radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,0.10), transparent 60%),
+                radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,0.12), transparent 55%),
+                radial-gradient(45rem 45rem at 50% 120%, rgba(37,99,235,0.08), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1, h2, h3, h4, .display {
+            font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .gradient-text {
+            background: linear-gradient(100deg, #60a5fa, #3b82f6 45%, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass {
+            background: rgba(255,255,255,0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 20px 40px -24px rgba(30,58,138,0.28);
+        }
+        .service-card {
+            position: relative;
+            transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute; inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(96,165,250,.6), rgba(124,58,237,.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            opacity: 0; transition: opacity .35s ease;
+            pointer-events: none;
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(30,58,138,0.45); }
+        .service-card:hover::before { opacity: 1; }
+        .num-badge {
+            background: linear-gradient(135deg, #60a5fa, #3b82f6 55%, #7c3aed);
+            box-shadow: 0 10px 22px -8px rgba(59,130,246,0.7);
+        }
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+        .reveal.in { opacity: 1; transform: none; }
+        @keyframes float1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(20px,-16px) scale(1.08);} }
+        @keyframes float2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-24px,14px) scale(1.12);} }
+        .orb1 { animation: float1 11s ease-in-out infinite; }
+        .orb2 { animation: float2 14s ease-in-out infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .shine {
+            background: linear-gradient(90deg,#93c5fd,#e0e7ff,#93c5fd,#c4b5fd);
+            background-size: 200% auto;
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+        .price-pill { background: linear-gradient(135deg,#eff6ff,#eef2ff); border:1px solid #dbeafe; }
+        .wa-float {
+            box-shadow: 0 14px 30px -8px rgba(22,163,74,0.6);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .wa-float:hover { transform: translateY(-3px) scale(1.04); }
+        @keyframes waPulse { 0%{ box-shadow:0 0 0 0 rgba(34,197,94,.5);} 70%{ box-shadow:0 0 0 16px rgba(34,197,94,0);} 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+        .wa-pulse { animation: waPulse 2.4s infinite; }
+        .btn-primary {
+            background: linear-gradient(135deg,#3b82f6,#7c3aed);
+            transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+            box-shadow: 0 14px 28px -10px rgba(59,130,246,0.7);
+        }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 20px 34px -10px rgba(124,58,237,0.6); }
+        .section-tag { background: linear-gradient(135deg,#0b1220,#1e3a8a); }
+        @media print {
+            body { background: #fff; }
+            .no-print { display: none !important; }
+            .reveal { opacity:1 !important; transform:none !important; }
+            main { box-shadow:none !important; margin: 0 !important; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 selection:bg-violet-200 selection:text-violet-900">
+
+    <main class="max-w-4xl mx-auto my-6 sm:my-10 glass rounded-[28px] overflow-hidden">
+
+        <!-- ============ HEADER ============ -->
+        <header class="relative overflow-hidden text-white px-7 sm:px-10 pt-8 pb-10"
+                style="background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);">
+            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.55),transparent 70%);"></div>
+            <div class="orb2 absolute -bottom-24 -left-10 w-72 h-72 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(59,130,246,.5),transparent 70%);"></div>
+            <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:32px 32px;"></div>
+
+            <div class="relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-8 border-b border-white/15">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);">
+                            <svg width="26" height="26" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="25" cy="15" r="3.2" fill="#fff"/>
+                                <circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/>
+                            </svg>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="display text-lg font-bold tracking-tight">elementoweb<span class="text-violet-300">.com</span></p>
+                            <p class="text-[11px] text-blue-200/80 tracking-wide">Desarrollo Web · IA · Automatización</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm sm:justify-end">
+                        <a href="mailto:info@elementoweb.com" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            info@elementoweb.com
+                        </a>
+                        <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-blue-100 hover:text-white transition">
+                            <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                            6162-2787
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+                    <div>
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-blue-200 bg-white/10 border border-white/15 rounded-full px-3 py-1 mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-400 wa-pulse"></span> Propuesta de Servicios Digitales
+                        </span>
+                        <h1 class="text-4xl sm:text-5xl font-extrabold leading-none mb-3">
+                            <span class="shine">MAX IMPRESIONES</span>
+                        </h1>
+                        <p class="text-blue-100/90 max-w-lg text-sm leading-relaxed">
+                            Página web completa, infraestructura anual, posicionamiento en Google y mantenimiento mensual para su imprenta.
+                        </p>
+                    </div>
+                    <div class="shrink-0 grid gap-3 text-sm">
+                        <div class="glass !bg-white/10 !border-white/15 rounded-xl px-4 py-3 text-white">
+                            <p class="text-[11px] text-blue-200 uppercase tracking-wider mb-0.5">Preparado para</p>
+                            <p class="font-semibold">Max Impresiones</p>
+                            <p class="text-blue-200 text-xs">Villa Zaita Mall · Panamá</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-blue-200 text-xs justify-end">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            29 de septiembre de 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="px-7 sm:px-10 py-12">
+
+            <!-- ============ INTRO ============ -->
+            <section class="reveal mb-14 text-center max-w-2xl mx-auto">
+                <h2 class="display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Su imprenta en internet, <span class="gradient-text">completa y bien cuidada</span></h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Una página web completa para Max Impresiones, con dominio, servidor y certificado de seguridad incluidos en la infraestructura anual, más posicionamiento en Google y un plan de mantenimiento mensual para que el sitio siga funcionando y encontrándose.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mt-6">
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🌐 Página Web Completa</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🔒 Dominio + Servidor VPS + SSL</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🔎 Posicionamiento SEO</span>
+                    <span class="text-xs font-medium text-blue-700 price-pill rounded-full px-3 py-1.5">🛠️ Mantenimiento mensual</span>
+                </div>
+            </section>
+
+                <!-- Service 1 -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">1</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Página Web Completa</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Posicionamiento básico · Redacción de contenido · Generación de imágenes</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">$1,350</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">Pago Único</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3 md:pl-15">Una vitrina digital a la altura de una planta de producción B2B: gran formato, rotulación, bordado industrial, serigrafía, offset y ploteo de planos, todo explicado con claridad para que un cliente empresarial cotice sin llamar primero.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 md:pl-15 mb-4">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Posicionamiento básico</strong>: título, descripción y estructura de cada página listos para que Google la pueda leer bien desde el día uno. El trabajo continuo de posicionamiento va aparte (ver más abajo).</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Redacción de todo el contenido</strong>: cada servicio explicado en el lenguaje que usa su cliente, no en jerga técnica.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Generación de imágenes</strong> para cada servicio, sin depender de fotos de stock genéricas.</span></li>
+                    </ul>
+                    <span class="inline-flex items-center gap-2 text-xs text-blue-800 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2 md:ml-15">
+                        <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span><strong>Entrega estimada:</strong> 7 días hábiles tras recibir el material.</span>
+                    </span>
+                </div>
+
+                <!-- Service 2: Infraestructura -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">2</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Infraestructura Web Anual</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Dominio · Servidor VPS · Certificado SSL (1 año)</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">$461</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">Pago Anual</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3 md:pl-15">Va aparte de la página web: es lo que mantiene el sitio de Max Impresiones vivo, seguro y en internet durante todo el año.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 md:pl-15 mb-3">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Dominio propio</strong> a nombre de Max Impresiones: <strong class="text-slate-800">$15 al año</strong>.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Servidor VPS</strong> administrado por Elemento Web, seguro y disponible 24/7: <strong class="text-slate-800">$350 al año</strong>.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Certificado SSL</strong> (el candado de seguridad que da confianza a quien cotiza en línea): <strong class="text-slate-800">$96 al año</strong>.</span></li>
+                    </ul>
+                    <p class="text-xs text-slate-500 md:pl-15">Total por sitio: $15 de dominio + $350 de servidor VPS + $96 de certificado SSL = $461 al año. Se renueva cada año a este mismo precio.</p>
+                </div>
+
+                <!-- Service 3: SEO continuo -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">3</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Posicionamiento Web (SEO)</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Trabajo continuo de posicionamiento en Google, mes a mes</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">$89</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">/ mes</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3 md:pl-15">Lo que se entrega al inicio es un posicionamiento básico: la base técnica lista. Aparecer arriba en Google para las búsquedas que de verdad traen clientes es trabajo continuo, no algo que se termina una vez.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 md:pl-15">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Monitoreo de posiciones</strong> en Google para las búsquedas que importan al negocio.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Ajustes técnicos y de contenido</strong> cada mes, según cómo responde Google.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Nuevo contenido optimizado</strong> (páginas o artículos de blog) para captar más búsquedas con el tiempo.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: Mantenimiento -->
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-14 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">4</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Plan de Mantenimiento Web</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Su página segura, respaldada y funcionando, mes a mes</p>
+                            </div>
+                        </div>
+                        <div class="text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">$49</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">/ mes</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3 md:pl-15">Una página web no se entrega y se olvida: necesita actualizaciones, copias de seguridad y alguien pendiente cuando algo falla. Este plan deja ese cuidado en nuestras manos para que ustedes se dediquen a atender clientes.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 md:pl-15">
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Actualizaciones de seguridad</strong> del sitio y de sus componentes.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Copias de seguridad</strong> periódicas, para recuperar la página si algo sale mal.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Monitoreo de caídas</strong> y del certificado SSL, con aviso y reacción rápida.</span></li>
+                        <li class="flex gap-2"><span class="text-blue-500 mt-0.5">▸</span><span><strong class="text-slate-800">Ajustes menores de contenido</strong> (textos, fotos, datos de contacto) y resolución de problemas técnicos.</span></li>
+                    </ul>
+                </div>
+
+            <!-- ============ INVESTMENT SUMMARY ============ -->
+            <div class="reveal rounded-[24px] p-7 sm:p-9 text-white shadow-2xl mb-14 relative overflow-hidden"
+                 style="background:linear-gradient(150deg,#0b1220,#15254d 55%,#1e3a8a);">
+                <div class="orb2 absolute -bottom-20 -right-16 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.4),transparent 70%);"></div>
+                <div class="relative z-10">
+                    <h2 class="display text-2xl font-bold mb-6">Resumen de Inversión</h2>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Pagos Iniciales (único / anual)</h4>
+                            <div class="space-y-0.5 text-sm">
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Página Web Completa (pago único)</span><span class="font-semibold">$1,350.00</span></div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Infraestructura Web anual</span><span class="font-semibold">$461.00</span></div>
+                                <div class="flex justify-between items-center py-3 mt-1"><span class="font-bold text-blue-200">Subtotal Inicial</span><span class="text-xl font-bold text-blue-300">$1,811.00</span></div>
+                                <p class="text-[11px] text-blue-300/70">La infraestructura web ($461: dominio $15, servidor VPS $350 y SSL $96) se renueva cada año.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Pagos Recurrentes (mensuales)</h4>
+                            <div class="space-y-0.5 text-sm">
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Posicionamiento Web (SEO)</span><span class="font-semibold">$89.00</span></div>
+                                <div class="flex justify-between items-center py-2.5 border-b border-white/10"><span class="text-blue-100">Plan de Mantenimiento Web</span><span class="font-semibold">$49.00</span></div>
+                                <div class="flex justify-between items-center py-3 mt-1"><span class="font-bold text-blue-200">Subtotal Mensual</span><span class="text-xl font-bold text-blue-300">$138.00 <span class="text-xs font-normal text-blue-300/70">/mes</span></span></div>
+                                <p class="text-[11px] text-blue-300/70">Ambos servicios inician un mes después de la entrega de la página.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+                         style="background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(124,58,237,.25));border:1px solid rgba(255,255,255,.18);">
+                        <div>
+                            <p class="text-blue-200 text-xs uppercase tracking-wider mb-1">Para iniciar hoy · anticipo 50%</p>
+                            <p class="display text-4xl font-extrabold shine">$905.50</p>
+                            <p class="text-blue-200 text-xs mt-1">El 50% restante ($905.50) se abona contra entrega final de la página.</p>
+                        </div>
+                        <a href="https://wa.me/50761622787?text=Hola%2C%20quiero%20aceptar%20la%20propuesta%20de%20MAX%20IMPRESIONES%20y%20arrancar%20el%20proyecto."
+                           target="_blank" rel="noopener"
+                           class="btn-primary text-white font-semibold rounded-xl px-6 py-3.5 text-sm text-center whitespace-nowrap no-print">
+                            Aceptar y comenzar →
+                        </a>
+                    </div>
+                    <p class="text-[11px] text-blue-300/70 mt-3">Precios en USD. No incluyen ITBMS (7%); se aplicará según corresponda. El 50% de anticipo se calcula sobre el subtotal inicial ($1,811.00).</p>
+                </div>
+            </div>
+
+            <!-- ============ TERMS ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-8">
+                <h3 class="display text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Condiciones Comerciales
+                </h3>
+                <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-700">
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Estructura de pago:</strong> anticipo del <strong>50% ($905.50)</strong> para iniciar; 50% restante contra entrega final y conformidad de la página.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Infraestructura web:</strong> el dominio, el servidor VPS y el certificado SSL van aparte de la página web, $461 al año ($15 de dominio, $350 de servidor VPS y $96 de certificado SSL), y se renuevan cada año a este mismo precio.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Servidor VPS:</strong> no viene incluido en el precio de la web; se factura aparte, $350 al año, dentro de la infraestructura anual.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Formas de pago:</strong> tarjeta de crédito/débito, transferencia bancaria o Yappy.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Pagos recurrentes:</strong> el posicionamiento SEO ($89/mes) y el mantenimiento web ($49/mes) inician un mes después de la entrega de la página.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Posicionamiento web:</strong> lo que entrega la página al inicio es posicionamiento básico. El trabajo continuo de SEO es un servicio mensual aparte, $89/mes.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Mantenimiento web:</strong> cubre actualizaciones de seguridad, copias de seguridad, monitoreo de caídas y ajustes menores de contenido. Rediseños o funciones nuevas se cotizan aparte.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Garantía:</strong> 30 días de correcciones sin costo tras la entrega ante cualquier falla técnica.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Propiedad:</strong> el dominio, la web y los accesos quedan a nombre del cliente al completar el pago.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0">◆</span><span><strong>Validez:</strong> esta cotización es válida por 30 días desde su emisión.</span></p>
+                </div>
+            </div>
+
+            <!-- ============ CTA ============ -->
+            <div class="reveal text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden"
+                 style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #e0e7ff;">
+                <h3 class="display text-2xl font-bold text-slate-900 mb-2">¿Comenzamos? 🚀</h3>
+                <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">Confirma la aceptación de esta propuesta y te enviamos la factura del anticipo del 50% para arrancar con su página web.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center no-print">
+                    <a href="https://wa.me/50761622787?text=Hola%2C%20quiero%20aceptar%20la%20propuesta%20de%20MAX%20IMPRESIONES%20y%20arrancar%20el%20proyecto."
+                       target="_blank" rel="noopener"
+                       class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                        Aceptar por WhatsApp
+                    </a>
+                    <a href="mailto:info@elementoweb.com?subject=Aceptaci%C3%B3n%20propuesta%20MAX%20IMPRESIONES&body=Hola%2C%20confirmo%20la%20aceptaci%C3%B3n%20de%20la%20propuesta%20para%20MAX%20IMPRESIONES."
+                       class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Aceptar por Correo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="px-7 sm:px-10 py-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#122043);">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);">
+                        <svg width="22" height="22" viewBox="0 0 50 52" fill="none"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/></svg>
+                    </div>
+                    <div>
+                        <p class="display font-bold">elementoweb<span class="text-violet-300">.com</span></p>
+                        <p class="text-[11px] text-blue-200/70">Documento confidencial · Preparado para Max Impresiones</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-blue-100">
+                    <a href="mailto:info@elementoweb.com" class="hover:text-white transition">info@elementoweb.com</a>
+                    <a href="https://wa.me/50761622787" target="_blank" rel="noopener" class="hover:text-white transition">+507 6162-2787</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <a href="https://wa.me/50761622787?text=Hola%2C%20tengo%20una%20consulta%20sobre%20la%20propuesta%20de%20MAX%20IMPRESIONES."
+       target="_blank" rel="noopener"
+       class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse"
+       aria-label="Escríbenos por WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    </a>
+
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = Math.min(i * 40, 200) + 'ms';
+            io.observe(el);
+        });
+    </script>
+</body>
+</html>

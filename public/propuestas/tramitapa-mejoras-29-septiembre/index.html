@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lo que mejoró en tu asistente · TRAMITA PA · elementoweb.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1e293b; --navy: #1e3a8a; --deep: #0b1220;
+    --blue: #3b82f6; --violet: #7c3aed;
+    --paper: #eef2fb; --card: rgba(255,255,255,.78); --line: #dbe3f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Inter', system-ui, sans-serif; color: var(--ink);
+    font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    background: var(--paper);
+    background-image:
+      radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,.10), transparent 60%),
+      radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,.12), transparent 55%);
+    background-attachment: fixed;
+  }
+  .page { max-width: 52rem; margin: 1.5rem auto 4rem; padding: 0 1.1rem; }
+  h1,h2,h3,h4 { font-family: 'Bricolage Grotesque','Inter',sans-serif; letter-spacing: -.02em; text-wrap: balance; }
+  header.ew {
+    background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);
+    color: #fff; border-radius: 22px; padding: 1.8rem 1.9rem; overflow: hidden; position: relative;
+  }
+  header.ew::after {
+    content:''; position:absolute; inset:0; opacity:.06; pointer-events:none;
+    background-image: linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),
+                      linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);
+    background-size: 32px 32px;
+  }
+  .brand { display:flex; align-items:center; gap:.65rem; padding-bottom:1.1rem; border-bottom:1px solid rgba(255,255,255,.15); }
+  .brand .mark {
+    width: 2.4rem; height: 2.4rem; border-radius: .8rem; display:grid; place-items:center; flex-shrink:0;
+    background: linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);
+    box-shadow: 0 10px 24px -8px rgba(59,130,246,.7);
+  }
+  .brand p { margin:0; line-height:1.25; }
+  .brand .n { font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:1.05rem; }
+  .brand .n span { color:#c4b5fd; }
+  .brand .s { font-size:.68rem; color:rgba(174,187,230,.9); letter-spacing:.08em; }
+  .eyebrow { margin:1.2rem 0 .4rem; font-size:.7rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase; color:#aebbe6; }
+  header.ew h1 {
+    margin:0; font-size:2rem; line-height:1.12; font-weight:800;
+    background: linear-gradient(90deg,#93c5fd,#e0e7ff,#c4b5fd);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  header.ew .fecha { margin:.7rem 0 0; font-size:.82rem; color:rgba(174,187,230,.9); }
+  main.card {
+    margin-top: 1.4rem; background: var(--card); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.9); border-radius: 18px;
+    box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 20px 40px -24px rgba(30,58,138,.28);
+    padding: 1.6rem 1.8rem;
+  }
+  main h2 {
+    font-size: 1.2rem; color: var(--navy); margin: 1.9em 0 .7em;
+    padding-bottom: .35em; border-bottom: 1px solid var(--line);
+  }
+  main h2:first-child { margin-top: .2em; }
+  main h3 { font-size: 1rem; color: var(--navy); margin: 1.4em 0 .4em; }
+  main blockquote {
+    margin: 1em 0; padding: .8em 1.05em; border: 1px solid #c9dcf8; background: #eef4fe;
+    border-radius: 12px; color: #24406e; font-size: .92em;
+  }
+  main blockquote p { margin: .25em 0; }
+  main ul { padding-left: 1.3rem; }
+  main li { margin: .35rem 0; }
+  main li::marker { color: var(--blue); font-weight: 700; }
+  .tabla { overflow-x: auto; margin: 1em 0; }
+  main table { border-collapse: collapse; width: 100%; font-size: .9em; }
+  main th {
+    text-align: left; background: linear-gradient(135deg,#eff6ff,#eef2ff);
+    color: var(--navy); padding: .55em .8em; border: 1px solid var(--line);
+    font-family: 'Bricolage Grotesque',sans-serif; font-weight: 700; white-space: nowrap;
+  }
+  main td { padding: .55em .8em; border: 1px solid var(--line); vertical-align: top; background: rgba(255,255,255,.6); font-variant-numeric: tabular-nums; }
+  main hr { border: none; border-top: 1px solid var(--line); margin: 1.6em 0; }
+  main strong { color: var(--navy); }
+
+  .hecho {
+    margin: 0 0 .4em; padding: 1.15rem 1.35rem; border-radius: 16px;
+    border: 1px solid #a7d5b5; background: linear-gradient(135deg,#effaf3,#eef6fe);
+  }
+  .hecho .titulo {
+    font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.15rem;
+    color:#166534; margin-bottom:.3rem;
+  }
+  .hecho p { margin: .35em 0 0; color:#20452f; }
+  .hecho p:last-child { margin-bottom: 0; }
+
+  .punto {
+    margin:.9em 0; padding:.95rem 1.15rem; border-radius:13px;
+    border:1px solid var(--line); background:rgba(255,255,255,.72);
+  }
+  .punto .pidio {
+    font-size:.92em; color:#4b5b78; font-style:italic; margin:0 0 .5em;
+    padding-left:.75em; border-left:3px solid #c7d5ee;
+  }
+  .punto .titulo { font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--navy); margin-bottom:.25em; }
+  .punto p:last-child { margin-bottom:0; }
+  .punto .listo { color:#166534; font-weight:600; }
+
+  .accion {
+    margin:1.2em 0; padding:1.1rem 1.3rem; border-radius:16px;
+    border:1px solid #c7b8f5; background:linear-gradient(135deg,#f5f3ff,#eef4fe);
+  }
+  .accion h3 { margin-top:0; color:#5b21b6; }
+  .accion p:last-child, .accion ul:last-child { margin-bottom:0; }
+
+  /* La mensualidad: que se vea, sin gritar. */
+  .pago {
+    margin:1.2em 0; padding:1.15rem 1.35rem; border-radius:16px;
+    border:1px solid #f1d29a; background:linear-gradient(135deg,#fffbeb,#fdf5e6);
+  }
+  .pago h3 { margin-top:0; color:#92400e; }
+  .pago .monto {
+    font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.7rem;
+    color:#92400e; margin:.05em 0 .15em; line-height:1.2;
+  }
+  .pago .detalle { margin:0 0 .6em; color:#7c4a12; font-size:.92em; }
+  .pago p { color:#5b3a12; }
+  .pago strong { color:#92400e; }
+  .pago p:last-child { margin-bottom:0; }
+
+  /* Conversación de prueba: que se lea como un chat, no como una cita. */
+  .chat { margin:1em 0; }
+  .chat .m {
+    max-width:82%; padding:.55em .8em; border-radius:13px; margin:.4em 0;
+    font-size:.9em; line-height:1.5; background:#fff; border:1px solid var(--line);
+  }
+  .chat .m.cli {
+    margin-left:auto; background:#e6f0ff; border-color:#c6dcfb; color:#1c3768;
+  }
+  .chat .m .quien {
+    display:block; font-size:.66em; letter-spacing:.09em; text-transform:uppercase;
+    font-weight:700; color:#7b8aa6; margin-bottom:.15em;
+  }
+  .chat .m.cli .quien { color:#5a7cb3; }
+  .largo { font-size:.78em; color:#7b8aa6; margin:.1em 0 .6em; }
+
+  footer.ew {
+    margin-top: 1.4rem; display:flex; flex-wrap:wrap; gap:.3rem 1.4rem;
+    font-size:.82rem; color:#5b6478; padding: 0 .4rem;
+  }
+  footer.ew b { color: var(--navy); }
+
+  /* En el teléfono, cuatro columnas no caben: cada fila pasa a ser una tarjeta
+     y cada dato lleva su etiqueta, para que «Ahora» no quede fuera de pantalla. */
+  @media (max-width: 560px) {
+    main.card { padding: 1.3rem 1.1rem; }
+    header.ew { padding: 1.5rem 1.3rem; }
+    header.ew h1 { font-size: 1.7rem; }
+    .chat .m { max-width: 92%; }
+    .tabla table, .tabla tbody, .tabla tr, .tabla td { display: block; width: 100%; }
+    .tabla thead { display: none; }
+    .tabla tr { border: 1px solid var(--line); border-radius: 12px; margin: .7em 0; overflow: hidden; background: rgba(255,255,255,.7); }
+    .tabla td { border: none; border-top: 1px solid var(--line); background: none; padding: .45em .8em; }
+    .tabla td:first-child { border-top: none; padding-top: .6em; }
+    .tabla td[data-l]::before { content: attr(data-l) ": "; color: #7b8aa6; font-weight: 600; }
+  }
+  @media print {
+    body { background:#fff; }
+    main.card { box-shadow:none; border-color:#e5e7eb; }
+    header.ew { border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="ew">
+    <div class="brand">
+      <div class="mark"><svg width="22" height="22" viewBox="0 0 50 52" fill="none"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/><circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/></svg></div>
+      <div>
+        <p class="n">elementoweb<span>.com</span></p>
+        <p class="s">DESARROLLO WEB · IA · AUTOMATIZACIÓN</p>
+      </div>
+    </div>
+    <p class="eyebrow">Respuestas dobles · datos guardados · fuera de horario · tu mensualidad</p>
+    <h1>Lo que mejoró<br>en tu asistente</h1>
+    <p class="fecha">29 de septiembre de 2026 · Asistente de TRAMITA PA</p>
+  </header>
+
+  <main class="card">
+
+<div class="hecho">
+  <div class="titulo">Activo desde hoy, Jahir. Y probado antes.</div>
+  <p>Lo que te prometimos ayer ya quedó: cuando un cliente manda varios mensajes seguidos, el asistente <strong>contesta una sola vez</strong>.</p>
+  <p>Además, ahora <strong>guarda siempre los datos</strong> de quien quiere iniciar su trámite, y de noche <strong>avisa que están fuera de horario</strong> sin dejar de atender.</p>
+  <p>Lo probamos con tu propio asistente antes de activarlo: más de 200 respuestas de prueba hoy, y ninguna le llegó a un cliente real.</p>
+</div>
+
+<h2>Qué mejoró</h2>
+
+<div class="punto">
+  <p class="pidio">«Que no vuelva a estar repitiendo lo mismo»</p>
+  <div class="titulo">1 · Una sola respuesta cuando escriben varios mensajes seguidos</div>
+  <p><span class="listo">Activo.</span> Si un cliente mandaba dos mensajes con unos segundos de diferencia, el asistente contestaba cada uno por separado, y a veces repetía lo mismo. En la semana del 21 al 28 de septiembre pasó en <strong>115 de 942 respuestas</strong>.</p>
+  <p>Ahora, antes de mandar su respuesta, revisa si llegó otro mensaje. Si llegó, espera y contesta todo junto.</p>
+</div>
+
+<div class="punto">
+  <div class="titulo">2 · Guarda los datos siempre</div>
+  <p><span class="listo">Activo.</span> Cuando alguien manda su nombre, cédula y correo para iniciar, el asistente los guarda en tu CRM y cierra con tu frase. En las pruebas, antes los guardaba <strong>12 de 15 veces</strong>. Las otras 3 respondía «Listo» sin guardarlos, y ese cliente no te llegaba. Ahora: <strong>15 de 15</strong>.</p>
+  <div class="chat">
+    <div class="m cli"><span class="quien">Cliente</span>Ana Pérez, 8-888-888, ana.perez@correo.com</div>
+    <div class="m"><span class="quien">Asistente, ahora</span>Listo, Ana. Tus datos quedaron registrados. Un asesor te contacta y te envía todo a tu correo.</div>
+  </div>
+  <p class="largo">Datos inventados para la prueba.</p>
+</div>
+
+<div class="punto">
+  <div class="titulo">3 · Ya no te pasa conversaciones por error</div>
+  <p><span class="listo">Activo.</span> A veces, justo después de guardar los datos, el asistente se quedaba sin escribir nada y te pasaba la conversación como si necesitara ayuda. En una semana, <strong>7 de tus 61 traspasos</strong> fueron eso. Ahora, si le pasa, lo vuelve a intentar y contesta.</p>
+</div>
+
+<div class="punto">
+  <div class="titulo">4 · De noche avisa que están fuera de horario</div>
+  <p><span class="listo">Activo.</span> A un mensaje de las 10 de la noche, antes saludaba y pedía datos sin decir que estaban cerrados: <strong>0 de 10</strong>. Ahora lo dice una vez, con tu propio mensaje, y sigue atendiendo: <strong>9 de 10</strong>.</p>
+  <div class="chat">
+    <div class="m cli"><span class="quien">Cliente</span>Hola, buenas noches. Quisiera sacar la visa</div>
+    <div class="m"><span class="quien">Asistente, antes</span>¡Hola! 👋 Mr. Jackson, de TRAMITA PA. Te ayudamos con tu visa americana.<br><br>Para empezar, necesito tus <b>tres datos</b>: nombre completo, cédula y correo electrónico.</div>
+    <div class="m"><span class="quien">Asistente, ahora</span>¡Hola! 👋 Mr. Jackson, de TRAMITA PA. Te ayudamos con tu visa americana.<br><br>Ahora estamos fuera de horario (lunes a viernes, de 8:00 a.m. a 6:00 p.m.), pero sigo por aquí. Cuéntame y te dejo todo listo para que un asesor lo tome apenas abramos.<br><br>¿Es primera vez, renovación, o tienes otro trámite?</div>
+  </div>
+  <p>Un detalle: tu mensaje dice «lunes a viernes», pero tu horario no tiene días marcados, así que un sábado a las 10 de la mañana el asistente lo da por abierto. Ya se pueden marcar los días. Si nos confirmas que es de lunes a viernes, lo dejamos así.</p>
+</div>
+
+<div class="punto">
+  <div class="titulo">5 · Ya no copia tu forma de escribir</div>
+  <p><span class="listo">Activo.</span> Tus mensajes le llegaban al asistente como si los hubiera escrito él. Por eso le dijo «cariño» a una clienta, copiándote. Ahora los ve marcados como tuyos.</p>
+</div>
+
+<div class="punto">
+  <div class="titulo">6 · Pagos: no confirma lo que no puede ver</div>
+  <p><span class="listo">Activo.</span> Si un cliente dice que ya pagó, el asistente no le confirma el pago: le pide el comprobante y le dice que un asesor lo verifica, como está en tus preguntas frecuentes. Esa regla, que tu asistente ya tenía, ahora la tienen todos los asistentes.</p>
+</div>
+
+<div class="punto">
+  <div class="titulo">7 · Si vuelves a encender los recordatorios automáticos</div>
+  <p><span class="listo">Activo.</span> Ya no salen de madrugada: esperan a tu horario. El mensaje de la 1:12 a.m. no vuelve a pasar.</p>
+</div>
+
+<h2>Lo probamos antes de avisarte</h2>
+
+<p>Tu asistente como estaba ayer, contra el de hoy, con las mismas preguntas:</p>
+
+<div class="tabla">
+<table>
+  <thead><tr><th>&nbsp;</th><th>Pruebas</th><th>Antes</th><th>Ahora</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Nombre, cédula y correo</strong> para iniciar</td><td data-l="Pruebas">15</td><td data-l="Antes">los guarda en 12</td><td data-l="Ahora"><strong>los guarda en 15</strong></td></tr>
+    <tr><td><strong>Un mensaje a las 10 p.m.</strong></td><td data-l="Pruebas">10</td><td data-l="Antes">avisa del horario en 0</td><td data-l="Ahora"><strong>avisa en 9</strong></td></tr>
+    <tr><td><strong>«¿Cuáles son los requisitos?»</strong></td><td data-l="Pruebas">5</td><td data-l="Antes">los da en 4</td><td data-l="Ahora"><strong>los da en 5</strong></td></tr>
+    <tr><td><strong>«Ya pagué, te mando el comprobante»</strong></td><td data-l="Pruebas">5</td><td data-l="Antes">no confirma el pago en 5</td><td data-l="Ahora"><strong>no lo confirma en 5</strong></td></tr>
+    <tr><td><strong>«Quiero hablar con una persona»</strong></td><td data-l="Pruebas">5</td><td data-l="Antes">te pasa la conversación en 5</td><td data-l="Ahora"><strong>te la pasa en 5</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Lo que todavía estamos afinando</h2>
+
+<ul>
+  <li><strong>Los requisitos a veces salen largos.</strong> Ahora los da completos cuando se los piden, y a veces agrega detalles que no están en tu lista, como «foto 2x2, fondo blanco» u otros tipos de visa. Si tu lista de 5 requisitos es la única que vale, dínoslo y lo ajustamos.</li>
+  <li><strong>Tus clientes de siempre</strong>, en el apartado que sigue.</li>
+</ul>
+
+<h2>Tus clientes: lo que falta de tu pedido</h2>
+
+<p><strong>Hoy funciona así:</strong> en las 749 conversaciones donde ya escribiste, el asistente sigue apagado. En las conversaciones nuevas, cuando tú contestas, se aparta 3 horas.</p>
+
+<p>Ya está listo el ajuste que te dijimos, con un cambio que creemos mejor que apagarlo para siempre: apagado, quien te escribe de noche o cuando no alcanzas a contestar se queda sin respuesta. Con el ajuste nuevo:</p>
+
+<ul>
+  <li>Si tú o tu equipo ya escribieron en la conversación, el asistente <strong>espera 3 horas</strong> a que contesten.</li>
+  <li>Si contestan, no aparece.</li>
+  <li>Si nadie contesta, responde lo general (precios, requisitos, cómo funciona) y <strong>te pasa a ti</strong> lo del caso de esa persona.</li>
+  <li>De noche no escribe: guarda su respuesta para las 7 a.m.</li>
+</ul>
+
+<p>Lo activamos contigo: dinos si lo quieres así y lo dejamos funcionando también en tus conversaciones de hasta hoy.</p>
+
+<h2>Tu mensualidad</h2>
+
+<div class="pago">
+  <h3>Recordatorio de pago</h3>
+  <p class="monto">$78</p>
+  <p class="detalle">2 mensualidades vencidas de $39</p>
+  <p>Tu asistente no es un programa instalado en una computadora: funciona las 24 horas sobre una infraestructura que mantenemos para ti. Son servidores en la nube, base de datos, la bandeja donde ves tus conversaciones, la conexión oficial de WhatsApp con Meta, y el laboratorio donde probamos cada cambio con tu propio asistente antes de activarlo.</p>
+  <p>Solo entre ayer y hoy fueron <strong>dos actualizaciones del sistema</strong> y <strong>más de 900 respuestas de prueba</strong>.</p>
+  <p>Para seguir sosteniéndola, te pedimos ponerte al día. Escríbenos y te pasamos los datos para pagar.</p>
+</div>
+
+<div class="accion">
+<h3>Lo que necesito de ti</h3>
+<ul>
+  <li>¿Activamos el ajuste de <strong>esperar 3 horas</strong> en tus conversaciones?</li>
+  <li>¿Tu horario es de <strong>lunes a viernes</strong>? Así marcamos los días.</li>
+  <li>¿Tu lista de <strong>5 requisitos</strong> es la única que vale?</li>
+  <li>Y ponte al día con las <strong>2 mensualidades ($78)</strong>.</li>
+</ul>
+</div>
+
+<hr>
+  </main>
+  <footer class="ew">
+    <span>Preparado para <b>TRAMITA PA</b> por <b>ElementoWeb</b></span>
+    <span>info@elementoweb.com</span>
+    <span>+507 6162-2787</span>
+  </footer>
+</div>
+</body>
+</html>

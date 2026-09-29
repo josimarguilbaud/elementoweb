@@ -286,6 +286,23 @@ export const marketingPages: PageData[] = [
       },
       modeloCobro,
       {
+        type: 'checklist',
+        h2: 'Trafficker dedicado para varias marcas o tiendas',
+        // ⚠️ Fee propuesto: $300/mes por cuenta administrada, sin baja por
+        // volumen (precio de mercado en Panamá: $250-$1,000/mes por cuenta
+        // según NexGenPixels 2026; agencias como Kreado cobran $600-$900/mes
+        // por cuenta con contenido incluido). Nunca por debajo de nuestro
+        // propio piso de $300/mes de una sola cuenta.
+        intro: '¿Manejas más de una página de ventas o marca? Te asignamos un trafficker dedicado que monta, analiza, optimiza y escala las campañas de cada cuenta por separado. $300/mes por cuenta administrada, sin descuento por volumen: cada cuenta recibe la misma atención.',
+        items: [
+          'Una cuenta publicitaria por marca o tienda, sin mezclar datos ni presupuestos entre negocios',
+          'Reporte mensual individual por cuenta: qué se gastó, qué vendió, qué se optimizó',
+          'Rotación de creativos y ajustes de puja específicos para cada negocio',
+          'Un solo punto de contacto que coordina todas tus cuentas, sin que nada se pierda entre una y otra',
+          'Escalamos la cuenta que rinde y ajustamos la que no, con el mismo criterio en todas',
+        ],
+      },
+      {
         type: 'prose',
         h2: 'El creativo pesa más que la segmentación',
         paragraphs: [
@@ -342,6 +359,7 @@ export const marketingPages: PageData[] = [
           { q: '¿Facebook o Instagram para mi negocio?', a: 'No tienes que elegir: ambas se gestionan desde Meta Ads y el algoritmo reparte tu presupuesto donde rinde mejor. En general, Instagram pesa más para marcas visuales y público joven; Facebook para alcance amplio y públicos mayores.' },
           { q: '¿Sirve para vender directo o solo para marca?', a: 'Para ambos. Configuramos la campaña según tu objetivo real: mensajes a WhatsApp, ventas en tu tienda o registro de interesados. La estructura cambia según lo que quieras lograr.' },
           { q: '¿Qué pasa si Meta bloquea mi cuenta?', a: 'Es un riesgo real con cuentas mal gestionadas. Como Meta Verified Tech Provider trabajamos con las cuentas comerciales correctamente verificadas, lo que reduce mucho ese riesgo.' },
+          { q: '¿Pueden gestionar varias páginas o marcas a la vez?', a: 'Sí. Te asignamos un trafficker dedicado a tu grupo de cuentas, con montaje, optimización y reporte individual por cada una — nunca las mezclamos. El fee es de $300 al mes por cuenta administrada, sin descuento por volumen: cada cuenta recibe el mismo nivel de atención. Para 4 cuentas, el fee de gestión total es de $1,200/mes; la inversión publicitaria de cada una es aparte y va directo a Meta desde su propia cuenta.' },
           { q: '¿Qué es el remarketing y por qué lo recomiendan tanto?', a: 'Es volver a mostrarle anuncios a quien ya interactuó contigo: visitó tu web, vio tu video o abandonó un carrito. Es la parte más rentable de Meta, porque le hablas a gente que ya te conoce en lugar de a desconocidos. Para que funcione, el píxel de Meta debe estar bien instalado desde el inicio, y eso es de lo primero que revisamos.' },
           { q: '¿Cuántos creativos hacen falta para arrancar?', a: 'Recomendamos empezar con varios ángulos, no con un solo anuncio. El algoritmo aprende más rápido cuando tiene opciones para comparar, y así descubrimos con datos cuál mensaje conecta antes de escalar el presupuesto en el ganador.' },
           { q: '¿Necesito grabar videos o sirven fotos?', a: 'Las fotos funcionan, pero el video corto suele rendir más porque frena el scroll y el algoritmo lo empuja. No necesitas producción de estudio: muchas veces un clip auténtico grabado con celular convierte mejor que algo demasiado pulido. Si ya haces <a href="/marketing/contenido-redes-sociales-panama/">contenido para redes</a>, lo aprovechamos para la pauta.' },

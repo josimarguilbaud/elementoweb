@@ -37,7 +37,7 @@ export const marketingPages: PageData[] = [
         h2: 'Qué hacemos en marketing',
         items: [
           { h3: 'Google Ads', text: 'Aparece justo cuando alguien busca lo que vendes. Búsqueda, display y remarketing gestionados y optimizados.', link: { slug: 'marketing/google-ads-panama', label: 'Google Ads' } },
-          { h3: 'Facebook e Instagram Ads', text: 'Campañas en Meta para descubrimiento, captación y ventas, con segmentación afinada y creativos que detienen el scroll.', link: { slug: 'marketing/facebook-instagram-ads-panama', label: 'Meta Ads' } },
+          { h3: 'Facebook e Instagram Ads', text: 'Campañas en Meta para descubrimiento, captación y ventas, con segmentación afinada y creativos que detienen el scroll. También ofrecemos trafficker dedicado si manejas varias cuentas.', link: { slug: 'marketing/facebook-instagram-ads-panama', label: 'Meta Ads' } },
           { h3: 'Contenido para redes', text: 'Publicaciones, diseño gráfico y Reels que mantienen tu marca viva entre campaña y campaña.', link: { slug: 'marketing/contenido-redes-sociales-panama', label: 'Contenido para Redes' } },
           { h3: 'Email marketing', text: 'El canal con mejor retorno: newsletters, automatizaciones y recuperación de clientes que ya te conocen.', link: { slug: 'marketing/email-marketing-panama', label: 'Email Marketing' } },
           { h3: 'WhatsApp marketing masivo', text: 'Campañas por WhatsApp Business API oficial. Somos Meta Verified Tech Provider, así que sin riesgo de bloqueo.', link: { slug: 'marketing/whatsapp-marketing-masivo-panama', label: 'WhatsApp Marketing' } },
@@ -257,8 +257,8 @@ export const marketingPages: PageData[] = [
   {
     slug: 'marketing/facebook-instagram-ads-panama',
     parent,
-    title: 'Publicidad en Facebook e Instagram en Panamá | Meta Ads',
-    description: 'Gestión de publicidad en Facebook e Instagram (Meta Ads) en Panamá: segmentación, creativos y ventas. Fee de gestión claro, tu inversión va directo a Meta.',
+    title: 'Publicidad en Facebook e Instagram en Panamá | Meta Ads y Trafficker Digital',
+    description: 'Gestión de publicidad en Facebook e Instagram (Meta Ads) en Panamá: segmentación, creativos y ventas. Trafficker dedicado si manejas varias cuentas. Fee de gestión claro, tu inversión va directo a Meta.',
     h1: 'Publicidad en Facebook e Instagram',
     breadcrumb: 'Facebook e Instagram Ads',
     heroImage: { src: 'https://picsum.photos/seed/redes-sociales-anuncios-panama/1200/675', alt: 'Persona viendo anuncios en redes sociales desde su teléfono' },
@@ -266,6 +266,7 @@ export const marketingPages: PageData[] = [
     lead: [
       'Facebook e Instagram comparten el mismo motor de anuncios (Meta Ads), así que los gestionamos juntos y decidimos con datos en cuál aparece cada campaña.',
       'Aquí no esperas a que te busquen: interrumpes con algo tan bueno que el usuario deja de hacer scroll. Por eso Meta es imbatible para dar a conocer una marca, captar interesados y vender productos con buena foto. El reto es la segmentación y el creativo, y ahí es donde se gana o se pierde el presupuesto.',
+      '¿Buscas un <strong>trafficker</strong> que administre tus campañas? Es justo lo que hacemos: si manejas una cuenta o varias, más abajo está el detalle de cómo trabajamos la gestión y cuánto cuesta cada modalidad.',
     ],
     blocks: [
       {

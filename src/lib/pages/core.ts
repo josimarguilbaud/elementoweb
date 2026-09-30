@@ -273,14 +273,14 @@ export const core: PageData[] = [
           { h3: 'Respondemos', text: 'El mismo día hábil, con preguntas concretas si algo necesita aclararse.' },
           { h3: 'Diagnóstico', text: 'Videollamada sin costo para entender el problema a fondo.' },
           { h3: 'Propuesta', text: 'Alcance, tiempos y precio cerrado, por escrito.' },
-          { h3: 'Arranque', text: 'Con el anticipo del 50% arrancamos y avanzamos por etapas hasta la publicación.' },
+          { h3: 'Arranque', text: 'Proyecto por etapas: con el anticipo del 50% arrancamos y avanzamos hasta la publicación. Plan mensual: pagas la puesta en marcha y empiezas con la primera cuota mensual.' },
         ],
       },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuáles son las formas de pago?', a: 'Tarjeta de crédito o débito, transferencia bancaria y Yappy. El pago se divide en tres etapas: 50% para iniciar, 30% al aprobar el demo online y 20% para publicar en tu dominio. Ver <a href="/como-trabajamos/">cómo trabajamos</a>.' },
+          { q: '¿Cuáles son las formas de pago?', a: 'Tarjeta de crédito o débito, transferencia bancaria y Yappy. Si contratas por proyecto, el pago se divide en tres etapas: 50% para iniciar, 30% al aprobar el demo online y 20% para publicar en tu dominio. Si prefieres el <a href="/precios/#plan-mensual">plan mensual</a>, pagas $350 de puesta en marcha y $169 al mes durante 12 meses. Ver <a href="/como-trabajamos/">cómo trabajamos</a>.' },
           { q: '¿Atienden fuera de horario?', a: 'El asistente de IA responde de inmediato a cualquier hora, resuelve lo básico y agenda el seguimiento con una persona del equipo. Es el mismo sistema que instalamos a nuestros clientes.' },
           { q: '¿El diagnóstico de verdad es gratis?', a: 'Sí: la conversación para entender tu problema y dimensionar el proyecto no cuesta nada ni te compromete. Si el caso exige un análisis técnico profundo antes de cotizar, te lo decimos por adelantado.' },
         ],

@@ -109,3 +109,11 @@ Base: `cbff42e`. Publicado en `main` hasta `e73f70f` (despliegues 131 y 132: exi
 - Plan mensual: el botón envía `?servicio=mensual` y el formulario muestra "Web empresarial gestionada — plan mensual". Proceso y FAQ de la home distinguen proyecto por etapas y plan mensual (propiedad, mes 13).
 - Formulario: empresa y mensaje pasan a opcionales; nota "Te contactamos el mismo día hábil…". Correo y teléfono siguen obligatorios porque el flujo n8n exige correo válido.
 - Pendiente (necesita material/decisión del dueño): testimonios y foto autorizados, menú simplificado, WhatsApp-o-correo (requiere cambio en n8n).
+
+## Lote 7 — recorrido de la revisión gratuita, menú y textos
+- Formulario según la oferta: "Revisión de mi web" pide la dirección de la web (obligatoria), sin presupuesto, botón "Solicitar mi revisión" y confirmación propia; "Ayúdame a definir mi proyecto" pregunta actividad y objetivo; plan mensual pregunta cuándo quiere empezar en vez del presupuesto. Se envían `web`, `inicio` y `modalidad`, y web/inicio también van dentro de `mensaje` para que lleguen al correo y al CRM aunque n8n no mapee los campos nuevos.
+- Contacto: arranque y formas de pago incluyen el plan mensual.
+- Casos: el bloque "Resultados" pasa a "La solución en funcionamiento" (sin cifras inventadas).
+- Textos: selector con beneficio, "Consultar este proyecto", botones "Cotizar mi landing/web/tienda", nota corta de costos aparte; SEO de la página corporativa sin promesa de posicionamiento.
+- Menú: Servicios · Más · Proyectos · Precios · Nosotros · Cotizar (marketing, SaaS, industrias, Miami y blog dentro de "Más").
+- Pendiente: contacto WhatsApp-o-correo (requiere n8n), testimonios y foto reales, seguimiento posterior al formulario (CRM).

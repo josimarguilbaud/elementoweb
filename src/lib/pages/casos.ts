@@ -63,7 +63,7 @@ export const casos: PageData[] = [
       },
       { type: 'prose', h2: 'El sitio en vivo', paragraphs: ['TramitaPa · Trámites de visa · 2025. <a href="https://tramitapa.com" target="_blank" rel="noopener">Visitar tramitapa.com</a>.'] },
       { type: 'prose', h2: 'Lo que dice el cliente', paragraphs: ['<p>«Rehicieron nuestro sitio y las consultas por WhatsApp se multiplicaron. Entienden de negocio, no solo de diseño.» — Jhair Davis, fundador de TramitaPa.</p>'] },
-      { type: 'prose', h2: 'Resultados', paragraphs: ['Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: consultas calificadas recibidas por WhatsApp. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
+      { type: 'prose', h2: 'La solución en funcionamiento', paragraphs: ['El sitio está publicado y puedes recorrerlo en el enlace de arriba. Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: consultas calificadas recibidas por WhatsApp. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
       {
         type: 'related',
         items: [
@@ -98,7 +98,7 @@ export const casos: PageData[] = [
         ],
       },
       { type: 'prose', h2: 'El sitio en vivo', paragraphs: ['San Blas Full · Turismo · Tours · 2025. <a href="https://sanblasfull.com" target="_blank" rel="noopener">Visitar sanblasfull.com</a>.'] },
-      { type: 'prose', h2: 'Resultados', paragraphs: ['Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: reservas con depósito. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
+      { type: 'prose', h2: 'La solución en funcionamiento', paragraphs: ['El sitio está publicado y puedes recorrerlo en el enlace de arriba. Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: reservas con depósito. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
       {
         type: 'related',
         items: [
@@ -133,7 +133,7 @@ export const casos: PageData[] = [
         ],
       },
       { type: 'prose', h2: 'El sitio en vivo', paragraphs: ['KL Contable · Contabilidad · 2026. <a href="https://klcontable.com" target="_blank" rel="noopener">Visitar klcontable.com</a>.'] },
-      { type: 'prose', h2: 'Resultados', paragraphs: ['Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: consultas por servicio y posicionamiento de las páginas de servicio y del blog. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
+      { type: 'prose', h2: 'La solución en funcionamiento', paragraphs: ['El sitio está publicado y puedes recorrerlo en el enlace de arriba. Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: consultas por servicio y posicionamiento de las páginas de servicio y del blog. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
       {
         type: 'related',
         items: [
@@ -168,7 +168,7 @@ export const casos: PageData[] = [
         ],
       },
       { type: 'prose', h2: 'El sitio en vivo', paragraphs: ['Panama International Movers · Mudanzas internacionales · 2025. <a href="https://panamainternationalmovers.com" target="_blank" rel="noopener">Visitar panamainternationalmovers.com</a>.'] },
-      { type: 'prose', h2: 'Resultados', paragraphs: ['Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: cotizaciones recibidas por ruta y tipo de carga. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
+      { type: 'prose', h2: 'La solución en funcionamiento', paragraphs: ['El sitio está publicado y puedes recorrerlo en el enlace de arriba. Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: cotizaciones recibidas por ruta y tipo de carga. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
       {
         type: 'related',
         items: [

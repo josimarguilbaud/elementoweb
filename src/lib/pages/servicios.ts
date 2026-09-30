@@ -155,7 +155,7 @@ export const servicios: PageData[] = [
         type: 'prose',
         h2: 'Por qué una página por servicio',
         paragraphs: [
-          'El error más común de los sitios corporativos es la página única de "Servicios" con una lista de todo. Google posiciona páginas, no listas: si tu servicio de contabilidad vive en la misma URL que tu servicio de auditoría, no compites en ninguna de las dos búsquedas.',
+          'El error más común de los sitios corporativos es la página única de "Servicios" con una lista de todo. Google indexa páginas, no listas: una página por servicio explica mejor tu oferta y da a cada búsqueda un destino claro. Ayuda a organizarla, pero no garantiza posicionamiento.',
           'Nosotros estructuramos el sitio como lo busca tu cliente: <strong>una página por servicio, cada una respondiendo una intención de búsqueda concreta</strong>. Esa arquitectura es la diferencia entre aparecer y no existir.',
           'Además cada página termina en una acción específica, con el mensaje de WhatsApp ya escrito. El cliente que llega desde Google te escribe listo para hablar de su caso, no para preguntar qué haces.',
         ],

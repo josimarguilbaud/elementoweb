@@ -63,6 +63,7 @@ const tools = [
 /* Estas cuatro preguntas se pintan en la portada Y alimentan el FAQPage del
    JSON-LD (ver homeJsonLd). Son las que mas se buscan en el mercado, asi que
    conviene que un motor generativo pueda citarlas textualmente. */
+const ctaLabel = (n: string) => ({ landing: 'Cotizar mi landing', pyme: 'Cotizar mi web', ecommerce: 'Cotizar mi tienda' } as Record<string, string>)[planKey(n)] || 'Cotizar mi proyecto';
 const faqs: [string, string][] = [
   ['¿Cuánto cuesta una página web en Panamá?', 'Landing desde $550, corporativa desde $1,250 y e-commerce desde $1,950. Siempre con cotización cerrada antes de empezar.'],
   ['¿Mi web va a aparecer en Google?', 'Se entrega con SEO técnico completo. Posicionar términos competitivos requiere además trabajo continuo de contenido, que ofrecemos por separado.'],
@@ -254,7 +255,7 @@ const faqs: [string, string][] = [
     <div class="mx-auto max-w-4xl px-6">
       <div class="mx-auto mb-10 max-w-2xl text-center">
         <h2 class="reveal font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold leading-[1.05] text-ink">¿Qué necesita tu negocio <span class="grad-text">ahora</span>?</h2>
-        <p class="reveal mt-4 text-lg text-ink/70">Elige la situación que más se parece a la tuya. Te llevamos al formato indicado y dejamos tu elección marcada en el formulario.</p>
+        <p class="reveal mt-4 text-lg text-ink/70">Cuéntanos qué quieres conseguir y encuentra la opción adecuada para tu negocio.</p>
       </div>
       <ul class="reveal grid gap-3">
         {[
@@ -267,7 +268,7 @@ const faqs: [string, string][] = [
             <div><p class="font-display text-lg font-bold text-ink">{n[0]}</p><p class="mt-0.5 text-sm text-ink/70">Lo que necesitas: {n[1]}</p></div>
             <div class="flex flex-wrap gap-3">
               <a href={n[3]} class="inline-flex items-center rounded-full border border-ink/15 bg-white px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-ink/40">{n[2]}</a>
-              <a href={`/contacto/?servicio=${n[4]}#formulario`} class="inline-flex items-center rounded-full bg-night px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal-deep">Cotizar esto</a>
+              <a href={`/contacto/?servicio=${n[4]}#formulario`} class="inline-flex items-center rounded-full bg-night px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal-deep">Consultar este proyecto</a>
             </div>
           </li>
         ))}
@@ -282,7 +283,7 @@ const faqs: [string, string][] = [
         <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Precios</p>
         <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Precios claros, sin <span class="grad-text">sorpresas después</span>.</h2>
         <p class="reveal mt-5 text-lg text-ink/70">Cotización cerrada antes de empezar. Precios en USD, no incluyen ITBMS. <a href="/precios/" class="font-semibold text-teal-deep underline underline-offset-2">Ver qué incluye cada uno</a>.</p>
-        <p class="reveal mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-ink/70">Sitio corporativo en 2 a 3 semanas desde que recibimos tu contenido. Dominio, hosting, correo, mantenimiento, licencias de terceros y la redacción de textos no están incluidos en el precio del proyecto: <a href="/precios/" class="font-semibold text-teal-deep underline underline-offset-2">mira cuánto cuestan</a>. El alcance exacto se confirma por escrito antes de empezar.</p>
+        <p class="reveal mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-ink/70">Dominio, hosting, correo y mantenimiento se cotizan aparte. <a href="/precios/" class="font-semibold text-teal-deep underline underline-offset-2">Mira el desglose completo</a>.</p>
         <p class="reveal mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold text-teal-deep">{Object.values(archCards).map((c) => <a href={url(c.slug)} class="underline underline-offset-2">{c.t}</a>)}</p>
       </div>
       <div class="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
@@ -292,7 +293,7 @@ const faqs: [string, string][] = [
             <h3 class="font-display text-xl font-bold">{plan.name}</h3>
             <div class="mt-6 flex items-end gap-1.5"><span class={`text-sm font-medium ${plan.featured ? 'text-white/50' : 'text-ink/70'}`}>desde</span><span class="font-display text-5xl font-extrabold tracking-tight">{plan.price}</span></div>
             <ul class="mt-7 flex flex-col gap-3">{plan.features.map((f) => (<li class="flex items-start gap-3 text-sm"><span class={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${plan.featured ? 'bg-teal text-night' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={plan.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>))}</ul>
-            <a href={`/contacto/?servicio=${planKey(plan.name)}#formulario`} aria-label={`Empezar con el plan ${plan.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${plan.featured ? 'bg-teal text-night hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
+            <a href={`/contacto/?servicio=${planKey(plan.name)}#formulario`} aria-label={`Empezar con el plan ${plan.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${plan.featured ? 'bg-teal text-night hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>{ctaLabel(plan.name)}</a>
           </div>
         ))}
       </div>

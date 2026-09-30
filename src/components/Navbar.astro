@@ -15,14 +15,12 @@ const { current = '', dark = false } = Astro.props;
         <button type="button" data-menu="servicios" aria-expanded="false" aria-controls="panel-servicios" class="nav-trigger flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm font-medium text-ink/70 transition hover:bg-ink/5 hover:text-ink">
           Servicios <svg class="chev h-3 w-3 opacity-50 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" /></svg>
         </button>
-        <button type="button" data-menu="marketing" aria-expanded="false" aria-controls="panel-marketing" class="nav-trigger flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm font-medium text-ink/70 transition hover:bg-ink/5 hover:text-ink">
-          Marketing <svg class="chev h-3 w-3 opacity-50 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        <button type="button" data-menu="mas" aria-expanded="false" aria-controls="panel-mas" class="nav-trigger flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm font-medium text-ink/70 transition hover:bg-ink/5 hover:text-ink">
+          Más <svg class="chev h-3 w-3 opacity-50 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" /></svg>
         </button>
-        <a href="/saas/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'saas' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>SaaS</a>
-        <a href="/portafolio/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'portafolio' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Portafolio</a>
-        <a href="/industrias/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'industrias' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Industrias</a>
-        <a href="/miami/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'miami' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Miami</a>
-        <a href="/blog/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'blog' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Blog</a>
+        <a href="/portafolio/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'portafolio' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Proyectos</a>
+        <a href="/precios/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'precios' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Precios</a>
+        <a href="/nosotros/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'nosotros' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Nosotros</a>
       </div>
 
       <a href="/contacto/" data-magnetic="0.4" class="cta-pill ml-1 hidden items-center gap-2 rounded-full bg-night px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-ink/20 transition-colors hover:bg-teal-deep sm:inline-flex">
@@ -50,9 +48,15 @@ const { current = '', dark = false } = Astro.props;
     </div>
 
     <!-- Panel Marketing -->
-    <div data-panel="marketing" id="panel-marketing" inert aria-hidden="true" class="invisible pointer-events-none absolute left-1/2 top-full z-40 mt-3 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300">
-      <div class="menu-panel grid w-[min(92vw,600px)] grid-cols-2 gap-x-6 gap-y-1 rounded-3xl p-6">
+    <div data-panel="mas" id="panel-mas" inert aria-hidden="true" class="invisible pointer-events-none absolute left-1/2 top-full z-40 mt-3 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300">
+      <div class="menu-panel grid w-[min(92vw,640px)] grid-cols-2 gap-x-6 gap-y-1 rounded-3xl p-6">
+        <p class="col-span-2 px-3 pb-1 font-display text-xs font-bold uppercase tracking-wide text-ink/70">Marketing</p>
         {marketing.map((l) => <a href={url(l.slug)} class="whitespace-nowrap rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">{l.label}</a>)}
+        <p class="col-span-2 mt-3 px-3 pb-1 font-display text-xs font-bold uppercase tracking-wide text-ink/70">Explorar</p>
+        <a href="/saas/" class="rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">SaaS</a>
+        <a href="/industrias/" class="rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">Industrias</a>
+        <a href="/miami/" class="rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">Miami</a>
+        <a href="/blog/" class="rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">Blog</a>
       </div>
     </div>
   </div>
@@ -74,10 +78,12 @@ const { current = '', dark = false } = Astro.props;
         {marketing.map((l) => <a href={url(l.slug)} class="py-1 text-sm text-white/60">{l.label}</a>)}
       </div>
     </div>
+    <a href="/portafolio/" class="m-row font-display text-2xl font-bold">Proyectos</a>
+    <a href="/precios/" class="m-row font-display text-2xl font-bold">Precios</a>
+    <a href="/nosotros/" class="m-row font-display text-2xl font-bold">Nosotros</a>
     <a href="/saas/" class="m-row font-display text-2xl font-bold">SaaS</a>
     <a href="/industrias/" class="m-row font-display text-2xl font-bold">Industrias</a>
     <a href="/miami/" class="m-row font-display text-2xl font-bold">Miami</a>
-    <a href="/portafolio/" class="m-row font-display text-2xl font-bold">Portafolio</a>
     <a href="/blog/" class="m-row font-display text-2xl font-bold">Blog</a>
     <a href="/contacto/" class="m-row mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-4 text-base font-semibold text-night">Cotizar mi proyecto</a>
   </div>

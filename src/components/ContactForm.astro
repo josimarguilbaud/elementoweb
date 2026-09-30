@@ -15,15 +15,18 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
     <input type="hidden" name="from_name" value="Elemento Web — Web" />
     <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
+    <h3 id="cf-titulo" class="mb-4 hidden font-display text-xl font-bold text-ink"></h3>
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-nombre">Nombre <span class="text-teal-deep" aria-hidden="true">*</span></label><input name="nombre" id="cf-nombre" autocomplete="name" required aria-required="true" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /><p id="err-nombre" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
       <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-empresa">Empresa <span class="font-normal text-ink/70">(opcional)</span></label><input name="empresa" id="cf-empresa" autocomplete="organization" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /><p id="err-empresa" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
       <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-email">Correo <span class="text-teal-deep" aria-hidden="true">*</span></label><input name="email" id="cf-email" type="email" autocomplete="email" inputmode="email" required aria-required="true" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /><p id="err-email" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
       <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-telefono">WhatsApp <span class="text-teal-deep" aria-hidden="true">*</span></label><input name="telefono" id="cf-telefono" type="tel" autocomplete="tel" inputmode="tel" required aria-required="true" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /><p id="err-telefono" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
+      <div id="wrap-web" class="hidden sm:col-span-2"><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-web">Dirección de tu página web <span class="text-teal-deep" aria-hidden="true">*</span></label><input name="web" id="cf-web" type="text" inputmode="url" autocomplete="url" placeholder="www.tuempresa.com" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /><p id="err-web" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
+      <div id="wrap-inicio" class="hidden"><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-inicio">¿Cuándo quieres empezar?</label><select name="inicio" id="cf-inicio" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"><option value="">Selecciona</option><option>Lo antes posible</option><option>En las próximas 2 a 4 semanas</option><option>En 1 a 3 meses</option><option>Solo estoy comparando</option></select></div>
       <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-servicio">¿Qué necesitas?</label><select name="servicio" id="cf-servicio" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"><option value="">Selecciona</option>{services.map((s) => <option>{s}</option>)}</select></div>
-      <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-presupuesto">Presupuesto estimado <span class="font-normal text-ink/70">(opcional)</span></label><select name="presupuesto" id="cf-presupuesto" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"><option value="">Selecciona</option>{budgets.map((b) => <option>{b}</option>)}</select></div>
+      <div id="wrap-presupuesto"><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-presupuesto">Presupuesto estimado <span class="font-normal text-ink/70">(opcional)</span></label><select name="presupuesto" id="cf-presupuesto" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"><option value="">Selecciona</option>{budgets.map((b) => <option>{b}</option>)}</select></div>
     </div>
-    <div class="mt-4"><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-mensaje">¿Qué quieres resolver? <span class="font-normal text-ink/70">(opcional)</span></label><textarea name="mensaje" id="cf-mensaje" rows="4" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" placeholder="Una o dos líneas bastan. Si tienes web actual, pega el enlace."></textarea><p id="err-mensaje" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
+    <div class="mt-4"><label id="lb-mensaje" class="mb-1.5 block text-sm font-semibold text-ink" for="cf-mensaje">¿Qué quieres resolver? <span class="font-normal text-ink/70">(opcional)</span></label><textarea name="mensaje" id="cf-mensaje" rows="4" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" placeholder="Una o dos líneas bastan. Si tienes web actual, pega el enlace."></textarea><p id="err-mensaje" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
 
     <button type="submit" data-magnetic="0.25" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-night px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-teal-deep disabled:opacity-60">Enviar solicitud</button>
     <p id="cerr" role="alert" class="mt-3 hidden text-center text-sm font-medium text-red-700"></p>
@@ -34,7 +37,7 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
   <div id="cok" role="status" tabindex="-1" class="hidden flex-col items-center py-10 text-center outline-none">
     <span class="grid h-16 w-16 place-items-center rounded-full bg-teal-deep/15 text-teal-deep"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
     <h3 class="mt-5 font-display text-2xl font-bold text-ink">Solicitud recibida</h3>
-    <p class="mt-2 max-w-sm text-sm leading-relaxed text-ink/70">Gracias por escribirnos. Revisamos tu proyecto y te respondemos el mismo día hábil.</p>
+    <p id="cok-txt" class="mt-2 max-w-sm text-sm leading-relaxed text-ink/70">Gracias por escribirnos. Revisamos tu proyecto y te respondemos el mismo día hábil.</p>
   </div>
 </div>
 
@@ -50,13 +53,34 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
       ecommerce: 'Tienda online / E-commerce',
       medida: 'Software a medida',
       mensual: 'Web empresarial gestionada — plan mensual',
-      revision: 'Rediseño web',
-      definir: 'Otro',
+      revision: 'Revisión de mi web',
+      definir: 'Ayúdame a definir mi proyecto',
     };
+    // Cada oferta que motivó el clic define el formulario: la revisión pide la web
+    // a revisar; el plan mensual no pregunta por presupuesto sino por el inicio.
+    const MODE = {
+      'Revisión de mi web': { titulo: 'Solicita la revisión de tu web', web: true, sinPresupuesto: true, boton: 'Solicitar mi revisión', ok: 'Revisaremos tu página y te contactaremos con los siguientes pasos.', mensaje: '¿Qué te gustaría mejorar? (opcional)' },
+      'Ayúdame a definir mi proyecto': { titulo: 'Cuéntanos de tu negocio', sinPresupuesto: true, boton: 'Enviar mi solicitud', mensaje: '¿A qué se dedica tu negocio y qué quieres lograr con tu web?' },
+      'Web empresarial gestionada — plan mensual': { inicio: true, sinPresupuesto: true, boton: 'Consultar el plan mensual' },
+    };
+    const sel0 = document.getElementById('cf-servicio');
+    const applyMode = () => {
+      const m = MODE[sel0.value] || {};
+      const show = (id, on) => { const el = document.getElementById(id); if (el) el.classList.toggle('hidden', !on); };
+      const t = document.getElementById('cf-titulo'); t.textContent = m.titulo || ''; t.classList.toggle('hidden', !m.titulo);
+      show('wrap-web', !!m.web); show('wrap-inicio', !!m.inicio); show('wrap-presupuesto', !m.sinPresupuesto);
+      const lb = document.getElementById('lb-mensaje');
+      lb.innerHTML = (m.mensaje || '¿Qué quieres resolver? <span class="font-normal text-ink/70">(opcional)</span>');
+      form.querySelector('button[type="submit"]').textContent = m.boton || 'Enviar solicitud';
+      document.getElementById('cok-txt').textContent = m.ok || 'Gracias por escribirnos. Revisamos tu proyecto y te respondemos el mismo día hábil.';
+    };
+    sel0.addEventListener('change', applyMode);
     try {
       const k = new URLSearchParams(location.search).get('servicio');
       const sel = document.getElementById('cf-servicio');
       if (k && PLAN[k] && sel) sel.value = PLAN[k];
+    } catch (e) {}
+    try { applyMode();
     } catch (e) {}
 
     const MSG = {
@@ -74,6 +98,7 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
       el.classList.add('border-red-500');
       const p = document.getElementById('err-' + el.name); if (p) { p.textContent = text; p.classList.remove('hidden'); }
     };
+    MSG.web = 'Escribe la dirección de la página que quieres que revisemos.';
     Object.keys(MSG).forEach((k) => {
       const el = form.elements.namedItem(k);
       el.addEventListener('input', () => clearErr(el));
@@ -91,6 +116,7 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
       const fd = new FormData(form);
       const bad = [];
       for (const k of Object.keys(MSG)) {
+        if (k === 'web' && !(MODE[sel0.value] || {}).web) continue;
         const el = form.elements.namedItem(k);
         const val = String(fd.get(k) || '').trim();
         const invalid = !val
@@ -137,8 +163,11 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
             email: String(fd.get('email') || '').trim(),
             telefono: String(fd.get('telefono') || '').trim(),
             servicio: String(fd.get('servicio') || '').trim(),
-            presupuesto: String(fd.get('presupuesto') || '').trim(),
-            mensaje: String(fd.get('mensaje') || '').trim(),
+            presupuesto: (MODE[sel0.value] || {}).sinPresupuesto ? '' : String(fd.get('presupuesto') || '').trim(),
+            web: (MODE[sel0.value] || {}).web ? String(fd.get('web') || '').trim() : '',
+            inicio: (MODE[sel0.value] || {}).inicio ? String(fd.get('inicio') || '').trim() : '',
+            modalidad: sel0.value.indexOf('plan mensual') > -1 ? 'plan mensual' : 'proyecto',
+            mensaje: [((MODE[sel0.value] || {}).web ? 'Web a revisar: ' + String(fd.get('web') || '').trim() : ''), ((MODE[sel0.value] || {}).inicio && fd.get('inicio') ? 'Quiere empezar: ' + fd.get('inicio') : ''), String(fd.get('mensaje') || '').trim()].filter(Boolean).join('\n'),
             botcheck: String(fd.get('botcheck') || ''),
             intento: attemptId,
             origen: location.origin + location.pathname,

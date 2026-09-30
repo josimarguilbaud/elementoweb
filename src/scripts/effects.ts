@@ -8,7 +8,8 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
 
 /* ---- Lenis smooth scroll enganchado a GSAP ---- */
-const lenis = new Lenis({ wheelMultiplier: 1, lerp: 0.1, smoothWheel: !reduce });
+// Smooth scroll solo con puntero fino y sin reduced-motion; en táctil el scroll es nativo.
+const lenis = new Lenis({ wheelMultiplier: 1, lerp: 0.1, smoothWheel: fine && !reduce });
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((t) => lenis.raf(t * 1000));
 gsap.ticker.lagSmoothing(0);

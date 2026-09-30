@@ -23,20 +23,34 @@
   </div>
 </div>
 
+<noscript><style>#preloader{display:none!important}</style></noscript>
 <script is:inline>
-  // bloquea el scroll de inmediato para evitar salto durante la carga
-  document.documentElement.style.overflow = 'hidden';
+  // Solo se muestra en la primera visita de la sesión; después se quita antes
+  // de pintar. Si se muestra, bloquea el scroll para evitar saltos mientras carga.
+  (function () {
+    var seen = false;
+    try { seen = sessionStorage.getItem('pl') === '1'; } catch (e) {}
+    var el = document.getElementById('preloader');
+    if (seen) { if (el) el.remove(); return; }
+    document.documentElement.style.overflow = 'hidden';
+    // Salvavidas: si el script principal falla, la web no se queda bloqueada
+    setTimeout(function () {
+      var p = document.getElementById('preloader');
+      if (p) { p.remove(); document.documentElement.style.overflow = ''; }
+    }, 3500);
+  })();
 </script>
 
 <script>
   import { gsap } from 'gsap';
   const root = document.getElementById('preloader');
-  if (root) {
+  if (root && root.isConnected) {
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const words = root.querySelectorAll('.pl-word');
     const bar = document.getElementById('pl-bar');
     const pct = document.getElementById('pl-pct');
     const done = () => {
+      try { sessionStorage.setItem('pl', '1'); } catch (e) {}
       document.documentElement.style.overflow = '';
       const lenis = (window as any).__lenis;
       lenis?.scrollTo(0, { immediate: true });
@@ -50,13 +64,13 @@
       (window as any).__lenis?.stop();
       const c = { v: 0 };
       gsap.timeline({ defaults: { ease: 'power3.out' }, onComplete: done })
-        .from('#pl-icon', { scale: 0.7, opacity: 0, duration: 0.7, ease: 'back.out(1.6)' }, 0)
-        .from(words, { yPercent: 120, opacity: 0, duration: 0.9, stagger: 0.08 }, 0.15)
-        .to(bar, { scaleX: 1, duration: 1.5, ease: 'power2.inOut' }, 0.2)
-        .to(c, { v: 100, duration: 1.5, ease: 'power2.inOut', onUpdate: () => { if (pct) pct.textContent = String(Math.round(c.v)).padStart(3, '0'); } }, 0.2)
-        .to(words, { yPercent: -120, opacity: 0, duration: 0.6, stagger: 0.04, ease: 'power3.in' }, '+=0.2')
+        .from('#pl-icon', { scale: 0.7, opacity: 0, duration: 0.5, ease: 'back.out(1.6)' }, 0)
+        .from(words, { yPercent: 120, opacity: 0, duration: 0.55, stagger: 0.06 }, 0.1)
+        .to(bar, { scaleX: 1, duration: 0.7, ease: 'power2.inOut' }, 0.2)
+        .to(c, { v: 100, duration: 0.7, ease: 'power2.inOut', onUpdate: () => { if (pct) pct.textContent = String(Math.round(c.v)).padStart(3, '0'); } }, 0.2)
+        .to(words, { yPercent: -120, opacity: 0, duration: 0.6, stagger: 0.04, ease: 'power3.in' }, '+=0.05')
         .to('#pl-icon', { scale: 0.9, opacity: 0, duration: 0.5, ease: 'power3.in' }, '<')
-        .to(root, { yPercent: -100, duration: 0.9, ease: 'power4.inOut' }, '-=0.15');
+        .to(root, { yPercent: -100, duration: 0.6, ease: 'power4.inOut' }, '-=0.15');
     }
   }
 </script>

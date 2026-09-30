@@ -112,11 +112,11 @@ const { blocks } = Astro.props;
         <div class="mt-10 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
           {pricing.tiers.map((p) => (
             <div class={`reveal relative flex flex-col rounded-[1.75rem] p-8 ${p.featured ? 'bg-gradient-to-b from-night to-night-2 text-white shadow-2xl shadow-teal-deep/25' : 'border border-ink/10 bg-white text-ink'}`}>
-              {p.featured && <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold text-ink">Recomendado</span>}
+              {p.featured && <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold text-night">Recomendado</span>}
               <h3 class="font-display text-xl font-bold">{p.name}</h3>
               <div class="mt-6 flex items-end gap-1.5"><span class={`text-sm font-medium ${p.featured ? 'text-white/50' : 'text-ink/40'}`}>desde</span><span class="font-display text-5xl font-extrabold">{p.price}</span></div>
-              <ul class="mt-7 flex flex-col gap-3">{p.features.map((f) => <li class="flex items-center gap-3 text-sm"><span class={`grid h-5 w-5 shrink-0 place-items-center rounded-full ${p.featured ? 'bg-teal text-ink' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={p.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>)}</ul>
-              <a href="/contacto/" aria-label={`Empezar con el plan ${p.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${p.featured ? 'bg-teal text-ink hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
+              <ul class="mt-7 flex flex-col gap-3">{p.features.map((f) => <li class="flex items-center gap-3 text-sm"><span class={`grid h-5 w-5 shrink-0 place-items-center rounded-full ${p.featured ? 'bg-teal text-night' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={p.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>)}</ul>
+              <a href="/contacto/" aria-label={`Empezar con el plan ${p.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${p.featured ? 'bg-teal text-night hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
             </div>
           ))}
         </div>
@@ -141,7 +141,7 @@ const { blocks } = Astro.props;
                 <div class="text-sm font-medium text-white/45">desde</div>
                 <div class="font-display text-6xl font-extrabold leading-none">{pricing.custom.price}</div>
                 <p class="mx-auto mt-3 max-w-[16rem] text-sm text-white/50">Cotización cerrada por escrito tras el diagnóstico, sin compromiso.</p>
-                <a href={wa(pricing.custom.wa)} target="_blank" rel="noopener" data-magnetic="0.3" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-4 text-sm font-semibold text-ink transition-colors hover:bg-white">{pricing.custom.cta}<span class="grid h-5 w-5 place-items-center rounded-full bg-night text-teal"><svg width="9" height="9" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span></a>
+                <a href={wa(pricing.custom.wa)} target="_blank" rel="noopener" data-magnetic="0.3" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-4 text-sm font-semibold text-night transition-colors hover:bg-white">{pricing.custom.cta}<span class="grid h-5 w-5 place-items-center rounded-full bg-night text-teal"><svg width="9" height="9" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span></a>
               </div>
             </div>
           </div>
@@ -260,12 +260,12 @@ const { blocks } = Astro.props;
         <div class="mt-10 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
           {b.tiers.map((t) => (
             <div class={`reveal relative flex flex-col rounded-[1.75rem] p-8 ${t.featured ? 'bg-gradient-to-b from-night to-night-2 text-white shadow-2xl shadow-teal-deep/25' : 'border border-ink/10 bg-white text-ink'}`}>
-              {t.featured && <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold text-ink">Recomendado</span>}
+              {t.featured && <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold text-night">Recomendado</span>}
               <h3 class="font-display text-xl font-bold">{t.name}</h3>
               {t.for && <p class={`mt-2 text-sm ${t.featured ? 'text-white/50' : 'text-ink/45'}`}>{t.for}</p>}
               <div class="mt-6 flex items-end gap-1.5"><span class={`text-sm font-medium ${t.featured ? 'text-white/50' : 'text-ink/40'}`}>desde</span><span class="font-display text-5xl font-extrabold">{t.price}</span>{t.unit && <span class={`text-sm font-medium ${t.featured ? 'text-white/50' : 'text-ink/40'}`}>{t.unit}</span>}</div>
-              <ul class="mt-7 flex flex-1 flex-col gap-3">{t.features.map((f) => <li class="flex items-start gap-3 text-sm"><span class={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${t.featured ? 'bg-teal text-ink' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={t.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>)}</ul>
-              <a href="/contacto/" aria-label={`Empezar con el plan ${t.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${t.featured ? 'bg-teal text-ink hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
+              <ul class="mt-7 flex flex-1 flex-col gap-3">{t.features.map((f) => <li class="flex items-start gap-3 text-sm"><span class={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${t.featured ? 'bg-teal text-night' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={t.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>)}</ul>
+              <a href="/contacto/" aria-label={`Empezar con el plan ${t.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${t.featured ? 'bg-teal text-night hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
             </div>
           ))}
         </div>

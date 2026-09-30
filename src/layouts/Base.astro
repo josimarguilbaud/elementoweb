@@ -13,8 +13,14 @@ interface Props {
   dark?: boolean;
   /** Imagen para compartir (og:image). Absoluta o relativa a la raíz. */
   image?: string;
+  /** Página fuera del índice (404, borradores): sin canonical y con noindex. */
+  noindex?: boolean;
+  /** Tipo Open Graph; los artículos usan 'article'. */
+  ogType?: 'website' | 'article';
+  /** Fecha de publicación ISO (solo artículos). */
+  published?: string;
 }
-const { title, description, current = '', jsonld, dark = false, image } = Astro.props;
+const { title, description, current = '', jsonld, dark = false, image, noindex = false, ogType = 'website', published } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.domain).href;
 const schemas = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
 /* og:image: usa la imagen de la página; si no, una por defecto. Siempre absoluta. */
@@ -26,15 +32,16 @@ const rawImage = image || defaultImage;
 const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.domain).href;
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es-PA">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline>document.documentElement.classList.add('js')</script>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23333333'/%3E%3Cpath d='M16 6 25 11.2V21.8L16 27 7 21.8V11.2Z' fill='none' stroke='%230099cc' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M16 16.5 7 11.2M16 16.5 25 11.2M16 16.5V27' stroke='%230099cc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    {!noindex && <link rel="canonical" href={canonical} />}
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'} />
     {analytics.searchConsole && <meta name="google-site-verification" content={analytics.searchConsole} />}
     {analytics.gaId && (
       <>
@@ -43,7 +50,8 @@ const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.
       </>
     )}
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    {ogType === 'article' && published && <meta property="article:published_time" content={published} />}
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -54,20 +62,23 @@ const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={title} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" /></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
     {schemas.map((s) => <script type="application/ld+json" set:html={typeof s === 'string' ? s : JSON.stringify(s)} />)}
   </head>
   <body>
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-full focus:bg-night focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-white">Saltar al contenido</a>
     <!-- barra de progreso de scroll -->
     <div id="scroll-progress" class="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left scale-x-0 bg-gradient-to-r from-teal-deep via-teal to-violet"></div>
 
     <Navbar current={current} dark={dark} />
-    <main>
+    <main id="contenido" tabindex="-1">
       <slot />
     </main>
     <Footer />

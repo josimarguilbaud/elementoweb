@@ -13,7 +13,7 @@ export function orgNode() {
     url: site.domain,
     email: site.email,
     telephone: site.phone.replace(/\s/g, '-'),
-    logo: `${site.domain}/favicon.svg`,
+    logo: `${site.domain}/marca/favicon.png`,
     areaServed: [{ '@type': 'Country', name: 'Panamá' }, { '@type': 'Place', name: 'América Latina' }, { '@type': 'Place', name: 'Miami-Dade County, Florida' }],
     // ⚠️ Completar con perfiles sociales reales antes de publicar.
     sameAs: ['https://www.instagram.com/elementoweb.com'],
@@ -33,7 +33,7 @@ export function webSiteNode() {
   };
 }
 
-/* LocalBusiness solo en home y contacto. Dirección: TODO bloqueante
+/* ProfessionalService solo en home y contacto. Dirección: TODO bloqueante
    (sin dirección real verificada no se añade PostalAddress). El área servida sí
    se puede declarar sin dirección: es el país y un radio sobre Ciudad de Panamá,
    que es lo que responde a "agencia web cerca de mí". */
@@ -100,7 +100,9 @@ export function serviceNode(page: PageData) {
     serviceType: page.service.type,
     description: page.description,
     provider: { '@id': ORG_ID },
-    areaServed: { '@type': 'Country', name: 'Panamá' },
+    areaServed: page.slug.startsWith('miami')
+      ? { '@type': 'Place', name: 'Miami-Dade County, Florida' }
+      : { '@type': 'Country', name: 'Panamá' },
     inLanguage: 'es-PA',
   };
 }
@@ -117,21 +119,28 @@ export function pageJsonLd(page: PageData, opts: { localBusiness?: boolean } = {
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
 }
 
-export function articleJsonLd(a: { title: string; description: string; slug: string; date: Date }) {
+/* `a.slug` ya trae el prefijo `blog/` (p. ej. 'blog/cuanto-cuesta-…'), así que
+   la URL se arma con url(): concatenar '/blog/' otra vez producía /blog/blog/…
+   (404) en el mainEntityOfPage de los 70 artículos. */
+export function articleJsonLd(a: { title: string; description: string; slug: string; date: Date; image?: string }) {
+  const pageUrl = `${site.domain}${url(a.slug)}`;
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
       orgNode(),
       webSiteNode(),
       {
-        '@type': 'Article',
+        '@type': 'BlogPosting',
+        '@id': `${pageUrl}#articulo`,
+        url: pageUrl,
         headline: a.title,
+        ...(a.image ? { image: a.image } : {}),
         description: a.description,
         datePublished: a.date.toISOString().slice(0, 10),
         inLanguage: 'es-PA',
         author: { '@id': ORG_ID },
         publisher: { '@id': ORG_ID },
-        mainEntityOfPage: `${site.domain}/blog/${a.slug}/`,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
       },
     ],
   });
@@ -144,7 +153,7 @@ export function articleJsonLd(a: { title: string; description: string; slug: str
  * Datos estructurados del home.
  *
  * Recibe las preguntas visibles de la portada porque eran las unicas del sitio
- * que no llegaban al JSON-LD: las 108 paginas restantes si emiten FAQPage y el
+ * que no llegaban al JSON-LD: el resto de paginas si emiten FAQPage y el
  * home, que trae justo las preguntas que la gente busca ("cuanto cuesta una
  * pagina web en Panama"), se quedaba fuera.
  */

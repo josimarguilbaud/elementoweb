@@ -193,3 +193,19 @@ Se añaden **solo** vía `src/lib/pages/*.ts` + registro en `index.ts` (con guar
 - CSP mal puesta rompe fuentes/formulario → solo Report-Only en esta entrega.
 - Optimización de imágenes aumenta el tamaño del repo si se versionan variantes → generar en build (`prebuild`) o commitear solo variantes finales; decidir en Lote B.
 - Redirects www/HTTPS dependen de Coolify: sin tu acceso no se pueden cerrar.
+
+---
+
+## Estado de avance (actualizado 30-sep-2026)
+
+| Fase | Estado |
+|---|---|
+| 0 Baseline | Hecho: `audit/baseline-seo.json` (155 URLs originales), `scripts/qa-seo.mjs` |
+| 1 Fricciones críticas | Hecho: navbar/foco/Escape, contraste, formulario, anclas + plan preseleccionado, alcance $950 = hasta 6 páginas, pauta propia. Pendiente: prueba E2E con webhook sandbox |
+| 2 SEO técnico | Hecho salvo Coolify (HTTPS 301 y www) y probar nginx en contenedor |
+| 3 Rendimiento | Hecho: hero sin reveal, preloader corto, WebP responsive, fuentes. Pendiente: medir en PSI real tras deploy |
+| 4 UX/conversión | Hecho: H1 nuevo, orden de secciones. Pendiente: reducir bloques repetidos, enlaces "Ver más" de Miami |
+| 5 Arquitectura | `/precios/` hecho. Pendiente: `/casos-de-exito/`, recursos, comparativa, Miami |
+| 6-9 | Pendiente (necesita datos de casos, GSC, GBP, permisos) |
+| 10 Analítica | Eventos listos (`track.ts`); falta ID de GA4 y código de Search Console |
+| 11 QA | `qa-seo.mjs` + `check-links.mjs` limpios (0 problemas). Faltan tests de responsive completos |

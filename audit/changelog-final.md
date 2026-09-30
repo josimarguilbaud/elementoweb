@@ -74,3 +74,13 @@ Base: `cbff42e`. Publicado en `main` hasta `e73f70f` (despliegues 131 y 132: exi
 - No se han medido PageSpeed real, INP ni datos de campo.
 - Las cifras de los 4 casos de éxito no están publicadas: faltan los datos de cada cliente.
 - Google Business Profile, reseñas, logos con nombre en el `alt`, y las decisiones sobre Miami (con datos) siguen abiertos.
+
+## Lote 3 (30-sep-2026): red interna, Nosotros, guías y hubs
+- **Footer:** filas de Miami (5 enlaces) e industrias con más prueba (8 + «ver todas»), y enlace a Guías.
+- **Home:** selector «Trabajamos en: Panamá · Miami» bajo los botones del hero.
+- **Nosotros:** bloque «Elemento Web en una página» (qué somos, dónde, tecnología, casos, precios, proceso) y 4 preguntas nuevas (qué es, quién dirige, Miami, cuánto cuesta). Sin años de experiencia ni tamaño de equipo: no hay dato confirmado.
+- **Guías de precio sueltas (5):** tienda online, landing, mantenimiento, rediseño y desarrollo a medida. Solo cifras propias de `site.ts` y `crecimiento.ts`.
+- **Guías de Miami (2):** agencia de diseño web en Miami en español y diseño web para negocios hispanos. Sin cifras de mercado ni exenciones fiscales.
+- **Hubs de clúster:** `/guias/` y 7 hubs (`/guias/diseno-web-panama/`, `tiendas-online-y-pagos`, `seo-y-posicionamiento`, `whatsapp-ia-y-automatizacion`, `marketing-y-pauta`, `diseno-web-miami`, `diseno-web-por-industria`) con 82 enlaces a guías; enlazados desde el blog y el footer.
+- **Cadena de enlaces:** 76 páginas comerciales revisadas con `scripts/qa-chain.mjs`: las 76 tenían huecos (precio, prueba o contacto). Una franja «Siguiente paso» en la plantilla lo resuelve: 0 huecos.
+- **QA:** 235 páginas, 0 problemas de SEO, 0 de enlaces rotos, 0 de accesibilidad (axe, 15 páginas × 2 tamaños) y 0 fallos responsive (13 páginas × 10 tamaños).

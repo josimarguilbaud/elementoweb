@@ -1,6 +1,24 @@
 ---
 import { site, cols, marketing, saas, legal, url, wa } from '../lib/site';
 const waHref = wa('Hola, quiero cotizar un proyecto web.');
+/* Enlaces de red interna del pie: Miami (servicio remoto) e industrias con más prueba. */
+const miamiLinks = [
+  { slug: 'miami', label: 'Diseño web en Miami' },
+  { slug: 'miami/diseno-web-en-miami-en-espanol', label: 'Páginas web para negocios hispanos' },
+  { slug: 'miami/diseno-web-doral', label: 'Diseño web en Doral' },
+  { slug: 'miami/diseno-web-hialeah', label: 'Diseño web en Hialeah' },
+  { slug: 'blog/cuanto-cuesta-pagina-web-miami', label: 'Cuánto cuesta una web en Miami' },
+];
+const industryLinks = [
+  { slug: 'industrias/diseno-web-abogados-panama', label: 'Abogados' },
+  { slug: 'industrias/diseno-web-bienes-raices-panama', label: 'Bienes raíces' },
+  { slug: 'industrias/diseno-web-turismo-hoteles-panama', label: 'Turismo y hoteles' },
+  { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Restaurantes' },
+  { slug: 'industrias/diseno-web-clinicas-salud-panama', label: 'Clínicas' },
+  { slug: 'industrias/diseno-web-constructoras-panama', label: 'Constructoras' },
+  { slug: 'industrias/diseno-web-contadores-panama', label: 'Contadores' },
+  { slug: 'industrias/diseno-web-logistica-transporte-panama', label: 'Logística y transporte' },
+];
 const serviceCols = [...cols, { title: 'Nuestros SaaS', hub: 'saas', links: saas.map((s) => ({ slug: s.slug, label: s.label })) }];
 ---
 <footer class="relative overflow-hidden bg-night text-white">
@@ -43,7 +61,16 @@ const serviceCols = [...cols, { title: 'Nuestros SaaS', hub: 'saas', links: saas
   </div>
 
   <div class="relative mx-auto max-w-7xl border-t border-white/10 px-6 py-6">
-    <a href="/industrias/" class="inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition hover:text-teal">Diseño web por industria <span aria-hidden="true" class="text-teal">→</span></a>
+    <p class="text-xs font-semibold uppercase tracking-wider text-white/40">Miami · servicio remoto desde Panamá</p>
+    <div class="mt-4 flex flex-wrap gap-x-7 gap-y-2.5 text-sm">{miamiLinks.map((m) => <a href={url(m.slug)} class="text-white/60 transition hover:text-teal">{m.label}</a>)}</div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl border-t border-white/10 px-6 py-6">
+    <p class="text-xs font-semibold uppercase tracking-wider text-white/40">Diseño web por industria</p>
+    <div class="mt-4 flex flex-wrap items-center gap-x-7 gap-y-2.5 text-sm">
+      {industryLinks.map((m) => <a href={url(m.slug)} class="text-white/60 transition hover:text-teal">{m.label}</a>)}
+      <a href="/industrias/" class="inline-flex items-center gap-2 font-semibold text-white/70 transition hover:text-teal">Ver todas <span aria-hidden="true" class="text-teal">→</span></a>
+    </div>
   </div>
 
   <div class="relative mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 px-6 py-7 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
@@ -51,6 +78,7 @@ const serviceCols = [...cols, { title: 'Nuestros SaaS', hub: 'saas', links: saas
     <div class="flex flex-wrap gap-x-6 gap-y-2">
       <a href="/precios/" class="transition hover:text-teal">Precios</a>
       <a href="/casos-de-exito/" class="transition hover:text-teal">Casos de éxito</a>
+      <a href="/guias/" class="transition hover:text-teal">Guías</a>
       <a href="/recursos/" class="transition hover:text-teal">Recursos</a>
       <a href="/como-trabajamos/" class="transition hover:text-teal">Cómo trabajamos</a>
       {legal.map((l) => <a href={url(l.slug)} class="transition hover:text-teal">{l.label}</a>)}

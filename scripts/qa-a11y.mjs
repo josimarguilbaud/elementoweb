@@ -9,7 +9,7 @@ import { createRequire } from 'node:module';
 const BASE = process.argv[2] || 'http://localhost:4610';
 const EXE = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium';
 const axeSrc = readFileSync(createRequire(import.meta.url).resolve('axe-core/axe.min.js'), 'utf8');
-const PAGES = ['/', '/precios/', '/contacto/', '/diseno-web-panama/', '/miami/', '/casos-de-exito/tramitapa/', '/recursos/calculadora-costo-total-web/', '/blog/cuanto-cuesta-diseno-web-panama/', '/nosotros/', '/servicios/diseno-web-corporativo-panama/'];
+const PAGES = ['/', '/precios/', '/contacto/', '/diseno-web-panama/', '/miami/', '/casos-de-exito/tramitapa/', '/recursos/calculadora-costo-total-web/', '/blog/cuanto-cuesta-diseno-web-panama/', '/nosotros/', '/servicios/diseno-web-corporativo-panama/', '/guias/', '/guias/diseno-web-por-industria/', '/blog/cuanto-cuesta-tienda-online-panama/', '/blog/agencia-diseno-web-miami-en-espanol/', '/blog/'];
 const b = await chromium.launch({ executablePath: EXE });
 const seen = new Map();
 for (const [w, h] of [[390, 844], [1280, 800]]) {

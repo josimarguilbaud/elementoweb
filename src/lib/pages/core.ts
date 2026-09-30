@@ -197,6 +197,19 @@ export const core: PageData[] = [
         ],
       },
       {
+        type: 'cards',
+        h2: 'Elemento Web en una página',
+        intro: 'Lo esencial, con enlaces a la evidencia de cada punto.',
+        items: [
+          { h3: 'Qué somos', text: 'Una agencia de diseño web y software house con sede en Ciudad de Panamá. Diseñamos y desarrollamos sitios, tiendas online y software a medida, y operamos marketing digital, SEO y automatización con IA.', link: { slug: 'servicios', label: 'Ver los servicios' } },
+          { h3: 'Dónde trabajamos', text: 'En Panamá, y de forma remota con negocios hispanos de Miami-Dade, en español y en dólares. No tenemos oficina en Miami.', link: { slug: 'miami', label: 'Ver el servicio para Miami' } },
+          { h3: 'Qué tecnología usamos', text: 'Astro, React, Vue, WordPress y Shopify, según lo que necesite el proyecto. También operamos tres productos SaaS propios en producción.', link: { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Ver desarrollo a medida' } },
+          { h3: 'Qué hemos hecho', text: 'Sitios para turismo, logística, contabilidad, servicios de trámites y más. Cada caso cuenta el problema y lo que construimos; las cifras se publican solo cuando están medidas.', link: { slug: 'casos-de-exito', label: 'Ver los casos' } },
+          { h3: 'Cuánto cobramos', text: 'Precios publicados en dólares y sin sorpresas: landing desde $550, sitio corporativo desde $950 (hasta 6 páginas internas), tienda online desde $1,500 y proyectos a medida desde $2,900. No incluyen ITBMS.', link: { slug: 'precios', label: 'Ver los precios' } },
+          { h3: 'Cómo trabajamos', text: 'Cotización cerrada por escrito, demo en línea antes de publicar y pago en tres etapas (50%, 30% y 20%). Dominio, código y accesos quedan a nombre de tu empresa.', link: { slug: 'como-trabajamos', label: 'Ver el proceso' } },
+        ],
+      },
+      {
         type: 'checklist',
         h2: 'Cómo trabajamos',
         items: [
@@ -215,6 +228,10 @@ export const core: PageData[] = [
           { q: '¿Qué es exactamente Meta Verified Tech Provider?', a: 'Una acreditación oficial de Meta para proveedores tecnológicos autorizados a integrar sus APIs de WhatsApp Business e Instagram. Significa verificación de números por el canal oficial y soporte directo, sin intermediarios improvisados.' },
           { q: '¿Subcontratan parte del trabajo?', a: 'No. Diseño, desarrollo, SEO técnico, integraciones, pauta publicitaria y contenido para redes son de equipo interno. Lo que no hacemos (registro de marca, fotografía o video de estudio) te lo decimos y te referimos con especialistas.' },
           { q: '¿Dónde están ubicados?', a: 'En Ciudad de Panamá, con trabajo remoto para todo el país y la región. Las reuniones presenciales se coordinan según el proyecto.' },
+          { q: '¿Qué es Elemento Web?', a: 'Una agencia de diseño web y software house con sede en Ciudad de Panamá. Diseñamos sitios corporativos, tiendas online y landing pages, desarrollamos software a medida y operamos marketing digital, SEO y automatización con IA.' },
+          { q: '¿Quién dirige Elemento Web?', a: 'Josimar Guilbaud es el CEO de Elemento Web.' },
+          { q: '¿Trabajan con negocios de Miami?', a: 'Sí, de forma remota desde Panamá y en español. Facturamos en dólares. No tenemos oficina en Miami; coordinamos por WhatsApp y videollamada. Más detalle en <a href="/miami/">diseño web para Miami</a>.' },
+          { q: '¿Cuánto cuesta una página web con Elemento Web?', a: 'Landing desde $550, sitio corporativo desde $950 (hasta 6 páginas internas), tienda online desde $1,500 y proyectos a medida desde $2,900. Sin ITBMS (7%). Todo el detalle está en <a href="/precios/">precios</a>.' },
         ],
       },
       {

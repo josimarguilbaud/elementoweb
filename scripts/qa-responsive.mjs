@@ -5,7 +5,7 @@ import { chromium } from 'playwright-core';
 
 const BASE = process.argv[2] || 'http://localhost:4610';
 const EXE = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium';
-const PAGES = ['/', '/precios/', '/contacto/', '/diseno-web-panama/', '/miami/', '/casos-de-exito/tramitapa/', '/recursos/calculadora-costo-total-web/', '/blog/cuanto-cuesta-diseno-web-panama/', '/comparativas/web-a-medida-vs-suscripcion/'];
+const PAGES = ['/', '/precios/', '/contacto/', '/diseno-web-panama/', '/miami/', '/casos-de-exito/tramitapa/', '/recursos/calculadora-costo-total-web/', '/blog/cuanto-cuesta-diseno-web-panama/', '/comparativas/web-a-medida-vs-suscripcion/', '/nosotros/', '/guias/', '/guias/diseno-web-por-industria/', '/servicios/diseno-web-corporativo-panama/'];
 const SIZES = [[320, 640], [360, 740], [390, 844], [430, 932], [768, 1024], [820, 1180], [1024, 768], [1280, 800], [1440, 900], [844, 390]];
 
 const b = await chromium.launch({ executablePath: EXE });

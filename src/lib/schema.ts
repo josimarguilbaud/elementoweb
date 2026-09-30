@@ -111,7 +111,7 @@ export function serviceNode(page: PageData) {
 /* Tipo de página según su función real. Solo se declara donde la página ES eso. */
 const COLLECTIONS = new Set(['portafolio', 'casos-de-exito', 'recursos', 'miami', 'industrias', 'servicios', 'saas', 'marketing', 'crecimiento', 'tecnologias', 'funcionalidades']);
 function webPageNode(page: PageData) {
-  const type = page.slug === 'nosotros' ? 'AboutPage' : page.slug === 'contacto' ? 'ContactPage' : COLLECTIONS.has(page.slug) ? 'CollectionPage' : 'WebPage';
+  const type = page.slug === 'nosotros' ? 'AboutPage' : page.slug === 'contacto' ? 'ContactPage' : COLLECTIONS.has(page.slug) || page.slug.startsWith('guias') ? 'CollectionPage' : 'WebPage';
   const pageUrl = `${site.domain}${url(page.slug)}`;
   return {
     '@type': type,

@@ -29,6 +29,9 @@ const jsonld = isBlog
       ...(blogFaq ? [{ '@context': 'https://schema.org', ...blogFaq }] : []),
     ]
   : pageJsonLd(page, { localBusiness: page.slug === 'contacto' });
+/* Cadena de enlaces de las páginas comerciales: servicio → precio → prueba → contacto. */
+const CHAIN_SECTIONS = ['servicios', 'crecimiento', 'tecnologias', 'funcionalidades', 'marketing', 'industrias', 'miami', 'saas', 'diseno-web-panama'];
+const showNext = CHAIN_SECTIONS.includes(page.slug.split('/')[0]);
 const dateLabel = page.date
   ? new Date(page.date + 'T12:00:00').toLocaleDateString('es-PA', { day: 'numeric', month: 'long', year: 'numeric' })
   : '';
@@ -82,6 +85,18 @@ const dateLabel = page.date
   )}
 
   <Blocks blocks={page.blocks} />
+  {showNext && (
+    <section class="mx-auto max-w-7xl px-6 pb-16" aria-labelledby="siguiente-paso">
+      <div class="rounded-3xl border border-ink/10 bg-white p-7 md:p-9">
+        <h2 id="siguiente-paso" class="font-display text-xl font-bold text-ink md:text-2xl">Siguiente paso</h2>
+        <ul class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <li><a href="/precios/" class="block rounded-2xl border border-ink/10 p-5 transition hover:border-teal-deep/40 hover:shadow-md"><span class="font-display font-bold text-ink">Precios</span><span class="mt-1 block text-sm text-ink/70">Cuánto cuesta cada formato y qué incluye.</span></a></li>
+          <li><a href="/casos-de-exito/" class="block rounded-2xl border border-ink/10 p-5 transition hover:border-teal-deep/40 hover:shadow-md"><span class="font-display font-bold text-ink">Casos de éxito</span><span class="mt-1 block text-sm text-ink/70">Proyectos reales: el problema y lo que construimos.</span></a></li>
+          <li><a href="/contacto/#formulario" class="block rounded-2xl border border-ink/10 p-5 transition hover:border-teal-deep/40 hover:shadow-md"><span class="font-display font-bold text-ink">Pedir cotización</span><span class="mt-1 block text-sm text-ink/70">Diagnóstico sin costo y propuesta con precio cerrado.</span></a></li>
+        </ul>
+      </div>
+    </section>
+  )}
 
   <!-- CTA de cierre -->
   <section class="mx-auto max-w-7xl px-6 py-20">

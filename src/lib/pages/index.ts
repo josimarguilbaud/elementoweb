@@ -4,6 +4,7 @@ import { core } from './core';
 import { precios } from './precios';
 import { casos } from './casos';
 import { recursos } from './recursos';
+import { clusters } from './clusters';
 import { disenoWebPanama } from './diseno-web-panama';
 import { servicios } from './servicios';
 import { tecnologias } from './tecnologias';
@@ -57,12 +58,15 @@ import { blog36 } from './blog-36';
 import { blog37 } from './blog-37';
 import { blog38 } from './blog-38';
 import { blog39 } from './blog-39';
+import { blog40 } from './blog-40';
+import { blog41 } from './blog-41';
 
 export const pages: PageData[] = [
   ...core,
   ...precios,
   ...casos,
   ...recursos,
+  ...clusters,
   ...disenoWebPanama,
   ...servicios,
   ...tecnologias,
@@ -116,6 +120,8 @@ export const pages: PageData[] = [
   ...blog37,
   ...blog38,
   ...blog39,
+  ...blog40,
+  ...blog41,
 ];
 
 /* Guardia de build: slugs duplicados rompen la compilación aquí mismo. */

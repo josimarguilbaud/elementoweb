@@ -23,5 +23,5 @@ Indexación: 102 indexadas, 8 no (1 con 404, 7 «descubierta, actualmente sin in
 GA4 (G-J0NHHRTV75): sin datos hasta el despliegue del 30-sep-2026.
 
 ## Cómo leerlo
-- Las páginas de Miami se publicaron el 28-sep-2026 (commit 1924515), un día después del cierre del rango. Cero impresiones es lo esperado, no una señal de falta de demanda. Volver a medir con datos de al menos 6–8 semanas antes de ampliar o fusionar.
+- Las páginas de Miami se desplegaron al final del rango (commit 1924515, de la noche del 27-sep en Panamá; el despliegue corrió el 28-sep 04:40 UTC), así que Google prácticamente no tuvo tiempo de mostrarlas. Cero impresiones es lo esperado, no una señal de falta de demanda. Volver a medir con datos de al menos 6–8 semanas antes de ampliar o fusionar.
 - Posición ~90 significa página 9–10 de Google. Con ese punto de partida el problema es autoridad y relevancia, no el título ni el CTR.

@@ -88,7 +88,7 @@ export const blog1: PageData[] = [
         paragraphs: [
           'El monto correcto no depende de una tabla, sino de qué tan central es la web para tus ventas. Si tu negocio vive de que la gente te encuentre en Google y te escriba —consultorios, servicios, comercios locales— la web es tu vendedor principal y merece una inversión acorde. Recortar ahí es recortar en ventas.',
           'Si vendes en línea, la ecuación es todavía más directa: la tienda es literalmente tu caja registradora, y cada mejora en velocidad, pagos o experiencia se traduce en pedidos completados. Y si apenas estás validando una idea, una landing enfocada te deja probar el mercado con poco riesgo antes de escalar.',
-          'La forma sana de decidirlo es al revés de como suele hacerse: no partas del precio más bajo que encuentres, parte de cuánto vale un cliente nuevo para ti. Si un cliente te deja cientos o miles de dólares al año, una web que te trae varios al mes se paga sola en semanas. Cuando tengas ese número claro, <a href="/servicios/">explora los servicios</a> o pídenos una <a href="/contacto/">cotización cerrada</a> y compara con datos, no con corazonadas.',
+          'La forma sana de decidirlo es al revés de como suele hacerse: no partas del precio más bajo que encuentres, parte de cuánto vale un cliente nuevo para ti. Si un cliente te deja cientos o miles de dólares al año, una web que te trae varios al mes puede recuperar su costo en poco tiempo. Cuando tengas ese número claro, <a href="/servicios/">explora los servicios</a> o pídenos una <a href="/contacto/">cotización cerrada</a> y compara con datos, no con corazonadas.',
         ],
       },
       {

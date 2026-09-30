@@ -69,7 +69,7 @@ export const miamiPages: PageData[] = [
         items: [
           { q: '¿Cómo se factura si están en Panamá?', a: 'Facturamos desde la empresa panameña, en dólares, igual que cualquier cliente de Elemento Web. El pago se hace por tarjeta o transferencia internacional; no manejamos Yappy fuera de Panamá porque es un método de pago exclusivo de ahí.' },
           { q: '¿Aplica el ITBMS (7%) que mencionan en los precios?', a: 'No. El ITBMS es un impuesto panameño y no aplica a un servicio facturado a un cliente fuera de Panamá. Los precios publicados son los que pagas, sin ese recargo.' },
-          { q: '¿Por qué no contratar una agencia que ya esté en Miami?', a: 'Puedes, y vas a pagar la estructura de costos de EE.UU. por el mismo trabajo. Nosotros operamos desde Panamá con el mismo nivel técnico (los mismos estándares con los que mantenemos <a href="/saas/">tres SaaS propios en producción</a>) a un costo que no carga ese sobreprecio.' },
+          { q: '¿Por qué no contratar una agencia que ya esté en Miami?', a: 'Puedes, y puede convenirte si valoras reunirte en persona. Nosotros trabajamos remoto desde Panamá, con el mismo proceso que usamos con nuestros clientes en Panamá y precios publicados en dólares. Compara alcance, plazos y precio por escrito antes de decidir.' },
           { q: '¿Hay diferencia horaria real?', a: 'Panamá está en UTC-5 todo el año. Miami está en UTC-5 en invierno y UTC-4 en horario de verano, así que la diferencia es de cero a una hora. En la práctica, coordinamos en tu jornada laboral sin fricción.' },
           { q: '¿El sitio queda en español, en inglés, o en los dos?', a: 'Depende de a quién le vendes. Si tu cliente en Miami opera en español (la mayoría en Doral, Hialeah y buena parte del condado), el sitio va en español. Si necesitas atender también al cliente angloparlante, agregamos inglés como segundo idioma sin duplicar el trabajo desde cero.' },
           { q: '¿Cuánto cuesta comparado con una web para un cliente en Panamá?', a: 'Los mismos precios: landing desde $550, sitio corporativo desde $950, e-commerce desde $1,500. No cobramos más por atender Miami; la moneda y el proceso ya son los mismos.' },
@@ -115,10 +115,10 @@ export const miamiPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El sobreprecio de "estar en Miami" no es calidad, es renta',
+        h2: 'Qué cambia cuando tu agencia trabaja remoto desde Panamá',
         paragraphs: [
-          'Una agencia física en Miami paga oficina, nómina en dólares de EE.UU. y overhead que no tiene nada que ver con la calidad del sitio que te entrega. Ese costo se traslada al cliente.',
-          'Nosotros operamos desde Panamá con estructura de costos panameña, pero con el mismo nivel de exigencia técnica: el mismo que usamos para mantener <a href="/saas/">tres productos SaaS propios en producción</a> con clientes reales. La diferencia de precio no es por hacer menos: es por no cargar una renta que no aporta nada a tu web.',
+          'Una agencia con oficina en Miami tiene una estructura de costos distinta a la nuestra, y eso puede reflejarse en sus precios. No comparamos cifras porque no tenemos datos verificados de otros proveedores: pide cotizaciones con alcance por escrito y compara.',
+          'Nosotros operamos desde Panamá con el mismo proceso que aplicamos con clientes en Panamá: demo en línea antes de publicar, pago por etapas y un interlocutor fijo. También mantenemos <a href="/saas/">tres productos SaaS propios en producción</a>. Lo que cambia es que no nos reunimos en persona: coordinamos por WhatsApp y videollamada.',
         ],
       },
       {

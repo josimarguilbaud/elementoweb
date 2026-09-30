@@ -32,3 +32,6 @@ window.addEventListener('cf:lead', (e) => {
 });
 
 if (location.pathname.startsWith('/precios')) send('pricing_view');
+// vista de un caso de éxito individual (no del hub): el parámetro es el slug del caso
+const caso = location.pathname.match(/^\/casos-de-exito\/([^/]+)\/?$/);
+if (caso) send('case_study_view', { case_slug: caso[1] });

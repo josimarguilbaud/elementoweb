@@ -19,7 +19,7 @@ export const blog17: PageData[] = [
       alt: 'Habitación de un hotel boutique con cama tendida, luz cálida y un ventanal grande dejando entrar luz natural sobre una decoración minimalista',
     },
     lead: [
-      'Un huésped te encuentra en Booking o Airbnb, mira las fotos, y antes de reservar abre otra pestaña y busca el nombre de tu hotel en Google. Ese segundo clic es la oportunidad más barata que vas a tener para recuperar la comisión — y la mayoría de las webs de turismo en Panamá la desperdician con un sitio que no le da ninguna razón para reservar ahí en vez de volver a la app.',
+      'Un huésped te encuentra en Booking o Airbnb, mira las fotos, y antes de reservar abre otra pestaña y busca el nombre de tu hotel en Google. Ese segundo clic es la oportunidad más barata que vas a tener para recuperar la comisión — y se desperdicia cuando el sitio no le da ninguna razón para reservar ahí en vez de volver a la app.',
       'Booking y Airbnb cobran entre el 15% y el 20% de cada reserva que pasa por ellos: una de cada cinco o seis noches, regalada. En esta guía vemos qué necesita de verdad la web de un hotel, posada u operador turístico para ganar esa reserva directa, y también cuándo, con honestidad, todavía no conviene meterse en esto.',
     ],
     blocks: [

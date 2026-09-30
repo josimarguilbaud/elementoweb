@@ -27,6 +27,7 @@ Base: `cbff42e`. Publicado en `main` hasta `e73f70f` (despliegues 131 y 132: exi
 | Redirect de directorio (`/servicios`) | 301 a `http://` | 301 relativo (`/servicios/`) | nginx local con la config real |
 | Carpetas de cliente | 49 de 50 HTML con noindex | 50 de 50 + `X-Robots-Tag` | `qa-seo.mjs` y nginx local |
 | Analítica | GA4 sin ID (0 eventos) | GA4 activo, 9 eventos propios definidos | `docs/event-dictionary.md`; verificar en Tiempo real tras publicar |
+| Contraste y accesibilidad automática (axe-core, WCAG 2.x A/AA, 10 páginas × 2 tamaños) | no medida (texto gris con contraste insuficiente en ~446 puntos) | 0 problemas | `scripts/qa-a11y.mjs`; texto `text-ink/30–65` subido a `/70`; numeración decorativa `aria-hidden`; región desplazable con foco. No sustituye la revisión con lector de pantalla |
 | Matriz responsive (10 tamaños × 9 páginas) | no medida | 0 fallos de desbordamiento | `scripts/qa-responsive.mjs` |
 
 **Search Console (línea base, 28-jul a 27-sep-2026):** 6 clics, 6.269 impresiones, posición media 83,4 (`audit/gsc-baseline-2026-09.md`). No se atribuye ninguna mejora comercial: falta la ventana de datos posterior.

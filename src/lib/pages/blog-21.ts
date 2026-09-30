@@ -96,7 +96,7 @@ export const blog21: PageData[] = [
         paragraphs: [
           'Si tu salón es unipersonal, la agenda ya se llena solo con referidos y no te interesa captar clientela nueva por internet, montar un sistema de reservas por profesional, portafolio y pauta es resolver un problema que hoy no tienes. Un perfil simple con tus datos, algunas fotos de tu trabajo y un botón de WhatsApp puede ser más que suficiente, y gastar de más ahí no te devuelve nada.',
           'Tampoco conviene mostrar un portafolio a medias. Si apenas estás empezando y todavía no tienes fotos propias de resultados —solo un par de trabajos, con mala luz o de hace tiempo—, rellenar la web con imágenes de banco disfrazadas de trabajo propio se nota casi de inmediato en este rubro, y cuesta más confianza de la que ahorra tiempo. Mejor esperar a tener diez o doce fotos reales, buenas, y salir con eso.',
-          'Donde sí se justifica invertir es cuando ya tienes más de un profesional compitiendo por agenda propia, cuando dependes de clientela nueva y no solo de referidos, o cuando el ausentismo ya se nota en los números del mes. Ahí una reserva bien construida se paga sola en pocos meses.',
+          'Donde sí se justifica invertir es cuando ya tienes más de un profesional compitiendo por agenda propia, cuando dependes de clientela nueva y no solo de referidos, o cuando el ausentismo ya se nota en los números del mes. Ahí una reserva bien construida puede recuperar su costo en pocos meses.',
         ],
       },
       {

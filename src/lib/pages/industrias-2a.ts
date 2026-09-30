@@ -605,7 +605,7 @@ export const industrias2a: PageData[] = [
         type: 'prose',
         h2: 'Qué medir: citas agendadas, no visitas',
         paragraphs: [
-          'La pregunta que casi todo consultorio le hace a su web es cuántas visitas tuvo. Es la métrica más fácil de mirar y la que menos dice. Mil visitas al mes sin una sola cita agendada es una web que no está trabajando; doscientas visitas con quince citas es una web que se paga sola.',
+          'La pregunta que casi todo consultorio le hace a su web es cuántas visitas tuvo. Es la métrica más fácil de mirar y la que menos dice. Mil visitas al mes sin una sola cita agendada es una web que no está trabajando; doscientas visitas con quince citas es una web que se justifica por sí sola.',
           'Lo que vale la pena mirar es corto: cuántas citas se agendaron online, cuántas conversaciones entraron por WhatsApp, cuántas llamadas salieron del botón de la web, y de qué tratamiento venía cada una. Ese último dato es el más útil de todos, porque te dice en qué tratamiento invertir tu tiempo y tu pauta, y cuál no vale la pena empujar.',
           'El segundo número que casi nadie mira es la tasa de ausencia. Si de cada diez citas agendadas faltan tres, el problema no es de captación, es de recordatorios. Eso se arregla con automatización, no con más publicidad, y sale mucho más barato.',
           'Lo dejamos medido desde el primer día, no como un informe que nadie abre sino como un tablero de tres o cuatro números que puedas revisar en dos minutos. El detalle de cómo lo planteamos está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',

@@ -243,15 +243,15 @@ const marca = (v: boolean | string | null) =>
   <section class="bg-paper py-24 md:py-28">
     <div class="mx-auto max-w-7xl px-6">
       <div class="max-w-3xl">
-        <p class="mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/60">Antes de los precios</p>
+        <p class="mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Antes de los precios</p>
         <h2 class="font-display text-[clamp(1.9rem,4.2vw,3rem)] font-extrabold leading-[1.05] text-ink">Qué es CyberSource y qué es Unified Checkout</h2>
-        <p class="mt-6 text-lg leading-relaxed text-ink/60">
+        <p class="mt-6 text-lg leading-relaxed text-ink/70">
           <strong class="font-semibold text-ink">CyberSource es la pasarela de pagos de Visa.</strong> Es la
           plataforma que varios bancos adquirentes le ofrecen a sus comercios para procesar tarjetas de
           crédito y débito. Si tu banco en Panamá te habló de CyberSource al aprobarte la cuenta de
           comercio, esta es la integración que te toca.
         </p>
-        <p class="mt-5 text-lg leading-relaxed text-ink/60">
+        <p class="mt-5 text-lg leading-relaxed text-ink/70">
           <strong class="font-semibold text-ink">Unified Checkout es su formulario de pago embebido.</strong>
           Los campos donde tu cliente escribe la tarjeta se ven dentro de tu página, pero los sirve
           CyberSource: el número viaja directo a ellos y tu servidor nunca lo toca. Tu cliente no sale de tu
@@ -265,7 +265,7 @@ const marca = (v: boolean | string | null) =>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20" /></svg>
           </div>
           <h3 class="font-display text-lg font-bold text-ink">Tarjetas de verdad</h3>
-          <p class="mt-2.5 text-sm leading-relaxed text-ink/60">
+          <p class="mt-2.5 text-sm leading-relaxed text-ink/70">
             Crédito y débito, locales y del exterior. Es lo que te falta si hoy solo puedes cobrar por
             transferencia o por Yappy y estás perdiendo al cliente que paga con tarjeta.
           </p>
@@ -275,7 +275,7 @@ const marca = (v: boolean | string | null) =>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4 3.5 6.5 8 8 4.5-1.5 8-4 8-8V6l-8-3Z" /><path d="m9 12 2 2 4-4" /></svg>
           </div>
           <h3 class="font-display text-lg font-bold text-ink">Sin cargar con los datos</h3>
-          <p class="mt-2.5 text-sm leading-relaxed text-ink/60">
+          <p class="mt-2.5 text-sm leading-relaxed text-ink/70">
             Los campos de tarjeta los aloja CyberSource. Tu servidor no ve ni guarda el número, así que tu
             cumplimiento PCI-DSS se queda en el cuestionario más simple, el SAQ A.
           </p>
@@ -285,7 +285,7 @@ const marca = (v: boolean | string | null) =>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v6l4 2" /><circle cx="12" cy="12" r="9" /></svg>
           </div>
           <h3 class="font-display text-lg font-bold text-ink">Ninguna orden perdida</h3>
-          <p class="mt-2.5 text-sm leading-relaxed text-ink/60">
+          <p class="mt-2.5 text-sm leading-relaxed text-ink/70">
             El webhook confirma cada cobro servidor a servidor. Si tu cliente cierra la pestaña justo
             después de pagar, la orden se registra igual. Es el error silencioso más común de estas
             integraciones.
@@ -300,7 +300,7 @@ const marca = (v: boolean | string | null) =>
     <div class="mx-auto max-w-7xl px-6">
       <div class="mx-auto max-w-2xl text-center">
         <h2 class="font-display text-[clamp(1.9rem,4.2vw,3rem)] font-extrabold leading-[1.05] text-ink">Tres alcances, precio cerrado</h2>
-        <p class="mt-5 text-lg leading-relaxed text-ink/60">
+        <p class="mt-5 text-lg leading-relaxed text-ink/70">
           La diferencia entre uno y otro no es de calidad: es cuánto tiene que hacer tu sistema solo
           después del cobro. Elige por volumen de operaciones, no por presupuesto.
         </p>
@@ -314,22 +314,22 @@ const marca = (v: boolean | string | null) =>
             )}
             <div class="flex items-start justify-between gap-3">
               <div>
-                <span class={`text-xs font-bold uppercase tracking-wider ${p.destacado ? 'text-teal-deep' : 'text-ink/45'}`}>{p.tier}</span>
+                <span class={`text-xs font-bold uppercase tracking-wider ${p.destacado ? 'text-teal-deep' : 'text-ink/70'}`}>{p.tier}</span>
                 <h3 class="mt-1 font-display text-2xl font-bold text-ink">{p.nombre}</h3>
               </div>
               {!p.destacado && (
-                <span class="shrink-0 rounded-md bg-ink/[0.06] px-2.5 py-1 text-xs font-semibold text-ink/60">{p.etiqueta}</span>
+                <span class="shrink-0 rounded-md bg-ink/[0.06] px-2.5 py-1 text-xs font-semibold text-ink/70">{p.etiqueta}</span>
               )}
             </div>
 
-            <p class="mt-3.5 text-sm leading-relaxed text-ink/55">{p.para}</p>
+            <p class="mt-3.5 text-sm leading-relaxed text-ink/70">{p.para}</p>
 
             <div class="mt-7">
               <div class="flex items-baseline gap-1.5">
                 <span class="font-display text-4xl font-extrabold text-ink">{p.precio}</span>
-                <span class="text-sm font-semibold text-ink/40">USD</span>
+                <span class="text-sm font-semibold text-ink/70">USD</span>
               </div>
-              <p class="mt-1.5 text-xs font-medium text-ink/50">Pago único · Entrega en {p.plazo}</p>
+              <p class="mt-1.5 text-xs font-medium text-ink/70">Pago único · Entrega en {p.plazo}</p>
             </div>
 
             <hr class="my-6 border-ink/[0.08]" />
@@ -342,19 +342,19 @@ const marca = (v: boolean | string | null) =>
                 </li>
               ))}
               {p.fuera.map((t) => (
-                <li class="flex items-start gap-2.5 text-ink/30">
+                <li class="flex items-start gap-2.5 text-ink/70">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" class="mt-1 shrink-0" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
                   <span class="line-through">{t}</span>
                 </li>
               ))}
             </ul>
 
-            <p class={`mt-7 border-t pt-4 text-center text-[11px] font-semibold ${p.destacado ? 'border-ink/[0.08] text-teal-deep' : 'border-ink/[0.08] text-ink/50'}`}>{p.soporte}</p>
+            <p class={`mt-7 border-t pt-4 text-center text-[11px] font-semibold ${p.destacado ? 'border-ink/[0.08] text-teal-deep' : 'border-ink/[0.08] text-ink/70'}`}>{p.soporte}</p>
           </div>
         ))}
       </div>
 
-      <p class="mx-auto mt-9 max-w-3xl text-center text-sm leading-relaxed text-ink/50">
+      <p class="mx-auto mt-9 max-w-3xl text-center text-sm leading-relaxed text-ink/70">
         Precios en dólares, no incluyen ITBMS (7%). El pago va en tres partes, igual que el resto de
         nuestros proyectos: 50% para arrancar, 30% al aprobar la demostración en sandbox y 20% al pasar a
         producción. Las comisiones por transacción las cobra CyberSource o tu banco adquirente y son
@@ -367,7 +367,7 @@ const marca = (v: boolean | string | null) =>
   <section class="bg-paper py-24 md:py-28">
     <div class="mx-auto max-w-7xl px-6">
       <h2 class="font-display text-[clamp(1.9rem,4.2vw,2.8rem)] font-extrabold leading-[1.05] text-ink">Qué entra en cada alcance</h2>
-      <p class="mt-4 max-w-2xl text-lg text-ink/55">La misma información de arriba, tarea por tarea, para que la puedas comparar sin volver a subir.</p>
+      <p class="mt-4 max-w-2xl text-lg text-ink/70">La misma información de arriba, tarea por tarea, para que la puedas comparar sin volver a subir.</p>
 
       <div class="mt-10 overflow-x-auto rounded-3xl border border-ink/10 bg-white shadow-sm shadow-ink/[0.03]">
         <table class="w-full min-w-[720px] border-collapse text-left text-sm">
@@ -375,9 +375,9 @@ const marca = (v: boolean | string | null) =>
           <thead>
             <tr class="border-b border-ink/10 bg-ink/[0.02]">
               <th scope="col" class="px-6 py-4 font-display font-bold text-ink">Tarea técnica</th>
-              <th scope="col" class="px-4 py-4 text-center font-display font-bold text-ink/70">Esencial<span class="mt-0.5 block text-xs font-medium text-ink/40">$1,050</span></th>
+              <th scope="col" class="px-4 py-4 text-center font-display font-bold text-ink/70">Esencial<span class="mt-0.5 block text-xs font-medium text-ink/70">$1,050</span></th>
               <th scope="col" class="bg-teal-deep/[0.04] px-4 py-4 text-center font-display font-bold text-teal-deep">Profesional<span class="mt-0.5 block text-xs font-medium text-teal-deep/60">$2,150</span></th>
-              <th scope="col" class="px-4 py-4 text-center font-display font-bold text-ink/70">Avanzado<span class="mt-0.5 block text-xs font-medium text-ink/40">$3,850</span></th>
+              <th scope="col" class="px-4 py-4 text-center font-display font-bold text-ink/70">Avanzado<span class="mt-0.5 block text-xs font-medium text-ink/70">$3,850</span></th>
             </tr>
           </thead>
           <tbody>
@@ -456,7 +456,7 @@ const marca = (v: boolean | string | null) =>
   <section class="bg-paper py-24 md:py-28">
     <div class="mx-auto max-w-7xl px-6">
       <h2 class="font-display text-[clamp(1.9rem,4.2vw,2.8rem)] font-extrabold leading-[1.05] text-ink">Cómo se ejecuta, día por día</h2>
-      <p class="mt-4 max-w-2xl text-lg text-ink/55">
+      <p class="mt-4 max-w-2xl text-lg text-ink/70">
         El cronograma del alcance Profesional. Los otros dos se acortan o se alargan sobre esta misma
         secuencia, y en todos los casos apruebas en sandbox antes de que se toque producción.
       </p>
@@ -466,8 +466,8 @@ const marca = (v: boolean | string | null) =>
           <div class="rounded-3xl border border-ink/10 bg-white p-6 shadow-sm shadow-ink/[0.03]">
             <div class={`mb-4 grid h-9 w-9 place-items-center rounded-lg font-display text-sm font-bold text-white ${f.fin ? 'bg-teal-deep' : 'bg-ink/80'}`}>{f.n}</div>
             <h3 class="font-display text-base font-bold text-ink">{f.t}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-ink/55">{f.d}</p>
-            <span class={`mt-4 inline-block text-[11px] font-bold uppercase tracking-wider ${f.fin ? 'text-teal-deep' : 'text-ink/40'}`}>{f.dias}</span>
+            <p class="mt-2 text-sm leading-relaxed text-ink/70">{f.d}</p>
+            <span class={`mt-4 inline-block text-[11px] font-bold uppercase tracking-wider ${f.fin ? 'text-teal-deep' : 'text-ink/70'}`}>{f.dias}</span>
           </div>
         ))}
       </div>
@@ -521,7 +521,7 @@ const marca = (v: boolean | string | null) =>
                 <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
               </span>
             </summary>
-            <p class="pb-6 pl-9 pr-2 text-base leading-relaxed text-ink/60">{f.a}</p>
+            <p class="pb-6 pl-9 pr-2 text-base leading-relaxed text-ink/70">{f.a}</p>
           </details>
         ))}
       </div>
@@ -548,7 +548,7 @@ const marca = (v: boolean | string | null) =>
 
       <div class="mt-16 rounded-[2rem] border border-ink/10 bg-paper p-8 text-center sm:p-12">
         <h2 class="mx-auto max-w-2xl font-display text-[clamp(1.6rem,3.4vw,2.3rem)] font-extrabold leading-[1.08] text-ink">¿Tu banco ya te dio las llaves de CyberSource?</h2>
-        <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink/55">
+        <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink/70">
           Cuéntanos qué plataforma tiene tu sitio y qué te pidió el banco. Te decimos qué alcance necesitas
           y qué va a costar, por escrito y antes de arrancar. La revisión técnica no tiene costo.
         </p>

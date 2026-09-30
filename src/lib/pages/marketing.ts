@@ -29,7 +29,7 @@ export const marketingPages: PageData[] = [
     heroImage: { src: 'https://picsum.photos/seed/marketing-digital-equipo-panama/1200/675', alt: 'Equipo de marketing digital analizando métricas de campañas en pantallas' },
     lead: [
       'Tu web es el destino; el marketing es lo que lleva gente hasta ella. Hacemos las dos cosas, así que tus campañas y tu sitio hablan el mismo idioma.',
-      'La mayoría de las agencias de pauta manda el tráfico a una web que no convierte, y la mayoría de las agencias web no sabe traer tráfico. Nosotros cerramos el círculo: atraemos, convertimos y medimos, con un fee de gestión claro y tu inversión publicitaria siempre bajo tu control.',
+      'Una campaña que manda el tráfico a una web que no convierte pierde dinero, y una web bonita sin tráfico no vende. Nosotros cerramos el círculo: atraemos, convertimos y medimos, con un fee de gestión claro y tu inversión publicitaria siempre bajo tu control.',
     ],
     blocks: [
       {
@@ -862,7 +862,7 @@ export const marketingPages: PageData[] = [
         type: 'checklist',
         h2: 'Qué podemos automatizar',
         // ⚠️ Precio propuesto: cotización por flujo, desde $300 por automatización. Confirmar.
-        intro: 'Se cotiza por flujo, desde $300 por automatización según la complejidad. La mayoría se paga sola en horas ahorradas.',
+        intro: 'Se cotiza por flujo, desde $300 por automatización según la complejidad. Según el flujo, el ahorro de horas puede cubrir su costo.',
         items: [
           'Lead de tu web o pauta directo a tu CRM, etiquetado y asignado',
           'Mensaje de bienvenida automático por WhatsApp o correo',

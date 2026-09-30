@@ -57,7 +57,7 @@ export const funcionalidades: PageData[] = [
         h2: 'Cuál te conviene según tu negocio',
         intro: 'No todas las webs necesitan las tres. Este es el punto de partida más común por tipo de operación.',
         items: [
-          { h3: 'Vendes productos o servicios', text: 'Si cobras en línea, empieza por el pago: es la funcionalidad que se paga sola. Yappy y tarjeta directo en tu web o tienda.', link: { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y Pasarelas' } },
+          { h3: 'Vendes productos o servicios', text: 'Si cobras en línea, empieza por el pago: es la funcionalidad que más rápido puede recuperar su inversión. Yappy y tarjeta directo en tu web o tienda.', link: { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y Pasarelas' } },
           { h3: 'Recibes muchas consultas', text: 'Si tu WhatsApp e Instagram no dan abasto y pierdes mensajes fuera de horario, un asistente con IA responde y califica 24/7.', link: { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' } },
           { h3: 'Trabajas con citas', text: 'Si tu operación vive de agenda (clínica, barbería, spa, consultoría), las reservas online liberan a tu equipo del teléfono.', link: { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' } },
         ],

@@ -5,7 +5,31 @@ import type { PageData } from '../types';
 
 export const recursos: PageData[] = [
   {
+    slug: 'recursos',
+    title: 'Recursos para planear tu web: calculadora y guías',
+    description: 'Herramientas y guías gratuitas para planear tu página web en Panamá: calculadora de costo total, checklist de migración SEO y comparativa de modelos.',
+    h1: 'Recursos para planear tu web',
+    breadcrumb: 'Recursos',
+    lead: [
+      'Herramientas y guías prácticas, sin registro, para decidir con números y sin perder posicionamiento.',
+    ],
+    blocks: [
+      {
+        type: 'cards',
+        h2: 'Qué puedes usar',
+        items: [
+          { h3: 'Calculadora de costo total', text: 'Suma proyecto, infraestructura, mantenimiento e impuesto a 12 y 36 meses, y compárala con una suscripción. Todo se calcula en tu navegador.', link: { slug: 'recursos/calculadora-costo-total-web', label: 'Abrir la calculadora' } },
+          { h3: 'Checklist de migración SEO', text: 'Qué hacer antes, durante y después de rediseñar o migrar una web para cuidar tu posicionamiento.', link: { slug: 'recursos/checklist-migracion-seo', label: 'Ver el checklist' } },
+          { h3: 'Web a medida vs suscripción', text: 'Comparativa neutral: propiedad, costo a 12 y 36 meses, soporte, salida y límites, incluyendo cuándo conviene la suscripción.', link: { slug: 'comparativas/web-a-medida-vs-suscripcion', label: 'Leer la comparativa' } },
+        ],
+      },
+      { type: 'related', items: [{ slug: 'precios', label: 'Precios' }, { slug: 'casos-de-exito', label: 'Casos de éxito' }, { slug: 'blog', label: 'Blog' }] },
+      { type: 'form', h2: '¿Prefieres que lo revisemos contigo?', intro: 'Cuéntanos tu caso y te respondemos el mismo día hábil.' },
+    ],
+  },
+  {
     slug: 'recursos/checklist-migracion-seo',
+    parent: { slug: 'recursos', label: 'Recursos' },
     title: 'Checklist de migración SEO para rediseñar tu web',
     description: 'Lista práctica para rediseñar o migrar una web sin perder posicionamiento: qué hacer antes, durante y después, con redirecciones 301 y monitoreo.',
     h1: 'Checklist de migración SEO para rediseñar o migrar tu web',

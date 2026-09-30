@@ -13,10 +13,11 @@ Regla: **nunca** se envía nombre, correo, teléfono, mensaje ni URLs con datos 
 | `form_error` | Envío con errores de validación | Diagnóstico | `form`, `fields` (nombres de campo, sin valores), `page_path` |
 | `generate_lead` | El backend (n8n) respondió OK al envío | **Conversión principal** | `form`, `service`, `lead_id` (UUID por intento), `page_path` |
 | `pricing_view` | Carga de `/precios/` | Microconversión | `page_path` |
+| `case_study_view` | Carga de un caso individual de `/casos-de-exito/<caso>/` | Microconversión | `case_slug`, `page_path` |
 | `calculator_complete` | Primer cálculo en `/recursos/calculadora-costo-total-web/` | Microconversión | `page_path` |
 | `page_view`, `scroll`, `click` (salientes), `file_download` | Medición mejorada de GA4 (automático) | Contexto | los de GA4 |
 
-Pendiente (aún no implementado): `case_study_view` (vista de un caso), `qualified_lead`, `proposal_sent`, `deal_won`. Estos últimos dependen del CRM: se envían desde el servidor cuando el estado cambia, no desde el navegador.
+Pendiente (aún no implementado): `qualified_lead`, `proposal_sent`, `deal_won`. Estos últimos dependen del CRM: se envían desde el servidor cuando el estado cambia, no desde el navegador.
 
 ## Reglas de interpretación
 - Clic en WhatsApp **no** es una conversación ni una venta: es una microconversión. No sumarlo a los leads.

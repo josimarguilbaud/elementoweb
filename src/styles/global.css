@@ -39,6 +39,8 @@
   body { overflow-x: hidden; }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.03em; line-height: 1.02; }
   a { color: inherit; }
+  /* Indicador de foco visible y consistente (3:1 sobre fondo claro y oscuro) */
+  :where(a, button, summary, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid var(--color-teal); outline-offset: 3px; border-radius: 6px; }
   ::selection { background: var(--color-teal); color: #05201c; }
   :focus-visible { outline: 2px solid var(--color-teal-deep); outline-offset: 3px; }
   .lenis.lenis-smooth { scroll-behavior: auto !important; }

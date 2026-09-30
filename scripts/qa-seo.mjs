@@ -16,6 +16,27 @@ const routeOf = (f) => { let r = '/' + relative(DIST, f).replace(/index\.html$/,
 const get = (h, re) => (h.match(re) || [])[1]?.trim() ?? null;
 const sha = (s) => createHash('sha1').update(s).digest('hex').slice(0, 10);
 
+
+/* Reglas mínimas por tipo de schema (no sustituye al validador de schema.org / Rich Results Test). */
+function schemaRules(route, n, bad, routes, ids) {
+  const t = n['@type']; const need = (props) => props.forEach((k) => { if (n[k] === undefined || n[k] === '' || (Array.isArray(n[k]) && !n[k].length)) bad(route, `schema ${t}: falta «${k}»`); });
+  const refOk = (v, label) => { const id = v?.['@id']; if (id && !ids.has(id)) bad(route, `schema ${t}.${label}: @id sin resolver (${id})`); };
+  switch (t) {
+    case 'Organization': need(['name', 'url']); break;
+    case 'WebSite': need(['url', 'name']); refOk(n.publisher, 'publisher'); break;
+    case 'WebPage': case 'AboutPage': case 'ContactPage': case 'CollectionPage': need(['url', 'name', 'isPartOf']); refOk(n.isPartOf, 'isPartOf'); refOk(n.about, 'about'); break;
+    case 'ProfessionalService': need(['name', 'url']); break;
+    case 'Service': need(['name', 'provider', 'areaServed']); refOk(n.provider, 'provider'); break;
+    case 'BlogPosting': case 'Article': need(['headline', 'datePublished', 'author', 'mainEntityOfPage']); refOk(n.author, 'author'); refOk(n.publisher, 'publisher'); if (!n.image) bad(route, `schema ${t}: falta «image»`); break;
+    case 'Person': need(['name']); break;
+    case 'FAQPage': need(['mainEntity']); (n.mainEntity || []).forEach((q, i) => { if (!q.name || !q.acceptedAnswer?.text) bad(route, `schema FAQPage: pregunta ${i + 1} incompleta`); }); break;
+    case 'BreadcrumbList': need(['itemListElement']); (n.itemListElement || []).forEach((it, i) => { if (it.position !== i + 1) bad(route, 'schema BreadcrumbList: posiciones no consecutivas'); const r = it.item && new URL(it.item).pathname; if (r && !routes.has(r)) bad(route, `schema BreadcrumbList: ${r} no existe`); }); break;
+    case 'OfferCatalog': need(['itemListElement']); (n.itemListElement || []).forEach((o) => { if (!(o.priceSpecification?.minPrice > 0) || o.priceSpecification?.priceCurrency !== 'USD') bad(route, `schema Offer «${o.name}»: precio o moneda inválidos`); }); break;
+    default: break;
+  }
+  for (const [k, v] of Object.entries(n)) if (typeof v === 'string' && /^https?:\/\/elementoweb\.com\/(?!#)/.test(v) && !/(logo|image)$/i.test(k) && !v.includes('#') && !/\.(png|jpe?g|webp|svg)$/i.test(v)) { const r = new URL(v).pathname; if (!routes.has(r) && !/^\/(fonts|marca|images|logos|portfolio)\//.test(r)) bad(route, `schema ${t}.${k}: URL sin página (${r})`); }
+}
+
 const pages = {};
 const problems = [];
 const bad = (route, msg) => problems.push(`${route}  ${msg}`);
@@ -46,9 +67,13 @@ for (const f of htmls) {
   if ((h.match(/rel="canonical"/g) || []).length > 1) bad(route, 'canonical duplicado');
   if (/\/blog\/blog\//.test(h)) bad(route, 'contiene /blog/blog/');
   if (!/<html lang="es-PA"/.test(h)) bad(route, 'lang ≠ es-PA');
+  // Referencias @id del grafo: cada { '@id': X } debe resolverse dentro de la página
+  const graphIds = new Set(); const refs = [];
+  for (const j of ld) { try { const d = JSON.parse(j); for (const n of d['@graph'] ?? [d]) { if (n['@id']) graphIds.add(n['@id']); } } catch {} }
   for (const j of ld) {
     let data; try { data = JSON.parse(j); } catch { bad(route, 'JSON-LD no parsea'); continue; }
     const nodes = data['@graph'] ?? [data];
+    for (const n of nodes) schemaRules(route, n, bad, routes, graphIds);
     for (const n of nodes) {
       const m = n.mainEntityOfPage?.['@id'] ?? n.mainEntityOfPage;
       if (typeof m === 'string' && m.startsWith('https://elementoweb.com')) {

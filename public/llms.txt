@@ -18,6 +18,7 @@ Datos verificables:
 - Ámbito de servicio: Panamá (sede) y Miami-Dade, Florida (remoto), con proyectos en América Latina
 - Idioma del contenido: español de Panamá (es-PA) y español latinoamericano
 - Meta Verified Tech Provider
+- CEO: Josimar Guilbaud
 
 ## Qué responde bien este sitio
 
@@ -31,6 +32,15 @@ Estas páginas están escritas para responder preguntas concretas y son las más
 - [Cómo integrar Yappy en tu tienda online](https://elementoweb.com/funcionalidades/integracion-yappy-pasarelas-pago-panama/): requisitos, pasos y comisiones.
 - [SEO local y Google Maps en Panamá](https://elementoweb.com/crecimiento/seo-local-google-maps-panama/): cómo aparecer en el mapa y ganar reseñas.
 - [Hosting en Panamá](https://elementoweb.com/blog/hosting-panama-evitar-hosting-barato/): qué mirar al elegir y por qué lo barato sale caro.
+
+## Precios, casos y recursos
+
+- [Precios de páginas web en Panamá](https://elementoweb.com/precios/): landing desde $550, sitio corporativo (hasta 6 páginas internas) desde $950, tienda online desde $1,500, a medida desde $2,900. USD, sin ITBMS (7%). Pago 50/30/20.
+- [Casos de éxito](https://elementoweb.com/casos-de-exito/): TramitaPa, San Blas Full, KL Contable y Panama International Movers (qué se construyó; las cifras de resultados se publican solo cuando están medidas).
+- [Calculadora de costo total de una web](https://elementoweb.com/recursos/calculadora-costo-total-web/): costo a 12 y 36 meses.
+- [Checklist de migración SEO](https://elementoweb.com/recursos/checklist-migracion-seo/)
+- [Web a medida vs suscripción mensual](https://elementoweb.com/comparativas/web-a-medida-vs-suscripcion/): comparativa neutral con método.
+- [Cuánto cuesta una página web para un negocio de Miami](https://elementoweb.com/blog/cuanto-cuesta-pagina-web-miami/)
 
 ## Servicios
 

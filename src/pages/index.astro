@@ -67,7 +67,8 @@ const faqs: [string, string][] = [
   ['¿Cuánto cuesta una página web en Panamá?', 'Landing desde $550, corporativa desde $1,250 y e-commerce desde $1,950. Siempre con cotización cerrada antes de empezar.'],
   ['¿Mi web va a aparecer en Google?', 'Se entrega con SEO técnico completo. Posicionar términos competitivos requiere además trabajo continuo de contenido, que ofrecemos por separado.'],
   ['¿Cuánto tarda el desarrollo?', 'Una landing en 5 días hábiles; un sitio corporativo entre 2 y 3 semanas desde que recibimos tu contenido.'],
-  ['¿Cómo funciona el pago?', 'En tres etapas: 50% para iniciar, 30% al aprobar el demo online y 20% para publicar en tu dominio. Tarjeta, transferencia o Yappy.'],
+  ['¿Cómo funciona el pago?', 'Hay dos modalidades. Proyecto por etapas: 50% para iniciar, 30% al aprobar el demo online y 20% para publicar en tu dominio. Plan mensual gestionado: $350 de puesta en marcha más $169 al mes durante 12 meses, y desde el mes 13 solo $94 al mes por el servicio continuo. Tarjeta, transferencia o Yappy.'],
+  ['¿En el plan mensual, la web es mía?', 'Sí. Dominio, hosting y accesos quedan a nombre de tu empresa. Si decides no continuar tras el mes 12, te entregamos la web y sus accesos; el detalle de cancelación se acuerda por escrito antes de empezar.'],
 ];
 ---
 <Base title={title} description={description} current="home" image={ogFor('')} jsonld={homeJsonLd(faqs)}>
@@ -248,6 +249,32 @@ const faqs: [string, string][] = [
     </script>
   </section>
 
+  <!-- SELECTOR DE NECESIDAD -->
+  <section id="necesidad" class="relative bg-white py-20 md:py-24">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="mx-auto mb-10 max-w-2xl text-center">
+        <h2 class="reveal font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold leading-[1.05] text-ink">¿Qué necesita tu negocio <span class="grad-text">ahora</span>?</h2>
+        <p class="reveal mt-4 text-lg text-ink/70">Elige la situación que más se parece a la tuya. Te llevamos al formato indicado y dejamos tu elección marcada en el formulario.</p>
+      </div>
+      <ul class="reveal grid gap-3">
+        {[
+          ['Quiero presentar mi empresa', 'Web empresarial', 'Ver web empresarial', '/servicios/diseno-web-corporativo-panama/', 'pyme'],
+          ['Quiero promocionar una oferta', 'Landing page', 'Ver landing', '/servicios/landing-pages-alta-conversion-panama/', 'landing'],
+          ['Quiero vender o cobrar online', 'E-commerce', 'Ver tienda online', '/servicios/tiendas-online-ecommerce-panama/', 'ecommerce'],
+          ['Ya tengo web, pero recibo pocas consultas', 'Diagnóstico o rediseño', 'Revisar mi web', '/contacto/?servicio=revision#formulario', 'revision'],
+        ].map((n) => (
+          <li class="flex flex-col gap-4 rounded-2xl border border-ink/10 bg-paper p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+            <div><p class="font-display text-lg font-bold text-ink">{n[0]}</p><p class="mt-0.5 text-sm text-ink/70">Lo que necesitas: {n[1]}</p></div>
+            <div class="flex flex-wrap gap-3">
+              <a href={n[3]} class="inline-flex items-center rounded-full border border-ink/15 bg-white px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-ink/40">{n[2]}</a>
+              <a href={`/contacto/?servicio=${n[4]}#formulario`} class="inline-flex items-center rounded-full bg-night px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal-deep">Cotizar esto</a>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
   <!-- PRECIOS -->
   <section id="precios" class="relative bg-paper py-28 md:py-32">
     <div class="mx-auto max-w-7xl px-6">
@@ -340,16 +367,13 @@ const faqs: [string, string][] = [
     <div class="absolute inset-0 mesh-dark opacity-40"></div>
     <div class="sphere sphere-dark h-[300px] w-[300px] left-1/2 -top-24 -translate-x-1/2" style="background:#00688c;opacity:.4"></div>
     <div class="relative mx-auto max-w-3xl px-6 text-center">
-      <h2 class="reveal font-display text-[clamp(1.7rem,4vw,2.8rem)] font-extrabold leading-[1.08]">¿Tu proyecto se parece a alguno de estos?</h2>
-      <p class="reveal mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white/60">Cuéntanos qué necesitas y te devolvemos un diagnóstico sin costo, con el alcance y el precio cerrado por escrito. Sin compromiso.</p>
+      <h2 class="reveal font-display text-[clamp(1.7rem,4vw,2.8rem)] font-extrabold leading-[1.08]">¿Tu web está ayudando a conseguir clientes?</h2>
+      <p class="reveal mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white/70">Revisamos tu página principal y te señalamos tres mejoras prioritarias en el mensaje, la experiencia móvil y el camino hacia la consulta.</p>
       <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-4">
-        <a href="/contacto/" data-magnetic="0.35" class="inline-flex items-center gap-2.5 rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-night shadow-2xl shadow-teal/25 transition-colors hover:bg-white">
-          Pedir diagnóstico sin costo
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5" /><polyline points="5 5 19 5 19 19" /></svg>
-        </a>
-        <a href={waHome} class="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white/85 transition-colors hover:border-teal hover:text-teal">Escribir por WhatsApp</a>
+        <a href="/contacto/?servicio=revision#formulario" data-magnetic="0.35" class="inline-flex items-center gap-2.5 rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-night shadow-2xl shadow-teal/25 transition-colors hover:bg-white">Solicitar revisión de mi web</a>
+        <a href="/contacto/?servicio=definir#formulario" class="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white/85 transition-colors hover:border-teal hover:text-teal">Aún no tengo web: ayúdame a definir mi proyecto</a>
       </div>
-      <p class="reveal mt-5 text-sm text-white/40">Respuesta el mismo día hábil · Landing desde $550 · Corporativa desde $1,250</p>
+      <p class="reveal mt-5 text-sm text-white/60">Sin costo ni compromiso · Respuesta el mismo día hábil · También por <a href={waHome} class="underline underline-offset-2">WhatsApp</a></p>
     </div>
   </section>
 
@@ -390,7 +414,7 @@ const faqs: [string, string][] = [
       <div class="mb-16 max-w-2xl">
         <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Cómo trabajamos</p>
         <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Cuatro etapas con entregas <span class="grad-text">verificables</span>.</h2>
-        <p class="reveal mt-5 text-lg text-ink/70">Pago por etapas: 50% al iniciar, 30% al aprobar el demo, 20% para publicar. Sin misterio y sin desapariciones.</p>
+        <p class="reveal mt-5 text-lg text-ink/70">Proyecto por etapas: 50% al iniciar, 30% al aprobar el demo, 20% para publicar. O <a href="/precios/#plan-mensual" class="font-semibold text-teal-deep underline underline-offset-2">plan mensual gestionado</a> si prefieres cuotas. Sin misterio y sin desapariciones.</p>
       </div>
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
         {procSteps.map((s, i) => (

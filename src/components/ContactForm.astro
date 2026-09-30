@@ -17,17 +17,18 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
 
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-nombre">Nombre <span class="text-teal-deep" aria-hidden="true">*</span></label><input name="nombre" id="cf-nombre" autocomplete="name" required aria-required="true" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /><p id="err-nombre" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
-      <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-empresa">Empresa <span class="text-teal-deep" aria-hidden="true">*</span></label><input name="empresa" id="cf-empresa" autocomplete="organization" required aria-required="true" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /><p id="err-empresa" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
+      <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-empresa">Empresa <span class="font-normal text-ink/70">(opcional)</span></label><input name="empresa" id="cf-empresa" autocomplete="organization" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /><p id="err-empresa" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
       <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-email">Correo <span class="text-teal-deep" aria-hidden="true">*</span></label><input name="email" id="cf-email" type="email" autocomplete="email" inputmode="email" required aria-required="true" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /><p id="err-email" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
       <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-telefono">WhatsApp <span class="text-teal-deep" aria-hidden="true">*</span></label><input name="telefono" id="cf-telefono" type="tel" autocomplete="tel" inputmode="tel" required aria-required="true" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" /><p id="err-telefono" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
-      <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-servicio">Servicio de interés</label><select name="servicio" id="cf-servicio" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"><option value="">Selecciona</option>{services.map((s) => <option>{s}</option>)}</select></div>
-      <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-presupuesto">Presupuesto estimado</label><select name="presupuesto" id="cf-presupuesto" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"><option value="">Selecciona</option>{budgets.map((b) => <option>{b}</option>)}</select></div>
+      <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-servicio">¿Qué necesitas?</label><select name="servicio" id="cf-servicio" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"><option value="">Selecciona</option>{services.map((s) => <option>{s}</option>)}</select></div>
+      <div><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-presupuesto">Presupuesto estimado <span class="font-normal text-ink/70">(opcional)</span></label><select name="presupuesto" id="cf-presupuesto" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"><option value="">Selecciona</option>{budgets.map((b) => <option>{b}</option>)}</select></div>
     </div>
-    <div class="mt-4"><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-mensaje">Cuéntanos de tu proyecto <span class="text-teal-deep" aria-hidden="true">*</span></label><textarea name="mensaje" id="cf-mensaje" rows="4" required aria-required="true" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" placeholder="¿Qué necesitas resolver?"></textarea><p id="err-mensaje" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
+    <div class="mt-4"><label class="mb-1.5 block text-sm font-semibold text-ink" for="cf-mensaje">¿Qué quieres resolver? <span class="font-normal text-ink/70">(opcional)</span></label><textarea name="mensaje" id="cf-mensaje" rows="4" class="cf w-full rounded-xl border border-ink/12 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-ink/35 focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20" placeholder="Una o dos líneas bastan. Si tienes web actual, pega el enlace."></textarea><p id="err-mensaje" class="cf-err mt-1 hidden text-xs font-medium text-red-700"></p></div>
 
     <button type="submit" data-magnetic="0.25" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-night px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-teal-deep disabled:opacity-60">Enviar solicitud</button>
     <p id="cerr" role="alert" class="mt-3 hidden text-center text-sm font-medium text-red-700"></p>
-    <p class="mt-3 text-center text-xs text-ink/70">Los campos con <span aria-hidden="true">*</span><span class="sr-only">asterisco</span> son obligatorios. Tus datos solo se usan para responderte.</p>
+    <p class="mt-3 text-center text-sm text-ink/80">Te contactamos el mismo día hábil para aclarar tu necesidad. Después recibes una propuesta con alcance, plazo y precio.</p>
+    <p class="mt-2 text-center text-xs text-ink/70">Los campos con <span aria-hidden="true">*</span><span class="sr-only">asterisco</span> son obligatorios. Tus datos solo se usan para responderte.</p>
   </form>
 
   <div id="cok" role="status" tabindex="-1" class="hidden flex-col items-center py-10 text-center outline-none">
@@ -48,6 +49,9 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
       pyme: 'Diseño web / Sitio corporativo',
       ecommerce: 'Tienda online / E-commerce',
       medida: 'Software a medida',
+      mensual: 'Web empresarial gestionada — plan mensual',
+      revision: 'Rediseño web',
+      definir: 'Otro',
     };
     try {
       const k = new URLSearchParams(location.search).get('servicio');
@@ -57,10 +61,8 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
 
     const MSG = {
       nombre: 'Escribe tu nombre.',
-      empresa: 'Escribe el nombre de tu empresa o "Independiente".',
       email: 'Escribe un correo válido, por ejemplo nombre@empresa.com.',
       telefono: 'Escribe un teléfono o WhatsApp con al menos 8 dígitos.',
-      mensaje: 'Cuéntanos brevemente qué necesitas.',
     };
     const clearErr = (el) => {
       el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby');

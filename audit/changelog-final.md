@@ -102,3 +102,10 @@ Base: `cbff42e`. Publicado en `main` hasta `e73f70f` (despliegues 131 y 132: exi
 - **Consistencia:** barrido de `$950`/`$1,500`/«Página PYME»/«páginas internas» en 57 archivos (páginas, artículos, `llms.txt`, docs); recalculadas las cuentas de la comparativa a 12 y 36 meses; frases de alcance obsoletas («catálogo completo», «blog para posicionamiento») reescritas; las menciones a «5 días hábiles» aclaran desde cuándo cuentan.
 - **QA:** 235 páginas, 0 problemas de SEO/schema, 0 de enlaces, 0 de accesibilidad (axe), 0 fallos responsive y 0 de teclado/estructura.
 - **Pendiente de definir por el negocio:** qué pasarelas y cuántas incluye la tienda; alcance mínimo de un proyecto a medida ($2,900); revisión legal de las condiciones de cancelación del plan mensual; confirmar que cada compromiso de la base común se cumple en todos los proyectos.
+
+## Lote 6 — selector de necesidades y continuidad del plan mensual
+- Home: sección "¿Qué necesita tu negocio ahora?" (4 situaciones → página del servicio + "Cotizar esto" con la elección marcada en el formulario).
+- Home: el bloque genérico de diagnóstico pasa a oferta concreta ("Solicitar revisión de mi web" / "ayúdame a definir mi proyecto").
+- Plan mensual: el botón envía `?servicio=mensual` y el formulario muestra "Web empresarial gestionada — plan mensual". Proceso y FAQ de la home distinguen proyecto por etapas y plan mensual (propiedad, mes 13).
+- Formulario: empresa y mensaje pasan a opcionales; nota "Te contactamos el mismo día hábil…". Correo y teléfono siguen obligatorios porque el flujo n8n exige correo válido.
+- Pendiente (necesita material/decisión del dueño): testimonios y foto autorizados, menú simplificado, WhatsApp-o-correo (requiere cambio en n8n).

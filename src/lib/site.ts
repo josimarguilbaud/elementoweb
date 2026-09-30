@@ -53,6 +53,7 @@ export const contactForm = {
     'Diseño web / Sitio corporativo',
     'Tienda online / E-commerce',
     'Landing page',
+    'Web empresarial gestionada — plan mensual',
     'Rediseño web',
     'Marketing digital / Pauta',
     'Automatización / Inteligencia artificial',

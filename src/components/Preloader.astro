@@ -64,13 +64,13 @@
       (window as any).__lenis?.stop();
       const c = { v: 0 };
       gsap.timeline({ defaults: { ease: 'power3.out' }, onComplete: done })
-        .from('#pl-icon', { scale: 0.7, opacity: 0, duration: 0.5, ease: 'back.out(1.6)' }, 0)
-        .from(words, { yPercent: 120, opacity: 0, duration: 0.55, stagger: 0.06 }, 0.1)
-        .to(bar, { scaleX: 1, duration: 0.7, ease: 'power2.inOut' }, 0.2)
-        .to(c, { v: 100, duration: 0.7, ease: 'power2.inOut', onUpdate: () => { if (pct) pct.textContent = String(Math.round(c.v)).padStart(3, '0'); } }, 0.2)
-        .to(words, { yPercent: -120, opacity: 0, duration: 0.6, stagger: 0.04, ease: 'power3.in' }, '+=0.05')
-        .to('#pl-icon', { scale: 0.9, opacity: 0, duration: 0.5, ease: 'power3.in' }, '<')
-        .to(root, { yPercent: -100, duration: 0.6, ease: 'power4.inOut' }, '-=0.15');
+        .from('#pl-icon', { scale: 0.7, opacity: 0, duration: 0.35, ease: 'back.out(1.6)' }, 0)
+        .from(words, { yPercent: 120, opacity: 0, duration: 0.35, stagger: 0.04 }, 0.05)
+        .to(bar, { scaleX: 1, duration: 0.4, ease: 'power2.inOut' }, 0.1)
+        .to(c, { v: 100, duration: 0.4, ease: 'power2.inOut', onUpdate: () => { if (pct) pct.textContent = String(Math.round(c.v)).padStart(3, '0'); } }, 0.2)
+        .to(words, { yPercent: -120, opacity: 0, duration: 0.3, stagger: 0.03, ease: 'power3.in' }, '+=0.02')
+        .to('#pl-icon', { scale: 0.9, opacity: 0, duration: 0.3, ease: 'power3.in' }, '<')
+        .to(root, { yPercent: -100, duration: 0.4, ease: 'power3.inOut' }, '-=0.1');
     }
   }
 </script>

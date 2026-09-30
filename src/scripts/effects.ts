@@ -9,7 +9,8 @@ const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
 
 /* ---- Lenis smooth scroll enganchado a GSAP ---- */
 // Smooth scroll solo con puntero fino y sin reduced-motion; en táctil el scroll es nativo.
-const lenis = new Lenis({ wheelMultiplier: 1, lerp: 0.1, smoothWheel: fine && !reduce });
+// lerp 0.1 arrastraba ~0.6 s tras soltar la rueda: se sentía como retraso. 0.2 sigue suave pero responde al instante.
+const lenis = new Lenis({ wheelMultiplier: 1, lerp: 0.2, smoothWheel: fine && !reduce });
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((t) => lenis.raf(t * 1000));
 gsap.ticker.lagSmoothing(0);
@@ -31,12 +32,21 @@ function initReveals() {
   const targets = gsap.utils.toArray<HTMLElement>('.reveal');
   if (!targets.length) return;
   if (reduce) { gsap.set(targets, { opacity: 1, y: 0 }); return; }
-  gsap.set(targets, { opacity: 0, y: 34 });
+  gsap.set(targets, { opacity: 0, y: 18 });
+  // Entra antes de llegar (98 % del viewport), rápido y con escalón corto: el contenido
+  // no debe verse "en blanco" mientras el usuario ya está leyendo esa zona.
   ScrollTrigger.batch(targets, {
-    start: 'top 85%',
+    start: 'top 98%',
     once: true,
-    onEnter: (batch) => gsap.to(batch, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.08 }),
+    interval: 0.05,
+    batchMax: 6,
+    onEnter: (batch) => gsap.to(batch, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.04, overwrite: true }),
   });
+  // Las imágenes y fuentes cambian la altura de la página después de calcular los
+  // disparadores; sin recalcular, bloques lejanos podían quedarse invisibles.
+  const refresh = () => ScrollTrigger.refresh();
+  addEventListener('load', refresh, { once: true });
+  (document as any).fonts?.ready?.then(refresh);
 }
 
 /* ---- Botones magnéticos ([data-magnetic]) ---- */
@@ -81,7 +91,7 @@ function initCounters() {
       trigger: el, start: 'top 85%', once: true,
       onEnter: () => {
         const obj = { v: 0 };
-        gsap.to(obj, { v: end, duration: 1.4, ease: 'power2.out', onUpdate: () => { el.textContent = pre + Math.round(obj.v) + suf; } });
+        gsap.to(obj, { v: end, duration: 1, ease: 'power2.out', onUpdate: () => { el.textContent = pre + Math.round(obj.v) + suf; } });
       },
     });
   });
@@ -93,9 +103,14 @@ function initCursor() {
   const dot = document.querySelector<HTMLElement>('.cursor-dot');
   if (!ring || !dot || !fine || reduce) return;
   let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
-  addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; dot.style.transform = `translate(${mx}px,${my}px)`; });
-  const loop = () => { rx += (mx - rx) * 0.16; ry += (my - ry) * 0.16; ring.style.transform = `translate(${rx}px,${ry}px)`; requestAnimationFrame(loop); };
-  requestAnimationFrame(loop);
+  addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; dot.style.transform = `translate(${mx}px,${my}px)`; kick(); }, { passive: true });
+  let running = false;
+  const loop = () => {
+    rx += (mx - rx) * 0.25; ry += (my - ry) * 0.25;
+    ring.style.transform = `translate(${rx}px,${ry}px)`;
+    if (Math.abs(mx - rx) + Math.abs(my - ry) > 0.3) requestAnimationFrame(loop); else running = false;
+  };
+  const kick = () => { if (!running) { running = true; requestAnimationFrame(loop); } };
   const bind = () => document.querySelectorAll('a, button, input, select, textarea, summary, [data-cursor]').forEach((el) => {
     el.addEventListener('mouseenter', () => ring.classList.add('grow'));
     el.addEventListener('mouseleave', () => ring.classList.remove('grow'));

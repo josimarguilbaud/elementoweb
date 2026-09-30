@@ -132,3 +132,11 @@ Base: `cbff42e`. Publicado en `main` hasta `e73f70f` (despliegues 131 y 132: exi
 - Web empresarial aclara que es un formato acotado frente a los sitios a medida del portafolio; /portafolio/ lo dice en su introducción.
 - Scroll: Lenis lerp 0.2, reveals de 0.5 s con umbral 98 %, recálculo de disparadores tras carga de imágenes/fuentes, cursor sin bucle ocioso, preloader ~1.1 s.
 - Pendiente: caso real de una landing de publicidad (lo aportará el dueño) para reemplazar la ilustración.
+
+## Lote 10 — página de landing: oferta visible, menos repetición, promesas suaves
+- Botón "Ver cómo se estructura una landing" (antes "Ver un ejemplo real", que llevaba a una ilustración). La ilustración se puede ampliar y verse por separado en computadora y celular.
+- Línea de oferta bajo los botones: Desde $550 · Hasta 7 secciones · 2 rondas de revisión; entrega en 5 días hábiles (datos de `pricing`).
+- Alcance: las 2 rondas de revisión del diseño se separan del ajuste posterior a la campaña; se precisa cuándo la conexión a CRM va incluida (webhook o correo) y cuándo se cotiza aparte.
+- Contenido recortado: anatomía fusionada con el esquema visual; una sola comparación landing/sitio; se eliminan "el destino decide el costo", "una landing por campaña", errores de conversión y "qué medir"; FAQ reducidas a dudas de contratación (de 12 a 7).
+- Promesas: "costo por lead más bajo" y "multiplica la conversión" pasan a "puede mejorar la conversión; medimos para ajustar".
+- Pendiente: captura real de una landing de publicidad (caso que aportará el dueño) para la cabecera y para "demostrar"; confirmar la regla de CRM incluida.

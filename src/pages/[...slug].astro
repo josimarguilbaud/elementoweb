@@ -27,6 +27,7 @@ const SERVICE_KEYS: Record<string, [string, string]> = {
   'servicios/tiendas-online-ecommerce-panama': ['ecommerce', 'Cotizar mi tienda'],
   'servicios/redisenio-web-panama': ['revision', 'Revisar mi web'],
 };
+const showcase = page.blocks.find((b) => b.type === 'showcase') as (Extract<import('../lib/types').Block, { type: 'showcase' }>) | undefined;
 const sk = SERVICE_KEYS[page.slug];
 const contactHref = sk ? `/contacto/?servicio=${sk[0]}#formulario` : '/contacto/#formulario';
 const contactLabel = sk ? sk[1] : 'Cotizar por formulario';
@@ -77,8 +78,9 @@ const dateLabel = page.date
             <span class="grid h-5 w-5 place-items-center rounded-full bg-night text-teal"><svg width="9" height="9" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
           </a>
           <a href={contactHref} class="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/50">{contactLabel}</a>
-          {page.blocks.some((b) => b.type === 'showcase') && <a href="#ejemplo" class="inline-flex items-center gap-2 rounded-full px-4 py-3.5 text-sm font-semibold text-teal underline underline-offset-4">Ver un ejemplo real</a>}
+          {showcase && <a href="#ejemplo" class="inline-flex items-center gap-2 rounded-full px-4 py-3.5 text-sm font-semibold text-teal underline underline-offset-4">{showcase.ctaLabel ?? 'Ver un ejemplo real'}</a>}
         </div>
+        {page.offer && (<p class="mt-5 max-w-xl text-sm leading-relaxed text-white/70"><strong class="block font-semibold text-white">{page.offer.line}</strong>{page.offer.note}</p>)}
       </div>
 
       <div class="relative">

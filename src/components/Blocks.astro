@@ -97,7 +97,7 @@ const { blocks } = Astro.props;
           <div class="mt-10 grid items-start gap-8 lg:grid-cols-[1.4fr_1fr]">
             <figure class="reveal overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-xl shadow-ink/5">
               <Pic src={img.src} alt={img.alt} width={img.width} height={img.height} sizes="(min-width:1024px) 55vw, 92vw" class="w-full object-cover object-top" />
-              <figcaption class="border-t border-ink/10 px-5 py-3 text-sm text-ink/70">{img.caption}</figcaption>
+              <figcaption class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-t border-ink/10 px-5 py-3 text-sm text-ink/70"><span>{img.caption}</span>{b.image && <span class="flex flex-wrap gap-x-4 font-semibold text-teal-deep">{(b.extraViews ?? []).map((v) => <a href={v.src} target="_blank" rel="noopener" class="underline underline-offset-2">{v.label}<span class="sr-only"> (se abre en otra pestaña)</span></a>)}<a href={img.src} target="_blank" rel="noopener" class="underline underline-offset-2">Ampliar<span class="sr-only"> ilustración (se abre en otra pestaña)</span></a></span>}</figcaption>
             </figure>
             <div class="reveal">
               <ol class="flex flex-col gap-4">

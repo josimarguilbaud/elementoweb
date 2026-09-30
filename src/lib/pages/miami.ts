@@ -18,6 +18,7 @@ export const miamiPages: PageData[] = [
     description: 'Agencia de diseño web para negocios hispanos de Miami-Dade. Mismo huso horario, mismo precio en USD, soporte 100% en español. Sede en Panamá, servicio remoto.',
     h1: 'Diseño web en Miami, en español',
     breadcrumb: 'Miami',
+    heroImage: { src: '/images/hero/miami--diseno-web-en-miami-en-espanol.jpg', alt: 'Diseño web en Miami en español' },
     lead: [
       'Miami-Dade se vende y se compra en español. Tu web debería hablar el mismo idioma que tu cliente, no una traducción de plantilla.',
       'Somos una agencia con sede en Panamá que trabaja 100% remoto para negocios hispanos de Miami: mismo huso horario (una hora de diferencia como mucho), precios en USD y el mismo proceso que usamos con nuestros clientes en Panamá. Aquí ves las zonas donde trabajamos; si buscas la oferta y cómo se cobra, está en <a href="/miami/diseno-web-en-miami-en-espanol/">páginas web para negocios hispanos de Miami</a>.',

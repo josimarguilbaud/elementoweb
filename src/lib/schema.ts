@@ -1,6 +1,6 @@
 /* Datos estructurados JSON-LD. El FAQPage SIEMPRE se deriva del bloque faq
    visible: no puede desincronizarse de lo que el usuario ve. */
-import { site, url } from './site';
+import { site, url, pricing } from './site';
 import type { PageData } from './types';
 
 const ORG_ID = `${site.domain}/#organizacion`;
@@ -15,8 +15,9 @@ export function orgNode() {
     telephone: site.phone.replace(/\s/g, '-'),
     logo: `${site.domain}/marca/favicon.png`,
     areaServed: [{ '@type': 'Country', name: 'Panamá' }, { '@type': 'Place', name: 'América Latina' }, { '@type': 'Place', name: 'Miami-Dade County, Florida' }],
-    // ⚠️ Completar con perfiles sociales reales antes de publicar.
-    sameAs: ['https://www.instagram.com/elementoweb.com'],
+    // sameAs: solo perfiles verificados por el dueño. El Instagram que había aquí no
+    // estaba confirmado (el footer tampoco lo publica), así que se quitó. Añadir cada
+    // perfil real (Instagram, LinkedIn, Google Business Profile) junto con el enlace visible.
   };
 }
 
@@ -107,13 +108,66 @@ export function serviceNode(page: PageData) {
   };
 }
 
+/* Tipo de página según su función real. Solo se declara donde la página ES eso. */
+const COLLECTIONS = new Set(['portafolio', 'casos-de-exito', 'miami', 'industrias', 'servicios', 'saas', 'marketing', 'crecimiento', 'tecnologias', 'funcionalidades']);
+function webPageNode(page: PageData) {
+  const type = page.slug === 'nosotros' ? 'AboutPage' : page.slug === 'contacto' ? 'ContactPage' : COLLECTIONS.has(page.slug) ? 'CollectionPage' : 'WebPage';
+  const pageUrl = `${site.domain}${url(page.slug)}`;
+  return {
+    '@type': type,
+    '@id': `${pageUrl}#pagina`,
+    url: pageUrl,
+    name: page.title,
+    description: page.description,
+    inLanguage: 'es-PA',
+    isPartOf: { '@id': `${site.domain}/#sitio` },
+    about: { '@id': ORG_ID },
+    breadcrumb: undefined,
+  };
+}
+
+/* Persona con nombre y cargo confirmados por el dueño. Añadir más solo con permiso. */
+function personNodes(page: PageData) {
+  if (page.slug !== 'nosotros') return [];
+  return [{
+    '@type': 'Person',
+    '@id': `${site.domain}/nosotros/#josimar-guilbaud`,
+    name: 'Josimar Guilbaud',
+    jobTitle: 'CEO',
+    worksFor: { '@id': ORG_ID },
+  }];
+}
+
+/* /precios/: ofertas a partir de la fuente única de precios (site.ts). "Desde" = precio mínimo. */
+function offersNode(page: PageData) {
+  if (page.slug !== 'precios') return null;
+  const num = (p: string) => Number(p.replace(/[^0-9.]/g, '').replace(/,/g, ''));
+  return {
+    '@type': 'OfferCatalog',
+    name: 'Formatos de sitio web y precio de partida',
+    itemListElement: pricing.tiers.map((t) => ({
+      '@type': 'Offer',
+      name: t.name,
+      description: `${t.name}: ${t.features.join('; ')}. Precio de partida, sin ITBMS.`,
+      priceSpecification: { '@type': 'PriceSpecification', minPrice: num(t.price), priceCurrency: 'USD', valueAddedTaxIncluded: false },
+      seller: { '@id': ORG_ID },
+    })),
+  };
+}
+
 export function pageJsonLd(page: PageData, opts: { localBusiness?: boolean } = {}) {
+  const wp: any = webPageNode(page); delete wp.breadcrumb;
+  const svc: any = serviceNode(page);
+  const offers = offersNode(page);
+  if (svc && offers) svc.hasOfferCatalog = offers;
   const graph = [
     orgNode(),
     webSiteNode(),
     opts.localBusiness ? localBusinessNode() : null,
+    wp,
+    ...personNodes(page),
     breadcrumbNode(page),
-    serviceNode(page),
+    svc,
     faqNode(page),
   ].filter(Boolean);
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });

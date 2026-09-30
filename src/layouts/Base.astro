@@ -65,11 +65,9 @@ const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+    <!-- Fonts: autoalojadas (ver @font-face en global.css). Solo se precargan las dos que pintan el primer pantallazo. -->
+    <link rel="preload" href="/fonts/outfit-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
     {schemas.map((s) => <script type="application/ld+json" set:html={typeof s === 'string' ? s : JSON.stringify(s)} />)}
   </head>
   <body>

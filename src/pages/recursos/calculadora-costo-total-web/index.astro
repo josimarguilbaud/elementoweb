@@ -1,0 +1,124 @@
+---
+/* Calculadora de costo total a 12/36 meses. Las tarifas salen de `pricing` (site.ts);
+   la cuota de la suscripción la escribe la persona: no hay precios de terceros aquí.
+   No es una cotización ni promete retorno. Todo el cálculo ocurre en el navegador y no
+   se envía ni se guarda ningún dato. */
+import Base from '../../../layouts/Base.astro';
+import ContactForm from '../../../components/ContactForm.astro';
+import { pricing, site, url } from '../../../lib/site';
+import { pageJsonLd } from '../../../lib/schema';
+
+const slug = 'recursos/calculadora-costo-total-web';
+const title = 'Calculadora de costo total de una web a 12 y 36 meses';
+const description = 'Calcula cuánto cuesta tener una página web a 12 y 36 meses: proyecto, infraestructura, mantenimiento e ITBMS, y compárala con una suscripción mensual.';
+const jsonld = pageJsonLd({
+  slug, title, description, h1: 'Calculadora de costo total de una web', breadcrumb: 'Calculadora de costo total',
+  lead: [], blocks: [],
+  parent: { slug: 'servicios', label: 'Servicios' },
+});
+const num = (p: string) => Number(p.replace(/[^0-9.]/g, '').replace(/,/g, ''));
+const tiers = [
+  ...pricing.tiers.map((t) => ({ name: t.name, price: num(t.price) })),
+  { name: 'Proyecto a medida', price: num(pricing.custom.price) },
+];
+---
+<Base title={title} description={description} jsonld={jsonld}>
+  <section class="bg-night pt-36 pb-16 text-white md:pt-44">
+    <div class="mx-auto max-w-3xl px-6">
+      <nav aria-label="Ruta de navegación" class="text-sm text-white/60"><a href="/" class="hover:text-white">Inicio</a> <span aria-hidden="true">/</span> <a href="/precios/" class="hover:text-white">Precios</a> <span aria-hidden="true">/</span> <span>Calculadora</span></nav>
+      <h1 class="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] font-extrabold leading-[1.05]">Calculadora de costo total de una web</h1>
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">Suma proyecto, infraestructura, mantenimiento e impuesto y mira cuánto cuesta a 12 y a 36 meses. Si escribes la cuota de una suscripción mensual, la compara.</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-6 py-14">
+    <form id="calc" class="glass rounded-3xl p-6 sm:p-8" novalidate>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div>
+          <label for="c-formato" class="mb-1.5 block text-sm font-semibold text-ink">Formato de sitio</label>
+          <select id="c-formato" class="w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm text-ink focus:border-teal-deep focus:outline-none focus:ring-2 focus:ring-teal-deep/20">
+            {tiers.map((t) => <option value={t.price}>{t.name} · desde ${t.price.toLocaleString('en-US')}</option>)}
+          </select>
+        </div>
+        <div>
+          <label for="c-infra" class="mb-1.5 block text-sm font-semibold text-ink">Infraestructura anual (dominio, hosting, SSL)</label>
+          <input id="c-infra" type="number" inputmode="decimal" min="0" step="1" value="350" class="w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm text-ink focus:border-teal-deep focus:outline-none focus:ring-2 focus:ring-teal-deep/20" aria-describedby="h-infra" />
+          <p id="h-infra" class="mt-1 text-xs text-ink/60">Tarifa de partida publicada: $350 al año. Ajústala si tu hosting es otro nivel.</p>
+        </div>
+        <div>
+          <label for="c-mant" class="mb-1.5 block text-sm font-semibold text-ink">Mantenimiento mensual (opcional)</label>
+          <input id="c-mant" type="number" inputmode="decimal" min="0" step="1" value="0" class="w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm text-ink focus:border-teal-deep focus:outline-none focus:ring-2 focus:ring-teal-deep/20" aria-describedby="h-mant" />
+          <p id="h-mant" class="mt-1 text-xs text-ink/60">Desde $59/mes si lo contratas. Deja 0 si no.</p>
+        </div>
+        <div>
+          <label for="c-sus" class="mb-1.5 block text-sm font-semibold text-ink">Cuota mensual de la suscripción a comparar (opcional)</label>
+          <input id="c-sus" type="number" inputmode="decimal" min="0" step="1" placeholder="Ej.: la que te cotizó el proveedor" class="w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink/35 focus:border-teal-deep focus:outline-none focus:ring-2 focus:ring-teal-deep/20" aria-describedby="h-sus" />
+          <p id="h-sus" class="mt-1 text-xs text-ink/60">Escribe la cuota real que te dieron; nosotros no usamos precios de otros proveedores.</p>
+        </div>
+      </div>
+      <div class="mt-5 flex items-center gap-3">
+        <input id="c-itbms" type="checkbox" class="h-5 w-5 rounded border-ink/30 text-teal-deep focus:ring-teal-deep" />
+        <label for="c-itbms" class="text-sm font-medium text-ink">Sumar ITBMS (7%) al total de Elemento Web (aplica según corresponda; confirmar en la cotización)</label>
+      </div>
+    </form>
+
+    <div id="calc-out" role="status" aria-live="polite" class="mt-8 rounded-3xl border border-ink/10 bg-white p-6 sm:p-8">
+      <h2 class="font-display text-2xl font-extrabold text-ink">Resultado</h2>
+      <dl class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div class="rounded-2xl bg-paper p-5"><dt class="text-sm font-semibold text-ink/60">Elemento Web a 12 meses</dt><dd id="o-w12" class="mt-1 font-display text-3xl font-extrabold text-ink">—</dd></div>
+        <div class="rounded-2xl bg-paper p-5"><dt class="text-sm font-semibold text-ink/60">Elemento Web a 36 meses</dt><dd id="o-w36" class="mt-1 font-display text-3xl font-extrabold text-ink">—</dd></div>
+        <div class="rounded-2xl bg-paper p-5" id="box-s12" hidden><dt class="text-sm font-semibold text-ink/60">Suscripción a 12 meses</dt><dd id="o-s12" class="mt-1 font-display text-3xl font-extrabold text-ink">—</dd></div>
+        <div class="rounded-2xl bg-paper p-5" id="box-s36" hidden><dt class="text-sm font-semibold text-ink/60">Suscripción a 36 meses</dt><dd id="o-s36" class="mt-1 font-display text-3xl font-extrabold text-ink">—</dd></div>
+      </dl>
+      <p id="o-note" class="mt-5 text-sm leading-relaxed text-ink/70"></p>
+    </div>
+
+    <div class="mt-8 rounded-2xl border border-ink/10 bg-white p-6 text-sm leading-relaxed text-ink/70">
+      <h2 class="font-display text-lg font-bold text-ink">Cómo se calcula y sus límites</h2>
+      <ul class="mt-3 list-disc space-y-1.5 pl-5">
+        <li>Elemento Web = proyecto (pago único) + infraestructura × años + mantenimiento × meses (+ ITBMS si lo marcas).</li>
+        <li>Suscripción = cuota × meses. No incluye extras que cobre el proveedor (dominio, correo, extensiones, comisiones): súmalos tú.</li>
+        <li>Los precios de partida los publicamos en <a href="/precios/" class="font-semibold text-teal-deep underline">precios</a> y pueden cambiar; el alcance final se confirma por escrito.</li>
+        <li>Es una cuenta de dinero: no mide la propiedad del sitio, la salida ni los límites técnicos. Míralos en la <a href="/comparativas/web-a-medida-vs-suscripcion/" class="font-semibold text-teal-deep underline">comparativa completa</a>.</li>
+        <li>No es una cotización ni garantiza retorno. Todo se calcula en tu navegador; no guardamos lo que escribes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-2xl px-6 pb-20">
+    <h2 class="text-center font-display text-[clamp(1.6rem,3.5vw,2.4rem)] font-extrabold text-ink">¿Quieres una cotización cerrada?</h2>
+    <p class="mx-auto mt-3 max-w-xl text-center text-lg text-ink/60">Cuéntanos qué necesitas y te respondemos el mismo día hábil.</p>
+    <div class="mt-8"><ContactForm /></div>
+  </section>
+</Base>
+
+<script>
+  const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+  const money = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+  const v = (id: string) => Math.max(0, parseFloat($(id).value) || 0);
+  let sent = false;
+  const calc = () => {
+    const proyecto = v('c-formato'), infra = v('c-infra'), mant = v('c-mant'), sus = v('c-sus');
+    const tax = $('c-itbms').checked ? 1.07 : 1;
+    const w = (meses: number) => (proyecto + infra * (meses / 12) + mant * meses) * tax;
+    $('o-w12').textContent = money(w(12));
+    $('o-w36').textContent = money(w(36));
+    const has = sus > 0;
+    (document.getElementById('box-s12') as HTMLElement).hidden = !has;
+    (document.getElementById('box-s36') as HTMLElement).hidden = !has;
+    const note = document.getElementById('o-note')!;
+    if (has) {
+      $('o-s12').textContent = money(sus * 12);
+      $('o-s36').textContent = money(sus * 36);
+      const d12 = w(12) - sus * 12, d36 = w(36) - sus * 36;
+      const txt = (d: number, m: string) => d === 0 ? `A ${m} meses cuestan lo mismo.` : d > 0 ? `A ${m} meses la suscripción cuesta ${money(d)} menos.` : `A ${m} meses el proyecto cuesta ${money(-d)} menos.`;
+      note.textContent = `${txt(d12, '12')} ${txt(d36, '36')} Solo dinero: falta pesar propiedad, salida y límites.`;
+    } else {
+      note.textContent = 'Escribe la cuota mensual de una suscripción para compararla.';
+    }
+    if (!sent) { sent = true; (window as any).gtag?.('event', 'calculator_complete', { page_path: location.pathname }); }
+  };
+  document.getElementById('calc')!.addEventListener('input', calc);
+  document.getElementById('calc')!.addEventListener('submit', (e) => e.preventDefault());
+  calc();
+</script>

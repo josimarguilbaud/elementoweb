@@ -11,6 +11,7 @@ export const precios: PageData[] = [
     description: 'Precios de diseño web en Panamá: landing desde $550, sitio corporativo desde $950 y tienda online desde $1,500. Qué incluye cada uno, qué se paga aparte y cómo se paga.',
     h1: 'Precios de páginas web en Panamá',
     breadcrumb: 'Precios',
+    heroImage: { src: '/images/hero/servicios--diseno-web-corporativo-panama.jpg', alt: 'Diseño web corporativo en Panamá' },
     creds: false,
     service: { type: 'Diseño y desarrollo web' },
     lead: [

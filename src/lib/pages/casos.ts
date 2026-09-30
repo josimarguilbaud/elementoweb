@@ -9,6 +9,7 @@ const parent = { slug: 'casos-de-exito', label: 'Casos de éxito' };
 export const casos: PageData[] = [
   {
     slug: 'casos-de-exito',
+    heroImage: { src: '/images/hero/portafolio.jpg', alt: 'Proyectos de diseño web de Elemento Web' },
     title: 'Casos de éxito de diseño web en Panamá | Elemento Web',
     description: 'Proyectos reales de Elemento Web: qué necesitaba cada negocio, qué construimos y qué medimos. TramitaPa, San Blas Full, KL Contable y Panama International Movers.',
     h1: 'Casos de éxito',
@@ -42,6 +43,7 @@ export const casos: PageData[] = [
   {
     slug: 'casos-de-exito/tramitapa',
     parent,
+    heroImage: { src: '/portfolio/tramitapa.jpg', alt: 'Sitio web de TramitaPa' },
     title: 'Caso TramitaPa: landing de captación para trámites de visa | Elemento Web',
     description: 'Cómo diseñamos la landing de TramitaPa, un servicio de trámites y asesoría de visa en Panamá, pensada para convertir consultas directo por WhatsApp.',
     h1: 'Caso TramitaPa: landing para captar consultas de visa por WhatsApp',
@@ -77,6 +79,7 @@ export const casos: PageData[] = [
   {
     slug: 'casos-de-exito/san-blas-full',
     parent,
+    heroImage: { src: '/portfolio/sanblasfull.jpg', alt: 'Sitio web de San Blas Full' },
     title: 'Caso San Blas Full: web de tours con reserva y depósito | Elemento Web',
     description: 'Cómo construimos el sitio multi-idioma de San Blas Full: selector de tour, reserva con depósito y soporte por WhatsApp para tours de un día.',
     h1: 'Caso San Blas Full: reservas de tours con depósito, en varios idiomas',
@@ -111,6 +114,7 @@ export const casos: PageData[] = [
   {
     slug: 'casos-de-exito/kl-contable',
     parent,
+    heroImage: { src: '/portfolio/klcontable.jpg', alt: 'Sitio web de KL Contable' },
     title: 'Caso KL Contable: web corporativa para una firma contable | Elemento Web',
     description: 'Cómo diseñamos la web de KL Contable, una firma de contabilidad en Panamá: diez servicios, guías por tipo de cliente, calculadora de Seguro Social y blog propio.',
     h1: 'Caso KL Contable: web corporativa con guías y calculadora para una firma contable',
@@ -145,6 +149,7 @@ export const casos: PageData[] = [
   {
     slug: 'casos-de-exito/panama-international-movers',
     parent,
+    heroImage: { src: '/portfolio/panamainternationalmovers-2026.jpg', alt: 'Sitio web de Panama International Movers' },
     title: 'Caso Panama International Movers: web de mudanzas internacionales | Elemento Web',
     description: 'Cómo diseñamos la web de Panama International Movers: más de 30 servicios (marítimo, aéreo, autos, mascotas, oficinas), mapa de destinos y cotización por WhatsApp.',
     h1: 'Caso Panama International Movers: web para una empresa de mudanzas con más de 30 servicios',

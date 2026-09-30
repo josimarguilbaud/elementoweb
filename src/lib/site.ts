@@ -23,7 +23,7 @@ export const site = {
            que gaId esté activo, y puedes dejar esto vacío.
    Vacío = no se carga nada (sin scripts de terceros). */
 export const analytics = {
-  gaId: '',          // ej: 'G-XXXXXXXXXX'
+  gaId: 'G-J0NHHRTV75',
   searchConsole: '', // ej: 'aBc123...'
 };
 

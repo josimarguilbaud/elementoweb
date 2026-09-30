@@ -42,7 +42,7 @@ const services2 = ['Diseño web / Sitio corporativo', 'Tienda online / E-commerc
 const waHome = wa('Hola, vi su portafolio y quiero un diagnóstico para mi proyecto.');
 
 const title = 'Agencia de Diseño Web en Panamá | Elemento Web';
-const description = 'Software house en Panamá: diseño web de alto rendimiento, marketing con IA y automatización. Sitios que atraen, convierten y escalan.';
+const description = 'Agencia de diseño web en Panamá. Páginas corporativas, tiendas online y landing pages con diseño a medida y SEO técnico. Solicita tu cotización.';
 
 const capCols = [...cols, { title: 'Marketing y Pauta', hub: 'marketing', links: marketing }, { title: 'Nuestros SaaS', hub: 'saas', links: saas.map((s) => ({ slug: s.slug, label: s.label })) }];
 
@@ -85,10 +85,10 @@ const faqs: [string, string][] = [
         Boutique de diseño y desarrollo
       </p>
       <h1 class="font-display text-[clamp(2.4rem,6.2vw,4.5rem)] font-extrabold leading-[1.05] tracking-tight text-ink">Diseño web en Panamá <br class="hidden sm:block" />que <span class="hero-outline italic pr-1">convierte</span> visitas en consultas.</h1>
-      <p class="mt-5 max-w-2xl text-base leading-relaxed text-ink/70 md:text-lg">Somos la agencia de <strong class="font-semibold text-ink/80">diseño web en Panamá</strong> para empresas que quieren más consultas: sitios corporativos, tiendas y landings con precio cerrado, SEO técnico y contacto conectado a tu operación. Con sede en Panamá, atendemos también de forma remota a negocios hispanos de <a href="/miami/" class="font-semibold text-ink/80 underline decoration-ink/20 underline-offset-2 hover:decoration-ink/50">Miami</a>.</p>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-ink/70 md:text-lg">Somos una agencia de <strong class="font-semibold text-ink/80">diseño web en Panamá</strong>. Creamos páginas corporativas, tiendas online y landing pages con diseño a medida, SEO técnico y precio cerrado.</p>
       <div class="mt-8 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row sm:gap-5">
-        <a href="/contacto/" data-magnetic="0.35" class="group relative inline-flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-night px-8 py-3.5 text-base font-semibold text-white shadow-xl shadow-ink/25 transition-all hover:-translate-y-0.5 hover:bg-teal-deep sm:w-auto">
-          <span class="relative z-10">Solicitar diagnóstico</span>
+        <a href="/contacto/#formulario" data-magnetic="0.35" class="group relative inline-flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-night px-8 py-3.5 text-base font-semibold text-white shadow-xl shadow-ink/25 transition-all hover:-translate-y-0.5 hover:bg-teal-deep sm:w-auto">
+          <span class="relative z-10">Cotizar mi página web</span>
           <svg class="relative z-10 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5" /><polyline points="5 5 19 5 19 19" /></svg>
         </a>
         <span class="hidden text-sm text-ink/70 sm:block">o</span>
@@ -109,8 +109,8 @@ const faqs: [string, string][] = [
   <style>
     .hero-outline {
       color: transparent;
-      -webkit-text-stroke: 2px rgba(51, 51, 51, 0.32);
-      text-stroke: 2px rgba(51, 51, 51, 0.32);
+      -webkit-text-stroke: 2px rgba(51, 51, 51, 0.85);
+      text-stroke: 2px rgba(51, 51, 51, 0.85);
     }
     @media (max-width: 640px) {
       .hero-outline { -webkit-text-stroke-width: 1.4px; text-stroke-width: 1.4px; }
@@ -188,23 +188,32 @@ const faqs: [string, string][] = [
         <div class="flex flex-col justify-center p-8 md:p-12">
           <div class="flex items-center gap-3"><span class="rounded-full bg-violet/20 px-3 py-1 text-xs font-semibold text-violet">{folioFeatured.catLabel}</span><span class="text-sm text-white/40">{folioFeatured.year}</span></div>
           <h3 class="mt-4 font-display text-3xl font-extrabold">{folioFeatured.t}</h3>
-          <p class="mt-3 leading-relaxed text-white/55">{folioFeatured.desc}</p>
-          <a href={folioFeatured.href} target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal transition-colors hover:text-white">Visitar sitio en vivo <span aria-hidden="true">↗</span></a>
+          <p class="mt-3 leading-relaxed text-white/70">{folioFeatured.desc}</p>
+          <p class="mt-4 text-sm leading-relaxed text-white/85"><strong class="text-teal">Qué resolvimos:</strong> {folioFeatured.did}</p>
+          <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+            {folioFeatured.caso && <a href={url(folioFeatured.caso)} class="inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-teal">Ver caso del proyecto <span aria-hidden="true">→</span></a>}
+            <a href={folioFeatured.href} target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-teal transition-colors hover:text-white">Visitar sitio en vivo <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </article>
 
       <div class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
         {folio.map((w) => (
-          <a href={w.href} target="_blank" rel="noopener" class="folio-item reveal group block overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] transition-transform duration-500 hover:-translate-y-1.5" data-cat={w.cat}>
-            <div class="relative aspect-[16/10] overflow-hidden">
+          <article class="folio-item reveal group flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03]" data-cat={w.cat}>
+            <a href={w.href} target="_blank" rel="noopener" class="relative block aspect-[16/10] overflow-hidden" aria-label={`Visitar el sitio de ${w.t}`}>
               <Pic src={w.img} alt={`Sitio web de ${w.t}`} width={1200} height={900} sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 92vw" class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
               <span class="absolute right-4 top-4 rounded-full bg-black/45 px-3 py-1 text-xs font-semibold backdrop-blur">{w.tag}</span>
+            </a>
+            <div class="flex flex-1 flex-col p-6">
+              <div class="text-xs font-medium text-teal">{w.catLabel}</div>
+              <h3 class="mt-1 font-display text-lg font-bold">{w.t}</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-white/70"><strong class="text-white/90">Qué resolvimos:</strong> {w.did}</p>
+              <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold">
+                {w.caso && <a href={url(w.caso)} class="text-white transition-colors hover:text-teal">Ver caso del proyecto →</a>}
+                <a href={w.href} target="_blank" rel="noopener" class="text-teal transition-colors hover:text-white">Visitar sitio ↗</a>
+              </div>
             </div>
-            <div class="flex items-center justify-between p-6">
-              <div><div class="text-xs font-medium text-teal">{w.catLabel}</div><h3 class="mt-1 font-display text-lg font-bold">{w.t}</h3></div>
-              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/15 transition-colors group-hover:bg-teal group-hover:text-ink"><svg width="12" height="12" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
-            </div>
-          </a>
+          </article>
         ))}
       </div>
 
@@ -245,6 +254,7 @@ const faqs: [string, string][] = [
         <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Precios</p>
         <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Precios claros, sin <span class="grad-text">sorpresas después</span>.</h2>
         <p class="reveal mt-5 text-lg text-ink/70">Cotización cerrada antes de empezar. Precios en USD, no incluyen ITBMS. <a href="/precios/" class="font-semibold text-teal-deep underline underline-offset-2">Ver qué incluye cada uno</a>.</p>
+        <p class="reveal mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-ink/70">Plazos: landing en 5 días hábiles y sitio corporativo en 2 a 3 semanas, desde que recibimos tu contenido. Redacción de textos, imágenes con IA y logo se cotizan aparte. El alcance exacto de cada plan se confirma por escrito antes de empezar.</p>
         <p class="reveal mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold text-teal-deep">{Object.values(archCards).map((c) => <a href={url(c.slug)} class="underline underline-offset-2">{c.t}</a>)}</p>
       </div>
       <div class="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
@@ -347,7 +357,7 @@ const faqs: [string, string][] = [
         <div class="lg:sticky lg:top-28">
           <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Soluciones</p>
           <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Un solo equipo para toda tu <span class="grad-text">presencia digital</span>.</h2>
-          <p class="reveal mt-6 max-w-sm text-lg leading-relaxed text-ink/70">Del diseño al marketing y la automatización. Cerramos el círculo: atraemos, convertimos y medimos.</p>
+          <p class="reveal mt-6 max-w-sm text-lg leading-relaxed text-ink/70">Una web bonita no basta: tiene que traer consultas. Por eso cubrimos del diseño al marketing y la automatización: atraemos, convertimos y medimos.</p>
         </div>
       </div>
       <div class="lg:col-span-8">
@@ -371,18 +381,8 @@ const faqs: [string, string][] = [
     </div>
   </section>
 
-  <!-- PROBLEM -->
-  <section class="relative overflow-hidden bg-night py-28 text-white md:py-32">
-    <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(ellipse 60% 60% at 50% 40%, rgba(0, 153, 204,.14), transparent 70%)"></div>
-    <div class="relative mx-auto max-w-4xl px-6 text-center">
-      <p class="reveal mb-6 inline-block rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white/60">El problema</p>
-      <h2 class="reveal font-display text-[clamp(2rem,5vw,3.6rem)] font-extrabold leading-[1.05]">Una web bonita no basta: tiene que <span class="grad-text">traer consultas</span>.</h2>
-      <p class="reveal mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-white/60">Muchas webs se ven bien pero no aparecen en Google, no responden fuera de horario y no convierten la visita en un cliente. La tuya puede ser un canal de ventas.</p>
-    </div>
-  </section>
-
   <!-- PROCESO -->
-  <section id="process" class="relative bg-paper py-28 md:py-32">
+  <section id="process" class="relative bg-white py-28 md:py-32">
     <div class="mx-auto max-w-7xl px-6">
       <div class="mb-16 max-w-2xl">
         <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Cómo trabajamos</p>
@@ -397,90 +397,6 @@ const faqs: [string, string][] = [
             <p class="mt-3 text-sm leading-relaxed text-ink/70 transition-colors duration-500 group-hover:text-white/60">{s.d}</p>
           </article>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ECOSISTEMA (terminal) -->
-  <section id="ecosystem" class="relative overflow-hidden bg-night-2 py-28 text-white md:py-32">
-    <div class="absolute inset-0 mesh-dark opacity-60"></div>
-    <div class="sphere sphere-dark h-[420px] w-[420px] right-[-6rem] top-10" style="background:#00688c;opacity:.4"></div>
-    <div class="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2">
-      <div>
-        <p class="reveal mb-5 inline-block rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white/60">Ecosistema de IA</p>
-        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.04]">Tu web deja de ser una página. Se vuelve un <span class="grad-text">sistema que vende</span>.</h2>
-        <p class="reveal mt-6 max-w-md text-lg leading-relaxed text-white/55">Conectamos diseño, inteligencia artificial y automatización en un solo flujo. Mientras atiendes otras cosas, tu negocio puede responder, calificar y agendar consultas de forma automática.</p>
-      </div>
-      <div class="reveal">
-        <div class="glass-dark rounded-3xl p-2">
-          <div class="flex items-center gap-2 px-4 py-3"><span class="h-3 w-3 rounded-full bg-[#ff5f57]"></span><span class="h-3 w-3 rounded-full bg-[#febc2e]"></span><span class="h-3 w-3 rounded-full bg-[#28c840]"></span><span class="ml-3 text-xs text-white/40">flujo-automatizacion.ts</span></div>
-          <div class="rounded-2xl bg-black/40 p-5">
-            <div class="flex flex-col gap-3">
-              {ecoSteps.map((s, i) => (
-                <div class="relative flex items-start gap-4">
-                  {i < ecoSteps.length - 1 && <span class="absolute left-[1.15rem] top-10 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-teal/50 to-transparent"></span>}
-                  <span class={`grid h-9 w-9 shrink-0 place-items-center rounded-xl font-display text-sm font-bold ${s.teal ? 'bg-teal-deep/30 text-teal' : 'bg-violet/25 text-violet'}`}>{s.n}</span>
-                  <div class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3"><div class="font-display text-base font-semibold text-white">{s.t}</div><div class="mt-0.5 text-sm text-white/50">{s.d}</div></div>
-                </div>
-              ))}
-            </div>
-            <div class="mt-5 rounded-xl border border-white/10 bg-black/50 px-4 py-3 font-mono text-[13px] leading-relaxed"><span class="text-white/40">$</span> <span class="text-teal">lead</span>.on(<span class="text-violet">'nuevo'</span>) <span class="text-white/40">→</span> <span class="text-teal">ia</span>.responder() <span class="text-white/40">→</span> <span class="text-teal">crm</span>.agendar()<span class="ml-1 inline-block h-4 w-2 translate-y-0.5 animate-pulse bg-teal"></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- POR QUÉ INVERTIR -->
-  <section class="relative bg-paper py-28 md:py-32">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="mx-auto mb-16 max-w-2xl text-center">
-        <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Por qué invertir</p>
-        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Tu web no es un gasto. Es tu <span class="grad-text">canal de clientes más rentable</span>.</h2>
-        <p class="reveal mt-5 text-lg text-ink/70">La pregunta correcta no es cuánto cuesta una buena web, sino cuánto te cuesta cada mes no tenerla.</p>
-      </div>
-
-      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
-        {[
-          { t: 'Trabaja 24/7', d: 'Tu mejor vendedor no duerme, no se enferma y atiende a todos a la vez. Tu web recibe, informa y capta mientras tú haces otra cosa.', ic: 'M12 6v6l4 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z' },
-          { t: 'Puede pagarse rápido', d: 'Según tu ticket promedio, un solo cliente nuevo puede cubrir buena parte de la inversión. Cada consulta adicional que llega mejora tu retorno.', ic: 'M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
-          { t: 'Un activo que crece', d: 'A diferencia de la pauta, el posicionamiento no se apaga cuando dejas de pagar. Se acumula y trabaja para ti durante años.', ic: 'M3 3v18h18M7 14l4-4 3 3 5-6' },
-        ].map((v) => (
-          <div class="reveal rounded-3xl border border-ink/10 bg-white p-8">
-            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-teal-deep to-teal text-white"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d={v.ic} /></svg></span>
-            <h3 class="mt-5 font-display text-xl font-bold text-ink">{v.t}</h3>
-            <p class="mt-3 leading-relaxed text-ink/70">{v.d}</p>
-          </div>
-        ))}
-      </div>
-
-      <div class="reveal relative mt-6 overflow-hidden rounded-[2rem] bg-night p-6 text-white md:p-10">
-        <div class="absolute inset-0 mesh-dark opacity-40"></div>
-        <div class="relative">
-          <h3 class="mb-7 font-display text-xl font-bold md:text-2xl">En qué se diferencia de una plantilla o de un trabajo independiente</h3>
-          <div class="overflow-x-auto" tabindex="0" role="region" aria-label="Comparativa: plantilla, trabajo independiente y Elemento Web">
-            <div class="min-w-[560px]">
-              <div class="grid grid-cols-[1.1fr_1fr_1fr] border-b border-white/10 pb-3 text-xs font-semibold uppercase tracking-wide">
-                <span></span>
-                <span class="px-3 text-white/45">Plantilla / Freelancer</span>
-                <span class="rounded-t-xl bg-teal/15 px-3 py-1 text-teal">Elemento Web</span>
-              </div>
-              {[
-                ['Enfoque', 'Una plantilla bonita', 'Estructura pensada para vender'],
-                ['SEO', 'Improvisado o inexistente', 'Técnico + una página por servicio'],
-                ['Tecnología', 'Constructor pesado y lento', 'El mismo stack de nuestros SaaS'],
-                ['Al terminar', 'Desaparece', 'Equipo interno, acompañamiento real'],
-                ['Respaldo', 'Ninguno', 'Meta Verified + 3 SaaS en producción'],
-              ].map((r) => (
-                <div class="grid grid-cols-[1.1fr_1fr_1fr] items-center border-b border-white/8 py-3.5 text-sm">
-                  <span class="font-semibold text-white">{r[0]}</span>
-                  <span class="flex items-center gap-2 px-3 text-white/45"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round" /></svg>{r[1]}</span>
-                  <span class="flex items-center gap-2 bg-teal/[0.06] px-3 py-2 text-white/90"><span class="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-teal text-night"><svg width="9" height="7" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></span>{r[2]}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -525,6 +441,10 @@ const faqs: [string, string][] = [
         ))}
       </div>
 
+      <div class="reveal mt-8 flex items-center gap-4 rounded-3xl border border-ink/10 bg-paper p-5 sm:w-fit sm:pr-10">
+        <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-gradient-to-br from-teal-deep/20 to-violet/25 font-display text-lg font-extrabold text-ink" aria-hidden="true">JG</span>
+        <div><p class="font-display text-lg font-bold text-ink">Josimar Guilbaud</p><p class="text-sm text-ink/70">CEO de Elemento Web</p></div>
+      </div>
       <a href="/nosotros/" class="reveal mt-8 inline-flex items-center gap-2 text-sm font-semibold text-teal-deep">Conoce al equipo <span aria-hidden="true">→</span></a>
 
       {/* Rejilla de personas: se enciende cuando haya fotos, nombres y cargos
@@ -549,57 +469,28 @@ const faqs: [string, string][] = [
     </div>
   </section>
 
-  <!-- SAAS -->
-  <section class="relative overflow-hidden bg-night-2 py-28 text-white md:py-32">
-    <div class="absolute inset-0 mesh-dark opacity-50"></div>
-    <div class="sphere sphere-dark h-[440px] w-[440px] left-[-8rem] top-1/4" style="background:#00688c;opacity:.35"></div>
-    <div class="relative mx-auto max-w-7xl px-6">
-      <div class="mb-16 max-w-3xl">
-        <p class="reveal mb-5 inline-block rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white/60">Nuestros SaaS</p>
-        <h2 class="reveal font-display text-[clamp(2rem,4.8vw,3.6rem)] font-extrabold leading-[1.03]">No solo desarrollamos software. <span class="grad-text">Lo operamos.</span></h2>
-        <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-white/55">Tres productos propios en producción, con clientes reales. Si construimos y mantenemos nuestro propio software, imagina lo que hacemos con el tuyo.</p>
+  <!-- IA Y AUTOMATIZACIÓN: complemento opcional -->
+  <section id="ecosystem" class="relative overflow-hidden bg-night-2 py-16 text-white md:py-20">
+    <div class="absolute inset-0 mesh-dark opacity-40"></div>
+    <div class="relative mx-auto flex max-w-5xl flex-col items-start gap-6 px-6 md:flex-row md:items-center md:justify-between">
+      <div class="max-w-2xl">
+        <p class="reveal text-xs font-semibold uppercase tracking-wider text-teal">Complemento opcional</p>
+        <h2 class="reveal mt-3 font-display text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold leading-[1.1]">IA y automatización para atender y agendar consultas</h2>
+        <p class="reveal mt-3 text-white/70">Si quieres ir más allá de la web, conectamos un asistente de IA y automatizaciones a tu WhatsApp y tu CRM. Lo cotizamos aparte y con supervisión humana.</p>
       </div>
-      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
-        {saasProducts.map((p) => (
-          <div data-tilt="6">
-            <a href={url(p.slug)} class="glass-dark group relative flex h-full flex-col overflow-hidden rounded-3xl p-8">
-              <span class="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-40 blur-3xl transition-opacity duration-500 group-hover:opacity-70" style={`background:${p.c}`}></span>
-              <div class="relative flex items-center justify-between">
-                <span class="grid h-12 w-12 place-items-center rounded-2xl font-display text-lg font-bold" style={`background:${p.c}22;color:${p.c}`}>{p.n[0]}</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-white/[0.04] px-3 py-1 text-[11px] font-semibold text-white/70"><span class="h-1.5 w-1.5 rounded-full" style={`background:${p.c}`}></span> En producción</span>
-              </div>
-              <h3 class="relative mt-6 font-display text-2xl font-bold">{p.n}</h3>
-              <p class="relative mt-1 text-sm font-medium" style={`color:${p.c}`}>{p.tag}</p>
-              <p class="relative mt-3 flex-1 text-sm leading-relaxed text-white/55">{p.d}</p>
-              <span class="relative mt-6 inline-flex items-center gap-2 text-sm font-semibold" style={`color:${p.c}`}>Conocer {p.n} →</span>
-            </a>
-          </div>
-        ))}
-      </div>
-
-      {/* El stack vivia en su propia seccion, con el titular "Construido con
-          tecnologia de ultima generacion". Era la cuarta vez que la portada
-          decia "hacemos todo y con buena tecnologia", y ademas el reclamo no
-          se sostenia solo. Aqui, justo debajo de los tres SaaS que operamos,
-          se gana el sitio: son las herramientas con las que estan hechos. */}
-      <div class="reveal mt-16 border-t border-white/10 pt-12">
-        <p class="mb-7 text-center text-sm font-semibold uppercase tracking-[0.18em] text-white/40">El mismo stack con el que los construimos</p>
-        <div class="marquee-mask overflow-hidden">
-          <div class="marquee-track" style="animation-duration:48s">
-            {[...tools, ...tools].map((t) => (
-              <span class="mr-3 inline-flex shrink-0 items-center gap-2.5 rounded-full border border-ink/[0.07] bg-white px-4 py-2.5 shadow-sm shadow-ink/5">
-                <img src={`/tech/${t.ic}.svg`} alt={t.name} width="22" height="22" loading="lazy" class="h-[22px] w-[22px] shrink-0" />
-                <span class="whitespace-nowrap text-sm font-semibold text-ink/70">{t.name}</span>
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
+      <a href="/inteligencia-artificial-para-empresas-panama/" class="reveal inline-flex shrink-0 items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-teal hover:text-teal">Ver IA y automatización <span aria-hidden="true">→</span></a>
     </div>
   </section>
 
+  <!-- SAAS: una frase y un enlace -->
+  <section class="relative bg-paper py-14">
+    <div class="mx-auto flex max-w-5xl flex-col items-start gap-4 px-6 md:flex-row md:items-center md:justify-between">
+      <p class="max-w-2xl text-lg text-ink/70">Además del trabajo para clientes, operamos tres productos propios en producción: <strong class="text-ink">WazaCRM</strong>, <strong class="text-ink">NousCRM</strong> y <strong class="text-ink">Cifrao</strong>.</p>
+      <a href="/saas/" class="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-teal-deep">Ver los productos <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
   <!-- FAQ -->
-  <section class="relative bg-paper py-20 md:py-24">
+  <section class="relative bg-white py-20 md:py-24">
     <div class="mx-auto max-w-4xl px-6">
       <h2 class="reveal mb-10 text-center font-display text-[clamp(1.8rem,4vw,3rem)] font-extrabold text-ink">Preguntas <span class="grad-text">frecuentes</span></h2>
       <div class="flex flex-col gap-3">

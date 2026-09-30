@@ -20,6 +20,16 @@ const intro = page.lead.slice(1);
 const cta = page.cta ?? {};
 const ctaText = cta.wa ?? `Hola, me interesa ${page.h1}.`;
 const isBlog = page.parent?.slug === 'blog';
+/* Los botones de una página de servicio conservan el servicio elegido en el formulario. */
+const SERVICE_KEYS: Record<string, [string, string]> = {
+  'servicios/landing-pages-alta-conversion-panama': ['landing', 'Cotizar mi landing'],
+  'servicios/diseno-web-corporativo-panama': ['pyme', 'Cotizar mi web'],
+  'servicios/tiendas-online-ecommerce-panama': ['ecommerce', 'Cotizar mi tienda'],
+  'servicios/redisenio-web-panama': ['revision', 'Revisar mi web'],
+};
+const sk = SERVICE_KEYS[page.slug];
+const contactHref = sk ? `/contacto/?servicio=${sk[0]}#formulario` : '/contacto/#formulario';
+const contactLabel = sk ? sk[1] : 'Cotizar por formulario';
 /* Blog: Article + (si hay bloque faq) FAQPage, para ganar fragmentos en Google.
    El resto de páginas usa el grafo completo de pageJsonLd. */
 const blogFaq = isBlog ? faqNode(page) : null;
@@ -66,7 +76,8 @@ const dateLabel = page.date
             Hablar por WhatsApp
             <span class="grid h-5 w-5 place-items-center rounded-full bg-night text-teal"><svg width="9" height="9" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
           </a>
-          <a href="/contacto/#formulario" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/50">Cotizar por formulario</a>
+          <a href={contactHref} class="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-white/50">{contactLabel}</a>
+          {page.blocks.some((b) => b.type === 'showcase') && <a href="#ejemplo" class="inline-flex items-center gap-2 rounded-full px-4 py-3.5 text-sm font-semibold text-teal underline underline-offset-4">Ver un ejemplo real</a>}
         </div>
       </div>
 
@@ -92,7 +103,7 @@ const dateLabel = page.date
         <ul class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
           <li><a href="/precios/" class="block rounded-2xl border border-ink/10 p-5 transition hover:border-teal-deep/40 hover:shadow-md"><span class="font-display font-bold text-ink">Precios</span><span class="mt-1 block text-sm text-ink/70">Cuánto cuesta cada formato y qué incluye.</span></a></li>
           <li><a href="/casos-de-exito/" class="block rounded-2xl border border-ink/10 p-5 transition hover:border-teal-deep/40 hover:shadow-md"><span class="font-display font-bold text-ink">Casos de éxito</span><span class="mt-1 block text-sm text-ink/70">Proyectos reales: el problema y lo que construimos.</span></a></li>
-          <li><a href="/contacto/#formulario" class="block rounded-2xl border border-ink/10 p-5 transition hover:border-teal-deep/40 hover:shadow-md"><span class="font-display font-bold text-ink">Pedir cotización</span><span class="mt-1 block text-sm text-ink/70">Diagnóstico sin costo y propuesta con precio cerrado.</span></a></li>
+          <li><a href={contactHref} class="block rounded-2xl border border-ink/10 p-5 transition hover:border-teal-deep/40 hover:shadow-md"><span class="font-display font-bold text-ink">Pedir cotización</span><span class="mt-1 block text-sm text-ink/70">Diagnóstico sin costo y propuesta con precio cerrado.</span></a></li>
         </ul>
       </div>
     </section>
@@ -108,7 +119,7 @@ const dateLabel = page.date
         <p class="mx-auto mt-5 max-w-lg text-lg text-white/60">{cta.text ?? 'Diagnóstico sin costo y propuesta con precio cerrado, por escrito. Sin compromiso.'}</p>
         <div class="mt-9 flex flex-wrap justify-center gap-3">
           <a href={wa(ctaText)} target="_blank" rel="noopener" data-magnetic="0.4" class="inline-flex items-center gap-2.5 rounded-full bg-teal px-8 py-4 text-base font-semibold text-night shadow-2xl shadow-teal/25 transition-colors hover:bg-white">Escríbenos por WhatsApp</a>
-          <a href="/contacto/#formulario" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-4 text-base font-semibold text-white transition-colors hover:border-white/50">Ir al formulario</a>
+          <a href={contactHref} class="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-4 text-base font-semibold text-white transition-colors hover:border-white/50">Ir al formulario</a>
         </div>
       </div>
     </div>

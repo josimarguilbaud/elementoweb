@@ -16,7 +16,8 @@ export type Block =
   | { type: 'statement'; text: string; strong?: string }
   | { type: 'infra'; h2: string; intro?: string; columns: InfraColumn[] }
   | { type: 'plans'; h2: string; intro?: string; tiers: PlanTier[]; note?: string }
-  | { type: 'seo-momentum'; h2: string; intro?: string };
+  | { type: 'seo-momentum'; h2: string; intro?: string }
+  | { type: 'showcase'; id?: string; h2: string; intro?: string; project: string; notes: { label: string; text: string }[]; caption?: string };
 
 /** Columna del widget de infraestructura/confiabilidad (3 columnas animadas). */
 export interface InfraColumn {
@@ -53,6 +54,8 @@ export interface PageData {
   /** ⚠️ TEMPORAL: placeholders de picsum.photos con seed descriptivo (sin créditos de
    *  generación disponibles). Reemplazar por fotografía real o generada antes de publicar. */
   heroImage?: { src: string; alt: string };
+  /** Servicio que preselecciona el formulario desde los botones de la página (clave de planKey). */
+  serviceKey?: string;
   heroCtas?: { label: string; href: string; primary?: boolean }[];
   blocks: Block[];
   cta?: { h2?: string; text?: string; wa?: string };

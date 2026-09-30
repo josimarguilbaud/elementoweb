@@ -117,3 +117,11 @@ Base: `cbff42e`. Publicado en `main` hasta `e73f70f` (despliegues 131 y 132: exi
 - Textos: selector con beneficio, "Consultar este proyecto", botones "Cotizar mi landing/web/tienda", nota corta de costos aparte; SEO de la página corporativa sin promesa de posicionamiento.
 - Menú: Servicios · Más · Proyectos · Precios · Nosotros · Cotizar (marketing, SaaS, industrias, Miami y blog dentro de "Más").
 - Pendiente: contacto WhatsApp-o-correo (requiere n8n), testimonios y foto reales, seguimiento posterior al formulario (CRM).
+
+## Lote 8 — páginas de servicio que muestran el producto
+- Nuevo bloque `showcase` (captura real de un proyecto con notas numeradas, enlace al caso y al sitio en vivo).
+- Landing: imagen principal = TramitaPa; bloque "Así puede verse la página de tu campaña". Web empresarial: imagen principal y bloque con Panama International Movers.
+- Botones de las páginas de servicio conservan el servicio en el formulario ("Cotizar mi landing/web/tienda", "Revisar mi web") y enlazan a "Ver un ejemplo real".
+- Alcance unificado: la redacción desde cero se cotiza aparte (landing, corporativa y home coinciden); ajuste post-campaña acotado; carritos por WhatsApp y comisiones de pasarela marcados como aparte.
+- Rediseño: sin promesa de conservar posiciones (redirecciones reducen el riesgo; Google advierte fluctuaciones).
+- Pendiente (necesita material): tienda con demo visual de compra, antes/después real para rediseño, ejemplo de diagnóstico anotado, capturas de panel/video, resto de servicios (SEO, publicidad, automatización, mantenimiento, hosting).

@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Preloader from '../components/Preloader.astro';
-import { site, cols, marketing, saas, pricing, industrias, url, wa, clientLogos, portfolio, portfolioCats } from '../lib/site';
+import { site, cols, marketing, saas, pricing, industrias, url, wa, clientLogos, portfolio, portfolioCats, planKey } from '../lib/site';
 import { ogFor } from '../lib/img';
 import ContactForm from '../components/ContactForm.astro';
 import { homeJsonLd } from '../lib/schema';
@@ -173,7 +173,7 @@ const faqs: [string, string][] = [
       <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
         {[
           { t: 'Trabaja 24/7', d: 'Tu mejor vendedor no duerme, no se enferma y atiende a todos a la vez. Tu web recibe, informa y capta mientras tú haces otra cosa.', ic: 'M12 6v6l4 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z' },
-          { t: 'Se paga sola', d: 'Un solo cliente nuevo suele cubrir la inversión completa. A partir de ahí, cada consulta que llega es ganancia neta.', ic: 'M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
+          { t: 'Puede pagarse rápido', d: 'Según tu ticket promedio, un solo cliente nuevo puede cubrir buena parte de la inversión. Cada consulta adicional que llega mejora tu retorno.', ic: 'M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
           { t: 'Un activo que crece', d: 'A diferencia de la pauta, el posicionamiento no se apaga cuando dejas de pagar. Se acumula y trabaja para ti durante años.', ic: 'M3 3v18h18M7 14l4-4 3 3 5-6' },
         ].map((v) => (
           <div class="reveal rounded-3xl border border-ink/10 bg-white p-8">
@@ -363,7 +363,7 @@ const faqs: [string, string][] = [
             <h3 class="font-display text-xl font-bold">{plan.name}</h3>
             <div class="mt-6 flex items-end gap-1.5"><span class={`text-sm font-medium ${plan.featured ? 'text-white/50' : 'text-ink/40'}`}>desde</span><span class="font-display text-5xl font-extrabold tracking-tight">{plan.price}</span></div>
             <ul class="mt-7 flex flex-col gap-3">{plan.features.map((f) => (<li class="flex items-center gap-3 text-sm"><span class={`grid h-5 w-5 shrink-0 place-items-center rounded-full ${plan.featured ? 'bg-teal text-night' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={plan.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>))}</ul>
-            <a href="/contacto/" aria-label={`Empezar con el plan ${plan.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${plan.featured ? 'bg-teal text-night hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
+            <a href={`/contacto/?servicio=${planKey(plan.name)}#formulario`} aria-label={`Empezar con el plan ${plan.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${plan.featured ? 'bg-teal text-night hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
           </div>
         ))}
       </div>

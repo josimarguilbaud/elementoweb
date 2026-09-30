@@ -189,6 +189,14 @@ export const core: PageData[] = [
         ],
       },
       {
+        type: 'cards',
+        h2: 'Quién está detrás',
+        intro: 'Elemento Web tiene responsable con nombre y apellido.',
+        items: [
+          { h3: 'Josimar Guilbaud, CEO', text: 'Al frente de Elemento Web. Responde por la empresa y por cada proyecto que entregamos.' },
+        ],
+      },
+      {
         type: 'checklist',
         h2: 'Cómo trabajamos',
         items: [
@@ -205,7 +213,7 @@ export const core: PageData[] = [
         h2: 'Preguntas frecuentes',
         items: [
           { q: '¿Qué es exactamente Meta Verified Tech Provider?', a: 'Una acreditación oficial de Meta para proveedores tecnológicos autorizados a integrar sus APIs de WhatsApp Business e Instagram. Significa verificación de números por el canal oficial y soporte directo, sin intermediarios improvisados.' },
-          { q: '¿Subcontratan parte del trabajo?', a: 'No. Diseño, desarrollo, SEO técnico e integraciones son de equipo interno. Lo que no hacemos (pauta publicitaria, producción audiovisual) te lo decimos y te referimos con especialistas.' },
+          { q: '¿Subcontratan parte del trabajo?', a: 'No. Diseño, desarrollo, SEO técnico, integraciones, pauta publicitaria y contenido para redes son de equipo interno. Lo que no hacemos (registro de marca, fotografía o video de estudio) te lo decimos y te referimos con especialistas.' },
           { q: '¿Dónde están ubicados?', a: 'En Ciudad de Panamá, con trabajo remoto para todo el país y la región. Las reuniones presenciales se coordinan según el proyecto.' },
         ],
       },

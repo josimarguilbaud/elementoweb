@@ -511,7 +511,7 @@ export const servicios: PageData[] = [
           { q: '¿Puedo usar una sola landing para todas mis campañas?', a: 'Se puede y sale caro. Cuando el anuncio promete una cosa y la landing habla de otra, Google lo penaliza en el costo por clic y Meta en el costo por resultado. Una landing por oferta cuesta poco de producir y casi siempre ahorra más de lo que cuesta.' },
           { q: '¿Por qué la landing no debe tener menú?', a: 'Porque cada enlace del menú es una salida. Una landing existe para que el visitante haga una sola cosa; darle diez caminos alternativos es pagar por una visita y luego regalarla.' },
           { q: '¿Qué mido en una landing?', a: 'Tasa de conversión, costo por lead y calidad del lead. El tercero es el que casi nadie mira y el que decide: bajar la barrera del formulario sube la conversión y puede llenarte de contactos que no compran. Bajar el costo por lead mientras sube el costo por venta es el autoengaño más común.' },
-          { q: '¿Cuándo NO te conviene una landing page?', a: 'Cuando el cliente necesita investigarte antes de decidir. Una firma legal o una constructora se evalúan leyendo: ahí una sola página no alcanza y conviene el sitio de 8 a 12 páginas desde $950. La landing brilla cuando hay una sola oferta, tráfico dirigido y una sola acción posible.' },
+          { q: '¿Cuándo NO te conviene una landing page?', a: 'Cuando el cliente necesita investigarte antes de decidir. Una firma legal o una constructora se evalúan leyendo: ahí una sola página no alcanza y conviene el sitio de hasta 6 páginas desde $950. La landing brilla cuando hay una sola oferta, tráfico dirigido y una sola acción posible.' },
         ],
       },
       {

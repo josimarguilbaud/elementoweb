@@ -203,7 +203,7 @@ export const pricing = {
       name: 'Página PYME',
       price: '$950',
       featured: true,
-      features: ['8 a 12 páginas internas', 'Página por servicio con SEO', 'Blog para posicionamiento', 'Panel autoadministrable'],
+      features: ['Hasta 6 páginas internas', 'Página por servicio con SEO', 'Blog para posicionamiento', 'Panel autoadministrable'],
     },
     {
       name: 'E-commerce',
@@ -269,8 +269,8 @@ export const pricing = {
       note: 'Textos originales creados con IA a partir de la información de tu negocio y revisados por nuestro equipo. Nada de relleno genérico: contenido pensado para tu sitio.',
       tiers: [
         { label: 'Landing page', price: '$150' },
-        { label: 'Web corporativa (6 a 8 páginas internas)', price: '$200' },
-        { label: 'Web extensa (más de 8 páginas internas)', price: '$350' },
+        { label: 'Web corporativa (hasta 6 páginas internas)', price: '$200' },
+        { label: 'Web extensa (más de 6 páginas internas)', price: '$350' },
       ],
     },
     images: {
@@ -335,3 +335,8 @@ export const portfolio = [
 export const url = (slug: string) => (slug === '' ? '/' : `/${slug}/`);
 export const wa = (text: string) =>
   `https://wa.me/${site.phoneRaw}?text=${encodeURIComponent(text)}`;
+
+/* Clave de servicio que viaja en /contacto/?servicio=… para preseleccionar el
+   formulario. Solo la clave, nunca datos personales. */
+export const planKey = (name: string) =>
+  /landing/i.test(name) ? 'landing' : /pyme|corporativ/i.test(name) ? 'pyme' : /commerce|tienda/i.test(name) ? 'ecommerce' : 'medida';

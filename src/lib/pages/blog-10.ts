@@ -71,7 +71,7 @@ export const blog10: PageData[] = [
         intro: 'Precios en USD y no incluyen ITBMS (7%). El formato correcto depende de cuánto necesitas resolver, no de cuál se ve mejor.',
         items: [
           { h3: 'Landing — $550', text: 'Para un puesto, food truck o restaurante pequeño que solo necesita el menú, fotos y un botón directo a WhatsApp, sin reservas ni ambición de posicionar en Google. Una sola página bien resuelta.', link: { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing pages' } },
-          { h3: 'Página PYME — $950 (recomendada)', text: 'Menú por categorías, reserva online, ficha de Google alineada y un blog para posicionar en búsquedas locales, dentro de 8 a 12 páginas internas. El punto de partida para un restaurante con mesa que quiere su propio canal.' },
+          { h3: 'Página PYME — $950 (recomendada)', text: 'Menú por categorías, reserva online, ficha de Google alineada y un blog para posicionar en búsquedas locales, dentro de un máximo de 6 páginas internas. El punto de partida para un restaurante con mesa que quiere su propio canal.' },
           { h3: 'E-commerce — $1,500', text: 'Para cuando el pedido para llevar es una parte real del negocio y quieres carrito, inventario de platos del día y pago integrado, no solo coordinar cada pedido por WhatsApp.', link: { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online' } },
         ],
       },

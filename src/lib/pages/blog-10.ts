@@ -71,8 +71,8 @@ export const blog10: PageData[] = [
         intro: 'Precios en USD y no incluyen ITBMS (7%). El formato correcto depende de cuánto necesitas resolver, no de cuál se ve mejor.',
         items: [
           { h3: 'Landing — $550', text: 'Para un puesto, food truck o restaurante pequeño que solo necesita el menú, fotos y un botón directo a WhatsApp, sin reservas ni ambición de posicionar en Google. Una sola página bien resuelta.', link: { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing pages' } },
-          { h3: 'Página PYME — $950 (recomendada)', text: 'Menú por categorías, reserva online, ficha de Google alineada y un blog para posicionar en búsquedas locales, dentro de un máximo de 6 páginas internas. El punto de partida para un restaurante con mesa que quiere su propio canal.' },
-          { h3: 'E-commerce — $1,500', text: 'Para cuando el pedido para llevar es una parte real del negocio y quieres carrito, inventario de platos del día y pago integrado, no solo coordinar cada pedido por WhatsApp.', link: { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online' } },
+          { h3: 'Web empresarial — $1,250 (recomendada)', text: 'Menú por categorías, reserva online, ficha de Google alineada y un blog para posicionar en búsquedas locales, dentro de un máximo de 6 páginas internas. El punto de partida para un restaurante con mesa que quiere su propio canal.' },
+          { h3: 'E-commerce — $1,950', text: 'Para cuando el pedido para llevar es una parte real del negocio y quieres carrito, inventario de platos del día y pago integrado, no solo coordinar cada pedido por WhatsApp.', link: { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online' } },
         ],
       },
       {
@@ -102,7 +102,7 @@ export const blog10: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes sobre la web de un restaurante',
         items: [
-          { q: '¿Cuánto cuesta la web de un restaurante en Panamá?', a: 'Depende de lo que necesites resolver. Un menú simple con WhatsApp parte de una Landing ($550); la mayoría de los restaurantes con mesa arrancan en Página PYME ($950), con reserva y SEO local; si necesitas carrito y pago integrado para pedidos, es E-commerce ($1,500). Precios en USD, sin ITBMS (7%).' },
+          { q: '¿Cuánto cuesta la web de un restaurante en Panamá?', a: 'Depende de lo que necesites resolver. Un menú simple con WhatsApp parte de una Landing ($550); la mayoría de los restaurantes con mesa arrancan en Web empresarial ($1,250), con reserva y SEO local; si necesitas carrito y pago integrado para pedidos, es E-commerce ($1,950). Precios en USD, sin ITBMS (7%).' },
           { q: '¿Me garantizan salir primero en Google o en el mapa?', a: 'No, y conviene desconfiar de quien lo prometa. Nadie controla el algoritmo de Google. Lo que sí se puede hacer es tener la ficha y la web bien trabajadas —horario real, fotos propias, reseñas respondidas— para competir con una base sólida, no con un atajo que no existe.' },
           { q: '¿Mi web reemplaza a las apps de delivery?', a: 'No, las complementa. Las apps te dan visibilidad ante gente que todavía no te conoce; tu web y tu WhatsApp convierten al cliente que ya te conoce en un pedido directo, sin pagarle comisión a nadie por una venta que ya tenías ganada.' },
           { q: '¿Necesito reserva online si mi restaurante es informal?', a: 'Probablemente no. La reserva online rinde en restaurantes donde se pierden mesas por no contestar el teléfono a tiempo: grupos, ocasiones, fines de semana. Si tu negocio es de paso y no maneja mesas para reservar, esa función sobra; mejor invertir en que el menú y la ficha de Google estén impecables.' },

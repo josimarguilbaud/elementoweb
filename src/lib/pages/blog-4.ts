@@ -181,7 +181,7 @@ export const blog4: PageData[] = [
         paragraphs: [
           'Puedes tener el mejor presupuesto y la mejor segmentación, y aun así perder si el tráfico llega a una web lenta, confusa o sin un botón claro de contacto. El anuncio solo compra la visita; el destino decide si se convierte en cliente. Pagar clics para mandarlos a una página que no vende es literalmente quemar dinero.',
           'Por eso, antes de hablar de presupuesto de pauta, revisamos a dónde llega el clic. Muchas veces la mejor inversión inicial no es más pauta, sino una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page de conversión</a> o un ajuste a tu sitio. Una misma campaña puede rendir el doble solo con un destino mejor armado.',
-          'Si aún no tienes web, vale la pena saber que en Elemento Web una landing arranca en $550 y una web PYME en $950, con cotización cerrada por escrito según el alcance. A veces esa inversión rinde más que subir el presupuesto de anuncios.',
+          'Si aún no tienes web, vale la pena saber que en Elemento Web una landing arranca en $550 y una web PYME en $1,250, con cotización cerrada por escrito según el alcance. A veces esa inversión rinde más que subir el presupuesto de anuncios.',
         ],
       },
       {

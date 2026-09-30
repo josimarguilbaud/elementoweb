@@ -21,6 +21,7 @@ const tiers = [
   ...pricing.tiers.map((t) => ({ name: t.name, price: num(t.price) })),
   { name: 'Proyecto a medida', price: num(pricing.custom.price) },
 ];
+const m = pricing.managed;
 ---
 <Base title={title} description={description} jsonld={jsonld} dark>
   <section class="bg-night pt-36 pb-16 text-white md:pt-44">
@@ -32,12 +33,13 @@ const tiers = [
   </section>
 
   <section class="mx-auto max-w-3xl px-6 py-14">
-    <form id="calc" class="glass rounded-3xl p-6 sm:p-8" novalidate>
+    <form id="calc" class="glass rounded-3xl p-6 sm:p-8" novalidate data-setup={m.setup} data-monthly={m.monthly} data-after={m.afterYear}>
       <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label for="c-formato" class="mb-1.5 block text-sm font-semibold text-ink">Formato de sitio</label>
           <select id="c-formato" class="w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm text-ink focus:border-teal-deep focus:outline-none focus:ring-2 focus:ring-teal-deep/20">
             {tiers.map((t) => <option value={t.price}>{t.name} · desde ${t.price.toLocaleString('en-US')}</option>)}
+            <option value="managed">{m.name} · ${m.setup} inicial + ${m.monthly}/mes</option>
           </select>
         </div>
         <div>
@@ -96,11 +98,17 @@ const tiers = [
   const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
   const money = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
   const v = (id: string) => Math.max(0, parseFloat($(id).value) || 0);
+  const cf = document.getElementById('calc') as HTMLElement;
+  const M = { setup: Number(cf.dataset.setup), monthly: Number(cf.dataset.monthly), after: Number(cf.dataset.after) };
   let sent = false;
   const calc = () => {
+    const managed = $('c-formato').value === 'managed';
     const proyecto = v('c-formato'), infra = v('c-infra'), mant = v('c-mant'), sus = v('c-sus');
     const tax = $('c-itbms').checked ? 1.07 : 1;
-    const w = (meses: number) => (proyecto + infra * (meses / 12) + mant * meses) * tax;
+    // Plan gestionado: $350 + $169/mes los primeros 12 meses, luego $94/mes (hosting y mantenimiento incluidos)
+    const wm = (meses: number) => (M.setup + M.monthly * Math.min(meses, 12) + M.after * Math.max(meses - 12, 0)) * tax;
+    const w = (meses: number) => managed ? wm(meses) : (proyecto + infra * (meses / 12) + mant * meses) * tax;
+    ['c-infra', 'c-mant'].forEach((id) => { $(id).disabled = managed; });
     $('o-w12').textContent = money(w(12));
     $('o-w36').textContent = money(w(36));
     const has = sus > 0;

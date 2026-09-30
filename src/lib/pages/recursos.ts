@@ -158,7 +158,7 @@ export const recursos: PageData[] = [
           { h3: 'Capacidad de salida y migración', text: 'Es uno de los puntos más importantes y de los menos mirados. Si el sitio está en una plataforma cerrada, sacar todo el contenido y el diseño puede ser parcial o imposible; verifícalo en los términos del proveedor antes de contratar. Con un sitio propio, mover el código a otro hosting es posible. Si algún día migras, la <a href="/recursos/checklist-migracion-seo/">checklist de migración SEO</a> te ayuda a no perder posicionamiento.' },
           { h3: 'Límites técnicos', text: 'Los constructores ofrecen las funciones que la plataforma soporta; lo que queda fuera se resuelve con extensiones o no se puede. Un sitio a medida no tiene ese techo, aunque cada funcionalidad extra implica trabajo y, a veces, costo aparte. Si tu proyecto es estándar, el límite quizá nunca te afecte.' },
           { h3: 'Velocidad', text: 'La velocidad depende de cómo esté construido cada sitio, no del modelo de pago. Hay sitios rápidos y lentos en ambos. Lo honesto es medir el caso concreto con la misma herramienta, por ejemplo PageSpeed Insights, y comparar. Detalles en la guía para <a href="/blog/como-mejorar-la-velocidad-de-tu-pagina-web/">mejorar la velocidad de tu web</a>.' },
-          { h3: 'Quién actualiza el contenido', text: 'Los constructores están pensados para que tú edites textos e imágenes con un editor visual, sin depender de nadie. En nuestro caso, la Página PYME incluye panel autoadministrable, y los cambios más grandes se piden a nosotros. Si tu equipo quiere editar todo solo y con frecuencia, pesa a favor de la suscripción.' },
+          { h3: 'Quién actualiza el contenido', text: 'Los constructores están pensados para que tú edites textos e imágenes con un editor visual, sin depender de nadie. En nuestro caso, la Web empresarial incluye panel autoadministrable, y los cambios más grandes se piden a nosotros. Si tu equipo quiere editar todo solo y con frecuencia, pesa a favor de la suscripción.' },
         ],
       },
       {
@@ -175,8 +175,8 @@ export const recursos: PageData[] = [
         intro: 'Cifras calculadas con las tarifas de partida publicadas. El proyecto se paga una vez y la infraestructura cada año: total a 12 meses = proyecto + $350; total a 36 meses = proyecto + 3×$350.',
         items: [
           'Landing Page ($550): $900 a 12 meses y $1,600 a 36 meses',
-          'Página PYME ($950, hasta 6 páginas internas): $1,300 a 12 meses y $2,000 a 36 meses',
-          'E-commerce ($1,500): $1,850 a 12 meses y $2,550 a 36 meses',
+          'Web empresarial ($1,250, hasta 6 páginas en total): $1,600 a 12 meses y $2,300 a 36 meses',
+          'E-commerce ($1,950, hasta 25 productos cargados): $2,300 a 12 meses y $3,000 a 36 meses',
           'Proyecto a medida ($2,900): $3,250 a 12 meses y $3,950 a 36 meses',
         ],
       },
@@ -185,9 +185,19 @@ export const recursos: PageData[] = [
         h2: 'Si además contratas mantenimiento',
         intro: 'El mantenimiento desde $59/mes suma $708 por cada año ($59×12), $1,416 en 24 meses y $2,124 en 36 meses.',
         items: [
-          'Página PYME con mantenimiento desde $59/mes: desde $2,008 a 12 meses y desde $4,124 a 36 meses',
+          'Web empresarial con mantenimiento desde $59/mes: desde $2,308 a 12 meses y desde $4,424 a 36 meses',
           'Landing Page con mantenimiento desde $59/mes: desde $1,608 a 12 meses y desde $3,724 a 36 meses',
           'Son cifras «desde»: el alcance final se confirma por escrito en la cotización',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Elemento Web: plan mensual gestionado (Web empresarial gestionada)',
+        intro: 'Puesta en marcha de $350 más $169 al mes durante los primeros 12 meses (incluye el desarrollo distribuido y el servicio continuo); desde el mes 13, $94 al mes por el servicio continuo. Ya incluye dominio estándar, hosting, SSL y mantenimiento.',
+        items: [
+          'A 12 meses: $2,378 antes de impuestos ($350 + 12 × $169)',
+          'A 36 meses: $4,634 antes de impuestos ($2,378 + 24 × $94)',
+          'Para comparar con una suscripción, usa estas cifras junto a tu cuota real X',
         ],
       },
       {

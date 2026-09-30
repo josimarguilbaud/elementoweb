@@ -6,7 +6,7 @@ export type Block =
   | { type: 'catalog'; h2: string; intro?: string; groups: { title: string; hub: string; items: { h3: string; text: string; link: { slug: string; label: string } }[] }[] }
   | { type: 'checklist'; h2: string; intro?: string; items: string[] }
   | { type: 'steps'; h2: string; intro?: string; items: { h3: string; text: string }[] }
-  | { type: 'pricing'; h2: string; intro?: string }
+  | { type: 'pricing'; h2: string; intro?: string; full?: boolean }
   | { type: 'extras'; h2: string; intro?: string }
   | { type: 'production'; h2: string; intro?: string }
   | { type: 'projects'; h2?: string; intro?: string }

@@ -288,7 +288,7 @@ export const blog6: PageData[] = [
         intro: 'No necesitas el sitio más grande del país para arrancar. Necesitas uno bien hecho que ya trabaje para ti.',
         items: [
           { h3: 'Asegura tu dominio y hosting a tu nombre', text: 'La base de todo. Registramos tu dominio y montamos el hosting con SSL a nombre de tu empresa, desde $350 al año. Tú eres el dueño desde el día uno.' },
-          { h3: 'Empieza por lo esencial', text: 'Una landing bien hecha desde $550 o una web PYME desde $950 ya te da presencia, confianza y un canal de contacto. No hace falta arrancar con todo.' },
+          { h3: 'Empieza por lo esencial', text: 'Una landing bien hecha desde $550 o una web PYME desde $1,250 ya te da presencia, confianza y un canal de contacto. No hace falta arrancar con todo.' },
           { h3: 'Conecta tus canales', text: 'Botón de WhatsApp, redes y ficha de Google apuntando a tu web. Así conviertes seguidores y curiosos en consultas reales.' },
           { h3: 'Crece según los resultados', text: 'Con el tiempo sumas reservas, pagos, SEO o una tienda. Escalas cuando los números lo pidan, no antes. Todo con cotización cerrada por escrito.' },
         ],
@@ -307,7 +307,7 @@ export const blog6: PageData[] = [
         h2: 'Preguntas frecuentes',
         items: [
           { q: '¿No me basta con Instagram y WhatsApp?', a: 'Son excelentes para atraer y conversar, pero no aparecen en Google cuando te buscan, no dan la misma confianza al investigarte y no son tuyos: la plataforma manda. La web es la base propia que sostiene y potencia tus redes, no las reemplaza.' },
-          { q: '¿Una web no es muy cara para un negocio pequeño?', a: 'Depende del alcance. Una landing bien hecha empieza en $550 y una web PYME en $950, con cotización cerrada por escrito. Comparado con lo que puede traerte un solo cliente que te encontró en Google, la inversión puede recuperarse rápido.' },
+          { q: '¿Una web no es muy cara para un negocio pequeño?', a: 'Depende del alcance. Una landing bien hecha empieza en $550 y una web PYME en $1,250, con cotización cerrada por escrito. Comparado con lo que puede traerte un solo cliente que te encontró en Google, la inversión puede recuperarse rápido.' },
           { q: '¿Cuánto tarda en dar resultados una página web?', a: 'Como canal de confianza y contacto, funciona desde el día que se publica. En Google, aparecer para búsquedas competidas toma tiempo y trabajo de SEO; el SEO local suele dar señales más rápido. Lo importante es que la base ya está trabajando por ti.' },
           { q: '¿Puedo tener web sin saber de tecnología?', a: 'Sí. Nosotros nos encargamos del dominio, el hosting, el diseño y el mantenimiento. Tú te dedicas a tu negocio. Y todo queda a nombre de tu empresa, así que siempre eres el dueño aunque no toques la parte técnica.' },
           { q: '¿Qué pasa si ya tengo muchos seguidores en redes?', a: 'Mejor todavía: una web te da dónde convertir esos seguidores en clientes. Diriges tu tráfico de redes a un sitio que sí es tuyo, con más información, más confianza y herramientas para agendar, pagar o contactarte. Aprovechas lo que ya construiste.' },

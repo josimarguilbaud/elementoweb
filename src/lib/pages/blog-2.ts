@@ -182,7 +182,7 @@ export const blog2: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta crear una tienda online en Panamá?', a: 'Nuestro e-commerce parte desde <strong>$1,500</strong> según el catálogo, las integraciones y el nivel de personalización. Antes de empezar recibes una cotización cerrada por escrito, sin costos sorpresa a mitad del proyecto.' },
+          { q: '¿Cuánto cuesta crear una tienda online en Panamá?', a: 'Nuestro e-commerce parte desde <strong>$1,950</strong> según el catálogo, las integraciones y el nivel de personalización. Antes de empezar recibes una cotización cerrada por escrito, sin costos sorpresa a mitad del proyecto.' },
           { q: '¿Necesito tener aviso de operación para vender online?', a: 'Para operar formalmente y activar cobros comerciales como el Botón de Pago Yappy, sí necesitas tu aviso de operación vigente. Es un requisito del banco, no algo que dependa de nosotros.' },
           { q: '¿Puedo administrar la tienda yo mismo después?', a: 'Sí. Te entregamos la tienda a tu nombre y te capacitamos para cargar productos, ver pedidos y gestionar el día a día. Si prefieres delegarlo, ofrecemos planes de mantenimiento desde $59 al mes.' },
           { q: '¿Cuánto tarda tener la tienda lista?', a: 'Depende del tamaño del catálogo y de las integraciones. Una tienda bien planificada suele estar lista en pocas semanas; lo que más influye es la rapidez con la que nos entregas fotos, precios y textos.' },

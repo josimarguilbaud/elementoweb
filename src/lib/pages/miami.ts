@@ -72,7 +72,7 @@ export const miamiPages: PageData[] = [
           { q: '¿Por qué no contratar una agencia que ya esté en Miami?', a: 'Puedes, y puede convenirte si valoras reunirte en persona. Nosotros trabajamos remoto desde Panamá, con el mismo proceso que usamos con nuestros clientes en Panamá y precios publicados en dólares. Compara alcance, plazos y precio por escrito antes de decidir.' },
           { q: '¿Hay diferencia horaria real?', a: 'Panamá está en UTC-5 todo el año. Miami está en UTC-5 en invierno y UTC-4 en horario de verano, así que la diferencia es de cero a una hora. En la práctica, coordinamos en tu jornada laboral sin fricción.' },
           { q: '¿El sitio queda en español, en inglés, o en los dos?', a: 'Depende de a quién le vendes. Si tu cliente en Miami opera en español (la mayoría en Doral, Hialeah y buena parte del condado), el sitio va en español. Si necesitas atender también al cliente angloparlante, agregamos inglés como segundo idioma sin duplicar el trabajo desde cero.' },
-          { q: '¿Cuánto cuesta comparado con una web para un cliente en Panamá?', a: 'Los mismos precios: landing desde $550, sitio corporativo desde $950, e-commerce desde $1,500. No cobramos más por atender Miami; la moneda y el proceso ya son los mismos.' },
+          { q: '¿Cuánto cuesta comparado con una web para un cliente en Panamá?', a: 'Los mismos precios: landing desde $550, sitio corporativo desde $1,250, e-commerce desde $1,950. No cobramos más por atender Miami; la moneda y el proceso ya son los mismos.' },
         ],
       },
       {
@@ -245,7 +245,7 @@ export const miamiPages: PageData[] = [
         h2: 'Preguntas frecuentes',
         items: [
           { q: '¿La web queda solo en español o también en inglés?', a: 'Para la mayoría de negocios en Hialeah, español es suficiente porque es el idioma en el que ya opera el cliente. Si además atiendes clientes angloparlantes, agregamos inglés sin problema.' },
-          { q: '¿Cuánto cuesta una web para un negocio pequeño en Hialeah?', a: 'Los mismos rangos que en Panamá: landing desde $550, sitio de varias páginas desde $950. Sin ITBMS, porque ese impuesto es panameño y no aplica facturando a un cliente en EE.UU.' },
+          { q: '¿Cuánto cuesta una web para un negocio pequeño en Hialeah?', a: 'Los mismos rangos que en Panamá: landing desde $550, sitio de varias páginas desde $1,250. Sin ITBMS, porque ese impuesto es panameño y no aplica facturando a un cliente en EE.UU.' },
           { q: '¿Cómo nos comunicamos durante el proyecto?', a: 'Por WhatsApp, en español, con la diferencia horaria de cero a una hora entre Panamá y Miami. El mismo canal que ya usas para hablar con tus propios clientes.' },
         ],
       },

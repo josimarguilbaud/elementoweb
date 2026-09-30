@@ -12,7 +12,7 @@ export const blog40: PageData[] = [
     slug: 'blog/cuanto-cuesta-tienda-online-panama',
     parent,
     title: 'Cuánto cuesta una tienda online en Panamá',
-    description: 'Una tienda online con Elemento Web parte desde $1,500 sin ITBMS. Qué define el precio final, qué se paga aparte y cuándo una tienda no te conviene.',
+    description: 'Una tienda online con Elemento Web parte desde $1,950 sin ITBMS. Qué define el precio final, qué se paga aparte y cuándo una tienda no te conviene.',
     h1: 'Cuánto cuesta una tienda online en Panamá',
     breadcrumb: 'Cuánto cuesta una tienda online',
     category: 'Precios',
@@ -22,7 +22,7 @@ export const blog40: PageData[] = [
       alt: 'Persona comprando desde el celular en una tienda online con carrito y método de pago',
     },
     lead: [
-      'Nuestro paquete de E-commerce parte desde $1,500 (precios en USD, sin ITBMS del 7%). Incluye catálogo y carrito completos, Yappy y pasarelas locales, gestión de inventario y configuración de envíos. El precio final sube o se queda en ese piso según el tamaño de tu catálogo y las integraciones que necesites.',
+      'Nuestro paquete de E-commerce parte desde $1,950 (precios en USD, sin ITBMS del 7%). Incluye hasta 25 productos cargados, categorías y carrito, configuración de pagos y envíos (las pasarelas y su cantidad se definen en la cotización), pruebas de compra y capacitación para gestionar pedidos. El precio final sube o se queda en ese piso según el tamaño de tu catálogo y las integraciones que necesites.',
       'Esta guía no repite la <a href="/blog/cuanto-cuesta-diseno-web-panama/">guía general de precios</a>: se centra en lo que solo aplica a una tienda, es decir, qué mueve el costo, qué se cotiza aparte y en qué casos una tienda completa es más de lo que tu negocio necesita.',
     ],
     blocks: [
@@ -30,14 +30,14 @@ export const blog40: PageData[] = [
         type: 'prose',
         h2: 'Qué incluye el precio base de una tienda online',
         paragraphs: [
-          'El paquete E-commerce de $1,500 cubre lo que una tienda necesita para vender: catálogo y carrito completos, Yappy y pasarelas locales, gestión de inventario y configuración de envíos. Los precios vigentes están siempre en la página de <a href="/precios/">precios</a>.',
+          'El paquete E-commerce de $1,950 cubre lo que una tienda necesita para vender: hasta 25 productos cargados, categorías y carrito, configuración de pagos y envíos (las pasarelas y su cantidad se definen en la cotización), pruebas de compra y capacitación para gestionar pedidos. Los precios vigentes están siempre en la página de <a href="/precios/">precios</a>.',
           'El detalle de lo que incluye, con la lógica de cómo lo construimos, está en la página de <a href="/servicios/tiendas-online-ecommerce-panama/">tiendas online y e-commerce</a>. Aquí nos concentramos en el costo.',
         ],
       },
       {
         type: 'cards',
         h2: 'Qué determina el costo final de tu tienda',
-        intro: 'El piso de $1,500 se mueve por estos factores. Los dejamos claros desde la cotización.',
+        intro: 'El piso de $1,950 se mueve por estos factores. Los dejamos claros desde la cotización.',
         items: [
           { h3: 'Tamaño del catálogo', text: 'No es lo mismo cargar veinte productos con pocas variantes que un catálogo grande con tallas, colores y categorías. Más productos y más variantes significan más trabajo de carga y de orden.' },
           { h3: 'Medios de pago', text: 'Yappy y las pasarelas locales están dentro del paquete. Cada método se prueba antes de abrir la tienda; cuanto más particular sea tu forma de cobrar, más trabajo de integración hay.' },
@@ -82,8 +82,8 @@ export const blog40: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes sobre el costo de una tienda online',
         items: [
-          { q: '¿Cuánto cuesta una tienda online en Panamá con ustedes?', a: 'El paquete E-commerce parte desde $1,500, sin ITBMS del 7%. Incluye catálogo y carrito completos, Yappy y pasarelas locales, gestión de inventario y configuración de envíos. El precio final depende del tamaño del catálogo y de las integraciones.' },
-          { q: '¿Los $1,500 incluyen hosting y dominio?', a: 'No. La infraestructura anual es aparte y parte desde $350 con dominio, hosting cloud y certificado SSL. Según el proyecto puede ser hosting compartido ($225 al año), cloud ($350) o VPS ($550).' },
+          { q: '¿Cuánto cuesta una tienda online en Panamá con ustedes?', a: 'El paquete E-commerce parte desde $1,950, sin ITBMS del 7%. Incluye hasta 25 productos cargados, categorías y carrito, configuración de pagos y envíos (las pasarelas y su cantidad se definen en la cotización), pruebas de compra y capacitación para gestionar pedidos. El precio final depende del tamaño del catálogo y de las integraciones.' },
+          { q: '¿Los $1,950 incluyen hosting y dominio?', a: 'No. La infraestructura anual es aparte y parte desde $350 con dominio, hosting cloud y certificado SSL. Según el proyecto puede ser hosting compartido ($225 al año), cloud ($350) o VPS ($550).' },
           { q: '¿Yappy tiene un costo adicional de integración?', a: 'El Botón de Pago Yappy y las pasarelas con tarjeta forman parte del paquete E-commerce. Cada método se prueba antes de abrir la tienda. Más detalle en la página de <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy y pasarelas de pago</a>.' },
           { q: '¿Cómo se paga la tienda?', a: 'En tres pagos: 50% al iniciar, 30% en el avance y 20% al entregar. Los precios no incluyen ITBMS del 7%.' },
           { q: '¿Cuándo NO me conviene una tienda online?', a: 'Cuando vendes muy pocos productos y todo ya se cierra por WhatsApp, cuando no tienes resuelta la logística de entrega o cuando nadie va a mantener el catálogo al día. En esos casos una landing page o una web simple es más sensata.' },
@@ -123,7 +123,7 @@ export const blog40: PageData[] = [
       alt: 'Diseño de una landing page en una pantalla con una oferta y un botón de contacto',
     },
     lead: [
-      'Una landing page en Elemento Web cuesta $550 (USD, sin ITBMS del 7%). Es una página enfocada en conversión, con diseño a medida, responsive y un botón directo a WhatsApp, con entrega en 5 días hábiles.',
+      'Una landing page en Elemento Web cuesta $550 (USD, sin ITBMS del 7%). Es una página enfocada en conversión, con diseño a medida, responsive y un botón directo a WhatsApp, con entrega en 5 días hábiles desde recibir el contenido y aprobar el alcance.',
       'La <a href="/blog/cuanto-cuesta-diseno-web-panama/">guía general de precios</a> compara todos los paquetes. Aquí respondemos solo esta pregunta: qué hay detrás de esos $550, qué se suma aparte y cuándo una landing no es la herramienta correcta.',
     ],
     blocks: [
@@ -131,7 +131,7 @@ export const blog40: PageData[] = [
         type: 'prose',
         h2: 'Qué incluye el precio de $550',
         paragraphs: [
-          'El paquete Landing Page incluye una página enfocada en conversión, diseño a medida, responsive, un botón directo a WhatsApp y entrega en 5 días hábiles. Es un solo destino con una sola acción: la que quieres que haga tu visitante.',
+          'El paquete Landing Page incluye una página enfocada en conversión, diseño a medida, responsive, un botón directo a WhatsApp y entrega en 5 días hábiles desde recibir el contenido y aprobar el alcance. Es un solo destino con una sola acción: la que quieres que haga tu visitante.',
           'Sirve como destino de una campaña, de una oferta o de un servicio concreto. Si quieres entender bien en qué se diferencia de un sitio con varias páginas, lo explicamos en <a href="/blog/landing-page-vs-sitio-web-cual-necesitas/">landing page vs sitio web</a>, y el detalle del servicio está en <a href="/servicios/landing-pages-alta-conversion-panama/">landing pages de alta conversión</a>.',
         ],
       },
@@ -181,7 +181,7 @@ export const blog40: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes sobre el costo de una landing page',
         items: [
-          { q: '¿Cuánto cuesta una landing page en Panamá con ustedes?', a: 'El paquete Landing Page cuesta $550 (USD, sin ITBMS del 7%). Incluye una página enfocada en conversión, diseño a medida, responsive, botón directo a WhatsApp y entrega en 5 días hábiles.' },
+          { q: '¿Cuánto cuesta una landing page en Panamá con ustedes?', a: 'El paquete Landing Page cuesta $550 (USD, sin ITBMS del 7%). Incluye una página enfocada en conversión, diseño a medida, responsive, botón directo a WhatsApp y entrega en 5 días hábiles desde recibir el contenido y aprobar el alcance.' },
           { q: '¿El precio incluye dominio y hosting?', a: 'No, la infraestructura es aparte. Va desde $350 al año con dominio, hosting cloud y SSL, y para una landing de tráfico moderado existe el hosting compartido a $225 al año.' },
           { q: '¿Y si no tengo los textos ni las imágenes?', a: 'No es un bloqueo. Podemos redactar el contenido con IA ($150 para una landing) y generar imágenes originales ($100), y te los mostramos para tu aprobación antes de publicar.' },
           { q: '¿Cómo se paga?', a: 'En tres pagos: 50% al iniciar, 30% en el avance y 20% al entregar. Los precios no incluyen ITBMS.' },
@@ -298,7 +298,7 @@ export const blog40: PageData[] = [
     slug: 'blog/cuanto-cuesta-redisenar-una-pagina-web',
     parent,
     title: 'Cuánto cuesta rediseñar una página web',
-    description: 'Un rediseño web parte del precio de un sitio nuevo (desde $950) más la auditoría y la migración. Qué lo define, qué va aparte y cuándo no rediseñar.',
+    description: 'Un rediseño web parte del precio de un sitio nuevo (desde $1,250) más la auditoría y la migración. Qué lo define, qué va aparte y cuándo no rediseñar.',
     h1: 'Cuánto cuesta rediseñar una página web',
     breadcrumb: 'Cuánto cuesta rediseñar una web',
     category: 'Precios',
@@ -308,7 +308,7 @@ export const blog40: PageData[] = [
       alt: 'Comparación entre un sitio web antiguo y su versión rediseñada en pantalla',
     },
     lead: [
-      'Un rediseño en Elemento Web se mueve en el rango de un sitio nuevo, desde $950 (USD, sin ITBMS del 7%), más la auditoría y la migración. El precio cerrado se da después de auditar tu sitio actual, porque depende de su estado y del alcance.',
+      'Un rediseño en Elemento Web se mueve en el rango de un sitio nuevo, desde $1,250 (USD, sin ITBMS del 7%), más la auditoría y la migración. El precio cerrado se da después de auditar tu sitio actual, porque depende de su estado y del alcance.',
       'No damos una cifra sin mirar antes: rediseñar sin auditar es justo lo que hace perder el posicionamiento. Esta guía explica qué mueve el costo, qué se suma aparte y cuándo conviene no rediseñar todavía. Los precios de los paquetes, en la <a href="/blog/cuanto-cuesta-diseno-web-panama/">guía general</a>.',
     ],
     blocks: [
@@ -341,7 +341,7 @@ export const blog40: PageData[] = [
           'Migración de datos: cotización aparte',
           'Integraciones externas por API: cotización aparte',
           'Sitio en varios idiomas: cotización aparte, por cada idioma extra',
-          'Contenido nuevo: redacción con IA, $200 para una web corporativa de hasta 6 páginas internas ($350 si es más extensa)',
+          'Contenido nuevo: redacción con IA, $200 para una web corporativa de hasta 6 páginas en total ($350 si es más extensa)',
           'Infraestructura anual: desde $350 con dominio, hosting cloud y SSL',
           'Mantenimiento web: desde $59 al mes',
           'Entrega express: recargo del 30%',
@@ -369,7 +369,7 @@ export const blog40: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes sobre el costo de un rediseño',
         items: [
-          { q: '¿Cuánto cuesta rediseñar una página web?', a: 'Como referencia, un rediseño se mueve en el rango de un sitio nuevo, desde $950, más la auditoría y la migración. Sin ITBMS del 7%. La cotización cerrada se da tras auditar el sitio actual.' },
+          { q: '¿Cuánto cuesta rediseñar una página web?', a: 'Como referencia, un rediseño se mueve en el rango de un sitio nuevo, desde $1,250, más la auditoría y la migración. Sin ITBMS del 7%. La cotización cerrada se da tras auditar el sitio actual.' },
           { q: '¿Por qué no dan un precio sin ver mi sitio?', a: 'Porque el costo depende del tamaño del sitio, del estado de su base, del contenido que se conserva y de las integraciones activas. Rediseñar sin auditar es la causa número uno de desplomes de tráfico.' },
           { q: '¿Perderé mi posicionamiento en Google?', a: 'No, si se hace con un mapa de URLs y redirecciones 301, que en nuestro proceso son una etapa obligatoria y no un extra que se cobra aparte.' },
           { q: '¿Se paga por adelantado todo?', a: 'No. El pago se divide en 50% al iniciar, 30% en el avance y 20% al entregar.' },
@@ -460,7 +460,7 @@ export const blog40: PageData[] = [
         type: 'prose',
         h2: 'Cuándo NO conviene un desarrollo a medida',
         paragraphs: [
-          'Si tu necesidad cabe en un paquete, un desarrollo a medida es pagar de más. Una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> desde $950, con hasta 6 páginas internas, o una tienda desde $1,500, cubren la mayoría de los negocios que solo necesitan presencia o venta en línea.',
+          'Si tu necesidad cabe en un paquete, un desarrollo a medida es pagar de más. Una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> desde $1,250, con hasta 6 páginas en total, o una tienda desde $1,950, cubren la mayoría de los negocios que solo necesitan presencia o venta en línea.',
           'Tampoco conviene si todavía no sabes qué quieres que haga el sistema. Un proyecto a medida necesita reglas claras; si el proceso de tu negocio aún cambia cada semana, lo sensato es empezar con algo más simple y aprender con el uso.',
           'Y si el presupuesto no alcanza para el piso de $2,900, es mejor arrancar con un paquete y dejar lo a medida para una segunda etapa, que forzar un proyecto complejo con recursos ajustados.',
         ],

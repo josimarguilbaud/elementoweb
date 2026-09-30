@@ -260,7 +260,7 @@ export const blog7: PageData[] = [
         h2: 'Qué es un sitio web completo',
         paragraphs: [
           'Un sitio web completo es un conjunto de páginas conectadas: inicio, servicios, sobre nosotros, portafolio, contacto, blog. Cada sección cumple una función y, en conjunto, construyen presencia, confianza y posicionamiento. Es la casa digital del negocio, no una vitrina de una sola oferta.',
-          'Su gran ventaja es el SEO. Cuando cada servicio importante tiene su propia página optimizada, Google puede mostrarte para muchas búsquedas distintas, y ese tráfico llega gratis mes tras mes. Una <strong>Página PYME</strong> bien estructurada es una máquina de captar clientes que buscan lo que ofreces, sin pagar por cada clic.',
+          'Su gran ventaja es el SEO. Cuando cada servicio importante tiene su propia página optimizada, Google puede mostrarte para muchas búsquedas distintas, y ese tráfico llega gratis mes tras mes. Una <strong>Web empresarial</strong> bien estructurada es una máquina de captar clientes que buscan lo que ofreces, sin pagar por cada clic.',
           'El sitio completo también da espacio para crecer: sumar un blog que atrae visitas, un catálogo, un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas</a> o una tienda. Es la opción para el negocio que piensa en internet como un canal permanente, no como una campaña puntual.',
         ],
       },
@@ -272,7 +272,7 @@ export const blog7: PageData[] = [
           { h3: 'Objetivo', text: 'La landing busca una acción inmediata; el sitio construye presencia y capta clientes de forma continua.' },
           { h3: 'SEO', text: 'La landing rara vez posiciona por sí sola; el sitio completo, con una página por servicio, es el que trae tráfico gratis desde Google.' },
           { h3: 'Ideal para', text: 'La landing brilla con pauta y ofertas concretas; el sitio brilla como presencia permanente del negocio.' },
-          { h3: 'Inversión', text: 'La landing parte desde $550; una Página PYME desde $950, según páginas e integraciones.' },
+          { h3: 'Inversión', text: 'La landing parte desde $550; una Web empresarial desde $1,250, según páginas e integraciones.' },
         ],
       },
       {
@@ -303,7 +303,7 @@ export const blog7: PageData[] = [
         h2: 'Cuánto cuesta cada una en Panamá',
         paragraphs: [
           'Una landing page de alta conversión parte desde $550: una sola página enfocada, con diseño a medida y botón directo a WhatsApp. Es la inversión más contenida para empezar a captar con una oferta clara.',
-          'Un sitio web tipo Página PYME parte desde $950 e incluye varias secciones, una página por servicio con SEO y un panel para administrarlo tú. Si el proyecto necesita catálogo y pagos, una tienda online parte desde $1,500, y un sitio corporativo a medida se cotiza desde $2,900. En todos los casos, el precio se cierra por escrito antes de empezar.',
+          'Un sitio web tipo Web empresarial parte desde $1,250 e incluye varias secciones, una página por servicio con SEO y un panel para administrarlo tú. Si el proyecto necesita catálogo y pagos, una tienda online parte desde $1,950, y un sitio corporativo a medida se cotiza desde $2,900. En todos los casos, el precio se cierra por escrito antes de empezar.',
           'Si quieres el panorama completo de precios y qué encarece un proyecto, lo desglosamos en <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a>. La regla de oro: no elijas por precio, elige por objetivo, y deja que el objetivo defina el formato.',
         ],
       },
@@ -314,7 +314,7 @@ export const blog7: PageData[] = [
           { q: '¿Una landing page sirve para posicionar en Google?', a: 'Poco. Una sola página compite por muy pocas búsquedas y no da a Google suficientes motivos para mostrarte en muchas consultas. Para SEO conviene un sitio completo con una página por servicio. La landing brilla más con pauta pagada que con posicionamiento orgánico.' },
           { q: '¿Puedo empezar con una landing y luego crecer?', a: 'Sí, y es una estrategia muy sensata cuando el presupuesto es ajustado. Lanzas una landing sólida, validas que genera consultas y luego construyes el sitio completo sobre esa base. Lo importante es que la landing esté bien hecha desde el inicio, no una plantilla barata.' },
           { q: '¿Qué necesito si voy a hacer pauta en Google o Meta?', a: 'Para pauta, una landing page enfocada suele convertir mejor que mandar el tráfico a la página de inicio de un sitio completo, porque elimina distracciones y guía a una sola acción. Muchos negocios tienen su sitio y, además, landings específicas para cada campaña.' },
-          { q: '¿Cuál es más barata?', a: 'La landing, porque es una sola página. Parte desde $550, frente a los $950 de una Página PYME. Pero "más barata" no significa "mejor" en todos los casos: si tu negocio necesita posicionar varios servicios, ahorrar con una landing puede costarte el tráfico gratis que solo un sitio completo genera.' },
+          { q: '¿Cuál es más barata?', a: 'La landing, porque es una sola página. Parte desde $550, frente a los $1,250 de una Web empresarial. Pero "más barata" no significa "mejor" en todos los casos: si tu negocio necesita posicionar varios servicios, ahorrar con una landing puede costarte el tráfico gratis que solo un sitio completo genera.' },
         ],
       },
       {

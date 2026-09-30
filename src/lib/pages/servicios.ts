@@ -139,10 +139,10 @@ export const servicios: PageData[] = [
       {
         type: 'checklist',
         h2: 'Qué incluye tu web corporativa',
-        intro: 'Alcance base del servicio. Desde $950, con cotización cerrada según páginas e integraciones.',
+        intro: 'Alcance base del servicio. Desde $1,250, con cotización cerrada según páginas e integraciones.',
         items: [
           'Diseño a medida alineado a tu marca, sin plantillas compradas',
-          'Hasta 6 páginas internas con estructura de venta',
+          'Hasta 6 páginas en total con estructura de venta',
           'Una página por servicio, optimizada para su búsqueda en Google',
           'Redacción y estructura del contenido junto a tu equipo',
           'Formularios conectados a tu correo y botones directos a WhatsApp',
@@ -209,7 +209,7 @@ export const servicios: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta un sitio corporativo en Panamá?', a: 'Desde <strong>$950</strong> con hasta 6 páginas internas. Sitios con más secciones, dos idiomas o integraciones especiales se cotizan según alcance, siempre con precio cerrado antes de empezar.' },
+          { q: '¿Cuánto cuesta un sitio corporativo en Panamá?', a: 'Desde <strong>$1,250</strong> con hasta 6 páginas en total. Sitios con más secciones, dos idiomas o integraciones especiales se cotizan según alcance, siempre con precio cerrado antes de empezar.' },
           { q: '¿En cuánto tiempo estará listo?', a: 'Entre 2 y 3 semanas desde que recibimos tu contenido (textos base, logo e imágenes). Si no tienes contenido, te ayudamos a producirlo.' },
           { q: '¿Puedo editarlo yo mismo después?', a: 'Sí. Entregamos un panel autoadministrable y una capacitación grabada. Cambiar textos, fotos o publicar en el blog no requiere programador.' },
           { q: '¿Con qué tecnología lo construyen?', a: 'Depende de tu caso: <a href="/tecnologias/diseno-web-wordpress-panama/">WordPress</a> cuando el cliente edita contenido con frecuencia, o <a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">desarrollo a medida</a> cuando el rendimiento o las integraciones lo exigen. Te recomendamos con argumentos, no por comodidad nuestra.' },
@@ -284,7 +284,7 @@ export const servicios: PageData[] = [
       {
         type: 'checklist',
         h2: 'Qué incluye tu e-commerce',
-        intro: 'Desde $1,500 según catálogo e integraciones. El mejor e-commerce para Panamá debe incluir:',
+        intro: 'Desde $1,950 según catálogo e integraciones. El mejor e-commerce para Panamá debe incluir:',
         items: [
           'Catálogo y carrito completos con gestión de inventario',
           '<a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Botón de Pago Yappy</a> y pasarelas con tarjeta',
@@ -354,7 +354,7 @@ export const servicios: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta una tienda online en Panamá?', a: 'Desde <strong>$1,500</strong> con catálogo, carrito, pagos y envíos configurados. El precio sube según el tamaño del catálogo y las integraciones (inventario, facturación, logística).' },
+          { q: '¿Cuánto cuesta una tienda online en Panamá?', a: 'Desde <strong>$1,950</strong> con catálogo, carrito, pagos y envíos configurados. El precio sube según el tamaño del catálogo y las integraciones (inventario, facturación, logística).' },
           { q: '¿Puedo cobrar con Yappy?', a: 'Sí. Integramos el <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Botón de Pago Yappy oficial</a> además de pasarelas con tarjeta, para que el cliente pague como prefiera.' },
           { q: '¿Quién administra los productos?', a: 'Tu equipo, desde un panel diseñado para eso. Agregar productos, cambiar precios y despachar pedidos no requiere conocimientos técnicos. Entregamos capacitación grabada.' },
           { q: '¿Qué pasa con los carritos abandonados?', a: 'Configuramos recuperación automática por correo y, si activas WhatsApp Business API, seguimiento por chat. La mayor parte de las ventas perdidas se pierde ahí, no en el catálogo.' },
@@ -418,7 +418,7 @@ export const servicios: PageData[] = [
     slug: 'servicios/landing-pages-alta-conversion-panama',
     parent,
     title: 'Landing Pages en Panamá | Alta Conversión desde $550',
-    description: 'Landing pages de alta conversión en Panamá: una página, una oferta, una acción. El destino correcto para tu pauta. Entrega en 5 días hábiles.',
+    description: 'Landing pages de alta conversión en Panamá: una página, una oferta, una acción. El destino correcto para tu pauta. Entrega en 5 días hábiles desde recibir el contenido y aprobar el alcance.',
     h1: 'Landing pages de alta conversión',
     breadcrumb: 'Landing Pages',
     service: { type: 'Diseño de landing pages de conversión' },
@@ -500,7 +500,7 @@ export const servicios: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta una landing page en Panamá?', a: 'Desde <strong>$550</strong>, con redacción, diseño a medida, WhatsApp integrado y medición de conversiones. Entrega en 5 días hábiles.' },
+          { q: '¿Cuánto cuesta una landing page en Panamá?', a: 'Desde <strong>$550</strong>, con redacción, diseño a medida, WhatsApp integrado y medición de conversiones. Entrega en 5 días hábiles desde recibir el contenido y aprobar el alcance.' },
           { q: '¿Sirve para campañas de WhatsApp?', a: 'Sí, es su mejor uso en Panamá: la landing califica al visitante y lo entrega a tu WhatsApp con el mensaje de la campaña ya escrito. Tu equipo recibe conversaciones listas para cerrar.' },
           { q: '¿Incluye la pauta publicitaria?', a: 'La landing y la gestión de pauta son servicios distintos, pero ofrecemos ambos y trabajan mejor juntos. Ver <a href="/marketing/google-ads-panama/">Google Ads</a> y <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a>. Si ya tienes agencia de pauta, coordinamos los píxeles y eventos de conversión.' },
           { q: '¿Una landing o un sitio completo?', a: 'Si necesitas validar una oferta o correr una campaña puntual, landing. Si necesitas presencia permanente y posicionamiento en Google, un <a href="/servicios/diseno-web-corporativo-panama/">sitio corporativo</a>. Muchos clientes empiezan con la landing y crecen al sitio completo.' },
@@ -511,7 +511,7 @@ export const servicios: PageData[] = [
           { q: '¿Puedo usar una sola landing para todas mis campañas?', a: 'Se puede y sale caro. Cuando el anuncio promete una cosa y la landing habla de otra, Google lo penaliza en el costo por clic y Meta en el costo por resultado. Una landing por oferta cuesta poco de producir y casi siempre ahorra más de lo que cuesta.' },
           { q: '¿Por qué la landing no debe tener menú?', a: 'Porque cada enlace del menú es una salida. Una landing existe para que el visitante haga una sola cosa; darle diez caminos alternativos es pagar por una visita y luego regalarla.' },
           { q: '¿Qué mido en una landing?', a: 'Tasa de conversión, costo por lead y calidad del lead. El tercero es el que casi nadie mira y el que decide: bajar la barrera del formulario sube la conversión y puede llenarte de contactos que no compran. Bajar el costo por lead mientras sube el costo por venta es el autoengaño más común.' },
-          { q: '¿Cuándo NO te conviene una landing page?', a: 'Cuando el cliente necesita investigarte antes de decidir. Una firma legal o una constructora se evalúan leyendo: ahí una sola página no alcanza y conviene el sitio de hasta 6 páginas desde $950. La landing brilla cuando hay una sola oferta, tráfico dirigido y una sola acción posible.' },
+          { q: '¿Cuándo NO te conviene una landing page?', a: 'Cuando el cliente necesita investigarte antes de decidir. Una firma legal o una constructora se evalúan leyendo: ahí una sola página no alcanza y conviene el sitio de hasta 6 páginas desde $1,250. La landing brilla cuando hay una sola oferta, tráfico dirigido y una sola acción posible.' },
         ],
       },
       {
@@ -646,7 +646,7 @@ export const servicios: PageData[] = [
         h2: 'Preguntas frecuentes',
         items: [
           { q: '¿Voy a perder mi posición en Google al rediseñar?', a: 'No, si se hace con mapa de URLs y redirecciones 301. Es el paso que la mayoría omite y la causa número uno de desplomes de tráfico tras un rediseño. En nuestro proceso es una etapa obligatoria, no un extra.' },
-          { q: '¿Cuánto cuesta un rediseño?', a: 'Depende del estado actual y el alcance. Como referencia, un rediseño corporativo se mueve en el rango de un sitio nuevo (desde $950) más la auditoría y migración. Cotización cerrada tras auditar.' },
+          { q: '¿Cuánto cuesta un rediseño?', a: 'Depende del estado actual y el alcance. Como referencia, un rediseño corporativo se mueve en el rango de un sitio nuevo (desde $1,250) más la auditoría y migración. Cotización cerrada tras auditar.' },
           { q: '¿Pueden trabajar sobre mi sitio actual sin rehacerlo todo?', a: 'A veces sí: si la base técnica es sana, una modernización parcial (tipografía, estructura, velocidad) logra el 70% del resultado por menos. La auditoría lo revela y te lo decimos con franqueza.' },
           { q: 'Perdí los accesos de mi sitio anterior. ¿Pueden ayudar?', a: 'Sí, es más común de lo que crees. Si puedes demostrar la titularidad del dominio o de la empresa, gestionamos la recuperación antes de rediseñar.' },
           { q: '¿Cuánto tarda un rediseño?', a: 'Entre 2 y 4 semanas según el tamaño del sitio y el estado de su contenido. La auditoría y el mapa de redirecciones toman los primeros días; la reconstrucción, el resto. Te damos un cronograma con fechas al cerrar el alcance.' },

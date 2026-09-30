@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Pic from '../components/Pic.astro';
+import PricingExtras from '../components/PricingExtras.astro';
 import Preloader from '../components/Preloader.astro';
 import { site, cols, marketing, saas, pricing, industrias, url, wa, clientLogos, portfolio, portfolioCats, planKey } from '../lib/site';
 import { ogFor } from '../lib/img';
@@ -63,7 +64,7 @@ const tools = [
    JSON-LD (ver homeJsonLd). Son las que mas se buscan en el mercado, asi que
    conviene que un motor generativo pueda citarlas textualmente. */
 const faqs: [string, string][] = [
-  ['¿Cuánto cuesta una página web en Panamá?', 'Landing desde $550, corporativa desde $950 y e-commerce desde $1,500. Siempre con cotización cerrada antes de empezar.'],
+  ['¿Cuánto cuesta una página web en Panamá?', 'Landing desde $550, corporativa desde $1,250 y e-commerce desde $1,950. Siempre con cotización cerrada antes de empezar.'],
   ['¿Mi web va a aparecer en Google?', 'Se entrega con SEO técnico completo. Posicionar términos competitivos requiere además trabajo continuo de contenido, que ofrecemos por separado.'],
   ['¿Cuánto tarda el desarrollo?', 'Una landing en 5 días hábiles; un sitio corporativo entre 2 y 3 semanas desde que recibimos tu contenido.'],
   ['¿Cómo funciona el pago?', 'En tres etapas: 50% para iniciar, 30% al aprobar el demo online y 20% para publicar en tu dominio. Tarjeta, transferencia o Yappy.'],
@@ -254,7 +255,7 @@ const faqs: [string, string][] = [
         <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Precios</p>
         <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Precios claros, sin <span class="grad-text">sorpresas después</span>.</h2>
         <p class="reveal mt-5 text-lg text-ink/70">Cotización cerrada antes de empezar. Precios en USD, no incluyen ITBMS. <a href="/precios/" class="font-semibold text-teal-deep underline underline-offset-2">Ver qué incluye cada uno</a>.</p>
-        <p class="reveal mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-ink/70">Plazos: landing en 5 días hábiles y sitio corporativo en 2 a 3 semanas, desde que recibimos tu contenido. Redacción de textos, imágenes con IA y logo se cotizan aparte. El alcance exacto de cada plan se confirma por escrito antes de empezar.</p>
+        <p class="reveal mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-ink/70">Sitio corporativo en 2 a 3 semanas desde que recibimos tu contenido. Dominio, hosting, correo, mantenimiento, licencias de terceros y la redacción de textos no están incluidos en el precio del proyecto: <a href="/precios/" class="font-semibold text-teal-deep underline underline-offset-2">mira cuánto cuestan</a>. El alcance exacto se confirma por escrito antes de empezar.</p>
         <p class="reveal mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold text-teal-deep">{Object.values(archCards).map((c) => <a href={url(c.slug)} class="underline underline-offset-2">{c.t}</a>)}</p>
       </div>
       <div class="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
@@ -263,11 +264,13 @@ const faqs: [string, string][] = [
             {plan.featured && <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold text-night">Recomendado</span>}
             <h3 class="font-display text-xl font-bold">{plan.name}</h3>
             <div class="mt-6 flex items-end gap-1.5"><span class={`text-sm font-medium ${plan.featured ? 'text-white/50' : 'text-ink/70'}`}>desde</span><span class="font-display text-5xl font-extrabold tracking-tight">{plan.price}</span></div>
-            <ul class="mt-7 flex flex-col gap-3">{plan.features.map((f) => (<li class="flex items-center gap-3 text-sm"><span class={`grid h-5 w-5 shrink-0 place-items-center rounded-full ${plan.featured ? 'bg-teal text-night' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={plan.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>))}</ul>
+            <ul class="mt-7 flex flex-col gap-3">{plan.features.map((f) => (<li class="flex items-start gap-3 text-sm"><span class={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${plan.featured ? 'bg-teal text-night' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={plan.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>))}</ul>
             <a href={`/contacto/?servicio=${planKey(plan.name)}#formulario`} aria-label={`Empezar con el plan ${plan.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${plan.featured ? 'bg-teal text-night hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
           </div>
         ))}
       </div>
+
+      <PricingExtras mode="home" />
 
       <!-- Franja premium: corporativo a medida -->
       <div class="reveal relative mt-6 overflow-hidden rounded-[2rem] bg-night px-8 py-10 text-white md:px-12 md:py-12">
@@ -346,7 +349,7 @@ const faqs: [string, string][] = [
         </a>
         <a href={waHome} class="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white/85 transition-colors hover:border-teal hover:text-teal">Escribir por WhatsApp</a>
       </div>
-      <p class="reveal mt-5 text-sm text-white/40">Respuesta el mismo día hábil · Landing desde $550 · Corporativa desde $950</p>
+      <p class="reveal mt-5 text-sm text-white/40">Respuesta el mismo día hábil · Landing desde $550 · Corporativa desde $1,250</p>
     </div>
   </section>
 

@@ -9,7 +9,7 @@ export const disenoWebPanama: PageData[] = [
     slug: 'diseno-web-panama',
     title: 'Diseño Web en Panamá | Páginas que Consiguen Clientes',
     description:
-      'Diseño web en Panamá para empresas que quieren vender: sitios corporativos, tiendas online y landing pages. SEO, WhatsApp y precio cerrado desde $950.',
+      'Diseño web en Panamá para empresas que quieren vender: sitios corporativos, tiendas online y landing pages. SEO, WhatsApp y precio cerrado desde $1,250.',
     h1: 'Diseño web en Panamá',
     breadcrumb: 'Diseño Web en Panamá',
     service: { type: 'Diseño y desarrollo web' },
@@ -113,7 +113,7 @@ export const disenoWebPanama: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes sobre diseño web en Panamá',
         items: [
-          { q: '¿Cuánto cuesta una página web en Panamá?', a: 'Depende del formato: una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> parte desde $550, un <a href="/servicios/diseno-web-corporativo-panama/">sitio corporativo</a> desde $950 y una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online</a> desde $1,500. Toda cotización es cerrada y por escrito antes de empezar, según tus páginas e integraciones.' },
+          { q: '¿Cuánto cuesta una página web en Panamá?', a: 'Depende del formato: una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> parte desde $550, un <a href="/servicios/diseno-web-corporativo-panama/">sitio corporativo</a> desde $1,250 y una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online</a> desde $1,950. Toda cotización es cerrada y por escrito antes de empezar, según tus páginas e integraciones.' },
           { q: '¿En cuánto tiempo tienen lista mi web?', a: 'Una landing sencilla puede estar en 1 semana; un sitio corporativo entre 2 y 3 semanas; un e-commerce entre 3 y 5 semanas. El reloj arranca cuando recibimos tu contenido base. Si no lo tienes, te ayudamos a producirlo.' },
           { q: '¿La página aparecerá en Google?', a: 'Todo sitio se entrega con SEO técnico completo y estructura optimizada, que es la base para posicionar. Aparecer de primero en búsquedas competidas requiere además trabajo continuo de <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y contenido</a>, que ofrecemos como servicio de crecimiento.' },
           { q: '¿Puedo administrar la web yo mismo después?', a: 'Sí. Entregamos un panel autoadministrable y una capacitación grabada. Cambiar textos, fotos, precios o publicar en el blog no requiere llamar a un programador.' },

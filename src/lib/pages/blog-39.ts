@@ -235,7 +235,7 @@ export const blog39: PageData[] = [
       alt: 'Calculadora, cuaderno y computadora portátil sobre un escritorio mientras se estima el presupuesto de un sitio web',
     },
     lead: [
-      'El costo de una página web para un negocio de Miami contratando a una agencia en Panamá se calcula sumando cinco cosas: la implementación, el hosting y el dominio, el mantenimiento, el contenido y los impuestos que apliquen. Nuestros precios de implementación parten de $550 (Landing), $950 (Página PYME), $1,500 (E-commerce) y $2,900 (a medida), en dólares.',
+      'El costo de una página web para un negocio de Miami contratando a una agencia en Panamá se calcula sumando cinco cosas: la implementación, el hosting y el dominio, el mantenimiento, el contenido y los impuestos que apliquen. Nuestros precios de implementación parten de $550 (Landing), $1,250 (Web empresarial), $1,950 (E-commerce) y $2,900 (a medida), en dólares.',
       'No vamos a citar rangos de mercado de Miami ni de agencias locales, porque no los tenemos verificados y un número inventado no te sirve para decidir. Sí te damos un método y nuestros precios reales, para que armes tu propio presupuesto y lo compares con cualquier otra cotización.',
     ],
     blocks: [
@@ -265,8 +265,8 @@ export const blog39: PageData[] = [
         intro: 'Son precios propios, en dólares estadounidenses. Cada proyecto se cotiza según su alcance real.',
         items: [
           { h3: 'Landing: $550', text: 'Una página enfocada en una oferta o servicio, pensada para recibir consultas. Es el punto de partida más sencillo.' },
-          { h3: 'Página PYME: $950', text: 'Para un negocio que necesita presentarse con varias secciones, hasta 6 páginas internas.' },
-          { h3: 'E-commerce: $1,500', text: 'Una tienda en línea para vender productos directamente desde el sitio.' },
+          { h3: 'Web empresarial: $1,250', text: 'Para un negocio que necesita presentarse con varias secciones, hasta 6 páginas en total.' },
+          { h3: 'E-commerce: $1,950', text: 'Una tienda en línea para vender productos directamente desde el sitio.' },
           { h3: 'A medida: $2,900', text: 'Para proyectos con funciones específicas que no encajan en un formato estándar, como portales, reservas o integraciones.' },
         ],
       },
@@ -307,7 +307,7 @@ export const blog39: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes sobre el costo de una web para Miami',
         items: [
-          { q: '¿Cuánto cuesta una página web para un negocio en Miami con ustedes?', a: 'La implementación parte de $550 para una Landing, $950 para una Página PYME de hasta 6 páginas internas, $1,500 para un E-commerce y $2,900 para un proyecto a medida. A eso se suma la infraestructura, desde $350 al año, y el mantenimiento, desde $59 al mes.' },
+          { q: '¿Cuánto cuesta una página web para un negocio en Miami con ustedes?', a: 'La implementación parte de $550 para una Landing, $1,250 para una Web empresarial de hasta 6 páginas en total, $1,950 para un E-commerce y $2,900 para un proyecto a medida. A eso se suma la infraestructura, desde $350 al año, y el mantenimiento, desde $59 al mes.' },
           { q: '¿Cuánto cobran otras agencias de Miami?', a: 'No lo sabemos con certeza y no queremos inventar rangos. Lo recomendable es pedir cotizaciones por escrito y compararlas con los cinco componentes: implementación, hosting y dominio, mantenimiento, contenido e impuestos.' },
           { q: '¿En qué moneda facturan?', a: 'En dólares estadounidenses, y la factura sale desde Panamá.' },
           { q: '¿Tengo que pagar impuestos adicionales?', a: 'Depende de tu situación y de cómo se facture. No damos por hecho ninguna exención: el tratamiento de impuestos se confirma en la cotización, y conviene que tu contador la revise.' },

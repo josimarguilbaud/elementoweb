@@ -31,7 +31,7 @@ function schemaRules(route, n, bad, routes, ids) {
     case 'Person': need(['name']); break;
     case 'FAQPage': need(['mainEntity']); (n.mainEntity || []).forEach((q, i) => { if (!q.name || !q.acceptedAnswer?.text) bad(route, `schema FAQPage: pregunta ${i + 1} incompleta`); }); break;
     case 'BreadcrumbList': need(['itemListElement']); (n.itemListElement || []).forEach((it, i) => { if (it.position !== i + 1) bad(route, 'schema BreadcrumbList: posiciones no consecutivas'); const r = it.item && new URL(it.item).pathname; if (r && !routes.has(r)) bad(route, `schema BreadcrumbList: ${r} no existe`); }); break;
-    case 'OfferCatalog': need(['itemListElement']); (n.itemListElement || []).forEach((o) => { if (!(o.priceSpecification?.minPrice > 0) || o.priceSpecification?.priceCurrency !== 'USD') bad(route, `schema Offer «${o.name}»: precio o moneda inválidos`); }); break;
+    case 'OfferCatalog': need(['itemListElement']); (n.itemListElement || []).forEach((o) => { if (!((o.priceSpecification?.minPrice ?? o.priceSpecification?.price) > 0) || o.priceSpecification?.priceCurrency !== 'USD') bad(route, `schema Offer «${o.name}»: precio o moneda inválidos`); }); break;
     default: break;
   }
   for (const [k, v] of Object.entries(n)) if (typeof v === 'string' && /^https?:\/\/elementoweb\.com\/(?!#)/.test(v) && !/(logo|image)$/i.test(k) && !v.includes('#') && !/\.(png|jpe?g|webp|svg)$/i.test(v)) { const r = new URL(v).pathname; if (!routes.has(r) && !/^\/(fonts|marca|images|logos|portfolio)\//.test(r)) bad(route, `schema ${t}.${k}: URL sin página (${r})`); }

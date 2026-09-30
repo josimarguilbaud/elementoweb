@@ -81,7 +81,7 @@ export const blog38: PageData[] = [
         type: 'prose',
         h2: 'El costo real: suscripción para siempre vs. inversión con techo',
         paragraphs: [
-          'Un plan de Wix o Squarespace parece más barato al mes, pero es una renta que pagas mientras el sitio exista —nunca es tuyo del todo. Un sitio a medida o en WordPress se cotiza cerrado una vez (nuestras <a href="/servicios/">webs corporativas parten desde $950</a>), y el gasto recurrente después es solo la infraestructura y el mantenimiento, no una licencia de la plataforma.',
+          'Un plan de Wix o Squarespace parece más barato al mes, pero es una renta que pagas mientras el sitio exista —nunca es tuyo del todo. Un sitio a medida o en WordPress se cotiza cerrado una vez (nuestras <a href="/servicios/">webs corporativas parten desde $1,250</a>), y el gasto recurrente después es solo la infraestructura y el mantenimiento, no una licencia de la plataforma.',
           'Sumado a un año o dos, la diferencia se acorta mucho más de lo que el precio de entrada sugiere. Si quieres el desglose completo, lo cubrimos en <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a>.',
         ],
       },

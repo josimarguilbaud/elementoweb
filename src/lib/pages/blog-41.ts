@@ -68,7 +68,7 @@ export const blog41: PageData[] = [
         type: 'prose',
         h2: 'Qué precios puedes esperar de nosotros',
         paragraphs: [
-          'Nuestros precios están publicados en dólares: Landing desde $550, Página PYME desde $950 (hasta 6 páginas internas), E-commerce desde $1,500 y proyectos a medida desde $2,900. El detalle de cada plan está en <a href="/precios/">precios</a>, y para un análisis de qué influye en el costo, tienes <a href="/blog/cuanto-cuesta-pagina-web-miami/">cuánto cuesta una página web en Miami</a>.',
+          'Nuestros precios están publicados en dólares: Landing desde $550, Web empresarial desde $1,250 (hasta 6 páginas en total), E-commerce desde $1,950 y proyectos a medida desde $2,900. El detalle de cada plan está en <a href="/precios/">precios</a>, y para un análisis de qué influye en el costo, tienes <a href="/blog/cuanto-cuesta-pagina-web-miami/">cuánto cuesta una página web en Miami</a>.',
           'Facturamos en USD desde nuestra empresa en Panamá. El tratamiento fiscal de tu factura se confirma en la cotización, antes de que pagues nada.',
         ],
       },
@@ -158,7 +158,7 @@ export const blog41: PageData[] = [
         h2: 'Cómo lo trabajamos y cuánto cuesta',
         paragraphs: [
           'Trabajamos desde Panamá, 100% remoto, con negocios de Miami-Dade: coordinamos por WhatsApp y videollamada, mostramos una demo en línea antes de publicar y cobramos por etapas. Facturamos en USD y no tenemos oficina en Miami. Tienes la explicación de la oferta en <a href="/miami/diseno-web-en-miami-en-espanol/">diseño web en Miami en español</a>.',
-          'Los precios publicados son: Landing desde $550, Página PYME desde $950 (hasta 6 páginas internas), E-commerce desde $1,500 y proyectos a medida desde $2,900. Puedes ver el detalle en <a href="/precios/">precios</a>. El tratamiento fiscal de tu factura se confirma en la cotización.',
+          'Los precios publicados son: Landing desde $550, Web empresarial desde $1,250 (hasta 6 páginas en total), E-commerce desde $1,950 y proyectos a medida desde $2,900. Puedes ver el detalle en <a href="/precios/">precios</a>. El tratamiento fiscal de tu factura se confirma en la cotización.',
         ],
       },
       {

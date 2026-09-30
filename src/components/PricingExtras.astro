@@ -1,0 +1,78 @@
+---
+/* Debajo de las tarjetas de precio: base común de todos los proyectos, costos que se pagan aparte y el
+   plan mensual gestionado. Todo sale de `pricing` (site.ts): una sola fuente para home, /precios/ y schema.
+   mode="home" → resumen; mode="full" → con costos aparte, desglose y condiciones (/precios/). */
+import { pricing } from '../lib/site';
+interface Props { mode?: 'home' | 'full' }
+const { mode = 'home' } = Astro.props;
+const m = pricing.managed;
+const money = (n: number) => '$' + n.toLocaleString('en-US');
+const check = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" /></svg>';
+---
+<div class="mt-10 rounded-[1.75rem] border border-ink/10 bg-white p-7 md:p-9">
+  <h3 class="font-display text-xl font-bold text-ink">{pricing.included.title}</h3>
+  <ul class="mt-5 grid grid-cols-1 gap-x-8 gap-y-3 text-sm text-ink/80 md:grid-cols-2">
+    {pricing.included.items.map((t) => (
+      <li class="flex items-start gap-3"><span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal-deep text-white" set:html={check}></span><span>{t}</span></li>
+    ))}
+  </ul>
+</div>
+
+{mode === 'full' && (
+  <div class="mt-6 rounded-[1.75rem] border border-ink/10 bg-paper p-7 md:p-9">
+    <h3 class="font-display text-xl font-bold text-ink">{pricing.separate.title}</h3>
+    <dl class="mt-5 grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-2">
+      {pricing.separate.items.map((i) => (
+        <div><dt class="font-semibold text-ink">{i.name}</dt><dd class="mt-1 text-sm text-ink/70">{i.text}</dd></div>
+      ))}
+    </dl>
+  </div>
+)}
+
+<div id="plan-mensual" class="mt-6 scroll-mt-28 overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-night to-night-2 p-7 text-white md:p-10">
+  <div class="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-wider text-teal">Plan mensual · {m.name}</p>
+      <h3 class="mt-3 font-display text-2xl font-extrabold leading-tight md:text-3xl">{m.headline}</h3>
+      <p class="mt-3 max-w-xl text-white/75">{m.text}</p>
+      <ul class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-white/90">
+        {m.summary.map((t) => <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-teal"></span>{t}</li>)}
+      </ul>
+    </div>
+    <div class="rounded-2xl border border-white/15 bg-white/[0.05] p-6">
+      <p class="font-display text-3xl font-extrabold">{money(m.setup)} <span class="text-lg font-semibold text-white/70">inicial</span></p>
+      <p class="mt-1 font-display text-3xl font-extrabold">+ {money(m.monthly)}<span class="text-lg font-semibold text-white/70">/mes</span></p>
+      <p class="mt-3 text-sm leading-relaxed text-white/75">Desarrollo distribuido en 12 meses. Total de los primeros 12 meses: {money(m.firstYearTotal)} antes de impuestos. Desde el mes 13: {money(m.afterYear)}/mes por el servicio continuo.</p>
+      {mode === 'home'
+        ? <a href="/precios/#plan-mensual" class="mt-5 inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-semibold text-night transition-colors hover:bg-white">Ver el plan mensual <span aria-hidden="true">→</span></a>
+        : <a href="/contacto/?servicio=pyme#formulario" class="mt-5 inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-semibold text-night transition-colors hover:bg-white">Pedir el plan mensual <span aria-hidden="true">→</span></a>}
+    </div>
+  </div>
+
+  {mode === 'full' && (
+    <div class="mt-10 grid gap-8 border-t border-white/10 pt-8 md:grid-cols-2">
+      <div>
+        <h4 class="font-display text-lg font-bold">Cómo se compone el precio</h4>
+        <table class="mt-4 w-full text-sm">
+          <caption class="sr-only">Desglose del plan mensual gestionado</caption>
+          <tbody class="divide-y divide-white/10">
+            <tr><th scope="row" class="py-2.5 pr-4 text-left font-medium text-white/85">Puesta en marcha</th><td class="py-2.5 text-right">{money(m.setup)}</td></tr>
+            <tr><th scope="row" class="py-2.5 pr-4 text-left font-medium text-white/85">Desarrollo, en 12 mensualidades</th><td class="py-2.5 text-right">{money(m.development)}/mes</td></tr>
+            <tr><th scope="row" class="py-2.5 pr-4 text-left font-medium text-white/85">Servicio continuo (hosting, mantenimiento y cambios menores)</th><td class="py-2.5 text-right">{money(m.ongoing)}/mes</td></tr>
+            <tr><th scope="row" class="py-2.5 pr-4 text-left font-semibold">Mensualidad durante los primeros 12 meses</th><td class="py-2.5 text-right font-semibold">{money(m.monthly)}/mes</td></tr>
+            <tr><th scope="row" class="py-2.5 pr-4 text-left font-semibold">Total de los primeros 12 meses</th><td class="py-2.5 text-right font-semibold">{money(m.firstYearTotal)}</td></tr>
+            <tr><th scope="row" class="py-2.5 pr-4 text-left font-medium text-white/85">Desde el mes 13</th><td class="py-2.5 text-right">{money(m.afterYear)}/mes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h4 class="font-display text-lg font-bold">Qué incluye</h4>
+        <ul class="mt-4 space-y-2 text-sm text-white/85">{m.includes.map((t) => <li class="flex items-start gap-2"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal"></span>{t}</li>)}</ul>
+        <h4 class="mt-6 font-display text-lg font-bold">Qué no incluye (cada cosa se cotiza con su alcance)</h4>
+        <ul class="mt-4 space-y-2 text-sm text-white/85">{m.excludes.map((t) => <li class="flex items-start gap-2"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-white/40"></span>{t}</li>)}</ul>
+        <h4 class="mt-6 font-display text-lg font-bold">Condiciones</h4>
+        <ul class="mt-4 space-y-2 text-sm text-white/85">{m.terms.map((t) => <li class="flex items-start gap-2"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal"></span>{t}</li>)}</ul>
+      </div>
+    </div>
+  )}
+</div>

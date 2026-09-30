@@ -43,7 +43,7 @@ export const miamiPages2: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta una web para un negocio en Kendall?', a: 'Los mismos rangos que cualquier proyecto: landing desde $550, sitio corporativo desde $950. Sin ITBMS, porque es un impuesto panameño que no aplica facturando a un cliente en EE.UU.' },
+          { q: '¿Cuánto cuesta una web para un negocio en Kendall?', a: 'Los mismos rangos que cualquier proyecto: landing desde $550, sitio corporativo desde $1,250. Sin ITBMS, porque es un impuesto panameño que no aplica facturando a un cliente en EE.UU.' },
           { q: '¿Cómo se coordina el proyecto siendo remoto?', a: 'Por WhatsApp y videollamada, con una diferencia horaria de cero a una hora entre Panamá y Miami según la época del año.' },
           { q: '¿El sitio puede ir en español e inglés?', a: 'Sí, se puede armar bilingüe desde el inicio si atiendes clientes en ambos idiomas.' },
         ],
@@ -95,7 +95,7 @@ export const miamiPages2: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta una web en Westchester?', a: 'Landing desde $550, sitio corporativo desde $950, sin ITBMS (impuesto panameño que no aplica a EE.UU.).' },
+          { q: '¿Cuánto cuesta una web en Westchester?', a: 'Landing desde $550, sitio corporativo desde $1,250, sin ITBMS (impuesto panameño que no aplica a EE.UU.).' },
           { q: '¿Se puede pagar en dólares desde EE.UU.?', a: 'Sí, tarjeta o transferencia internacional, facturado desde la empresa panameña.' },
           { q: '¿Cuánto tarda el proyecto?', a: 'Una landing en 5 días hábiles, un sitio corporativo entre 2 y 3 semanas desde que recibimos el contenido.' },
         ],
@@ -200,7 +200,7 @@ export const miamiPages2: PageData[] = [
         h2: 'Preguntas frecuentes',
         items: [
           { q: '¿El diseño puede ser tan cuidado como una web de una marca grande?', a: 'Sí, es justamente el estándar que aplicamos: diseño a medida, no plantilla genérica, alineado con la imagen de marca que ya tienes en tu local.' },
-          { q: '¿Cuánto cuesta una web para una boutique o despacho en Coral Gables?', a: 'Landing desde $550, sitio corporativo desde $950, sin ITBMS (impuesto panameño, no aplica a EE.UU.).' },
+          { q: '¿Cuánto cuesta una web para una boutique o despacho en Coral Gables?', a: 'Landing desde $550, sitio corporativo desde $1,250, sin ITBMS (impuesto panameño, no aplica a EE.UU.).' },
           { q: '¿Trabajan con fotografía de producto o solo con lo que ya tengo?', a: 'Podemos trabajar con tu material existente o generar imágenes con IA como parte del proyecto si no tienes fotografía lista.' },
         ],
       },
@@ -296,7 +296,7 @@ export const miamiPages2: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta una web en Sweetwater?', a: 'Landing desde $550, sitio corporativo desde $950, sin ITBMS.' },
+          { q: '¿Cuánto cuesta una web en Sweetwater?', a: 'Landing desde $550, sitio corporativo desde $1,250, sin ITBMS.' },
           { q: '¿Se puede pagar desde EE.UU.?', a: 'Sí, tarjeta o transferencia internacional, facturado en USD desde la empresa panameña.' },
         ],
       },
@@ -339,7 +339,7 @@ export const miamiPages2: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta una web para un negocio en Hialeah Gardens?', a: 'Landing desde $550, sitio corporativo desde $950, sin ITBMS (impuesto panameño, no aplica a EE.UU.).' },
+          { q: '¿Cuánto cuesta una web para un negocio en Hialeah Gardens?', a: 'Landing desde $550, sitio corporativo desde $1,250, sin ITBMS (impuesto panameño, no aplica a EE.UU.).' },
           { q: '¿Sirve para un negocio de logística o venta al mayor?', a: 'Sí, se puede armar con catálogo de líneas de producto y cotización directa por WhatsApp.' },
         ],
       },
@@ -383,7 +383,7 @@ export const miamiPages2: PageData[] = [
         h2: 'Preguntas frecuentes',
         items: [
           { q: '¿Manejan proyectos corporativos en Miami Lakes?', a: 'Sí, con el mismo nivel de diseño y estructura que un sitio corporativo de Panamá, adaptado al cliente de EE.UU.' },
-          { q: '¿Cuánto cuesta un sitio corporativo en Miami Lakes?', a: 'Desde $950, sin ITBMS (impuesto panameño, no aplica facturando a EE.UU.).' },
+          { q: '¿Cuánto cuesta un sitio corporativo en Miami Lakes?', a: 'Desde $1,250, sin ITBMS (impuesto panameño, no aplica facturando a EE.UU.).' },
         ],
       },
       {
@@ -467,7 +467,7 @@ export const miamiPages2: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta una web en North Miami?', a: 'Landing desde $550, sitio corporativo desde $950, sin ITBMS (impuesto panameño, no aplica a EE.UU.).' },
+          { q: '¿Cuánto cuesta una web en North Miami?', a: 'Landing desde $550, sitio corporativo desde $1,250, sin ITBMS (impuesto panameño, no aplica a EE.UU.).' },
           { q: '¿Puede ser bilingüe?', a: 'Sí, si tu negocio atiende tanto en español como en inglés lo armamos desde el inicio en ambos idiomas.' },
         ],
       },

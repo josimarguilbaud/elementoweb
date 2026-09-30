@@ -1,5 +1,6 @@
 ---
 import Pic from './Pic.astro';
+import PricingExtras from './PricingExtras.astro';
 import type { Block } from '../lib/types';
 import { pricing, url, wa, portfolio, portfolioCats, planKey } from '../lib/site';
 import ContactForm from './ContactForm.astro';
@@ -116,11 +117,13 @@ const { blocks } = Astro.props;
               {p.featured && <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold text-night">Recomendado</span>}
               <h3 class="font-display text-xl font-bold">{p.name}</h3>
               <div class="mt-6 flex items-end gap-1.5"><span class={`text-sm font-medium ${p.featured ? 'text-white/50' : 'text-ink/70'}`}>desde</span><span class="font-display text-5xl font-extrabold">{p.price}</span></div>
-              <ul class="mt-7 flex flex-col gap-3">{p.features.map((f) => <li class="flex items-center gap-3 text-sm"><span class={`grid h-5 w-5 shrink-0 place-items-center rounded-full ${p.featured ? 'bg-teal text-night' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={p.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>)}</ul>
+              <ul class="mt-7 flex flex-col gap-3">{p.features.map((f) => <li class="flex items-start gap-3 text-sm"><span class={`grid h-5 w-5 shrink-0 place-items-center rounded-full ${p.featured ? 'bg-teal text-night' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={p.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>)}</ul>
               <a href={`/contacto/?servicio=${planKey(p.name)}#formulario`} aria-label={`Empezar con el plan ${p.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${p.featured ? 'bg-teal text-night hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>Empezar</a>
             </div>
           ))}
         </div>
+
+        <PricingExtras mode={(b as any).full ? 'full' : 'home'} />
 
         <div class="reveal relative mt-6 overflow-hidden rounded-[2rem] bg-night px-8 py-10 text-white md:px-12 md:py-12">
           <div class="absolute inset-0 mesh-dark opacity-40"></div>

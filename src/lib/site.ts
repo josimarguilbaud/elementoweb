@@ -197,20 +197,98 @@ export const pricing = {
     {
       name: 'Landing Page',
       price: '$550',
-      features: ['Una página enfocada en conversión', 'Diseño a medida, responsive', 'Botón directo a WhatsApp', 'Entrega en 5 días hábiles'],
+      features: [
+        'Una página de hasta 7 secciones',
+        'Mensaje y estructura pensados para convertir',
+        'Formulario de consulta y botón de WhatsApp',
+        'Medición de contactos',
+        '2 rondas de revisión del diseño',
+        '5 días hábiles desde recibir el contenido y aprobar el alcance',
+      ],
     },
     {
-      name: 'Página PYME',
-      price: '$950',
+      name: 'Web empresarial',
+      price: '$1,250',
       featured: true,
-      features: ['Hasta 6 páginas internas', 'Página por servicio con SEO', 'Blog para posicionamiento', 'Panel autoadministrable'],
+      features: [
+        'Hasta 6 páginas en total',
+        'Estructura por servicios',
+        'SEO inicial por página',
+        'Panel editable y capacitación grabada',
+        'Blog listo para publicar artículos (la redacción se contrata aparte)',
+        'Formularios y WhatsApp configurados',
+      ],
     },
     {
       name: 'E-commerce',
-      price: '$1,500',
-      features: ['Catálogo y carrito completos', 'Yappy y pasarelas locales', 'Gestión de inventario', 'Configuración de envíos'],
+      price: '$1,950',
+      features: [
+        'Carga inicial de hasta 25 productos',
+        'Categorías y carrito',
+        'Configuración de pagos y envíos (las pasarelas y su cantidad se definen en la cotización)',
+        'Pruebas de compra',
+        'Capacitación para gestionar pedidos',
+        'Inventario propio (la sincronización con un ERP se cotiza aparte)',
+      ],
     },
   ],
+
+  /* Base común de todos los proyectos. Cada punto es un compromiso de entrega: no añadir
+     nada aquí que el equipo no vaya a cumplir en cada proyecto. */
+  included: {
+    title: 'Todos nuestros proyectos incluyen',
+    items: [
+      'Diseño adaptado a móvil y computadora',
+      'Formularios y WhatsApp configurados y comprobados',
+      'SEO inicial: títulos, descripciones, sitemap e indexación solicitada',
+      'Analytics y medición de clics en WhatsApp y envíos de formularios',
+      'Dos rondas de revisión del diseño',
+      'Capacitación grabada cuando hay panel de administración',
+      'Corrección de errores del desarrollo durante 30 días después de publicar',
+    ],
+  },
+
+  /* Lo que NO está en el precio del proyecto y se cotiza o paga aparte. */
+  separate: {
+    title: 'Lo que se paga aparte del proyecto',
+    items: [
+      { name: 'Dominio, hosting y certificado SSL', text: 'Infraestructura anual desde $350 (hosting cloud; hay niveles desde $225 hasta $550 al año según el proyecto). No está incluida en el precio del proyecto.' },
+      { name: 'Correo corporativo', text: 'Desde $60 al año. No incluido.' },
+      { name: 'Mantenimiento', text: 'Desde $59 al mes si lo contratas. No incluido.' },
+      { name: 'Licencias y comisiones de terceros', text: 'Plugins, temas, pasarelas de pago y plataformas cobran sus propias licencias y comisiones; se detallan en la cotización.' },
+      { name: 'Redacción de contenido, imágenes y logo con IA', text: 'Contenido desde $150, imágenes $100, logo desde $120. Se cotizan aparte y los apruebas antes de publicar.' },
+    ],
+  },
+
+  /* Plan mensual: una sola opción por ahora, para medir cuánto soporte consume antes de ampliarla. */
+  managed: {
+    name: 'Web empresarial gestionada',
+    headline: 'Tu web profesional, con un equipo que la mantiene',
+    text: 'Diseñamos tu página, la publicamos y nos encargamos del hosting, la seguridad y los cambios cotidianos. Tú puedes concentrarte en atender tu negocio.',
+    setup: 350,
+    monthly: 169,
+    afterYear: 94,
+    development: 75,
+    ongoing: 94,
+    firstYearTotal: 2378,
+    summary: ['Hasta 6 páginas en total', 'Hosting y dominio', 'Mantenimiento', '1 hora mensual de cambios'],
+    includes: [
+      'Web de hasta 6 páginas en total',
+      'Dominio estándar, hosting y certificado SSL',
+      'Formularios, WhatsApp y medición inicial',
+      'Actualizaciones aplicables, respaldos y monitoreo',
+      'Hasta 1 hora mensual (no acumulable) de cambios de textos e imágenes',
+      'Respuesta de soporte el siguiente día hábil',
+      'Resumen mensual de visitas y contactos medidos',
+    ],
+    excludes: ['Artículos mensuales', 'Campañas publicitarias', 'Nuevas páginas', 'Rediseños', 'IA e integraciones especiales (cada una se cotiza con su alcance)'],
+    terms: [
+      'El dominio queda a nombre del cliente y la web es suya.',
+      'Si cancela antes de los 12 meses, liquida las cuotas pendientes del desarrollo y recibe los accesos y archivos; el servicio continuo deja de cobrarse.',
+      'Desde el mes 13 se cobran solo $94 al mes por el servicio continuo, mientras continúe.',
+      'No incluye ITBMS (7%).',
+    ],
+  },
 
   /* Franja premium bajo las tarjetas: el proyecto corporativo grande no es un
      paquete cerrado; se presenta como servicio a medida de alto valor. */
@@ -269,8 +347,8 @@ export const pricing = {
       note: 'Textos originales creados con IA a partir de la información de tu negocio y revisados por nuestro equipo. Nada de relleno genérico: contenido pensado para tu sitio.',
       tiers: [
         { label: 'Landing page', price: '$150' },
-        { label: 'Web corporativa (hasta 6 páginas internas)', price: '$200' },
-        { label: 'Web extensa (más de 6 páginas internas)', price: '$350' },
+        { label: 'Web corporativa (hasta 6 páginas en total)', price: '$200' },
+        { label: 'Web extensa (más de 6 páginas)', price: '$350' },
       ],
     },
     images: {
@@ -339,4 +417,4 @@ export const wa = (text: string) =>
 /* Clave de servicio que viaja en /contacto/?servicio=… para preseleccionar el
    formulario. Solo la clave, nunca datos personales. */
 export const planKey = (name: string) =>
-  /landing/i.test(name) ? 'landing' : /pyme|corporativ/i.test(name) ? 'pyme' : /commerce|tienda/i.test(name) ? 'ecommerce' : 'medida';
+  /landing/i.test(name) ? 'landing' : /pyme|empresarial|corporativ/i.test(name) ? 'pyme' : /commerce|tienda/i.test(name) ? 'ecommerce' : 'medida';

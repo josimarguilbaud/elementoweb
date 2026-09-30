@@ -151,7 +151,13 @@ function offersNode(page: PageData) {
       description: `${t.name}: ${t.features.join('; ')}. Precio de partida, sin ITBMS.`,
       priceSpecification: { '@type': 'PriceSpecification', minPrice: num(t.price), priceCurrency: 'USD', valueAddedTaxIncluded: false },
       seller: { '@id': ORG_ID },
-    })),
+    })).concat([{
+      '@type': 'Offer',
+      name: pricing.managed.name,
+      description: `${pricing.managed.name}: ${pricing.managed.summary.join('; ')}. Puesta en marcha de $${pricing.managed.setup} más $${pricing.managed.monthly} al mes durante 12 meses; desde el mes 13, $${pricing.managed.afterYear} al mes por el servicio continuo. Sin ITBMS.`,
+      priceSpecification: { '@type': 'UnitPriceSpecification', price: pricing.managed.monthly, priceCurrency: 'USD', billingDuration: 12, billingIncrement: 1, unitCode: 'MON', valueAddedTaxIncluded: false },
+      seller: { '@id': ORG_ID },
+    } as any]),
   };
 }
 

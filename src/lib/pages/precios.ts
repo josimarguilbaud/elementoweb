@@ -8,7 +8,7 @@ export const precios: PageData[] = [
   {
     slug: 'precios',
     title: 'Precios de páginas web en Panamá: Landing, PYME y E-commerce | Elemento Web',
-    description: 'Precios de diseño web en Panamá: landing desde $550, sitio corporativo desde $950 y tienda online desde $1,500. Qué incluye cada uno, qué se paga aparte y cómo se paga.',
+    description: 'Precios de diseño web en Panamá: landing desde $550, sitio corporativo desde $1,250 y tienda online desde $1,950. Qué incluye cada uno, qué se paga aparte y cómo se paga.',
     h1: 'Precios de páginas web en Panamá',
     breadcrumb: 'Precios',
     heroImage: { src: '/images/hero/servicios--diseno-web-corporativo-panama.jpg', alt: 'Diseño web corporativo en Panamá' },
@@ -23,7 +23,7 @@ export const precios: PageData[] = [
       { label: 'Ver proyectos reales', href: '/portafolio/' },
     ],
     blocks: [
-      { type: 'pricing', h2: 'Tres formatos, un precio de partida cada uno', intro: 'Elige por lo que necesita tu negocio, no por el precio: una landing sirve para una campaña, el sitio corporativo para presentar toda la empresa y la tienda para vender en línea. Si tu caso no encaja, el proyecto <a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">a medida</a> se cotiza según alcance.' },
+      { type: 'pricing', full: true, h2: 'Tres formatos, un precio de partida cada uno', intro: 'Elige por lo que necesita tu negocio, no por el precio: una landing sirve para una campaña, el sitio corporativo para presentar toda la empresa y la tienda para vender en línea. Si tu caso no encaja, el proyecto <a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">a medida</a> se cotiza según alcance.' },
       {
         type: 'checklist',
         h2: 'Cómo se paga y qué queda a tu nombre',
@@ -41,7 +41,11 @@ export const precios: PageData[] = [
         type: 'faq',
         h2: 'Preguntas sobre precios',
         items: [
-          { q: '¿Qué incluye el sitio corporativo de $950?', a: 'Un sitio de hasta 6 páginas internas, con una página por servicio optimizada para SEO, blog para posicionamiento y panel autoadministrable. Más secciones, más idiomas o integraciones se cotizan según alcance.' },
+          { q: '¿Qué incluye la Web empresarial de $1,250?', a: 'Hasta 6 páginas en total, estructura por servicios, SEO inicial por página, panel editable con capacitación grabada, blog listo para publicar artículos (la redacción se contrata aparte), formularios y WhatsApp configurados. Más páginas, más idiomas o integraciones se cotizan según alcance.' },
+          { q: '¿Qué incluye la tienda online de $1,950?', a: 'Carga inicial de hasta 25 productos, categorías, carrito, configuración de pagos y envíos, pruebas de compra y capacitación para gestionar pedidos. Las pasarelas de pago y su cantidad se definen en la cotización; las comisiones y licencias de terceros se pagan aparte. El inventario es propio: sincronizarlo con un ERP es otro alcance y se cotiza aparte.' },
+          { q: '¿Qué incluyen todos los proyectos?', a: 'Diseño adaptado a móvil y computadora, formularios y WhatsApp comprobados, SEO inicial (títulos, descripciones, sitemap e indexación solicitada), medición de clics en WhatsApp y envíos de formularios, dos rondas de revisión del diseño, capacitación grabada cuando hay panel de administración y corrección de errores del desarrollo durante 30 días después de publicar.' },
+          { q: '¿Qué es la Web empresarial gestionada?', a: 'Un plan mensual: $350 de puesta en marcha más $169 al mes durante 12 meses (incluye el desarrollo y el servicio continuo de hosting, mantenimiento y cambios menores). Total de los primeros 12 meses: $2,378 antes de impuestos. Desde el mes 13 son $94 al mes por el servicio continuo. El dominio queda a nombre del cliente y la web es suya. Si cancelas antes de los 12 meses, liquidas las cuotas pendientes del desarrollo y recibes los accesos y archivos.' },
+          { q: '¿Hosting, dominio y correo están incluidos?', a: 'En los proyectos con pago único, no: la infraestructura anual (dominio, hosting y SSL) parte desde $350, el correo corporativo desde $60 al año y el mantenimiento desde $59 al mes. En el plan mensual gestionado sí están incluidos el dominio estándar, el hosting y el mantenimiento.' },
           { q: '¿Los precios incluyen impuestos?', a: 'No. Son precios de partida en USD, sin ITBMS (7%). El impuesto se aplica según corresponda al facturar.' },
           { q: '¿Qué pasa si necesito algo que no está en los paquetes?', a: 'Se cotiza aparte y por escrito antes de empezar: base de datos nueva, migración de datos, integraciones con sistemas de terceros o un sitio en varios idiomas. No hay costos sorpresa a mitad del proyecto.' },
           { q: '¿El dominio y el sitio quedan a mi nombre?', a: 'Sí. Dominio, código y accesos quedan a nombre de tu empresa.' },

@@ -88,15 +88,16 @@ const { blocks } = Astro.props;
     )}
 
     {b.type === 'showcase' && (() => {
-      const pr = portfolio.find((x) => x.t === b.project);
-      return pr ? (
+      const pr = b.project ? portfolio.find((x) => x.t === b.project) : null;
+      const img = b.image ?? (pr ? { src: pr.img, alt: `Captura de ${pr.t}, proyecto real de Elemento Web`, width: 1200, height: 900, caption: `${pr.t} · ${pr.catLabel} · ${pr.year}` } : null);
+      return img ? (
         <section id={b.id} class="mx-auto max-w-6xl scroll-mt-28 px-6 py-16">
           <h2 class="reveal text-center font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>
           {b.intro && <p class="rt reveal mx-auto mt-3 max-w-2xl text-center text-lg text-ink/70" set:html={b.intro}></p>}
-          <div class="mt-10 grid items-start gap-8 lg:grid-cols-[1.25fr_1fr]">
+          <div class="mt-10 grid items-start gap-8 lg:grid-cols-[1.4fr_1fr]">
             <figure class="reveal overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-xl shadow-ink/5">
-              <Pic src={pr.img} alt={`Captura de ${pr.t}, proyecto real de Elemento Web`} width={1200} height={900} sizes="(min-width:1024px) 52vw, 92vw" class="w-full object-cover object-top" />
-              <figcaption class="border-t border-ink/10 px-5 py-3 text-sm text-ink/70">{b.caption ?? `${pr.t} · ${pr.catLabel} · ${pr.year}`}</figcaption>
+              <Pic src={img.src} alt={img.alt} width={img.width} height={img.height} sizes="(min-width:1024px) 55vw, 92vw" class="w-full object-cover object-top" />
+              <figcaption class="border-t border-ink/10 px-5 py-3 text-sm text-ink/70">{img.caption}</figcaption>
             </figure>
             <div class="reveal">
               <ol class="flex flex-col gap-4">
@@ -104,10 +105,12 @@ const { blocks } = Astro.props;
                   <li class="flex gap-4"><span aria-hidden="true" class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-night text-xs font-bold text-white">{i + 1}</span><div><p class="font-display font-bold text-ink">{n.label}</p><p class="mt-0.5 text-sm leading-relaxed text-ink/70">{n.text}</p></div></li>
                 ))}
               </ol>
-              <p class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-teal-deep">
-                {pr.caso && <a href={`/${pr.caso}/`} class="underline underline-offset-2">Ver el caso completo</a>}
-                <a href={pr.href} target="_blank" rel="noopener" class="underline underline-offset-2">Visitar {pr.t}<span class="sr-only"> (se abre en otra pestaña)</span></a>
-              </p>
+              {pr && (
+                <p class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-teal-deep">
+                  {pr.caso && <a href={`/${pr.caso}/`} class="underline underline-offset-2">Ver el caso completo</a>}
+                  <a href={pr.href} target="_blank" rel="noopener" class="underline underline-offset-2">Visitar {pr.t}<span class="sr-only"> (se abre en otra pestaña)</span></a>
+                </p>
+              )}
             </div>
           </div>
         </section>

@@ -128,7 +128,7 @@ export const core: PageData[] = [
     h1: 'Portafolio',
     breadcrumb: 'Portafolio',
     lead: [
-      'Sitios reales, en producción, que trabajan por sus dueños todos los días. Estos son algunos de los proyectos que hemos construido para empresas en Panamá y la región.',
+      'Sitios reales, en producción, que trabajan por sus dueños todos los días. Son proyectos a medida, con más de 30 páginas internas y SEO avanzado pensado para Google y los motores de búsqueda con IA. Estos son algunos de los que hemos construido para empresas en Panamá y la región.',
       'Un buen portafolio no es una galería bonita: es la prueba de que entendemos distintos negocios —turismo, construcción, servicios profesionales, trámites— y sabemos convertir cada uno en una web que capta clientes.',
     ],
     heroCtas: [

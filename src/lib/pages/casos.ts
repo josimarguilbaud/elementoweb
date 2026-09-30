@@ -44,9 +44,9 @@ export const casos: PageData[] = [
     slug: 'casos-de-exito/tramitapa',
     parent,
     heroImage: { src: '/portfolio/tramitapa.jpg', alt: 'Sitio web de TramitaPa' },
-    title: 'Caso TramitaPa: landing de captación para trámites de visa | Elemento Web',
-    description: 'Cómo diseñamos la landing de TramitaPa, un servicio de trámites y asesoría de visa en Panamá, pensada para convertir consultas directo por WhatsApp.',
-    h1: 'Caso TramitaPa: landing para captar consultas de visa por WhatsApp',
+    title: 'Caso TramitaPa: sitio a medida para captar consultas de visa | Elemento Web',
+    description: 'Cómo diseñamos el sitio de TramitaPa, un servicio de trámites y asesoría de visa en Panamá, pensada para convertir consultas directo por WhatsApp.',
+    h1: 'Caso TramitaPa: sitio a medida para captar consultas de visa por WhatsApp',
     breadcrumb: 'TramitaPa',
     lead: ['TramitaPa ofrece trámites y asesoría de visa. Necesitaba una página que explicara el servicio y llevara a la persona a una conversación por WhatsApp sin pasos de más.'],
     blocks: [
@@ -55,7 +55,7 @@ export const casos: PageData[] = [
         type: 'checklist',
         h2: 'Qué construimos',
         items: [
-          'Landing de captación enfocada en una sola acción: escribir por WhatsApp',
+          'Sitio a medida enfocado en una sola acción: escribir por WhatsApp',
           'Estructura pensada para explicar el servicio y resolver las dudas frecuentes antes del contacto',
           'Diseño responsive, porque buena parte de las consultas llegan desde el celular',
           'Botón de WhatsApp visible en todo el recorrido',
@@ -67,7 +67,7 @@ export const casos: PageData[] = [
       {
         type: 'related',
         items: [
-          { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing pages de alta conversión' },
+          { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño web corporativo' },
           { slug: 'casos-de-exito', label: 'Todos los casos' },
           { slug: 'precios', label: 'Precios' },
         ],

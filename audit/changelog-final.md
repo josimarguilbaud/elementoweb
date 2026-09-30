@@ -125,3 +125,10 @@ Base: `cbff42e`. Publicado en `main` hasta `e73f70f` (despliegues 131 y 132: exi
 - Alcance unificado: la redacción desde cero se cotiza aparte (landing, corporativa y home coinciden); ajuste post-campaña acotado; carritos por WhatsApp y comisiones de pasarela marcados como aparte.
 - Rediseño: sin promesa de conservar posiciones (redirecciones reducen el riesgo; Google advierte fluctuaciones).
 - Pendiente (necesita material): tienda con demo visual de compra, antes/después real para rediseño, ejemplo de diagnóstico anotado, capturas de panel/video, resto de servicios (SEO, publicidad, automatización, mantenimiento, hosting).
+
+## Lote 9 — corrección: los proyectos publicados no son landings + scroll
+- Los proyectos del portafolio son sitios a medida de más de 30 páginas con SEO avanzado. Se retira TramitaPa como "ejemplo de landing" (portafolio, caso, hero y bloque de la página de landing) y Panama International Movers como ejemplo del paquete de $1,250. TramitaPa pasa a "Sitio a medida"; se elimina el filtro "Landing" del portafolio.
+- La página de landing usa una ilustración propia de la estructura (`public/images/servicios/landing-estructura.*`), rotulada como ilustración con texto de ejemplo, no como proyecto de cliente. fal.ai no es accesible desde el entorno de trabajo; la ilustración se dibujó en HTML y se renderizó.
+- Web empresarial aclara que es un formato acotado frente a los sitios a medida del portafolio; /portafolio/ lo dice en su introducción.
+- Scroll: Lenis lerp 0.2, reveals de 0.5 s con umbral 98 %, recálculo de disparadores tras carga de imágenes/fuentes, cursor sin bucle ocioso, preloader ~1.1 s.
+- Pendiente: caso real de una landing de publicidad (lo aportará el dueño) para reemplazar la ilustración.

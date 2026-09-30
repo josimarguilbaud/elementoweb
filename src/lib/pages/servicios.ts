@@ -131,29 +131,15 @@ export const servicios: PageData[] = [
     h1: 'Diseño web corporativo en Panamá',
     breadcrumb: 'Diseño Web Corporativo',
     service: { type: 'Diseño web corporativo' },
-    heroImage: { src: '/portfolio/panamainternationalmovers-2026.jpg', alt: 'Sitio corporativo de Panama International Movers, proyecto real de Elemento Web' },
     lead: [
       'El sitio que tus clientes revisan antes de firmar contigo. Si no proyecta la solidez de tu empresa, te está costando contratos.',
       'Un buen sitio corporativo en Panamá debe lograr tres cosas: que te encuentren en Google cuando buscan tu servicio, que el visitante entienda en segundos qué haces y por qué eres confiable, y que el siguiente paso (escribirte) sea obvio. Todo lo demás es decoración.',
     ],
     blocks: [
       {
-        type: 'showcase', id: 'ejemplo',
-        h2: 'Así se ve una web corporativa terminada',
-        intro: 'Un proyecto real: cada servicio tiene su propio espacio y todo camino lleva a pedir una cotización. Se adapta al negocio; el plan contempla hasta 6 páginas en total.',
-        project: 'Panama International Movers',
-        notes: [
-          { label: 'Inicio', text: 'Qué hace la empresa y desde cuándo, con la acción principal a la vista.' },
-          { label: 'Servicios', text: 'Más de 30 servicios ordenados para que cada visitante encuentre el suyo.' },
-          { label: 'Destinos', text: 'Mapa y rutas para que el cliente vea que se llega a donde necesita.' },
-          { label: 'Contacto', text: 'Cotización por WhatsApp desde cualquier página, también en el celular.' },
-          { label: 'Administración', text: 'Un panel para cambiar textos y fotos sin programador; lo enseñamos en una capacitación grabada.' },
-        ],
-      },
-      {
         type: 'checklist',
         h2: 'Qué incluye tu web corporativa',
-        intro: 'Alcance base del servicio. Desde $1,250, con cotización cerrada según páginas e integraciones.',
+        intro: 'Alcance base del servicio. Desde $1,250, con cotización cerrada según páginas e integraciones. Es un formato acotado: los sitios del portafolio son desarrollos a medida de más de 30 páginas con SEO avanzado, que se cotizan como proyecto a medida.',
         items: [
           'Diseño a medida alineado a tu marca, sin plantillas compradas',
           'Hasta 6 páginas en total con estructura de venta',
@@ -436,7 +422,7 @@ export const servicios: PageData[] = [
     h1: 'Landing pages de alta conversión',
     breadcrumb: 'Landing Pages',
     service: { type: 'Diseño de landing pages de conversión' },
-    heroImage: { src: '/portfolio/tramitapa.jpg', alt: 'Landing page de TramitaPa, proyecto real de Elemento Web' },
+    heroImage: { src: '/images/servicios/landing-estructura.jpg', alt: 'Ilustración de la estructura de una landing page de conversión, en computadora y celular' },
     lead: [
       'Una página, una oferta, una acción. Si estás pagando pauta y la mandas a tu página de inicio, estás quemando presupuesto.',
       'La página de inicio habla de toda tu empresa; una landing habla de una sola cosa: la oferta de tu campaña. Esa concentración es lo que multiplica la conversión. El visitante no tiene menú para distraerse ni cinco servicios para dudar: entiende, confía y actúa.',
@@ -444,15 +430,15 @@ export const servicios: PageData[] = [
     blocks: [
       {
         type: 'showcase', id: 'ejemplo',
-        h2: 'Así puede verse la página de tu campaña',
+        h2: 'Así se estructura la página de tu campaña',
         intro: 'Una oferta clara, pruebas que generan confianza y un camino directo hacia la consulta.',
-        project: 'TramitaPa',
+        image: { src: '/images/servicios/landing-estructura.jpg', alt: 'Ilustración de una landing page de conversión con sus cinco bloques, en computadora y celular', width: 1600, height: 1100, caption: 'Ilustración de la estructura de una landing. Texto de ejemplo: no es un proyecto de cliente.' },
         notes: [
-          { label: 'Encabezado', text: 'Qué ofrece y para quién, en una frase.' },
-          { label: 'Beneficios', text: 'Por qué le interesa a quien llega desde el anuncio.' },
-          { label: 'Pruebas', text: 'Por qué confiar: experiencia, casos y datos verificables.' },
+          { label: 'Promesa y acción', text: 'Qué ofrece y para quién, en una frase, con el formulario o WhatsApp ya visible.' },
+          { label: 'Beneficios', text: 'Por qué le interesa a quien llega desde el anuncio: resultados, no características.' },
+          { label: 'Pruebas', text: 'Por qué confiar: testimonios, clientes y datos verificables.' },
           { label: 'Preguntas', text: 'Las dudas que frenan la consulta, resueltas antes de escribir.' },
-          { label: 'Siguiente paso', text: 'Formulario o WhatsApp con el mensaje de la campaña ya escrito.' },
+          { label: 'Cierre', text: 'Un último llamado a la acción, con el mensaje de la campaña ya escrito en WhatsApp.' },
         ],
       },
       {

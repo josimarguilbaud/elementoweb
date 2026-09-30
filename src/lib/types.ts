@@ -17,7 +17,7 @@ export type Block =
   | { type: 'infra'; h2: string; intro?: string; columns: InfraColumn[] }
   | { type: 'plans'; h2: string; intro?: string; tiers: PlanTier[]; note?: string }
   | { type: 'seo-momentum'; h2: string; intro?: string }
-  | { type: 'showcase'; id?: string; h2: string; intro?: string; project: string; notes: { label: string; text: string }[]; caption?: string };
+  | { type: 'showcase'; id?: string; h2: string; intro?: string; project?: string; image?: { src: string; alt: string; width: number; height: number; caption: string }; notes: { label: string; text: string }[]; caption?: string };
 
 /** Columna del widget de infraestructura/confiabilidad (3 columnas animadas). */
 export interface InfraColumn {

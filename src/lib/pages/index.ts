@@ -1,6 +1,7 @@
 /* Registro central de páginas. El orden no importa; los slugs sí. */
 import type { PageData } from '../types';
 import { core } from './core';
+import { precios } from './precios';
 import { disenoWebPanama } from './diseno-web-panama';
 import { servicios } from './servicios';
 import { tecnologias } from './tecnologias';
@@ -56,6 +57,7 @@ import { blog38 } from './blog-38';
 
 export const pages: PageData[] = [
   ...core,
+  ...precios,
   ...disenoWebPanama,
   ...servicios,
   ...tecnologias,

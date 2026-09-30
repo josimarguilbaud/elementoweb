@@ -49,6 +49,7 @@ const serviceCols = [...cols, { title: 'Nuestros SaaS', hub: 'saas', links: saas
   <div class="relative mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 px-6 py-7 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
     <span>© 2026 {site.name}. Todos los derechos reservados.</span>
     <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href="/precios/" class="transition hover:text-teal">Precios</a>
       <a href="/como-trabajamos/" class="transition hover:text-teal">Cómo trabajamos</a>
       {legal.map((l) => <a href={url(l.slug)} class="transition hover:text-teal">{l.label}</a>)}
     </div>

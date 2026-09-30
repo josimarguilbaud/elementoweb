@@ -1,0 +1,30 @@
+---
+/* <picture> con WebP responsive (variantes generadas por scripts/optimize-images.mjs,
+   que viven junto al JPEG: foto.jpg → foto-800.webp). Si la imagen no es local o no
+   tiene variantes (p. ej. Unsplash), cae a un <img> normal. El JPEG original queda
+   como fallback. width/height se pasan siempre: reservan espacio y evitan CLS. */
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+
+interface Props {
+  src: string; alt: string; width: number; height: number; class?: string;
+  sizes?: string; loading?: 'lazy' | 'eager'; fetchpriority?: 'high' | 'low' | 'auto';
+}
+const { src, alt, width, height, class: cls = '', sizes = '100vw', loading = 'lazy', fetchpriority } = Astro.props;
+
+const WIDTHS = [480, 800, 1200, 1600];
+let srcset = '';
+if (src.startsWith('/') && /\.jpe?g$/i.test(src)) {
+  const base = src.replace(/\.jpe?g$/i, '');
+  const found = WIDTHS.filter((w) => existsSync(join(process.cwd(), 'public', `${base}-${w}.webp`)));
+  srcset = found.map((w) => `${base}-${w}.webp ${w}w`).join(', ');
+}
+---
+{srcset ? (
+  <picture>
+    <source type="image/webp" srcset={srcset} sizes={sizes} />
+    <img src={src} alt={alt} width={width} height={height} loading={loading} decoding="async" fetchpriority={fetchpriority} class={cls} />
+  </picture>
+) : (
+  <img src={src} alt={alt} width={width} height={height} loading={loading} decoding="async" fetchpriority={fetchpriority} class={cls} />
+)}

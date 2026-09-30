@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Blocks from '../components/Blocks.astro';
+import Pic from '../components/Pic.astro';
 import { pages } from '../lib/pages';
 import { url, wa, site } from '../lib/site';
 import { pageJsonLd, articleJsonLd, faqNode } from '../lib/schema';
@@ -32,7 +33,7 @@ const dateLabel = page.date
   ? new Date(page.date + 'T12:00:00').toLocaleDateString('es-PA', { day: 'numeric', month: 'long', year: 'numeric' })
   : '';
 ---
-<Base title={page.title} description={page.description} dark image={ogFor(page.slug)} jsonld={jsonld} noindex={page.noindex} ogType={isBlog ? 'article' : 'website'} published={isBlog ? page.date : undefined}>
+<Base title={page.title} description={page.description} dark image={ogFor(page.slug)} jsonld={jsonld} ogType={isBlog ? 'article' : 'website'} published={isBlog ? page.date : undefined}>
   <!-- HERO interno -->
   <section class="relative overflow-hidden bg-night pt-36 pb-20 text-white md:pt-44 md:pb-24">
     <div class="absolute inset-0 mesh-dark opacity-50"></div>
@@ -68,7 +69,7 @@ const dateLabel = page.date
 
       <div class="relative">
         <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-teal/25 to-violet/25 blur-2xl"></div>
-        <img src={hero.src} alt={hero.alt} width="1600" height="1120" loading="eager" fetchpriority="high" decoding="async" class="relative aspect-[10/7] w-full rounded-[1.75rem] border border-white/10 object-cover shadow-2xl" />
+        <Pic src={hero.src} alt={hero.alt} width={1600} height={1120} loading="eager" fetchpriority="high" sizes="(min-width:1024px) 46vw, 92vw" class="relative aspect-[10/7] w-full rounded-[1.75rem] border border-white/10 object-cover shadow-2xl" />
       </div>
     </div>
   </section>

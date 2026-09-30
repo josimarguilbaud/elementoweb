@@ -2,6 +2,7 @@
 import type { PageData } from '../types';
 import { core } from './core';
 import { precios } from './precios';
+import { casos } from './casos';
 import { disenoWebPanama } from './diseno-web-panama';
 import { servicios } from './servicios';
 import { tecnologias } from './tecnologias';
@@ -58,6 +59,7 @@ import { blog38 } from './blog-38';
 export const pages: PageData[] = [
   ...core,
   ...precios,
+  ...casos,
   ...disenoWebPanama,
   ...servicios,
   ...tecnologias,

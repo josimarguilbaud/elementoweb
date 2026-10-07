@@ -145,3 +145,65 @@ visible, el color nunca es la única señal.
 
 Demo 2 (voz en vivo: Retell/Vapi + número + WhatsApp real), luego MVP de producto sobre el
 stack objetivo, empezando por la fase 1.
+
+---
+
+## 9. Decisiones consolidadas tras las revisiones (v2 — manda sobre lo anterior)
+
+Ver `review-producto.md`, `review-ingenieria.md`, `review-diseno.md`.
+
+**Nombre provisional de la plataforma:** "Recupera" · por Elemento Web (constante `PRODUCT_NAME`,
+fácil de cambiar). Espacio de trabajo: "Kredit".
+
+**Vistas finales (hash):**
+1. `#resumen` — héroe: mora sobre cartera **10.0% hoy** con línea del límite 10% y meta (8%),
+   historia de 90 días SIN plataforma (plana alrededor de 9.8–10.1%). **Simulador de escenarios**
+   con 2 palancas (% de mora temprana contactada el día 0; % de planes resueltos por regla) que
+   dibuja una curva punteada "escenario" a 60 días tras la puesta en marcha, etiquetada
+   "Escenario ilustrativo, no una proyección". 4 KPIs (recuperado del mes, % resuelto sin
+   humano, promesas cumplidas, contactos fuera de límite = 0 con check). 2 gráficos: embudo de
+   la secuencia (barras horizontales) y recuperación por canal. Panel "Valor del mes"
+   (recuperado atribuible vs. grupo de control, horas de gerencia liberadas, mensajes evitados) y
+   "Uso del plan: 480 de 1,000 cuentas gestionadas" + consumo de terceros a costo. Todas las cifras
+   base con etiqueta "ejemplo".
+2. `#reglas` — pestañas: **Planes** (wow: el usuario define monto máximo, cuotas máximas, niveles
+   permitidos A–C; en vivo "Con esta regla, N de los 120 planes del mes pasado se habrían aprobado
+   solos; a usted le habrían llegado M" — N y M se calculan sobre un dataset determinista de 120
+   solicitudes; con los valores por defecto da 117/3), **Límites y horario** (valores de ejemplo),
+   **Guiones** (con versión), **Bitácora** (por defecto al entrar desde el guion de cumplimiento;
+   CSV real; hash encadenado; nota "formato y campos a acordar con su oficial de cumplimiento").
+3. `#aprobaciones` — solo las M excepciones que resultan de la regla vigente; tarjetas de
+   decisión; aprobar/rechazar decrementa el badge y deja bitácora; toast con Deshacer.
+4. `#conciliacion` — feed de pagos (link de pago, Yappy, archivo del banco) con "Conciliado
+   automático" o "Sin coincidencia · revisar"; botón "Simular pago entrante" que concilia y saca
+   la cuenta de la secuencia (cancela el próximo mensaje programado); KPI "Mensajes evitados a
+   clientes que ya pagaron".
+5. `#conversacion` — selector segmentado: (a) **Pago con plan**: saludo como sistema automatizado
+   → **verificación de identidad** (últimos 4 dígitos de cédula) → saldo → plan preaprobado en 3
+   cuotas → link de pago → pago conciliado → sale de la secuencia; mutación idempotente del
+   estado (KPI recuperado sube una sola vez). (b) **"Ya pagué"**: busca el pago; si no hay
+   coincidencia crea caso en bandeja y pausa contactos. (c) **"No soy el titular"**: no revela
+   ningún dato, registra y detiene. (d) **Llamada de voz**: reproductor visual con onda y
+   transcripción sincronizada (con aviso de grabación al inicio y verificación); sin audio real
+   (hueco preparado para un MP3 futuro). Panel "Qué está pasando en el sistema" sincronizado.
+   Plantilla del día 0 incluye opción de baja.
+6. `#bandeja` — casos escalados (incluye uno nivel D asignado a una persona desde el inicio);
+   panel de caso con resumen IA y acciones básicas.
+7. `#cuenta/:id` — ficha mínima (accesible desde bandeja/conciliación): saldo, nivel, línea de
+   tiempo, próximos contactos (cancelados si pagó o disputa).
+8. `#conectores` — catálogo: SIF (conectado), AgileCheck (conectado), Yappy, Link de pago,
+   Archivo del banco, WhatsApp Business (API oficial), Email, SMS, Voz IA — "Conectado" /
+   "Disponible". Línea "Configurado para Kredit".
+9. `#ruta` — "Qué ve hoy y cuándo llega": cada pantalla → fase (1–5) y semana.
+
+**Transversal:** banda "Datos ficticios de demostración" fija; botón "Reiniciar demo";
+"Recorrido guiado" de 6 pasos (globos) que sigue el guion; no nombrar ningún regulador; sin
+jerga técnica; usted; "B/. 1,250.00". Modo oscuro: al final si sobra tiempo (tokens en
+review-diseno.md).
+
+**Recortes:** sin selector 7/30/90; sin migración semanal; ~40 cuentas visibles + agregados
+fijos (no 4,800 filas); filtros mínimos en bandeja.
+
+**Guion (7 min):** Resumen 0:45 → Reglas+Aprobaciones (wow) → Conciliación → WhatsApp pago (KPI
+sube) → Cumplimiento (verificación, límites, bitácora CSV) → Cierre: pedir fecha del taller de
+reglas de 1 h y datos de cartera para fijar precio.

@@ -1,6 +1,6 @@
 // Estado único del demo: dispatch(action) muta entidades, añade bitácora con hash
 // encadenado (SHA-256) y los KPIs salen de selectores puros.
-import { BASE, DEFAULT_RULE, RULE_TEMPLATES, DEMO_TODAY, buildSeed, withinRule, money, addDays, COBRADORES } from './data.js';
+import { BASE, DEFAULT_RULE, RULE_TEMPLATES, DEMO_TODAY, buildSeed, withinRule, money, addDays, COBRADORES } from './data.js?v=20261007b';
 
 // ---------- SHA-256 síncrono (para la cadena de la bitácora) ----------
 const K = new Uint32Array([

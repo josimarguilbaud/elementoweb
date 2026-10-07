@@ -75,7 +75,7 @@ export const COBRADORES = ['Ana Ríos', 'Jorge Sánchez', 'Melissa Cedeño'];
 export const SIN_ASIGNAR = 'Sin asignar';
 
 export const STAGES = ['D0', 'D3–5', 'D10–15', 'D20+'];
-const STAGE_LABEL = { 'D0': 'Día 0 · WhatsApp + link de pago', 'D3–5': 'Días 3–5 · WhatsApp + email', 'D10–15': 'Días 10–15 · Llamada con IA', 'D20+': 'Día 20+ · Cobrador' };
+const STAGE_LABEL = { 'D0': 'Día 0 · WhatsApp + enlace de pago', 'D3–5': 'Días 3–5 · WhatsApp + email', 'D10–15': 'Días 10–15 · Llamada con IA', 'D20+': 'Día 20+ · Cobrador' };
 export function stageLabel(s) { return STAGE_LABEL[s] || s; }
 function stageFor(days) {
   if (days < 3) return 'D0';
@@ -102,8 +102,8 @@ function baseTimeline(acc, rnd) {
   const ev = [];
   const start = addDays(DEMO_TODAY, -acc.days);
   ev.push({ ts: start + ' 08:30', channel: 'Sistema', text: `Cuota de ${money(acc.cuota)} vencida. Entra a la secuencia de cobranza.`, result: 'Inicio de secuencia' });
-  if (acc.days >= 0) ev.push({ ts: start + ' 09:02', channel: 'WhatsApp', text: 'Recordatorio con link de pago. Incluye opción de baja (responder BAJA).', result: rnd() > 0.3 ? 'Leído' : 'Entregado' });
-  if (acc.days >= 3) ev.push({ ts: addDays(start, 3) + ' 10:15', channel: 'Email', text: 'Estado de cuenta y link de pago.', result: 'Abierto' });
+  if (acc.days >= 0) ev.push({ ts: start + ' 09:02', channel: 'WhatsApp', text: 'Recordatorio con enlace de pago. Incluye opción de baja (responder BAJA).', result: rnd() > 0.3 ? 'Leído' : 'Entregado' });
+  if (acc.days >= 3) ev.push({ ts: addDays(start, 3) + ' 10:15', channel: 'Email', text: 'Estado de cuenta y enlace de pago.', result: 'Abierto' });
   if (acc.days >= 4) ev.push({ ts: addDays(start, 4) + ' 11:40', channel: 'WhatsApp', text: 'Segundo recordatorio con opciones de plan.', result: rnd() > 0.5 ? 'Respondió: “Pago la próxima semana”' : 'Leído, sin respuesta' });
   if (acc.days >= 10) ev.push({
     ts: addDays(start, 10) + ' 15:05', channel: 'Llamada IA', text: 'Llamada del asistente automatizado (aviso de grabación al inicio).', result: 'Contestó · 2 min 14 s',
@@ -121,7 +121,7 @@ function nextContacts(acc) {
     next.push({ id: acc.id + '-n2', ts: addDays(DEMO_TODAY, 5) + ' 10:30', channel: 'Email', label: 'Estado de cuenta actualizado', status: 'programado' });
   } else if (s === 'D10–15') {
     next.push({ id: acc.id + '-n1', ts: addDays(DEMO_TODAY, 1) + ' 15:00', channel: 'Llamada IA', label: 'Llamada con plan preaprobado', status: 'programado' });
-    next.push({ id: acc.id + '-n2', ts: addDays(DEMO_TODAY, 3) + ' 10:00', channel: 'WhatsApp', label: 'Resumen de la llamada y link de pago', status: 'programado' });
+    next.push({ id: acc.id + '-n2', ts: addDays(DEMO_TODAY, 3) + ' 10:00', channel: 'WhatsApp', label: 'Resumen de la llamada y enlace de pago', status: 'programado' });
   } else {
     next.push({ id: acc.id + '-n1', ts: addDays(DEMO_TODAY, 1) + ' 09:30', channel: 'Cobrador', label: 'Gestión personal del cobrador asignado', status: 'programado' });
   }
@@ -307,7 +307,7 @@ export const BASE = {
     { key: 'Cobrador', cents: 4130000 },
   ],
   funnel: [
-    { key: 'D0', label: 'Día 0 · WhatsApp + link', accounts: 480, recoveredPct: 41 },
+    { key: 'D0', label: 'Día 0 · WhatsApp + enlace', accounts: 480, recoveredPct: 41 },
     { key: 'D3–5', label: 'Días 3–5 · WhatsApp + email', accounts: 283, recoveredPct: 27 },
     { key: 'D10–15', label: 'Días 10–15 · Llamada IA', accounts: 162, recoveredPct: 19 },
     { key: 'D20+', label: 'Día 20+ · Cobrador', accounts: 74, recoveredPct: 9 },

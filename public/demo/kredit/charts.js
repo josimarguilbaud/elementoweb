@@ -91,7 +91,7 @@ export function moraChart(container, opts) {
       el('line', { x1: m.l, x2: m.l + iw, y1: sy(v), y2: sy(v), class: 'gridline' }, g);
       txt('text', { x: m.l - 8, y: sy(v) + 4, class: 'tick', 'text-anchor': 'end' }, v + '%', g);
     }
-    const ticks = narrow ? [-90, -45, 0, 30, 60] : [-90, -60, -30, 0, 30, 60];
+    const ticks = narrow ? [-90, 0, 60] : [-90, -60, -30, 0, 30, 60];
     for (const d of ticks) {
       const label = d === 0 ? 'Hoy' : d < 0 ? `hace ${-d} d` : `+${d} d`;
       txt('text', { x: sx(d), y: H - 10, class: 'tick' + (d === 0 ? ' tick-strong' : ''), 'text-anchor': d === -90 ? 'start' : d === 60 ? 'end' : 'middle' }, label, g);
@@ -213,11 +213,9 @@ export function stackBar(container, { segments, label }) {
     const seg = document.createElement('div');
     seg.className = 'stack-seg seq-' + i;
     seg.style.setProperty('--w', p.toFixed(2) + '%');
-    if (p >= 14) {
-      const t = document.createElement('span');
-      t.textContent = `${s.label} · ${Math.round(p)}%`;
-      seg.appendChild(t);
-    }
+    const t = document.createElement('span');
+    t.textContent = `${s.short || s.label} · ${Math.round(p)}%`;
+    seg.appendChild(t);
     seg.addEventListener('pointermove', (e) => showTip(e.clientX, e.clientY, s.label, [{ value: `${s.value} cuentas`, label: `${Math.round(p)}%`, key: 'rect', colorName: 'seq-' + i }]));
     seg.addEventListener('pointerleave', hideTip);
     bar.appendChild(seg);
@@ -228,7 +226,12 @@ export function stackBar(container, { segments, label }) {
     legend.appendChild(li);
   });
   container.append(bar, legend);
-  return () => {};
+  // Una etiqueta que no cabe con holgura no se recorta: se quita (queda en leyenda, tooltip y tabla).
+  const fit = () => bar.querySelectorAll('.stack-seg').forEach((seg) => { const t = seg.querySelector('span'); if (t) { t.hidden = false; if (t.offsetWidth + 12 > seg.clientWidth) t.hidden = true; } });
+  fit();
+  const ro = new ResizeObserver(fit);
+  ro.observe(bar);
+  return () => ro.disconnect();
 }
 
 // ---------- sparkline ----------

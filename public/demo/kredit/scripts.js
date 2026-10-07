@@ -195,7 +195,7 @@ export function chatPlayer(script, ui) {
 
 // ---------- reproductor de voz (sin audio real: transcripción sincronizada) ----------
 export function voicePlayer(ui) {
-  let t = 0;
+  let t = -1; // -1 = aún no empieza
   let timer = null;
   let playing = false;
   let fired = false;
@@ -208,7 +208,7 @@ export function voicePlayer(ui) {
   }
   let shown = -1;
   function render() {
-    const k = lineAt(t);
+    const k = t < 0 ? -1 : lineAt(t);
     if (k !== shown) {
       for (let i = shown + 1; i <= k; i++) {
         if (lines[i].sys) ui.addSys(lines[i].sys, lines[i].tone, i);
@@ -221,6 +221,7 @@ export function voicePlayer(ui) {
   function play() {
     if (playing) return;
     if (t >= VOICE.duration) reset();
+    if (t < 0) t = 0;
     playing = true;
     const speed = reducedMotion() ? 6 : 1;
     timer = setInterval(() => {
@@ -233,7 +234,7 @@ export function voicePlayer(ui) {
   function pause() { playing = false; if (timer) clearInterval(timer); timer = null; render(); }
   function next() {
     pause();
-    const k = lineAt(t);
+    const k = t < 0 ? -1 : lineAt(t);
     if (k + 1 < lines.length) t = lines[k + 1].t; else t = VOICE.duration;
     render();
   }
@@ -244,7 +245,7 @@ export function voicePlayer(ui) {
   }
   function reset() {
     pause();
-    t = 0; shown = -1; fired = false;
+    t = -1; shown = -1; fired = false;
     ui.clearSys();
     render();
   }

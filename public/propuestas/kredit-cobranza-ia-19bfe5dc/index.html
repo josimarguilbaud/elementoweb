@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Cobranza con IA · Propuesta para Kredit — elementoweb.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#f6f8fc; --card:#ffffff; --ink:#0f172a; --ink-2:#1e293b; --muted:#475569; --soft:#64748b;
+  --rule:rgba(15,23,42,.12); --rule-2:rgba(15,23,42,.07);
+  --navy:#0b1220; --navy-2:#122043; --brand:#3b82f6; --brand-deep:#1e3a8a; --brand-tint:#eff6ff;
+  --violet:#7c3aed; --violet-tint:#f5f3ff; --ok:#047857; --ok-tint:#ecfdf5;
+  --display:'Bricolage Grotesque','Inter',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'Geist Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.6 var(--body);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:920px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.015em}
+p{margin:0 0 .9em}
+a{color:var(--brand-deep)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.eyebrow{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:0 0 12px}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding-block:28px 0}
+.brandrow{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:56px}
+.wordmark{display:flex;align-items:center;gap:10px;font:700 17px/1 var(--display);letter-spacing:-.01em}
+.wordmark i{width:20px;height:20px;border-radius:5px;background:linear-gradient(135deg,var(--brand),var(--violet));display:block}
+.doctype{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#93c5fd}
+.hero h1{font-weight:800;font-size:clamp(32px,6vw,54px);line-height:1.02;max-width:16ch}
+.hero .sub{font-size:clamp(15px,2.2vw,18px);color:#cbd5e1;max-width:58ch;margin:18px 0 0}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border-top:1px solid rgba(255,255,255,.14)}
+.facts div{padding:16px 16px 20px 0}
+.facts dt{font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#93c5fd;margin-bottom:8px}
+.facts dd{margin:0;font:600 14px/1.35 var(--body);color:#fff}
+@media(max-width:640px){.facts{grid-template-columns:1fr 1fr}}
+
+/* secciones */
+section{padding-block:52px 4px}
+section h2{font-weight:700;font-size:clamp(24px,3.6vw,34px);line-height:1.1;margin-bottom:14px;max-width:24ch}
+.lede{font-size:17px;color:var(--ink-2);max-width:64ch}
+.prose{max-width:66ch;color:var(--ink-2)}
+.figure{margin:26px 0 8px}
+.figure svg{display:block;width:100%;height:auto}
+.scroll-x{overflow-x:auto}
+.scroll-x svg{min-width:640px}
+.caption{font-size:13px;color:var(--soft);max-width:70ch;margin-top:8px}
+
+/* razones */
+.reasons{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:22px}
+.reasons div{border-top:1px solid var(--rule);padding:16px 0 10px}
+.reasons h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.reasons p{font-size:14.5px;color:var(--muted);margin:0}
+@media(max-width:640px){.reasons{grid-template-columns:1fr}}
+
+/* paquetes */
+.pkgs{display:grid;grid-template-columns:1fr 1.14fr 1fr;gap:16px;margin-top:26px;align-items:stretch}
+.pkg{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:22px 20px;display:flex;flex-direction:column;break-inside:avoid}
+.pkg.rec{background:var(--navy);color:#fff;border-color:var(--navy);position:relative}
+.pkg .tag{font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:10px}
+.pkg.rec .tag{color:#c4b5fd}
+.pkg h3{font-size:21px;font-weight:700;margin-bottom:4px}
+.pkg .for{font-size:13.5px;color:var(--muted);margin-bottom:16px;min-height:2.9em}
+.pkg.rec .for{color:#cbd5e1}
+.price{font:800 40px/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.price small{font:500 12px/1.3 var(--body);color:var(--soft);display:block;margin-top:6px;letter-spacing:0}
+.pkg.rec .price small{color:#cbd5e1}
+.pkg ul{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--rule);font-size:13.5px;display:grid;gap:8px}
+.pkg.rec ul{border-color:rgba(255,255,255,.18)}
+.pkg li{padding-left:18px;position:relative}
+.pkg li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:2px;background:var(--brand)}
+.pkg.rec li::before{background:#a78bfa}
+.pkg .lic{margin-top:auto;padding-top:16px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--rule)}
+.pkg.rec .lic{color:#cbd5e1;border-color:rgba(255,255,255,.2)}
+.pkg ul+.lic{margin-top:18px}
+.badge{position:absolute;top:-11px;left:20px;background:var(--violet);color:#fff;font:600 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:4px}
+@media(max-width:820px){.pkgs{grid-template-columns:1fr}}
+
+/* tablas */
+.tbl{overflow-x:auto;margin-top:22px}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px;background:var(--card);border:1px solid var(--rule)}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--rule-2);vertical-align:top}
+thead th{font:600 12px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);background:#f1f5f9;border-bottom:1px solid var(--rule)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+th.rec,td.rec{background:var(--violet-tint)}
+thead th.rec{color:var(--violet);background:#ede9fe}
+tr.grp td{font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-deep);background:var(--brand-tint);padding-block:9px}
+.yes{color:var(--ok);font-weight:600}
+.no{color:var(--soft)}
+tfoot td{font-weight:700;background:#f1f5f9}
+tr.total td{font-weight:700;border-top:2px solid var(--ink)}
+
+/* opciones de licencia */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.opt{border:1px solid var(--rule);background:var(--card);border-radius:8px;padding:20px;break-inside:avoid}
+.opt h3{font-size:18px;margin-bottom:6px}
+.opt .k{font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:10px}
+.opt p{font-size:14px;color:var(--muted);margin:0 0 .6em}
+.opt ul{margin:8px 0 0;padding-left:18px;font-size:14px;color:var(--ink-2)}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+
+/* listas de accion */
+.checks{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:0;max-width:70ch}
+.checks li{padding:12px 0 12px 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:200px 1fr;gap:16px;font-size:14.5px}
+.checks li b{font-weight:600;color:var(--ink)}
+.checks li span{color:var(--muted)}
+@media(max-width:640px){.checks li{grid-template-columns:1fr;gap:2px}}
+.terms{columns:2;column-gap:40px;font-size:14px;color:var(--ink-2);margin-top:14px}
+.terms p{break-inside:avoid;margin-bottom:.8em}
+@media(max-width:700px){.terms{columns:1}}
+.note{border-left:3px solid var(--violet);background:var(--violet-tint);padding:12px 16px;border-radius:0 6px 6px 0;font-size:14px;color:var(--ink-2);margin-top:18px;max-width:70ch}
+
+/* CTA + pie */
+.cta{margin-top:56px;background:var(--navy);color:#fff;border-radius:10px;padding:32px clamp(20px,4vw,40px);display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center}
+.cta h2{color:#fff;font-size:clamp(24px,3.4vw,32px);max-width:18ch;margin-bottom:8px}
+.cta p{color:#cbd5e1;margin:0;font-size:14.5px}
+.cta .btns{display:grid;gap:10px}
+.btn{display:block;text-align:center;text-decoration:none;font:600 15px/1 var(--body);padding:15px 18px;border-radius:6px;background:var(--brand);color:#fff}
+.btn.alt{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff}
+@media(max-width:700px){.cta{grid-template-columns:1fr}}
+footer{padding:36px 0 56px;font-size:12.5px;color:var(--soft)}
+footer .src{max-width:80ch;margin-top:10px;line-height:1.5}
+footer .src a{color:var(--soft)}
+.legalrow{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--rule);padding-top:14px;margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.04em}
+
+/* severidad y estadisticas */
+.sev{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:4px;white-space:nowrap}
+.sev.crit{background:#fef2f2;color:#b91c1c}
+.sev.alto{background:#fff7ed;color:#c2410c}
+.sev.medio{background:#fefce8;color:#854d0e}
+.sev.bajo{background:#f1f5f9;color:#475569}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:22px;border-top:1px solid var(--rule)}
+.stats div{padding:16px 16px 6px 0}
+.stats b{display:block;font:800 42px/1 var(--display);letter-spacing:-.02em;margin-bottom:6px}
+.stats span{font:500 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.stats .c b{color:#b91c1c}.stats .a b{color:#c2410c}.stats .m b{color:#854d0e}
+@media(max-width:640px){.stats{grid-template-columns:1fr 1fr}}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.cols3 .opt h3{font-size:16px}
+@media(max-width:820px){.cols3{grid-template-columns:1fr}}
+td small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+code{font:500 .9em var(--mono);background:#eef2f7;padding:1px 5px;border-radius:3px}
+td:first-child code{white-space:nowrap}
+
+/* impresion: Carta */
+@page{size:Letter;margin:.5in}
+@media print{
+  body{background:#fff;font-size:12.5px}
+  .wrap{max-width:none;padding-inline:0}
+  .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;margin:-.5in -.5in 0;padding-inline:.5in}
+  section{padding-block:26px 0;break-inside:auto}
+  section h2{break-after:avoid}
+  .figure,.pkg,.opt,.tbl,.reasons div,.checks li,.note,.cta{break-inside:avoid}
+  .scroll-x svg{min-width:0}
+  .cta{margin-top:30px}
+  .btn{border:1px solid #fff}
+  .pdfhide{display:none}
+  .eyebrow{break-after:avoid}
+  section h2{break-inside:avoid;break-after:avoid}
+  .prose,.lede{break-after:avoid}
+  section.newpage{break-before:page;padding-top:0}
+  .pkg.rec{position:static}
+  .badge{position:static;display:inline-block;align-self:flex-start;margin-bottom:12px}
+  .pkgs{grid-template-columns:1fr 1.14fr 1fr;gap:12px}
+  .pkg{padding:18px 15px}
+  .pkg ul{font-size:11.5px}
+  .price{font-size:32px}
+  .two{grid-template-columns:1fr 1fr}
+  .reasons{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:repeat(4,1fr)}
+  .terms{columns:2}
+  .checks li{grid-template-columns:170px 1fr}
+  .cta{grid-template-columns:1.3fr 1fr}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .cols3{grid-template-columns:repeat(3,1fr)}
+  tr{break-inside:avoid}
+  table{min-width:0;font-size:12px}
+  th,td{padding:8px 10px}
+}
+
+/* propios de esta propuesta */
+.ph{background:#fef9c3;border:1px dashed #ca8a04;color:#854d0e;border-radius:4px;padding:1px 6px;font-weight:600;white-space:nowrap}
+.pkg .price .ph{font-size:20px;padding:4px 8px}
+.alert{border-left:3px solid #b91c1c;background:#fef2f2;padding:14px 18px;border-radius:0 6px 6px 0;font-size:14.5px;color:var(--ink-2);margin-top:18px;max-width:70ch}
+.alert b{color:#991b1b}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--soft);margin-top:10px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:6px}
+@media print{.alert{break-inside:avoid}footer .wrap{break-inside:avoid}footer{padding-bottom:0}}
+</style></head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="brandrow"><div class="wordmark"><i aria-hidden="true"></i>Elemento Web</div><div class="doctype">Propuesta · Cobranza con IA</div></div>
+  <h1>Bajar la mora del límite, sin sumar personal</h1>
+  <p class="sub">Una plataforma de cobranza con inteligencia artificial que contacta a cada cliente en el momento correcto, ofrece planes de pago dentro de sus reglas, concilia los pagos al instante y deja registro de cada contacto ante la Superintendencia.</p>
+  <dl class="facts">
+    <div><dt>Preparada para</dt><dd>Kredit · Gerencia General</dd></div>
+    <div><dt>Fecha</dt><dd>7 de octubre de 2026</dd></div>
+    <div><dt>Válida hasta</dt><dd>6 de noviembre de 2026</dd></div>
+    <div><dt>Referencia</dt><dd>EW-KRE-2026-01</dd></div>
+  </dl>
+</div></header>
+<main class="wrap">
+
+<section>
+  <p class="eyebrow">Resumen ejecutivo</p>
+  <h2>Recuperar más, con menos horas y con cada contacto registrado</h2>
+  <p class="lede">Proponemos poner en marcha, en 8 a 14 semanas, una operación de cobranza automatizada sobre su cartera actual. La plataforma trabaja en tres capas: <b>segmenta</b> cada cuenta por riesgo con los datos del SIF y de AgileCheck, <b>contacta</b> de forma automática por WhatsApp, email y SMS según los días de mora, y <b>llama</b> con un agente de voz con IA a las cuentas en mora avanzada.</p>
+  <p class="prose">Antes de encender la IA resolvemos los dos frenos de hoy: los planes de pago que aprueba la Gerencia General uno por uno y la conciliación de pagos por correo. Sin eso, el sistema contactaría más rápido, pero cada caso seguiría esperando una aprobación o un registro manual.</p>
+  <div class="stats">
+    <div class="c"><b>10%</b><span>Mora actual, igual al límite</span></div>
+    <div><b>3</b><span>Capas: segmentar, contactar, llamar</span></div>
+    <div><b>8–14</b><span>Semanas hasta operar completo</span></div>
+    <div><b>100%</b><span>De los contactos con registro auditable</span></div>
+  </div>
+</section>
+
+<section class="newpage">
+  <p class="eyebrow">Diagnóstico</p>
+  <h2>La mora ya está en el límite que permite la regulación</h2>
+  <p class="prose">Según nos indicaron, la cartera en mora de Kredit está en el 10%, que es el tope regulatorio que les aplica. Eso cambia la naturaleza del proyecto: no se trata solo de cobrar mejor, sino de <b>salir de la zona de riesgo regulatorio</b> y mantener un margen de seguridad. Cualquier deterioro adicional de la cartera los pondría por encima del límite.</p>
+  <div class="figure scroll-x"><svg viewBox="0 0 960 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dm-title dm-desc"><title id="dm-title">Mora de Kredit frente al límite regulatorio</title><desc id="dm-desc">Escala de 0 a 15 por ciento de cartera en mora. El límite regulatorio está en 10 por ciento y Kredit está hoy en ese mismo punto. La flecha verde indica el objetivo de bajar con margen de seguridad.</desc><defs><marker id="dm-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#475569"/></marker><marker id="dm-v" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#7c3aed"/></marker><marker id="dm-g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#047857"/></marker><marker id="dm-r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#b91c1c"/></marker><marker id="dm-b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#3b82f6"/></marker></defs><rect width="100%" height="100%" fill="#f6f8fc"/><text x="60" y="40" fill="#64748b" font-size="10" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="start" letter-spacing="0.12em">CARTERA EN MORA SOBRE CARTERA TOTAL</text><rect x="60" y="110" width="560.0" height="26" rx="4" fill="#dbeafe"/><rect x="620.0" y="110" width="280.0" height="26" rx="4" fill="#fee2e2"/><line x1="60.0" y1="136" x2="60.0" y2="148" stroke="#64748b" stroke-width="0.8"/><text x="60.0" y="164" fill="#64748b" font-size="11" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">0%</text><line x1="116.0" y1="136" x2="116.0" y2="142" stroke="#64748b" stroke-width="0.8"/><line x1="172.0" y1="136" x2="172.0" y2="142" stroke="#64748b" stroke-width="0.8"/><line x1="228.0" y1="136" x2="228.0" y2="142" stroke="#64748b" stroke-width="0.8"/><line x1="284.0" y1="136" x2="284.0" y2="142" stroke="#64748b" stroke-width="0.8"/><line x1="340.0" y1="136" x2="340.0" y2="148" stroke="#64748b" stroke-width="0.8"/><text x="340.0" y="164" fill="#64748b" font-size="11" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">5%</text><line x1="396.0" y1="136" x2="396.0" y2="142" stroke="#64748b" stroke-width="0.8"/><line x1="452.0" y1="136" x2="452.0" y2="142" stroke="#64748b" stroke-width="0.8"/><line x1="508.0" y1="136" x2="508.0" y2="142" stroke="#64748b" stroke-width="0.8"/><line x1="564.0" y1="136" x2="564.0" y2="142" stroke="#64748b" stroke-width="0.8"/><line x1="620.0" y1="136" x2="620.0" y2="148" stroke="#64748b" stroke-width="0.8"/><text x="620.0" y="164" fill="#64748b" font-size="11" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">10%</text><line x1="676.0" y1="136" x2="676.0" y2="142" stroke="#64748b" stroke-width="0.8"/><line x1="732.0" y1="136" x2="732.0" y2="142" stroke="#64748b" stroke-width="0.8"/><line x1="788.0" y1="136" x2="788.0" y2="142" stroke="#64748b" stroke-width="0.8"/><line x1="844.0" y1="136" x2="844.0" y2="142" stroke="#64748b" stroke-width="0.8"/><line x1="900.0" y1="136" x2="900.0" y2="148" stroke="#64748b" stroke-width="0.8"/><text x="900.0" y="164" fill="#64748b" font-size="11" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">15%</text><line x1="620.0" y1="70" x2="620.0" y2="136" stroke="#b91c1c" stroke-width="2.5"/><text x="628.0" y="82" fill="#b91c1c" font-size="13" font-weight="700" font-family="Inter, system-ui, sans-serif" text-anchor="start">Límite regulatorio: 10%</text><text x="628.0" y="98" fill="#b91c1c" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">Por encima: zona de infracción</text><circle cx="620.0" cy="123" r="9" fill="#0b1220" stroke="#fff" stroke-width="2"/><text x="606.0" y="82" fill="#0f172a" font-size="13" font-weight="700" font-family="Inter, system-ui, sans-serif" text-anchor="end">Kredit hoy: 10%</text><text x="606.0" y="98" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="end">sin margen ante una mala quincena</text><path d="M608.0 180 L492.0 180" fill="none" stroke="#047857" stroke-width="2" marker-end="url(#dm-g)"/><text x="550.0" y="200" fill="#047857" font-size="11.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Objetivo: margen de seguridad bajo el límite (la meta se fija con Kredit en la fase 1)</text><text x="64" y="128" fill="#1e3a8a" font-size="11" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="start">Dentro del límite</text><text x="896" y="128" fill="#b91c1c" font-size="11" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="end">Fuera del límite</text></svg></div>
+  <p class="caption">El valor de 10% y el límite aplicable se confirman con el oficial de cumplimiento de Kredit en la fase 1, junto con la meta de mora que fijaremos como objetivo del proyecto.</p>
+  <div class="alert"><b>Por qué importa ahora.</b> Un cliente que entra en mora temprana y no recibe contacto en los primeros días tiene mucha más probabilidad de pasar a mora avanzada. Hoy el primer contacto depende de que una persona tenga tiempo; con la plataforma ocurre el mismo día, en todas las cuentas.</div>
+
+  <h2 style="margin-top:44px">Dos frenos que hay que quitar primero</h2>
+  <p class="prose">En la reunión identificamos dos cuellos de botella que hoy limitan cualquier esfuerzo de cobranza, con o sin IA. Por eso la fase 1 los resuelve antes de activar el agente de voz.</p>
+  <div class="figure scroll-x"><svg viewBox="0 0 960 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dc-title dc-desc"><title id="dc-title">Los dos cuellos de botella de hoy y cómo quedan</title><desc id="dc-desc">Comparación de dos procesos. Planes de pago: hoy el Gerente General aprueba cada caso y el cliente espera horas o días; con la plataforma, un motor de reglas preaprobadas permite que el agente ofrezca el plan y solo las excepciones suben a gerencia. Conciliación: hoy el pago se avisa por correo y se registra a mano con hasta un día de retraso, con riesgo de cobrar a quien ya pagó; con la plataforma se concilia automáticamente, se actualiza el SIF y la cuenta sale de la secuencia.</desc><defs><marker id="dc-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#475569"/></marker><marker id="dc-v" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#7c3aed"/></marker><marker id="dc-g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#047857"/></marker><marker id="dc-r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#b91c1c"/></marker><marker id="dc-b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#3b82f6"/></marker></defs><rect width="100%" height="100%" fill="#f6f8fc"/><text x="20" y="32" fill="#64748b" font-size="11" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="start" letter-spacing="0.14em">PLANES DE PAGO</text><text x="20" y="70" fill="#b91c1c" font-size="12" font-weight="700" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="start" letter-spacing="0.06em">HOY</text><text x="20" y="87" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">cada caso sube</text><rect x="196" y="46" width="170" height="58" rx="8" fill="#fff" stroke="rgba(15,23,42,.18)" stroke-width="1"/><text x="281.0" y="71.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Cliente pide plan</text><text x="281.0" y="87.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">por teléfono o chat</text><line x1="368" y1="75.0" x2="385" y2="75.0" stroke="#475569" stroke-width="1.4" marker-end="url(#dc-a)"/><rect x="388" y="46" width="170" height="58" rx="8" fill="#fff" stroke="rgba(15,23,42,.18)" stroke-width="1"/><text x="473.0" y="71.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Cobrador arma la</text><text x="473.0" y="87.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">propuesta a mano</text><line x1="560" y1="75.0" x2="577" y2="75.0" stroke="#475569" stroke-width="1.4" marker-end="url(#dc-a)"/><rect x="580" y="46" width="170" height="58" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/><text x="665.0" y="71.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Gerente General</text><text x="665.0" y="87.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">aprueba caso por caso</text><line x1="752" y1="75.0" x2="769" y2="75.0" stroke="#475569" stroke-width="1.4" marker-end="url(#dc-a)"/><rect x="772" y="46" width="170" height="58" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/><text x="857.0" y="71.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Respuesta al cliente</text><text x="857.0" y="87.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">horas o días después</text><text x="20" y="142" fill="#047857" font-size="12" font-weight="700" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="start" letter-spacing="0.06em">CON LA PLATAFORMA</text><text x="20" y="159" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">solo excepciones suben</text><rect x="196" y="118" width="170" height="58" rx="8" fill="#fff" stroke="rgba(15,23,42,.18)" stroke-width="1"/><text x="281.0" y="143.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Cliente pide plan</text><text x="281.0" y="159.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">WhatsApp o llamada</text><line x1="368" y1="147.0" x2="385" y2="147.0" stroke="#475569" stroke-width="1.4" marker-end="url(#dc-a)"/><rect x="388" y="118" width="170" height="58" rx="8" fill="#ecfdf5" stroke="#047857" stroke-width="1"/><text x="473.0" y="143.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Motor de reglas</text><text x="473.0" y="159.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">planes preaprobados</text><line x1="560" y1="147.0" x2="577" y2="147.0" stroke="#475569" stroke-width="1.4" marker-end="url(#dc-a)"/><rect x="580" y="118" width="170" height="58" rx="8" fill="#ecfdf5" stroke="#047857" stroke-width="1"/><text x="665.0" y="143.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Agente IA lo ofrece</text><text x="665.0" y="159.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">y registra la promesa</text><line x1="752" y1="147.0" x2="769" y2="147.0" stroke="#475569" stroke-width="1.4" marker-end="url(#dc-a)"/><rect x="772" y="118" width="170" height="58" rx="8" fill="#fff" stroke="rgba(15,23,42,.18)" stroke-width="1"/><text x="857.0" y="143.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Gerencia revisa</text><text x="857.0" y="159.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">solo lo fuera de regla</text><line x1="20" y1="200" x2="940" y2="200" stroke="rgba(15,23,42,.12)"/><text x="20" y="228" fill="#64748b" font-size="11" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="start" letter-spacing="0.14em">CONCILIACIÓN DE PAGOS</text><text x="20" y="266" fill="#b91c1c" font-size="12" font-weight="700" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="start" letter-spacing="0.06em">HOY</text><text x="20" y="283" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">aviso por correo</text><rect x="196" y="242" width="170" height="58" rx="8" fill="#fff" stroke="rgba(15,23,42,.18)" stroke-width="1"/><text x="281.0" y="267.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Cliente paga</text><text x="281.0" y="283.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">banco, ACH o Yappy</text><line x1="368" y1="271.0" x2="385" y2="271.0" stroke="#475569" stroke-width="1.4" marker-end="url(#dc-a)"/><rect x="388" y="242" width="170" height="58" rx="8" fill="#fff" stroke="rgba(15,23,42,.18)" stroke-width="1"/><text x="473.0" y="267.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Aviso por correo</text><text x="473.0" y="283.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">a una persona</text><line x1="560" y1="271.0" x2="577" y2="271.0" stroke="#475569" stroke-width="1.4" marker-end="url(#dc-a)"/><rect x="580" y="242" width="170" height="58" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/><text x="665.0" y="267.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Registro manual</text><text x="665.0" y="283.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">hasta 1 día de retraso</text><line x1="752" y1="271.0" x2="769" y2="271.0" stroke="#475569" stroke-width="1.4" marker-end="url(#dc-a)"/><rect x="772" y="242" width="170" height="58" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/><text x="857.0" y="267.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Riesgo: se cobra</text><text x="857.0" y="283.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">a quien ya pagó</text><text x="20" y="338" fill="#047857" font-size="12" font-weight="700" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="start" letter-spacing="0.06em">CON LA PLATAFORMA</text><text x="20" y="355" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">en minutos</text><rect x="196" y="314" width="170" height="58" rx="8" fill="#fff" stroke="rgba(15,23,42,.18)" stroke-width="1"/><text x="281.0" y="339.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Cliente paga</text><text x="281.0" y="355.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">link de pago o banco</text><line x1="368" y1="343.0" x2="385" y2="343.0" stroke="#475569" stroke-width="1.4" marker-end="url(#dc-a)"/><rect x="388" y="314" width="170" height="58" rx="8" fill="#ecfdf5" stroke="#047857" stroke-width="1"/><text x="473.0" y="339.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Conciliación auto.</text><text x="473.0" y="355.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">aviso o archivo del banco</text><line x1="560" y1="343.0" x2="577" y2="343.0" stroke="#475569" stroke-width="1.4" marker-end="url(#dc-a)"/><rect x="580" y="314" width="170" height="58" rx="8" fill="#ecfdf5" stroke="#047857" stroke-width="1"/><text x="665.0" y="339.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">SIF actualizado</text><text x="665.0" y="355.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">saldo al día</text><line x1="752" y1="343.0" x2="769" y2="343.0" stroke="#475569" stroke-width="1.4" marker-end="url(#dc-a)"/><rect x="772" y="314" width="170" height="58" rx="8" fill="#fff" stroke="rgba(15,23,42,.18)" stroke-width="1"/><text x="857.0" y="339.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Sale de la secuencia</text><text x="857.0" y="355.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">y recibe su recibo</text></svg></div>
+  <p class="caption">Cobrar a un cliente que ya pagó, porque el pago todavía no se registró, es una de las causas más comunes de reclamos. La conciliación automática elimina ese riesgo.</p>
+</section>
+
+<section>
+  <p class="eyebrow">Tecnología disponible hoy</p>
+  <h2>Un agente de voz que llama, negocia dentro de reglas y deja todo grabado</h2>
+  <p class="prose">Hoy existen agentes de voz con IA que hacen llamadas de cobranza con voz natural en español. Se identifican como sistema automatizado, recuerdan el saldo, ofrecen planes de pago preaprobados y transfieren a una persona cuando detectan una disputa o un caso delicado. No reemplazan a su equipo: le quitan las llamadas repetitivas para que se concentre en los casos que de verdad necesitan criterio humano.</p>
+  <div class="cols3">
+    <div class="opt"><p class="k">Escala</p><h3>Cientos de llamadas al día</h3><p>Cada cuenta en la etapa correspondiente recibe su llamada a tiempo, dentro del horario permitido, sin depender de la disponibilidad del equipo.</p></div>
+    <div class="opt"><p class="k">Consistencia</p><h3>El mismo guion, siempre</h3><p>Ninguna llamada sale del tono aprobado ni ofrece algo fuera de las reglas. Cada conversación queda grabada y transcrita.</p></div>
+    <div class="opt"><p class="k">Control</p><h3>Una persona decide lo delicado</h3><p>Disputas, menciones legales o clientes vulnerables pasan de inmediato a un cobrador, con el resumen de la conversación.</p></div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">La solución</p>
+  <h2>Una plataforma propia, conectada a sus sistemas</h2>
+  <p class="prose">Es una plataforma de Elemento Web que operamos como servicio: Kredit no compra servidores ni licencias sueltas ni mantiene integraciones. Se conecta al SIF y a AgileCheck, usa sus canales oficiales y escribe de vuelta en el SIF los pagos, promesas y gestiones.</p>
+  <div class="figure scroll-x"><svg viewBox="0 0 960 476" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="da-title da-desc"><title id="da-title">Arquitectura de la plataforma de cobranza</title><desc id="da-desc">A la izquierda, los sistemas de Kredit: SIF, AgileCheck y banco o pagos, que alimentan la plataforma. En el centro, la plataforma de Elemento Web con ocho módulos: conector de datos, segmentación, motor de reglas, orquestador n8n, agente de WhatsApp, agente de voz, conciliación y bitácora auditable. A la derecha, los canales WhatsApp, email, SMS y llamada que llegan al cliente en mora. Abajo, el dashboard gerencial y la bandeja de cobradores para disputas y casos de riesgo.</desc><defs><marker id="da-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#475569"/></marker><marker id="da-v" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#7c3aed"/></marker><marker id="da-g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#047857"/></marker><marker id="da-r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#b91c1c"/></marker><marker id="da-b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#3b82f6"/></marker></defs><rect width="100%" height="100%" fill="#f6f8fc"/><text x="20" y="36" fill="#64748b" font-size="10" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="start" letter-spacing="0.12em">SISTEMAS DE KREDIT</text><rect x="20" y="96" width="170" height="66" rx="8" fill="#fff" stroke="rgba(15,23,42,.22)" stroke-width="1"/><text x="105.0" y="118.0" fill="#0f172a" font-size="13" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">SIF</text><text x="105.0" y="134.0" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">sistema core</text><text x="105.0" y="148.0" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">cartera y saldos</text><rect x="20" y="186" width="170" height="66" rx="8" fill="#fff" stroke="rgba(15,23,42,.22)" stroke-width="1"/><text x="105.0" y="208.0" fill="#0f172a" font-size="13" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">AgileCheck</text><text x="105.0" y="224.0" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">score de riesgo</text><text x="105.0" y="238.0" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">ya existente</text><rect x="20" y="276" width="170" height="66" rx="8" fill="#fff" stroke="rgba(15,23,42,.22)" stroke-width="1"/><text x="105.0" y="298.0" fill="#0f172a" font-size="13" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Banco y pagos</text><text x="105.0" y="314.0" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">ACH, Yappy,</text><text x="105.0" y="328.0" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">link de pago</text><rect x="226" y="56" width="492" height="316" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/><text x="472" y="82" fill="#1e3a8a" font-size="10.5" font-weight="600" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.1em">PLATAFORMA DE COBRANZA · ELEMENTO WEB</text><rect x="244" y="98" width="216" height="54" rx="8" fill="#fff" stroke="rgba(30,58,138,.25)" stroke-width="1"/><text x="352.0" y="121.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Conector de datos</text><text x="352.0" y="137.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">lee SIF y AgileCheck</text><rect x="476" y="98" width="216" height="54" rx="8" fill="#fff" stroke="rgba(30,58,138,.25)" stroke-width="1"/><text x="584.0" y="121.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Segmentación</text><text x="584.0" y="137.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">4 niveles de riesgo</text><rect x="244" y="164" width="216" height="54" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="1"/><text x="352.0" y="187.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Motor de reglas</text><text x="352.0" y="203.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">planes y límites de contacto</text><rect x="476" y="164" width="216" height="54" rx="8" fill="#fff" stroke="rgba(30,58,138,.25)" stroke-width="1"/><text x="584.0" y="187.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Orquestador (n8n)</text><text x="584.0" y="203.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">secuencias por etapa</text><rect x="244" y="230" width="216" height="54" rx="8" fill="#fff" stroke="rgba(30,58,138,.25)" stroke-width="1"/><text x="352.0" y="253.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Agente WhatsApp IA</text><text x="352.0" y="269.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">consultas, pagos, planes</text><rect x="476" y="230" width="216" height="54" rx="8" fill="#fff" stroke="rgba(30,58,138,.25)" stroke-width="1"/><text x="584.0" y="253.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Agente de voz IA</text><text x="584.0" y="269.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">llamadas en mora avanzada</text><rect x="244" y="296" width="216" height="54" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="1"/><text x="352.0" y="319.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Conciliación</text><text x="352.0" y="335.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">pagos al instante</text><rect x="476" y="296" width="216" height="54" rx="8" fill="#fff" stroke="rgba(30,58,138,.25)" stroke-width="1"/><text x="584.0" y="319.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Bitácora auditable</text><text x="584.0" y="335.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">cada contacto, exportable</text><line x1="192" y1="120" x2="224" y2="120" stroke="#475569" stroke-width="1.4" marker-end="url(#da-a)"/><line x1="192" y1="210" x2="224" y2="210" stroke="#475569" stroke-width="1.4" marker-end="url(#da-a)"/><line x1="192" y1="300" x2="224" y2="300" stroke="#475569" stroke-width="1.4" marker-end="url(#da-a)"/><line x1="224" y1="142" x2="192" y2="142" stroke="#7c3aed" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#da-v)"/><text x="756" y="36" fill="#64748b" font-size="10" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="start" letter-spacing="0.12em">CANALES</text><rect x="756" y="56" width="184" height="46" rx="8" fill="#fff" stroke="rgba(15,23,42,.22)" stroke-width="1"/><text x="848.0" y="75.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">WhatsApp</text><text x="848.0" y="91.5" fill="#475569" font-size="10" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">API oficial de Meta</text><line x1="720" y1="79" x2="754" y2="79" stroke="#475569" stroke-width="1.4" marker-end="url(#da-a)"/><rect x="756" y="112" width="184" height="46" rx="8" fill="#fff" stroke="rgba(15,23,42,.22)" stroke-width="1"/><text x="848.0" y="139.0" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Email</text><line x1="720" y1="135" x2="754" y2="135" stroke="#475569" stroke-width="1.4" marker-end="url(#da-a)"/><rect x="756" y="168" width="184" height="46" rx="8" fill="#fff" stroke="rgba(15,23,42,.22)" stroke-width="1"/><text x="848.0" y="195.0" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">SMS</text><line x1="720" y1="191" x2="754" y2="191" stroke="#475569" stroke-width="1.4" marker-end="url(#da-a)"/><rect x="756" y="224" width="184" height="46" rx="8" fill="#fff" stroke="rgba(15,23,42,.22)" stroke-width="1"/><text x="848.0" y="243.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Llamada de voz</text><text x="848.0" y="259.5" fill="#475569" font-size="10" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">número local</text><line x1="720" y1="247" x2="754" y2="247" stroke="#475569" stroke-width="1.4" marker-end="url(#da-a)"/><rect x="756" y="300" width="184" height="64" rx="8" fill="#0b1220" stroke="#0b1220" stroke-width="1"/><text x="848.0" y="321.0" fill="#fff" font-size="13" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Cliente en mora</text><text x="848.0" y="337.0" fill="#cbd5e1" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">responde, paga o</text><text x="848.0" y="351.0" fill="#cbd5e1" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">pide un plan</text><line x1="848" y1="272" x2="848" y2="298" stroke="#475569" stroke-width="1.4" marker-end="url(#da-a)"/><rect x="244" y="400" width="216" height="56" rx="8" fill="#fff" stroke="rgba(15,23,42,.22)" stroke-width="1"/><text x="352.0" y="424.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Dashboard gerencial</text><text x="352.0" y="440.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">mora, recuperación, cumplimiento</text><rect x="476" y="400" width="216" height="56" rx="8" fill="#fff5f5" stroke="#b91c1c" stroke-width="1"/><text x="584.0" y="424.5" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="middle">Bandeja de cobradores</text><text x="584.0" y="440.5" fill="#475569" font-size="10.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="middle">disputas y casos de riesgo</text><line x1="352" y1="374" x2="352" y2="398" stroke="#475569" stroke-width="1.4" marker-end="url(#da-a)"/><line x1="584" y1="374" x2="584" y2="398" stroke="#b91c1c" stroke-width="1.4" marker-end="url(#da-r)"/><line x1="20" y1="424" x2="44" y2="424" stroke="#7c3aed" stroke-width="1.4" stroke-dasharray="4 3"/><text x="52" y="428" fill="#7c3aed" font-size="11" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="start">Escritura de vuelta:</text><text x="20" y="446" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">pagos, promesas y gestiones</text><text x="20" y="462" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">quedan registrados en el SIF</text></svg></div>
+  <p class="caption">En violeta, los dos módulos que resuelven los frenos actuales: el motor de reglas, que sustituye la aprobación caso por caso, y la conciliación automática. La forma de conexión con el SIF (API, base de datos de solo lectura o archivo diario) se define en la fase 1 con su equipo de sistemas.</p>
+  <ul class="checks">
+    <li><b>Conector de datos</b><span>Lee del SIF saldos, cuotas, días de mora e historial de pago, y de AgileCheck el score de cada cliente. Escribe de vuelta pagos, promesas y gestiones.</span></li>
+    <li><b>Motor de reglas</b><span>La Gerencia General define una vez qué planes se pueden ofrecer, a quién y con qué condiciones. Lo que entra en la regla se ofrece al instante; solo las excepciones le llegan a aprobar.</span></li>
+    <li><b>Conciliación de pagos</b><span>Recibe los pagos por link de pago o por el aviso o archivo del banco, los cruza con la cuenta y saca al cliente de la secuencia en minutos, no al día siguiente.</span></li>
+    <li><b>Bandeja de cobradores</b><span>Las disputas, los casos de riesgo y las excepciones llegan a su equipo con el historial completo de la cuenta y de cada contacto.</span></li>
+  </ul>
+</section>
+
+<section>
+  <p class="eyebrow">Capa 1 · Segmentación</p>
+  <h2>Cada cuenta recibe la intensidad que le corresponde</h2>
+  <p class="prose">Aprovechamos el score de AgileCheck que ya usan, en vez de construir otro, y lo combinamos con el comportamiento de pago de cada cliente. Así el esfuerzo se concentra donde más se recupera.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Criterio</th><th>Fuente</th><th>Uso en la segmentación</th></tr></thead>
+    <tbody>
+      <tr><td><b>Días de mora</b></td><td>SIF</td><td>Define en qué etapa de la secuencia entra la cuenta.</td></tr>
+      <tr><td><b>Monto adeudado</b></td><td>SIF</td><td>Prioriza el esfuerzo hacia los montos altos.</td></tr>
+      <tr><td><b>Score de riesgo</b></td><td>AgileCheck</td><td>Ajusta la probabilidad de pago estimada.</td></tr>
+      <tr><td><b>Historial de pagos y promesas</b></td><td>SIF y plataforma</td><td>Distingue al cliente que se atrasa por descuido del que no tiene intención de pagar.</td></tr>
+      <tr><td><b>Canal que responde</b></td><td>Plataforma</td><td>Prioriza el canal en el que ese cliente suele contestar.</td></tr>
+      <tr><td><b>Disputas o reclamos abiertos</b></td><td>SIF o atención al cliente</td><td>Saca la cuenta de la automatización y la asigna a una persona.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Nivel</th><th>Perfil</th><th>Tratamiento</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sev bajo">A · Bajo</span></td><td>Buen historial, atraso corto</td><td>Recordatorios amables por WhatsApp; sin llamadas.</td></tr>
+      <tr><td><span class="sev medio">B · Medio</span></td><td>Atrasos ocasionales</td><td>Secuencia completa por mensajes; llamada con IA desde el día 10.</td></tr>
+      <tr><td><span class="sev alto">C · Alto</span></td><td>Atrasos repetidos o score bajo</td><td>Llamada con IA más temprana y oferta de plan preaprobado.</td></tr>
+      <tr><td><span class="sev crit">D · Crítico</span></td><td>Monto alto, mora avanzada o promesas incumplidas</td><td>Cobrador humano desde el inicio, con apoyo de la plataforma.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="caption">Cuatro niveles como punto de partida, con reglas simples y explicables. Los cortes se calibran con su cartera real en la fase 2.</p>
+</section>
+
+<section>
+  <p class="eyebrow">Capa 2 · Secuencia multicanal</p>
+  <h2>El contacto correcto, el día correcto, por el canal correcto</h2>
+  <p class="prose">Cada cuenta avanza por una secuencia según sus días de mora. Todo ocurre de forma automática, dentro del horario y de los límites de contacto permitidos.</p>
+  <div class="figure scroll-x"><svg viewBox="0 0 960 376" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ds-title ds-desc"><title id="ds-title">Secuencia de cobranza por días de mora</title><desc id="ds-desc">Línea de tiempo en cuatro etapas: día 0 recordatorio amable por WhatsApp con link de pago; días 3 a 5 segundo aviso por WhatsApp y email, SMS si no lee; días 10 a 15 gestión firme con llamada de IA y oferta de plan preaprobado; día 20 en adelante escalamiento a cobrador humano o vía legal. Si paga en cualquier etapa sale de la secuencia; ante disputa o pedido de no contacto se detiene todo y pasa a una persona.</desc><defs><marker id="ds-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#475569"/></marker><marker id="ds-v" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#7c3aed"/></marker><marker id="ds-g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#047857"/></marker><marker id="ds-r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#b91c1c"/></marker><marker id="ds-b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#3b82f6"/></marker></defs><rect width="100%" height="100%" fill="#f6f8fc"/><line x1="30" y1="52" x2="930" y2="52" stroke="#64748b" stroke-width="1.2"/><circle cx="127.0" cy="52" r="7" fill="#3b82f6"/><text x="127.0" y="32" fill="#3b82f6" font-size="11" font-weight="600" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.1em">DÍA 0</text><rect x="20" y="74" width="214" height="150" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/><text x="36" y="102" fill="#0f172a" font-size="15" font-weight="700" font-family="'Bricolage Grotesque', Inter, sans-serif" text-anchor="start">Recordatorio amable</text><text x="36" y="128" fill="#0f172a" font-size="12.5" font-weight="500" font-family="Inter, system-ui, sans-serif" text-anchor="start">WhatsApp + link de pago</text><line x1="36" y1="178" x2="218" y2="178" stroke="rgba(15,23,42,.12)"/><text x="36" y="200" fill="#475569" font-size="11.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">Tono cordial</text><line x1="236" y1="149" x2="250" y2="149" stroke="#475569" stroke-width="1.4" marker-end="url(#ds-a)"/><circle cx="359.0" cy="52" r="7" fill="#3b82f6"/><text x="359.0" y="32" fill="#3b82f6" font-size="11" font-weight="600" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.1em">DÍA 3 A 5</text><rect x="252" y="74" width="214" height="150" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/><text x="268" y="102" fill="#0f172a" font-size="15" font-weight="700" font-family="'Bricolage Grotesque', Inter, sans-serif" text-anchor="start">Segundo aviso</text><text x="268" y="128" fill="#0f172a" font-size="12.5" font-weight="500" font-family="Inter, system-ui, sans-serif" text-anchor="start">WhatsApp + email</text><text x="268" y="146" fill="#0f172a" font-size="12.5" font-weight="500" font-family="Inter, system-ui, sans-serif" text-anchor="start">SMS si no lee</text><line x1="268" y1="178" x2="450" y2="178" stroke="rgba(15,23,42,.12)"/><text x="268" y="200" fill="#475569" font-size="11.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">Tono claro</text><line x1="468" y1="149" x2="482" y2="149" stroke="#475569" stroke-width="1.4" marker-end="url(#ds-a)"/><circle cx="591.0" cy="52" r="7" fill="#7c3aed"/><text x="591.0" y="32" fill="#7c3aed" font-size="11" font-weight="600" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.1em">DÍA 10 A 15</text><rect x="484" y="74" width="214" height="150" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.2"/><text x="500" y="102" fill="#0f172a" font-size="15" font-weight="700" font-family="'Bricolage Grotesque', Inter, sans-serif" text-anchor="start">Gestión firme</text><text x="500" y="128" fill="#0f172a" font-size="12.5" font-weight="500" font-family="Inter, system-ui, sans-serif" text-anchor="start">Llamada con IA</text><text x="500" y="146" fill="#0f172a" font-size="12.5" font-weight="500" font-family="Inter, system-ui, sans-serif" text-anchor="start">oferta de plan preaprobado</text><line x1="500" y1="178" x2="682" y2="178" stroke="rgba(15,23,42,.12)"/><text x="500" y="200" fill="#475569" font-size="11.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">Tono firme y respetuoso</text><line x1="700" y1="149" x2="714" y2="149" stroke="#475569" stroke-width="1.4" marker-end="url(#ds-a)"/><circle cx="823.0" cy="52" r="7" fill="#c2410c"/><text x="823.0" y="32" fill="#c2410c" font-size="11" font-weight="600" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.1em">DÍA 20 EN ADELANTE</text><rect x="716" y="74" width="214" height="150" rx="8" fill="#fff7ed" stroke="#c2410c" stroke-width="1.2"/><text x="732" y="102" fill="#0f172a" font-size="15" font-weight="700" font-family="'Bricolage Grotesque', Inter, sans-serif" text-anchor="start">Escalamiento</text><text x="732" y="128" fill="#0f172a" font-size="12.5" font-weight="500" font-family="Inter, system-ui, sans-serif" text-anchor="start">Cobrador humano</text><text x="732" y="146" fill="#0f172a" font-size="12.5" font-weight="500" font-family="Inter, system-ui, sans-serif" text-anchor="start">o vía legal</text><line x1="732" y1="178" x2="914" y2="178" stroke="rgba(15,23,42,.12)"/><text x="732" y="200" fill="#475569" font-size="11.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">Decisión de Kredit</text><rect x="20" y="246" width="920" height="38" rx="6" fill="#ecfdf5" stroke="#047857" stroke-width="1"/><text x="36" y="270" fill="#047857" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="start">Si paga en cualquier etapa: la cuenta sale de la secuencia de inmediato y recibe su comprobante.</text><rect x="20" y="294" width="920" height="38" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/><text x="36" y="318" fill="#b91c1c" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="start">Si dice «ya pagué», «no es mío», pide no ser contactado o menciona un abogado: se detiene todo y pasa a una persona.</text><text x="20" y="360" fill="#475569" font-size="11.5" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">Los días, canales y tonos son el punto de partida; se ajustan por nivel de riesgo y con los resultados de las primeras semanas.</text></svg></div>
+  <p class="caption">Los mensajes de WhatsApp salen por la API oficial de Meta, con plantillas aprobadas y con la marca de Kredit verificada. Así se evita el bloqueo del número y se cumple la política de mensajes de la plataforma.</p>
+</section>
+
+<section>
+  <p class="eyebrow">Capa 3 · Agentes con IA</p>
+  <h2>Dos agentes que atienden, ofrecen y escalan</h2>
+  <div class="two">
+    <div class="opt"><p class="k">WhatsApp, desde el día 0</p><h3>Agente conversacional</h3>
+      <ul>
+        <li>Responde saldo, fecha de vencimiento e historial con datos reales del SIF. No inventa montos.</li>
+        <li>Envía el link de pago y confirma cuando el pago entra.</li>
+        <li>Ofrece planes dentro de las reglas preaprobadas y registra la promesa de pago.</li>
+        <li>Detecta «ya pagué», «no es mío» o «quiero hablar con un abogado» y pasa el caso a una persona, deteniendo los mensajes.</li>
+      </ul></div>
+    <div class="opt"><p class="k">Voz, desde el día 10–15</p><h3>Agente de llamadas</h3>
+      <ul>
+        <li>Llama desde un número local y se identifica como sistema automatizado de Kredit.</li>
+        <li>Verifica la identidad antes de hablar de la deuda.</li>
+        <li>Negocia solo dentro de las reglas y confirma el acuerdo por WhatsApp.</li>
+        <li>Graba y transcribe cada llamada, y transfiere a un cobrador ante disputa o riesgo.</li>
+      </ul></div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Plataforma de voz</th><th>Fortaleza</th><th class="n">Costo de referencia</th></tr></thead>
+    <tbody>
+      <tr><td><b>Retell AI</b></td><td>Casos de cobranza ya probados e integración con sistemas de préstamos.</td><td class="n">US$0.07–0.31 / min</td></tr>
+      <tr><td><b>Vapi</b></td><td>Más flexible para integrar reglas de cumplimiento propias.</td><td class="n">US$0.05 / min + telefonía y voz</td></tr>
+      <tr><td><b>Bland AI</b></td><td>Modelo de voz propio y baja latencia.</td><td class="n">Variable</td></tr>
+    </tbody>
+  </table></div>
+  <p class="caption">Elegimos la plataforma en la fase 1 con pruebas de voz en español de Panamá. El orquestador no depende de un solo proveedor: si uno sube de precio o baja de calidad, se cambia sin rehacer el sistema.</p>
+</section>
+
+<section>
+  <p class="eyebrow">Cumplimiento y gobernanza</p>
+  <h2>Diseñado para resistir una auditoría</h2>
+  <p class="prose">En una entidad regulada, lo que importa no es solo cuánto se cobra, sino cómo. Cada regla se configura dentro de los límites que exigen la Superintendencia y la normativa de protección al consumidor, y queda documentada.</p>
+  <ul class="checks">
+    <li><b>Límites de contacto</b><span>Máximo de intentos por cuenta, por día y por semana, y horario permitido. El sistema no puede pasarse aunque alguien lo intente.</span></li>
+    <li><b>Identificación</b><span>El agente, por voz o por WhatsApp, se identifica siempre como sistema automatizado de Kredit al inicio.</span></li>
+    <li><b>Pausa y escalamiento</b><span>Ante una disputa, un reclamo, una mención legal o un pedido de no contacto, se detiene la automatización y el caso pasa a una persona.</span></li>
+    <li><b>Terceros</b><span>Nunca se habla de la deuda con alguien distinto al titular. La identidad se verifica antes de dar cualquier dato.</span></li>
+    <li><b>Bitácora auditable</b><span>Fecha, hora, canal, contenido, grabación y resultado de cada contacto. Se exporta para una auditoría o para responder un reclamo.</span></li>
+    <li><b>Datos personales</b><span>Tratamiento conforme a la Ley 81 de 2019 de protección de datos personales: acceso por roles, cifrado y datos que no se usan para entrenar modelos de IA.</span></li>
+    <li><b>Aprobación de guiones</b><span>Todos los mensajes y guiones de llamada los aprueba Kredit antes de salir, y cualquier cambio queda versionado.</span></li>
+  </ul>
+  <div class="note">Los límites exactos de frecuencia, horario y contenido se confirman con su oficial de cumplimiento en la fase 1, antes de enviar el primer mensaje.</div>
+</section>
+
+<section>
+  <p class="eyebrow">Dashboard</p>
+  <h2>La cobranza en tiempo real, en una sola pantalla</h2>
+  <p class="prose">La Gerencia General ve en todo momento cuánto se recupera, por qué canal y si se cumplen los límites. Medimos la situación inicial en la fase 1 para que el resultado se pueda comparar con datos y no con impresiones.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Métrica</th><th>Qué responde</th></tr></thead>
+    <tbody>
+      <tr><td><b>Mora sobre cartera total</b></td><td>¿Cuánto margen tenemos frente al límite regulatorio?</td></tr>
+      <tr><td><b>Recuperación por etapa y canal</b></td><td>¿Qué mensaje, canal o llamada está funcionando?</td></tr>
+      <tr><td><b>Monto recuperado frente a mora</b></td><td>¿Cuánto dinero devolvió el sistema este mes?</td></tr>
+      <tr><td><b>Promesas de pago cumplidas</b></td><td>¿Los acuerdos que se cierran se pagan de verdad?</td></tr>
+      <tr><td><b>Paso de mora temprana a avanzada</b></td><td>¿Estamos frenando el deterioro de la cartera?</td></tr>
+      <tr><td><b>Casos resueltos sin intervención humana</b></td><td>¿Cuántas horas del equipo liberamos?</td></tr>
+      <tr><td><b>Tiempo hasta el primer contacto</b></td><td>¿Qué tan rápido actuamos sobre una cuenta nueva en mora?</td></tr>
+      <tr><td><b>Casos escalados y motivo</b></td><td>¿Cuántas disputas y casos de riesgo hay, y por qué?</td></tr>
+      <tr><td><b>Cumplimiento de límites</b></td><td>¿Alguna cuenta recibió más contactos de los permitidos? Debe ser siempre cero.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note">Para medir el efecto real, durante las primeras semanas dejamos un grupo pequeño de cuentas con el proceso actual y lo comparamos con las gestionadas por la plataforma.</div>
+</section>
+
+<section class="newpage">
+  <p class="eyebrow">Fases y cronograma</p>
+  <h2>De 8 a 14 semanas, empezando por quitar los frenos</h2>
+  <div class="figure scroll-x"><svg viewBox="0 0 960 416" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dg-title dg-desc"><title id="dg-title">Cronograma por fases en semanas</title><desc id="dg-desc">Gantt de 14 semanas con cinco fases. Escenario ágil: descubrimiento y bases en la semana y media inicial; segmentación y secuencia hasta la semana 4; agente de WhatsApp hasta la 6; agente de voz de la 6 a la 7; dashboard y ajuste en la 8. El escenario conservador, punteado, llega a 14 semanas. La fase de voz depende de que las reglas y la conciliación de la fase 1 estén funcionando.</desc><defs><marker id="dg-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#475569"/></marker><marker id="dg-v" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#7c3aed"/></marker><marker id="dg-g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#047857"/></marker><marker id="dg-r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#b91c1c"/></marker><marker id="dg-b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#3b82f6"/></marker></defs><rect width="100%" height="100%" fill="#f6f8fc"/><text x="274.64285714285717" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S1</text><line x1="250.0" y1="60" x2="250.0" y2="356" stroke="rgba(15,23,42,.07)"/><text x="323.92857142857144" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S2</text><line x1="299.2857142857143" y1="60" x2="299.2857142857143" y2="356" stroke="rgba(15,23,42,.07)"/><text x="373.2142857142857" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S3</text><line x1="348.57142857142856" y1="60" x2="348.57142857142856" y2="356" stroke="rgba(15,23,42,.07)"/><text x="422.5" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S4</text><line x1="397.8571428571429" y1="60" x2="397.8571428571429" y2="356" stroke="rgba(15,23,42,.07)"/><text x="471.7857142857143" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S5</text><line x1="447.1428571428571" y1="60" x2="447.1428571428571" y2="356" stroke="rgba(15,23,42,.07)"/><text x="521.0714285714286" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S6</text><line x1="496.42857142857144" y1="60" x2="496.42857142857144" y2="356" stroke="rgba(15,23,42,.07)"/><text x="570.3571428571429" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S7</text><line x1="545.7142857142858" y1="60" x2="545.7142857142858" y2="356" stroke="rgba(15,23,42,.07)"/><text x="619.6428571428571" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S8</text><line x1="595.0" y1="60" x2="595.0" y2="356" stroke="rgba(15,23,42,.07)"/><text x="668.9285714285714" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S9</text><line x1="644.2857142857142" y1="60" x2="644.2857142857142" y2="356" stroke="rgba(15,23,42,.07)"/><text x="718.2142857142858" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S10</text><line x1="693.5714285714286" y1="60" x2="693.5714285714286" y2="356" stroke="rgba(15,23,42,.07)"/><text x="767.5" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S11</text><line x1="742.8571428571429" y1="60" x2="742.8571428571429" y2="356" stroke="rgba(15,23,42,.07)"/><text x="816.7857142857142" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S12</text><line x1="792.1428571428571" y1="60" x2="792.1428571428571" y2="356" stroke="rgba(15,23,42,.07)"/><text x="866.0714285714286" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S13</text><line x1="841.4285714285714" y1="60" x2="841.4285714285714" y2="356" stroke="rgba(15,23,42,.07)"/><text x="915.3571428571429" y="52" fill="#64748b" font-size="9.5" font-weight="500" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">S14</text><line x1="890.7142857142857" y1="60" x2="890.7142857142857" y2="356" stroke="rgba(15,23,42,.07)"/><line x1="940" y1="60" x2="940" y2="356" stroke="rgba(15,23,42,.07)"/><text x="20" y="90" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="start">1 · Descubrimiento y bases</text><text x="20" y="106" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">reglas, conciliación, datos</text><rect x="250.0" y="78" width="147.85714285714286" height="30" rx="5" fill="#7c3aed" fill-opacity=".14" stroke="#7c3aed" stroke-opacity=".5" stroke-dasharray="4 3"/><rect x="250.0" y="82" width="73.92857142857143" height="22" rx="4" fill="#7c3aed"/><text x="20" y="146" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="start">2 · Segmentación y secuencia</text><text x="20" y="162" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">WhatsApp, email y SMS</text><rect x="397.8571428571429" y="134" width="147.85714285714286" height="30" rx="5" fill="#3b82f6" fill-opacity=".14" stroke="#3b82f6" stroke-opacity=".5" stroke-dasharray="4 3"/><rect x="323.92857142857144" y="138" width="98.57142857142857" height="22" rx="4" fill="#3b82f6"/><text x="20" y="202" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="start">3 · Agente de WhatsApp</text><text x="20" y="218" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">consultas, pagos y planes</text><rect x="545.7142857142858" y="190" width="147.85714285714286" height="30" rx="5" fill="#3b82f6" fill-opacity=".14" stroke="#3b82f6" stroke-opacity=".5" stroke-dasharray="4 3"/><rect x="422.5" y="194" width="98.57142857142857" height="22" rx="4" fill="#3b82f6"/><text x="20" y="258" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="start">4 · Agente de voz</text><text x="20" y="274" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">llamadas con guardrails</text><rect x="693.5714285714286" y="246" width="197.14285714285714" height="30" rx="5" fill="#3b82f6" fill-opacity=".14" stroke="#3b82f6" stroke-opacity=".5" stroke-dasharray="4 3"/><rect x="496.42857142857144" y="250" width="98.57142857142857" height="22" rx="4" fill="#3b82f6"/><text x="20" y="314" fill="#0f172a" font-size="12.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="start">5 · Dashboard y ajuste</text><text x="20" y="330" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">panel en vivo y afinado</text><rect x="841.4285714285714" y="302" width="98.57142857142857" height="30" rx="5" fill="#047857" fill-opacity=".14" stroke="#047857" stroke-opacity=".5" stroke-dasharray="4 3"/><rect x="595.0" y="306" width="49.285714285714285" height="22" rx="4" fill="#047857"/><path d="M323.92857142857144 84 L332.92857142857144 93 L323.92857142857144 102 L314.92857142857144 93 Z" fill="#0b1220" stroke="#fff" stroke-width="1.5"/><path d="M422.5 140 L431.5 149 L422.5 158 L413.5 149 Z" fill="#0b1220" stroke="#fff" stroke-width="1.5"/><path d="M595.0 252 L604.0 261 L595.0 270 L586.0 261 Z" fill="#0b1220" stroke="#fff" stroke-width="1.5"/><text x="20" y="376" fill="#7c3aed" font-size="11.5" font-weight="600" font-family="Inter, system-ui, sans-serif" text-anchor="start">Requisito: la fase 4 (voz) se activa solo con las reglas y la conciliación de la fase 1 funcionando.</text><rect x="20" y="392" width="22" height="12" rx="3" fill="#3b82f6"/><text x="50" y="402" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">Escenario ágil: 8 semanas</text><rect x="270" y="392" width="22" height="12" rx="3" fill="#3b82f6" fill-opacity=".14" stroke="#3b82f6" stroke-opacity=".5" stroke-dasharray="4 3"/><text x="300" y="402" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">Escenario conservador: hasta 14 semanas</text><path d="M580 391 L587 398 L580 405 L573 398 Z" fill="#0b1220"/><text x="596" y="402" fill="#475569" font-size="11" font-weight="400" font-family="Inter, system-ui, sans-serif" text-anchor="start">Hito: reglas listas · primer mensaje · primera llamada</text></svg></div>
+  <p class="caption">El plazo depende sobre todo de qué tan rápido tengamos acceso a los datos del SIF y de la aprobación de las reglas y guiones por parte de Kredit.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Fase</th><th>Duración</th><th>Entregables</th><th>Criterio de salida</th></tr></thead>
+    <tbody>
+      <tr><td><b>1 · Descubrimiento y bases</b></td><td>1–3 sem.</td><td>Acceso a datos del SIF y AgileCheck; reglas de planes preaprobados con la Gerencia General; conciliación automática de pagos; límites de cumplimiento confirmados; medición inicial.</td><td>Un pago se concilia solo y un plan dentro de regla se aprueba sin intervención</td></tr>
+      <tr><td><b>2 · Segmentación y secuencia</b></td><td>2–3 sem.</td><td>Niveles de riesgo calibrados; secuencia por WhatsApp, email y SMS en n8n; plantillas aprobadas por Meta; bitácora activa.</td><td>Cuentas reales reciben su secuencia y salen al pagar</td></tr>
+      <tr><td><b>3 · Agente de WhatsApp</b></td><td>2–3 sem.</td><td>Agente en producción con consultas de saldo, links de pago, planes preaprobados y escalamiento a la bandeja.</td><td>Resuelve consultas simples sin persona y escala bien las disputas</td></tr>
+      <tr><td><b>4 · Agente de voz</b></td><td>2–4 sem.</td><td>Plataforma de voz elegida, número local, guiones aprobados, grabación y transcripción; salida gradual por volumen.</td><td>Llamadas activas en mora avanzada sin incumplir ningún límite</td></tr>
+      <tr><td><b>5 · Dashboard y ajuste</b></td><td>1–2 sem.</td><td>Panel en vivo, comparación con la medición inicial, ajuste de reglas, mensajes y horarios.</td><td>La Gerencia General sigue la cobranza desde el panel</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <p class="eyebrow">Inversión</p>
+  <h2>Implementación única y servicio mensual</h2>
+  <p class="prose">La plataforma se cobra como servicio: una implementación inicial para conectarla a sus sistemas y a sus reglas, y una mensualidad que cubre la operación, el soporte y las mejoras continuas. El consumo de terceros se factura a costo, sin margen.</p>
+  <div class="pkgs">
+    <div class="pkg"><p class="tag">Pago único</p><h3>Implementación</h3><p class="for">Fases 1 a 5, de 8 a 14 semanas.</p><div class="price"><span class="ph">US$ por definir</span><small>Sin ITBMS</small></div>
+      <ul><li>Integración con SIF y AgileCheck</li><li>Motor de reglas y conciliación</li><li>Secuencia multicanal y agentes de IA</li><li>Dashboard, capacitación y puesta en marcha</li></ul></div>
+    <div class="pkg rec"><span class="badge">Recomendado</span><p class="tag">Mensual</p><h3>Plataforma de cobranza</h3><p class="for">Operación continua desde la puesta en marcha.</p><div class="price"><span class="ph">US$ por definir</span><small>Por mes, sin ITBMS</small></div>
+      <ul><li>Alojamiento, seguridad y respaldos</li><li>Hasta <span class="ph">___</span> cuentas gestionadas al mes</li><li>Soporte y ajustes de reglas y guiones</li><li>Mejoras continuas de la plataforma</li><li>Informe mensual de resultados</li></ul></div>
+    <div class="pkg"><p class="tag">Según uso</p><h3>Consumo de terceros</h3><p class="for">Facturado a costo, con el detalle del proveedor.</p><div class="price" style="font-size:24px">A costo<small>Sin margen de Elemento Web</small></div>
+      <ul><li>Minutos del agente de voz y telefonía</li><li>Conversaciones de WhatsApp (tarifa de Meta)</li><li>SMS y correo transaccional</li><li>Uso de modelos de IA</li></ul></div>
+  </div>
+  <p class="caption">Precio por definir: Kredit no tiene un presupuesto asignado para este proyecto. Lo fijamos con usted tras confirmar el tamaño de la cartera y el volumen de cuentas en mora.</p>
+</section>
+
+<section>
+  <p class="eyebrow">Riesgos del plan</p>
+  <h2>Lo que puede complicarlo y cómo lo evitamos</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Riesgo</th><th>Mitigación</th></tr></thead>
+    <tbody>
+      <tr><td>El SIF no tiene una API o el acceso a los datos se demora</td><td>Plan B con base de datos de solo lectura o archivo diario; el plazo cuenta desde que tenemos acceso.</td></tr>
+      <tr><td>Las reglas de planes de pago no se definen y todo vuelve a la Gerencia General</td><td>Taller con la Gerencia General en la fase 1. El agente de voz no sale hasta tener las reglas.</td></tr>
+      <tr><td>Un mensaje o llamada fuera de tono afecta la marca o genera un reclamo</td><td>Guiones aprobados por Kredit, límites que no se pueden saltar, salida gradual y revisión de muestras grabadas.</td></tr>
+      <tr><td>Bloqueo del número de WhatsApp</td><td>API oficial de Meta, plantillas aprobadas y opción de baja en cada mensaje.</td></tr>
+      <tr><td>Costo de voz por encima de lo previsto</td><td>Llamadas solo a los niveles de riesgo que lo justifican, tope mensual de minutos y reporte de consumo.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <p class="eyebrow">Para avanzar</p>
+  <h2>Lo que necesitamos de Kredit</h2>
+  <ul class="checks">
+    <li><b>Acceso a datos</b><span>Contacto en sistemas y forma de conexión con el SIF (API, base de solo lectura o archivo diario) y con AgileCheck.</span></li>
+    <li><b>Cartera</b><span>Número de cuentas activas y en mora por tramo de días, y monto total, para dimensionar el servicio y fijar el precio.</span></li>
+    <li><b>Reglas de planes</b><span>Una sesión de una hora con la Gerencia General para definir los planes de pago preaprobados.</span></li>
+    <li><b>Pagos</b><span>Bancos y medios de pago que usan sus clientes, y cómo les llega hoy el aviso de cada pago.</span></li>
+    <li><b>Cumplimiento</b><span>Su oficial de cumplimiento, para confirmar límites de contacto, horarios y textos obligatorios.</span></li>
+    <li><b>Canales</b><span>Número de WhatsApp Business y dominio de correo de Kredit, y la verificación de la empresa en Meta.</span></li>
+  </ul>
+</section>
+
+<section>
+  <p class="eyebrow">Condiciones</p>
+  <h2>Condiciones comerciales</h2>
+  <div class="terms">
+    <p><b>Pago de la implementación.</b> <span class="ph">por definir</span> al firmar y el resto contra entrega de cada fase. Transferencia, ACH o Yappy.</p>
+    <p><b>Mensualidad.</b> Empieza con la puesta en marcha de la fase 2. Plazo mínimo de <span class="ph">__ meses</span>.</p>
+    <p><b>Datos.</b> Los datos de cartera, clientes y contactos son de Kredit. Se exportan completos cuando lo pida y se eliminan al terminar el servicio.</p>
+    <p><b>Plataforma.</b> El software de la plataforma es de Elemento Web y se presta como servicio.</p>
+    <p><b>Confidencialidad.</b> Acuerdo de confidencialidad y de tratamiento de datos firmado antes de recibir cualquier dato. Los datos no se usan para entrenar modelos de IA.</p>
+    <p><b>Disponibilidad y soporte.</b> Soporte en horario laboral, atención prioritaria a incidentes que detengan la cobranza y respaldos diarios.</p>
+    <p><b>Alcance.</b> El descrito en esta propuesta. Los cambios de alcance se cotizan aparte.</p>
+    <p><b>Validez.</b> Esta propuesta vale hasta el 6 de noviembre de 2026. Precios en USD sin ITBMS (7%).</p>
+  </div>
+</section>
+
+<div class="cta">
+  <div><h2>¿Empezamos por quitar los frenos?</h2><p>Al aceptar, agendamos el taller de reglas con la Gerencia General y la sesión con sistemas para conectar el SIF. En dos semanas los pagos se concilian solos.</p></div>
+  <div class="btns"><a class="btn" href="mailto:info@elementoweb.com?subject=Propuesta%20EW-KRE-2026-01%3A%20cobranza%20con%20IA&body=Hola%2C%20queremos%20avanzar%20con%20la%20propuesta%20EW-KRE-2026-01%20de%20cobranza%20con%20IA%20de%20Elemento%20Web.">Avanzar por correo</a><a class="btn alt" href="https://wa.me/50761622787?text=Hola%2C%20quiero%20conversar%20sobre%20la%20propuesta%20EW-KRE-2026-01%20de%20cobranza%20con%20IA.">Conversar por WhatsApp</a></div>
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div class="src"><b>Fuentes y supuestos.</b> La mora de 10% y el límite regulatorio aplicable son datos indicados por Kredit, a confirmar con su oficial de cumplimiento. Los costos de referencia de Retell AI, Vapi y Bland AI provienen de las tarifas publicadas por cada proveedor y pueden cambiar; se confirman al elegir la plataforma en la fase 1. Los mensajes de WhatsApp siguen las políticas y tarifas de Meta para la API de WhatsApp Business. Los plazos son estimaciones de Elemento Web y dependen del acceso a los datos y de las aprobaciones de Kredit.</div>
+  <div class="legalrow"><span>elementoweb.com · info@elementoweb.com · +507 6162-2787</span><span>Documento confidencial · Preparado para Kredit · EW-KRE-2026-01</span></div>
+</div></footer>
+</body></html>

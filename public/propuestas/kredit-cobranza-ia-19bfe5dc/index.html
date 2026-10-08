@@ -183,14 +183,22 @@ td:first-child code{white-space:nowrap}
 .alert b{color:#991b1b}
 .legend{display:flex;gap:18px;flex-wrap:wrap;font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--soft);margin-top:10px}
 .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:6px}
-@media print{.alert{break-inside:avoid}footer .wrap{break-inside:avoid}footer{padding-bottom:0}}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.shots figure{margin:0;background:var(--card);border:1px solid var(--rule);border-radius:8px;overflow:hidden;break-inside:avoid}
+.shots img{display:block;width:100%;height:auto;border-bottom:1px solid var(--rule)}
+.shots figcaption{font-size:13px;color:var(--muted);padding:10px 14px}
+.demo-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:18px}
+.demo-cta .btn{display:inline-block}
+.demo-cta span{font-size:13px;color:var(--soft)}
+@media(max-width:700px){.shots{grid-template-columns:1fr}}
+@media print{.demo-block{break-inside:avoid}.shots{grid-template-columns:1fr 1fr}.alert{break-inside:avoid}footer .wrap{break-inside:avoid}footer{padding-bottom:0}}
 </style></head>
 <body>
 
 <header class="hero"><div class="wrap">
   <div class="brandrow"><div class="wordmark"><i aria-hidden="true"></i>Elemento Web</div><div class="doctype">Propuesta · Cobranza con IA</div></div>
   <h1>Bajar la mora del límite, sin sumar personal</h1>
-  <p class="sub">Una plataforma de cobranza con inteligencia artificial que contacta a cada cliente en el momento correcto, ofrece planes de pago dentro de sus reglas, concilia los pagos al instante y deja registro de cada contacto ante la Superintendencia.</p>
+  <p class="sub">Una plataforma de cobranza con inteligencia artificial que contacta a cada cliente en el momento correcto, ofrece planes de pago dentro de sus reglas, concilia los pagos al instante y deja registro de cada contacto, listo para cualquier revisión de su ente regulador.</p>
   <dl class="facts">
     <div><dt>Preparada para</dt><dd>Kredit · Gerencia General</dd></div>
     <div><dt>Fecha</dt><dd>7 de octubre de 2026</dd></div>
@@ -250,6 +258,19 @@ td:first-child code{white-space:nowrap}
     <li><b>Conciliación de pagos</b><span>Recibe los pagos por link de pago o por el aviso o archivo del banco, los cruza con la cuenta y saca al cliente de la secuencia en minutos, no al día siguiente.</span></li>
     <li><b>Bandeja de cobradores</b><span>Las disputas, los casos de riesgo y las excepciones llegan a su equipo con el historial completo de la cuenta y de cada contacto.</span></li>
   </ul>
+</section>
+
+<section>
+  <p class="eyebrow">Demo navegable</p>
+  <h2>Véalo funcionando antes de decidir</h2>
+  <p class="prose">Preparamos una maqueta navegable de la plataforma con datos ficticios de una cartera como la suya. Puede recorrerla por su cuenta: definir una regla y ver cuántos planes se aprobarían solos, simular un pago entrante, reproducir una conversación de WhatsApp y una llamada, y exportar la bitácora.</p>
+  <div class="demo-block">
+  <div class="shots">
+    <figure><img src="demo-resumen.webp" width="2160" height="1350" alt="Pantalla de resumen gerencial del demo: mora sobre cartera en 10% frente al límite, simulador de escenario e indicadores del mes" loading="lazy"><figcaption><b>Resumen gerencial.</b> La mora frente al límite y un simulador de escenarios, con cifras de ejemplo.</figcaption></figure>
+    <figure><img src="demo-reglas.webp" width="2160" height="1350" alt="Pantalla de reglas del demo: con la regla recomendada, 117 de 120 planes se aprueban solos y 3 llegan a la Gerencia General" loading="lazy"><figcaption><b>Reglas de planes.</b> Con la regla de ejemplo, 117 de 120 planes se aprueban solos y a usted le llegan 3.</figcaption></figure>
+  </div>
+  <div class="demo-cta"><a class="btn" href="https://elementoweb.com/demo/kredit/">Abrir el demo</a><span>elementoweb.com/demo/kredit · datos ficticios, nada se envía a clientes reales</span></div>
+  </div>
 </section>
 
 <section>
@@ -320,7 +341,7 @@ td:first-child code{white-space:nowrap}
 <section>
   <p class="eyebrow">Cumplimiento y gobernanza</p>
   <h2>Diseñado para resistir una auditoría</h2>
-  <p class="prose">En una entidad regulada, lo que importa no es solo cuánto se cobra, sino cómo. Cada regla se configura dentro de los límites que exigen la Superintendencia y la normativa de protección al consumidor, y queda documentada.</p>
+  <p class="prose">En una entidad regulada, lo que importa no es solo cuánto se cobra, sino cómo. Cada regla se configura dentro de los límites que exigen su ente regulador y la normativa de protección al consumidor, y queda documentada.</p>
   <ul class="checks">
     <li><b>Límites de contacto</b><span>Máximo de intentos por cuenta, por día y por semana, y horario permitido. El sistema no puede pasarse aunque alguien lo intente.</span></li>
     <li><b>Identificación</b><span>El agente, por voz o por WhatsApp, se identifica siempre como sistema automatizado de Kredit al inicio.</span></li>
@@ -431,7 +452,7 @@ td:first-child code{white-space:nowrap}
 
 <div class="cta">
   <div><h2>¿Empezamos por quitar los frenos?</h2><p>Al aceptar, agendamos el taller de reglas con la Gerencia General y la sesión con sistemas para conectar el SIF. En dos semanas los pagos se concilian solos.</p></div>
-  <div class="btns"><a class="btn" href="mailto:info@elementoweb.com?subject=Propuesta%20EW-KRE-2026-01%3A%20cobranza%20con%20IA&body=Hola%2C%20queremos%20avanzar%20con%20la%20propuesta%20EW-KRE-2026-01%20de%20cobranza%20con%20IA%20de%20Elemento%20Web.">Avanzar por correo</a><a class="btn alt" href="https://wa.me/50761622787?text=Hola%2C%20quiero%20conversar%20sobre%20la%20propuesta%20EW-KRE-2026-01%20de%20cobranza%20con%20IA.">Conversar por WhatsApp</a></div>
+  <div class="btns"><a class="btn" href="mailto:info@elementoweb.com?subject=Propuesta%20EW-KRE-2026-01%3A%20cobranza%20con%20IA&body=Hola%2C%20queremos%20avanzar%20con%20la%20propuesta%20EW-KRE-2026-01%20de%20cobranza%20con%20IA%20de%20Elemento%20Web.">Avanzar por correo</a><a class="btn alt" href="https://elementoweb.com/demo/kredit/">Ver el demo</a><a class="btn alt" href="https://wa.me/50761622787?text=Hola%2C%20quiero%20conversar%20sobre%20la%20propuesta%20EW-KRE-2026-01%20de%20cobranza%20con%20IA.">Conversar por WhatsApp</a></div>
 </div>
 </main>
 

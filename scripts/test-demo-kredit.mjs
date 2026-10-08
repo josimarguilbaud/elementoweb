@@ -149,10 +149,66 @@ for (const width of [1440, 390]) {
     await go(page, v);
     if (shotsDir) await page.screenshot({ path: path.join(shotsDir, `dark-${width}-${v.slice(1).replace(/\//g, '_')}.png`), fullPage: true });
   }
+  // contraste de las burbujas del chat en modo oscuro (el teléfono mantiene colores claros)
+  await go(page, '#conversacion/pago');
+  while (await page.isEnabled('#chat-step')) await page.click('#chat-step');
+  const lowContrast = await page.evaluate(() => {
+    const parse = (c) => (c.match(/[\d.]+/g) || []).slice(0, 3).map(Number);
+    const lum = ([r, g, b]) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+    const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
+    const bad = [];
+    for (const el of document.querySelectorAll('.phone-thread .bubble, .phone-thread .bubble *')) {
+      if (!el.textContent.trim()) continue;
+      let n = el, bgc = 'rgba(0, 0, 0, 0)';
+      while (n && (bgc = getComputedStyle(n).backgroundColor) && /rgba\(.*, 0\)$/.test(bgc)) n = n.parentElement;
+      const r = ratio(parse(getComputedStyle(el).color), parse(bgc));
+      if (r < 4.5) bad.push(`${el.className || el.tagName}: ${r.toFixed(2)}`);
+    }
+    return bad;
+  });
+  check(lowContrast.length === 0, `${width}px oscuro: texto del chat con contraste AA`, lowContrast.slice(0, 4).join(' | '));
   await page.click('.topbar [data-action="theme-toggle"]');
   const bg2 = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
   check(bg2 === 'rgb(246, 248, 252)', `${width}px: el botón de tema cambia a claro`, bg2);
   check(errors.length === 0, `${width}px oscuro: sin errores`, errors.join(' | '));
+  await ctx.close();
+}
+
+console.log('\nContraste AA en todas las vistas');
+for (const scheme of ['light', 'dark']) {
+  const { ctx, page } = await newPage(1440, 900, scheme);
+  await page.goto(URL0 + '#resumen');
+  await page.waitForSelector('#view h1');
+  const fails = [];
+  for (const v of VIEWS) {
+    await go(page, v);
+    if (v.startsWith('#conversacion/') && v !== '#conversacion/voz') { while (await page.isEnabled('#chat-step')) await page.click('#chat-step'); }
+    const bad = await page.evaluate(() => {
+      const parse = (c) => (c.match(/[\d.]+/g) || []).map(Number);
+      const lum = ([r, g, b]) => { const f = (x) => { x /= 255; return x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+      const out = []; const seen = new Set();
+      const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      while (w.nextNode()) {
+        const t = w.currentNode; if (!t.textContent.trim()) continue;
+        const el = t.parentElement; if (seen.has(el)) continue; seen.add(el);
+        const cs = getComputedStyle(el);
+        if (cs.visibility === 'hidden' || el.closest('[hidden], svg, .sr-only, .visually-hidden')) continue;
+        const rc = el.getBoundingClientRect(); if (!rc.width || !rc.height) continue;
+        let n = el, bg = null;
+        while (n) { const c = getComputedStyle(n); const a = parse(c.backgroundColor); if (c.backgroundImage !== 'none') break; if (a.length >= 3 && (a.length === 3 || a[3] > 0.5)) { bg = a; break; } n = n.parentElement; }
+        if (!bg) continue;
+        const fg = parse(cs.color);
+        if (fg.length === 4 && fg[3] < 1) for (let i = 0; i < 3; i++) fg[i] = fg[i] * fg[3] + bg[i] * (1 - fg[3]);
+        const [x, y] = [lum(fg.slice(0, 3)), lum(bg.slice(0, 3))].sort((m, k) => k - m);
+        const ratio = (x + 0.05) / (y + 0.05);
+        const big = parseFloat(cs.fontSize) >= 24 || (parseFloat(cs.fontSize) >= 18.6 && +cs.fontWeight >= 700);
+        if (ratio < (big ? 3 : 4.5)) out.push(`${ratio.toFixed(2)} «${t.textContent.trim().slice(0, 30)}»`);
+      }
+      return out;
+    });
+    for (const b of bad) fails.push(`${v} ${b}`);
+  }
+  check(fails.length === 0, `Modo ${scheme === 'dark' ? 'oscuro' : 'claro'}: texto con contraste AA en ${VIEWS.length} vistas`, fails.slice(0, 5).join(' | '));
   await ctx.close();
 }
 

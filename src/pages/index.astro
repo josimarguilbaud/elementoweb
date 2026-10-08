@@ -36,6 +36,7 @@ const folioFeatured = portfolio.find((p) => p.featured)!;
 // Home: San Blas Full (destacado) + Remodelaciones JG + TramitaPa + Panama International Movers + CicloFrio. El resto vive en /portafolio/.
 const homeFolioDomains = ['remodelacionesjg.com', 'tramitapa.com', 'panamainternationalmovers.com', 'ciclofrio.com'];
 const folio = portfolio.filter((p) => !p.featured && homeFolioDomains.some((d) => p.href.includes(d)));
+const folioItems = [folioFeatured, ...folio];
 const indIcons = ['M12 3 4 7v5c0 4 3.5 7 8 8 4.5-1 8-4 8-8V7l-8-4Z','M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z','M6 3v7a2 2 0 0 0 4 0V3M8 10v11M16 3c-1.5 0-2 2-2 4s0 4 2 4 2-2 2-4-.5-4-2-4Zm0 8v10','M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5','M12 5v14M5 12h14M7 5h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z','M2 20h20M4 20V8l6-4 6 4M9 20v-5h4v5M18 20v-9l3 2v7','M12 4 2 9l10 5 10-5-10-5ZM6 12v5c0 1 3 2 6 2s6-1 6-2v-5','M6 6h12l1 14H5L6 6Zm3 0a3 3 0 0 1 6 0','M4 9v6M20 9v6M7 7v10M17 7v10M7 12h10','M14 6a4 4 0 0 0-5 5l-6 6 2 2 6-6a4 4 0 0 0 5-5l-2 2-2-2 2-2Z','M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10Z','M1 7h13v10H1zM14 10h4l3 3v4h-7'];
 const services2 = ['Diseño web / Sitio corporativo', 'Tienda online / E-commerce', 'Landing page', 'Marketing / Pauta', 'IA / Automatización', 'Otro'];
 
@@ -161,64 +162,237 @@ const faqs: [string, string][] = [
   </section>
 
   <!-- PORTAFOLIO -->
-  <section id="showcase" class="relative overflow-hidden bg-night py-28 text-white md:py-32">
+  <section id="showcase" class="relative overflow-hidden bg-[#0a1118] py-28 text-white md:py-32">
     <div class="absolute inset-0 mesh-dark opacity-40"></div>
     <div class="sphere sphere-dark h-[420px] w-[420px] right-[-8rem] -top-10" style="background:#0077a3;opacity:.28"></div>
     <div class="sphere sphere-dark h-[360px] w-[360px] left-[-6rem] bottom-0" style="background:#00688c;opacity:.32"></div>
 
     <div class="relative mx-auto max-w-7xl px-6">
-      <div class="grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-end">
-        <div>
-          <span class="reveal inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal"><span class="h-1.5 w-1.5 rounded-full bg-teal"></span>Nuestro trabajo</span>
-          <h2 class="reveal mt-5 font-display text-[clamp(2.2rem,5vw,4rem)] font-extrabold leading-[1.02]">Diseño que <span class="grad-text">desafía lo común</span>.</h2>
+      <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <div class="max-w-3xl">
+          <h2 class="reveal font-display text-[clamp(2.4rem,5.5vw,4.5rem)] font-extrabold leading-[1.05] tracking-tight text-white">Diseño que <br class="hidden sm:block" /><span class="text-[#00b4d8]">desafía lo común.</span></h2>
+          <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-white/60 md:text-xl">Creamos experiencias digitales que no solo se ven increíbles: <strong class="font-medium text-white">convierten y escalan</strong> el negocio de nuestros clientes.</p>
         </div>
-        <p class="reveal text-lg leading-relaxed text-white/55">Creamos experiencias digitales que no solo se ven increíbles: <strong class="text-white/85">convierten y escalan</strong> el negocio de nuestros clientes.</p>
-      </div>
-
-      <div class="reveal mt-12 flex justify-center">
-        <div class="inline-flex flex-wrap justify-center gap-1 rounded-full border border-white/12 bg-white/[0.04] p-1.5">
-          {folioCats.map((c, i) => (
-            <button type="button" data-folio-filter={c.key} class={`folio-tab rounded-full px-5 py-2 text-sm font-medium transition-colors ${i === 0 ? 'bg-white text-ink' : 'text-white/60 hover:text-white'}`}>{c.label}</button>
-          ))}
-        </div>
-      </div>
-      <p class="reveal mt-6 text-center text-sm text-white/35">Proyectos reales, en vivo · haz clic para visitar cada sitio.</p>
-
-      <article class="folio-item reveal mt-8 grid overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] lg:grid-cols-2" data-cat={folioFeatured.cat}>
-        <div class="relative aspect-[4/3] overflow-hidden lg:aspect-auto">
-          <Pic src={folioFeatured.img} alt={`Sitio web de ${folioFeatured.t}`} width={1200} height={900} sizes="(min-width:1024px) 60vw, 92vw" class="h-full w-full object-cover object-top" />
-        </div>
-        <div class="flex flex-col justify-center p-8 md:p-12">
-          <div class="flex items-center gap-3"><span class="rounded-full bg-violet/20 px-3 py-1 text-xs font-semibold text-violet">{folioFeatured.catLabel}</span><span class="text-sm text-white/40">{folioFeatured.year}</span></div>
-          <h3 class="mt-4 font-display text-3xl font-extrabold">{folioFeatured.t}</h3>
-          <p class="mt-3 leading-relaxed text-white/70">{folioFeatured.desc}</p>
-          <p class="mt-4 text-sm leading-relaxed text-white/85"><strong class="text-teal">Qué resolvimos:</strong> {folioFeatured.did}</p>
-          <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-            {folioFeatured.caso && <a href={url(folioFeatured.caso)} class="inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-teal">Ver caso del proyecto <span aria-hidden="true">→</span></a>}
-            <a href={folioFeatured.href} target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-teal transition-colors hover:text-white">Visitar sitio en vivo <span aria-hidden="true">↗</span></a>
+        <div class="reveal flex flex-col items-start gap-4 lg:items-end">
+          <div role="group" aria-label="Filtrar proyectos" class="inline-flex flex-wrap gap-1 rounded-full border border-white/10 bg-[#111c27] p-1.5 shadow-lg">
+            {folioCats.map((c, i) => (
+              <button type="button" data-folio-filter={c.key} aria-pressed={i === 0 ? 'true' : 'false'} class="folio-tab rounded-full px-5 py-2.5 text-sm font-semibold text-white/60 transition-colors duration-300 hover:text-white">{c.label}</button>
+            ))}
           </div>
+          <p class="text-xs font-medium text-white/60">Proyectos reales, en vivo · haz clic para expandir.</p>
         </div>
-      </article>
+      </div>
 
-      <div class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
-        {folio.map((w) => (
-          <article class="folio-item reveal group flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03]" data-cat={w.cat}>
-            <a href={w.href} target="_blank" rel="noopener" class="relative block aspect-[16/10] overflow-hidden" aria-label={`Visitar el sitio de ${w.t}`}>
-              <Pic src={w.img} alt={`Sitio web de ${w.t}`} width={1200} height={900} sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 92vw" class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-              <span class="absolute right-4 top-4 rounded-full bg-black/45 px-3 py-1 text-xs font-semibold backdrop-blur">{w.tag}</span>
-            </a>
-            <div class="flex flex-1 flex-col p-6">
-              <div class="text-xs font-medium text-teal">{w.catLabel}</div>
-              <h3 class="mt-1 font-display text-lg font-bold">{w.t}</h3>
-              <p class="mt-3 flex-1 text-sm leading-relaxed text-white/70"><strong class="text-white/90">Qué resolvimos:</strong> {w.did}</p>
-              <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold">
-                {w.caso && <a href={url(w.caso)} class="text-white transition-colors hover:text-teal">Ver caso del proyecto →</a>}
-                <a href={w.href} target="_blank" rel="noopener" class="text-teal transition-colors hover:text-white">Visitar sitio ↗</a>
+      <div class="folio-acc reveal mt-12" data-folio-acc>
+        {folioItems.map((p, i) => (
+          <article class={`folio-panel${i === 0 ? ' is-active' : ''}`} data-cat={p.cat}>
+            <div class="folio-media">
+              <Pic src={p.img} alt={`Sitio web de ${p.t}`} width={1200} height={900} sizes="(min-width:768px) 72vw, 100vw" />
+            </div>
+            <div class="folio-shade" aria-hidden="true"></div>
+            <button type="button" class="folio-toggle" aria-expanded={i === 0 ? 'true' : 'false'} aria-controls={`folio-c-${i}`} tabindex={i === 0 ? -1 : 0}>
+              <span class="folio-plus" aria-hidden="true">+</span>
+              <span class="folio-vtitle">{p.t}</span>
+              <span class="sr-only"> — ver el proyecto</span>
+            </button>
+            <div class="folio-content" id={`folio-c-${i}`}>
+              <div class="flex items-center gap-3">
+                <span class="rounded-full border border-[#00b4d8]/30 bg-[#111c27]/80 px-3 py-1 text-xs font-bold text-[#00b4d8] backdrop-blur-sm">{p.catLabel}</span>
+                <span class="text-xs font-medium text-white/60">{p.year}</span>
+              </div>
+              <h3 class="mt-4 font-display text-[clamp(1.75rem,3.2vw,2.5rem)] font-extrabold leading-[1.05] text-white">{p.t}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-white/80 md:text-[0.9375rem]">{p.desc}</p>
+              {p.did && (
+                <div class="mt-4 rounded-xl border border-white/10 bg-[#111c27]/60 p-3.5 backdrop-blur-md">
+                  <p class="text-xs leading-relaxed text-white/80 md:text-sm"><strong class="font-bold text-[#00b4d8]">Qué resolvimos:</strong> {p.did}</p>
+                </div>
+              )}
+              <div class="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2">
+                <a href={p.href} target="_blank" rel="noopener" class="group inline-flex items-center gap-2 text-sm font-semibold text-[#00b4d8] transition-colors hover:text-white">Visitar sitio en vivo <span aria-hidden="true" class="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span></a>
+                {p.caso && <a href={url(p.caso)} class="inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-[#00b4d8]">Ver caso del proyecto <span aria-hidden="true">→</span></a>}
               </div>
             </div>
           </article>
         ))}
       </div>
+
+      <style>
+        /* Acordeón horizontal: la fila mide ~60vh y el panel activo crece con flex-grow. */
+        .folio-acc {
+          container-type: size; /* da cqw/cqh a las fotos y al texto para no depender del ancho animado del panel */
+          display: flex;
+          gap: 12px;
+          height: clamp(30rem, 60vh, 38.75rem);
+        }
+        .folio-panel {
+          position: relative;
+          flex: 0.5 1 0;
+          min-width: 0;
+          overflow: hidden;
+          border-radius: 1.5rem;
+          border: 1px solid rgba(255, 255, 255, 0.06);
+          background: #111c27;
+          transition: flex-grow 0.7s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .folio-panel[hidden] { display: none; }
+        .folio-panel.is-active {
+          flex-grow: 5;
+          border-color: rgba(0, 180, 216, 0.3);
+          box-shadow: 0 0 30px rgba(0, 180, 216, 0.1);
+        }
+
+        /* La foto tiene el ancho del panel ya expandido: al animar el panel solo se
+           revela o recorta, no se reescala fotograma a fotograma. */
+        .folio-media { position: absolute; inset: 0; }
+        .folio-media :global(img) {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: max(100%, 72cqw);
+          max-width: none;
+          height: 100%;
+          transform: translateX(-50%);
+          object-fit: cover;
+          object-position: top;
+        }
+
+        /* Dos velos apilados (cambiar un degradado no se anima, la opacidad sí). */
+        .folio-shade { position: absolute; inset: 0; pointer-events: none; }
+        .folio-shade::before,
+        .folio-shade::after { content: ''; position: absolute; inset: 0; transition: opacity 0.5s ease; }
+        .folio-shade::before {
+          background: linear-gradient(to top, rgba(10, 17, 24, 0.95) 0%, rgba(10, 17, 24, 0.45) 55%, rgba(10, 17, 24, 0.15) 100%);
+          opacity: 0.8;
+        }
+        .folio-shade::after {
+          background: linear-gradient(to right, rgba(10, 17, 24, 0.97) 0%, rgba(10, 17, 24, 0.93) 46%, rgba(10, 17, 24, 0.4) 76%, rgba(10, 17, 24, 0) 100%);
+          opacity: 0;
+        }
+        .folio-panel:not(.is-active):hover .folio-shade::before { opacity: 0.55; }
+        .folio-panel.is-active .folio-shade::before { opacity: 0; }
+        .folio-panel.is-active .folio-shade::after { opacity: 1; }
+
+        /* Botón que cubre la tarjeta comprimida: es lo que se pulsa y se enfoca con teclado. */
+        .folio-toggle {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          display: block;
+          width: 100%;
+          cursor: pointer;
+          color: rgba(255, 255, 255, 0.85);
+          text-align: center;
+        }
+        .folio-toggle:focus-visible { outline: 2px solid #00b4d8; outline-offset: -5px; border-radius: 1.5rem; }
+        .folio-panel.is-active .folio-toggle { pointer-events: none; }
+        .folio-plus {
+          position: absolute;
+          top: 1.25rem;
+          left: 50%;
+          display: grid;
+          place-items: center;
+          width: 2rem;
+          height: 2rem;
+          margin-left: -1rem;
+          border-radius: 9999px;
+          border: 1px solid rgba(0, 180, 216, 0.5);
+          background: rgba(10, 17, 24, 0.6);
+          color: #00b4d8;
+          font-size: 1.1rem;
+          line-height: 1;
+          transition: opacity 0.3s ease;
+        }
+        .folio-vtitle {
+          position: absolute;
+          bottom: 1.5rem;
+          left: 50%;
+          writing-mode: vertical-rl;
+          transform: translateX(-50%) rotate(180deg);
+          white-space: nowrap;
+          font-family: var(--font-display);
+          font-size: 1.05rem;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+          transition: opacity 0.3s ease;
+        }
+        .folio-panel.is-active .folio-plus,
+        .folio-panel.is-active .folio-vtitle { opacity: 0; }
+
+        /* Texto del panel activo. Ancho fijo (no depende del panel animado) y oculto
+           con visibility para que sus enlaces no entren en el tab mientras está cerrado. */
+        .folio-content {
+          position: absolute;
+          bottom: 2rem;
+          left: 2rem;
+          z-index: 2;
+          width: min(30rem, calc(68cqw - 4rem));
+          opacity: 0;
+          visibility: hidden;
+          transform: translate(-16px, 16px);
+          transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+        }
+        .folio-panel.is-active .folio-content {
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          transition: opacity 0.45s ease 0.3s, transform 0.45s ease 0.3s, visibility 0s;
+        }
+
+        /* Filtros: el estado vive en aria-pressed, no en clases sueltas. */
+        .folio-tab[aria-pressed='true'] { background: #fff; color: #0a1118; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); }
+
+        /* Móvil: el acordeón pasa a vertical y el título deja de rotarse. */
+        @media (max-width: 767px) {
+          .folio-acc { flex-direction: column; gap: 8px; height: clamp(48rem, 90svh, 56rem); }
+          .folio-panel { border-radius: 1.25rem; }
+          .folio-media :global(img) {
+            left: 0;
+            width: 100%;
+            height: max(100%, 70cqh);
+            transform: none;
+          }
+          /* Fila comprimida: velo parejo y denso; con degradado, la cabecera blanca de la captura se cuela detrás del título. */
+          .folio-shade::before { background: rgba(10, 17, 24, 0.78); opacity: 1; }
+          .folio-panel:not(.is-active):hover .folio-shade::before { opacity: 1; }
+          .folio-shade::after {
+            background: linear-gradient(to top, rgba(10, 17, 24, 0.97) 0%, rgba(10, 17, 24, 0.88) 60%, rgba(10, 17, 24, 0.3) 100%);
+          }
+          .folio-toggle { text-align: left; }
+          .folio-toggle:focus-visible { border-radius: 1.25rem; }
+          .folio-plus { top: 50%; left: auto; right: 1rem; margin: -1rem 0 0; }
+          .folio-vtitle {
+            top: 50%;
+            bottom: auto;
+            left: 1.25rem;
+            writing-mode: horizontal-tb;
+            transform: translateY(-50%);
+            right: 3.5rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+            text-transform: none;
+          }
+          .folio-content { left: 1.25rem; bottom: 1rem; width: calc(100cqw - 2.5rem); transform: translateY(16px); }
+        }
+
+        /* Sin JS no hay forma de expandir: todo el contenido queda apilado y visible. */
+        :global(html:not(.js)) .folio-acc { display: block; height: auto; container-type: normal; }
+        :global(html:not(.js)) .folio-panel { flex: none; min-height: 30rem; margin-bottom: 12px; }
+        :global(html:not(.js)) .folio-toggle,
+        :global(html:not(.js)) .folio-plus,
+        :global(html:not(.js)) .folio-vtitle { display: none; }
+        :global(html:not(.js)) .folio-media :global(img) { left: 0; width: 100%; transform: none; }
+        :global(html:not(.js)) .folio-shade::before { opacity: 0; }
+        :global(html:not(.js)) .folio-shade::after { opacity: 1; background: linear-gradient(to top, rgba(10, 17, 24, 0.97) 20%, rgba(10, 17, 24, 0.3)); }
+        :global(html:not(.js)) .folio-content { position: relative; inset: auto; width: auto; padding: 14rem 1.5rem 1.5rem; opacity: 1; visibility: visible; transform: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+          .folio-panel, .folio-shade::before, .folio-shade::after, .folio-content, .folio-plus, .folio-vtitle { transition: none !important; }
+        }
+      </style>
 
       <div class="reveal mt-8 text-center">
         <a href="/portafolio/" data-magnetic="0.3" class="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-teal hover:text-teal">Ver todo el portafolio <span aria-hidden="true">→</span></a>
@@ -235,18 +409,37 @@ const faqs: [string, string][] = [
     </div>
 
     <script>
-      const tabs = document.querySelectorAll<HTMLButtonElement>('[data-folio-filter]');
-      const items = document.querySelectorAll<HTMLElement>('.folio-item');
-      tabs.forEach((t) => t.addEventListener('click', () => {
-        const k = t.dataset.folioFilter;
-        tabs.forEach((x) => {
-          const on = x === t;
-          x.classList.toggle('bg-white', on);
-          x.classList.toggle('text-ink', on);
-          x.classList.toggle('text-white/60', !on);
-        });
-        items.forEach((it) => { it.style.display = k === 'all' || it.dataset.cat === k ? '' : 'none'; });
-      }));
+      const acc = document.querySelector<HTMLElement>('[data-folio-acc]');
+      if (acc) {
+        const panels = [...acc.querySelectorAll<HTMLElement>('.folio-panel')];
+        const tabs = document.querySelectorAll<HTMLButtonElement>('[data-folio-filter]');
+
+        // Un solo panel abierto; el botón del abierto sale del tab (su texto ya está a la vista).
+        const open = (target: HTMLElement) => {
+          panels.forEach((p) => {
+            const on = p === target;
+            p.classList.toggle('is-active', on);
+            const btn = p.querySelector<HTMLButtonElement>('.folio-toggle')!;
+            btn.setAttribute('aria-expanded', String(on));
+            btn.tabIndex = on ? -1 : 0;
+          });
+        };
+        panels.forEach((p) => p.querySelector('.folio-toggle')!.addEventListener('click', () => open(p)));
+
+        tabs.forEach((t) => t.addEventListener('click', () => {
+          const k = t.dataset.folioFilter;
+          tabs.forEach((x) => x.setAttribute('aria-pressed', String(x === t)));
+          panels.forEach((p) => p.classList.remove('is-active'));
+          const visible = panels.filter((p) => {
+            const show = k === 'all' || p.dataset.cat === k;
+            p.hidden = !show;
+            return show;
+          });
+          // Reflow antes de abrir: así el primer panel visible anima desde comprimido en vez de aparecer ya abierto.
+          void acc.offsetWidth;
+          if (visible[0]) open(visible[0]);
+        }));
+      }
     </script>
   </section>
 

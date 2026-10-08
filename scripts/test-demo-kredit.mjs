@@ -174,6 +174,52 @@ for (const width of [1440, 390]) {
   await ctx.close();
 }
 
+console.log('\nVoz sintética del navegador (con voces simuladas)');
+{
+  const { ctx, page, errors } = await newPage(1440);
+  await ctx.addInitScript(() => {
+    const spoken = [];
+    window.__spoken = spoken;
+    const voices = [
+      { name: 'Alex', lang: 'en-US' },
+      { name: 'Microsoft Jorge Online (Natural) - Spanish (Mexico)', lang: 'es-MX' },
+      { name: 'Microsoft Dalia Online (Natural) - Spanish (Mexico)', lang: 'es-MX' },
+    ];
+    class FakeUtterance { constructor(text) { this.text = text; } }
+    const synthFake = {
+      getVoices: () => voices,
+      speak(u) { spoken.push({ text: u.text, voice: u.voice && u.voice.name }); setTimeout(() => u.onend && u.onend(), 20); },
+      cancel() {},
+      addEventListener() {},
+      removeEventListener() {},
+    };
+    Object.defineProperty(window, 'speechSynthesis', { value: synthFake, configurable: true });
+    window.SpeechSynthesisUtterance = FakeUtterance;
+  });
+  await page.goto(URL0 + '#conversacion/voz');
+  await page.waitForSelector('#view h1');
+  check((await page.textContent('#voice-chip')).includes('Voz sintética'), 'Voz: la etiqueta indica voz sintética cuando hay voces en español');
+  check(await page.isVisible('#voice-sound'), 'Voz: botón de sonido visible');
+  await page.click('#voice-play');
+  await page.waitForFunction(() => /Repetir/.test(document.querySelector('#voice-play').textContent), null, { timeout: 30000 });
+  const spoken = await page.evaluate(() => window.__spoken);
+  const lines = await page.evaluate(() => [...document.querySelectorAll('#transcript .tline')].map((b) => b.textContent));
+  check(spoken.length === lines.length, `Voz: se dicen las ${lines.length} frases, en orden`, `${spoken.length} dichas`);
+  check(spoken.every((x, i) => lines[i].includes(x.text)), 'Voz: el texto hablado coincide con la transcripción');
+  const agentVoices = new Set(spoken.filter((_, i) => !/Cliente:/.test(lines[i])).map((x) => x.voice));
+  const clientVoices = new Set(spoken.filter((_, i) => /Cliente:/.test(lines[i])).map((x) => x.voice));
+  check(agentVoices.size === 1 && [...agentVoices][0].includes('Dalia') && clientVoices.size === 1 && [...clientVoices][0].includes('Jorge'), 'Voz: asistente con voz femenina y cliente con voz masculina', [...agentVoices, ...clientVoices].join(', '));
+  check(await st(page, () => window.__recupera.getState().accounts['K-10560'].promises.length === 1), 'Voz: la promesa se registra una sola vez');
+  await page.click('#voice-sound');
+  check((await page.getAttribute('#voice-sound', 'aria-pressed')) === 'false', 'Voz: el botón silencia el sonido');
+  const n0 = (await page.evaluate(() => window.__spoken.length));
+  await page.click('#voice-play');
+  await page.waitForTimeout(400);
+  check((await page.evaluate(() => window.__spoken.length)) === n0, 'Voz: con el sonido apagado no se habla');
+  check(errors.length === 0, 'Voz: sin errores', errors.join(' | '));
+  await ctx.close();
+}
+
 console.log('\nContraste AA en todas las vistas');
 for (const scheme of ['light', 'dark']) {
   const { ctx, page } = await newPage(1440, 900, scheme);

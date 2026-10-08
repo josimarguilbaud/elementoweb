@@ -193,12 +193,49 @@ export function chatPlayer(script, ui) {
   return { play, step, stop, reset, get done() { return idx >= total; } };
 }
 
-// ---------- reproductor de voz (sin audio real: transcripción sincronizada) ----------
+// ---------- voz sintética del navegador (Web Speech API) ----------
+// Si el navegador tiene voces en español, la llamada se escucha con ellas; si no, se
+// reproduce solo la transcripción sincronizada. No hay audio grabado ni red de por medio.
+const FEMALE = /(paulina|sabina|dalia|helena|laura|m[oó]nica|paloma|elvira|lupe|pen[eé]lope|ximena|valentina|camila|elena|francisca|marisol|soledad|ang[eé]lica|isabel|larissa|salom[eé]|catalina|google español|\bfemale\b|mujer)/i;
+const MALE = /(jorge|juan|diego|ra[uú]l|pablo|[aá]lvaro|carlos|enrique|miguel|andr[eé]s|gonzalo|tom[aá]s|alonso|gerardo|federico|emilio|lorenzo|\bmale\b|hombre)/i;
+const LANG_RANK = ['es-pa', 'es-us', 'es-mx', 'es-419', 'es-co', 'es-cr', 'es-es'];
+
+function synth() {
+  return typeof window !== 'undefined' && window.speechSynthesis && typeof window.SpeechSynthesisUtterance !== 'undefined' ? window.speechSynthesis : null;
+}
+function spanishVoices() {
+  const ss = synth();
+  if (!ss) return [];
+  try { return ss.getVoices().filter((v) => /^es([-_]|$)/i.test(v.lang)); } catch { return []; }
+}
+function rank(v) {
+  const i = LANG_RANK.indexOf(v.lang.toLowerCase().replace('_', '-'));
+  return (i < 0 ? LANG_RANK.length : i) - (/natural|online|neural/i.test(v.name) ? 0.5 : 0);
+}
+export function pickVoices() {
+  const vs = spanishVoices().sort((a, b) => rank(a) - rank(b));
+  if (!vs.length) return null;
+  const agent = vs.find((v) => FEMALE.test(v.name) && !MALE.test(v.name)) || vs[0];
+  const client = vs.find((v) => v !== agent && MALE.test(v.name)) || vs.find((v) => v !== agent && v.lang === agent.lang) || agent;
+  return { agent, client, same: client === agent };
+}
+export function speechSupported() { return !!pickVoices(); }
+export function onVoicesChanged(cb) {
+  const ss = synth();
+  if (!ss || !ss.addEventListener) return () => {};
+  ss.addEventListener('voiceschanged', cb);
+  return () => ss.removeEventListener('voiceschanged', cb);
+}
+
+// ---------- reproductor de voz ----------
 export function voicePlayer(ui) {
   let t = -1; // -1 = aún no empieza
   let timer = null;
   let playing = false;
   let fired = false;
+  let sound = true;
+  let gen = 0; // invalida callbacks de frases canceladas
+  let speaking = false;
   const lines = VOICE.lines;
 
   function lineAt(time) {
@@ -218,27 +255,97 @@ export function voicePlayer(ui) {
     }
     ui.onTime(t, k, playing);
   }
-  function play() {
-    if (playing) return;
-    if (t >= VOICE.duration) reset();
+  function clearTimer() { if (timer) clearInterval(timer); timer = null; }
+  function stopSpeech() {
+    gen++;
+    speaking = false;
+    const ss = synth();
+    if (ss) { try { ss.cancel(); } catch { /* nada */ } }
+  }
+  const useSpeech = () => sound && !!pickVoices();
+  const endOf = (k) => (k + 1 < lines.length ? lines[k + 1].t : VOICE.duration);
+
+  // Modo con voz: cada frase se dice completa y la siguiente empieza al terminar.
+  function speakFrom(k) {
+    const voices = pickVoices();
+    const ss = synth();
+    if (!voices || !ss) { timerPlay(); return; }
+    const my = ++gen;
+    clearTimer();
+    const line = lines[k];
+    t = line.t;
+    render();
+    const u = new window.SpeechSynthesisUtterance(line.text);
+    const isAgent = line.who !== 'Cliente';
+    u.voice = isAgent ? voices.agent : voices.client;
+    u.lang = u.voice.lang;
+    u.rate = 1;
+    u.pitch = !isAgent && voices.same ? 0.7 : 1;
+    const start = Date.now();
+    const end = endOf(k);
+    const est = Math.max(1.2, line.text.length / 14);
+    timer = setInterval(() => {
+      if (my !== gen) return;
+      const el = (Date.now() - start) / 1000;
+      t = Math.min(end - 0.05, line.t + (end - line.t) * Math.min(1, el / est));
+      render();
+    }, 120);
+    let done = false;
+    const watchdog = setTimeout(() => finish(), (est + 8) * 1000);
+    function finish() {
+      if (done || my !== gen) return;
+      done = true;
+      speaking = false;
+      clearTimeout(watchdog);
+      clearTimer();
+      if (k + 1 < lines.length) {
+        t = end;
+        render();
+        setTimeout(() => { if (my === gen && playing) speakFrom(k + 1); }, 300);
+      } else {
+        t = VOICE.duration;
+        playing = false;
+        render();
+      }
+    }
+    u.onend = finish;
+    u.onerror = finish;
+    speaking = true;
+    ss.speak(u); // dentro del clic del usuario en la primera frase (requisito de Safari/Chrome)
+  }
+
+  // Modo sin voz: reloj simulado, como antes.
+  function timerPlay() {
+    clearTimer();
     if (t < 0) t = 0;
-    playing = true;
     const speed = reducedMotion() ? 6 : 1;
     timer = setInterval(() => {
       t = Math.min(VOICE.duration, t + 0.25 * speed);
       if (t >= VOICE.duration) { pause(); }
       render();
     }, 250);
+  }
+
+  function play() {
+    if (playing) return;
+    if (t >= VOICE.duration) reset();
+    playing = true;
+    if (useSpeech()) speakFrom(Math.max(0, t < 0 ? 0 : lineAt(t)));
+    else timerPlay();
     render();
   }
-  function pause() { playing = false; if (timer) clearInterval(timer); timer = null; render(); }
+  function pause() { playing = false; clearTimer(); stopSpeech(); render(); }
   function next() {
-    pause();
+    const wasPlaying = playing && useSpeech();
     const k = t < 0 ? -1 : lineAt(t);
+    if (wasPlaying && k + 1 < lines.length) { stopSpeech(); speakFrom(k + 1); return; }
+    pause();
     if (k + 1 < lines.length) t = lines[k + 1].t; else t = VOICE.duration;
     render();
   }
   function seekLine(i) {
+    const wasPlaying = playing && useSpeech();
+    if (wasPlaying) { stopSpeech(); speakFrom(i); return; }
     pause();
     t = lines[i].t;
     render();
@@ -249,5 +356,15 @@ export function voicePlayer(ui) {
     ui.clearSys();
     render();
   }
-  return { play, pause, next, seekLine, reset, stop: pause, get playing() { return playing; } };
+  function setSound(on) {
+    const wasPlaying = playing;
+    sound = !!on;
+    if (wasPlaying) { pause(); play(); }
+  }
+  return {
+    play, pause, next, seekLine, reset, setSound, stop: pause,
+    get playing() { return playing; },
+    get sound() { return sound; },
+    get speaking() { return speaking; },
+  };
 }

@@ -412,6 +412,14 @@ export const portfolio = [
   { t: 'WazaCRM', cat: 'corporativo', catLabel: 'SaaS propio', tag: 'CRM', year: '2026', img: '/portfolio/wazacrm.jpg', href: 'https://wazacrm.com', desc: 'Sitio del CRM de WhatsApp con IA que desarrollamos nosotros mismos: agente que atiende, cotiza y cobra sobre la API oficial de Meta, con bandeja compartida y pipeline de ventas.' },
 ];
 
+/* Testimonios de clientes (los pinta la sección #testimonios de la portada).
+   Solo van los que el cliente dijo de verdad, con nombre y cargo reales: no se
+   inventan ni se resumen. Para sumar uno, añadir otro objeto a esta lista; la
+   portada lo recoge sola y pasa a carrusel cuando ya no caben en pantalla. */
+export const testimonials: { quote: string; name: string; role: string }[] = [
+  { quote: 'Rehicieron nuestro sitio y las consultas por WhatsApp se multiplicaron. Entienden de negocio, no solo de diseño.', name: 'Jhair Davis', role: 'Fundador de TRAMITAPA' },
+];
+
 export const url = (slug: string) => (slug === '' ? '/' : `/${slug}/`);
 export const wa = (text: string) =>
   `https://wa.me/${site.phoneRaw}?text=${encodeURIComponent(text)}`;

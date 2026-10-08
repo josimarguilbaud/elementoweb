@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import Pic from '../components/Pic.astro';
 import PricingExtras from '../components/PricingExtras.astro';
 import Preloader from '../components/Preloader.astro';
-import { site, cols, marketing, saas, pricing, industrias, url, wa, clientLogos, portfolio, portfolioCats, planKey } from '../lib/site';
+import { site, cols, marketing, saas, pricing, industrias, url, wa, clientLogos, portfolio, portfolioCats, testimonials, planKey } from '../lib/site';
 import { ogFor } from '../lib/img';
 import ContactForm from '../components/ContactForm.astro';
 import { homeJsonLd } from '../lib/schema';
@@ -398,14 +398,6 @@ const faqs: [string, string][] = [
         <a href="/portafolio/" data-magnetic="0.3" class="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-teal hover:text-teal">Ver todo el portafolio <span aria-hidden="true">→</span></a>
       </div>
 
-      <figure class="reveal relative mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-10 md:p-16">
-        <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(ellipse 50% 80% at 80% 20%, rgba(94, 200, 232,0.18), transparent 70%)"></div>
-        <div class="relative">
-          <div class="mb-6 font-display text-6xl leading-none text-teal">“</div>
-          <blockquote class="max-w-4xl font-display text-[clamp(1.5rem,3.4vw,2.6rem)] font-bold leading-[1.2]">Rehicieron nuestro sitio y las consultas por WhatsApp se <span class="grad-text">multiplicaron</span>. Entienden de negocio, no solo de diseño.</blockquote>
-          <figcaption class="mt-8 flex items-center gap-4"><span class="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-teal to-violet font-bold text-ink">JD</span><div><div class="font-semibold text-white">Jhair Davis</div><div class="text-sm text-white/50">Fundador de TRAMITAPA</div></div></figcaption>
-        </div>
-      </figure>
     </div>
 
     <script>
@@ -439,6 +431,66 @@ const faqs: [string, string][] = [
           void acc.offsetWidth;
           if (visible[0]) open(visible[0]);
         }));
+      }
+    </script>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <!-- Sección propia, fuera del portafolio. Compacta: una fila de tarjetas que se
+       centra mientras caben y pasa a carrusel (flechas + deslizar) al sumar más. -->
+  <section id="testimonios" aria-labelledby="testimonios-t" class="border-b border-ink/8 bg-paper py-14 md:py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="flex items-end justify-between gap-6">
+        <h2 id="testimonios-t" class="reveal font-display text-[clamp(1.6rem,3vw,2.25rem)] font-extrabold leading-[1.05] text-ink">Lo que dicen <span class="grad-text">nuestros clientes</span></h2>
+        <div class="hidden shrink-0 gap-2" data-testi-nav>
+          <button type="button" data-testi-dir="-1" aria-label="Testimonio anterior" class="grid h-10 w-10 place-items-center rounded-full border border-ink/15 bg-white text-ink transition hover:border-ink/40 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-ink/15"><span aria-hidden="true">←</span></button>
+          <button type="button" data-testi-dir="1" aria-label="Testimonio siguiente" class="grid h-10 w-10 place-items-center rounded-full border border-ink/15 bg-white text-ink transition hover:border-ink/40 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-ink/15"><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+
+      <ul class="testi-track reveal mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2" aria-label="Testimonios de clientes" tabindex="0" data-testi>
+        {testimonials.map((t) => (
+          <li class="shrink-0 basis-[min(88%,25rem)] snap-start">
+            <figure class="flex h-full flex-col justify-between rounded-2xl border border-ink/10 bg-white p-5 shadow-sm">
+              <blockquote class="text-[0.95rem] leading-relaxed text-ink/80">“{t.quote}”</blockquote>
+              <figcaption class="mt-4 flex items-center gap-3">
+                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-teal to-violet text-sm font-bold text-ink" aria-hidden="true">{t.name.split(/\s+/).map((w) => w[0]).slice(0, 2).join('').toUpperCase()}</span>
+                <div class="min-w-0"><div class="text-sm font-semibold text-ink">{t.name}</div><div class="text-xs text-ink/70">{t.role}</div></div>
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <style>
+      /* Centradas mientras caben; si no caben, alinean al inicio y se desliza. */
+      .testi-track { justify-content: safe center; scrollbar-width: none; }
+      .testi-track::-webkit-scrollbar { display: none; }
+      .testi-track:focus-visible { outline-offset: 4px; border-radius: 1rem; }
+    </style>
+
+    <script>
+      const track = document.querySelector<HTMLElement>('[data-testi]');
+      const nav = document.querySelector<HTMLElement>('[data-testi-nav]');
+      if (track && nav) {
+        const btns = [...nav.querySelectorAll<HTMLButtonElement>('[data-testi-dir]')];
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const sync = () => {
+          const over = track.scrollWidth > track.clientWidth + 1;
+          nav.classList.toggle('hidden', !over);
+          nav.classList.toggle('flex', over);
+          btns[0].disabled = track.scrollLeft <= 1;
+          btns[1].disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+        };
+        btns.forEach((b) => b.addEventListener('click', () => {
+          const card = track.firstElementChild as HTMLElement | null;
+          const step = (card ? card.getBoundingClientRect().width : track.clientWidth) + 16;
+          track.scrollBy({ left: Number(b.dataset.testiDir) * step, behavior: reduce ? 'auto' : 'smooth' });
+        }));
+        track.addEventListener('scroll', sync, { passive: true });
+        new ResizeObserver(sync).observe(track);
+        sync();
       }
     </script>
   </section>

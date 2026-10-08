@@ -1,9 +1,9 @@
 // Recupera · demo para Kredit — router por hash, vistas, recorrido guiado.
-import { PRODUCT_NAME, PRODUCT_BY, WORKSPACE, DEMO_TODAY, BASE, RULE_TEMPLATES, DEFAULT_RULE, MOTIVOS, COBRADORES, SIN_ASIGNAR, money, moneyShort, int, pct, fmtDate, fmtDateShort, fmtDateTime, fmtDateLong, stageLabel, withinRule, ruleReasons, moraHistory, mulberry32, SEED } from './data.js?v=20261008a';
-import { getState, dispatch, subscribe, kpis, ruleStats, exceptions, pendingExceptions, scenarioEnd, verifyChain } from './store.js?v=20261008a';
-import { moraChart, hBars, stackBar, sparkline, hideTip } from './charts.js?v=20261008a';
-import { SCRIPTS, SCRIPT_TABS, VOICE, chatPlayer, voicePlayer } from './scripts.js?v=20261008a';
-import { toCsv, csvFilename, downloadCsv } from './csv.js?v=20261008a';
+import { PRODUCT_NAME, PRODUCT_BY, WORKSPACE, DEMO_TODAY, BASE, RULE_TEMPLATES, DEFAULT_RULE, MOTIVOS, COBRADORES, SIN_ASIGNAR, money, moneyShort, int, pct, fmtDate, fmtDateShort, fmtDateTime, fmtDateLong, stageLabel, withinRule, ruleReasons, moraHistory, mulberry32, SEED } from './data.js?v=20261008b';
+import { getState, dispatch, subscribe, kpis, ruleStats, exceptions, pendingExceptions, scenarioEnd, verifyChain } from './store.js?v=20261008b';
+import { moraChart, hBars, stackBar, sparkline, hideTip } from './charts.js?v=20261008b';
+import { SCRIPTS, SCRIPT_TABS, VOICE, chatPlayer, voicePlayer, speechSupported, onVoicesChanged } from './scripts.js?v=20261008b';
+import { toCsv, csvFilename, downloadCsv } from './csv.js?v=20261008b';
 
 // ---------- utilidades ----------
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -926,7 +926,7 @@ function voiceHtml(s) {
       <div class="call-head">
         <span class="call-icon">${ic('phone')}</span>
         <span><strong>Llamada · Asistente de voz de Kredit</strong><small>${esc(acc.name)} · ${esc(acc.phone)}</small></span>
-        <span class="chip chip-ai">${ic('mic')}Simulación sin audio</span>
+        <span class="chip chip-ai" id="voice-chip">${ic('mic')}Simulación sin audio</span>
       </div>
       <div class="wave" id="wave" aria-hidden="true">${bars.map((h) => `<span class="wb h${h}"></span>`).join('')}</div>
       <div class="call-time"><span id="voice-time" class="mono">0:00</span><span class="mono muted">${fmtSec(VOICE.duration)}</span></div>
@@ -934,8 +934,9 @@ function voiceHtml(s) {
         <button type="button" class="btn btn-primary" data-action="voice-play" id="voice-play">${ic('play')}Reproducir</button>
         <button type="button" class="btn btn-secondary" data-action="voice-next" id="voice-next">Siguiente frase ${ic('next')}</button>
         <button type="button" class="btn btn-link" data-action="voice-reset">${ic('reset')}Reiniciar</button>
+        <button type="button" class="btn btn-link" data-action="voice-sound" id="voice-sound" aria-pressed="true" hidden>${ic('volume')}Sonido activado</button>
       </div>
-      <p class="muted small">Espacio preparado para la grabación real de la llamada (Demo 2). Aquí la transcripción avanza sincronizada.</p>
+      <p class="muted small" id="voice-note">Su navegador no tiene voces en español instaladas: se muestra la transcripción sincronizada. En la llamada real (Demo 2) se escucha la voz del asistente.</p>
       <ol class="transcript" id="transcript">${VOICE.lines.map((l, i) => `<li><button type="button" class="tline" data-action="voice-seek" data-i="${i}" data-focus="tline-${i}"><span class="mono muted">${fmtSec(l.t)}</span><span><strong>${esc(l.who)}:</strong> ${esc(l.text)}</span></button></li>`).join('')}</ol>
     </article>
   </div>
@@ -978,10 +979,27 @@ function mountVoice(ctx) {
     },
   });
   activeVoice = vp;
-  ctx.cleanup.push(() => { vp.stop(); activeVoice = null; });
+  const syncSpeechUi = () => {
+    const ok = speechSupported();
+    const chip = $('#voice-chip'); const btn = $('#voice-sound'); const note = $('#voice-note');
+    if (!chip || !btn || !note) return;
+    chip.innerHTML = ok ? `${ic('volume')}Voz sintética · simulación` : `${ic('mic')}Simulación sin audio`;
+    btn.hidden = !ok;
+    btn.setAttribute('aria-pressed', String(vp.sound));
+    btn.innerHTML = vp.sound ? `${ic('volume')}Sonido activado` : `${ic('volume-off')}Sonido apagado`;
+    note.textContent = ok
+      ? 'Voz sintética del navegador, solo para el demo: la llamada real usa una voz natural elegida para Kredit (Demo 2). Suba el volumen.'
+      : 'Su navegador no tiene voces en español instaladas: se muestra la transcripción sincronizada. En la llamada real (Demo 2) se escucha la voz del asistente.';
+  };
+  syncSpeechUi();
+  const offVoices = onVoicesChanged(syncSpeechUi);
+  activeVoiceUi = syncSpeechUi;
+  ctx.cleanup.push(() => { vp.stop(); offVoices(); activeVoice = null; activeVoiceUi = null; });
   ctx.setUpdate((st) => { const a = $('#convo-after'); if (a) a.innerHTML = afterHtml('voz', st); });
 }
 let activeVoice = null;
+let activeVoiceUi = null;
+ACTIONS['voice-sound'] = () => { if (!activeVoice) return; activeVoice.setSound(!activeVoice.sound); if (activeVoiceUi) activeVoiceUi(); };
 ACTIONS['voice-play'] = () => activeVoice && activeVoice.play();
 ACTIONS['voice-pause'] = () => activeVoice && activeVoice.pause();
 ACTIONS['voice-next'] = () => {
@@ -1191,7 +1209,7 @@ const RUTA = [
   { screen: 'Conectores SIF y AgileCheck', today: 'Catálogo', phase: 1, weeks: 'Semanas 1–4', href: '#conectores' },
   { screen: 'Bandeja y secuencia multicanal', today: 'Casos escalados y acciones', phase: 2, weeks: 'Semanas 4–6', href: '#bandeja' },
   { screen: 'Conversación por WhatsApp', today: 'Guiones simulados', phase: 3, weeks: 'Semanas 6–9', href: '#conversacion/pago' },
-  { screen: 'Llamada de voz', today: 'Transcripción sincronizada (audio en el Demo 2)', phase: 4, weeks: 'Semanas 9–12', href: '#conversacion/voz' },
+  { screen: 'Llamada de voz', today: 'Voz sintética del navegador; voz natural en el Demo 2', phase: 4, weeks: 'Semanas 9–12', href: '#conversacion/voz' },
   { screen: 'Resumen gerencial', today: 'Indicadores y escenario ilustrativo', phase: 5, weeks: 'Semanas 11–14', href: '#resumen' },
 ];
 const PHASES = ['Descubrimiento y bases', 'Segmentación y secuencia', 'Asistente de WhatsApp', 'Asistente de voz', 'Resumen y ajuste'];

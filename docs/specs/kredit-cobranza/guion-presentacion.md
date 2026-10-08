@@ -10,6 +10,9 @@ Uso interno de Elemento Web. No se envía al cliente.
 - [ ] Abrir el demo en la laptop, en Chrome, a pantalla completa, y pulsar **Reiniciar demo**
       (si se ensayó antes, los números quedan cambiados).
 - [ ] Modo claro (el botón de la luna arriba) — se ve mejor en proyector.
+- [ ] Sonido: la llamada de voz usa la voz sintética del navegador. **Microsoft Edge** trae las voces
+      más naturales en español (Dalia, Jorge); Chrome usa las de Google. Probar el volumen y la
+      salida de audio (bocinas del lugar) antes de empezar.
 - [ ] Tener abierta también la propuesta, en la sección "Inversión".
 - [ ] Probar el internet del lugar; si falla, el demo funciona igual (solo cambian las fuentes).
 - [ ] Llevar anotadas las preguntas de cierre (al final de este documento).

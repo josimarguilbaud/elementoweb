@@ -11,7 +11,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'public');
 const DIR = path.join(ROOT, 'demo', 'kredit-landings');
-const V = '?v=20261011a';
+const V = '?v=20261011b';
 const args = process.argv.slice(2);
 const shotsDir = args.includes('--shots') ? args[args.indexOf('--shots') + 1] : null;
 const liveFonts = args.includes('--live-fonts');
@@ -452,7 +452,7 @@ for (const width of [1440, 390]) {
   await waitResult(page);
   await page.waitForTimeout(400);
   const res = await page.evaluate(() => ({ tier: document.querySelector('.lf-result').dataset.tier, text: document.querySelector('.lf-result').innerText, dl: window.dataLayer, net: window.__net }));
-  check(res.tier === 'calificado' && /preliminar · calificado/i.test(res.text) && /WhatsApp en minutos/.test(res.text), `${width}px: resultado "Calificado" con asesor por WhatsApp`);
+  check(res.tier === 'calificado' && /Recibimos tu solicitud/.test(res.text) && !/calificad|aprobad/i.test(res.text) && /WhatsApp en minutos/.test(res.text), `${width}px: resultado "Calificado" con asesor por WhatsApp`);
   check(!/aprobad|garantiz/i.test(res.text), `${width}px: el resultado no dice "aprobado"`);
   check(requests.length === before && res.net.fetch === 0 && res.net.beacon === 0 && res.net.xhr === 0, `${width}px: modo demo sin peticiones al enviar`, requests.slice(before).join(', '));
   const submits = res.dl.filter((x) => x.event === 'lead_submit');
@@ -573,7 +573,7 @@ console.log('\nPréstamos: No calificado');
   await page.click('[data-next]');
   await waitResult(page);
   const r = await page.evaluate(() => ({ tier: document.querySelector('.lf-result').dataset.tier, text: document.querySelector('.lf-result').innerText, link: document.querySelector('.lf-result a[href="../empresas/"]') !== null }));
-  check(r.tier === 'no_calificado' && /Gracias por confiar en Kredit/.test(r.text) && /No es definitivo/.test(r.text) && r.link, 'mensaje respetuoso con alternativa (recomendar empresa)');
+  check(r.tier === 'no_calificado' && /Gracias por confiar en Kredit/.test(r.text) && /te lo diremos con claridad/.test(r.text) && !/no podemos ofrecerte|rechazad|calificad/i.test(r.text) && r.link, 'mensaje respetuoso con alternativa (recomendar empresa)');
   check(!/aprobad|rechaz/i.test(r.text), 'sin "aprobado" ni "rechazado"');
   check(errors.length === 0, 'sin errores de página', errors.join(' | '));
   await ctx.close();

@@ -7,15 +7,15 @@
 <title>Préstamos rápidos con cuotas fijas · Kredit</title>
 <meta name="description" content="Vista previa: landing de préstamos de Kredit con calculadora de cuota y solicitud en línea. Formulario en modo demo.">
 <meta name="theme-color" content="#1559ED">
-<link rel="icon" href="../assets/kredit-mark.svg?v=20261011a" type="image/svg+xml">
+<link rel="icon" href="../assets/kredit-mark.svg?v=20261011b" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Poppins:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="../assets/base.css?v=20261011a">
-<link rel="modulepreload" href="../assets/form.js?v=20261011a">
-<link rel="modulepreload" href="../assets/calc.js?v=20261011a">
-<script type="module" src="../assets/page.js?v=20261011a"></script>
-<script type="module" src="../assets/prestamos.js?v=20261011a"></script>
+<link rel="stylesheet" href="../assets/base.css?v=20261011b">
+<link rel="modulepreload" href="../assets/form.js?v=20261011b">
+<link rel="modulepreload" href="../assets/calc.js?v=20261011b">
+<script type="module" src="../assets/page.js?v=20261011b"></script>
+<script type="module" src="../assets/prestamos.js?v=20261011b"></script>
 </head>
 <body id="top">
 <!-- SPRITE:start (íconos y logotipo) -->
@@ -140,7 +140,7 @@
                   <input class="input" id="f-monto" name="monto" type="text" inputmode="decimal" autocomplete="off" value="3,000" aria-describedby="f-monto-scale f-monto-err">
                 </div>
                 <input class="range" id="calc-range" type="range" min="300" max="15000" step="100" value="3000" aria-label="Elegir el monto con el control deslizante" aria-describedby="f-monto-scale">
-                <div class="range__scale" id="f-monto-scale"><span>B/. 300</span><span>Rango ilustrativo</span><span>B/. 15,000</span></div>
+                <div class="range__scale" id="f-monto-scale"><span>B/. 300</span><span>Rango ilustrativo, por confirmar</span><span>B/. 15,000</span></div>
                 <p class="field-error" id="f-monto-err" data-error-for="monto" hidden></p>
               </div>
 
@@ -163,7 +163,7 @@
                   <p class="calc__cuota" data-calc-cuota>B/. 149.77</p>
                 </div>
                 <div class="calc__rate field" data-field="tasa_ejemplo">
-                  <label for="f-tasa">Tasa de ejemplo</label>
+                  <label for="f-tasa">Tasa nominal de ejemplo</label>
                   <div class="rate"><input class="input" id="f-tasa" name="tasa_ejemplo" type="text" inputmode="decimal" value="18" aria-describedby="f-tasa-err calc-fine"><span>% anual</span></div>
                   <p class="field-error" id="f-tasa-err" data-error-for="tasa_ejemplo" hidden></p>
                 </div>
@@ -317,14 +317,14 @@
                 <div class="field" data-field="acepta_privacidad">
                   <label class="check">
                     <input type="checkbox" name="acepta_privacidad" value="si" aria-describedby="f-priv-err">
-                    <span>Acepto el <a href="#" data-placeholder-link="Enlace al aviso de privacidad de Kredit: por conectar.">aviso de privacidad</a> y el tratamiento de mis datos para evaluar mi solicitud, conforme a la Ley 81 de 2019. <span class="req" aria-hidden="true">*</span></span>
+                    <span>Acepto el <a href="https://kredit.com.pa/politicas-de-privacidad/">aviso de privacidad</a> y el tratamiento de mis datos para evaluar mi solicitud, conforme a la Ley 81 de 2019. <span class="req" aria-hidden="true">*</span></span>
                   </label>
                   <p class="field-error" id="f-priv-err" data-error-for="acepta_privacidad" hidden></p>
                 </div>
                 <div class="field" data-field="acepta_referencias">
                   <label class="check">
                     <input type="checkbox" name="acepta_referencias" value="si" aria-describedby="f-apc-err">
-                    <span>Autorizo a Kredit a consultar mis referencias de crédito (APC) para evaluar mi solicitud. <span class="req" aria-hidden="true">*</span></span>
+                    <span>Autorizo a Kredit a consultar mis referencias de crédito (APC u otras agencias de información de crédito) para evaluar mi solicitud. <span class="req" aria-hidden="true">*</span></span>
                   </label>
                   <p class="field-error" id="f-apc-err" data-error-for="acepta_referencias" hidden></p>
                 </div>
@@ -397,7 +397,7 @@
                 <div class="field" data-field="ref_privacidad">
                   <label class="check">
                     <input type="checkbox" name="ref_privacidad" value="si" aria-describedby="f-ref-priv-err">
-                    <span>Acepto el <a href="#" data-placeholder-link="Enlace al aviso de privacidad de Kredit: por conectar.">aviso de privacidad</a> y el tratamiento de mis datos para gestionar esta recomendación, conforme a la Ley 81 de 2019. <span class="req" aria-hidden="true">*</span></span>
+                    <span>Acepto el <a href="https://kredit.com.pa/politicas-de-privacidad/">aviso de privacidad</a> y el tratamiento de mis datos para gestionar esta recomendación, conforme a la Ley 81 de 2019. <span class="req" aria-hidden="true">*</span></span>
                   </label>
                   <p class="field-error" id="f-ref-priv-err" data-error-for="ref_privacidad" hidden></p>
                 </div>
@@ -467,7 +467,7 @@
           <div><dt>Ejemplo representativo</dt><dd><span class="tbd">[Monto, plazo, cuota y costo total con todos los cargos: dato por confirmar con Kredit]</span></dd></div>
           <div><dt>Comisiones y cargos</dt><dd><span class="tbd">[Comisiones, seguros y FECI si aplican: dato por confirmar con Kredit]</span></dd></div>
         </dl>
-        <p class="disclosure__legal"><strong>CREDU HOLDINGS, S.A.</strong> (Kredit) · RUC 155770767-2-2025 DV9 · Licencia de empresa financiera (MICI): <span class="tbd">[número por confirmar con Kredit]</span> · San Francisco, Urbanización Punta Pacífica, Edificio Torre de las Américas, Torre B, Oficina 602-B, Panamá.</p>
+        <p class="disclosure__legal"><strong>CREDU HOLDINGS, S.A.</strong> (Kredit) · RUC 155770767-2-2025 DV9 · Licencia y ente regulador: <span class="tbd">[por confirmar con Kredit]</span> · San Francisco, Urbanización Punta Pacífica, Edificio Torre de las Américas, Torre B, Oficina 602-B, Panamá.</p>
       </div>
     </div>
   </section>
@@ -506,7 +506,7 @@
         <strong>Lo que necesitas:</strong>
         <ul class="mini-list">
           <li><svg class="ic" aria-hidden="true"><use href="#i-id"/></svg>Cédula vigente</li>
-          <li><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg>Estar activo en tu empresa</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg>Estar activo en tu empresa <span class="tbd">[¿solo empresas afiliadas? por confirmar]</span></li>
           <li><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>Llenar la solicitud digital</li>
         </ul>
       </div>
@@ -524,7 +524,7 @@
       <div class="goals">
         <button type="button" class="goal goal--featured" data-goal="celebracion">
           <span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
-          <span class="goal__title">Celebra en grande, sin esperar</span>
+          <span class="goal__title">Planifica tus metas con cuota fija</span>
           <span class="goal__text">Graduaciones, bodas, cumpleaños: los momentos importantes no esperan.</span>
           <svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg>
         </button>
@@ -573,7 +573,7 @@
     <div class="wrap split">
       <div class="split__media">
         <svg class="k-ghost" viewBox="0 0 29.4 38.6" aria-hidden="true"><use href="#logo-k"/></svg>
-        <img src="../assets/ilustracion-celular.svg?v=20261011a" alt="" width="420" height="420" decoding="async">
+        <img src="../assets/ilustracion-celular.svg?v=20261011b" alt="" width="420" height="420" decoding="async">
       </div>
       <div>
         <div class="section-head">
@@ -622,7 +622,7 @@
       <div class="faq">
         <details>
           <summary>¿Quién puede solicitar un crédito con Kredit?</summary>
-          <div class="answer"><p>Los créditos de Kredit están pensados para colaboradores de empresas afiliadas, porque la cuota se descuenta directo de la planilla. Si tu empresa aún no está afiliada, igual puedes completar el formulario: un asesor revisará tu caso y también puedes recomendar a tu empresa. <span class="tbd">[Política para solicitantes de empresas no afiliadas: por confirmar con Kredit]</span></p></div>
+          <div class="answer"><p>Los créditos de Kredit están pensados para colaboradores de empresas afiliadas, porque la cuota se descuenta directo de la planilla. Si tu empresa aún no está afiliada, puedes completar el formulario y un asesor te dirá si hay una opción para ti; también puedes recomendar a tu empresa. <span class="tbd">[Política para solicitantes de empresas no afiliadas: por confirmar con Kredit]</span></p></div>
         </details>
         <details>
           <summary>¿Qué necesito para solicitar?</summary>
@@ -650,7 +650,7 @@
         </details>
         <details>
           <summary>¿Consultarán mi historial de crédito?</summary>
-          <div class="answer"><p>Sí. Con tu autorización, Kredit consulta tus referencias de crédito (APC) para evaluar tu solicitud. Es una de las autorizaciones del formulario y puedes leerla antes de enviarlo.</p></div>
+          <div class="answer"><p>Sí. Con tu autorización, Kredit consulta tus referencias de crédito (APC u otras agencias de información de crédito) para evaluar tu solicitud. Es una de las autorizaciones del formulario y puedes leerla antes de enviarlo.</p></div>
         </details>
         <details>
           <summary>¿Cómo protegen mis datos?</summary>
@@ -664,7 +664,7 @@
   <section class="cta-final on-dark" aria-labelledby="cta-title" data-sticky-hide>
     <svg class="k-ghost" viewBox="0 0 29.4 38.6" aria-hidden="true"><use href="#logo-k"/></svg>
     <div class="wrap">
-      <h2 class="cta-final__title" id="cta-title">Porque alcanzar tus metas nunca ha sido más fácil</h2>
+      <h2 class="cta-final__title" id="cta-title">Tus metas, con una cuota que conoces desde el inicio</h2>
       <p>Calcula tu cuota y solicita tu crédito en línea. Un asesor de Kredit te acompaña por WhatsApp.</p>
       <div class="cta-final__actions">
         <a class="btn btn--white btn--lg" href="#solicitud">Solicitar mi préstamo<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
@@ -742,7 +742,7 @@
         <h3>Legal</h3>
         <ul>
           <li><a href="#" data-placeholder-link="Aviso legal de Kredit: enlace por conectar.">Aviso legal</a></li>
-          <li><a href="#" data-placeholder-link="Política de privacidad de Kredit: enlace por conectar.">Política de privacidad</a></li>
+          <li><a href="https://kredit.com.pa/politicas-de-privacidad/">Política de privacidad</a></li>
           <li><a href="#" data-placeholder-link="Política de cookies de Kredit: enlace por conectar.">Política de cookies</a></li>
           <li><a href="#info-credito-completa">Información del crédito</a></li>
         </ul>

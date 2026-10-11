@@ -1,8 +1,8 @@
 // prestamos.js — landing de préstamos (B2C): configuración del formulario y calculadora.
 // Vista previa para Kredit · Elemento Web. Todos los umbrales y listas son EJEMPLOS de
 // trabajo: los define Kredit (spec §4) y se ajustan aquí sin tocar el motor (form.js).
-import { initLeadForm, normalizeCedula, toE164PA } from './form.js?v=20261011a';
-import { escenario, formatMoney, formatInt, parseMoney } from './calc.js?v=20261011a';
+import { initLeadForm, normalizeCedula, toE164PA } from './form.js?v=20261011b';
+import { escenario, formatMoney, formatInt, parseMoney } from './calc.js?v=20261011b';
 
 /** Número oficial de WhatsApp de Kredit (kredit.com.pa). En demo no abre chats reales. */
 export const WHATSAPP = '50769975664';
@@ -93,10 +93,10 @@ export const config = {
 
   fields: {
     // Paso 1 · calculadora
-    monto: { kind: 'money', required: true, min: 100, max: 100000, label: 'Monto',
-      messages: { min: 'El monto mínimo para esta simulación es B/. 100.', max: 'Para montos mayores a B/. 100,000 habla con un asesor.' } },
+    monto: { kind: 'money', required: true, min: 300, max: 15000, label: 'Monto',
+      messages: { min: 'El monto mínimo de esta simulación es B/. 300 (rango por confirmar con Kredit).', max: 'Para montos mayores a B/. 15,000 habla con un asesor (rango por confirmar con Kredit).' } },
     plazo: { kind: 'radio', required: true, label: 'Plazo' },
-    tasa_ejemplo: { kind: 'money', required: true, min: 0, max: 60, label: 'Tasa de ejemplo',
+    tasa_ejemplo: { kind: 'money', required: true, min: 0, max: 60, label: 'Tasa nominal anual de ejemplo',
       messages: { money: 'Escribe una tasa anual de ejemplo entre 0 y 60 %.', min: 'Escribe una tasa anual de ejemplo entre 0 y 60 %.', max: 'Escribe una tasa anual de ejemplo entre 0 y 60 %.' } },
     // Paso 2 · trabajo
     empresa: { kind: 'text', required: true, label: 'Empresa donde trabajas',
@@ -223,8 +223,8 @@ export const config = {
     if (tier === 'calificado') {
       return {
         tone: 'ok', icon: 'i-check',
-        badge: 'Precalificación preliminar · Calificado',
-        title: `¡Listo, ${first}! Tu solicitud cumple los criterios preliminares`,
+        badge: 'Solicitud recibida',
+        title: `¡Listo, ${first}! Recibimos tu solicitud`,
         body: [wa
           ? 'Un asesor te escribirá por WhatsApp en minutos, en horario de atención [[horario por confirmar con Kredit]], para continuar con tu solicitud.'
           : 'Un asesor te contactará al celular o al correo que nos diste, en horario de atención [[horario por confirmar con Kredit]], para continuar con tu solicitud.'],
@@ -241,7 +241,7 @@ export const config = {
     if (tier === 'revisar') {
       return {
         tone: 'review', icon: 'i-clipboard',
-        badge: 'Precalificación preliminar · En revisión',
+        badge: 'Solicitud recibida',
         title: 'Revisaremos tu solicitud',
         body: [`Gracias, ${first}. Un asesor revisará tu información y te contactará [[plazo de respuesta por confirmar con Kredit]] para conversar sobre las opciones que mejor se ajusten a ti.`],
         next: ['Ten a mano tu cédula vigente y tu último comprobante de pago.', ...refNote],
@@ -251,16 +251,16 @@ export const config = {
     }
     return {
       tone: 'neutral', icon: 'i-heart',
-      badge: 'Precalificación preliminar',
+      badge: 'Solicitud recibida',
       title: 'Gracias por confiar en Kredit',
       body: [
-        `${first}, con la información que nos diste, por ahora no podemos ofrecerte esta opción de crédito.`,
-        'No es definitivo: si cambia tu situación (por ejemplo, tienes más antigüedad o tu empresa se afilia a Kredit), puedes volver a intentarlo cuando quieras.',
+        `Gracias, ${first}. Recibimos tu solicitud y un asesor revisará tu información.`,
+        'Si por ahora no hay una opción que se ajuste a tu perfil, te lo diremos con claridad; podrás volver a intentarlo cuando cambie tu situación (por ejemplo, si tu empresa se afilia a Kredit).',
         ...(wa ? ['Como aceptaste mensajes por WhatsApp, te enviaremos consejos para tus finanzas y otras opciones [[alternativa por confirmar con Kredit]].'] : []),
       ],
       next: refNote,
       actions: [{ label: '¿Tu empresa podría afiliarse? Recomiéndala', href: '../empresas/', icon: 'i-building' }],
-      fine: 'Esta respuesta es preliminar y automática; no afecta tu historial de crédito.',
+      fine: 'Esta respuesta es automática; la evaluación de tu solicitud la realiza Kredit.',
     };
   },
 };

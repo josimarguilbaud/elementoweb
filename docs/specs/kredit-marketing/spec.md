@@ -19,8 +19,10 @@ recomienda la inversión); 2 landings profesionales con formularios avanzados co
 a su CRM; gestión de redes con el sistema de generación de contenido de Instagram; mejora de la
 página principal con SEO + GEO avanzado (Search Console, GA4); y un VPS de Elemento Web.
 
-No se pudo acceder a kredit.com.pa (DNS no resolvió desde el entorno) ni a Instagram: la
-auditoría del sitio y del perfil se hace al aprobar (o con capturas que envíe Kredit).
+Fuentes revisadas el 11-oct-2026: HTML de la página principal enviado por el usuario y captura
+de Instagram (@kredit_pa: 5 publicaciones, 13 seguidores). Según su FAQ, el crédito es para
+colaboradores de empresas afiliadas y se paga por descuento en planilla; la landing de personas
+(tráfico de Google) tiene un interruptor `soloEmpresasAfiliadas` (falso por defecto) para ambos casos.
 
 ## 2. Principio rector
 
@@ -66,7 +68,8 @@ Pago único:
 - D. Medición: GA4, Google Tag Manager, Search Console, píxel de Meta + API de conversiones, conversiones offline desde el CRM, tablero de resultados — 450
 - E. Creación de campañas de Google Ads (B2C + B2B) — 450
 - F. Creación de campañas de Meta Ads (B2C + B2B) — 450
-- G. Mejora de la página principal de kredit.com.pa (estructura, mensajes, velocidad, SEO on-page, schema) — 950 (se confirma tras auditar el sitio)
+- G. Mejora de la página principal de kredit.com.pa (formulario de afiliación, tasa y costo visibles, aviso legal, velocidad, SEO on-page, schema) — 950
+- H. Kit de activación para empresas afiliadas (QR, afiches, mensajes para RR. HH., enlace con código; hasta 10 empresas) — 450
 
 Mensual:
 - 1. Gestión de Google Ads — 400
@@ -77,7 +80,7 @@ Mensual:
 - 6. Mantenimiento web Prioritario — 99
 - VPS de Elemento Web (alojamiento de landings, n8n y web) — 550 al año
 
-Planes: Esencial (A–F + 1–2), Recomendado (A–F + 1–4), Integral (A–G + 1–6 + VPS).
+Planes (VPS en los tres): Esencial (A–F + 1–2) 4,250 + 900/mes; Crecimiento, recomendado (A–F + H + 1–4) 4,700 + 1,700/mes; Integral (A–H + 1–6) 5,650 + 2,399/mes.
 
 Inversión publicitaria recomendada (aparte, directo a Google/Meta): arranque 1,500/mes;
 recomendada 2,700/mes (Google 1,200 · Meta 1,500); escala 4,500/mes desde el mes 3 si el

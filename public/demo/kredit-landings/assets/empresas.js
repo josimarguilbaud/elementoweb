@@ -1,6 +1,6 @@
 // empresas.js — landing de empresas (B2B): configuración del formulario de afiliación.
 // Vista previa para Kredit · Elemento Web. Puntaje de ejemplo según spec §4 (lo fija Kredit).
-import { initLeadForm, isFreeEmail, toE164PA, emailDomain } from './form.js?v=20261011a';
+import { initLeadForm, isFreeEmail, toE164PA, emailDomain } from './form.js?v=20261011b';
 
 export const WHATSAPP = '50769975664';
 
@@ -117,7 +117,7 @@ export const config = {
       title: 'Gracias por tu interés en Kredit',
       body: [
         'Por ahora el programa está pensado para empresas con [[tamaño mínimo por confirmar con Kredit]]. Guardamos tus datos para avisarte cuando tengamos una opción para tu empresa.',
-        'Mientras tanto, tus colaboradores pueden conocer las opciones de crédito en nuestra página de préstamos.',
+        'Mientras tanto, te enviaremos información sobre cómo funciona el programa.',
       ],
       actions: [{ label: 'Ver la página de préstamos', href: '../prestamos/', icon: 'i-arrow-r' }],
     };

@@ -31,7 +31,7 @@ export function formatInt(x) {
 /** Lee montos escritos como "B/. 1,234.50", "1234" o "1.234" (sin decimales ambiguos). */
 export function parseMoney(v) {
   if (typeof v === 'number') return v;
-  const s = String(v || '').replace(/[^\d.,]/g, '');
+  const s = String(v || '').replace(/B\/\./gi, '').replace(/[^\d.,]/g, '');
   if (!s) return NaN;
   // "1,234.56" → coma de miles; "1.234" sin decimales tras el punto de 3 cifras → miles
   let clean = s.replace(/,/g, '');

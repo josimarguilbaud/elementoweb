@@ -595,6 +595,30 @@ export function initLeadForm(form, config) {
   form.addEventListener('input', onEdit);
   form.addEventListener('change', onEdit);
 
+  // Validar al salir de un campo puede insertar un mensaje de error y mover el diseño
+  // justo entre mousedown y mouseup (el clic "se pierde"). Si hay un puntero presionado,
+  // la validación espera a que se suelte.
+  let pointerDown = false;
+  const pending = new Set();
+  const flush = () => {
+    pointerDown = false;
+    if (!pending.size) return;
+    const names = [...pending];
+    pending.clear();
+    setTimeout(() => names.forEach(blurValidate), 0);
+  };
+  doc.addEventListener('pointerdown', () => { pointerDown = true; }, true);
+  doc.addEventListener('pointerup', flush, true);
+  doc.addEventListener('pointercancel', flush, true);
+
+  function blurValidate(name) {
+    const f = fields[name];
+    if (['radio', 'checkbox', 'checkboxes'].includes(f.kind)) return;
+    const c = ctx();
+    if (!isEmpty(name, c.values[name]) || st.invalid.has(name)) setError(name, fieldError(name, c));
+    updateWarnings(c);
+  }
+
   form.addEventListener('focusout', (e) => {
     const el = e.target;
     const name = el.name;
@@ -606,10 +630,8 @@ export function initLeadForm(form, config) {
     }
     if ((f.kind === 'mobile' || f.kind === 'phone') && el.value.trim()) el.value = formatPhone(el.value);
     if (f.kind === 'cedula' && el.value.trim()) el.value = normalizeCedula(el.value);
-    if (['radio', 'checkbox', 'checkboxes'].includes(f.kind)) return;
-    const c = ctx();
-    if (!isEmpty(name, c.values[name]) || st.invalid.has(name)) setError(name, fieldError(name, c));
-    updateWarnings(c);
+    if (pointerDown) pending.add(name);
+    else blurValidate(name);
   });
 
   form.addEventListener('submit', (e) => {

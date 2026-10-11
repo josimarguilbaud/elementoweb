@@ -570,6 +570,16 @@ export function initLeadForm(form, config) {
     wrap.appendChild(reset);
 
     resultBox.appendChild(wrap);
+    if (progressLabel) progressLabel.textContent = r.head || 'Solicitud enviada';
+    if (progressFill) progressFill.style.width = '100%';
+    if (progress) { progress.setAttribute('aria-valuenow', progress.getAttribute('aria-valuemax')); progress.setAttribute('aria-valuetext', r.head || 'Solicitud enviada'); }
+    if (progressList) progressList.querySelectorAll('li').forEach((li) => {
+      li.className = 'is-done';
+      li.removeAttribute('aria-current');
+      const dot = li.querySelector('.lf-dot');
+      dot.textContent = '';
+      dot.appendChild(icon(doc, 'i-check'));
+    });
     form.hidden = true;
     resultBox.hidden = false;
     card.classList.add('is-result');

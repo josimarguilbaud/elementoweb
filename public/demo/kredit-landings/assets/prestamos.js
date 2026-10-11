@@ -206,7 +206,7 @@ export const config = {
     const empresa = (referido ? (v.ref_empresa || v.empresa) : v.empresa) || 'tu empresa';
     if (tier === 'referido_empresa') {
       return {
-        tone: 'referral', icon: 'i-sparkles',
+        tone: 'referral', icon: 'i-sparkles', head: 'Recomendación enviada',
         badge: 'Recomendación recibida',
         title: `¡Gracias, ${first}! Vamos a presentarle Kredit a ${empresa}`,
         body: [

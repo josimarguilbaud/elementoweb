@@ -91,5 +91,11 @@ if (sticky && 'IntersectionObserver' in window) {
   update();
 }
 
+/* ---------- WhatsApp flotante: no tapar el formulario en pantallas angostas ---------- */
+const formCard = document.querySelector('[data-form-card]');
+if (formCard && 'IntersectionObserver' in window) {
+  new IntersectionObserver(([en]) => document.body.classList.toggle('form-visible', en.isIntersecting), { threshold: 0.05 }).observe(formCard);
+}
+
 /* ---------- año del pie ---------- */
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = String(new Date().getFullYear()); });

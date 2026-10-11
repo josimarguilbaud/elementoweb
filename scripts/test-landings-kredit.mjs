@@ -146,7 +146,8 @@ async function newPage(width, { height, reducedMotion = 'reduce' } = {}) {
   const errors = [];
   const requests = [];
   page.on('pageerror', (er) => errors.push('pageerror: ' + er.message));
-  page.on('console', (m) => { if (m.type() === 'error') errors.push('console: ' + m.text()); });
+  // Con --live-fonts, los reintentos del proxy hacia Google Fonts no son fallas de la página.
+  page.on('console', (m) => { if (m.type() === 'error' && !(liveFonts && /Failed to load resource/.test(m.text()))) errors.push('console: ' + m.text()); });
   page.on('request', (r) => requests.push(r.url()));
   if (!liveFonts) {
     await page.route(/fonts\.(googleapis|gstatic)\.com/, (route) => route.fulfill({ status: 200, contentType: route.request().url().includes('googleapis') ? 'text/css' : 'font/woff2', body: '' }));
@@ -329,7 +330,11 @@ const ATTR_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_
 
 async function shot(page, name, full = false) {
   if (!shotsDir) return;
+  // En la captura de página completa, los elementos fijos (barra móvil, WhatsApp) se
+  // pintarían en medio del documento: se ocultan solo para esa captura.
+  const tag = full ? await page.addStyleTag({ content: '.sticky-cta, .wa-float, .toast { display: none !important; }' }) : null;
   await page.screenshot({ path: path.join(shotsDir, name), fullPage: full });
+  if (tag) await tag.evaluate((n) => n.remove());
 }
 
 // 3a. carga, red, scroll horizontal, primer pantallazo
@@ -731,6 +736,7 @@ console.log('\nTeclado, movimiento y flotantes');
   await page.waitForTimeout(400);
   const shown = await page.evaluate(() => ({ bar: document.querySelector('[data-sticky-cta]').classList.contains('is-on'), wa: getComputedStyle(document.querySelector('.wa-float')).visibility, cuota: document.querySelector('[data-sticky-cuota]').textContent }));
   check(shown.bar && shown.wa === 'visible' && /^B\/\. \d/.test(shown.cuota), '390px: barra fija con la cuota y WhatsApp al desplazarse', JSON.stringify(shown));
+  await shot(page, 'prestamos-390-barra-fija.png');
   await contrast(page, 'préstamos 390px con barra fija', { top: false });
   await page.click('[data-sticky-cta] a');
   await page.waitForTimeout(600);

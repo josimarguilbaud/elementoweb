@@ -46,6 +46,6 @@ export function escenario(monto, tasaAnualPct, meses) {
   return {
     cuota: round2(cuota),
     quincena: round2(cuota / 2),
-    total: round2(cuota * Math.round(Number(meses) || 0)),
+    total: round2(round2(cuota) * Math.round(Number(meses) || 0)),
   };
 }

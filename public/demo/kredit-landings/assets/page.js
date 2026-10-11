@@ -78,6 +78,7 @@ if (sticky && 'IntersectionObserver' in window) {
   const update = () => {
     const show = visible.size === 0 && window.scrollY > 240;
     sticky.classList.toggle('is-on', show);
+    document.body.classList.toggle('sticky-on', show);
     sticky.setAttribute('aria-hidden', String(!show));
     sticky.querySelectorAll('a, button').forEach((el) => { el.tabIndex = show ? 0 : -1; });
   };

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kredit – Tu crédito, sin vueltas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1559ED;
+    --blue-light:#4F6BF2;
+    --blue-pale:#C5D0FA;
+    --navy:#091845;
+    --bg:#FAFBFC;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Poppins',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--navy);
+    line-height:1.5;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+  /* Header */
+  header{
+    background:var(--blue);
+    position:sticky;top:0;z-index:50;
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 24px;max-width:1200px;margin:0 auto;
+  }
+  .logo img{height:36px;}
+  .nav-links{display:flex;gap:32px;list-style:none;}
+  .nav-links a{color:#fff;font-weight:500;font-size:15px;}
+  .nav-cta{
+    background:#fff;color:var(--blue);
+    padding:12px 24px;border-radius:50px;
+    font-weight:600;font-size:15px;white-space:nowrap;
+  }
+  .burger{display:none;color:#fff;font-size:28px;background:none;border:none;cursor:pointer;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg,var(--blue) 0%, var(--blue-light) 100%);
+    color:#fff;
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:1200px;margin:0 auto;padding:60px 24px 0;
+    display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;
+  }
+  .hero h1{font-size:52px;font-weight:600;line-height:1.1;margin-bottom:20px;}
+  .hero p{font-size:17px;max-width:480px;opacity:.92;}
+  .hero-media{position:relative;}
+  .hero-media img{border-radius:12px;width:100%;}
+
+  /* Accede section */
+  .accede{
+    background:var(--blue-pale);
+    padding:70px 0;
+  }
+  .accede-inner{
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+  }
+  .accede-media{display:flex;justify-content:center;}
+  .accede-media img{max-width:380px;}
+  .accede h2{font-size:45px;font-weight:600;color:var(--navy);margin-bottom:20px;line-height:1.15;}
+  .accede p{font-size:16px;color:var(--navy);opacity:.85;max-width:460px;margin-bottom:28px;}
+  .btn-navy{
+    display:inline-block;background:var(--navy);color:#fff;
+    padding:16px 32px;border-radius:50px;font-weight:600;font-size:15px;
+  }
+
+  /* Afiliar CTA */
+  .afiliar{
+    background:var(--bg);
+    padding:70px 0;text-align:center;
+  }
+  .afiliar h2{font-size:36px;font-weight:600;margin-bottom:16px;}
+  .afiliar p{max-width:520px;margin:0 auto 28px;opacity:.8;}
+  .btn-blue{
+    display:inline-block;background:var(--blue);color:#fff;
+    padding:16px 32px;border-radius:50px;font-weight:600;font-size:15px;
+  }
+
+  /* Quienes somos */
+  .quienes{
+    background:var(--navy);color:#fff;
+    padding:80px 0;text-align:center;
+  }
+  .quienes h2{font-size:45px;font-weight:600;margin-bottom:24px;}
+  .quienes p{max-width:640px;margin:0 auto;font-size:17px;opacity:.9;}
+
+  /* FAQ */
+  .faq{padding:80px 0;}
+  .faq h2{font-size:36px;font-weight:600;text-align:center;margin-bottom:40px;}
+  .faq-list{max-width:760px;margin:0 auto;}
+  details{
+    border-bottom:1px solid #E2E6EF;padding:20px 4px;
+  }
+  summary{
+    cursor:pointer;font-weight:600;font-size:17px;
+    display:flex;justify-content:space-between;align-items:center;list-style:none;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";font-size:22px;color:var(--blue);font-weight:400;}
+  details[open] summary::after{content:"–";}
+  details p{margin-top:14px;opacity:.8;font-size:15px;max-width:680px;}
+
+  /* Footer */
+  footer{
+    background:var(--navy);color:#fff;
+    padding:60px 0 24px;
+  }
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px;
+  }
+  .footer-grid h3{font-size:17px;margin-bottom:16px;font-weight:600;}
+  .footer-grid p{opacity:.75;font-size:14px;margin-top:8px;}
+  .footer-links{list-style:none;}
+  .footer-links li{margin-bottom:10px;}
+  .footer-links a{opacity:.8;font-size:14px;}
+  .footer-logo img{height:32px;margin-bottom:16px;}
+  .social{display:flex;gap:14px;margin-top:12px;}
+  .social a{
+    width:38px;height:38px;border:1px solid rgba(255,255,255,.3);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+  }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.15);
+    padding-top:20px;text-align:center;font-size:13px;opacity:.6;
+  }
+
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .hero-inner,.accede-inner{grid-template-columns:1fr;}
+    .hero h1{font-size:38px;}
+    .accede h2,.quienes h2{font-size:32px;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="https://kredit.com.pa/"><img src="https://kredit.com.pa/wp-content/uploads/2026/03/logokredit.png" alt="Kredit"></a>
+    <ul class="nav-links">
+      <li><a href="#nosotros">¿Quiénes somos?</a></li>
+      <li><a href="#empresas">Empresas</a></li>
+      <li><a href="#preguntas">Preguntas Frecuentes</a></li>
+    </ul>
+    <a class="nav-cta" href="https://wa.me/50769975664">Contáctanos</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Sigue creciendo<br>con KREDIT.</h1>
+      <p>KREDIT facilita el acceso a créditos rápidos y fáciles, con cuotas fijas y sin costos ocultos.</p>
+    </div>
+    <div class="hero-media">
+      <img src="https://kredit.com.pa/wp-content/uploads/2025/11/bannercredu1.jpg" alt="Cliente KREDIT">
+    </div>
+  </div>
+</section>
+
+<section class="accede" id="cuenta">
+  <div class="container accede-inner">
+    <div class="accede-media">
+      <img src="https://kredit.com.pa/wp-content/uploads/2026/03/Frame-50.png" alt="App KREDIT">
+    </div>
+    <div>
+      <h2>Accede a<br>tu cuenta</h2>
+      <p>Si ya eres miembro, ingresa al portal y gestiona tus créditos en línea. Consulta tu saldo, pagos y solicita nuevos créditos al instante.</p>
+      <a class="btn-navy" href="https://kredit.com.pa/app/">Ingresar al portal</a>
+    </div>
+  </div>
+</section>
+
+<section class="afiliar" id="empresas">
+  <div class="container">
+    <h2>¿Cómo afiliar tu empresa?</h2>
+    <p>Ofrece un beneficio de valor a tus colaboradores. Contáctanos y nuestro equipo te guiará en el proceso.</p>
+    <a class="btn-blue" href="#empresas">Afiliar empresa</a>
+  </div>
+</section>
+
+<section class="quienes" id="nosotros">
+  <div class="container">
+    <h2>¿Quiénes<br>somos?</h2>
+    <p>KREDIT es una fintech panameña que transforma la manera de acceder a créditos. Ofrecemos soluciones fáciles, seguras y rápidas. Nuestra prioridad es la transparencia, sin letras pequeñas ni costos ocultos.</p>
+  </div>
+</section>
+
+<section class="faq" id="preguntas">
+  <div class="container">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq-list">
+      <details>
+        <summary>¿Quiénes pueden solicitar un crédito con KREDIT?</summary>
+        <p>Todos los colaboradores de empresas afiliadas a KREDIT.</p>
+      </details>
+      <details>
+        <summary>¿Qué necesito para solicitar un crédito?</summary>
+        <p>Solo debes estar activo en una empresa afiliada, contar con tu cédula vigente y llenar la solicitud digital.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto tiempo demora el desembolso?</summary>
+        <p>El desembolso es inmediato, el mismo día en que tu crédito es aprobado.</p>
+      </details>
+      <details>
+        <summary>¿Qué montos y plazos están disponibles?</summary>
+        <p>El monto y plazo del crédito que puedes solicitar se ajusta a tus necesidades y a tu capacidad financiera.</p>
+      </details>
+      <details>
+        <summary>¿Cómo veo el estado de mi cuenta?</summary>
+        <p>Puedes acceder fácilmente a tu cuenta ingresando con tu cédula en nuestro portal. Allí podrás ver tu estado de cuenta actualizado, los pagos realizados, cuánto te falta por pagar y si lo necesitas solicitar un crédito adicional.</p>
+      </details>
+      <details>
+        <summary>¿Cuáles son las formas de pago?</summary>
+        <p>Los pagos de tu crédito se realizan automáticamente mediante tu empresa afiliada. Si en algún momento deseas hacer un abono adicional o cancelar tu crédito por completo, contáctanos y te ayudaremos a realizar el pago sin ningún cargo adicional.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="https://kredit.com.pa/wp-content/uploads/2026/03/logokredit.png" alt="Kredit">
+        <h3>CREDU HOLDINGS, S.A.</h3>
+        <p>155770767-2-2025 DV9</p>
+        <p>San Francisco, Urbanización Punta Pacífica, Edificio Torre de las Américas, Torre B, Oficina 602-B</p>
+      </div>
+      <div>
+        <h3>Recursos</h3>
+        <ul class="footer-links">
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="https://kredit.com.pa/politicas-de-privacidad/">Política de Privacidad</a></li>
+          <li><a href="#">Política de Cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <div class="social">
+          <a href="https://api.whatsapp.com/send/?phone=50769975664" aria-label="WhatsApp">W</a>
+          <a href="http://www.instagram.com/kreditpa" aria-label="Instagram">IG</a>
+          <a href="mailto:ventas@kredit.com.pa" aria-label="Email">@</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 KREDIT – Desarrollado por www.jacs3d.com</div>
+  </div>
+</footer>
+
+</body>
+</html>

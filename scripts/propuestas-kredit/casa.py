@@ -176,9 +176,44 @@ def wa_link(text):
     return f'https://wa.me/{WA}?text={q(text)}'
 
 
+
+def default_hero(*, doc_type, client, headline, subtitle, prepared_for, prepared_sub, date, ref, valid):
+    """Titular por defecto del encabezado (cliente, titular, preparado para, fecha y referencia)."""
+    return f'''                <div class="pt-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+                    <div>
+                        <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-blue-200 bg-white/10 border border-white/15 rounded-full px-3 py-1 mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-400 wa-pulse"></span> {esc(doc_type)}
+                        </span>
+                        <h1 class="text-4xl sm:text-5xl font-extrabold leading-none mb-4">
+                            <span class="shine">{esc(client)}</span>
+                        </h1>
+                        <p class="display text-lg sm:text-xl font-semibold text-white leading-snug max-w-lg mb-2">{esc(headline)}</p>
+                        <p class="text-blue-100/90 max-w-lg text-sm leading-relaxed">{subtitle}</p>
+                    </div>
+                    <div class="shrink-0 grid gap-3 text-sm">
+                        <div class="glass !bg-white/10 !border-white/15 rounded-xl px-4 py-3 text-white">
+                            <p class="text-[11px] text-blue-200 uppercase tracking-wider mb-0.5">Preparado para</p>
+                            <p class="font-semibold">{esc(prepared_for)}</p>
+                            <p class="text-blue-200 text-xs">{esc(prepared_sub)}</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-blue-200 text-xs justify-end">
+                            {ICON_CAL}
+                            {esc(date)}
+                        </div>
+                        <p class="text-blue-200/80 text-[11px] text-right">Ref. {esc(ref)} · válida hasta el {esc(valid)}</p>
+                    </div>
+                </div>
+'''
+
 def page(*, title, doc_type, client, headline, subtitle, prepared_for, prepared_sub, date, ref, valid,
-         body, client_footer, wa_consulta):
-    """Documento completo con encabezado, cuerpo y pie de la casa."""
+         body, client_footer, wa_consulta, hero=None, extra_css='', extra_fonts=''):
+    """Documento completo con encabezado, cuerpo y pie de la casa.
+
+    hero: HTML que reemplaza el bloque de titular del encabezado (la barra con logo y contacto se mantiene).
+    """
+    if hero is None:
+        hero = default_hero(doc_type=doc_type, client=client, headline=headline, subtitle=subtitle,
+                            prepared_for=prepared_for, prepared_sub=prepared_sub, date=date, ref=ref, valid=valid)
     return f'''<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -188,7 +223,8 @@ def page(*, title, doc_type, client, headline, subtitle, prepared_for, prepared_
     <title>{esc(title)}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     {FONTS}
-    <style>{CSS}    </style>
+    {extra_fonts}
+    <style>{CSS}{extra_css}    </style>
 </head>
 <body class="text-slate-800 selection:bg-violet-200 selection:text-violet-900">
 
@@ -222,30 +258,7 @@ def page(*, title, doc_type, client, headline, subtitle, prepared_for, prepared_
                     </div>
                 </div>
 
-                <div class="pt-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6">
-                    <div>
-                        <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-blue-200 bg-white/10 border border-white/15 rounded-full px-3 py-1 mb-4">
-                            <span class="w-1.5 h-1.5 rounded-full bg-green-400 wa-pulse"></span> {esc(doc_type)}
-                        </span>
-                        <h1 class="text-4xl sm:text-5xl font-extrabold leading-none mb-4">
-                            <span class="shine">{esc(client)}</span>
-                        </h1>
-                        <p class="display text-lg sm:text-xl font-semibold text-white leading-snug max-w-lg mb-2">{esc(headline)}</p>
-                        <p class="text-blue-100/90 max-w-lg text-sm leading-relaxed">{subtitle}</p>
-                    </div>
-                    <div class="shrink-0 grid gap-3 text-sm">
-                        <div class="glass !bg-white/10 !border-white/15 rounded-xl px-4 py-3 text-white">
-                            <p class="text-[11px] text-blue-200 uppercase tracking-wider mb-0.5">Preparado para</p>
-                            <p class="font-semibold">{esc(prepared_for)}</p>
-                            <p class="text-blue-200 text-xs">{esc(prepared_sub)}</p>
-                        </div>
-                        <div class="flex items-center gap-2 text-blue-200 text-xs justify-end">
-                            {ICON_CAL}
-                            {esc(date)}
-                        </div>
-                        <p class="text-blue-200/80 text-[11px] text-right">Ref. {esc(ref)} · válida hasta el {esc(valid)}</p>
-                    </div>
-                </div>
+{hero}
             </div>
         </header>
 
@@ -297,13 +310,13 @@ def page(*, title, doc_type, client, headline, subtitle, prepared_for, prepared_
 
 # ---------- bloques ----------
 
-def sec(eyebrow, title, inner, *, cls='mb-14', newpage=False, title_html=None):
+def sec(eyebrow, title, inner, *, cls='mb-14', newpage=False, title_html=None, id=None):
     """Sección con etiqueta oscura, h2 y línea degradada (formato Max Impresiones)."""
     np = ' newpage' if newpage else ''
     t = title_html if title_html is not None else esc(title)
     tag = f'<span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">{esc(eyebrow)}</span>' if eyebrow else ''
     return f'''
-            <section class="{cls}{np}">
+            <section{f' id="{id}"' if id else ''} class="{cls}{np}">
                 <div class="reveal sec-head mb-6">
                     {f'<div class="mb-3">{tag}</div>' if tag else ''}
                     <div class="flex items-center gap-3">

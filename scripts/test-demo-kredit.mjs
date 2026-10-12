@@ -77,7 +77,41 @@ const tampered = JSON.parse(JSON.stringify(s0.audit)); tampered[2].detail += 'x'
 check(!store.verifyChain(tampered).ok, 'Bitácora: detecta alteración');
 const rec0 = store.kpis(s0).recoveredCents;
 store.dispatch({ type: 'SCENARIO_PAGO' }); store.dispatch({ type: 'SCENARIO_PAGO' });
-check(store.kpis(store.getState()).recoveredCents === rec0 + 125000, 'Store: pago idempotente (+B/. 1,250.00 una sola vez)');
+check(store.kpis(store.getState()).recoveredCents === rec0 + 37500, 'Store: pago idempotente (+B/. 375.00 una sola vez)');
+
+// WhatsApp prohíbe la cobranza de deudas en su política de negocio: el demo no lo usa en ningún canal.
+const NO_WA = /whatsapp/i;
+const waHits = (text) => [...String(text).matchAll(/.{0,40}whatsapp.{0,40}/gis)].map((m) => m[0].replace(/\s+/g, ' ').trim()).slice(0, 3).join(' | ');
+const scriptsMod = await import(pathToFileURL(path.join(DEMO, 'scripts.js')).href + V);
+for (const t of ['SCENARIO_DISPUTA', 'SCENARIO_TITULAR', 'SCENARIO_VOZ', 'SIMULATE_INCOMING', 'SIMULATE_INCOMING', 'SIMULATE_INCOMING', 'SIMULATE_INCOMING']) store.dispatch({ type: t });
+const kAll = store.kpis(store.getState());
+const moduleText = JSON.stringify({ seed: data.buildSeed(), base: data.BASE, stages: data.STAGES.map(data.stageLabel), scripts: scriptsMod.SCRIPTS, voice: scriptsMod.VOICE, state: store.getState(), kpis: kAll, csv: csv.toCsv(store.getState().audit) });
+check(!NO_WA.test(moduleText), 'Sin WhatsApp en datos, guiones, estado ni CSV (módulos)', waHits(moduleText));
+check(kAll.channels.reduce((t, c) => t + c.cents, 0) === kAll.recoveredCents, 'Recuperación por canal suma el recuperado total', `${kAll.channels.reduce((t, c) => t + c.cents, 0)} vs ${kAll.recoveredCents}`);
+const srcText = fs.readdirSync(DEMO).map((f) => fs.readFileSync(path.join(DEMO, f), 'utf8')).join('\n');
+const waPalette = srcText.match(/whatsapp|#25d366|#128c7e|#075e54|#dcf8c6|#ece5dd|✓✓/gi);
+check(!waPalette, 'Código del demo sin WhatsApp, su paleta verde ni doble check', (waPalette || []).slice(0, 5).join(', '));
+
+// Kredit presta de B/. 50 a B/. 3,000: ningún plan, préstamo, saldo, cuota, promesa ni pago individual pasa de B/. 3,000.
+const MAX = 300000;
+const sAll = store.getState();
+const amountsOf = (text) => [...String(text).matchAll(/B\/\.\s*([\d,]+(?:\.\d+)?)/g)].map((m) => Math.round(Number(m[1].replace(/,/g, '')) * 100));
+const perItem = [
+  ...sAll.requests.map((r) => ['plan ' + r.id, r.amountCents]),
+  ...Object.values(sAll.accounts).flatMap((a) => [['préstamo ' + a.id, a.principal], ['vencido ' + a.id, a.overdue], ['cuota ' + a.id, a.cuota], ['pagado ' + a.id, a.paidCents], ...a.promises.map((x) => ['promesa ' + a.id, x.amountCents])]),
+  ...sAll.payments.map((x) => ['pago ' + x.id, x.amountCents]),
+  ...sAll.queue.map((x) => ['pago en cola ' + x.id, x.amountCents]),
+  ...data.RULE_TEMPLATES.map((t) => ['plantilla ' + t.id, t.rule.maxAmountCents]),
+  ...amountsOf(JSON.stringify({ scripts: scriptsMod.SCRIPTS, voice: scriptsMod.VOICE, cases: sAll.cases, audit: sAll.audit, timelines: Object.values(sAll.accounts).map((a) => a.timeline) })).map((c) => ['texto', c]),
+];
+const over = perItem.filter(([, c]) => !(c <= MAX));
+check(perItem.length > 400 && over.length === 0, 'Montos individuales ≤ B/. 3,000 (planes, préstamos, saldos, cuotas, promesas, pagos y textos)', over.slice(0, 4).map(([k, c]) => `${k}: ${data.money(c)}`).join(' | ') || `${perItem.length} montos`);
+// Cifras de cartera coherentes con préstamos de B/. 50 a B/. 3,000.
+const enMora = data.BASE.levels.reduce((t, l) => t + l.count, 0);
+const moraPorCuenta = data.BASE.moraCents / enMora;
+check(data.BASE.moraCents * 10 === data.BASE.carteraCents && enMora === 480 && moraPorCuenta >= 30000 && moraPorCuenta <= 150000, 'Cartera: mora / cartera = 10.0% exacto y mora por cuenta en mora entre B/. 300 y B/. 1,500', `${data.money(data.BASE.moraCents)} / ${data.money(data.BASE.carteraCents)} · ${enMora} cuentas · ${data.money(moraPorCuenta)} por cuenta`);
+const loans = Object.values(sAll.accounts).map((a) => a.principal);
+check(Math.min(...loans) >= 5000 && data.DEFAULT_RULE.maxAmountCents === 150000, 'Préstamos entre B/. 50 y B/. 3,000; regla por defecto hasta B/. 1,500', `${data.money(Math.min(...loans))} a ${data.money(Math.max(...loans))}`);
 
 // ---------- 2. navegador ----------
 const browser = await chromium.launch();
@@ -280,7 +314,7 @@ console.log('\nFlujos');
   await go(page, '#aprobaciones');
   check((await page.$$('.approval')).length === 3, 'Aprobaciones muestra exactamente 3 tarjetas');
   await go(page, '#reglas/planes');
-  await page.$eval('#rule-amount', (el) => { el.value = '250000'; el.dispatchEvent(new Event('input', { bubbles: true })); });
+  await page.$eval('#rule-amount', (el) => { el.value = '75000'; el.dispatchEvent(new Event('input', { bubbles: true })); });
   const nLive = Number(await page.textContent('#rule-n'));
   const mLive = Number(await page.textContent('#rule-m'));
   check(nLive < 117 && nLive + mLive === 120, 'Reglas: recalcula en vivo al mover el monto', `${nLive}/${mLive}`);
@@ -307,13 +341,13 @@ console.log('\nFlujos');
   await page.click('.approval [data-decision="rechazado"]');
   check(await badge() === 2, 'Rechazar también decrementa el badge');
 
-  // pago por WhatsApp: recuperado sube una sola vez
+  // pago por SMS: recuperado sube una sola vez
   const rec0b = await st(page, () => window.__recupera.kpis().recoveredCents);
   await go(page, '#conversacion/pago');
   const stepAll = async () => { while (await page.isEnabled('#chat-step')) await page.click('#chat-step'); };
   await stepAll();
   const rec1 = await st(page, () => window.__recupera.kpis().recoveredCents);
-  check(rec1 - rec0b === 125000, 'Guion de pago: recuperado +B/. 1,250.00', String(rec1 - rec0b));
+  check(rec1 - rec0b === 37500, 'Guion de pago: recuperado +B/. 375.00', String(rec1 - rec0b));
   await page.click('#chat-reset');
   await stepAll();
   await page.click('#chat-reset');
@@ -321,7 +355,7 @@ console.log('\nFlujos');
   await page.waitForFunction(() => document.querySelector('#chat-progress').textContent.startsWith('11 de 11'), null, { timeout: 15000 });
   const rec2 = await st(page, () => window.__recupera.kpis().recoveredCents);
   check(rec2 === rec1, 'Guion de pago repetido (paso a paso y reproducir): no vuelve a sumar');
-  check(await st(page, () => window.__recupera.getState().payments.filter((p) => p.id === 'PG-WA-10482').length === 1), 'Un solo pago registrado para el guion');
+  check(await st(page, () => window.__recupera.getState().payments.filter((p) => p.id === 'PG-SMS-10482').length === 1), 'Un solo pago registrado para el guion');
   check(await st(page, () => window.__recupera.getState().accounts['K-10482'].next.every((n) => n.status === 'cancelado')), 'Cuenta pagada: próximos contactos cancelados');
   await go(page, '#resumen');
   check((await page.textContent('#kpi-recovered')).trim() === data.money(rec1), 'Resumen muestra el recuperado actualizado', await page.textContent('#kpi-recovered'));
@@ -352,7 +386,7 @@ console.log('\nFlujos');
   await stepAll();
   check(await st(page, () => window.__recupera.getState().accounts['K-10533'].status === 'no_titular'), 'No soy el titular: detiene contactos');
   const thread = await page.textContent('#thread');
-  check(!/Carmen|980|B\/\./.test(thread), 'No soy el titular: no revela nombre ni monto');
+  check(!/Carmen|294|B\/\./.test(thread), 'No soy el titular: no revela nombre ni monto');
 
   // voz
   await go(page, '#conversacion/voz');
@@ -366,8 +400,11 @@ console.log('\nFlujos');
   const av1 = await st(page, () => window.__recupera.kpis().messagesAvoided);
   check(av1 === av0 + 1, 'Simular pago entrante: +1 mensaje evitado');
   check((await page.textContent('#kpi-avoided')).trim() === String(av1), 'KPI de mensajes evitados se actualiza');
-  await page.click('[data-action="resolve-payment"]');
-  check(await st(page, () => window.__recupera.getState().payments.find((p) => p.id === 'PG-88431').status === 'conciliado'), 'Pago sin coincidencia se asocia a la cuenta sugerida');
+  await page.click('[data-action="resolve-payment"][data-id="PG-88431"]');
+  check(await st(page, () => { const ps = window.__recupera.getState().payments.filter((p) => p.id === 'PG-88431'); return ps.length === 1 && ps[0].status === 'conciliado' && ps[0].manual && ps[0].accountId === 'K-10604'; }), 'Pago sin coincidencia se asocia a la cuenta sugerida');
+  await page.click('[data-action="resolve-payment"][data-id="PG-88452"]');
+  check(await st(page, () => window.__recupera.getState().payments.filter((p) => p.id === 'PG-88452' && p.status === 'en_revision').length === 1), 'Pago sin cuenta sugerida pasa a revisión del equipo');
+  check(await st(page, () => { const ids = window.__recupera.getState().payments.map((p) => p.id); return new Set(ids).size === ids.length; }), 'Conciliación: cada pago tiene un ID único');
 
   // bitácora: integridad y CSV
   await go(page, '#reglas/bitacora');
@@ -415,10 +452,75 @@ console.log('\nFlujos');
   await page.click('.topbar [data-action="reset-demo"]');
   await page.waitForFunction(() => location.hash === '#resumen');
   const afterReset = await st(page, () => { const k = window.__recupera.kpis(); return { rec: k.recoveredCents, pending: k.pending, cases: window.__recupera.getState().cases.length }; });
-  check(afterReset.rec === 18642350 && afterReset.pending === 3 && afterReset.cases === 5, 'Reiniciar demo vuelve al estado inicial', JSON.stringify(afterReset));
+  check(afterReset.rec === 5592705 && afterReset.pending === 3 && afterReset.cases === 5, 'Reiniciar demo vuelve al estado inicial', JSON.stringify(afterReset));
+  const moraUi = { v: (await page.textContent('#mora-value')).trim(), d: (await page.textContent('#mora-detail')).trim(), r: (await page.textContent('#kpi-recovered')).trim() };
+  check(moraUi.v === '10.0%' && moraUi.d === 'B/. 374,400.00 en mora de B/. 3,744,000.00 de cartera' && moraUi.r === 'B/. 55,927.05', 'Resumen inicial: mora 10.0% de B/. 3,744,000.00 y recuperado B/. 55,927.05', JSON.stringify(moraUi));
 
   check(errors.length === 0, 'Flujos: sin pageerror ni console.error', errors.slice(0, 3).join(' | '));
   check(badRequests.length === 0, 'Flujos: solo peticiones propias y de Google Fonts', badRequests.join(', '));
+  await ctx.close();
+}
+
+console.log('\nSin WhatsApp y con montos de Kredit (B/. 50 a B/. 3,000)');
+{
+  // Recorre todo lo que puede ver o descargar un usuario, con los cuatro guiones ya jugados.
+  const { ctx, page, errors } = await newPage(1440);
+  await page.goto(URL0 + '#resumen');
+  await page.waitForSelector('#view h1');
+  const grab = () => page.evaluate(() => {
+    const attrs = [...document.querySelectorAll('[aria-label], [title], [alt], [placeholder]')].map((e) => ['aria-label', 'title', 'alt', 'placeholder'].map((a) => e.getAttribute(a) || '').join(' '));
+    return [document.title, document.body.innerText, document.body.textContent, ...attrs].join('\n');
+  });
+  // Montos de las vistas por cuenta, plan y pago (sin el Resumen ni el enlace al recuperado del mes, que son totales de cartera).
+  const grabAmounts = () => page.evaluate(() => {
+    const v = document.querySelector('#view').cloneNode(true);
+    v.querySelectorAll('.after').forEach((n) => n.remove());
+    return [v.textContent, ...[...v.querySelectorAll('[title]')].map((n) => n.getAttribute('title'))].join('\n');
+  });
+  const stepAll = async () => { while (await page.isEnabled('#chat-step')) await page.click('#chat-step'); };
+  let seen = '';
+  let amountText = '';
+  for (const id of ['pago', 'disputa', 'titular']) { await go(page, '#conversacion/' + id); await stepAll(); seen += await grab(); amountText += await grabAmounts(); }
+  await go(page, '#conversacion/voz');
+  while (await page.isEnabled('#voice-next')) await page.click('#voice-next');
+  seen += await grab();
+  amountText += await grabAmounts();
+  await go(page, '#conciliacion');
+  while (await page.isEnabled('#btn-simulate')) await page.click('#btn-simulate');
+  for (const v of VIEWS) {
+    await go(page, v);
+    await page.$$eval('[data-action="toggle-table"][aria-expanded="false"]', (bs) => bs.forEach((b) => b.click()));
+    seen += await grab();
+    if (v !== '#resumen') amountText += await grabAmounts();
+  }
+  await go(page, '#bandeja');
+  for (const id of await st(page, () => window.__recupera.getState().cases.map((c) => c.id))) {
+    await page.click(`[data-focus="case-${id}"]`);
+    await page.waitForSelector('#case-panel');
+    seen += await grab();
+    amountText += await grabAmounts();
+  }
+  for (const id of await st(page, () => window.__recupera.getState().accountOrder)) {
+    await go(page, '#cuenta/' + id);
+    await page.$$eval('details', (ds) => ds.forEach((d) => { d.open = true; }));
+    seen += await grab();
+    amountText += await grabAmounts();
+  }
+  await page.click('.topbar [data-action="tour-start"]');
+  for (let i = 0; i < 6; i++) { await page.waitForTimeout(120); seen += await page.textContent('#tour'); await page.click('[data-action="tour-next"]'); }
+  check(!NO_WA.test(seen), 'Sin WhatsApp en el texto visible (vistas, tablas, casos, 40 fichas y recorrido)', waHits(seen));
+  const shown = amountsOf(amountText);
+  check(shown.length > 300 && Math.max(...shown) <= MAX, 'En pantalla, ningún monto de plan, cuenta o pago pasa de B/. 3,000', `${shown.length} montos, el mayor ${data.money(Math.max(...shown))}`);
+  await go(page, '#reglas/bitacora');
+  const [dl] = await Promise.all([page.waitForEvent('download'), page.click('#btn-export')]);
+  const file = path.join(os.tmpdir(), 'kredit-bitacora-sin-wa.csv');
+  await dl.saveAs(file);
+  const csvText = fs.readFileSync(file, 'utf8');
+  const stateText = await st(page, () => JSON.stringify({ s: window.__recupera.getState(), k: window.__recupera.kpis() }));
+  check(csvText.includes('Asistente conversacional') && !NO_WA.test(csvText) && !NO_WA.test(stateText), 'Sin WhatsApp en el CSV exportado ni en el estado del navegador', waHits(csvText + stateText));
+  const k = await st(page, () => window.__recupera.kpis());
+  check(k.channels.map((c) => c.key).join() === 'SMS,Llamada IA,Email,Chat del portal,Cobrador' && k.channels.reduce((t, c) => t + c.cents, 0) === k.recoveredCents, 'Canales: SMS, voz, email, chat del portal y cobrador; suman el recuperado', JSON.stringify(k.channels));
+  check(errors.length === 0, 'Sin WhatsApp: recorrido sin errores', errors.slice(0, 3).join(' | '));
   await ctx.close();
 }
 

@@ -1,9 +1,9 @@
 // Recupera · demo para Kredit — router por hash, vistas, recorrido guiado.
-import { PRODUCT_NAME, PRODUCT_BY, WORKSPACE, DEMO_TODAY, BASE, RULE_TEMPLATES, DEFAULT_RULE, MOTIVOS, COBRADORES, SIN_ASIGNAR, money, moneyShort, int, pct, fmtDate, fmtDateShort, fmtDateTime, fmtDateLong, stageLabel, withinRule, ruleReasons, moraHistory, mulberry32, SEED } from './data.js?v=20261008b';
-import { getState, dispatch, subscribe, kpis, ruleStats, exceptions, pendingExceptions, scenarioEnd, verifyChain } from './store.js?v=20261008b';
-import { moraChart, hBars, stackBar, sparkline, hideTip } from './charts.js?v=20261008b';
-import { SCRIPTS, SCRIPT_TABS, VOICE, chatPlayer, voicePlayer, speechSupported, onVoicesChanged } from './scripts.js?v=20261008b';
-import { toCsv, csvFilename, downloadCsv } from './csv.js?v=20261008b';
+import { PRODUCT_NAME, PRODUCT_BY, WORKSPACE, DEMO_TODAY, BASE, RULE_TEMPLATES, DEFAULT_RULE, MOTIVOS, COBRADORES, SIN_ASIGNAR, money, moneyShort, int, pct, fmtDate, fmtDateShort, fmtDateTime, fmtDateLong, stageLabel, withinRule, ruleReasons, moraHistory, mulberry32, SEED } from './data.js?v=20261012c';
+import { getState, dispatch, subscribe, kpis, ruleStats, exceptions, pendingExceptions, scenarioEnd, verifyChain } from './store.js?v=20261012c';
+import { moraChart, hBars, stackBar, sparkline, hideTip } from './charts.js?v=20261012c';
+import { SCRIPTS, SCRIPT_TABS, VOICE, chatPlayer, voicePlayer, speechSupported, onVoicesChanged } from './scripts.js?v=20261012c';
+import { toCsv, csvFilename, downloadCsv } from './csv.js?v=20261012c';
 
 // ---------- utilidades ----------
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -285,7 +285,7 @@ function statusChip(acc) {
 }
 const PRIORITY = { alta: { label: 'Alta', icon: 'up', tone: 'crit' }, media: { label: 'Media', icon: 'next', tone: 'warn' }, baja: { label: 'Baja', icon: 'down', tone: 'neutral' } };
 const MOTIVE_ICON = { disputa: 'alert', ya_pague: 'coin', legal: 'file', no_contactar: 'x-circle', fuera_regla: 'reglas', nivel_d: 'user' };
-const CHANNEL_ICON = { WhatsApp: 'conversacion', Email: 'mail', SMS: 'sms', 'Llamada IA': 'phone', Sistema: 'database', Pago: 'coin', Cobrador: 'user' };
+const CHANNEL_ICON = { SMS: 'sms', 'Chat del portal': 'conversacion', Email: 'mail', 'Llamada IA': 'phone', Sistema: 'database', Pago: 'coin', Cobrador: 'user' };
 function levelChip(l) { return `<span class="level level-${l}" title="Nivel de riesgo ${l}">Nivel ${l}</span>`; }
 
 // =====================================================================
@@ -525,8 +525,8 @@ function reglasPlanes(s) {
     </div>
     <label class="slider">
       <span class="slider-top"><span>Monto máximo del plan</span><output id="out-amount" for="rule-amount">${money(r.maxAmountCents)}</output></span>
-      <input type="range" id="rule-amount" min="100000" max="1500000" step="25000" value="${r.maxAmountCents}" data-input="rule" aria-describedby="rule-result">
-      <span class="slider-scale" aria-hidden="true"><span>B/. 1,000</span><span>B/. 15,000</span></span>
+      <input type="range" id="rule-amount" min="25000" max="300000" step="2500" value="${r.maxAmountCents}" data-input="rule" aria-describedby="rule-result">
+      <span class="slider-scale" aria-hidden="true"><span>B/. 250</span><span>B/. 3,000</span></span>
     </label>
     <label class="slider">
       <span class="slider-top"><span>Cuotas máximas</span><output id="out-cuotas" for="rule-cuotas">${r.maxCuotas} cuotas</output></span>
@@ -588,10 +588,10 @@ ACTIONS['rule-template'] = (t) => {
 function reglasLimites() {
   const rows = [
     ['Intentos por cliente al día', '2', 'Todos los canales sumados'],
-    ['Intentos por cliente a la semana', '6', 'Incluye mensajes, correos y llamadas'],
+    ['Intentos por cliente a la semana', '6', 'Incluye SMS, correos y llamadas'],
     ['Llamadas por semana', '2', 'Solo desde el día 10 de atraso'],
     ['Pausa automática', 'Disputa, “no contactar”, mención legal', 'Se reanuda solo cuando una persona lo decide'],
-    ['Opción de baja', 'Responder BAJA', 'Incluida desde el primer mensaje'],
+    ['Opción de baja', 'Responder BAJA', 'Incluida desde el primer SMS'],
     ['Contacto a terceros', 'Nunca se revelan datos', 'Sin nombre, monto ni detalles del préstamo'],
   ];
   const days = [['Lunes', 'wd'], ['Martes', 'wd'], ['Miércoles', 'wd'], ['Jueves', 'wd'], ['Viernes', 'wd'], ['Sábado', 'sat'], ['Domingo', 'none'], ['Feriados', 'none']];
@@ -615,9 +615,9 @@ function reglasLimites() {
 }
 
 const GUIONES = [
-  { name: 'Día 0 · WhatsApp', v: 'v3', date: '2026-10-02', by: 'Cumplimiento Kredit', text: 'Hola, le escribe el asistente automatizado de Kredit. Su cuota de {monto} venció el {fecha}. Puede pagar aquí: {enlace}. Si necesita un plan, responda PLAN. Para no recibir más mensajes, responda BAJA.', change: 'v3: se agregó la opción de baja en el primer mensaje.' },
+  { name: 'Día 0 · SMS', v: 'v3', date: '2026-10-02', by: 'Cumplimiento Kredit', text: 'Kredit: le escribe el asistente automatizado. Su cuota de {monto} venció el {fecha}. Puede pagar aquí: {enlace}. Si necesita un plan, responda PLAN. Para no recibir más mensajes, responda BAJA.', change: 'v3: se agregó la opción de baja en el primer mensaje.' },
   { name: 'Días 3–5 · Email', v: 'v2', date: '2026-09-18', by: 'Cumplimiento Kredit', text: 'Asunto: Estado de su préstamo con Kredit. Le compartimos su estado de cuenta y las opciones de pago disponibles. Si ya pagó, ignore este mensaje.', change: 'v2: texto más corto y aviso “si ya pagó”.' },
-  { name: 'Días 10–15 · Llamada con IA', v: 'v4', date: '2026-10-05', by: 'Cumplimiento Kredit', text: 'Aviso de grabación al inicio → verificación de identidad (últimos 4 dígitos de cédula) → saldo leído del sistema → plan preaprobado o promesa de pago → resumen por WhatsApp.', change: 'v4: la verificación pasa antes de mencionar cualquier monto.' },
+  { name: 'Días 10–15 · Llamada con IA', v: 'v4', date: '2026-10-05', by: 'Cumplimiento Kredit', text: 'Aviso de grabación al inicio → verificación de identidad (últimos 4 dígitos de cédula) → saldo leído del sistema → plan preaprobado o promesa de pago → confirmación del acuerdo por SMS.', change: 'v4: la verificación pasa antes de mencionar cualquier monto.' },
   { name: 'Respuesta “ya pagué”', v: 'v2', date: '2026-09-25', by: 'Operaciones Kredit', text: 'Busca el pago en enlace de pago, Yappy y archivo del banco. Si no lo encuentra: crea caso, pausa contactos y pide el comprobante. Nunca insiste.', change: 'v2: pausa automática de contactos.' },
   { name: 'Tercero / no es el titular', v: 'v1', date: '2026-09-12', by: 'Cumplimiento Kredit', text: 'No menciona nombre, monto ni datos del préstamo. Se disculpa, registra el hecho y retira el número.', change: 'Versión inicial.' },
 ];
@@ -815,7 +815,7 @@ ROUTES.conversacion = {
   html(s, param) {
     const id = SCRIPT_TABS.find((t) => t.id === param) ? param : 'pago';
     const seg = `<nav class="segmented" aria-label="Guiones">${SCRIPT_TABS.map((t) => `<a href="#conversacion/${t.id}" ${t.id === id ? 'aria-current="page"' : ''}>${esc(t.label)}</a>`).join('')}</nav>`;
-    const head = pageHead('Conversación simulada', 'Conversación simulada', 'Así conversa el asistente: se identifica como sistema automatizado, verifica identidad y nunca inventa montos. Nada de esto se envía de verdad.');
+    const head = pageHead('Conversación simulada', 'Conversación simulada', 'Así conversa el asistente por SMS (el mismo asistente atiende el chat del portal de clientes): se identifica como sistema automatizado, verifica identidad y nunca inventa montos. Nada de esto se envía de verdad.');
     if (id === 'voz') return head + seg + voiceHtml(s);
     const sc = SCRIPTS[id];
     const acc = s.accounts[sc.accountId];
@@ -823,10 +823,10 @@ ROUTES.conversacion = {
 <div class="convo">
   <div class="convo-phone">
     <p class="convo-intro">${esc(sc.intro)} <a href="#cuenta/${acc.id}">Ver ficha de ${esc(acc.name)}</a></p>
-    <div class="phone" aria-label="Conversación de WhatsApp simulada">
-      <div class="phone-head"><span class="phone-avatar" aria-hidden="true">K</span><span><strong>Kredit · Asistente automatizado</strong><small>con ${esc(sc.contact)}</small></span></div>
+    <div class="phone" aria-label="Conversación por SMS simulada">
+      <div class="phone-head"><span class="phone-avatar" aria-hidden="true">K</span><span><strong>Kredit · Asistente automatizado</strong><small>SMS · con ${esc(sc.contact)}</small></span></div>
       <div class="phone-thread" id="thread" aria-live="polite"></div>
-      <div class="phone-input" aria-hidden="true"><span>Mensaje</span></div>
+      <div class="phone-input" aria-hidden="true"><span>Mensaje de texto</span></div>
     </div>
     <div class="player-controls" data-tour="phone-controls">
       <button type="button" class="btn btn-primary" data-action="chat-play" id="chat-play">${ic('play')}Reproducir</button>
@@ -890,7 +890,7 @@ ACTIONS['chat-step'] = async () => {
 ACTIONS['chat-reset'] = () => activePlayer && activePlayer.reset();
 
 function ruleCheckText(s) {
-  const ok = withinRule({ amountCents: 375000, cuotas: 3, level: 'B' }, s.rule);
+  const ok = withinRule({ amountCents: 112500, cuotas: 3, level: 'B' }, s.rule);
   return ok
     ? `Plan dentro de la regla vigente (hasta ${money(s.rule.maxAmountCents)}, hasta ${s.rule.maxCuotas} cuotas, nivel B permitido) → aprobado solo, sin pasar por gerencia.`
     : 'Con la regla que usted dejó, este plan iría a Aprobaciones. Para el demo, el guion sigue como si estuviera dentro de la regla.';
@@ -1182,9 +1182,9 @@ const CONNECTORS = [
   { name: 'Enlace de pago', desc: 'Enlaces de un solo uso con el monto exacto de la cuota o del plan.', status: 'on', icon: 'coin' },
   { name: 'Yappy', desc: 'Pagos entrantes conciliados en segundos.', status: 'on', icon: 'sms' },
   { name: 'Archivo del banco', desc: 'Lectura automática del archivo diario de depósitos.', status: 'on', icon: 'file' },
-  { name: 'WhatsApp Business (API oficial)', desc: 'Plantillas aprobadas y conversación con el asistente.', status: 'on', icon: 'conversacion' },
-  { name: 'Email', desc: 'Estados de cuenta y recordatorios.', status: 'on', icon: 'mail' },
-  { name: 'SMS', desc: 'Respaldo cuando el cliente no lee WhatsApp.', status: 'off', icon: 'sms' },
+  { name: 'SMS', desc: 'Recordatorios con enlace de pago y conversación con el asistente. Opción de baja: responder BAJA.', status: 'on', icon: 'sms' },
+  { name: 'Email', desc: 'Estados de cuenta y recordatorios con enlace de pago.', status: 'on', icon: 'mail' },
+  { name: 'Chat del portal de clientes', desc: 'El asistente atiende dentro de “Accede a tu cuenta”: saldo, enlace de pago, planes preaprobados y disputas.', status: 'on', icon: 'conversacion' },
   { name: 'Voz IA', desc: 'Llamadas del asistente con número local. Se muestra en el Demo 2.', status: 'off', icon: 'mic' },
 ];
 ROUTES.conectores = {
@@ -1208,11 +1208,11 @@ const RUTA = [
   { screen: 'Conciliación de pagos', today: 'Feed de pagos y simulación', phase: 1, weeks: 'Semanas 2–4', href: '#conciliacion' },
   { screen: 'Conectores SIF y AgileCheck', today: 'Catálogo', phase: 1, weeks: 'Semanas 1–4', href: '#conectores' },
   { screen: 'Bandeja y secuencia multicanal', today: 'Casos escalados y acciones', phase: 2, weeks: 'Semanas 4–6', href: '#bandeja' },
-  { screen: 'Conversación por WhatsApp', today: 'Guiones simulados', phase: 3, weeks: 'Semanas 6–9', href: '#conversacion/pago' },
+  { screen: 'Conversación por SMS y chat del portal', today: 'Guiones simulados por SMS', phase: 3, weeks: 'Semanas 6–9', href: '#conversacion/pago' },
   { screen: 'Llamada de voz', today: 'Voz sintética del navegador; voz natural en el Demo 2', phase: 4, weeks: 'Semanas 9–12', href: '#conversacion/voz' },
   { screen: 'Resumen gerencial', today: 'Indicadores y escenario ilustrativo', phase: 5, weeks: 'Semanas 11–14', href: '#resumen' },
 ];
-const PHASES = ['Descubrimiento y bases', 'Segmentación y secuencia', 'Asistente de WhatsApp', 'Asistente de voz', 'Resumen y ajuste'];
+const PHASES = ['Descubrimiento y bases', 'Segmentación y secuencia', 'Asistente por SMS y portal', 'Asistente de voz', 'Resumen y ajuste'];
 ROUTES.ruta = {
   title: 'Qué llega y cuándo',
   html() {
@@ -1253,7 +1253,7 @@ const TOUR = [
   { hash: '#reglas/planes', target: '[data-tour="wow"]', title: 'Usted pone la regla una vez', text: (s) => { const st = ruleStats(s); return `Con estos valores, ${st.auto} de los 120 planes del mes pasado se habrían aprobado solos y a usted le habrían llegado ${st.exceptions}. Mueva el monto o las cuotas y vea cómo cambia.`; } },
   { hash: '#aprobaciones', target: '[data-tour="approvals"]', title: 'Solo ve las excepciones', text: (s) => { const st = ruleStats(s); return `Esto es lo único que le llega: ${st.exceptions} ${plural(st.exceptions, 'caso', 'casos')} fuera de regla, no 120. Cada decisión queda en la bitácora y se puede deshacer.`; } },
   { hash: '#conciliacion', target: '[data-tour="simular"]', title: 'Nadie le escribe a quien ya pagó', text: () => 'Pulse “Simular pago entrante”: el pago se concilia solo, la cuenta sale de la secuencia y se cancela el próximo mensaje.' },
-  { hash: '#conversacion/pago', target: '[data-tour="phone-controls"]', title: 'El asistente cobra por WhatsApp', text: () => 'Reproduzca la conversación: se identifica como sistema automatizado, verifica identidad, ofrece un plan dentro de la regla y el pago se concilia. Después vuelva al Resumen: el recuperado sube.' },
+  { hash: '#conversacion/pago', target: '[data-tour="phone-controls"]', title: 'El asistente conversa por SMS', text: () => 'Reproduzca la conversación por SMS: se identifica como sistema automatizado, verifica identidad, ofrece un plan dentro de la regla y el pago se concilia. El mismo asistente atiende el chat del portal de clientes. Después vuelva al Resumen: el recuperado sube.' },
   { hash: '#reglas/bitacora', target: '[data-tour="export"]', title: 'Todo queda registrado', text: () => 'Cada contacto, decisión y pago queda en una bitácora encadenada que puede exportar. Límites y horario están en la pestaña de al lado. Siguiente paso: un taller de reglas de 1 hora y los datos de su cartera para fijar el precio.' },
 ];
 const tour = { active: false, i: 0, returnFocus: null };

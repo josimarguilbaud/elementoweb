@@ -1,6 +1,6 @@
 // Estado único del demo: dispatch(action) muta entidades, añade bitácora con hash
 // encadenado (SHA-256) y los KPIs salen de selectores puros.
-import { BASE, DEFAULT_RULE, RULE_TEMPLATES, DEMO_TODAY, buildSeed, withinRule, money, addDays, COBRADORES } from './data.js?v=20261008b';
+import { BASE, DEFAULT_RULE, RULE_TEMPLATES, DEMO_TODAY, buildSeed, withinRule, money, addDays, COBRADORES } from './data.js?v=20261012c';
 
 // ---------- SHA-256 síncrono (para la cadena de la bitácora) ----------
 const K = new Uint32Array([
@@ -68,7 +68,7 @@ function clockTs(min) {
 }
 
 const clone = (o) => JSON.parse(JSON.stringify(o));
-const STORAGE_KEY = 'recupera-demo-kredit-v1';
+const STORAGE_KEY = 'recupera-demo-kredit-v2'; // v2: canales SMS, email, chat del portal y voz
 
 function initialState() {
   const seed = buildSeed();
@@ -135,7 +135,7 @@ function applyPayment(s, p, actor) {
 
 // ---------- escenarios (idempotentes) ----------
 const SCN = {
-  pago: { accountId: 'K-10482', paymentId: 'PG-WA-10482' },
+  pago: { accountId: 'K-10482', paymentId: 'PG-SMS-10482' },
   disputa: { accountId: 'K-10517', caseId: 'C-2041' },
   titular: { accountId: 'K-10533' },
   voz: { accountId: 'K-10560' },
@@ -179,10 +179,10 @@ function reduce(s, a) {
       const c = SCN.pago;
       s.scenarios.pago = { before: clone(s.accounts[c.accountId]) };
       const acc = s.accounts[c.accountId];
-      acc.timeline.push({ ts: nowTs(s), channel: 'WhatsApp', text: 'Asistente automatizado: verificación de identidad (últimos 4 dígitos), saldo y plan de 3 cuotas de B/. 1,250.00.', result: 'Aceptó el plan · link de pago enviado' });
-      acc.promises.push({ ts: nowTs(s), amountCents: 125000, due: DEMO_TODAY, status: 'cumplida', label: 'Cuota 1 de 3' }, { ts: nowTs(s), amountCents: 125000, due: '2026-11-15', status: 'pendiente', label: 'Cuota 2 de 3' }, { ts: nowTs(s), amountCents: 125000, due: '2026-12-15', status: 'pendiente', label: 'Cuota 3 de 3' });
-      appendAudit(s, { actor: 'Asistente WhatsApp', action: 'Plan aprobado por regla', entity: c.accountId, detail: '3 cuotas de B/. 1,250.00 · identidad verificada · dentro de la regla vigente' });
-      applyPayment(s, { id: c.paymentId, source: 'Link de pago', ref: 'LK-74482', amountCents: 125000, accountId: c.accountId, channel: 'WhatsApp' }, 'Conciliación');
+      acc.timeline.push({ ts: nowTs(s), channel: 'SMS', text: 'Asistente automatizado: verificación de identidad (últimos 4 dígitos), saldo y plan de 3 cuotas de B/. 375.00.', result: 'Aceptó el plan · link de pago enviado' });
+      acc.promises.push({ ts: nowTs(s), amountCents: 37500, due: DEMO_TODAY, status: 'cumplida', label: 'Cuota 1 de 3' }, { ts: nowTs(s), amountCents: 37500, due: '2026-11-15', status: 'pendiente', label: 'Cuota 2 de 3' }, { ts: nowTs(s), amountCents: 37500, due: '2026-12-15', status: 'pendiente', label: 'Cuota 3 de 3' });
+      appendAudit(s, { actor: 'Asistente conversacional', action: 'Plan aprobado por regla', entity: c.accountId, detail: '3 cuotas de B/. 375.00 · por SMS · identidad verificada · dentro de la regla vigente' });
+      applyPayment(s, { id: c.paymentId, source: 'Link de pago', ref: 'LK-74482', amountCents: 37500, accountId: c.accountId, channel: 'SMS' }, 'Conciliación');
       return true;
     }
     case 'SCENARIO_DISPUTA': {
@@ -190,12 +190,12 @@ function reduce(s, a) {
       const c = SCN.disputa;
       s.scenarios.disputa = { before: clone(s.accounts[c.accountId]) };
       const acc = s.accounts[c.accountId];
-      appendAudit(s, { actor: 'Asistente WhatsApp', action: 'Búsqueda de pago', entity: c.accountId, detail: 'Link de pago, Yappy y archivo del banco (7 días) · sin coincidencia' });
+      appendAudit(s, { actor: 'Asistente conversacional', action: 'Búsqueda de pago', entity: c.accountId, detail: 'Link de pago, Yappy y archivo del banco (7 días) · sin coincidencia' });
       const n = pauseAccount(s, c.accountId, 'Disputa en revisión');
       acc.status = 'disputa';
-      acc.timeline.push({ ts: nowTs(s), channel: 'WhatsApp', text: 'Cliente: “Yo ya pagué eso el viernes en el banco.” El asistente buscó el pago y no lo encontró.', result: 'Escalado a bandeja · contactos pausados' });
+      acc.timeline.push({ ts: nowTs(s), channel: 'SMS', text: 'Cliente: “Yo ya pagué eso el viernes en el banco.” El asistente buscó el pago y no lo encontró.', result: 'Escalado a bandeja · contactos pausados' });
       s.cases.unshift({ id: c.caseId, accountId: c.accountId, motive: 'ya_pague', priority: 'alta', waitH: 0, owner: 'Sin asignar', status: 'abierto', paused: true, isNew: true,
-        summary: 'El cliente dice que pagó el viernes en el banco. No hay coincidencia en link de pago, Yappy ni archivo del banco de los últimos 7 días. Envió foto del comprobante. Mensajes automáticos detenidos hasta que una persona lo revise.' });
+        summary: 'El cliente dice que pagó el viernes en el banco. No hay coincidencia en link de pago, Yappy ni archivo del banco de los últimos 7 días. Subió la foto del comprobante por el enlace seguro. Mensajes automáticos detenidos hasta que una persona lo revise.' });
       appendAudit(s, { actor: 'Sistema', action: 'Caso creado en bandeja', entity: c.caseId, detail: `Dice que ya pagó · cuenta ${c.accountId} · ${n} contacto(s) programado(s) cancelado(s)` });
       return true;
     }
@@ -206,8 +206,8 @@ function reduce(s, a) {
       const acc = s.accounts[c.accountId];
       const n = pauseAccount(s, c.accountId, 'Número no es del titular');
       acc.status = 'no_titular';
-      acc.timeline.push({ ts: nowTs(s), channel: 'WhatsApp', text: 'Respondió una persona que no es el titular. No se reveló nombre, monto ni datos del préstamo.', result: 'Número retirado · verificación de datos' });
-      appendAudit(s, { actor: 'Asistente WhatsApp', action: 'Contacto con tercero', entity: c.accountId, detail: `No se reveló información · número marcado “no es el titular” · ${n} contacto(s) detenido(s)` });
+      acc.timeline.push({ ts: nowTs(s), channel: 'SMS', text: 'Respondió una persona que no es el titular. No se reveló nombre, monto ni datos del préstamo.', result: 'Número retirado · verificación de datos' });
+      appendAudit(s, { actor: 'Asistente conversacional', action: 'Contacto con tercero', entity: c.accountId, detail: `No se reveló información · número marcado “no es el titular” · ${n} contacto(s) detenido(s)` });
       return true;
     }
     case 'SCENARIO_VOZ': {
@@ -216,11 +216,12 @@ function reduce(s, a) {
       s.scenarios.voz = { before: clone(s.accounts[c.accountId]) };
       const acc = s.accounts[c.accountId];
       acc.status = 'promesa';
-      acc.promises.push({ ts: nowTs(s), amountCents: 194000, due: '2026-10-30', status: 'pendiente', label: 'Promesa por llamada' });
-      acc.timeline.push({ ts: nowTs(s), channel: 'Llamada IA', text: 'Llamada con aviso de grabación e identidad verificada. Promesa de pago por B/. 1,940.00 para el 30 oct.', result: 'Promesa registrada' });
+      acc.promises.push({ ts: nowTs(s), amountCents: 58200, due: '2026-10-30', status: 'pendiente', label: 'Promesa por llamada' });
+      acc.timeline.push({ ts: nowTs(s), channel: 'Llamada IA', text: 'Llamada con aviso de grabación e identidad verificada. Promesa de pago por B/. 582.00 para el 30 oct.', result: 'Promesa registrada' });
+      acc.timeline.push({ ts: nowTs(s), channel: 'SMS', text: 'Confirmación del acuerdo: promesa de B/. 582.00 para el 30 oct, con enlace de pago.', result: 'Entregado' });
       acc.next = acc.next.map((x) => (x.status === 'programado' ? { ...x, status: 'cancelado', reason: 'Promesa vigente' } : x));
-      acc.next.push({ id: c.accountId + '-p1', ts: '2026-10-29 10:00', channel: 'WhatsApp', label: 'Recordatorio de la promesa (1 día antes)', status: 'programado' });
-      appendAudit(s, { actor: 'Asistente de voz', action: 'Promesa de pago registrada', entity: c.accountId, detail: 'B/. 1,940.00 para el 30 oct 2026 · aviso de grabación · identidad verificada' });
+      acc.next.push({ id: c.accountId + '-p1', ts: '2026-10-29 10:00', channel: 'SMS', label: 'Recordatorio de la promesa (1 día antes)', status: 'programado' });
+      appendAudit(s, { actor: 'Asistente de voz', action: 'Promesa de pago registrada', entity: c.accountId, detail: 'B/. 582.00 para el 30 oct 2026 · aviso de grabación · identidad verificada · confirmada por SMS' });
       return true;
     }
     case 'RESET_SCENARIO': {
@@ -239,7 +240,7 @@ function reduce(s, a) {
       const received = new Set(s.payments.map((p) => p.id));
       const next = s.queue.find((q) => !received.has(q.id));
       if (!next) return false;
-      const channels = ['WhatsApp', 'Email', 'Llamada IA', 'SMS'];
+      const channels = ['SMS', 'Email', 'Llamada IA', 'Chat del portal'];
       applyPayment(s, { ...next, channel: channels[s.queue.indexOf(next) % channels.length] }, 'Conciliación');
       return true;
     }
@@ -315,7 +316,7 @@ export function kpis(s) {
   const autoResolved = BASE.autoResolved + autoPays;
   const totalResolved = BASE.totalResolved + autoPays + humanAdds;
   const avoided = BASE.messagesAvoided + np.reduce((t, p) => t + (p.cancelled ? 1 : 0), 0);
-  const channels = BASE.channels.map((c) => ({ ...c, cents: c.cents + np.filter((p) => (p.channel || 'WhatsApp') === c.key).reduce((t, p) => t + p.amountCents, 0) }));
+  const channels = BASE.channels.map((c) => ({ ...c, cents: c.cents + np.filter((p) => (p.channel || 'SMS') === c.key).reduce((t, p) => t + p.amountCents, 0) }));
   const st = ruleStats(s);
   return {
     recoveredCents: recovered,

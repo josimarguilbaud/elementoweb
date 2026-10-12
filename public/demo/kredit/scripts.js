@@ -7,7 +7,8 @@ export const SCRIPT_TABS = [
   { id: 'voz', label: 'Llamada de voz' },
 ];
 
-// who: agent | client | event ; sys: lo que pasa en el sistema en ese paso
+// Conversaciones por SMS con el asistente conversacional (el mismo asistente atiende el chat del portal).
+// who: agent | client | event ; sys: lo que pasa en el sistema en ese paso ; kind: link (tarjeta de enlace)
 export const SCRIPTS = {
   pago: {
     accountId: 'K-10482',
@@ -16,17 +17,17 @@ export const SCRIPTS = {
     action: 'SCENARIO_PAGO',
     doneNote: 'El pago ya se registró. Puede repetir la conversación: el recuperado no vuelve a sumar.',
     steps: [
-      { who: 'agent', text: 'Buenos días. Le escribe el asistente automatizado de Kredit. Esta conversación es con un sistema automatizado; puede pedir hablar con una persona cuando guste.', sys: 'Contacto del día 18 por WhatsApp · dentro del horario permitido · intento 1 de 2 del día.' },
+      { who: 'agent', text: 'Buenos días. Le escribe el asistente automatizado de Kredit. Esta conversación es con un sistema automatizado; puede pedir hablar con una persona cuando guste.', sys: 'Contacto del día 18 por SMS · dentro del horario permitido · intento 1 de 2 del día.' },
       { who: 'agent', text: 'Para proteger su información, ¿me confirma los últimos 4 dígitos de su cédula?', sys: 'Antes de hablar de dinero, el asistente pide verificar identidad.' },
       { who: 'client', text: '8417' },
       { who: 'agent', text: 'Gracias, señora Quintero. Su identidad quedó verificada.', sys: 'Verificación de identidad: coincide con los últimos 4 dígitos registrados.', tone: 'ok' },
-      { who: 'agent', text: 'Su préstamo tiene un saldo vencido de B/. 3,750.00, con 18 días de atraso.', sys: 'Saldo consultado en el sistema de Kredit. El asistente no inventa montos: los lee de la cuenta.' },
+      { who: 'agent', text: 'Su préstamo tiene un saldo vencido de B/. 1,125.00, con 18 días de atraso.', sys: 'Saldo consultado en el sistema de Kredit. El asistente no inventa montos: los lee de la cuenta.' },
       { who: 'client', text: 'Ahorita no tengo todo junto. ¿Puedo pagar por partes?' },
-      { who: 'agent', text: 'Sí. Le puedo ofrecer 3 cuotas de B/. 1,250.00: hoy, el 15 de noviembre y el 15 de diciembre. ¿Le funciona?', sys: 'RULE_CHECK', tone: 'ai' },
+      { who: 'agent', text: 'Sí. Le puedo ofrecer 3 cuotas de B/. 375.00: hoy, el 15 de noviembre y el 15 de diciembre. ¿Le funciona?', sys: 'RULE_CHECK', tone: 'ai' },
       { who: 'client', text: 'Sí, me funciona.' },
-      { who: 'agent', kind: 'link', text: 'Listo. Este es su enlace de pago seguro para la primera cuota.', amount: 'B/. 1,250.00', sys: 'Enlace de pago generado por B/. 1,250.00 (monto validado contra el plan).' },
-      { who: 'event', text: 'Pago recibido · B/. 1,250.00 · enlace de pago', sys: 'Pago conciliado automáticamente en 40 segundos. La cuenta sale de la secuencia y se cancela el mensaje programado. El recuperado del mes sube B/. 1,250.00.', action: true, tone: 'ok' },
-      { who: 'agent', text: 'Recibimos su pago de B/. 1,250.00. Gracias, señora Quintero. Le recordaremos la próxima cuota 3 días antes. Si no desea recibir mensajes, responda BAJA.', sys: 'Próximo contacto: recordatorio el 12 nov. Nada más hasta entonces.' },
+      { who: 'agent', kind: 'link', text: 'Listo. Este es su enlace de pago seguro para la primera cuota.', amount: 'B/. 375.00', sys: 'Enlace de pago generado por B/. 375.00 (monto validado contra el plan).' },
+      { who: 'event', text: 'Pago recibido · B/. 375.00 · enlace de pago', sys: 'Pago conciliado automáticamente en 40 segundos. La cuenta sale de la secuencia y se cancela el mensaje programado. El recuperado del mes sube B/. 375.00.', action: true, tone: 'ok' },
+      { who: 'agent', text: 'Recibimos su pago de B/. 375.00. Gracias, señora Quintero. Le recordaremos la próxima cuota por SMS 3 días antes. Si no desea recibir mensajes, responda BAJA.', sys: 'Próximo contacto: recordatorio por SMS el 12 nov. Nada más hasta entonces.' },
     ],
   },
   disputa: {
@@ -36,14 +37,14 @@ export const SCRIPTS = {
     action: 'SCENARIO_DISPUTA',
     doneNote: 'El caso ya está en la bandeja. Repetir la conversación no crea un segundo caso.',
     steps: [
-      { who: 'agent', text: 'Buenas tardes. Le escribe el asistente automatizado de Kredit. ¿Me confirma los últimos 4 dígitos de su cédula para continuar?', sys: 'Contacto del día 9 por WhatsApp · dentro del horario permitido.' },
+      { who: 'agent', text: 'Buenas tardes. Le escribe el asistente automatizado de Kredit. ¿Me confirma los últimos 4 dígitos de su cédula para continuar?', sys: 'Contacto del día 9 por SMS · dentro del horario permitido.' },
       { who: 'client', text: '3052' },
-      { who: 'agent', text: 'Gracias, señor Batista. Su cuenta muestra un saldo vencido de B/. 2,180.00.', sys: 'Identidad verificada. Saldo leído de la cuenta.', tone: 'ok' },
+      { who: 'agent', text: 'Gracias, señor Batista. Su cuenta muestra un saldo vencido de B/. 654.00.', sys: 'Identidad verificada. Saldo leído de la cuenta.', tone: 'ok' },
       { who: 'client', text: 'Yo ya pagué eso el viernes en el banco.' },
       { who: 'agent', text: 'Gracias por avisarnos. Déjeme revisar los pagos recibidos…', sys: 'Buscando el pago en enlace de pago, Yappy y archivo del banco de los últimos 7 días…' },
-      { who: 'agent', text: 'Todavía no encuentro ese pago. Una persona del equipo revisará su caso hoy. Mientras tanto no le enviaremos más mensajes de cobro. Si tiene el comprobante, puede enviarlo por aquí.', sys: 'Sin coincidencia → caso C-2041 creado en la bandeja (“Dice que ya pagó”). Contactos automáticos pausados.', action: true, tone: 'warn' },
-      { who: 'client', kind: 'file', text: 'comprobante-deposito.jpg' },
-      { who: 'agent', text: 'Recibido. Lo adjunté a su caso. Gracias por su paciencia.', sys: 'Comprobante adjuntado al caso para la persona que lo revise.' },
+      { who: 'agent', kind: 'link', text: 'Todavía no encuentro ese pago. Una persona del equipo revisará su caso hoy. Mientras tanto no le enviaremos más mensajes de cobro. Si tiene el comprobante, puede subirlo en este enlace seguro.', linkLabel: 'Subir comprobante', linkNote: 'enlace seguro · de un solo uso', sys: 'Sin coincidencia → caso C-2041 creado en la bandeja (“Dice que ya pagó”). Contactos automáticos pausados.', action: true, tone: 'warn' },
+      { who: 'event', text: 'Comprobante recibido · comprobante-deposito.jpg', sys: 'El cliente subió la foto del comprobante por el enlace seguro. Quedó adjunta al caso para la persona que lo revise.', tone: 'ok' },
+      { who: 'agent', text: 'Recibido. Lo adjunté a su caso. Gracias por su paciencia.', sys: 'Sin más mensajes de cobro hasta que una persona revise el caso.' },
     ],
   },
   titular: {
@@ -53,7 +54,7 @@ export const SCRIPTS = {
     action: 'SCENARIO_TITULAR',
     doneNote: 'El número ya está marcado. Repetir la conversación no duplica el registro.',
     steps: [
-      { who: 'agent', text: 'Buenos días. Le escribe el asistente automatizado de Kredit. Busco comunicarme con la persona titular de este número para un asunto personal. ¿Me confirma los últimos 4 dígitos de su cédula?', sys: 'Primer mensaje sin nombre, sin monto y sin datos del préstamo.' },
+      { who: 'agent', text: 'Buenos días. Le escribe el asistente automatizado de Kredit. Busco comunicarme con la persona titular de este número para un asunto personal. ¿Me confirma los últimos 4 dígitos de su cédula?', sys: 'Primer SMS sin nombre, sin monto y sin datos del préstamo.' },
       { who: 'client', text: 'No, ese no soy yo. Este número es mío desde hace un año.' },
       { who: 'agent', text: 'Disculpe la molestia. No compartiremos ninguna información y retiraremos este número de nuestros contactos.', sys: 'No se reveló nombre, monto ni datos del préstamo. Número marcado “no es el titular”; contactos a este número detenidos.', action: true, tone: 'ok' },
       { who: 'agent', text: 'Gracias por avisarnos. Que tenga buen día.', sys: 'La cuenta pasa a verificación de datos de contacto.' },
@@ -74,11 +75,11 @@ export const VOICE = {
     { t: 10, who: 'Cliente', text: 'Sí, con él.' },
     { t: 12, who: 'Asistente', text: 'Para confirmar su identidad, ¿me indica los últimos 4 dígitos de su cédula?', sys: 'Verificación de identidad antes de hablar del saldo.' },
     { t: 17, who: 'Cliente', text: 'Dos, dos, cero, nueve.' },
-    { t: 20, who: 'Asistente', text: 'Gracias, identidad confirmada. Su cuenta tiene B/. 1,940.00 vencidos, con 12 días de atraso.', sys: 'Identidad verificada. Saldo leído de la cuenta.', tone: 'ok' },
+    { t: 20, who: 'Asistente', text: 'Gracias, identidad confirmada. Su cuenta tiene B/. 582.00 vencidos, con 12 días de atraso.', sys: 'Identidad verificada. Saldo leído de la cuenta.', tone: 'ok' },
     { t: 28, who: 'Cliente', text: 'Sí, ya sé. Me pagan el 30. ¿Puedo pagar ese día?' },
-    { t: 33, who: 'Asistente', text: 'Puedo registrar una promesa de pago por B/. 1,940.00 para el 30 de octubre. Le enviaré un recordatorio por WhatsApp el día anterior. ¿Está de acuerdo?', sys: 'Promesa de pago dentro de la regla (≤ 15 días). No requiere aprobación.', tone: 'ai' },
+    { t: 33, who: 'Asistente', text: 'Puedo registrar una promesa de pago por B/. 582.00 para el 30 de octubre. Le confirmo el acuerdo por SMS y le envío un recordatorio el día anterior. ¿Está de acuerdo?', sys: 'Promesa de pago dentro de la regla (≤ 15 días). No requiere aprobación.', tone: 'ai' },
     { t: 44, who: 'Cliente', text: 'Sí, de acuerdo.' },
-    { t: 46, who: 'Asistente', text: 'Queda registrado. Hasta entonces no le volveremos a llamar. Gracias, señor Pinzón, que tenga buen día.', sys: 'Promesa registrada. Llamadas canceladas hasta el 30 oct; recordatorio programado el 29 oct.', action: true, tone: 'ok' },
+    { t: 46, who: 'Asistente', text: 'Queda registrado. Hasta entonces no le volveremos a llamar. Gracias, señor Pinzón, que tenga buen día.', sys: 'Promesa registrada y confirmada por SMS. Llamadas canceladas hasta el 30 oct; recordatorio por SMS programado el 29 oct.', action: true, tone: 'ok' },
   ],
 };
 
@@ -118,18 +119,11 @@ export function chatPlayer(script, ui) {
       const card = document.createElement('div');
       card.className = 'paylink';
       const s1 = document.createElement('strong');
-      s1.textContent = 'Pagar ' + step.amount;
+      s1.textContent = step.linkLabel || 'Pagar ' + step.amount;
       const s2 = document.createElement('span');
-      s2.textContent = 'pago seguro · enlace de un solo uso';
+      s2.textContent = step.linkNote || 'pago seguro · enlace de un solo uso';
       card.append(s1, s2);
       b.append(p, card);
-    } else if (step.kind === 'file') {
-      const i = document.createElement('span');
-      i.className = 'file-icon';
-      i.setAttribute('aria-hidden', 'true');
-      const t = document.createElement('span');
-      t.textContent = step.text;
-      b.append(i, t);
     } else {
       b.textContent = step.text;
     }

@@ -1,9 +1,9 @@
 // Recupera · demo para Kredit — router por hash, vistas, recorrido guiado.
-import { PRODUCT_NAME, PRODUCT_BY, WORKSPACE, DEMO_TODAY, BASE, RULE_TEMPLATES, DEFAULT_RULE, MOTIVOS, COBRADORES, SIN_ASIGNAR, money, moneyShort, int, pct, fmtDate, fmtDateShort, fmtDateTime, fmtDateLong, stageLabel, withinRule, ruleReasons, moraHistory, mulberry32, SEED } from './data.js?v=20261012c';
-import { getState, dispatch, subscribe, kpis, ruleStats, exceptions, pendingExceptions, scenarioEnd, verifyChain } from './store.js?v=20261012c';
-import { moraChart, hBars, stackBar, sparkline, hideTip } from './charts.js?v=20261012c';
-import { SCRIPTS, SCRIPT_TABS, VOICE, chatPlayer, voicePlayer, speechSupported, onVoicesChanged } from './scripts.js?v=20261012c';
-import { toCsv, csvFilename, downloadCsv } from './csv.js?v=20261012c';
+import { PRODUCT_NAME, PRODUCT_BY, WORKSPACE, DEMO_TODAY, BASE, RULE_TEMPLATES, DEFAULT_RULE, MOTIVOS, COBRADORES, SIN_ASIGNAR, money, moneyShort, int, pct, fmtDate, fmtDateShort, fmtDateTime, fmtDateLong, stageLabel, withinRule, ruleReasons, moraHistory, mulberry32, SEED } from './data.js?v=20261012e';
+import { getState, dispatch, subscribe, kpis, ruleStats, exceptions, pendingExceptions, scenarioEnd, verifyChain } from './store.js?v=20261012e';
+import { moraChart, hBars, stackBar, sparkline, hideTip } from './charts.js?v=20261012e';
+import { SCRIPTS, SCRIPT_TABS, VOICE, chatPlayer, voicePlayer, speechSupported, onVoicesChanged } from './scripts.js?v=20261012e';
+import { toCsv, csvFilename, downloadCsv } from './csv.js?v=20261012e';
 
 // ---------- utilidades ----------
 const $ = (sel, root = document) => root.querySelector(sel);

@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Préstamo con depósito el mismo día · Kredit</title>
-<meta name="description" content="Vista previa: landing de préstamos de Kredit para colaboradores de empresas afiliadas, con calculadora de cuota quincenal y solicitud en línea. Formulario en modo demo.">
+<meta name="description" content="Vista previa: landing de préstamos de Kredit para personas que trabajan en una empresa con planilla en Panamá, con calculadora de cuota quincenal y solicitud en línea. Formulario en modo demo.">
 <meta name="theme-color" content="#091845">
-<link rel="icon" href="../assets/kredit-mark.svg?v=20261012d" type="image/svg+xml">
+<link rel="icon" href="../assets/kredit-mark.svg?v=20261012e" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
-<link rel="stylesheet" href="../assets/base.css?v=20261012d">
-<link rel="modulepreload" href="../assets/form.js?v=20261012d">
-<link rel="modulepreload" href="../assets/calc.js?v=20261012d">
-<script type="module" src="../assets/page.js?v=20261012d"></script>
-<script type="module" src="../assets/prestamos.js?v=20261012d"></script>
-<script type="module" src="../assets/quincenas.js?v=20261012d"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800;900&amp;family=Roboto+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/base.css?v=20261012e">
+<link rel="modulepreload" href="../assets/form.js?v=20261012e">
+<link rel="modulepreload" href="../assets/calc.js?v=20261012e">
+<script type="module" src="../assets/page.js?v=20261012e"></script>
+<script type="module" src="../assets/prestamos.js?v=20261012e"></script>
+<script type="module" src="../assets/quincenas.js?v=20261012e"></script>
 </head>
 <body id="top">
 <!-- SPRITE:start (íconos y logotipo) -->
@@ -92,7 +92,6 @@
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#beneficios">Por qué Kredit</a>
       <a href="#preguntas">Preguntas</a>
-      <a href="../empresas/">Empresas</a>
     </nav>
     <div class="nav__actions">
       <a class="portal-link" href="https://kredit.com.pa/app/" target="_blank" rel="noopener" aria-label="Accede a tu cuenta en el portal de clientes">
@@ -110,7 +109,7 @@
     <div class="wrap hero__grid">
       <div class="hero__copy">
         <h1 id="hero-title">Tu préstamo se deposita <span class="hl">el mismo día</span> que se aprueba</h1>
-        <p class="hero__lead">Para colaboradores de empresas afiliadas a Kredit<span class="hide-m">: cuota fija que se descuenta de tu planilla, sin costos ocultos</span>.</p>
+        <p class="hero__lead">Cuota fija que se descuenta de tu planilla<span class="hide-m">, sin&nbsp;costos&nbsp;ocultos</span>.</p>
         <ul class="hero__facts">
           <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Ves la tasa, los cargos y el costo total antes de firmar.</li>
           <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Abonos o cancelación anticipada sin cargo adicional.</li>
@@ -182,27 +181,10 @@
 
               <div class="field" data-field="empresa">
                 <label for="f-empresa">¿En qué empresa trabajas?</label>
-                <div class="combo">
-                  <div class="affix affix--search">
-                    <svg class="ic affix__pre" aria-hidden="true"><use href="#i-search"/></svg>
-                    <input class="input" id="f-empresa" name="empresa" type="text" autocomplete="organization" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="empresa-list" aria-describedby="f-empresa-hint f-empresa-err" placeholder="Nombre de tu empresa">
-                  </div>
-                  <ul class="combo__list" id="empresa-list" role="listbox" aria-label="Empresas afiliadas (lista de ejemplo)" hidden></ul>
-                </div>
-                <p class="hint" id="f-empresa-hint">Demo: escribe «demo» o «ejemplo» para ver la lista de empresas afiliadas de ejemplo. En producción se consulta la lista real.</p>
+                <input class="input" id="f-empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nombre de tu empresa" aria-describedby="f-empresa-hint f-empresa-err">
+                <p class="hint" id="f-empresa-hint">Kredit coordina con tu empresa el descuento de tu cuota en la planilla.</p>
                 <p class="field-error" id="f-empresa-err" data-error-for="empresa" hidden></p>
               </div>
-
-              <fieldset class="field" data-field="afiliada">
-                <legend>¿Tu empresa está afiliada a Kredit?</legend>
-                <div class="chips chips--3">
-                  <input class="chip-input" type="radio" name="afiliada" id="af-si" value="si" aria-describedby="f-afiliada-status f-afiliada-err"><label class="chip" for="af-si">Sí</label>
-                  <input class="chip-input" type="radio" name="afiliada" id="af-no" value="no" aria-describedby="f-afiliada-status f-afiliada-err"><label class="chip" for="af-no">No</label>
-                  <input class="chip-input" type="radio" name="afiliada" id="af-nose" value="no_se" aria-describedby="f-afiliada-status f-afiliada-err"><label class="chip" for="af-nose">No sé</label>
-                </div>
-                <p class="field-status" id="f-afiliada-status" data-company-status role="status" hidden></p>
-                <p class="field-error" id="f-afiliada-err" data-error-for="afiliada" hidden></p>
-              </fieldset>
 
               <div class="grid-2">
                 <div class="field" data-field="salario_neto">
@@ -282,36 +264,6 @@
               <legend class="lf-title">Revisa y autoriza</legend>
               <dl class="summary" data-summary aria-label="Resumen de tu solicitud"></dl>
 
-              <div class="refer-box" data-show-if="noAfiliada" hidden>
-                <label class="check" data-field="recomendar">
-                  <input type="checkbox" name="recomendar" value="si">
-                  <span><strong>Quiero recomendar a mi empresa</strong> para que se afilie a Kredit <span class="opt">(opcional)</span>. Si se afilia, podrás pagar con descuento directo de tu planilla.</span>
-                </label>
-                <div class="refer-box__fields" data-show-if="recomendar" hidden>
-                  <p class="subgroup-title">Contacto de RR. HH. (opcional)</p>
-                  <div class="field" data-field="rec_rrhh_nombre">
-                    <label for="f-rec-nombre">Nombre</label>
-                    <input class="input" id="f-rec-nombre" name="rec_rrhh_nombre" type="text" autocomplete="off">
-                  </div>
-                  <div class="grid-2">
-                    <div class="field" data-field="rec_rrhh_correo">
-                      <label for="f-rec-correo">Correo</label>
-                      <input class="input" id="f-rec-correo" name="rec_rrhh_correo" type="email" autocomplete="off" aria-describedby="f-rec-correo-err">
-                      <p class="field-error" id="f-rec-correo-err" data-error-for="rec_rrhh_correo" hidden></p>
-                    </div>
-                    <div class="field" data-field="rec_rrhh_telefono">
-                      <label for="f-rec-tel">Teléfono</label>
-                      <input class="input" id="f-rec-tel" name="rec_rrhh_telefono" type="tel" inputmode="tel" autocomplete="off" aria-describedby="f-rec-tel-err">
-                      <p class="field-error" id="f-rec-tel-err" data-error-for="rec_rrhh_telefono" hidden></p>
-                    </div>
-                  </div>
-                  <label class="check" data-field="rec_mencionar">
-                    <input type="checkbox" name="rec_mencionar" value="si">
-                    <span>Pueden decirle a mi empresa que yo la recomendé.</span>
-                  </label>
-                </div>
-              </div>
-
               <div class="consents">
                 <div class="field" data-field="acepta_privacidad">
                   <label class="check">
@@ -331,79 +283,6 @@
                   <label class="check">
                     <input type="checkbox" name="acepta_whatsapp" value="si">
                     <span>Acepto recibir información de Kredit por WhatsApp. <span class="opt">(Opcional)</span></span>
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-
-            <!-- Ruta alternativa · Recomienda a tu empresa -->
-            <fieldset class="lf-step" data-step="referido" tabindex="-1" hidden>
-              <legend class="lf-title">Recomienda a tu empresa</legend>
-              <div class="refer-hero">
-                <span class="refer-hero__icon"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg></span>
-                <div>
-                  <strong>Tu empresa puede sumarse a Kredit</strong>
-                  <p>Le presentamos el beneficio a RR. HH. y te avisamos en cuanto esté afiliada para que solicites tu crédito con descuento de planilla.</p>
-                </div>
-              </div>
-              <div class="grid-2">
-                <div class="field" data-field="ref_nombre">
-                  <label for="f-ref-nombre">Tu nombre completo</label>
-                  <input class="input" id="f-ref-nombre" name="ref_nombre" type="text" autocomplete="name" aria-describedby="f-ref-nombre-err">
-                  <p class="field-error" id="f-ref-nombre-err" data-error-for="ref_nombre" hidden></p>
-                </div>
-                <div class="field" data-field="ref_celular">
-                  <label for="f-ref-celular">Tu celular (WhatsApp)</label>
-                  <div class="affix affix--tel">
-                    <span class="affix__pre" aria-hidden="true">+507</span>
-                    <input class="input" id="f-ref-celular" name="ref_celular" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="6123-4567" aria-describedby="f-ref-celular-err">
-                  </div>
-                  <p class="field-error" id="f-ref-celular-err" data-error-for="ref_celular" hidden></p>
-                </div>
-              </div>
-              <div class="field" data-field="ref_empresa">
-                <label for="f-ref-empresa">Empresa que recomiendas</label>
-                <input class="input" id="f-ref-empresa" name="ref_empresa" type="text" autocomplete="organization" aria-describedby="f-ref-empresa-err">
-                <p class="field-error" id="f-ref-empresa-err" data-error-for="ref_empresa" hidden></p>
-              </div>
-              <div class="field" data-field="ref_correo">
-                <label for="f-ref-correo">Tu correo <span class="opt">(opcional)</span></label>
-                <input class="input" id="f-ref-correo" name="ref_correo" type="email" autocomplete="email" aria-describedby="f-ref-correo-err">
-                <p class="field-error" id="f-ref-correo-err" data-error-for="ref_correo" hidden></p>
-              </div>
-              <p class="subgroup-title">Contacto de RR. HH. (opcional)</p>
-              <div class="field" data-field="ref_rrhh_nombre">
-                <label for="f-ref-rrhh">Nombre</label>
-                <input class="input" id="f-ref-rrhh" name="ref_rrhh_nombre" type="text" autocomplete="off">
-              </div>
-              <div class="grid-2">
-                <div class="field" data-field="ref_rrhh_correo">
-                  <label for="f-ref-rrhh-correo">Correo</label>
-                  <input class="input" id="f-ref-rrhh-correo" name="ref_rrhh_correo" type="email" autocomplete="off" aria-describedby="f-ref-rrhh-correo-err">
-                  <p class="field-error" id="f-ref-rrhh-correo-err" data-error-for="ref_rrhh_correo" hidden></p>
-                </div>
-                <div class="field" data-field="ref_rrhh_telefono">
-                  <label for="f-ref-rrhh-tel">Teléfono</label>
-                  <input class="input" id="f-ref-rrhh-tel" name="ref_rrhh_telefono" type="tel" inputmode="tel" autocomplete="off" aria-describedby="f-ref-rrhh-tel-err">
-                  <p class="field-error" id="f-ref-rrhh-tel-err" data-error-for="ref_rrhh_telefono" hidden></p>
-                </div>
-              </div>
-              <label class="check" data-field="ref_mencionar">
-                <input type="checkbox" name="ref_mencionar" value="si">
-                <span>Pueden decirle a mi empresa que yo la recomendé. <span class="opt">(Opcional)</span></span>
-              </label>
-              <div class="consents">
-                <div class="field" data-field="ref_privacidad">
-                  <label class="check">
-                    <input type="checkbox" name="ref_privacidad" value="si" aria-describedby="f-ref-priv-err">
-                    <span>Acepto el <a href="https://kredit.com.pa/politicas-de-privacidad/">aviso de privacidad</a> y el tratamiento de mis datos para gestionar esta recomendación, conforme a la Ley 81 de 2019. <span class="req" aria-hidden="true">*</span></span>
-                  </label>
-                  <p class="field-error" id="f-ref-priv-err" data-error-for="ref_privacidad" hidden></p>
-                </div>
-                <div class="field" data-field="ref_whatsapp">
-                  <label class="check">
-                    <input type="checkbox" name="ref_whatsapp" value="si">
-                    <span>Acepto recibir por WhatsApp el aviso cuando mi empresa esté afiliada. <span class="opt">(Opcional)</span></span>
                   </label>
                 </div>
               </div>
@@ -440,12 +319,7 @@
         <li class="is-pay"><span class="payline__when" data-pl="q2">Siguiente quincena</span><span class="payline__what">La misma cuota, sin sorpresas</span></li>
       </ol>
 
-      <p class="payline__note" data-pl="nota">El desembolso es el mismo día de la aprobación; la aprobación depende de la evaluación. Las fechas de descuento las define tu empresa (ejemplo: quincenas del 15 y del último día del mes).</p>
-      <div class="demo-toggle">
-        <span class="demo-toggle__tag">Ajuste de demo</span>
-        <label class="demo-toggle__switch"><input class="switch" type="checkbox" role="switch" id="demo-solo-afiliadas">Solo empresas afiliadas</label>
-        <p class="demo-toggle__state" data-rule-state>Abierto al público: la empresa afiliada suma puntos y llega antes a «Calificado».</p>
-      </div>
+      <p class="payline__note" data-pl="nota">El desembolso es el mismo día de la aprobación; la aprobación depende de la evaluación. Kredit coordina el descuento con tu empresa; las fechas son las de tu planilla (ejemplo: quincenas del 15 y del último día del mes).</p>
     </div>
   </section>
 
@@ -486,7 +360,7 @@
         <strong>Lo que necesitas</strong>
         <ul class="mini-list">
           <li><svg class="ic" aria-hidden="true"><use href="#i-id"/></svg>Cédula vigente</li>
-          <li><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg>Estar activo en una empresa afiliada a Kredit</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg><span>Trabajar en una empresa con planilla en Panamá <span class="tbd">[requisitos exactos por confirmar con Kredit]</span></span></li>
           <li><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>Llenar la solicitud digital</li>
           <li><svg class="ic" aria-hidden="true"><use href="#i-receipt"/></svg><span>Si tu asesor lo pide: carta de trabajo o talonario reciente <span class="tbd">[por confirmar con Kredit]</span></span></li>
         </ul>
@@ -543,8 +417,8 @@
     </div>
   </section>
 
-  <!-- ===================================== PORTAL Y EMPRESA AFILIADA -->
-  <section class="section" aria-label="Clientes y empresas">
+  <!-- ===================================== PORTAL Y ASESOR -->
+  <section class="section" aria-label="Portal de clientes y asesoría">
     <div class="wrap duo-cards">
       <div class="duo-card duo-card--navy" id="portal">
         <svg class="k-ghost" viewBox="0 0 29.4 38.6" aria-hidden="true"><use href="#logo-k"/></svg>
@@ -553,12 +427,12 @@
         <p>Ingresa con tu cédula al portal y gestiona tus créditos en línea: consulta tu saldo y tus pagos, y solicita nuevos créditos al instante.</p>
         <a class="btn btn--white" href="https://kredit.com.pa/app/" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-login"/></svg>Ingresar al portal</a>
       </div>
-      <div class="duo-card duo-card--pale" id="empresa-afiliada">
+      <div class="duo-card duo-card--pale" id="asesor">
         <svg class="k-ghost" viewBox="0 0 29.4 38.6" aria-hidden="true"><use href="#logo-k"/></svg>
-        <p class="label">¿Tu empresa no está afiliada?</p>
-        <h2>Recomiéndala y te avisamos</h2>
-        <p>Con una empresa afiliada, la cuota se descuenta directo de tu planilla. Indícalo en tu solicitud o comparte la página para empresas con RR. HH.</p>
-        <a class="btn btn--navy" href="../empresas/"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>Ver el beneficio para empresas</a>
+        <p class="label">¿Tienes dudas?</p>
+        <h2>Habla con un asesor</h2>
+        <p>Te explicamos la cuota, los requisitos y cómo se coordina el descuento con tu empresa, antes de que envíes tu solicitud.</p>
+        <a class="btn btn--navy" href="#" data-whatsapp="50769975664" data-wa-text="Hola Kredit, quiero hablar con un asesor sobre un préstamo."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
       </div>
     </div>
   </section>
@@ -572,7 +446,7 @@
       <div class="faq">
         <details>
           <summary>¿Quién puede solicitar un crédito con Kredit?</summary>
-          <div class="answer"><p>Los colaboradores de empresas afiliadas a Kredit, porque la cuota se descuenta directo de la planilla. Si tu empresa aún no está afiliada, puedes completar el formulario y un asesor te dirá si hay una opción para ti; también puedes recomendar a tu empresa. <span class="tbd">[Política para solicitantes de empresas no afiliadas: por confirmar con Kredit]</span></p></div>
+          <div class="answer"><p>Las personas que trabajan en una empresa con planilla en Panamá. Tu cuota se descuenta directo de tu planilla: Kredit coordina el descuento con la empresa donde trabajas. <span class="tbd">[Requisitos exactos (antigüedad, salario mínimo, tipo de contrato): por confirmar con Kredit]</span></p></div>
         </details>
         <details>
           <summary>¿Qué necesito para solicitar?</summary>
@@ -592,7 +466,7 @@
         </details>
         <details>
           <summary>¿Cómo pago mi crédito?</summary>
-          <div class="answer"><p>Si tu empresa está afiliada, los pagos se realizan automáticamente mediante descuento de tu planilla. Si quieres hacer un abono adicional o cancelar tu crédito por completo, contáctanos y te ayudamos a hacerlo sin ningún cargo adicional.</p></div>
+          <div class="answer"><p>Tu cuota se descuenta automáticamente de tu planilla: Kredit coordina el descuento directo con tu empresa. Si quieres hacer un abono adicional o cancelar tu crédito por completo, contáctanos y te ayudamos a hacerlo sin ningún cargo adicional.</p></div>
         </details>
         <details>
           <summary>¿Qué pasa si cambio de trabajo?</summary>
@@ -688,7 +562,6 @@
         <ul>
           <li><a href="#como-funciona">Cómo funciona</a></li>
           <li><a href="#preguntas">Preguntas frecuentes</a></li>
-          <li><a href="../empresas/">Afiliar empresa</a></li>
           <li><a href="https://kredit.com.pa/app/" target="_blank" rel="noopener">Portal de clientes</a></li>
         </ul>
       </div>

@@ -10,7 +10,7 @@ import { FAQ } from './faq.mjs';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(HERE, '..', '..');
 const OUT = path.join(REPO, 'public', 'demo', 'kredit-web');
-const V = '?v=20261012d';
+const V = '?v=20261012e';
 const calc = await import(pathToFileURL(path.join(REPO, 'public', 'demo', 'kredit-landings', 'assets', 'calc.js')).href + V);
 
 export const PAGES = [
@@ -302,7 +302,7 @@ function layout(h, p) {
 <link rel="icon" href="${r}../kredit-landings/assets/kredit-mark.svg${V}" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800;900&amp;family=Roboto+Mono:wght@400;500;600&amp;display=swap">
 <link rel="stylesheet" href="${r}../kredit-landings/assets/base.css${V}">
 <link rel="stylesheet" href="${r}assets/site.css${V}">
 <link rel="modulepreload" href="${r}../kredit-landings/assets/calc.js${V}">

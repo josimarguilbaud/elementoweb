@@ -45,13 +45,23 @@ con `origin/main` (no se tocó).
   página principal», US$ 950) a **US$ 3,000**, punto medio del mercado panameño para 8–12 páginas
   (fuentes en `precio-rediseno-web-panama.md`). Integral pasa a US$ 7,700 + US$ 2,399/mes. Esencial y
   Crecimiento no cambian.
+- **Roboto en todo lo de Kredit** (pedido de Josimar): Roboto y Roboto Mono en landings, web, demo
+  de cobranza y capturas de las propuestas. El tracking negativo de los titulares se redujo a la mitad
+  porque Roboto es más ancha (detalle en `DESIGN-kredit.md`).
+- **La landing de personas es solo para Google y redes, sin afiliados:** no pregunta por empresa
+  afiliada ni ofrece recomendar a la empresa; la cuota se paga por descuento directo de planilla que
+  Kredit coordina con la empresa del cliente. Las afiliadas siguen en la landing de empresas y en la
+  web. La propuesta de marketing se reescribió en ese sentido.
+- Las quincenas que caen en fin de semana o feriado se muestran el día hábil anterior
+  (`quincenas.js`, con pruebas en `test-web-kredit.mjs`).
 - Landings rediseñadas: hero que cabe en la primera pantalla (1440×900: termina en 820 px; 390×844:
   CTA en 821 px; antes 1,043 y 1,852), cuota quincenal como cifra principal, sello MICI arriba.
 
 ## 4. Pendientes (en orden)
 
 1. Que Kredit confirme: plazos, tasa efectiva máxima, ejemplo representativo, comisiones, dirección
-   oficial, si prestan a no afiliados, requisitos y costo para la empresa. Todo está marcado `.tbd`.
+   oficial, requisitos para quien llega por Google y redes (la landing de personas ya no pide empresa
+   afiliada; la web todavía dice «colaboradores de empresas afiliadas»), costo para la empresa. Todo está marcado `.tbd`.
 2. Precios de la propuesta de cobranza (implementación, mensualidad, plazo mínimo, anticipo) cuando
    Kredit dé el tamaño de cartera.
 3. Voz real del demo (llamada): Higgsfield con la voz Gia (`530df032-c311-483b-a750-cb3c9e1bcdfd`);

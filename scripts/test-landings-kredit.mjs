@@ -11,7 +11,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'public');
 const DIR = path.join(ROOT, 'demo', 'kredit-landings');
-const V = '?v=20261012d';
+const V = '?v=20261012e';
 const args = process.argv.slice(2);
 const shotsDir = args.includes('--shots') ? args[args.indexOf('--shots') + 1] : null;
 const liveFonts = args.includes('--live-fonts');
@@ -37,6 +37,7 @@ const PAGES = {
   prestamos: path.join(DIR, 'prestamos', 'index.html'),
   empresas: path.join(DIR, 'empresas', 'index.html'),
 };
+const ROBOTO = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800;900&amp;family=Roboto+Mono:wght@400;500;600&amp;display=swap">';
 const BANNED = [/adelanto de (salario|n[óo]mina)/i, /anticipo de sueldo/i, /pr[ée]stamo de d[íi]a de pago/i, /aprobad[oa]s?\b/i, /garantizad[oa]s?\b/i, /sin revisar (tu |su )?historial/i];
 const assetsText = fs.readdirSync(path.join(DIR, 'assets')).filter((f) => /\.(js|css)$/.test(f)).map((f) => [f, fs.readFileSync(path.join(DIR, 'assets', f), 'utf8')]);
 for (const [name, file] of Object.entries(PAGES)) {
@@ -52,6 +53,7 @@ for (const [name, file] of Object.entries(PAGES)) {
   const bad = BANNED.filter((re) => re.test(text));
   check(bad.length === 0, `${name}: sin términos prohibidos (adelanto de salario, aprobado, garantizado…)`, bad.join(' '));
   check(!/unsplash|pexels|images\.|cdn\./i.test(html), `${name}: sin imágenes enlazadas a terceros`);
+  check(html.includes(ROBOTO), `${name}: Roboto y Roboto Mono desde Google Fonts`);
 }
 for (const [f, txt] of assetsText) {
   const bad = BANNED.filter((re) => re.test(txt));
@@ -70,6 +72,12 @@ for (const [f, txt] of assetsText) {
     check(p.includes(k), `préstamos: divulgación incluye "${k}"`);
   }
   check(p.includes('Kredit nunca te pedirá pagos por adelantado'), 'préstamos: aviso antifraude');
+  // Préstamos es para el público que llega de Google y redes (decisión del 12-oct): nada de empresas afiliadas.
+  check(!/afiliad/i.test(p), 'préstamos: el HTML no menciona "afiliad"');
+  check(!/id="demo-solo-afiliadas"|data-rule-state|data-step="referido"|id="empresa-list"|role="(?:combobox|listbox)"|name="afiliada"|data-company-status|name="(?:rec|ref)_|refer-box/.test(p), 'préstamos: sin ajuste solo-afiliadas, ruta de referido, lista de empresas ni pregunta de afiliación');
+  check(!/\.\.\/empresas\//.test(p), 'préstamos: sin enlaces a la landing de empresas (menú, pie ni tarjetas)');
+  check(/data-field="empresa">\s*<label for="f-empresa">¿En qué empresa trabajas\?<\/label>\s*<input class="input" id="f-empresa" name="empresa" type="text" autocomplete="organization"/.test(p), 'préstamos: «¿En qué empresa trabajas?» es un campo de texto normal');
+  check(/Trabajar en una empresa con planilla en Panamá <span class="tbd">/.test(p) && /id="asesor"[\s\S]*?data-whatsapp="50769975664"/.test(p), 'préstamos: requisito de planilla (por confirmar) y tarjeta «Habla con un asesor»');
 }
 {
   // Empresas (B2B): licencia visible, nada no confirmado presentado como hecho, fotos locales y fuera del hero.
@@ -112,15 +120,19 @@ check(form.isValidRuc('155770767-2-2025 DV9') && form.isValidRuc('8-123-456 DV 1
   check(keep.utm_source === 'meta' && keep.fbclid === 'F1', 'atribución guardada en la sesión');
 }
 {
-  const base = { monto: 2500, salario_neto: 1200, cuota_estimada: 132.18, antiguedad: '2-5a' };
-  const s1 = form.computeScore(b2c.config.score, { ...base, empresa_verificada: true, empresa_afiliada: 'si' });
-  const s2 = form.computeScore(b2c.config.score, { ...base, empresa_verificada: false, empresa_afiliada: 'no' });
-  const s3 = form.computeScore(b2c.config.score, { monto: 15000, salario_neto: 300, cuota_estimada: 2600, antiguedad: 'menos-6m', empresa_verificada: false, empresa_afiliada: 'no' });
-  check(s1.tier === 'calificado' && s1.score === 100, 'B2C: afiliada + perfil sólido → Calificado (100)', JSON.stringify(s1));
-  check(s2.tier === 'revisar' && s2.score === 60, 'B2C: sin empresa afiliada, buen perfil → Revisar (60)', JSON.stringify(s2));
-  check(s3.tier === 'no_calificado', 'B2C: perfil débil → No calificado', JSON.stringify(s3));
-  check(b2c.config.soloEmpresasAfiliadas === false, 'B2C: regla soloEmpresasAfiliadas = false por defecto');
-  check(b2c.isAffiliatedCompany('empresa afiliada demo sa') && !b2c.isAffiliatedCompany('Otra Empresa'), 'B2C: lista de empresas afiliadas (ejemplo) con nombre normalizado');
+  // Puntaje de ejemplo sin afiliación: antigüedad 30/15, salario 25, cuota ≤ 30 % del salario 30, monto 15.
+  const s1 = form.computeScore(b2c.config.score, { monto: 2500, salario_neto: 1200, cuota_estimada: 132.18, antiguedad: '2-5a' });
+  const s2 = form.computeScore(b2c.config.score, { monto: 1500, salario_neto: 1000, cuota_estimada: 137.52, antiguedad: '6-11m' });
+  const s3 = form.computeScore(b2c.config.score, { monto: 1500, salario_neto: 500, cuota_estimada: 137.52, antiguedad: '6-11m' });
+  const s4 = form.computeScore(b2c.config.score, { monto: 3000, salario_neto: 450, cuota_estimada: 526.58, antiguedad: '1-2a' });
+  const s5 = form.computeScore(b2c.config.score, { monto: 3000, salario_neto: 300, cuota_estimada: 526.58, antiguedad: 'menos-6m' });
+  check(s1.tier === 'calificado' && s1.score === 100, 'B2C: 2 a 5 años, B/. 1,200, cuota 11 % del salario → Calificado (100)', JSON.stringify(s1));
+  check(s2.tier === 'calificado' && s2.score === 85, 'B2C: 6 a 11 meses, B/. 1,000, cuota 14 % → Calificado (85)', JSON.stringify(s2));
+  check(s3.tier === 'revisar' && s3.score === 60, 'B2C: 6 a 11 meses, B/. 500 (bajo el umbral), cuota 28 % → Revisar (60)', JSON.stringify(s3));
+  check(s4.tier === 'revisar' && s4.score === 45, 'B2C: 1 a 2 años, B/. 450, cuota sobre la capacidad → Revisar (45)', JSON.stringify(s4));
+  check(s5.tier === 'no_calificado' && s5.score === 15, 'B2C: menos de 6 meses, B/. 300, cuota sobre la capacidad → No calificado (15)', JSON.stringify(s5));
+  check(!b2c.config.score.rules.some((r) => /afili|empresa/.test(r.id)) && b2c.config.score.thresholds.calificado === 70 && b2c.config.score.thresholds.revisar === 40, 'B2C: el puntaje no depende de la empresa (umbrales 70 / 40)');
+  check(!('soloEmpresasAfiliadas' in b2c.config) && !('EMPRESAS_AFILIADAS_DEMO' in b2c) && !('isAffiliatedCompany' in b2c) && !('referido' in b2c.config.paths) && !('afiliada' in b2c.config.fields), 'B2C: sin regla solo-afiliadas, lista de empresas, pregunta de afiliación ni ruta de referido');
   const t1 = form.computeScore(b2b.config.score, { colaboradores: '100-249', cargo: 'rrhh', correo_corporativo: true, sector: 'comercio', inicio: 'este-mes' });
   const t2 = form.computeScore(b2b.config.score, { colaboradores: '1-19', cargo: 'otro', correo_corporativo: false, sector: 'otro', inicio: 'explorando' });
   check(t1.tier === 'calificado' && t1.score === 100, 'B2B: 100+ colaboradores, RR. HH., correo corporativo → Calificado');
@@ -305,15 +317,8 @@ async function b2cStep1(page, { monto = '2500', plazo = '24', tasa = '24' } = {}
   await page.click('[data-next]');
   await page.waitForSelector('[data-step="trabajo"]:not([hidden])');
 }
-async function b2cStep2(page, { empresa = null, afiliada = null, salario = '1200', antiguedad = '2-5a', proposito = 'estudios' } = {}) {
-  if (!empresa) {
-    await page.fill('#f-empresa', 'demo');
-    await page.click('#empresa-list li >> nth=0');
-  } else {
-    await page.fill('#f-empresa', empresa);
-    await page.keyboard.press('Escape');
-  }
-  if (afiliada) await page.click(`label[for="af-${afiliada}"]`);
+async function b2cStep2(page, { empresa = 'Distribuidora Istmeña, S.A.', salario = '1200', antiguedad = '2-5a', proposito = 'estudios' } = {}) {
+  await page.fill('#f-empresa', empresa);
   await page.fill('#f-salario', salario);
   await page.selectOption('#f-antiguedad', antiguedad);
   await page.selectOption('#f-proposito', proposito);
@@ -463,7 +468,6 @@ for (const width of [1440, 390]) {
   await page.goto(URLS.prestamos + '?utm_source=google&utm_medium=cpc&utm_campaign=prestamos-rapidos&utm_term=prestamo+personal&gclid=TEST-GCLID-123');
   await b2cStep1(page);
   await b2cStep2(page);
-  const status = await page.evaluate(() => document.querySelector('[data-company-status]'));
   await b2cStep3(page);
   await b2cConsents(page);
   const summary = await page.textContent('[data-summary]');
@@ -474,6 +478,7 @@ for (const width of [1440, 390]) {
   await page.waitForTimeout(400);
   const res = await page.evaluate(() => ({ tier: document.querySelector('.lf-result').dataset.tier, text: document.querySelector('.lf-result').innerText, dl: window.dataLayer, net: window.__net }));
   check(res.tier === 'calificado' && /Recibimos tu solicitud/.test(res.text) && !/calificad|aprobad/i.test(res.text) && /WhatsApp en minutos/.test(res.text), `${width}px: resultado "Calificado" con asesor por WhatsApp`);
+  check(res.text.includes('Tu cuota se descontará de tu planilla: Kredit coordina el descuento directo con tu empresa.') && !/afili|recomi/i.test(res.text), `${width}px: el resultado explica el descuento directo y no habla de afiliar ni recomendar`);
   check(!/aprobad|garantiz/i.test(res.text), `${width}px: el resultado no dice "aprobado"`);
   check(requests.length === before && res.net.fetch === 0 && res.net.beacon === 0 && res.net.xhr === 0, `${width}px: modo demo sin peticiones al enviar`, requests.slice(before).join(', '));
   const submits = res.dl.filter((x) => x.event === 'lead_submit');
@@ -483,7 +488,8 @@ for (const width of [1440, 390]) {
   check(JSON.stringify(Object.keys(json)) === JSON.stringify(SCHEMA_KEYS), `${width}px: payload con el esquema común`, Object.keys(json).join(','));
   check(json.form_id === 'kredit-prestamos' && json.tier === 'calificado' && json.score === 100, `${width}px: form_id, tier y score`, `${json.form_id} ${json.tier} ${json.score}`);
   check(json.lead.cedula === '8-***-*56' && !txt.includes('8-123-456'), `${width}px: cédula enmascarada en la vista previa`, json.lead.cedula);
-  check(json.lead.celular === '+50761234567' && json.lead.monto === 2500 && json.lead.plazo_meses === 24 && json.lead.cuota_estimada === 132.18 && json.lead.empresa_verificada === true, `${width}px: datos del lead normalizados`);
+  check(json.lead.celular === '+50761234567' && json.lead.monto === 2500 && json.lead.plazo_meses === 24 && json.lead.cuota_estimada === 132.18 && json.lead.empresa === 'Distribuidora Istmeña, S.A.', `${width}px: datos del lead normalizados`);
+  check(['empresa_verificada', 'empresa_afiliada', 'referral', 'regla_solo_afiliadas'].every((k) => !(k in json.lead)), `${width}px: el lead ya no trae datos de afiliación ni de recomendación`, Object.keys(json.lead).join(','));
   check(JSON.stringify(Object.keys(json.attribution)) === JSON.stringify(ATTR_KEYS) && json.attribution.utm_source === 'google' && json.attribution.utm_campaign === 'prestamos-rapidos' && json.attribution.utm_term === 'prestamo personal' && json.attribution.gclid === 'TEST-GCLID-123' && json.attribution.fbclid === null && json.attribution.landing === 'kredit-prestamos', `${width}px: atribución UTM y gclid en el payload`);
   check(json.consents.privacidad === true && json.consents.referencias_credito === true && json.consents.whatsapp === true, `${width}px: consentimientos en el payload`);
   check(errors.length === 0, `${width}px: sin errores de página`, errors.join(' | '));
@@ -491,94 +497,54 @@ for (const width of [1440, 390]) {
   await shot(page, `prestamos-${width}-resultado.png`, false);
   if (shotsDir) { const card = await page.$('[data-form-card]'); await card.screenshot({ path: path.join(shotsDir, `prestamos-${width}-resultado-tarjeta.png`) }); }
   await ctx.close();
-  void status;
 }
 
-// 3e. empresa no afiliada en modo abierto: sigue y puede recomendar
-console.log('\nPréstamos: empresa no afiliada (modo abierto)');
+// 3e. perfil intermedio: Revisar, sin consentimiento de WhatsApp
+console.log('\nPréstamos: Revisar (sin WhatsApp)');
 {
   const { ctx, page, errors } = await newPage(1440);
   await page.goto(URLS.prestamos);
-  await b2cStep1(page);
-  await page.fill('#f-empresa', 'Taller Independiente');
-  await page.keyboard.press('Escape');
-  await page.click('label[for="af-no"]');
-  const msg = await page.textContent('[data-company-status]');
-  check(/puedes continuar/i.test(msg), 'mensaje positivo: puede continuar', msg);
-  await page.fill('#f-salario', '1200');
-  await page.selectOption('#f-antiguedad', '2-5a');
-  await page.selectOption('#f-proposito', 'hogar');
-  await page.click('[data-next]');
-  check((await page.textContent('[data-progress-label]')).includes('Paso 3 de 4'), 'modo abierto: sigue la ruta principal (4 pasos)');
+  await b2cStep1(page, { monto: '1500', plazo: '12', tasa: '18' });
+  await b2cStep2(page, { empresa: 'Taller Independiente', salario: '500', antiguedad: '6-11m', proposito: 'hogar' });
+  await page.waitForSelector('[data-step="datos"]:not([hidden])');
+  check((await page.textContent('[data-progress-label]')).includes('Paso 3 de 4'), 'cualquier empresa sigue la ruta de 4 pasos');
   await b2cStep3(page);
   await b2cConsents(page, { whatsapp: false });
-  check(await page.isVisible('.refer-box'), 'bloque opcional "Quiero recomendar a mi empresa" visible');
-  await page.check('input[name="recomendar"]');
-  await page.fill('#f-rec-nombre', 'Ana RR. HH.');
-  await page.fill('#f-rec-correo', 'ana@');
-  await page.click('[data-next]');
-  check(await page.isVisible('#f-rec-correo-err'), 'correo de RR. HH. inválido: error');
-  await page.fill('#f-rec-correo', 'rrhh@taller.com.pa');
   await page.click('[data-next]');
   await waitResult(page);
   const r = await page.evaluate(() => ({ tier: document.querySelector('.lf-result').dataset.tier, text: document.querySelector('.lf-result').innerText }));
-  check(r.tier === 'revisar' && /Revisaremos tu solicitud/.test(r.text), 'resultado "Revisar"');
+  check(r.tier === 'revisar' && /Revisaremos tu solicitud/.test(r.text) && r.text.includes('Kredit coordina el descuento directo con tu empresa'), 'resultado "Revisar" con la línea de planilla');
   const { json } = await readPayload(page);
-  check(json.tier === 'revisar' && json.lead.empresa_afiliada === 'no' && json.lead.referral && json.lead.referral.empresa === 'Taller Independiente' && json.lead.referral.rrhh_correo === 'rrhh@taller.com.pa', 'payload con referral de la empresa');
+  check(json.tier === 'revisar' && json.score === 60 && json.lead.empresa === 'Taller Independiente' && json.lead.cuota_estimada === 137.52, 'payload "Revisar" (60): 6 a 11 meses, salario bajo el umbral, cuota dentro de la capacidad', `${json.tier} ${json.score} ${json.lead.cuota_estimada}`);
   check(json.consents.whatsapp === false && !/WhatsApp en minutos/.test(r.text), 'sin consentimiento de WhatsApp: no promete WhatsApp');
   check(errors.length === 0, 'sin errores de página', errors.join(' | '));
   await ctx.close();
 }
 
-// 3f. regla "solo empresas afiliadas" → Recomienda a tu empresa
-console.log('\nPréstamos: regla "solo empresas afiliadas" (referido_empresa)');
-for (const via of ['toggle', 'url']) {
-  const { ctx, page, errors, requests } = await newPage(via === 'toggle' ? 1440 : 390);
-  await page.goto(URLS.prestamos + (via === 'url' ? '?solo_afiliadas=1' : ''));
-  if (via === 'toggle') { await page.click('.demo-toggle__switch'); }
-  check(await page.isChecked('#demo-solo-afiliadas'), `${via}: ajuste de demo activado`);
-  await b2cStep1(page);
-  await page.fill('#f-empresa', 'Comercial Sin Convenio');
-  await page.keyboard.press('Escape');
-  await page.click('label[for="af-nose"]');
-  check(/recomendar a tu empresa/i.test(await page.textContent('[data-company-status]')), `${via}: aviso de que puede recomendar a su empresa`);
-  await page.fill('#f-salario', '900');
-  await page.selectOption('#f-antiguedad', '1-2a');
-  await page.selectOption('#f-proposito', 'salud');
-  await page.click('[data-next]');
-  await page.waitForSelector('[data-step="referido"]:not([hidden])');
-  check((await page.textContent('[data-progress-label]')).includes('Paso 3 de 3 · Recomienda a tu empresa'), `${via}: pasa a "Recomienda a tu empresa" (3 de 3)`);
-  check((await page.inputValue('#f-ref-empresa')) === 'Comercial Sin Convenio', `${via}: empresa precargada`);
-  await page.fill('#f-ref-nombre', 'Luis Castillo');
-  await page.fill('#f-ref-celular', '6987-6543');
-  await page.fill('#f-ref-rrhh-correo', 'rrhh@comercial.com.pa');
-  await page.check('input[name="ref_mencionar"]');
-  await page.click('[data-next]');
-  check(await page.isVisible('#f-ref-priv-err'), `${via}: privacidad obligatoria en la recomendación`);
-  await page.check('input[name="ref_privacidad"]');
-  await page.check('input[name="ref_whatsapp"]');
-  const before = requests.length;
-  await page.click('[data-next]');
-  await waitResult(page);
-  const r = await page.evaluate(() => ({ tier: document.querySelector('.lf-result').dataset.tier, text: document.querySelector('.lf-result').innerText, dl: window.dataLayer }));
-  check(r.tier === 'referido_empresa' && /Vamos a presentarle Kredit a Comercial Sin Convenio/.test(r.text), `${via}: resultado positivo de recomendación`);
-  check(!/aprobad|no calificad|rechaz/i.test(r.text), `${via}: sin lenguaje de rechazo ni aprobación`);
-  const { json } = await readPayload(page);
-  check(json.form_id === 'kredit-prestamos' && json.tier === 'referido_empresa' && json.score === null && json.lead.referral.empresa === 'Comercial Sin Convenio' && json.lead.referral.mencionar_mi_nombre === true && json.lead.referral.rrhh_correo === 'rrhh@comercial.com.pa', `${via}: payload referido_empresa con lead.referral`);
-  check(json.lead.regla_solo_afiliadas === true && !('cedula' in json.lead), `${via}: sin cédula en la recomendación`);
-  check(r.dl.some((x) => x.event === 'lead_submit' && x.lead_tier === 'referido_empresa'), `${via}: dataLayer con lead_tier referido_empresa`);
-  check(requests.length === before, `${via}: sin peticiones al enviar`);
-  check(errors.length === 0, `${via}: sin errores de página`, errors.join(' | '));
-  if (via === 'toggle') { await shot(page, 'prestamos-1440-referido.png'); }
-  await ctx.close();
-}
-{
-  const { ctx, page } = await newPage(1440);
+// 3f. préstamos sin empresas afiliadas: ni en el texto, ni en el aria, ni en el flujo
+console.log('\nPréstamos: sin empresas afiliadas');
+for (const width of [1440, 390]) {
+  const { ctx, page, errors } = await newPage(width);
   await page.goto(URLS.prestamos + '?solo_afiliadas=1');
+  await page.evaluate(() => document.querySelectorAll('details').forEach((d) => { d.open = true; }));
+  const st = await page.evaluate(() => {
+    const attrs = [...document.querySelectorAll('*')].flatMap((el) => [...el.attributes].filter((a) => /^aria-|^title$|^alt$|^placeholder$|^data-wa-text$/.test(a.name)).map((a) => a.value));
+    return {
+      text: document.body.innerText + ' ' + document.title + ' ' + (document.querySelector('meta[name="description"]') || {}).content,
+      attrs: attrs.join(' '),
+      rest: ['#demo-solo-afiliadas', '[data-rule-state]', '[data-step="referido"]', '#empresa-list', '[role="combobox"]', '[role="listbox"]', '[name="afiliada"]', '[data-company-status]', '[name^="rec_"]', '[name^="ref_"]', 'a[href*="empresas"]'].filter((s) => document.querySelector(s)),
+    };
+  });
+  check(!/afiliad/i.test(st.text) && !/afiliad/i.test(st.attrs), `${width}px: el texto visible, el título y los atributos aria no mencionan "afiliad"`);
+  check(st.rest.length === 0, `${width}px: no quedan el ajuste solo-afiliadas, el referido, la lista de empresas ni enlaces a empresas`, st.rest.join(', '));
   await b2cStep1(page);
-  await b2cStep2(page);
+  await page.focus('#f-empresa');
+  await page.keyboard.type('demo');
+  check(await page.evaluate(() => !document.querySelector('[role="option"]') && document.getElementById('f-empresa').getAttribute('autocomplete') === 'organization'), `${width}px: la empresa se escribe sin lista de ejemplo`);
+  await b2cStep2(page, { empresa: 'Comercial Sin Convenio' });
   await page.waitForSelector('[data-step="datos"]:not([hidden])');
-  check((await page.textContent('[data-progress-label]')).includes('Paso 3 de 4'), 'regla activada + empresa afiliada: sigue la ruta principal');
+  check((await page.textContent('[data-progress-label]')).includes('Paso 3 de 4'), `${width}px: ?solo_afiliadas=1 ya no cambia la ruta (4 pasos)`);
+  check(errors.length === 0, `${width}px: sin errores de página`, errors.join(' | '));
   await ctx.close();
 }
 
@@ -588,13 +554,15 @@ console.log('\nPréstamos: No calificado');
   const { ctx, page, errors } = await newPage(1440);
   await page.goto(URLS.prestamos);
   await b2cStep1(page, { monto: '3000', plazo: '6', tasa: '18' });
-  await b2cStep2(page, { empresa: 'Negocio Propio', afiliada: 'no', salario: '300', antiguedad: 'menos-6m', proposito: 'otro' });
+  await b2cStep2(page, { empresa: 'Negocio Propio', salario: '300', antiguedad: 'menos-6m', proposito: 'otro' });
   await b2cStep3(page);
   await b2cConsents(page);
   await page.click('[data-next]');
   await waitResult(page);
-  const r = await page.evaluate(() => ({ tier: document.querySelector('.lf-result').dataset.tier, text: document.querySelector('.lf-result').innerText, link: document.querySelector('.lf-result a[href="../empresas/"]') !== null }));
-  check(r.tier === 'no_calificado' && /Gracias por confiar en Kredit/.test(r.text) && /te lo diremos con claridad/.test(r.text) && !/no podemos ofrecerte|rechazad|calificad/i.test(r.text) && r.link, 'mensaje respetuoso con alternativa (recomendar empresa)');
+  const r = await page.evaluate(() => ({ tier: document.querySelector('.lf-result').dataset.tier, text: document.querySelector('.lf-result').innerText, empresas: document.querySelector('.lf-result a[href*="empresas"]') !== null, asesor: document.querySelector('.lf-result [data-whatsapp]') !== null }));
+  check(r.tier === 'no_calificado' && /Gracias por confiar en Kredit/.test(r.text) && /te lo diremos con claridad/.test(r.text) && !/no podemos ofrecerte|rechazad|calificad/i.test(r.text) && !r.empresas && r.asesor && !/afili|recomi/i.test(r.text), 'mensaje respetuoso, con un asesor por WhatsApp y sin enlace a empresas');
+  const { json: jn } = await readPayload(page);
+  check(jn.tier === 'no_calificado' && jn.score === 15, 'payload "No calificado" (15): menos de 6 meses, salario bajo y cuota sobre la capacidad', `${jn.tier} ${jn.score}`);
   check(!/aprobad|rechaz/i.test(r.text), 'sin "aprobado" ni "rechazado"');
   check(errors.length === 0, 'sin errores de página', errors.join(' | '));
   await ctx.close();

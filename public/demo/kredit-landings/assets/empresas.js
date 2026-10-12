@@ -1,6 +1,6 @@
 // empresas.js — landing de empresas (B2B): configuración del formulario de afiliación.
 // Vista previa para Kredit · Elemento Web. Puntaje de ejemplo según spec §4 (lo fija Kredit).
-import { initLeadForm, isFreeEmail, toE164PA, emailDomain } from './form.js?v=20261012d';
+import { initLeadForm, isFreeEmail, toE164PA, emailDomain } from './form.js?v=20261012e';
 
 export const WHATSAPP = '50769975664';
 

@@ -28,25 +28,25 @@ colors:
   warning-surface: "#FFF5E5"
 typography:
   display:
-    fontFamily: Manrope
+    fontFamily: Roboto
     fontWeight: 800
     fontSize: clamp(31px, 4.6vw, 56px)
-    letterSpacing: -0.032em
+    letterSpacing: -0.018em
   heading:
-    fontFamily: Manrope
+    fontFamily: Roboto
     fontWeight: 800
     fontSize: clamp(28px, 3.6vw, 44px)
-    letterSpacing: -0.025em
+    letterSpacing: -0.014em
   body:
-    fontFamily: Source Sans 3
+    fontFamily: Roboto
     fontSize: 17px
     lineHeight: 1.55
   label:
-    fontFamily: IBM Plex Mono
+    fontFamily: Roboto Mono
     fontSize: 12px
     letterSpacing: 0.06em
   mono:
-    fontFamily: IBM Plex Mono
+    fontFamily: Roboto Mono
     fontFeature: tnum
 rounded:
   sm: 6px
@@ -92,7 +92,7 @@ components:
 **Reference sites:** investigación en `investigacion-landings-panama.md` (Banco General, Global Bank TAP, Banisi, Panacredit, Kueski, BCP Convenios, minu).
 **Key characteristics:**
 - Plano navy con el corte diagonal de la «K» y un comprobante blanco que lo cruza.
-- La cuota quincenal es la cifra más grande del primer pliegue, en IBM Plex Mono con resaltador hielo.
+- La cuota quincenal es la cifra más grande del primer pliegue, en Roboto Mono con resaltador hielo.
 - Licencia del MICI en un sello de doble filete, en el primer pliegue.
 - Regla de quincenas con fechas reales (hoy, el día de la aprobación, las próximas quincenas).
 - Fotos documentales (IA, contexto panameño) solo desde la segunda sección; nunca en el hero de las landings.
@@ -105,7 +105,7 @@ El cian (#22D3EE) del degradado del logo es solo una marca de «hoy / depositado
 
 ## Typography
 
-Manrope (su titular actual) para titulares, botones y etiquetas de formulario: 800 en H1/H2, 700 en H3 y botones. Source Sans 3 reemplaza a Roboto y Poppins en el texto: más humana y legible en celular. IBM Plex Mono para cifras (cuota, montos, fechas, sello, escalas, etiquetas de paso), siempre con números tabulares. Carga: Google Fonts, `display=swap`, pesos Manrope 500–800, Source Sans 3 400–700, IBM Plex Mono 400–600. Escala: H1 56 px escritorio / 31 px móvil; H2 44 / 28; cuerpo 17; etiquetas mono 12–13.
+Roboto en todo, por decisión de Josimar (12-oct): es la fuente que Kredit ya usa en su web, así que la marca no cambia de voz. Titulares 800 en H1/H2 y 700 en H3 y botones; texto 400 y 500. Roboto Mono para cifras (cuota, montos, fechas, sello, escalas, etiquetas de paso), siempre con números tabulares. Roboto es más ancha que Manrope: el tracking negativo de los titulares se redujo a la mitad (-0.018em en H1, -0.014em en H2) para que no se peguen las letras. Carga: Google Fonts, `display=swap`, Roboto 400/500/700/800/900 y Roboto Mono 400–600. Escala: H1 56 px escritorio / 31 px móvil; H2 44 / 28; cuerpo 17; etiquetas mono 12–13.
 
 ## Layout
 
@@ -154,4 +154,5 @@ Radios: 6 (etiquetas), 10 (botones y campos), 16 (comprobante y tarjetas), 22 (b
 |------|----------|-----------|
 | 2026-10-12 | Sistema «Comprobante claro» creado | /design-consultation con investigación de 12 landings y voces externas (subagente Claude «Talonario»; Codex «Claridad que deposita», rechazado por el validador de formato pero leído). Aprobado por Josimar sobre la vista previa de la landing de préstamos. |
 | 2026-10-12 | Source Sans 3 e IBM Plex Mono reemplazan a Roboto y Poppins | Tres sans competían; la mono da cifras tabulares al comprobante. |
+| 2026-10-12 | Roboto y Roboto Mono reemplazan a Manrope, Source Sans 3 e IBM Plex Mono | Pedido de Josimar: una sola familia en todo lo de Kredit, la misma de su web. Tracking de titulares reescalado. |
 | 2026-10-12 | Sin WhatsApp en la cobranza | Política de Mensajería de WhatsApp Business, sección 4. |

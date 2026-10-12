@@ -12,7 +12,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'public');
 const DIR = path.join(ROOT, 'demo', 'kredit-web');
 const LANDINGS = path.join(ROOT, 'demo', 'kredit-landings');
-const V = '?v=20261012d';
+const V = '?v=20261012e';
 const args = process.argv.slice(2);
 const liveFonts = args.includes('--live-fonts');
 
@@ -418,6 +418,16 @@ console.log('\nCalculadora del inicio y de préstamos');
   const t = await page.evaluate(() => ({ hoy: document.querySelector('[data-pl="hoy"]').textContent, q1: document.querySelector('[data-pl="q1"]').textContent }));
   check(/^(Hoy · |[a-zé]{3} \d)/.test(t.hoy) && /ejemplo/.test(t.q1) && /\d/.test(t.q1), 'inicio: la regla de quincenas muestra fechas reales (quincenas.js)', JSON.stringify(t));
   await ctx.close();
+  // una quincena que cae en fin de semana se paga el día hábil anterior
+  const q = await import(pathToFileURL(path.join(LANDINGS, 'assets', 'quincenas.js')).href + V);
+  for (const [d, q1, q2] of [
+    [new Date(2026, 9, 12), 'jue 15 oct · ejemplo', 'vie 30 oct'],
+    [new Date(2026, 9, 30), 'vie 13 nov · ejemplo', 'lun 30 nov'],
+    [new Date(2026, 1, 2), 'vie 13 feb · ejemplo', 'vie 27 feb'],
+  ]) {
+    const r = q.regla(d);
+    check(r.q1 === q1 && r.q2 === q2, `quincenas desde ${d.toDateString()}: ${q1} / ${q2}`, JSON.stringify([r.q1, r.q2]));
+  }
 }
 
 // 2f. formulario de contacto en modo demo

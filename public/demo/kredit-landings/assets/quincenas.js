@@ -1,6 +1,7 @@
 // quincenas.js — «la página sabe qué día es»: fechas reales para la regla de quincenas.
 // Vista previa para Kredit · Elemento Web. Funciones puras (se prueban en Node) + pintado del DOM.
-// Las quincenas de ejemplo son el 15 y el último día del mes; cada empresa define las suyas.
+// Las quincenas de ejemplo son el 15 y el último día del mes, y si caen en fin de semana o feriado
+// se pagan el día hábil anterior; cada empresa define las suyas.
 
 /** Feriados nacionales de Panamá 2026 (lista de ejemplo para la demo; confirmar con Kredit). */
 export const FERIADOS_2026 = [
@@ -22,13 +23,20 @@ export function proximoHabil(d, feriados = FERIADOS_2026) {
   return x;
 }
 
-/** Las dos próximas quincenas (15 y último día del mes) estrictamente después de la fecha. */
+/** El mismo día si es hábil; si no, el día hábil anterior (así se adelanta la planilla). */
+export function anteriorHabil(d, feriados = FERIADOS_2026) {
+  const x = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  while (!esDiaHabil(x, feriados)) x.setDate(x.getDate() - 1);
+  return x;
+}
+
+/** Las próximas quincenas (15 y último día del mes, ya movidas a día hábil) estrictamente después de la fecha. */
 export function proximasQuincenas(d, n = 2) {
   const out = [];
   let y = d.getFullYear(), m = d.getMonth();
   while (out.length < n) {
     for (const day of [15, new Date(y, m + 1, 0).getDate()]) {
-      const q = new Date(y, m, day);
+      const q = anteriorHabil(new Date(y, m, day));
       if (q > d && out.length < n) out.push(q);
     }
     m += 1;

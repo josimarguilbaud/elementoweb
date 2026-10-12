@@ -22,6 +22,9 @@ falla, el deploy se cae y la web se queda en la versión anterior.
 | `public/propuestas/<cliente-tema>/` | Propuestas, informes y manuales para un cliente | `/propuestas/...` |
 | `public/presentaciones/<x>/` | Presentaciones | `/presentaciones/<x>/` |
 
+Las demos de Kredit (`public/demo/kredit-landings/` y `kredit-web/`) siguen
+`docs/specs/kredit-marketing/DESIGN-kredit.md`; no cambiar tokens ni fuentes sin aprobación.
+
 `robots.txt` bloquea `/demo/`, `/propuestas/` y `/presentaciones/`: son documentos
 de cliente, no se indexan. Al crear uno nuevo, añadirle además
 `<meta name="robots" content="noindex, nofollow">`.

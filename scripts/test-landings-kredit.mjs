@@ -11,7 +11,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'public');
 const DIR = path.join(ROOT, 'demo', 'kredit-landings');
-const V = '?v=20261011b';
+const V = '?v=20261012a';
 const args = process.argv.slice(2);
 const shotsDir = args.includes('--shots') ? args[args.indexOf('--shots') + 1] : null;
 const liveFonts = args.includes('--live-fonts');
@@ -68,6 +68,20 @@ for (const [f, txt] of assetsText) {
   }
   check(p.includes('Kredit nunca te pedirá pagos por adelantado'), 'préstamos: aviso antifraude');
 }
+{
+  // Empresas (B2B): licencia visible, nada no confirmado presentado como hecho, fotos locales y fuera del hero.
+  const html = fs.readFileSync(PAGES.empresas, 'utf8');
+  const hero = html.slice(html.indexOf('<section class="hero'), html.indexOf('</section>', html.indexOf('<section class="hero')));
+  check(/class="seal"[\s\S]*?Resolución No\. 638/.test(hero) && /Res\. No\. 638 de 2025/.test(html), 'empresas: sello del MICI en el hero y licencia en el pie');
+  check(!/sin costo para la empresa/i.test(html.replace(/<span class="tbd">[^<]*<\/span>/g, '')), 'empresas: no afirma "sin costo para la empresa"');
+  check(/Costo para la empresa<\/dt><dd><span class="tbd">/.test(html), 'empresas: costo para la empresa marcado como por confirmar');
+  check(!/<img\b/.test(hero), 'empresas: sin fotos en el hero');
+  const imgs = [...html.matchAll(/<figure class="photo[^"]*">\s*<img\b([^>]*)>\s*<figcaption[^>]*>([^<]*)<\/figcaption>/g)];
+  const okImg = (a, cap) => /src="\.\.\/\.\.\/kredit-web\/img\/[a-z-]+-800\.webp"/.test(a) && /-1600\.webp 1600w/.test(a) && /width="800" height="537"/.test(a) && /loading="lazy"/.test(a) && /alt="[^"]{12,}"/.test(a) && cap === 'Imagen ilustrativa generada con IA';
+  const names = imgs.map((m) => (m[1].match(/img\/([a-z-]+)-800\.webp/) || [])[1]).sort();
+  check(JSON.stringify(names) === JSON.stringify(['comercio-colaborador', 'equipo-almacen', 'firma-convenio', 'rrhh-reunion']) && imgs.every((m) => okImg(m[1], m[2].trim())), 'empresas: 4 fotos locales con srcset, medidas, lazy y aviso de IA', names.join(', '));
+  check(!/portal-celular/.test(html), 'empresas: no usa la foto del portal en el celular');
+}
 
 // ---------------------------------------------------------------- 2. módulos
 console.log('\nMódulos (Node)');
@@ -95,7 +109,7 @@ check(form.isValidRuc('155770767-2-2025 DV9') && form.isValidRuc('8-123-456 DV 1
   check(keep.utm_source === 'meta' && keep.fbclid === 'F1', 'atribución guardada en la sesión');
 }
 {
-  const base = { monto: 5000, salario_neto: 1200, cuota_estimada: 196.16, antiguedad: '2-5a' };
+  const base = { monto: 2500, salario_neto: 1200, cuota_estimada: 132.18, antiguedad: '2-5a' };
   const s1 = form.computeScore(b2c.config.score, { ...base, empresa_verificada: true, empresa_afiliada: 'si' });
   const s2 = form.computeScore(b2c.config.score, { ...base, empresa_verificada: false, empresa_afiliada: 'no' });
   const s3 = form.computeScore(b2c.config.score, { monto: 15000, salario_neto: 300, cuota_estimada: 2600, antiguedad: 'menos-6m', empresa_verificada: false, empresa_afiliada: 'no' });
@@ -281,7 +295,7 @@ async function noOverflow(page) {
 
 // --- flujos ---
 const B2C_DATA = { nombre: 'María Pérez Gómez', cedula: '8-123-456', celular: '6123-4567', correo: 'maria.perez@example.com' };
-async function b2cStep1(page, { monto = '5000', plazo = '36', tasa = '24' } = {}) {
+async function b2cStep1(page, { monto = '2500', plazo = '24', tasa = '24' } = {}) {
   await page.fill('#f-monto', monto);
   await page.click(`label[for="pl-${plazo}"]`);
   await page.fill('#f-tasa', tasa);
@@ -373,18 +387,22 @@ console.log('\nCalculadora');
   const { ctx, page, errors } = await newPage(1440);
   await page.goto(URLS.prestamos);
   await page.waitForSelector('[data-calc-cuota]');
-  check((await page.textContent('[data-calc-cuota]')).trim() === fmt(cuotaRef(3000, 18, 24)), 'valor inicial: B/. 3,000 · 24 meses · 18 % = ' + fmt(cuotaRef(3000, 18, 24)));
-  await page.fill('#f-monto', '5000');
-  await page.click('label[for="pl-36"]');
+  check((await page.textContent('[data-calc-cuota]')).trim() === fmt(cuotaRef(1000, 18, 12)), 'valor inicial: B/. 1,000 · 12 meses · 18 % = ' + fmt(cuotaRef(1000, 18, 12)));
+  check((await page.textContent('[data-calc-quincena]')).trim() === 'B/. 45.84', 'valor inicial: cuota quincenal B/. 45.84');
+  await page.fill('#f-monto', '2500');
+  await page.click('label[for="pl-24"]');
   await page.fill('#f-tasa', '24');
   const cuota = (await page.textContent('[data-calc-cuota]')).trim();
-  check(cuota === 'B/. 196.16' && cuota === fmt(cuotaRef(5000, 24, 36)), 'B/. 5,000 · 36 meses · 24 % → B/. 196.16', cuota);
+  check(cuota === 'B/. 132.18' && cuota === fmt(cuotaRef(2500, 24, 24)), 'B/. 2,500 · 24 meses · 24 % → B/. 132.18', cuota);
   const quincena = (await page.textContent('[data-calc-quincena]')).trim();
   const total = (await page.textContent('[data-calc-total]')).trim();
-  check(quincena === 'B/. 98.08' && total === fmt(196.16 * 36), 'quincena B/. 98.08 y total = cuota × 36', `${quincena} / ${total}`);
-  await page.evaluate(() => { const r = document.getElementById('calc-range'); r.value = '7500'; r.dispatchEvent(new Event('input', { bubbles: true })); });
-  check((await page.inputValue('#f-monto')) === '7,500', 'el deslizador actualiza el monto (7,500)');
-  check((await page.textContent('[data-calc-cuota]')).trim() === fmt(cuotaRef(7500, 24, 36)), 'el deslizador recalcula la cuota');
+  check(quincena === 'B/. 66.09' && total === fmt(132.18 * 24), 'quincena B/. 66.09 y total = cuota × 24', `${quincena} / ${total}`);
+  await page.evaluate(() => { const r = document.getElementById('calc-range'); r.value = '2250'; r.dispatchEvent(new Event('input', { bubbles: true })); });
+  check((await page.inputValue('#f-monto')) === '2,250', 'el deslizador actualiza el monto (2,250)');
+  check((await page.textContent('[data-calc-cuota]')).trim() === fmt(cuotaRef(2250, 24, 24)), 'el deslizador recalcula la cuota');
+  await page.fill('#f-monto', '3500');
+  await page.click('[data-next]');
+  check(await page.isVisible('#f-monto-err') && /3,000/.test(await page.textContent('#f-monto-err')) && await page.isVisible('[data-step="prestamo"]'), 'monto mayor a B/. 3,000: error y no avanza');
   await page.fill('#f-monto', '');
   await page.click('[data-next]');
   check(await page.isVisible('#f-monto-err') && await page.isVisible('[data-step="prestamo"]'), 'monto vacío: error y no avanza');
@@ -446,7 +464,7 @@ for (const width of [1440, 390]) {
   await b2cStep3(page);
   await b2cConsents(page);
   const summary = await page.textContent('[data-summary]');
-  check(summary.includes('B/. 5,000.00') && summary.includes('36 meses') && summary.includes('B/. 196.16'), `${width}px: resumen antes de enviar`, summary);
+  check(summary.includes('B/. 2,500.00') && summary.includes('24 meses') && summary.includes('B/. 132.18'), `${width}px: resumen antes de enviar`, summary);
   const before = requests.length;
   await page.dblclick('[data-next]');
   await waitResult(page);
@@ -462,7 +480,7 @@ for (const width of [1440, 390]) {
   check(JSON.stringify(Object.keys(json)) === JSON.stringify(SCHEMA_KEYS), `${width}px: payload con el esquema común`, Object.keys(json).join(','));
   check(json.form_id === 'kredit-prestamos' && json.tier === 'calificado' && json.score === 100, `${width}px: form_id, tier y score`, `${json.form_id} ${json.tier} ${json.score}`);
   check(json.lead.cedula === '8-***-*56' && !txt.includes('8-123-456'), `${width}px: cédula enmascarada en la vista previa`, json.lead.cedula);
-  check(json.lead.celular === '+50761234567' && json.lead.monto === 5000 && json.lead.plazo_meses === 36 && json.lead.cuota_estimada === 196.16 && json.lead.empresa_verificada === true, `${width}px: datos del lead normalizados`);
+  check(json.lead.celular === '+50761234567' && json.lead.monto === 2500 && json.lead.plazo_meses === 24 && json.lead.cuota_estimada === 132.18 && json.lead.empresa_verificada === true, `${width}px: datos del lead normalizados`);
   check(JSON.stringify(Object.keys(json.attribution)) === JSON.stringify(ATTR_KEYS) && json.attribution.utm_source === 'google' && json.attribution.utm_campaign === 'prestamos-rapidos' && json.attribution.utm_term === 'prestamo personal' && json.attribution.gclid === 'TEST-GCLID-123' && json.attribution.fbclid === null && json.attribution.landing === 'kredit-prestamos', `${width}px: atribución UTM y gclid en el payload`);
   check(json.consents.privacidad === true && json.consents.referencias_credito === true && json.consents.whatsapp === true, `${width}px: consentimientos en el payload`);
   check(errors.length === 0, `${width}px: sin errores de página`, errors.join(' | '));
@@ -566,7 +584,7 @@ console.log('\nPréstamos: No calificado');
 {
   const { ctx, page, errors } = await newPage(1440);
   await page.goto(URLS.prestamos);
-  await b2cStep1(page, { monto: '15000', plazo: '6', tasa: '18' });
+  await b2cStep1(page, { monto: '3000', plazo: '6', tasa: '18' });
   await b2cStep2(page, { empresa: 'Negocio Propio', afiliada: 'no', salario: '300', antiguedad: 'menos-6m', proposito: 'otro' });
   await b2cStep3(page);
   await b2cConsents(page);
@@ -674,6 +692,28 @@ for (const width of [1440, 390]) {
   check(await page.isVisible('#b-cargo-otro-err'), 'cargo "Otro" vacío: error');
   await ctx.close();
 }
+{
+  // Regla de altura del hero de empresas (DESIGN-kredit.md): 1440×900 el hero termina antes de 840 px;
+  // 390×844 el botón del paso 1 termina dentro de la pantalla.
+  for (const width of [1440, 390]) {
+    const { ctx, page } = await newPage(width);
+    await page.goto(URLS.empresas, { waitUntil: 'networkidle' });
+    await page.evaluate(() => document.fonts.ready);
+    const m = await page.evaluate(() => ({ hero: document.querySelector('.hero').getBoundingClientRect().bottom, card: document.querySelector('[data-form-card]').getBoundingClientRect().top, next: document.querySelector('[data-next]').getBoundingClientRect().bottom, vh: innerHeight }));
+    if (width === 1440) check(m.hero < 840 && m.card < 260 && m.next <= m.vh, 'empresas 1440px: hero < 840 px con el formulario y su botón a la vista', JSON.stringify(m));
+    else check(m.next < 844, 'empresas 390px: el botón del paso 1 termina antes de 844 px', JSON.stringify(m));
+    await ctx.close();
+  }
+  // En móvil y al enviar, el paso de afiliación sigue enfocando el primer error en el orden visual.
+  const { ctx, page } = await newPage(390);
+  await page.goto(URLS.empresas);
+  await page.fill('#b-empresa', 'Distribuidora Istmeña, S.A.');
+  await page.fill('#b-ruc', '155612345-2-2021 DV 45');
+  await page.selectOption('#b-sector', 'comercio');
+  await page.click('[data-next]');
+  check(await page.evaluate(() => document.activeElement.id) === 'b-provincia' && await page.isVisible('#b-colab-err'), 'empresas: foco en el primer error visible (provincia antes que colaboradores)');
+  await ctx.close();
+}
 
 // 3j. contraste AA en todas las páginas
 console.log('\nContraste AA (texto visible vs. fondo efectivo)');
@@ -691,7 +731,7 @@ for (const width of [1440, 390]) {
   // La auditoría no es decorativa: debe detectar un texto con contraste bajo sobre el degradado.
   const { ctx, page } = await newPage(1440);
   await page.goto(URLS.prestamos);
-  await page.addStyleTag({ content: '.hero__lead { color: #C5D0FA !important; }' });
+  await page.addStyleTag({ content: '.hero__lead { color: #1B2F6B !important; }' }); // azul oscuro sobre el plano navy del hero
   const { fails } = await page.evaluate(contrastAudit);
   check(fails.some((f) => f.includes('hero__lead')), 'la auditoría de contraste detecta un texto deficiente (control)', fails.slice(0, 1).join(''));
   await ctx.close();

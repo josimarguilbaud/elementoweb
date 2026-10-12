@@ -1,0 +1,229 @@
+/* =========================================================================
+   Kredit · landing de empresas (B2B) y página índice — sistema «Comprobante claro»
+   Se carga DESPUÉS de base.css (compartido, no se toca). Aquí no se redefinen
+   tokens: solo componentes propios de /empresas/ y del índice /kredit-landings/.
+   Fuente de verdad: docs/specs/kredit-marketing/DESIGN-kredit.md
+   ========================================================================= */
+
+/* ---------------------------------------------------------------- foco sobre planos navy */
+.site-header :focus-visible,
+.cta-final :focus-visible,
+.site-footer :focus-visible { outline-color: var(--cyan); }
+
+/* ---------------------------------------------------------------- campos: ajustes de AA */
+/* El placeholder de base.css (#6B7A8E) queda en 4.38:1 sobre blanco; --text-3 da 5.6:1. */
+.lead-form .input::placeholder,
+.lead-form .textarea::placeholder { color: var(--text-3); }
+/* Flecha del select como SVG y no como degradado: así el fondo del campo sigue siendo blanco
+   para la auditoría de contraste y el texto elegido tiene más ancho útil. */
+.lead-form .select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23091845' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: right 14px center;
+  background-size: 12px 8px;
+  padding-right: 36px;
+  text-overflow: ellipsis;
+}
+.check-list { display: grid; gap: 10px; }
+/* íconos en línea con su texto (base.css pone todo svg en display: block) */
+.lead-form .field-error, .lead-form .field-warn, .lead-form .lf-submit-error { display: flex; align-items: flex-start; gap: 6px; }
+.lead-form .field-error .ic, .lead-form .field-warn .ic, .lead-form .lf-submit-error .ic { width: 16px; height: 16px; margin-top: 1px; }
+.lf-result__reset { display: inline-flex; align-items: center; gap: 6px; justify-self: start; }
+.lf-result__reset .ic { width: 16px; height: 16px; }
+.payload summary { display: flex; align-items: center; gap: 8px; list-style: none; }
+.payload summary::-webkit-details-marker { display: none; }
+.payload summary .ic { width: 16px; height: 16px; color: var(--blue); }
+.payload summary::after { content: ''; flex: none; margin-left: auto; width: 8px; height: 8px; border-right: 2px solid var(--blue); border-bottom: 2px solid var(--blue); transform: rotate(45deg) translateY(-2px); transition: transform .2s; }
+.payload[open] summary::after { transform: rotate(225deg) translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .payload summary::after { transition: none; } }
+
+/* ---------------------------------------------------------------- hero (empresas) */
+@media (min-width: 901px) {
+  /* mismo corte de la «K», un poco más abajo: la columna de texto es más larga que en préstamos
+     y el sello tiene que quedar sobre navy aun con la fuente de respaldo (un solo degradado: la
+     auditoría de contraste lo lee) */
+  .hero--b2b { background: linear-gradient(174deg, var(--navy) 0%, var(--navy) 80%, var(--bg) 80%); }
+  .hero--b2b .hero__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 4.4vw, 64px); }
+}
+/* ancho en em y no en ch: así el titular corta igual con Manrope que con la fuente de respaldo */
+.hero--b2b h1 { font-size: clamp(31px, 4.1vw, 52px); max-width: 10.2em; }
+@media (max-width: 900px) { .hero--b2b h1 { max-width: 19ch; } }
+.hero--b2b .hero__lead { max-width: 46ch; }
+.hero--b2b .hero__facts { max-width: none; margin-top: 22px; }
+.hero--b2b .hero__facts li, .hero--b2b .hero__lead { text-wrap: pretty; }
+.hero--b2b .seal { margin-top: 22px; }
+
+/* comprobante de afiliación: lista de pasos bajo la barra */
+.lf-head .lf-steps { margin: 12px 0 0; gap: 18px; }
+.lf-head .lf-dot-label { font-weight: 500; }
+
+/* paso 1 en dos columnas (empresa | RUC, sector | provincia) */
+@media (min-width: 901px) and (max-width: 1080px) { .grid-2--b2b { grid-template-columns: minmax(0, 1fr); } }
+
+@media (max-width: 640px) {
+  /* el botón del paso 1 tiene que quedar dentro de 390×844: fuera lo accesorio */
+  .hero--b2b { padding-top: 12px; }
+  .hero--b2b .hero__grid { gap: 16px; }
+  .hero--b2b .hero__lead { margin: 8px 0 0; }
+  .hero--b2b .lf-steps,
+  .hero--b2b [data-step="empresa"] .lf-intro { display: none; }
+  .hero--b2b .lf-head { margin-bottom: 10px; }
+  .hero--b2b .field { margin-bottom: 8px; }
+  .hero--b2b .field > label,
+  .hero--b2b fieldset.field > legend { margin-bottom: 4px; }
+  .hero--b2b .lf-actions { margin-top: 12px; }
+}
+
+/* ---------------------------------------------------------------- el convenio, en una página */
+/* Ficha técnica: encabezado arriba y 8 datos en una grilla de 4 × 2 con filetes. */
+.disclosure--b2b { padding-bottom: clamp(56px, 7vw, 96px); }
+.disclosure--b2b .disclosure__panel { grid-template-columns: minmax(0, 1fr); gap: clamp(18px, 2.4vw, 28px); }
+.disclosure--b2b .disclosure__head { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 10px clamp(20px, 4vw, 56px); align-items: end; }
+.disclosure--b2b .disclosure__title { margin: 0; }
+.disclosure--b2b .disclosure__head p { margin: 0; }
+.disclosure--b2b .disclosure__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1.5px solid var(--navy); }
+.disclosure--b2b .disclosure__grid > div { display: block; padding: 16px 20px 18px; border-bottom: 0; border-left: 1px solid var(--rule); }
+.disclosure--b2b .disclosure__grid > div:nth-child(4n + 1) { border-left: 0; padding-left: 0; }
+.disclosure--b2b .disclosure__grid > div:nth-child(n + 5) { border-top: 1px solid var(--rule); }
+.disclosure--b2b .disclosure__grid dt { margin-bottom: 6px; font: 600 12px/1.35 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--text-3); }
+.disclosure--b2b .disclosure__grid dd { font: 700 16.5px/1.35 var(--f-display); color: var(--navy); }
+.disclosure--b2b .disclosure__grid dd .tbd { font: 500 13px/1.5 var(--f-mono); }
+@media (max-width: 960px) {
+  .disclosure--b2b .disclosure__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .disclosure--b2b .disclosure__grid > div:nth-child(4n + 1) { border-left: 1px solid var(--rule); padding-left: 20px; }
+  .disclosure--b2b .disclosure__grid > div:nth-child(2n + 1) { border-left: 0; padding-left: 0; }
+  .disclosure--b2b .disclosure__grid > div:nth-child(n + 3) { border-top: 1px solid var(--rule); }
+}
+@media (max-width: 760px) { .disclosure--b2b .disclosure__head { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) {
+  .disclosure--b2b .disclosure__grid { grid-template-columns: minmax(0, 1fr); }
+  .disclosure--b2b .disclosure__grid > div, .disclosure--b2b .disclosure__grid > div:nth-child(4n + 1) { border-left: 0; padding: 14px 0; }
+  .disclosure--b2b .disclosure__grid > div:nth-child(n + 2) { border-top: 1px solid var(--rule); }
+}
+
+/* ---------------------------------------------------------------- bloques partidos con foto */
+.photo { margin: 0; }
+.section-head p { text-wrap: pretty; }
+.split--b2b { align-items: center; }
+@media (min-width: 861px) { .split--req { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); } }
+.split--flip .split__media { order: 2; }
+@media (max-width: 860px) { .split--flip .split__media { order: 0; } }
+
+/* ---------------------------------------------------------------- qué hace cada parte */
+.roles-doc { background: var(--paper); border: 1px solid var(--rule-2); border-radius: var(--r-lg); box-shadow: var(--shadow-1); overflow: hidden; }
+.roles-table { width: 100%; border-collapse: collapse; }
+.roles-table thead th {
+  text-align: left; padding: 14px 22px; background: var(--navy); color: #fff;
+  font: 600 12.5px/1.2 var(--f-mono); letter-spacing: .06em; text-transform: uppercase;
+}
+.roles-table__who { display: inline-flex; align-items: center; gap: 8px; }
+.roles-table__who .ic { width: 18px; height: 18px; color: var(--cyan); }
+.roles-table tbody th { width: 24%; text-align: left; vertical-align: top; padding: 18px 22px; font: 700 16.5px/1.4 var(--f-display); color: var(--navy); }
+.roles-table td { vertical-align: top; padding: 18px 22px; border-left: 1px solid var(--rule); font-size: 16px; line-height: 1.5; color: var(--text-2); }
+.roles-table td:last-child { background: var(--bg); }
+.roles-table td.is-none { color: var(--text-3); font-style: italic; }
+.roles-table tbody tr + tr > * { border-top: 1px solid var(--rule); }
+.roles-note { display: flex; gap: 10px; align-items: flex-start; margin: 16px 0 0; font-size: 14.5px; line-height: 1.5; color: var(--text-2); }
+.roles-note .ic { width: 18px; height: 18px; margin-top: 2px; color: var(--amber); }
+@media (max-width: 760px) {
+  .roles-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .roles-table, .roles-table tbody, .roles-table tr, .roles-table th, .roles-table td { display: block; width: auto; }
+  .roles-table tbody tr { padding: 16px 18px 18px; }
+  .roles-table tbody tr + tr { border-top: 1px solid var(--rule); }
+  .roles-table tbody tr + tr > * { border-top: 0; }
+  .roles-table tbody th { width: auto; padding: 0 0 6px; }
+  .roles-table td, .roles-table td:last-child { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 10px; padding: 8px 0 0; border-left: 0; background: none; font-size: 15.5px; }
+  .roles-table td::before { content: attr(data-label); padding-top: 2px; font: 600 11.5px/1.5 var(--f-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--text-3); }
+}
+
+/* ---------------------------------------------------------------- cómo se afilia */
+/* el tiempo de cada paso queda alineado abajo aunque los textos midan distinto */
+.steps .step { display: flex; flex-direction: column; }
+.step .step__time {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 8px;
+  margin: auto 0 0; padding-top: 12px; border-top: 1px dashed var(--rule-2);
+  font: 500 13px/1.4 var(--f-mono); color: var(--text-3);
+}
+.step > p:not(.step__time) { margin-bottom: 16px; }
+.step__time > span:first-child { font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.needs p { margin: 0; color: var(--text-2); }
+
+/* ---------------------------------------------------------------- requisitos */
+.req-list { margin: 0; border-top: 1px solid var(--rule-2); }
+.req-list > div { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.req-list dt { font: 700 15.5px/1.35 var(--f-display); color: var(--navy); }
+.req-list dd { margin: 0; font-size: 15.5px; line-height: 1.5; color: var(--text-2); }
+@media (max-width: 560px) { .req-list > div { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
+
+/* ---------------------------------------------------------------- kit de activación */
+.kit { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
+.kit-list { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; border-top: 1px solid var(--rule-2); }
+.kit-list li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+.kit-list .ic { width: 22px; height: 22px; margin-top: 1px; color: var(--blue); }
+.kit-list h3 { font: 800 17px/1.25 var(--f-display); margin-bottom: 4px; }
+.kit-list p { font-size: 15.5px; color: var(--text-2); }
+
+/* afiche de ejemplo: un comprobante en miniatura */
+.poster { position: relative; width: 100%; max-width: 340px; margin-inline: auto; border-radius: var(--r-lg); overflow: hidden; background: var(--paper); border: 1px solid var(--rule); box-shadow: 18px 18px 0 -2px var(--ice-2), var(--shadow-2); transform: rotate(-2deg); }
+.poster__head { background: var(--navy); color: #fff; padding: 20px 22px 26px; }
+.poster__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
+.poster__top .logo svg { width: 92px; }
+.poster__tag { font: 600 11px/1 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--amber); background: var(--amber-bg); padding: 5px 8px; border-radius: 6px; }
+.poster .poster__title { margin: 0; color: #fff; font: 800 34px/1.04 var(--f-display); letter-spacing: -0.03em; }
+.poster__title span { white-space: nowrap; text-decoration: underline; text-decoration-color: var(--cyan); text-decoration-thickness: .09em; text-underline-offset: .14em; text-decoration-skip-ink: none; }
+.poster__body { padding: 18px 22px 22px; }
+.poster .poster__text { margin: 0 0 16px; font-size: 15px; line-height: 1.45; color: var(--text-2); }
+.poster__qr { display: flex; align-items: center; gap: 14px; padding: 12px; border: 1.5px dashed var(--rule-2); border-radius: var(--r-md); }
+.poster__qr svg { width: 76px; height: 76px; flex: none; }
+.poster__qr strong { display: block; font: 700 15px/1.25 var(--f-display); color: var(--navy); }
+.poster__qr small { display: block; margin-top: 2px; font: 500 12.5px var(--f-mono); color: var(--text-3); }
+@media (max-width: 860px) { .kit { grid-template-columns: minmax(0, 1fr); } .poster { transform: none; } }
+@media (max-width: 560px) { .kit-list { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------------------------------------------------------------- fotos del equipo */
+.photo-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 760px) { .photo-pair { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------------------------------------------------------------- llamado final y barra móvil */
+.cta-final .cta-final__mail { margin-top: 20px; font-size: 16px; color: var(--ice); }
+.cta-final__mail a { color: #fff; text-decoration-color: rgba(198, 218, 255, .6); }
+.cta-final__mail a:hover { color: var(--ice); }
+.sticky-cta__info .sticky-cta__title { font: 800 17px/1.2 var(--f-display); letter-spacing: -0.01em; }
+
+/* encabezado entre 961 y 1180 px: el enlace a préstamos queda solo con el ícono */
+@media (min-width: 961px) and (max-width: 1180px) { .portal-link span { display: none; } }
+
+/* =========================================================================
+   Página índice (/demo/kredit-landings/): elige entre préstamos y empresas
+   ========================================================================= */
+.nav__note { margin: 0 0 0 auto; font: 500 13px/1.3 var(--f-mono); letter-spacing: .02em; color: var(--ice); text-align: right; }
+.hero--index { padding-bottom: clamp(40px, 5vw, 64px); }
+.index-head { max-width: 780px; margin-bottom: clamp(30px, 4vw, 48px); }
+.index-head h1 { max-width: 17ch; }
+.index-head .hero__lead { max-width: 60ch; }
+.index-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 3vw, 32px); align-items: stretch; }
+.index-card { display: flex; flex-direction: column; gap: 12px; padding: 22px 24px 24px; text-decoration: none; color: var(--text); transition: transform .2s var(--ease-out), box-shadow .2s var(--ease-out); }
+.index-card:hover { color: var(--text); transform: translateY(-2px); box-shadow: 0 2px 4px rgba(9, 24, 69, .06), 0 30px 56px -24px rgba(9, 24, 69, .42); }
+.index-card:active { transform: translateY(0); }
+.index-card:focus-visible { outline-color: var(--cyan); }
+.index-card .lf-head__top { margin-bottom: 4px; }
+.index-card h2 { font: 800 clamp(23px, 2.4vw, 30px)/1.12 var(--f-display); letter-spacing: -0.02em; }
+.index-card p { margin: 0; color: var(--text-2); }
+.index-card .ledger { margin: 6px 0 4px; padding-top: 12px; border-top: 1.5px dashed var(--rule-2); }
+.index-card .ledger dd { text-align: right; }
+.index-card .btn { margin-top: auto; }
+.index-card .btn .ic { transition: transform .2s var(--ease-out); }
+.index-card:hover .btn { --b: var(--blue-hover); }
+.index-card:hover .btn .ic { transform: translateX(3px); }
+.index-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; padding-bottom: clamp(40px, 6vw, 72px); }
+.index-foot .seal { margin-top: 0; }
+.index-foot p:not(.seal) { margin: 0; font-size: 14.5px; color: var(--text-3); }
+@media (prefers-reduced-motion: reduce) {
+  .index-card, .index-card .btn .ic { transition: none; }
+  .index-card:hover, .index-card:hover .btn .ic { transform: none; }
+}
+@media (max-width: 760px) {
+  .index-grid { grid-template-columns: minmax(0, 1fr); }
+  /* apiladas, la segunda tarjeta ya queda sobre el papel: sus muescas toman ese color */
+  .index-grid > .index-card:nth-child(2)::before { background-image: radial-gradient(circle at 7px 7px, var(--bg) 5.5px, transparent 6px); }
+}
+@media (max-width: 560px) { .nav__note { display: none; } }

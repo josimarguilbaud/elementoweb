@@ -358,7 +358,7 @@ export function initLeadForm(form, config) {
     const n = path.length;
     const title = config.stepTitles[st.stepId] || '';
     if (progressLabel) progressLabel.textContent = `Paso ${i + 1} de ${n} · ${title}`;
-    if (progressFill) progressFill.style.width = `${((i + 1) / n) * 100}%`;
+    if (progressFill) progressFill.style.transform = `scaleX(${(i + 1) / n})`;
     if (progress) {
       progress.setAttribute('aria-valuemax', String(n));
       progress.setAttribute('aria-valuenow', String(i + 1));

@@ -1,6 +1,6 @@
 // empresas.js — landing de empresas (B2B): configuración del formulario de afiliación.
 // Vista previa para Kredit · Elemento Web. Puntaje de ejemplo según spec §4 (lo fija Kredit).
-import { initLeadForm, isFreeEmail, toE164PA, emailDomain } from './form.js?v=20261011b';
+import { initLeadForm, isFreeEmail, toE164PA, emailDomain } from './form.js?v=20261012a';
 
 export const WHATSAPP = '50769975664';
 
@@ -35,12 +35,13 @@ export const config = {
     cargoOtro: (c) => c.values.cargo === 'otro',
   },
 
+  // El orden de los campos es el orden visual del paso: el foco va al primer error que se ve.
   fields: {
     empresa: { kind: 'text', required: true, label: 'Empresa', messages: { required: 'Escribe el nombre de la empresa.' } },
     ruc: { kind: 'ruc', required: true, label: 'RUC' },
     sector: { kind: 'select', required: true, label: 'Sector' },
-    colaboradores: { kind: 'radio', required: true, label: 'Colaboradores' },
     provincia: { kind: 'select', required: true, label: 'Provincia' },
+    colaboradores: { kind: 'radio', required: true, label: 'Colaboradores' },
     nombre: { kind: 'name', required: true, label: 'Nombre' },
     cargo: { kind: 'select', required: true, label: 'Cargo' },
     cargo_otro: { kind: 'text', required: true, label: 'Cargo (otro)', messages: { required: 'Cuéntanos tu cargo.' } },

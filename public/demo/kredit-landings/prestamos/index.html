@@ -4,18 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Préstamos rápidos con cuotas fijas · Kredit</title>
-<meta name="description" content="Vista previa: landing de préstamos de Kredit con calculadora de cuota y solicitud en línea. Formulario en modo demo.">
-<meta name="theme-color" content="#1559ED">
-<link rel="icon" href="../assets/kredit-mark.svg?v=20261011b" type="image/svg+xml">
+<title>Préstamo con depósito el mismo día · Kredit</title>
+<meta name="description" content="Vista previa: landing de préstamos de Kredit para colaboradores de empresas afiliadas, con calculadora de cuota quincenal y solicitud en línea. Formulario en modo demo.">
+<meta name="theme-color" content="#091845">
+<link rel="icon" href="../assets/kredit-mark.svg?v=20261012a" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Poppins:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="../assets/base.css?v=20261011b">
-<link rel="modulepreload" href="../assets/form.js?v=20261011b">
-<link rel="modulepreload" href="../assets/calc.js?v=20261011b">
-<script type="module" src="../assets/page.js?v=20261011b"></script>
-<script type="module" src="../assets/prestamos.js?v=20261011b"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/base.css?v=20261012a">
+<link rel="modulepreload" href="../assets/form.js?v=20261012a">
+<link rel="modulepreload" href="../assets/calc.js?v=20261012a">
+<script type="module" src="../assets/page.js?v=20261012a"></script>
+<script type="module" src="../assets/prestamos.js?v=20261012a"></script>
+<script type="module" src="../assets/quincenas.js?v=20261012a"></script>
 </head>
 <body id="top">
 <!-- SPRITE:start (íconos y logotipo) -->
@@ -82,21 +83,21 @@
   <span>Vista previa · Elemento Web — formulario en modo demo, no se envían datos</span>
 </div>
 
-<header class="site-header on-dark" data-header>
+<header class="site-header" data-header>
   <div class="wrap nav">
     <a class="logo logo--white" href="#top" aria-label="Kredit, ir al inicio">
       <svg viewBox="0 0 144.9 38.6" width="145" height="39" aria-hidden="true" focusable="false"><use href="#logo-k" class="logo__k" width="29.4" height="38.6"/><use href="#logo-word" class="logo__word" width="144.9" height="38.6"/></svg>
     </a>
     <nav class="nav__links" aria-label="Secciones">
       <a href="#como-funciona">Cómo funciona</a>
-      <a href="#beneficios">Beneficios</a>
+      <a href="#beneficios">Por qué Kredit</a>
       <a href="#preguntas">Preguntas</a>
       <a href="../empresas/">Empresas</a>
     </nav>
     <div class="nav__actions">
-      <a class="portal-link" href="https://kredit.com.pa/app/" target="_blank" rel="noopener">
+      <a class="portal-link" href="https://kredit.com.pa/app/" target="_blank" rel="noopener" aria-label="Accede a tu cuenta en el portal de clientes">
         <svg class="ic" aria-hidden="true"><use href="#i-login"/></svg>
-        <span><small>¿Ya eres cliente?</small><span class="portal-text">Ingresa al portal</span></span>
+        <span><small>¿Ya eres cliente?</small>Accede a tu cuenta</span>
       </a>
       <a class="btn btn--white btn--sm" href="#solicitud">Solicitar</a>
     </div>
@@ -105,16 +106,17 @@
 
 <main>
   <!-- =========================================================== HERO -->
-  <section class="hero on-dark" aria-labelledby="hero-title">
-    <div class="hero__deco" aria-hidden="true">
-      <span class="ring"></span><span class="ring ring--2"></span><span class="dots"></span>
-      <svg class="k-ghost" viewBox="0 0 29.4 38.6"><use href="#logo-k"/></svg>
-    </div>
+  <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero__grid">
       <div class="hero__copy">
-        <p class="kicker">Tu crédito, sin vueltas</p>
-        <h1 id="hero-title">Préstamos rápidos con <span class="hl">cuotas fijas</span> y sin costos ocultos</h1>
-        <p class="hero__lead">Calcula tu cuota, solicita en línea con tu cédula y recibe el desembolso el mismo día de la aprobación de tu crédito.</p>
+        <h1 id="hero-title">Tu préstamo se deposita <span class="hl">el mismo día</span> que se aprueba</h1>
+        <p class="hero__lead">Para colaboradores de empresas afiliadas a Kredit<span class="hide-m">: cuota fija que se descuenta de tu planilla, sin costos ocultos</span>.</p>
+        <ul class="hero__facts">
+          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Ves la tasa, los cargos y el costo total antes de firmar.</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Abonos o cancelación anticipada sin cargo adicional.</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Solicitud digital con tu cédula, en 4 pasos.</li>
+        </ul>
+        <p class="seal"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><span>Empresa financiera autorizada por el MICI<br><strong>Resolución No. 638 · 23 sep 2025</strong></span></p>
       </div>
 
       <div class="hero__aside">
@@ -130,56 +132,53 @@
           <form class="lead-form" id="form-prestamos" data-lead-form data-endpoint="" novalidate>
             <p class="sr-only" data-form-status aria-live="polite"></p>
 
-            <!-- Paso 1 · calculadora -->
+            <!-- Paso 1 · calculadora: el comprobante -->
             <fieldset class="lf-step" data-step="prestamo" tabindex="-1">
               <legend class="lf-title">¿Cuánto necesitas?</legend>
               <div class="field" data-field="monto">
                 <label class="sr-only" for="f-monto">Monto del préstamo en balboas</label>
                 <div class="affix money-xl">
                   <span class="affix__pre" aria-hidden="true">B/.</span>
-                  <input class="input" id="f-monto" name="monto" type="text" inputmode="decimal" autocomplete="off" value="3,000" aria-describedby="f-monto-scale f-monto-err">
+                  <input class="input" id="f-monto" name="monto" type="text" inputmode="decimal" autocomplete="off" value="1,000" aria-describedby="f-monto-scale f-monto-err">
                 </div>
-                <input class="range" id="calc-range" type="range" min="300" max="15000" step="100" value="3000" aria-label="Elegir el monto con el control deslizante" aria-describedby="f-monto-scale">
-                <div class="range__scale" id="f-monto-scale"><span>B/. 300</span><span>Rango ilustrativo, por confirmar</span><span>B/. 15,000</span></div>
+                <input class="range" id="calc-range" type="range" min="50" max="3000" step="50" value="1000" aria-label="Elegir el monto con el control deslizante" aria-describedby="f-monto-scale">
+                <div class="range__scale" id="f-monto-scale"><span>B/. 50</span><span>Montos de B/. 50 a B/. 3,000</span><span>B/. 3,000</span></div>
                 <p class="field-error" id="f-monto-err" data-error-for="monto" hidden></p>
               </div>
 
               <fieldset class="field" data-field="plazo">
-                <legend>Plazo en meses</legend>
+                <legend>Plazo en meses <span class="opt">(ejemplo)</span></legend>
                 <div class="chips">
+                  <input class="chip-input" type="radio" name="plazo" id="pl-4" value="4" aria-describedby="f-plazo-err"><label class="chip" for="pl-4">4</label>
                   <input class="chip-input" type="radio" name="plazo" id="pl-6" value="6" aria-describedby="f-plazo-err"><label class="chip" for="pl-6">6</label>
-                  <input class="chip-input" type="radio" name="plazo" id="pl-12" value="12" aria-describedby="f-plazo-err"><label class="chip" for="pl-12">12</label>
+                  <input class="chip-input" type="radio" name="plazo" id="pl-9" value="9" aria-describedby="f-plazo-err"><label class="chip" for="pl-9">9</label>
+                  <input class="chip-input" type="radio" name="plazo" id="pl-12" value="12" checked aria-describedby="f-plazo-err"><label class="chip" for="pl-12">12</label>
                   <input class="chip-input" type="radio" name="plazo" id="pl-18" value="18" aria-describedby="f-plazo-err"><label class="chip" for="pl-18">18</label>
-                  <input class="chip-input" type="radio" name="plazo" id="pl-24" value="24" checked aria-describedby="f-plazo-err"><label class="chip" for="pl-24">24</label>
-                  <input class="chip-input" type="radio" name="plazo" id="pl-36" value="36" aria-describedby="f-plazo-err"><label class="chip" for="pl-36">36</label>
-                  <input class="chip-input" type="radio" name="plazo" id="pl-48" value="48" aria-describedby="f-plazo-err"><label class="chip" for="pl-48">48</label>
+                  <input class="chip-input" type="radio" name="plazo" id="pl-24" value="24" aria-describedby="f-plazo-err"><label class="chip" for="pl-24">24</label>
                 </div>
                 <p class="field-error" id="f-plazo-err" data-error-for="plazo" hidden></p>
               </fieldset>
 
               <div class="calc__result">
-                <div>
-                  <p class="calc__result-label">Cuota mensual estimada</p>
-                  <p class="calc__cuota" data-calc-cuota>B/. 149.77</p>
+                <div class="calc__big">
+                  <p class="calc__result-label">Tu cuota quincenal<small>se descuenta de tu planilla</small></p>
+                  <p class="calc__quincena" data-calc-quincena>B/. 45.84</p>
                 </div>
-                <div class="calc__rate field" data-field="tasa_ejemplo">
-                  <label for="f-tasa">Tasa nominal de ejemplo</label>
-                  <div class="rate"><input class="input" id="f-tasa" name="tasa_ejemplo" type="text" inputmode="decimal" value="18" aria-describedby="f-tasa-err calc-fine"><span>% anual</span></div>
-                  <p class="field-error" id="f-tasa-err" data-error-for="tasa_ejemplo" hidden></p>
-                </div>
-                <dl class="calc__meta">
-                  <div><dt>Por quincena:</dt><dd data-calc-quincena>B/. 74.89</dd></div>
-                  <div><dt>Total estimado:</dt><dd data-calc-total>B/. 3,594.48</dd></div>
+                <dl class="ledger">
+                  <div><dt>Cuota mensual</dt><dd data-calc-cuota>B/. 91.68</dd></div>
+                  <div><dt>Total estimado</dt><dd data-calc-total>B/. 1,100.16</dd></div>
+                  <div class="calc__rate" data-field="tasa_ejemplo"><dt><label for="f-tasa">Tasa nominal de ejemplo</label></dt><dd class="rate"><input class="input" id="f-tasa" name="tasa_ejemplo" type="text" inputmode="decimal" value="18" aria-describedby="f-tasa-err calc-fine"><span>% anual</span></dd></div>
                 </dl>
+                <p class="field-error" id="f-tasa-err" data-error-for="tasa_ejemplo" hidden></p>
               </div>
               <p class="sr-only" aria-live="polite" data-calc-live></p>
-              <p class="calc__fine" id="calc-fine"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span>Cálculo ilustrativo; la tasa y la cuota final dependen de la evaluación. No incluye cargos ni seguros, si aplican. Con empresa afiliada, la cuota se descuenta de tu planilla. <a href="#info-credito">Información importante del crédito</a></span></p>
+              <p class="calc__fine" id="calc-fine"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span>Ejemplo ilustrativo, sin compromiso: la cuota final depende de la evaluación y no incluye cargos ni seguros. <a href="#info-credito">Información importante del crédito</a></span></p>
             </fieldset>
 
             <!-- Paso 2 · trabajo e ingresos -->
             <fieldset class="lf-step" data-step="trabajo" tabindex="-1" hidden>
               <legend class="lf-title">Tu trabajo e ingresos</legend>
-              <p class="lf-chip-summary"><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg><span data-step2-cuota>B/. 3,000.00 a 24 meses</span></p>
+              <p class="lf-chip-summary"><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg><span data-step2-cuota>B/. 1,000.00 a 12 meses</span></p>
 
               <div class="field" data-field="empresa">
                 <label for="f-empresa">¿En qué empresa trabajas?</label>
@@ -341,7 +340,7 @@
             <fieldset class="lf-step" data-step="referido" tabindex="-1" hidden>
               <legend class="lf-title">Recomienda a tu empresa</legend>
               <div class="refer-hero">
-                <span class="refer-hero__icon"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
+                <span class="refer-hero__icon"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg></span>
                 <div>
                   <strong>Tu empresa puede sumarse a Kredit</strong>
                   <p>Le presentamos el beneficio a RR. HH. y te avisamos en cuanto esté afiliada para que solicites tu crédito con descuento de planilla.</p>
@@ -420,35 +419,32 @@
               <button type="button" class="btn btn--outline" data-prev hidden><svg class="ic" aria-hidden="true"><use href="#i-arrow-l"/></svg>Atrás</button>
               <button type="submit" class="btn btn--blue btn--lg" data-next><span data-next-label>Continuar</span><svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></button>
             </div>
-            <p class="lf-secure"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Sin compromiso · Datos protegidos (Ley 81 de 2019)</p>
           </form>
 
           <div class="lf-result-box" data-result hidden tabindex="-1"></div>
         </div>
 
-        <div class="demo-toggle">
-          <span class="demo-toggle__tag">Ajuste de demo</span>
-          <label class="demo-toggle__switch"><input class="switch" type="checkbox" role="switch" id="demo-solo-afiliadas">Solo empresas afiliadas</label>
-          <p class="demo-toggle__state" data-rule-state>Abierto al público: la empresa afiliada suma puntos y llega antes a «Calificado».</p>
-        </div>
+        <p class="seal seal--ink seal--m"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><span>Empresa financiera autorizada por el MICI<br><strong>Resolución No. 638 · 23 sep 2025</strong></span></p>
       </div>
+    </div>
+  </section>
 
-      <div class="hero__extra">
-        <ul class="checklist">
-          <li><span class="tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>Cuotas fijas: sabes cuánto pagas desde el inicio</li>
-          <li><span class="tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>Desembolso el mismo día de la aprobación</li>
-          <li><span class="tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>Sin costos ocultos ni letras pequeñas</li>
-          <li><span class="tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>Abonos o cancelación anticipada sin cargo adicional</li>
-        </ul>
-        <div class="hero__note">
-          <svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>
-          <p>¿Trabajas en una empresa afiliada a Kredit? Tu cuota se descuenta directo de tu planilla. ¿Aún no lo está? <a href="#empresa-afiliada">Recomiéndala</a>.</p>
-        </div>
-        <ul class="mini-trust">
-          <li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Datos protegidos · Ley 81 de 2019</li>
-          <li><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Atención por WhatsApp</li>
-          <li><svg class="ic" aria-hidden="true"><use href="#i-id"/></svg>Solicitud digital con tu cédula</li>
-        </ul>
+  <!-- ===================================================== REGLA DE QUINCENAS -->
+  <section class="payline" aria-labelledby="payline-title" data-payline>
+    <div class="wrap">
+      <h2 class="sr-only" id="payline-title">Qué pasa después de solicitar</h2>
+      <ol class="payline__list">
+        <li class="is-today"><span class="payline__when" data-pl="hoy">Hoy</span><span class="payline__what">Solicitas desde tu celular</span></li>
+        <li><span class="payline__when" data-pl="revision">El día de la aprobación</span><span class="payline__what">Recibes el depósito ese mismo día</span></li>
+        <li class="is-pay"><span class="payline__when" data-pl="q1">Primera quincena · ejemplo</span><span class="payline__what">Primera cuota, descontada de tu planilla</span></li>
+        <li class="is-pay"><span class="payline__when" data-pl="q2">Siguiente quincena</span><span class="payline__what">La misma cuota, sin sorpresas</span></li>
+      </ol>
+
+      <p class="payline__note" data-pl="nota">El desembolso es el mismo día de la aprobación; la aprobación depende de la evaluación. Las fechas de descuento las define tu empresa (ejemplo: quincenas del 15 y del último día del mes).</p>
+      <div class="demo-toggle">
+        <span class="demo-toggle__tag">Ajuste de demo</span>
+        <label class="demo-toggle__switch"><input class="switch" type="checkbox" role="switch" id="demo-solo-afiliadas">Solo empresas afiliadas</label>
+        <p class="demo-toggle__state" data-rule-state>Abierto al público: la empresa afiliada suma puntos y llega antes a «Calificado».</p>
       </div>
     </div>
   </section>
@@ -459,55 +455,65 @@
       <div class="disclosure__panel">
         <div class="disclosure__head">
           <h2 class="disclosure__title" id="info-credito-title"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>Información importante del crédito</h2>
-          <p>Crédito sujeto a evaluación. Recibes por escrito la tasa, los cargos y el costo total antes de firmar.</p>
+          <p>La letra pequeña, en grande. Crédito sujeto a evaluación: recibes por escrito la tasa, los cargos y el costo total antes de firmar.</p>
         </div>
         <dl class="disclosure__grid">
-          <div><dt>Plazo mínimo y máximo</dt><dd><span class="tbd">[Plazo mínimo y máximo: dato por confirmar con Kredit]</span></dd></div>
-          <div><dt>Tasa de interés efectiva anual máxima</dt><dd><span class="tbd">[Tasa de interés efectiva máxima: dato por confirmar con Kredit]</span></dd></div>
-          <div><dt>Ejemplo representativo</dt><dd><span class="tbd">[Monto, plazo, cuota y costo total con todos los cargos: dato por confirmar con Kredit]</span></dd></div>
-          <div><dt>Comisiones y cargos</dt><dd><span class="tbd">[Comisiones, seguros y FECI si aplican: dato por confirmar con Kredit]</span></dd></div>
+          <div><dt>Montos</dt><dd>De B/. 50 a B/. 3,000</dd></div>
+          <div><dt>Plazo mínimo y máximo</dt><dd><span class="tbd">[Por confirmar con Kredit; la calculadora usa de 4 a 24 meses como ejemplo]</span></dd></div>
+          <div><dt>Tasa de interés efectiva anual máxima</dt><dd><span class="tbd">[Dato por confirmar con Kredit]</span></dd></div>
+          <div><dt>Ejemplo representativo</dt><dd><span class="tbd">[Monto, plazo, cuota y costo total con todos los cargos: por confirmar]</span></dd></div>
+          <div><dt>Comisiones y cargos</dt><dd><span class="tbd">[Comisiones, seguros y FECI si aplican: por confirmar]</span></dd></div>
         </dl>
-        <p class="disclosure__legal"><strong>CREDU HOLDINGS, S.A.</strong> (Kredit) · RUC 155770767-2-2025 DV9 · Licencia y ente regulador: <span class="tbd">[por confirmar con Kredit]</span> · San Francisco, Urbanización Punta Pacífica, Edificio Torre de las Américas, Torre B, Oficina 602-B, Panamá.</p>
+        <p class="disclosure__legal"><strong>CREDU HOLDINGS, S.A.</strong> (Kredit) · RUC 155770767-2-2025 DV9 · Empresa financiera autorizada por el MICI, Resolución No. 638 del 23 de septiembre de 2025 · Torre de las Américas, Torre B, Oficina 602-B, Punta Pacífica, Panamá.</p>
       </div>
     </div>
   </section>
 
   <!-- ========================================================= CÓMO FUNCIONA -->
-  <section class="section section--pale" id="como-funciona" aria-labelledby="como-title">
+  <section class="section section--white" id="como-funciona" aria-labelledby="como-title">
     <div class="wrap">
-      <div class="section-head section-head--center">
-        <p class="eyebrow">Cómo funciona</p>
-        <h2 class="h2" id="como-title">Tu préstamo en 4 pasos, sin filas</h2>
-        <p>Todo empieza en línea, desde tu celular. Un asesor de Kredit te acompaña hasta el desembolso.</p>
+      <div class="section-head">
+        <h2 class="h2" id="como-title">Cuatro pasos, sin filas ni papeles de más</h2>
+        <p>Todo empieza en línea, desde tu celular. Un asesor de Kredit te acompaña hasta el depósito.</p>
       </div>
       <ol class="steps">
-        <li class="step">
-          <span class="step__num" aria-hidden="true">01</span>
-          <h3>Calcula tu cuota</h3>
-          <p>Elige el monto y el plazo, y mira al instante cuánto pagarías cada mes.</p>
-        </li>
-        <li class="step">
-          <span class="step__num" aria-hidden="true">02</span>
-          <h3>Solicita en línea</h3>
-          <p>Llena la solicitud digital con tu cédula, en 4 pasos y desde tu celular.</p>
-        </li>
-        <li class="step">
-          <span class="step__num" aria-hidden="true">03</span>
-          <h3>Un asesor revisa tu solicitud</h3>
-          <p>Te escribe por WhatsApp, resuelve tus dudas y te explica la tasa, los cargos y el costo total.</p>
-        </li>
-        <li class="step">
-          <span class="step__num" aria-hidden="true">04</span>
-          <h3>Recibe tu dinero</h3>
-          <p>El desembolso se hace el mismo día de la aprobación. Pagas cuotas fijas; con empresa afiliada, por descuento de planilla.</p>
-        </li>
+        <li class="step"><span class="step__num" aria-hidden="true">01</span><h3>Calcula tu cuota</h3><p>Elige el monto y el plazo y ve al instante cuánto pagarías cada quincena.</p></li>
+        <li class="step"><span class="step__num" aria-hidden="true">02</span><h3>Solicita en línea</h3><p>Llena la solicitud digital con tu cédula, en 4 pasos y desde tu celular.</p></li>
+        <li class="step"><span class="step__num" aria-hidden="true">03</span><h3>Un asesor te llama o escribe</h3><p>Revisa tu solicitud, resuelve tus dudas y te explica la tasa, los cargos y el costo total.</p></li>
+        <li class="step"><span class="step__num" aria-hidden="true">04</span><h3>Recibes tu dinero</h3><p>El depósito se hace el mismo día de la aprobación. Tu cuota se descuenta de tu planilla.</p></li>
       </ol>
       <div class="needs">
-        <strong>Lo que necesitas:</strong>
+        <strong>Lo que necesitas</strong>
         <ul class="mini-list">
           <li><svg class="ic" aria-hidden="true"><use href="#i-id"/></svg>Cédula vigente</li>
-          <li><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg>Estar activo en tu empresa <span class="tbd">[¿solo empresas afiliadas? por confirmar]</span></li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg>Estar activo en una empresa afiliada a Kredit</li>
           <li><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>Llenar la solicitud digital</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-receipt"/></svg><span>Si tu asesor lo pide: carta de trabajo o talonario reciente <span class="tbd">[por confirmar con Kredit]</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= POR QUÉ KREDIT -->
+  <section class="section" id="beneficios" aria-labelledby="beneficios-title">
+    <div class="wrap split">
+      <div class="split__media">
+        <figure class="photo">
+          <img src="../../kredit-web/img/deposito-celular-800.webp" srcset="../../kredit-web/img/deposito-celular-800.webp 800w, ../../kredit-web/img/deposito-celular-1600.webp 1600w" sizes="(max-width: 860px) 92vw, 540px" width="800" height="1000" alt="Colaborador en el pasillo de su oficina mira su celular con una sonrisa" loading="lazy" decoding="async">
+          <figcaption class="photo__tag">Imagen ilustrativa generada con IA</figcaption>
+        </figure>
+      </div>
+      <div>
+        <div class="section-head">
+          <h2 class="h2" id="beneficios-title">Tu solución financiera, sin letra pequeña</h2>
+          <p>Kredit es una fintech panameña, autorizada por el MICI, que facilita el acceso a créditos rápidos y claros de principio a fin.</p>
+        </div>
+        <ul class="ticks">
+          <li><span class="tile" aria-hidden="true">01</span><div><h3>Cuota fija</h3><p>Sabes desde el inicio cuánto pagas cada quincena, sin sorpresas.</p></div></li>
+          <li><span class="tile" aria-hidden="true">02</span><div><h3>Depósito el mismo día</h3><p>Recibes tu dinero el mismo día de la aprobación de tu crédito.</p></div></li>
+          <li><span class="tile" aria-hidden="true">03</span><div><h3>Sin costos ocultos</h3><p>Antes de firmar recibes por escrito la tasa de interés efectiva, los cargos y el costo total.</p></div></li>
+          <li><span class="tile" aria-hidden="true">04</span><div><h3>Abonos sin cargo adicional</h3><p>Puedes abonar o cancelar tu crédito por completo cuando quieras.</p></div></li>
+          <li><span class="tile" aria-hidden="true">05</span><div><h3>Tu cuenta en línea</h3><p>En el portal ves tu saldo y tus pagos, y puedes pedir un crédito adicional.</p></div></li>
         </ul>
       </div>
     </div>
@@ -517,94 +523,39 @@
   <section class="section section--white" id="metas" aria-labelledby="metas-title">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Opciones de crédito para tus metas</p>
-        <h2 class="h2" id="metas-title">Metas, sueños, planes… Nosotros te ayudamos a cumplirlos</h2>
-        <p>Elige para qué lo necesitas y empieza tu solicitud con ese propósito.</p>
+        <h2 class="h2" id="metas-title">¿Para qué lo necesitas?</h2>
+        <p>Elige tu meta y empieza la solicitud con ese propósito. Opciones de crédito para tus metas, con una cuota que conoces desde el inicio.</p>
       </div>
       <div class="goals">
         <button type="button" class="goal goal--featured" data-goal="celebracion">
           <span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
-          <span class="goal__title">Planifica tus metas con cuota fija</span>
-          <span class="goal__text">Graduaciones, bodas, cumpleaños: los momentos importantes no esperan.</span>
+          <span class="goal__title">Los momentos importantes no esperan</span>
+          <span class="goal__text">Graduaciones, bodas, cumpleaños: planifícalos con cuota fija.</span>
           <svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg>
         </button>
-        <button type="button" class="goal" data-goal="estudios">
-          <span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></span>
-          <span class="goal__title">Estudios</span>
-          <span class="goal__text">Matrícula, cursos o útiles.</span>
-          <svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg>
-        </button>
-        <button type="button" class="goal" data-goal="hogar">
-          <span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span>
-          <span class="goal__title">Tu hogar</span>
-          <span class="goal__text">Mejoras, muebles o equipos.</span>
-          <svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg>
-        </button>
-        <button type="button" class="goal" data-goal="salud">
-          <span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-pulse"/></svg></span>
-          <span class="goal__title">Salud</span>
-          <span class="goal__text">Tratamientos y gastos médicos.</span>
-          <svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg>
-        </button>
-        <button type="button" class="goal" data-goal="deudas">
-          <span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span>
-          <span class="goal__title">Ordena tus deudas</span>
-          <span class="goal__text">Una sola cuota fija, fácil de seguir.</span>
-          <svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg>
-        </button>
-        <button type="button" class="goal" data-goal="viajes">
-          <span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-plane"/></svg></span>
-          <span class="goal__title">Viajes</span>
-          <span class="goal__text">Ese viaje que tanto planeas.</span>
-          <svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg>
-        </button>
-        <button type="button" class="goal" data-goal="imprevistos">
-          <span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-umbrella"/></svg></span>
-          <span class="goal__title">Imprevistos</span>
-          <span class="goal__text">Para lo que no estaba en tus planes.</span>
-          <svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================= BENEFICIOS -->
-  <section class="section" id="beneficios" aria-labelledby="beneficios-title">
-    <div class="wrap split">
-      <div class="split__media">
-        <svg class="k-ghost" viewBox="0 0 29.4 38.6" aria-hidden="true"><use href="#logo-k"/></svg>
-        <img src="../assets/ilustracion-celular.svg?v=20261011b" alt="" width="420" height="420" decoding="async">
-      </div>
-      <div>
-        <div class="section-head">
-          <p class="eyebrow">¿Por qué Kredit?</p>
-          <h2 class="h2" id="beneficios-title">Tu solución financiera, sin letras pequeñas</h2>
-          <p>Kredit es una fintech panameña que facilita el acceso a créditos rápidos y fáciles, con transparencia de principio a fin.</p>
-        </div>
-        <ul class="ticks">
-          <li><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-receipt"/></svg></span><div><h3>Cuotas fijas</h3><p>Sabes desde el inicio cuánto pagas cada mes, sin sorpresas.</p></div></li>
-          <li><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg></span><div><h3>Desembolso el mismo día</h3><p>Recibes tu dinero el mismo día de la aprobación de tu crédito.</p></div></li>
-          <li><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg></span><div><h3>Sin costos ocultos</h3><p>Antes de firmar recibes por escrito la tasa de interés efectiva, los cargos y el costo total.</p></div></li>
-          <li><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-wallet"/></svg></span><div><h3>Abonos sin cargo adicional</h3><p>Puedes hacer abonos o cancelar tu crédito por completo cuando quieras, sin cargos extra.</p></div></li>
-          <li><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-login"/></svg></span><div><h3>Tu cuenta en línea</h3><p>En el portal ves tu saldo, tus pagos y puedes solicitar un nuevo crédito.</p></div></li>
-        </ul>
+        <button type="button" class="goal" data-goal="estudios"><span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></span><span class="goal__title">Estudios</span><span class="goal__text">Matrícula, cursos o útiles.</span></button>
+        <button type="button" class="goal" data-goal="hogar"><span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span><span class="goal__title">Tu hogar</span><span class="goal__text">Mejoras, muebles o equipos.</span></button>
+        <button type="button" class="goal" data-goal="salud"><span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-pulse"/></svg></span><span class="goal__title">Salud</span><span class="goal__text">Tratamientos y gastos médicos.</span></button>
+        <button type="button" class="goal" data-goal="deudas"><span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span class="goal__title">Ordena tus deudas</span><span class="goal__text">Una sola cuota fija, fácil de seguir.</span></button>
+        <button type="button" class="goal" data-goal="viajes"><span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-plane"/></svg></span><span class="goal__title">Viajes</span><span class="goal__text">Ese viaje que tanto planeas.</span></button>
+        <button type="button" class="goal" data-goal="imprevistos"><span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-umbrella"/></svg></span><span class="goal__title">Imprevistos</span><span class="goal__text">Para lo que no estaba en tus planes.</span></button>
       </div>
     </div>
   </section>
 
   <!-- ===================================== PORTAL Y EMPRESA AFILIADA -->
-  <section class="section section--white" aria-label="Clientes y empresas">
+  <section class="section" aria-label="Clientes y empresas">
     <div class="wrap duo-cards">
       <div class="duo-card duo-card--navy" id="portal">
         <svg class="k-ghost" viewBox="0 0 29.4 38.6" aria-hidden="true"><use href="#logo-k"/></svg>
-        <p class="eyebrow">¿Ya eres cliente?</p>
+        <p class="label">¿Ya eres cliente?</p>
         <h2>Accede a tu cuenta</h2>
-        <p>Ingresa con tu cédula al portal y gestiona tus créditos en línea: consulta tu saldo, tus pagos y solicita nuevos créditos.</p>
+        <p>Ingresa con tu cédula al portal y gestiona tus créditos en línea: consulta tu saldo y tus pagos, y solicita nuevos créditos al instante.</p>
         <a class="btn btn--white" href="https://kredit.com.pa/app/" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-login"/></svg>Ingresar al portal</a>
       </div>
       <div class="duo-card duo-card--pale" id="empresa-afiliada">
         <svg class="k-ghost" viewBox="0 0 29.4 38.6" aria-hidden="true"><use href="#logo-k"/></svg>
-        <p class="eyebrow">¿Tu empresa no está afiliada?</p>
+        <p class="label">¿Tu empresa no está afiliada?</p>
         <h2>Recomiéndala y te avisamos</h2>
         <p>Con una empresa afiliada, la cuota se descuenta directo de tu planilla. Indícalo en tu solicitud o comparte la página para empresas con RR. HH.</p>
         <a class="btn btn--navy" href="../empresas/"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>Ver el beneficio para empresas</a>
@@ -613,16 +564,15 @@
   </section>
 
   <!-- ========================================================= PREGUNTAS -->
-  <section class="section" id="preguntas" aria-labelledby="faq-title">
+  <section class="section section--white" id="preguntas" aria-labelledby="faq-title">
     <div class="wrap">
       <div class="section-head section-head--center">
-        <p class="eyebrow">Preguntas frecuentes</p>
-        <h2 class="h2" id="faq-title">Resolvemos tus dudas</h2>
+        <h2 class="h2" id="faq-title">Preguntas frecuentes</h2>
       </div>
       <div class="faq">
         <details>
           <summary>¿Quién puede solicitar un crédito con Kredit?</summary>
-          <div class="answer"><p>Los créditos de Kredit están pensados para colaboradores de empresas afiliadas, porque la cuota se descuenta directo de la planilla. Si tu empresa aún no está afiliada, puedes completar el formulario y un asesor te dirá si hay una opción para ti; también puedes recomendar a tu empresa. <span class="tbd">[Política para solicitantes de empresas no afiliadas: por confirmar con Kredit]</span></p></div>
+          <div class="answer"><p>Los colaboradores de empresas afiliadas a Kredit, porque la cuota se descuenta directo de la planilla. Si tu empresa aún no está afiliada, puedes completar el formulario y un asesor te dirá si hay una opción para ti; también puedes recomendar a tu empresa. <span class="tbd">[Política para solicitantes de empresas no afiliadas: por confirmar con Kredit]</span></p></div>
         </details>
         <details>
           <summary>¿Qué necesito para solicitar?</summary>
@@ -634,15 +584,19 @@
         </details>
         <details>
           <summary>¿Qué montos y plazos puedo solicitar?</summary>
-          <div class="answer"><p>El monto y el plazo se ajustan a tus necesidades y a tu capacidad financiera. <span class="tbd">[Monto mínimo y máximo, plazo mínimo y máximo: dato por confirmar con Kredit]</span></p></div>
+          <div class="answer"><p>Puedes solicitar desde B/. 50 hasta B/. 3,000. El monto y el plazo se ajustan a tus necesidades y a tu capacidad de pago. <span class="tbd">[Plazo mínimo y máximo: dato por confirmar con Kredit]</span></p></div>
         </details>
         <details>
           <summary>¿Qué tasa de interés tendría mi crédito?</summary>
-          <div class="answer"><p>Depende de la evaluación de tu solicitud. Antes de firmar recibes por escrito la tasa de interés efectiva, los cargos y el costo total, sin letras pequeñas. <span class="tbd">[Tasa de interés efectiva anual máxima: dato por confirmar con Kredit]</span></p></div>
+          <div class="answer"><p>Depende de la evaluación de tu solicitud. Antes de firmar recibes por escrito la tasa de interés efectiva, los cargos y el costo total, sin letra pequeña. <span class="tbd">[Tasa de interés efectiva anual máxima: dato por confirmar con Kredit]</span></p></div>
         </details>
         <details>
           <summary>¿Cómo pago mi crédito?</summary>
           <div class="answer"><p>Si tu empresa está afiliada, los pagos se realizan automáticamente mediante descuento de tu planilla. Si quieres hacer un abono adicional o cancelar tu crédito por completo, contáctanos y te ayudamos a hacerlo sin ningún cargo adicional.</p></div>
+        </details>
+        <details>
+          <summary>¿Qué pasa si cambio de trabajo?</summary>
+          <div class="answer"><p>Avísale a tu asesor antes de tu última quincena en la empresa: te explica cómo seguir pagando tu cuota sin atrasos. <span class="tbd">[Procedimiento al cambiar de empleo: por confirmar con Kredit]</span></p></div>
         </details>
         <details>
           <summary>¿Cómo veo el estado de mi cuenta?</summary>
@@ -661,13 +615,13 @@
   </section>
 
   <!-- ========================================================= CTA FINAL -->
-  <section class="cta-final on-dark" aria-labelledby="cta-title" data-sticky-hide>
+  <section class="cta-final" aria-labelledby="cta-title" data-sticky-hide>
     <svg class="k-ghost" viewBox="0 0 29.4 38.6" aria-hidden="true"><use href="#logo-k"/></svg>
     <div class="wrap">
-      <h2 class="cta-final__title" id="cta-title">Tus metas, con una cuota que conoces desde el inicio</h2>
-      <p>Calcula tu cuota y solicita tu crédito en línea. Un asesor de Kredit te acompaña por WhatsApp.</p>
+      <h2 class="cta-final__title" id="cta-title">Calcula tu cuota quincenal y solicita en minutos</h2>
+      <p>Tu crédito, sin vueltas: un asesor de Kredit te acompaña por WhatsApp hasta el depósito.</p>
       <div class="cta-final__actions">
-        <a class="btn btn--white btn--lg" href="#solicitud">Solicitar mi préstamo<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+        <a class="btn btn--white btn--lg" href="#solicitud">Calcular mi cuota<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
         <a class="btn btn--outline-light btn--lg" href="#" data-whatsapp="50769975664" data-wa-text="Hola Kredit, quiero información sobre un préstamo."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
       </div>
     </div>
@@ -677,20 +631,20 @@
   <section class="legal-full" id="info-credito-completa" aria-labelledby="legal-title">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Transparencia</p>
         <h2 class="h2" id="legal-title">Información importante del crédito</h2>
         <p>Todo crédito está sujeto a evaluación y a la verificación de tus datos. Antes de firmar recibes por escrito las condiciones completas.</p>
       </div>
       <div class="legal-full__grid">
         <dl class="legal-table">
+          <div><dt>Montos</dt><dd>De B/. 50 a B/. 3,000</dd></div>
           <div><dt>Plazo mínimo y máximo</dt><dd><span class="tbd">[Dato por confirmar con Kredit]</span></dd></div>
-          <div><dt>Tasa de interés efectiva anual máxima</dt><dd><span class="tbd">[Dato por confirmar con Kredit]</span></dd></div>
+          <div class="span-2"><dt>Tasa de interés efectiva anual máxima</dt><dd><span class="tbd">[Dato por confirmar con Kredit]</span></dd></div>
           <div class="span-2"><dt>Ejemplo representativo</dt><dd><span class="tbd">[Préstamo de B/. —— a —— meses, tasa de interés efectiva ——%, cuota de B/. ——, costo total con todos los cargos B/. ——: dato por confirmar con Kredit]</span></dd></div>
           <div><dt>Comisiones y cargos</dt><dd><span class="tbd">[Comisiones, seguros y FECI si aplican: dato por confirmar]</span></dd></div>
           <div><dt>Atrasos en el pago</dt><dd>Pueden generar cargos por mora y afectar tu historial de crédito. <span class="tbd">[Cargo por mora: dato por confirmar]</span></dd></div>
           <div><dt>Razón social</dt><dd>CREDU HOLDINGS, S.A. · RUC 155770767-2-2025 DV9</dd></div>
-          <div><dt>Licencia</dt><dd>Empresa financiera (MICI): <span class="tbd">[número de licencia por confirmar con Kredit]</span></dd></div>
-          <div class="span-2"><dt>Dirección física</dt><dd>San Francisco, Urbanización Punta Pacífica, Edificio Torre de las Américas, Torre B, Oficina 602-B, Ciudad de Panamá.</dd></div>
+          <div><dt>Licencia</dt><dd>Empresa financiera autorizada por el MICI (Dirección General de Empresas Financieras), Resolución No. 638 del 23 de septiembre de 2025</dd></div>
+          <div class="span-2"><dt>Dirección física</dt><dd>San Francisco, Urbanización Punta Pacífica, Edificio Torre de las Américas, Torre B, Oficina 602-B, Ciudad de Panamá. <span class="tbd">[Confirmar dirección oficial: la política de privacidad indica Calle 1ra La Cresta, P.H. El Alcázar, Bella Vista]</span></dd></div>
         </dl>
         <div>
           <div class="callout">
@@ -722,7 +676,7 @@
         <a class="logo" href="#top" aria-label="Kredit, ir al inicio">
           <svg viewBox="0 0 144.9 38.6" width="145" height="39" aria-hidden="true" focusable="false"><use href="#logo-k" class="logo__k" width="29.4" height="38.6"/><use href="#logo-word" class="logo__word" width="144.9" height="38.6"/></svg>
         </a>
-        <p>Tu crédito, sin vueltas. Fintech panameña con créditos rápidos y fáciles, cuotas fijas y sin costos ocultos.</p>
+        <p>Tu crédito, sin vueltas. Fintech panameña con créditos rápidos y claros, cuotas fijas y sin costos ocultos.</p>
         <div class="footer__social">
           <a href="https://www.instagram.com/kredit_pa/" target="_blank" rel="noopener" aria-label="Instagram de Kredit (@kredit_pa)"><svg class="ic" aria-hidden="true"><use href="#i-ig"/></svg></a>
           <a href="#" data-whatsapp="50769975664" data-wa-text="Hola Kredit, quiero información sobre un préstamo." aria-label="WhatsApp de Kredit"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></a>
@@ -757,14 +711,14 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <p>© <span data-year>2026</span> CREDU HOLDINGS, S.A. (Kredit) · RUC 155770767-2-2025 DV9 · Licencia MICI <span class="tbd">[por confirmar]</span></p>
+      <p>© <span data-year>2026</span> CREDU HOLDINGS, S.A. (Kredit) · RUC 155770767-2-2025 DV9 · Empresa financiera autorizada por el MICI, Res. No. 638 de 2025</p>
       <p>Vista previa diseñada por Elemento Web</p>
     </div>
   </div>
 </footer>
 
 <div class="sticky-cta" data-sticky-cta aria-hidden="true">
-  <div class="sticky-cta__info"><small>Cuota estimada</small><strong data-sticky-cuota>B/. 149.77</strong></div>
+  <div class="sticky-cta__info"><small>Tu cuota quincenal</small><strong data-sticky-cuota>B/. 45.84</strong></div>
   <a class="btn btn--blue btn--sm" href="#solicitud" tabindex="-1">Solicitar ahora</a>
 </div>
 

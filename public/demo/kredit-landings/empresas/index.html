@@ -4,17 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Kredit para empresas · Beneficio para colaboradores</title>
-<meta name="description" content="Vista previa: landing para empresas que se afilian a Kredit para ofrecer créditos con descuento por planilla a sus colaboradores. Formulario en modo demo.">
-<meta name="theme-color" content="#1559ED">
-<link rel="icon" href="../assets/kredit-mark.svg?v=20261011b" type="image/svg+xml">
+<title>Kredit para empresas · Beneficio financiero para tu equipo</title>
+<meta name="description" content="Vista previa: landing para RR. HH. y finanzas de empresas que se afilian a Kredit para ofrecer préstamos con descuento por planilla a sus colaboradores. Formulario en modo demo.">
+<meta name="theme-color" content="#091845">
+<link rel="icon" href="../assets/kredit-mark.svg?v=20261012a" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Poppins:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="../assets/base.css?v=20261011b">
-<link rel="modulepreload" href="../assets/form.js?v=20261011b">
-<script type="module" src="../assets/page.js?v=20261011b"></script>
-<script type="module" src="../assets/empresas.js?v=20261011b"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/base.css?v=20261012a">
+<link rel="stylesheet" href="../assets/empresas.css?v=20261012a">
+<link rel="modulepreload" href="../assets/form.js?v=20261012a">
+<script type="module" src="../assets/page.js?v=20261012a"></script>
+<script type="module" src="../assets/empresas.js?v=20261012a"></script>
 </head>
 <body id="top">
 <!-- SPRITE:start (íconos y logotipo) -->
@@ -81,21 +82,21 @@
   <span>Vista previa · Elemento Web — formulario en modo demo, no se envían datos</span>
 </div>
 
-<header class="site-header on-dark" data-header>
+<header class="site-header" data-header>
   <div class="wrap nav">
     <a class="logo logo--white" href="#top" aria-label="Kredit, ir al inicio">
       <svg viewBox="0 0 144.9 38.6" width="145" height="39" aria-hidden="true" focusable="false"><use href="#logo-k" class="logo__k" width="29.4" height="38.6"/><use href="#logo-word" class="logo__word" width="144.9" height="38.6"/></svg>
     </a>
     <nav class="nav__links" aria-label="Secciones">
       <a href="#beneficios">Beneficios</a>
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="#activacion">Activación</a>
+      <a href="#roles">Qué hace RR. HH.</a>
+      <a href="#como-funciona">Cómo se afilia</a>
       <a href="#preguntas">Preguntas</a>
     </nav>
     <div class="nav__actions">
-      <a class="portal-link" href="../prestamos/">
+      <a class="portal-link" href="../prestamos/" aria-label="¿Eres colaborador? Solicita tu crédito">
         <svg class="ic" aria-hidden="true"><use href="#i-user"/></svg>
-        <span><small>¿Eres colaborador?</small><span class="portal-text">Solicita tu crédito</span></span>
+        <span><small>¿Eres colaborador?</small>Solicita tu crédito</span>
       </a>
       <a class="btn btn--white btn--sm" href="#afiliacion">Afiliar empresa</a>
     </div>
@@ -104,16 +105,17 @@
 
 <main>
   <!-- =========================================================== HERO -->
-  <section class="hero on-dark" aria-labelledby="hero-title">
-    <div class="hero__deco" aria-hidden="true">
-      <span class="ring"></span><span class="ring ring--2"></span><span class="dots"></span>
-      <svg class="k-ghost" viewBox="0 0 29.4 38.6"><use href="#logo-k"/></svg>
-    </div>
+  <section class="hero hero--b2b" aria-labelledby="hero-title">
     <div class="wrap hero__grid">
       <div class="hero__copy">
-        <p class="kicker">Una solución financiera para tu equipo</p>
-        <h1 id="hero-title">Ofrece un beneficio de valor a <span class="hl">tus colaboradores</span></h1>
-        <p class="hero__lead">Con Kredit, tu equipo accede a créditos rápidos y fáciles, con cuotas fijas que se descuentan de la planilla. Kredit evalúa y gestiona cada crédito; tu empresa aplica el descuento acordado.</p>
+        <h1 id="hero-title">Un beneficio que retiene a tu equipo, <span class="hl">sin carga para RR.&nbsp;HH.</span></h1>
+        <p class="hero__lead"><span class="hide-m">Tus colaboradores solicitan su crédito en línea. </span>RR.&nbsp;HH. aplica la cuota<span class="hide-m"> en planilla</span>; Kredit hace el resto.</p>
+        <ul class="hero__facts">
+          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Kredit evalúa, desembolsa y atiende a cada colaborador.</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Préstamos de B/. 50 a B/. 3,000, depositados el mismo día de la aprobación.</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Cuota fija por planilla; abonos o cancelación anticipada sin cargo.</li>
+        </ul>
+        <p class="seal"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><span>Empresa financiera autorizada por el MICI<br><strong>Resolución No. 638 · 23 sep 2025</strong></span></p>
       </div>
 
       <div class="hero__aside">
@@ -130,20 +132,23 @@
           <form class="lead-form" id="form-empresas" data-lead-form data-endpoint="" novalidate>
             <p class="sr-only" data-form-status aria-live="polite"></p>
 
+            <!-- Paso 1 · la empresa -->
             <fieldset class="lf-step" data-step="empresa" tabindex="-1">
               <legend class="lf-title">Afilia tu empresa</legend>
-              <p class="lf-intro">Cuéntanos de tu empresa y un ejecutivo de convenios te guiará en el proceso.</p>
-              <div class="field" data-field="empresa">
-                <label for="b-empresa">Nombre de la empresa</label>
-                <input class="input" id="b-empresa" name="empresa" type="text" autocomplete="organization" aria-describedby="b-empresa-err">
-                <p class="field-error" id="b-empresa-err" data-error-for="empresa" hidden></p>
-              </div>
-              <div class="grid-2">
+              <p class="lf-intro">Sin compromiso: un ejecutivo de convenios te contacta para presentarte el programa.</p>
+              <div class="grid-2 grid-2--b2b">
+                <div class="field" data-field="empresa">
+                  <label for="b-empresa">Nombre de la empresa</label>
+                  <input class="input" id="b-empresa" name="empresa" type="text" autocomplete="organization" aria-describedby="b-empresa-err">
+                  <p class="field-error" id="b-empresa-err" data-error-for="empresa" hidden></p>
+                </div>
                 <div class="field" data-field="ruc">
                   <label for="b-ruc">RUC (con DV)</label>
                   <input class="input" id="b-ruc" name="ruc" type="text" autocomplete="off" spellcheck="false" autocapitalize="characters" placeholder="1234567-1-123456" aria-describedby="b-ruc-err">
                   <p class="field-error" id="b-ruc-err" data-error-for="ruc" hidden></p>
                 </div>
+              </div>
+              <div class="grid-2 grid-2--b2b">
                 <div class="field" data-field="sector">
                   <label for="b-sector">Sector</label>
                   <select class="select" id="b-sector" name="sector" aria-describedby="b-sector-err">
@@ -162,9 +167,27 @@
                   </select>
                   <p class="field-error" id="b-sector-err" data-error-for="sector" hidden></p>
                 </div>
+                <div class="field" data-field="provincia">
+                  <label for="b-provincia">Provincia</label>
+                  <select class="select" id="b-provincia" name="provincia" aria-describedby="b-provincia-err">
+                    <option value="">Elige una provincia</option>
+                    <option value="panama">Panamá</option>
+                    <option value="panama-oeste">Panamá Oeste</option>
+                    <option value="colon">Colón</option>
+                    <option value="chiriqui">Chiriquí</option>
+                    <option value="cocle">Coclé</option>
+                    <option value="herrera">Herrera</option>
+                    <option value="los-santos">Los Santos</option>
+                    <option value="veraguas">Veraguas</option>
+                    <option value="bocas-del-toro">Bocas del Toro</option>
+                    <option value="darien">Darién</option>
+                    <option value="comarca">Comarca indígena</option>
+                  </select>
+                  <p class="field-error" id="b-provincia-err" data-error-for="provincia" hidden></p>
+                </div>
               </div>
               <fieldset class="field" data-field="colaboradores">
-                <legend>Número de colaboradores</legend>
+                <legend>Colaboradores en planilla</legend>
                 <div class="chips chips--3">
                   <input class="chip-input" type="radio" name="colaboradores" id="c-1" value="1-19" aria-describedby="b-colab-err"><label class="chip" for="c-1">1 – 19</label>
                   <input class="chip-input" type="radio" name="colaboradores" id="c-2" value="20-49" aria-describedby="b-colab-err"><label class="chip" for="c-2">20 – 49</label>
@@ -175,26 +198,9 @@
                 </div>
                 <p class="field-error" id="b-colab-err" data-error-for="colaboradores" hidden></p>
               </fieldset>
-              <div class="field" data-field="provincia">
-                <label for="b-provincia">Provincia</label>
-                <select class="select" id="b-provincia" name="provincia" aria-describedby="b-provincia-err">
-                  <option value="">Elige una provincia</option>
-                  <option value="panama">Panamá</option>
-                  <option value="panama-oeste">Panamá Oeste</option>
-                  <option value="colon">Colón</option>
-                  <option value="chiriqui">Chiriquí</option>
-                  <option value="cocle">Coclé</option>
-                  <option value="herrera">Herrera</option>
-                  <option value="los-santos">Los Santos</option>
-                  <option value="veraguas">Veraguas</option>
-                  <option value="bocas-del-toro">Bocas del Toro</option>
-                  <option value="darien">Darién</option>
-                  <option value="comarca">Comarca indígena</option>
-                </select>
-                <p class="field-error" id="b-provincia-err" data-error-for="provincia" hidden></p>
-              </div>
             </fieldset>
 
+            <!-- Paso 2 · contacto -->
             <fieldset class="lf-step" data-step="contacto" tabindex="-1" hidden>
               <legend class="lf-title">¿Con quién hablamos?</legend>
               <p class="lf-intro">Idealmente, alguien de RR. HH., finanzas o gerencia.</p>
@@ -238,13 +244,16 @@
               </div>
             </fieldset>
 
+            <!-- Paso 3 · interés y autorización -->
             <fieldset class="lf-step" data-step="interes" tabindex="-1" hidden>
               <legend class="lf-title">¿Qué te interesa?</legend>
               <fieldset class="field" data-field="interes">
                 <legend>Marca una o más opciones</legend>
-                <label class="check"><input type="checkbox" name="interes" value="afiliacion" aria-describedby="b-interes-err"><span><strong>Afiliar la empresa</strong> para ofrecer créditos con descuento por planilla</span></label>
-                <label class="check"><input type="checkbox" name="interes" value="presentacion" aria-describedby="b-interes-err"><span><strong>Una presentación</strong> para RR. HH. y finanzas</span></label>
-                <label class="check"><input type="checkbox" name="interes" value="kit-activacion" aria-describedby="b-interes-err"><span><strong>El kit de activación</strong> para comunicar el beneficio al equipo</span></label>
+                <div class="check-list">
+                  <label class="check"><input type="checkbox" name="interes" value="afiliacion" aria-describedby="b-interes-err"><span><strong>Afiliar la empresa</strong> para ofrecer préstamos con descuento por planilla</span></label>
+                  <label class="check"><input type="checkbox" name="interes" value="presentacion" aria-describedby="b-interes-err"><span><strong>Una presentación</strong> para RR. HH. y finanzas</span></label>
+                  <label class="check"><input type="checkbox" name="interes" value="kit-activacion" aria-describedby="b-interes-err"><span><strong>El kit de activación</strong> para comunicar el beneficio al equipo</span></label>
+                </div>
                 <p class="field-error" id="b-interes-err" data-error-for="interes" hidden></p>
               </fieldset>
               <div class="field" data-field="inicio">
@@ -291,34 +300,35 @@
             </div>
             <p class="lf-secure"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Sin compromiso · Datos protegidos (Ley 81 de 2019)</p>
           </form>
+
           <div class="lf-result-box" data-result hidden tabindex="-1"></div>
         </div>
-      </div>
 
-      <div class="hero__extra">
-        <ul class="checklist">
-          <li><span class="tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>Kredit evalúa y gestiona cada crédito</li>
-          <li><span class="tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>Solicitud digital para tus colaboradores</li>
-          <li><span class="tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>Cuotas fijas y sin costos ocultos</li>
-          <li><span class="tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>Desembolso el mismo día de la aprobación</li>
-        </ul>
-        <div class="hero__note">
-          <svg class="ic" aria-hidden="true"><use href="#i-handshake"/></svg>
-          <p>Modelo de referencia: convenio de descuento por planilla. <span class="tbd">[Condiciones, costos y alcance del convenio: por confirmar con Kredit]</span></p>
-        </div>
+        <p class="seal seal--ink seal--m"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><span>Empresa financiera autorizada por el MICI<br><strong>Resolución No. 638 · 23 sep 2025</strong></span></p>
       </div>
     </div>
   </section>
 
-  <!-- ===================================================== FRANJA DE VALOR -->
-  <section class="value-strip" aria-label="Lo que gana tu empresa">
+  <!-- ============================================ EL CONVENIO, EN UNA PÁGINA -->
+  <section class="disclosure disclosure--b2b" id="convenio" aria-labelledby="convenio-title">
     <div class="wrap">
-      <ul>
-        <li><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span><span>Bienestar financiero<small>Un respaldo real para tu equipo</small></span></li>
-        <li><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-trend"/></svg></span><span>Retención y compromiso<small>Un beneficio que se valora</small></span></li>
-        <li><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><span>Menos solicitudes de ayuda económica<small>Una alternativa formal para tu equipo</small></span></li>
-        <li><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-receipt"/></svg></span><span>Operación simple<small>Descuento acordado en planilla</small></span></li>
-      </ul>
+      <div class="disclosure__panel">
+        <div class="disclosure__head">
+          <h2 class="disclosure__title" id="convenio-title"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>El convenio, en una página</h2>
+          <p>Lo esencial para RR. HH. y finanzas antes de la primera reunión. Lo que Kredit todavía no ha definido aparece marcado como pendiente.</p>
+        </div>
+        <dl class="disclosure__grid">
+          <div><dt>Para quién</dt><dd>Colaboradores activos de empresas afiliadas a Kredit</dd></div>
+          <div><dt>Montos para el colaborador</dt><dd>De B/. 50 a B/. 3,000</dd></div>
+          <div><dt>Forma de pago</dt><dd>Cuota fija descontada por planilla</dd></div>
+          <div><dt>Desembolso</dt><dd>El mismo día de la aprobación</dd></div>
+          <div><dt>Abonos y cancelación anticipada</dt><dd>Sin cargo adicional</dd></div>
+          <div><dt>Costo para la empresa</dt><dd><span class="tbd">[Por confirmar con Kredit]</span></dd></div>
+          <div><dt>Tiempo de afiliación</dt><dd><span class="tbd">[Por confirmar con Kredit]</span></dd></div>
+          <div><dt>Convenio</dt><dd><span class="tbd">[Convenio modelo, vigencia y forma de terminarlo: por confirmar con Kredit]</span></dd></div>
+        </dl>
+        <p class="disclosure__legal"><strong>CREDU HOLDINGS, S.A.</strong> (Kredit) · RUC 155770767-2-2025 DV9 · Empresa financiera autorizada por el MICI (Dirección General de Empresas Financieras), Resolución No. 638 del 23 de septiembre de 2025.</p>
+      </div>
     </div>
   </section>
 
@@ -326,111 +336,153 @@
   <section class="section section--white" id="beneficios" aria-labelledby="beneficios-title">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Para RR. HH. y finanzas</p>
-        <h2 class="h2" id="beneficios-title">Un beneficio que tu equipo usa y valora</h2>
-        <p>Tus colaboradores tienen acceso a crédito formal y transparente; tu empresa suma un beneficio sin gestionar préstamos internos.</p>
+        <h2 class="h2" id="beneficios-title">Lo que gana tu empresa</h2>
+        <p>Un beneficio que tu equipo usa cuando lo necesita y que RR. HH. no tiene que administrar.</p>
       </div>
-      <div class="features">
-        <article class="feature">
-          <div class="feature__icon"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></div>
-          <h3>Bienestar financiero</h3>
-          <p>Tus colaboradores acceden a crédito formal, con cuotas fijas y condiciones claras, cuando lo necesitan.</p>
-        </article>
-        <article class="feature">
-          <div class="feature__icon"><svg class="ic" aria-hidden="true"><use href="#i-trend"/></svg></div>
-          <h3>Retención y compromiso</h3>
-          <p>Un beneficio que suma a tu propuesta de valor como empleador y ayuda a retener talento.</p>
-        </article>
-        <article class="feature">
-          <div class="feature__icon"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></div>
-          <h3>Menos solicitudes de ayuda económica</h3>
-          <p>Tu equipo tiene una alternativa formal y RR. HH. deja de gestionar préstamos internos.</p>
-        </article>
-        <article class="feature">
-          <div class="feature__icon"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></div>
-          <h3>Crédito responsable</h3>
-          <p>Cada solicitud se evalúa según las necesidades y la capacidad financiera del colaborador, sin costos ocultos ni letras pequeñas.</p>
-        </article>
-        <article class="feature">
-          <div class="feature__icon"><svg class="ic" aria-hidden="true"><use href="#i-receipt"/></svg></div>
-          <h3>Operación simple para planilla</h3>
-          <p>Kredit te envía el detalle de los descuentos y tu equipo los aplica en planilla. <span class="tbd">[Formato y calendario: por confirmar con Kredit]</span></p>
-        </article>
-        <article class="feature">
-          <div class="feature__icon"><svg class="ic" aria-hidden="true"><use href="#i-handshake"/></svg></div>
-          <h3>Acompañamiento dedicado</h3>
-          <p>Un ejecutivo de convenios te acompaña en la afiliación, el lanzamiento y la operación del día a día.</p>
-        </article>
+      <div class="split split--b2b">
+        <div class="split__media">
+          <figure class="photo photo--wide">
+            <img src="../../kredit-web/img/rrhh-reunion-800.webp" srcset="../../kredit-web/img/rrhh-reunion-800.webp 800w, ../../kredit-web/img/rrhh-reunion-1600.webp 1600w" sizes="(max-width: 860px) 92vw, 560px" width="800" height="537" alt="Una gerente de Recursos Humanos conversa con el gerente de finanzas en una sala de reuniones con vista a la ciudad de Panamá" loading="lazy" decoding="async">
+            <figcaption class="photo__tag">Imagen ilustrativa generada con IA</figcaption>
+          </figure>
+        </div>
+        <ul class="ticks">
+          <li><span class="tile" aria-hidden="true">01</span><div><h3>Retención</h3><p>Un beneficio concreto que suma a tu propuesta como empleador y ayuda a que tu gente se quede.</p></div></li>
+          <li><span class="tile" aria-hidden="true">02</span><div><h3>Bienestar financiero</h3><p>Tu equipo accede a crédito formal, con cuota fija y condiciones por escrito, en lugar de recurrir a prestamistas informales.</p></div></li>
+          <li><span class="tile" aria-hidden="true">03</span><div><h3>Cero trámite para RR. HH.</h3><p>Kredit recibe cada solicitud, la evalúa, desembolsa y atiende al colaborador. Tu empresa no gestiona préstamos internos.</p></div></li>
+          <li><span class="tile" aria-hidden="true">04</span><div><h3>Crédito claro</h3><p>Cada colaborador ve la tasa, los cargos y el costo total antes de firmar, con una cuota acorde a su capacidad de pago.</p></div></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================= CÓMO FUNCIONA -->
-  <section class="section section--pale" id="como-funciona" aria-labelledby="como-title">
+  <!-- ===================================================== QUÉ HACE CADA PARTE -->
+  <section class="section section--ice" id="roles" aria-labelledby="roles-title">
     <div class="wrap">
-      <div class="section-head section-head--center">
-        <p class="eyebrow">Cómo funciona</p>
-        <h2 class="h2" id="como-title">De la afiliación al primer descuento, en 4 pasos</h2>
+      <div class="section-head">
+        <h2 class="h2" id="roles-title">Qué hace Kredit y qué hace RR. HH.</h2>
+        <p>Kredit gestiona el crédito de principio a fin; tu empresa aplica el descuento y avisa los cambios de personal. Esta es la división de tareas de referencia, que queda por escrito en el convenio.</p>
+      </div>
+      <div class="roles-doc">
+        <table class="roles-table">
+          <caption class="sr-only">División de tareas entre Kredit y RR. HH. de la empresa afiliada</caption>
+          <thead>
+            <tr>
+              <th scope="col">Etapa</th>
+              <th scope="col"><span class="roles-table__who"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Kredit hace</span></th>
+              <th scope="col"><span class="roles-table__who"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>RR. HH. hace</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Afiliación</th>
+              <td data-label="Kredit">Presenta el programa a RR. HH. y finanzas y prepara el convenio.</td>
+              <td data-label="RR. HH.">Revisa y firma el convenio y designa a una persona de contacto.</td>
+            </tr>
+            <tr>
+              <th scope="row">Solicitud y evaluación</th>
+              <td data-label="Kredit">Recibe la solicitud digital de cada colaborador, la evalúa y toma la decisión de crédito.</td>
+              <td data-label="RR. HH.">Confirma que el colaborador está activo, cuando Kredit lo pide.</td>
+            </tr>
+            <tr>
+              <th scope="row">Desembolso</th>
+              <td data-label="Kredit">Deposita el préstamo al colaborador el mismo día de la aprobación.</td>
+              <td data-label="RR. HH." class="is-none">No interviene.</td>
+            </tr>
+            <tr>
+              <th scope="row">Orden de descuento</th>
+              <td data-label="Kredit">Envía la orden de descuento de cada crédito nuevo, con la cuota fija y la fecha de inicio.</td>
+              <td data-label="RR. HH.">Registra la cuota en la planilla del colaborador.</td>
+            </tr>
+            <tr>
+              <th scope="row">Conciliación quincenal</th>
+              <td data-label="Kredit">Envía el detalle de cuotas antes de cada una de las 2 fechas de pago del mes y concilia lo recibido.</td>
+              <td data-label="RR. HH.">Aplica el descuento en cada quincena y remite el total a Kredit.</td>
+            </tr>
+            <tr>
+              <th scope="row">Altas y bajas</th>
+              <td data-label="Kredit">Actualiza los descuentos cuando un crédito se abona, se cancela o termina.</td>
+              <td data-label="RR. HH.">Avisa a Kredit si un colaborador con crédito sale de la empresa o cambia de planilla.</td>
+            </tr>
+            <tr>
+              <th scope="row">Atención al colaborador</th>
+              <td data-label="Kredit">Atiende dudas, abonos y estados de cuenta por WhatsApp y en el portal de clientes.</td>
+              <td data-label="RR. HH.">Refiere las consultas a Kredit.</td>
+            </tr>
+            <tr>
+              <th scope="row">Datos personales</th>
+              <td data-label="Kredit">Trata los datos conforme a la Ley 81 de 2019 y solo para gestionar el crédito.</td>
+              <td data-label="RR. HH.">Comparte solo los datos necesarios para confirmar el empleo y aplicar el descuento.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="roles-note"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span>Referencia de trabajo, no condiciones finales. <span class="tbd">[Formato de la orden de descuento, fechas de corte y plazo para avisar las bajas: por confirmar con Kredit]</span></span></p>
+    </div>
+  </section>
+
+  <!-- ========================================================= CÓMO SE AFILIA -->
+  <section class="section section--white" id="como-funciona" aria-labelledby="como-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="como-title">De la primera conversación al primer descuento</h2>
         <p>Tu empresa se afilia una vez; desde ahí, cada colaborador solicita por su cuenta y Kredit hace el resto.</p>
       </div>
-      <div class="split split--steps">
-      <div class="split__media split__media--light">
-        <img src="../assets/ilustracion-tableta.svg?v=20261011b" alt="" width="420" height="420" decoding="async">
-      </div>
-      <ol class="steps steps--2">
+      <ol class="steps">
         <li class="step">
           <span class="step__num" aria-hidden="true">01</span>
-          <h3>Tu empresa se afilia</h3>
-          <p>Firmamos el convenio y definimos el calendario de descuentos.</p>
-          <span class="step__tag">Condiciones por confirmar</span>
+          <h3>Nos cuentas de tu empresa</h3>
+          <p>Llenas el formulario de esta página o escribes a <a href="mailto:ventas@kredit.com.pa">ventas@kredit.com.pa</a>.</p>
+          <p class="step__time"><span>Respuesta</span><span class="tbd">[Plazo por confirmar]</span></p>
         </li>
         <li class="step">
           <span class="step__num" aria-hidden="true">02</span>
-          <h3>Tus colaboradores solicitan en línea</h3>
-          <p>Con su cédula y desde el celular. Cada solicitud se evalúa de forma individual.</p>
+          <h3>Presentación y convenio</h3>
+          <p>Un ejecutivo de convenios presenta el programa a RR. HH. y finanzas y comparte el borrador del convenio.</p>
+          <p class="step__time"><span>Tiempo</span><span class="tbd">[Por confirmar]</span></p>
         </li>
         <li class="step">
           <span class="step__num" aria-hidden="true">03</span>
-          <h3>Desembolso</h3>
-          <p>El colaborador recibe su dinero el mismo día de la aprobación de su crédito.</p>
+          <h3>Firma y orden de descuento</h3>
+          <p>Firman el convenio y acuerdan el formato de la orden de descuento y las fechas de corte de la planilla.</p>
+          <p class="step__time"><span>Tiempo</span><span class="tbd">[Por confirmar]</span></p>
         </li>
         <li class="step">
           <span class="step__num" aria-hidden="true">04</span>
-          <h3>Descuento automático en planilla</h3>
-          <p>La cuota fija se descuenta en planilla y se remite a Kredit según lo acordado.</p>
+          <h3>Lanzamiento al equipo</h3>
+          <p>Kredit entrega el kit de activación y tus colaboradores empiezan a solicitar en línea, desde el celular.</p>
+          <p class="step__time"><span>Tiempo</span><span class="tbd">[Por confirmar]</span></p>
         </li>
       </ol>
+      <div class="needs">
+        <strong>Tiempo total de afiliación</strong>
+        <p>Depende de la revisión y la firma del convenio. <span class="tbd">[Tiempo estimado, de la primera reunión al primer descuento: por confirmar con Kredit]</span></p>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================= ROLES -->
-  <section class="section section--navy" aria-labelledby="roles-title">
+  <!-- ========================================================= REQUISITOS -->
+  <section class="section" id="requisitos" aria-labelledby="req-title">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Responsabilidades claras</p>
-        <h2 class="h2" id="roles-title">Qué hace tu empresa y qué hace Kredit</h2>
-        <p>Kredit gestiona el crédito; tu empresa aplica el descuento en planilla. <span class="tbd">[Alcance operativo y responsabilidades: por confirmar con Kredit]</span></p>
+        <h2 class="h2" id="req-title">Qué necesita tu empresa para afiliarse</h2>
+        <p>Requisitos de referencia: Kredit los confirma en la presentación.</p>
       </div>
-      <div class="roles">
-        <div class="role role--company">
-          <div class="role__head"><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg></span><h3>Tu empresa</h3></div>
-          <ul>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Firma el convenio de afiliación.</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Comunica el beneficio a su equipo con el kit de activación.</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Confirma que el colaborador está activo, cuando Kredit lo solicita.</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Aplica en planilla el descuento acordado y lo remite a Kredit.</span></li>
-          </ul>
+      <div class="split split--b2b split--flip split--req">
+        <div class="split__media">
+          <figure class="photo photo--wide">
+            <img src="../../kredit-web/img/firma-convenio-800.webp" srcset="../../kredit-web/img/firma-convenio-800.webp 800w, ../../kredit-web/img/firma-convenio-1600.webp 1600w" sizes="(max-width: 860px) 92vw, 560px" width="800" height="537" alt="Dos personas se dan la mano sobre una mesa de reuniones con documentos" loading="lazy" decoding="async">
+            <figcaption class="photo__tag">Imagen ilustrativa generada con IA</figcaption>
+          </figure>
         </div>
-        <div class="role role--kredit">
-          <div class="role__head"><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg></span><h3>Kredit</h3></div>
-          <ul>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Evalúa cada solicitud y toma la decisión de crédito.</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Atiende a tus colaboradores por WhatsApp y en el portal.</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Desembolsa el crédito y envía el detalle de descuentos.</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Protege los datos conforme a la Ley 81 de 2019.</span></li>
-          </ul>
-        </div>
+        <dl class="req-list">
+          <div><dt>Tipo de empresa</dt><dd>Empresas e instituciones en Panamá con colaboradores en planilla. <span class="tbd">[Si aplica a entidades públicas: por confirmar]</span></dd></div>
+          <div><dt>Tamaño mínimo</dt><dd><span class="tbd">[Número mínimo de colaboradores: por confirmar con Kredit]</span></dd></div>
+          <div><dt>Antigüedad de la empresa</dt><dd><span class="tbd">[Por confirmar con Kredit]</span></dd></div>
+          <div><dt>Planilla</dt><dd>Pago quincenal o mensual. <span class="tbd">[Frecuencias aceptadas: por confirmar]</span></dd></div>
+          <div><dt>Documentos</dt><dd><span class="tbd">[Aviso de operación, certificado del Registro Público y cédula del representante legal: lista por confirmar con Kredit]</span></dd></div>
+          <div><dt>Contacto</dt><dd>Una persona de RR. HH. o de planilla que coordine con Kredit.</dd></div>
+        </dl>
       </div>
     </div>
   </section>
@@ -440,103 +492,148 @@
     <div class="wrap kit">
       <div>
         <div class="section-head">
-          <p class="eyebrow">Programa de activación</p>
           <h2 class="h2" id="kit-title">Te ayudamos a lanzar el beneficio</h2>
-          <p>Un beneficio solo funciona si tu equipo lo conoce. Con la afiliación recibes un kit listo para comunicarlo.</p>
+          <p>Un beneficio solo funciona si tu equipo lo conoce. Con la afiliación recibes un kit listo para comunicarlo. <span class="tbd">[Contenido final del kit: por confirmar con Kredit]</span></p>
         </div>
-        <div class="kit__list">
-          <div class="kit__item"><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-qr"/></svg></span><h3>Afiches con código QR</h3><p>Para comedores, áreas comunes y sucursales: escanean y solicitan.</p></div>
-          <div class="kit__item"><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg></span><h3>Mensajes listos</h3><p>Textos para WhatsApp, correo interno e intranet.</p></div>
-          <div class="kit__item"><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-slides"/></svg></span><h3>Presentación breve</h3><p>Para explicar el beneficio en una reunión de equipo.</p></div>
-          <div class="kit__item"><span class="tile"><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg></span><h3>Página para colaboradores</h3><p>Con calculadora de cuota y solicitud en línea.</p></div>
-        </div>
+        <ul class="kit-list">
+          <li><svg class="ic" aria-hidden="true"><use href="#i-qr"/></svg><div><h3>Afiches con código QR</h3><p>Para comedores, áreas comunes y sucursales: escanean y solicitan.</p></div></li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><div><h3>Mensajes listos</h3><p>Textos para WhatsApp, correo interno e intranet.</p></div></li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-slides"/></svg><div><h3>Presentación breve</h3><p>Para explicar el beneficio en una reunión de equipo.</p></div></li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg><div><h3>Página para colaboradores</h3><p>Con calculadora de cuota quincenal y solicitud en línea.</p></div></li>
+        </ul>
       </div>
-      <div class="poster" aria-label="Ejemplo de afiche del kit de activación" role="img">
-        <div class="poster__top">
-          <span class="logo"><svg viewBox="0 0 144.9 38.6" width="145" height="39" aria-hidden="true" focusable="false"><use href="#logo-k" class="logo__k" width="29.4" height="38.6"/><use href="#logo-word" class="logo__word" width="144.9" height="38.6"/></svg></span>
-          <span class="poster__tag">Ejemplo</span>
+      <div class="poster" role="img" aria-label="Ejemplo de afiche del kit de activación: «Tu crédito, sin vueltas», con un código QR de ejemplo">
+        <div class="poster__head">
+          <div class="poster__top">
+            <span class="logo logo--white"><svg viewBox="0 0 144.9 38.6" width="145" height="39" aria-hidden="true" focusable="false"><use href="#logo-k" class="logo__k" width="29.4" height="38.6"/><use href="#logo-word" class="logo__word" width="144.9" height="38.6"/></svg></span>
+            <span class="poster__tag">Ejemplo</span>
+          </div>
+          <p class="poster__title">Tu crédito, <span>sin vueltas</span></p>
         </div>
-        <p class="poster__title">Tu crédito, <span>sin vueltas</span></p>
-        <p>Beneficio exclusivo para colaboradores. Cuotas fijas descontadas de tu planilla.</p>
-        <div class="poster__qr">
-          <svg viewBox="0 0 21 21" aria-hidden="true" shape-rendering="crispEdges"><rect width="21" height="21" fill="#fff"/><g fill="#091845"><path d="M0 0h7v7H0zM14 0h7v7h-7zM0 14h7v7H0z"/></g><g fill="#fff"><path d="M1 1h5v5H1zM15 1h5v5h-5zM1 15h5v5H1z"/></g><g fill="#091845"><path d="M2 2h3v3H2zM16 2h3v3h-3zM2 16h3v3H2zM8 0h1v2H8zM10 1h2v1h-2zM9 3h2v2H9zM12 4h1v3h-1zM8 6h2v1H8zM0 8h2v1H0zM3 8h3v1H3zM7 8h3v2H7zM11 8h2v1h-2zM14 8h1v2h-1zM16 8h3v1h-3zM20 9h1v3h-1zM1 10h2v2H1zM5 10h1v3H5zM9 11h3v1H9zM13 11h2v2h-2zM17 10h2v2h-2zM8 13h2v2H8zM11 14h1v3h-1zM14 14h3v1h-3zM18 14h2v2h-2zM9 16h1v2H9zM13 16h2v2h-2zM16 17h1v3h-1zM18 18h3v1h-3zM8 19h3v2H8zM12 19h2v1h-2zM19 20h2v1h-2z"/></g></svg>
-          <div><strong>Escanea y solicita</strong><small>QR de ejemplo (no funcional)</small></div>
+        <div class="poster__body">
+          <p class="poster__text">Beneficio para colaboradores de tu empresa. Cuota fija descontada de tu planilla.</p>
+          <div class="poster__qr">
+            <svg viewBox="0 0 21 21" aria-hidden="true" shape-rendering="crispEdges"><rect width="21" height="21" fill="#fff"/><g fill="#091845"><path d="M0 0h7v7H0zM14 0h7v7h-7zM0 14h7v7H0z"/></g><g fill="#fff"><path d="M1 1h5v5H1zM15 1h5v5h-5zM1 15h5v5H1z"/></g><g fill="#091845"><path d="M2 2h3v3H2zM16 2h3v3h-3zM2 16h3v3H2zM8 0h1v2H8zM10 1h2v1h-2zM9 3h2v2H9zM12 4h1v3h-1zM8 6h2v1H8zM0 8h2v1H0zM3 8h3v1H3zM7 8h3v2H7zM11 8h2v1h-2zM14 8h1v2h-1zM16 8h3v1h-3zM20 9h1v3h-1zM1 10h2v2H1zM5 10h1v3H5zM9 11h3v1H9zM13 11h2v2h-2zM17 10h2v2h-2zM8 13h2v2H8zM11 14h1v3h-1zM14 14h3v1h-3zM18 14h2v2h-2zM9 16h1v2H9zM13 16h2v2h-2zM16 17h1v3h-1zM18 18h3v1h-3zM8 19h3v2H8zM12 19h2v1h-2zM19 20h2v1h-2z"/></g></svg>
+            <div><strong>Escanea y solicita</strong><small>QR de ejemplo (no funcional)</small></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ========================================================= TODO EL EQUIPO -->
+  <section class="section" id="equipos" aria-labelledby="equipos-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="equipos-title">Para todo tu equipo, no solo para la oficina</h2>
+        <p>El crédito se solicita desde el celular, con la cédula: sirve igual al personal de almacén, de tienda o administrativo.</p>
+      </div>
+      <div class="photo-pair">
+        <figure class="photo photo--wide">
+          <img src="../../kredit-web/img/equipo-almacen-800.webp" srcset="../../kredit-web/img/equipo-almacen-800.webp 800w, ../../kredit-web/img/equipo-almacen-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 580px" width="800" height="537" alt="Cuatro colaboradores con chalecos de seguridad conversan durante una pausa en un almacén de distribución" loading="lazy" decoding="async">
+          <figcaption class="photo__tag">Imagen ilustrativa generada con IA</figcaption>
+        </figure>
+        <figure class="photo photo--wide">
+          <img src="../../kredit-web/img/comercio-colaborador-800.webp" srcset="../../kredit-web/img/comercio-colaborador-800.webp 800w, ../../kredit-web/img/comercio-colaborador-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 580px" width="800" height="537" alt="Colaborador de un minisúper acomoda productos en un estante" loading="lazy" decoding="async">
+          <figcaption class="photo__tag">Imagen ilustrativa generada con IA</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ========================================================= PREGUNTAS -->
-  <section class="section" id="preguntas" aria-labelledby="faq-title">
+  <section class="section section--white" id="preguntas" aria-labelledby="faq-title">
     <div class="wrap">
       <div class="section-head section-head--center">
-        <p class="eyebrow">Preguntas de RR. HH. y finanzas</p>
-        <h2 class="h2" id="faq-title">Lo que suelen preguntarnos las empresas</h2>
+        <h2 class="h2" id="faq-title">Preguntas de RR. HH. y finanzas</h2>
       </div>
       <div class="faq">
         <details>
-          <summary>¿Qué tiene que hacer la empresa?</summary>
-          <div class="answer"><p>Firmar el convenio, comunicar el beneficio a su equipo y aplicar en planilla los descuentos acordados. Kredit evalúa, desembolsa y atiende a cada colaborador.</p></div>
+          <summary>¿Cómo se aplica el descuento por planilla?</summary>
+          <div class="answer"><p>Por cada crédito nuevo, Kredit envía la orden de descuento con la cuota fija. Tu equipo de planilla la aplica en cada fecha de pago y remite el total a Kredit según el calendario del convenio. <span class="tbd">[Formato del reporte y fechas de remisión: por confirmar con Kredit]</span></p></div>
+        </details>
+        <details>
+          <summary>¿Qué pasa si un colaborador con crédito renuncia o deja la empresa?</summary>
+          <div class="answer"><p>RR. HH. avisa a Kredit de la salida y Kredit acuerda directamente con el colaborador cómo seguir pagando su saldo. <span class="tbd">[Procedimiento ante la salida de un colaborador, uso de la liquidación y plazo para avisar: por confirmar con Kredit]</span></p></div>
+        </details>
+        <details>
+          <summary>¿La empresa responde si un colaborador no paga?</summary>
+          <div class="answer"><p>La decisión de crédito la toma Kredit con cada colaborador, y las responsabilidades de la empresa quedan por escrito en el convenio. <span class="tbd">[Responsabilidad de la empresa ante impagos: por confirmar con Kredit]</span></p></div>
+        </details>
+        <details>
+          <summary>¿RR. HH. sabrá quién pidió un préstamo y para qué?</summary>
+          <div class="answer"><p>La solicitud es personal: cada colaborador la hace directamente con Kredit. La empresa recibe solo los datos necesarios para aplicar el descuento. <span class="tbd">[Datos exactos que recibe la empresa: por confirmar con Kredit]</span></p></div>
+        </details>
+        <details>
+          <summary>¿Cómo se protegen los datos personales?</summary>
+          <div class="answer"><p>Kredit trata los datos conforme a la Ley 81 de 2019 de protección de datos personales y su reglamento, y solo para gestionar el crédito. El intercambio de datos entre la empresa y Kredit queda definido en el convenio. Los colaboradores pueden ejercer sus derechos de acceso, rectificación, cancelación y oposición en <a href="mailto:protecciondedatos@kredit.com.pa">protecciondedatos@kredit.com.pa</a>.</p></div>
         </details>
         <details>
           <summary>¿Tiene algún costo para la empresa?</summary>
           <div class="answer"><p>Te lo explicamos en la presentación, junto con el borrador del convenio. <span class="tbd">[Costo del convenio para la empresa: por confirmar con Kredit]</span></p></div>
         </details>
         <details>
-          <summary>¿La empresa responde si un colaborador no paga?</summary>
-          <div class="answer"><p>La decisión de crédito la toma Kredit con cada colaborador. Las responsabilidades de la empresa quedan por escrito en el convenio. <span class="tbd">[Responsabilidad de la empresa ante impagos o salidas de personal: por confirmar con Kredit]</span></p></div>
-        </details>
-        <details>
-          <summary>¿Qué información de los colaboradores comparte la empresa?</summary>
-          <div class="answer"><p>Solo la necesaria para confirmar que el colaborador está activo y aplicar el descuento, siempre conforme a la Ley 81 de 2019. <span class="tbd">[Datos exactos e intercambio de información: por confirmar con Kredit]</span></p></div>
-        </details>
-        <details>
-          <summary>¿Cómo se aplica el descuento por planilla?</summary>
-          <div class="answer"><p>Kredit envía el detalle de las cuotas de cada período; tu equipo de planilla aplica el descuento y lo remite a Kredit según el calendario acordado. <span class="tbd">[Formato del reporte y fechas de remisión: por confirmar con Kredit]</span></p></div>
-        </details>
-        <details>
           <summary>¿Es obligatorio para los colaboradores?</summary>
           <div class="answer"><p>No. Es un beneficio voluntario: cada colaborador decide si solicita un crédito, y cada solicitud se evalúa de forma individual.</p></div>
         </details>
         <details>
-          <summary>¿Cuánto tarda la afiliación?</summary>
-          <div class="answer"><p>Depende de la revisión y firma del convenio. <span class="tbd">[Tiempo estimado de afiliación: por confirmar con Kredit]</span></p></div>
+          <summary>¿Hay un tope de descuento sobre el salario?</summary>
+          <div class="answer"><p>Kredit evalúa la capacidad de pago de cada colaborador antes de ofrecerle un monto. <span class="tbd">[Tope de descuento aplicable y cómo se coordina con otros descuentos de la planilla: por confirmar con Kredit]</span></p></div>
         </details>
         <details>
-          <summary>¿Qué empresas pueden afiliarse?</summary>
-          <div class="answer"><p>Empresas privadas e instituciones en Panamá con colaboradores en planilla. <span class="tbd">[Tamaño mínimo y requisitos de la empresa: por confirmar con Kredit]</span></p></div>
+          <summary>¿Cuánto tarda la afiliación?</summary>
+          <div class="answer"><p>Depende de la revisión y la firma del convenio. <span class="tbd">[Tiempo estimado de afiliación: por confirmar con Kredit]</span></p></div>
         </details>
       </div>
     </div>
   </section>
 
   <!-- ========================================================= CTA FINAL -->
-  <section class="cta-final on-dark" aria-labelledby="cta-title" data-sticky-hide>
+  <section class="cta-final" aria-labelledby="cta-title" data-sticky-hide>
     <svg class="k-ghost" viewBox="0 0 29.4 38.6" aria-hidden="true"><use href="#logo-k"/></svg>
     <div class="wrap">
-      <h2 class="cta-final__title" id="cta-title">¿Buscas una solución financiera para tu equipo? ¡Contáctanos!</h2>
-      <p>Nuestro equipo te guiará en el proceso de afiliación.</p>
+      <h2 class="cta-final__title" id="cta-title">Agenda una presentación para RR. HH. y finanzas</h2>
+      <p>Un ejecutivo de convenios te explica el programa, el borrador del convenio y el kit de activación. Sin compromiso.</p>
       <div class="cta-final__actions">
         <a class="btn btn--white btn--lg" href="#afiliacion">Afiliar mi empresa<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
         <a class="btn btn--outline-light btn--lg" href="#" data-whatsapp="50769975664" data-wa-text="Hola Kredit, quiero información para afiliar a mi empresa."><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
       </div>
+      <p class="cta-final__mail">O escríbenos a <a href="mailto:ventas@kredit.com.pa">ventas@kredit.com.pa</a></p>
     </div>
   </section>
 
-  <!-- ================================ INFORMACIÓN IMPORTANTE (versión breve) -->
+  <!-- ============================== INFORMACIÓN IMPORTANTE -->
   <section class="legal-full" id="info-credito" aria-labelledby="legal-title">
     <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="legal-title">Información importante</h2>
+        <p>Los préstamos a colaboradores están sujetos a evaluación individual. Antes de firmar, cada colaborador recibe por escrito la tasa, los cargos y el costo total.</p>
+      </div>
       <div class="legal-full__grid">
+        <dl class="legal-table">
+          <div><dt>Montos</dt><dd>De B/. 50 a B/. 3,000</dd></div>
+          <div><dt>Plazo mínimo y máximo</dt><dd><span class="tbd">[Dato por confirmar con Kredit]</span></dd></div>
+          <div class="span-2"><dt>Tasa de interés efectiva anual máxima</dt><dd><span class="tbd">[Dato por confirmar con Kredit]</span></dd></div>
+          <div><dt>Razón social</dt><dd>CREDU HOLDINGS, S.A. · RUC 155770767-2-2025 DV9</dd></div>
+          <div><dt>Licencia</dt><dd>Empresa financiera autorizada por el MICI (Dirección General de Empresas Financieras), Resolución No. 638 del 23 de septiembre de 2025</dd></div>
+          <div class="span-2"><dt>Dirección física</dt><dd>San Francisco, Urbanización Punta Pacífica, Edificio Torre de las Américas, Torre B, Oficina 602-B, Ciudad de Panamá. <span class="tbd">[Confirmar dirección oficial: la política de privacidad indica Calle 1ra La Cresta, P.H. El Alcázar, Bella Vista]</span></dd></div>
+        </dl>
         <div>
-          <h2 class="disclosure__title" id="legal-title"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>Información importante</h2>
-          <p class="disclosure__legal">Los créditos a colaboradores están sujetos a evaluación individual. Tasa de interés efectiva anual máxima: <span class="tbd">[dato por confirmar con Kredit]</span> · Plazo mínimo y máximo: <span class="tbd">[dato por confirmar con Kredit]</span>.</p>
-          <p class="disclosure__legal"><strong>CREDU HOLDINGS, S.A.</strong> (Kredit) · RUC 155770767-2-2025 DV9 · Licencia y ente regulador: <span class="tbd">[por confirmar con Kredit]</span> · San Francisco, Urbanización Punta Pacífica, Edificio Torre de las Américas, Torre B, Oficina 602-B, Panamá.</p>
-        </div>
-        <div class="callout">
-          <svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>
-          <div>
-            <strong>Kredit nunca pide pagos por adelantado para aprobar un crédito.</strong>
-            <p>Canales oficiales: WhatsApp +507 6997-5664 · ventas@kredit.com.pa · Instagram @kredit_pa.</p>
+          <div class="callout">
+            <svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>
+            <div>
+              <strong>Kredit nunca pide pagos por adelantado para aprobar un crédito.</strong>
+              <p>Si alguien lo pide en nombre de Kredit, a tu empresa o a un colaborador, no paguen y repórtenlo a los canales oficiales.</p>
+            </div>
+          </div>
+          <div class="channels">
+            <h3>Canales oficiales</h3>
+            <ul>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp +507 6997-5664</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:ventas@kredit.com.pa">ventas@kredit.com.pa</a></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram @kredit_pa</span></li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-login"/></svg><span>kredit.com.pa <span class="muted">· portal de clientes</span></span></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -551,7 +648,7 @@
         <a class="logo" href="#top" aria-label="Kredit, ir al inicio">
           <svg viewBox="0 0 144.9 38.6" width="145" height="39" aria-hidden="true" focusable="false"><use href="#logo-k" class="logo__k" width="29.4" height="38.6"/><use href="#logo-word" class="logo__word" width="144.9" height="38.6"/></svg>
         </a>
-        <p>Tu crédito, sin vueltas. Fintech panameña con créditos rápidos y fáciles, cuotas fijas y sin costos ocultos.</p>
+        <p>Tu crédito, sin vueltas. Fintech panameña con créditos rápidos y claros, cuotas fijas y sin costos ocultos.</p>
         <div class="footer__social">
           <a href="https://www.instagram.com/kredit_pa/" target="_blank" rel="noopener" aria-label="Instagram de Kredit (@kredit_pa)"><svg class="ic" aria-hidden="true"><use href="#i-ig"/></svg></a>
           <a href="#" data-whatsapp="50769975664" data-wa-text="Hola Kredit, quiero información para afiliar a mi empresa." aria-label="WhatsApp de Kredit"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></a>
@@ -561,10 +658,11 @@
       <div>
         <h3>Empresas</h3>
         <ul>
-          <li><a href="#beneficios">Beneficios</a></li>
-          <li><a href="#como-funciona">Cómo funciona</a></li>
-          <li><a href="#activacion">Programa de activación</a></li>
-          <li><a href="../prestamos/">Créditos para colaboradores</a></li>
+          <li><a href="#beneficios">Lo que gana tu empresa</a></li>
+          <li><a href="#como-funciona">Cómo se afilia</a></li>
+          <li><a href="#requisitos">Requisitos</a></li>
+          <li><a href="../prestamos/">Préstamos para colaboradores</a></li>
+          <li><a href="https://kredit.com.pa/app/" target="_blank" rel="noopener">Portal de clientes</a></li>
         </ul>
       </div>
       <div>
@@ -586,14 +684,14 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <p>© <span data-year>2026</span> CREDU HOLDINGS, S.A. (Kredit) · RUC 155770767-2-2025 DV9 · Licencia MICI <span class="tbd">[por confirmar]</span></p>
+      <p>© <span data-year>2026</span> CREDU HOLDINGS, S.A. (Kredit) · RUC 155770767-2-2025 DV9 · Empresa financiera autorizada por el MICI, Res. No. 638 de 2025</p>
       <p>Vista previa diseñada por Elemento Web</p>
     </div>
   </div>
 </footer>
 
 <div class="sticky-cta" data-sticky-cta aria-hidden="true">
-  <div class="sticky-cta__info"><small>Para empresas</small><strong>Afilia tu empresa</strong></div>
+  <div class="sticky-cta__info"><small>Para RR. HH. y finanzas</small><strong class="sticky-cta__title">Afilia tu empresa</strong></div>
   <a class="btn btn--blue btn--sm" href="#afiliacion" tabindex="-1">Afiliar empresa</a>
 </div>
 

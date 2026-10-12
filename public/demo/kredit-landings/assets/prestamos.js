@@ -1,8 +1,8 @@
 // prestamos.js — landing de préstamos (B2C): configuración del formulario y calculadora.
 // Vista previa para Kredit · Elemento Web. Todos los umbrales y listas son EJEMPLOS de
 // trabajo: los define Kredit (spec §4) y se ajustan aquí sin tocar el motor (form.js).
-import { initLeadForm, normalizeCedula, toE164PA } from './form.js?v=20261011b';
-import { escenario, formatMoney, formatInt, parseMoney } from './calc.js?v=20261011b';
+import { initLeadForm, normalizeCedula, toE164PA } from './form.js?v=20261012a';
+import { escenario, formatMoney, formatInt, parseMoney } from './calc.js?v=20261012a';
 
 /** Número oficial de WhatsApp de Kredit (kredit.com.pa). En demo no abre chats reales. */
 export const WHATSAPP = '50769975664';
@@ -49,8 +49,8 @@ export const config = {
   consultaReferenciasObligatoria: true,
 
   umbrales: {
-    montoMin: 300,          // rango ilustrativo de la calculadora (por confirmar con Kredit)
-    montoMax: 15000,
+    montoMin: 50,           // montos de Kredit: de B/. 50 a B/. 3,000 (dato de Kredit, 12-oct-2026)
+    montoMax: 3000,
     salarioMinimo: 600,     // salario neto mensual de referencia (por confirmar)
     cuotaMaxSobreSalario: 0.30, // capacidad de descuento de referencia (por confirmar)
   },
@@ -93,8 +93,8 @@ export const config = {
 
   fields: {
     // Paso 1 · calculadora
-    monto: { kind: 'money', required: true, min: 300, max: 15000, label: 'Monto',
-      messages: { min: 'El monto mínimo de esta simulación es B/. 300 (rango por confirmar con Kredit).', max: 'Para montos mayores a B/. 15,000 habla con un asesor (rango por confirmar con Kredit).' } },
+    monto: { kind: 'money', required: true, min: 50, max: 3000, label: 'Monto',
+      messages: { min: 'El monto mínimo es B/. 50.', max: 'El monto máximo es B/. 3,000.' } },
     plazo: { kind: 'radio', required: true, label: 'Plazo' },
     tasa_ejemplo: { kind: 'money', required: true, min: 0, max: 60, label: 'Tasa nominal anual de ejemplo',
       messages: { money: 'Escribe una tasa anual de ejemplo entre 0 y 60 %.', min: 'Escribe una tasa anual de ejemplo entre 0 y 60 %.', max: 'Escribe una tasa anual de ejemplo entre 0 y 60 %.' } },
@@ -306,9 +306,9 @@ if (typeof document !== 'undefined') {
     out.cuota.textContent = e ? formatMoney(e.cuota) : 'B/. —';
     out.quincena.textContent = e ? formatMoney(e.quincena) : '—';
     out.total.textContent = e ? formatMoney(e.total) : '—';
-    if (out.sticky) out.sticky.textContent = e ? formatMoney(e.cuota) : 'B/. —';
-    if (out.step2) out.step2.textContent = e ? `${formatMoney(monto)} a ${plazo} meses · cuota estimada ${formatMoney(e.cuota)}` : '—';
-    if (announce && e) out.live.textContent = `Cuota mensual estimada: ${formatMoney(e.cuota)}.`;
+    if (out.sticky) out.sticky.textContent = e ? formatMoney(e.quincena) : 'B/. —';
+    if (out.step2) out.step2.textContent = e ? `${formatMoney(monto)} a ${plazo} meses · cuota estimada ${formatMoney(e.cuota)} al mes (${formatMoney(e.quincena)} por quincena)` : '—';
+    if (announce && e) out.live.textContent = `Cuota quincenal estimada: ${formatMoney(e.quincena)}; mensual: ${formatMoney(e.cuota)}.`;
     return e;
   }
 

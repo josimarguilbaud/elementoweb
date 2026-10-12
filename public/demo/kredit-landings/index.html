@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Landings de Kredit · Vista previa</title>
-<meta name="description" content="Vista previa de Elemento Web: las dos landings de Kredit (préstamos y empresas).">
-<meta name="theme-color" content="#1559ED">
-<link rel="icon" href="assets/kredit-mark.svg?v=20261011b" type="image/svg+xml">
+<meta name="description" content="Vista previa de Elemento Web: las dos landings de Kredit (préstamos para colaboradores y afiliación de empresas).">
+<meta name="theme-color" content="#091845">
+<link rel="icon" href="assets/kredit-mark.svg?v=20261012a" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Poppins:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="assets/base.css?v=20261011b">
-<script type="module" src="assets/page.js?v=20261011b"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="assets/base.css?v=20261012a">
+<link rel="stylesheet" href="assets/empresas.css?v=20261012a">
+<script type="module" src="assets/page.js?v=20261012a"></script>
 </head>
-<body>
+<body id="top">
 <!-- SPRITE:start (íconos y logotipo) -->
 <svg class="sprite" aria-hidden="true" focusable="false">
   <defs>
@@ -77,30 +78,61 @@
   <span>Vista previa · Elemento Web — formulario en modo demo, no se envían datos</span>
 </div>
 
-<main class="chooser on-dark">
-  <div class="wrap">
-    <div class="chooser__head">
-      <span class="logo logo--white">
-        <svg viewBox="0 0 144.9 38.6" width="145" height="39" role="img" aria-label="kredit"><use href="#logo-k" class="logo__k" width="29.4" height="38.6"/><use href="#logo-word" class="logo__word" width="144.9" height="38.6"/></svg>
-      </span>
-      <h1>Landings de captación</h1>
-      <p>Dos páginas, un mismo flujo hacia n8n y el CRM de Kredit. Elige cuál revisar.</p>
+<header class="site-header" data-header>
+  <div class="wrap nav">
+    <span class="logo logo--white">
+      <svg viewBox="0 0 144.9 38.6" width="145" height="39" role="img" aria-label="Kredit"><use href="#logo-k" class="logo__k" width="29.4" height="38.6"/><use href="#logo-word" class="logo__word" width="144.9" height="38.6"/></svg>
+    </span>
+    <p class="nav__note">Vista previa para Kredit · Elemento Web</p>
+  </div>
+</header>
+
+<main>
+  <section class="hero hero--index" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="index-head">
+        <h1 id="hero-title">Dos landings, <span class="hl">un mismo flujo</span> hacia el CRM</h1>
+        <p class="hero__lead">Una página para el colaborador que busca un préstamo y otra para que RR. HH. afilie a su empresa. Las dos envían el mismo JSON a n8n. Elige cuál revisar.</p>
+      </div>
+
+      <div class="index-grid">
+        <a class="card lf-card index-card" href="prestamos/">
+          <div class="lf-head__top">
+            <p class="lf-step-label">Personas · /prestamos/</p>
+            <span class="badge-demo"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg>Modo demo</span>
+          </div>
+          <h2>Préstamos para colaboradores</h2>
+          <p>Para quien busca un préstamo en Google o en redes: calculadora de cuota quincenal, solicitud en 4 pasos y precalificación.</p>
+          <dl class="ledger">
+            <div><dt>Público</dt><dd>Colaboradores</dd></div>
+            <div><dt>Formulario</dt><dd>4 pasos</dd></div>
+            <div><dt>Mensaje</dt><dd>Cuota quincenal</dd></div>
+          </dl>
+          <span class="btn btn--blue btn--block">Ver la landing de préstamos<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </a>
+
+        <a class="card lf-card index-card" href="empresas/">
+          <div class="lf-head__top">
+            <p class="lf-step-label">Empresas · /empresas/</p>
+            <span class="badge-demo"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg>Modo demo</span>
+          </div>
+          <h2>Afiliación de empresas</h2>
+          <p>Para RR. HH. y finanzas: el beneficio para el equipo, qué hace cada parte, requisitos y formulario de afiliación con RUC.</p>
+          <dl class="ledger">
+            <div><dt>Público</dt><dd>RR. HH. y finanzas</dd></div>
+            <div><dt>Formulario</dt><dd>3 pasos</dd></div>
+            <div><dt>Mensaje</dt><dd>Sin carga para RR. HH.</dd></div>
+          </dl>
+          <span class="btn btn--blue btn--block">Ver la landing de empresas<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </a>
+      </div>
+
     </div>
-    <div class="chooser__grid">
-      <a class="choice" href="prestamos/">
-        <span class="feature__icon"><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg></span>
-        <h2>Préstamos (personas)</h2>
-        <p>Para quien busca un préstamo en Google: calculadora de cuota, solicitud en 4 pasos y precalificación.</p>
-        <span class="go">Ver landing de préstamos<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
-      </a>
-      <a class="choice" href="empresas/">
-        <span class="feature__icon"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg></span>
-        <h2>Empresas (afiliación)</h2>
-        <p>Para RR. HH. y finanzas: beneficio para colaboradores con descuento por planilla y formulario de afiliación.</p>
-        <span class="go">Ver landing de empresas<svg class="ic" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
-      </a>
-    </div>
-    <p class="chooser__foot">Preparado por Elemento Web · Formularios en modo demo: no envían datos.</p>
+  </section>
+
+  <div class="wrap index-foot">
+    <p class="seal seal--ink"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><span>Empresa financiera autorizada por el MICI<br><strong>Resolución No. 638 · 23 sep 2025</strong></span></p>
+    <p>Preparado por Elemento Web · Formularios en modo demo: no envían datos.</p>
   </div>
 </main>
 </body>

@@ -1,0 +1,107 @@
+{
+  "nota_general": "Fotos generadas con IA para la vista previa de diseno de Kredit. No son personas reales ni lugares exactos. Modelo fal-ai/nano-banana-2, resolucion 2K, una generacion por imagen. Variantes WebP de 1600 y 800 px de ancho (calidad 78) hechas con sharp.",
+  "imagenes": [
+    {
+      "archivo": ["colaboradora-oficina-1600.webp", "colaboradora-oficina-800.webp"],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "prompt": "A Panamanian woman around 30 years old, mestiza, dark wavy hair tied back, wearing a light short-sleeve blouse suitable for hot weather, sitting at her desk in a modern office in Panama City. She looks down at her smartphone held in both hands, the phone screen faces away from the camera, with a calm, relieved expression and a soft smile, as if a worry just went away. Behind her a large window shows the out-of-focus high-rise towers of Costa del Este under a bright hazy tropical sky. On the desk: a laptop seen from the side, a coffee mug, a small plant. Medium shot from a three-quarter side angle at eye level. Style: candid documentary photograph, full-frame camera, 50mm lens, natural window light, true-to-life neutral colors without heavy filters or oversaturation, realistic skin texture, natural relaxed hands with correct anatomy and five fingers. She is not looking at the camera. Absolutely no text, no logos, no brand names, no signage and no readable screens anywhere in the image. Authentic Panama City setting, not generic American stock photography.",
+      "retoque": "Se borro a mano un logotipo de manzana que salio en la tapa de la laptop (relleno interpolado de la superficie, sin IA).",
+      "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    },
+    {
+      "archivo": ["deposito-celular-1600.webp", "deposito-celular-800.webp"],
+      "relacion": "4:5",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "prompt": "An Afro-Panamanian man around 35 years old, short hair and a neatly trimmed beard, wearing a light blue short-sleeve button-up shirt and dark chinos, standing in a bright office hallway in Panama City. He looks at his smartphone held in one hand at chest height, the phone screen faces away from the camera, with a subtle, genuine smile as if he just received a good notification. Waist-up medium shot, shallow depth of field, glass office walls and soft daylight blurred behind him. Style: candid documentary photograph, full-frame camera, 50mm lens, natural light, true-to-life neutral colors without heavy filters or oversaturation, realistic skin texture, natural relaxed hands with correct anatomy and five fingers. He is not looking at the camera. Absolutely no text, no logos, no brand names, no signage and no readable screens anywhere in the image. Authentic Panama City office, not generic American stock photography.",
+      "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    },
+    {
+      "archivo": ["rrhh-reunion-1600.webp", "rrhh-reunion-800.webp"],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "prompt": "A small human resources meeting in a conference room with floor-to-ceiling windows overlooking the Panama City skyline of Obarrio and Calle 50 towers, softly out of focus. A Panamanian HR manager woman around 45, mestiza, shoulder-length dark hair, wearing a sleeveless blouse with a light cardigan, talks warmly with a finance manager man around 40, mestizo, wearing a short-sleeve dress shirt without a tie. On the wooden table: a closed laptop, plain manila folders with blank covers, two glasses of water. Both are engaged with each other in conversation, natural hand gestures, professional and warm atmosphere. Medium-wide shot from the side of the table. Style: candid documentary photograph, full-frame camera, 35mm lens, natural daylight from the windows, true-to-life neutral colors without heavy filters or oversaturation, realistic skin texture, natural hands with correct anatomy. Nobody looks at the camera. Absolutely no text, no logos, no brand names, no signage and no readable screens or papers anywhere in the image. Authentic Panama City setting, not generic American stock photography.",
+      "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    },
+    {
+      "archivo": ["equipo-almacen-1600.webp", "equipo-almacen-800.webp"],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "prompt": "A team of four employees of a distribution company standing in a clean, orderly warehouse in Panama: two men and two women aged 25 to 45, a mix of mestizo and Afro-Panamanian people, wearing plain high-visibility safety vests with no print over polo shirts and jeans. They stand in a relaxed loose circle chatting during a short break; one holds a plain clipboard, another holds a water bottle. Plain brown cardboard boxes without labels stacked on metal pallet racks. Natural daylight streams in through a large open roll-up loading door. Wide candid shot. Style: documentary photograph, full-frame camera, 35mm lens, natural light, true-to-life neutral colors without heavy filters or oversaturation, realistic skin texture, natural hands with correct anatomy. Nobody looks at the camera. Absolutely no text, no logos, no brand names, no signage, no labels and no readable screens anywhere in the image. Authentic Panamanian warehouse in a hot climate, not generic American stock photography.",
+      "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    },
+    {
+      "archivo": ["familia-metas-1600.webp", "familia-metas-800.webp"],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "prompt": "A young Panamanian couple in their late twenties, she is mestiza with long dark hair, he is Afro-Panamanian with short hair, sitting side by side at a small wooden dining table in their simple but nicely kept home in Panama City, reviewing their household budget together. On the table: a smartphone lying face down, an open notebook with handwritten notes that are too small and blurred to read, a pen, two cups of coffee. Calm, relaxed and supportive mood: she points at the notebook while he listens and nods. Warm late-afternoon sunlight comes through a window with a light curtain, a potted plant nearby, tiled floor. Medium shot. Style: candid documentary photograph, full-frame camera, 35mm lens, natural light, true-to-life colors without heavy filters or oversaturation, realistic skin texture, natural hands with correct anatomy and five fingers. They do not look at the camera. Absolutely no text, no logos, no brand names and no readable screens or writing anywhere in the image. Authentic Panamanian home, not generic American stock photography.",
+      "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    },
+    {
+      "archivo": ["estudiante-metas-1600.webp", "estudiante-metas-800.webp"],
+      "relacion": "4:5",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "prompt": "A Panamanian university student, a young mestizo man around 24 years old, short dark hair, wearing a light t-shirt, jeans and a backpack over his shoulders, walking along a shaded path on a university campus in Panama City, holding a spiral notebook in one hand. The campus has tropical trees, palm trees, green lawns and modernist concrete buildings typical of Panama. Bright sunny day with soft dappled shadows. Medium-full shot, he looks ahead, relaxed and confident. Style: candid documentary photograph, full-frame camera, 50mm lens, natural sunlight, true-to-life colors without heavy filters or oversaturation, realistic skin texture, natural hands with correct anatomy. He is not looking at the camera. Absolutely no text, no logos, no brand names, no signage and no readable writing anywhere in the image. Authentic Panamanian campus, not generic American stock photography.",
+      "observacion": "Las dos piernas quedan superpuestas en el paso y de cerca se leen casi como una sola; a tamano de tarjeta no se nota.",
+      "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    },
+    {
+      "archivo": ["equipo-kredit-1600.webp", "equipo-kredit-800.webp"],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "prompt": "A small fintech team of four people aged 28 to 40, two women and two men, a mix of Panamanian mestizo and Afro-Panamanian people, working in a bright modern open-plan office in Punta Pacifica, Panama City. Large windows show the Pacific Ocean and residential towers softly out of focus. In the foreground two of them sit close together looking at one laptop, its screen faces away from the camera, one of them points at it while the other smiles; the other two work at their desks in the background. Smart casual warm-weather clothing, plants, light wood desks. Candid, collaborative mood. Medium-wide shot. Style: documentary photograph, full-frame camera, 35mm lens, natural daylight, true-to-life neutral colors without heavy filters or oversaturation, realistic skin texture, natural hands with correct anatomy. Nobody looks at the camera. Absolutely no text, no logos, no brand names, no signage and no readable screens anywhere in the image. Authentic Panama City office, not generic American stock photography.",
+      "retoque": "Se borro a mano un logotipo de manzana tenue en la tapa de la laptop del primer plano (relleno interpolado, sin IA).",
+      "observacion": "Salieron 5 personas en vez de 4.",
+      "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    },
+    {
+      "archivo": ["atencion-cliente-1600.webp", "atencion-cliente-800.webp"],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "prompt": "A Panamanian customer service advisor, an Afro-Panamanian woman around 28 with natural curly hair pulled back, wearing a lightweight over-the-head headset with a small microphone and a simple short-sleeve blouse, smiling naturally while talking on a call at her workstation. Her computer monitor is turned away from the camera. Soft office background out of focus with blurred colleagues and plants. Medium close-up from a three-quarter angle, she looks slightly off-camera, attentive and kind. Style: candid documentary photograph, full-frame camera, 85mm lens, natural window light, true-to-life neutral colors without heavy filters or oversaturation, realistic skin texture, natural hands with correct anatomy. She is not looking at the camera. Absolutely no text, no logos, no brand names, no signage and no readable screens anywhere in the image. Authentic Panama City office, not generic American stock photography.",
+      "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    },
+    {
+      "archivo": ["firma-convenio-1600.webp", "firma-convenio-800.webp"],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "prompt": "Close-up of a handshake between two business people over a wooden meeting table, medium close framing focused on the hands: one person wears a light blue dress shirt with the cuff slightly rolled, the other a white long-sleeve blouse; both have warm brown skin tones typical of Panama. Exactly two hands clasped in a natural, firm, anatomically correct handshake, each hand with five fingers, thumbs placed correctly on top. Below them, the edge of the table with a few loose document sheets and a pen; the documents are out of focus so no text can be read. Faces are out of frame. Soft natural window light from the side, shallow depth of field, blurred office background with a hint of Panama City towers through the window. Style: candid documentary photograph, full-frame camera, 85mm lens, true-to-life neutral colors without heavy filters or oversaturation, realistic skin texture. Absolutely no text, no logos, no brand names, no watches with brands, no signage and no readable papers or screens anywhere in the image. Not generic American stock photography.",
+      "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    },
+    {
+      "archivo": ["comercio-colaborador-1600.webp", "comercio-colaborador-800.webp"],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "prompt": "A Panamanian supermarket employee, a mestizo man around 30 with short dark hair, wearing a plain dark green polo uniform shirt with no logo or name tag, smiling softly while arranging products on a shelf in a neighborhood supermarket in Panama City. He is placing items with both hands, looking at the shelf, not at the camera. The products are in plain, generic packaging in muted colors, slightly out of focus, with no readable labels and no brands. Medium shot from the aisle at eye level, natural store lighting mixed with daylight from the entrance. Style: candid documentary photograph, full-frame camera, 50mm lens, shallow depth of field, true-to-life neutral colors without heavy filters or oversaturation, realistic skin texture, natural hands with correct anatomy and five fingers. Absolutely no text, no logos, no brand names, no price tags with readable numbers, no signage and no readable screens anywhere in the image. Authentic Panamanian minisuper, not generic American stock photography.",
+      "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    },
+    {
+      "archivo": ["ciudad-panama-1600.webp", "ciudad-panama-800.webp"],
+      "relacion": "16:9",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "prompt": "View of the Panama City skyline at sunset from a high office balcony: the Cinta Costera coastal road with its palm trees and green park curving along the bay toward the dense cluster of high-rise towers of Punta Paitilla and Punta Pacifica, calm Pacific Ocean water reflecting the light, warm golden and soft pink sky with scattered tropical clouds. In the foreground the edge of a glass balcony railing, slightly out of focus. No people. Style: realistic landscape photograph, full-frame camera, 35mm lens, natural evening light, true-to-life colors, not oversaturated, no HDR look. Absolutely no text, no logos, no brand names, no signage and no billboards anywhere in the image.",
+      "observacion": "Hay un letrero vial verde y un aviso luminoso en un edificio, ambos diminutos e ilegibles.",
+      "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    },
+    {
+      "archivo": ["portal-celular-1600.webp", "portal-celular-800.webp"],
+      "relacion": "4:5",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "prompt": "Close-up of two hands holding a smartphone just above a cafe table, the phone screen faces away from the camera so we only see the plain back of the phone, with no logo. Next to it on the table: a glass of iced coffee and a small ceramic cup. The surroundings have soft blue tones: a blue-gray tabletop, a light blue painted wall, cool daylight from a window. The person's face is out of frame, we see the forearms and hands with warm brown skin, a light short-sleeve shirt. Shallow depth of field. A cafe in Panama City. Style: candid documentary photograph, full-frame camera, 50mm lens, natural light, true-to-life soft colors without heavy filters or oversaturation, realistic skin texture, natural relaxed hands with correct anatomy and five fingers each. Absolutely no text, no logos, no brand names, no signage, no cup prints and no readable screens anywhere in the image. Not generic American stock photography.",
+      "estado": "PROVISIONAL - no paso la revision: los brazos no cuadran (sale un brazo desde la manga y otro antebrazo desde el borde) y hay dedos de mas a la derecha del celular. Pendiente de regenerar; no usar como imagen protagonista.",
+      "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    }
+  ]
+}

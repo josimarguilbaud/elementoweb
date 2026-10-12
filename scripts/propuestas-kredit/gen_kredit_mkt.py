@@ -1,160 +1,172 @@
 #!/usr/bin/env python3
-"""Propuesta de marketing digital y captación de leads para Kredit (formato Elemento Web)."""
-import pathlib, json
-
-HERE = pathlib.Path(__file__).parent
-_src = (HERE / 'gen_kredit.py').read_text()
-exec(_src[:_src.index('def d_mora')])  # plantilla, CSS y utilidades SVG compartidas
+"""Propuesta de marketing digital y captación de leads para Kredit (EW-KRE-2026-02),
+con el diseño de la casa (ver casa.py). Uso: python scripts/propuestas-kredit/gen_kredit_mkt.py"""
+import pathlib, sys
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+from casa import *  # noqa: F401,F403
+from casa import esc, q
 
 OUT_DIR = ROOT / 'public/propuestas/kredit-marketing-digital-4a6a12dc'
-OUT = OUT_DIR / 'index.html'
 REF = 'EW-KRE-2026-02'
 DEMO_B2C = 'https://elementoweb.com/demo/kredit-landings/prestamos/'
 DEMO_B2B = 'https://elementoweb.com/demo/kredit-landings/empresas/'
-GOOGLE, META, TEAL = '#1d4ed8', '#0d9488', '#0d9488'
+DEMO_WEB = 'https://elementoweb.com/demo/kredit-web/'
+GOOGLE, META = '#1e40af', '#93c5fd'
 
-css += """
-.aud{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
-.aud .opt h3{font-size:19px}
-.aud dl{margin:10px 0 0;display:grid;grid-template-columns:120px 1fr;gap:6px 12px;font-size:13.5px}
-.aud dt{font:600 11px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
-.aud dd{margin:0;color:var(--ink-2)}
-@media(max-width:700px){.aud{grid-template-columns:1fr}.aud dl{grid-template-columns:1fr}}
-.meter{display:inline-block;height:8px;border-radius:4px;background:#1d4ed8;vertical-align:middle;margin-right:8px}
-.miss{counter-reset:m;list-style:none;margin:18px 0 0;padding:0;display:grid;gap:0;max-width:74ch}
-.miss li{counter-increment:m;border-top:1px solid var(--rule);padding:13px 0 13px 44px;position:relative;font-size:14.5px;color:var(--ink-2)}
-.miss li::before{content:counter(m);position:absolute;left:0;top:12px;width:28px;height:28px;border-radius:50%;background:var(--brand-tint);color:var(--brand-deep);font:700 13px/28px var(--display);text-align:center}
-.miss li b{color:var(--ink)}
-.need{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
-.need .opt ul{margin:8px 0 0;padding-left:18px;font-size:13.5px;color:var(--ink-2)}
-.need .opt li{margin-bottom:4px}
-@media(max-width:820px){.need{grid-template-columns:1fr}}
-tr.sub td{background:#f1f5f9;font-weight:700}
-td.ph-cell{white-space:nowrap}
-@media print{.keep{break-inside:avoid}.figure,.demo-block,.aud,.cols3{break-before:avoid}section>.eyebrow,section>h2,section>.prose,section>.lede{break-after:avoid}.aud,.need{break-inside:auto}.aud .opt,.need .opt{break-inside:avoid}.need{grid-template-columns:repeat(3,1fr)}.aud{grid-template-columns:1fr 1fr}}
-"""
 
-# ---------- D1: embudo completo ----------
+# =====================================================================================
+# Diagramas (skill diagram-design, tokens de la casa)
+# =====================================================================================
+
 def d_embudo():
-    p = 'de'
-    b = txt(20, 34, 'CANALES', 10, SOFT, 500, family=MONO, ls='0.12em')
-    ch = [('Google Ads', 'búsqueda con intención'), ('Meta Ads', 'Facebook e Instagram'),
-          ('Instagram', 'contenido mensual'), ('WhatsApp', 'envíos a su base'), ('Web + SEO/GEO', 'Google y asistentes IA')]
-    ys = [50, 112, 174, 236, 298]
-    for (t, s), y in zip(ch, ys):
-        hl = t in ('Google Ads', 'Meta Ads')
-        b += card(20, y, 170, 50, t, (s,), '#fff', GOOGLE if t == 'Google Ads' else META if t == 'Meta Ads' else 'rgba(15,23,42,.2)', ts=12.5, ss=10.5)
-    b += txt(232, 34, 'LANDINGS', 10, SOFT, 500, family=MONO, ls='0.12em')
-    b += card(232, 82, 168, 74, 'Préstamos', ('personas · calculadora', 'precalificación'), '#eff6ff', BRAND, ts=13.5, ss=10.5)
-    b += card(232, 214, 168, 74, 'Empresas', ('convenio para', 'colaboradores'), '#eff6ff', BRAND, ts=13.5, ss=10.5)
-    for y in ys:
-        ty = 119 if y < 200 else 251
-        b += path(f'M192 {y+25} C212 {y+25} 210 {ty} 230 {ty}', p, 'rgba(71,85,105,.55)', sw=1.2)
-    b += txt(444, 34, 'AUTOMATIZACIÓN', 10, SOFT, 500, family=MONO, ls='0.12em')
-    b += box(444, 104, 178, 162, '#f5f3ff', VIOLET, sw=1.4)
-    b += txt(533, 128, 'n8n', 15, INK, 700, 'middle', DISP)
-    for i, s in enumerate(['valida y deduplica', 'puntaje del lead', 'AgileCheck (si aplica)', 'asigna vendedor', 'responde por WhatsApp']):
-        b += txt(460, 152 + i * 21, '· ' + s, 11.5, INK)
-    b += arrow(402, 119, 442, 150, p)
-    b += arrow(402, 251, 442, 222, p)
-    b += txt(664, 34, 'VENTA', 10, SOFT, 500, family=MONO, ls='0.12em')
-    b += card(664, 120, 132, 80, 'CRM de Kredit', ('lead calificado', 'con su historial'), '#fff', 'rgba(15,23,42,.25)', ts=13, ss=10.5)
-    b += arrow(624, 160, 662, 160, p)
-    b += card(818, 120, 122, 80, 'Vendedor', ('contacta en', 'menos de 5 min'), NAVY, NAVY, '#fff', '#cbd5e1', ts=13, ss=10.5)
-    b += arrow(798, 160, 816, 160, p)
-    b += card(664, 228, 200, 70, 'No calificado', ('respuesta clara y nutrición', 'por WhatsApp, sin vendedor'), '#f8fafc', 'rgba(15,23,42,.2)', '#334155', MUTED, ts=12.5, ss=10.5)
-    b += path('M624 236 C640 236 646 262 662 262', p, MUTED, sw=1.2)
-    # retorno de señales
-    b += path('M905 202 L905 380 L105 380 L105 352', p, VIOLET, '5 4', 1.5, 'v')
-    b += txt(492, 372, 'Señal de vuelta: lead calificado y préstamo desembolsado → Google y Meta optimizan por calidad', 11.5, VIOLET, 600, 'middle')
-    return svg(p, 960, 400, 'Embudo de captación de Kredit',
-               'Cinco canales (Google Ads, Meta Ads, Instagram, WhatsApp y la web con SEO) llevan a dos landings, de préstamos y de empresas. Un flujo en n8n valida, deduplica, puntúa, asigna vendedor y responde por WhatsApp. Los calificados pasan al CRM de Kredit y a un vendedor que contacta en menos de cinco minutos; los no calificados reciben una respuesta clara y nutrición por WhatsApp. El resultado vuelve a Google y Meta como señal de calidad.', b)
+    """Flujo de captación: canales → landings → n8n → CRM y vendedor, con la señal de vuelta."""
+    p, W, H = 'de', 800, 356
+    b = ''
+    # conectores primero
+    b += conn([(180, 96), (219, 96)], p)
+    b += conn([(180, 200), (219, 200)], p)
+    b += conn([(364, 96), (403, 96)], p)
+    b += conn([(364, 200), (403, 200)], p)
+    b += conn([(572, 84), (611, 84)], p, OK, 'g')
+    b += conn([(696, 116), (696, 139)], p)
+    b += conn([(572, 212), (592, 212), (592, 264), (611, 264)], p, SOFT, 's')
+    b += conn([(780, 172), (792, 172), (792, 320), (100, 320), (100, 253)], p, ACC, 'v', '5 4', 1.5)
+    # columnas
+    for x, s in ((20, 'Canales'), (220, 'Landings'), (404, 'Automatización'), (612, 'Venta')):
+        b += eyebrow(x, 30, s)
+    b += list_node(20, 44, 160, 208, [('Google Ads', 'búsqueda con intención'), ('Meta Ads', 'Facebook e Instagram'),
+                                      ('Instagram', 'contenido mensual'), ('WhatsApp', 'envíos a su base'),
+                                      ('Web + SEO/GEO', 'Google y asistentes IA')])
+    b += node(220, 64, 144, 64, 'Préstamos', ('personas · calculadora', 'y precalificación'), 'brand')
+    b += node(220, 168, 144, 64, 'Empresas', ('convenio para', 'colaboradores'), 'brand')
+    b += list_node(404, 56, 168, 184, ['valida y deduplica', 'puntaje del lead', 'AgileCheck (si aplica)',
+                                       'asigna vendedor', 'responde por WhatsApp'], 'focal', head='n8n')
+    b += node(612, 52, 168, 64, 'CRM de Kredit', ('lead calificado', 'con su historial'))
+    b += node(612, 140, 168, 64, 'Vendedor', ('contacta en', 'menos de 5 min'), 'dark')
+    b += node(612, 232, 168, 64, 'No calificado', ('respuesta clara y', 'nutrición, sin vendedor'), 'optional')
+    b += t(116, 341, 'Señal de vuelta: lead calificado y préstamo desembolsado → Google y Meta optimizan por calidad', 11.5, ACC, 600)
+    return svg(p, W, H, 'Embudo de captación de Kredit',
+               'Cinco canales (Google Ads, Meta Ads, Instagram, WhatsApp y la web con SEO) llevan a dos landings, '
+               'de préstamos y de empresas. Un flujo en n8n valida, deduplica, puntúa, asigna vendedor y responde por '
+               'WhatsApp. Los calificados pasan al CRM de Kredit y a un vendedor que contacta en menos de cinco minutos; '
+               'los no calificados reciben una respuesta clara y nutrición, sin ocupar al vendedor. El resultado vuelve '
+               'a Google y Meta como señal de calidad.', b)
 
-# ---------- D2: calificación ----------
+
 def d_calif():
-    p = 'dq'
-    b = card(20, 120, 150, 70, 'Formulario', ('multipaso, con', 'consentimientos'), '#eff6ff', BRAND, ts=13, ss=10.5)
-    b += box(204, 60, 230, 190, '#f5f3ff', VIOLET, sw=1.4)
-    b += txt(319, 84, 'n8n · en segundos', 13, INK, 700, 'middle', DISP)
-    for i, s in enumerate(['Formato de cédula y celular', 'Duplicados y spam', 'Puntaje según sus reglas', 'Empresa afiliada / tipo de ingreso', 'Consulta AgileCheck (opcional)', 'Etiqueta UTM y campaña']):
-        b += txt(220, 110 + i * 22, '✓ ' + s, 11.5, INK)
-    b += arrow(172, 155, 202, 155, p)
-    tiers = [(40, 'CALIFICADO', '70 puntos o más', ['CRM + vendedor asignado', 'WhatsApp inmediato (si lo autorizó)', 'contacto en menos de 5 min'], '#ecfdf5', OK),
-             (128, 'REVISAR', '40 a 69 puntos', ['CRM en etapa "revisión"', 'se atiende el mismo día', 'pide datos que faltan'], '#fff7ed', AMBER),
-             (216, 'NO CALIFICADO', 'menos de 40', ['respuesta respetuosa', 'nutrición por WhatsApp (si aceptó)', 'no ocupa al vendedor'], '#f8fafc', SOFT)]
-    for y, t, s, items, f, c in tiers:
-        b += box(500, y, 440, 78, f, c, sw=1.3)
-        b += txt(516, y + 26, t, 11.5, c, 700, family=MONO, ls='0.08em')
-        b += txt(516, y + 46, s, 11, MUTED)
+    """Calificación: formulario → reglas en n8n → tres niveles."""
+    p, W, H = 'dq', 800, 336
+    b = ''
+    b += conn([(152, 152), (187, 152)], p)
+    b += conn([(412, 104), (430, 104), (430, 72), (447, 72)], p, OK, 'g')
+    b += conn([(412, 152), (430, 152), (430, 164), (447, 164)], p, AMB, 'w')
+    b += conn([(412, 200), (430, 200), (430, 256), (447, 256)], p, SOFT, 's')
+    b += node(20, 116, 132, 72, 'Formulario', ('multipaso, con', 'consentimientos'), 'input')
+    b += list_node(188, 56, 224, 192, ['✓ Formato de cédula y celular', '✓ Duplicados y spam', '✓ Puntaje según sus reglas',
+                                       '✓ Empresa afiliada / ingreso', '✓ AgileCheck (opcional)', '✓ Etiqueta UTM y campaña'],
+                   'focal', head='n8n · en segundos')
+    tiers = [(32, 'Calificado', '70 puntos o más', ['CRM + vendedor asignado', 'WhatsApp si lo autorizó', 'contacto en menos de 5 min'], 'ok', OK),
+             (124, 'Revisar', '40 a 69 puntos', ['CRM en etapa «revisión»', 'se atiende el mismo día', 'pide los datos que faltan'], 'warn', AMB),
+             (216, 'No calificado', 'menos de 40', ['respuesta respetuosa', 'nutrición si la aceptó', 'no ocupa al vendedor'], 'optional', SOFT)]
+    for y, name, score, items, kind, c in tiers:
+        f, s, d, _, _ = KINDS[kind]
+        b += rect(448, y, 332, 80, PAPER, 'none') + rect(448, y, 332, 80, f, s, dash=d, sw=1.2)
+        b += eyebrow(464, y + 30, name, c)
+        b += t(464, y + 50, score, 11.5, MUTED)
+        b += f'<line x1="584" y1="{y + 14}" x2="584" y2="{y + 66}" stroke="{RULE}"/>'
         for i, it in enumerate(items):
-            b += txt(690, y + 24 + i * 19, '· ' + it, 11.5, INK)
-        b += path(f'M436 155 C468 155 468 {y+39} 498 {y+39}', p, c, sw=1.3, mk='g' if c == OK else 'a')
-    b += txt(20, 316, 'Umbrales y pesos de ejemplo: los define Kredit en el taller de calificación y se ajustan con los resultados reales.', 11.5, MUTED)
-    return svg(p, 960, 330, 'Cómo se califica cada lead',
-               'El formulario multipaso entra a n8n, que valida cédula y celular, descarta duplicados y spam, calcula un puntaje según las reglas de Kredit, revisa empresa afiliada y tipo de ingreso, puede consultar AgileCheck y etiqueta la campaña. Con 70 puntos o más el lead es calificado y va al CRM con vendedor asignado; de 40 a 69 queda en revisión; con menos de 40 recibe una respuesta respetuosa y nutrición, sin ocupar al vendedor.', b)
+            b += t(598, y + 25 + i * 19, '· ' + it, 11.5, INK)
+    b += t(20, 318, 'Umbrales y pesos de ejemplo: los define Kredit en el taller de calificación y se ajustan con los resultados reales.', 11.5, MUTED)
+    return svg(p, W, H, 'Cómo se califica cada lead',
+               'El formulario multipaso entra a n8n, que valida cédula y celular, descarta duplicados y spam, calcula un '
+               'puntaje según las reglas de Kredit, revisa empresa afiliada y tipo de ingreso, puede consultar AgileCheck '
+               'y etiqueta la campaña. Con 70 puntos o más el lead es calificado y va al CRM con vendedor asignado; de 40 '
+               'a 69 queda en revisión; con menos de 40 recibe una respuesta respetuosa y nutrición, sin ocupar al vendedor.', b)
 
-# ---------- D3: inversión publicitaria (gráfico de datos) ----------
+
 SCEN = [('Arranque', 700, 800), ('Recomendada', 1200, 1500), ('Escala (desde el mes 3)', 2000, 2500)]
+
+
 def d_pauta():
-    p = 'dp'
-    x0, W, maxv = 210, 640, 4500
-    sc = lambda v: W * v / maxv
-    b = f'<rect x="20" y="22" width="12" height="12" rx="3" fill="{GOOGLE}"/>' + txt(38, 32, 'Google Ads', 11.5, INK, 500)
-    b += f'<rect x="130" y="22" width="12" height="12" rx="3" fill="{META}"/>' + txt(148, 32, 'Meta Ads', 11.5, INK, 500)
+    """Barras apiladas horizontales: inversión mensual por escenario."""
+    p, W, H = 'dp', 800, 270
+    x0, PW, maxv = 196, 480, 4500
+    sc = lambda v: PW * v / maxv
+    b = ''
+    rec_y = 36 + 60
+    b += rect(12, rec_y - 6, 776, 52, ACC_T, ACC, r=8, sw=1)
+    for v in range(0, 5000, 1000):
+        X = x0 + sc(v)
+        b += f'<line x1="{X:g}" y1="30" x2="{X:g}" y2="204" stroke="{"rgba(15,23,42,.25)" if v == 0 else "rgba(15,23,42,.08)"}" stroke-width="{1 if v == 0 else 0.8}"/>'
+        b += t(X, 222, f'{v:,}', 10, SOFT, 500, 'middle', MONO)
     for i, (n, g, m) in enumerate(SCEN):
-        y = 62 + i * 58
+        y = 36 + i * 60
         rec = n == 'Recomendada'
-        b += txt(20, y + 20, n, 13, INK, 700 if rec else 500)
+        b += t(28, y + 26, n, 13, INK, 700 if rec else 500)
         b += f'<g><title>{esc(n)}: Google Ads US$ {g:,} · Meta Ads US$ {m:,} · total US$ {g+m:,} al mes</title>'
-        b += f'<rect x="{x0}" y="{y+4}" width="{sc(g)-1}" height="24" rx="4" fill="{GOOGLE}"/>'
-        b += f'<rect x="{x0+sc(g)+1}" y="{y+4}" width="{sc(m)-1}" height="24" rx="4" fill="{META}"/></g>'
-        if sc(g) > 70: b += txt(x0 + 10, y + 21, f'{g:,}', 11, '#fff', 600, family=MONO)
-        if sc(m) > 70: b += txt(x0 + sc(g) + 11, y + 21, f'{m:,}', 11, '#fff', 600, family=MONO)
-        b += txt(x0 + sc(g + m) + 10, y + 21, f'US$ {g+m:,}/mes', 12, INK, 700 if rec else 500)
-    b += f'<line x1="{x0}" y1="52" x2="{x0}" y2="{62+3*58-20}" stroke="rgba(15,23,42,.25)"/>'
-    return svg(p, 960, 230, 'Inversión publicitaria mensual recomendada por escenario',
-               'Barras apiladas por escenario. Arranque: Google Ads 700 y Meta Ads 800, total 1,500 dólares al mes. Recomendada: Google 1,200 y Meta 1,500, total 2,700. Escala desde el mes 3: Google 2,000 y Meta 2,500, total 4,500.', b)
+        b += f'<rect x="{x0}" y="{y + 6}" width="{sc(g) - 1:g}" height="28" rx="4" fill="{GOOGLE}"/>'
+        b += f'<rect x="{x0 + sc(g) + 1:g}" y="{y + 6}" width="{sc(m) - 1:g}" height="28" rx="4" fill="{META}"/></g>'
+        b += t(x0 + 10, y + 25, f'{g:,}', 11, '#ffffff', 600, fam=MONO)
+        b += t(x0 + sc(g) + 11, y + 25, f'{m:,}', 11, INK, 600, fam=MONO)
+        b += t(x0 + sc(g + m) + 12, y + 25, f'US$ {g + m:,}/mes', 12.5, INK, 700 if rec else 500)
+    b += legend(254, [('swatch:' + GOOGLE + ':' + GOOGLE, 'Google Ads'), ('swatch:' + META + ':' + META, 'Meta Ads'),
+                      ('focal', 'Escenario recomendado')], W)
+    return svg(p, W, H, 'Inversión publicitaria mensual por escenario',
+               'Barras apiladas por escenario, en dólares al mes. Arranque: Google Ads 700 y Meta Ads 800, total 1,500. '
+               'Recomendada: Google 1,200 y Meta 1,500, total 2,700. Escala desde el mes 3: Google 2,000 y Meta 2,500, total 4,500.', b)
 
-# ---------- D4: cronograma ----------
+
 def d_crono():
-    p = 'dg'
-    LX, X0, X1, Y0, RH = 20, 270, 940, 64, 40
+    """Gantt de las primeras 8 semanas en dos grupos."""
+    p, W = 'dg', 800
+    X0, X1 = 256, 780
     wk = (X1 - X0) / 8
-    for w in range(8):
-        b0 = txt(X0 + wk * (w + .5), 48, f'S{w+1}', 10, SOFT, 500, 'middle', MONO, '0.08em')
-        if w == 0: b = b0
-        else: b += b0
-        b += f'<line x1="{X0+wk*w}" y1="56" x2="{X0+wk*w}" y2="{Y0+9*RH}" stroke="rgba(15,23,42,.07)"/>'
-    rows = [('Taller, accesos y medición', 0, 1.5, VIOLET),
-            ('Auditoría web y SEO técnico', 0, 2, BRAND),
-            ('Landings de préstamos y empresas', 0.5, 3, BRAND),
-            ('n8n + integración con el CRM', 1, 3, VIOLET),
-            ('WhatsApp: verificación Meta y plantillas', 1, 3, BRAND),
-            ('Creación de campañas y artes', 2, 3.5, BRAND),
-            ('Pauta en vivo y optimización semanal', 3.5, 8, OK),
-            ('Contenido de Instagram (mes 1)', 1.5, 8, BRAND),
-            ('Mejora de la página principal + SEO/GEO', 2, 8, BRAND)]
-    for i, (t, a, e, c) in enumerate(rows):
-        y = Y0 + i * RH
-        b += txt(LX, y + 22, t, 12, INK, 500)
-        b += f'<rect x="{X0+wk*a}" y="{y+9}" width="{wk*(e-a)}" height="18" rx="4" fill="{c}"/>'
-    x = X0 + wk * 3.5
-    b += f'<line x1="{x}" y1="56" x2="{x}" y2="{Y0+9*RH}" stroke="{OK}" stroke-width="1.5" stroke-dasharray="4 3"/>'
-    b += txt(x + 6, Y0 + 9 * RH + 16, 'Lanzamiento de la pauta (semana 4)', 11.5, OK, 600)
-    return svg(p, 960, Y0 + 9 * RH + 30, 'Cronograma de las primeras 8 semanas',
-               'Semana 1: taller, accesos y medición, y auditoría web. Semanas 1 a 3: landings, n8n con el CRM y verificación de WhatsApp. Semanas 3 y 4: campañas y artes. La pauta sale en vivo a mediados de la semana 4 y se optimiza cada semana. El contenido de Instagram y la mejora de la web con SEO avanzan en paralelo desde la semana 2.', b)
+    rows = [('Taller, accesos y medición', 0, 1.5), ('Auditoría web y SEO técnico', 0, 2),
+            ('Landings de préstamos y empresas', 0.5, 3), ('n8n + integración con el CRM', 1, 3),
+            ('WhatsApp: verificación y plantillas', 1, 3), ('Creación de campañas y artes', 2, 3.5),
+            ('Pauta en vivo y optimización semanal', 3.5, 8), ('Contenido de Instagram (mes 1)', 1.5, 8),
+            ('Rediseño de la web + SEO/GEO', 2, 8)]
+    groups = [('Preparación y construcción', 0, 6, 64), ('En marcha', 6, 9, 300)]
+    RH = 34
+    H = 470
+    b = ''
+    for name, a, e, gy in groups:
+        b += rect(12, gy, 776, 24 + (e - a) * RH + 6, 'rgba(15,23,42,.02)', 'rgba(15,23,42,.08)', r=8)
+        b += eyebrow(24, gy + 17, name)
+    for w in range(9):
+        X = X0 + wk * w
+        b += f'<line x1="{X:g}" y1="52" x2="{X:g}" y2="{H - 46}" stroke="rgba(15,23,42,.07)"/>'
+        if w < 8:
+            b += t(X + wk / 2, 42, f'S{w + 1}', 10, SOFT, 500, 'middle', MONO, '0.06em')
+    b += f'<line x1="12" y1="52" x2="788" y2="52" stroke="rgba(15,23,42,.14)"/>'
+    for i, (name, a, e) in enumerate(rows):
+        g = groups[0] if i < 6 else groups[1]
+        y = g[3] + 24 + (i - g[1]) * RH
+        focal = name.startswith('Pauta')
+        b += t(24, y + 22, name, 12, INK, 600 if focal else 500)
+        fill, stroke = (ACC, ACC) if focal else ('#dbeafe', '#3b82f6')
+        b += rect(X0 + wk * a, y + 9, wk * (e - a), 18, fill, stroke, r=4)
+    xm = X0 + wk * 3.5
+    b += f'<line x1="{xm:g}" y1="52" x2="{xm:g}" y2="{H - 46}" stroke="{ACC}" stroke-width="1.5" stroke-dasharray="4 3"/>'
+    b += label(xm, H - 28, 'Lanzamiento de la pauta · semana 4', ACC, 'middle', 10.5)
+    return svg(p, W, H, 'Cronograma de las primeras 8 semanas',
+               'Semana 1: taller, accesos y medición, y auditoría web. Semanas 1 a 3: landings, n8n con el CRM y '
+               'verificación de WhatsApp. Semanas 3 y 4: campañas y artes. La pauta sale en vivo a mediados de la semana 4 '
+               'y se optimiza cada semana. El contenido de Instagram y el rediseño de la web con SEO avanzan en paralelo '
+               'desde la semana 2.', b)
 
-def fig(s, cap):
-    return f'<div class="figure scroll-x">{s}</div>\n  <p class="caption">{cap}</p>'
 
-# ---------- precios ----------
+# =====================================================================================
+# Precios (sin cambios salvo el ítem G: el rediseño multipágina reemplaza a la mejora)
+# =====================================================================================
+
 UNICO = [('A', 'Landing de préstamos (personas)', 'Calculadora de cuota, formulario de precalificación multipaso, información de costo del crédito, carga rápida en móvil', 950),
          ('B', 'Landing de empresas (convenios)', 'Propuesta para RR. HH. y finanzas, pasos del convenio, formulario de afiliación con validación de correo corporativo', 750),
          ('C', 'Automatización n8n + integración con su CRM', 'Validación, deduplicación, puntaje, asignación de vendedor, aviso inmediato y respuesta automática por WhatsApp', 1200),
          ('D', 'Medición y analítica', 'GA4, Google Tag Manager, Search Console, píxel de Meta + API de conversiones, conversiones offline desde el CRM y tablero', 450),
          ('E', 'Creación de campañas de Google Ads', 'Búsqueda para personas y para empresas, palabras clave y negativas, anuncios, extensiones y conversiones', 450),
          ('F', 'Creación de campañas de Meta Ads', 'Estructura por público, audiencias y remarketing, primeros creativos y formularios conectados', 450),
-         ('G', 'Mejora de la página principal', 'Formulario de afiliación, tasa y costo visibles, aviso legal, velocidad, SEO on-page y datos estructurados', 950),
+         ('G', 'Rediseño multipágina de kredit.com.pa', 'Sitio nuevo de hasta 10 páginas con su marca: inicio, préstamos, empresas, nosotros, preguntas frecuentes, contacto y legales; calculadora, formularios conectados a n8n, licencia y costo del crédito visibles, SEO on-page y datos estructurados', 3000),
          ('H', 'Kit de activación para empresas afiliadas', 'Afiches y tarjetas con QR por empresa, mensajes para RR. HH. (correo, WhatsApp, intranet) y enlace con código de empresa para medir; hasta 10 empresas afiliadas', 450)]
 MENSUAL = [('1', 'Gestión de Google Ads', 'Optimización semanal, pruebas de anuncios, palabras negativas, reporte', 400),
            ('2', 'Gestión de Meta Ads con artes', '8 piezas al mes (estáticos, carruseles y 2 reels), pruebas A/B, reporte', 500),
@@ -167,375 +179,308 @@ u = {k: v for k, _, _, v in UNICO}
 m = {k: v for k, _, _, v in MENSUAL}
 ESENCIAL_U = sum(u[k] for k in 'ABCDEF'); ESENCIAL_M = m['1'] + m['2']
 RECOM_M = sum(m[k] for k in '1234')
-INTEGRAL_U = sum(u.values()); INTEGRAL_M = sum(m.values()); CREC_U = ESENCIAL_U + u['H']
+CREC_U = ESENCIAL_U + u['H']
+INTEGRAL_U = sum(u.values()); INTEGRAL_M = sum(m.values())
+PAUTA = 2700
 money = lambda v: f'US$ {v:,}'
+assert (ESENCIAL_U, ESENCIAL_M, CREC_U, RECOM_M, INTEGRAL_M) == (4250, 900, 4700, 1700, 2399)
+assert INTEGRAL_U == 7700
 
-def rows_table(items):
-    return ''.join(f'<tr><td><b>{k}</b></td><td><b>{esc(t)}</b><small>{esc(d)}</small></td><td class="n">{money(v)}</td></tr>' for k, t, d, v in items)
 
-SUBCLS = ' class="sub"'
-PAUTA_ROWS = ''.join(f'<tr{SUBCLS if n=="Recomendada" else ""}><td>{esc(n)}</td><td class="n">{money(g)}</td><td class="n">{money(mm)}</td><td class="n">{money(g+mm)}</td></tr>' for n, g, mm in SCEN)
+# =====================================================================================
+# Contenido
+# =====================================================================================
 
-html = f'''<!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Marketing digital y captación de leads · Propuesta para Kredit — elementoweb.com</title>
-{head_links}
-<style>{css}</style></head>
-<body>
+def capturas():
+    out = ''
+    if (OUT_DIR / 'landing-prestamos.webp').exists():
+        out += shots([
+            ('landing-prestamos.webp', 1440, 900, 'Vista previa de la landing de préstamos de Kredit con calculadora de cuota y formulario de precalificación',
+             '<b class="text-slate-900">Préstamos.</b> El comprobante con la cuota quincenal, la tasa de ejemplo y la licencia del MICI en la primera pantalla; solicitud en 4 pasos.'),
+            ('landing-empresas.webp', 1440, 900, 'Vista previa de la landing de empresas de Kredit para el convenio de préstamos para colaboradores',
+             '<b class="text-slate-900">Empresas.</b> El convenio explicado para RR. HH. y finanzas, con formulario de afiliación.')])
+        out += buttons([('Abrir la landing de préstamos', DEMO_B2C), ('Abrir la landing de empresas', DEMO_B2B)])
+        out += '<p class="text-xs text-slate-500 mt-2 no-print">Vista previa · formularios en modo demo, no se envía nada.</p>'
+    return out
 
-<header class="hero"><div class="wrap">
-  <div class="brandrow"><div class="wordmark"><i aria-hidden="true"></i>Elemento Web</div><div class="doctype">Propuesta · Marketing digital y captación</div></div>
-  <h1>Más solicitudes calificadas, directo a sus vendedores</h1>
-  <p class="sub">Un sistema completo de captación para personas y empresas: publicidad en Google y Meta, dos landings con formularios inteligentes, calificación automática con n8n, entrega al CRM de Kredit, WhatsApp marketing, contenido de Instagram y una web mejor posicionada en Google y en los asistentes de IA.</p>
-  <dl class="facts">
-    <div><dt>Preparada para</dt><dd>Kredit · Gerencia General</dd></div>
-    <div><dt>Fecha</dt><dd>11 de octubre de 2026</dd></div>
-    <div><dt>Válida hasta</dt><dd>10 de noviembre de 2026</dd></div>
-    <div><dt>Referencia</dt><dd>{REF}</dd></div>
-  </dl>
-</div></header>
-<main class="wrap">
 
-<section>
-  <p class="eyebrow">Resumen ejecutivo</p>
-  <h2>Captar más, pero sobre todo captar mejor</h2>
-  <p class="lede">Proponemos un sistema de captación con dos puertas de entrada: una para <b>empresas que quieren ofrecer el crédito a sus colaboradores</b> y otra para <b>los colaboradores que lo necesitan</b>. Cada solicitud se valida, se puntúa y llega al CRM de Kredit ya calificada, con su vendedor asignado y, si la persona lo autorizó, un primer mensaje enviado por WhatsApp en segundos.</p>
-  <p class="prose">La publicidad aprende de lo que pasa después del formulario: le devolvemos a Google y a Meta qué leads resultaron calificados y cuáles se desembolsaron, para que inviertan en personas parecidas a sus mejores clientes y no en las que solo llenan formularios. Cuando la calidad de la cartera es prioridad, eso importa tanto como el volumen.</p>
-  <div class="stats">
-    <div><b>2</b><span>Landings: personas y empresas</span></div>
-    <div><b>5</b><span>Canales trabajando juntos</span></div>
-    <div><b>&lt;5 min</b><span>Objetivo de primer contacto del vendedor</span></div>
-    <div><b>4</b><span>Semanas hasta la pauta en vivo</span></div>
-  </div>
-</section>
+def web_preview():
+    out = ''
+    if (OUT_DIR / 'web-inicio.webp').exists():
+        out += shots([('web-inicio.webp', 1440, 900, 'Vista previa del rediseño multipágina de kredit.com.pa: página de inicio',
+                       '<b class="text-slate-900">Web nueva · inicio.</b> Misma marca, sus colores y su estructura, en un sitio de varias páginas.')], cls='mt-6')
+        out += buttons([('Recorrer la web nueva', DEMO_WEB)])
+    return out
 
-<section>
-  <p class="eyebrow">Punto de partida</p>
-  <h2>Una marca clara, con un canal digital que recién arranca</h2>
-  <p class="prose">Revisamos el Instagram de Kredit (@kredit_pa) el 11 de octubre de 2026. La identidad ya está bien resuelta: una "K" reconocible, azul rey y cian, titulares fuertes y un mensaje aspiracional ("Tu solución financiera, en un instante", "Opciones de crédito para tus metas"). Incluso ya hay una pieza para empresas: "¿Buscas una solución financiera para tu equipo?".</p>
-  <div class="stats">
-    <div><b>5</b><span>Publicaciones en Instagram</span></div>
-    <div><b>13</b><span>Seguidores</span></div>
-    <div><b>1</b><span>Enlace en la biografía: kredit.com.pa</span></div>
-    <div><b>2</b><span>Públicos en su contenido: personas y empresas</span></div>
-  </div>
-  <p class="prose" style="margin-top:18px">Con esa audiencia, el alcance orgánico todavía no genera solicitudes por sí solo: hoy el crecimiento tiene que venir de la pauta, y el contenido debe trabajar para la pauta (confianza, prueba social y un camino claro a la precalificación).</p>
-  <h3 style="margin-top:30px;font-size:19px">La página principal hoy</h3>
-  <p class="prose">También revisamos la página principal de kredit.com.pa. Comunica bien la promesa ("créditos rápidos y fáciles, con cuotas fijas y sin costos ocultos") y explica en sus preguntas frecuentes el modelo: <b>el crédito es para colaboradores de empresas afiliadas</b> y se paga con descuento automático en planilla. Lo que hoy le quita solicitudes:</p>
-  <div class="tbl"><table>
-    <thead><tr><th>Hallazgo</th><th>Por qué importa</th></tr></thead>
-    <tbody>
-      <tr><td><b>El botón "Afiliar empresa" no lleva a un formulario</b></td><td>Apunta a la misma sección: la empresa interesada no tiene dónde dejar sus datos. Es la puerta más valiosa del negocio.</td></tr>
-      <tr><td><b>No hay formulario ni precalificación para personas</b></td><td>El único camino es escribir por WhatsApp; no se sabe de qué empresa viene cada persona ni de qué campaña.</td></tr>
-      <tr><td><b>No se muestran tasa efectiva, plazos ni un ejemplo de costo</b></td><td>Google lo exige en la landing para aprobar anuncios de préstamos, y la normativa panameña pide indicar la tasa efectiva en la publicidad (a validar con su asesor).</td></tr>
-      <tr><td><b>Aviso legal y política de cookies sin contenido</b></td><td>Los enlaces existen pero no llevan a nada; en una financiera restan confianza.</td></tr>
-      <tr><td><b>Sin descripción, datos estructurados ni contenido para buscar</b></td><td>Una sola página sin metadatos ni páginas por tema: Google y los asistentes de IA tienen poco para mostrar.</td></tr>
-      <tr><td><b>El enlace a Instagram del pie apunta a /kreditpa</b></td><td>El perfil activo es @kredit_pa. Conviene verificarlo para no mandar visitas a otra cuenta.</td></tr>
-    </tbody>
-  </table></div>
-</section>
 
-<section>
-  <p class="eyebrow">La estrategia</p>
-  <h2>Dos landings: empresas que se afilian y personas que buscan un préstamo</h2>
-  <p class="prose">La landing de empresas trae convenios nuevos; la de personas está pensada para quien busca un préstamo en Google. Hoy su web indica que el crédito es para colaboradores de empresas afiliadas; por eso la landing pregunta dónde trabaja la persona y la regla se ajusta con un interruptor: <b>si Kredit presta al público general</b>, la solicitud sigue su curso; <b>si solo presta a afiliadas</b>, a quien no califica se le invita a recomendar a su empresa, y ese contacto entra como lead de empresa.</p>
-  <div class="cols3">
-    <div class="opt"><p class="k">1 · Afiliar</p><h3>Empresas nuevas</h3><p>Google (búsquedas de beneficios para colaboradores), LinkedIn opcional y la landing de empresas con formulario y reunión con un ejecutivo.</p></div>
-    <div class="opt"><p class="k">2 · Activar</p><h3>Colaboradores de afiliadas</h3><p>Kit para RR. HH. con afiches y QR, mensajes internos, WhatsApp a quienes aceptaron y anuncios alrededor de las empresas afiliadas.</p></div>
-    <div class="opt"><p class="k">3 · Captar en Google</p><h3>Personas que buscan un préstamo</h3><p>Landing con calculadora y precalificación para la búsqueda con intención; si su empresa no está afiliada, puede recomendarla y n8n la entrega como lead de empresa.</p></div>
-  </div>
-</section>
+S = []  # secciones en orden
 
-<section class="keep">
-  <p class="eyebrow">El sistema</p>
-  <h2>Del anuncio al vendedor, sin pasos manuales</h2>
-  <p class="prose">Todos los canales llevan a las landings. Las landings entregan a n8n, que decide qué hacer con cada solicitud. El CRM de Kredit recibe solo lo que vale la pena atender, y el resultado de cada contacto vuelve a las plataformas de publicidad.</p>
-  {fig(d_embudo(), 'Nada se pierde entre herramientas: cada lead conserva de dónde vino (campaña, anuncio, palabra clave) hasta el desembolso, para saber cuánto cuesta un préstamo colocado por canal.')}
-  <div class="alert"><b>Calidad sobre volumen.</b> Un lead que se desembolsa y no paga cuesta más que ningún lead. Por eso la calificación filtra antes del vendedor y, cuando Kredit lo autorice, consulta AgileCheck desde n8n. Este sistema y la plataforma de cobranza que le propusimos comparten la misma base: n8n, WhatsApp oficial y sus reglas.</div>
-</section>
+S.append(intro('Captar más, pero sobre todo <span class="gradient-text">captar mejor</span>', [
+    'Proponemos un sistema de captación con dos puertas de entrada: una para <b class="text-slate-800">empresas que quieren ofrecer el crédito a sus colaboradores</b> y otra para <b class="text-slate-800">los colaboradores que lo necesitan</b>. Cada solicitud se valida, se puntúa y llega al CRM de Kredit ya calificada, con su vendedor asignado y, si la persona lo autorizó, un primer mensaje enviado por WhatsApp en segundos.',
+    'La publicidad aprende de lo que pasa después del formulario: le devolvemos a Google y a Meta qué leads resultaron calificados y cuáles se desembolsaron, para que inviertan en personas parecidas a sus mejores clientes y no en las que solo llenan formularios. Cuando la calidad de la cartera es prioridad, eso importa tanto como el volumen.'],
+    chips=['🎯 Dos landings', '⚙️ Calificación con n8n', '🔍 Google Ads', '📸 Meta Ads', '💬 WhatsApp oficial', '🌐 Web nueva + SEO/GEO'])
+    .replace('</section>', stats([('2', 'Landings: personas y empresas'), ('5', 'Canales trabajando juntos'),
+                                  ('<5 min', 'Objetivo de primer contacto del vendedor'), ('4', 'Semanas hasta la pauta en vivo')], 'mt-8') + '</section>'))
 
-<section>
-  <p class="eyebrow">Dos públicos</p>
-  <h2>Un mensaje distinto para cada puerta</h2>
-  <div class="aud">
-    <div class="opt"><p class="k">Personas</p><h3>Quien busca un préstamo en Google</h3>
-      <dl><dt>Busca</dt><dd>Rapidez, cuota fija, saber si califica y cuándo le depositan, sin costos ocultos.</dd>
-      <dt>Canales</dt><dd>Google (búsqueda con intención), Meta, Instagram, WhatsApp y el kit interno de las empresas afiliadas.</dd>
-      <dt>Oferta</dt><dd>Calculadora de cuota y precalificación en 2 minutos; si su empresa no está afiliada, puede recomendarla.</dd>
-      <dt>Se mide por</dt><dd>Costo por lead calificado, por préstamo desembolsado y empresas recomendadas.</dd></dl></div>
-    <div class="opt"><p class="k">Empresas</p><h3>RR. HH. y finanzas que quieren el convenio</h3>
-      <dl><dt>Buscan</dt><dd>Un beneficio para sus colaboradores, sin carga administrativa ni riesgo para la empresa.</dd>
-      <dt>Canales</dt><dd>Google (búsquedas de beneficios y préstamos para colaboradores), Meta con público empresarial, LinkedIn opcional.</dd>
-      <dt>Oferta</dt><dd>Cómo funciona el convenio, qué hace la empresa y qué hace Kredit, y una reunión con un ejecutivo.</dd>
-      <dt>Se mide por</dt><dd>Reuniones agendadas, convenios firmados y colaboradores que solicitan.</dd></dl></div>
-  </div>
-  <p class="caption">Una empresa afiliada multiplica: cada convenio abre la puerta a todos sus colaboradores, con la cuota descontada por planilla. Por eso la landing de empresas tiene su propia campaña y su propio seguimiento.</p>
-</section>
+S.append(sec('Punto de partida', 'Una marca clara, con un canal digital que recién arranca',
+    p('Revisamos el Instagram de Kredit (@kredit_pa) el 12 de octubre de 2026. La identidad ya está bien resuelta: una "K" reconocible, azul rey y cian, titulares fuertes y un mensaje aspiracional ("Tu solución financiera, en un instante", "Opciones de crédito para tus metas"). Ya hay piezas para empresas ("¿Buscas una solución financiera para tu equipo?") y un primer reel que explica cómo solicitar el crédito en 7 pasos.')
+    + stats([('6', 'Publicaciones: 5 imágenes y 1 reel'), ('13', 'Seguidores'), ('1', 'Enlace en la biografía: kredit.com.pa'), ('2', 'Públicos en su contenido: personas y empresas')])
+    + p('Con esa audiencia, el alcance orgánico todavía no genera solicitudes por sí solo: hoy el crecimiento tiene que venir de la pauta, y el contenido debe trabajar para la pauta (confianza, prueba social y un camino claro a la precalificación).', 'mt-6 mb-4')
+    + h3('La página principal hoy')
+    + p('También revisamos kredit.com.pa el mismo día. Comunica bien la promesa ("créditos rápidos y fáciles, con cuotas fijas y sin costos ocultos") y explica en sus preguntas frecuentes el modelo: <b class="text-slate-800">el crédito es para colaboradores de empresas afiliadas</b>, se paga con descuento automático en planilla y el desembolso es el mismo día de la aprobación. Su política de privacidad confirma además que CREDU HOLDINGS, S.A. está autorizada como empresa financiera por el MICI (Resolución No. 638 de 2025). Lo que hoy le quita solicitudes:')
+    + table(['Hallazgo', 'Por qué importa'], [
+        ['<b>"Afiliar empresa" abre un formulario genérico</b>', 'El popup pide solo nombre, correo, teléfono y mensaje: no pregunta empresa, RUC, cargo ni número de colaboradores, y no tiene página de gracias para medir la conversión. Es la puerta más valiosa del negocio.'],
+        ['<b>No hay formulario ni precalificación para personas</b>', '"Crear cuenta" no lleva a ninguna parte y el único camino es escribir por WhatsApp: no se sabe de qué empresa viene cada persona ni de qué campaña.'],
+        ['<b>No se muestran tasa efectiva, plazos ni un ejemplo de costo</b>', 'Google lo exige en la landing para aprobar anuncios de préstamos, y la normativa panameña pide indicar la tasa efectiva en la publicidad (a validar con su asesor).'],
+        ['<b>No hay medición</b>', 'Sin Google Analytics, Tag Manager ni píxel de Meta: hoy no se sabe cuántas visitas llegan ni cuántas escriben, y la pauta no tendría con qué optimizar.'],
+        ['<b>La licencia y la dirección no se ven</b>', 'La autorización del MICI solo aparece dentro de la política de privacidad, y el pie y la política muestran dos direcciones distintas. En una financiera, y para Google Ads, ambas deben verse y coincidir.'],
+        ['<b>Aviso legal y política de cookies sin página</b>', 'La política de privacidad ya está completa, pero "Aviso legal" y "Política de cookies" son texto sin enlace.'],
+        ['<b>Sin título principal, descripción ni datos estructurados</b>', 'El titular no está marcado como H1, no hay meta descripción ni datos estructurados y el sitio es una sola página: Google y los asistentes de IA tienen poco para mostrar.'],
+        ['<b>El enlace a Instagram del pie apunta a /kreditpa</b>', 'El perfil activo es @kredit_pa. Conviene corregirlo para no mandar visitas a otra cuenta.'],
+    ])))
 
-<section>
-  <div class="keep">
-  <p class="eyebrow">Landings</p>
-  <h2>Dos landings hechas para convertir</h2>
-  <p class="prose">Ya preparamos una vista previa de ambas para que las recorra. Los formularios están en modo demostración: validan los datos y le muestran exactamente lo que recibiría n8n, pero no envían nada.</p>
-  @@SHOTS@@
-  </div>
-  <ul class="checks">
-    <li><b>Formularios multipaso</b><span>Preguntas cortas en 3 o 4 pasos con barra de avance: más solicitudes completas que un formulario largo, y datos útiles para calificar.</span></li>
-    <li><b>Validación al momento</b><span>Formato de cédula y de celular panameño, correo corporativo en empresas, protección contra spam y envíos duplicados.</span></li>
-    <li><b>Calculadora de cuota</b><span>El cliente ve una cuota estimada antes de enviar sus datos, con la información de costo del crédito que exigen las plataformas.</span></li>
-    <li><b>Consentimientos claros</b><span>Aviso de privacidad (Ley 81 de 2019), autorización para consultar referencias de crédito y permiso aparte para escribirle por WhatsApp.</span></li>
-    <li><b>Atribución completa</b><span>Cada solicitud lleva su campaña, anuncio y palabra clave (UTM, gclid, fbclid) hasta el CRM.</span></li>
-    <li><b>Velocidad</b><span>Páginas livianas alojadas en nuestro VPS, pensadas primero para el celular, que es donde llega casi todo el tráfico pagado.</span></li>
-  </ul>
-</section>
+S.append(sec('La estrategia', 'Dos landings: empresas que se afilian y personas que buscan un préstamo',
+    p('La landing de empresas trae convenios nuevos; la de personas está pensada para quien busca un préstamo en Google. Hoy su web indica que el crédito es para colaboradores de empresas afiliadas; por eso la landing pregunta dónde trabaja la persona y la regla se ajusta con un interruptor: <b class="text-slate-800">si Kredit presta al público general</b>, la solicitud sigue su curso; <b class="text-slate-800">si solo presta a afiliadas</b>, a quien no califica se le invita a recomendar a su empresa, y ese contacto entra como lead de empresa.')
+    + cards([('1 · Afiliar', 'Empresas nuevas', 'Google (búsquedas de beneficios para colaboradores), LinkedIn opcional y la landing de empresas con formulario y reunión con un ejecutivo.'),
+             ('2 · Activar', 'Colaboradores de afiliadas', 'Kit para RR. HH. con afiches y QR, mensajes internos, WhatsApp a quienes aceptaron y anuncios alrededor de las empresas afiliadas.'),
+             ('3 · Captar en Google', 'Personas que buscan un préstamo', 'Landing con calculadora y precalificación para la búsqueda con intención; si su empresa no está afiliada, puede recomendarla y n8n la entrega como lead de empresa.')])))
 
-<section class="keep">
-  <p class="eyebrow">Calificación automática</p>
-  <h2>Su vendedor solo atiende lo que vale la pena</h2>
-  {fig(d_calif(), 'El cliente nunca ve un "aprobado" ni un "rechazado": ve "Solicitud recibida" y el siguiente paso. En producción el puntaje se calcula en n8n, así que las reglas no quedan visibles en la página, y la decisión de crédito sigue siendo de Kredit.')}
-  <div class="tbl"><table>
-    <thead><tr><th>Criterio (ejemplo)</th><th>Personas</th><th>Empresas</th></tr></thead>
-    <tbody>
-      <tr><td><b>Empresa</b></td><td>Trabaja en una empresa afiliada (requisito o puntaje extra, según decida Kredit)</td><td>Empresa formal con planilla en Panamá</td></tr>
-      <tr><td><b>Perfil</b></td><td>Antigüedad en la empresa y tipo de contrato</td><td>Sector y número de colaboradores</td></tr>
-      <tr><td><b>Capacidad</b></td><td>Ingreso neto mensual frente al monto y plazo pedidos</td><td>Cargo del contacto (decide o influye)</td></tr>
-      <tr><td><b>Vínculo</b></td><td>Cliente actual o referido por un cliente o una empresa</td><td>Correo corporativo y RUC válidos</td></tr>
-      <tr><td><b>Cobertura</b></td><td>Provincia donde Kredit atiende</td><td>Provincia y fecha deseada de inicio</td></tr>
-      <tr><td><b>Riesgo</b></td><td>Consulta de AgileCheck con autorización (opcional)</td><td>—</td></tr>
-    </tbody>
-  </table></div>
-</section>
+S.append(sec('El sistema', 'Del anuncio al vendedor, sin pasos manuales',
+    p('Todos los canales llevan a las landings. Las landings entregan a n8n, que decide qué hacer con cada solicitud. El CRM de Kredit recibe solo lo que vale la pena atender, y el resultado de cada contacto vuelve a las plataformas de publicidad.')
+    + figure(d_embudo(), 'Nada se pierde entre herramientas: cada lead conserva de dónde vino (campaña, anuncio, palabra clave) hasta el desembolso, para saber cuánto cuesta un préstamo colocado por canal.')
+    + callout('Calidad sobre volumen.', 'Un lead que se desembolsa y no paga cuesta más que ningún lead. Por eso la calificación filtra antes del vendedor y, cuando Kredit lo autorice, consulta AgileCheck desde n8n. Este sistema y la plataforma de cobranza que le propusimos comparten la misma base: n8n y sus reglas.')))
 
-<section>
-  <p class="eyebrow">Publicidad</p>
-  <h2>Google para quien ya busca, Meta para quien todavía no</h2>
-  <div class="two">
-    <div class="opt"><p class="k">Google Ads</p><h3>Intención de compra</h3>
-      <ul><li>Búsqueda para personas: "préstamo rápido Panamá", "préstamo personal", "préstamo con descuento directo" y la marca Kredit, con negativas para no pagar clics inútiles.</li>
-      <li>Búsqueda para empresas: "beneficios para colaboradores", "bienestar financiero empleados", "convenio de préstamos para empleados".</li>
-      <li>Remarketing a quien visitó la landing y no terminó.</li>
-      <li>Conversiones offline: lead calificado y desembolso.</li></ul></div>
-    <div class="opt"><p class="k">Meta Ads</p><h3>Demanda y remarketing</h3>
-      <ul><li>Anuncios por ubicación alrededor de las empresas afiliadas, para activar a sus colaboradores (si la categoría especial de servicios financieros no lo limita).</li>
-      <li>Campañas de clientes potenciales hacia la landing; quien no tiene empresa afiliada la recomienda.</li>
-      <li>Remarketing en Instagram y Facebook con casos y preguntas frecuentes.</li>
-      <li>8 artes nuevos al mes, con pruebas A/B de mensaje y formato.</li></ul></div>
-  </div>
-  <h3 style="margin-top:34px;font-size:20px">Inversión publicitaria recomendada</h3>
-  <p class="prose">La inversión va directo a Google y a Meta desde las cuentas de Kredit; no pasa por nosotros. Sugerimos empezar con US$ 2,700 al mes y subir a US$ 4,500 solo cuando el costo por lead calificado esté en meta.</p>
-  {fig(d_pauta(), 'Montos mensuales en dólares, aparte de la gestión. Pase el cursor sobre cada barra para ver el detalle.')}
-  <div class="tbl"><table>
-    <thead><tr><th>Escenario</th><th class="n">Google Ads</th><th class="n">Meta Ads</th><th class="n">Total al mes</th></tr></thead>
-    <tbody>{PAUTA_ROWS}</tbody>
-  </table></div>
-  @@BENCH@@
-  <div class="note">Los primeros 30 días son de aprendizaje: las plataformas necesitan conversiones para optimizar. Recomendamos un mínimo de 3 meses de pauta antes de juzgar el canal.</div>
-</section>
+S.append(sec('Dos públicos', 'Un mensaje distinto para cada puerta',
+    f'''<div class="reveal grid md:grid-cols-2 gap-4">
+        <div class="item-card bg-white/70 rounded-2xl p-6 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Personas</p><h3 class="display text-lg font-bold text-slate-900 mb-3">Quien busca un préstamo en Google</h3>
+          <dl class="grid grid-cols-[96px_1fr] gap-x-3 gap-y-2 text-sm"><dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Busca</dt><dd class="text-slate-700">Rapidez, cuota fija, saber si califica y cuándo le depositan, sin costos ocultos.</dd>
+          <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Canales</dt><dd class="text-slate-700">Google (búsqueda con intención), Meta, Instagram, WhatsApp y el kit interno de las empresas afiliadas.</dd>
+          <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Oferta</dt><dd class="text-slate-700">Calculadora de cuota y precalificación en 2 minutos; si su empresa no está afiliada, puede recomendarla.</dd>
+          <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Se mide por</dt><dd class="text-slate-700">Costo por lead calificado, por préstamo desembolsado y empresas recomendadas.</dd></dl></div>
+        <div class="item-card bg-white/70 rounded-2xl p-6 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Empresas</p><h3 class="display text-lg font-bold text-slate-900 mb-3">RR. HH. y finanzas que quieren el convenio</h3>
+          <dl class="grid grid-cols-[96px_1fr] gap-x-3 gap-y-2 text-sm"><dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Buscan</dt><dd class="text-slate-700">Un beneficio para sus colaboradores, sin carga administrativa ni riesgo para la empresa.</dd>
+          <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Canales</dt><dd class="text-slate-700">Google (búsquedas de beneficios y préstamos para colaboradores), Meta con público empresarial, LinkedIn opcional.</dd>
+          <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Oferta</dt><dd class="text-slate-700">Cómo funciona el convenio, qué hace la empresa y qué hace Kredit, y una reunión con un ejecutivo.</dd>
+          <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Se mide por</dt><dd class="text-slate-700">Reuniones agendadas, convenios firmados y colaboradores que solicitan.</dd></dl></div>
+      </div>'''
+    + p('Una empresa afiliada multiplica: cada convenio abre la puerta a todos sus colaboradores, con la cuota descontada por planilla. Por eso la landing de empresas tiene su propia campaña y su propio seguimiento.', 'mt-5 text-xs')))
 
-<section>
-  <p class="eyebrow">Cumplimiento en la publicidad</p>
-  <h2>Anuncios de crédito pensados para cumplir las políticas</h2>
-  @@POLICY@@
-</section>
+S.append(sec('Landings', 'Dos landings hechas para convertir',
+    p('Ya preparamos una vista previa de ambas para que las recorra. Los formularios están en modo demostración: validan los datos y le muestran exactamente lo que recibiría n8n, pero no envían nada.')
+    + '@@SHOTS@@'
+    + checks([('Formularios multipaso', 'Preguntas cortas en 3 o 4 pasos con barra de avance: más solicitudes completas que un formulario largo, y datos útiles para calificar.'),
+              ('Validación al momento', 'Formato de cédula y de celular panameño, correo corporativo en empresas, protección contra spam y envíos duplicados.'),
+              ('Primera pantalla que se entiende', 'El titular, la cuota quincenal, la licencia del MICI y el botón caben en la pantalla del celular. En Panamá las landings piden entre 8 y 14 datos antes de dar algo a cambio; aquí el cliente ve su cuota primero.'),
+              ('Calculadora de cuota quincenal', 'Montos de B/. 50 a B/. 3,000: el cliente ve su cuota por quincena, la mensual y el total estimado antes de enviar sus datos, con la información de costo del crédito que exigen las plataformas.'),
+              ('Consentimientos claros', 'Aviso de privacidad (Ley 81 de 2019), autorización para consultar referencias de crédito y permiso aparte para escribirle por WhatsApp.'),
+              ('Atribución completa', 'Cada solicitud lleva su campaña, anuncio y palabra clave (UTM, gclid, fbclid) hasta el CRM.'),
+              ('Velocidad', 'Páginas livianas alojadas en nuestro VPS, pensadas primero para el celular, que es donde llega casi todo el tráfico pagado.')])))
 
-<section>
-  <p class="eyebrow">WhatsApp marketing</p>
-  <h2>Envíos masivos a su base, por la vía oficial</h2>
-  <p class="prose">Campañas a su base de clientes y prospectos por la API oficial de WhatsApp Business: renovaciones, clientes que pueden volver a solicitar, empresas afiliadas y recordatorios. Cada respuesta llega a una bandeja compartida y, si es un lead, entra al mismo flujo de calificación.</p>
-  <ul class="checks">
-    <li><b>Incluye</b><span>5,000 mensajes al mes, hasta 5 usuarios, bandeja multiusuario, plantillas con variables, campañas programadas con imágenes, segmentos y panel de métricas.</span></li>
-    <li><b>Consentimiento</b><span>Solo se escribe a contactos que aceptaron recibir mensajes de Kredit, con opción de baja en cada envío. Así se cuida el número y la calidad de la cuenta.</span></li>
-    <li><b>Número propio</b><span>Recomendamos un número para ventas y otro para cobranza: si una campaña recibe reportes, no afecta los recordatorios de pago.</span></li>
-    <li><b>Tarifas de Meta</b><span>Meta cobra cada mensaje de marketing entregado. Para Panamá, las tarifas publicadas a octubre de 2026 rondan US$ 0.074–0.085 por mensaje: 5,000 mensajes serían unos US$ 370–425 al mes, que se facturan aparte, a costo y según el volumen real.</span></li>
-    <li><b>Política de WhatsApp</b><span>Permite promocionar préstamos de una entidad con licencia, pero no adelantos de nómina ni préstamos de día de pago, y no se debe pedir la cédula completa por chat: los datos sensibles van en la landing.</span></li>
-  </ul>
-</section>
+S.append(sec('Calificación automática', 'Su vendedor solo atiende lo que vale la pena',
+    figure(d_calif(), 'El cliente nunca ve un "aprobado" ni un "rechazado": ve "Solicitud recibida" y el siguiente paso. En producción el puntaje se calcula en n8n, así que las reglas no quedan visibles en la página, y la decisión de crédito sigue siendo de Kredit.', 'mt-0')
+    + table(['Criterio (ejemplo)', 'Personas', 'Empresas'], [
+        ['<b>Empresa</b>', 'Trabaja en una empresa afiliada (requisito o puntaje extra, según decida Kredit)', 'Empresa formal con planilla en Panamá'],
+        ['<b>Perfil</b>', 'Antigüedad en la empresa y tipo de contrato', 'Sector y número de colaboradores'],
+        ['<b>Capacidad</b>', 'Ingreso neto mensual frente al monto y plazo pedidos', 'Cargo del contacto (decide o influye)'],
+        ['<b>Vínculo</b>', 'Cliente actual o referido por un cliente o una empresa', 'Correo corporativo y RUC válidos'],
+        ['<b>Cobertura</b>', 'Provincia donde Kredit atiende', 'Provincia y fecha deseada de inicio'],
+        ['<b>Riesgo</b>', 'Consulta de AgileCheck con autorización (opcional)', '—']])))
 
-<section>
-  <p class="eyebrow">Instagram</p>
-  <h2>Un mes de contenido pensado para captar, no solo para publicar</h2>
-  <p class="prose">Con nuestro sistema de generación de contenido entregamos el mes completo de Instagram de una vez: calendario, artes, textos y llamados a la acción que llevan a la calculadora o a WhatsApp. Kredit revisa y aprueba antes de publicar.</p>
-  <div class="tbl"><table>
-    <thead><tr><th>Pilar</th><th>Para qué</th><th>Peso en el mes</th></tr></thead>
-    <tbody>
-      <tr><td><b>Educación financiera</b></td><td>Responder dudas reales: cuota, plazo, cómo mejorar su historial. Genera confianza y búsquedas.</td><td><span class="meter" style="width:60px"></span>30%</td></tr>
-      <tr><td><b>Oferta y calculadora</b></td><td>Llevar a la precalificación con un mensaje claro y la información de costo.</td><td><span class="meter" style="width:50px"></span>25%</td></tr>
-      <tr><td><b>Confianza</b></td><td>Quién es Kredit, cómo protege los datos, cómo identificar préstamos falsos.</td><td><span class="meter" style="width:40px"></span>20%</td></tr>
-      <tr><td><b>Casos y testimonios</b></td><td>Historias reales, con autorización, de clientes y empresas afiliadas.</td><td><span class="meter" style="width:30px"></span>15%</td></tr>
-      <tr><td><b>Empresas</b></td><td>El convenio como beneficio para colaboradores, para RR. HH. y gerencias.</td><td><span class="meter" style="width:20px"></span>10%</td></tr>
-    </tbody>
-  </table></div>
-  <p class="caption">16 publicaciones (imágenes, carruseles y reels) y 12 historias al mes. El perfil de Instagram se audita al iniciar: biografía, enlaces, historias destacadas y respuesta a mensajes.</p>
-</section>
+BENCH = table(['Escenario', 'Leads Google', 'Leads Meta', 'Leads al mes', 'Calificados'], [
+    ['Arranque', '18–47', '40–133', '58–180', '15–72'],
+    ['Recomendada', '30–80', '75–250', '105–330', '26–132'],
+    ['Escala', '50–133', '125–417', '175–550', '44–220']], num=(1, 2, 3, 4), sub_rows=(1,),
+    caption='Supuestos: costo por lead de US$ 15–40 en Google (búsqueda financiera, clics de US$ 1–8 en Panamá) y de US$ 6–20 en Meta (referencias de fintech en Latinoamérica), y entre 25% y 40% de leads calificados si Kredit presta al público general. Si presta solo a colaboradores de empresas afiliadas, la parte calificada de personas será menor y conviene mover más pauta a empresas: esos leads cuestan más, pero cada convenio vale por muchos colaboradores. No hay datos públicos específicos de préstamos en Panamá; la cifra real la da el primer mes y se reporta desde la primera semana.')
 
-<section>
-  <p class="eyebrow">Web, SEO y GEO</p>
-  <h2>Una página principal que convierte y aparece en Google y en la IA</h2>
-  <p class="prose">La publicidad trae tráfico mientras se paga; el SEO trae solicitudes cada mes sin pagar por clic. Mejoramos la página principal de kredit.com.pa y trabajamos su posicionamiento con medición avanzada.</p>
-  <div class="cols3">
-    <div class="opt"><p class="k">Página principal</p><h3>Mejora</h3><p>Formulario real para afiliar empresas, acceso a la precalificación, tasa efectiva y ejemplo de costo visibles, aviso legal y cookies completos, señales de confianza y velocidad en móvil, sobre el WordPress actual.</p></div>
-    <div class="opt"><p class="k">SEO avanzado</p><h3>Search Console y GA4</h3><p>Indexación, rendimiento por consulta, Core Web Vitals, eventos y conversiones en GA4, informes por canal y páginas de servicio que respondan cómo buscan sus clientes.</p></div>
-    <div class="opt"><p class="k">GEO</p><h3>Asistentes de IA</h3><p>Contenido y datos estructurados para aumentar la probabilidad de que ChatGPT, Gemini y otros asistentes mencionen a Kredit cuando alguien pregunta por préstamos en Panamá.</p></div>
-  </div>
-  <ul class="checks">
-    <li><b>VPS de Elemento Web</b><span>Alojamos las landings, n8n y, si lo desean, la web principal en un servidor privado virtual administrado por nosotros: recursos dedicados, certificados, respaldos diarios y monitoreo. Va en los tres planes, dimensionado para el volumen de leads; la ficha técnica se entrega al iniciar. Los datos de los leads quedan en un servidor bajo su control contractual, no en una herramienta gratuita.</span></li>
-    <li><b>Perfil de Google</b><span>Ficha de empresa optimizada y estrategia de reseñas: en financieras, las reseñas pesan tanto como el anuncio.</span></li>
-  </ul>
-</section>
+S.append(sec('Publicidad', 'Google para quien ya busca, Meta para quien todavía no',
+    f'''<div class="reveal grid md:grid-cols-2 gap-4">
+        <div class="item-card bg-white/70 rounded-2xl p-6 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Google Ads</p><h3 class="display text-lg font-bold text-slate-900 mb-3">Intención de compra</h3>{bullets([
+            'Búsqueda para personas: "préstamo rápido Panamá", "préstamo personal", "préstamo con descuento directo" y la marca Kredit, con negativas para no pagar clics inútiles.',
+            'Búsqueda para empresas: "beneficios para colaboradores", "bienestar financiero empleados", "convenio de préstamos para empleados".',
+            'Remarketing a quien visitó la landing y no terminó.', 'Conversiones offline: lead calificado y desembolso.'])}</div>
+        <div class="item-card bg-white/70 rounded-2xl p-6 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Meta Ads</p><h3 class="display text-lg font-bold text-slate-900 mb-3">Demanda y remarketing</h3>{bullets([
+            'Anuncios por ubicación alrededor de las empresas afiliadas, para activar a sus colaboradores (si la categoría especial de servicios financieros no lo limita).',
+            'Campañas de clientes potenciales hacia la landing; quien no tiene empresa afiliada la recomienda.',
+            'Remarketing en Instagram y Facebook con casos y preguntas frecuentes.', '8 artes nuevos al mes, con pruebas A/B de mensaje y formato.'])}</div>
+      </div>'''
+    + service_card('$', 'Inversión Publicitaria Recomendada · Google + Meta', 'Lo que se muestra en anuncios: va directo a las cuentas de Kredit',
+                   money(PAUTA), '/ mes recomendado', ribbon='INVERSIÓN, NO FEE', cls='mt-8 mb-0',
+                   text=f'La inversión va directo a Google ({money(1200)}) y a Meta ({money(1500)}) desde las cuentas de Kredit; no pasa por nosotros. Sugerimos empezar con {money(PAUTA)} al mes y subir a {money(4500)} solo cuando el costo por lead calificado esté en meta.')
+    + figure(d_pauta(), 'Montos mensuales en dólares, aparte de la gestión. Pase el cursor sobre cada barra para ver el detalle.')
+    + table(['Escenario', 'Google Ads', 'Meta Ads', 'Total al mes'],
+            [[esc(n), money(g), money(mm), money(g + mm)] for n, g, mm in SCEN], num=(1, 2, 3), sub_rows=(1,))
+    + h3('Qué se puede esperar desde el mes 2 (estimación)')
+    + BENCH.replace('class="reveal mt-6"', 'class="reveal mt-0"', 1)
+    + callout('', 'Los primeros 30 días son de aprendizaje: las plataformas necesitan conversiones para optimizar. Recomendamos un mínimo de 3 meses de pauta antes de juzgar el canal.', 'blue')))
 
-<section>
-  <p class="eyebrow">Medición</p>
-  <h2>Un tablero con lo que importa al negocio</h2>
-  <div class="tbl"><table>
-    <thead><tr><th>Indicador</th><th>Qué responde</th></tr></thead>
-    <tbody>
-      <tr><td><b>Costo por lead calificado</b></td><td>¿Cuánto cuesta una solicitud que vale la pena atender, por canal y campaña?</td></tr>
-      <tr><td><b>Costo por préstamo desembolsado</b></td><td>¿Cuánto cuesta colocar un préstamo con cada canal? Es la cifra para decidir dónde invertir.</td></tr>
-      <tr><td><b>Tasa de calificación</b></td><td>¿Qué parte de los leads cumple el perfil? Si baja, se ajustan anuncios y segmentación.</td></tr>
-      <tr><td><b>Tiempo a primer contacto</b></td><td>¿Los vendedores responden en menos de 5 minutos? Un lead atendido tarde se enfría.</td></tr>
-      <tr><td><b>Convenios y reuniones</b></td><td>¿Cuántas empresas pidieron reunión y cuántas firmaron?</td></tr>
-      <tr><td><b>Tráfico orgánico y menciones</b></td><td>¿Cuántas solicitudes llegan por Google sin pagar y por asistentes de IA?</td></tr>
-    </tbody>
-  </table></div>
-  <p class="caption">Reporte mensual con recomendaciones y una reunión de resultados. El tablero se actualiza solo y Kredit lo puede ver cuando quiera.</p>
-</section>
+S.append(billing_box('Cómo se cobra la pauta', 'Dos costos distintos, y conviene no confundirlos.',
+    ('💼 Nuestro fee de gestión', 'Lo que nos pagan a nosotros por crear, optimizar y reportar las campañas (servicios 1 y 2). Es lo único de la pauta que factura Elemento Web.'),
+    ('📢 La inversión publicitaria', 'El dinero que se muestra en anuncios. Va directo a Google y Meta desde las cuentas de Kredit; no la intermediamos ni le aplicamos margen.'),
+    'Las cuentas, campañas y datos de Google Ads y Meta son de Kredit desde el día uno.'))
 
-<section class="keep">
-  <p class="eyebrow">Cronograma</p>
-  <h2>Pauta en vivo en la semana 4</h2>
-  {fig(d_crono(), 'El plazo corre desde que tenemos los accesos y las reglas de calificación. La pauta no sale sin la medición funcionando: invertir sin medir es pagar a ciegas.')}
-</section>
+S.append(sec('Cumplimiento en la publicidad', 'Anuncios de crédito pensados para cumplir las políticas',
+    p('Google, Meta y la ley panameña tratan la publicidad de crédito con reglas propias. Las cumplimos desde el diseño de anuncios y landings, y su oficial de cumplimiento aprueba cada pieza antes de publicarse.')
+    + checks([('Google Ads', 'Solo admite préstamos personales con plazo de pago de 61 días o más. La landing debe mostrar, sin clics: plazo mínimo y máximo, tasa anual máxima, un ejemplo representativo del costo total y la dirección física. Hoy Panamá no figura entre los países que exigen verificación de anunciante financiero; lo revisamos al crear la cuenta.'),
+              ('Meta Ads', 'Prohíbe anunciar adelantos de nómina y préstamos a 90 días o menos. El convenio con empresas se comunica como préstamo con descuento directo a varios meses, nunca como "adelanto de salario". Si Meta aplica a Panamá la categoría especial de servicios financieros, la segmentación se ajusta (sin edad, género ni públicos similares).'),
+              ('Plazos que se pueden anunciar', 'Con préstamos de B/. 50 a B/. 3,000, solo se anuncian plazos de más de 90 días (Meta) y de 61 días o más (Google). Si Kredit ofrece plazos más cortos, se atienden por los canales propios, sin pauta.'),
+              ('Ley panameña', 'La publicidad de una financiera debe indicar la tasa de interés efectiva (Ley 42 de 2001, modificada por la Ley 33 de 2002, y Decreto Ejecutivo 213 de 2010), ser veraz y decir su vigencia (Ley 45 de 2007).'),
+              ('Datos y referencias de crédito', 'Casillas separadas y sin marcar para el aviso de privacidad (Ley 81 de 2019), la autorización para consultar referencias de crédito (Ley 24 de 2002) y el permiso para escribir por WhatsApp.'),
+              ('Confianza', 'Razón social, licencia del MICI (Resolución No. 638 de 2025), una sola dirección, canales oficiales y la frase "Kredit nunca cobra por adelantado para aprobar un préstamo": en Panamá abundan las financieras falsas en redes y el cliente lo sabe.')], cols=1)
+    + p('Resumen de políticas públicas a octubre de 2026, no es asesoría legal: el texto final de anuncios y avisos lo valida su asesor legal o de cumplimiento.', 'mt-4 text-xs')))
 
-<section>
-  <p class="eyebrow">Inversión</p>
-  <h2>Tres formas de empezar</h2>
-  <div class="pkgs">
-    <div class="pkg"><p class="tag">Captación</p><h3>Esencial</h3><p class="for">Landings, automatización, medición y pauta gestionada.</p><div class="price">{money(ESENCIAL_U)}<small>pago único · más {money(ESENCIAL_M)} al mes y VPS {money(VPS)} al año</small></div>
-      <ul><li>Landings de préstamos y empresas (A, B)</li><li>n8n + CRM + calificación (C)</li><li>Medición completa (D)</li><li>VPS para landings y n8n</li><li>Google y Meta: creación y gestión (E, F, 1, 2)</li></ul></div>
-    <div class="pkg rec"><span class="badge">Recomendado</span><p class="tag">Captación + contenido</p><h3>Crecimiento</h3><p class="for">Lo esencial más activación de afiliadas, Instagram y WhatsApp.</p><div class="price">{money(CREC_U)}<small>pago único · más {money(RECOM_M)} al mes y VPS {money(VPS)} al año</small></div>
-      <ul><li>Todo el plan Esencial</li><li>Kit de activación para empresas afiliadas (H)</li><li>Contenido mensual de Instagram (3)</li><li>WhatsApp marketing masivo (4)</li></ul></div>
-    <div class="pkg"><p class="tag">Todo incluido</p><h3>Integral</h3><p class="for">Crecimiento más web, SEO + GEO y mantenimiento.</p><div class="price">{money(INTEGRAL_U)}<small>pago único · más {money(INTEGRAL_M)} al mes y VPS {money(VPS)} al año</small></div>
-      <ul><li>Todo el plan Crecimiento</li><li>Mejora de la página principal (G)</li><li>SEO + GEO avanzado (5)</li><li>Mantenimiento web Prioritario (6)</li></ul></div>
-  </div>
-  <p class="caption">La inversión publicitaria (escenario recomendado: {money(2700)} al mes) y las tarifas de Meta por mensaje de WhatsApp (unos US$ 370–425 al mes si se usan los 5,000 mensajes) van aparte, a costo. Ejemplo con el plan Crecimiento y la pauta recomendada: US$ 1,700 + US$ 2,700 de pauta + unos US$ 400 de mensajes ≈ US$ 4,800 al mes.</p>
-  <div class="tbl"><table>
-    <thead><tr><th></th><th>Pago único</th><th class="n">Precio</th></tr></thead>
-    <tbody>{rows_table(UNICO)}</tbody>
-  </table></div>
-  <div class="tbl"><table>
-    <thead><tr><th></th><th>Servicio mensual</th><th class="n">Al mes</th></tr></thead>
-    <tbody>{rows_table(MENSUAL)}<tr><td><b>VPS</b></td><td><b>Servidor VPS de Elemento Web</b><small>Landings, n8n y web; recursos dedicados, respaldos y monitoreo</small></td><td class="n">{money(VPS)} al año</td></tr></tbody>
-  </table></div>
-</section>
+S.append(sec('WhatsApp marketing', 'Envíos masivos a su base, por la vía oficial',
+    p('Campañas a su base de clientes y prospectos por la API oficial de WhatsApp Business: renovaciones, clientes que pueden volver a solicitar y empresas afiliadas. Cada respuesta llega a una bandeja compartida y, si es un lead, entra al mismo flujo de calificación.')
+    + checks([('Incluye', '5,000 mensajes al mes, hasta 5 usuarios, bandeja multiusuario, plantillas con variables, campañas programadas con imágenes, segmentos y panel de métricas.'),
+              ('Consentimiento', 'Solo se escribe a contactos que aceptaron recibir mensajes de Kredit, con opción de baja en cada envío. Así se cuida el número y la calidad de la cuenta.'),
+              ('Solo ventas y atención', 'La política de WhatsApp Business prohíbe usarlo para cobrar deudas, aun con licencia. Por eso la plataforma de cobranza que le propusimos cobra por SMS, correo y voz, y el número de ventas no se pone en riesgo.'),
+              ('Tarifas de Meta', 'Meta cobra cada mensaje de marketing entregado. Para Panamá, las tarifas publicadas a octubre de 2026 rondan US$ 0.074–0.085 por mensaje: 5,000 mensajes serían unos US$ 370–425 al mes, que se facturan aparte, a costo y según el volumen real.'),
+              ('Política de WhatsApp', 'Permite promocionar préstamos de una entidad con licencia, pero no adelantos de nómina, préstamos de día de pago ni cobranza, y no se debe pedir la cédula completa por chat: los datos sensibles van en la landing.')])))
 
-<section>
-  <p class="eyebrow">Para considerar</p>
-  <h2>Lo que suele quedar fuera, y no debería</h2>
-  <ol class="miss">
-    <li><b>Decidir a quién se presta.</b> Su web dice que el crédito es para colaboradores de empresas afiliadas. Si sigue así, la pauta de personas en Google debe decirlo en el anuncio para no pagar clics de quien no puede solicitar; si Kredit abre el crédito al público, la landing ya está lista para ambos casos.</li>
-    <li><b>Activar a las empresas que ya están afiliadas.</b> Es el lead más barato y de mejor calidad: sus colaboradores ya califican. Suele quedar fuera porque no se ve como "marketing".</li>
-    <li><b>El formulario para afiliar empresas.</b> Hoy el botón de la web no lleva a ninguno; cualquier pauta para empresas necesita esa puerta abierta primero.</li>
-    <li><b>Vendedores listos antes de la pauta.</b> El mejor anuncio se pierde si el lead espera horas. Acordemos un tiempo de respuesta, horarios y quién atiende cada tipo de lead.</li>
-    <li><b>Reglas de calificación escritas.</b> Quién califica, con qué ingreso, plazo, monto y cobertura. Sin ellas, el CRM se llena de solicitudes que no se pueden aprobar.</li>
-    <li><b>Aprobación de anuncios por cumplimiento.</b> Los anuncios de crédito deben mostrar el costo y no prometer aprobación. Su oficial de cumplimiento revisa textos y artes antes de publicar.</li>
-    <li><b>Consentimientos y base de WhatsApp.</b> Solo se envían campañas a contactos que aceptaron. Si la base actual no tiene ese registro, empezamos por pedirlo.</li>
-    <li><b>La señal de vuelta desde el CRM.</b> Sin marcar en el CRM qué lead calificó y cuál se desembolsó, Google y Meta optimizan por volumen y no por calidad.</li>
-    <li><b>Confianza visible.</b> Con tantos préstamos falsos en redes, la licencia, la dirección, los canales oficiales y las reseñas reales venden tanto como la tasa.</li>
-  </ol>
-  <h2 style="margin-top:40px">Qué más podemos sumar</h2>
-  <div class="tbl"><table>
-    <thead><tr><th>Opcional</th><th>Para qué</th><th class="n">Precio</th></tr></thead>
-    <tbody>
-      <tr><td><b>Asistente de IA en WhatsApp para precalificar 24/7</b></td><td>Responde preguntas, calcula la cuota y precalifica de noche y en fin de semana, cuando no hay vendedores.</td><td class="n">desde US$ 349 al mes</td></tr>
-      <tr><td><b>LinkedIn Ads para empresas</b></td><td>Llegar directo a gerentes de RR. HH. y finanzas para el programa de convenios.</td><td class="n">US$ 300 al mes de gestión</td></tr>
-      <tr><td><b>Programa de referidos</b></td><td>Clientes y empresas afiliadas recomiendan con un enlace propio que el CRM reconoce.</td><td class="n">se cotiza según alcance</td></tr>
-      <tr><td><b>Video testimonial</b></td><td>Clientes y empresas reales contando su experiencia, para anuncios y redes.</td><td class="n">se cotiza según alcance</td></tr>
-      <tr><td><b>Plataforma de cobranza con IA</b></td><td>La propuesta EW-KRE-2026-01: usa el mismo n8n, el mismo WhatsApp oficial y las mismas reglas.</td><td class="n">según su propuesta</td></tr>
-    </tbody>
-  </table></div>
-</section>
+S.append(sec('Instagram', 'Un mes de contenido pensado para captar, no solo para publicar',
+    p('Con nuestro sistema de generación de contenido entregamos el mes completo de Instagram de una vez: calendario, artes, textos y llamados a la acción que llevan a la calculadora o a WhatsApp. Kredit revisa y aprueba antes de publicar.')
+    + table(['Pilar', 'Para qué', 'Peso en el mes'], [
+        ['<b>Educación financiera</b>', 'Responder dudas reales: cuota, plazo, cómo mejorar su historial. Genera confianza y búsquedas.', '<span class="meter" style="width:60px"></span>30%'],
+        ['<b>Oferta y calculadora</b>', 'Llevar a la precalificación con un mensaje claro y la información de costo.', '<span class="meter" style="width:50px"></span>25%'],
+        ['<b>Confianza</b>', 'Quién es Kredit, cómo protege los datos, cómo identificar préstamos falsos.', '<span class="meter" style="width:40px"></span>20%'],
+        ['<b>Casos y testimonios</b>', 'Historias reales, con autorización, de clientes y empresas afiliadas.', '<span class="meter" style="width:30px"></span>15%'],
+        ['<b>Empresas</b>', 'El convenio como beneficio para colaboradores, para RR. HH. y gerencias.', '<span class="meter" style="width:20px"></span>10%']],
+        caption='16 publicaciones (imágenes, carruseles y reels) y 12 historias al mes. El perfil de Instagram se audita al iniciar: biografía, enlaces, historias destacadas y respuesta a mensajes.')))
 
-<section>
-  <p class="eyebrow">Para avanzar</p>
-  <h2>Lo que necesitamos de Kredit</h2>
-  <div class="need">
-    <div class="opt"><p class="k">Accesos</p><h3>Cuentas y plataformas</h3><ul>
-      <li>Google Ads, Google Analytics y Search Console (como administrador)</li>
-      <li>Meta Business Suite, cuenta publicitaria e Instagram</li>
-      <li>Dominio y DNS de kredit.com.pa, y acceso al WordPress</li>
-      <li>CRM: nombre, acceso a su API, campos y etapas</li>
-      <li>Número de WhatsApp Business y verificación de la empresa en Meta</li></ul></div>
-    <div class="opt"><p class="k">Negocio</p><h3>Reglas y productos</h3><ul>
-      <li>Productos: montos, plazos, tasa y costo total, requisitos</li>
-      <li>Reglas de calificación, cobertura por provincia y uso de AgileCheck y la APC</li>
-      <li>Cómo funciona el convenio, la lista de empresas afiliadas y si prestan al público general</li>
-      <li>Vendedores: nombres, horarios y tiempo de respuesta</li>
-      <li>Presupuesto mensual de pauta y medio de pago a las plataformas</li></ul></div>
-    <div class="opt"><p class="k">Marca y legal</p><h3>Contenido y cumplimiento</h3><ul>
-      <li>Logo, colores, tipografías y fotos de marca</li>
-      <li>Aviso de privacidad y autorización de referencias de crédito</li>
-      <li>Datos de licencia y textos legales obligatorios</li>
-      <li>Persona de cumplimiento que aprueba anuncios</li>
-      <li>Base de contactos con su consentimiento para WhatsApp</li>
-      <li>Testimonios y casos con autorización</li></ul></div>
-  </div>
-</section>
+S.append(sec('Web, SEO y GEO', 'Una web que convierte y aparece en Google y en la IA',
+    p('La publicidad trae tráfico mientras se paga; el SEO trae solicitudes cada mes sin pagar por clic. Proponemos rehacer kredit.com.pa como un sitio de varias páginas, con su misma marca y estructura, y trabajar su posicionamiento con medición avanzada.')
+    + cards([('Web nueva', 'Rediseño multipágina', 'Inicio, préstamos para colaboradores, empresas, nosotros, preguntas frecuentes, contacto y páginas legales. Formulario real para afiliar empresas, calculadora, licencia del MICI, tasa y ejemplo de costo visibles, y velocidad en móvil.'),
+             ('SEO avanzado', 'Search Console y GA4', 'Indexación, rendimiento por consulta, Core Web Vitals, eventos y conversiones en GA4, informes por canal y páginas de servicio que respondan cómo buscan sus clientes.'),
+             ('GEO', 'Asistentes de IA', 'Contenido y datos estructurados para aumentar la probabilidad de que ChatGPT, Gemini y otros asistentes mencionen a Kredit cuando alguien pregunta por préstamos en Panamá.')])
+    + '@@WEB@@'
+    + checks([('VPS de Elemento Web', 'Alojamos las landings, n8n y la web nueva en un servidor privado virtual administrado por nosotros: recursos dedicados, certificados, respaldos diarios y monitoreo. Va en los tres planes, dimensionado para el volumen de leads; la ficha técnica se entrega al iniciar. Los datos de los leads quedan en un servidor bajo su control contractual, no en una herramienta gratuita.'),
+              ('Perfil de Google', 'Ficha de empresa optimizada y estrategia de reseñas: en financieras, las reseñas pesan tanto como el anuncio.')])))
 
-<section>
-  <p class="eyebrow">Riesgos del plan</p>
-  <h2>Lo que puede frenar los resultados</h2>
-  <div class="tbl"><table>
-    <thead><tr><th>Riesgo</th><th>Cómo lo evitamos</th></tr></thead>
-    <tbody>
-      <tr><td>Las plataformas rechazan o limitan anuncios de crédito</td><td>Anuncios y landings con la información de costo que exigen, verificación del anunciante al iniciar y revisión de cumplimiento antes de publicar.</td></tr>
-      <tr><td>Muchos leads, pocos aprobables</td><td>Calificación en el formulario, puntaje en n8n y señal de vuelta desde el CRM para optimizar por calidad.</td></tr>
-      <tr><td>Leads atendidos tarde</td><td>Aviso inmediato al vendedor, respuesta automática por WhatsApp y alerta si un lead lleva más de 15 minutos sin contacto.</td></tr>
-      <tr><td>El CRM no tiene API o la integración se demora</td><td>Plan B por correo estructurado o planilla compartida mientras se conecta; el flujo de n8n no cambia.</td></tr>
-      <tr><td>Bloqueo del número de WhatsApp</td><td>API oficial, solo contactos con consentimiento, opción de baja y números separados para ventas y cobranza.</td></tr>
-    </tbody>
-  </table></div>
-</section>
+S.append(sec('Medición', 'Un tablero con lo que importa al negocio',
+    table(['Indicador', 'Qué responde'], [
+        ['<b>Costo por lead calificado</b>', '¿Cuánto cuesta una solicitud que vale la pena atender, por canal y campaña?'],
+        ['<b>Costo por préstamo desembolsado</b>', '¿Cuánto cuesta colocar un préstamo con cada canal? Es la cifra para decidir dónde invertir.'],
+        ['<b>Tasa de calificación</b>', '¿Qué parte de los leads cumple el perfil? Si baja, se ajustan anuncios y segmentación.'],
+        ['<b>Tiempo a primer contacto</b>', '¿Los vendedores responden en menos de 5 minutos? Un lead atendido tarde se enfría.'],
+        ['<b>Convenios y reuniones</b>', '¿Cuántas empresas pidieron reunión y cuántas firmaron?'],
+        ['<b>Tráfico orgánico y menciones</b>', '¿Cuántas solicitudes llegan por Google sin pagar y por asistentes de IA?']], cls='mt-0',
+        caption='Reporte mensual con recomendaciones y una reunión de resultados. El tablero se actualiza solo y Kredit lo puede ver cuando quiera.')))
 
-<section>
-  <p class="eyebrow">Condiciones</p>
-  <h2>Condiciones comerciales</h2>
-  <div class="terms">
-    <p><b>Pago único.</b> 50% al aprobar y 50% al lanzar la pauta. Tarjeta, transferencia bancaria o Yappy.</p>
-    <p><b>Servicios mensuales.</b> Se facturan por mes adelantado desde el lanzamiento. Plazo mínimo de 3 meses para pauta y contenido.</p>
-    <p><b>Inversión publicitaria.</b> Va directo a Google y Meta desde las cuentas de Kredit; las cuentas, campañas y datos son de Kredit.</p>
-    <p><b>Propiedad.</b> Las landings, textos, artes y flujos de n8n hechos para Kredit son de Kredit al completar el pago.</p>
-    <p><b>Datos.</b> Los datos de los leads se tratan conforme a la Ley 81 de 2019; firmamos acuerdo de confidencialidad y de tratamiento de datos.</p>
-    <p><b>Resultados.</b> Las cifras de costo por lead son estimaciones de mercado; los resultados reales se reportan cada mes y guían los ajustes.</p>
-    <p><b>Validez.</b> Esta propuesta vale hasta el 10 de noviembre de 2026. Precios en USD sin ITBMS (7%).</p>
-  </div>
-</section>
+S.append(sec('Cronograma', 'Pauta en vivo en la semana 4',
+    figure(d_crono(), 'El plazo corre desde que tenemos los accesos y las reglas de calificación. La pauta no sale sin la medición funcionando: invertir sin medir es pagar a ciegas.', 'mt-0')))
 
-<div class="cta">
-  <div><h2>¿Empezamos por el taller de calificación?</h2><p>Una sesión de una hora para definir quién califica y cómo se reparte entre sus vendedores. Con eso arrancamos las landings y la medición.</p></div>
-  <div class="btns"><a class="btn" href="mailto:info@elementoweb.com?subject=Propuesta%20{REF}%3A%20marketing%20digital%20Kredit">Avanzar por correo</a><a class="btn alt" href="{DEMO_B2C}">Ver la landing de préstamos</a><a class="btn alt" href="https://wa.me/50761622787?text=Hola%2C%20quiero%20conversar%20sobre%20la%20propuesta%20{REF}%20de%20marketing%20digital.">Conversar por WhatsApp</a></div>
-</div>
-</main>
+PLANS = [
+    {'tag': 'Captación', 'name': 'Esencial', 'for': 'Landings, automatización, medición y pauta gestionada.', 'price': money(ESENCIAL_U),
+     'price_note': f'pago único · más {money(ESENCIAL_M)} al mes y VPS {money(VPS)} al año',
+     'items': ['Landings de préstamos y empresas (A, B)', 'n8n + CRM + calificación (C)', 'Medición completa (D)', 'VPS para landings y n8n', 'Google y Meta: creación y gestión (E, F, 1, 2)']},
+    {'tag': 'Captación + contenido', 'name': 'Crecimiento', 'rec': True, 'for': 'Lo esencial más activación de afiliadas, Instagram y WhatsApp.', 'price': money(CREC_U),
+     'price_note': f'pago único · más {money(RECOM_M)} al mes y VPS {money(VPS)} al año',
+     'items': ['Todo el plan Esencial', 'Kit de activación para empresas afiliadas (H)', 'Contenido mensual de Instagram (3)', 'WhatsApp marketing masivo (4)']},
+    {'tag': 'Todo incluido', 'name': 'Integral', 'for': 'Crecimiento más la web nueva, SEO + GEO y mantenimiento.', 'price': money(INTEGRAL_U),
+     'price_note': f'pago único · más {money(INTEGRAL_M)} al mes y VPS {money(VPS)} al año',
+     'items': ['Todo el plan Crecimiento', 'Rediseño multipágina de la web (G)', 'SEO + GEO avanzado (5)', 'Mantenimiento web Prioritario (6)']},
+]
 
-<footer><div class="wrap">
-  <div class="src"><b>Fuentes y supuestos.</b> @@SOURCES@@ Los precios de Elemento Web son en dólares, sin ITBMS. Las cifras de inversión y costo por lead son estimaciones de mercado sujetas a los resultados de los primeros 30 días. El perfil de Instagram y la página principal de kredit.com.pa se revisaron el 11 de octubre de 2026; la auditoría técnica completa del sitio se hace al iniciar.</div>
-  <div class="legalrow"><span>elementoweb.com · info@elementoweb.com · +507 6162-2787</span><span>Documento confidencial · Preparado para Kredit · {REF}</span></div>
-</div></footer>
-</body></html>
-'''
+cards_unico = ''.join(service_card(k, ti, esc(d), money(v), 'Pago único', cls='mb-4') for k, ti, d, v in UNICO)
+cards_mensual = ''.join(service_card(k, ti, esc(d), money(v), '/ mes', cls='mb-4') for k, ti, d, v in MENSUAL)
+cards_mensual += service_card('VPS', 'Servidor VPS de Elemento Web', 'Landings, n8n y web; recursos dedicados, respaldos y monitoreo. Va en los tres planes.', money(VPS), '/ año', cls='mb-0')
 
-# bloques que dependen de la investigación y de las capturas
-extra = json.loads((HERE / 'kredit_mkt_extra.json').read_text()) if (HERE / 'kredit_mkt_extra.json').exists() else {}
-shots = ''
-if (OUT_DIR / 'landing-prestamos.webp').exists():
-    shots = f'''<div class="demo-block"><div class="shots">
-    <figure><img src="landing-prestamos.webp" width="1440" height="900" alt="Vista previa de la landing de préstamos de Kredit con calculadora de cuota y formulario de precalificación" loading="lazy"><figcaption><b>Préstamos.</b> Calculadora, precalificación en 4 pasos y respuesta por WhatsApp.</figcaption></figure>
-    <figure><img src="landing-empresas.webp" width="1440" height="900" alt="Vista previa de la landing de empresas de Kredit para el convenio de préstamos para colaboradores" loading="lazy"><figcaption><b>Empresas.</b> El convenio explicado para RR. HH. y finanzas, con formulario de afiliación.</figcaption></figure>
-  </div>
-  <div class="demo-cta"><a class="btn" href="{DEMO_B2C}">Abrir la landing de préstamos</a><a class="btn" href="{DEMO_B2B}">Abrir la landing de empresas</a><span>Vista previa · formularios en modo demo</span></div></div>'''
-html = (html.replace('@@SHOTS@@', shots)
-            .replace('@@BENCH@@', extra.get('bench', ''))
-            .replace('@@POLICY@@', extra.get('policy', '<p class="prose">Google y Meta tratan los préstamos como categoría sensible. Antes de lanzar verificamos la cuenta de anunciante, incluimos en anuncios y landings la información de costo del crédito que exigen y evitamos promesas de aprobación.</p>'))
-            .replace('@@SOURCES@@', extra.get('sources', '')))
+S.append(sec('Inversión', 'Tres formas de empezar',
+    packages(PLANS, 'mt-0')
+    + p(f'La inversión publicitaria (escenario recomendado: {money(PAUTA)} al mes) y las tarifas de Meta por mensaje de WhatsApp (unos US$ 370–425 al mes si se usan los 5,000 mensajes) van aparte, a costo. Ejemplo con el plan Crecimiento y la pauta recomendada: US$ 1,700 + US$ 2,700 de pauta + unos US$ 400 de mensajes ≈ US$ 4,800 al mes.', 'mt-5 mb-0 text-xs')))
+
+S.append(sec('Lo que incluye cada servicio', 'Pago único: implementación',
+    '<div class="svc-grid">' + cards_unico + '</div>'
+    + '<div class="reveal sec-head flex items-center gap-3 mt-10 mb-6"><h2 class="display text-2xl font-bold text-slate-900">Servicios mensuales</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div></div>'
+    + '<div class="svc-grid">' + cards_mensual + '</div>'))
+
+resumen_inner = (
+    sum_head('Pago único · plan Crecimiento')
+    + '<div class="space-y-0.5 text-sm mb-3">'
+    + sum_row('Landings, automatización, medición y campañas (A–F)', money(ESENCIAL_U))
+    + sum_row('Kit de activación para empresas afiliadas (H)', money(u['H']))
+    + sum_total('Total pago único', money(CREC_U)) + '</div>'
+    + sum_head('Pagos mensuales', 'bg-violet-400', 'mt-8')
+    + '<div class="grid md:grid-cols-2 gap-8"><div>'
+    + '<h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">A Elemento Web · servicios</h4><div class="space-y-0.5 text-sm">'
+    + sum_row('Gestión de Google Ads (1)', money(m['1'])) + sum_row('Gestión de Meta Ads con artes (2)', money(m['2']))
+    + sum_row('Contenido de Instagram (3)', money(m['3'])) + sum_row('WhatsApp marketing (4)', money(m['4']))
+    + sum_total('Subtotal servicios', money(RECOM_M), '/mes') + '</div></div><div>'
+    + '<h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Inversión y consumo, a costo</h4><div class="space-y-0.5 text-sm">'
+    + sum_row('Google Ads', money(1200)) + sum_row('Meta Ads', money(1500))
+    + sum_row('Mensajes de WhatsApp (tarifa de Meta)', '≈ US$ 370–425')
+    + sum_total('Subtotal a costo', '≈ US$ 3,100', '/mes')
+    + '<p class="text-[11px] text-blue-300/70">La pauta no la facturamos nosotros: se carga directo en las cuentas de Kredit.</p></div></div></div>'
+    + '<div class="flex justify-between items-center gap-4 py-3 mt-4 border-t border-white/15"><span class="font-bold text-blue-200">Total mensual combinado</span><span class="text-xl font-bold text-blue-300 whitespace-nowrap">≈ US$ 4,800 <span class="text-xs font-normal text-blue-300/70">/mes</span></span></div>'
+    + sum_row('Servidor VPS de Elemento Web', f'{money(VPS)} al año', last=True)
+    + f'<p class="text-[11px] text-blue-300/70 mt-3">Los otros planes: Esencial {money(ESENCIAL_U)} + {money(ESENCIAL_M)} al mes · Integral {money(INTEGRAL_U)} + {money(INTEGRAL_M)} al mes. VPS {money(VPS)} al año en los tres.</p>')
+
+S.append(summary(resumen_inner, 'Para arrancar hoy · a Elemento Web', money(CREC_U // 2),
+    f'50% del pago único del plan Crecimiento. El otro 50% ({money(CREC_U // 2)}) se paga al lanzar la pauta, y la mensualidad de {money(RECOM_M)} se factura desde el lanzamiento.',
+    f'Hola, queremos aceptar la propuesta {REF} de marketing digital para Kredit (plan Crecimiento).',
+    'Precios en USD, sin ITBMS (7%); se aplicará según corresponda. La inversión publicitaria no pasa por nosotros, por lo que no le aplicamos ITBMS de nuestra parte.'))
+
+S.append(sec('Para considerar', 'Lo que suele quedar fuera, y no debería',
+    '<ol class="reveal space-y-0 max-w-3xl">' + ''.join(
+        f'<li class="flex gap-4 py-3.5 border-t border-slate-200/80 text-sm text-slate-600 leading-relaxed"><span class="num-badge w-8 h-8 rounded-lg grid place-items-center text-white text-xs font-bold shrink-0">{i}</span><span>{x}</span></li>'
+        for i, x in enumerate([
+            '<b class="text-slate-900">Decidir a quién se presta.</b> Su web dice que el crédito es para colaboradores de empresas afiliadas. Si sigue así, la pauta de personas en Google debe decirlo en el anuncio para no pagar clics de quien no puede solicitar; si Kredit abre el crédito al público, la landing ya está lista para ambos casos.',
+            '<b class="text-slate-900">Activar a las empresas que ya están afiliadas.</b> Es el lead más barato y de mejor calidad: sus colaboradores ya califican. Suele quedar fuera porque no se ve como "marketing".',
+            '<b class="text-slate-900">El formulario para afiliar empresas.</b> El de hoy solo pide nombre, correo, teléfono y mensaje; para calificar un convenio hace falta saber la empresa, su tamaño y quién decide.',
+            '<b class="text-slate-900">Vendedores listos antes de la pauta.</b> El mejor anuncio se pierde si el lead espera horas. Acordemos un tiempo de respuesta, horarios y quién atiende cada tipo de lead.',
+            '<b class="text-slate-900">Reglas de calificación escritas.</b> Quién califica, con qué ingreso, plazo, monto y cobertura. Sin ellas, el CRM se llena de solicitudes que no se pueden aprobar.',
+            '<b class="text-slate-900">Aprobación de anuncios por cumplimiento.</b> Los anuncios de crédito deben mostrar el costo y no prometer aprobación. Su oficial de cumplimiento revisa textos y artes antes de publicar.',
+            '<b class="text-slate-900">Consentimientos y base de WhatsApp.</b> Solo se envían campañas a contactos que aceptaron. Si la base actual no tiene ese registro, empezamos por pedirlo.',
+            '<b class="text-slate-900">La señal de vuelta desde el CRM.</b> Sin marcar en el CRM qué lead calificó y cuál se desembolsó, Google y Meta optimizan por volumen y no por calidad.',
+            '<b class="text-slate-900">Confianza visible.</b> Con tantos préstamos falsos en redes, la licencia del MICI, una sola dirección, los canales oficiales y las reseñas reales venden tanto como la tasa.'], 1)) + '</ol>'
+    + h3('Qué más podemos sumar', 'mt-12 mb-4')
+    + table(['Opcional', 'Para qué', 'Precio'], [
+        ['<b>Asistente de IA en WhatsApp para precalificar 24/7</b>', 'Responde preguntas, calcula la cuota y precalifica de noche y en fin de semana, cuando no hay vendedores.', 'desde US$ 349 al mes'],
+        ['<b>LinkedIn Ads para empresas</b>', 'Llegar directo a gerentes de RR. HH. y finanzas para el programa de convenios.', 'US$ 300 al mes de gestión'],
+        ['<b>Programa de referidos</b>', 'Clientes y empresas afiliadas recomiendan con un enlace propio que el CRM reconoce.', 'se cotiza según alcance'],
+        ['<b>Video testimonial</b>', 'Clientes y empresas reales contando su experiencia, para anuncios y redes.', 'se cotiza según alcance'],
+        ['<b>Plataforma de cobranza con IA</b>', 'La propuesta EW-KRE-2026-01: usa el mismo n8n y las mismas reglas, y cobra por SMS, correo y voz, sin poner en riesgo el WhatsApp de ventas.', 'según su propuesta']], num=(2,), cls='mt-0')))
+
+S.append(sec('Para avanzar', 'Lo que necesitamos de Kredit',
+    cards([('Accesos', 'Cuentas y plataformas', bullets(['Google Ads, Google Analytics y Search Console (como administrador)', 'Meta Business Suite, cuenta publicitaria e Instagram',
+                                                       'Dominio y DNS de kredit.com.pa, y acceso al WordPress', 'CRM: nombre, acceso a su API, campos y etapas', 'Número de WhatsApp Business y verificación de la empresa en Meta'])),
+           ('Negocio', 'Reglas y productos', bullets(['Productos: montos, plazos, tasa y costo total, requisitos', 'Reglas de calificación, cobertura por provincia y uso de AgileCheck y la APC',
+                                                     'Cómo funciona el convenio, la lista de empresas afiliadas y si prestan al público general', 'Vendedores: nombres, horarios y tiempo de respuesta', 'Presupuesto mensual de pauta y medio de pago a las plataformas'])),
+           ('Marca y legal', 'Contenido y cumplimiento', bullets(['Logo, colores, tipografías y fotos de marca', 'Aviso de privacidad y autorización de referencias de crédito', 'Datos de licencia, dirección oficial y textos legales obligatorios',
+                                                                 'Persona de cumplimiento que aprueba anuncios', 'Base de contactos con su consentimiento para WhatsApp', 'Testimonios y casos con autorización']))], 3, 'mt-0')))
+
+S.append(sec('Riesgos del plan', 'Lo que puede frenar los resultados',
+    table(['Riesgo', 'Cómo lo evitamos'], [
+        ['Las plataformas rechazan o limitan anuncios de crédito', 'Anuncios y landings con la información de costo que exigen, verificación del anunciante al iniciar y revisión de cumplimiento antes de publicar.'],
+        ['Muchos leads, pocos aprobables', 'Calificación en el formulario, puntaje en n8n y señal de vuelta desde el CRM para optimizar por calidad.'],
+        ['Leads atendidos tarde', 'Aviso inmediato al vendedor, respuesta automática por WhatsApp y alerta si un lead lleva más de 15 minutos sin contacto.'],
+        ['El CRM no tiene API o la integración se demora', 'Plan B por correo estructurado o planilla compartida mientras se conecta; el flujo de n8n no cambia.'],
+        ['Bloqueo del número de WhatsApp', 'API oficial, solo contactos con consentimiento, opción de baja en cada envío y la cobranza fuera de WhatsApp (va por SMS, correo y voz).']], cls='mt-0')))
+
+S.append(terms([
+    ('Pago único', '50% al aprobar y 50% al lanzar la pauta. Tarjeta, transferencia bancaria o Yappy.'),
+    ('Servicios mensuales', 'Se facturan por mes adelantado desde el lanzamiento. Plazo mínimo de 3 meses para pauta y contenido.'),
+    ('Inversión publicitaria', 'Va directo a Google y Meta desde las cuentas de Kredit; las cuentas, campañas y datos son de Kredit.'),
+    ('Propiedad', 'Las landings, la web, los textos, artes y flujos de n8n hechos para Kredit son de Kredit al completar el pago.'),
+    ('Datos', 'Los datos de los leads se tratan conforme a la Ley 81 de 2019; firmamos acuerdo de confidencialidad y de tratamiento de datos.'),
+    ('Resultados', 'Las cifras de costo por lead son estimaciones de mercado; los resultados reales se reportan cada mes y guían los ajustes.'),
+    ('Validez', 'Esta propuesta vale hasta el 10 de noviembre de 2026. Precios en USD sin ITBMS (7%).')]))
+
+S.append(cta('¿Empezamos por el taller de calificación? 🚀',
+    'Una sesión de una hora para definir quién califica y cómo se reparte entre sus vendedores. Con eso arrancamos las landings y la medición.',
+    f'Hola, quiero conversar sobre la propuesta {REF} de marketing digital para Kredit.',
+    f'Propuesta {REF}: marketing digital Kredit', f'Hola, queremos avanzar con la propuesta {REF} de marketing digital para Kredit.',
+    extra=[('Ver la landing de préstamos', DEMO_B2C)], wa_label='Conversar por WhatsApp', mail_label='Avanzar por correo'))
+
+S.append(sources('Políticas de Google Ads sobre servicios financieros y préstamos personales (support.google.com/adspolicy); normas de publicidad de Meta sobre productos financieros (transparency.meta.com); Política de Mensajería de WhatsApp Business (actualizada el 23 de septiembre de 2026) y precios por mensaje vigentes desde octubre de 2026; Ley 42 de 2001 y Ley 33 de 2002 (mici.gob.pa); Ley 45 de 2007 (acodeco.gob.pa); Decreto Ejecutivo 213 de 2010; Ley 81 de 2019 y Decreto Ejecutivo 285 de 2021 (antai.gob.pa); referencias de costo por clic en Panamá y de costo por lead de fintech en Latinoamérica de fuentes de la industria. Los precios de Elemento Web son en dólares, sin ITBMS. Las cifras de inversión y costo por lead son estimaciones de mercado sujetas a los resultados de los primeros 30 días. El perfil de Instagram y el sitio kredit.com.pa (página principal y política de privacidad) se revisaron el 12 de octubre de 2026; la auditoría técnica completa se hace al iniciar.'))
+
+body = '\n'.join(S).replace('@@SHOTS@@', capturas()).replace('@@WEB@@', web_preview())
+html = page(title='Marketing digital y captación de leads · Propuesta para Kredit — elementoweb.com',
+            doc_type='Propuesta · Marketing digital y captación', client='KREDIT',
+            headline='Más solicitudes calificadas, directo a sus vendedores',
+            subtitle='Un sistema completo de captación para personas y empresas: publicidad en Google y Meta, dos landings con formularios inteligentes, calificación automática con n8n, entrega al CRM de Kredit, WhatsApp marketing, contenido de Instagram y una web nueva, mejor posicionada en Google y en los asistentes de IA.',
+            prepared_for='Kredit · Gerencia General', prepared_sub='CREDU HOLDINGS, S.A.',
+            date='11 de octubre de 2026', ref=REF, valid='10 de noviembre de 2026',
+            body=body, client_footer='Kredit', wa_consulta=f'Hola, tengo una consulta sobre la propuesta {REF} de marketing digital para Kredit.')
 assert '@@' not in html
-OUT_DIR.mkdir(parents=True, exist_ok=True)
-OUT.write_text(html)
-print('ok', OUT, len(html), 'esencial', ESENCIAL_U, ESENCIAL_M, 'recom', RECOM_M, 'integral', INTEGRAL_U, INTEGRAL_M)
+write(OUT_DIR / 'index.html', html)
+print('ok', OUT_DIR / 'index.html', len(html), 'esencial', ESENCIAL_U, ESENCIAL_M, 'crecimiento', CREC_U, RECOM_M, 'integral', INTEGRAL_U, INTEGRAL_M)

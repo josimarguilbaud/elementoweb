@@ -1,83 +1,78 @@
-# Traspaso — Kredit (cobranza + marketing) · estado al 12-oct-2026
+# Traspaso — Kredit (cobranza + marketing + web) · estado al 12-oct-2026 (sesión local)
 
-Para continuar en una sesión local de Claude Code. Repo: `josimarguilbaud/elementoweb`
-(todo está en `main` y en la rama `claude/festive-mendel-ld3j60`). **Un push a `main` publica
-en producción** (ver `CLAUDE.md`).
+Repo `josimarguilbaud/elementoweb`. **Un push a `main` publica en producción** (ver `CLAUDE.md`).
+Esta sesión trabajó en el worktree `.claude/worktrees/kredit-casa` (rama `kredit-diseno-casa`, base
+`origin/main`) porque el `main` local de Josimar tiene un rediseño del home sin commitear que choca
+con `origin/main` (no se tocó).
 
 ## 1. Cliente
 
-- **Kredit** · razón social CREDU HOLDINGS, S.A. · RUC 155770767-2-2025 DV9 · Torre de las
-  Américas, Torre B, Of. 602-B, Punta Pacífica · WhatsApp +507 6997-5664 · ventas@kredit.com.pa
-- Web en vivo (WordPress, hecha por jacs3d.com): https://kredit.com.pa — hero "Tu crédito, sin
-  vueltas.", foto de mujer con celular, mockups de la app, "Accede a tu cuenta" (portal
-  /app/), "Afiliar empresa", Quiénes somos, FAQ. Copia del HTML y captura en `referencias/`.
-- Instagram @kredit_pa: 5 publicaciones, 13 seguidores (11-oct). Colores #1559ED, #4F6BF2,
-  #C5D0FA, #091845; Poppins; "K" en degradado cian→azul.
-- **Modelo (según su FAQ):** crédito solo para colaboradores de **empresas afiliadas**, cuota
-  descontada por planilla, desembolso el mismo día de la aprobación.
-- Contexto: fintech regulada (dijeron SBP; en Panamá las financieras suelen ser del **MICI** —
-  sin confirmar), core SIF, score AgileCheck, mora en 10% (su límite), el Gerente General aprueba
-  cada plan de pago y la conciliación de pagos es manual (por correo).
+- **Kredit** · CREDU HOLDINGS, S.A. · RUC 155770767-2-2025 DV9 · WhatsApp +507 6997-5664 ·
+  ventas@kredit.com.pa · protecciondedatos@kredit.com.pa.
+- **Licencia confirmada:** empresa financiera autorizada por el MICI (Dirección General de Empresas
+  Financieras), Resolución No. 638 del 23-sep-2025 (consta en su política de privacidad).
+- **Montos (dato de Josimar, 12-oct):** de B/. 50 a B/. 3,000. **Plazos:** no confirmados; las
+  calculadoras usan 4, 6, 9, 12, 18 y 24 meses como ejemplo (todo > 90 días, anunciable en Google y Meta).
+- Dos direcciones distintas publicadas: pie de su web (Torre de las Américas, Torre B, Of. 602-B,
+  Punta Pacífica) y política de privacidad (Calle 1ra La Cresta, P.H. El Alcázar, Bella Vista). Confirmar.
+- Revisión de su web e Instagram del 12-oct: `revision-web-instagram-2026-10-12.md`.
 
-## 2. Entregables publicados
+## 2. Entregables
 
 | Qué | URL | Fuente |
 |---|---|---|
 | Propuesta cobranza con IA (EW-KRE-2026-01) | elementoweb.com/propuestas/kredit-cobranza-ia-19bfe5dc/ (+ PDF) | `scripts/propuestas-kredit/gen_kredit.py` |
-| Propuesta marketing digital (EW-KRE-2026-02) | elementoweb.com/propuestas/kredit-marketing-digital-4a6a12dc/ (+ PDF) | `scripts/propuestas-kredit/gen_kredit_mkt.py` + `kredit_mkt_extra.json` |
-| Demo 1 "Recupera" (cobranza) | elementoweb.com/demo/kredit/ | `public/demo/kredit/`, pruebas `scripts/test-demo-kredit.mjs` (96 OK) |
-| Landing personas (Google) | elementoweb.com/demo/kredit-landings/prestamos/ | `public/demo/kredit-landings/` |
-| Landing empresas (B2B) | elementoweb.com/demo/kredit-landings/empresas/ | pruebas `scripts/test-landings-kredit.mjs` (236 OK) |
-| Artifact privado de la propuesta de marketing | https://claude.ai/artifact/P3C8AzrWG6RRgh2r6hgxLg | copia con `<title>` corto |
+| Propuesta marketing digital (EW-KRE-2026-02) | elementoweb.com/propuestas/kredit-marketing-digital-4a6a12dc/ (+ PDF) | `scripts/propuestas-kredit/gen_kredit_mkt.py` |
+| Demo «Recupera» (cobranza) | elementoweb.com/demo/kredit/ | `public/demo/kredit/`, pruebas `scripts/test-demo-kredit.mjs` |
+| Landing personas | elementoweb.com/demo/kredit-landings/prestamos/ | `public/demo/kredit-landings/` |
+| Landing empresas (B2B) | elementoweb.com/demo/kredit-landings/empresas/ | pruebas `scripts/test-landings-kredit.mjs` |
+| Web nueva multipágina (10 páginas) | elementoweb.com/demo/kredit-web/ | `public/demo/kredit-web/`, pruebas `scripts/test-web-kredit.mjs` |
 
-Specs y revisiones: `docs/specs/kredit-cobranza/` (spec, reviews, guion-presentacion.md,
-demo2-agente-voz.md) y `docs/specs/kredit-marketing/spec.md`.
+- **Diseño de las propuestas:** el de la casa (Tailwind CDN, glass, header oscuro con orbes),
+  plantilla compartida `scripts/propuestas-kredit/casa.py`; diagramas SVG hechos con la skill
+  `diagram-design` (conectores ortogonales, 1–2 acentos, leyenda abajo).
+- **Diseño de las demos de Kredit:** sistema «Comprobante claro» en `DESIGN-kredit.md` (aprobado por
+  Josimar el 12-oct). Investigación de mercado: `investigacion-landings-panama.md`. Fotos con IA
+  (fal · nano-banana-2, US$ 1.44) en `public/demo/kredit-web/img/` con `CREDITOS.json`;
+  `portal-celular` salió defectuosa y no se usa.
 
-Precios marketing (USD sin ITBMS): Esencial 4,250 + 900/mes · Crecimiento (recomendado) 4,700 +
-1,700/mes · Integral 5,650 + 2,399/mes · VPS 550/año en los tres · pauta recomendada 2,700/mes
-(Google 1,200 / Meta 1,500) · WhatsApp Meta ≈ US$ 0.074–0.085 por mensaje.
-Precios cobranza: **por definir** (placeholders amarillos).
+## 3. Decisiones del 12-oct
 
-## 3. Pendientes (en orden)
+- **La cobranza no usa WhatsApp** (Política de Mensajería de WhatsApp Business, sección 4: prohíbe
+  la cobranza de deudas aunque haya licencia). Canales: SMS, correo, chat del portal y voz. Aplicado
+  en la propuesta EW-KRE-2026-01 y en el demo (pruebas que fallan si reaparece «WhatsApp»).
+- **El rediseño multipágina entra a la propuesta de marketing** como ítem G (reemplaza «Mejora de la
+  página principal», US$ 950) a **US$ 3,000**, punto medio del mercado panameño para 8–12 páginas
+  (fuentes en `precio-rediseno-web-panama.md`). Integral pasa a US$ 7,700 + US$ 2,399/mes. Esencial y
+  Crecimiento no cambian.
+- Landings rediseñadas: hero que cabe en la primera pantalla (1440×900: termina en 820 px; 390×844:
+  CTA en 821 px; antes 1,043 y 1,852), cuota quincenal como cifra principal, sello MICI arriba.
 
-1. **Rehacer las DOS propuestas con el diseño de la casa** (el que pidió Josimar):
-   referencia `public/propuestas/tramitapa-entrega/index.html` y, para marketing,
-   `public/propuestas/max-impresiones-marketing-digital/index.html`. Es Tailwind (CDN), `main`
-   glass `max-w-4xl rounded-[28px]`, header oscuro `#0b1220→#1e3a8a` con orbes y rejilla, logo
-   "elementoweb.com · Desarrollo Web · IA · Automatización", pill de tipo de documento, título
-   con `.shine`, caja "Preparado para", secciones con `h2` + línea degradada, `service-card`
-   numeradas con precio a la derecha, bloque "INVERSIÓN, NO FEE", "Cómo se cobra la pauta",
-   "Resumen de Inversión" oscuro con "Para arrancar hoy", "Condiciones Comerciales" con ◆, CTA
-   en degradado claro con WhatsApp + correo, footer oscuro y botón flotante de WhatsApp.
-   Mantener todo el contenido actual (diagnóstico, estrategia, diagramas SVG, tablas, planes,
-   lo que necesitamos, riesgos) y los diagramas, re-estilizados para ese formato.
-   Regenerar los PDF (Carta, `printBackground`) y revisar página por página.
-2. **Usar el skill local de gráficos y planificación** (el que se usó en la propuesta de MGI
-   Chambonett) para mejorar diagramas, cronograma y gráficos.
-3. Revisar de nuevo kredit.com.pa e Instagram (en local sí abren) y ajustar el diagnóstico.
-4. **Cobranza y WhatsApp:** la política de WhatsApp Business parece prohibir la cobranza de
-   deudas (aun con licencia); los recordatorios de pago antes del vencimiento como plantillas
-   de utilidad sí parecen viables. Confirmar en la política oficial de Meta y, si aplica,
-   ajustar EW-KRE-2026-01 (mora avanzada por voz/SMS/correo) y el demo.
-5. Precios de la propuesta de cobranza (implementación, mensualidad por cuentas, plazo
-   mínimo, anticipo) cuando Kredit dé tamaño de cartera.
-6. Voz real del demo (llamada): generar en Higgsfield con la voz Gia
-   (`530df032-c311-483b-a750-cb3c9e1bcdfd`) + voz masculina para el cliente, montar el MP3 en
-   `public/demo/kredit/audio/` y sincronizar `VOICE.lines[].t` en `scripts.js`. Requiere
-   créditos (≈ 8). Hoy suena con la voz del navegador (Web Speech API).
-7. Demo 2 (llamada en vivo con Retell/Vapi): diseño listo en `demo2-agente-voz.md`.
-8. Opcional: cargar las cotizaciones de Kredit en NousCRM (empresa Elemento Web).
+## 4. Pendientes (en orden)
 
-## 4. Comandos
+1. Que Kredit confirme: plazos, tasa efectiva máxima, ejemplo representativo, comisiones, dirección
+   oficial, si prestan a no afiliados, requisitos y costo para la empresa. Todo está marcado `.tbd`.
+2. Precios de la propuesta de cobranza (implementación, mensualidad, plazo mínimo, anticipo) cuando
+   Kredit dé el tamaño de cartera.
+3. Voz real del demo (llamada): Higgsfield con la voz Gia (`530df032-c311-483b-a750-cb3c9e1bcdfd`);
+   Higgsfield tiene 0 créditos hoy.
+4. Demo 2 (llamada en vivo con Retell/Vapi): diseño en `docs/specs/kredit-cobranza/demo2-agente-voz.md`.
+5. Opcional: cargar las cotizaciones de Kredit en NousCRM (el MCP de NousCRM devolvió 401: token vencido).
+6. El `main` local de Josimar tiene un rediseño del home sin commitear que choca con `origin/main`
+   (15 commits del home): resolverlo antes de trabajar el home ahí.
+
+## 5. Comandos
 
 ```bash
-npm run build                                   # obligatorio antes de pushear a main
-python3 scripts/propuestas-kredit/gen_kredit_mkt.py   # regenera la propuesta de marketing (HTML)
-node scripts/propuestas-kredit/pdf-marketing.mjs      # PDF (necesita playwright instalado)
-NODE_PATH=$(npm root -g) node scripts/test-landings-kredit.mjs
-NODE_PATH=$(npm root -g) node scripts/test-demo-kredit.mjs
+npm run build                                          # obligatorio antes de pushear a main
+python scripts/propuestas-kredit/gen_kredit_mkt.py     # propuesta de marketing (HTML)
+python scripts/propuestas-kredit/gen_kredit.py         # propuesta de cobranza (HTML)
+node scripts/propuestas-kredit/pdf.mjs                 # PDF Carta de las dos (o: marketing | cobranza)
+node scripts/test-landings-kredit.mjs
+node scripts/test-demo-kredit.mjs
+node scripts/test-web-kredit.mjs
 ```
 
-Nota: `gen_kredit_mkt.py` toma CSS y utilidades SVG de `gen_kredit.py` (que usa la plantilla
-de MGI Chambonett). Al pasar al diseño de la casa conviene un generador nuevo con la
-plantilla Tailwind.
+Todos los `node` necesitan Playwright: `NODE_PATH=<carpeta con playwright>` (en Windows se instaló
+`playwright@1.63` en una carpeta temporal; usa el Chromium 1243 ya descargado). En Windows correr
+los `python` con `PYTHONUTF8=1` si la consola falla al imprimir acentos.

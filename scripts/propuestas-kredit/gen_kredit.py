@@ -352,7 +352,7 @@ S.append(summary(resumen_inner, 'Para arrancar · primer paso', 'Taller de regla
     'Una sesión con la Gerencia General para definir los planes preaprobados y otra con sistemas para conectar el SIF. Con el tamaño de la cartera, fijamos el precio.',
     f'Hola, queremos agendar el taller de reglas de la propuesta {REF} de cobranza con IA para Kredit.',
     'Precios en USD, sin ITBMS (7%); se aplicará según corresponda. El consumo de terceros se factura a costo, con el detalle del proveedor.',
-    btn='Agendar el taller →'))
+    btn='Agendar el taller →', cls='mb-14 sumblock--flow'))
 
 S.append(sec('Riesgos del plan', 'Lo que puede complicarlo y cómo lo evitamos',
     table(['Riesgo', 'Mitigación'], [

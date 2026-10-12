@@ -63,7 +63,7 @@ def d_calif():
     b += conn([(412, 200), (430, 200), (430, 256), (447, 256)], p, SOFT, 's')
     b += node(20, 116, 132, 72, 'Formulario', ('multipaso, con', 'consentimientos'), 'input')
     b += list_node(188, 56, 224, 192, ['✓ Formato de cédula y celular', '✓ Duplicados y spam', '✓ Puntaje según sus reglas',
-                                       '✓ Empresa afiliada / ingreso', '✓ AgileCheck (opcional)', '✓ Etiqueta UTM y campaña'],
+                                       '✓ Empresa e ingreso', '✓ AgileCheck (opcional)', '✓ Etiqueta UTM y campaña'],
                    'focal', head='n8n · en segundos')
     tiers = [(32, 'Calificado', '70 puntos o más', ['CRM + vendedor asignado', 'WhatsApp si lo autorizó', 'contacto en menos de 5 min'], 'ok', OK),
              (124, 'Revisar', '40 a 69 puntos', ['CRM en etapa «revisión»', 'se atiende el mismo día', 'pide los datos que faltan'], 'warn', AMB),
@@ -79,7 +79,7 @@ def d_calif():
     b += t(20, 318, 'Umbrales y pesos de ejemplo: los define Kredit en el taller de calificación y se ajustan con los resultados reales.', 11.5, MUTED)
     return svg(p, W, H, 'Cómo se califica cada lead',
                'El formulario multipaso entra a n8n, que valida cédula y celular, descarta duplicados y spam, calcula un '
-               'puntaje según las reglas de Kredit, revisa empresa afiliada y tipo de ingreso, puede consultar AgileCheck '
+               'puntaje según las reglas de Kredit, revisa la empresa, la antigüedad y el tipo de ingreso, puede consultar AgileCheck '
                'y etiqueta la campaña. Con 70 puntos o más el lead es calificado y va al CRM con vendedor asignado; de 40 '
                'a 69 queda en revisión; con menos de 40 recibe una respuesta respetuosa y nutrición, sin ocupar al vendedor.', b)
 
@@ -216,7 +216,7 @@ def web_preview():
 S = []  # secciones en orden
 
 S.append(intro('Captar más, pero sobre todo <span class="gradient-text">captar mejor</span>', [
-    'Proponemos un sistema de captación con dos puertas de entrada: una para <b class="text-slate-800">empresas que quieren ofrecer el crédito a sus colaboradores</b> y otra para <b class="text-slate-800">los colaboradores que lo necesitan</b>. Cada solicitud se valida, se puntúa y llega al CRM de Kredit ya calificada, con su vendedor asignado y, si la persona lo autorizó, un primer mensaje enviado por WhatsApp en segundos.',
+    'Proponemos un sistema de captación con dos puertas de entrada: una para <b class="text-slate-800">empresas que quieren ofrecer el crédito a sus colaboradores</b> y otra para <b class="text-slate-800">las personas que buscan un préstamo en Google y redes</b>. Cada solicitud se valida, se puntúa y llega al CRM de Kredit ya calificada, con su vendedor asignado y, si la persona lo autorizó, un primer mensaje enviado por WhatsApp en segundos.',
     'La publicidad aprende de lo que pasa después del formulario: le devolvemos a Google y a Meta qué leads resultaron calificados y cuáles se desembolsaron, para que inviertan en personas parecidas a sus mejores clientes y no en las que solo llenan formularios. Cuando la calidad de la cartera es prioridad, eso importa tanto como el volumen.'],
     chips=['🎯 Dos landings', '⚙️ Calificación con n8n', '🔍 Google Ads', '📸 Meta Ads', '💬 WhatsApp oficial', '🌐 Web nueva + SEO/GEO'])
     .replace('</section>', stats([('2', 'Landings: personas y empresas'), ('5', 'Canales trabajando juntos'),
@@ -240,10 +240,10 @@ S.append(sec('Punto de partida', 'Una marca clara, con un canal digital que reci
     ])))
 
 S.append(sec('La estrategia', 'Dos landings: empresas que se afilian y personas que buscan un préstamo',
-    p('La landing de empresas trae convenios nuevos; la de personas está pensada para quien busca un préstamo en Google. Hoy su web indica que el crédito es para colaboradores de empresas afiliadas; por eso la landing pregunta dónde trabaja la persona y la regla se ajusta con un interruptor: <b class="text-slate-800">si Kredit presta al público general</b>, la solicitud sigue su curso; <b class="text-slate-800">si solo presta a afiliadas</b>, a quien no califica se le invita a recomendar a su empresa, y ese contacto entra como lead de empresa.')
+    p('La landing de empresas trae convenios nuevos. La de personas es solo para el tráfico de Google y redes: <b class="text-slate-800">no pide que la empresa del cliente esté afiliada</b>; la cuota igual se descuenta de su planilla, porque Kredit coordina el descuento directo con la empresa donde trabaja. Así cada landing habla de una sola cosa y cada campaña mide la suya.')
     + cards([('1 · Afiliar', 'Empresas nuevas', 'Google (búsquedas de beneficios para colaboradores), LinkedIn opcional y la landing de empresas con formulario y reunión con un ejecutivo.'),
              ('2 · Activar', 'Colaboradores de afiliadas', 'Kit para RR. HH. con afiches y QR, mensajes internos, WhatsApp a quienes aceptaron y anuncios alrededor de las empresas afiliadas.'),
-             ('3 · Captar en Google', 'Personas que buscan un préstamo', 'Landing con calculadora y precalificación para la búsqueda con intención; si su empresa no está afiliada, puede recomendarla y n8n la entrega como lead de empresa.')])))
+             ('3 · Captar en Google y redes', 'Personas que buscan un préstamo', 'Landing con calculadora y precalificación para quien llega desde Google, Facebook o Instagram; la cuota se descuenta de su planilla con descuento directo.')])))
 
 S.append(sec('El sistema', 'Del anuncio al vendedor, sin pasos manuales',
     p('Todos los canales llevan a las landings. Las landings entregan a n8n, que decide qué hacer con cada solicitud. El CRM de Kredit recibe solo lo que vale la pena atender, y el resultado de cada contacto vuelve a las plataformas de publicidad.')
@@ -254,9 +254,9 @@ S.append(sec('Dos públicos', 'Un mensaje distinto para cada puerta',
     f'''<div class="reveal grid md:grid-cols-2 gap-4">
         <div class="item-card bg-white/70 rounded-2xl p-6 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Personas</p><h3 class="display text-lg font-bold text-slate-900 mb-3">Quien busca un préstamo en Google</h3>
           <dl class="grid grid-cols-[96px_1fr] gap-x-3 gap-y-2 text-sm"><dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Busca</dt><dd class="text-slate-700">Rapidez, cuota fija, saber si califica y cuándo le depositan, sin costos ocultos.</dd>
-          <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Canales</dt><dd class="text-slate-700">Google (búsqueda con intención), Meta, Instagram, WhatsApp y el kit interno de las empresas afiliadas.</dd>
-          <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Oferta</dt><dd class="text-slate-700">Calculadora de cuota y precalificación en 2 minutos; si su empresa no está afiliada, puede recomendarla.</dd>
-          <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Se mide por</dt><dd class="text-slate-700">Costo por lead calificado, por préstamo desembolsado y empresas recomendadas.</dd></dl></div>
+          <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Canales</dt><dd class="text-slate-700">Google (búsqueda con intención), Meta e Instagram, y WhatsApp para atenderlos.</dd>
+          <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Oferta</dt><dd class="text-slate-700">Calculadora de cuota quincenal y precalificación en 2 minutos, con descuento directo de planilla.</dd>
+          <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Se mide por</dt><dd class="text-slate-700">Costo por lead calificado y por préstamo desembolsado.</dd></dl></div>
         <div class="item-card bg-white/70 rounded-2xl p-6 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Empresas</p><h3 class="display text-lg font-bold text-slate-900 mb-3">RR. HH. y finanzas que quieren el convenio</h3>
           <dl class="grid grid-cols-[96px_1fr] gap-x-3 gap-y-2 text-sm"><dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Buscan</dt><dd class="text-slate-700">Un beneficio para sus colaboradores, sin carga administrativa ni riesgo para la empresa.</dd>
           <dt class="text-[11px] font-semibold uppercase tracking-wide text-slate-500 pt-0.5">Canales</dt><dd class="text-slate-700">Google (búsquedas de beneficios y préstamos para colaboradores), Meta con público empresarial, LinkedIn opcional.</dd>
@@ -279,7 +279,7 @@ S.append(sec('Landings', 'Dos landings hechas para convertir',
 S.append(sec('Calificación automática', 'Su vendedor solo atiende lo que vale la pena',
     figure(d_calif(), 'El cliente nunca ve un "aprobado" ni un "rechazado": ve "Solicitud recibida" y el siguiente paso. En producción el puntaje se calcula en n8n, así que las reglas no quedan visibles en la página, y la decisión de crédito sigue siendo de Kredit.', 'mt-0')
     + table(['Criterio (ejemplo)', 'Personas', 'Empresas'], [
-        ['<b>Empresa</b>', 'Trabaja en una empresa afiliada (requisito o puntaje extra, según decida Kredit)', 'Empresa formal con planilla en Panamá'],
+        ['<b>Empresa</b>', 'Trabaja en una empresa con planilla en Panamá (Kredit coordina el descuento directo)', 'Empresa formal con planilla en Panamá'],
         ['<b>Perfil</b>', 'Antigüedad en la empresa y tipo de contrato', 'Sector y número de colaboradores'],
         ['<b>Capacidad</b>', 'Ingreso neto mensual frente al monto y plazo pedidos', 'Cargo del contacto (decide o influye)'],
         ['<b>Vínculo</b>', 'Cliente actual o referido por un cliente o una empresa', 'Correo corporativo y RUC válidos'],
@@ -290,7 +290,7 @@ BENCH = table(['Escenario', 'Leads Google', 'Leads Meta', 'Leads al mes', 'Calif
     ['Arranque', '18–47', '40–133', '58–180', '15–72'],
     ['Recomendada', '30–80', '75–250', '105–330', '26–132'],
     ['Escala', '50–133', '125–417', '175–550', '44–220']], num=(1, 2, 3, 4), sub_rows=(1,),
-    caption='Supuestos: costo por lead de US$ 15–40 en Google (búsqueda financiera, clics de US$ 1–8 en Panamá) y de US$ 6–20 en Meta (referencias de fintech en Latinoamérica), y entre 25% y 40% de leads calificados si Kredit presta al público general. Si presta solo a colaboradores de empresas afiliadas, la parte calificada de personas será menor y conviene mover más pauta a empresas: esos leads cuestan más, pero cada convenio vale por muchos colaboradores. No hay datos públicos específicos de préstamos en Panamá; la cifra real la da el primer mes y se reporta desde la primera semana.')
+    caption='Supuestos: costo por lead de US$ 15–40 en Google (búsqueda financiera, clics de US$ 1–8 en Panamá) y de US$ 6–20 en Meta (referencias de fintech en Latinoamérica), y entre 25% y 40% de leads calificados en la landing de personas, abierta al público de Google y redes. Los leads de empresas cuestan más, pero cada convenio vale por muchos colaboradores. No hay datos públicos específicos de préstamos en Panamá; la cifra real la da el primer mes y se reporta desde la primera semana.')
 
 S.append(sec('Publicidad', 'Google para quien ya busca, Meta para quien todavía no',
     f'''<div class="reveal grid md:grid-cols-2 gap-4">
@@ -299,8 +299,8 @@ S.append(sec('Publicidad', 'Google para quien ya busca, Meta para quien todavía
             'Búsqueda para empresas: "beneficios para colaboradores", "bienestar financiero empleados", "convenio de préstamos para empleados".',
             'Remarketing a quien visitó la landing y no terminó.', 'Conversiones offline: lead calificado y desembolso.'])}</div>
         <div class="item-card bg-white/70 rounded-2xl p-6 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Meta Ads</p><h3 class="display text-lg font-bold text-slate-900 mb-3">Demanda y remarketing</h3>{bullets([
-            'Anuncios por ubicación alrededor de las empresas afiliadas, para activar a sus colaboradores (si la categoría especial de servicios financieros no lo limita).',
-            'Campañas de clientes potenciales hacia la landing; quien no tiene empresa afiliada la recomienda.',
+            'Campañas de clientes potenciales hacia la landing de préstamos, con la cuota quincenal como mensaje.',
+            'Públicos por intereses y por zona de trabajo (si la categoría especial de servicios financieros no lo limita).',
             'Remarketing en Instagram y Facebook con casos y preguntas frecuentes.', '8 artes nuevos al mes, con pruebas A/B de mensaje y formato.'])}</div>
       </div>'''
     + service_card('$', 'Inversión Publicitaria Recomendada · Google + Meta', 'Lo que se muestra en anuncios: va directo a las cuentas de Kredit',
@@ -423,7 +423,7 @@ S.append(sec('Para considerar', 'Lo que suele quedar fuera, y no debería',
     '<ol class="reveal space-y-0 max-w-3xl">' + ''.join(
         f'<li class="flex gap-4 py-3.5 border-t border-slate-200/80 text-sm text-slate-600 leading-relaxed"><span class="num-badge w-8 h-8 rounded-lg grid place-items-center text-white text-xs font-bold shrink-0">{i}</span><span>{x}</span></li>'
         for i, x in enumerate([
-            '<b class="text-slate-900">Decidir a quién se presta.</b> Su web dice que el crédito es para colaboradores de empresas afiliadas. Si sigue así, la pauta de personas en Google debe decirlo en el anuncio para no pagar clics de quien no puede solicitar; si Kredit abre el crédito al público, la landing ya está lista para ambos casos.',
+            '<b class="text-slate-900">Requisitos para el público de Google y redes.</b> La landing de personas no pide empresa afiliada: Kredit coordina el descuento directo con la empresa de cada cliente. Antes de lanzar la pauta conviene fijar antigüedad, tipo de contrato y salario mínimo, para que el anuncio no pague clics de quien no puede solicitar.',
             '<b class="text-slate-900">Activar a las empresas que ya están afiliadas.</b> Es el lead más barato y de mejor calidad: sus colaboradores ya califican. Suele quedar fuera porque no se ve como "marketing".',
             '<b class="text-slate-900">El formulario para afiliar empresas.</b> El de hoy solo pide nombre, correo, teléfono y mensaje; para calificar un convenio hace falta saber la empresa, su tamaño y quién decide.',
             '<b class="text-slate-900">Vendedores listos antes de la pauta.</b> El mejor anuncio se pierde si el lead espera horas. Acordemos un tiempo de respuesta, horarios y quién atiende cada tipo de lead.',
@@ -444,7 +444,7 @@ S.append(sec('Para avanzar', 'Lo que necesitamos de Kredit',
     cards([('Accesos', 'Cuentas y plataformas', bullets(['Google Ads, Google Analytics y Search Console (como administrador)', 'Meta Business Suite, cuenta publicitaria e Instagram',
                                                        'Dominio y DNS de kredit.com.pa, y acceso al WordPress', 'CRM: nombre, acceso a su API, campos y etapas', 'Número de WhatsApp Business y verificación de la empresa en Meta'])),
            ('Negocio', 'Reglas y productos', bullets(['Productos: montos, plazos, tasa y costo total, requisitos', 'Reglas de calificación, cobertura por provincia y uso de AgileCheck y la APC',
-                                                     'Cómo funciona el convenio, la lista de empresas afiliadas y si prestan al público general', 'Vendedores: nombres, horarios y tiempo de respuesta', 'Presupuesto mensual de pauta y medio de pago a las plataformas'])),
+                                                     'Cómo funciona el convenio, la lista de empresas afiliadas y los requisitos para personas que llegan por Google y redes', 'Vendedores: nombres, horarios y tiempo de respuesta', 'Presupuesto mensual de pauta y medio de pago a las plataformas'])),
            ('Marca y legal', 'Contenido y cumplimiento', bullets(['Logo, colores, tipografías y fotos de marca', 'Aviso de privacidad y autorización de referencias de crédito', 'Datos de licencia, dirección oficial y textos legales obligatorios',
                                                                  'Persona de cumplimiento que aprueba anuncios', 'Base de contactos con su consentimiento para WhatsApp', 'Testimonios y casos con autorización']))], 3, 'mt-0')))
 

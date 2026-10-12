@@ -139,13 +139,17 @@ CSS = r"""
             .svc-grid .service-card .md\:flex-row { flex-direction: column !important; gap: 6px !important; }
             .svc-grid .service-card .md\:text-right { text-align: left !important; padding-left: 3.75rem !important; }
             .sumblock { padding: 22px 26px !important; break-before: page; }
+            .sumblock.sumblock--flow { break-before: auto; }
             .sumblock .py-2\.5 { padding-top: 5px !important; padding-bottom: 5px !important; }
             .sumblock .mt-8 { margin-top: 16px !important; }
             .sumblock .text-4xl { font-size: 28px !important; }
             .newpage { break-before: page; }
             .figure svg { min-width: 0; }
             .figure { overflow: visible !important; }
-            .fullbleed-footer { break-inside: avoid; }
+            .fullbleed-footer { break-inside: avoid; padding-top: 16px !important; padding-bottom: 16px !important; }
+            .cta-box { padding: 22px 26px !important; }
+            .cta-box h3 { font-size: 20px !important; }
+            .sources { margin-top: 20px !important; padding-top: 12px !important; }
         }
 """
 
@@ -532,7 +536,7 @@ def summary(inner, start_label, start_value, start_note, accept_wa, foot, title=
 def terms(items, cls='mb-8'):
     ps = ''.join(f'<p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>{esc(b)}:</strong> {t}</span></p>' for b, t in items)
     return f'''
-            <div class="reveal glass rounded-2xl p-7 sm:p-8 {cls}">
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 avoid {cls}">
                 <h3 class="display text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">{ICON_CHECK_CIRCLE} Condiciones Comerciales</h3>
                 <div class="terms grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-700">{ps}</div>
             </div>'''
@@ -541,7 +545,7 @@ def terms(items, cls='mb-8'):
 def cta(title, text, wa_text, mail_subject, mail_body, extra=(), wa_label='Aceptar por WhatsApp', mail_label='Aceptar por Correo'):
     ex = ''.join(f'''<a href="{href}" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">{esc(label)}</a>''' for label, href in extra)
     return f'''
-            <div class="reveal avoid text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden"
+            <div class="reveal avoid cta-box text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden"
                  style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #e0e7ff;">
                 <h3 class="display text-2xl font-bold text-slate-900 mb-2">{esc(title)}</h3>
                 <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">{text}</p>
@@ -563,7 +567,7 @@ def cta(title, text, wa_text, mail_subject, mail_body, extra=(), wa_label='Acept
 
 
 def sources(text, cls='mt-10'):
-    return f'<div class="reveal text-[11px] text-slate-500 leading-relaxed border-t border-slate-200 pt-5 {cls}"><strong class="text-slate-600">Fuentes y supuestos.</strong> {text}</div>'
+    return f'<div class="reveal avoid sources text-[11px] text-slate-500 leading-relaxed border-t border-slate-200 pt-5 {cls}"><strong class="text-slate-600">Fuentes y supuestos.</strong> {text}</div>'
 
 
 def shots(items, cls='mt-6'):

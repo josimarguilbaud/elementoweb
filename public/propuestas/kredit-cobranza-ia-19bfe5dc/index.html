@@ -109,13 +109,17 @@
             .svc-grid .service-card .md\:flex-row { flex-direction: column !important; gap: 6px !important; }
             .svc-grid .service-card .md\:text-right { text-align: left !important; padding-left: 3.75rem !important; }
             .sumblock { padding: 22px 26px !important; break-before: page; }
+            .sumblock.sumblock--flow { break-before: auto; }
             .sumblock .py-2\.5 { padding-top: 5px !important; padding-bottom: 5px !important; }
             .sumblock .mt-8 { margin-top: 16px !important; }
             .sumblock .text-4xl { font-size: 28px !important; }
             .newpage { break-before: page; }
             .figure svg { min-width: 0; }
             .figure { overflow: visible !important; }
-            .fullbleed-footer { break-inside: avoid; }
+            .fullbleed-footer { break-inside: avoid; padding-top: 16px !important; padding-bottom: 16px !important; }
+            .cta-box { padding: 22px 26px !important; }
+            .cta-box h3 { font-size: 20px !important; }
+            .sources { margin-top: 20px !important; padding-top: 12px !important; }
         }
     </style>
 </head>
@@ -435,7 +439,7 @@
                 </div>
             </section>
 
-            <div class="reveal avoid sumblock rounded-[24px] p-7 sm:p-9 text-white shadow-2xl mb-14 relative overflow-hidden"
+            <div class="reveal avoid sumblock rounded-[24px] p-7 sm:p-9 text-white shadow-2xl mb-14 sumblock--flow relative overflow-hidden"
                  style="background:linear-gradient(150deg,#0b1220,#15254d 55%,#1e3a8a);">
                 <div class="orb2 absolute -bottom-20 -right-16 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.4),transparent 70%);"></div>
                 <div class="relative z-10">
@@ -495,12 +499,12 @@
                     </div></div>
             </section>
 
-            <div class="reveal glass rounded-2xl p-7 sm:p-8 mb-8">
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 avoid mb-8">
                 <h3 class="display text-lg font-bold text-slate-900 mb-5 flex items-center gap-2"><svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Condiciones Comerciales</h3>
                 <div class="terms grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-700"><p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Pago de la implementación:</strong> <span class="ph">por definir</span> al firmar y el resto contra entrega de cada fase. Transferencia, ACH o Yappy.</span></p><p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Mensualidad:</strong> Empieza con la puesta en marcha de la fase 2. Plazo mínimo de <span class="ph">__ meses</span>.</span></p><p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Datos:</strong> Los datos de cartera, clientes y contactos son de Kredit. Se exportan completos cuando lo pida y se eliminan al terminar el servicio.</span></p><p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Plataforma:</strong> El software de la plataforma es de Elemento Web y se presta como servicio.</span></p><p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Confidencialidad:</strong> Acuerdo de confidencialidad y de tratamiento de datos firmado antes de recibir cualquier dato. Los datos no se usan para entrenar modelos de IA.</span></p><p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Disponibilidad y soporte:</strong> Soporte en horario laboral, atención prioritaria a incidentes que detengan la cobranza y respaldos diarios.</span></p><p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Alcance:</strong> El descrito en esta propuesta. Los cambios de alcance se cotizan aparte.</span></p><p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Validez:</strong> Esta propuesta vale hasta el 6 de noviembre de 2026. Precios en USD sin ITBMS (7%).</span></p></div>
             </div>
 
-            <div class="reveal avoid text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden"
+            <div class="reveal avoid cta-box text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden"
                  style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #e0e7ff;">
                 <h3 class="display text-2xl font-bold text-slate-900 mb-2">¿Empezamos por quitar los frenos? 🚀</h3>
                 <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">Al aceptar, agendamos el taller de reglas con la Gerencia General y la sesión con sistemas para conectar el SIF. En dos semanas los pagos se concilian solos.</p>
@@ -519,7 +523,7 @@
                 </div>
                 <p class="hidden print:block text-sm text-slate-600 mt-2">WhatsApp +507 6162-2787 · info@elementoweb.com</p>
             </div>
-<div class="reveal text-[11px] text-slate-500 leading-relaxed border-t border-slate-200 pt-5 mt-10"><strong class="text-slate-600">Fuentes y supuestos.</strong> La mora de 10% y el límite regulatorio aplicable son datos indicados por Kredit, a confirmar con su oficial de cumplimiento. La licencia de CREDU HOLDINGS, S.A. como empresa financiera (Resolución No. 638 de 2025 de la Dirección General de Empresas Financieras del MICI) consta en su política de privacidad publicada en kredit.com.pa, revisada el 12 de octubre de 2026. La Política de Mensajería de WhatsApp Business (sección 4, actualizada el 23 de septiembre de 2026) prohíbe la cobranza de deudas aunque la empresa tenga licencia; por eso la plataforma no la usa. Los costos de referencia de Retell AI, Vapi y Bland AI provienen de las tarifas publicadas por cada proveedor y pueden cambiar; se confirman al elegir la plataforma en la fase 1. Los plazos son estimaciones de Elemento Web y dependen del acceso a los datos y de las aprobaciones de Kredit.</div>
+<div class="reveal avoid sources text-[11px] text-slate-500 leading-relaxed border-t border-slate-200 pt-5 mt-10"><strong class="text-slate-600">Fuentes y supuestos.</strong> La mora de 10% y el límite regulatorio aplicable son datos indicados por Kredit, a confirmar con su oficial de cumplimiento. La licencia de CREDU HOLDINGS, S.A. como empresa financiera (Resolución No. 638 de 2025 de la Dirección General de Empresas Financieras del MICI) consta en su política de privacidad publicada en kredit.com.pa, revisada el 12 de octubre de 2026. La Política de Mensajería de WhatsApp Business (sección 4, actualizada el 23 de septiembre de 2026) prohíbe la cobranza de deudas aunque la empresa tenga licencia; por eso la plataforma no la usa. Los costos de referencia de Retell AI, Vapi y Bland AI provienen de las tarifas publicadas por cada proveedor y pueden cambiar; se confirman al elegir la plataforma en la fase 1. Los plazos son estimaciones de Elemento Web y dependen del acceso a los datos y de las aprobaciones de Kredit.</div>
         </div>
 
         <!-- ============ FOOTER ============ -->

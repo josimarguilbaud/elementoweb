@@ -12,7 +12,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'public');
 const DIR = path.join(ROOT, 'demo', 'kredit-web');
 const LANDINGS = path.join(ROOT, 'demo', 'kredit-landings');
-const V = '?v=20261012a';
+const V = '?v=20261012d';
 const args = process.argv.slice(2);
 const liveFonts = args.includes('--live-fonts');
 

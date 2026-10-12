@@ -1,8 +1,8 @@
 // prestamos.js — landing de préstamos (B2C): configuración del formulario y calculadora.
 // Vista previa para Kredit · Elemento Web. Todos los umbrales y listas son EJEMPLOS de
 // trabajo: los define Kredit (spec §4) y se ajustan aquí sin tocar el motor (form.js).
-import { initLeadForm, normalizeCedula, toE164PA } from './form.js?v=20261012a';
-import { escenario, formatMoney, formatInt, parseMoney } from './calc.js?v=20261012a';
+import { initLeadForm, normalizeCedula, toE164PA } from './form.js?v=20261012d';
+import { escenario, formatMoney, formatInt, parseMoney } from './calc.js?v=20261012d';
 
 /** Número oficial de WhatsApp de Kredit (kredit.com.pa). En demo no abre chats reales. */
 export const WHATSAPP = '50769975664';

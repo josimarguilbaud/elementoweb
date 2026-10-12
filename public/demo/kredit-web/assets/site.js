@@ -4,7 +4,7 @@
 // - calculadoras de cuota ([data-calc]) con las funciones puras de calc.js;
 // - formulario de contacto en modo demo ([data-contact-form] con data-endpoint vacío: no envía nada);
 // - índice de las páginas legales y de preguntas que marca la sección visible.
-import { escenario, formatMoney, formatInt, parseMoney } from '../../kredit-landings/assets/calc.js?v=20261012a';
+import { escenario, formatMoney, formatInt, parseMoney } from '../../kredit-landings/assets/calc.js?v=20261012d';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];

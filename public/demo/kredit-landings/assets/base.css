@@ -85,10 +85,11 @@ ul, ol { margin: 0; padding: 0; }
 
 /* ---------------------------------------------------------------- banda de demo (fija) */
 .demo-band {
-  position: fixed; inset: 0 0 auto 0; z-index: 60; height: var(--band-h);
+  /* la altura sale del contenido, nunca de --band-h: page.js mide la banda y fija esa variable */
+  position: fixed; inset: 0 0 auto 0; z-index: 60; min-height: 34px;
   display: flex; align-items: center; justify-content: center; gap: 10px;
   background: var(--navy); color: var(--ice); font: 500 13px/1.2 var(--f-body);
-  padding: 0 12px; text-align: center; border-bottom: 1px solid rgba(198, 218, 255, .18);
+  padding: 5px 12px; text-align: center; border-bottom: 1px solid rgba(198, 218, 255, .18);
 }
 .demo-band__pill { font: 600 11px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; background: var(--cyan); color: var(--navy); padding: 4px 7px; border-radius: 4px; flex: none; }
 @media (max-width: 520px) { .demo-band { font-size: 12px; justify-content: flex-start; text-align: left; } }
@@ -120,7 +121,9 @@ ul, ol { margin: 0; padding: 0; }
 
 /* ---------------------------------------------------------------- encabezado */
 .site-header {
-  position: sticky; top: var(--band-h); z-index: 50; height: var(--header-h);
+  /* altura fija en CSS; --header-h es solo la medida que usa el desplazamiento. Si la altura
+     dependiera de --header-h, WebKit la mide sin estilos (232 px) y queda congelada */
+  position: sticky; top: var(--band-h); z-index: 50; height: 72px;
   display: flex; align-items: center; background: var(--navy); color: #fff;
   transition: box-shadow .2s;
 }
@@ -143,6 +146,7 @@ ul, ol { margin: 0; padding: 0; }
 @media (max-width: 960px) { .nav__links { display: none; } }
 @media (max-width: 640px) {
   :root { --header-h: 64px; }
+  .site-header { height: 64px; }
   .logo svg { width: 100px; }
   .portal-link span { display: none; }
   .portal-link { padding: 8px; border-radius: 8px; }

@@ -11,7 +11,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'public');
 const DIR = path.join(ROOT, 'demo', 'kredit-landings');
-const V = '?v=20261012a';
+const V = '?v=20261012d';
 const args = process.argv.slice(2);
 const shotsDir = args.includes('--shots') ? args[args.indexOf('--shots') + 1] : null;
 const liveFonts = args.includes('--live-fonts');
@@ -60,6 +60,9 @@ for (const [f, txt] of assetsText) {
 {
   const css = fs.readFileSync(path.join(DIR, 'assets', 'base.css'), 'utf8');
   check(/reemplazar con la identidad de Kredit/.test(css) && /--blue:\s*#1559ED/i.test(css) && /--navy:\s*#091845/i.test(css), 'base.css: tokens de marca en :root documentados');
+  // page.js mide la banda y el encabezado y escribe --band-h / --header-h. Si la altura dependiera de
+  // esas variables, WebKit (iPhone) mide antes de aplicar estilos y el encabezado queda en 232 px.
+  check(!/(?:^|[;{\s])(?:min-|max-)?height:\s*var\(--(?:band|header)-h\)/m.test(css), 'base.css: la altura de la banda y del encabezado no depende de las variables que mide page.js');
   const p = fs.readFileSync(PAGES.prestamos, 'utf8');
   check(/data-endpoint=""/.test(p) && /data-endpoint=""/.test(fs.readFileSync(PAGES.empresas, 'utf8')), 'formularios con data-endpoint vacío (modo demo)');
   check((p.match(/Información importante del crédito/g) || []).length >= 2, 'préstamos: bloque "Información importante del crédito" junto a la calculadora y al pie');

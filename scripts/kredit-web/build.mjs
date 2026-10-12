@@ -10,7 +10,7 @@ import { FAQ } from './faq.mjs';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(HERE, '..', '..');
 const OUT = path.join(REPO, 'public', 'demo', 'kredit-web');
-const V = '?v=20261012a';
+const V = '?v=20261012d';
 const calc = await import(pathToFileURL(path.join(REPO, 'public', 'demo', 'kredit-landings', 'assets', 'calc.js')).href + V);
 
 export const PAGES = [

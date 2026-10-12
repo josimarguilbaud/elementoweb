@@ -2,7 +2,10 @@
   "nota_general": "Fotos generadas con IA para la vista previa de diseno de Kredit. No son personas reales ni lugares exactos. Modelo fal-ai/nano-banana-2, resolucion 2K, una generacion por imagen. Variantes WebP de 1600 y 800 px de ancho (calidad 78) hechas con sharp.",
   "imagenes": [
     {
-      "archivo": ["colaboradora-oficina-1600.webp", "colaboradora-oficina-800.webp"],
+      "archivo": [
+        "colaboradora-oficina-1600.webp",
+        "colaboradora-oficina-800.webp"
+      ],
       "relacion": "3:2",
       "origen": "Generada con IA (fal · nano-banana-2)",
       "fecha": "2026-10-12",
@@ -11,7 +14,10 @@
       "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
     },
     {
-      "archivo": ["deposito-celular-1600.webp", "deposito-celular-800.webp"],
+      "archivo": [
+        "deposito-celular-1600.webp",
+        "deposito-celular-800.webp"
+      ],
       "relacion": "4:5",
       "origen": "Generada con IA (fal · nano-banana-2)",
       "fecha": "2026-10-12",
@@ -19,7 +25,10 @@
       "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
     },
     {
-      "archivo": ["rrhh-reunion-1600.webp", "rrhh-reunion-800.webp"],
+      "archivo": [
+        "rrhh-reunion-1600.webp",
+        "rrhh-reunion-800.webp"
+      ],
       "relacion": "3:2",
       "origen": "Generada con IA (fal · nano-banana-2)",
       "fecha": "2026-10-12",
@@ -27,7 +36,10 @@
       "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
     },
     {
-      "archivo": ["equipo-almacen-1600.webp", "equipo-almacen-800.webp"],
+      "archivo": [
+        "equipo-almacen-1600.webp",
+        "equipo-almacen-800.webp"
+      ],
       "relacion": "3:2",
       "origen": "Generada con IA (fal · nano-banana-2)",
       "fecha": "2026-10-12",
@@ -35,7 +47,10 @@
       "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
     },
     {
-      "archivo": ["familia-metas-1600.webp", "familia-metas-800.webp"],
+      "archivo": [
+        "familia-metas-1600.webp",
+        "familia-metas-800.webp"
+      ],
       "relacion": "3:2",
       "origen": "Generada con IA (fal · nano-banana-2)",
       "fecha": "2026-10-12",
@@ -43,7 +58,10 @@
       "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
     },
     {
-      "archivo": ["estudiante-metas-1600.webp", "estudiante-metas-800.webp"],
+      "archivo": [
+        "estudiante-metas-1600.webp",
+        "estudiante-metas-800.webp"
+      ],
       "relacion": "4:5",
       "origen": "Generada con IA (fal · nano-banana-2)",
       "fecha": "2026-10-12",
@@ -52,7 +70,10 @@
       "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
     },
     {
-      "archivo": ["equipo-kredit-1600.webp", "equipo-kredit-800.webp"],
+      "archivo": [
+        "equipo-kredit-1600.webp",
+        "equipo-kredit-800.webp"
+      ],
       "relacion": "3:2",
       "origen": "Generada con IA (fal · nano-banana-2)",
       "fecha": "2026-10-12",
@@ -62,7 +83,10 @@
       "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
     },
     {
-      "archivo": ["atencion-cliente-1600.webp", "atencion-cliente-800.webp"],
+      "archivo": [
+        "atencion-cliente-1600.webp",
+        "atencion-cliente-800.webp"
+      ],
       "relacion": "3:2",
       "origen": "Generada con IA (fal · nano-banana-2)",
       "fecha": "2026-10-12",
@@ -70,7 +94,10 @@
       "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
     },
     {
-      "archivo": ["firma-convenio-1600.webp", "firma-convenio-800.webp"],
+      "archivo": [
+        "firma-convenio-1600.webp",
+        "firma-convenio-800.webp"
+      ],
       "relacion": "3:2",
       "origen": "Generada con IA (fal · nano-banana-2)",
       "fecha": "2026-10-12",
@@ -78,7 +105,10 @@
       "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
     },
     {
-      "archivo": ["comercio-colaborador-1600.webp", "comercio-colaborador-800.webp"],
+      "archivo": [
+        "comercio-colaborador-1600.webp",
+        "comercio-colaborador-800.webp"
+      ],
       "relacion": "3:2",
       "origen": "Generada con IA (fal · nano-banana-2)",
       "fecha": "2026-10-12",
@@ -86,7 +116,10 @@
       "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
     },
     {
-      "archivo": ["ciudad-panama-1600.webp", "ciudad-panama-800.webp"],
+      "archivo": [
+        "ciudad-panama-1600.webp",
+        "ciudad-panama-800.webp"
+      ],
       "relacion": "16:9",
       "origen": "Generada con IA (fal · nano-banana-2)",
       "fecha": "2026-10-12",
@@ -95,13 +128,96 @@
       "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
     },
     {
-      "archivo": ["portal-celular-1600.webp", "portal-celular-800.webp"],
+      "archivo": [
+        "portal-celular-1600.webp",
+        "portal-celular-800.webp"
+      ],
       "relacion": "4:5",
       "origen": "Generada con IA (fal · nano-banana-2)",
       "fecha": "2026-10-12",
       "prompt": "Close-up of two hands holding a smartphone just above a cafe table, the phone screen faces away from the camera so we only see the plain back of the phone, with no logo. Next to it on the table: a glass of iced coffee and a small ceramic cup. The surroundings have soft blue tones: a blue-gray tabletop, a light blue painted wall, cool daylight from a window. The person's face is out of frame, we see the forearms and hands with warm brown skin, a light short-sleeve shirt. Shallow depth of field. A cafe in Panama City. Style: candid documentary photograph, full-frame camera, 50mm lens, natural light, true-to-life soft colors without heavy filters or oversaturation, realistic skin texture, natural relaxed hands with correct anatomy and five fingers each. Absolutely no text, no logos, no brand names, no signage, no cup prints and no readable screens anywhere in the image. Not generic American stock photography.",
       "estado": "PROVISIONAL - no paso la revision: los brazos no cuadran (sale un brazo desde la manga y otro antebrazo desde el borde) y hay dedos de mas a la derecha del celular. Pendiente de regenerar; no usar como imagen protagonista.",
       "uso": "Uso: vista previa de diseño para Kredit; no son personas reales"
+    },
+    {
+      "archivo": [
+        "meta-celebracion-1600.webp",
+        "meta-celebracion-800.webp"
+      ],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "descripcion": "Familia panameña celebrando una graduación en casa"
+    },
+    {
+      "archivo": [
+        "meta-salud-1600.webp",
+        "meta-salud-800.webp"
+      ],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "descripcion": "Hombre afropanameño tranquilo en la sala de espera de una clínica"
+    },
+    {
+      "archivo": [
+        "meta-deudas-1600.webp",
+        "meta-deudas-800.webp"
+      ],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "descripcion": "Mujer ordenando sus cuentas en la mesa de la cocina"
+    },
+    {
+      "archivo": [
+        "meta-viajes-1600.webp",
+        "meta-viajes-800.webp"
+      ],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "descripcion": "Pareja caminando por un sendero de playa en Bocas del Toro"
+    },
+    {
+      "archivo": [
+        "meta-imprevistos-1600.webp",
+        "meta-imprevistos-800.webp"
+      ],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "descripcion": "Cliente conversando con un mecánico junto a su auto con el capó abierto"
+    },
+    {
+      "archivo": [
+        "rrhh-presentacion-1600.webp",
+        "rrhh-presentacion-800.webp"
+      ],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "descripcion": "Gerente de RR. HH. presentando a un grupo de colaboradores"
+    },
+    {
+      "archivo": [
+        "kit-cartelera-1600.webp",
+        "kit-cartelera-800.webp"
+      ],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "descripcion": "Dos colaboradores frente a un afiche con QR en el área de descanso"
+    },
+    {
+      "archivo": [
+        "solicitud-parada-1600.webp",
+        "solicitud-parada-800.webp"
+      ],
+      "relacion": "3:2",
+      "origen": "Generada con IA (fal · nano-banana-2)",
+      "fecha": "2026-10-12",
+      "descripcion": "Hombre en una parada de bus de Ciudad de Panamá usando su celular"
     }
   ]
 }

@@ -1,0 +1,114 @@
+/* =========================================================================
+   Kredit · bloques compartidos de las dos landings (préstamos y empresas)
+   Se carga DESPUÉS de base.css (y de empresas.css en /empresas/). No toca el
+   hero, el formulario ni la calculadora: solo las secciones bajo el pliegue.
+   Fuente de verdad: docs/specs/kredit-marketing/DESIGN-kredit.md
+   ========================================================================= */
+
+/* ---------------------------------------------------------------- confianza: licencia y supervisión
+   Plano navy con las placas blancas de base.css (.regs / .reg): los logos oficiales solo se
+   leen sobre blanco. Alcance exacto: el MICI da la licencia; la SBP supervisa solo la
+   prevención del blanqueo de capitales. */
+.trust { position: relative; overflow: hidden; background: var(--navy); color: #fff; }
+.trust .section-head h2 { color: #fff; }
+.trust .section-head p { color: var(--ice); }
+.trust__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.trust .regs { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.trust .reg { display: grid; grid-template-columns: 216px minmax(0, 1fr); align-items: center; gap: 24px; padding: 22px 26px; border: 0; border-radius: var(--r-lg); box-shadow: var(--shadow-2); }
+.trust .reg__logo { justify-self: center; }
+.trust .reg__logo--mici { width: 216px; }
+.trust .reg__logo--sbp { width: 88px; }
+.trust .reg__txt { padding-left: 24px; border-left: 1px solid var(--rule); font-size: 15px; line-height: 1.45; color: var(--text-2); }
+.trust .reg__txt b { font-size: 16px; line-height: 1.3; margin-bottom: 4px; }
+.trust__points { list-style: none; border-top: 1px solid rgba(198, 218, 255, .22); }
+.trust__points li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 14px; padding: 18px 0; border-bottom: 1px solid rgba(198, 218, 255, .22); }
+.trust__points .ic { width: 22px; height: 22px; margin-top: 1px; color: var(--cyan); }
+.trust__points h3 { color: #fff; font: 700 18px/1.3 var(--f-display); letter-spacing: -0.005em; margin-bottom: 4px; }
+.trust__points p { color: var(--ice); font-size: 15.5px; line-height: 1.5; }
+.trust__entity { margin: clamp(28px, 4vw, 44px) 0 0; padding-top: 18px; border-top: 1px solid rgba(198, 218, 255, .22); font: 500 13px/1.5 var(--f-mono); letter-spacing: .02em; color: var(--ice); }
+.trust__entity strong { color: #fff; font-weight: 600; }
+@media (max-width: 860px) { .trust__grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 600px) {
+  .trust .reg { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 18px; }
+  .trust .reg__logo { justify-self: start; }
+  .trust .reg__logo--mici { width: 220px; }
+  .trust .reg__logo--sbp { width: 80px; }
+  .trust .reg__txt { padding: 14px 0 0; border-left: 0; border-top: 1px solid var(--rule); }
+}
+
+/* placas en el pie: la etiqueta ámbar de base.css para el pie oscuro no se lee sobre la placa blanca */
+.site-footer .reg .tbd { background: var(--amber-bg); color: var(--amber); border-color: #E7B26A; }
+.regs--foot + .footer__bottom { margin-top: 28px; }
+/* placas apiladas en celular: hay ancho para que el logo del MICI se lea */
+@media (max-width: 420px) { .regs--foot .reg__logo--mici { width: 172px; } .regs--foot .reg__logo--sbp { width: 60px; } }
+
+/* ---------------------------------------------------------------- bloque partido: la foto llena el alto del texto */
+.split__media > .photo-note { margin-top: 10px; }
+@media (min-width: 861px) {
+  .split--media-end > .split__media { order: 2; }
+  .split--fill { align-items: stretch; }
+  .split--fill > .split__media { display: grid; }
+  .split--fill > .split__media > .photo { min-height: 380px; }
+  .split--fill > .split__media > .photo img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; }
+}
+.photo--focus-r img { object-position: 64% 50%; }
+
+/* pasos en vertical, con número de comprobante y filetes */
+.steps--stack { grid-template-columns: minmax(0, 1fr); border-top: 1.5px solid var(--navy); }
+.steps--stack .step, .steps--stack .step + .step { display: grid; grid-template-columns: 52px minmax(0, 1fr); align-items: start; padding: 22px 0; border: 0; border-bottom: 1px solid var(--rule); }
+.steps--stack .step__num { grid-row: 1 / span 2; margin: 4px 0 0; font-size: 15px; }
+.steps--stack .step h3 { margin-bottom: 6px; }
+.steps--stack .step p { margin: 0; }
+
+/* comprobante pequeño que cruza el borde de la foto (marca cian = «depositado») */
+.photo-chip { position: absolute; right: -28px; bottom: 72px; z-index: 1; display: flex; align-items: center; gap: 12px; max-width: calc(100% - 24px); margin: 0; padding: 12px 18px 12px 14px; background: var(--paper); border: 1px solid var(--rule); border-radius: var(--r-md); box-shadow: var(--shadow-2); color: var(--navy); }
+.photo-chip__dot { flex: none; width: 14px; height: 14px; border-radius: 50%; background: var(--cyan); border: 2px solid var(--navy); }
+.photo-chip small { display: block; font: 600 11.5px/1.2 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); }
+.photo-chip strong { display: block; margin-top: 2px; font: 700 15px/1.25 var(--f-display); }
+@media (max-width: 860px) { .photo-chip { right: 12px; bottom: 58px; padding: 10px 14px 10px 12px; } }
+
+.photo-note { margin: 14px 0 0; font: 500 12.5px/1.4 var(--f-mono); color: var(--text-3); }
+
+/* ---------------------------------------------------------------- metas con foto (los botones data-goal son la tarjeta entera) */
+.goals--photo { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.goals--photo .goal { position: relative; overflow: hidden; align-items: stretch; gap: 0; padding: 0; background: var(--paper); }
+.goals--photo .goal:hover { background: var(--ice-2); }
+.goal__media { position: relative; display: block; aspect-ratio: 3 / 2; overflow: hidden; background: var(--ice-2); }
+.goal__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.goal__media--top img { object-position: 50% 24%; }
+.goal__media--left img { object-position: 30% 50%; }
+.goals--photo .goal__body { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto 1fr; column-gap: 12px; row-gap: 4px; padding: 16px 18px 18px; }
+.goals--photo .goal__title, .goals--photo .goal__text { grid-column: 1; }
+.goals--photo .goal__text { align-self: start; }
+.goals--photo .goal__go { grid-column: 2; grid-row: 1 / span 2; align-self: end; margin: 0; transition: transform .2s var(--ease-out); }
+.goals--photo .goal:hover .goal__go { transform: translateX(3px); }
+
+/* destacada: foto y panel navy, el doble de ancho */
+.goals--photo .goal--featured { grid-column: span 2; grid-row: auto; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); min-height: 0; padding: 0; background: var(--navy); border-color: var(--navy); }
+.goals--photo .goal--featured:hover { background: var(--navy-2); border-color: var(--navy-2); }
+.goals--photo .goal--featured .goal__media { aspect-ratio: auto; min-height: 260px; }
+.goals--photo .goal--featured .goal__body { align-content: end; grid-template-rows: auto auto; padding: 24px 24px 22px; row-gap: 8px; }
+.goals--photo .goal--featured .goal__title { font-size: 25px; line-height: 1.12; letter-spacing: -0.01em; }
+/* sobre el papel, el anillo de foco cian de base.css no llega a 3:1: azul rey */
+.goals--photo .goal--featured:focus-visible { outline-color: var(--focus); }
+
+@media (max-width: 1100px) {
+  .goals--photo { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .goals--photo .goal--featured { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); }
+}
+@media (max-width: 860px) { .goals--photo { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
+@media (max-width: 560px) {
+  .goals--photo { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .goals--photo .goal--featured { grid-template-columns: minmax(0, 1fr); }
+  .goals--photo .goal--featured .goal__media { aspect-ratio: 3 / 2; min-height: 0; }
+  .goals--photo .goal--featured .goal__body { padding: 18px 18px 20px; }
+  .goals--photo .goal--featured .goal__title { font-size: 22px; }
+  .goals--photo .goal:not(.goal--featured) { flex-direction: row; min-height: 92px; }
+  .goals--photo .goal:not(.goal--featured) .goal__media { flex: none; width: 104px; aspect-ratio: auto; }
+  .goals--photo .goal:not(.goal--featured) .goal__body { align-content: center; grid-template-rows: auto auto; padding: 14px 16px; }
+  .goals--photo .goal:not(.goal--featured) .goal__go { align-self: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .goals--photo .goal__go { transition: none; }
+  .goals--photo .goal:hover .goal__go { transform: none; }
+}

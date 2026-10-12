@@ -1,9 +1,27 @@
-// Inicio (/): hero con comprobante, regla de quincenas, dos puertas, cómo funciona, confianza,
-// portal de clientes, adelanto de preguntas y llamado final.
+// Inicio (/): hero con comprobante, regla de quincenas, dos puertas, cómo funciona, ¿para qué lo
+// necesitas? (metas con foto), confianza con los reguladores, portal de clientes, preguntas y llamado final.
 export default (h) => {
   const { ic, link, landing, photo, wa, seal, money } = h;
   const base = h.ex(1000, 18, 12);
   const plazos = [4, 6, 9, 12, 18, 24];
+
+  // Metas: cada tarjeta lleva a la calculadora completa de /prestamos/. Sin promesas de aprobación.
+  const USES = [
+    { img: 'meta-celebracion', title: 'Celebraciones', text: 'Una graduación, un cumpleaños o una boda, con una cuota que conoces desde el inicio.',
+      alt: 'Familia panameña celebra en casa la graduación de su hija con un abrazo, globos y un pastel' },
+    { img: 'estudiante-metas', title: 'Estudios', text: 'Matrícula, cursos, útiles o la laptop para la universidad.', cls: 'use__photo--top',
+      alt: 'Estudiante universitario camina por un campus con palmeras en Ciudad de Panamá, con su cuaderno en la mano' },
+    { img: 'familia-metas', title: 'Tu hogar', text: 'Mejoras, muebles o equipos para la casa, con una cuota fija por planilla.',
+      alt: 'Pareja joven revisa su presupuesto en la mesa del comedor de su casa' },
+    { img: 'meta-salud', title: 'Salud', text: 'Consultas, exámenes o tratamientos, con el costo total claro antes de firmar.',
+      alt: 'Hombre espera tranquilo su turno en la sala de espera de una clínica, con una carpeta en las manos' },
+    { img: 'meta-deudas', title: 'Ordena tus deudas', text: 'Ponte al día y paga una sola cuota fija, fácil de seguir.',
+      alt: 'Mujer ordena sus recibos y cuentas en la mesa de la cocina y anota en una libreta' },
+    { img: 'meta-viajes', title: 'Viajes', text: 'Ese viaje en familia o en pareja, con los pagos calculados desde antes de salir.',
+      alt: 'Pareja con mochilas camina por un sendero junto al mar en Bocas del Toro, entre palmeras' },
+    { img: 'meta-imprevistos', title: 'Imprevistos', text: 'La reparación del carro o ese gasto que no estaba en tus planes.',
+      alt: 'Cliente conversa con un mecánico junto a su carro con el capó abierto en un taller' },
+  ];
 
   const jsonld = {
     '@context': 'https://schema.org',
@@ -140,7 +158,7 @@ export default (h) => {
           </div>
         </article>
         <article class="door door--navy" aria-labelledby="door-empresas">
-          ${photo('rrhh-reunion', 'Gerente de recursos humanos conversa con el gerente de finanzas en una sala de reuniones con vista a la ciudad', { sizes: '(max-width: 860px) 92vw, 580px' })}
+          ${photo('rrhh-presentacion', 'Gerente de recursos humanos hace una presentación a un grupo de colaboradores en una sala de reuniones con vista a la ciudad', { sizes: '(max-width: 860px) 92vw, 580px' })}
           <div class="door__body">
             <h3 class="door__title" id="door-empresas">Para empresas</h3>
             <p>Ofrece un beneficio de valor a tus colaboradores sin gestionar préstamos internos: Kredit evalúa, desembolsa y atiende; tu planilla aplica el descuento acordado.</p>
@@ -176,8 +194,42 @@ export default (h) => {
         <p class="needs-line"><strong>Lo que necesitas:</strong> cédula vigente · estar activo en una empresa afiliada · la solicitud digital.</p>
       </div>
       <div class="how__media">
-        ${photo('deposito-celular', 'Colaborador en el pasillo de su oficina mira su celular con una sonrisa', { ratio: 'tall', sizes: '(max-width: 860px) 92vw, 520px' })}
+        <div class="how__shot how__shot--a">
+          ${photo('solicitud-parada', 'Hombre en una parada de bus de Ciudad de Panamá revisa su celular mientras espera', { sizes: '(max-width: 860px) 92vw, 520px' })}
+          <p class="how__cap"><span>02</span>Solicitas desde tu celular, donde estés.</p>
+        </div>
+        <div class="how__shot how__shot--b">
+          ${photo('deposito-celular', 'Colaborador en el pasillo de su oficina mira su celular con una sonrisa', { sizes: '(max-width: 860px) 92vw, 520px' })}
+          <p class="how__cap"><span>04</span>El depósito llega el mismo día de la aprobación.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== ¿PARA QUÉ LO NECESITAS? -->
+  <section class="section" id="para-que" aria-labelledby="usos-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="usos-title">¿Para qué lo necesitas?</h2>
+        <p>Tú decides en qué usarlo. Elige tu meta y calcula cuánto pagarías cada quincena, con montos de B/. 50 a B/. 3,000.</p>
+      </div>
+      <ul class="uses">
+        ${USES.map((u) => `<li class="use">
+          ${photo(u.img, u.alt, { sizes: '(max-width: 640px) 300px, (max-width: 999px) 46vw, 380px', cls: u.cls || '' })}
+          <div class="use__body">
+            <h3 class="use__title"><a href="${link('prestamos')}#calculadora">${u.title}<span class="sr-only">: calcula tu cuota</span></a></h3>
+            <p>${u.text}</p>
+            <span class="use__go" aria-hidden="true">Calcular mi cuota</span>
+          </div>
+        </li>`).join('\n        ')}
+        <li class="uses__more">
+          ${h.kGhost}
+          <h3 class="use__title">¿Otra meta?</h3>
+          <p>Sea cual sea, calcula tu cuota quincenal con el monto y el plazo que necesitas.</p>
+          <a class="btn btn--white" href="${link('prestamos')}#calculadora">Abrir la calculadora${ic('arrow-r')}</a>
+        </li>
+      </ul>
+      <p class="uses__hint" aria-hidden="true">Desliza para ver más metas</p>
     </div>
   </section>
 
@@ -187,11 +239,7 @@ export default (h) => {
       <div class="trust__copy">
         <h2 class="h2" id="trust-title">Un crédito formal, con licencia y todo por escrito</h2>
         <p class="trust__lead">Kredit es una empresa financiera autorizada por el MICI. Antes de firmar ves la tasa, los cargos y el costo total: la letra pequeña, en grande.</p>
-        <div class="stamp">
-          <span class="stamp__k">Empresa financiera autorizada</span>
-          <span class="stamp__num">MICI · Res. No. 638</span>
-          <span class="stamp__date">23 de septiembre de 2025</span>
-        </div>
+        ${h.regs('regs--trust')}
         <p class="trust__more"><a class="link-arrow" href="${link('nosotros')}#licencia">Conoce nuestra licencia</a></p>
       </div>
       <dl class="ledger-lg">

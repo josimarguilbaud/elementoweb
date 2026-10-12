@@ -1,0 +1,15 @@
+{
+  "nota": "Logos oficiales descargados el 12-oct-2026 para la vista previa de Kredit. Su uso en el sitio real debe confirmarlo Kredit: el MICI otorga su licencia (Res. 638-2025) y la SBP la supervisa solo en prevención de blanqueo de capitales (Ley 23 de 2015, art. 22). mici.png y sbp.png son recortes de los originales.",
+  "archivos": [
+    {
+      "archivo": "mici-oficial.png",
+      "fuente": "https://mici.gob.pa/wp-content/uploads/2021/07/logomici.png",
+      "titular": "Ministerio de Comercio e Industrias de Panamá"
+    },
+    {
+      "archivo": "sbp-oficial.png",
+      "fuente": "https://www.superbancos.gob.pa/sites/default/files/logo-oficial_0.png",
+      "titular": "Superintendencia de Bancos de Panamá"
+    }
+  ]
+}

@@ -155,8 +155,12 @@
 @media (max-width: 560px) { .req-list > div { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
 
 /* ---------------------------------------------------------------- kit de activación */
-.kit { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
+/* escena: la foto del afiche en el área de descanso y, encima de su borde, el afiche de ejemplo */
+.kit-scene { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .6fr); align-items: center; }
+.kit-scene .poster { z-index: 1; margin-left: -64px; }
 .kit-list { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; border-top: 1px solid var(--rule-2); }
+.kit-list--row { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(36px, 5vw, 56px); border-top: 1.5px solid var(--navy); }
+@media (max-width: 1080px) { .kit-list--row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .kit-list li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
 .kit-list .ic { width: 22px; height: 22px; margin-top: 1px; color: var(--blue); }
 .kit-list h3 { font: 800 17px/1.25 var(--f-display); margin-bottom: 4px; }
@@ -176,12 +180,25 @@
 .poster__qr svg { width: 76px; height: 76px; flex: none; }
 .poster__qr strong { display: block; font: 700 15px/1.25 var(--f-display); color: var(--navy); }
 .poster__qr small { display: block; margin-top: 2px; font: 500 12.5px var(--f-mono); color: var(--text-3); }
-@media (max-width: 860px) { .kit { grid-template-columns: minmax(0, 1fr); } .poster { transform: none; } }
+@media (max-width: 860px) {
+  .kit-scene { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .kit-scene .poster { margin: 0 auto; transform: none; }
+}
 @media (max-width: 560px) { .kit-list { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------------------------------------------------------------- fotos del equipo */
 .photo-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 @media (max-width: 760px) { .photo-pair { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------------------------------------------------------------- preguntas: foto de RR. HH. y finanzas al lado */
+.faq-split { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.faq-split__aside { position: sticky; top: calc(var(--band-h) + var(--header-h) + 24px); }
+.faq-split__aside .section-head { margin-bottom: 28px; }
+.faq-split .faq { max-width: none; margin: 0; }
+@media (max-width: 860px) {
+  .faq-split { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .faq-split__aside { position: static; }
+}
 
 /* ---------------------------------------------------------------- llamado final y barra móvil */
 .cta-final .cta-final__mail { margin-top: 20px; font-size: 16px; color: var(--ice); }

@@ -7,16 +7,17 @@
 <title>Préstamo con depósito el mismo día · Kredit</title>
 <meta name="description" content="Vista previa: landing de préstamos de Kredit para personas que trabajan en una empresa con planilla en Panamá, con calculadora de cuota quincenal y solicitud en línea. Formulario en modo demo.">
 <meta name="theme-color" content="#091845">
-<link rel="icon" href="../assets/kredit-mark.svg?v=20261012e" type="image/svg+xml">
+<link rel="icon" href="../assets/kredit-mark.svg?v=20261012f" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800;900&amp;family=Roboto+Mono:wght@400;500;600&amp;display=swap">
-<link rel="stylesheet" href="../assets/base.css?v=20261012e">
-<link rel="modulepreload" href="../assets/form.js?v=20261012e">
-<link rel="modulepreload" href="../assets/calc.js?v=20261012e">
-<script type="module" src="../assets/page.js?v=20261012e"></script>
-<script type="module" src="../assets/prestamos.js?v=20261012e"></script>
-<script type="module" src="../assets/quincenas.js?v=20261012e"></script>
+<link rel="stylesheet" href="../assets/base.css?v=20261012f">
+<link rel="stylesheet" href="../assets/bloques.css?v=20261012f">
+<link rel="modulepreload" href="../assets/form.js?v=20261012f">
+<link rel="modulepreload" href="../assets/calc.js?v=20261012f">
+<script type="module" src="../assets/page.js?v=20261012f"></script>
+<script type="module" src="../assets/prestamos.js?v=20261012f"></script>
+<script type="module" src="../assets/quincenas.js?v=20261012f"></script>
 </head>
 <body id="top">
 <!-- SPRITE:start (íconos y logotipo) -->
@@ -343,6 +344,29 @@
     </div>
   </section>
 
+  <!-- ================================== CONFIANZA: LICENCIA Y SUPERVISIÓN -->
+  <!-- Alcance exacto: el MICI da la licencia; la SBP supervisa solo la prevención del blanqueo de capitales. -->
+  <section class="section trust" id="confianza" aria-labelledby="confianza-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="confianza-title">Un préstamo formal, con licencia y supervisión</h2>
+        <p>Detrás de Kredit está CREDU HOLDINGS, S.A., una empresa financiera con licencia del Ministerio de Comercio e Industrias. Puedes verificarlo antes de solicitar.</p>
+      </div>
+      <div class="trust__grid">
+        <div class="regs">
+          <div class="reg"><img class="reg__logo reg__logo--mici" src="../assets/reguladores/mici.png" width="720" height="119" alt="Ministerio de Comercio e Industrias de Panamá" loading="lazy"><p class="reg__txt"><b>Licencia de empresa financiera</b>Ministerio de Comercio e Industrias · Resolución No. 638 del 23 de septiembre de 2025</p></div>
+          <div class="reg"><img class="reg__logo reg__logo--sbp" src="../assets/reguladores/sbp.png" width="274" height="189" alt="Superintendencia de Bancos de Panamá" loading="lazy"><p class="reg__txt"><b>Supervisión en prevención de blanqueo de capitales</b>Superintendencia de Bancos de Panamá · Ley 23 de 2015 <span class="tbd">[registro por confirmar con Kredit]</span></p></div>
+        </div>
+        <ul class="trust__points">
+          <li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><div><h3>Sin pagos por adelantado</h3><p>Kredit nunca cobra por adelantado para aprobar un préstamo. Si alguien te lo pide en su nombre, no pagues y repórtalo a los canales oficiales.</p></div></li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg><div><h3>Todo por escrito antes de firmar</h3><p>Recibes la tasa de interés efectiva, los cargos y el costo total antes de firmar.</p></div></li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg><div><h3>Tus datos, protegidos</h3><p>Tratamos tus datos conforme a la Ley 81 de 2019 y solo para gestionar tu solicitud.</p></div></li>
+        </ul>
+      </div>
+      <p class="trust__entity"><strong>CREDU HOLDINGS, S.A.</strong> (Kredit) · RUC 155770767-2-2025 DV9</p>
+    </div>
+  </section>
+
   <!-- ========================================================= CÓMO FUNCIONA -->
   <section class="section section--white" id="como-funciona" aria-labelledby="como-title">
     <div class="wrap">
@@ -350,12 +374,20 @@
         <h2 class="h2" id="como-title">Cuatro pasos, sin filas ni papeles de más</h2>
         <p>Todo empieza en línea, desde tu celular. Un asesor de Kredit te acompaña hasta el depósito.</p>
       </div>
-      <ol class="steps">
-        <li class="step"><span class="step__num" aria-hidden="true">01</span><h3>Calcula tu cuota</h3><p>Elige el monto y el plazo y ve al instante cuánto pagarías cada quincena.</p></li>
-        <li class="step"><span class="step__num" aria-hidden="true">02</span><h3>Solicita en línea</h3><p>Llena la solicitud digital con tu cédula, en 4 pasos y desde tu celular.</p></li>
-        <li class="step"><span class="step__num" aria-hidden="true">03</span><h3>Un asesor te llama o escribe</h3><p>Revisa tu solicitud, resuelve tus dudas y te explica la tasa, los cargos y el costo total.</p></li>
-        <li class="step"><span class="step__num" aria-hidden="true">04</span><h3>Recibes tu dinero</h3><p>El depósito se hace el mismo día de la aprobación. Tu cuota se descuenta de tu planilla.</p></li>
-      </ol>
+      <div class="split split--fill split--media-end">
+        <div class="split__media">
+          <figure class="photo photo--wide photo--focus-r">
+            <img src="../../kredit-web/img/solicitud-parada-800.webp" srcset="../../kredit-web/img/solicitud-parada-800.webp 800w, ../../kredit-web/img/solicitud-parada-1600.webp 1600w" sizes="(max-width: 860px) 92vw, 540px" width="800" height="537" alt="Un hombre sonríe mientras usa su celular en una parada de bus de la Ciudad de Panamá, con taxis amarillos y edificios al fondo" loading="lazy" decoding="async">
+            <figcaption class="photo__tag">Imagen ilustrativa generada con IA</figcaption>
+          </figure>
+        </div>
+        <ol class="steps steps--stack">
+          <li class="step"><span class="step__num" aria-hidden="true">01</span><h3>Calcula tu cuota</h3><p>Elige el monto y el plazo y ve al instante cuánto pagarías cada quincena.</p></li>
+          <li class="step"><span class="step__num" aria-hidden="true">02</span><h3>Solicita en línea</h3><p>Llena la solicitud digital con tu cédula, en 4 pasos y desde tu celular.</p></li>
+          <li class="step"><span class="step__num" aria-hidden="true">03</span><h3>Un asesor te llama o escribe</h3><p>Revisa tu solicitud, resuelve tus dudas y te explica la tasa, los cargos y el costo total.</p></li>
+          <li class="step"><span class="step__num" aria-hidden="true">04</span><h3>Recibes tu dinero</h3><p>El depósito se hace el mismo día de la aprobación. Tu cuota se descuenta de tu planilla.</p></li>
+        </ol>
+      </div>
       <div class="needs">
         <strong>Lo que necesitas</strong>
         <ul class="mini-list">
@@ -373,9 +405,10 @@
     <div class="wrap split">
       <div class="split__media">
         <figure class="photo">
-          <img src="../../kredit-web/img/deposito-celular-800.webp" srcset="../../kredit-web/img/deposito-celular-800.webp 800w, ../../kredit-web/img/deposito-celular-1600.webp 1600w" sizes="(max-width: 860px) 92vw, 540px" width="800" height="1000" alt="Colaborador en el pasillo de su oficina mira su celular con una sonrisa" loading="lazy" decoding="async">
+          <img src="../../kredit-web/img/deposito-celular-800.webp" srcset="../../kredit-web/img/deposito-celular-800.webp 800w, ../../kredit-web/img/deposito-celular-1600.webp 1600w" sizes="(max-width: 860px) 92vw, 540px" width="800" height="993" alt="Colaborador en el pasillo de su oficina mira su celular con una sonrisa" loading="lazy" decoding="async">
           <figcaption class="photo__tag">Imagen ilustrativa generada con IA</figcaption>
         </figure>
+        <p class="photo-chip"><span class="photo-chip__dot" aria-hidden="true"></span><span><small>Depósito</small><strong>El mismo día de la aprobación</strong></span></p>
       </div>
       <div>
         <div class="section-head">
@@ -400,20 +433,43 @@
         <h2 class="h2" id="metas-title">¿Para qué lo necesitas?</h2>
         <p>Elige tu meta y empieza la solicitud con ese propósito. Opciones de crédito para tus metas, con una cuota que conoces desde el inicio.</p>
       </div>
-      <div class="goals">
-        <button type="button" class="goal goal--featured" data-goal="celebracion">
-          <span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
-          <span class="goal__title">Los momentos importantes no esperan</span>
-          <span class="goal__text">Graduaciones, bodas, cumpleaños: planifícalos con cuota fija.</span>
-          <svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg>
+      <!-- Cada botón data-goal es la tarjeta entera: precarga el propósito y lleva al formulario (prestamos.js).
+           El nombre accesible sale del título (aria-labelledby), no del alt de la foto. -->
+      <div class="goals goals--photo">
+        <button type="button" class="goal goal--featured" data-goal="celebracion" aria-labelledby="goal-celebracion-t" aria-describedby="goal-celebracion-d">
+          <span class="goal__media"><img src="../../kredit-web/img/meta-celebracion-800.webp" srcset="../../kredit-web/img/meta-celebracion-800.webp 800w, ../../kredit-web/img/meta-celebracion-1600.webp 1600w" sizes="(max-width: 560px) 92vw, (max-width: 1100px) 52vw, 320px" width="800" height="537" alt="Una familia celebra en casa la graduación de su hija: la madre la abraza mientras el padre y la abuela sonríen junto a un pastel y globos" loading="lazy" decoding="async"></span>
+          <span class="goal__body">
+            <span class="goal__title" id="goal-celebracion-t">Los momentos importantes no esperan</span>
+            <span class="goal__text" id="goal-celebracion-d">Graduaciones, bodas, cumpleaños: planifícalos con cuota fija.</span>
+            <svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg>
+          </span>
         </button>
-        <button type="button" class="goal" data-goal="estudios"><span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></span><span class="goal__title">Estudios</span><span class="goal__text">Matrícula, cursos o útiles.</span></button>
-        <button type="button" class="goal" data-goal="hogar"><span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span><span class="goal__title">Tu hogar</span><span class="goal__text">Mejoras, muebles o equipos.</span></button>
-        <button type="button" class="goal" data-goal="salud"><span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-pulse"/></svg></span><span class="goal__title">Salud</span><span class="goal__text">Tratamientos y gastos médicos.</span></button>
-        <button type="button" class="goal" data-goal="deudas"><span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><span class="goal__title">Ordena tus deudas</span><span class="goal__text">Una sola cuota fija, fácil de seguir.</span></button>
-        <button type="button" class="goal" data-goal="viajes"><span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-plane"/></svg></span><span class="goal__title">Viajes</span><span class="goal__text">Ese viaje que tanto planeas.</span></button>
-        <button type="button" class="goal" data-goal="imprevistos"><span class="goal__icon"><svg class="ic" aria-hidden="true"><use href="#i-umbrella"/></svg></span><span class="goal__title">Imprevistos</span><span class="goal__text">Para lo que no estaba en tus planes.</span></button>
+        <button type="button" class="goal" data-goal="estudios" aria-labelledby="goal-estudios-t" aria-describedby="goal-estudios-d">
+          <span class="goal__media goal__media--top"><img src="../../kredit-web/img/estudiante-metas-800.webp" srcset="../../kredit-web/img/estudiante-metas-800.webp 800w, ../../kredit-web/img/estudiante-metas-1600.webp 1600w" sizes="(max-width: 560px) 104px, (max-width: 860px) 46vw, (max-width: 1100px) 31vw, 270px" width="800" height="993" alt="Un estudiante universitario camina con su mochila y un cuaderno por un sendero arbolado del campus" loading="lazy" decoding="async"></span>
+          <span class="goal__body"><span class="goal__title" id="goal-estudios-t">Estudios</span><span class="goal__text" id="goal-estudios-d">Matrícula, cursos o útiles.</span><svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </button>
+        <button type="button" class="goal" data-goal="hogar" aria-labelledby="goal-hogar-t" aria-describedby="goal-hogar-d">
+          <span class="goal__media"><img src="../../kredit-web/img/familia-metas-800.webp" srcset="../../kredit-web/img/familia-metas-800.webp 800w, ../../kredit-web/img/familia-metas-1600.webp 1600w" sizes="(max-width: 560px) 104px, (max-width: 860px) 46vw, (max-width: 1100px) 31vw, 270px" width="800" height="537" alt="Una pareja revisa un cuaderno con su presupuesto en la mesa del comedor de su casa" loading="lazy" decoding="async"></span>
+          <span class="goal__body"><span class="goal__title" id="goal-hogar-t">Tu hogar</span><span class="goal__text" id="goal-hogar-d">Mejoras, muebles o equipos.</span><svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </button>
+        <button type="button" class="goal" data-goal="salud" aria-labelledby="goal-salud-t" aria-describedby="goal-salud-d">
+          <span class="goal__media goal__media--left"><img src="../../kredit-web/img/meta-salud-800.webp" srcset="../../kredit-web/img/meta-salud-800.webp 800w, ../../kredit-web/img/meta-salud-1600.webp 1600w" sizes="(max-width: 560px) 104px, (max-width: 860px) 46vw, (max-width: 1100px) 31vw, 270px" width="800" height="537" alt="Un hombre espera tranquilo su turno en la sala de espera de una clínica, con una carpeta de documentos en la mano" loading="lazy" decoding="async"></span>
+          <span class="goal__body"><span class="goal__title" id="goal-salud-t">Salud</span><span class="goal__text" id="goal-salud-d">Tratamientos y gastos médicos.</span><svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </button>
+        <button type="button" class="goal" data-goal="deudas" aria-labelledby="goal-deudas-t" aria-describedby="goal-deudas-d">
+          <span class="goal__media"><img src="../../kredit-web/img/meta-deudas-800.webp" srcset="../../kredit-web/img/meta-deudas-800.webp 800w, ../../kredit-web/img/meta-deudas-1600.webp 1600w" sizes="(max-width: 560px) 104px, (max-width: 860px) 46vw, (max-width: 1100px) 31vw, 270px" width="800" height="537" alt="Una mujer ordena sus cuentas y recibos con un bolígrafo en la mesa de su cocina" loading="lazy" decoding="async"></span>
+          <span class="goal__body"><span class="goal__title" id="goal-deudas-t">Ordena tus deudas</span><span class="goal__text" id="goal-deudas-d">Una sola cuota fija, fácil de seguir.</span><svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </button>
+        <button type="button" class="goal" data-goal="viajes" aria-labelledby="goal-viajes-t" aria-describedby="goal-viajes-d">
+          <span class="goal__media"><img src="../../kredit-web/img/meta-viajes-800.webp" srcset="../../kredit-web/img/meta-viajes-800.webp 800w, ../../kredit-web/img/meta-viajes-1600.webp 1600w" sizes="(max-width: 560px) 104px, (max-width: 860px) 46vw, (max-width: 1100px) 31vw, 270px" width="800" height="537" alt="Una pareja camina sonriente con sus mochilas por un sendero de playa entre palmeras, junto al mar" loading="lazy" decoding="async"></span>
+          <span class="goal__body"><span class="goal__title" id="goal-viajes-t">Viajes</span><span class="goal__text" id="goal-viajes-d">Ese viaje que tanto planeas.</span><svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </button>
+        <button type="button" class="goal" data-goal="imprevistos" aria-labelledby="goal-imprevistos-t" aria-describedby="goal-imprevistos-d">
+          <span class="goal__media"><img src="../../kredit-web/img/meta-imprevistos-800.webp" srcset="../../kredit-web/img/meta-imprevistos-800.webp 800w, ../../kredit-web/img/meta-imprevistos-1600.webp 1600w" sizes="(max-width: 560px) 104px, (max-width: 860px) 46vw, (max-width: 1100px) 31vw, 270px" width="800" height="537" alt="Un mecánico revisa el motor de un auto con el capó abierto mientras conversa con el dueño en un taller" loading="lazy" decoding="async"></span>
+          <span class="goal__body"><span class="goal__title" id="goal-imprevistos-t">Imprevistos</span><span class="goal__text" id="goal-imprevistos-d">Para lo que no estaba en tus planes.</span><svg class="ic goal__go" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+        </button>
       </div>
+      <p class="photo-note">Imágenes ilustrativas generadas con IA.</p>
     </div>
   </section>
 
@@ -582,6 +638,10 @@
           <li>Torre de las Américas, Torre B, Of. 602-B, Punta Pacífica, Panamá</li>
         </ul>
       </div>
+    </div>
+    <div class="regs regs--foot">
+      <div class="reg"><img class="reg__logo reg__logo--mici" src="../assets/reguladores/mici.png" width="720" height="119" alt="Ministerio de Comercio e Industrias de Panamá" loading="lazy"><p class="reg__txt"><b>Licencia de empresa financiera</b>Ministerio de Comercio e Industrias · Resolución No. 638 del 23 de septiembre de 2025</p></div>
+      <div class="reg"><img class="reg__logo reg__logo--sbp" src="../assets/reguladores/sbp.png" width="274" height="189" alt="Superintendencia de Bancos de Panamá" loading="lazy"><p class="reg__txt"><b>Supervisión en prevención de blanqueo de capitales</b>Superintendencia de Bancos de Panamá · Ley 23 de 2015 <span class="tbd">[registro por confirmar con Kredit]</span></p></div>
     </div>
     <div class="footer__bottom">
       <p>© <span data-year>2026</span> CREDU HOLDINGS, S.A. (Kredit) · RUC 155770767-2-2025 DV9 · Empresa financiera autorizada por el MICI, Res. No. 638 de 2025</p>

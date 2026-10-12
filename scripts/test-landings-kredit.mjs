@@ -11,7 +11,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'public');
 const DIR = path.join(ROOT, 'demo', 'kredit-landings');
-const V = '?v=20261012e';
+const V = '?v=20261012f';
 const args = process.argv.slice(2);
 const shotsDir = args.includes('--shots') ? args[args.indexOf('--shots') + 1] : null;
 const liveFonts = args.includes('--live-fonts');
@@ -90,8 +90,61 @@ for (const [f, txt] of assetsText) {
   const imgs = [...html.matchAll(/<figure class="photo[^"]*">\s*<img\b([^>]*)>\s*<figcaption[^>]*>([^<]*)<\/figcaption>/g)];
   const okImg = (a, cap) => /src="\.\.\/\.\.\/kredit-web\/img\/[a-z-]+-800\.webp"/.test(a) && /-1600\.webp 1600w/.test(a) && /width="800" height="537"/.test(a) && /loading="lazy"/.test(a) && /alt="[^"]{12,}"/.test(a) && cap === 'Imagen ilustrativa generada con IA';
   const names = imgs.map((m) => (m[1].match(/img\/([a-z-]+)-800\.webp/) || [])[1]).sort();
-  check(JSON.stringify(names) === JSON.stringify(['comercio-colaborador', 'equipo-almacen', 'firma-convenio', 'rrhh-reunion']) && imgs.every((m) => okImg(m[1], m[2].trim())), 'empresas: 4 fotos locales con srcset, medidas, lazy y aviso de IA', names.join(', '));
+  check(JSON.stringify(names) === JSON.stringify(['comercio-colaborador', 'equipo-almacen', 'firma-convenio', 'kit-cartelera', 'rrhh-presentacion', 'rrhh-reunion']) && imgs.every((m) => okImg(m[1], m[2].trim())), 'empresas: 6 fotos locales con srcset, medidas, lazy y aviso de IA', names.join(', '));
   check(!/portal-celular/.test(html), 'empresas: no usa la foto del portal en el celular');
+  const sec = (id) => { const i = html.indexOf(`id="${id}"`); return i < 0 ? '' : html.slice(i, html.indexOf('</section>', i)); };
+  check(/rrhh-presentacion-800\.webp/.test(sec('beneficios')) && /kit-cartelera-800\.webp/.test(sec('activacion')) && /class="poster"/.test(sec('activacion')), 'empresas: rrhh-presentacion en «Lo que gana tu empresa» y kit-cartelera junto al afiche del kit');
+}
+{
+  // Préstamos: fotos fuera del hero; «Cómo funciona» con la parada de bus; metas con foto sin perder data-goal.
+  const html = fs.readFileSync(PAGES.prestamos, 'utf8');
+  const hero = html.slice(html.indexOf('<section class="hero'), html.indexOf('</section>', html.indexOf('<section class="hero')));
+  check(!/<img\b/.test(hero), 'préstamos: sin fotos en el hero');
+  const sec = (id) => { const i = html.indexOf(`id="${id}"`); return i < 0 ? '' : html.slice(i, html.indexOf('</section>', i)); };
+  check(/<figure class="photo[^"]*">\s*<img\b[^>]*solicitud-parada-800\.webp[^>]*>\s*<figcaption class="photo__tag">Imagen ilustrativa generada con IA<\/figcaption>/.test(sec('como-funciona')) && /<ol class="steps steps--stack">/.test(sec('como-funciona')), 'préstamos: «Cómo funciona» partido con la foto de la parada de bus y los 4 pasos');
+  check(/deposito-celular-800\.webp/.test(sec('beneficios')), 'préstamos: «Beneficios» conserva la foto del depósito');
+  const GOALS = { celebracion: 'meta-celebracion', estudios: 'estudiante-metas', hogar: 'familia-metas', salud: 'meta-salud', deudas: 'meta-deudas', viajes: 'meta-viajes', imprevistos: 'meta-imprevistos' };
+  const goals = [...sec('metas').matchAll(/<button type="button" class="goal[^"]*" data-goal="([a-z]+)"[^>]*>([\s\S]*?)<\/button>/g)];
+  const wrong = goals.filter((m) => !new RegExp(`img/${GOALS[m[1]]}-800\\.webp"`).test(m[2])).map((m) => m[1]);
+  check(goals.length === 7 && JSON.stringify(goals.map((m) => m[1]).sort()) === JSON.stringify(Object.keys(GOALS).sort()) && wrong.length === 0, 'préstamos: 7 tarjetas de metas (botones data-goal) con su foto', wrong.join(', '));
+  check(goals.length === 7 && goals.every((m) => /aria-labelledby="goal-[a-z]+-t"/.test(m[0]) && /<span class="goal__title" id="goal-[a-z]+-t">/.test(m[2])), 'préstamos: el nombre de cada tarjeta de meta sale de su título, no del alt de la foto');
+  check(/Imágenes ilustrativas generadas con IA/.test(sec('metas')), 'préstamos: aviso de IA bajo las fotos de metas');
+}
+{
+  // Fotos de ambas landings: locales, con 800w/1600w, sizes, lazy, alt y width/height iguales al archivo real.
+  const webpSize = (file) => {
+    const b = fs.readFileSync(file); const t = b.toString('ascii', 12, 16);
+    if (t === 'VP8X') return [1 + b.readUIntLE(24, 3), 1 + b.readUIntLE(27, 3)];
+    if (t === 'VP8 ') return [b.readUInt16LE(26) & 0x3fff, b.readUInt16LE(28) & 0x3fff];
+    if (t === 'VP8L') { const bits = b.readUInt32LE(21); return [(bits & 0x3fff) + 1, ((bits >> 14) & 0x3fff) + 1]; }
+    return null;
+  };
+  const IMG = path.join(ROOT, 'demo', 'kredit-web', 'img');
+  for (const name of ['prestamos', 'empresas']) {
+    const html = fs.readFileSync(PAGES[name], 'utf8');
+    const tags = [...html.matchAll(/<img\b[^>]*src="\.\.\/\.\.\/kredit-web\/img\/([a-z-]+)-800\.webp"[^>]*>/g)];
+    const bad = tags.filter(([tag, n]) => {
+      const f800 = path.join(IMG, `${n}-800.webp`), f1600 = path.join(IMG, `${n}-1600.webp`);
+      if (!fs.existsSync(f800) || !fs.existsSync(f1600)) return true;
+      const [w, h] = webpSize(f800);
+      return !(tag.includes(`${n}-800.webp 800w`) && tag.includes(`${n}-1600.webp 1600w`) && /\ssizes="[^"]+"/.test(tag) && tag.includes(`width="${w}" height="${h}"`) && /loading="lazy"/.test(tag) && /alt="[^"]{20,}"/.test(tag));
+    }).map(([, n]) => n);
+    check(tags.length >= (name === 'prestamos' ? 9 : 6) && bad.length === 0, `${name}: ${tags.length} fotos con srcset 800w/1600w, sizes, lazy, alt y medidas del archivo real`, bad.join(', '));
+  }
+}
+{
+  // Reguladores (decisión de Josimar): placas del MICI y de la SBP en un bloque propio y en el pie.
+  // El MICI da la licencia; la SBP supervisa solo la prevención del blanqueo de capitales.
+  for (const name of ['prestamos', 'empresas']) {
+    const html = fs.readFileSync(PAGES[name], 'utf8');
+    const mici = html.match(/<div class="reg"><img class="reg__logo reg__logo--mici" src="\.\.\/assets\/reguladores\/mici\.png" width="720" height="119" alt="Ministerio de Comercio e Industrias de Panamá" loading="lazy"><p class="reg__txt"><b>Licencia de empresa financiera<\/b>Ministerio de Comercio e Industrias · Resolución No\. 638 del 23 de septiembre de 2025<\/p><\/div>/g) || [];
+    const sbp = html.match(/<div class="reg"><img class="reg__logo reg__logo--sbp" src="\.\.\/assets\/reguladores\/sbp\.png" width="274" height="189" alt="Superintendencia de Bancos de Panamá" loading="lazy"><p class="reg__txt"><b>Supervisión en prevención de blanqueo de capitales<\/b>Superintendencia de Bancos de Panamá · Ley 23 de 2015 <span class="tbd">\[registro por confirmar con Kredit\]<\/span><\/p><\/div>/g) || [];
+    check(mici.length === 2 && sbp.length === 2, `${name}: placas del MICI y de la SBP con el marcado exacto, en el bloque de confianza y en el pie`, `${mici.length} MICI, ${sbp.length} SBP`);
+    check(!/regulad[oa]s?\s+por\s+la\s+superintendencia/i.test(html), `${name}: no dice «regulada por la Superintendencia»`);
+    check(!/licencia[^<]{0,80}superintendencia|superintendencia[^<]{0,80}licencia/i.test(html), `${name}: no atribuye la licencia a la Superintendencia`);
+    check(/<link rel="stylesheet" href="\.\.\/assets\/bloques\.css\?v=/.test(html), `${name}: enlaza bloques.css`);
+  }
+  for (const f of ['mici.png', 'sbp.png']) check(fs.existsSync(path.join(DIR, 'assets', 'reguladores', f)), `assets/reguladores/${f} existe`);
 }
 
 // ---------------------------------------------------------------- 2. módulos
@@ -140,7 +193,7 @@ check(form.isValidRuc('155770767-2-2025 DV9') && form.isValidRuc('8-123-456 DV 1
 }
 
 // ---------------------------------------------------------------- 3. navegador
-const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json' };
+const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.json': 'application/json' };
 const server = http.createServer((req, res) => {
   const u = new URL(req.url, 'http://x');
   let p = path.normalize(path.join(ROOT, decodeURIComponent(u.pathname)));
@@ -664,16 +717,23 @@ for (const width of [1440, 390]) {
   await ctx.close();
 }
 {
-  // Regla de altura del hero de empresas (DESIGN-kredit.md): 1440×900 el hero termina antes de 840 px;
-  // 390×844 el botón del paso 1 termina dentro de la pantalla.
-  for (const width of [1440, 390]) {
-    const { ctx, page } = await newPage(width);
-    await page.goto(URLS.empresas, { waitUntil: 'networkidle' });
-    await page.evaluate(() => document.fonts.ready);
-    const m = await page.evaluate(() => ({ hero: document.querySelector('.hero').getBoundingClientRect().bottom, card: document.querySelector('[data-form-card]').getBoundingClientRect().top, next: document.querySelector('[data-next]').getBoundingClientRect().bottom, vh: innerHeight }));
-    if (width === 1440) check(m.hero < 840 && m.card < 260 && m.next <= m.vh, 'empresas 1440px: hero < 840 px con el formulario y su botón a la vista', JSON.stringify(m));
-    else check(m.next < 844, 'empresas 390px: el botón del paso 1 termina antes de 844 px', JSON.stringify(m));
-    await ctx.close();
+  // Regla de altura del hero (DESIGN-kredit.md): 1440×900 el hero termina antes de 840 px con la tarjeta
+  // completa; 390×844 el botón del paso 1 termina dentro de la pantalla. bloques.css (secciones bajo el
+  // pliegue) no debe mover el hero: se mide con y sin esa hoja.
+  for (const name of ['prestamos', 'empresas']) {
+    for (const width of [1440, 390]) {
+      const { ctx, page } = await newPage(width);
+      await page.goto(URLS[name], { waitUntil: 'networkidle' });
+      await page.evaluate(() => document.fonts.ready);
+      const measure = () => page.evaluate(() => ({ hero: Math.round(document.querySelector('.hero').getBoundingClientRect().bottom), card: Math.round(document.querySelector('[data-form-card]').getBoundingClientRect().top), cardBottom: Math.round(document.querySelector('[data-form-card]').getBoundingClientRect().bottom), next: Math.round(document.querySelector('[data-next]').getBoundingClientRect().bottom), vh: innerHeight }));
+      const m = await measure();
+      if (width === 1440) check(m.hero < 840 && m.card < 260 && m.cardBottom <= m.vh && m.next <= m.vh, `${name} 1440px: hero < 840 px con la tarjeta completa y su botón a la vista`, JSON.stringify(m));
+      else check(m.next < 844, `${name} 390px: el botón del paso 1 termina antes de 844 px`, JSON.stringify(m));
+      await page.evaluate(() => { document.querySelector('link[href*="bloques.css"]').disabled = true; });
+      const sin = await measure();
+      check(JSON.stringify(sin) === JSON.stringify(m), `${name} ${width}px: bloques.css no cambia el hero`, `${JSON.stringify(m)} vs ${JSON.stringify(sin)}`);
+      await ctx.close();
+    }
   }
   // En móvil y al enviar, el paso de afiliación sigue enfocando el primer error en el orden visual.
   const { ctx, page } = await newPage(390);
@@ -684,6 +744,68 @@ for (const width of [1440, 390]) {
   await page.click('[data-next]');
   check(await page.evaluate(() => document.activeElement.id) === 'b-provincia' && await page.isVisible('#b-colab-err'), 'empresas: foco en el primer error visible (provincia antes que colaboradores)');
   await ctx.close();
+}
+
+// 3l. reguladores, fotos y tarjetas de metas
+console.log('\nReguladores, fotos y metas');
+{
+  const DISCLOSURE = { prestamos: 'info-credito', empresas: 'convenio' };
+  for (const name of ['prestamos', 'empresas']) {
+    for (const width of [1440, 390]) {
+      const { ctx, page, errors } = await newPage(width);
+      const http4xx = [];
+      page.on('response', (r) => { if (r.status() >= 400) http4xx.push(`${r.status()} ${r.url()}`); });
+      await page.goto(URLS[name], { waitUntil: 'networkidle' });
+      // las fotos son lazy: se fuerzan todas para comprobar que ninguna da 404
+      await page.evaluate(() => document.querySelectorAll('img[loading="lazy"]').forEach((i) => { i.loading = 'eager'; }));
+      await page.waitForFunction(() => [...document.images].every((i) => i.complete), null, { timeout: 20000 });
+      const st = await page.evaluate((discId) => {
+        const flat = (el) => el.innerText.replace(/\s+/g, ' ').trim();
+        const plate = (r) => { const img = r.querySelector('img.reg__logo'); const b = img.getBoundingClientRect(); return { src: img.getAttribute('src'), loaded: img.naturalWidth > 0, w: Math.round(b.width), text: flat(r) }; };
+        const trust = document.getElementById('confianza');
+        return {
+          count: document.images.length,
+          broken: [...document.images].filter((i) => !(i.naturalWidth > 0)).map((i) => i.getAttribute('src')),
+          noAlt: [...document.images].filter((i) => i.alt.trim().length < 12).map((i) => i.getAttribute('src')),
+          heroImgs: document.querySelectorAll('.hero img').length,
+          order: !!trust && document.getElementById(discId).nextElementSibling === trust,
+          block: trust ? [...trust.querySelectorAll('.regs .reg')].map(plate) : [],
+          foot: [...document.querySelectorAll('.site-footer .regs--foot .reg')].map(plate),
+          trust: trust ? flat(trust) : '',
+          body: document.body.innerText,
+        };
+      }, DISCLOSURE[name]);
+      check(st.count >= (name === 'prestamos' ? 13 : 10) && st.broken.length === 0 && http4xx.length === 0, `${name} ${width}px: las ${st.count} imágenes cargan, sin 404`, [...st.broken, ...http4xx].slice(0, 4).join(', '));
+      check(st.noAlt.length === 0, `${name} ${width}px: todas las imágenes tienen alt descriptivo`, st.noAlt.join(', '));
+      check(st.heroImgs === 0, `${name} ${width}px: sin fotos en el hero`);
+      check(st.order, `${name} ${width}px: bloque de confianza justo después de #${DISCLOSURE[name]}`);
+      for (const [where, plates] of [['bloque', st.block], ['pie', st.foot]]) {
+        const [m, s] = plates;
+        check(plates.length === 2 && /reguladores\/mici\.png$/.test(m.src) && /reguladores\/sbp\.png$/.test(s.src) && plates.every((p) => p.loaded && p.w >= 50), `${name} ${width}px: ${where}: logos del MICI y de la SBP cargados (naturalWidth > 0)`, JSON.stringify(plates.map((p) => [p.src, p.loaded, p.w])));
+        check(!!m && m.text.includes('Licencia de empresa financiera') && m.text.includes('638') && !!s && s.text.includes('prevención de blanqueo') && !/licencia/i.test(s.text), `${name} ${width}px: ${where}: «Licencia de empresa financiera» + 638 en el MICI; la SBP solo «prevención de blanqueo»`);
+      }
+      check(st.trust.includes('CREDU HOLDINGS, S.A.') && /nunca cobra por adelantado/.test(st.trust) && /costo total/.test(st.trust) && /Ley 81 de 2019/.test(st.trust), `${name} ${width}px: confianza con la razón social y los 3 puntos (sin cobro adelantado, costo total por escrito, Ley 81)`);
+      check(!/regulad[oa]s?\s+por\s+la\s+superintendencia/i.test(st.body), `${name} ${width}px: el texto visible no dice «regulada por la Superintendencia»`);
+      if (name === 'prestamos') {
+        const goals = await page.evaluate(() => [...document.querySelectorAll('[data-goal]')].map((b) => ({
+          v: b.dataset.goal, tag: b.tagName, type: b.type,
+          img: !!b.querySelector('img') && b.querySelector('img').naturalWidth > 0,
+          label: (b.getAttribute('aria-labelledby') || '').split(' ').map((id) => (document.getElementById(id) || {}).textContent || '').join(' ').trim(),
+          opt: !!document.querySelector(`#f-proposito option[value="${b.dataset.goal}"]`),
+        })));
+        check(goals.length === 7 && goals.every((g) => g.tag === 'BUTTON' && g.type === 'button' && g.img && g.label.length > 3 && g.opt), `${width}px: 7 tarjetas de metas son botones con foto, nombre del título y opción en el formulario`, JSON.stringify(goals.filter((g) => !(g.img && g.opt && g.label))));
+        for (const [goal, part, label] of [['salud', '.goal__media', 'la foto'], ['celebracion', '.goal__title', 'el título'], ['imprevistos', '.goal__go', 'la flecha']]) {
+          await page.evaluate(() => { document.getElementById('f-proposito').value = ''; document.getElementById('metas').scrollIntoView(); });
+          await page.click(`[data-goal="${goal}"] ${part}`);
+          await page.waitForTimeout(120);
+          const r = await page.evaluate(() => ({ v: document.getElementById('f-proposito').value, focus: document.activeElement.id, top: Math.round(document.getElementById('solicitud').getBoundingClientRect().top), vh: innerHeight }));
+          check(r.v === goal && r.focus === 'f-monto' && r.top >= 0 && r.top < r.vh, `${width}px: la tarjeta «${goal}» (clic en ${label}) precarga el propósito y lleva a la calculadora`, JSON.stringify(r));
+        }
+      }
+      check(errors.length === 0, `${name} ${width}px: sin errores de página`, errors.join(' | '));
+      await ctx.close();
+    }
+  }
 }
 
 // 3j. contraste AA en todas las páginas

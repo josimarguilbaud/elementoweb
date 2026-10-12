@@ -564,3 +564,25 @@ body.form-visible .wa-float { visibility: hidden; opacity: 0; }
   .demo-band, .site-header, .sticky-cta, .wa-float, .toast { display: none !important; }
   body { padding-top: 0; background: #fff; }
 }
+
+/* ---------- reguladores: licencia MICI y supervisión SBP ----------
+   Los logos oficiales solo se leen sobre blanco, así que van en placas claras aun dentro de
+   planos navy. Cada placa dice el alcance exacto: el MICI da la licencia; la SBP supervisa
+   solo la prevención del blanqueo de capitales (Ley 23 de 2015, art. 22). */
+.regs { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .regs { grid-template-columns: 1.25fr 1fr; } }
+.reg { display: flex; align-items: center; gap: 16px; background: #fff; border: 1px solid var(--rule); border-radius: 14px; padding: 14px 18px; color: var(--navy); }
+.reg__logo { flex: none; display: block; height: auto; }
+.reg__logo--mici { width: 168px; }
+.reg__logo--sbp { width: 74px; }
+.reg__txt { font-size: 14px; line-height: 1.4; color: var(--text-2); margin: 0; }
+.reg__txt b { display: block; color: var(--navy); font-weight: 700; font-size: 14.5px; margin-bottom: 2px; }
+.reg__txt .mono { font-family: var(--f-mono); font-size: 12.5px; letter-spacing: .01em; }
+@media (max-width: 420px) { .reg { flex-direction: column; align-items: flex-start; gap: 10px; } .reg__logo--mici { width: 190px; } }
+/* versión compacta para el pie */
+.regs--foot { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(198, 218, 255, .16); }
+.regs--foot .reg { padding: 10px 14px; border-radius: 12px; }
+.regs--foot .reg__logo--mici { width: 132px; }
+.regs--foot .reg__logo--sbp { width: 56px; }
+.regs--foot .reg__txt { font-size: 12.5px; }
+.regs--foot .reg__txt b { font-size: 13px; }

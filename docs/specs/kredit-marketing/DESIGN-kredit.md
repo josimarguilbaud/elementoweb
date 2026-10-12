@@ -124,6 +124,7 @@ Radios: 6 (etiquetas), 10 (botones y campos), 16 (comprobante y tarjetas), 22 (b
 - **Botón primario:** sólido azul rey, texto blanco, 48 px de alto (56 en `--lg`); hover #264FE1; activo #1A3FC2 y 1 px abajo; foco con anillo de 3 px.
 - **Comprobante (`.lf-card` en el hero):** paso y barra de avance arriba, monto en mono 26 px con deslizador, plazo en chips, cuota quincenal grande, libro mayor (cuota mensual, total, tasa de ejemplo) con puntos guía, nota ámbar y CTA de ancho completo.
 - **Sello (`.seal`):** «Empresa financiera autorizada por el MICI · Resolución No. 638 · 23 sep 2025».
+- **Reguladores (`.regs` / `.reg`, en base.css):** placas blancas con el logo oficial y su alcance exacto. MICI: «Licencia de empresa financiera · Resolución No. 638 del 23 de septiembre de 2025». SBP: «Supervisión en prevención de blanqueo de capitales · Ley 23 de 2015». Van en un bloque de confianza debajo de la divulgación y, en versión compacta (`.regs--foot`), en el pie. Nunca «regulada por la Superintendencia de Bancos»: la licencia la da el MICI.
 - **Regla de quincenas (`.payline`):** 4 hitos; el de hoy en cian. Las fechas se calculan (`quincenas.js`); fines de semana y feriados cambian el texto con honestidad.
 - **Divulgación (`.disclosure`, `.legal-full`):** «Información importante del crédito», con los datos en mono y lo pendiente en `.tbd`.
 - **Pasos (`.steps`):** secuencia numerada con filetes, no una grilla de íconos.
@@ -155,4 +156,5 @@ Radios: 6 (etiquetas), 10 (botones y campos), 16 (comprobante y tarjetas), 22 (b
 | 2026-10-12 | Sistema «Comprobante claro» creado | /design-consultation con investigación de 12 landings y voces externas (subagente Claude «Talonario»; Codex «Claridad que deposita», rechazado por el validador de formato pero leído). Aprobado por Josimar sobre la vista previa de la landing de préstamos. |
 | 2026-10-12 | Source Sans 3 e IBM Plex Mono reemplazan a Roboto y Poppins | Tres sans competían; la mono da cifras tabulares al comprobante. |
 | 2026-10-12 | Roboto y Roboto Mono reemplazan a Manrope, Source Sans 3 e IBM Plex Mono | Pedido de Josimar: una sola familia en todo lo de Kredit, la misma de su web. Tracking de titulares reescalado. |
+| 2026-10-12 | Logos oficiales del MICI y de la SBP con su alcance | Pedido de Josimar. La SBP supervisa a las financieras solo en prevención de blanqueo (Ley 23 de 2015, art. 22; Acuerdo 05-2015); la licencia es del MICI. Logos bajados de mici.gob.pa y superbancos.gob.pa, por confirmar con Kredit. |
 | 2026-10-12 | Sin WhatsApp en la cobranza | Política de Mensajería de WhatsApp Business, sección 4. |

@@ -10,7 +10,7 @@ import { FAQ } from './faq.mjs';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(HERE, '..', '..');
 const OUT = path.join(REPO, 'public', 'demo', 'kredit-web');
-const V = '?v=20261012e';
+const V = '?v=20261012f';
 const calc = await import(pathToFileURL(path.join(REPO, 'public', 'demo', 'kredit-landings', 'assets', 'calc.js')).href + V);
 
 export const PAGES = [
@@ -39,6 +39,8 @@ const PHOTOS = {
   'colaboradora-oficina': 537, 'deposito-celular': 993, 'rrhh-reunion': 537, 'equipo-almacen': 537,
   'familia-metas': 537, 'estudiante-metas': 993, 'equipo-kredit': 537, 'atencion-cliente': 537,
   'firma-convenio': 537, 'comercio-colaborador': 537, 'ciudad-panama': 447,
+  'meta-celebracion': 537, 'meta-salud': 537, 'meta-deudas': 537, 'meta-viajes': 537, 'meta-imprevistos': 537,
+  'rrhh-presentacion': 537, 'solicitud-parada': 537,
 };
 
 const SPRITE = fs.readFileSync(path.join(HERE, 'parts', 'sprite.html'), 'utf8').trim();
@@ -71,6 +73,13 @@ function helpers(slug) {
         </figure>`;
   };
   const wa = (text, cls, inner, label = '') => `<a${cls ? ` class="${cls}"` : ''} href="#" data-whatsapp="${WA}" data-wa-text="${text}"${label ? ` aria-label="${label}"` : ''}>${inner}</a>`;
+  /** Placas de los reguladores (componente .regs de base.css). Alcance exacto: el MICI da la licencia;
+   *  la SBP supervisa solo la prevención del blanqueo de capitales. Nunca «regulada por la SBP». */
+  const regsDir = `${r}../kredit-landings/assets/reguladores/`;
+  const regs = (cls = '') => `<div class="regs${cls ? ' ' + cls : ''}">
+        <div class="reg"><img class="reg__logo reg__logo--mici" src="${regsDir}mici.png" width="720" height="119" alt="Ministerio de Comercio e Industrias de Panamá" loading="lazy"><p class="reg__txt"><b>Licencia de empresa financiera</b>Ministerio de Comercio e Industrias · Resolución No. 638 del 23 de septiembre de 2025</p></div>
+        <div class="reg"><img class="reg__logo reg__logo--sbp" src="${regsDir}sbp.png" width="274" height="189" alt="Superintendencia de Bancos de Panamá" loading="lazy"><p class="reg__txt"><b>Supervisión en prevención de blanqueo de capitales</b>Superintendencia de Bancos de Panamá · Ley 23 de 2015 <span class="tbd">[registro por confirmar con Kredit]</span></p></div>
+      </div>`;
   const seal = (cls = '') => `<p class="seal${cls ? ' ' + cls : ''}">${ic('shield')}<span>Empresa financiera autorizada por el MICI<br><strong>Resolución No. 638 · 23 sep 2025</strong></span></p>`;
   const faqBlock = (ids) => {
     const all = FAQ.flatMap((c) => c.items);
@@ -159,7 +168,7 @@ function helpers(slug) {
   </div>`;
   };
 
-  return { slug, r, home, link, ic, landing, photo, wa, seal, faqBlock, ex, money, PORTAL, FAQ, faqHtml, kGhost, pageHero, paylineList, ctaFinal, calc, acctMock, legalBody };
+  return { slug, r, home, link, ic, landing, photo, wa, seal, regs, faqBlock, ex, money, PORTAL, FAQ, faqHtml, kGhost, pageHero, paylineList, ctaFinal, calc, acctMock, legalBody };
 }
 
 export function faqHtml(items, r, landing) {
@@ -263,7 +272,7 @@ function footer(h) {
       </div>
     </div>
     <div class="footer__license">
-      ${h.seal()}
+      ${h.regs('regs--foot')}
       <p>CREDU HOLDINGS, S.A. es una empresa financiera autorizada por la Dirección General de Empresas Financieras del Ministerio de Comercio e Industrias, Resolución No. 638 del 23 de septiembre de 2025. <strong>Kredit nunca te pedirá pagos por adelantado.</strong></p>
     </div>
     <div class="footer__bottom">

@@ -12,7 +12,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'public');
 const DIR = path.join(ROOT, 'demo', 'kredit-web');
 const LANDINGS = path.join(ROOT, 'demo', 'kredit-landings');
-const V = '?v=20261012e';
+const V = '?v=20261012f';
 const args = process.argv.slice(2);
 const liveFonts = args.includes('--live-fonts');
 
@@ -76,23 +76,36 @@ for (const [name, src] of Object.entries(html)) {
   check(/<link rel="icon" href="[^"]*kredit-mark\.svg/.test(src) && src.includes('<symbol id="logo-k"') && src.includes('<symbol id="logo-word"'), `${name}: sprite del logo copiado de la landing`);
   // Fotos: -800.webp con srcset a -1600.webp, medidas, carga diferida y pie «Imagen ilustrativa generada con IA».
   const imgs = [...src.matchAll(/<figure class="photo[^"]*">\s*<img ([^>]+)>\s*<figcaption class="photo__tag">([^<]+)<\/figcaption>/g)];
-  const allImgs = (src.match(/<img /g) || []).length;
+  const allImgs = (src.match(/<img (?![^>]*class="reg__logo)/g) || []).length; // los logos de los reguladores van aparte
   const okImgs = imgs.filter(([, a, cap]) => {
     const m = a.match(/src="([^"]+)-800\.webp" srcset="\1-800\.webp 800w, \1-1600\.webp 1600w"/);
     return m && /width="800" height="\d+"/.test(a) && /loading="lazy"/.test(a) && /alt="[^"]{12,}"/.test(a) && cap === 'Imagen ilustrativa generada con IA'
       && fs.existsSync(path.resolve(path.dirname(fileOf(PAGES[name])), m[1] + '-800.webp')) && fs.existsSync(path.resolve(path.dirname(fileOf(PAGES[name])), m[1] + '-1600.webp'));
   });
   check(okImgs.length === allImgs, `${name}: fotos con srcset 800/1600, medidas, lazy, alt y pie de IA (${allImgs})`, `${okImgs.length}/${allImgs}`);
+  // Reguladores: logos locales con el mismo prefijo relativo que base.css, medidas, carga diferida y alt.
+  const pre = PAGES[name] ? '../../' : '../';
+  const logos = [...src.matchAll(/<img class="reg__logo reg__logo--(mici|sbp)" src="([^"]+)" width="(\d+)" height="(\d+)" alt="([^"]+)" loading="lazy">/g)];
+  const okLogos = logos.filter(([, k, u, w, hh, alt]) => u === `${pre}kredit-landings/assets/reguladores/${k}.png` && fs.existsSync(path.resolve(path.dirname(fileOf(PAGES[name])), u))
+    && (k === 'mici' ? w === '720' && hh === '119' && alt === 'Ministerio de Comercio e Industrias de Panamá' : w === '274' && hh === '189' && alt === 'Superintendencia de Bancos de Panamá'));
+  const nLogos = (src.match(/class="reg__logo/g) || []).length;
+  check(nLogos === (name === 'inicio' ? 4 : 2) && okLogos.length === nLogos, `${name}: logos del MICI y la SBP con ruta ${pre}kredit-landings/…, medidas, lazy y alt (${nLogos})`, `${okLogos.length}/${nLogos}`);
+  check(!/regulad[oa]s?\s+por\s+la\s+superintendencia/i.test(src), `${name}: nunca dice «regulada por la Superintendencia»`);
 }
 check(new Set(Object.values(titles)).size === 10 && new Set(Object.values(descs)).size === 10, 'title y description distintos en las 10 páginas');
 {
   // Encabezado y pie idénticos (salvo la página actual y la profundidad de las rutas relativas).
   const part = (src, tag) => (src.match(new RegExp(`<${tag} class="site-${tag}"[\\s\\S]*?</${tag}>`)) || [''])[0]
-    .replace(/ aria-current="page"/g, '').replace(/href="(?:\.\.\/)+/g, 'href="').replace(/href="\.\/"/g, 'href=""');
+    .replace(/ aria-current="page"/g, '').replace(/(href|src)="(?:\.\.\/)+/g, '$1="').replace(/href="\.\/"/g, 'href=""');
   const heads = new Set(Object.values(html).map((s) => part(s, 'header')));
   const foots = new Set(Object.values(html).map((s) => part(s, 'footer')));
   check(heads.size === 1 && [...heads][0].length > 1000, 'encabezado idéntico en las 10 páginas');
   check(foots.size === 1 && [...foots][0].includes('Resolución No. 638'), 'pie idéntico en las 10 páginas, con la licencia del MICI');
+  const foot = [...foots][0];
+  check(foot.includes('<div class="regs regs--foot">')
+    && foot.includes('<b>Licencia de empresa financiera</b>Ministerio de Comercio e Industrias · Resolución No. 638 del 23 de septiembre de 2025')
+    && foot.includes('<b>Supervisión en prevención de blanqueo de capitales</b>Superintendencia de Bancos de Panamá · Ley 23 de 2015'),
+  'pie: placas del MICI (licencia) y de la SBP (prevención de blanqueo) con su alcance exacto');
   check(Object.values(html).every((s) => (s.match(/<a [^>]*href="[^"]*kredit-landings\/prestamos\/#solicitud"[^>]*>Solicitar<\/a>/) || []).length === 1), 'botón «Solicitar» del encabezado lleva a la landing de préstamos');
 }
 {
@@ -112,6 +125,21 @@ check(new Set(Object.values(titles)).size === 10 && new Set(Object.values(descs)
   check(html.privacidad.includes('[confirmar dirección oficial]') && html.contacto.includes('[confirmar dirección oficial]'), 'privacidad y contacto: diferencia de dirección marcada por confirmar');
   for (const n of ['aviso-legal', 'cookies']) check(html[n].includes('Texto de ejemplo para la vista previa: lo valida el asesor legal de Kredit') && html[n].includes('CREDU HOLDINGS, S.A.') && html[n].includes('Resolución No. 638'), `${n}: marcado como texto de ejemplo, con razón social y licencia`);
   for (const k of ['Organization', 'FinancialService']) check(html.inicio.includes(`"@type": "${k}"`), `inicio: JSON-LD ${k}`);
+  {
+    const trust = (html.inicio.match(/<section class="section section--navy trust"[\s\S]*?<\/section>/) || [''])[0];
+    check(trust.includes('<div class="regs regs--trust">') && (trust.match(/class="reg"/g) || []).length === 2 && trust.includes('<dl class="ledger-lg">') && (trust.match(/<dt>/g) || []).length === 5,
+      'inicio: la sección de confianza tiene las dos placas y conserva sus 5 puntos');
+    const usos = (html.inicio.match(/<section class="section" id="para-que"[\s\S]*?<\/section>/) || [''])[0];
+    const at = (k) => html.inicio.indexOf(k);
+    check(usos.includes('¿Para qué lo necesitas?') && at('id="como-funciona"') > 0 && at('id="para-que"') > at('id="como-funciona"') && at('id="para-que"') < at('id="trust-title"'),
+      'inicio: «¿Para qué lo necesitas?» va después de «Cómo funciona» y antes de la confianza');
+    const want = [['meta-celebracion', 'Celebraciones'], ['estudiante-metas', 'Estudios'], ['familia-metas', 'Tu hogar'], ['meta-salud', 'Salud'], ['meta-deudas', 'Ordena tus deudas'], ['meta-viajes', 'Viajes'], ['meta-imprevistos', 'Imprevistos']];
+    const cards = [...usos.matchAll(/<li class="use">[\s\S]*?<\/li>/g)].map((m) => m[0]);
+    const okCards = cards.filter((c, i) => want[i] && c.includes(`img/${want[i][0]}-800.webp`) && c.includes(`>${want[i][1]}<span class="sr-only">`) && c.includes('href="prestamos/#calculadora"'));
+    check(cards.length === 7 && okCards.length === 7, 'inicio: 7 metas en orden (celebraciones, estudios, hogar, salud, deudas, viajes, imprevistos) con foto y enlace a prestamos/#calculadora', `${okCards.length}/${cards.length}`);
+    const hero = (html.inicio.match(/<section class="hero hero--home"[\s\S]*?<\/section>/) || [''])[0];
+    check(hero.length > 1000 && !hero.includes('<img '), 'inicio: sin fotos en el hero');
+  }
   check(html.preguntas.includes('"@type": "FAQPage"'), 'preguntas: JSON-LD FAQPage');
 }
 for (const f of ['site.js', 'site.css']) {
@@ -281,6 +309,9 @@ async function contrast(page, label, opts = {}) {
 const noOverflow = (page) => page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
 
 // 2a. carga, red, scroll horizontal, banda, H1, hero
+// Alturas del hero del inicio medidas el 12-oct-2026 en estas mismas condiciones (fuentes vacías, movimiento
+// reducido). El hero tiene su altura probada: si cambia a propósito, se vuelve a medir y se actualiza aquí.
+const HERO_BASE = { 1440: { heroH: 691 }, 390: { heroH: 778.3, cta: 759.6 } };
 console.log('\nCarga, red y scroll horizontal (390 / 768 / 1440)');
 const internalLinks = new Map(); // url sin hash → { hashes:Set, from:Set }
 for (const width of [390, 768, 1440]) {
@@ -310,6 +341,7 @@ for (const width of [390, 768, 1440]) {
     if (width === 1440) {
       check(JSON.stringify(st.current) === JSON.stringify(NAV_CURRENT[name] ? [NAV_CURRENT[name]] : []), `${name}: navegación marca la página actual (aria-current)`, st.current.join(','));
       if (name === 'inicio') check(st.heroBottom < 840, `inicio 1440×900: el hero termina antes de 840 px (${Math.round(st.heroBottom)})`);
+      if (name === 'inicio') check(Math.abs(st.heroH - HERO_BASE[1440].heroH) <= 1, `inicio 1440×900: alto del hero sin cambios (${st.heroH.toFixed(1)} ≈ ${HERO_BASE[1440].heroH})`);
       else check(st.heroH <= 540, `${name} 1440×900: hero corto, ≤ 60% de la pantalla (${Math.round(st.heroH)} px)`);
       for (const href of st.links) {
         const u = new URL(href);
@@ -322,6 +354,61 @@ for (const width of [390, 768, 1440]) {
       }
     }
     if (width === 390 && name === 'inicio') check(st.cta !== null && st.cta < 844, `inicio 390×844: el CTA del comprobante termina antes de 844 px (${Math.round(st.cta)})`);
+    if (width === 390 && name === 'inicio') check(Math.abs(st.heroH - HERO_BASE[390].heroH) <= 1 && Math.abs(st.cta - HERO_BASE[390].cta) <= 1, `inicio 390×844: alto del hero y posición del CTA sin cambios (${st.heroH.toFixed(1)} / ${st.cta.toFixed(1)})`);
+    await ctx.close();
+  }
+}
+
+// 2a-bis. reguladores, metas e imágenes
+console.log('\nReguladores, metas e imágenes (1440 / 390)');
+const scrollAll = (page) => page.evaluate(async () => {
+  for (let y = 0; y < document.documentElement.scrollHeight; y += 400) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 25)); }
+  window.scrollTo(0, 0);
+});
+// Espera a que las imágenes indicadas terminen de cargar (las diferidas de un carrusel se fuerzan a «eager»).
+const loadImgs = (page, sel) => page.evaluate(async (s) => {
+  const imgs = [...document.querySelectorAll(s)];
+  imgs.forEach((i) => { if (!i.complete) i.loading = 'eager'; });
+  await Promise.race([Promise.all(imgs.map((i) => (i.complete ? 0 : new Promise((r) => { i.addEventListener('load', r, { once: true }); i.addEventListener('error', r, { once: true }); })))), new Promise((r) => setTimeout(r, 5000))]);
+  return imgs.map((i) => ({ src: i.currentSrc || i.src, ok: i.complete && i.naturalWidth > 0 }));
+}, sel);
+const regsText = (page, sel) => page.evaluate((s) => [...document.querySelectorAll(s + ' .reg')].map((r) => r.innerText.replace(/\s+/g, ' ').trim()), sel);
+for (const width of [1440, 390]) {
+  for (const [name, url] of Object.entries(URLS)) {
+    const { ctx, page } = await newPage(width);
+    const bad = [];
+    page.on('response', (r) => { if (r.status() >= 400) bad.push(`${r.status()} ${r.url()}`); });
+    await page.goto(url, { waitUntil: 'networkidle' });
+    await scrollAll(page);
+    const imgs = await loadImgs(page, 'img');
+    check(imgs.length > 0 && imgs.every((i) => i.ok) && bad.length === 0, `${name} ${width}px: las ${imgs.length} imágenes cargan, sin respuestas 404`, [...imgs.filter((i) => !i.ok).map((i) => i.src), ...bad].slice(0, 4).join(' | '));
+    const foot = await regsText(page, '.site-footer .regs--foot');
+    const footLogos = await loadImgs(page, '.site-footer .reg__logo');
+    check(foot.length === 2 && footLogos.length === 2 && footLogos.every((i) => i.ok)
+      && /Licencia de empresa financiera/.test(foot[0]) && /638/.test(foot[0]) && /prevención de blanqueo/.test(foot[1]),
+    `${name} ${width}px: pie con las placas del MICI y la SBP, logos cargados`, JSON.stringify(foot).slice(0, 160));
+    const txt = await page.evaluate(() => document.body.innerText);
+    check(!/regulad[oa]s?\s+por\s+la\s+superintendencia/i.test(txt), `${name} ${width}px: el texto visible nunca dice «regulada por la Superintendencia»`);
+    if (name === 'inicio') {
+      const trust = await regsText(page, '.trust .regs--trust');
+      const trustLogos = await loadImgs(page, '.trust .reg__logo');
+      const onWhite = await page.evaluate(() => [...document.querySelectorAll('.trust .reg')].every((r) => getComputedStyle(r).backgroundColor === 'rgb(255, 255, 255)'));
+      check(trust.length === 2 && trustLogos.every((i) => i.ok) && trustLogos.length === 2 && onWhite
+        && /Licencia de empresa financiera/.test(trust[0]) && /638/.test(trust[0]) && /prevención de blanqueo/.test(trust[1]),
+      `inicio ${width}px: sección de confianza con las dos placas blancas y logos cargados`, JSON.stringify(trust).slice(0, 160));
+      const usos = await page.evaluate(() => [...document.querySelectorAll('#para-que .use')].map((c) => ({ href: c.querySelector('.use__title a')?.href || '', title: c.querySelector('.use__title')?.textContent.trim() })));
+      const usosImgs = await loadImgs(page, '#para-que .use img');
+      check(usos.length === 7 && usosImgs.length === 7 && usosImgs.every((i) => i.ok) && usos.every((u) => u.href.endsWith('/demo/kredit-web/prestamos/#calculadora')),
+        `inicio ${width}px: «¿Para qué lo necesitas?» con 7 tarjetas, foto cargada y enlace a la calculadora`, JSON.stringify(usos.map((u) => u.title)));
+      if (width === 390) {
+        const sc = await page.evaluate(() => { const u = document.querySelector('#para-que .uses'); return { sw: u.scrollWidth, cw: u.clientWidth, ox: getComputedStyle(u).overflowX }; });
+        check(sc.ox === 'auto' && sc.sw > sc.cw, 'inicio 390px: las metas se deslizan dentro de su carrusel (la página no se desborda)', JSON.stringify(sc));
+      } else {
+        await page.locator('#para-que .use__title a').first().focus();
+        const ring = await page.evaluate(() => { const c = document.querySelector('#para-que .use'); const cs = getComputedStyle(c); return cs.outlineStyle !== 'none' && parseFloat(cs.outlineWidth) >= 2; });
+        check(ring, 'inicio 1440px: la tarjeta de meta muestra el foco al recibirlo');
+      }
+    }
     await ctx.close();
   }
 }
@@ -532,7 +619,9 @@ console.log('\nTeclado, movimiento y WhatsApp');
   await page.click('.cta-final [data-whatsapp]');
   await page.waitForSelector('[data-toast].is-on');
   const toastText = await page.textContent('[data-toast]');
-  check(/Modo demo/.test(toastText) && /6997-5664/.test(toastText) && page.url() === url0 && requests.length === before && ctx.pages().length === 1, 'WhatsApp en demo: aviso, sin abrir chat ni navegar', toastText);
+  // El clic baja hasta el llamado final y carga imágenes diferidas propias (fotos, logos del pie): eso no es un chat.
+  const extra = requests.slice(before).filter((u) => !(new URL(u).origin === ORIGIN && /\.(webp|png)$/.test(new URL(u).pathname)));
+  check(/Modo demo/.test(toastText) && /6997-5664/.test(toastText) && page.url() === url0 && extra.length === 0 && ctx.pages().length === 1, 'WhatsApp en demo: aviso, sin abrir chat ni navegar', `${toastText} ${extra.join(', ')}`);
   await ctx.close();
 }
 

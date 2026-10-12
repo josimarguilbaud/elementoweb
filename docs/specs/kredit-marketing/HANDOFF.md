@@ -54,6 +54,12 @@ con `origin/main` (no se tocó).
   web. La propuesta de marketing se reescribió en ese sentido.
 - Las quincenas que caen en fin de semana o feriado se muestran el día hábil anterior
   (`quincenas.js`, con pruebas en `test-web-kredit.mjs`).
+- **Reguladores con su alcance exacto** (pedido de Josimar): logos oficiales del MICI (licencia, Res.
+  638-2025) y de la SBP (solo supervisión en prevención de blanqueo, Ley 23 de 2015) en un bloque de
+  confianza de cada landing, en la portada de la web y en el pie de todas las páginas. Kredit debe
+  confirmar su registro ante la SBP y autorizar el uso de los logos (`assets/reguladores/FUENTES.json`).
+- Propuesta de marketing con hero de portada y bloques por servicio (Google Ads, Meta Ads, Instagram,
+  landings, web), 12 fotos de fal; solo HTML, el PDF no se regeneró.
 - Landings rediseñadas: hero que cabe en la primera pantalla (1440×900: termina en 820 px; 390×844:
   CTA en 821 px; antes 1,043 y 1,852), cuota quincenal como cifra principal, sello MICI arriba.
 

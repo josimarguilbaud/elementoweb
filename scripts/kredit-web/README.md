@@ -11,7 +11,7 @@ node scripts/kredit-web/build.mjs inicio     # solo una (nombre del módulo en p
 
 | Archivo | Qué hace |
 |---|---|
-| `build.mjs` | Plantilla común (head, banda, encabezado con menú móvil, pie, barra fija, WhatsApp) y ayudas: `photo()`, `pageHero()`, `paylineList()`, `ctaFinal()`, `acctMock()`, `legalBody()`, `faqBlock()`. |
+| `build.mjs` | Plantilla común (head, banda, encabezado con menú móvil, pie, barra fija, WhatsApp) y ayudas: `photo()`, `regs()` (placas del MICI y la SBP), `pageHero()`, `paylineList()`, `ctaFinal()`, `acctMock()`, `legalBody()`, `faqBlock()`. |
 | `pages/*.mjs` | Una página cada uno: devuelve `title`, `description`, `body` y, si aplica, `jsonld`, `quincenas` y `sticky`. |
 | `faq.mjs` | Todas las preguntas frecuentes. Las usan la página de preguntas (y su JSON-LD FAQPage), el inicio, préstamos y empresas. |
 | `parts/sprite.html` | Copia del bloque `<svg class="sprite">` de la landing de préstamos (logo e íconos). |

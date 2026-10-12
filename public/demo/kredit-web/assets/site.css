@@ -155,19 +155,86 @@ figure { margin: 0; }
 .vsteps p { color: var(--text-2); font-size: 16.5px; }
 .needs-line { margin-top: 22px; font-size: 16px; color: var(--text-2); }
 .needs-line strong { color: var(--navy); font-family: var(--f-display); }
-@media (max-width: 860px) { .how { grid-template-columns: 1fr; } .how__media { order: -1; } }
+.how__media { display: grid; gap: clamp(20px, 2.4vw, 32px); }
+.how__cap { display: flex; gap: 10px; align-items: baseline; margin: 12px 0 0; font-size: 15.5px; line-height: 1.4; color: var(--text-2); }
+.how__cap span { flex: none; font: 600 13px var(--f-mono); letter-spacing: .04em; color: var(--blue); }
+.how__shot--b .photo img { object-position: 50% 28%; }
+/* En una columna la foto de la solicitud va arriba de los pasos y la del depósito, al final. */
+@media (max-width: 860px) {
+  .how { grid-template-columns: 1fr; }
+  .how__media { display: contents; }
+  .how__shot--a { order: -1; }
+  .how__shot--b { order: 1; }
+}
+
+/* ---------------------------------------------------------------- inicio: ¿para qué lo necesitas? */
+/* 7 tarjetas con foto + una de cierre; toda la tarjeta lleva a la calculadora (enlace extendido del H3).
+   En móvil se desliza en horizontal dentro de su propio contenedor (la página no se desborda). */
+.uses { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
+.use { position: relative; display: flex; flex-direction: column; min-width: 0; background: var(--paper); border: 1px solid var(--rule); border-radius: var(--r-xl); overflow: hidden; transition: border-color .18s, box-shadow .18s; }
+.use .photo { border-radius: 0; }
+.use .photo img { transition: transform .35s var(--ease-out); }
+.use .photo__tag { left: 12px; bottom: 12px; font-size: 11.5px; padding: 6px 9px; }
+.use__photo--top img { object-position: 50% 22%; }
+.use__body { flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 22px 24px 24px; }
+.use__title { font: 800 22px/1.2 var(--f-display); letter-spacing: -0.01em; }
+.use__title a { color: var(--navy); text-decoration: none; }
+.use__title a::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.use__body p { color: var(--text-2); font-size: 16px; line-height: 1.5; }
+.use__go { margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 8px; font: 700 15.5px/1.2 var(--f-display); color: var(--blue); }
+.use__go::after { content: '→'; font-family: var(--f-body); transition: transform .18s var(--ease-out); }
+.use:hover { border-color: var(--blue); box-shadow: var(--shadow-1); }
+.use:hover .use__go { text-decoration: underline; }
+.use:hover .use__go::after { transform: translateX(3px); }
+.use:hover .photo img { transform: scale(1.03); }
+@supports selector(:has(*)) {
+  .use__title a:focus-visible { outline: none; }
+  .use:has(.use__title a:focus-visible) { outline: 3px solid var(--focus); outline-offset: 3px; }
+}
+.uses__more {
+  position: relative; overflow: hidden; grid-column: span 2; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px;
+  padding: clamp(26px, 3.6vw, 48px); border-radius: var(--r-xl); background: var(--navy); color: #fff;
+}
+.uses__more .use__title { color: #fff; font-size: clamp(24px, 2.6vw, 32px); }
+.uses__more p { color: var(--ice); font-size: 17px; max-width: 40ch; }
+.uses__more .btn { margin-top: 8px; }
+.uses__more .k-ghost { width: 220px; right: -34px; bottom: -60px; opacity: .07; color: #fff; }
+.uses__more :focus-visible { outline-color: var(--cyan); }
+.uses__hint { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .use .photo img, .use__go::after { transition: none; }
+  .use:hover .photo img { transform: none; }
+}
+@media (max-width: 999px) { .uses { grid-template-columns: repeat(2, minmax(0, 1fr)); } .uses__more { grid-column: auto; } }
+@media (max-width: 640px) {
+  .uses {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(80%, 300px);
+    overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+    margin-inline: calc(-1 * var(--gutter)); padding: 8px var(--gutter) 14px; scrollbar-width: thin;
+  }
+  .use, .uses__more { scroll-snap-align: start; }
+  .use__body { padding: 18px 20px 20px; }
+  .use__title { font-size: 20px; }
+  .uses__hint { display: flex; align-items: center; gap: 8px; margin: 6px 0 0; font: 500 13px/1.3 var(--f-mono); letter-spacing: .02em; color: var(--text-3); }
+  .uses__hint::after { content: '→'; font-family: var(--f-body); font-size: 16px; }
+}
 
 /* ---------------------------------------------------------------- confianza (navy) */
 .trust__grid { position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
 .trust__lead { font-size: clamp(17px, 1.5vw, 19px); margin-top: 16px; max-width: 46ch; }
-.trust__more { margin-top: 18px; }
-.stamp {
-  display: inline-grid; gap: 6px; margin-top: 30px; padding: 18px 22px;
-  border: 4px double rgba(198, 218, 255, .7); border-radius: 14px; background: var(--navy);
-}
-.stamp__k { font: 600 12px/1.2 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ice); }
-.stamp__num { font: 600 clamp(26px, 2.8vw, 36px)/1.05 var(--f-mono); letter-spacing: -0.01em; color: #fff; }
-.stamp__date { font: 500 14px/1.3 var(--f-mono); color: var(--ice); }
+.trust__more { margin-top: 22px; }
+.section--navy :focus-visible { outline-color: var(--cyan); }
+/* Reguladores (base.css): placas blancas apiladas en la columna del título. Sobre navy, base.css pinta
+   los <p> de hielo; dentro de la placa el texto vuelve a ser oscuro. */
+/* site.css carga después de base.css: esta regla gana a la de dos columnas de .regs */
+.regs--trust { grid-template-columns: minmax(0, 1fr); gap: 14px; margin-top: 32px; max-width: 520px; }
+.regs--trust .reg { padding: 18px 22px; border-color: #fff; border-radius: var(--r-lg); }
+/* El logo del MICI es una firma ancha: aquí va arriba del texto para que se lea a buen tamaño. */
+.regs--trust .reg:first-child { flex-direction: column; align-items: flex-start; gap: 12px; }
+.regs--trust .reg__logo--mici { width: min(236px, 100%); }
+.regs--trust .reg__logo--sbp { width: 80px; }
+.section--navy .reg__txt, .site-footer .reg__txt { color: var(--text-2); }
+.site-footer .reg .tbd { background: var(--amber-bg); color: var(--amber); border-color: #E7B26A; }
 .ledger-lg { margin: 0; border-top: 1px solid rgba(198, 218, 255, .24); }
 .ledger-lg > div { display: grid; grid-template-columns: minmax(0, .4fr) minmax(0, 1fr); gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(198, 218, 255, .24); }
 .ledger-lg dt { font: 600 12.5px/1.4 var(--f-mono); letter-spacing: .07em; text-transform: uppercase; color: var(--ice); padding-top: 4px; }
@@ -452,10 +519,12 @@ figure { margin: 0; }
 @media (min-width: 1100px) { .footer__grid--web { grid-template-columns: minmax(0, 1.35fr) repeat(3, minmax(0, .8fr)) minmax(0, 1.15fr); } }
 @media (min-width: 861px) and (max-width: 1099px) { .footer__grid--web { grid-template-columns: repeat(4, minmax(0, 1fr)); } .footer__grid--web .footer__brand { grid-column: 1 / -1; } }
 .site-footer li { overflow-wrap: anywhere; }
-.footer__license { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(198, 218, 255, .18); }
-.footer__license .seal { margin: 0; }
-.footer__license p { flex: 1 1 360px; margin: 0; font-size: 14.5px; color: var(--ice); max-width: 72ch; }
-.footer__license strong { color: #fff; }
+/* Licencia: placas de los reguladores (.regs--foot de base.css, con su filete arriba) y el texto legal. */
+.footer__license { margin-top: 8px; }
+/* En tableta las dos placas lado a lado aprietan el texto: una debajo de otra hasta 1024 px. */
+@media (max-width: 1023px) { .regs--foot { grid-template-columns: minmax(0, 1fr); } }
+.footer__license > p { margin: 18px 0 0; font-size: 14.5px; color: var(--ice); max-width: 96ch; }
+.footer__license > p strong { color: #fff; }
 .footer__bottom { margin-top: 24px; }
 
 /* ---------------------------------------------------------------- impresión */

@@ -177,6 +177,7 @@ export const HERO_ALTS: Record<string, string> = {
   'miami/diseno-web-en-miami-en-espanol': 'Avenida costera de Miami con torres de vidrio y palmeras frente al mar, para el diseño web en español de negocios de Miami',
   'miami/diseno-web-kendall': 'Edificio comercial de una planta con palmeras y estacionamiento al atardecer, para el diseño web de negocios en Kendall',
   'portafolio': 'Mesa con impresiones de maquetas de sitios web y dos celulares que muestran páginas, junto al portafolio de proyectos de diseño web',
+  'precios': 'La dueña de un negocio lee con calma una cotización impresa en su escritorio, con café y una planta, frente a una ventana con edificios de Ciudad de Panamá',
   'servicios/diseno-web-corporativo-panama': 'Dos ejecutivos revisan el sitio web corporativo de su empresa en una pantalla de sala de reuniones con vista a Punta Paitilla',
   'tecnologias/desarrollo-web-a-medida-vue-react-panama': 'Desarrolladora señala la interfaz de una aplicación en un monitor mientras su compañero toma notas, en una oficina de Ciudad de Panamá',
 };

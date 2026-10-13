@@ -20,6 +20,7 @@
     { "archivo": "funcionalidades--sistemas-reservas-citas-online-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Barbero revisa las citas del día en una tableta" },
     { "archivo": "tecnologias--desarrollo-web-a-medida-vue-react-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Dos desarrolladores revisan la interfaz de una aplicación; recortada para dejar fuera un logo" },
     { "archivo": "saas--nouscrm.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Dueña de una imprenta envía una cotización desde su celular" },
-    { "archivo": "servicios.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Diseñadora y dueño de negocio revisan maquetas de una web en una oficina con vista a la ciudad; logo de la laptop borrado" }
+    { "archivo": "servicios.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Diseñadora y dueño de negocio revisan maquetas de una web en una oficina con vista a la ciudad; logo de la laptop borrado" },
+    { "archivo": "precios.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Dueña de un negocio revisa una cotización impresa en su escritorio" }
   ]
 }

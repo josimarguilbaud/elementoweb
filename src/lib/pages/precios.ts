@@ -1,39 +1,135 @@
 /* /precios/: resumen comercial en un solo lugar. Todas las cifras salen de
    `pricing` (site.ts) a través de los bloques; el texto de aquí no repite números
    salvo los que ya son públicos en el resto del sitio. Actualizar la fecha de
-   revisión cuando cambien las tarifas. */
+   revisión cuando cambien las tarifas.
+   Anatomía v2 con molde Kredit (D44) y metadatos de la fase 2b (KEYWORDS.md): la página
+   toma «precios de páginas web en panamá»; la guía del blog conserva «cuánto cuesta». */
 import type { PageData } from '../types';
 
 export const precios: PageData[] = [
   {
     slug: 'precios',
-    title: 'Precios de páginas web en Panamá: Landing, PYME y E-commerce | Elemento Web',
-    description: 'Precios de diseño web en Panamá: landing desde $550, sitio corporativo desde $1,250 y tienda online desde $1,950. Qué incluye cada uno, qué se paga aparte y cómo se paga.',
+    title: 'Precios de Páginas Web en Panamá | Elemento Web',
+    description: 'Precios de páginas web en Panamá: landing desde $550, sitio corporativo desde $1,250 y tienda online desde $1,950. Qué incluye y qué se paga aparte.',
     h1: 'Precios de páginas web en Panamá',
     breadcrumb: 'Precios',
-    heroImage: { src: '/images/hero/servicios--diseno-web-corporativo-panama.jpg', alt: 'Dos ejecutivos revisan el sitio web de su empresa en la pantalla de una sala de reuniones con vista a Punta Paitilla' },
+    anatomia: 'v2',
+    portada: {
+      pie: 'Precios publicados y cotización cerrada por escrito. Si algo no está en la cotización, se cotiza por escrito antes de hacerlo.',
+      riel: [
+        { k: 'Landing page', v: 'desde $550' },
+        { k: 'Web empresarial', v: 'desde $1,250' },
+        { k: 'Tienda online', v: 'desde $1,950' },
+        { k: 'Plan mensual', v: '$350 + $169 al mes' },
+      ],
+    },
     creds: false,
     service: { type: 'Diseño y desarrollo web' },
     lead: [
-      'Precios en USD, con alcance por escrito antes de empezar. Esta página resume lo que cuesta cada formato, qué incluye y qué se cotiza aparte.',
-      'Los precios son de partida y no incluyen ITBMS (7%). Última revisión: septiembre de 2026.',
-    ],
-    heroCtas: [
-      { label: 'Pedir cotización cerrada', href: '/contacto/#formulario', primary: true },
-      { label: 'Ver proyectos reales', href: '/portafolio/' },
+      'Precios en USD, publicados y con el alcance por escrito antes de empezar: lo que cuesta cada formato, qué incluye y qué se paga aparte.',
     ],
     blocks: [
+      {
+        type: 'answer',
+        fecha: '2026-10-13',
+        text: 'En Panamá, una página web con Elemento Web cuesta desde $550 una landing page, desde $1,250 un sitio corporativo de hasta 6 páginas y desde $1,950 una tienda online con hasta 25 productos cargados. Los precios son en USD, sin ITBMS (7%), y cada proyecto se cierra por escrito antes de empezar. Hosting y dominio van aparte.',
+      },
+      {
+        type: 'receipt',
+        titulo: 'Página web',
+        fecha: '2026-10-13',
+        precio: { estado: 'confirmado', desde: '$550', unidad: 'por proyecto (landing page)' },
+        plazo: 'De 5 días hábiles (landing) a 5 semanas (tienda online), desde que recibimos el contenido',
+        medicionId: 'precios-lcp',
+        pie: ['Dominio, hosting y mantenimiento se pagan aparte.', 'Precios en dólares, sin ITBMS (7%).'],
+      },
       { type: 'pricing', full: true, h2: 'Tres formatos, un precio de partida cada uno', intro: 'Elige por lo que necesita tu negocio, no por el precio: una landing sirve para una campaña, el sitio corporativo para presentar toda la empresa y la tienda para vender en línea. Si tu caso no encaja, el proyecto <a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">a medida</a> se cotiza según alcance.' },
       {
-        type: 'checklist',
-        h2: 'Cómo se paga y qué queda a tu nombre',
-        items: [
-          'Pago en tres etapas: 50% para iniciar, 30% al aprobar el demo en línea y 20% para publicar en tu dominio',
-          'Métodos: tarjeta de crédito o débito, transferencia bancaria y Yappy',
-          'Cotización cerrada por escrito antes de empezar, con el alcance definido',
-          'Dominio, código y accesos a nombre de tu empresa',
-          'Los precios no incluyen ITBMS (7%); se aplica según corresponda',
+        type: 'tabla',
+        h2: 'Los tres formatos, lado a lado',
+        intro: 'Lo que cambia entre uno y otro, con el detalle de cada servicio en su página:',
+        columnas: ['', 'Landing page', 'Web empresarial', 'Tienda online'],
+        filas: [
+          ['Sirve para', 'Una campaña o una sola oferta', 'Presentar toda la empresa y sus servicios', 'Vender productos en línea'],
+          ['Desde', '$550', '$1,250', '$1,950'],
+          ['Alcance', 'Una página de hasta 7 secciones', 'Hasta 6 páginas, con estructura por servicios', 'Carga inicial de hasta 25 productos, categorías y carrito'],
+          ['Lo que la distingue', 'Formulario, WhatsApp y medición de contactos', 'SEO inicial por página, panel editable y blog listo', 'Pagos y envíos configurados y pruebas de compra'],
+          ['Plazo', '5 días hábiles', 'Entre 2 y 3 semanas', 'Entre 3 y 5 semanas'],
+          ['Detalle', '<a href="/servicios/landing-pages-alta-conversion-panama/">Landing pages</a>', '<a href="/servicios/diseno-web-corporativo-panama/">Diseño web corporativo</a>', '<a href="/servicios/tiendas-online-ecommerce-panama/">Tiendas online</a>'],
         ],
+        nota: 'Precios en USD, sin ITBMS (7%). El plazo corre desde que recibimos el contenido y apruebas el alcance.',
+      },
+      {
+        type: 'ejemplos',
+        h2: 'Cómo se ve una cotización cerrada',
+        intro: 'Antes de empezar recibes el alcance, el plazo y el precio por escrito, y sabes qué se paga aparte y cuándo pagas cada parte.',
+        columnas: 2,
+        items: [
+          {
+            tipo: 'whatsapp',
+            negocio: 'Elemento Web',
+            mensajes: [
+              { de: 'cliente', texto: 'Hola, necesito una web para mi consultorio: inicio, servicios, equipo y contacto.', hora: '10:12' },
+              { de: 'negocio', texto: 'Con gusto. Eso cabe en la Web empresarial, de hasta 6 páginas. Te enviamos hoy la cotización cerrada con alcance, plazo y precio.', hora: '10:15', botones: ['Ver cotización'] },
+            ],
+          },
+          {
+            tipo: 'informe', titulo: 'Cotización · Web empresarial', sitio: 'Tu consultorio · ejemplo',
+            filas: [
+              { k: 'Alcance', v: 'Hasta 6 páginas', estado: 'bien' },
+              { k: 'Plazo', v: '2 a 3 semanas', estado: 'bien' },
+              { k: 'Precio', v: '$1,250.00', estado: 'bien' },
+              { k: 'ITBMS (7%)', v: '$87.50', estado: 'bien' },
+              { k: 'Total del proyecto', v: '$1,337.50', estado: 'bien' },
+              { k: 'Dominio, hosting y SSL', v: 'Aparte, desde $350 al año', estado: 'ojo' },
+            ],
+            pie: 'Lo que se paga aparte va escrito en la misma cotización, no aparece al final.',
+          },
+          {
+            tipo: 'flujo',
+            titulo: 'Cómo se paga el proyecto',
+            pasos: [
+              { t: '50 %', d: 'Para iniciar, con la cotización firmada.' },
+              { t: '30 %', d: 'Cuando apruebas el demo en línea.' },
+              { t: '20 %', d: 'Para publicar en tu dominio.' },
+              { t: '30 días', d: 'De corrección de errores del desarrollo después de publicar.' },
+            ],
+          },
+        ],
+        nota: 'Conversación y cotización de ejemplo. Aceptamos tarjeta de crédito o débito, transferencia bancaria y Yappy.',
+      },
+      {
+        type: 'compare',
+        h2: 'Compara con tu otra cotización',
+        intro: 'Ocho preguntas que puedes hacerle a cualquier proveedor. Usa la última columna para anotar lo que te respondieron.',
+        otraCotizacion: true,
+        criterios: [
+          { criterio: 'Precio publicado', nosotros: 'Sí: landing desde $550, corporativo desde $1,250 y tienda desde $1,950' },
+          { criterio: 'Cotización', nosotros: 'Cerrada y por escrito antes de empezar, con el alcance definido' },
+          { criterio: 'Forma de pago', nosotros: 'En tres etapas: 50 %, 30 % y 20 %' },
+          { criterio: 'Dominio y código', nosotros: 'A nombre de tu empresa' },
+          { criterio: 'Lo que se paga aparte', nosotros: 'Detallado en la cotización: hosting, correo, licencias y contenido' },
+          { criterio: 'Revisiones del diseño', nosotros: 'Dos rondas incluidas' },
+          { criterio: 'Después de publicar', nosotros: '30 días de corrección de errores del desarrollo' },
+          { criterio: 'Impuestos', nosotros: 'ITBMS (7%) aparte, dicho desde la primera cotización' },
+        ],
+      },
+      {
+        type: 'includes',
+        h2: 'Qué incluye siempre y qué se paga aparte',
+        intro: 'La base es la misma en los tres formatos. Lo que va aparte también es igual, y lo ves antes de firmar.',
+        incluye: [
+          { t: 'Diseño adaptado', d: 'Se ve y funciona bien en celular y en computadora.' },
+          { t: 'Formularios y WhatsApp', d: 'Configurados y comprobados antes de publicar.' },
+          { t: 'SEO inicial', d: 'Títulos, descripciones, sitemap e indexación solicitada en Google.' },
+          { t: 'Medición', d: 'Clics en WhatsApp y envíos de formularios, desde el primer día.' },
+          { t: 'Dos rondas de revisión', d: 'Del diseño, antes de pasar a desarrollo.' },
+          { t: 'Capacitación grabada', d: 'Cuando la web tiene panel de administración.' },
+          { t: '30 días de corrección', d: 'De errores del desarrollo después de publicar.' },
+        ],
+        entregables: ['Cotización cerrada por escrito', 'Sitio publicado en tu dominio', 'Dominio, código y accesos a nombre de tu empresa', 'Capacitación grabada cuando hay panel'],
+        noIncluye: ['Dominio, hosting y SSL: desde $350 al año', 'Correo corporativo: desde $60 al año', 'Mantenimiento: desde $59 al mes', 'Licencias y comisiones de terceros', 'Redacción de contenido, imágenes y logo'],
+        medimos: ['Clics en WhatsApp', 'Envíos de formularios'],
       },
       { type: 'extras', h2: 'Infraestructura anual: hosting, dominio y SSL', intro: 'Además del proyecto, tu sitio necesita dónde vivir. El nivel depende del tráfico, las integraciones y el control que necesites. Mantenimiento web desde $59/mes.' },
       { type: 'production', h2: '¿No tienes textos, imágenes o logo?', intro: 'Se cotizan aparte del diseño y los apruebas antes de publicarlos.' },
@@ -41,6 +137,7 @@ export const precios: PageData[] = [
         type: 'faq',
         h2: 'Preguntas sobre precios',
         items: [
+          { q: '¿Cuánto cuesta una página web en Panamá?', a: 'Con nosotros, desde $550 una landing page, desde $1,250 un sitio corporativo de hasta 6 páginas y desde $1,950 una tienda online. Un proyecto a medida parte de $2,900. El precio final depende de las páginas, las integraciones y el contenido, y se cierra por escrito antes de empezar.' },
           { q: '¿Qué incluye la Web empresarial de $1,250?', a: 'Hasta 6 páginas en total, estructura por servicios, SEO inicial por página, panel editable con capacitación grabada, blog listo para publicar artículos (la redacción se contrata aparte), formularios y WhatsApp configurados. Más páginas, más idiomas o integraciones se cotizan según alcance.' },
           { q: '¿Qué incluye la tienda online de $1,950?', a: 'Carga inicial de hasta 25 productos, categorías, carrito, configuración de pagos y envíos, pruebas de compra y capacitación para gestionar pedidos. Las pasarelas de pago y su cantidad se definen en la cotización; las comisiones y licencias de terceros se pagan aparte. El inventario es propio: sincronizarlo con un ERP es otro alcance y se cotiza aparte.' },
           { q: '¿Qué incluyen todos los proyectos?', a: 'Diseño adaptado a móvil y computadora, formularios y WhatsApp comprobados, SEO inicial (títulos, descripciones, sitemap e indexación solicitada), medición de clics en WhatsApp y envíos de formularios, dos rondas de revisión del diseño, capacitación grabada cuando hay panel de administración y corrección de errores del desarrollo durante 30 días después de publicar.' },
@@ -53,8 +150,10 @@ export const precios: PageData[] = [
           { q: '¿Cobran diferente si mi negocio está en Miami?', a: 'El trabajo es remoto y en dólares. Los impuestos aplicables a clientes en Estados Unidos se confirman en la cotización; no los damos por supuestos. Más detalle en <a href="/miami/">diseño web para Miami</a>.' },
         ],
       },
+      { type: 'form', h2: 'Pide tu cotización cerrada', intro: 'Cuéntanos qué necesitas y te respondemos el mismo día hábil con el alcance, el plazo y el precio por escrito.' },
       {
         type: 'related',
+        h2: 'Antes de decidir',
         items: [
           { slug: 'diseno-web-panama', label: 'Diseño web en Panamá' },
           { slug: 'servicios/diseno-web-corporativo-panama', label: 'Diseño web corporativo' },
@@ -67,7 +166,7 @@ export const precios: PageData[] = [
           { slug: 'portafolio', label: 'Portafolio' },
         ],
       },
-      { type: 'form', h2: 'Pide tu cotización cerrada', intro: 'Cuéntanos qué necesitas y te respondemos el mismo día hábil.' },
     ],
+    cta: { h2: 'Tu precio, cerrado y por escrito', wa: 'Hola, quiero una cotización cerrada para mi página web.', boton: 'Pedir cotización cerrada' },
   },
 ];

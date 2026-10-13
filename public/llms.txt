@@ -55,6 +55,40 @@ Estas páginas están escritas para responder preguntas concretas y son las más
 - [Integración de CyberSource](https://elementoweb.com/funcionalidades/integracion-cybersource-panama/): qué es Unified Checkout, alcances con precio, PCI-DSS SAQ A y 3-D Secure 2.
 - [Inteligencia artificial para empresas](https://elementoweb.com/inteligencia-artificial-para-empresas-panama/): asistentes, automatización y base de conocimiento privada.
 
+## Mapa de servicios
+
+Una página por servicio, agrupadas por tema. Los precios están en [Precios](https://elementoweb.com/precios/); donde un servicio se cotiza, la página lo dice.
+
+Diseño web:
+- [Diseño web corporativo](https://elementoweb.com/servicios/diseno-web-corporativo-panama/): estructura clara, SEO por servicio y panel autoadministrable.
+- [Tiendas online y e-commerce](https://elementoweb.com/servicios/tiendas-online-ecommerce-panama/): catálogo, carrito, Yappy, pasarelas de pago locales y envíos.
+- [Landing pages](https://elementoweb.com/servicios/landing-pages-alta-conversion-panama/): una página, una oferta, una acción, para recibir tráfico de pauta.
+- [Rediseño web](https://elementoweb.com/servicios/redisenio-web-panama/): auditoría del sitio actual, reconstrucción y plan de redirecciones para reducir el riesgo de perder posiciones.
+
+Crecimiento:
+- [SEO y posicionamiento web](https://elementoweb.com/crecimiento/seo-posicionamiento-web-panama/): contenido, técnica y autoridad para aparecer en Google, sin promesas de posición.
+- [SEO local y Google Maps](https://elementoweb.com/crecimiento/seo-local-google-maps-panama/): ficha de Google, reseñas y presencia en Maps.
+- [Mantenimiento web](https://elementoweb.com/crecimiento/mantenimiento-web-panama/): planes con respaldos verificados y monitoreo.
+- [Hosting e infraestructura](https://elementoweb.com/crecimiento/hosting-infraestructura-panama/): hosting cloud, VPS y correo empresarial, con dominio y SSL.
+
+Marketing:
+- [Google Ads](https://elementoweb.com/marketing/google-ads-panama/): búsqueda, display y remarketing; la inversión en anuncios va directo a Google.
+- [Facebook e Instagram Ads](https://elementoweb.com/marketing/facebook-instagram-ads-panama/): gestión de Meta Ads; la inversión va directo a Meta.
+- [Contenido para redes sociales](https://elementoweb.com/marketing/contenido-redes-sociales-panama/): publicaciones, diseño gráfico y Reels mensuales.
+- [Email marketing](https://elementoweb.com/marketing/email-marketing-panama/): newsletters, automatizaciones y recuperación de clientes.
+- [WhatsApp marketing masivo](https://elementoweb.com/marketing/whatsapp-marketing-masivo-panama/): campañas con la API oficial de WhatsApp Business.
+- [Automatizaciones con n8n](https://elementoweb.com/marketing/automatizaciones-n8n-panama/): flujos que conectan herramientas y eliminan trabajo manual repetitivo.
+
+Tecnologías:
+- [Diseño web en WordPress](https://elementoweb.com/tecnologias/diseno-web-wordpress-panama/): temas desarrollados a medida, autoadministrables.
+- [Diseño web en Shopify](https://elementoweb.com/tecnologias/diseno-web-shopify-panama/): tiendas con catálogo, pagos y envíos configurados para el mercado local.
+- [Desarrollo web a medida](https://elementoweb.com/tecnologias/desarrollo-web-a-medida-vue-react-panama/): Vue 3, React y Laravel, el mismo stack de los SaaS propios.
+
+Funcionalidades:
+- [Chatbot con IA para tu web](https://elementoweb.com/funcionalidades/chatbots-ia-web-wazacrm-panama/): responde con la información real del negocio y deriva a WhatsApp.
+- [Yappy y pasarelas de pago](https://elementoweb.com/funcionalidades/integracion-yappy-pasarelas-pago-panama/): botón de pago Yappy y pasarelas con tarjeta.
+- [Reservas y citas online](https://elementoweb.com/funcionalidades/sistemas-reservas-citas-online-panama/): disponibilidad real, recordatorios automáticos y pago anticipado opcional.
+
 ## Miami (servicio remoto desde Panamá)
 
 Elemento Web atiende negocios hispanos de Miami-Dade de forma 100% remota
@@ -96,7 +130,7 @@ marítimos, y cooperativas de ahorro y crédito.
 
 ## Blog
 
-Treinta y nueve artículos sobre diseño web, SEO, comercio electrónico,
+Más de setenta y cinco artículos sobre diseño web, SEO, comercio electrónico,
 marketing y automatización, todos referidos al contexto panameño: Yappy,
 WhatsApp como canal de venta, hosting local, calendario fiscal.
 

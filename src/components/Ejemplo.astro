@@ -141,6 +141,34 @@ const inicialDe = (s: string) => s.replace(/^www\./, '').trim().charAt(0).toUppe
   </figure>
 )}
 
+{e.tipo === 'panel' && (
+  <figure class="ew-mock ew-panel">
+    <figcaption class="sr-only">Ejemplo de pantalla de edición del panel: {e.titulo}</figcaption>
+    <p class="ew-dev__bar" aria-hidden="true"><i></i><i></i><i></i><span>{e.sitio}</span></p>
+    <div class="ew-panel__body">
+      <p class="ew-panel__t">{e.titulo}</p>
+      <dl class="ew-panel__campos">
+        {e.campos.map((c) => <div class={c.largo ? 'ew-panel__campo ew-panel__campo--largo' : 'ew-panel__campo'}><dt>{c.k}</dt><dd>{c.v}</dd></div>)}
+      </dl>
+      <span class="ew-panel__btn">{e.boton}</span>
+    </div>
+  </figure>
+)}
+
+{e.tipo === 'agenda' && (
+  <figure class="ew-mock ew-agenda">
+    <figcaption class="sr-only">Ejemplo de agenda en línea de {e.negocio} para {e.servicio}</figcaption>
+    <p class="ew-agenda__neg">{e.negocio}</p>
+    <p class="ew-agenda__srv">{e.servicio}</p>
+    <p class="ew-co__sub">Día</p>
+    <p class="ew-agenda__dias">{e.dias.map((d) => <span class={d.sel ? 'ew-agenda__sel' : undefined}>{d.d}</span>)}</p>
+    <p class="ew-co__sub">Hora</p>
+    <p class="ew-agenda__horas">{e.horas.map((h) => <span class={h.sel ? 'ew-agenda__sel' : h.libre ? undefined : 'ew-agenda__ocupada'}>{h.h}<span class="sr-only">{h.libre ? '' : ' (ocupada)'}</span></span>)}</p>
+    {e.deposito && <p class="ew-agenda__dep">{e.deposito}</p>}
+    <span class="ew-co__btn">{e.boton}</span>
+  </figure>
+)}
+
 {e.tipo === 'mapa' && (
   <figure class="ew-mock ew-mapa">
     <figcaption class="sr-only">Ejemplo del mapa de Google para la búsqueda «{e.consulta}»: {e.lugares.map((l) => l.nombre).join(', ')}</figcaption>

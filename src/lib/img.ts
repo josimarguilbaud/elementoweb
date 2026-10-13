@@ -113,7 +113,7 @@ export const HERO_ALTS: Record<string, string> = {
   'marketing/whatsapp-marketing-masivo-panama': 'Dueño de una ferretería de barrio en Ciudad de Panamá responde mensajes de clientes en su celular desde el mostrador',
   'saas/nouscrm': 'Panel de CRM con embudo de ventas, cotización, factura pagada y una conversación de chat conectada a un contacto',
   'servicios': 'Ventana de sitio web rodeada de seis servicios: tienda, SEO, chat, automatización, seguridad y analítica',
-  'tecnologias/diseno-web-wordpress-panama': 'Sitio web armado con bloques a medida frente a una cuadrícula de plantillas genéricas: diseño en WordPress sin plantillas',
+  'tecnologias/diseno-web-wordpress-panama': 'Recepcionista de una clínica dental actualiza la web de la clínica en una laptop desde el mostrador, con pacientes esperando al fondo',
   'guias': 'Abanico de tarjetas de vidrio con pictogramas de navegador, lupa, bolsa, chat, engranaje y gráfico: biblioteca de guías de diseño web y marketing',
   'guias/diseno-web-miami': 'Dos marcadores unidos por un arco sobre un mapa, de Panamá a Florida, con una ventana de sitio web: diseño web para negocios de Miami',
   'guias/diseno-web-panama': 'Skyline de torres de vidrio frente a una bahía con una ventana de sitio web y un marcador de ubicación: diseño web en Panamá',
@@ -131,8 +131,8 @@ export const HERO_ALTS: Record<string, string> = {
   'crecimiento/seo-posicionamiento-web-panama': 'Mujer de negocios busca en Google desde su laptop en un coworking de Ciudad de Panamá, con café y su celular en la mesa',
   'funcionalidades/chatbots-ia-web-wazacrm-panama': 'Mujer sonriente escribe en su celular desde un sofá en penumbra, como quien conversa con el chatbot de IA de un negocio',
   'funcionalidades': 'Dos hombres ante un monitor en un escritorio con libretas y plantas, uno señala la pantalla al planear funcionalidades web',
-  'funcionalidades/integracion-yappy-pasarelas-pago-panama': 'Manos acercan un celular a una terminal de cobro sobre un mostrador de madera, ilustrando los pagos en línea con pasarelas',
-  'funcionalidades/sistemas-reservas-citas-online-panama': 'Calendario mensual de papel con chinchetas en una pared blanca y casillas vacías, para ilustrar las reservas y citas online',
+  'funcionalidades/integracion-yappy-pasarelas-pago-panama': 'Mujer sonríe en el sofá de su casa al confirmar un pago en el celular, con una caja de envío y un café en la mesa',
+  'funcionalidades/sistemas-reservas-citas-online-panama': 'Barbero revisa en una tableta las citas del día en el mostrador de su barbería mientras un cliente espera en la silla',
   'industrias/diseno-web-educacion-panama': 'Aula vacía con pupitres de madera, pizarra verde y ventanas con persianas hacia las palmeras, para el diseño web de colegios',
   'industrias/diseno-web-gimnasios-fitness-panama': 'Gimnasio amplio sin personas, con rack de mancuernas, máquinas y ventanales con luz natural, para el diseño web de gimnasios',
   'industrias/diseno-web-logistica-transporte-panama': 'Nave de almacén con estanterías llenas de cajas y un montacargas naranja en el pasillo, para el diseño web de logística',
@@ -178,7 +178,7 @@ export const HERO_ALTS: Record<string, string> = {
   'miami/diseno-web-kendall': 'Edificio comercial de una planta con palmeras y estacionamiento al atardecer, para el diseño web de negocios en Kendall',
   'portafolio': 'Mesa con impresiones de maquetas de sitios web y dos celulares que muestran páginas, junto al portafolio de proyectos de diseño web',
   'servicios/diseno-web-corporativo-panama': 'Dos ejecutivos revisan el sitio web corporativo de su empresa en una pantalla de sala de reuniones con vista a Punta Paitilla',
-  'tecnologias/desarrollo-web-a-medida-vue-react-panama': 'Banco de carpintero con un bloque de madera sujeto en prensas, metáfora del desarrollo web a medida con Vue y React',
+  'tecnologias/desarrollo-web-a-medida-vue-react-panama': 'Desarrolladora señala la interfaz de una aplicación en un monitor mientras su compañero toma notas, en una oficina de Ciudad de Panamá',
 };
 
 export function heroFor(page: { slug: string; h1: string; heroImage?: { src: string; alt: string } }, w = 1600, ar = 0.62) {

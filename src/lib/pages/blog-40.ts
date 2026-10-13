@@ -405,7 +405,7 @@ export const blog40: PageData[] = [
     category: 'Precios',
     date: '2026-09-30',
     heroImage: {
-      src: '/images/hero/tecnologias--desarrollo-web-a-medida-vue-react-panama.jpg',
+      src: '/images/hero/blog--cuanto-cuesta-desarrollo-web-a-medida-panama.jpg',
       alt: 'Banco de carpintero con un bloque de madera sujeto con prensas y formones, en una guía de desarrollo web a medida',
     },
     lead: [

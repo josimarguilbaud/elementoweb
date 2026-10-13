@@ -66,6 +66,10 @@ export type Ejemplo =
   | { tipo: 'checkout'; tienda: string; lineas: { t: string; v: string }[]; envios: { t: string; d: string; v: string; sel?: boolean }[]; total: { t: string; v: string }; pagos: { t: string; sel?: boolean }[]; boton: string }
   /** Los tres negocios del mapa de Google para una búsqueda local; el destacado muestra sus botones. */
   | { tipo: 'mapa'; consulta: string; lugares: { nombre: string; nota: string; resenas: string; categoria: string; detalle: string; destacado?: boolean }[]; botones: string[] }
+  /** Pantalla de edición de un panel (WordPress, portal a medida): los campos exactos que ve el equipo. */
+  | { tipo: 'panel'; sitio: string; titulo: string; campos: { k: string; v: string; largo?: boolean }[]; boton: string }
+  /** Agenda de reservas en la web: servicio, días, horas libres y ocupadas, depósito opcional. */
+  | { tipo: 'agenda'; negocio: string; servicio: string; dias: { d: string; sel?: boolean }[]; horas: { h: string; libre: boolean; sel?: boolean }[]; deposito?: string; boton: string }
   /** Reseña de Google con la respuesta del negocio. */
   | { tipo: 'resena'; negocio: string; autor: string; inicial: string; estrellas: number; hace: string; texto: string; respuesta: string; respondio: string }
   /** Ficha de auditoría de un sitio de ejemplo: cada fila con su estado (bien, revisar, mal). */

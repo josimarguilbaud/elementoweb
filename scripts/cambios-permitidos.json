@@ -20,6 +20,12 @@
     { "ruta": "/crecimiento/hosting-infraestructura-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): oferta confirmada desde $225 al año, portada nueva en foto (D45) y FAQPage sincronizado." },
     { "ruta": "/marketing/automatizaciones-n8n-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): servicio con precio propuesto (D23), portada en foto en lugar del diagrama (D45) y FAQPage sin las preguntas repetidas." },
     { "ruta": "/funcionalidades/chatbots-ia-web-wazacrm-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): servicio cotizado y FAQPage sin la pregunta repetida sobre costos." },
-    { "ruta": "/blog/cuanto-cuesta-mantenimiento-web-panama/", "campos": ["schema"], "motivo": "Conserva su foto de siempre: la de mantenimiento cambió (D45), así que la suya pasa a un archivo propio con la misma imagen." }
+    { "ruta": "/blog/cuanto-cuesta-mantenimiento-web-panama/", "campos": ["schema"], "motivo": "Conserva su foto de siempre: la de mantenimiento cambió (D45), así que la suya pasa a un archivo propio con la misma imagen." },
+    { "ruta": "/tecnologias/diseno-web-wordpress-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): oferta confirmada desde $1,250, portada nueva en foto (D45) y FAQPage sincronizado." },
+    { "ruta": "/tecnologias/diseno-web-shopify-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): oferta confirmada desde $1,950 con carga inicial de hasta 25 productos y FAQPage sin la pregunta repetida de costos." },
+    { "ruta": "/tecnologias/desarrollo-web-a-medida-vue-react-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): oferta confirmada desde $2,900, portada nueva en foto (D45) y FAQPage sincronizado." },
+    { "ruta": "/funcionalidades/integracion-yappy-pasarelas-pago-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): servicio cotizado, portada nueva en foto (D45) y FAQPage sin las preguntas repetidas." },
+    { "ruta": "/funcionalidades/sistemas-reservas-citas-online-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): servicio cotizado, portada nueva en foto (D45) y FAQPage sin «Meta Verified» (D11) ni la pregunta repetida." },
+    { "ruta": "/blog/cuanto-cuesta-desarrollo-web-a-medida-panama/", "campos": ["schema"], "motivo": "Conserva su foto de siempre: la de desarrollo a medida cambió (D45), así que la suya pasa a un archivo propio con la misma imagen." }
   ]
 }

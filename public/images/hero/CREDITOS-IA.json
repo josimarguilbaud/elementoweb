@@ -14,6 +14,10 @@
     { "archivo": "crecimiento--seo-local-google-maps-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Dueño de un taller mecánico de barrio mira su celular en la entrada del taller" },
     { "archivo": "marketing--automatizaciones-n8n-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Gerente de operaciones con café frente a su laptop en una oficina de Ciudad de Panamá" },
     { "archivo": "crecimiento--mantenimiento-web-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Técnico web revisa un panel de estado y marca una lista de verificación" },
-    { "archivo": "crecimiento--hosting-infraestructura-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Técnica de TI revisa los cables de un rack de servidores en una oficina" }
+    { "archivo": "crecimiento--hosting-infraestructura-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Técnica de TI revisa los cables de un rack de servidores en una oficina" },
+    { "archivo": "tecnologias--diseno-web-wordpress-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Recepcionista de una clínica dental actualiza la web en una laptop" },
+    { "archivo": "funcionalidades--integracion-yappy-pasarelas-pago-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Mujer confirma un pago en su celular desde el sofá de su casa" },
+    { "archivo": "funcionalidades--sistemas-reservas-citas-online-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Barbero revisa las citas del día en una tableta" },
+    { "archivo": "tecnologias--desarrollo-web-a-medida-vue-react-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Dos desarrolladores revisan la interfaz de una aplicación; recortada para dejar fuera un logo" }
   ]
 }

@@ -252,3 +252,24 @@
 .ew-res__resp { margin-top: 12px; padding: 10px 12px; border-left: 3px solid var(--ew-primary); border-radius: 0 8px 8px 0; background: #f1f4f8; font-size: 0.84rem; line-height: 1.55; color: #202124; }
 .ew-res__quien { margin-bottom: 4px !important; font-weight: 700; }
 .ew-res__quien small { margin-left: 6px; font-weight: 400; color: #5f6368; }
+
+/* Panel de edición (WordPress, portal a medida) y agenda de reservas. */
+.ew-panel { background: #fff; }
+.ew-panel__body { padding: 14px 16px 16px; }
+.ew-panel__t { margin-bottom: 12px !important; font-size: 0.95rem; font-weight: 700; color: var(--ew-text); }
+.ew-panel__campos { margin: 0; display: grid; gap: 10px; }
+@container (min-width: 460px) { .ew-panel__campos { grid-template-columns: 1fr 1fr; } }
+.ew-panel { container-type: inline-size; }
+.ew-panel__campo--largo { grid-column: 1 / -1; }
+.ew-panel__campo dt { margin-bottom: 4px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ew-muted); }
+.ew-panel__campo dd { margin: 0; padding: 8px 10px; border: 1px solid var(--ew-border); border-radius: 6px; background: var(--ew-surface); font-size: 0.85rem; line-height: 1.45; color: var(--ew-text); }
+.ew-panel__btn { display: inline-block; margin-top: 14px; padding: 8px 16px; border-radius: 6px; background: var(--ew-primary); font-size: 0.85rem; font-weight: 700; color: #fff; }
+
+.ew-agenda { padding: 16px; background: #fff; }
+.ew-agenda__neg { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ew-muted); }
+.ew-agenda__srv { margin-top: 2px !important; font-size: 1rem; font-weight: 700; color: var(--ew-text); }
+.ew-agenda__dias, .ew-agenda__horas { display: flex; flex-wrap: wrap; gap: 6px; }
+.ew-agenda__dias > span, .ew-agenda__horas > span { padding: 6px 10px; border: 1px solid var(--ew-border); border-radius: 8px; font-size: 0.82rem; font-weight: 500; color: var(--ew-text); }
+.ew-agenda__dias > .ew-agenda__sel, .ew-agenda__horas > .ew-agenda__sel { border-color: var(--ew-primary); background: var(--ew-primary); color: #fff; }
+.ew-agenda__horas > .ew-agenda__ocupada { border-style: dashed; color: #8a95a3; text-decoration: line-through; }
+.ew-agenda__dep { margin-top: 12px !important; padding: 8px 10px; border-radius: 8px; background: var(--ew-surface-alt); font-size: 0.8rem; line-height: 1.45; color: var(--ew-text); }

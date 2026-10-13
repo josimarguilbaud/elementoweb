@@ -160,6 +160,56 @@
       "herramienta": "Lighthouse",
       "fecha": "2026-10-13",
       "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "wordpress-lcp",
+      "url": "http://localhost:4602/tecnologias/diseno-web-wordpress-panama/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 1958,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "shopify-lcp",
+      "url": "http://localhost:4602/tecnologias/diseno-web-shopify-panama/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 1959,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "medida-lcp",
+      "url": "http://localhost:4602/tecnologias/desarrollo-web-a-medida-vue-react-panama/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 2033,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "yappy-lcp",
+      "url": "http://localhost:4602/funcionalidades/integracion-yappy-pasarelas-pago-panama/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 1958,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "reservas-lcp",
+      "url": "http://localhost:4602/funcionalidades/sistemas-reservas-citas-online-panama/",
+      "metrica": "LCP",
+      "valor": "2,1 s",
+      "valorNumerico": 2109,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
     }
   ]
 }

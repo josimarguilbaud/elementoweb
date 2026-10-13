@@ -514,6 +514,7 @@ export const crecimiento: PageData[] = [
         items: [
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
           { slug: 'diseno-web-panama', label: 'Diseño web en Panamá' },
+          { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas y citas online' },
           { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Web para Restaurantes' },
           { slug: 'industrias/diseno-web-clinicas-salud-panama', label: 'Web para Clínicas' },
           { slug: 'marketing/google-ads-panama', label: 'Google Ads' },

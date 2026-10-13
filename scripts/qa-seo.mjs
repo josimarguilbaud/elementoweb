@@ -12,7 +12,7 @@ const opt = (n) => (args.includes(n) ? args[args.indexOf(n) + 1] : null);
 
 const walk = (d) => readdirSync(d).flatMap((n) => { const p = join(d, n); return statSync(p).isDirectory() ? walk(p) : [p]; });
 const htmls = walk(DIST).filter((f) => f.endsWith('.html'));
-const routeOf = (f) => { let r = '/' + relative(DIST, f).replace(/index\.html$/, '').replace(/\.html$/, ''); return r; };
+const routeOf = (f) => { let r = '/' + relative(DIST, f).replaceAll('\\', '/').replace(/index\.html$/, '').replace(/\.html$/, ''); return r; };
 const get = (h, re) => (h.match(re) || [])[1]?.trim() ?? null;
 const sha = (s) => createHash('sha1').update(s).digest('hex').slice(0, 10);
 

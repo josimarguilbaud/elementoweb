@@ -69,16 +69,86 @@ export const servicios: PageData[] = [
   /* ---------- HUB ---------- */
   {
     slug: 'servicios',
-    title: 'Servicios de Diseño Web en Panamá | Elemento Web',
-    description: 'Todo lo que ofrece Elemento Web en un solo lugar: diseño web, tecnologías, funcionalidades, crecimiento y SaaS propios para empresas en Panamá.',
-    h1: 'Servicios de diseño web',
+    title: 'Servicios Web en Panamá | Diseño, SEO, Ads y Software',
+    description: 'Los servicios de Elemento Web en Panamá: páginas web, tiendas online, SEO, Google Ads, IA y software propio. Elige por lo que quieres lograr.',
+    h1: 'Servicios web en Panamá, por objetivo',
     breadcrumb: 'Servicios',
-    heroImage: { src: 'https://picsum.photos/seed/equipo-diseno-web-panama/1200/675', alt: 'Equipo de diseño revisando una maqueta de página web en pantalla' },
+    anatomia: 'v2',
+    portada: {
+      pie: 'No partimos de una plantilla: partimos de lo que quieres lograr. Cada objetivo tiene su página, con alcance, plazo y precio.',
+      riel: [
+        { k: 'Landing', v: 'desde $550' },
+        { k: 'Corporativo', v: 'desde $1,250' },
+        { k: 'Tienda online', v: 'desde $1,950' },
+        { k: 'A medida', v: 'desde $2,900' },
+      ],
+    },
     lead: [
       'Diseño web, tecnología, funcionalidades, crecimiento y software propio: todo lo que ofrece la agencia, en un solo lugar.',
       'No partimos de una plantilla: partimos de la pregunta de negocio. ¿Necesitas proyectar solidez, vender productos, convertir una campaña, automatizar tu atención o posicionarte en Google? Cada respuesta tiene su propia página, con su propio alcance y precio.',
     ],
     blocks: [
+      {
+        type: 'answer',
+        fecha: '2026-10-13',
+        text: 'Elemento Web ofrece en Panamá landing pages desde $550, sitios corporativos desde $1,250, tiendas online desde $1,950, SEO y SEO local, Google Ads y Meta, chatbots con IA, automatizaciones, mantenimiento y software propio. Cada servicio tiene su página con alcance, plazo y precio, y toda cotización es cerrada y por escrito antes de empezar.',
+      },
+      {
+        type: 'tabla',
+        h2: 'Elige por lo que quieres lograr',
+        intro: 'Empieza por el objetivo, no por el servicio. Cada fila lleva a su página con el detalle completo:',
+        columnas: ['Si quieres…', 'Servicio', 'Desde'],
+        filas: [
+          ['Que tu pauta llegue a una página que convierta', '<a href="/servicios/landing-pages-alta-conversion-panama/">Landing page</a>', '$550'],
+          ['Que tus clientes confíen antes de la reunión', '<a href="/servicios/diseno-web-corporativo-panama/">Web corporativa</a>', '$1,250'],
+          ['Vender productos en línea, con Yappy', '<a href="/servicios/tiendas-online-ecommerce-panama/">Tienda online</a>', '$1,950'],
+          ['Modernizar tu web sin perder lo que ya posiciona', '<a href="/servicios/redisenio-web-panama/">Rediseño web</a>', 'Se cotiza tras la auditoría'],
+          ['Aparecer en Google y en el mapa', '<a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a> y <a href="/crecimiento/seo-local-google-maps-panama/">SEO local</a>', 'Se cotiza tras la auditoría'],
+          ['Que te encuentren hoy, pagando por clic', '<a href="/marketing/google-ads-panama/">Google Ads</a> y <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a>', 'Referencia: $300 al mes de gestión'],
+          ['Responder a toda hora por WhatsApp y la web', '<a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">Chatbot con IA</a>', 'WazaCRM desde $349 al mes'],
+          ['Software que resuelva tu operación', '<a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">Desarrollo a medida</a>', '$2,900'],
+          ['Que tu web no se caiga ni envejezca', '<a href="/crecimiento/mantenimiento-web-panama/">Mantenimiento</a>', '$59 al mes'],
+        ],
+        nota: 'Precios en USD, sin ITBMS (7%). Las referencias de pauta son el fee de gestión; la inversión publicitaria va aparte.',
+      },
+      {
+        type: 'ejemplos',
+        h2: 'Cómo se ve cada servicio',
+        intro: 'La web, el resultado en Google, la conversación por WhatsApp y el reporte del mes: lo que recibe un negocio cuando los servicios trabajan juntos.',
+        columnas: 2,
+        items: [
+          { tipo: 'web', dominio: 'remodelacionesjg.com', escritorio: { src: '/portfolio/remodelacionesjg-800.webp', alt: 'Página de inicio de Remodelaciones JG en escritorio, proyecto publicado de Elemento Web', width: 800, height: 600 }, movil: { src: '/images/ejemplos/movil-remodelacionesjg.webp', alt: 'La web de Remodelaciones JG en un celular', width: 390, height: 844 }, pie: 'Remodelaciones JG · web corporativa con portafolio de obras y cotización por WhatsApp. Proyecto publicado.' },
+          {
+            tipo: 'google',
+            consulta: 'remodelación de cocinas en panamá',
+            resultados: [
+              { clase: 'organico', sitio: 'Tu empresa de remodelaciones', url: 'tuempresa.example › cocinas', titulo: 'Remodelación de Cocinas en Panamá | Diseño, Obra y Garantía', texto: 'Cotizamos tu cocina con visita en sitio y te entregamos el presupuesto por escrito. Obras en todo Panamá, con fotos de cada proyecto.', enlaces: ['Proyectos', 'Cómo cotizamos', 'Garantía', 'Escríbenos por WhatsApp'] },
+              { clase: 'organico', sitio: 'Directorio genérico', url: 'directorio.example › contratistas', titulo: 'Contratistas en Panamá - Listado', texto: 'Encuentra contratistas en todo el país. Más de 300 perfiles.' },
+            ],
+          },
+          {
+            tipo: 'whatsapp',
+            negocio: 'Tu empresa de remodelaciones',
+            mensajes: [
+              { de: 'cliente', texto: 'Hola, vi en su web la cocina de la obra en Costa del Este. ¿Cuánto cuesta algo parecido?', hora: '19:05' },
+              { de: 'negocio', texto: 'Hola, depende de las medidas y los materiales. Te agendamos una visita sin costo para medir y te enviamos el presupuesto por escrito. ¿Qué día te queda bien?', hora: '19:06', botones: ['Agendar visita', 'Hablar con una persona'] },
+              { de: 'cliente', texto: 'El sábado en la mañana.', hora: '19:08' },
+            ],
+          },
+          {
+            tipo: 'informe', titulo: 'Reporte del mes de tu web', sitio: 'tuempresa.example · ejemplo',
+            filas: [
+              { k: 'Disponibilidad del sitio', v: '99,9 %', estado: 'bien' },
+              { k: 'Respaldos verificados', v: '30 de 30', estado: 'bien' },
+              { k: 'Consultas por WhatsApp desde la web', v: '42', estado: 'bien' },
+              { k: 'Formularios recibidos', v: '17', estado: 'bien' },
+              { k: 'Páginas lentas en celular', v: '2', estado: 'ojo' },
+            ],
+            pie: 'Cada mes, lo que pasó y lo que toca corregir, en una página.',
+          },
+        ],
+        nota: 'La web es un proyecto publicado; la búsqueda, la conversación y las cifras del reporte son de ejemplo.',
+      },
       {
         type: 'catalog',
         h2: 'Todo lo que ofrecemos',
@@ -109,10 +179,13 @@ export const servicios: PageData[] = [
           { q: '¿Puedo ver avances durante el proyecto?', a: 'Siempre. Cada etapa termina en algo que puedes revisar: la estructura, el diseño de pantallas y el sitio en un ambiente de prueba antes de publicar.' },
         ],
       },
+      { type: 'form', h2: 'Cuéntanos qué quieres lograr', intro: 'Si no sabes qué servicio necesitas, descríbenos el objetivo: te respondemos con lo que conviene y su precio cerrado.' },
       {
         type: 'related',
         h2: 'Antes de decidir',
         items: [
+          { slug: 'diseno-web-panama', label: 'Diseño web en Panamá' },
+          { slug: 'precios', label: 'Precios' },
           { slug: 'como-trabajamos', label: 'Cómo trabajamos' },
           { slug: 'industrias', label: 'Diseño web por industria' },
           { slug: 'portafolio', label: 'Portafolio' },
@@ -120,6 +193,7 @@ export const servicios: PageData[] = [
         ],
       },
     ],
+    cta: { h2: 'Empieza por lo que quieres lograr', wa: 'Hola, quiero saber qué servicio me conviene.', boton: 'Ayúdame a elegir' },
   },
 
   /* ---------- CORPORATIVO ---------- */

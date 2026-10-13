@@ -11,12 +11,58 @@ export const tecnologias: PageData[] = [
     description: 'La tecnología correcta según tu objetivo: WordPress para contenido, Shopify para vender rápido, Vue y React cuando el proyecto exige código a medida.',
     h1: 'La tecnología se elige por tu objetivo',
     breadcrumb: 'Tecnologías',
-    heroImage: { src: 'https://picsum.photos/seed/desarrollador-codigo-panama/1200/675', alt: 'Desarrollador trabajando en código frente a varios monitores' },
+    anatomia: 'v2',
+    portada: {
+      pie: 'Una agencia que solo domina una herramienta te recomendará siempre esa herramienta.',
+      riel: [
+        { k: 'WordPress', v: 'desde $1,250' },
+        { k: 'Shopify', v: 'desde $1,950' },
+        { k: 'A medida', v: 'desde $2,900' },
+        { k: 'Criterio', v: 'Tu operación, no nuestra costumbre' },
+      ],
+    },
     lead: [
       'WordPress, Shopify o código a medida: cada uno gana en un escenario distinto. Elegimos por tu operación, no por nuestra comodidad.',
       'Una agencia que solo domina una herramienta te recomendará siempre esa herramienta. Nosotros operamos las tres a diario (y nuestros propios productos SaaS corren sobre stack a medida), así que la recomendación sale del caso, no del catálogo.',
     ],
     blocks: [
+      {
+        type: 'answer',
+        fecha: '2026-10-13',
+        text: 'Elegimos la tecnología de tu web por tu objetivo, no por costumbre: WordPress cuando tu equipo publica seguido, Shopify cuando quieres vender sin administrar servidores y desarrollo a medida con Vue, React y Laravel cuando las integraciones o el producto lo exigen. Operamos las tres a diario, en Panamá.',
+      },
+      {
+        type: 'tabla',
+        h2: 'Cuál te toca',
+        intro: 'La recomendación sale de tu caso y te la damos por escrito, con la razón:',
+        columnas: ['Si tu caso es…', 'Tecnología', 'Desde'],
+        filas: [
+          ['Tu equipo publica seguido y quiere autonomía', '<a href="/tecnologias/diseno-web-wordpress-panama/">WordPress</a>', '$1,250, hasta 6 páginas'],
+          ['Vendes productos y no quieres administrar servidores', '<a href="/tecnologias/diseno-web-shopify-panama/">Shopify</a>', '$1,950, más la suscripción de Shopify'],
+          ['Integraciones propias, portales o tu producto es la aplicación', '<a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">Desarrollo a medida</a>', '$2,900'],
+          ['Un sitio pequeño que casi no cambia', 'Sitio estático, sin mantenimiento de plataforma', 'Según el formato de la web'],
+        ],
+        nota: 'Precios en USD, sin ITBMS (7%).',
+      },
+      {
+        type: 'ejemplos',
+        h2: 'Lo que preguntamos antes de recomendar',
+        columnas: 2,
+        items: [
+          {
+            tipo: 'flujo',
+            titulo: 'Las cuatro preguntas antes de recomendar',
+            pasos: [
+              { t: 'Objetivo', d: '¿Informar, vender productos o resolver un proceso?' },
+              { t: 'Quién opera', d: '¿Tu equipo va a publicar? ¿Hay quien mantenga?' },
+              { t: 'Integraciones', d: '¿Pagos, inventario, CRM o un sistema interno?' },
+              { t: 'Volumen', d: '¿Cuánto tráfico y cuántas ventas al mes?' },
+              { t: 'Recomendación', d: 'Por escrito, con la razón y lo que cuesta mantenerla.' },
+            ],
+          },
+        ],
+        nota: 'La mejor tecnología es la que tu equipo puede operar sin nosotros el día que ya no estemos.',
+      },
       {
         type: 'cards',
         h2: 'Tres caminos, un criterio',
@@ -70,21 +116,20 @@ export const tecnologias: PageData[] = [
           { h3: 'Producto o portal propio', text: 'Cuando tu operación vive en hojas de cálculo o tu producto ES la aplicación, la plantilla se queda corta y toca código a medida.', link: { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Ver a medida' } },
         ],
       },
-      {
-        type: 'statement',
-        text: 'La mejor tecnología no es la más nueva ni la más popular: es la que tu equipo puede operar sin nosotros el día que ya no estemos.',
-        strong: 'la que tu equipo puede operar sin nosotros',
-      },
+      { type: 'form', h2: 'Te recomendamos la tecnología por escrito', intro: 'Cuéntanos qué quieres lograr, quién va a operar la web y qué sistemas usas: te respondemos con la recomendación y su razón.' },
       {
         type: 'related',
+        h2: 'Servicios relacionados',
         items: [
           { slug: 'servicios', label: 'Servicios de diseño web' },
           { slug: 'funcionalidades', label: 'Funcionalidades' },
+          { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' },
           { slug: 'blog/diferencia-wordpress-shopify-diseno-web', label: 'WordPress vs Shopify' },
           { slug: 'blog/tendencias-de-diseno-web-2026-panama', label: 'Tendencias de diseño 2026' },
         ],
       },
     ],
+    cta: { h2: 'La tecnología que tu equipo puede operar', wa: 'Hola, quiero que me recomienden la tecnología para mi web.', boton: 'Pedir recomendación' },
   },
 
   /* ---------- WORDPRESS (anatomía v2, molde Kredit: D44, D45) ---------- */

@@ -11,12 +11,58 @@ export const crecimiento: PageData[] = [
     description: 'Servicios de crecimiento para tu web en Panamá: posicionamiento SEO, SEO local en Google Maps y mantenimiento con hosting gestionado.',
     h1: 'Tu web se lanzó. Ahora tiene que crecer.',
     breadcrumb: 'Crecimiento',
-    heroImage: { src: 'https://picsum.photos/seed/crecimiento-grafico-negocio-panama/1200/675', alt: 'Gráfico de crecimiento ascendente proyectado en una pantalla' },
+    anatomia: 'v2',
+    portada: {
+      pie: 'Publicar la web es el kilómetro cero: el tráfico, las posiciones y la seguridad se construyen mes a mes.',
+      riel: [
+        { k: 'SEO', v: 'Google y respuestas de IA' },
+        { k: 'SEO local', v: 'El mapa de tu zona' },
+        { k: 'Mantenimiento', v: 'desde $59 al mes' },
+        { k: 'Hosting', v: 'desde $225 al año' },
+      ],
+    },
     lead: [
       'Publicar el sitio es el kilómetro cero. El tráfico, las posiciones y la seguridad se construyen mes a mes, con método.',
       'Estos tres servicios sostienen la inversión que ya hiciste: el SEO trae visitas que no pagas por clic, el SEO local te pone en el mapa donde busca tu vecindario, y el mantenimiento evita que el sitio envejezca hasta romperse.',
     ],
     blocks: [
+      {
+        type: 'answer',
+        fecha: '2026-10-13',
+        text: 'Crecimiento digital en Panamá es lo que hacemos después de publicar tu web: SEO para aparecer en Google y en las respuestas de IA, SEO local para el mapa, mantenimiento desde $59 al mes y hosting desde $225 al año. Son servicios recurrentes y cancelables, con reporte de lo que se hizo y de lo que se midió.',
+      },
+      {
+        type: 'tabla',
+        h2: 'Elige por lo que quieres lograr',
+        intro: 'Cuatro servicios, cuatro problemas distintos. Empieza por el que hoy te cuesta clientes:',
+        columnas: ['Si quieres…', 'Servicio', 'Precio', 'Cuándo se nota'],
+        filas: [
+          ['Aparecer en Google cuando buscan lo que vendes', '<a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>', 'Se cotiza tras la auditoría', 'Técnica en semanas; posiciones competidas en 3 a 6 meses'],
+          ['Salir en el mapa de tu zona', '<a href="/crecimiento/seo-local-google-maps-panama/">SEO local</a>', 'Se cotiza tras revisar tu ficha', 'Primeras señales en semanas'],
+          ['Que tu web no se caiga ni envejezca', '<a href="/crecimiento/mantenimiento-web-panama/">Mantenimiento web</a>', 'Desde $59 al mes', 'Desde el primer mes'],
+          ['Un servidor estable con dominio y SSL', '<a href="/crecimiento/hosting-infraestructura-panama/">Hosting e infraestructura</a>', 'Desde $225 al año', 'Al publicar'],
+        ],
+        nota: 'Precios en USD, sin ITBMS (7%).',
+      },
+      {
+        type: 'ejemplos',
+        h2: 'Cómo se suman',
+        columnas: 2,
+        items: [
+          {
+            tipo: 'flujo',
+            titulo: 'Lo que pasa después de publicar',
+            pasos: [
+              { t: 'Publicar', d: 'El sitio sale con SEO técnico, datos estructurados y velocidad medida.' },
+              { t: 'Mantener', d: 'Actualizaciones con respaldo previo, restauración probada y monitoreo.' },
+              { t: 'Posicionar', d: 'Palabras clave por página y contenido que responde de forma directa.' },
+              { t: 'El mapa', d: 'Ficha de Google completa, datos idénticos y un flujo de reseñas.' },
+              { t: 'Medir', d: 'Consultas, llamadas, rutas y búsquedas, cada mes.' },
+            ],
+          },
+        ],
+        nota: 'El orden importa: posicionar un sitio que se cae o que nadie mantiene es trabajo perdido.',
+      },
       {
         type: 'cards',
         h2: 'Los tres motores',
@@ -70,8 +116,10 @@ export const crecimiento: PageData[] = [
           'Si no sabes por dónde empezar, escríbenos por WhatsApp y revisamos tu caso sin compromiso. A veces la respuesta honesta es "todavía no necesitas SEO, arregla primero esto otro", y preferimos decírtelo a venderte un plan que no te va a servir. Mira también nuestros <a href="/servicios/">servicios de diseño web</a> si tu sitio aún no está a la altura.',
         ],
       },
+      { type: 'form', h2: 'Revisemos por dónde empezar', intro: 'Pásanos tu web y cuéntanos qué te preocupa: te decimos qué servicio mueve la aguja primero en tu caso.' },
       {
         type: 'related',
+        h2: 'Servicios relacionados',
         items: [
           { slug: 'crecimiento/hosting-infraestructura-panama', label: 'Hosting e Infraestructura' },
           { slug: 'servicios/redisenio-web-panama', label: 'Rediseño Web' },
@@ -81,6 +129,7 @@ export const crecimiento: PageData[] = [
         ],
       },
     ],
+    cta: { h2: 'Que tu web siga creciendo después de publicarla', wa: 'Hola, quiero hacer crecer mi web.', boton: 'Revisar mi caso' },
   },
 
   /* ---------- SEO (anatomía v2, molde Kredit, SEO y GEO avanzados: D21, D44, D45) ---------- */

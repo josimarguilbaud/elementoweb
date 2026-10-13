@@ -29,6 +29,8 @@
     { "ruta": "/blog/cuanto-cuesta-desarrollo-web-a-medida-panama/", "campos": ["schema"], "motivo": "Conserva su foto de siempre: la de desarrollo a medida cambió (D45), así que la suya pasa a un archivo propio con la misma imagen." },
     { "ruta": "/saas/wazacrm/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): nodo Service con oferta confirmada desde $349 al mes y FAQPage sin «Meta Verified» (D11) ni la pregunta repetida." },
     { "ruta": "/saas/nouscrm/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): nodo Service sin oferta (precio propuesto, D23), portada nueva en foto (D45) y FAQPage con el precio de entrada." },
-    { "ruta": "/saas/cifrao/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): nodo Service y FAQPage sin las respuestas contradictorias sobre implementación." }
+    { "ruta": "/saas/cifrao/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): nodo Service y FAQPage sin las respuestas contradictorias sobre implementación." },
+    { "ruta": "/servicios/", "campos": ["title", "description", "h1", "schema"], "motivo": "Fase 2b (R35 de KEYWORDS.md): el hub pasa a «servicios web panamá» y cede «creación de páginas web» a la pilar; anatomía v2 (D44) con portada nueva en foto (D45)." },
+    { "ruta": "/saas/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): el FAQPage pierde la pregunta sobre «Meta Verified Tech Provider», afirmación bloqueada (D11)." }
   ]
 }

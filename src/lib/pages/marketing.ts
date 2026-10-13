@@ -26,12 +26,60 @@ export const marketingPages: PageData[] = [
     description: 'Marketing digital en Panamá: Google Ads, Facebook e Instagram Ads, contenido para redes, email marketing y automatizaciones. Fee claro, tu inversión aparte.',
     h1: 'Marketing digital que trae clientes',
     breadcrumb: 'Marketing',
-    heroImage: { src: 'https://picsum.photos/seed/marketing-digital-equipo-panama/1200/675', alt: 'Equipo de marketing digital analizando métricas de campañas en pantallas' },
+    anatomia: 'v2',
+    portada: {
+      pie: 'Una campaña que manda tráfico a una web que no convierte pierde dinero. Hacemos el anuncio y el destino.',
+      riel: [
+        { k: 'Pauta', v: 'Google, Facebook e Instagram' },
+        { k: 'Contenido', v: 'Redes, email y WhatsApp' },
+        { k: 'Automatización', v: 'Con n8n' },
+        { k: 'Cobro', v: 'Fee claro; tu inversión va directo a la plataforma' },
+      ],
+    },
     lead: [
       'Tu web es el destino; el marketing es lo que lleva gente hasta ella. Hacemos las dos cosas, así que tus campañas y tu sitio hablan el mismo idioma.',
       'Una campaña que manda el tráfico a una web que no convierte pierde dinero, y una web bonita sin tráfico no vende. Nosotros cerramos el círculo: atraemos, convertimos y medimos, con un fee de gestión claro y tu inversión publicitaria siempre bajo tu control.',
     ],
     blocks: [
+      {
+        type: 'answer',
+        fecha: '2026-10-13',
+        text: 'Hacemos marketing digital en Panamá que trae clientes: Google Ads, Facebook e Instagram Ads, contenido para redes, email, WhatsApp marketing y automatizaciones con n8n. Cobramos un fee de gestión claro y tu inversión publicitaria va directo a la plataforma. Antes de pautar aseguramos el destino y la medición de conversiones.',
+      },
+      {
+        type: 'tabla',
+        h2: 'Elige por lo que quieres lograr',
+        intro: 'Cada canal resuelve algo distinto. Estas son las referencias publicadas de nuestro fee de gestión:',
+        columnas: ['Si quieres…', 'Servicio', 'Referencia publicada'],
+        filas: [
+          ['Aparecer cuando alguien busca lo que vendes', '<a href="/marketing/google-ads-panama/">Google Ads</a>', 'Desde $300 al mes de gestión'],
+          ['Que te descubra gente que todavía no te busca', '<a href="/marketing/facebook-instagram-ads-panama/">Facebook e Instagram Ads</a>', 'Desde $300 al mes por cuenta'],
+          ['Que tus redes no se vean abandonadas', '<a href="/marketing/contenido-redes-sociales-panama/">Contenido para redes</a>', 'Desde $250 al mes'],
+          ['Volver a venderle a quien ya te compró', '<a href="/marketing/email-marketing-panama/">Email marketing</a>', 'Desde $200 al mes'],
+          ['Avisar por WhatsApp sin que te bloqueen', '<a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp marketing</a>', 'Desde $150 al mes'],
+          ['Que tus herramientas se pasen los datos solas', '<a href="/marketing/automatizaciones-n8n-panama/">Automatizaciones con n8n</a>', 'Desde $300 por automatización'],
+        ],
+        nota: 'Son referencias: cada propuesta se cierra por escrito según tu caso. La inversión publicitaria va aparte, directo a Google o Meta. Sin ITBMS (7%).',
+      },
+      {
+        type: 'ejemplos',
+        h2: 'Cómo se suman los canales',
+        columnas: 2,
+        items: [
+          {
+            tipo: 'flujo',
+            titulo: 'Del anuncio al cliente que vuelve',
+            pasos: [
+              { t: 'Anuncio', d: 'En Google o en Meta, con una sola oferta por campaña.' },
+              { t: 'Destino', d: 'Una landing que repite la promesa y muestra un solo botón.' },
+              { t: 'Conversación', d: 'WhatsApp con el mensaje escrito, registrado en tu CRM.' },
+              { t: 'Seguimiento', d: 'Email, WhatsApp y automatizaciones para quien no compró todavía.' },
+              { t: 'Reporte', d: 'Costo por lead y por venta, no «me gusta».' },
+            ],
+          },
+        ],
+        nota: 'Cuando el anuncio y el destino los hace el mismo equipo, nadie se culpa por la fuga: se mide de punta a punta.',
+      },
       {
         type: 'cards',
         h2: 'Qué hacemos en marketing',
@@ -40,16 +88,11 @@ export const marketingPages: PageData[] = [
           { h3: 'Facebook e Instagram Ads', text: 'Campañas en Meta para descubrimiento, captación y ventas, con segmentación afinada y creativos que detienen el scroll. También ofrecemos trafficker dedicado si manejas varias cuentas.', link: { slug: 'marketing/facebook-instagram-ads-panama', label: 'Meta Ads' } },
           { h3: 'Contenido para redes', text: 'Publicaciones, diseño gráfico y Reels que mantienen tu marca viva entre campaña y campaña.', link: { slug: 'marketing/contenido-redes-sociales-panama', label: 'Contenido para Redes' } },
           { h3: 'Email marketing', text: 'El canal con mejor retorno: newsletters, automatizaciones y recuperación de clientes que ya te conocen.', link: { slug: 'marketing/email-marketing-panama', label: 'Email Marketing' } },
-          { h3: 'WhatsApp marketing masivo', text: 'Campañas por WhatsApp Business API oficial. Somos Meta Verified Tech Provider, así que sin riesgo de bloqueo.', link: { slug: 'marketing/whatsapp-marketing-masivo-panama', label: 'WhatsApp Marketing' } },
+          { h3: 'WhatsApp marketing masivo', text: 'Campañas por la API oficial de WhatsApp Business, dentro de las políticas de Meta.', link: { slug: 'marketing/whatsapp-marketing-masivo-panama', label: 'WhatsApp Marketing' } },
           { h3: 'Automatizaciones con n8n', text: 'Conectamos tus herramientas para que el marketing y las ventas funcionen sin trabajo manual repetitivo.', link: { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones n8n' } },
         ],
       },
       modeloCobro,
-      {
-        type: 'statement',
-        text: 'La pauta a una web que no convierte es dinero quemado.',
-        strong: 'Nosotros hacemos las dos: el anuncio y el destino.',
-      },
       {
         type: 'faq',
         h2: 'Preguntas frecuentes',
@@ -97,8 +140,10 @@ export const marketingPages: PageData[] = [
           'Y no todo es pauta. El <a href="/marketing/email-marketing-panama/">email</a>, el <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp</a> y las <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones</a> exprimen a los contactos que la pauta ya te consiguió, para que no pagues dos veces por el mismo cliente. Ese es el marketing que trae clientes y, sobre todo, que los conserva.',
         ],
       },
+      { type: 'form', h2: 'Hablemos de tu marketing', intro: 'Cuéntanos qué vendes, a quién y qué canal has probado: te decimos por dónde conviene empezar y con qué presupuesto.' },
       {
         type: 'related',
+        h2: 'Servicios relacionados',
         items: [
           { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing Pages' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
@@ -107,7 +152,7 @@ export const marketingPages: PageData[] = [
         ],
       },
     ],
-    cta: { h2: 'Hablemos de tu marketing', wa: 'Hola, quiero información sobre sus servicios de marketing digital.' },
+    cta: { h2: 'El anuncio y el destino, del mismo equipo', wa: 'Hola, quiero información sobre sus servicios de marketing digital.', boton: 'Hablar de mi marketing' },
   },
 
   /* ---------- GOOGLE ADS (anatomía v2, molde Kredit: D21, D44, D45) ---------- */

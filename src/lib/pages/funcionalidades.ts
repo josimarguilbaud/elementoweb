@@ -11,12 +11,58 @@ export const funcionalidades: PageData[] = [
     description: 'Funcionalidades que convierten tu web en una herramienta de trabajo: pagos con Yappy, chatbot con IA y sistemas de reservas online.',
     h1: 'Funcionalidades que trabajan por ti',
     breadcrumb: 'Funcionalidades',
-    heroImage: { src: 'https://picsum.photos/seed/whatsapp-pago-movil-panama/1200/675', alt: 'Persona usando un teléfono para pagar y chatear con un negocio' },
+    anatomia: 'v2',
+    portada: {
+      pie: 'Una web moderna no solo informa: cobra, responde y agenda sin esperar a que alguien de tu equipo esté disponible.',
+      riel: [
+        { k: 'Cobrar', v: 'Yappy, tarjeta y CyberSource' },
+        { k: 'Responder', v: 'Chatbot con IA' },
+        { k: 'Agendar', v: 'Reservas con recordatorios' },
+        { k: 'Dónde', v: 'En tu sitio actual o en uno nuevo' },
+      ],
+    },
     lead: [
       'Una web moderna no solo informa: cobra, responde y agenda. Estas tres funcionalidades hacen la diferencia entre un folleto y una herramienta.',
       'Cada una se integra a tu sitio actual o al que construyamos juntos. Y las tres comparten un objetivo: que el visitante complete la acción sin fricción y sin esperar a que alguien de tu equipo esté disponible.',
     ],
     blocks: [
+      {
+        type: 'answer',
+        fecha: '2026-10-13',
+        text: 'Integramos en tu página web las funcionalidades que cobran, responden y agendan: Botón de Pago Yappy y tarjeta, CyberSource con 3-D Secure, chatbot con IA que responde con tu información y pasa a una persona cuando no sabe, y reservas online con recordatorios y depósito. Funcionan en tu sitio actual o en uno nuevo.',
+      },
+      {
+        type: 'tabla',
+        h2: 'Elige por lo que quieres lograr',
+        intro: 'Cada funcionalidad quita un momento en el que hoy se enfría la venta:',
+        columnas: ['Si quieres…', 'Funcionalidad', 'Precio'],
+        filas: [
+          ['Cobrar en tu web como pagan los panameños', '<a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy y pasarelas de pago</a>', 'Incluida en tiendas nuevas; sobre un sitio existente, se cotiza'],
+          ['Cobrar con tarjeta usando las llaves de CyberSource de tu banco', '<a href="/funcionalidades/integracion-cybersource-panama/">Integración CyberSource</a>', 'Se cotiza según tu plataforma'],
+          ['Responder a toda hora con tu información', '<a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">Chatbot con IA</a>', 'Implementación cotizada; WazaCRM desde $349 al mes'],
+          ['Que el cliente agende solo', '<a href="/funcionalidades/sistemas-reservas-citas-online-panama/">Reservas y citas online</a>', 'Se cotiza; en un sitio nuevo, desde $1,250'],
+        ],
+        nota: 'Precios en USD, sin ITBMS (7%). Las comisiones de cada medio de pago las fija el banco o la pasarela.',
+      },
+      {
+        type: 'ejemplos',
+        h2: 'Cómo se suman',
+        columnas: 2,
+        items: [
+          {
+            tipo: 'flujo',
+            titulo: 'Una visita que se resuelve sola',
+            pasos: [
+              { t: 'Pregunta', d: 'El chatbot responde con tu información aprobada.' },
+              { t: 'Agenda', d: 'Elige día y hora libres en tu agenda real.' },
+              { t: 'Paga', d: 'Un depósito con Yappy o tarjeta para apartar la hora.' },
+              { t: 'Confirmación', d: 'Por correo y WhatsApp, con recordatorio antes de la cita.' },
+              { t: 'Registro', d: 'Todo queda en tu CRM con el historial del cliente.' },
+            ],
+          },
+        ],
+        nota: 'Ninguna de estas tres cosas espera a que alguien de tu equipo esté disponible.',
+      },
       {
         type: 'cards',
         h2: 'Qué puedes integrar',
@@ -71,15 +117,20 @@ export const funcionalidades: PageData[] = [
           'Y todo esto suma para tu <strong>posicionamiento</strong>: Google premia las webs donde el usuario completa lo que vino a hacer sin rebotar. Si quieres que además te encuentren, el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Panamá</a> hace que estas funcionalidades reciban el tráfico que merecen.',
         ],
       },
+      { type: 'form', h2: 'Cuéntanos qué quieres que haga tu web', intro: 'Dinos en qué plataforma está tu sitio y qué quieres que resuelva solo: cobrar, responder o agendar.' },
       {
         type: 'related',
+        h2: 'Servicios relacionados',
         items: [
           { slug: 'servicios', label: 'Servicios de diseño web' },
+          { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas Online' },
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
           { slug: 'saas', label: 'Nuestros SaaS' },
           { slug: 'industrias', label: 'Diseño web por industria' },
         ],
       },
     ],
+    cta: { h2: 'Una web que cobra, responde y agenda', wa: 'Hola, quiero sumar funcionalidades a mi web.', boton: 'Cotizar funcionalidades' },
   },
 
   /* ---------- YAPPY (anatomía v2, molde Kredit: D44, D45) ---------- */

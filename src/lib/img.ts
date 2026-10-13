@@ -112,7 +112,7 @@ export const HERO_ALTS: Record<string, string> = {
   'marketing/automatizaciones-n8n-panama': 'Gerente de operaciones con una taza de café mira su laptop en una oficina de Ciudad de Panamá mientras el trabajo avanza solo',
   'marketing/whatsapp-marketing-masivo-panama': 'Dueño de una ferretería de barrio en Ciudad de Panamá responde mensajes de clientes en su celular desde el mostrador',
   'saas/nouscrm': 'Dueña de una imprenta de rótulos envía una cotización desde su celular en el mostrador, con su laptop abierta al lado',
-  'servicios': 'Ventana de sitio web rodeada de seis servicios: tienda, SEO, chat, automatización, seguridad y analítica',
+  'servicios': 'Una diseñadora muestra en su laptop la maqueta de una web al dueño de un negocio, en una mesa con bocetos y vista a la bahía de Panamá',
   'tecnologias/diseno-web-wordpress-panama': 'Recepcionista de una clínica dental actualiza la web de la clínica en una laptop desde el mostrador, con pacientes esperando al fondo',
   'guias': 'Abanico de tarjetas de vidrio con pictogramas de navegador, lupa, bolsa, chat, engranaje y gráfico: biblioteca de guías de diseño web y marketing',
   'guias/diseno-web-miami': 'Dos marcadores unidos por un arco sobre un mapa, de Panamá a Florida, con una ventana de sitio web: diseño web para negocios de Miami',

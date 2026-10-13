@@ -1,7 +1,7 @@
 {
   "_nota": "Registro de gasto en fal (D46: tope de US$ 10 aprobado por el dueño el 13-oct-2026). Una fila por generación cobrada, con su request_id para rastrearla en el historial de fal. Precios tomados de la API de precios de fal el 13-oct-2026: nano-banana-pro US$ 0,15 y nano-banana-2 US$ 0,08 por imagen a 1K.",
   "tope": 10,
-  "gastado": 3.03,
+  "gastado": 3.11,
   "generaciones": [
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2e71-75c1-a49e-c745a53357fc", "uso": "portada diseno-web-panama" },
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2eca-7e42-934f-a8dba3fddcf6", "uso": "portada servicios/diseno-web-corporativo-panama" },
@@ -32,6 +32,7 @@
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a136fc-2de3-7102-89ac-c985adb76e24", "uso": "descartada: logo de Apple en la laptop (a medida)" },
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13701-9666-7b20-b692-d06b6cea0ae1", "uso": "portada funcionalidades/sistemas-reservas-citas-online-panama" },
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13701-9664-7970-97fa-f82428adfb3f", "uso": "portada tecnologias/desarrollo-web-a-medida-vue-react-panama (recortada para dejar fuera un logo de Apple)" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a1370b-d4f8-76d3-aff6-d871a1a1accf", "uso": "portada saas/nouscrm" }
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a1370b-d4f8-76d3-aff6-d871a1a1accf", "uso": "portada saas/nouscrm" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13722-3af8-76f3-9c3d-a26d02f39b63", "uso": "portada servicios (logo de la laptop borrado a mano)" }
   ]
 }

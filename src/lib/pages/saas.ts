@@ -12,7 +12,16 @@ export const saasPages: PageData[] = [
     description: 'Tres productos SaaS propios en producción: WazaCRM (CRM de WhatsApp con IA y pipeline de ventas), NousCRM (cotizaciones y cobros por WhatsApp) y Cifrao (contabilidad).',
     h1: 'Software propio, en producción',
     breadcrumb: 'Nuestros SaaS',
-    heroImage: { src: 'https://picsum.photos/seed/software-dashboard-laptop-panama/1200/675', alt: 'Panel de control de software mostrado en una laptop moderna' },
+    anatomia: 'v2',
+    portada: {
+      pie: 'Cuando operas tu propio software, cada atajo técnico te cobra a ti. Esa disciplina es la que aplicamos en cada proyecto.',
+      riel: [
+        { k: 'WazaCRM', v: 'desde $349 al mes' },
+        { k: 'NousCRM', v: 'Cotizar, facturar y cobrar' },
+        { k: 'Cifrao', v: 'Contabilidad' },
+        { k: 'Hechos en', v: 'Panamá, en producción' },
+      ],
+    },
     creds: true,
     heroCtas: [
       { label: 'Agendar demostración', href: '/contacto/', primary: true },
@@ -23,6 +32,40 @@ export const saasPages: PageData[] = [
       'Una agencia entrega y se va; si la arquitectura era frágil, el costo lo descubre el cliente meses después. Cuando operas tu propio software, cada atajo técnico te cobra factura a ti: el servidor caído, la madrugada de soporte, el cliente molesto. Esa disciplina aprendida a golpes es la que aplicamos en cada proyecto de diseño web.',
     ],
     blocks: [
+      {
+        type: 'answer',
+        fecha: '2026-10-13',
+        text: 'Operamos tres productos de software propios, hechos en Panamá y en producción: WazaCRM, el CRM para WhatsApp con IA desde $349 al mes; NousCRM, para cotizar, facturar y cobrar por WhatsApp; y Cifrao, software contable con conciliación y cuentas por cobrar. Se contratan por suscripción y sin desarrollo a medida.',
+      },
+      {
+        type: 'tabla',
+        h2: 'Cuál necesitas',
+        intro: 'Se usan por separado o juntos, y se suman cuando el negocio lo pide:',
+        columnas: ['Si necesitas…', 'Producto', 'Precio'],
+        filas: [
+          ['Atender y vender por WhatsApp sin perder seguimientos', '<a href="/saas/wazacrm/">WazaCRM</a>', 'Desde $349 al mes'],
+          ['Cotizar, facturar y saber quién te debe', '<a href="/saas/nouscrm/">NousCRM</a>', 'Referencia: $20 al mes'],
+          ['Llevar la contabilidad fuera de la hoja de cálculo', '<a href="/saas/cifrao/">Cifrao</a>', 'Según usuarios y volumen'],
+        ],
+        nota: 'Precios en USD, sin ITBMS (7%). El consumo de Meta y de los motores de IA se paga por uso desde tus cuentas.',
+      },
+      {
+        type: 'ejemplos',
+        h2: 'Cómo se conectan',
+        columnas: 2,
+        items: [
+          {
+            tipo: 'flujo',
+            titulo: 'De la conversación a la contabilidad',
+            pasos: [
+              { t: 'WazaCRM', d: 'Atiende por WhatsApp, califica y lleva cada oportunidad por el embudo.' },
+              { t: 'NousCRM', d: 'Cotiza con tu marca, factura con un clic y recuerda los cobros.' },
+              { t: 'Cifrao', d: 'Concilia con el banco y deja la información lista para tu contador.' },
+            ],
+          },
+        ],
+        nota: 'Muchos negocios empiezan con uno y suman los demás cuando lo necesitan.',
+      },
       {
         type: 'cards',
         h2: 'Los tres productos',
@@ -37,7 +80,6 @@ export const saasPages: PageData[] = [
         h2: 'Preguntas frecuentes',
         items: [
           { q: '¿Los SaaS se venden por separado del diseño web?', a: 'Sí. Puedes usar WazaCRM, NousCRM o Cifrao sin contratar diseño web, y viceversa. Donde brillan es juntos: la web capta, la IA atiende y el sistema cobra.' },
-          { q: '¿Qué significa Meta Verified Tech Provider?', a: 'Es la validación oficial de Meta que nos acredita para integrar las APIs de WhatsApp Business e Instagram. En la práctica: verificamos tu número oficialmente, sin soluciones improvisadas que Meta bloquea.' },
           { q: '¿Cómo se cobra la licencia?', a: 'Mensual, por producto. El consumo de APIs de terceros (Meta, motores de IA) se paga por uso desde tus propias cuentas, con visibilidad total y sin margen nuestro.' },
           { q: '¿Los datos de mi negocio quedan expuestos a la agencia?', a: 'No. Cada cliente opera en su propia cuenta, con su información y sus credenciales de Meta y de IA. Nosotros configuramos y damos soporte; la operación diaria y los datos son tuyos.' },
           { q: '¿Puedo empezar con un solo producto y sumar los demás después?', a: 'Sí, y es lo más común. Muchos arrancan con NousCRM para cotizar y cobrar, o con WazaCRM para atender WhatsApp, y luego suman Cifrao cuando la contabilidad completa se vuelve el cuello de botella. No hay que contratarlos todos de golpe.' },
@@ -77,16 +119,21 @@ export const saasPages: PageData[] = [
           { h3: '4. Operación con soporte', text: 'Quedas en producción con acompañamiento. Ajustamos la IA, los embudos o los informes según lo que la operación real vaya pidiendo.' },
         ],
       },
+      { type: 'form', h2: 'Agenda una demostración', intro: 'Cuéntanos qué producto te interesa y cómo trabajas hoy: te lo mostramos con un caso como el tuyo.' },
       {
         type: 'related',
+        h2: 'Servicios relacionados',
         items: [
+          { slug: 'saas/wazacrm', label: 'WazaCRM' },
+          { slug: 'saas/nouscrm', label: 'NousCRM' },
+          { slug: 'saas/cifrao', label: 'Cifrao' },
           { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA para tu web' },
           { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Desarrollo a medida' },
           { slug: 'servicios', label: 'Servicios de diseño web' },
         ],
       },
     ],
-    cta: { h2: 'Agenda una demostración', wa: 'Hola, quiero una demo de sus productos SaaS.' },
+    cta: { h2: 'Software propio, hecho en Panamá', wa: 'Hola, quiero una demo de sus productos SaaS.', boton: 'Pedir una demo' },
   },
 
   /* ---------- WAZACRM (anatomía v2, molde Kredit: D44, D45) ---------- */

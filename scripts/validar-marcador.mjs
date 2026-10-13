@@ -205,6 +205,23 @@ export function evaluar(a, ctx) {
 const recorrer = (d) => readdirSync(d).flatMap((n) => { const p = join(d, n); return statSync(p).isDirectory() ? recorrer(p) : [p]; });
 const slugDe = (dist, f) => relative(dist, f).replaceAll('\\', '/').replace(/index\.html$/, '').replace(/\/$/, '');
 
+/** Enlaces entrantes del CONTENIDO (<main>): cuántas páginas distintas enlazan a cada slug. La navegación y el pie
+ *  no cuentan, porque están en todas las páginas y no dicen nada del enlazado editorial (D36). */
+export function enlacesEntrantes(dist) {
+  const entrantes = new Map();
+  for (const f of recorrer(dist).filter((x) => x.endsWith('.html'))) {
+    const origen = slugDe(dist, f);
+    if (/^(demo|propuestas|presentaciones|hackathon|qa-fixture)(\/|$)/.test(origen)) continue;
+    const main = parse(readFileSync(f, 'utf8')).querySelector('main');
+    if (!main) continue;
+    for (const h of hrefsInternos(main)) {
+      const s = slugDeHref(h);
+      if (s !== origen) entrantes.set(s, (entrantes.get(s) ?? 0) + 1);
+    }
+  }
+  return entrantes;
+}
+
 /** Valida todo dist/ contra el manifiesto. `hoy` y las listas se inyectan en las pruebas. */
 export function validarDist({ dist = join(RAIZ, 'dist'), manifiesto, exclusiones = [], precios, afirmaciones = [], hoy = new Date() } = {}) {
   const errores = [];
@@ -251,6 +268,17 @@ export function validarDist({ dist = join(RAIZ, 'dist'), manifiesto, exclusiones
     for (const m of r.errores) errores.push(`${p.slug || '/'}: ${m}`);
     for (const m of r.avisos) avisos.push(`${p.slug || '/'}: ${m}`);
   }
+
+  // D36: enlazado entrante mínimo. Mover una sección fuera de una página puede dejar a otra sin enlaces desde el
+  // contenido, y `check-links` solo detecta enlaces rotos, no enlaces perdidos.
+  if (manifiesto.minEntrantes) {
+    const entrantes = enlacesEntrantes(dist);
+    const existentes = new Set(html.map((f) => slugDe(dist, f)));
+    for (const p of manifiesto.paginas) {
+      const n = entrantes.get(p.slug) ?? 0;
+      if (existentes.has(p.slug) && n < manifiesto.minEntrantes) errores.push(`${p.slug || '/'}: solo ${n} página(s) enlazan a esta desde su contenido; la regla pide ${manifiesto.minEntrantes} o más (D36)`);
+    }
+  }
   return { resultados, errores, avisos };
 }
 
@@ -263,6 +291,11 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const exclusiones = leerJson(join(RAIZ, 'scripts/exclusiones-marcador.json')).exclusiones;
   const precios = leerJson(join(RAIZ, 'src/data/precios.json'));
   const afirmaciones = leerJson(join(RAIZ, 'scripts/afirmaciones-bloqueadas.json')).afirmaciones;
+  if (args.includes('--entrantes')) {
+    const e = enlacesEntrantes(dist);
+    for (const p of [...manifiesto.paginas].sort((a, b) => (e.get(a.slug) ?? 0) - (e.get(b.slug) ?? 0))) console.log(String(e.get(p.slug) ?? 0).padStart(4), p.slug || '/');
+    process.exit(0);
+  }
   const hoyTxt = opcion(args, '--hoy') ?? process.env.VALIDAR_HOY;
   const hoy = hoyTxt ? new Date(`${hoyTxt}T12:00:00Z`) : new Date();
   const { resultados, errores, avisos } = validarDist({ dist, manifiesto, exclusiones, precios, afirmaciones, hoy });

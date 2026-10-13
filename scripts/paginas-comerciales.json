@@ -3,6 +3,7 @@
   "ordenFases": ["1", "2a", "3", "2b", "4", "5"],
   "faseActual": "1",
   "seccionesComerciales": ["servicios", "crecimiento", "marketing", "tecnologias", "funcionalidades", "saas"],
+  "minEntrantes": 3,
   "paginas": [
     { "slug": "diseno-web-panama", "tipo": "pilar", "fase": "2a" },
     { "slug": "servicios/diseno-web-corporativo-panama", "tipo": "servicio", "fase": "2a", "precio": "confirmado" },

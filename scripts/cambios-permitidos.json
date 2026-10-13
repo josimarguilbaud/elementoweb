@@ -1,0 +1,4 @@
+{
+  "_nota": "Cambios de title, descripción, H1, canonical, robots o schema que una fase PUEDE hacer (D36). Cada entrada: ruta, campos (lista o \"todos\") y motivo. Se añaden al empezar la fase que los hace y se vacían al cerrarla, después de reescribir el snapshot con `node scripts/seo-congelado.mjs --actualizar`. La pilar /diseno-web-panama/ no puede cambiar de title, H1 ni canonical aunque esté aquí. Fase 1: ninguno.",
+  "permitidos": []
+}

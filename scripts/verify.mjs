@@ -56,6 +56,7 @@ npm('compilación de pruebas (páginas de ejemplo del marcador)', 'run', 'build:
 npm('pruebas unitarias (node:test)', 'test');
 paso('FORMULARIO.md coincide con src/data/formulario.json', process.execPath, ['scripts/gen-formulario-md.mjs', '--check']);
 paso('qa-seo (title, canonical, schema)', process.execPath, ['scripts/qa-seo.mjs']);
+paso('SEO congelado (metadatos y schema no cambian sin permiso, D36)', process.execPath, ['scripts/seo-congelado.mjs']);
 paso('check-links (enlaces internos)', process.execPath, ['scripts/check-links.mjs']);
 paso(`validador del marcador (fecha ${hoy})`, process.execPath, ['scripts/validar-marcador.mjs', '--hoy', hoy]);
 

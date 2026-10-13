@@ -209,6 +209,24 @@ test('exclusiones: una página excluida que ya emite data-page-type falla; una s
   assert.ok(validar({ 'servicios/a': sinTipo }, { exclusiones: [{ slug: 'servicios/a', motivo: '' }] }).errores.some((e) => /sin motivo/.test(e)));
 });
 
+test('enlazado entrante (D36): una página comercial que nadie enlaza desde su contenido falla; con el enlace pasa', () => {
+  const enlace = '<main><a href="/servicios/b/">b</a></main>';
+  const m = manifiestoBase({ minEntrantes: 1, paginas: [{ slug: 'servicios/a', tipo: 'servicio', fase: '2a' }, { slug: 'servicios/b', tipo: 'servicio', fase: '2a' }] });
+  const sin = validar({ 'servicios/a': sinTipo, 'servicios/b': sinTipo }, { manifiesto: m });
+  assert.ok(sin.errores.some((e) => /servicios\/(a|b): solo 0 página\(s\) enlazan/.test(e)), sin.errores.join(' | '));
+  const con = validar({ 'servicios/a': enlace, 'servicios/b': '<main><a href="/servicios/a/">a</a></main>' }, { manifiesto: m });
+  assert.deepEqual(con.errores, []);
+  // La navegación (fuera de <main>) no cuenta como enlazado editorial.
+  const nav = validar({ 'servicios/a': '<nav><a href="/servicios/b/">b</a></nav><main></main>', 'servicios/b': '<nav><a href="/servicios/a/">a</a></nav><main></main>' }, { manifiesto: m });
+  assert.ok(nav.errores.length >= 2);
+});
+
+test('el sitio real: toda página comercial tiene al menos 3 enlaces entrantes desde su contenido (si hay dist)', { skip: !existsSync(join(RAIZ, 'dist/index.html')) }, () => {
+  const manifiesto = JSON.parse(readFileSync(join(RAIZ, 'scripts/paginas-comerciales.json'), 'utf8'));
+  const { errores } = validarDist({ dist: join(RAIZ, 'dist'), manifiesto, exclusiones: JSON.parse(readFileSync(join(RAIZ, 'scripts/exclusiones-marcador.json'), 'utf8')).exclusiones, precios, hoy: HOY });
+  assert.deepEqual(errores, []);
+});
+
 test('el manifiesto real y las exclusiones reales son coherentes con la fase 1', () => {
   const manifiesto = JSON.parse(readFileSync(join(RAIZ, 'scripts/paginas-comerciales.json'), 'utf8'));
   const { exclusiones } = JSON.parse(readFileSync(join(RAIZ, 'scripts/exclusiones-marcador.json'), 'utf8'));

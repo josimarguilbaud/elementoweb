@@ -13,9 +13,21 @@
 **Priority:** P1
 **Depends on:** Permisos de clientes para los casos.
 
-### Volver a medir en producción las 11 páginas del molde Kredit
+### Vigilar CyberSource en Search Console tras pasarla a la plantilla
 
-**What:** Tras publicar la tanda del molde Kredit (D44), correr `node scripts/medir.mjs https://elementoweb.com/<ruta>/ --id <id> --escribir` para los 11 ids de `src/data/mediciones.json` (pilar, corporativo, SEO, Google Ads, Meta, contenido, email, WhatsApp, tiendas, landing y rediseño) y publicar el cambio.
+**What:** Comparar posición, clics e impresiones de `/funcionalidades/integracion-cybersource-panama/` el 27-oct-2026 y el 10-nov-2026 contra la línea base de `audit/gsc-baseline-2026-10.md` (17 impresiones, posición 7,4).
+
+**Why:** Era la única página de servicio en la primera página de Google. El 13-oct-2026 dejó de ser una página hecha a mano y pasó a la plantilla con anatomía v2 (commit `1d07b68`). Se conservaron title, description, H1, canonical y todas las frases; cambió el schema (una Offer desde $1,050 en vez de tres) y se sumaron secciones (de ~2.250 a ~3.180 palabras).
+
+**Context:** Si cae más de 5 posiciones y se sostiene dos semanas, revisar primero el orden de las secciones: «Qué es CyberSource» pasó del primer bloque del cuerpo al cuarto, detrás de la respuesta, el comprobante y «Resultados de clientes».
+
+**Effort:** S
+**Priority:** P1
+**Depends on:** Nada; Search Console ya tiene la propiedad.
+
+### Volver a medir en producción las páginas del molde Kredit
+
+**What:** Tras publicar la tanda del molde Kredit (D44), correr `node scripts/medir.mjs https://elementoweb.com/<ruta>/ --id <id> --escribir` para cada id de `src/data/mediciones.json` (las 24 páginas de servicio y la pilar, más precios, IA para empresas y CyberSource desde el 13-oct-2026) y publicar el cambio.
 
 **Why:** Las mediciones del 13-oct-2026 se hicieron con Lighthouse sobre el build local (`astro preview`), porque producción todavía servía las páginas viejas. La cifra visible tiene que ser la de la página publicada, servida por nginx desde Netcup.
 

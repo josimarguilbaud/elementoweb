@@ -1,0 +1,45 @@
+# Aviso mensual de mediciones vencidas (D40). Una cifra publicada en un comprobante no puede envejecer en
+# silencio: el sitio es estatico y nada la renueva solo. Este job corre el dia 1 de cada mes y abre una
+# incidencia si alguna medicion de src/data/mediciones.json supera los 45 dias (o tiene fecha futura).
+# Renovar: node scripts/medir.mjs <url> --id <id> --escribir
+name: Mediciones vencidas
+
+on:
+  schedule:
+    - cron: '0 14 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Revisar la antigüedad de las mediciones
+        id: rev
+        run: |
+          set +e
+          node scripts/medir.mjs --check > revision.txt 2>&1
+          echo "codigo=$?" >> "$GITHUB_OUTPUT"
+          cat revision.txt
+
+      - name: Abrir una incidencia si hay mediciones vencidas
+        if: ${{ steps.rev.outputs.codigo != '0' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          abiertas=$(gh issue list --state open --search 'in:title "Mediciones vencidas del comprobante"' --json number --jq 'length')
+          if [ "$abiertas" = "0" ]; then
+            gh issue create --title "Mediciones vencidas del comprobante" --body-file revision.txt
+          else
+            echo "Ya hay una incidencia abierta; no se duplica."
+          fi

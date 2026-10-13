@@ -40,6 +40,15 @@ test('el despliegue conserva sus tres pasos y no manda nada más que el UUID', (
   assert.match(yml, /"root@\$\{NETCUP_HOST\}" "\$\{APP_UUID\}"/);
 });
 
+test('el cron mensual de mediciones vencidas existe y abre una incidencia sin duplicarla', () => {
+  const m = readFileSync(join(RAIZ, '.github/workflows/medir-vencidas.yml'), 'utf8').replace(/\r\n/g, '\n');
+  assert.match(m, /cron: '0 14 1 \* \*'/);
+  assert.match(m, /node scripts\/medir\.mjs --check/);
+  assert.match(m, /gh issue create/);
+  assert.match(m, /issues: write/);
+  assert.match(m, /no se duplica/);
+});
+
 test('package.json expone verify y el Dockerfile sigue construyendo solo con npm run build', () => {
   assert.equal(pkg.scripts.verify, 'node scripts/verify.mjs');
   assert.equal(pkg.scripts.build, 'astro build');

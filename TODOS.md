@@ -13,6 +13,18 @@
 **Priority:** P1
 **Depends on:** Permisos de clientes para los casos.
 
+### Redirecciones 301 de tres URLs retiradas que aún tienen impresiones
+
+**What:** Agregar en `nginx.conf` tres 301: `/saas/chatmantis/` a `/saas/wazacrm/`, `/funcionalidades/chatbots-ia-web-chatmantis-panama/` a `/funcionalidades/chatbots-ia-web-wazacrm-panama/` y `/saas/wapycrm/` a `/saas/nouscrm/`, y sumar la comprobación a `scripts/check-prod.sh`.
+
+**Why:** Search Console todavía lista las tres (2, 1 y 1 impresiones en el rango 28-jul a 11-oct-2026) y hoy dan 404 en producción. Los renombres fueron `6e0c1ff` (ChatMantis a WazaCRM) y `408f1c9` (WapyCRM a NousCRM) y no dejaron redirección.
+
+**Context:** Hallazgo 5 de `audit/gsc-baseline-2026-10.md`. Son pocas impresiones, pero el 301 es la forma correcta de despedir una URL con historial. Cambia `nginx.conf`, así que se publica con el push y requiere la aprobación del dueño.
+
+**Effort:** S
+**Priority:** P3
+**Depends on:** Nada.
+
 ### Páginas de casos con métricas reales
 
 **What:** Publicar páginas de casos de éxito con cifras medidas (consultas, ventas, posición) cuando el cliente autorice.

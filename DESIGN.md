@@ -131,9 +131,9 @@ Una sola familia en todo el sitio: Roboto, por decisión del dueño (12 de octub
 
 Ancho máximo 1200 px, márgenes laterales de 16 a 32 px. Base de 8 px. Ritmo de secciones 112, 80 y 64 px, alternando `surface` y `surface-alt`. Alineado a la izquierda; las secciones usan una columna estrecha para el título y una ancha para el contenido (0,8 fr y 1,2 fr). Nada de filas de tres tarjetas iguales: el contenido de distinto peso lleva filas de distinto peso.
 
-**Portada como póster:** H1 y texto a la izquierda; a la derecha una ilustración del servicio con un comprobante superpuesto; en el borde inferior, un riel de cuatro cifras publicadas (precios en la home; alcance en servicios). Debe caber en 1440 por 900 y en 390 por 844 con el botón principal visible.
+**Portada como póster:** H1 y texto a la izquierda; a la derecha una ilustración del servicio con un comprobante superpuesto; en el borde inferior, un riel: en la home, los nombres de los 6 servicios sin cifras (para no volver a vender solo web); en una página de servicio, los datos de alcance de ese servicio. Debe caber en 1440 por 900 y en 390 por 844 con el botón principal visible. La ilustración nunca va sola: en la misma pantalla lleva un artefacto de prueba (comprobante, captura o tabla).
 
-**Anatomía de toda sección de servicio:** respuesta de 40 a 60 palabras (con fecha) → evidencia (comprobante, captura o tabla) → por qué es mejor, con criterios que el visitante pueda verificar → qué incluye y qué no → botón propio del servicio.
+**Anatomía de toda página de servicio (orden de lectura):** portada (H1, bajada de 15 a 20 palabras, botón y comprobante) → respuesta citable de 40 a 60 palabras con fecha → prueba (comprobante, captura de proyecto y medición en un solo sistema) → qué incluye, entregables y qué no incluye → cómo lo hacemos y plazo, con el botón repetido → por qué es mejor, con criterios que el visitante pueda verificar → preguntas frecuentes → formulario → servicios relacionados. En móvil hay una barra fija con el botón del servicio y WhatsApp.
 
 **Marcador de 10 puntos por página de servicio:** alcance, entregables, precio de partida, plazo, qué no incluye, FAQ de 6 o más, schema Service y FAQPage, una medición real, una prueba de proyecto, y una comparación con criterios verificables. Toda afirmación comparativa se basa en la oferta publicada, nunca en un ataque a terceros.
 
@@ -149,7 +149,11 @@ Radios 6, 12 y 20 px; la píldora completa queda para la barra de navegación y 
 
 - **Comprobante:** tira blanca, voz de datos (Roboto 500 con cifras tabulares), filas con puntos guía hasta el valor, una cifra con `marker`, línea de encabezado con fecha y método, y pie con lo que no incluye. Una fila sin dato se imprime con "sin medir" o "sin publicar aún" en peso 500 y borde punteado. Nunca se rellena con un número de plantilla.
 - **Botón primario (portada):** `accent` con texto marino, píldora, 52 px de alto, foco con anillo `accent-on-dark` de 3 px. **Botón sólido (cuerpo):** marino con texto claro, radio 6 px. **WhatsApp:** verde con texto oscuro, píldora.
-- **Formulario por servicio:** un solo componente que conoce todos los servicios. Fichas de servicio (radio accesible) cambian el título, las preguntas, el botón y el payload. Obligatorios: nombre, correo y WhatsApp. Campos: borde `field-border` de 1,5 px (4,31:1), foco con anillo de 3 px, error en `error` con texto que dice cómo corregirlo y foco al primer campo inválido. El envío lleva `servicio`, `origen` y un `detalle` por pregunta hacia n8n y NousCRM, y el evento `generate_lead` de GA4 lleva `service`.
+- **Formulario por servicio:** un solo componente que conoce todos los servicios. Fichas de servicio (radio accesible) cambian el título, las preguntas, el botón y el payload. Obligatorios: nombre y WhatsApp; el correo es opcional. Campos: borde `field-border` de 1,5 px (4,31:1), foco con anillo de 3 px, error en `error` con texto que dice cómo corregirlo y foco al primer campo inválido. Con un servicio preseleccionado se muestra «Servicio: X · cambiar» y las fichas solo aparecen al pulsar «cambiar». El envío conserva `servicio` (etiqueta de texto) y `origen` y suma `servicio_clave` y un `detalle` por pregunta hacia n8n y WazaCRM; el evento `generate_lead` de GA4 lleva `service` con la clave. Los estados (enviando, éxito, fallo de red, fallo parcial) están en `docs/specs/rediseno-elementoweb/DECISIONES.md`, D22.
+- **Fila de servicio (mapa de la home):** fila, no tarjeta: nombre en `title`, una línea de qué resuelve y para quién en `body`, enlace principal con `accent-on-light`, filete inferior de 1 px en `border`; en compacto se apila y el enlace ocupa el ancho completo (toque de 44 px).
+- **Respuesta citable (`answer`):** párrafo de 40 a 60 palabras en `body` a 1,1 veces, con el rótulo en voz de datos «Actualizado el DD/MM» debajo; sin caja ni fondo propio.
+- **Incluye y no incluye (`includes`):** tres listas simples (incluye, entregables, no incluye) con el signo «+» y «−» en voz de datos y filetes `border`; sin iconos en círculos.
+- **Comparación (`compare`):** tabla con encabezados reales; la columna «tu otra cotización» son celdas vacías con línea punteada y el texto oculto «espacio para completar»; en compacto cada fila se apila; con hoja de estilos de impresión.
 - **Preguntas frecuentes:** `details` nativos, visibles en el HTML, con el mismo texto que el schema FAQPage.
 - **Imagen de héroe:** una ilustración 3D de vidrio por página (marino a azul, cian, sin texto, personas ni logos), 3:2, con alt descriptivo y `ImageObject`. Las fotos de stock no entran como portada de servicio.
 
@@ -171,7 +175,7 @@ Radios 6, 12 y 20 px; la píldora completa queda para la barra de navegación y 
 - **Approach:** intentional, solo bajo la primera pantalla.
 - **Easing:** enter(ease-out) exit(ease-in) move(ease-in-out)
 - **Duration:** revelado 200 ms (opacidad y 8 px de desplazamiento); impresión del comprobante 350 ms (`clip-path`). Se anima solo `opacity`, `transform` y `clip-path`.
-- **The one authored moment:** el comprobante que se imprime al llegar a la vista. La portada nunca se anima. Con `prefers-reduced-motion` todo aparece sin transición, y sin JavaScript todo es visible. El script pesa menos de 2 KB y no entra ninguna librería.
+- **The one authored moment:** el comprobante de la sección de prueba, que se imprime al llegar a la vista (no el de la portada). La portada nunca se anima. Con `prefers-reduced-motion` todo aparece sin transición, y sin JavaScript todo es visible. El script pesa menos de 2 KB y no entra ninguna librería.
 
 ## Decisions Log
 | Date | Decision | Rationale |

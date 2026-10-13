@@ -12,11 +12,18 @@ hdr(){ curl -sI -m 20 "$1" | tr -d '\r' | grep -i "^$2:" | head -1 | sed 's/^[^:
 eqc(){ [ "$2" = "$3" ] && ok "$1" || ko "$1" "$2" "$3"; }
 has(){ [ -n "$3" ] && echo "$3" | grep -qi "$2" && ok "$1" || ko "$1" "contiene «$2»" "${3:-(vacío)}"; }
 
-echo "== Redirects (un solo salto, 301, sin bajar a http) =="
+echo "== Redirects (sin bajar a http; www → no-www en 301) =="
+CANON="https://elementoweb.com"
+# www se resuelve en nginx por la cabecera Host, así que se prueba también en local.
+www_get(){ if [ "$LOCAL" = 1 ]; then curl -sI -m 20 -o /dev/null -H "Host: www.elementoweb.com" -w '%{http_code} %{redirect_url}' "$BASE$1"; else curl -sI -m 20 -o /dev/null -w '%{http_code} %{redirect_url}' "https://www.elementoweb.com$1"; fi; }
+r=$(www_get "/"); eqc "www → no-www (301)" "301 $CANON/" "$r"
+r=$(www_get "/precios/?utm_source=a&b=2"); eqc "www → no-www conserva ruta y consulta" "301 $CANON/precios/?utm_source=a&b=2" "$r"
 if [ "$LOCAL" = 0 ]; then
-  r=$(curl -sI -m 20 -o /dev/null -w '%{http_code} %{redirect_url}' "http://$HOST/"); eqc "http → https (301)" "301 https://$HOST/" "$r"
-  r=$(curl -sI -m 20 -o /dev/null -w '%{http_code} %{redirect_url}' "https://www.$HOST/"); eqc "www → no-www (301)" "301 https://$HOST/" "$r"
-  r=$(curl -sI -m 20 -o /dev/null -w '%{http_code} %{redirect_url}' "http://www.$HOST/servicios"); has "http://www/servicios termina en https no-www (primer salto)" "https://$HOST" "$r"
+  # El salto http → https lo hace Traefik/Coolify con 307 (temporal); HSTS cubre a los navegadores.
+  r=$(curl -sI -m 20 -o /dev/null -w '%{http_code} %{redirect_url}' "http://$HOST/")
+  case "$r" in "301 https://$HOST/"|"307 https://$HOST/"|"308 https://$HOST/") ok "http → https ($r)";; *) ko "http → https (301/307/308)" "https://$HOST/" "$r";; esac
+  r=$(curl -sIL -m 30 -o /dev/null -w '%{url_effective} %{num_redirects}' "http://www.$HOST/servicios")
+  eqc "http://www/servicios termina en $CANON/servicios/ (≤ 4 saltos)" "$CANON/servicios/ ok" "${r% *} $([ "${r##* }" -le 4 ] 2>/dev/null && echo ok || echo "${r##* } saltos")"
 fi
 loc=$(hdr "$BASE/servicios" location); c=$(code "$BASE/servicios")
 eqc "/servicios responde 301" 301 "$c"
@@ -34,7 +41,8 @@ h=$(hdr "$BASE/" x-frame-options); has "X-Frame-Options" "sameorigin" "$h"
 h=$(hdr "$BASE/" permissions-policy); has "Permissions-Policy" "camera=()" "$h"
 h=$(hdr "$BASE/" content-security-policy-report-only); has "CSP en solo-reporte" "default-src" "$h"
 h=$(hdr "$BASE/" server); case "$h" in *[0-9].[0-9]*) ko "Server no debe mostrar versión" "nginx" "$h";; *) ok "Server sin versión ($h)";; esac
-[ "$LOCAL" = 0 ] && { h=$(hdr "$BASE/" strict-transport-security); has "HSTS (lo pone Traefik/Coolify)" "max-age" "$h"; }
+h=$(hdr "$BASE/" strict-transport-security); has "HSTS" "max-age" "$h"
+case "$h" in *includeSubDomains*|*preload*) ko "HSTS sin includeSubDomains ni preload (mail, cpanel y app viven en otros servidores)" "max-age=…" "$h";; *) ok "HSTS sin includeSubDomains ni preload";; esac
 
 echo "== Documentos de cliente =="
 h=$(hdr "$BASE/propuestas/evolutionpmc-servidor-vps/" x-robots-tag); has "X-Robots-Tag noindex en /propuestas/" "noindex" "$h"

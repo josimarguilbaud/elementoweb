@@ -22,7 +22,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Nodo Code del flujo \"Elemento Web - Leads Formulario Web\" (n8n).\n//\n// Vive en el repo a proposito: si solo existe dentro de n8n, nadie sabe que\n// cambio ni cuando. Al editarlo aqui hay que volver a subirlo con\n// scripts/subir-flujo-contacto.mjs.\n//\n// Campos que manda src/components/ContactForm.astro:\n//   nombre, empresa, email, telefono, servicio, presupuesto, mensaje,\n//   origen, fecha  +  botcheck (honeypot)\n\nconst b = $input.first().json.body || {};\n\n// Trampa antibots. Se responde ok y se descarta: decirle \"rechazado\" a un bot\n// solo le ensena a esquivarla la proxima vez. El formulario ya filtra en el\n// navegador, pero un bot que llame al webhook directo se salta esa parte.\nif (String(b.botcheck || '').trim() !== '') {\n  return [{ json: { spam: true } }];\n}\n\nconst h = (s) => String(s == null ? '' : s)\n  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')\n  .replace(/\"/g, '&quot;').replace(/'/g, '&#039;');\n\n// Quita saltos de linea (inyeccion de cabeceras) y recorta.\nconst limpio = (v) => String(v == null ? '' : v).replace(/[\\r\\n]/g, ' ').trim();\n\nconst nombre      = limpio(b.nombre);\nconst empresa     = limpio(b.empresa);\nconst telefono    = limpio(b.telefono);\nconst servicio    = limpio(b.servicio);\nconst presupuesto = limpio(b.presupuesto);\nconst origen      = limpio(b.origen);\nconst emailBruto  = limpio(b.email);\nconst email       = /^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(emailBruto) ? emailBruto : '';\nconst mensaje     = String(b.mensaje || '').trim();\n\n// El formulario del sitio exige nombre y correo. Sin correo no hay a quien\n// responderle, asi que ese si es motivo de rechazo (a diferencia de\n// Remodelaciones JG, que cierra por WhatsApp y ahi el correo es opcional).\nif (!nombre || !email) {\n  return [{ json: { invalido: true, motivo: 'faltan nombre o correo' } }];\n}\n\nconst nl = String.fromCharCode(10);\n\n// La fecha la manda el navegador del visitante, asi que puede venir vacia o\n// con la zona horaria de otro pais. Se recalcula del lado del servidor.\nconst fecha = new Date().toLocaleString('es-PA', {\n  timeZone: 'America/Panama', day: '2-digit', month: '2-digit', year: 'numeric',\n  hour: '2-digit', minute: '2-digit', hour12: true,\n});\n\nconst soloDigitos = telefono.replace(/\\D/g, '');\n// Los telefonos panamenos se escriben sin prefijo; para wa.me hace falta el 507.\nconst waNumero = soloDigitos.length === 8 ? '507' + soloDigitos : soloDigitos;\n\nconst fila = (label, valor, ultima) => {\n  const borde = ultima ? '' : 'border-bottom:1px solid #eef1f4;';\n  return '<tr>'\n    + '<td style=\"padding:10px 0;color:#64748b;width:130px;' + borde + '\">' + h(label) + '</td>'\n    + '<td style=\"padding:10px 0;color:#0f172a;font-weight:600;' + borde + '\">' + valor + '</td>'\n    + '</tr>';\n};\n\nconst filas = fila('Correo', '<a href=\"mailto:' + h(email) + '\" style=\"color:#0f766e;text-decoration:none\">' + h(email) + '</a>')\n  + (telefono    ? fila('Telefono', h(telefono)) : '')\n  + (servicio    ? fila('Servicio', h(servicio)) : '')\n  + (presupuesto ? fila('Presupuesto', h(presupuesto), true) : '');\n\nconst titulo = nombre + (empresa ? ' &middot; ' + empresa : '');\n\nconst html = ''\n+ '<!DOCTYPE html><html><body style=\"margin:0;background:#f8f9fa;font-family:Arial,Helvetica,sans-serif;color:#1c2230\">'\n+ '<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#f8f9fa;padding:24px 0\"><tr><td align=\"center\">'\n+ '<table role=\"presentation\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:600px;width:100%;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 10px 40px rgba(15,23,42,.08)\">'\n\n+ '<tr><td style=\"background:#0f172a;padding:22px 28px\"><table role=\"presentation\" width=\"100%\"><tr>'\n+ '<td style=\"color:#ffffff;font-size:17px;font-weight:bold;letter-spacing:-.3px\">Elemento Web</td>'\n+ '<td align=\"right\" style=\"color:#2dd4bf;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1.5px\">Nuevo lead</td>'\n+ '</tr></table></td></tr>'\n+ '<tr><td style=\"height:4px;background:#2dd4bf\"></td></tr>'\n\n+ '<tr><td style=\"padding:28px\">'\n+ '<div style=\"font-size:13px;color:#64748b\">Recibiste una nueva solicitud desde tu pagina web</div>'\n+ '<div style=\"font-size:23px;font-weight:bold;color:#0f172a;margin:6px 0 22px;letter-spacing:-.4px\">' + h(nombre) + (empresa ? ' &middot; ' + h(empresa) : '') + '</div>'\n+ '<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:14px;border-collapse:collapse\">' + filas + '</table>'\n\n+ (mensaje\n    ? '<div style=\"margin:22px 0 8px;color:#64748b;font-size:13px\">Mensaje</div>'\n      + '<div style=\"background:#f8f9fa;border-left:3px solid #2dd4bf;border-radius:8px;padding:14px 16px;font-size:14px;line-height:1.6;color:#334155;white-space:pre-wrap\">' + h(mensaje) + '</div>'\n    : '')\n\n+ '<table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-top:26px\"><tr>'\n+ (waNumero\n    ? '<td style=\"padding-right:10px\"><a href=\"https://wa.me/' + h(waNumero) + '\" style=\"display:inline-block;background:#0f766e;color:#ffffff;text-decoration:none;font-weight:bold;font-size:14px;padding:13px 24px;border-radius:999px\">Responder por WhatsApp</a></td>'\n    : '')\n+ '<td><a href=\"mailto:' + h(email) + '\" style=\"display:inline-block;background:#f1f5f9;color:#0f172a;text-decoration:none;font-weight:bold;font-size:14px;padding:13px 24px;border-radius:999px\">Responder por correo</a></td>'\n+ '</tr></table>'\n+ '</td></tr>'\n\n+ '<tr><td style=\"padding:16px 28px;background:#f8f9fa;border-top:1px solid #eef1f4;color:#94a3b8;font-size:12px\">'\n+ 'Enviado el ' + h(fecha) + (origen ? ' desde <a href=\"' + h(origen) + '\" style=\"color:#64748b\">' + h(origen) + '</a>' : '')\n+ '</td></tr>'\n\n+ '</table></td></tr></table></body></html>';\n\n// La otra mitad del multipart. Un correo solo-HTML pesa como sospechoso en los\n// filtros de spam, y ademas asi se lee en cualquier cliente.\nconst texto = 'NUEVO LEAD - elementoweb.com' + nl + nl\n  + 'Nombre:      ' + nombre + nl\n  + (empresa     ? 'Empresa:     ' + empresa + nl : '')\n  + 'Correo:      ' + email + nl\n  + (telefono    ? 'Telefono:    ' + telefono + nl : '')\n  + (servicio    ? 'Servicio:    ' + servicio + nl : '')\n  + (presupuesto ? 'Presupuesto: ' + presupuesto + nl : '')\n  + (mensaje     ? nl + 'Mensaje:' + nl + mensaje + nl : '')\n  + nl + 'Recibido el ' + fecha + (origen ? ' desde ' + origen : '') + '.' + nl;\n\nreturn [{ json: {\n  spam: false,\n  invalido: false,\n  asunto: 'Nuevo lead web - ' + nombre + (empresa ? ' (' + empresa + ')' : ''),\n  html,\n  texto,\n  correo_cliente: email,\n  nombre,\n} }];\n"
+        "jsCode": "// Nodo Code del flujo \"Elemento Web - Leads Formulario Web\" (n8n). Contrato v2 (D30 a D33).\n//\n// Vive en el repo a proposito: si solo existe dentro de n8n, nadie sabe que\n// cambio ni cuando. Al editarlo aqui hay que volver a subirlo con\n// scripts/subir-flujo-contacto.mjs (que inyecta el esquema donde dice {\"limites\":{\"respuesta\":300,\"mensaje\":2000,\"campo\":500},\"claves\":{\"pyme\":{\"servicio\":\"Diseño web / Sitio corporativo\",\"etiqueta\":\"Sitio corporativo\",\"campos\":{\"paginas\":{\"etiqueta\":\"¿Cuántas páginas calculas?\",\"tipo\":\"sel\"},\"dominio\":{\"etiqueta\":\"¿Ya tienes dominio?\",\"tipo\":\"sel\"}}},\"ecommerce\":{\"servicio\":\"Tienda online / E-commerce\",\"etiqueta\":\"Tienda online\",\"campos\":{\"productos\":{\"etiqueta\":\"¿Cuántos productos venderás?\",\"tipo\":\"sel\"},\"pagos\":{\"etiqueta\":\"¿Cómo quieres cobrar?\",\"tipo\":\"sel\"},\"envios\":{\"etiqueta\":\"¿Cómo entregas?\",\"tipo\":\"sel\"},\"plataforma\":{\"etiqueta\":\"¿Plataforma preferida?\",\"tipo\":\"sel\"}}},\"landing\":{\"servicio\":\"Landing page\",\"etiqueta\":\"Landing page\",\"campos\":{\"objetivo\":{\"etiqueta\":\"¿Qué quieres lograr con ella?\",\"tipo\":\"sel\"},\"pauta\":{\"etiqueta\":\"¿La usarás con anuncios pagados?\",\"tipo\":\"sel\"}}},\"mensual\":{\"servicio\":\"Web empresarial gestionada — plan mensual\",\"etiqueta\":\"Plan mensual\",\"campos\":{\"inicio\":{\"etiqueta\":\"¿Cuándo quieres empezar?\",\"tipo\":\"sel\"},\"dominio\":{\"etiqueta\":\"¿Ya tienes dominio?\",\"tipo\":\"sel\"}}},\"revision\":{\"servicio\":\"Revisión de mi web\",\"etiqueta\":\"Revisión de mi web\",\"campos\":{\"web\":{\"etiqueta\":\"Dirección de tu web (obligatorio)\",\"tipo\":\"url\"},\"dolor\":{\"etiqueta\":\"¿Qué te preocupa más?\",\"tipo\":\"sel\"}}},\"rediseno\":{\"servicio\":\"Rediseño web\",\"etiqueta\":\"Rediseño\",\"campos\":{\"web\":{\"etiqueta\":\"Dirección de tu web actual (obligatorio)\",\"tipo\":\"url\"},\"motivo\":{\"etiqueta\":\"¿Por qué rediseñar?\",\"tipo\":\"sel\"},\"urls\":{\"etiqueta\":\"¿Conservamos las direcciones actuales?\",\"tipo\":\"sel\"}}},\"seo\":{\"servicio\":\"SEO y posicionamiento\",\"etiqueta\":\"SEO y posicionamiento\",\"campos\":{\"web\":{\"etiqueta\":\"Dirección de tu web (si ya tienes)\",\"tipo\":\"url\"},\"zona\":{\"etiqueta\":\"Zona o ciudad donde quieres aparecer\",\"tipo\":\"txt\"},\"claves\":{\"etiqueta\":\"Búsquedas que quieres ganar (2 o 3)\",\"tipo\":\"txt\"}}},\"pauta\":{\"servicio\":\"Marketing digital / Pauta\",\"etiqueta\":\"Google Ads y Meta Ads\",\"campos\":{\"plataforma\":{\"etiqueta\":\"¿Dónde quieres anunciar?\",\"tipo\":\"sel\"},\"inversion\":{\"etiqueta\":\"Inversión mensual estimada en pauta\",\"tipo\":\"sel\"},\"destino\":{\"etiqueta\":\"¿Tienes web o landing donde llegue la gente?\",\"tipo\":\"sel\"}}},\"whatsapp\":{\"servicio\":\"WhatsApp marketing\",\"etiqueta\":\"WhatsApp marketing\",\"campos\":{\"contactos\":{\"etiqueta\":\"¿Cuántos contactos con permiso tienes?\",\"tipo\":\"sel\"},\"numero\":{\"etiqueta\":\"¿Tu número ya está verificado en la API oficial?\",\"tipo\":\"sel\"},\"uso\":{\"etiqueta\":\"¿Para qué lo usarías?\",\"tipo\":\"sel\"}}},\"ia\":{\"servicio\":\"Automatización / Inteligencia artificial\",\"etiqueta\":\"Chatbots e IA\",\"campos\":{\"canal\":{\"etiqueta\":\"¿En qué canal?\",\"tipo\":\"sel\"},\"tarea\":{\"etiqueta\":\"¿Qué debe resolver?\",\"tipo\":\"sel\"},\"volumen\":{\"etiqueta\":\"Mensajes al mes, aproximado\",\"tipo\":\"sel\"}}},\"automatizacion\":{\"servicio\":\"Automatización n8n\",\"etiqueta\":\"Automatización n8n\",\"campos\":{\"tarea\":{\"etiqueta\":\"¿Qué tarea repites a mano hoy?\",\"tipo\":\"txt\"},\"herramientas\":{\"etiqueta\":\"¿Qué herramientas usas? (Excel, Gmail, CRM…)\",\"tipo\":\"txt\"}}},\"medida\":{\"servicio\":\"Software a medida\",\"etiqueta\":\"Software y CRM a medida\",\"campos\":{\"proceso\":{\"etiqueta\":\"¿Qué proceso quieres digitalizar?\",\"tipo\":\"txt\"},\"usuarios\":{\"etiqueta\":\"¿Cuántas personas lo usarían?\",\"tipo\":\"sel\"}}},\"definir\":{\"servicio\":\"Ayúdame a definir mi proyecto\",\"etiqueta\":\"Ayúdame a definir\",\"campos\":{\"negocio\":{\"etiqueta\":\"¿A qué se dedica tu negocio y en qué ciudad?\",\"tipo\":\"txt\"},\"meta\":{\"etiqueta\":\"¿Qué quieres lograr primero?\",\"tipo\":\"sel\"}}},\"otro\":{\"servicio\":\"Otro\",\"etiqueta\":\"Otro\",\"campos\":{\"necesidad\":{\"etiqueta\":\"¿Qué necesitas?\",\"tipo\":\"txt\"}}}}}).\n//\n// Entra el cuerpo del webhook. Sale UN item con una de estas banderas:\n//   invalido  -> el flujo responde 422 {\"ok\": false}; el cliente NO cuenta exito\n//   spam      -> honeypot lleno: 200 {\"ok\": true} sin efecto (decirle \"rechazado\" a un bot le ensena a esquivarlo)\n//   duplicado -> el mismo `intento` ya se proceso: 200 {\"ok\": true} sin efecto (idempotencia, D31)\n//   ninguna   -> lead valido: el flujo responde 200 YA y sigue con el correo y el CRM\n// Campos que manda el sitio. v1 (ContactForm hoy): nombre, empresa, email, telefono, servicio,\n// presupuesto, mensaje, web, inicio, modalidad, intento, origen, fecha, botcheck.\n// v2 (ServiceForm) suma: payload_version, servicio_clave y detalle_<campo> (aplanado, D32).\n\nconst FORMULARIO = {\"limites\":{\"respuesta\":300,\"mensaje\":2000,\"campo\":500},\"claves\":{\"pyme\":{\"servicio\":\"Diseño web / Sitio corporativo\",\"etiqueta\":\"Sitio corporativo\",\"campos\":{\"paginas\":{\"etiqueta\":\"¿Cuántas páginas calculas?\",\"tipo\":\"sel\"},\"dominio\":{\"etiqueta\":\"¿Ya tienes dominio?\",\"tipo\":\"sel\"}}},\"ecommerce\":{\"servicio\":\"Tienda online / E-commerce\",\"etiqueta\":\"Tienda online\",\"campos\":{\"productos\":{\"etiqueta\":\"¿Cuántos productos venderás?\",\"tipo\":\"sel\"},\"pagos\":{\"etiqueta\":\"¿Cómo quieres cobrar?\",\"tipo\":\"sel\"},\"envios\":{\"etiqueta\":\"¿Cómo entregas?\",\"tipo\":\"sel\"},\"plataforma\":{\"etiqueta\":\"¿Plataforma preferida?\",\"tipo\":\"sel\"}}},\"landing\":{\"servicio\":\"Landing page\",\"etiqueta\":\"Landing page\",\"campos\":{\"objetivo\":{\"etiqueta\":\"¿Qué quieres lograr con ella?\",\"tipo\":\"sel\"},\"pauta\":{\"etiqueta\":\"¿La usarás con anuncios pagados?\",\"tipo\":\"sel\"}}},\"mensual\":{\"servicio\":\"Web empresarial gestionada — plan mensual\",\"etiqueta\":\"Plan mensual\",\"campos\":{\"inicio\":{\"etiqueta\":\"¿Cuándo quieres empezar?\",\"tipo\":\"sel\"},\"dominio\":{\"etiqueta\":\"¿Ya tienes dominio?\",\"tipo\":\"sel\"}}},\"revision\":{\"servicio\":\"Revisión de mi web\",\"etiqueta\":\"Revisión de mi web\",\"campos\":{\"web\":{\"etiqueta\":\"Dirección de tu web (obligatorio)\",\"tipo\":\"url\"},\"dolor\":{\"etiqueta\":\"¿Qué te preocupa más?\",\"tipo\":\"sel\"}}},\"rediseno\":{\"servicio\":\"Rediseño web\",\"etiqueta\":\"Rediseño\",\"campos\":{\"web\":{\"etiqueta\":\"Dirección de tu web actual (obligatorio)\",\"tipo\":\"url\"},\"motivo\":{\"etiqueta\":\"¿Por qué rediseñar?\",\"tipo\":\"sel\"},\"urls\":{\"etiqueta\":\"¿Conservamos las direcciones actuales?\",\"tipo\":\"sel\"}}},\"seo\":{\"servicio\":\"SEO y posicionamiento\",\"etiqueta\":\"SEO y posicionamiento\",\"campos\":{\"web\":{\"etiqueta\":\"Dirección de tu web (si ya tienes)\",\"tipo\":\"url\"},\"zona\":{\"etiqueta\":\"Zona o ciudad donde quieres aparecer\",\"tipo\":\"txt\"},\"claves\":{\"etiqueta\":\"Búsquedas que quieres ganar (2 o 3)\",\"tipo\":\"txt\"}}},\"pauta\":{\"servicio\":\"Marketing digital / Pauta\",\"etiqueta\":\"Google Ads y Meta Ads\",\"campos\":{\"plataforma\":{\"etiqueta\":\"¿Dónde quieres anunciar?\",\"tipo\":\"sel\"},\"inversion\":{\"etiqueta\":\"Inversión mensual estimada en pauta\",\"tipo\":\"sel\"},\"destino\":{\"etiqueta\":\"¿Tienes web o landing donde llegue la gente?\",\"tipo\":\"sel\"}}},\"whatsapp\":{\"servicio\":\"WhatsApp marketing\",\"etiqueta\":\"WhatsApp marketing\",\"campos\":{\"contactos\":{\"etiqueta\":\"¿Cuántos contactos con permiso tienes?\",\"tipo\":\"sel\"},\"numero\":{\"etiqueta\":\"¿Tu número ya está verificado en la API oficial?\",\"tipo\":\"sel\"},\"uso\":{\"etiqueta\":\"¿Para qué lo usarías?\",\"tipo\":\"sel\"}}},\"ia\":{\"servicio\":\"Automatización / Inteligencia artificial\",\"etiqueta\":\"Chatbots e IA\",\"campos\":{\"canal\":{\"etiqueta\":\"¿En qué canal?\",\"tipo\":\"sel\"},\"tarea\":{\"etiqueta\":\"¿Qué debe resolver?\",\"tipo\":\"sel\"},\"volumen\":{\"etiqueta\":\"Mensajes al mes, aproximado\",\"tipo\":\"sel\"}}},\"automatizacion\":{\"servicio\":\"Automatización n8n\",\"etiqueta\":\"Automatización n8n\",\"campos\":{\"tarea\":{\"etiqueta\":\"¿Qué tarea repites a mano hoy?\",\"tipo\":\"txt\"},\"herramientas\":{\"etiqueta\":\"¿Qué herramientas usas? (Excel, Gmail, CRM…)\",\"tipo\":\"txt\"}}},\"medida\":{\"servicio\":\"Software a medida\",\"etiqueta\":\"Software y CRM a medida\",\"campos\":{\"proceso\":{\"etiqueta\":\"¿Qué proceso quieres digitalizar?\",\"tipo\":\"txt\"},\"usuarios\":{\"etiqueta\":\"¿Cuántas personas lo usarían?\",\"tipo\":\"sel\"}}},\"definir\":{\"servicio\":\"Ayúdame a definir mi proyecto\",\"etiqueta\":\"Ayúdame a definir\",\"campos\":{\"negocio\":{\"etiqueta\":\"¿A qué se dedica tu negocio y en qué ciudad?\",\"tipo\":\"txt\"},\"meta\":{\"etiqueta\":\"¿Qué quieres lograr primero?\",\"tipo\":\"sel\"}}},\"otro\":{\"servicio\":\"Otro\",\"etiqueta\":\"Otro\",\"campos\":{\"necesidad\":{\"etiqueta\":\"¿Qué necesitas?\",\"tipo\":\"txt\"}}}}};\nconst LIM = FORMULARIO.limites;\nconst MAX_CUERPO = 8192; // bytes aproximados del JSON; un formulario normal pesa menos de 2 KB (D33)\n\nconst b = $input.first().json.body || {};\nconst salida = (campos) => [{ json: { spam: false, invalido: false, duplicado: false, pico: false, ...campos } }];\n\n// Tope de tamano antes de tocar nada mas: el webhook es publico y CORS no es autenticacion.\nlet tamano = Infinity;\ntry { tamano = JSON.stringify(b).length; } catch (e) { /* ciclico o no serializable */ }\nif (tamano > MAX_CUERPO) return salida({ invalido: true, motivo: 'cuerpo demasiado grande' });\n\n// Trampa antibots. Se responde ok y se descarta.\nif (String(b.botcheck || '').trim() !== '') return salida({ spam: true });\n\nconst h = (s) => String(s == null ? '' : s)\n  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')\n  .replace(/\"/g, '&quot;').replace(/'/g, '&#039;');\n\n// Solo texto: un objeto o una lista nunca se vuelven \"[object Object]\". Quita saltos de\n// linea (inyeccion de cabeceras) y recorta al tope del campo.\nconst limpio = (v, max) => {\n  if (v == null || typeof v === 'object') return '';\n  return String(v).replace(/[\\r\\n]/g, ' ').trim().slice(0, max ?? LIM.campo);\n};\n\nconst nombre      = limpio(b.nombre, 200);\nconst empresa     = limpio(b.empresa, 200);\nconst telefono    = limpio(b.telefono, 40);\nconst presupuesto = limpio(b.presupuesto);\nconst web         = limpio(b.web);\nconst inicio      = limpio(b.inicio);\nconst servicioTxt = limpio(b.servicio);\nconst mensaje     = (typeof b.mensaje === 'string' ? b.mensaje : '').trim().slice(0, LIM.mensaje);\n// Un correo mal escrito en un campo opcional no puede costar el lead: se ignora y el lead sigue.\nconst emailBruto  = limpio(b.email, 200);\nconst email       = /^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(emailBruto) ? emailBruto : '';\n\n// Obligatorios: nombre y WhatsApp (8 digitos o mas). El correo es opcional (D30).\nconst soloDigitos = telefono.replace(/\\D/g, '');\nif (!nombre || soloDigitos.length < 8) {\n  return salida({ invalido: true, motivo: 'faltan nombre o telefono con al menos 8 digitos' });\n}\n// Los telefonos panamenos se escriben sin prefijo; para wa.me hace falta el 507.\nconst telefonoNormalizado = soloDigitos.length === 8 ? '507' + soloDigitos : soloDigitos;\n\n// El origen solo se acepta si es una ruta del sitio o una URL de elementoweb.com: nada de javascript:.\nlet origen = limpio(b.origen);\nif (!(origen.startsWith('/') && !origen.startsWith('//')) && !/^https:\\/\\/(www\\.)?elementoweb\\.com(\\/|$)/.test(origen)) origen = '';\n\n// Servicio: clave de la lista blanca; una clave desconocida, o v1 sin clave, se resuelve por la etiqueta o cae en \"definir\".\nlet clave = limpio(b.servicio_clave, 40);\nif (!FORMULARIO.claves[clave]) {\n  clave = Object.keys(FORMULARIO.claves).find((k) => FORMULARIO.claves[k].servicio === servicioTxt) || 'definir';\n}\nconst campos = FORMULARIO.claves[clave].campos;\nconst detalle = {};\nfor (const c of Object.keys(campos)) {\n  const v = limpio(b['detalle_' + c], LIM.respuesta);\n  if (v) detalle[c] = v;\n}\n\n// Idempotencia (D31): el mismo `intento` dos veces no duplica la ficha ni el correo.\nconst intento = /^[A-Za-z0-9._-]{8,80}$/.test(String(b.intento || '')) ? String(b.intento) : '';\nconst ahora = Date.now();\nconst sd = $getWorkflowStaticData('global');\nsd.vistos = sd.vistos || {};\nfor (const k of Object.keys(sd.vistos)) if (ahora - sd.vistos[k] > 24 * 3600 * 1000) delete sd.vistos[k];\nconst ids = Object.keys(sd.vistos);\nif (ids.length >= 500) delete sd.vistos[ids.sort((x, y) => sd.vistos[x] - sd.vistos[y])[0]];\nif (intento && sd.vistos[intento]) return salida({ duplicado: true });\nif (intento) sd.vistos[intento] = ahora;\n\n// Pico de envios (D33): mas de 20 leads validos en una hora marcan el asunto del correo.\nsd.horas = (sd.horas || []).filter((t) => ahora - t < 3600 * 1000);\nsd.horas.push(ahora);\nconst pico = sd.horas.length > 20;\n\nconst nl = String.fromCharCode(10);\n\n// La fecha la manda el navegador del visitante, asi que puede venir vacia o\n// con la zona horaria de otro pais. Se recalcula del lado del servidor.\nconst fecha = new Date().toLocaleString('es-PA', {\n  timeZone: 'America/Panama', day: '2-digit', month: '2-digit', year: 'numeric',\n  hour: '2-digit', minute: '2-digit', hour12: true,\n});\n\nconst servicio = servicioTxt || FORMULARIO.claves[clave].servicio;\nconst detalleFilas = Object.entries(detalle).map(([c, v]) => [campos[c].etiqueta, v]);\n\nconst fila = (label, valor, ultima) => {\n  const borde = ultima ? '' : 'border-bottom:1px solid #eef1f4;';\n  return '<tr>'\n    + '<td style=\"padding:10px 0;color:#64748b;width:130px;' + borde + '\">' + h(label) + '</td>'\n    + '<td style=\"padding:10px 0;color:#0f172a;font-weight:600;' + borde + '\">' + valor + '</td>'\n    + '</tr>';\n};\n\nconst filasHtml = [\n  ['Correo', email ? '<a href=\"mailto:' + h(email) + '\" style=\"color:#0f766e;text-decoration:none\">' + h(email) + '</a>' : '<span style=\"color:#94a3b8\">Sin correo: responder por WhatsApp</span>'],\n  ['WhatsApp', h(telefono)],\n  servicio ? ['Servicio', h(servicio)] : null,\n  ...detalleFilas.map(([l, v]) => [l, h(v)]),\n  web ? ['Pagina web', h(web)] : null,\n  inicio ? ['Inicio', h(inicio)] : null,\n  presupuesto ? ['Presupuesto', h(presupuesto)] : null,\n].filter(Boolean);\nconst filas = filasHtml.map(([l, v], i) => fila(l, v, i === filasHtml.length - 1)).join('');\n\nconst html = ''\n+ '<!DOCTYPE html><html><body style=\"margin:0;background:#f8f9fa;font-family:Arial,Helvetica,sans-serif;color:#1c2230\">'\n+ '<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#f8f9fa;padding:24px 0\"><tr><td align=\"center\">'\n+ '<table role=\"presentation\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:600px;width:100%;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 10px 40px rgba(15,23,42,.08)\">'\n\n+ '<tr><td style=\"background:#0f172a;padding:22px 28px\"><table role=\"presentation\" width=\"100%\"><tr>'\n+ '<td style=\"color:#ffffff;font-size:17px;font-weight:bold;letter-spacing:-.3px\">Elemento Web</td>'\n+ '<td align=\"right\" style=\"color:#2dd4bf;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1.5px\">' + (pico ? 'Pico de envios' : 'Nuevo lead') + '</td>'\n+ '</tr></table></td></tr>'\n+ '<tr><td style=\"height:4px;background:#2dd4bf\"></td></tr>'\n\n+ '<tr><td style=\"padding:28px\">'\n+ '<div style=\"font-size:13px;color:#64748b\">Recibiste una nueva solicitud desde tu pagina web</div>'\n+ '<div style=\"font-size:23px;font-weight:bold;color:#0f172a;margin:6px 0 22px;letter-spacing:-.4px\">' + h(nombre) + (empresa ? ' &middot; ' + h(empresa) : '') + '</div>'\n+ '<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:14px;border-collapse:collapse\">' + filas + '</table>'\n\n+ (mensaje\n    ? '<div style=\"margin:22px 0 8px;color:#64748b;font-size:13px\">Mensaje</div>'\n      + '<div style=\"background:#f8f9fa;border-left:3px solid #2dd4bf;border-radius:8px;padding:14px 16px;font-size:14px;line-height:1.6;color:#334155;white-space:pre-wrap\">' + h(mensaje) + '</div>'\n    : '')\n\n+ '<table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-top:26px\"><tr>'\n+ '<td style=\"padding-right:10px\"><a href=\"https://wa.me/' + h(telefonoNormalizado) + '\" style=\"display:inline-block;background:#0f766e;color:#ffffff;text-decoration:none;font-weight:bold;font-size:14px;padding:13px 24px;border-radius:999px\">Responder por WhatsApp</a></td>'\n+ (email ? '<td><a href=\"mailto:' + h(email) + '\" style=\"display:inline-block;background:#f1f5f9;color:#0f172a;text-decoration:none;font-weight:bold;font-size:14px;padding:13px 24px;border-radius:999px\">Responder por correo</a></td>' : '')\n+ '</tr></table>'\n+ '</td></tr>'\n\n+ '<tr><td style=\"padding:16px 28px;background:#f8f9fa;border-top:1px solid #eef1f4;color:#94a3b8;font-size:12px\">'\n+ 'Enviado el ' + h(fecha) + (origen ? ' desde <a href=\"' + h(origen.startsWith('/') ? 'https://elementoweb.com' + origen : origen) + '\" style=\"color:#64748b\">' + h(origen) + '</a>' : '')\n+ '</td></tr>'\n\n+ '</table></td></tr></table></body></html>';\n\n// La otra mitad del multipart. Un correo solo-HTML pesa como sospechoso en los\n// filtros de spam, y ademas asi se lee en cualquier cliente.\nconst texto = (pico ? 'PICO DE ENVIOS - mas de 20 leads en la ultima hora' + nl + nl : '') + 'NUEVO LEAD - elementoweb.com' + nl + nl\n  + 'Nombre:      ' + nombre + nl\n  + (empresa     ? 'Empresa:     ' + empresa + nl : '')\n  + 'Correo:      ' + (email || '(sin correo: responder por WhatsApp)') + nl\n  + 'WhatsApp:    ' + telefono + nl\n  + (servicio    ? 'Servicio:    ' + servicio + nl : '')\n  + detalleFilas.map(([l, v]) => l + ': ' + v + nl).join('')\n  + (web         ? 'Pagina web:  ' + web + nl : '')\n  + (inicio      ? 'Inicio:      ' + inicio + nl : '')\n  + (presupuesto ? 'Presupuesto: ' + presupuesto + nl : '')\n  + (mensaje     ? nl + 'Mensaje:' + nl + mensaje + nl : '')\n  + nl + 'Recibido el ' + fecha + (origen ? ' desde ' + origen : '') + '.' + nl;\n\nreturn salida({\n  asunto: (pico ? '[PICO] ' : '') + 'Nuevo lead web - ' + nombre + (empresa ? ' (' + empresa + ')' : ''),\n  html,\n  texto,\n  correo_cliente: email,\n  nombre,\n  pico,\n  // Lead ya limpio: el nodo del CRM lo toma de aqui y no vuelve a leer el cuerpo crudo.\n  lead: {\n    nombre, empresa, email, telefono, telefono_normalizado: telefonoNormalizado,\n    servicio, servicio_clave: clave, presupuesto, mensaje, web, inicio, origen, intento,\n    payload_version: limpio(b.payload_version, 4) === '2' ? '2' : '1',\n    detalle,\n  },\n});\n"
       },
       "id": "armar-correo",
       "name": "Armar correo",
@@ -43,11 +43,11 @@
           "conditions": [
             {
               "id": "c1",
-              "leftValue": "={{ $json.spam || $json.invalido }}",
+              "leftValue": "={{ $json.invalido }}",
               "rightValue": "",
               "operator": {
                 "type": "boolean",
-                "operation": "false",
+                "operation": "true",
                 "singleValue": true
               }
             }
@@ -56,8 +56,8 @@
         },
         "options": {}
       },
-      "id": "es-lead",
-      "name": "Es un lead de verdad",
+      "id": "es-invalido",
+      "name": "Es invalido",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
@@ -67,40 +67,92 @@
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://api.brevo.com/v3/smtp/email",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({\n  sender: {\"name\":\"Sitio web Elemento Web\",\"email\":\"avisos@mailweb.site\"},\n  to: [{\"email\":\"josimarguilbaud@gmail.com\"}, {\"email\":\"nicole@evolutionpmc.com\"}],\n  replyTo: { email: $json.correo_cliente, name: $json.nombre },\n  subject: $json.asunto,\n  htmlContent: $json.html,\n  textContent: $json.texto,\n  tags: [\"elementoweb-lead\"]\n}) }}",
+        "respondWith": "json",
+        "responseBody": "{\"ok\": false}",
         "options": {
-          "timeout": 20000
+          "responseCode": 422,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "={{ [\"https://elementoweb.com\",\"https://www.elementoweb.com\"].includes($('Webhook').first().json.headers.origin) ? $('Webhook').first().json.headers.origin : 'https://elementoweb.com' }}"
+              }
+            ]
+          }
         }
       },
-      "id": "enviar-brevo",
-      "name": "Enviar por Brevo",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "id": "responder-422",
+      "name": "Responder 422",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
       "position": [
         660,
-        -100
-      ],
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "cf1FZJ8CcLA90GVs",
-          "name": "Brevo API (avisos@mailweb.site)"
-        }
+        -240
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.spam || $json.duplicado }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
       },
-      "retryOnFail": true,
-      "maxTries": 2,
-      "waitBetweenTries": 1500
+      "id": "es-spam-o-duplicado",
+      "name": "Es spam o duplicado",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        660,
+        0
+      ]
     },
     {
       "parameters": {
         "respondWith": "json",
         "responseBody": "{\"ok\": true}",
         "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "={{ [\"https://elementoweb.com\",\"https://www.elementoweb.com\"].includes($('Webhook').first().json.headers.origin) ? $('Webhook').first().json.headers.origin : 'https://elementoweb.com' }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "responder-sin-efecto",
+      "name": "Responder OK sin efecto",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        880,
+        -140
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\"ok\": true}",
+        "options": {
+          "responseCode": 200,
           "responseHeaders": {
             "entries": [
               {
@@ -117,20 +169,52 @@
       "typeVersion": 1,
       "position": [
         880,
-        0
+        -60
       ]
     },
     {
       "parameters": {
-        "jsCode": "// Nodo Code del flujo \"Elemento Web - Leads Formulario Web\": traduce el lead al\n// idioma del CRM de WazaCRM.\n//\n// POR QUE EXISTE: hasta el 16-sep-2026 esta llamada la hacia el NAVEGADOR desde\n// ContactForm.astro, con el clientId y el SECRETO del webhook escritos en\n// src/lib/site.ts y, por tanto, en el HTML publico de elementoweb.com. El\n// comentario que habia alli decia que el secreto \"sirve para identificar al\n// cliente, no es una credencial de administracion\". Era falso: ese secreto es\n// exactamente lo que autoriza a escribir en el CRM de ese cliente, y con el\n// cualquiera podia inventar fichas en el embudo de la agencia.\n//\n// Un sitio estatico no puede guardar un secreto. Ahora la llamada sale de aqui,\n// servidor a servidor, con el secreto en una credencial de n8n.\nconst b = $('Webhook').first().json.body || {};\n\nconst limpio = (v) => String(v == null ? '' : v).replace(/[\\r\\n]/g, ' ').trim();\n\n// El formulario mandaba `location.pathname` al CRM y `location.href` a n8n. Se\n// queda con la ruta, que es lo que ya esta escrito en las fichas de antes.\nlet origen = limpio(b.origen);\nif (/^https?:\\/\\//i.test(origen)) {\n  const corte = origen.indexOf('/', origen.indexOf('//') + 2);\n  origen = corte === -1 ? '/' : origen.slice(corte);\n}\n\nreturn [{ json: {\n  formulario: 'Cotización web',\n  nombre: limpio(b.nombre),\n  email: limpio(b.email),\n  telefono: limpio(b.telefono),\n  mensaje: String(b.mensaje || '').trim(),\n  // Campos libres: el webhook del CRM los guarda en `extras` de la ficha. Los\n  // nombres se conservan como los mandaba la pagina.\n  empresa: limpio(b.empresa),\n  servicio: limpio(b.servicio),\n  presupuesto: limpio(b.presupuesto),\n  origen: origen,\n} }];\n"
+        "method": "POST",
+        "url": "https://api.brevo.com/v3/smtp/email",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  sender: {\"name\":\"Sitio web Elemento Web\",\"email\":\"avisos@mailweb.site\"},\n  to: [{\"email\":\"josimarguilbaud@gmail.com\"}, {\"email\":\"nicole@evolutionpmc.com\"}],\n  replyTo: $json.correo_cliente ? { email: $json.correo_cliente, name: $json.nombre } : undefined,\n  subject: $json.asunto,\n  htmlContent: $json.html,\n  textContent: $json.texto,\n  tags: [\"elementoweb-lead\"]\n}) }}",
+        "options": {
+          "timeout": 20000
+        }
+      },
+      "id": "enviar-brevo",
+      "name": "Enviar por Brevo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        40
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "cf1FZJ8CcLA90GVs",
+          "name": "Brevo API (avisos@mailweb.site)"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 1500,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Nodo Code del flujo \"Elemento Web - Leads Formulario Web\": traduce el lead al\n// idioma del CRM de WazaCRM. Contrato v2 (D32).\n//\n// POR QUE EXISTE: hasta el 16-sep-2026 esta llamada la hacia el NAVEGADOR desde\n// ContactForm.astro, con el clientId y el SECRETO del webhook escritos en\n// src/lib/site.ts y, por tanto, en el HTML publico de elementoweb.com. El\n// comentario que habia alli decia que el secreto \"sirve para identificar al\n// cliente, no es una credencial de administracion\". Era falso: ese secreto es\n// exactamente lo que autoriza a escribir en el CRM de ese cliente, y con el\n// cualquiera podia inventar fichas en el embudo de la agencia.\n//\n// Un sitio estatico no puede guardar un secreto. Ahora la llamada sale de aqui,\n// servidor a servidor, con el secreto en una credencial de n8n.\n//\n// El lead llega ya limpio desde \"Armar correo\" (topes, lista blanca y origen\n// validados): este nodo no vuelve a leer el cuerpo crudo del webhook.\nconst l = $input.first().json.lead || {};\n\n// El formulario mandaba `location.pathname` al CRM y `location.href` a n8n. Se\n// queda con la ruta, que es lo que ya esta escrito en las fichas de antes.\nlet origen = l.origen || '';\nif (/^https?:\\/\\//i.test(origen)) {\n  const corte = origen.indexOf('/', origen.indexOf('//') + 2);\n  origen = corte === -1 ? '/' : origen.slice(corte);\n}\n\nconst salida = {\n  formulario: 'Cotización web',\n  nombre: l.nombre || '',\n  telefono: l.telefono || '',\n  mensaje: l.mensaje || '',\n  // Campos libres: el webhook del CRM los guarda en `extras` de la ficha. Los\n  // nombres se conservan como los mandaba la pagina (v1) y se suman los de v2.\n  empresa: l.empresa || '',\n  servicio: l.servicio || '',\n  presupuesto: l.presupuesto || '',\n  origen,\n  servicio_clave: l.servicio_clave || '',\n  intento: l.intento || '',\n  payload_version: l.payload_version || '1',\n  telefono_normalizado: l.telefono_normalizado || '',\n  web: l.web || '',\n  inicio: l.inicio || '',\n};\n// El correo es opcional (D30): sin correo no se manda la clave, para no guardar una cadena vacia como si fuera un dato.\nif (l.email) salida.email = l.email;\n// `detalle` viaja aplanado como detalle_<campo>, cadenas de hasta 300 caracteres.\nfor (const [campo, valor] of Object.entries(l.detalle || {})) salida['detalle_' + campo] = valor;\n\nreturn [{ json: salida }];\n"
       },
       "id": "armar-lead-crm",
       "name": "Armar el lead para el CRM",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        660,
-        140
+        880,
+        200
       ]
     },
     {
@@ -160,8 +244,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        880,
-        140
+        1100,
+        200
       ],
       "credentials": {
         "httpHeaderAuth": {
@@ -169,10 +253,64 @@
           "name": "WazaCRM formularios ElementoWeb (x-waza-secret)"
         }
       },
-      "onError": "continueRegularOutput",
       "retryOnFail": true,
       "maxTries": 2,
-      "waitBetweenTries": 1500
+      "waitBetweenTries": 1500,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aviso cuando falla un canal del flujo (D31): el error no se traga en silencio.\nconst lead = $('Armar correo').first().json.lead || {};\nconst e = $input.first().json.error || {};\nconst nl = String.fromCharCode(10);\nreturn [{ json: {\n  asunto: 'FALLO en el formulario de elementoweb.com: el correo de aviso (Brevo)',\n  texto: 'El lead se recibio pero el correo de aviso (Brevo) no se pudo completar.' + nl + nl\n    + 'Nombre: ' + (lead.nombre || '?') + nl + 'WhatsApp: ' + (lead.telefono || '?') + nl\n    + 'Servicio: ' + (lead.servicio || '?') + nl + 'Intento: ' + (lead.intento || '?') + nl + nl\n    + 'Error: ' + String(e.message || JSON.stringify(e)).slice(0, 500),\n} }];"
+      },
+      "id": "aviso-fallo-correo",
+      "name": "Aviso fallo correo",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aviso cuando falla un canal del flujo (D31): el error no se traga en silencio.\nconst lead = $('Armar correo').first().json.lead || {};\nconst e = $input.first().json.error || {};\nconst nl = String.fromCharCode(10);\nreturn [{ json: {\n  asunto: 'FALLO en el formulario de elementoweb.com: la ficha en WazaCRM',\n  texto: 'El lead se recibio pero la ficha en WazaCRM no se pudo completar.' + nl + nl\n    + 'Nombre: ' + (lead.nombre || '?') + nl + 'WhatsApp: ' + (lead.telefono || '?') + nl\n    + 'Servicio: ' + (lead.servicio || '?') + nl + 'Intento: ' + (lead.intento || '?') + nl + nl\n    + 'Error: ' + String(e.message || JSON.stringify(e)).slice(0, 500),\n} }];"
+      },
+      "id": "aviso-fallo-crm",
+      "name": "Aviso fallo CRM",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1320,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.brevo.com/v3/smtp/email",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  sender: {\"name\":\"Sitio web Elemento Web\",\"email\":\"avisos@mailweb.site\"},\n  to: [{\"email\":\"josimarguilbaud@gmail.com\"}],\n  subject: $json.asunto,\n  textContent: $json.texto,\n  tags: [\"elementoweb-alerta\"]\n}) }}",
+        "options": {
+          "timeout": 20000
+        }
+      },
+      "id": "enviar-aviso-fallo",
+      "name": "Enviar aviso de fallo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1540,
+        120
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "cf1FZJ8CcLA90GVs",
+          "name": "Brevo API (avisos@mailweb.site)"
+        }
+      }
     }
   ],
   "connections": {
@@ -191,16 +329,46 @@
       "main": [
         [
           {
-            "node": "Es un lead de verdad",
+            "node": "Es invalido",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Es un lead de verdad": {
+    "Es invalido": {
       "main": [
         [
+          {
+            "node": "Responder 422",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Es spam o duplicado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Es spam o duplicado": {
+      "main": [
+        [
+          {
+            "node": "Responder OK sin efecto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Responder OK",
+            "type": "main",
+            "index": 0
+          },
           {
             "node": "Enviar por Brevo",
             "type": "main",
@@ -211,21 +379,15 @@
             "type": "main",
             "index": 0
           }
-        ],
-        [
-          {
-            "node": "Responder OK",
-            "type": "main",
-            "index": 0
-          }
         ]
       ]
     },
     "Enviar por Brevo": {
       "main": [
+        [],
         [
           {
-            "node": "Responder OK",
+            "node": "Aviso fallo correo",
             "type": "main",
             "index": 0
           }
@@ -237,6 +399,40 @@
         [
           {
             "node": "Guardar en WazaCRM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar en WazaCRM": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Aviso fallo CRM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aviso fallo correo": {
+      "main": [
+        [
+          {
+            "node": "Enviar aviso de fallo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aviso fallo CRM": {
+      "main": [
+        [
+          {
+            "node": "Enviar aviso de fallo",
             "type": "main",
             "index": 0
           }

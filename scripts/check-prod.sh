@@ -55,4 +55,21 @@ echo "$html" | grep -q '<link rel="canonical" href="https://elementoweb.com/"' &
 echo "$html" | grep -qi 'Agencia de diseño web en Panamá\. Páginas corporativas' && ok "meta descripción nueva" || ko "meta descripción nueva" "Agencia de diseño web en Panamá…" "distinta"
 h=$(hdr "$BASE/robots.txt" content-type); has "robots.txt es texto" "text/plain" "$h"
 
+# Sondas del webhook de contacto (D41). Sin efecto: el honeypot se descarta y un lead inválido no guarda nada,
+# así que no dejan ficha ni correo. Se piden a propósito (--webhook) porque llaman a n8n en Hetzner.
+#   bash scripts/check-prod.sh https://elementoweb.com --webhook      honeypot: 200 {"ok": true}
+#   bash scripts/check-prod.sh https://elementoweb.com --webhook-v2   además, un inválido responde 422 (contrato v2 activo)
+if [ "${2:-}" = "--webhook" ] || [ "${2:-}" = "--webhook-v2" ]; then
+  echo "== Webhook de contacto (sondas sin efecto) =="
+  EP="https://n8n.aiwebstudio.co/webhook/elementoweb-contacto"
+  post(){ curl -s -m 25 -o /tmp/sonda.$$ -w '%{http_code}' -X POST "$EP" -H 'Content-Type: application/json' -H 'Origin: https://elementoweb.com' --data "$1"; }
+  c=$(post '{"nombre":"sonda","telefono":"61234567","botcheck":"x","intento":"sonda-honeypot-0001"}'); eqc "honeypot responde 200" 200 "$c"
+  grep -q '"ok": *true' /tmp/sonda.$$ && ok "honeypot responde {\"ok\": true}" || ko "honeypot responde {\"ok\": true}" '{"ok": true}' "$(cat /tmp/sonda.$$)"
+  if [ "${2:-}" = "--webhook-v2" ]; then
+    c=$(post '{"nombre":"","telefono":"","intento":"sonda-invalido-0001"}'); eqc "un lead inválido responde 422 (contrato v2)" 422 "$c"
+    grep -q '"ok": *false' /tmp/sonda.$$ && ok "el inválido responde {\"ok\": false}" || ko "el inválido responde {\"ok\": false}" '{"ok": false}' "$(cat /tmp/sonda.$$)"
+  fi
+  rm -f /tmp/sonda.$$
+fi
+
 printf '\n%s ok · %s fallos\n' "$pass" "$fail"; [ "$fail" = 0 ]

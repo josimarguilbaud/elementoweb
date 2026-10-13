@@ -1,0 +1,18 @@
+{
+  "_nota": "Presupuesto de bytes de JS y CSS iniciales por plantilla (D40, T27). Se mide con scripts/presupuestos.mjs sobre dist/ y dist-fixture/, en gzip nivel 9: lo que el navegador baja al abrir la página (script src, modulepreload, hojas de estilo, sus importaciones estáticas y el JS y CSS en línea); las islas cargadas con import() no cuentan. `verify` falla al superar un máximo. Los máximos son lo medido el 13-oct-2026 más un 3% redondeado hacia arriba a 100 B: fijan que nada crezca, no que esté bien. `objetivo` anota a dónde debe bajar la plantilla en la fase que la reescribe; no se aplica todavía. Para subir un máximo, cambiarlo aquí con el motivo en el mensaje del commit.",
+  "medido": {
+    "fecha": "2026-10-13",
+    "metodo": "una sola corrida por plantilla: el build de Astro es determinista y gzip nivel 9 da el mismo tamaño cada vez, así que N=1 y la mediana es el valor",
+    "entorno": "Windows 11, Node 24, Astro 5"
+  },
+  "plantillas": [
+    { "id": "portada", "carpeta": "dist", "ruta": "/", "jsGzipMax": 60900, "cssGzipMax": 23500, "medido": { "jsGzip": 59060, "cssGzip": 22744 }, "objetivo": "La fase 2b reescribe la portada; sacar el Preloader y los efectos del camino del LCP (D18)." },
+    { "id": "pilar", "carpeta": "dist", "ruta": "/diseno-web-panama/", "jsGzipMax": 55900, "cssGzipMax": 22300, "medido": { "jsGzip": 54194, "cssGzip": 21619 } },
+    { "id": "servicio", "carpeta": "dist", "ruta": "/servicios/diseno-web-corporativo-panama/", "jsGzipMax": 55900, "cssGzipMax": 22300, "medido": { "jsGzip": 54194, "cssGzip": 21619 }, "objetivo": "Las páginas de servicio no cargan gsap ni lenis salvo necesidad (D40); lo hace la fase 2a." },
+    { "id": "hub", "carpeta": "dist", "ruta": "/servicios/", "jsGzipMax": 55900, "cssGzipMax": 22300, "medido": { "jsGzip": 54194, "cssGzip": 21619 } },
+    { "id": "precios", "carpeta": "dist", "ruta": "/precios/", "jsGzipMax": 59200, "cssGzipMax": 22300, "medido": { "jsGzip": 57429, "cssGzip": 21619 } },
+    { "id": "contacto", "carpeta": "dist", "ruta": "/contacto/", "jsGzipMax": 59200, "cssGzipMax": 22300, "medido": { "jsGzip": 57429, "cssGzip": 21619 } },
+    { "id": "blog", "carpeta": "dist", "ruta": "/blog/cuanto-cuesta-diseno-web-panama/", "jsGzipMax": 55900, "cssGzipMax": 22300, "medido": { "jsGzip": 54194, "cssGzip": 21619 } },
+    { "id": "servicio-v2-con-formulario", "carpeta": "dist-fixture", "ruta": "/qa-fixture/formulario/", "jsGzipMax": 56800, "cssGzipMax": 22300, "medido": { "jsGzip": 55053, "cssGzip": 21619 }, "diferidos": ["service-form."], "objetivo": "El formulario es una isla diferida: su código (service-form.*.js) no se baja al abrir la página." }
+  ]
+}

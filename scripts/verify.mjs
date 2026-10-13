@@ -1,7 +1,7 @@
 /* npm run verify: la puerta de calidad antes de pushear (D8, D37, R4, R29).
    Un solo punto de entrada, el mismo en local y en CI:
      build → compilación de pruebas → pruebas unitarias → FORMULARIO.md al día → qa-seo → check-links →
-     validador del marcador → (con navegador) preview en un puerto libre, qa-a11y y qa-lcp.
+     validador del marcador → presupuesto de JS y CSS → (con navegador) preview en un puerto libre, qa-a11y, qa-lcp y qa-form.
    Opciones:  --sin-navegador   omite los pasos con Chrome (solo para una emergencia; el CI no la usa)
               --hoy AAAA-MM-DD  fecha de las comparaciones del validador (por defecto la del último commit)
    Sale con código distinto de cero en cuanto un paso falla. El Dockerfile sigue ejecutando solo `npm run build`. */
@@ -59,6 +59,7 @@ paso('qa-seo (title, canonical, schema)', process.execPath, ['scripts/qa-seo.mjs
 paso('SEO congelado (metadatos y schema no cambian sin permiso, D36)', process.execPath, ['scripts/seo-congelado.mjs']);
 paso('check-links (enlaces internos)', process.execPath, ['scripts/check-links.mjs']);
 paso(`validador del marcador (fecha ${hoy})`, process.execPath, ['scripts/validar-marcador.mjs', '--hoy', hoy]);
+paso('presupuesto de JS y CSS por plantilla (D40, T27)', process.execPath, ['scripts/presupuestos.mjs']);
 
 if (sinNavegador) {
   console.log('\n⚠ --sin-navegador: se omiten qa-a11y y qa-lcp. No usar para publicar.');

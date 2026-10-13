@@ -4,9 +4,9 @@
    Herramienta: PageSpeed Insights (móvil, mediana de 3 corridas) si existe la clave ~/.ssh/psi.key; sin clave, la API
    responde 429 y se usa el CLI de Lighthouse (móvil, 150 ms de latencia simulada, mediana de 5 corridas). La etiqueta que
    ve el visitante nombra la herramienta realmente usada (D40). Sin --escribir solo imprime el resultado. */
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdtempSync, rmSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
-import { homedir } from 'node:os';
+import { homedir, tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rutaChrome } from './chrome.mjs';
@@ -85,11 +85,17 @@ function medirConLighthouse(url, corridas) {
   const probe = spawnSync('lighthouse', ['--version'], { shell: true, encoding: 'utf8' });
   if (probe.status !== 0) throw new Error('No se encontró el CLI de Lighthouse. Instálalo con: npm install -g lighthouse');
   const out = [];
-  for (let i = 0; i < corridas; i++) {
-    const r = spawnSync('lighthouse', [url, '--only-categories=performance', '--form-factor=mobile', '--output=json', '--quiet', '--chrome-flags="--headless=new --no-sandbox"'], { shell: true, encoding: 'utf8', env: { ...process.env, CHROME_PATH: chrome }, maxBuffer: 64 * 1024 * 1024 });
-    if (r.status !== 0) throw new Error(`Lighthouse falló (${r.status}): ${(r.stderr || '').slice(0, 300)}`);
-    out.push(extraerDeLighthouse(JSON.parse(r.stdout)));
-  }
+  // El informe va a un archivo, no a la salida estándar: en Windows el CLI sale con error EPERM al borrar el perfil
+  // temporal de Chrome aunque la medición terminó, así que el código de salida no dice si hay informe.
+  const carpeta = mkdtempSync(join(tmpdir(), 'medir-lh-'));
+  try {
+    for (let i = 0; i < corridas; i++) {
+      const archivo = join(carpeta, `informe-${i}.json`);
+      const r = spawnSync('lighthouse', [url, '--only-categories=performance', '--form-factor=mobile', '--output=json', `--output-path="${archivo}"`, '--quiet', '--chrome-flags="--headless=new --no-sandbox"'], { shell: true, encoding: 'utf8', env: { ...process.env, CHROME_PATH: chrome }, maxBuffer: 64 * 1024 * 1024 });
+      if (!existsSync(archivo)) throw new Error(`Lighthouse no dejó informe (${r.status}): ${(r.stderr || '').slice(0, 300)}`);
+      out.push(extraerDeLighthouse(JSON.parse(readFileSync(archivo, 'utf8'))));
+    }
+  } finally { rmSync(carpeta, { recursive: true, force: true }); }
   return out;
 }
 

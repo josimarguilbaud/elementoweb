@@ -43,11 +43,13 @@ const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.
     {!noindex && <link rel="canonical" href={canonical} />}
     <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'} />
     {analytics.searchConsole && <meta name="google-site-verification" content={analytics.searchConsole} />}
+    {/* gtag.js (176 KiB) se carga tras el evento load y en un momento ocioso, no en el <head>:
+        pedido ahí compite por ancho de banda con el CSS que bloquea el render y subía el LCP
+        móvil de ~3,3 s a ~5,9 s en el banco de pruebas (perf 86 → 72). La función gtag() y la
+        cola dataLayer se definen de inmediato, así que page_view y los eventos de track.ts
+        (clics, formulario) no se pierden: se envían cuando el script termina de cargar. */}
     {analytics.gaId && (
-      <>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${analytics.gaId}`}></script>
-        <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${analytics.gaId}');`}></script>
-      </>
+      <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${analytics.gaId}');window.addEventListener('load',function(){var go=function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${analytics.gaId}';document.head.appendChild(s)};('requestIdleCallback' in window)?requestIdleCallback(go,{timeout:3000}):setTimeout(go,2000)});`}></script>
     )}
     <!-- Open Graph -->
     <meta property="og:type" content={ogType} />

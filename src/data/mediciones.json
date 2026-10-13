@@ -110,6 +110,56 @@
       "herramienta": "Lighthouse",
       "fecha": "2026-10-13",
       "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "seo-local-lcp",
+      "url": "http://localhost:4602/crecimiento/seo-local-google-maps-panama/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 1959,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "n8n-lcp",
+      "url": "http://localhost:4602/marketing/automatizaciones-n8n-panama/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 1959,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "mantenimiento-lcp",
+      "url": "http://localhost:4602/crecimiento/mantenimiento-web-panama/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 1958,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "hosting-lcp",
+      "url": "http://localhost:4602/crecimiento/hosting-infraestructura-panama/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 1959,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "chatbot-lcp",
+      "url": "http://localhost:4602/funcionalidades/chatbots-ia-web-wazacrm-panama/",
+      "metrica": "LCP",
+      "valor": "1,8 s",
+      "valorNumerico": 1826,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
     }
   ]
 }

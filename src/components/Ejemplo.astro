@@ -141,6 +141,34 @@ const inicialDe = (s: string) => s.replace(/^www\./, '').trim().charAt(0).toUppe
   </figure>
 )}
 
+{e.tipo === 'mapa' && (
+  <figure class="ew-mock ew-mapa">
+    <figcaption class="sr-only">Ejemplo del mapa de Google para la búsqueda «{e.consulta}»: {e.lugares.map((l) => l.nombre).join(', ')}</figcaption>
+    <p class="ew-serp__q"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" stroke-linecap="round" /></svg><span>{e.consulta}</span></p>
+    <div class="ew-mapa__mapa" aria-hidden="true">{e.lugares.map((l, i) => <span class={l.destacado ? 'ew-mapa__pin ew-mapa__pin--sel' : 'ew-mapa__pin'} style={`--x:${[28, 62, 46][i % 3]}%;--y:${[38, 30, 66][i % 3]}%`}>{i + 1}</span>)}</div>
+    <ol class="ew-mapa__lista">
+      {e.lugares.map((l) => (
+        <li class={l.destacado ? 'ew-mapa__sel' : undefined}>
+          <p class="ew-mapa__n">{l.nombre}</p>
+          <p class="ew-mapa__r"><span>{l.nota}</span> <span class="ew-mapa__st" aria-hidden="true">★★★★★</span> <span>({l.resenas})</span> · {l.categoria}</p>
+          <p class="ew-mapa__d">{l.detalle}</p>
+          {l.destacado && <p class="ew-mapa__btns">{e.botones.map((b) => <span>{b}</span>)}</p>}
+        </li>
+      ))}
+    </ol>
+  </figure>
+)}
+
+{e.tipo === 'resena' && (
+  <figure class="ew-mock ew-res">
+    <figcaption class="sr-only">Ejemplo de reseña de Google para {e.negocio}, con la respuesta del negocio</figcaption>
+    <p class="ew-res__top"><span class="ew-res__av" aria-hidden="true">{e.inicial}</span><span>{e.autor}<small>Reseña en Google · {e.hace}</small></span></p>
+    <p class="ew-res__st" aria-label={`${e.estrellas} de 5 estrellas`}>{'★'.repeat(e.estrellas)}<span aria-hidden="true">{'★'.repeat(5 - e.estrellas)}</span></p>
+    <p class="ew-res__t">{e.texto}</p>
+    <div class="ew-res__resp"><p class="ew-res__quien">Respuesta de {e.negocio} <small>{e.respondio}</small></p><p>{e.respuesta}</p></div>
+  </figure>
+)}
+
 {e.tipo === 'informe' && (
   <figure class="ew-mock ew-inf">
     <figcaption class="ew-inf__head"><span>{e.titulo}</span><small>{e.sitio}</small></figcaption>

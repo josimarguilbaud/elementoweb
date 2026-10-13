@@ -11,6 +11,7 @@
 
 export const HERO_SLUGS = new Set<string>([
   'blog',
+  'blog/cuanto-cuesta-mantenimiento-web-panama',
   'como-trabajamos',
   'comparativas/web-a-medida-vs-suscripcion',
   'contacto',

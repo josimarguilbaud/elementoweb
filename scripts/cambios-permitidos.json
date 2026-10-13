@@ -14,6 +14,12 @@
     { "ruta": "/servicios/redisenio-web-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): servicio cotizado, portada nueva en foto (D45) y FAQPage con la primera respuesta corregida (el riesgo baja, no desaparece)." },
     { "ruta": "/precios/", "campos": ["schema"], "motivo": "La portada que comparte con el corporativo cambió de foto (D45): el texto alternativo de la imagen describe la foto nueva." },
     { "ruta": "/recursos/checklist-migracion-seo/", "campos": ["schema"], "motivo": "Conserva su foto de siempre: la de rediseño cambió (D45), así que la suya pasa a un archivo propio con la misma imagen." },
-    { "ruta": "/comparativas/web-a-medida-vs-suscripcion/", "campos": ["schema"], "motivo": "Conserva su foto de siempre: la del corporativo cambió (D45), así que la suya pasa a un archivo propio con la misma imagen." }
+    { "ruta": "/comparativas/web-a-medida-vs-suscripcion/", "campos": ["schema"], "motivo": "Conserva su foto de siempre: la del corporativo cambió (D45), así que la suya pasa a un archivo propio con la misma imagen." },
+    { "ruta": "/crecimiento/seo-local-google-maps-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): servicio cotizado, portada nueva en foto (D45) y FAQPage sincronizado con las preguntas visibles." },
+    { "ruta": "/crecimiento/mantenimiento-web-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): oferta confirmada desde $59 al mes, portada nueva en foto (D45) y FAQPage sin la pregunta repetida." },
+    { "ruta": "/crecimiento/hosting-infraestructura-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): oferta confirmada desde $225 al año, portada nueva en foto (D45) y FAQPage sincronizado." },
+    { "ruta": "/marketing/automatizaciones-n8n-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): servicio con precio propuesto (D23), portada en foto en lugar del diagrama (D45) y FAQPage sin las preguntas repetidas." },
+    { "ruta": "/funcionalidades/chatbots-ia-web-wazacrm-panama/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): servicio cotizado y FAQPage sin la pregunta repetida sobre costos." },
+    { "ruta": "/blog/cuanto-cuesta-mantenimiento-web-panama/", "campos": ["schema"], "motivo": "Conserva su foto de siempre: la de mantenimiento cambió (D45), así que la suya pasa a un archivo propio con la misma imagen." }
   ]
 }

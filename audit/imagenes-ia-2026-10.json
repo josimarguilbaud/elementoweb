@@ -1,7 +1,7 @@
 {
   "_nota": "Registro de gasto en fal (D46: tope de US$ 10 aprobado por el dueño el 13-oct-2026). Una fila por generación cobrada, con su request_id para rastrearla en el historial de fal. Precios tomados de la API de precios de fal el 13-oct-2026: nano-banana-pro US$ 0,15 y nano-banana-2 US$ 0,08 por imagen a 1K.",
   "tope": 10,
-  "gastado": 2.08,
+  "gastado": 2.47,
   "generaciones": [
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2e71-75c1-a49e-c745a53357fc", "uso": "portada diseno-web-panama" },
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2eca-7e42-934f-a8dba3fddcf6", "uso": "portada servicios/diseno-web-corporativo-panama" },
@@ -21,6 +21,10 @@
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-edd5-7a71-929b-c31e30ad0078", "uso": "ejemplo post-fachada" },
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1362a-d71a-7e83-b017-79e18189c149", "uso": "portada servicios/landing-pages-alta-conversion-panama" },
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1362a-d714-7391-8340-1a4bd22cfe3a", "uso": "portada servicios/redisenio-web-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a1362a-d7ad-76c3-ae5b-25230bb84602", "uso": "ejemplo producto-bolso y correo-bolso" }
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a1362a-d7ad-76c3-ae5b-25230bb84602", "uso": "ejemplo producto-bolso y correo-bolso" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a136cd-2e36-7e32-85db-7662770c6344", "uso": "portada crecimiento/seo-local-google-maps-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a136cd-2f36-7063-9f63-8056a3865622", "uso": "portada marketing/automatizaciones-n8n-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a136cd-2f34-7e43-b0a8-684ebe7ca933", "uso": "portada crecimiento/mantenimiento-web-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a136cd-2f6e-7720-88ae-15570ffea2fe", "uso": "portada crecimiento/hosting-infraestructura-panama" }
   ]
 }

@@ -64,6 +64,10 @@ export type Ejemplo =
   | { tipo: 'producto'; tienda: string; dominio: string; img: ImgEjemplo; nombre: string; precio: string; nota: string; opciones?: { k: string; v: string[] }; envio: string; boton: string; pagos: string }
   /** Resumen de pago de una tienda de ejemplo: envío por zona elegible y pago local antes de confirmar. */
   | { tipo: 'checkout'; tienda: string; lineas: { t: string; v: string }[]; envios: { t: string; d: string; v: string; sel?: boolean }[]; total: { t: string; v: string }; pagos: { t: string; sel?: boolean }[]; boton: string }
+  /** Los tres negocios del mapa de Google para una búsqueda local; el destacado muestra sus botones. */
+  | { tipo: 'mapa'; consulta: string; lugares: { nombre: string; nota: string; resenas: string; categoria: string; detalle: string; destacado?: boolean }[]; botones: string[] }
+  /** Reseña de Google con la respuesta del negocio. */
+  | { tipo: 'resena'; negocio: string; autor: string; inicial: string; estrellas: number; hace: string; texto: string; respuesta: string; respondio: string }
   /** Ficha de auditoría de un sitio de ejemplo: cada fila con su estado (bien, revisar, mal). */
   | { tipo: 'informe'; titulo: string; sitio: string; filas: { k: string; v: string; estado: 'bien' | 'ojo' | 'mal' }[]; pie: string };
 

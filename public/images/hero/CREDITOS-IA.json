@@ -10,6 +10,10 @@
     { "archivo": "marketing--email-marketing-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Mujer abre un boletín por correo en su laptop junto a la ventana de su apartamento" },
     { "archivo": "marketing--whatsapp-marketing-masivo-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Dueño de una ferretería de barrio responde mensajes en su celular desde el mostrador" },
     { "archivo": "servicios--landing-pages-alta-conversion-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Hombre con mochila toca el botón de una página en su celular en un lobby de Costa del Este" },
-    { "archivo": "servicios--redisenio-web-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Dueño de un negocio familiar y una diseñadora revisan el nuevo diseño de su web, con el sitio viejo impreso y anotado" }
+    { "archivo": "servicios--redisenio-web-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Dueño de un negocio familiar y una diseñadora revisan el nuevo diseño de su web, con el sitio viejo impreso y anotado" },
+    { "archivo": "crecimiento--seo-local-google-maps-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Dueño de un taller mecánico de barrio mira su celular en la entrada del taller" },
+    { "archivo": "marketing--automatizaciones-n8n-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Gerente de operaciones con café frente a su laptop en una oficina de Ciudad de Panamá" },
+    { "archivo": "crecimiento--mantenimiento-web-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Técnico web revisa un panel de estado y marca una lista de verificación" },
+    { "archivo": "crecimiento--hosting-infraestructura-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Técnica de TI revisa los cables de un rack de servidores en una oficina" }
   ]
 }

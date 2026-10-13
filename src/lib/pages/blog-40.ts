@@ -217,7 +217,7 @@ export const blog40: PageData[] = [
     category: 'Precios',
     date: '2026-09-30',
     heroImage: {
-      src: '/images/hero/crecimiento--mantenimiento-web-panama.jpg',
+      src: '/images/hero/blog--cuanto-cuesta-mantenimiento-web-panama.jpg',
       alt: 'Panel de monitoreo de un sitio web con estado, respaldos y actualizaciones',
     },
     lead: [

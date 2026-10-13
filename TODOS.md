@@ -21,9 +21,11 @@
 
 **Context:** El método (Lighthouse móvil, 150 ms simulados, mediana de 5) es el mismo; cambia el servidor. Si hay clave de PageSpeed en `~/.ssh/psi.key`, el script usa PSI y la etiqueta lo dice.
 
+**Intento del 13-oct-2026 (no se publicó):** tras el deploy de `b6929d3` se midieron las 11 contra producción desde la PC de Josimar en Panamá. Diez dieron 1,9 a 2,1 s y la pilar 4,8 s, pero el corporativo dio 1,9 s y, veinte minutos después, 4,8 s en cuatro corridas seguidas: el método no es estable contra producción. En las corridas lentas la página queda en blanco hasta ≈2,5 s aunque el HTML, el CSS, la fuente y la foto llegan antes de 0,7 s y el hilo principal está libre (sin tareas largas); el LCP simulado arrastra entonces gtag y las imágenes diferidas. Las páginas sin anatomía v2 pintan a ≈1,6 s en las mismas condiciones. En local con throttling real de DevTools, el corporativo v2 da 2,37 s y `/contacto/` 2,08 s. Queda sin explicar qué retiene el primer pintado en producción. Por eso `mediciones.json` sigue con las cifras del build local hasta tener PageSpeed Insights, que mide desde servidores de Google y no desde esta red.
+
 **Effort:** S
 **Priority:** P1
-**Depends on:** El push aprobado por el dueño.
+**Depends on:** La clave gratuita de PageSpeed Insights en `~/.ssh/psi.key` (pendiente del dueño, D40).
 
 ### Redirecciones 301 de tres URLs retiradas que aún tienen impresiones
 

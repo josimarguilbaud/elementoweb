@@ -222,3 +222,33 @@
 .ew-inf__dot--mal { background: #c4362f; }
 .ew-inf__pie { padding: 10px 16px 14px; font-size: 0.78rem; line-height: 1.5; color: var(--ew-muted); }
 
+
+/* Mapa de Google (paquete local de tres negocios) y reseña con respuesta del dueño. */
+.ew-mapa { padding: 16px 16px 6px; background: #fff; }
+.ew-mapa__mapa { position: relative; height: 150px; margin-bottom: 4px; overflow: hidden; border-radius: 12px; background-color: #e8eef3;
+  background-image: linear-gradient(90deg, transparent 47%, #fff 47%, #fff 52%, transparent 52%), linear-gradient(0deg, transparent 40%, #fff 40%, #fff 44%, transparent 44%),
+    linear-gradient(25deg, transparent 63%, #f7e7b4 63%, #f7e7b4 67%, transparent 67%), radial-gradient(circle at 80% 78%, #cfe5d3 0 18%, transparent 19%); }
+.ew-mapa__pin { position: absolute; left: var(--x); top: var(--y); display: grid; place-items: center; width: 24px; height: 24px; transform: translate(-50%, -50%);
+  border: 2px solid #fff; border-radius: 50%; background: #6b7a8c; box-shadow: 0 1px 3px rgba(0, 0, 0, .3); font-size: 0.72rem; font-weight: 700; line-height: 1; color: #fff; }
+.ew-mapa__pin--sel { width: 30px; height: 30px; background: #c4362f; }
+.ew-mapa__lista { list-style: none; margin: 0; padding: 0; }
+.ew-mapa__lista li { padding: 12px 0; border-top: 1px solid #ecedef; }
+.ew-mapa__lista li:first-child { border-top: 0; }
+.ew-mapa__n { font-size: 0.95rem; font-weight: 600; color: #1a0dab; }
+.ew-mapa__sel .ew-mapa__n { font-weight: 700; }
+.ew-mapa__r { margin-top: 2px !important; font-size: 0.8rem; color: #4d5156; }
+.ew-mapa__st { margin: 0 4px; letter-spacing: 1px; color: #e7a01b; }
+.ew-mapa__d { margin-top: 2px !important; font-size: 0.8rem; color: #4d5156; }
+.ew-mapa__btns { margin-top: 10px !important; display: flex; flex-wrap: wrap; gap: 8px; }
+.ew-mapa__btns span { padding: 5px 12px; border: 1px solid #dadce0; border-radius: 999px; font-size: 0.8rem; font-weight: 500; color: #0b57d0; }
+
+.ew-res { padding: 16px; background: #fff; }
+.ew-res__top { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 600; color: #202124; }
+.ew-res__top small { display: block; font-size: 0.75rem; font-weight: 400; color: #5f6368; }
+.ew-res__av { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: #7a4fa0; font-weight: 700; color: #fff; }
+.ew-res__st { margin: 10px 0 6px !important; letter-spacing: 2px; color: #e7a01b; }
+.ew-res__st span { color: #dadce0; }
+.ew-res__t { font-size: 0.86rem; line-height: 1.55; color: #202124; }
+.ew-res__resp { margin-top: 12px; padding: 10px 12px; border-left: 3px solid var(--ew-primary); border-radius: 0 8px 8px 0; background: #f1f4f8; font-size: 0.84rem; line-height: 1.55; color: #202124; }
+.ew-res__quien { margin-bottom: 4px !important; font-weight: 700; }
+.ew-res__quien small { margin-left: 6px; font-weight: 400; color: #5f6368; }

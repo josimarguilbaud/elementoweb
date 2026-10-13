@@ -1,0 +1,32 @@
+{
+  "_nota": "Fuente única de los precios en cifras (D39). site.ts lee de aquí los precios estructurados y el validador comprueba que todo Offer del schema salga de 'confirmados'. 'propuestos' son cifras publicadas hoy con comentario 'propuesto' o 'Confirmar' que NO pueden entrar en Offer ni en la respuesta citable (R27). Los textos con cifras dentro de una frase siguen escritos a mano en site.ts y en las páginas.",
+  "moneda": "USD",
+  "confirmados": {
+    "web-landing": { "nombre": "Landing Page", "monto": 550, "unidad": "proyecto", "fuente": "src/lib/site.ts pricing.tiers" },
+    "web-empresarial": { "nombre": "Web empresarial", "monto": 1250, "unidad": "proyecto", "fuente": "src/lib/site.ts pricing.tiers" },
+    "web-ecommerce": { "nombre": "E-commerce", "monto": 1950, "unidad": "proyecto", "fuente": "src/lib/site.ts pricing.tiers" },
+    "web-medida": { "nombre": "Página corporativa a medida", "monto": 2900, "unidad": "proyecto", "fuente": "src/lib/site.ts pricing.custom" },
+    "hosting-compartido": { "nombre": "Hosting Compartido", "monto": 225, "unidad": "año", "fuente": "src/lib/site.ts pricing.hosting" },
+    "hosting-cloud": { "nombre": "Hosting Cloud", "monto": 350, "unidad": "año", "fuente": "src/lib/site.ts pricing.hosting" },
+    "hosting-vps": { "nombre": "VPS Dedicado", "monto": 550, "unidad": "año", "fuente": "src/lib/site.ts pricing.hosting" },
+    "mantenimiento": { "nombre": "Mantenimiento web", "monto": 59, "unidad": "mes", "desde": true, "fuente": "src/lib/site.ts pricing.separate" },
+    "gestionada-puesta-en-marcha": { "nombre": "Web empresarial gestionada, puesta en marcha", "monto": 350, "unidad": "una vez", "fuente": "src/lib/site.ts pricing.managed" },
+    "gestionada-mensual": { "nombre": "Web empresarial gestionada, mensualidad", "monto": 169, "unidad": "mes", "fuente": "src/lib/site.ts pricing.managed" },
+    "gestionada-desde-el-mes-13": { "nombre": "Web empresarial gestionada, desde el mes 13", "monto": 94, "unidad": "mes", "fuente": "src/lib/site.ts pricing.managed" },
+    "contenido-ia-landing": { "nombre": "Redacción de contenido con IA, landing page", "monto": 150, "unidad": "proyecto", "fuente": "src/lib/site.ts pricing.production" },
+    "contenido-ia-corporativa": { "nombre": "Redacción de contenido con IA, web corporativa", "monto": 200, "unidad": "proyecto", "fuente": "src/lib/site.ts pricing.production" },
+    "contenido-ia-extensa": { "nombre": "Redacción de contenido con IA, web extensa", "monto": 350, "unidad": "proyecto", "fuente": "src/lib/site.ts pricing.production" },
+    "imagenes-ia": { "nombre": "Generación de imágenes con IA", "monto": 100, "unidad": "set", "fuente": "src/lib/site.ts pricing.production" },
+    "wazacrm": { "nombre": "WazaCRM", "monto": 349, "unidad": "mes", "desde": true, "fuente": "src/lib/pages/saas.ts" }
+  },
+  "propuestos": {
+    "pauta-gestion": { "nombre": "Gestión de Google Ads y Meta", "monto": 300, "unidad": "mes", "desde": true, "fuente": "src/lib/pages/marketing.ts" },
+    "trafficker-dedicado": { "nombre": "Trafficker dedicado", "monto": 300, "unidad": "mes por cuenta", "fuente": "src/lib/pages/marketing.ts" },
+    "contenido-redes": { "nombre": "Contenido para redes", "monto": 250, "unidad": "mes", "desde": true, "fuente": "src/lib/pages/marketing.ts" },
+    "email-marketing": { "nombre": "Email marketing", "monto": 200, "unidad": "mes", "desde": true, "fuente": "src/lib/pages/marketing.ts" },
+    "whatsapp-marketing": { "nombre": "WhatsApp marketing", "monto": 150, "unidad": "mes", "desde": true, "fuente": "src/lib/pages/marketing.ts" },
+    "automatizacion-n8n": { "nombre": "Automatización n8n", "monto": 300, "unidad": "por automatización", "desde": true, "fuente": "src/lib/pages/marketing.ts" },
+    "logo-ia": { "nombre": "Logo e identidad básica con IA", "monto": 120, "unidad": "proyecto", "desde": true, "fuente": "src/lib/site.ts pricing.production" }
+  },
+  "sinPrecio": ["seo", "ia"]
+}

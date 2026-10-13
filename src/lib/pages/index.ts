@@ -1,5 +1,6 @@
 /* Registro central de páginas. El orden no importa; los slugs sí. */
 import type { PageData } from '../types';
+import formulario from '../../data/formulario.json';
 import { core } from './core';
 import { precios } from './precios';
 import { casos } from './casos';
@@ -126,7 +127,10 @@ export const pages: PageData[] = [
 
 /* Guardia de build: slugs duplicados rompen la compilación aquí mismo. */
 const seen = new Set<string>();
+const claves = new Set(formulario.servicios.map((s) => s.clave));
 for (const p of pages) {
   if (seen.has(p.slug)) throw new Error(`Slug duplicado en lib/pages: "${p.slug}"`);
   seen.add(p.slug);
+  /* D34: el serviceKey de una página existe en el esquema único del formulario. */
+  if (p.serviceKey && !claves.has(p.serviceKey)) throw new Error(`serviceKey "${p.serviceKey}" de "${p.slug}" no existe en src/data/formulario.json`);
 }

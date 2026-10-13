@@ -1,0 +1,213 @@
+{
+  "_nota": "Fuente única del formulario por servicio (D34). La leen ServiceForm, el build (mapa página a clave), el generador de FORMULARIO.md y la lista blanca del flujo de n8n. Tipos de campo: sel (lista), txt (texto corto), url (dirección web). Máximo de cada respuesta: 300 caracteres (D32).",
+  "limites": { "respuesta": 300, "mensaje": 2000, "campo": 500 },
+  "_paginas": "Mapa planeado página a clave (D10). La clave se pasa a PageData.serviceKey cuando cada página se migra a la plantilla nueva (fases 2a, 4 y 5); mientras tanto el test comprueba que las páginas que ya tienen serviceKey coinciden con este mapa, salvo las de 'transitorias'. Una página sin clave propia usa 'definir'.",
+  "paginas": {
+    "servicios/diseno-web-corporativo-panama": "pyme",
+    "servicios/tiendas-online-ecommerce-panama": "ecommerce",
+    "servicios/landing-pages-alta-conversion-panama": "landing",
+    "servicios/redisenio-web-panama": "rediseno",
+    "marketing/google-ads-panama": "pauta",
+    "marketing/facebook-instagram-ads-panama": "pauta",
+    "marketing/contenido-redes-sociales-panama": "definir",
+    "marketing/email-marketing-panama": "definir",
+    "marketing/whatsapp-marketing-masivo-panama": "whatsapp",
+    "marketing/automatizaciones-n8n-panama": "automatizacion",
+    "inteligencia-artificial-para-empresas-panama": "ia",
+    "crecimiento/seo-posicionamiento-web-panama": "seo",
+    "crecimiento/seo-local-google-maps-panama": "seo",
+    "crecimiento/mantenimiento-web-panama": "mensual",
+    "crecimiento/hosting-infraestructura-panama": "mensual",
+    "tecnologias/diseno-web-wordpress-panama": "pyme",
+    "tecnologias/diseno-web-shopify-panama": "ecommerce",
+    "tecnologias/desarrollo-web-a-medida-vue-react-panama": "medida",
+    "funcionalidades/integracion-yappy-pasarelas-pago-panama": "ecommerce",
+    "funcionalidades/sistemas-reservas-citas-online-panama": "medida",
+    "funcionalidades/integracion-cybersource-panama": "ecommerce",
+    "funcionalidades/chatbots-ia-web-wazacrm-panama": "ia",
+    "saas/wazacrm": "definir",
+    "saas/nouscrm": "definir",
+    "saas/cifrao": "definir"
+  },
+  "transitorias": { "servicios/redisenio-web-panama": "revision" },
+  "servicios": [
+    {
+      "clave": "pyme",
+      "etiqueta": "Sitio corporativo",
+      "servicio": "Diseño web / Sitio corporativo",
+      "titulo": "Cotizar mi sitio corporativo",
+      "boton": "Pedir cotización de mi sitio",
+      "botonPagina": "Cotizar mi web",
+      "presupuesto": true,
+      "campos": [
+        { "tipo": "sel", "clave": "paginas", "etiqueta": "¿Cuántas páginas calculas?", "opciones": ["Hasta 6", "De 7 a 15", "Más de 15", "No lo sé"] },
+        { "tipo": "sel", "clave": "dominio", "etiqueta": "¿Ya tienes dominio?", "opciones": ["Sí", "No", "No lo sé"] }
+      ]
+    },
+    {
+      "clave": "ecommerce",
+      "etiqueta": "Tienda online",
+      "servicio": "Tienda online / E-commerce",
+      "titulo": "Cotizar mi tienda online",
+      "boton": "Pedir cotización de mi tienda",
+      "botonPagina": "Cotizar mi tienda",
+      "presupuesto": true,
+      "campos": [
+        { "tipo": "sel", "clave": "productos", "etiqueta": "¿Cuántos productos venderás?", "opciones": ["Hasta 25", "De 26 a 100", "Más de 100"] },
+        { "tipo": "sel", "clave": "pagos", "etiqueta": "¿Cómo quieres cobrar?", "opciones": ["Yappy y tarjeta", "Solo Yappy", "Solo tarjeta", "No lo sé"] },
+        { "tipo": "sel", "clave": "envios", "etiqueta": "¿Cómo entregas?", "opciones": ["Ciudad e interior", "Solo ciudad", "Retiro en tienda", "Internacional"] },
+        { "tipo": "sel", "clave": "plataforma", "etiqueta": "¿Plataforma preferida?", "opciones": ["Shopify", "WooCommerce", "Que me recomienden"] }
+      ]
+    },
+    {
+      "clave": "landing",
+      "etiqueta": "Landing page",
+      "servicio": "Landing page",
+      "titulo": "Cotizar mi landing page",
+      "boton": "Pedir cotización de mi landing",
+      "botonPagina": "Cotizar mi landing",
+      "presupuesto": true,
+      "campos": [
+        { "tipo": "sel", "clave": "objetivo", "etiqueta": "¿Qué quieres lograr con ella?", "opciones": ["Recibir consultas", "Vender un producto", "Agendar citas", "Otro"] },
+        { "tipo": "sel", "clave": "pauta", "etiqueta": "¿La usarás con anuncios pagados?", "opciones": ["Sí", "No", "No lo sé"] }
+      ]
+    },
+    {
+      "clave": "mensual",
+      "etiqueta": "Plan mensual",
+      "servicio": "Web empresarial gestionada — plan mensual",
+      "titulo": "Consultar el plan mensual",
+      "boton": "Consultar el plan mensual",
+      "presupuesto": false,
+      "campos": [
+        { "tipo": "sel", "clave": "inicio", "etiqueta": "¿Cuándo quieres empezar?", "opciones": ["Este mes", "En 1 a 3 meses", "Solo estoy mirando"] },
+        { "tipo": "sel", "clave": "dominio", "etiqueta": "¿Ya tienes dominio?", "opciones": ["Sí", "No", "No lo sé"] }
+      ]
+    },
+    {
+      "clave": "revision",
+      "etiqueta": "Revisión de mi web",
+      "servicio": "Revisión de mi web",
+      "titulo": "Pedir la revisión de mi web",
+      "boton": "Pedir la revisión",
+      "botonPagina": "Revisar mi web",
+      "presupuesto": false,
+      "campos": [
+        { "tipo": "url", "clave": "web", "etiqueta": "Dirección de tu web (obligatorio)", "obligatorio": true },
+        { "tipo": "sel", "clave": "dolor", "etiqueta": "¿Qué te preocupa más?", "opciones": ["Velocidad", "Que no aparece en Google", "Se ve vieja", "Otro"] }
+      ]
+    },
+    {
+      "clave": "rediseno",
+      "etiqueta": "Rediseño",
+      "servicio": "Rediseño web",
+      "titulo": "Cotizar el rediseño de mi web",
+      "boton": "Pedir cotización del rediseño",
+      "presupuesto": true,
+      "campos": [
+        { "tipo": "url", "clave": "web", "etiqueta": "Dirección de tu web actual (obligatorio)", "obligatorio": true },
+        { "tipo": "sel", "clave": "motivo", "etiqueta": "¿Por qué rediseñar?", "opciones": ["Se ve vieja", "Es lenta", "No genera consultas", "Cambió el negocio"] },
+        { "tipo": "sel", "clave": "urls", "etiqueta": "¿Conservamos las direcciones actuales?", "opciones": ["Sí", "No lo sé"] }
+      ]
+    },
+    {
+      "clave": "seo",
+      "etiqueta": "SEO y posicionamiento",
+      "servicio": "SEO y posicionamiento",
+      "titulo": "Cotizar SEO para mi negocio",
+      "boton": "Pedir cotización de SEO",
+      "presupuesto": true,
+      "campos": [
+        { "tipo": "url", "clave": "web", "etiqueta": "Dirección de tu web (si ya tienes)" },
+        { "tipo": "txt", "clave": "zona", "etiqueta": "Zona o ciudad donde quieres aparecer" },
+        { "tipo": "txt", "clave": "claves", "etiqueta": "Búsquedas que quieres ganar (2 o 3)" }
+      ]
+    },
+    {
+      "clave": "pauta",
+      "etiqueta": "Google Ads y Meta Ads",
+      "servicio": "Marketing digital / Pauta",
+      "titulo": "Cotizar mi campaña",
+      "boton": "Pedir cotización de campañas",
+      "presupuesto": true,
+      "campos": [
+        { "tipo": "sel", "clave": "plataforma", "etiqueta": "¿Dónde quieres anunciar?", "opciones": ["Google", "Facebook e Instagram", "Ambas", "No lo sé"] },
+        { "tipo": "sel", "clave": "inversion", "etiqueta": "Inversión mensual estimada en pauta", "opciones": ["Menos de $300", "$300 a $1,000", "Más de $1,000", "No lo sé"] },
+        { "tipo": "sel", "clave": "destino", "etiqueta": "¿Tienes web o landing donde llegue la gente?", "opciones": ["Sí", "No"] }
+      ]
+    },
+    {
+      "clave": "whatsapp",
+      "etiqueta": "WhatsApp marketing",
+      "servicio": "WhatsApp marketing",
+      "titulo": "Consultar WhatsApp marketing",
+      "boton": "Consultar WhatsApp marketing",
+      "presupuesto": true,
+      "campos": [
+        { "tipo": "sel", "clave": "contactos", "etiqueta": "¿Cuántos contactos con permiso tienes?", "opciones": ["Menos de 500", "500 a 5,000", "Más de 5,000", "Aún ninguno"] },
+        { "tipo": "sel", "clave": "numero", "etiqueta": "¿Tu número ya está verificado en la API oficial?", "opciones": ["Sí", "No", "No sé qué es"] },
+        { "tipo": "sel", "clave": "uso", "etiqueta": "¿Para qué lo usarías?", "opciones": ["Campañas", "Atención al cliente", "Ambos"] }
+      ]
+    },
+    {
+      "clave": "ia",
+      "etiqueta": "Chatbots e IA",
+      "servicio": "Automatización / Inteligencia artificial",
+      "titulo": "Cotizar mi asistente con IA",
+      "boton": "Pedir cotización del asistente",
+      "presupuesto": true,
+      "campos": [
+        { "tipo": "sel", "clave": "canal", "etiqueta": "¿En qué canal?", "opciones": ["WhatsApp", "Mi página web", "Ambos"] },
+        { "tipo": "sel", "clave": "tarea", "etiqueta": "¿Qué debe resolver?", "opciones": ["Responder preguntas", "Agendar citas", "Cotizar o calificar", "Otro"] },
+        { "tipo": "sel", "clave": "volumen", "etiqueta": "Mensajes al mes, aproximado", "opciones": ["Menos de 500", "500 a 3,000", "Más de 3,000"] }
+      ]
+    },
+    {
+      "clave": "automatizacion",
+      "etiqueta": "Automatización n8n",
+      "servicio": "Automatización n8n",
+      "titulo": "Cotizar una automatización",
+      "boton": "Pedir cotización de automatización",
+      "presupuesto": true,
+      "campos": [
+        { "tipo": "txt", "clave": "tarea", "etiqueta": "¿Qué tarea repites a mano hoy?" },
+        { "tipo": "txt", "clave": "herramientas", "etiqueta": "¿Qué herramientas usas? (Excel, Gmail, CRM…)" }
+      ]
+    },
+    {
+      "clave": "medida",
+      "etiqueta": "Software y CRM a medida",
+      "servicio": "Software a medida",
+      "titulo": "Cotizar mi software a medida",
+      "boton": "Pedir cotización del software",
+      "presupuesto": true,
+      "campos": [
+        { "tipo": "txt", "clave": "proceso", "etiqueta": "¿Qué proceso quieres digitalizar?" },
+        { "tipo": "sel", "clave": "usuarios", "etiqueta": "¿Cuántas personas lo usarían?", "opciones": ["De 1 a 5", "De 6 a 20", "Más de 20"] }
+      ]
+    },
+    {
+      "clave": "definir",
+      "etiqueta": "Ayúdame a definir",
+      "servicio": "Ayúdame a definir mi proyecto",
+      "titulo": "Ayúdame a definir mi proyecto",
+      "boton": "Pedir orientación",
+      "presupuesto": false,
+      "campos": [
+        { "tipo": "txt", "clave": "negocio", "etiqueta": "¿A qué se dedica tu negocio y en qué ciudad?" },
+        { "tipo": "sel", "clave": "meta", "etiqueta": "¿Qué quieres lograr primero?", "opciones": ["Más clientes", "Vender en línea", "Ordenar procesos", "No lo sé"] }
+      ]
+    },
+    {
+      "clave": "otro",
+      "etiqueta": "Otro",
+      "servicio": "Otro",
+      "titulo": "Cuéntanos qué necesitas",
+      "boton": "Enviar mi solicitud",
+      "presupuesto": false,
+      "campos": [
+        { "tipo": "txt", "clave": "necesidad", "etiqueta": "¿Qué necesitas?" }
+      ]
+    }
+  ]
+}

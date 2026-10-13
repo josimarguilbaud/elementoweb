@@ -4,6 +4,13 @@
    Cambiar un enlace aquí lo cambia en todo el sitio.
    ============================================================ */
 
+import precios from '../data/precios.json';
+import formulario from '../data/formulario.json';
+
+/* Cifras confirmadas: salen de src/data/precios.json (D39). El validador del marcador lee el mismo archivo. */
+const usd = (n: number) => '$' + n.toLocaleString('en-US');
+const monto = (id: keyof typeof precios.confirmados) => precios.confirmados[id].monto;
+
 export const site = {
   name: 'Elemento Web',
   domain: 'https://elementoweb.com',
@@ -199,7 +206,7 @@ export const pricing = {
   tiers: [
     {
       name: 'Landing Page',
-      price: '$550',
+      price: usd(monto('web-landing')),
       features: [
         'Una página de hasta 7 secciones',
         'Mensaje y estructura pensados para convertir',
@@ -211,7 +218,7 @@ export const pricing = {
     },
     {
       name: 'Web empresarial',
-      price: '$1,250',
+      price: usd(monto('web-empresarial')),
       featured: true,
       features: [
         'Hasta 6 páginas en total',
@@ -224,7 +231,7 @@ export const pricing = {
     },
     {
       name: 'E-commerce',
-      price: '$1,950',
+      price: usd(monto('web-ecommerce')),
       features: [
         'Carga inicial de hasta 25 productos',
         'Categorías y carrito',
@@ -268,9 +275,9 @@ export const pricing = {
     name: 'Web empresarial gestionada',
     headline: 'Tu web profesional, con un equipo que la mantiene',
     text: 'Diseñamos tu página, la publicamos y nos encargamos del hosting, la seguridad y los cambios cotidianos. Tú puedes concentrarte en atender tu negocio.',
-    setup: 350,
-    monthly: 169,
-    afterYear: 94,
+    setup: monto('gestionada-puesta-en-marcha'),
+    monthly: monto('gestionada-mensual'),
+    afterYear: monto('gestionada-desde-el-mes-13'),
     development: 75,
     ongoing: 94,
     firstYearTotal: 2378,
@@ -298,7 +305,7 @@ export const pricing = {
   custom: {
     eyebrow: 'Proyectos a medida',
     title: 'Páginas web corporativas a medida',
-    price: '$2,900',
+    price: usd(monto('web-medida')),
     text: 'Para empresas que necesitan más que un paquete: arquitectura propia, integraciones con tus sistemas y funcionalidad hecha a la medida de tu operación. El mismo equipo y el mismo stack con el que construimos nuestros propios SaaS.',
     features: [
       'Arquitectura y diseño 100% a tu medida',
@@ -318,14 +325,14 @@ export const pricing = {
     tiers: [
       {
         name: 'Hosting Compartido',
-        price: '$225',
+        price: usd(monto('hosting-compartido')),
         unit: '/año',
         for: 'Sitios corporativos y landing pages con tráfico moderado.',
         features: ['Recursos compartidos optimizados', 'Ideal para sitios de contenido', 'Dominio y SSL incluidos'],
       },
       {
         name: 'Hosting Cloud',
-        price: '$350',
+        price: usd(monto('hosting-cloud')),
         unit: '/año',
         featured: true,
         for: 'La opción recomendada para la mayoría de las empresas.',
@@ -333,7 +340,7 @@ export const pricing = {
       },
       {
         name: 'VPS Dedicado',
-        price: '$550',
+        price: usd(monto('hosting-vps')),
         unit: '/año',
         for: 'Proyectos a medida, e-commerce grande o alta demanda.',
         features: ['Servidor dedicado a tu proyecto', 'Control total del entorno', 'Dominio y SSL incluidos'],
@@ -349,14 +356,14 @@ export const pricing = {
       name: 'Redacción de contenido con IA',
       note: 'Textos originales creados con IA a partir de la información de tu negocio y revisados por nuestro equipo. Nada de relleno genérico: contenido pensado para tu sitio.',
       tiers: [
-        { label: 'Landing page', price: '$150' },
-        { label: 'Web corporativa (hasta 6 páginas en total)', price: '$200' },
-        { label: 'Web extensa (más de 6 páginas)', price: '$350' },
+        { label: 'Landing page', price: usd(monto('contenido-ia-landing')) },
+        { label: 'Web corporativa (hasta 6 páginas en total)', price: usd(monto('contenido-ia-corporativa')) },
+        { label: 'Web extensa (más de 6 páginas)', price: usd(monto('contenido-ia-extensa')) },
       ],
     },
     images: {
       name: 'Generación de imágenes con IA',
-      price: '$100',
+      price: usd(monto('imagenes-ia')),
       note: 'Un set de imágenes originales generadas con IA (Higgsfield) cuando no cuentas con fotografía propia. Alineadas al estilo de tu sitio.',
     },
     // ⚠️ Precio propuesto por confirmar (logo) — ver README.
@@ -420,3 +427,8 @@ export const wa = (text: string) =>
    formulario. Solo la clave, nunca datos personales. */
 export const planKey = (name: string) =>
   /landing/i.test(name) ? 'landing' : /pyme|empresarial|corporativ/i.test(name) ? 'pyme' : /commerce|tienda/i.test(name) ? 'ecommerce' : 'medida';
+
+/* Guardia de build (D34): toda clave que devuelve planKey existe en el esquema del formulario. */
+for (const k of ['landing', 'pyme', 'ecommerce', 'medida']) {
+  if (!formulario.servicios.some((s) => s.clave === k)) throw new Error(`planKey devuelve "${k}" y no existe en src/data/formulario.json`);
+}

@@ -6,6 +6,7 @@ import { pages } from '../lib/pages';
 import { url, wa, site } from '../lib/site';
 import { pageJsonLd, articleJsonLd, faqNode } from '../lib/schema';
 import { heroFor, ogFor } from '../lib/img';
+import formulario from '../data/formulario.json';
 
 export function getStaticPaths() {
   // El home vive en index.astro; aquí van todas las demás páginas del registro.
@@ -20,17 +21,12 @@ const intro = page.lead.slice(1);
 const cta = page.cta ?? {};
 const ctaText = cta.wa ?? `Hola, me interesa ${page.h1}.`;
 const isBlog = page.parent?.slug === 'blog';
-/* Los botones de una página de servicio conservan el servicio elegido en el formulario. */
-const SERVICE_KEYS: Record<string, [string, string]> = {
-  'servicios/landing-pages-alta-conversion-panama': ['landing', 'Cotizar mi landing'],
-  'servicios/diseno-web-corporativo-panama': ['pyme', 'Cotizar mi web'],
-  'servicios/tiendas-online-ecommerce-panama': ['ecommerce', 'Cotizar mi tienda'],
-  'servicios/redisenio-web-panama': ['revision', 'Revisar mi web'],
-};
+/* Los botones de una página de servicio conservan el servicio elegido en el formulario.
+   La clave sale de PageData.serviceKey y el rótulo de src/data/formulario.json (D34). */
+const formServicio = page.serviceKey ? formulario.servicios.find((s) => s.clave === page.serviceKey) : undefined;
 const showcase = page.blocks.find((b) => b.type === 'showcase') as (Extract<import('../lib/types').Block, { type: 'showcase' }>) | undefined;
-const sk = SERVICE_KEYS[page.slug];
-const contactHref = sk ? `/contacto/?servicio=${sk[0]}#formulario` : '/contacto/#formulario';
-const contactLabel = sk ? sk[1] : 'Cotizar por formulario';
+const contactHref = formServicio ? `/contacto/?servicio=${formServicio.clave}#formulario` : '/contacto/#formulario';
+const contactLabel = formServicio?.botonPagina ?? 'Cotizar por formulario';
 /* Blog: Article + (si hay bloque faq) FAQPage, para ganar fragmentos en Google.
    El resto de páginas usa el grafo completo de pageJsonLd. */
 const blogFaq = isBlog ? faqNode(page) : null;

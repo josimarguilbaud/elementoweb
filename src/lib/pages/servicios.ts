@@ -125,6 +125,7 @@ export const servicios: PageData[] = [
   /* ---------- CORPORATIVO ---------- */
   {
     slug: 'servicios/diseno-web-corporativo-panama',
+    serviceKey: 'pyme',
     parent,
     title: 'Diseño Web Corporativo en Panamá | Sitios que dan Confianza',
     description: 'Diseño web corporativo en Panamá para empresas que necesitan proyectar solidez: estructura clara, SEO por servicio y panel autoadministrable.',
@@ -270,6 +271,7 @@ export const servicios: PageData[] = [
   /* ---------- E-COMMERCE ---------- */
   {
     slug: 'servicios/tiendas-online-ecommerce-panama',
+    serviceKey: 'ecommerce',
     parent,
     title: 'Tiendas Online en Panamá | E-commerce con Yappy y Pasarelas',
     description: 'Desarrollo de tiendas online en Panamá: catálogo, carrito, Yappy, pasarelas de pago locales y envíos. E-commerce que sí vende.',
@@ -416,6 +418,7 @@ export const servicios: PageData[] = [
   /* ---------- LANDING PAGES ---------- */
   {
     slug: 'servicios/landing-pages-alta-conversion-panama',
+    serviceKey: 'landing',
     parent,
     title: 'Landing Pages en Panamá | Alta Conversión desde $550',
     description: 'Landing pages de alta conversión en Panamá: una página, una oferta, una acción. El destino correcto para tu pauta. Entrega en 5 días hábiles desde recibir el contenido y aprobar el alcance.',
@@ -519,6 +522,7 @@ export const servicios: PageData[] = [
   /* ---------- REDISEÑO ---------- */
   {
     slug: 'servicios/redisenio-web-panama',
+    serviceKey: 'revision',
     parent,
     title: 'Rediseño Web en Panamá | Moderniza cuidando tu SEO',
     description: 'Rediseño web en Panamá: auditamos tu sitio actual, lo reconstruimos con estándares modernos y planificamos las redirecciones para reducir el riesgo de perder posiciones.',

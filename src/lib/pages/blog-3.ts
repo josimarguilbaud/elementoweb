@@ -359,7 +359,7 @@ export const blog3: PageData[] = [
     date: '2026-06-04',
     heroImage: {
       src: '/images/blog/seo-para-pymes-en-panama-guia.jpg',
-      alt: 'Emprendedora de una pequeña empresa trabajando en su estrategia digital',
+      alt: 'Barra de búsqueda sobre tres resultados donde el primero destaca con estrella, ubicación y gráfico en alza: SEO para pymes',
     },
     lead: [
       'El SEO no es solo para grandes empresas con presupuestos enormes. Una pyme panameña puede posicionarse muy bien si enfoca su esfuerzo donde de verdad cuenta, en lugar de intentar competir en todo a la vez.',
@@ -467,7 +467,7 @@ export const blog3: PageData[] = [
     date: '2026-05-21',
     heroImage: {
       src: '/images/blog/por-que-mi-pagina-no-aparece-en-google.jpg',
-      alt: 'Persona frustrada frente a una laptop buscando su sitio web sin encontrarlo',
+      alt: 'Lupa sobre una cuadrícula de resultados de búsqueda con una tarjeta oculta y una brújula que marca el camino hacia arriba',
     },
     lead: [
       'Invertiste en una página web, la publicaste, y cuando buscas tu negocio en Google no aparece por ningún lado. Es una de las frustraciones más comunes, y casi siempre tiene una explicación concreta.',

@@ -15,7 +15,7 @@ export const blog23: PageData[] = [
     date: '2026-08-26',
     heroImage: {
       src: '/images/blog/diseno-web-para-agencias-de-viajes-panama.jpg',
-      alt: 'Bote de tour navegando aguas turquesas cerca de islas tropicales verdes, día soleado, sin rostros visibles',
+      alt: 'Islotes de San Blas con palmeras y un teléfono de vidrio con calendario y mapa que ilustran las reservas de una agencia de viajes',
     },
     lead: [
       'Son las once de la noche y alguien decide entre San Blas y Bocas del Toro para el próximo puente. Si tu web no le deja ver el paquete completo y reservar ahí mismo, mañana reserva con otra agencia.',

@@ -262,7 +262,7 @@ export const industrias3: PageData[] = [
     description: 'Diseño web para cooperativas de ahorro y crédito y financieras en Panamá: simulador de préstamo, afiliación en línea, transparencia de tasas y confianza.',
     h1: 'Diseño web para cooperativas y financieras',
     breadcrumb: 'Cooperativas y Financieras',
-    heroImage: { src: '/images/industrias/diseno-web-cooperativas-financieras-panama.jpg', alt: 'Dos personas conversando frente a frente en una oficina comunitaria sencilla' },
+    heroImage: { src: '/images/industrias/diseno-web-cooperativas-financieras-panama.jpg', alt: 'Edificio de columnas con una solicitud de préstamo en el móvil, un escudo con candado y monedas, para cooperativas y financieras' },
     service: { type: 'Diseño web para cooperativas de ahorro y crédito' },
     lead: [
       'Tu socio no es un cliente: es dueño de la cooperativa. Eso cambia todo lo que la web tiene que comunicar, y es justo lo que las webs del rubro suelen olvidar cuando copian el tono de un banco.',

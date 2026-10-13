@@ -120,7 +120,7 @@ export const blog40: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/blog/landing-page-vs-sitio-web-cual-necesitas.jpg',
-      alt: 'Diseño de una landing page en una pantalla con una oferta y un botón de contacto',
+      alt: 'Landing page de una sola pantalla con un botón de contacto destacado y una diana que representa una campaña enfocada',
     },
     lead: [
       'Una landing page en Elemento Web cuesta $550 (USD, sin ITBMS del 7%). Es una página enfocada en conversión, con diseño a medida, responsive y un botón directo a WhatsApp, con entrega en 5 días hábiles desde recibir el contenido y aprobar el alcance.',

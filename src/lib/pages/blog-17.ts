@@ -16,7 +16,7 @@ export const blog17: PageData[] = [
     date: '2026-08-20',
     heroImage: {
       src: '/images/blog/diseno-web-para-turismo-hoteles-panama.jpg',
-      alt: 'Habitación de un hotel boutique con cama tendida, luz cálida y un ventanal grande dejando entrar luz natural sobre una decoración minimalista',
+      alt: 'Teléfono con calendario de reservas frente a un hotel boutique al atardecer, para hoteles y turismo en Panamá',
     },
     lead: [
       'Un huésped te encuentra en Booking o Airbnb, mira las fotos, y antes de reservar abre otra pestaña y busca el nombre de tu hotel en Google. Ese segundo clic es la oportunidad más barata que vas a tener para recuperar la comisión — y se desperdicia cuando el sitio no le da ninguna razón para reservar ahí en vez de volver a la app.',

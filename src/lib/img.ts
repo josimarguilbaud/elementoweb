@@ -104,10 +104,21 @@ export function pickImg(slug: string): keyof typeof PHOTOS {
  * LinkedIn con la foto de stock de otro. Con imagen propia, la miniatura es
  * nuestra y se sirve desde nuestro dominio.
  */
+/* Alt descriptivo de las portadas de /images/hero/ (slug → texto). Describe lo que SE VE y
+   nombra el tema de forma natural, sin relleno de palabras clave. Sin entrada aquí, el alt
+   cae al H1, que repite el título y no describe la imagen (peor para accesibilidad y SEO de imágenes). */
+export const HERO_ALTS: Record<string, string> = {
+  'marketing/automatizaciones-n8n-panama': 'Diagrama de flujo con nodos de disparador, filtro, correo, chat y base de datos conectados por líneas: automatización con n8n',
+  'marketing/whatsapp-marketing-masivo-panama': 'Teléfono con globos de chat de WhatsApp que se reparten a una red de contactos: mensajería masiva con la API oficial',
+  'saas/nouscrm': 'Panel de CRM con embudo de ventas, cotización, factura pagada y una conversación de chat conectada a un contacto',
+  'servicios': 'Ventana de sitio web rodeada de seis servicios: tienda, SEO, chat, automatización, seguridad y analítica',
+  'tecnologias/diseno-web-wordpress-panama': 'Sitio web armado con bloques a medida frente a una cuadrícula de plantillas genéricas: diseño en WordPress sin plantillas',
+};
+
 export function heroFor(page: { slug: string; h1: string; heroImage?: { src: string; alt: string } }, w = 1600, ar = 0.62) {
   if (page.heroImage?.src && !page.heroImage.src.includes('picsum')) return page.heroImage;
   if (HERO_SLUGS.has(page.slug)) {
-    return { src: `/images/hero/${page.slug.replace(/\//g, '--')}.jpg`, alt: page.h1 };
+    return { src: `/images/hero/${page.slug.replace(/\//g, '--')}.jpg`, alt: HERO_ALTS[page.slug] ?? page.h1 };
   }
   return { src: unsplash(PHOTOS[pickImg(page.slug)], w, ar), alt: page.h1 };
 }

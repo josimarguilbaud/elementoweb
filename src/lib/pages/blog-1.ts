@@ -17,7 +17,7 @@ export const blog1: PageData[] = [
     date: '2026-07-22',
     heroImage: {
       src: '/images/blog/cuanto-cuesta-diseno-web-panama.jpg',
-      alt: 'Persona calculando el presupuesto de una página web en Panamá',
+      alt: 'Laptop con un sitio web y tres paneles escalonados que representan los niveles de precio de una página web en Panamá',
     },
     lead: [
       'Es la primera pregunta que nos hace todo el mundo, y la respuesta honesta incomoda un poco: depende. Una página web no es un producto de estante con un precio fijo, sino un proyecto que cambia de precio según lo que necesita tu negocio para vender. Pero eso no significa que estés a ciegas.',
@@ -151,7 +151,7 @@ export const blog1: PageData[] = [
     date: '2026-07-08',
     heroImage: {
       src: '/images/blog/errores-comunes-diseno-web-empresas.jpg',
-      alt: 'Empresario frustrado revisando una página web que no funciona',
+      alt: 'Ventana de navegador con señales de advertencia por diseño roto, carga lenta y enlace caído, y una llave que lo repara',
     },
     lead: [
       'Una página web puede estar en línea, verse moderna y aun así estar ahuyentando clientes todos los días sin que lo notes. No hace ruido cuando falla: simplemente la gente entra, no encuentra lo que busca y se va con la competencia. El dinero perdido no aparece en ningún reporte.',
@@ -290,7 +290,7 @@ export const blog1: PageData[] = [
     date: '2026-06-24',
     heroImage: {
       src: '/images/blog/diferencia-wordpress-shopify-diseno-web.jpg',
-      alt: 'Comparación entre las plataformas WordPress y Shopify para diseño web',
+      alt: 'Dos tarjetas enfrentadas, un constructor de páginas por bloques y una tienda online, para comparar plataformas de diseño web',
     },
     lead: [
       'WordPress o Shopify es una de las decisiones que más veces nos toca aclarar, y casi siempre viene mal planteada. La pregunta no es cuál es mejor en abstracto, porque no hay un ganador universal: hay una herramienta correcta para tu caso y varias que te complicarían la vida.',
@@ -417,7 +417,7 @@ export const blog1: PageData[] = [
     date: '2026-06-10',
     heroImage: {
       src: '/images/blog/como-elegir-agencia-diseno-web-panama.jpg',
-      alt: 'Reunión para elegir una agencia de diseño web en Panamá',
+      alt: 'Lupa sobre tres propuestas de sitio web, una marcada con una palomita, para elegir una agencia de diseño web en Panamá',
     },
     lead: [
       'Contratar a quien hará tu página web se parece más a elegir socio que a comprar un producto. Vas a depender de esa persona o empresa para uno de tus canales de venta más importantes, y un mal casting se paga con meses perdidos, dinero tirado y un sitio que hay que rehacer.',
@@ -547,7 +547,7 @@ export const blog1: PageData[] = [
     date: '2026-05-27',
     heroImage: {
       src: '/images/blog/cuanto-tiempo-toma-hacer-una-pagina-web.jpg',
-      alt: 'Calendario y planificación del tiempo para desarrollar una página web',
+      alt: 'Línea de tiempo con cinco etapas, del esquema al lanzamiento, que muestra cuánto tarda en hacerse una página web',
     },
     lead: [
       'Cuando alguien quiere una web, casi siempre la quiere para ayer. Es comprensible: hay una campaña por lanzar, una temporada que aprovechar o simplemente las ganas de dejar de perder clientes por no tener presencia. Pero prometer una web en tres días suele ser señal de que se va a entregar una plantilla, no una solución.',

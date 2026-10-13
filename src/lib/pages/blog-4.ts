@@ -239,7 +239,7 @@ export const blog4: PageData[] = [
     date: '2026-06-16',
     heroImage: {
       src: '/images/blog/como-hacer-campanas-de-whatsapp-masivo-en-panama.jpg',
-      alt: 'Persona enviando mensajes de WhatsApp masivo desde una laptop y un celular',
+      alt: 'Mensajes de WhatsApp que se segmentan en tres flujos hacia distintos grupos de clientes en una campaña masiva',
     },
     lead: [
       'WhatsApp es el canal donde de verdad está tu cliente en Panamá: lo abre todos los días y ahí sí lee. Por eso tantos negocios quieren mandar campañas masivas. El problema es que casi todos lo hacen mal, y terminan con el número bloqueado.',
@@ -351,7 +351,7 @@ export const blog4: PageData[] = [
     date: '2026-06-02',
     heroImage: {
       src: '/images/blog/email-marketing-para-negocios-en-panama.jpg',
-      alt: 'Persona revisando una campaña de email marketing en una laptop',
+      alt: 'Un sobre que libera correos de boletín junto a un editor de plantillas y un gráfico de crecimiento de email marketing',
     },
     lead: [
       'A muchos les suena viejo, pero el email sigue siendo el canal con mejor retorno del marketing digital, y por una razón simple: es tuyo. No dependes del algoritmo de nadie ni pagas por cada alcance. Tu lista es un activo que te pertenece.',

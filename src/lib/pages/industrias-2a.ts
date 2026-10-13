@@ -175,7 +175,7 @@ export const industrias2a: PageData[] = [
     h1: 'Diseño web para agencias de viajes y tours',
     breadcrumb: 'Agencias de Viajes',
     service: { type: 'Diseño web para agencias de viajes y tour operadores' },
-    heroImage: { src: '/images/industrias/diseno-web-agencias-viajes-tours-panama.jpg', alt: 'Viajera de espaldas con mochila mirando un mapa, lista para un tour' },
+    heroImage: { src: '/images/industrias/diseno-web-agencias-viajes-tours-panama.jpg', alt: 'Cayos de San Blas con una ruta turística marcada y una tableta con itinerario y botón de reserva para agencias de tours' },
     lead: [
       'El viajero sueña con San Blas o Bocas desde el celular, a las once de la noche. Si en ese momento no puede reservar contigo, mañana reserva con otro.',
       'Tu agencia trabaja el paquete, arma el itinerario y aún así muchas ventas se te van por depender del WhatsApp saturado o de intermediarios que se llevan margen. Una web propia con paquetes claros, disponibilidad y reserva con depósito convierte al viajero en el momento en que está más motivado, sin que nadie más se meta en medio.',

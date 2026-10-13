@@ -126,7 +126,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Elegir dominio web',
     category: 'Negocio',
     date: '2026-06-26',
-    heroImage: { src: '/images/blog/como-elegir-el-dominio-web-perfecto.jpg', alt: 'Persona escribiendo una dirección web en el teclado de una laptop' },
+    heroImage: { src: '/images/blog/como-elegir-el-dominio-web-perfecto.jpg', alt: 'Barra de dirección web con candado y un globo terráqueo que ilustran cómo elegir el dominio de un negocio' },
     lead: [
       'El dominio es tu dirección en internet: eso que la gente escribe para encontrarte y que aparece en tu tarjeta, tu Instagram y tus correos. Es la primera impresión de tu marca antes de que abran siquiera tu página.',
       'Elegirlo bien parece sencillo hasta que te sientas a hacerlo y descubres que todo lo bueno "ya está tomado". En esta guía vas a decidir con criterio: qué extensión usar, cómo dar con un nombre que se recuerde y qué errores te pueden costar caro después.',
@@ -235,7 +235,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Necesitas una web',
     category: 'Negocio',
     date: '2026-06-12',
-    heroImage: { src: '/images/blog/por-que-tu-negocio-necesita-una-pagina-web.jpg', alt: 'Dueño de un pequeño negocio revisando su sitio web en una tablet' },
+    heroImage: { src: '/images/blog/por-que-tu-negocio-necesita-una-pagina-web.jpg', alt: 'Local con toldo que se convierte en una ventana de navegador y recibe clientes que llegan desde un mapa' },
     lead: [
       '"Yo con mi Instagram tengo suficiente." Lo escuchamos todo el tiempo, y se entiende: las redes son gratis, rápidas y ahí está tu gente. Pero construir tu negocio solo sobre redes es levantar tu casa en un terreno alquilado.',
       'En 2026, una página web propia dejó de ser un lujo para volverse la base sobre la que se apoya todo lo demás. En este artículo te explicamos, sin humo, por qué tu negocio en Panamá la necesita y qué te da que las redes, por diseño, no pueden darte.',

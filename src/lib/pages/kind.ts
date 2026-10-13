@@ -21,12 +21,16 @@ export function pageTypeOf(page: Pick<PageData, 'slug' | 'kind' | 'anatomia' | '
 /** Los 6 hubs comerciales: su índice es `hub` y lo que cuelga de ellos es `service`. */
 export const HUBS = ['servicios', 'crecimiento', 'marketing', 'tecnologias', 'funcionalidades', 'saas'] as const;
 
+/** Páginas de servicio que viven en la raíz del sitio, fuera de los hubs. */
+export const SERVICIOS_EN_RAIZ = ['inteligencia-artificial-para-empresas-panama'] as const;
+
 export function kindOf(page: Pick<PageData, 'slug' | 'kind'>): PageKind {
   if (page.kind) return page.kind;
   const s = page.slug;
   const raiz = s.split('/')[0];
   if (s === 'diseno-web-panama') return 'pillar';
   if (s === 'precios') return 'pricing';
+  if ((SERVICIOS_EN_RAIZ as readonly string[]).includes(s)) return 'service';
   if (raiz === 'blog') return 'blog';
   if (raiz === 'industrias') return 'industry';
   if (raiz === 'miami') return 'location';

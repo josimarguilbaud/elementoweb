@@ -132,7 +132,7 @@ export function serviceNode(page: PageData) {
   return {
     '@type': 'Service',
     '@id': `${site.domain}${url(page.slug)}#servicio`,
-    name: page.h1,
+    name: page.service.name ?? page.h1,
     serviceType: page.service.type,
     description: page.description,
     provider: { '@id': ORG_ID },

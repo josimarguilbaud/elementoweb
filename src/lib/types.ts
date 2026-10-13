@@ -148,8 +148,8 @@ export interface PageData {
   /** `boton` sustituye el texto del botón principal de la portada v2 cuando la clave del formulario es genérica. */
   cta?: { h2?: string; text?: string; wa?: string; boton?: string };
   noindex?: boolean;
-  /** Schema Service */
-  service?: { type: string };
+  /** Schema Service. `name` cuando el H1 no nombra el servicio (un H1 de campaña); si falta, el nombre es el H1. */
+  service?: { type: string; name?: string };
   /** Hub padre para migas: 'servicios' | 'tecnologias' | ... */
   parent?: { slug: string; label: string };
   /** Muestra la banda de credenciales (hubs y páginas clave, no en todas). */

@@ -31,6 +31,7 @@
     { "ruta": "/saas/nouscrm/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): nodo Service sin oferta (precio propuesto, D23), portada nueva en foto (D45) y FAQPage con el precio de entrada." },
     { "ruta": "/saas/cifrao/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): nodo Service y FAQPage sin las respuestas contradictorias sobre implementación." },
     { "ruta": "/servicios/", "campos": ["title", "description", "h1", "schema"], "motivo": "Fase 2b (R35 de KEYWORDS.md): el hub pasa a «servicios web panamá» y cede «creación de páginas web» a la pilar; anatomía v2 (D44) con portada nueva en foto (D45)." },
-    { "ruta": "/saas/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): el FAQPage pierde la pregunta sobre «Meta Verified Tech Provider», afirmación bloqueada (D11)." }
+    { "ruta": "/saas/", "campos": ["schema"], "motivo": "Anatomía v2 (D44): el FAQPage pierde la pregunta sobre «Meta Verified Tech Provider», afirmación bloqueada (D11)." },
+    { "ruta": "/inteligencia-artificial-para-empresas-panama/", "campos": ["schema"], "motivo": "Pasa de página hecha a mano a la plantilla con anatomía v2 (D44): el schema lo arma la plantilla (Service con oferta confirmada desde $2,900, ImageObject de la portada nueva en foto, D45) y el FAQPage suma «¿Qué es una base de conocimiento con RAG?». Title, description y H1 no cambian." }
   ]
 }

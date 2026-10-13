@@ -3,6 +3,7 @@ import type { PageData } from '../types';
 import formulario from '../../data/formulario.json';
 import { core } from './core';
 import { precios } from './precios';
+import { iaEmpresas } from './ia-empresas';
 import { casos } from './casos';
 import { recursos } from './recursos';
 import { clusters } from './clusters';
@@ -65,6 +66,7 @@ import { blog41 } from './blog-41';
 export const pages: PageData[] = [
   ...core,
   ...precios,
+  ...iaEmpresas,
   ...casos,
   ...recursos,
   ...clusters,

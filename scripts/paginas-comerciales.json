@@ -1,0 +1,45 @@
+{
+  "_nota": "Manifiesto de páginas comerciales (D35). Lista cada página que el marcador debe vigilar con su tipo, la fase en que se construye y, si se sabe, el estado de precio esperado. El validador (scripts/validar-marcador.mjs) exige que las páginas con fase <= faseActual existan en dist/, emitan <main data-page-type> y cumplan el marcador; falla si una página emite data-page-type sin estar aquí, si un slug de una sección comercial no está aquí ni en scripts/exclusiones-marcador.json, y si una página excluida ya emite data-page-type. Subir faseActual cuando se publica cada fase; la fase 1 no exige ninguna página.",
+  "ordenFases": ["1", "2a", "3", "2b", "4", "5"],
+  "faseActual": "1",
+  "seccionesComerciales": ["servicios", "crecimiento", "marketing", "tecnologias", "funcionalidades", "saas"],
+  "paginas": [
+    { "slug": "diseno-web-panama", "tipo": "pilar", "fase": "2a" },
+    { "slug": "servicios/diseno-web-corporativo-panama", "tipo": "servicio", "fase": "2a", "precio": "confirmado" },
+    { "slug": "crecimiento/seo-posicionamiento-web-panama", "tipo": "servicio", "fase": "2a", "precio": "cotizado" },
+    { "slug": "marketing/google-ads-panama", "tipo": "servicio", "fase": "2a", "precio": "propuesto" },
+
+    { "slug": "", "tipo": "home", "fase": "2b" },
+    { "slug": "servicios", "tipo": "hub", "fase": "2b" },
+    { "slug": "precios", "tipo": "precios", "fase": "2b" },
+
+    { "slug": "servicios/tiendas-online-ecommerce-panama", "tipo": "servicio", "fase": "4" },
+    { "slug": "servicios/landing-pages-alta-conversion-panama", "tipo": "servicio", "fase": "4" },
+    { "slug": "servicios/redisenio-web-panama", "tipo": "servicio", "fase": "4" },
+    { "slug": "marketing/whatsapp-marketing-masivo-panama", "tipo": "servicio", "fase": "4" },
+    { "slug": "funcionalidades/chatbots-ia-web-wazacrm-panama", "tipo": "servicio", "fase": "4" },
+    { "slug": "inteligencia-artificial-para-empresas-panama", "tipo": "servicio", "fase": "4" },
+    { "slug": "crecimiento/seo-local-google-maps-panama", "tipo": "servicio", "fase": "4" },
+
+    { "slug": "marketing/facebook-instagram-ads-panama", "tipo": "servicio", "fase": "5" },
+    { "slug": "marketing/contenido-redes-sociales-panama", "tipo": "servicio", "fase": "5" },
+    { "slug": "marketing/email-marketing-panama", "tipo": "servicio", "fase": "5" },
+    { "slug": "marketing/automatizaciones-n8n-panama", "tipo": "servicio", "fase": "5" },
+    { "slug": "tecnologias/diseno-web-wordpress-panama", "tipo": "servicio", "fase": "5" },
+    { "slug": "tecnologias/diseno-web-shopify-panama", "tipo": "servicio", "fase": "5" },
+    { "slug": "tecnologias/desarrollo-web-a-medida-vue-react-panama", "tipo": "servicio", "fase": "5" },
+    { "slug": "funcionalidades/integracion-yappy-pasarelas-pago-panama", "tipo": "servicio", "fase": "5" },
+    { "slug": "funcionalidades/sistemas-reservas-citas-online-panama", "tipo": "servicio", "fase": "5" },
+    { "slug": "funcionalidades/integracion-cybersource-panama", "tipo": "servicio", "fase": "5" },
+    { "slug": "crecimiento/mantenimiento-web-panama", "tipo": "servicio", "fase": "5" },
+    { "slug": "crecimiento/hosting-infraestructura-panama", "tipo": "servicio", "fase": "5" },
+    { "slug": "saas/wazacrm", "tipo": "servicio", "fase": "5" },
+    { "slug": "saas/nouscrm", "tipo": "servicio", "fase": "5" },
+    { "slug": "saas/cifrao", "tipo": "servicio", "fase": "5" },
+    { "slug": "crecimiento", "tipo": "hub", "fase": "5" },
+    { "slug": "marketing", "tipo": "hub", "fase": "5" },
+    { "slug": "tecnologias", "tipo": "hub", "fase": "5" },
+    { "slug": "funcionalidades", "tipo": "hub", "fase": "5" },
+    { "slug": "saas", "tipo": "hub", "fase": "5" }
+  ]
+}

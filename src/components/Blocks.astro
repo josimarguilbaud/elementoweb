@@ -244,8 +244,8 @@ if (v2) {
         <div class="flex flex-col gap-3">
           {b.items.map((it, i) => (
             <details open={i === 0} class="group reveal rounded-2xl border border-ink/10 bg-white px-6 open:border-teal-deep/30">
-              <summary class="flex cursor-pointer list-none items-center gap-4 py-5 [&::-webkit-details-marker]:hidden"><span class="font-display text-sm font-bold text-teal-deep">{String(i + 1).padStart(2, '0')}</span><span class="flex-1 font-display text-lg font-semibold text-ink">{it.q}</span><span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ink/15 transition-transform duration-300 group-open:rotate-45 group-open:border-teal-deep group-open:bg-teal-deep group-open:text-white"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg></span></summary>
-              <p class="rt pb-6 pl-9 leading-relaxed text-ink/70" set:html={it.a}></p>
+              <summary class="flex cursor-pointer list-none items-center gap-4 py-5 [&::-webkit-details-marker]:hidden"><span class="font-display text-sm font-bold text-teal-deep">{String(i + 1).padStart(2, '0')}</span><span class="flex-1 font-display text-lg font-semibold text-ink" data-faq-q={v2 ? '' : undefined}>{it.q}</span><span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ink/15 transition-transform duration-300 group-open:rotate-45 group-open:border-teal-deep group-open:bg-teal-deep group-open:text-white"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg></span></summary>
+              <p class="rt pb-6 pl-9 leading-relaxed text-ink/70" set:html={it.a} data-faq-a={v2 ? '' : undefined}></p>
             </details>
           ))}
         </div>

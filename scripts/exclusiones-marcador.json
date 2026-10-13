@@ -1,0 +1,7 @@
+{
+  "_nota": "Páginas hechas a mano que NO usan la plantilla y quedan fuera del marcador hasta migrarse (D5). La lista no caduca, pero el validador falla si una página excluida ya emite data-page-type: al migrarla se quita de aquí. Cada exclusión lleva su motivo.",
+  "exclusiones": [
+    { "slug": "inteligencia-artificial-para-empresas-panama", "motivo": "Página hecha a mano en src/pages/inteligencia-artificial-para-empresas-panama/index.astro; migra a la plantilla en la fase 4" },
+    { "slug": "funcionalidades/integracion-cybersource-panama", "motivo": "Página hecha a mano; migra a la plantilla en la fase 5" }
+  ]
+}

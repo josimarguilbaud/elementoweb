@@ -26,7 +26,8 @@
     "email-marketing": { "nombre": "Email marketing", "monto": 200, "unidad": "mes", "desde": true, "fuente": "src/lib/pages/marketing.ts" },
     "whatsapp-marketing": { "nombre": "WhatsApp marketing", "monto": 150, "unidad": "mes", "desde": true, "fuente": "src/lib/pages/marketing.ts" },
     "automatizacion-n8n": { "nombre": "Automatización n8n", "monto": 300, "unidad": "por automatización", "desde": true, "fuente": "src/lib/pages/marketing.ts" },
-    "logo-ia": { "nombre": "Logo e identidad básica con IA", "monto": 120, "unidad": "proyecto", "desde": true, "fuente": "src/lib/site.ts pricing.production" }
+    "logo-ia": { "nombre": "Logo e identidad básica con IA", "monto": 120, "unidad": "proyecto", "desde": true, "fuente": "src/lib/site.ts pricing.production" },
+    "nouscrm": { "nombre": "NousCRM, precio de entrada", "monto": 20, "unidad": "mes", "desde": true, "fuente": "public/propuestas/nouscrm-presentacion (fijado por el dueño el 28-sep-2026)" }
   },
   "sinPrecio": ["seo", "ia"]
 }

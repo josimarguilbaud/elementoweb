@@ -210,6 +210,36 @@
       "herramienta": "Lighthouse",
       "fecha": "2026-10-13",
       "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "wazacrm-lcp",
+      "url": "http://localhost:4602/saas/wazacrm/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 2032,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "nouscrm-lcp",
+      "url": "http://localhost:4602/saas/nouscrm/",
+      "metrica": "LCP",
+      "valor": "2,2 s",
+      "valorNumerico": 2183,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "cifrao-lcp",
+      "url": "http://localhost:4602/saas/cifrao/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 1958,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
     }
   ]
 }

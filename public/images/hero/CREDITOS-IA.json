@@ -18,6 +18,7 @@
     { "archivo": "tecnologias--diseno-web-wordpress-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Recepcionista de una clínica dental actualiza la web en una laptop" },
     { "archivo": "funcionalidades--integracion-yappy-pasarelas-pago-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Mujer confirma un pago en su celular desde el sofá de su casa" },
     { "archivo": "funcionalidades--sistemas-reservas-citas-online-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Barbero revisa las citas del día en una tableta" },
-    { "archivo": "tecnologias--desarrollo-web-a-medida-vue-react-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Dos desarrolladores revisan la interfaz de una aplicación; recortada para dejar fuera un logo" }
+    { "archivo": "tecnologias--desarrollo-web-a-medida-vue-react-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Dos desarrolladores revisan la interfaz de una aplicación; recortada para dejar fuera un logo" },
+    { "archivo": "saas--nouscrm.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Dueña de una imprenta envía una cotización desde su celular" }
   ]
 }

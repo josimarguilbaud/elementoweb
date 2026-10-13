@@ -19,6 +19,10 @@
     { "archivo": "movil-ciclofrio.webp", "origen": "Captura de ciclofrio.com", "descripcion": "Primera pantalla en celular" },
     { "archivo": "movil-sanblasfull.webp", "origen": "Captura de sanblasfull.com", "descripcion": "Primera pantalla en celular" },
     { "archivo": "movil-remodelacionesjg.webp", "origen": "Captura de remodelacionesjg.com", "descripcion": "Primera pantalla en celular" },
-    { "archivo": "movil-grupoviesa.webp", "origen": "Captura de grupoviesa.com", "descripcion": "Primera pantalla en celular" }
+    { "archivo": "movil-grupoviesa.webp", "origen": "Captura de grupoviesa.com", "descripcion": "Primera pantalla en celular" },
+    { "archivo": "nouscrm-cotizacion.webp", "origen": "Captura de NousCRM con datos de demostración (public/propuestas/nouscrm-presentacion, 29-sep-2026)", "descripcion": "Pantalla real del producto; empresas, montos y personas ficticios" },
+    { "archivo": "nouscrm-cobrar.webp", "origen": "Captura de NousCRM con datos de demostración (public/propuestas/nouscrm-presentacion, 29-sep-2026)", "descripcion": "Pantalla real del producto; empresas, montos y personas ficticios" },
+    { "archivo": "nouscrm-tel-factura.webp", "origen": "Captura de NousCRM con datos de demostración (public/propuestas/nouscrm-presentacion, 29-sep-2026)", "descripcion": "Pantalla real del producto; empresas, montos y personas ficticios" },
+    { "archivo": "nouscrm-tel-cobrar.webp", "origen": "Captura de NousCRM con datos de demostración (public/propuestas/nouscrm-presentacion, 29-sep-2026)", "descripcion": "Pantalla real del producto; empresas, montos y personas ficticios" }
   ]
 }

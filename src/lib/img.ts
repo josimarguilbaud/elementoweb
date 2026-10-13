@@ -108,8 +108,9 @@ export function pickImg(slug: string): keyof typeof PHOTOS {
    nombra el tema de forma natural, sin relleno de palabras clave. Sin entrada aquí, el alt
    cae al H1, que repite el título y no describe la imagen (peor para accesibilidad y SEO de imágenes). */
 export const HERO_ALTS: Record<string, string> = {
+  'diseno-web-panama': 'Emprendedora sonríe al revisar la página web de su tienda en una laptop, frente a los balcones del Casco Viejo de Panamá',
   'marketing/automatizaciones-n8n-panama': 'Diagrama de flujo con nodos de disparador, filtro, correo, chat y base de datos conectados por líneas: automatización con n8n',
-  'marketing/whatsapp-marketing-masivo-panama': 'Teléfono con globos de chat de WhatsApp que se reparten a una red de contactos: mensajería masiva con la API oficial',
+  'marketing/whatsapp-marketing-masivo-panama': 'Dueño de una ferretería de barrio en Ciudad de Panamá responde mensajes de clientes en su celular desde el mostrador',
   'saas/nouscrm': 'Panel de CRM con embudo de ventas, cotización, factura pagada y una conversación de chat conectada a un contacto',
   'servicios': 'Ventana de sitio web rodeada de seis servicios: tienda, SEO, chat, automatización, seguridad y analítica',
   'tecnologias/diseno-web-wordpress-panama': 'Sitio web armado con bloques a medida frente a una cuadrícula de plantillas genéricas: diseño en WordPress sin plantillas',
@@ -127,7 +128,7 @@ export const HERO_ALTS: Record<string, string> = {
   'crecimiento/hosting-infraestructura-panama': 'Pasillo de un centro de datos con racks de servidores y luces azules y verdes, la base del hosting y la infraestructura web',
   'crecimiento': 'Clientes en fila ante el mostrador de una tienda de barrio con palmeras afuera, un negocio local que crece con su web',
   'crecimiento/seo-local-google-maps-panama': 'Vista aérea con dron de un cruce de calles de barrio con techos de zinc, palmeras y autos, para el SEO local en el mapa',
-  'crecimiento/seo-posicionamiento-web-panama': 'Manos siembran plántulas en bolsas de vivero con tierra, metáfora del crecimiento gradual del posicionamiento web',
+  'crecimiento/seo-posicionamiento-web-panama': 'Mujer de negocios busca en Google desde su laptop en un coworking de Ciudad de Panamá, con café y su celular en la mesa',
   'funcionalidades/chatbots-ia-web-wazacrm-panama': 'Mujer sonriente escribe en su celular desde un sofá en penumbra, como quien conversa con el chatbot de IA de un negocio',
   'funcionalidades': 'Dos hombres ante un monitor en un escritorio con libretas y plantas, uno señala la pantalla al planear funcionalidades web',
   'funcionalidades/integracion-yappy-pasarelas-pago-panama': 'Manos acercan un celular a una terminal de cobro sobre un mostrador de madera, ilustrando los pagos en línea con pasarelas',
@@ -140,10 +141,10 @@ export const HERO_ALTS: Record<string, string> = {
   'industrias/diseno-web-talleres-automotriz-panama': 'Taller mecánico con un sedán elevado en un elevador de dos columnas y carros de herramientas, para el diseño web de talleres',
   'industrias/diseno-web-turismo-hoteles-panama': 'Terraza de hotel frente al mar con dos camastros de madera y una palmera al atardecer, para el diseño web de turismo',
   'industrias': 'Calle comercial de barrio antiguo con toldos y fachadas coloniales donde la gente compra frutas, en diseño web por industria',
-  'marketing/contenido-redes-sociales-panama': 'Manos colocan un celular en un mini trípode junto a frascos de producto y una planta, para grabar contenido de redes sociales',
-  'marketing/email-marketing-panama': 'Persona mayor mirando su celular en la mesa del desayuno, entre café y frutas, como lectora típica de un email marketing',
-  'marketing/facebook-instagram-ads-panama': 'Hombre con un celular horizontal de pantalla en blanco ante una calle desenfocada, en publicidad de Facebook e Instagram',
-  'marketing/google-ads-panama': 'Hombre de perfil mirando su celular en una acera concurrida con toldos y palmeras, como el cliente que busca en Google',
+  'marketing/contenido-redes-sociales-panama': 'Creadora de contenido fotografía con su celular en trípode un plato de patacones con pescado en una fonda de Panamá, con el dueño sonriendo al fondo',
+  'marketing/email-marketing-panama': 'Mujer abre un boletín por correo en su laptop junto a la ventana de su apartamento en Ciudad de Panamá, con café y plantas',
+  'marketing/facebook-instagram-ads-panama': 'Dos jóvenes se ríen mientras miran su feed en el celular sentados en la Cinta Costera, con los rascacielos de Panamá al fondo',
+  'marketing/google-ads-panama': 'Hombre busca un servicio en su celular de noche en la mesa de su cocina, con las luces de Ciudad de Panamá en la ventana',
   'marketing': 'Avenida comercial al atardecer con tráfico, peatones y rótulos luminosos, donde el marketing digital busca clientes',
   'miami/diseno-web-brickell': 'Rascacielos de vidrio azul vistos desde la calle, con palmeras y avenida al pie, para diseño web en Brickell',
   'miami/diseno-web-coral-gables': 'Calle sombreada por banianos junto a fachadas mediterráneas con toldos verdes y un sedán, para diseño web en Coral Gables',
@@ -165,7 +166,8 @@ export const HERO_ALTS: Record<string, string> = {
   'tecnologias/diseno-web-shopify-panama': 'Mostrador de tienda física con bolsa de papel kraft, datáfono y estantes al fondo, el comercio que pasa a vender con Shopify',
   'tecnologias': 'Manos tecleando ante un monitor con código en un editor oscuro, con tazas y plantas al fondo, el desarrollo web a medida',
   'terminos': 'Hojas en blanco y un bolígrafo negro sobre una mesa de madera junto a una ventana, para los términos de contratación',
-  'servicios/redisenio-web-panama': 'Pared mitad recién pintada de blanco y mitad con yeso viejo y agrietado, metáfora del antes y después de rediseñar una web',
+  'servicios/redisenio-web-panama': 'Dueño de un negocio familiar y una diseñadora revisan el nuevo diseño de su web en un monitor, con las páginas del sitio viejo anotadas sobre el escritorio',
+  'servicios/landing-pages-alta-conversion-panama': 'Hombre con mochila toca el botón de una página en su celular en el lobby de un edificio de oficinas de Costa del Este',
   'crecimiento/mantenimiento-web-panama': 'Monitor con un panel de monitoreo de sitio web y gráficas de disponibilidad en verde, para el mantenimiento web en Panamá',
   'industrias/diseno-web-abogados-panama': 'Escritorio de madera con cuaderno de cuero, pluma y estantes de libros jurídicos, en una página de diseño web para abogados',
   'industrias/diseno-web-belleza-spa-panama': 'Salón de belleza luminoso con sillones, mesón con brochas y espejos, para el diseño web de salones de belleza y spas',
@@ -175,7 +177,7 @@ export const HERO_ALTS: Record<string, string> = {
   'miami/diseno-web-en-miami-en-espanol': 'Avenida costera de Miami con torres de vidrio y palmeras frente al mar, para el diseño web en español de negocios de Miami',
   'miami/diseno-web-kendall': 'Edificio comercial de una planta con palmeras y estacionamiento al atardecer, para el diseño web de negocios en Kendall',
   'portafolio': 'Mesa con impresiones de maquetas de sitios web y dos celulares que muestran páginas, junto al portafolio de proyectos de diseño web',
-  'servicios/diseno-web-corporativo-panama': 'Fachada moderna de concreto y vidrio vista desde abajo, para el diseño de sitios web corporativos en Panamá',
+  'servicios/diseno-web-corporativo-panama': 'Dos ejecutivos revisan el sitio web corporativo de su empresa en una pantalla de sala de reuniones con vista a Punta Paitilla',
   'tecnologias/desarrollo-web-a-medida-vue-react-panama': 'Banco de carpintero con un bloque de madera sujeto en prensas, metáfora del desarrollo web a medida con Vue y React',
 };
 

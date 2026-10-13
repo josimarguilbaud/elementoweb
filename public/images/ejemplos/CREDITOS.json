@@ -1,0 +1,24 @@
+{
+  "nota_general": "Imágenes de las maquetas de «Así se vería» (D44). Las fotos anuncio-*, post-* y producto-bolso (y sus recortes correo-cafe, whatsapp-cafe y correo-bolso) se generaron con IA (fal-ai/nano-banana-2, 1K, 13 de octubre de 2026) para un negocio de ejemplo: no son personas reales ni clientes. Las capturas movil-* son la primera pantalla en celular de proyectos publicados del portafolio de Elemento Web, tomadas con scripts/capturas-movil.mjs el 13 de octubre de 2026.",
+  "imagenes": [
+    { "archivo": "anuncio-cafe.webp", "origen": "IA (fal · nano-banana-2)", "descripcion": "Dos cafés fríos y pasteles en el mostrador de una cafetería" },
+    { "archivo": "anuncio-clinica.webp", "origen": "IA (fal · nano-banana-2)", "descripcion": "Odontóloga conversa con una paciente en una clínica luminosa" },
+    { "archivo": "post-latte.webp", "origen": "IA (fal · nano-banana-2)", "descripcion": "Barista sirve leche para el arte latte" },
+    { "archivo": "post-mesa.webp", "origen": "IA (fal · nano-banana-2)", "descripcion": "Café, granos, croissant y pan de banano vistos desde arriba" },
+    { "archivo": "post-barista.webp", "origen": "IA (fal · nano-banana-2)", "descripcion": "Manos pesan café molido junto a un filtro de goteo" },
+    { "archivo": "post-amigos.webp", "origen": "IA (fal · nano-banana-2)", "descripcion": "Tres amigas se ríen en una mesa de cafetería" },
+    { "archivo": "post-coldbrew.webp", "origen": "IA (fal · nano-banana-2)", "descripcion": "Café en frío servido sobre hielo" },
+    { "archivo": "post-fachada.webp", "origen": "IA (fal · nano-banana-2)", "descripcion": "Fachada de una cafetería de esquina al anochecer" },
+    { "archivo": "correo-cafe.webp", "origen": "Recorte de post-mesa.webp", "descripcion": "Encabezado del correo de ejemplo" },
+    { "archivo": "whatsapp-cafe.webp", "origen": "Recorte de post-coldbrew.webp", "descripcion": "Imagen de la plantilla de WhatsApp de ejemplo" },
+    { "archivo": "producto-bolso.webp", "origen": "IA (fal · nano-banana-2)", "descripcion": "Bolso de playa tejido con asas de cuero sobre un piso de terracota" },
+    { "archivo": "correo-bolso.webp", "origen": "Recorte de producto-bolso.webp", "descripcion": "Imagen del correo de carrito abandonado de ejemplo" },
+    { "archivo": "movil-tramitapa.webp", "origen": "Captura de tramitapa.com", "descripcion": "Primera pantalla en celular" },
+    { "archivo": "movil-klcontable.webp", "origen": "Captura de klcontable.com", "descripcion": "Primera pantalla en celular" },
+    { "archivo": "movil-movers.webp", "origen": "Captura de panamainternationalmovers.com", "descripcion": "Primera pantalla en celular" },
+    { "archivo": "movil-ciclofrio.webp", "origen": "Captura de ciclofrio.com", "descripcion": "Primera pantalla en celular" },
+    { "archivo": "movil-sanblasfull.webp", "origen": "Captura de sanblasfull.com", "descripcion": "Primera pantalla en celular" },
+    { "archivo": "movil-remodelacionesjg.webp", "origen": "Captura de remodelacionesjg.com", "descripcion": "Primera pantalla en celular" },
+    { "archivo": "movil-grupoviesa.webp", "origen": "Captura de grupoviesa.com", "descripcion": "Primera pantalla en celular" }
+  ]
+}

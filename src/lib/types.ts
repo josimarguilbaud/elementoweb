@@ -21,11 +21,51 @@ export type Block =
   | { type: 'answer'; h2?: string; text: string; fecha: string }
   | { type: 'receipt'; titulo: string; fecha: string; metodo?: string; precio: ReceiptPrice; plazo: string; medicionId?: string; pie?: string[]; compacto?: boolean }
   | { type: 'compare'; h2: string; intro?: string; criterios: CompareRow[]; otraCotizacion?: boolean }
-  | { type: 'includes'; h2: string; incluye: string[]; entregables: string[]; noIncluye: string[] }
+  /* `incluye` acepta texto suelto o { t, d } (molde Kredit, D44): título en negrita y una línea de explicación.
+     `medimos` son los indicadores de «Cómo lo medimos». */
+  | { type: 'includes'; h2: string; intro?: string; incluye: (string | ItemDetalle)[]; entregables: string[]; noIncluye: string[]; medimos?: string[] }
+  /* «Así se vería» (D44): maquetas del entregable hechas en HTML. Nunca afirman un resultado. */
+  | { type: 'ejemplos'; h2: string; intro?: string; items: Ejemplo[]; nota: string; columnas?: 1 | 2 | 3 }
+  /* Tabla de ejemplo (campañas y palabras, pilares del mes, páginas del sitio). */
+  | { type: 'tabla'; h2: string; intro?: string; columnas: string[]; filas: string[][]; nota?: string }
   | { type: 'blank'; punto: 'prueba'; h2?: string }
   /* Formulario por servicio (D10). Existe pero NINGUNA página lo usa hasta la fase 3: reemplaza al bloque `form` cuando n8n acepte el contrato v2. */
   | { type: 'service-form'; h2?: string; intro?: string; servicio?: string }
   | { type: 'showcase'; id?: string; ctaLabel?: string; extraViews?: { label: string; src: string }[]; h2: string; intro?: string; project?: string; image?: { src: string; alt: string; width: number; height: number; caption: string }; notes: { label: string; text: string }[]; caption?: string };
+
+/** Elemento de «Qué incluye» con título y explicación (molde Kredit, D44). */
+export interface ItemDetalle { t: string; d: string }
+
+/** Imagen local de una maqueta: ruta pública, texto alternativo y dimensiones reales. */
+export interface ImgEjemplo { src: string; alt: string; width: number; height: number }
+
+/** Resultado en la maqueta de Google: anuncio (Patrocinado), orgánico o con preguntas desplegadas. */
+export interface ResultadoGoogle {
+  clase: 'anuncio' | 'organico';
+  sitio: string;
+  url: string;
+  titulo: string;
+  texto: string;
+  enlaces?: string[];
+  preguntas?: string[];
+}
+
+/** Maquetas de «Así se vería» (D44). Todas son ejemplos y lo dicen en pantalla. */
+export type Ejemplo =
+  | { tipo: 'google'; consulta: string; resultados: ResultadoGoogle[] }
+  | { tipo: 'anuncio-social'; cuenta: string; inicial: string; img: ImgEjemplo; pill?: string; titular: string; enfasis?: string; sub?: string; cta: string; texto: string }
+  | { tipo: 'post'; img: ImgEjemplo; pill: string; titular: string; enfasis?: string; sub?: string; boton?: string; reel?: boolean; formato: string; objetivo: string; llamado: string }
+  | { tipo: 'web'; dominio: string; escritorio: ImgEjemplo; movil?: ImgEjemplo; pie: string }
+  | { tipo: 'whatsapp'; negocio: string; mensajes: { de: 'negocio' | 'cliente'; texto: string; hora: string; botones?: string[]; img?: ImgEjemplo }[] }
+  | { tipo: 'correo'; remitente: string; asunto: string; previa: string; img?: ImgEjemplo; titular: string; texto: string; boton: string }
+  | { tipo: 'flujo'; titulo: string; pasos: { t: string; d: string }[] }
+  | { tipo: 'asistente'; pregunta: string; respuesta: string; fuentes: string[] }
+  /** Ficha de producto de una tienda de ejemplo: precio con ITBMS claro, envío visible y formas de pago antes del carrito. */
+  | { tipo: 'producto'; tienda: string; dominio: string; img: ImgEjemplo; nombre: string; precio: string; nota: string; opciones?: { k: string; v: string[] }; envio: string; boton: string; pagos: string }
+  /** Resumen de pago de una tienda de ejemplo: envío por zona elegible y pago local antes de confirmar. */
+  | { tipo: 'checkout'; tienda: string; lineas: { t: string; v: string }[]; envios: { t: string; d: string; v: string; sel?: boolean }[]; total: { t: string; v: string }; pagos: { t: string; sel?: boolean }[]; boton: string }
+  /** Ficha de auditoría de un sitio de ejemplo: cada fila con su estado (bien, revisar, mal). */
+  | { tipo: 'informe'; titulo: string; sitio: string; filas: { k: string; v: string; estado: 'bien' | 'ojo' | 'mal' }[]; pie: string };
 
 /** Estado del precio (D23): solo 'confirmado' puede emitir Offer y llevar cifra en la portada. */
 export type PriceState = 'confirmado' | 'propuesto' | 'cotizado';
@@ -92,9 +132,13 @@ export interface PageData {
   anatomia?: 'v2';
   /** Línea de oferta bajo los botones de la portada (precio, alcance, plazo). */
   offer?: { line: string; note: string };
+  /** Portada con foto (D45, solo anatomía v2): pie corto sobre la foto y riel con datos de alcance. La foto es la de
+   *  public/images/hero/<slug>; su alt sale de src/lib/img.ts. */
+  portada?: { pie: string; riel: { k: string; v: string }[] };
   heroCtas?: { label: string; href: string; primary?: boolean }[];
   blocks: Block[];
-  cta?: { h2?: string; text?: string; wa?: string };
+  /** `boton` sustituye el texto del botón principal de la portada v2 cuando la clave del formulario es genérica. */
+  cta?: { h2?: string; text?: string; wa?: string; boton?: string };
   noindex?: boolean;
   /** Schema Service */
   service?: { type: string };

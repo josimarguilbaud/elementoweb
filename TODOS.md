@@ -13,6 +13,18 @@
 **Priority:** P1
 **Depends on:** Permisos de clientes para los casos.
 
+### Volver a medir en producción las 11 páginas del molde Kredit
+
+**What:** Tras publicar la tanda del molde Kredit (D44), correr `node scripts/medir.mjs https://elementoweb.com/<ruta>/ --id <id> --escribir` para los 11 ids de `src/data/mediciones.json` (pilar, corporativo, SEO, Google Ads, Meta, contenido, email, WhatsApp, tiendas, landing y rediseño) y publicar el cambio.
+
+**Why:** Las mediciones del 13-oct-2026 se hicieron con Lighthouse sobre el build local (`astro preview`), porque producción todavía servía las páginas viejas. La cifra visible tiene que ser la de la página publicada, servida por nginx desde Netcup.
+
+**Context:** El método (Lighthouse móvil, 150 ms simulados, mediana de 5) es el mismo; cambia el servidor. Si hay clave de PageSpeed en `~/.ssh/psi.key`, el script usa PSI y la etiqueta lo dice.
+
+**Effort:** S
+**Priority:** P1
+**Depends on:** El push aprobado por el dueño.
+
 ### Redirecciones 301 de tres URLs retiradas que aún tienen impresiones
 
 **What:** Agregar en `nginx.conf` tres 301: `/saas/chatmantis/` a `/saas/wazacrm/`, `/funcionalidades/chatbots-ia-web-chatmantis-panama/` a `/funcionalidades/chatbots-ia-web-wazacrm-panama/` y `/saas/wapycrm/` a `/saas/nouscrm/`, y sumar la comprobación a `scripts/check-prod.sh`.

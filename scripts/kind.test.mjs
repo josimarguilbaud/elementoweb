@@ -46,8 +46,17 @@ test('pageTypeOf: solo las páginas con anatomía v2 emiten tipo, y el precio de
   assert.equal(pageTypeOf({ slug: 'precios', anatomia: 'v2', blocks: [] }), 'precios');
 });
 
-test('ninguna página existente declara anatomía v2 todavía (la fase 1 no cambia ninguna)', () => {
+test('solo las páginas del manifiesto comercial declaran anatomía v2 (desde la fase 2a)', () => {
+  const comerciales = new Set(JSON.parse(readFileSync(join(RAIZ, 'scripts/paginas-comerciales.json'), 'utf8')).paginas.map((p) => p.slug));
+  let v2 = 0;
   for (const f of readdirSync(dir).filter((n) => n.endsWith('.ts') && n !== 'index.ts')) {
-    assert.doesNotMatch(readFileSync(join(dir, f), 'utf8'), /anatomia:\s*'v2'/, `${f} ya usa la anatomía nueva`);
+    // Cada página empieza en «slug:»; se mira si su cabecera (antes de «blocks:») declara la anatomía nueva.
+    for (const parte of readFileSync(join(dir, f), 'utf8').split(/^\s{2,6}slug: '/m).slice(1)) {
+      const slug = parte.slice(0, parte.indexOf("'"));
+      if (!/anatomia:\s*'v2'/.test(parte.split(/^\s{4}blocks:/m)[0])) continue;
+      v2++;
+      assert.ok(comerciales.has(slug), `${f}: ${slug} usa la anatomía v2 sin estar en scripts/paginas-comerciales.json`);
+    }
   }
+  assert.ok(v2 > 0, 'ninguna página declara la anatomía v2: ¿cambió el formato del registro?');
 });

@@ -2,12 +2,16 @@
 import Base from '../layouts/Base.astro';
 import Blocks from '../components/Blocks.astro';
 import Pic from '../components/Pic.astro';
+import PortadaServicio from '../components/PortadaServicio.astro';
 import { pages } from '../lib/pages';
 import { url, wa, site } from '../lib/site';
 import { pageJsonLd, articleJsonLd, faqNode } from '../lib/schema';
 import { heroFor, ogFor } from '../lib/img';
 import formulario from '../data/formulario.json';
 import { pageTypeOf } from '../lib/pages/kind';
+/* La hoja del molde Kredit va en línea y solo en las páginas v2: una hoja importada aquí la bajarían las ~180
+   páginas de esta ruta (Astro agrupa el CSS por ruta, no por componente renderizado). */
+import moldeCss from '../styles/molde-kredit.css?inline';
 
 export function getStaticPaths() {
   // El home vive en index.astro; aquí van todas las demás páginas del registro.
@@ -17,6 +21,7 @@ export function getStaticPaths() {
 }
 
 const { page } = Astro.props;
+const v2 = page.anatomia === 'v2';
 const hero = heroFor(page, 1600, 0.7);
 const intro = page.lead.slice(1);
 const cta = page.cta ?? {};
@@ -27,7 +32,7 @@ const isBlog = page.parent?.slug === 'blog';
 const formServicio = page.serviceKey ? formulario.servicios.find((s) => s.clave === page.serviceKey) : undefined;
 const showcase = page.blocks.find((b) => b.type === 'showcase') as (Extract<import('../lib/types').Block, { type: 'showcase' }>) | undefined;
 const contactHref = formServicio ? `/contacto/?servicio=${formServicio.clave}#formulario` : '/contacto/#formulario';
-const contactLabel = formServicio?.botonPagina ?? 'Cotizar por formulario';
+const contactLabel = (v2 ? page.cta?.boton : undefined) ?? formServicio?.botonPagina ?? (v2 ? formServicio?.titulo : undefined) ?? 'Cotizar por formulario';
 /* Blog: Article + (si hay bloque faq) FAQPage, para ganar fragmentos en Google.
    El resto de páginas usa el grafo completo de pageJsonLd. */
 const blogFaq = isBlog ? faqNode(page) : null;
@@ -45,7 +50,8 @@ const dateLabel = page.date
   : '';
 ---
 <Base title={page.title} description={page.description} dark image={ogFor(page.slug)} jsonld={jsonld} ogType={isBlog ? 'article' : 'website'} published={isBlog ? page.date : undefined} pageType={pageTypeOf(page)} service={page.anatomia === 'v2' ? page.serviceKey : undefined}>
-  <!-- HERO interno -->
+  {v2 && <style slot="head" is:inline set:html={moldeCss}></style>}
+  {v2 ? <PortadaServicio page={page} ctaText={ctaText} contactHref={contactHref} contactLabel={contactLabel} /> : (
   <section class="relative overflow-hidden bg-night pt-36 pb-20 text-white md:pt-44 md:pb-24">
     <div class="absolute inset-0 mesh-dark opacity-50"></div>
     <div class="sphere sphere-dark h-[440px] w-[440px] -left-24 -top-16" style="background:#00688c;opacity:.4"></div>
@@ -86,9 +92,10 @@ const dateLabel = page.date
       </div>
     </div>
   </section>
+  )}
 
-  <!-- Intro (resto del lead) -->
-  {intro.length > 0 && (
+  <!-- Intro (resto del lead); la anatomía v2 no lo usa: su contenido va en bloques (D21) -->
+  {!v2 && intro.length > 0 && (
     <section class="rt mx-auto max-w-3xl px-6 pt-16">
       {intro.map((p) => <p class="reveal mb-5 text-xl leading-relaxed text-ink/70" set:html={p}></p>)}
     </section>

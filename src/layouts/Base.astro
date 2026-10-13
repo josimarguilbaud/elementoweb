@@ -75,6 +75,7 @@ const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.
     <!-- Fonts: Roboto variable autoalojada (ver @font-face en global.css). Un solo archivo cubre todos los pesos del primer pantallazo. -->
     <link rel="preload" href="/fonts/roboto-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     {schemas.map((s) => <script type="application/ld+json" set:html={typeof s === 'string' ? s : JSON.stringify(s)} />)}
+    <slot name="head" />
   </head>
   <body>
     <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-full focus:bg-night focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-white">Saltar al contenido</a>

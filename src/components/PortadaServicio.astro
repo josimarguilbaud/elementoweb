@@ -1,0 +1,59 @@
+---
+/* Portada de las páginas con anatomía v2 (D21, D45): póster marino con H1, bajada, botón del servicio, WhatsApp y
+   un comprobante corto; a la derecha la foto con su pie; abajo, el riel con datos de alcance. El comprobante de aquí
+   es solo visual: el que cuenta para el marcador (data-score) es el bloque `receipt` del cuerpo.
+   La foto se sirve en WebP a 1200 px (60 KB o menos, D14) con variantes de 480 y 800. */
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import type { PageData, Block } from '../lib/types';
+import { url, wa } from '../lib/site';
+import { heroFor } from '../lib/img';
+
+interface Props { page: PageData; ctaText: string; contactHref: string; contactLabel: string }
+const { page, ctaText, contactHref, contactLabel } = Astro.props;
+const hero = heroFor(page);
+const base = hero.src.startsWith('/') ? hero.src.replace(/\.jpe?g$/i, '') : null;
+const anchos = base ? [480, 800, 1200].filter((w) => existsSync(join(process.cwd(), 'public', `${base}-${w}.webp`))) : [];
+if (!base || !anchos.includes(1200)) throw new Error(`Portada v2 sin foto propia a 1200 px: ${page.slug} (falta public${base ?? hero.src}-1200.webp)`);
+const srcset = anchos.map((w) => `${base}-${w}.webp ${w}w`).join(', ');
+const recibo = page.blocks.find((b) => b.type === 'receipt') as Extract<Block, { type: 'receipt' }> | undefined;
+const tieneFormulario = page.blocks.some((b) => b.type === 'form' || b.type === 'service-form');
+const precioTexto = !recibo ? null
+  : recibo.precio.estado === 'confirmado' ? `desde ${recibo.precio.desde}${recibo.precio.unidad ? ` ${recibo.precio.unidad}` : ''}`
+  : 'Cotización cerrada por escrito';
+---
+<section class="ew-hero">
+  <div class="ew-hero__grid">
+    <div class="ew-hero__text">
+      <nav aria-label="Ruta de navegación" class="ew-hero__crumbs">
+        <a href="/">Inicio</a><span aria-hidden="true">/</span>
+        {page.parent && (<><a href={url(page.parent.slug)}>{page.parent.label}</a><span aria-hidden="true">/</span></>)}
+        <span aria-current="page">{page.breadcrumb ?? page.h1}</span>
+      </nav>
+      <h1 class="ew-hero__h1">{page.h1}</h1>
+      <p class="ew-hero__lead rt-dark" set:html={page.lead[0]}></p>
+      <div class="ew-hero__ctas">
+        <a href={tieneFormulario ? '#formulario' : contactHref} class="ew-btn ew-btn--primary">{contactLabel}</a>
+        <a href={wa(ctaText)} target="_blank" rel="noopener" class="ew-btn ew-btn--ghost">Hablar por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
+      </div>
+      {recibo && (
+        <dl class="ew-hero__recibo">
+          <div><dt>Precio</dt><dd>{precioTexto}</dd></div>
+          <div><dt>Plazo</dt><dd>{recibo.plazo}</dd></div>
+        </dl>
+      )}
+    </div>
+    <figure class="ew-hero__media">
+      <picture>
+        <source type="image/webp" srcset={srcset} sizes="(min-width:1024px) 46vw, 92vw" />
+        <img src={`${base}-1200.webp`} alt={hero.alt} width="1200" height="840" loading="eager" decoding="async" fetchpriority="high" />
+      </picture>
+      {page.portada?.pie && <figcaption>{page.portada.pie}</figcaption>}
+    </figure>
+  </div>
+  {page.portada?.riel && page.portada.riel.length > 0 && (
+    <ul class="ew-rail" aria-label="Datos del servicio">
+      {page.portada.riel.map((r) => <li><span class="ew-rail__k">{r.k}</span><span class="ew-rail__v">{r.v}</span></li>)}
+    </ul>
+  )}
+</section>

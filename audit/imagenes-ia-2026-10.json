@@ -1,0 +1,26 @@
+{
+  "_nota": "Registro de gasto en fal (D46: tope de US$ 10 aprobado por el dueño el 13-oct-2026). Una fila por generación cobrada, con su request_id para rastrearla en el historial de fal. Precios tomados de la API de precios de fal el 13-oct-2026: nano-banana-pro US$ 0,15 y nano-banana-2 US$ 0,08 por imagen a 1K.",
+  "tope": 10,
+  "gastado": 2.08,
+  "generaciones": [
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2e71-75c1-a49e-c745a53357fc", "uso": "portada diseno-web-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2eca-7e42-934f-a8dba3fddcf6", "uso": "portada servicios/diseno-web-corporativo-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2ec9-7771-90eb-8c2382a9414c", "uso": "portada crecimiento/seo-posicionamiento-web-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2ecd-7d93-84bc-fdf72f6ab075", "uso": "portada marketing/google-ads-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2ecf-7850-940c-6d60bf7ce815", "uso": "portada marketing/facebook-instagram-ads-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2ec5-7ee0-b2c5-112279b9b984", "uso": "portada marketing/contenido-redes-sociales-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a1360e-2f9e-7942-a963-3494a41cfe92", "uso": "portada marketing/email-marketing-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a1360e-2fa5-7500-b094-92f5462dca68", "uso": "portada marketing/whatsapp-marketing-masivo-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-ed9a-7592-8275-df9d2e0f4296", "uso": "ejemplo anuncio-cafe" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-edd9-7ff1-9239-000232564fd9", "uso": "ejemplo anuncio-clinica" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-eddc-7bb0-b06a-440f30d16e65", "uso": "ejemplo post-latte" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-eddd-70d1-9ffe-865005ab51f7", "uso": "ejemplo post-mesa y correo-cafe" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-edd5-7281-898d-a66ae3302533", "uso": "ejemplo post-barista" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-edd0-7f10-945b-9917693a457a", "uso": "ejemplo post-amigos" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-edd1-7d81-91e4-ac17638da7f8", "uso": "ejemplo post-coldbrew y whatsapp-cafe" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-edd5-7a71-929b-c31e30ad0078", "uso": "ejemplo post-fachada" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1362a-d71a-7e83-b017-79e18189c149", "uso": "portada servicios/landing-pages-alta-conversion-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1362a-d714-7391-8340-1a4bd22cfe3a", "uso": "portada servicios/redisenio-web-panama" },
+    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a1362a-d7ad-76c3-ae5b-25230bb84602", "uso": "ejemplo producto-bolso y correo-bolso" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "nota_general": "Fotos generadas con IA para las portadas de las páginas de servicio de elementoweb.com (13 de octubre de 2026). No son personas reales ni clientes. Una generación por imagen a 1K, recortada a 10:7 y llevada a 1600x1120 con scripts/portadas-fotos.mjs. Sin texto ni logos dentro de la imagen.",
+  "imagenes": [
+    { "archivo": "diseno-web-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Emprendedora en su tienda del Casco Viejo revisando su página web en una laptop" },
+    { "archivo": "servicios--diseno-web-corporativo-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Dos ejecutivos revisan el sitio corporativo en una pantalla de sala de reuniones frente a Punta Paitilla" },
+    { "archivo": "crecimiento--seo-posicionamiento-web-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Mujer de negocios busca en Google desde su laptop en un coworking de Ciudad de Panamá" },
+    { "archivo": "marketing--google-ads-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Hombre busca un servicio en su celular de noche en la mesa de su cocina" },
+    { "archivo": "marketing--facebook-instagram-ads-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Dos jóvenes miran su feed en el celular en la Cinta Costera" },
+    { "archivo": "marketing--contenido-redes-sociales-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Creadora de contenido fotografía un plato de patacones con pescado en una fonda, con el dueño al fondo" },
+    { "archivo": "marketing--email-marketing-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Mujer abre un boletín por correo en su laptop junto a la ventana de su apartamento" },
+    { "archivo": "marketing--whatsapp-marketing-masivo-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Dueño de una ferretería de barrio responde mensajes en su celular desde el mostrador" },
+    { "archivo": "servicios--landing-pages-alta-conversion-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Hombre con mochila toca el botón de una página en su celular en un lobby de Costa del Este" },
+    { "archivo": "servicios--redisenio-web-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Dueño de un negocio familiar y una diseñadora revisan el nuevo diseño de su web, con el sitio viejo impreso y anotado" }
+  ]
+}

@@ -1,0 +1,164 @@
+---
+/* Una maqueta de «Así se vería» (D44): el entregable dibujado en HTML y CSS. Todo es un ejemplo y lo dice; ninguna
+   maqueta afirma un resultado ni usa logos de terceros. Las imágenes son locales, con alt y medidas reales. */
+import type { Ejemplo } from '../lib/types';
+interface Props { e: Ejemplo }
+const { e } = Astro.props;
+const inicialDe = (s: string) => s.replace(/^www\./, '').trim().charAt(0).toUpperCase();
+---
+{e.tipo === 'google' && (
+  <figure class="ew-mock ew-serp">
+    <figcaption class="sr-only">Ejemplo de resultados de Google para la búsqueda «{e.consulta}»</figcaption>
+    <p class="ew-serp__q"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" stroke-linecap="round" /></svg><span>{e.consulta}</span></p>
+    {e.resultados.map((r) => (
+      <div class="ew-serp__r">
+        {r.clase === 'anuncio' && <p class="ew-serp__sp">Patrocinado</p>}
+        <div class="ew-serp__site"><span class="ew-serp__fav" aria-hidden="true">{inicialDe(r.sitio)}</span><p>{r.sitio}<small>{r.url}</small></p></div>
+        <p class="ew-serp__h">{r.titulo}</p>
+        <p class="ew-serp__d">{r.texto}</p>
+        {r.enlaces && <p class="ew-serp__links">{r.enlaces.map((l) => <span>{l}</span>)}</p>}
+        {r.preguntas && <ul class="ew-serp__faq">{r.preguntas.map((p) => <li>{p}<span aria-hidden="true">⌄</span></li>)}</ul>}
+      </div>
+    ))}
+  </figure>
+)}
+
+{e.tipo === 'anuncio-social' && (
+  <figure class="ew-mock ew-ig">
+    <figcaption class="sr-only">Ejemplo de anuncio en el feed de Instagram y Facebook: {e.titular} {e.enfasis}</figcaption>
+    <div class="ew-ig__top"><span class="ew-ig__av" aria-hidden="true">{e.inicial}</span><p>{e.cuenta}<small>Publicidad</small></p><span class="ew-ig__dots" aria-hidden="true">···</span></div>
+    <div class="ew-kp">
+      <img src={e.img.src} alt={e.img.alt} width={e.img.width} height={e.img.height} loading="lazy" decoding="async" />
+      <div class="ew-kp__shade"></div>
+      <div class="ew-kp__txt">{e.pill && <span class="ew-kp__pill">{e.pill}</span>}<p class="ew-kp__h">{e.titular}{e.enfasis && <> <em>{e.enfasis}</em></>}</p>{e.sub && <p class="ew-kp__s">{e.sub}</p>}</div>
+      <div class="ew-kp__foot"><span>{e.cuenta}</span><span>Ejemplo de anuncio</span></div>
+    </div>
+    <p class="ew-ig__cta"><span>{e.cta}</span><span aria-hidden="true">›</span></p>
+    <p class="ew-ig__cap"><b>{e.cuenta}</b> {e.texto}</p>
+  </figure>
+)}
+
+{e.tipo === 'post' && (
+  <figure class="ew-mock ew-post">
+    <div class="ew-kp ew-kp--claro">
+      <img src={e.img.src} alt={e.img.alt} width={e.img.width} height={e.img.height} loading="lazy" decoding="async" />
+      <div class="ew-kp__shade"></div>
+      {e.reel && <span class="ew-kp__play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg></span>}
+      <div class="ew-kp__txt"><span class="ew-kp__pill">{e.pill}</span><p class="ew-kp__h">{e.titular}{e.enfasis && <> <em>{e.enfasis}</em></>}</p>{e.sub && <p class="ew-kp__s">{e.sub}</p>}{e.boton && <span class="ew-kp__btn">{e.boton}</span>}</div>
+    </div>
+    <figcaption>
+      <dl class="ew-post__dl"><dt>Formato</dt><dd>{e.formato}</dd><dt>Objetivo</dt><dd>{e.objetivo}</dd><dt>Llamado</dt><dd>{e.llamado}</dd></dl>
+    </figcaption>
+  </figure>
+)}
+
+{e.tipo === 'web' && (
+  <figure class="ew-mock ew-dev">
+    <div class="ew-dev__stage">
+      <div class="ew-dev__browser">
+        <p class="ew-dev__bar" aria-hidden="true"><i></i><i></i><i></i><span>{e.dominio}</span></p>
+        <img src={e.escritorio.src} alt={e.escritorio.alt} width={e.escritorio.width} height={e.escritorio.height} loading="lazy" decoding="async" />
+      </div>
+      {e.movil && <div class="ew-dev__phone"><img src={e.movil.src} alt={e.movil.alt} width={e.movil.width} height={e.movil.height} loading="lazy" decoding="async" /></div>}
+    </div>
+    <figcaption class="ew-dev__pie">{e.pie}</figcaption>
+  </figure>
+)}
+
+{e.tipo === 'whatsapp' && (
+  <figure class="ew-mock ew-wa">
+    <figcaption class="sr-only">Ejemplo de conversación de WhatsApp con {e.negocio}</figcaption>
+    <p class="ew-wa__top"><span class="ew-wa__av" aria-hidden="true">{inicialDe(e.negocio)}</span><span>{e.negocio}<small>Cuenta de empresa</small></span></p>
+    <div class="ew-wa__chat">
+      {e.mensajes.map((m) => (
+        <div class={`ew-wa__msg ew-wa__msg--${m.de}`}>
+          {m.img && <img src={m.img.src} alt={m.img.alt} width={m.img.width} height={m.img.height} loading="lazy" decoding="async" />}
+          <p set:html={m.texto}></p>
+          <span class="ew-wa__hora">{m.hora}</span>
+          {m.botones && <span class="ew-wa__btns">{m.botones.map((b) => <span>{b}</span>)}</span>}
+        </div>
+      ))}
+    </div>
+  </figure>
+)}
+
+{e.tipo === 'correo' && (
+  <figure class="ew-mock ew-mail">
+    <figcaption class="sr-only">Ejemplo de correo de {e.remitente}: {e.asunto}</figcaption>
+    <div class="ew-mail__head">
+      <p class="ew-mail__from"><span class="ew-mail__av" aria-hidden="true">{inicialDe(e.remitente)}</span><span>{e.remitente}<small>para mí</small></span></p>
+      <p class="ew-mail__subj">{e.asunto}</p>
+      <p class="ew-mail__prev">{e.previa}</p>
+    </div>
+    <div class="ew-mail__body">
+      {e.img && <img src={e.img.src} alt={e.img.alt} width={e.img.width} height={e.img.height} loading="lazy" decoding="async" />}
+      <p class="ew-mail__h">{e.titular}</p>
+      <p class="ew-mail__t">{e.texto}</p>
+      <span class="ew-mail__btn">{e.boton}</span>
+    </div>
+  </figure>
+)}
+
+{e.tipo === 'flujo' && (
+  <figure class="ew-mock ew-flow">
+    <figcaption class="ew-flow__t">{e.titulo}</figcaption>
+    <ol class="ew-flow__steps">
+      {e.pasos.map((p, i) => <li><span class="ew-flow__n" aria-hidden="true">{i + 1}</span><b>{p.t}</b><span>{p.d}</span></li>)}
+    </ol>
+  </figure>
+)}
+
+{e.tipo === 'producto' && (
+  <figure class="ew-mock ew-prod">
+    <figcaption class="sr-only">Ejemplo de ficha de producto en la tienda {e.tienda}: {e.nombre}</figcaption>
+    <p class="ew-dev__bar" aria-hidden="true"><i></i><i></i><i></i><span>{e.dominio}</span></p>
+    <div class="ew-prod__body">
+      <img src={e.img.src} alt={e.img.alt} width={e.img.width} height={e.img.height} loading="lazy" decoding="async" />
+      <div class="ew-prod__info">
+        <p class="ew-prod__tienda">{e.tienda}</p>
+        <p class="ew-prod__nombre">{e.nombre}</p>
+        <p class="ew-prod__precio">{e.precio} <small>{e.nota}</small></p>
+        {e.opciones && <p class="ew-prod__ops"><span class="ew-prod__k">{e.opciones.k}</span>{e.opciones.v.map((o, i) => <span class={i === 0 ? 'ew-prod__op ew-prod__op--sel' : 'ew-prod__op'}>{o}</span>)}</p>}
+        <p class="ew-prod__envio">{e.envio}</p>
+        <span class="ew-prod__btn">{e.boton}</span>
+        <p class="ew-prod__pagos">{e.pagos}</p>
+      </div>
+    </div>
+  </figure>
+)}
+
+{e.tipo === 'checkout' && (
+  <figure class="ew-mock ew-co">
+    <figcaption class="sr-only">Ejemplo de resumen de pago en la tienda {e.tienda}</figcaption>
+    <p class="ew-co__t">{e.tienda} · Resumen de tu pedido</p>
+    <dl class="ew-co__lineas">{e.lineas.map((l) => <><dt>{l.t}</dt><dd>{l.v}</dd></>)}</dl>
+    <p class="ew-co__sub">Entrega</p>
+    <ul class="ew-co__opts">{e.envios.map((o) => <li class={o.sel ? 'ew-co__sel' : undefined}><span class="ew-co__radio" aria-hidden="true"></span><span>{o.t}<small>{o.d}</small></span><b>{o.v}</b></li>)}</ul>
+    <p class="ew-co__sub">Forma de pago</p>
+    <ul class="ew-co__opts">{e.pagos.map((o) => <li class={o.sel ? 'ew-co__sel' : undefined}><span class="ew-co__radio" aria-hidden="true"></span><span>{o.t}</span></li>)}</ul>
+    <p class="ew-co__total"><span>{e.total.t}</span><b>{e.total.v}</b></p>
+    <span class="ew-co__btn">{e.boton}</span>
+  </figure>
+)}
+
+{e.tipo === 'informe' && (
+  <figure class="ew-mock ew-inf">
+    <figcaption class="ew-inf__head"><span>{e.titulo}</span><small>{e.sitio}</small></figcaption>
+    <ul class="ew-inf__filas">
+      {e.filas.map((f) => <li><span class={`ew-inf__dot ew-inf__dot--${f.estado}`} aria-hidden="true"></span><span class="ew-inf__k">{f.k}</span><span class="ew-inf__v">{f.v}</span><span class="sr-only">{f.estado === 'bien' ? '(bien)' : f.estado === 'ojo' ? '(revisar)' : '(mal)'}</span></li>)}
+    </ul>
+    <p class="ew-inf__pie">{e.pie}</p>
+  </figure>
+)}
+
+{e.tipo === 'asistente' && (
+  <figure class="ew-mock ew-ai">
+    <figcaption class="sr-only">Ejemplo de respuesta de un asistente de IA a la pregunta «{e.pregunta}»</figcaption>
+    <p class="ew-ai__q">{e.pregunta}</p>
+    <div class="ew-ai__a">
+      <p class="ew-ai__lab">Asistente de IA</p>
+      <p set:html={e.respuesta}></p>
+      <p class="ew-ai__src"><span class="ew-data">Fuentes</span>{e.fuentes.map((f) => <span>{f}</span>)}</p>
+    </div>
+  </figure>
+)}

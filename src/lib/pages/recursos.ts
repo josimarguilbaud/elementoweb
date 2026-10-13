@@ -34,7 +34,7 @@ export const recursos: PageData[] = [
     description: 'Lista práctica para rediseñar o migrar una web sin perder posicionamiento: qué hacer antes, durante y después, con redirecciones 301 y monitoreo.',
     h1: 'Checklist de migración SEO para rediseñar o migrar tu web',
     breadcrumb: 'Checklist de migración SEO',
-    heroImage: { src: '/images/hero/servicios--redisenio-web-panama.jpg', alt: 'Pared mitad recién pintada de blanco y mitad con yeso viejo y agrietado, metáfora del antes y después de rediseñar una web' },
+    heroImage: { src: '/images/hero/recursos--checklist-migracion-seo.jpg', alt: 'Pared mitad recién pintada de blanco y mitad con yeso viejo y agrietado, metáfora del antes y después de rediseñar una web' },
     lead: [
       'Una lista por fases para cambiar de diseño, dominio o plataforma cuidando lo que ya tienes en Google.',
       'Úsala como guía de trabajo: cada punto se marca cuando está hecho. Al final encuentras las preguntas más comunes.',
@@ -133,7 +133,7 @@ export const recursos: PageData[] = [
     description: 'Compara pagar un proyecto único con pagar una suscripción mensual: propiedad, costo a 12 y 36 meses, soporte, salida, límites y quién edita el contenido.',
     h1: 'Web a medida (pago único) vs suscripción mensual',
     breadcrumb: 'Web a medida vs suscripción',
-    heroImage: { src: '/images/hero/servicios--diseno-web-corporativo-panama.jpg', alt: 'Fachada moderna de concreto y vidrio vista desde abajo con palmas en la esquina, al comparar web a medida y suscripción' },
+    heroImage: { src: '/images/hero/comparativas--web-a-medida-vs-suscripcion.jpg', alt: 'Fachada moderna de concreto y vidrio vista desde abajo con palmas en la esquina, al comparar web a medida y suscripción' },
     lead: [
       'Dos formas de tener un sitio: pagar un proyecto una vez o pagar una cuota cada mes.',
       'Ninguna es mejor en todos los casos. Esta comparativa muestra en qué se diferencian y cuándo conviene cada una, incluyendo las situaciones en que la suscripción es la mejor opción.',

@@ -155,7 +155,10 @@ Radios 6, 12 y 20 px; la píldora completa queda para la barra de navegación y 
 - **Incluye y no incluye (`includes`):** tres listas simples (incluye, entregables, no incluye) con el signo «+» y «−» en voz de datos y filetes `border`; sin iconos en círculos.
 - **Comparación (`compare`):** tabla con encabezados reales; la columna «tu otra cotización» son celdas vacías con línea punteada y el texto oculto «espacio para completar»; en compacto cada fila se apila; con hoja de estilos de impresión.
 - **Preguntas frecuentes:** `details` nativos, visibles en el HTML, con el mismo texto que el schema FAQPage.
-- **Imagen de héroe:** una ilustración 3D de vidrio por página (marino a azul, cian, sin texto, personas ni logos), 3:2, con alt descriptivo y `ImageObject`. Las fotos de stock no entran como portada de servicio.
+- **Imagen de héroe:** una foto realista por página de servicio, al estilo de la propuesta de Kredit (personas y lugares de Panamá, luz natural, sin texto ni logos dentro de la imagen), con un pie corto sobre la foto y el comprobante en la misma pantalla. WebP a 1200 px de 60 KB o menos, ancho y alto declarados, alt descriptivo e `ImageObject`. Las fotos de stock de bancos de imágenes no entran (D45 de `docs/specs/rediseno-elementoweb/DECISIONES.md`).
+- **Qué incluye (molde Kredit):** lista de dos columnas; cada elemento lleva el signo «+» en `accent-on-light`, el título en `title` 600 y una línea de explicación en `muted`; filete superior de 1 px, sin tarjeta ni icono en círculo.
+- **Así se vería:** maquetas del entregable hechas en HTML y CSS sobre `raised` con borde de 1 px y radio 20: resultado de Google, anuncio en el feed, publicaciones del mes, navegador y celular con capturas reales del portafolio, conversación de WhatsApp, correo, flujo de automatización, respuesta de un asistente de IA, ficha de producto y resumen de pago de una tienda, y ficha de auditoría con estado por fila (verde, ámbar, rojo, siempre con el estado escrito para lector de pantalla). El flujo ocupa la fila entera de la rejilla porque se lee de izquierda a derecha. Cada una lleva la nota «Ejemplo» en voz de datos y nunca afirma un resultado. Son artefactos reales del servicio, por eso sí pueden ser tarjetas.
+- **Tabla de ejemplo y «cómo lo medimos»:** tabla con encabezados reales en el estilo de la comparación; los indicadores van como lista en línea en voz de datos.
 
 ## Do's and Don'ts
 
@@ -186,3 +189,4 @@ Radios 6, 12 y 20 px; la píldora completa queda para la barra de navegación y 
 | 2026-10-12 | Tracking del display -0,022 em (no -0,04) | A 72 px, -0,04 em hacía chocar las letras en la preview real |
 | 2026-10-12 | Acento único: cian | La categoría local es toda cálida; el cian marca verificación y coincide con las ilustraciones |
 | 2026-10-12 | Cuerpo claro, sin modo oscuro | Se lee, se compara y se llena un formulario; la portada oscura impone confianza |
+| 2026-10-13 | Secciones de servicio con el molde de la propuesta de Kredit y fotos realistas en la portada | Instrucción del dueño: cada servicio explica qué incluye, cómo se vería el entregable con ejemplos, cómo se mide y qué se entrega. Reemplaza la ilustración 3D de portada (D44 y D45) |

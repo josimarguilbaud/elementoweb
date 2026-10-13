@@ -44,6 +44,9 @@ Estado: normativo. Revisión del 12 de octubre de 2026 (cierre de la fase de est
 | R32 | Vigente con la precisión de D2 | D2 |
 | R33 | Vigente sin `blog-4.ts` (fuera de alcance) | D11 |
 | R35, R36, R37, R38, R39, R40 | Vigentes con las precisiones de D12, D13 y D14 | D12 a D14 |
+| D2 (tope de $4) | Reemplazada | D46 |
+| D25 (ilustración 3D en la portada) | Reemplazada en lo de la ilustración; sigue vigente que la imagen nunca va sola | D45 |
+| Regla «Imagen de héroe» de `DESIGN.md` | Reemplazada | D45 |
 
 ## 2. Decisiones
 
@@ -226,6 +229,22 @@ D30 a D33 son requisito de activar `ServiceForm` y el correo opcional. D34 a D39
 
 ### D43. Documento único de construcción
 Tras el gate final, T30 reescribe el encabezado y las secciones 3, 5, 6 y 7 del SPEC para que no contradigan a este documento, y `verify` comprueba que el encabezado nombre `DECISIONES.md`. Hasta entonces manda este documento (R44).
+
+### Instrucción del dueño (13-oct-2026): D44 a D47
+
+Tras publicar la fase 1, el dueño pidió «procede con todo» y que cada servicio se trabaje con las secciones de la propuesta de marketing de Kredit (`public/propuestas/kredit-marketing-digital-4a6a12dc/`), con sus imágenes y ejemplos; en diseño web, maquetas de páginas; SEO y GEO avanzados. Respondió dos preguntas el mismo día: tope de fal de US$ 10 y fotos tipo Kredit también en la portada. Donde choquen con un texto anterior, mandan D44 a D47.
+
+### D44. Molde Kredit para las páginas de servicio
+Cada página de servicio con anatomía v2 suma, sobre los 10 puntos del marcador, las secciones de la propuesta de Kredit: (1) «Qué incluye» como lista de dos columnas con título en negrita y una línea de explicación; (2) «Así se vería»: maquetas realistas del entregable hechas en HTML y CSS (resultado de Google, anuncio en el feed de Instagram y Facebook, publicaciones del mes, la web en escritorio y celular, conversación de WhatsApp, correo, flujo de automatización, respuesta de un asistente de IA, ficha de producto y resumen de pago de una tienda, ficha de auditoría de un sitio), siempre con la nota «ejemplo» y sin logos de terceros; (3) una tabla de ejemplo (campañas y palabras, pilares del mes, páginas del sitio); (4) entregables y «cómo lo medimos» con los indicadores del servicio. Las maquetas de diseño web usan capturas reales de proyectos publicados del portafolio; las de pauta y contenido usan fotos generadas para un cliente de ejemplo con el nombre «Tu negocio» o un rubro genérico, nunca un cliente real sin permiso. Ninguna maqueta afirma un resultado. Los estilos del molde viven en `src/styles/molde-kredit.css` y van en línea solo en las páginas v2: en la hoja global los pagaban las ~180 páginas de la ruta (presupuesto de D40); las plantillas v2 suben su máximo con ese motivo en `scripts/presupuestos.json`.
+
+### D45. Fotos en la portada (reemplaza la regla de ilustración 3D de `DESIGN.md` y la parte de ilustración de D25)
+La portada de cada página de servicio con anatomía v2 lleva una foto realista tipo Kredit (personas y lugares de Panamá, sin texto ni logos en la imagen), con pie corto sobre la foto como en la propuesta. El comprobante sigue en la misma pantalla. La foto se sirve en WebP a 1200 px con 60 KB o menos (D14) y declara ancho y alto; el `ImageObject` del schema describe la foto. Las páginas sin anatomía v2 conservan su imagen actual hasta su ola.
+
+### D46. Presupuesto de imágenes (reemplaza el tope de D2)
+Tope de US$ 10 en fal para esta etapa. Modelo superior (`fal-ai/nano-banana-pro`, US$ 0,15) para unas 15 fotos clave (portadas de la ola 1 y de pauta y contenido); el resto con `fal-ai/nano-banana-2` (US$ 0,08), el mismo modelo de Kredit. Cada generación cobrada queda registrada con su costo y su `request_id` en `audit/imagenes-ia-2026-10.json`, y cada foto publicada, con su modelo y descripción, en el `CREDITOS-IA.json` de su carpeta; se revisa el gasto acumulado antes de cada tanda.
+
+### D47. Orden de trabajo
+Se construye en continuo y en este orden: ola 1 (pilar, corporativo, SEO, Google Ads); pauta y contenido (Meta, contenido de Instagram, email, WhatsApp); formatos web (tiendas, landing, rediseño); el resto. Cada tanda pasa `npm run verify` y se mide con Lighthouse local (D6, D40); el dueño aprueba cada push. La puerta de PageSpeed Insights de D14 se aplica cuando exista la clave; mientras tanto la medida es Lighthouse local y así lo dice la etiqueta. La afirmación «Meta Verified» sigue bloqueada (D11) hasta que el dueño la confirme.
 
 ## 3. Responsables y dependencias humanas
 

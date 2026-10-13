@@ -1,4 +1,115 @@
 {
   "_nota": "Mediciones propias con fecha (D6, D40). Cada una: {id, url, metrica, valor, herramienta, fecha (AAAA-MM-DD), metodo}. Las escribe scripts/medir.mjs; ninguna cifra se inventa ni se rellena a mano. Una página sin medición imprime el blanco honesto «sin medir». La etiqueta visible nombra la herramienta guardada en `herramienta` y `metodo`.",
-  "mediciones": []
+  "mediciones": [
+    {
+      "id": "pilar-lcp",
+      "url": "http://localhost:4602/diseno-web-panama/",
+      "metrica": "LCP",
+      "valor": "2,2 s",
+      "valorNumerico": 2186,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "corporativo-lcp",
+      "url": "http://localhost:4602/servicios/diseno-web-corporativo-panama/",
+      "metrica": "LCP",
+      "valor": "2,2 s",
+      "valorNumerico": 2185,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "seo-lcp",
+      "url": "http://localhost:4602/crecimiento/seo-posicionamiento-web-panama/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 1960,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "google-ads-lcp",
+      "url": "http://localhost:4602/marketing/google-ads-panama/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 1960,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "meta-ads-lcp",
+      "url": "http://localhost:4602/marketing/facebook-instagram-ads-panama/",
+      "metrica": "LCP",
+      "valor": "2,1 s",
+      "valorNumerico": 2109,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "contenido-lcp",
+      "url": "http://localhost:4602/marketing/contenido-redes-sociales-panama/",
+      "metrica": "LCP",
+      "valor": "2,4 s",
+      "valorNumerico": 2407,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "email-lcp",
+      "url": "http://localhost:4602/marketing/email-marketing-panama/",
+      "metrica": "LCP",
+      "valor": "2,2 s",
+      "valorNumerico": 2183,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "whatsapp-lcp",
+      "url": "http://localhost:4602/marketing/whatsapp-marketing-masivo-panama/",
+      "metrica": "LCP",
+      "valor": "2,2 s",
+      "valorNumerico": 2183,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "tiendas-lcp",
+      "url": "http://localhost:4602/servicios/tiendas-online-ecommerce-panama/",
+      "metrica": "LCP",
+      "valor": "2,1 s",
+      "valorNumerico": 2108,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "landing-lcp",
+      "url": "http://localhost:4602/servicios/landing-pages-alta-conversion-panama/",
+      "metrica": "LCP",
+      "valor": "2,1 s",
+      "valorNumerico": 2108,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "redisenio-lcp",
+      "url": "http://localhost:4602/servicios/redisenio-web-panama/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 1959,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    }
+  ]
 }

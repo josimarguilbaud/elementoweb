@@ -8,6 +8,12 @@
       "port": 4600
     },
     {
+      "name": "elementoweb-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["astro", "preview", "--port", "4602"],
+      "port": 4602
+    },
+    {
       "name": "elementoweb-fixtures",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev:fixtures"],

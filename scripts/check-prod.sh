@@ -31,7 +31,7 @@ case "$loc" in http://*) ko "/servicios: Location no debe ser http://" "/servici
 r=$(curl -sI -m 20 -o /dev/null -w '%{http_code} %{redirect_url}' "$BASE/crecimiento/mantenimiento-hosting-web-panama"); has "301 histórico de mantenimiento" "301" "$r"
 
 echo "== Códigos =="
-for p in / /precios/ /casos-de-exito/ /guias/ /miami/ /contacto/ /robots.txt /sitemap-index.xml /llms.txt /fonts/outfit-latin-800-normal.woff2; do eqc "200 $p" 200 "$(code "$BASE$p")"; done
+for p in / /precios/ /casos-de-exito/ /guias/ /miami/ /contacto/ /robots.txt /sitemap-index.xml /llms.txt /fonts/roboto-latin-wght-normal.woff2; do eqc "200 $p" 200 "$(code "$BASE$p")"; done
 eqc "404 real en página inexistente" 404 "$(code "$BASE/esta-pagina-no-existe-$$")"
 
 echo "== Cabeceras de seguridad =="

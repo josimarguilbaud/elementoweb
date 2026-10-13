@@ -118,6 +118,8 @@ export interface PlanTier {
   for?: string;
   features: string[];
   featured?: boolean;
+  /** Botón propio; si falta, lleva a /contacto/ con el servicio que deduce planKey(). */
+  cta?: { label: string; href: string };
 }
 
 export interface PageData {

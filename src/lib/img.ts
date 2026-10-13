@@ -178,6 +178,7 @@ export const HERO_ALTS: Record<string, string> = {
   'miami/diseno-web-kendall': 'Edificio comercial de una planta con palmeras y estacionamiento al atardecer, para el diseño web de negocios en Kendall',
   'portafolio': 'Mesa con impresiones de maquetas de sitios web y dos celulares que muestran páginas, junto al portafolio de proyectos de diseño web',
   'precios': 'La dueña de un negocio lee con calma una cotización impresa en su escritorio, con café y una planta, frente a una ventana con edificios de Ciudad de Panamá',
+  'funcionalidades/integracion-cybersource-panama': 'Una mano sostiene una tarjeta bancaria sobre un celular, a punto de pagar en línea',
   'inteligencia-artificial-para-empresas-panama': 'Una gerente de operaciones señala en el monitor las respuestas de un asistente de IA interno mientras su colega revisa un reporte impreso, en una oficina de Ciudad de Panamá',
   'servicios/diseno-web-corporativo-panama': 'Dos ejecutivos revisan el sitio web corporativo de su empresa en una pantalla de sala de reuniones con vista a Punta Paitilla',
   'tecnologias/desarrollo-web-a-medida-vue-react-panama': 'Desarrolladora señala la interfaz de una aplicación en un monitor mientras su compañero toma notas, en una oficina de Ciudad de Panamá',

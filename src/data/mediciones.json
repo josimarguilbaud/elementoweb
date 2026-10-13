@@ -260,6 +260,16 @@
       "herramienta": "Lighthouse",
       "fecha": "2026-10-13",
       "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "cybersource-lcp",
+      "url": "http://localhost:4602/funcionalidades/integracion-cybersource-panama/",
+      "metrica": "LCP",
+      "valor": "2,0 s",
+      "valorNumerico": 1958,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-13",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
     }
   ]
 }

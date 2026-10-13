@@ -17,7 +17,10 @@
     "contenido-ia-corporativa": { "nombre": "Redacción de contenido con IA, web corporativa", "monto": 200, "unidad": "proyecto", "fuente": "src/lib/site.ts pricing.production" },
     "contenido-ia-extensa": { "nombre": "Redacción de contenido con IA, web extensa", "monto": 350, "unidad": "proyecto", "fuente": "src/lib/site.ts pricing.production" },
     "imagenes-ia": { "nombre": "Generación de imágenes con IA", "monto": 100, "unidad": "set", "fuente": "src/lib/site.ts pricing.production" },
-    "wazacrm": { "nombre": "WazaCRM", "monto": 349, "unidad": "mes", "desde": true, "fuente": "src/lib/pages/saas.ts" }
+    "wazacrm": { "nombre": "WazaCRM", "monto": 349, "unidad": "mes", "desde": true, "fuente": "src/lib/pages/saas.ts" },
+    "cybersource-esencial": { "nombre": "Integración CyberSource, alcance Esencial", "monto": 1050, "unidad": "proyecto", "fuente": "src/lib/pages/funcionalidades.ts (precio cerrado publicado en la página de CyberSource desde sep-2026)" },
+    "cybersource-profesional": { "nombre": "Integración CyberSource, alcance Profesional", "monto": 2150, "unidad": "proyecto", "fuente": "src/lib/pages/funcionalidades.ts (precio cerrado publicado en la página de CyberSource desde sep-2026)" },
+    "cybersource-avanzado": { "nombre": "Integración CyberSource, alcance Avanzado", "monto": 3850, "unidad": "proyecto", "fuente": "src/lib/pages/funcionalidades.ts (precio cerrado publicado en la página de CyberSource desde sep-2026)" }
   },
   "propuestos": {
     "pauta-gestion": { "nombre": "Gestión de Google Ads y Meta", "monto": 300, "unidad": "mes", "desde": true, "fuente": "src/lib/pages/marketing.ts" },

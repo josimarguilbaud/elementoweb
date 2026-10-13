@@ -20,7 +20,7 @@ for (const s of slugs) (porTipo[kindOf({ slug: s })] ??= []).push(s);
 test('se leyeron las páginas del registro', () => assert.ok(slugs.length >= 170, `solo ${slugs.length} páginas`));
 
 test('las páginas existentes se clasifican en los tipos esperados', () => {
-  assert.equal(porTipo.service.length, 24, 'las 23 páginas de servicio de los hubs más IA para empresas, que vive en la raíz');
+  assert.equal(porTipo.service.length, 25, 'las 24 páginas de servicio de los hubs (con CyberSource) más IA para empresas, que vive en la raíz');
   assert.deepEqual([...porTipo.hub].sort(), [...HUBS].sort());
   assert.deepEqual(porTipo.pillar, ['diseno-web-panama']);
   assert.deepEqual(porTipo.pricing, ['precios']);

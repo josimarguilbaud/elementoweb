@@ -126,7 +126,7 @@
   --ew-accent: #0099cc; --ew-accent-on-light: #00688c; --ew-accent-on-dark: #5ec8e8; --ew-marker: #aee8ff;
   --ew-surface: #f8f9fa; --ew-surface-alt: #eaf0f5; --ew-raised: #ffffff;
   --ew-text: #1c2230; --ew-muted: #4f5f75; --ew-border: #d4dee8; --ew-field: #6b7b92;
-  --ew-error: #b42318; --ew-ok: #167a58;
+  --ew-error: #b42318; --ew-ok: #167a58; --ew-whatsapp: #25d366; --ew-on-whatsapp: #06260f;
 }
 .ew-sec { padding: 56px 0; }
 @media (min-width: 1024px) { .ew-sec { padding: 80px 0; } }
@@ -183,6 +183,49 @@
   .ew-cmp th, .ew-cmp td { display: block; border: 0; padding: 6px 16px; }
   .ew-cmp td::before { content: attr(data-label); display: block; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ew-muted); }
 }
+/* ---- Formulario por servicio (ServiceForm, D10, D22, D27) ---- */
+.ew-form__body { max-width: 720px; display: grid; gap: 20px; }
+.ew-form__nojs { display: none; }
+html:not(.js) .ew-form__nojs { display: grid; gap: 12px; }
+html:not(.js) .ew-form__form { display: none; }
+.ew-svc { display: grid; gap: 12px; }
+.ew-svc__actual { margin: 0; color: var(--ew-text); }
+.ew-link { background: none; border: 0; padding: 0; min-height: 44px; font: inherit; font-weight: 600; color: var(--ew-accent-on-light); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.ew-chips { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; grid-template-columns: repeat(2, minmax(0, 1fr)); min-width: 0; }
+@media (min-width: 768px) { .ew-chips { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.ew-chips[hidden], .ew-qs[hidden], .ew-pres[hidden], [data-ew="exito"][hidden], [data-ew="fallo"][hidden], [data-ew="resumen"][hidden] { display: none; }
+.ew-chips legend, .ew-qs legend { padding: 0; margin-bottom: 8px; font-size: 0.92rem; font-weight: 600; color: var(--ew-text); }
+.ew-chip { position: relative; display: flex; align-items: center; min-height: 44px; padding: 10px 14px; background: var(--ew-raised); border: 1.5px solid var(--ew-field); border-radius: 6px; font-size: 0.92rem; font-weight: 500; color: var(--ew-text); cursor: pointer; }
+.ew-chip input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.ew-chip:has(input:checked) { border-color: var(--ew-primary); background: var(--ew-surface-alt); box-shadow: inset 0 0 0 1px var(--ew-primary); }
+.ew-chip:has(input:focus-visible) { outline: 3px solid var(--ew-accent-on-light); outline-offset: 2px; }
+.ew-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .ew-grid { grid-template-columns: 1fr 1fr; } .ew-grid .ew-full { grid-column: 1 / -1; } }
+.ew-qs { border: 0; margin: 0; padding: 0; min-width: 0; }
+.ew-qs .ew-grid { margin-top: 0; }
+.ew-field label, .ew-field .ew-lab { display: block; margin-bottom: 6px; font-size: 0.92rem; font-weight: 600; line-height: 1.4; color: var(--ew-text); }
+.ew-field .ew-opt { font-weight: 400; color: var(--ew-muted); }
+.ew-in { width: 100%; min-height: 44px; padding: 10px 14px; background: var(--ew-raised); color: var(--ew-text); border: 1.5px solid var(--ew-field); border-radius: 6px; font: inherit; font-size: 1rem; }
+textarea.ew-in { min-height: 112px; resize: vertical; }
+.ew-in:focus-visible { outline: 3px solid var(--ew-accent-on-light); outline-offset: 1px; border-color: var(--ew-accent-on-light); }
+.ew-in[aria-invalid="true"] { border-color: var(--ew-error); }
+.ew-err { margin: 6px 0 0; font-size: 0.85rem; font-weight: 500; color: var(--ew-error); }
+.ew-err[hidden] { display: none; }
+.ew-hint { margin: 6px 0 0; font-size: 0.85rem; color: var(--ew-muted); }
+.ew-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 0 28px; border: 0; border-radius: 9999px; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+.ew-btn--primary { background: var(--ew-accent); color: var(--ew-primary); }
+.ew-btn--primary:hover { background: var(--ew-accent-on-dark); }
+.ew-btn--primary:disabled { opacity: 0.7; cursor: progress; }
+.ew-btn--wa { background: var(--ew-whatsapp); color: var(--ew-on-whatsapp); }
+.ew-btn:focus-visible { outline: 3px solid var(--ew-accent-on-light); outline-offset: 3px; }
+.ew-resumen, .ew-fallo { margin: 0; padding: 12px 16px; border: 1.5px solid var(--ew-error); border-radius: 6px; background: var(--ew-raised); color: var(--ew-error); font-weight: 600; }
+.ew-fallo { display: grid; gap: 10px; color: var(--ew-text); }
+.ew-exito { display: grid; gap: 14px; padding: 24px; background: var(--ew-raised); border: 1px solid var(--ew-border); border-radius: 6px; outline: none; }
+.ew-exito h3 { margin: 0; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.015em; color: var(--ew-text); }
+.ew-exito p { margin: 0; color: var(--ew-muted); }
+.ew-note { margin: 0; font-size: 0.85rem; color: var(--ew-muted); }
+.ew-aviso { margin: 0; min-height: 1.2em; font-size: 0.85rem; font-weight: 500; color: var(--ew-accent-on-light); }
+
 @media print {
   .ew-cmp tr { break-inside: avoid; }
   .ew-cell-blank::after { height: 3rem; border-bottom-color: var(--ew-text); }

@@ -4,6 +4,7 @@ import PricingExtras from './PricingExtras.astro';
 import type { Block } from '../lib/types';
 import { pricing, url, wa, portfolio, portfolioCats, planKey } from '../lib/site';
 import ContactForm from './ContactForm.astro';
+import ServiceForm from './ServiceForm.astro';
 const ctaLabel = (n: string) => ({ landing: 'Cotizar mi landing', pyme: 'Cotizar mi web', ecommerce: 'Cotizar mi tienda' } as Record<string, string>)[planKey(n)] || 'Cotizar mi proyecto';
 import InfraReliability from './InfraReliability.astro';
 import SeoMomentum from './SeoMomentum.astro';
@@ -228,6 +229,8 @@ if (v2) {
         </div>
       </section>
     )}
+
+    {b.type === 'service-form' && <ServiceForm servicio={b.servicio} titulo={b.h2} intro={b.intro} />}
 
     {b.type === 'blank' && (
       <section class="ew-sec" data-block="blank" data-blank={b.punto}>

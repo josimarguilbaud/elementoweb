@@ -1,7 +1,9 @@
 # Diccionario de eventos de medición (GA4: G-J0NHHRTV75)
 
-Código: `src/scripts/track.ts` (clics) y `src/components/ContactForm.astro` (eventos del formulario) → `gtag`.
+Código: `src/scripts/track.ts` (clics) y los formularios (`src/components/ContactForm.astro` hoy; `ServiceForm` cuando se active en la fase 3) → `gtag`.
 Regla: **nunca** se envía nombre, correo, teléfono, mensaje ni URLs con datos personales. Solo ubicación, servicio (clave) e ID opaco.
+
+**`service` es la clave del servicio** de `src/data/formulario.json` (`pyme`, `ecommerce`, `landing`, `seo`, `pauta`…). Sale del enlace (`/contacto/?servicio=…`), de lo que informa el formulario o de `<main data-service>` en las páginas con anatomía nueva (D9). `form_start`, `form_error` y `click_whatsapp` lo llevan cuando la página declara servicio; las páginas actuales no lo declaran y sus eventos no cambian. `ContactForm` (v1) todavía informa en `generate_lead.service` la etiqueta de texto; `ServiceForm` informa la clave.
 
 | Evento | Cuándo se dispara | Tipo | Parámetros |
 |---|---|---|---|

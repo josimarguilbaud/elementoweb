@@ -13,7 +13,7 @@ export function getStaticPaths() {
 }
 const { page } = Astro.props;
 ---
-<Base title={page.title} description={page.description} dark noindex jsonld={pageJsonLd(page)} pageType={pageTypeOf(page)} service={page.serviceKey}>
+<Base title={page.title} description={page.description} dark noindex jsonld={pageJsonLd(page)} pageType={pageTypeOf(page)} service={page.serviceKey ?? (page.blocks.find((b) => b.type === 'service-form') as any)?.servicio}>
   <section class="ew-sec" style="background:#0a1a3a;color:#f5fafc">
     <div class="ew-wrap"><h1 class="ew-h2" style="color:#f5fafc">{page.h1}</h1></div>
   </section>

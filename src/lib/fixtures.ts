@@ -62,7 +62,20 @@ const base = (slug: string, blocks: Block[], precio: Extract<Block, { type: 'rec
   ],
 });
 
+const formularioPagina = (slug: string, servicio?: string): PageData => ({
+  slug,
+  title: `Ejemplo ${slug}`,
+  description: 'Página de ejemplo del formulario por servicio. No se publica.',
+  h1: `Ejemplo ${slug}`,
+  lead: ['Página de ejemplo.'],
+  noindex: true,
+  blocks: [{ type: 'service-form', h2: 'Cotiza tu proyecto', servicio }],
+});
+
 export const fixtures: PageData[] = [
+  // Formulario por servicio (ServiceForm): con servicio preseleccionado y sin él.
+  formularioPagina('qa-fixture/formulario', 'ecommerce'),
+  formularioPagina('qa-fixture/formulario-libre'),
   // Válida: precio confirmado, los 10 puntos (la medición queda en blanco honesto y la prueba es un proyecto real).
   base('qa-fixture/servicio-valido', [showcase, includes, compare, faq(6)], { estado: 'confirmado', desde: '$1,250', unidad: 'por proyecto' }),
   // Precio propuesto: la portada dice cotización cerrada, no hay Offer en el schema.

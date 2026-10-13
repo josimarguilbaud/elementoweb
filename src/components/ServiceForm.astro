@@ -1,0 +1,128 @@
+---
+/* Formulario por servicio (D10, D22, D30 a D34). Construido y SIN activar: ninguna página lo usa todavía; las páginas
+   siguen con ContactForm hasta la fase 3, cuando n8n acepte el contrato v2 y se pruebe de punta a punta.
+   Un solo componente que conoce los 14 servicios de src/data/formulario.json. Todo el marcado sale en el HTML (sin JS
+   se ven el WhatsApp y el correo); la lógica vive en src/scripts/service-form.ts y se carga solo cuando el visitante
+   llega al formulario (isla diferida, D40), para no cargar JS en el LCP.
+   Obligatorios: nombre y WhatsApp. El correo es opcional. */
+import formulario from '../data/formulario.json';
+import { contactForm, site, wa } from '../lib/site';
+
+interface Props {
+  /** Clave de formulario.json preseleccionada (p. ej. la de PageData.serviceKey). Sin clave válida, 'definir' con las fichas visibles. */
+  servicio?: string;
+  titulo?: string;
+  intro?: string;
+}
+const { servicio = '', titulo = 'Cuéntanos qué necesitas', intro } = Astro.props;
+const servicios = formulario.servicios;
+const preseleccionado = servicios.some((s) => s.clave === servicio) && servicio !== 'definir';
+const inicial = servicios.find((s) => s.clave === servicio) ?? servicios.find((s) => s.clave === 'definir')!;
+const { budgets } = contactForm;
+const waBase = `https://wa.me/${site.phoneRaw}?text=`;
+---
+<section id="formulario" class="ew-sec ew-form scroll-mt-28" data-block="service-form" data-servicio-inicial={inicial.clave} data-preseleccionado={preseleccionado ? '' : undefined} data-endpoint={contactForm.endpoint} data-wa-base={waBase} data-servicios={JSON.stringify(servicios.map((s) => ({ clave: s.clave, titulo: s.titulo, boton: s.boton, presupuesto: s.presupuesto })))}>
+  <div class="ew-wrap">
+    <h2 class="ew-h2">{titulo}</h2>
+    <div class="ew-form__body">
+      {intro && <p class="ew-intro" set:html={intro}></p>}
+
+      <!-- Sin JavaScript: el WhatsApp y el correo, como hoy el formulario actual. -->
+      <div class="ew-form__nojs">
+        <p class="ew-intro">Escríbenos directo y te respondemos el mismo día hábil.</p>
+        <a class="ew-btn ew-btn--wa" href={wa(`Hola, me interesa ${inicial.etiqueta.toLowerCase()}.`)}>Escribir por WhatsApp</a>
+        <a class="ew-link" href={`mailto:${site.email}`}>{site.email}</a>
+      </div>
+
+      <form class="ew-form__form" data-ew="form" novalidate aria-describedby="ew-f-resumen">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
+
+        <div class="ew-svc">
+          <p class="ew-svc__actual" data-ew="actual" hidden={!preseleccionado}>Servicio: <strong data-ew="servicio-actual">{inicial.etiqueta}</strong> · <button type="button" class="ew-link" data-ew="cambiar" aria-expanded="false" aria-controls="ew-f-fichas">cambiar</button></p>
+          <fieldset class="ew-chips" id="ew-f-fichas" data-ew="fichas" hidden={preseleccionado}>
+            <legend>¿Qué necesitas?</legend>
+            {servicios.map((s) => (
+              <label class="ew-chip"><input type="radio" name="servicio_clave" value={s.clave} checked={s.clave === inicial.clave} data-servicio-texto={s.servicio} /><span>{s.etiqueta}</span></label>
+            ))}
+          </fieldset>
+        </div>
+
+        <h3 class="ew-data" style="margin:0" data-ew="titulo" aria-live="polite">{inicial.titulo}</h3>
+
+        <div class="ew-grid">
+          <div class="ew-field"><label for="ew-f-nombre">Nombre <span aria-hidden="true">*</span></label><input class="ew-in" id="ew-f-nombre" name="nombre" autocomplete="name" required aria-required="true" aria-describedby="ew-f-err-nombre" /><p class="ew-err" id="ew-f-err-nombre" hidden></p></div>
+          <div class="ew-field"><label for="ew-f-telefono">WhatsApp <span aria-hidden="true">*</span></label><input class="ew-in" id="ew-f-telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required aria-required="true" aria-describedby="ew-f-hint-telefono ew-f-err-telefono" /><p class="ew-hint" id="ew-f-hint-telefono">Con +507 por defecto; si escribes desde Miami, empieza con +1.</p><p class="ew-err" id="ew-f-err-telefono" hidden></p></div>
+          <div class="ew-field"><label for="ew-f-email">Correo <span class="ew-opt">(opcional)</span></label><input class="ew-in" id="ew-f-email" name="email" type="email" inputmode="email" autocomplete="email" aria-describedby="ew-f-err-email" /><p class="ew-err" id="ew-f-err-email" hidden></p></div>
+          <div class="ew-field"><label for="ew-f-empresa">Empresa <span class="ew-opt">(opcional)</span></label><input class="ew-in" id="ew-f-empresa" name="empresa" autocomplete="organization" /></div>
+        </div>
+
+        <!-- Las preguntas de cada servicio salen en el HTML; solo la del servicio activo está habilitada y se envía. -->
+        <div data-ew="preguntas" style="margin-top:16px">
+          {servicios.map((s) => (
+            <fieldset class="ew-qs" data-servicio={s.clave} hidden={s.clave !== inicial.clave} disabled={s.clave !== inicial.clave}>
+              <legend class="sr-only">Preguntas sobre {s.etiqueta}</legend>
+              <div class="ew-grid">
+                {s.campos.map((c) => {
+                  const id = `ew-f-${s.clave}-${c.clave}`;
+                  return (
+                    <div class={`ew-field${c.tipo !== 'sel' ? ' ew-full' : ''}`}>
+                      <label for={id}>{c.etiqueta.replace(' (obligatorio)', '')}{c.obligatorio ? <span aria-hidden="true"> *</span> : <span class="ew-opt"> (opcional)</span>}</label>
+                      {c.tipo === 'sel'
+                        ? <select class="ew-in" id={id} name={`detalle_${c.clave}`}><option value="">Elige una opción</option>{c.opciones!.map((o) => <option>{o}</option>)}</select>
+                        : <input class="ew-in" id={id} name={`detalle_${c.clave}`} type="text" inputmode={c.tipo === 'url' ? 'url' : undefined} data-obligatorio={c.obligatorio ? '' : undefined} aria-describedby={c.obligatorio ? `${id}-err` : undefined} maxlength={formulario.limites.respuesta} />}
+                      {c.obligatorio && <p class="ew-err" id={`${id}-err`} hidden></p>}
+                    </div>
+                  );
+                })}
+              </div>
+            </fieldset>
+          ))}
+        </div>
+        <p class="ew-aviso" data-ew="aviso" role="status" aria-live="polite"></p>
+
+        <div class="ew-field ew-pres" data-ew="presupuesto" hidden={!inicial.presupuesto} style="margin-top:16px">
+          <label for="ew-f-presupuesto">Presupuesto estimado <span class="ew-opt">(opcional)</span></label>
+          <select class="ew-in" id="ew-f-presupuesto" name="presupuesto" disabled={!inicial.presupuesto}><option value="">Elige una opción</option>{budgets.map((b) => <option>{b}</option>)}</select>
+        </div>
+
+        <div class="ew-field" style="margin-top:16px"><label for="ew-f-mensaje">¿Algo más que debamos saber? <span class="ew-opt">(opcional)</span></label><textarea class="ew-in" id="ew-f-mensaje" name="mensaje" rows="4" maxlength={formulario.limites.mensaje}></textarea></div>
+
+        <p class="ew-resumen" id="ew-f-resumen" data-ew="resumen" role="alert" tabindex="-1" hidden style="margin-top:16px"></p>
+        <div class="ew-fallo" data-ew="fallo" role="alert" hidden style="margin-top:16px">
+          <p style="margin:0;font-weight:700">No pudimos enviar tu solicitud. Tus datos siguen aquí.</p>
+          <p style="margin:0">Puedes intentarlo de nuevo, o escribirnos directo:</p>
+          <p style="margin:0;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><a class="ew-btn ew-btn--wa" data-ew="fallo-wa" href={wa(`Hola, me interesa ${inicial.etiqueta.toLowerCase()}.`)}>Escribir por WhatsApp</a><a class="ew-link" href={`mailto:${site.email}`}>{site.email}</a></p>
+        </div>
+
+        <button type="submit" class="ew-btn ew-btn--primary" data-ew="enviar" style="margin-top:20px">{inicial.boton}</button>
+        <p class="ew-note" style="margin-top:12px">Los campos con <span aria-hidden="true">*</span><span class="sr-only">asterisco</span> son obligatorios. Tus datos solo se usan para responderte.</p>
+      </form>
+
+      <div class="ew-exito" data-ew="exito" role="status" tabindex="-1" hidden>
+        <h3>Solicitud recibida</h3>
+        <p>Gracias por escribirnos. Revisamos tu proyecto y te respondemos el mismo día hábil.</p>
+        <p><a class="ew-btn ew-btn--wa" data-ew="exito-wa" href={wa(`Hola, me interesa ${inicial.etiqueta.toLowerCase()}.`)}>Seguir por WhatsApp</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Isla diferida (D40): la lógica del formulario no entra en el JS inicial. Se carga cuando el formulario se acerca a
+  // la pantalla o cuando el visitante lo toca; sin JavaScript queda el WhatsApp y el correo.
+  const raiz = document.getElementById('formulario');
+  if (raiz && raiz.dataset.block === 'service-form') {
+    let cargado = false;
+    const cargar = () => {
+      if (cargado) return;
+      cargado = true;
+      import('../scripts/service-form').then((m) => m.iniciar(raiz));
+    };
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); cargar(); } }, { rootMargin: '600px' });
+      io.observe(raiz);
+    } else cargar();
+    raiz.addEventListener('focusin', cargar, { once: true });
+    raiz.addEventListener('pointerdown', cargar, { once: true });
+  }
+</script>

@@ -75,5 +75,7 @@ if (sinNavegador) {
   const env = { ...process.env, CHROMIUM_PATH: chrome };
   paso('qa-a11y (axe, WCAG 2.x AA)', process.execPath, ['scripts/qa-a11y.mjs', base], { env });
   paso('qa-lcp (sin JavaScript y elemento LCP)', process.execPath, ['scripts/qa-lcp.mjs', base], { env });
+  // Sirve dist-fixture/ por su cuenta y simula el webhook de n8n: no necesita el preview.
+  paso('qa-form (estados del formulario por servicio, eventos y accesibilidad)', process.execPath, ['scripts/qa-form.mjs'], { env });
 }
 terminar(0);

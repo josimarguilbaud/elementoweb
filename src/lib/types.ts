@@ -23,6 +23,8 @@ export type Block =
   | { type: 'compare'; h2: string; intro?: string; criterios: CompareRow[]; otraCotizacion?: boolean }
   | { type: 'includes'; h2: string; incluye: string[]; entregables: string[]; noIncluye: string[] }
   | { type: 'blank'; punto: 'prueba'; h2?: string }
+  /* Formulario por servicio (D10). Existe pero NINGUNA página lo usa hasta la fase 3: reemplaza al bloque `form` cuando n8n acepte el contrato v2. */
+  | { type: 'service-form'; h2?: string; intro?: string; servicio?: string }
   | { type: 'showcase'; id?: string; ctaLabel?: string; extraViews?: { label: string; src: string }[]; h2: string; intro?: string; project?: string; image?: { src: string; alt: string; width: number; height: number; caption: string }; notes: { label: string; text: string }[]; caption?: string };
 
 /** Estado del precio (D23): solo 'confirmado' puede emitir Offer y llevar cifra en la portada. */

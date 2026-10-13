@@ -343,7 +343,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Medir tu web',
     category: 'Negocio',
     date: '2026-05-29',
-    heroImage: { src: '/images/blog/como-medir-los-resultados-de-tu-pagina-web.jpg', alt: 'Panel de analítica web con gráficos de visitas y conversiones en pantalla' },
+    heroImage: { src: '/images/blog/como-medir-los-resultados-de-tu-pagina-web.jpg', alt: 'Manos arrugando recibos de papel con códigos de barras sobre un mostrador, en una guía para medir los resultados de tu web' },
     lead: [
       'Tienes tu página web publicada. Bien. Ahora viene la pregunta que casi nadie sabe responder con números: ¿está funcionando? ¿Te trae clientes o solo se ve bonita?',
       'La buena noticia es que una web se puede medir con precisión, a diferencia de un anuncio en radio o un volante. La mala es que la mayoría mira los datos equivocados y se emociona con cifras que no pagan facturas. En esta guía separamos las métricas que importan de las que solo alimentan el ego.',
@@ -455,7 +455,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Tendencias 2026',
     category: 'Negocio',
     date: '2026-05-15',
-    heroImage: { src: '/images/blog/tendencias-de-diseno-web-2026-panama.jpg', alt: 'Pantallas mostrando interfaces de diseño web moderno y limpio' },
+    heroImage: { src: '/images/blog/tendencias-de-diseno-web-2026-panama.jpg', alt: 'Fachada moderna de concreto y vidrio con balcones curvos y una palmera, para ilustrar tendencias de diseño web en 2026' },
     lead: [
       'Cada año aparece una nueva lista de tendencias de diseño web, y cada año hay negocios que gastan dinero persiguiendo modas que no les sirven de nada. Lo llamativo no siempre vende, y muchas veces estorba.',
       'Este artículo es distinto. En lugar de listar efectos de moda, separamos las tendencias 2026 que de verdad ayudan a tu negocio en Panamá de las que puedes ignorar con total tranquilidad. Diseño con criterio, no diseño para ganar premios que nadie te va a dar.',

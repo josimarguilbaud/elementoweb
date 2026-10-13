@@ -19,7 +19,7 @@ export const blog5: PageData[] = [
     date: '2026-07-12',
     heroImage: {
       src: '/images/blog/chatbots-con-ia-para-negocios-en-panama.jpg',
-      alt: 'Persona conversando por chat en un celular mientras trabaja',
+      alt: 'Campana de mostrador de latón sobre una mesa de madera en un cuarto vacío, en una nota sobre chatbots con IA para negocios',
     },
     lead: [
       'La palabra "chatbot" carga años de mala fama: menús rígidos, respuestas robóticas y clientes que terminaban escribiendo "quiero hablar con un humano". Los chatbots con IA cambiaron esa historia.',
@@ -227,7 +227,7 @@ export const blog5: PageData[] = [
     date: '2026-06-14',
     heroImage: {
       src: '/images/blog/inteligencia-artificial-para-pequenas-empresas-en-panama.jpg',
-      alt: 'Dueña de una pequeña empresa usando una laptop en su local',
+      alt: 'Primer plano de una mujer cosiendo tela con una máquina de coser antigua, en una guía de IA para pequeñas empresas',
     },
     lead: [
       'La inteligencia artificial dejó de ser tema de películas y de grandes corporaciones. Hoy una pyme en Panamá puede usarla para tareas concretas del día a día, sin un departamento de tecnología ni un presupuesto de multinacional.',
@@ -332,7 +332,7 @@ export const blog5: PageData[] = [
     date: '2026-05-31',
     heroImage: {
       src: '/images/blog/como-atender-clientes-24-7-con-un-asistente-de-ia.jpg',
-      alt: 'Pantalla de un asistente de inteligencia artificial respondiendo mensajes',
+      alt: 'Esquina de noche con persiana metálica cerrada y luz bajo ella, sobre atender clientes fuera de horario con IA',
     },
     lead: [
       'El cliente no escribe cuando te queda cómodo. Escribe en la noche, el domingo, en su hora de almuerzo. Y si nadie responde, no espera: le escribe al siguiente.',
@@ -436,7 +436,7 @@ export const blog5: PageData[] = [
     date: '2026-05-17',
     heroImage: {
       src: '/images/blog/crm-con-whatsapp-para-vender-mas-en-panama.jpg',
-      alt: 'Equipo de ventas revisando conversaciones y datos de clientes',
+      alt: 'Tickets de pedido en papel colgados sobre la cocina de un restaurante, en una guía de CRM con WhatsApp para ordenar ventas',
     },
     lead: [
       'En Panamá se vende por WhatsApp: cotizaciones, catálogos, cierres, todo pasa por ahí. El problema empieza cuando los chats se acumulan y ese cliente que iba a comprar se pierde entre cientos de conversaciones sin orden.',

@@ -113,7 +113,7 @@ export const blog2: PageData[] = [
     date: '2026-07-04',
     heroImage: {
       src: '/images/blog/como-crear-una-tienda-online-en-panama.jpg',
-      alt: 'Emprendedor preparando pedidos de una tienda online en Panama con laptop y cajas',
+      alt: 'Mujer joven empacando productos en una caja de cartón sobre una mesa de madera, para armar una tienda online en Panamá',
     },
     lead: [
       'Montar una tienda online en Panamá dejó de ser un proyecto reservado a grandes empresas. Con las plataformas y los medios de pago actuales, cualquier negocio puede vender por internet de forma profesional.',
@@ -219,7 +219,7 @@ export const blog2: PageData[] = [
     date: '2026-06-20',
     heroImage: {
       src: '/images/blog/shopify-vs-woocommerce-panama.jpg',
-      alt: 'Comparacion de dos plataformas de comercio electronico en la pantalla de una laptop',
+      alt: 'Dos carretas de mano vacías, una de madera y otra metálica, contra una pared beige, al comparar plataformas de tienda online',
     },
     lead: [
       'Shopify o WooCommerce es la primera gran decisión de cualquiera que quiere vender online en Panamá. Y como toda decisión de base, cambiarla después cuesta tiempo y dinero.',

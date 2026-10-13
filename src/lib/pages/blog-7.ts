@@ -135,7 +135,7 @@ export const blog7: PageData[] = [
     date: '2026-07-30',
     heroImage: {
       src: '/images/blog/cuando-hacer-rediseno-pagina-web.jpg',
-      alt: 'Equipo revisando el rediseño de una página web',
+      alt: 'Fachada deteriorada con puerta de madera descascarada y pintura desprendida, como señal de que un sitio pide rediseño web',
     },
     lead: [
       'Casi nadie decide rediseñar su web de un día para otro. La duda se acumula: se ve algo vieja, tarda en cargar, ya casi no llegan mensajes por ahí. Pero como sigue "funcionando", se posterga temporada tras temporada, mientras la competencia con un sitio fresco se lleva a los clientes que dudan.',
@@ -348,7 +348,7 @@ export const blog7: PageData[] = [
     date: '2026-07-28',
     heroImage: {
       src: '/images/blog/como-aumentar-ventas-tienda-online-panama.jpg',
-      alt: 'Dueño de una tienda online revisando sus ventas en Panamá',
+      alt: 'Pila de cajas de cartón selladas con cinta en la puerta de un depósito pequeño, en una guía para vender más online',
     },
     lead: [
       'Tienes la tienda online montada, los productos cargados y algo de tráfico entrando, pero las ventas no despegan como esperabas. Es una de las frustraciones más comunes, y casi nunca se debe a una sola causa grande: son varias fugas pequeñas que, sumadas, dejan escapar al cliente justo antes de pagar.',
@@ -453,7 +453,7 @@ export const blog7: PageData[] = [
     date: '2026-07-27',
     heroImage: {
       src: '/images/blog/carritos-abandonados-como-recuperar-ventas.jpg',
-      alt: 'Carrito de compras abandonado en una tienda online',
+      alt: 'Carrito con un solo producto abandonado en un pasillo de supermercado lleno, como un carrito abandonado en tienda online',
     },
     lead: [
       'De cada diez personas que llenan el carrito en una tienda online, la mayoría se va sin pagar. No es un problema tuyo en particular: es el comportamiento normal del comprador en internet. Lo que sí marca la diferencia entre una tienda que crece y una que se estanca es cuántas de esas ventas casi cerradas logra recuperar.',
@@ -557,7 +557,7 @@ export const blog7: PageData[] = [
     date: '2026-07-26',
     heroImage: {
       src: '/images/blog/como-elegir-palabras-clave-seo-panama.jpg',
-      alt: 'Investigación de palabras clave para SEO en Panamá',
+      alt: 'Hombre de espaldas en una parada de bus mirando un celular, con buses al fondo, en una guía de palabras clave para SEO',
     },
     lead: [
       'Puedes tener la web más bonita del mundo, pero si está optimizada para palabras que nadie busca —o que buscan personas que jamás te comprarán— no traerá un solo cliente. Elegir bien las palabras clave es la decisión de SEO que más pesa, y la que más negocios pasan por alto.',
@@ -870,7 +870,7 @@ export const blog7: PageData[] = [
     date: '2026-07-23',
     heroImage: {
       src: '/images/blog/automatizar-seguimiento-clientes-panama.jpg',
-      alt: 'Automatización del seguimiento de clientes con inteligencia artificial',
+      alt: 'Silla de barbero vacía con una toalla en el apoyabrazos, en una guía sobre automatizar el seguimiento de clientes',
     },
     lead: [
       'La escena se repite en casi todos los negocios: un cliente escribe, pide precio, recibe la cotización y dice "lo pienso". Y ahí muere la venta, no porque el cliente no quisiera comprar, sino porque nadie volvió a escribirle. El seguimiento, esa tarea aburrida que siempre se posterga, es donde se pierden la mayoría de las ventas casi cerradas.',

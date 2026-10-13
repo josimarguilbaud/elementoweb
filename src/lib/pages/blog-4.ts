@@ -18,7 +18,7 @@ export const blog4: PageData[] = [
     date: '2026-07-14',
     heroImage: {
       src: '/images/blog/google-ads-vs-facebook-ads-en-panama.jpg',
-      alt: 'Persona comparando resultados de campañas de Google y Facebook en dos pantallas',
+      alt: 'Dos vallas publicitarias en blanco sobre postes metálicos, con palmeras y cielo azul, para comparar Google Ads y Facebook Ads',
     },
     lead: [
       'Es la pregunta que nos hacen casi todas las semanas: si tengo un presupuesto limitado, pongo la plata en Google o en Facebook. La respuesta corta es que dependen de cosas distintas y sirven para momentos distintos del cliente.',
@@ -129,7 +129,7 @@ export const blog4: PageData[] = [
     date: '2026-06-30',
     heroImage: {
       src: '/images/blog/cuanto-invertir-en-publicidad-digital-en-panama.jpg',
-      alt: 'Persona planificando presupuesto de publicidad digital con calculadora y laptop',
+      alt: 'Manos contando monedas viejas apiladas sobre una mesa de madera gastada, en una guía de presupuesto para publicidad digital',
     },
     lead: [
       'Es la pregunta con la que arranca casi todo negocio que quiere pautar, y no tiene una respuesta de tabla. No existe un número mágico que sirva para todos, porque el presupuesto correcto depende de tu margen, tu objetivo y cuánto puedes pagar por un cliente sin perder dinero.',

@@ -36,7 +36,7 @@ const contactLabel = sk ? sk[1] : 'Cotizar por formulario';
 const blogFaq = isBlog ? faqNode(page) : null;
 const jsonld = isBlog
   ? [
-      articleJsonLd({ title: page.title, description: page.description, slug: page.slug, date: new Date((page.date ?? '2026-01-15') + 'T12:00:00'), image: new URL(ogFor(page.slug), site.domain).href }),
+      articleJsonLd({ title: page.title, description: page.description, slug: page.slug, date: new Date((page.date ?? '2026-01-15') + 'T12:00:00'), image: new URL(ogFor(page.slug), site.domain).href, hero }),
       ...(blogFaq ? [{ '@context': 'https://schema.org', ...blogFaq }] : []),
     ]
   : pageJsonLd(page, { localBusiness: page.slug === 'contacto' });

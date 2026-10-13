@@ -17,7 +17,7 @@ export const blog41: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/hero/miami--diseno-web-en-miami-en-espanol.jpg',
-      alt: 'Propietario de un negocio en Miami comparando agencias de diseño web desde su computadora',
+      alt: 'Avenida costera de Miami con torres de vidrio y palmeras frente al mar, para elegir agencia de diseño web en español',
     },
     lead: [
       'Elige la agencia que trabaje en español de verdad (no solo que traduzca), que te muestre su proceso por escrito, que deje el dominio y el código a tu nombre, y que te diga qué pasa después de publicar. Dónde esté su oficina importa menos que esas cinco cosas.',
@@ -119,7 +119,7 @@ export const blog41: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/hero/miami--diseno-web-kendall.jpg',
-      alt: 'Dueña de un negocio local en Miami-Dade revisando su página web desde el celular',
+      alt: 'Edificio comercial de una planta color arena con palmeras y dos autos al atardecer, sobre diseño web para negocios en Miami',
     },
     lead: [
       'La web de un negocio hispano de Miami-Dade necesita, como mínimo: textos en español nativo, un botón de WhatsApp visible, precios o rangos a la vista, información pensada para búsquedas locales en español, carga rápida en el celular y, solo si tu cliente lo pide, una versión en inglés bien hecha.',

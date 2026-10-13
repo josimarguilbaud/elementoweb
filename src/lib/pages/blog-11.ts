@@ -13,7 +13,7 @@ export const blog11: PageData[] = [
     date: '2026-09-17',
     heroImage: {
       src: '/images/blog/diseno-web-para-bienes-raices-panama.jpg',
-      alt: 'Fachada de una casa residencial moderna en Panamá, con jardín cuidado y luz cálida de atardecer',
+      alt: 'Fachada de casa moderna de dos pisos con garaje y césped cuidado al atardecer, para el diseño web de bienes raíces',
     },
     lead: [
       'El comprador ya filtró por zona, precio y habitaciones antes de escribirte. El problema es que lo hizo en Encuentra24 o Compreoalquile, viendo tu propiedad al lado de otras tres con el mismo precio y casi las mismas fotos. Si ese es tu único canal, no vendes tú: vende el portal, y tú pagas por aparecer en su vitrina.',

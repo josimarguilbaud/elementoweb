@@ -17,7 +17,7 @@ export const blog3: PageData[] = [
     date: '2026-07-16',
     heroImage: {
       src: '/images/blog/como-aparecer-primero-en-google-en-panama.jpg',
-      alt: 'Persona analizando datos y posiciones de búsqueda en la pantalla de una laptop',
+      alt: 'Esquina de calle al atardecer con locales de toldos y vitrinas iluminadas, en una guía para aparecer en Google en Panamá',
     },
     lead: [
       '"Quiero salir de primero en Google" es la frase que más escuchamos. Es una meta legítima, pero casi siempre viene con una idea equivocada de cómo se logra.',
@@ -141,7 +141,7 @@ export const blog3: PageData[] = [
     date: '2026-07-02',
     heroImage: {
       src: '/images/blog/que-es-el-seo-local-y-google-maps-panama.jpg',
-      alt: 'Mapa digital con marcadores de ubicación de negocios en una ciudad',
+      alt: 'Vista aérea tilt-shift de una esquina de ciudad con techos de zinc y una plaza, en una guía de SEO local y Google Maps',
     },
     lead: [
       'Cuando alguien en la ciudad de Panamá busca "farmacia cerca de mí" o "mecánico en Costa del Este", Google no le muestra el sitio web mejor posicionado del mundo: le muestra los negocios más cercanos y mejor valorados. Ese es el terreno del SEO local.',
@@ -252,7 +252,7 @@ export const blog3: PageData[] = [
     date: '2026-06-18',
     heroImage: {
       src: '/images/blog/como-mejorar-la-velocidad-de-tu-pagina-web.jpg',
-      alt: 'Velocímetro que representa la rapidez de carga de un sitio web',
+      alt: 'Mensajero en moto con un gran cajón de reparto por una calle colonial, como metáfora de la velocidad de carga de tu web',
     },
     lead: [
       'Una página lenta pierde clientes antes de mostrar lo que ofrece. Cada segundo de más en cargar es gente que se va, ventas que no ocurren y posiciones que Google no te da.',

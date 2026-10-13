@@ -1,9 +1,29 @@
 /* Datos estructurados JSON-LD. El FAQPage SIEMPRE se deriva del bloque faq
    visible: no puede desincronizarse de lo que el usuario ve. */
 import { site, url, pricing } from './site';
+import { heroFor } from './img';
 import type { PageData } from './types';
 
 const ORG_ID = `${site.domain}/#organizacion`;
+
+/* ImageObject de la portada de una página (para primaryImageOfPage y BlogPosting.image).
+   Solo imágenes propias servidas desde /images/: una foto de stock enlazada no es nuestra
+   y puede romperse. Las medidas son las del archivo real de cada carpeta; si no se conocen,
+   se omiten en vez de inventarlas. `caption` es el mismo alt que ve el visitante. */
+const IMG_DIMS: Record<string, [number, number]> = { hero: [1600, 1120], blog: [1600, 1073], industrias: [1600, 1073] };
+export function imageObject(img: { src: string; alt: string }) {
+  if (!img.src.startsWith('/images/')) return null;
+  const d = IMG_DIMS[img.src.split('/')[2]];
+  const abs = `${site.domain}${img.src}`;
+  return {
+    '@type': 'ImageObject',
+    url: abs,
+    contentUrl: abs,
+    ...(d ? { width: d[0], height: d[1] } : {}),
+    caption: img.alt,
+    inLanguage: 'es-PA',
+  };
+}
 
 export function orgNode() {
   return {
@@ -113,6 +133,7 @@ const COLLECTIONS = new Set(['portafolio', 'casos-de-exito', 'recursos', 'miami'
 function webPageNode(page: PageData) {
   const type = page.slug === 'nosotros' ? 'AboutPage' : page.slug === 'contacto' ? 'ContactPage' : COLLECTIONS.has(page.slug) || page.slug.startsWith('guias') ? 'CollectionPage' : 'WebPage';
   const pageUrl = `${site.domain}${url(page.slug)}`;
+  const primary = imageObject(heroFor(page));
   return {
     '@type': type,
     '@id': `${pageUrl}#pagina`,
@@ -122,6 +143,7 @@ function webPageNode(page: PageData) {
     inLanguage: 'es-PA',
     isPartOf: { '@id': `${site.domain}/#sitio` },
     about: { '@id': ORG_ID },
+    ...(primary ? { primaryImageOfPage: primary } : {}),
     breadcrumb: undefined,
   };
 }
@@ -182,8 +204,11 @@ export function pageJsonLd(page: PageData, opts: { localBusiness?: boolean } = {
 /* `a.slug` ya trae el prefijo `blog/` (p. ej. 'blog/cuanto-cuesta-…'), así que
    la URL se arma con url(): concatenar '/blog/' otra vez producía /blog/blog/…
    (404) en el mainEntityOfPage de los 70 artículos. */
-export function articleJsonLd(a: { title: string; description: string; slug: string; date: Date; image?: string }) {
+export function articleJsonLd(a: { title: string; description: string; slug: string; date: Date; image?: string; hero?: { src: string; alt: string } }) {
   const pageUrl = `${site.domain}${url(a.slug)}`;
+  /* image: portada con medidas y descripción + la imagen para compartir (1200x630). */
+  const heroObj = a.hero ? imageObject(a.hero) : null;
+  const images = [heroObj, a.image].filter(Boolean);
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -194,7 +219,7 @@ export function articleJsonLd(a: { title: string; description: string; slug: str
         '@id': `${pageUrl}#articulo`,
         url: pageUrl,
         headline: a.title,
-        ...(a.image ? { image: a.image } : {}),
+        ...(images.length ? { image: images } : {}),
         description: a.description,
         datePublished: a.date.toISOString().slice(0, 10),
         inLanguage: 'es-PA',

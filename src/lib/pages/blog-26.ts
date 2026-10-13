@@ -18,7 +18,7 @@ export const blog26: PageData[] = [
     date: '2026-08-29',
     heroImage: {
       src: '/images/blog/diseno-web-para-concesionarios-autos-panama.jpg',
-      alt: 'Sala de exhibición de un concesionario de autos moderno, con varias hileras de vehículos nuevos bajo luz brillante de techo',
+      alt: 'Vestíbulo de cristal vacío con piso brillante y luces de riel, con autos afuera, en una guía de web para concesionarios',
     },
     lead: [
       'El comprador de un auto en Panamá abre el celular, no la puerta del lote. Compara tres o cuatro concesionarios la misma noche, mira las fotos del modelo que le interesa, calcula mentalmente cuánto pagaría al mes y decide a cuál escribirle antes de haber pisado un solo showroom.',

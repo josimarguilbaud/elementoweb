@@ -406,7 +406,7 @@ export const blog40: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/hero/tecnologias--desarrollo-web-a-medida-vue-react-panama.jpg',
-      alt: 'Código de una aplicación web a medida en la pantalla de un desarrollador',
+      alt: 'Banco de carpintero con un bloque de madera sujeto con prensas y formones, en una guía de desarrollo web a medida',
     },
     lead: [
       'Las páginas web corporativas a medida de Elemento Web parten desde $2,900 (USD, sin ITBMS del 7%). No es un paquete cerrado: el precio final se define tras un diagnóstico, porque depende de la arquitectura, las integraciones y la funcionalidad que tu operación necesite.',

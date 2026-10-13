@@ -16,7 +16,7 @@ export const blog35: PageData[] = [
     date: '2026-09-07',
     heroImage: {
       src: '/images/blog/diseno-web-para-aire-acondicionado-panama.jpg',
-      alt: 'Manos de un técnico instalando una unidad de aire acondicionado en la pared, con herramientas y equipo profesional de HVAC',
+      alt: 'Unidad split de aire acondicionado en una pared blanca de una habitación luminosa, para el diseño web de empresas de A/C',
     },
     lead: [
       'Son las dos de la tarde en Panamá y a alguien se le dañó el aire acondicionado en plena ola de calor. No va a leer sobre planes de mantenimiento ni comparar marcas: quiere saber si alguien puede ir hoy y cuánto cuesta la visita, y lo decide en el tiempo que toma abrir dos o tres páginas desde el teléfono. Esa misma empresa, el mismo mes, puede estar cerrando un contrato anual con la administración de un edificio o una cadena de restaurantes: ahí no hay urgencia, hay presupuesto, comparación y una decisión que se toma con calma.',

@@ -7,6 +7,7 @@ import { url, wa, site } from '../lib/site';
 import { pageJsonLd, articleJsonLd, faqNode } from '../lib/schema';
 import { heroFor, ogFor } from '../lib/img';
 import formulario from '../data/formulario.json';
+import { pageTypeOf } from '../lib/pages/kind';
 
 export function getStaticPaths() {
   // El home vive en index.astro; aquí van todas las demás páginas del registro.
@@ -43,7 +44,7 @@ const dateLabel = page.date
   ? new Date(page.date + 'T12:00:00').toLocaleDateString('es-PA', { day: 'numeric', month: 'long', year: 'numeric' })
   : '';
 ---
-<Base title={page.title} description={page.description} dark image={ogFor(page.slug)} jsonld={jsonld} ogType={isBlog ? 'article' : 'website'} published={isBlog ? page.date : undefined}>
+<Base title={page.title} description={page.description} dark image={ogFor(page.slug)} jsonld={jsonld} ogType={isBlog ? 'article' : 'website'} published={isBlog ? page.date : undefined} pageType={pageTypeOf(page)} service={page.anatomia === 'v2' ? page.serviceKey : undefined}>
   <!-- HERO interno -->
   <section class="relative overflow-hidden bg-night pt-36 pb-20 text-white md:pt-44 md:pb-24">
     <div class="absolute inset-0 mesh-dark opacity-50"></div>
@@ -93,7 +94,7 @@ const dateLabel = page.date
     </section>
   )}
 
-  <Blocks blocks={page.blocks} />
+  <Blocks blocks={page.blocks} v2={page.anatomia === 'v2'} />
   {showNext && (
     <section class="mx-auto max-w-7xl px-6 pb-16" aria-labelledby="siguiente-paso">
       <div class="rounded-3xl border border-ink/10 bg-white p-7 md:p-9">

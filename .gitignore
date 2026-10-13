@@ -1,5 +1,9 @@
 # build output
 dist/
+# compilación de pruebas del marcador (npm run build:fixtures)
+dist-fixture/
+# archivos temporales de gstack/autoplan
+.gstack/tmp/
 # generated types
 .astro/
 # dependencies

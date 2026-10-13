@@ -112,8 +112,23 @@ export function faqNode(page: PageData) {
   };
 }
 
+/* Oferta de la página (D23, R27): solo con anatomía v2 y precio CONFIRMADO. Un precio propuesto o
+   cotizado nunca emite Offer; el validador comprueba además que la cifra esté en src/data/precios.json. */
+function pageOffer(page: PageData) {
+  if (page.anatomia !== 'v2') return null;
+  const rc = page.blocks.find((b) => b.type === 'receipt');
+  if (!rc || rc.type !== 'receipt' || rc.precio.estado !== 'confirmado' || !rc.precio.desde) return null;
+  const monto = Number(rc.precio.desde.replace(/[^0-9.]/g, ''));
+  return {
+    '@type': 'Offer',
+    priceSpecification: { '@type': 'PriceSpecification', minPrice: monto, priceCurrency: 'USD', valueAddedTaxIncluded: false },
+    seller: { '@id': ORG_ID },
+  };
+}
+
 export function serviceNode(page: PageData) {
   if (!page.service) return null;
+  const offer = pageOffer(page);
   return {
     '@type': 'Service',
     '@id': `${site.domain}${url(page.slug)}#servicio`,
@@ -125,6 +140,7 @@ export function serviceNode(page: PageData) {
       ? { '@type': 'Place', name: 'Miami-Dade County, Florida' }
       : { '@type': 'Country', name: 'Panamá' },
     inLanguage: 'es-PA',
+    ...(offer ? { offers: offer } : {}),
   };
 }
 

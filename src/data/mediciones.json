@@ -1,0 +1,4 @@
+{
+  "_nota": "Mediciones propias con fecha (D6, D40). Cada una: {id, url, metrica, valor, herramienta, fecha (AAAA-MM-DD), metodo}. Las escribe scripts/medir.mjs; ninguna cifra se inventa ni se rellena a mano. Una página sin medición imprime el blanco honesto «sin medir». La etiqueta visible nombra la herramienta guardada en `herramienta` y `metodo`.",
+  "mediciones": []
+}

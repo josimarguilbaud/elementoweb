@@ -7,8 +7,31 @@ import ContactForm from './ContactForm.astro';
 const ctaLabel = (n: string) => ({ landing: 'Cotizar mi landing', pyme: 'Cotizar mi web', ecommerce: 'Cotizar mi tienda' } as Record<string, string>)[planKey(n)] || 'Cotizar mi proyecto';
 import InfraReliability from './InfraReliability.astro';
 import SeoMomentum from './SeoMomentum.astro';
-interface Props { blocks: Block[] }
-const { blocks } = Astro.props;
+import mediciones from '../data/mediciones.json';
+/* `v2` = la página usa la anatomía nueva (PageData.anatomia): los bloques existentes emiten además el contrato
+   data-* que lee el validador. Sin `v2` el HTML de las páginas actuales no cambia ni un byte. */
+interface Props { blocks: Block[]; v2?: boolean }
+const { blocks, v2 = false } = Astro.props;
+/* '2026-10-13' → '13/10': sin Date, para no depender de la zona horaria del build. */
+const fechaCorta = (iso: string) => { const [, m, d] = iso.split('-'); return `${d}/${m}`; };
+const numero = (s?: string) => (s ? Number(s.replace(/[^0-9.]/g, '')) : undefined);
+/* D39: un bloque de la anatomía nueva con una lista vacía o un dato clave faltante rompe el build,
+   para que el marcador nunca cuente algo que no está en la página. */
+if (v2) {
+  const ISO = /^\d{4}-\d{2}-\d{2}$/;
+  for (const b of blocks) {
+    const falla = (msg: string): never => { throw new Error(`Bloque «${b.type}» inválido en una página con anatomía v2: ${msg}`); };
+    if (b.type === 'answer' && (!b.text.trim() || !ISO.test(b.fecha))) falla('texto vacío o fecha que no es AAAA-MM-DD');
+    if (b.type === 'receipt') {
+      if (!b.plazo.trim()) falla('sin plazo');
+      if (!ISO.test(b.fecha)) falla('fecha que no es AAAA-MM-DD');
+      if (b.precio.estado === 'confirmado' && !b.precio.desde) falla('precio confirmado sin cifra');
+    }
+    if (b.type === 'includes' && (!b.incluye.length || !b.entregables.length || !b.noIncluye.length)) falla('alguna de las tres listas está vacía');
+    if (b.type === 'compare' && !b.criterios.length) falla('sin criterios');
+    if (b.type === 'faq' && !b.items.length) falla('sin preguntas');
+  }
+}
 ---
 {blocks.map((b) => (
   <>
@@ -91,7 +114,7 @@ const { blocks } = Astro.props;
       const pr = b.project ? portfolio.find((x) => x.t === b.project) : null;
       const img = b.image ?? (pr ? { src: pr.img, alt: `Captura de ${pr.t}, proyecto real de Elemento Web`, width: 1200, height: 900, caption: `${pr.t} · ${pr.catLabel} · ${pr.year}` } : null);
       return img ? (
-        <section id={b.id} class="mx-auto max-w-6xl scroll-mt-28 px-6 py-16">
+        <section id={b.id} class="mx-auto max-w-6xl scroll-mt-28 px-6 py-16" data-score={v2 ? 'prueba' : undefined}>
           <h2 class="reveal text-center font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>
           {b.intro && <p class="rt reveal mx-auto mt-3 max-w-2xl text-center text-lg text-ink/70" set:html={b.intro}></p>}
           <div class="mt-10 grid items-start gap-8 lg:grid-cols-[1.4fr_1fr]">
@@ -117,8 +140,106 @@ const { blocks } = Astro.props;
       ) : null;
     })()}
 
+    {b.type === 'answer' && (
+      <section class="ew-sec" data-block="answer" data-fecha={b.fecha}>
+        <div class="ew-wrap">
+          {b.h2 && <h2 class="ew-h2">{b.h2}</h2>}
+          <p class="ew-answer rt" set:html={b.text}></p>
+          <p class="ew-data mt-3">Actualizado el {fechaCorta(b.fecha)}</p>
+        </div>
+      </section>
+    )}
+
+    {b.type === 'receipt' && (() => {
+      const med = b.medicionId ? mediciones.mediciones.find((m) => m.id === b.medicionId) : undefined;
+      const p = b.precio;
+      return (
+        <section class="ew-sec" data-block="receipt">
+          <div class="ew-wrap">
+            <div class="ew-receipt-shadow"><div class={`ew-receipt${b.compacto ? ' ew-receipt--compact' : ''}`}>
+              <p class="ew-data ew-receipt__head">Comprobante · {b.titulo} · {fechaCorta(b.fecha)}{b.metodo ? ` · ${b.metodo}` : ''}</p>
+              <dl>
+                <div class="ew-row" data-score="precio" data-price-state={p.estado} data-amount={p.estado === 'confirmado' ? numero(p.desde) : undefined}>
+                  <dt>Precio de partida</dt>
+                  <dd>
+                    {p.estado === 'confirmado'
+                      ? <><span class="ew-fig">desde {p.desde}</span>{p.unidad ? ` ${p.unidad}` : ''}</>
+                      : 'Cotización cerrada por escrito'}
+                    {p.estado === 'propuesto' && !b.compacto && p.desde && <small class="ew-small">Referencia publicada: desde {p.desde}{p.unidad ? ` ${p.unidad}` : ''}; se confirma en tu cotización.</small>}
+                  </dd>
+                </div>
+                <div class="ew-row" data-score="plazo"><dt>Plazo</dt><dd>{b.plazo}</dd></div>
+                {med ? (
+                  <div class="ew-row" data-score="medicion" data-fecha={med.fecha} data-metodo={med.metodo}>
+                    <dt>Medición</dt>
+                    <dd><span class="ew-fig">{med.valor}</span> {med.metrica}<small class="ew-small">medido el {fechaCorta(med.fecha)} con {med.herramienta} ({med.metodo})</small></dd>
+                  </div>
+                ) : (
+                  <div class="ew-row ew-row--blank" data-blank="medicion"><dt>Medición</dt><dd>sin medir</dd></div>
+                )}
+              </dl>
+              {b.pie && b.pie.length > 0 && <ul class="ew-receipt__foot">{b.pie.map((f) => <li>{f}</li>)}</ul>}
+            </div></div>
+          </div>
+        </section>
+      );
+    })()}
+
+    {b.type === 'includes' && (
+      <section class="ew-sec" data-block="includes">
+        <div class="ew-wrap">
+          <h2 class="ew-h2">{b.h2}</h2>
+          <div class="ew-inc">
+            <div>
+              <h3 class="ew-data">Incluye</h3>
+              <ul data-score="alcance">{b.incluye.map((t) => <li><span class="ew-sign" aria-hidden="true">+</span><span class="rt" set:html={t}></span></li>)}</ul>
+            </div>
+            <div>
+              <h3 class="ew-data">Entregables</h3>
+              <ul data-score="entregables">{b.entregables.map((t) => <li><span class="ew-sign" aria-hidden="true">+</span><span class="rt" set:html={t}></span></li>)}</ul>
+            </div>
+            <div>
+              <h3 class="ew-data">No incluye</h3>
+              <ul data-score="no-incluye">{b.noIncluye.map((t) => <li><span class="ew-sign" aria-hidden="true">−</span><span class="rt" set:html={t}></span></li>)}</ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    {b.type === 'compare' && (
+      <section class="ew-sec" data-block="compare">
+        <div class="ew-wrap">
+          <h2 class="ew-h2">{b.h2}</h2>
+          {b.intro && <p class="rt ew-intro" set:html={b.intro}></p>}
+          <table class="ew-cmp" data-score="comparacion">
+            <caption class="sr-only">{b.h2}</caption>
+            <thead><tr><th scope="col">Criterio</th><th scope="col">Elemento Web</th>{b.otraCotizacion && <th scope="col">Tu otra cotización</th>}</tr></thead>
+            <tbody>
+              {b.criterios.map((r) => (
+                <tr>
+                  <th scope="row">{r.criterio}</th>
+                  <td data-label="Elemento Web">{r.nosotros}{r.fuente && <>{' '}<a href={url(r.fuente.slug)} class="ew-src">{r.fuente.label}</a></>}</td>
+                  {b.otraCotizacion && <td class="ew-cell-blank" data-label="Tu otra cotización"><span class="sr-only">espacio para completar</span></td>}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )}
+
+    {b.type === 'blank' && (
+      <section class="ew-sec" data-block="blank" data-blank={b.punto}>
+        <div class="ew-wrap">
+          <h2 class="ew-h2">{b.h2 ?? 'Proyecto real'}</h2>
+          <p class="ew-blankbox">Resultado medido: sin publicar aún, falta la autorización del cliente</p>
+        </div>
+      </section>
+    )}
+
     {b.type === 'faq' && (
-      <section class="mx-auto max-w-4xl px-6 py-16">
+      <section class="mx-auto max-w-4xl px-6 py-16" data-score={v2 ? 'faq' : undefined}>
         <h2 class="reveal mb-8 text-center font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>
         <div class="flex flex-col gap-3">
           {b.items.map((it, i) => (
@@ -222,7 +343,7 @@ const { blocks } = Astro.props;
     )}
 
     {b.type === 'projects' && (
-      <section class="mx-auto max-w-7xl px-6 py-16">
+      <section class="mx-auto max-w-7xl px-6 py-16" data-score={v2 ? 'prueba' : undefined}>
         {b.h2 && <h2 class="reveal font-display text-[clamp(1.8rem,3.8vw,2.8rem)] font-extrabold text-ink">{b.h2}</h2>}
         {b.intro && <p class="rt reveal mt-3 max-w-2xl text-lg text-ink/70" set:html={b.intro}></p>}
 

@@ -19,8 +19,13 @@ interface Props {
   ogType?: 'website' | 'article';
   /** Fecha de publicación ISO (solo artículos). */
   published?: string;
+  /** Contrato del marcador (D7): tipo de página que lee el validador en <main data-page-type>.
+   *  Solo lo emiten las páginas que ya usan la anatomía nueva; las demás no llevan el atributo. */
+  pageType?: string;
+  /** Clave de servicio del formulario (D9): <main data-service>, la lee track.ts. */
+  service?: string;
 }
-const { title, description, current = '', jsonld, dark = false, image, noindex = false, ogType = 'website', published } = Astro.props;
+const { title, description, current = '', jsonld, dark = false, image, noindex = false, ogType = 'website', published, pageType, service } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.domain).href;
 const schemas = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
 /* og:image: usa la imagen de la página; si no, una por defecto. Siempre absoluta. */
@@ -77,7 +82,7 @@ const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.
     <div id="scroll-progress" class="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left scale-x-0 bg-gradient-to-r from-teal-deep via-teal to-violet"></div>
 
     <Navbar current={current} dark={dark} />
-    <main id="contenido" tabindex="-1">
+    <main id="contenido" tabindex="-1" data-page-type={pageType} data-service={service}>
       <slot />
     </main>
     <Footer />

@@ -17,7 +17,34 @@ export type Block =
   | { type: 'infra'; h2: string; intro?: string; columns: InfraColumn[] }
   | { type: 'plans'; h2: string; intro?: string; tiers: PlanTier[]; note?: string }
   | { type: 'seo-momentum'; h2: string; intro?: string }
+  /* Bloques de la anatomía nueva (D7, D21 a D24, D28). Cada uno emite el contrato data-* que lee el validador. */
+  | { type: 'answer'; h2?: string; text: string; fecha: string }
+  | { type: 'receipt'; titulo: string; fecha: string; metodo?: string; precio: ReceiptPrice; plazo: string; medicionId?: string; pie?: string[]; compacto?: boolean }
+  | { type: 'compare'; h2: string; intro?: string; criterios: CompareRow[]; otraCotizacion?: boolean }
+  | { type: 'includes'; h2: string; incluye: string[]; entregables: string[]; noIncluye: string[] }
+  | { type: 'blank'; punto: 'prueba'; h2?: string }
   | { type: 'showcase'; id?: string; ctaLabel?: string; extraViews?: { label: string; src: string }[]; h2: string; intro?: string; project?: string; image?: { src: string; alt: string; width: number; height: number; caption: string }; notes: { label: string; text: string }[]; caption?: string };
+
+/** Estado del precio (D23): solo 'confirmado' puede emitir Offer y llevar cifra en la portada. */
+export type PriceState = 'confirmado' | 'propuesto' | 'cotizado';
+
+export interface ReceiptPrice {
+  estado: PriceState;
+  /** Cifra de partida, p. ej. '$1,250'. Obligatoria si es 'confirmado'; en 'propuesto' es solo la referencia publicada. */
+  desde?: string;
+  /** Qué cubre o por cuánto tiempo, p. ej. 'por proyecto' o 'al mes'. */
+  unidad?: string;
+}
+
+/** Fila de la comparación (D28): el criterio sale de la oferta publicada y enlaza a su fuente. */
+export interface CompareRow {
+  criterio: string;
+  nosotros: string;
+  fuente?: { slug: string; label: string };
+}
+
+/** Clasificación de página (D35). La deriva `kindOf` en src/lib/pages/kind.ts; no cambia cómo se ve. */
+export type PageKind = 'service' | 'hub' | 'pillar' | 'pricing' | 'industry' | 'blog' | 'location' | 'guide' | 'case' | 'other';
 
 /** Columna del widget de infraestructura/confiabilidad (3 columnas animadas). */
 export interface InfraColumn {
@@ -54,8 +81,13 @@ export interface PageData {
   /** ⚠️ TEMPORAL: placeholders de picsum.photos con seed descriptivo (sin créditos de
    *  generación disponibles). Reemplazar por fotografía real o generada antes de publicar. */
   heroImage?: { src: string; alt: string };
-  /** Servicio que preselecciona el formulario desde los botones de la página (clave de planKey). */
+  /** Servicio que preselecciona el formulario desde los botones de la página: clave de src/data/formulario.json. */
   serviceKey?: string;
+  /** Clasificación explícita (D35); si falta, `kindOf` la deriva del slug. */
+  kind?: PageKind;
+  /** Opt-in a la anatomía nueva (D21): 'v2' activa el contrato data-* y los bloques de evidencia en esta página.
+   *  `kind` clasifica todas las páginas; solo las que declaran 'v2' cambian de aspecto. */
+  anatomia?: 'v2';
   /** Línea de oferta bajo los botones de la portada (precio, alcance, plazo). */
   offer?: { line: string; note: string };
   heroCtas?: { label: string; href: string; primary?: boolean }[];

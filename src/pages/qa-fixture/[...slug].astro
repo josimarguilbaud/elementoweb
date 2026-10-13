@@ -1,0 +1,21 @@
+---
+/* Ruta de pruebas: solo se genera con ASTRO_FIXTURES=1 (npm run build:fixtures → dist-fixture/).
+   Sin la variable getStaticPaths devuelve [] y la compilación normal no emite nada de esto. */
+import Base from '../../layouts/Base.astro';
+import Blocks from '../../components/Blocks.astro';
+import { pageJsonLd } from '../../lib/schema';
+import { pageTypeOf } from '../../lib/pages/kind';
+import { fixtures } from '../../lib/fixtures';
+
+export function getStaticPaths() {
+  if (process.env.ASTRO_FIXTURES !== '1') return [];
+  return fixtures.map((p) => ({ params: { slug: p.slug.replace(/^qa-fixture\//, '') }, props: { page: p } }));
+}
+const { page } = Astro.props;
+---
+<Base title={page.title} description={page.description} dark noindex jsonld={pageJsonLd(page)} pageType={pageTypeOf(page)} service={page.serviceKey}>
+  <section class="ew-sec" style="background:#0a1a3a;color:#f5fafc">
+    <div class="ew-wrap"><h1 class="ew-h2" style="color:#f5fafc">{page.h1}</h1></div>
+  </section>
+  <Blocks blocks={page.blocks} v2 />
+</Base>

@@ -116,3 +116,75 @@
   .reveal { opacity: 1 !important; transform: none !important; }
   .cursor-ring, .cursor-dot { display: none !important; }
 }
+
+/* ============ Evidencia: respuesta, comprobante, incluye y comparación ============
+   Sistema "Comprobante" de DESIGN.md. Los tokens llevan el prefijo --ew- y solo los usan los
+   bloques nuevos (answer, receipt, includes, compare, blank): las páginas actuales no cambian.
+   Contraste comprobado en DESIGN.md: texto 1c2230 y secundario 4f5f75 sobre f8f9fa >= 4,5:1. */
+:root {
+  --ew-primary: #0a1a3a; --ew-primary-raised: #123a6b; --ew-on-primary: #f5fafc; --ew-on-primary-muted: #b9cad5;
+  --ew-accent: #0099cc; --ew-accent-on-light: #00688c; --ew-accent-on-dark: #5ec8e8; --ew-marker: #aee8ff;
+  --ew-surface: #f8f9fa; --ew-surface-alt: #eaf0f5; --ew-raised: #ffffff;
+  --ew-text: #1c2230; --ew-muted: #4f5f75; --ew-border: #d4dee8; --ew-field: #6b7b92;
+  --ew-error: #b42318; --ew-ok: #167a58;
+}
+.ew-sec { padding: 56px 0; }
+@media (min-width: 1024px) { .ew-sec { padding: 80px 0; } }
+.ew-wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); display: grid; gap: 24px 48px; }
+@media (min-width: 1024px) {
+  /* Columna estrecha para el título y ancha para el contenido (0,8 fr y 1,2 fr). */
+  .ew-wrap:has(> .ew-h2) { grid-template-columns: 0.8fr 1.2fr; align-items: start; }
+  .ew-wrap:has(> .ew-h2) > .ew-h2 { grid-column: 1; grid-row: 1 / span 4; }
+  .ew-wrap:has(> .ew-h2) > :not(.ew-h2) { grid-column: 2; }
+}
+.ew-h2 { font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.025em; color: var(--ew-text); }
+.ew-intro { max-width: 62ch; line-height: 1.65; color: var(--ew-muted); }
+/* Voz de datos: etiquetas, comprobantes y mediciones. */
+.ew-data { font-size: 0.78rem; font-weight: 500; line-height: 1.5; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ew-muted); font-variant-numeric: tabular-nums; }
+.ew-answer { font-size: calc(1.0625rem * 1.1); line-height: 1.65; color: var(--ew-text); max-width: 62ch; }
+.ew-answer a { color: var(--ew-accent-on-light); }
+
+.ew-receipt-shadow { max-width: 560px; filter: drop-shadow(10px 10px 0 var(--ew-surface-alt)); }
+.ew-receipt { --tooth: 9px; background: var(--ew-raised); color: var(--ew-text); border: 1px solid var(--ew-border); border-bottom: 0; border-radius: 6px 6px 0 0; padding: 20px 24px calc(20px + var(--tooth));
+  -webkit-mask: linear-gradient(#000 0 0) top / 100% calc(100% - var(--tooth)) no-repeat, conic-gradient(from -45deg at 50% 100%, #000 90deg, #0000 0) bottom / calc(var(--tooth) * 2) var(--tooth) repeat-x;
+  mask: linear-gradient(#000 0 0) top / 100% calc(100% - var(--tooth)) no-repeat, conic-gradient(from -45deg at 50% 100%, #000 90deg, #0000 0) bottom / calc(var(--tooth) * 2) var(--tooth) repeat-x; }
+.ew-receipt--compact { padding-top: 14px; padding-bottom: calc(14px + var(--tooth)); }
+.ew-receipt__head { padding-bottom: 10px; border-bottom: 1px solid var(--ew-border); }
+.ew-receipt dl { margin: 0; }
+.ew-row { display: flex; align-items: baseline; gap: 12px; padding: 11px 0; font-size: 0.95rem; }
+.ew-row dt { flex: 1 1 auto; display: flex; align-items: baseline; gap: 8px; color: var(--ew-muted); font-weight: 500; }
+.ew-row dt::after { content: ""; flex: 1 1 auto; min-width: 12px; border-bottom: 1.5px dotted var(--ew-border); transform: translateY(-3px); }
+.ew-row dd { margin: 0; flex: 0 1 60%; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.ew-row--blank dd { flex: 0 0 auto; font-weight: 500; color: var(--ew-muted); border: 1.5px dotted var(--ew-field); border-radius: 6px; padding: 1px 10px; }
+.ew-fig { background: var(--ew-marker); color: var(--ew-primary); padding: 0 6px; border-radius: 6px; font-weight: 700; }
+.ew-small { display: block; margin-top: 2px; font-size: 0.78rem; font-weight: 400; color: var(--ew-muted); }
+.ew-receipt__foot { list-style: none; margin: 8px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--ew-border); font-size: 0.8rem; color: var(--ew-muted); }
+.ew-receipt__foot li + li { margin-top: 2px; }
+
+.ew-blankbox { border: 1.5px dotted var(--ew-field); border-radius: 6px; padding: 16px 20px; max-width: 62ch; font-weight: 500; color: var(--ew-muted); }
+
+.ew-inc { display: grid; gap: 32px; }
+@media (min-width: 768px) { .ew-inc { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.ew-inc ul { list-style: none; margin: 12px 0 0; padding: 0; }
+.ew-inc li { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--ew-border); line-height: 1.5; color: var(--ew-text); }
+.ew-sign { flex: none; width: 1.1em; font-size: 0.78rem; font-weight: 500; line-height: 1.9; color: var(--ew-accent-on-light); }
+[data-score="no-incluye"] .ew-sign { color: var(--ew-muted); }
+
+.ew-cmp { width: 100%; border-collapse: collapse; background: var(--ew-raised); border: 1px solid var(--ew-border); font-size: 0.95rem; }
+.ew-cmp th, .ew-cmp td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--ew-border); vertical-align: top; line-height: 1.5; }
+.ew-cmp thead th { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ew-muted); background: var(--ew-surface-alt); }
+.ew-cmp tbody th { font-weight: 600; color: var(--ew-text); }
+.ew-src { color: var(--ew-accent-on-light); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.ew-cell-blank::after { content: ""; display: block; height: 1.4em; border-bottom: 1.5px dotted var(--ew-field); }
+@media (max-width: 639px) {
+  /* Compacto: cada fila se apila; la celda vacía queda como línea punteada etiquetada. */
+  .ew-cmp thead { position: absolute; left: -9999px; }
+  .ew-cmp tr { display: block; border-bottom: 1px solid var(--ew-border); padding: 8px 0; }
+  .ew-cmp th, .ew-cmp td { display: block; border: 0; padding: 6px 16px; }
+  .ew-cmp td::before { content: attr(data-label); display: block; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ew-muted); }
+}
+@media print {
+  .ew-cmp tr { break-inside: avoid; }
+  .ew-cell-blank::after { height: 3rem; border-bottom-color: var(--ew-text); }
+  .ew-cmp, .ew-cmp th, .ew-cmp td { border-color: var(--ew-text); }
+}

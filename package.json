@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "astro dev --port 4600",
     "build": "astro build",
-    "preview": "astro preview --port 4600"
+    "preview": "astro preview --port 4600",
+    "build:fixtures": "node scripts/con-fixtures.mjs astro build --outDir dist-fixture",
+    "dev:fixtures": "node scripts/con-fixtures.mjs astro dev --port 4601",
+    "test": "node --test \"scripts/*.test.mjs\""
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",

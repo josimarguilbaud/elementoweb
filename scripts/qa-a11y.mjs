@@ -5,11 +5,16 @@
 import { chromium } from 'playwright-core';
 import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
+import { rutaChrome } from './chrome.mjs';
 
 const BASE = process.argv[2] || 'http://localhost:4610';
-const EXE = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium';
+const EXE = rutaChrome() || '/opt/pw-browsers/chromium';
 const axeSrc = readFileSync(createRequire(import.meta.url).resolve('axe-core/axe.min.js'), 'utf8');
-const PAGES = ['/', '/precios/', '/contacto/', '/diseno-web-panama/', '/miami/', '/casos-de-exito/tramitapa/', '/recursos/calculadora-costo-total-web/', '/blog/cuanto-cuesta-diseno-web-panama/', '/nosotros/', '/servicios/diseno-web-corporativo-panama/', '/guias/', '/guias/diseno-web-por-industria/', '/blog/cuanto-cuesta-tienda-online-panama/', '/blog/agencia-diseno-web-miami-en-espanol/', '/blog/'];
+// D8: la lista incluye la home, la pilar, /precios/ y las 3 páginas de la ola 1; además, toda página del manifiesto
+// cuya fase ya esté publicada (scripts/paginas-comerciales.json) entra sola.
+const manifiesto = JSON.parse(readFileSync(new URL('./paginas-comerciales.json', import.meta.url), 'utf8'));
+const exigidas = manifiesto.paginas.filter((p) => manifiesto.ordenFases.indexOf(p.fase) <= manifiesto.ordenFases.indexOf(manifiesto.faseActual)).map((p) => (p.slug ? `/${p.slug}/` : '/'));
+const PAGES = [...new Set(['/', '/precios/', '/contacto/', '/diseno-web-panama/', '/servicios/diseno-web-corporativo-panama/', '/crecimiento/seo-posicionamiento-web-panama/', '/marketing/google-ads-panama/', '/miami/', '/casos-de-exito/tramitapa/', '/recursos/calculadora-costo-total-web/', '/blog/cuanto-cuesta-diseno-web-panama/', '/nosotros/', '/guias/', '/guias/diseno-web-por-industria/', '/blog/cuanto-cuesta-tienda-online-panama/', '/blog/agencia-diseno-web-miami-en-espanol/', '/blog/', ...exigidas])];
 const b = await chromium.launch({ executablePath: EXE });
 const seen = new Map();
 for (const [w, h] of [[390, 844], [1280, 800]]) {

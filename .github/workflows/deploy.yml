@@ -1,4 +1,4 @@
-# Publica la web en Netcup cuando se sube algo a `main`.
+# Verifica y publica la web en Netcup cuando se sube algo a `main`.
 #
 # Por que existe: el panel de Coolify de Netcup esta cerrado a internet a
 # proposito, asi que GitHub no puede llamarle a un webhook. Sin esto un push se
@@ -14,16 +14,28 @@
 # no lee ficheros y no llega a Hetzner: lo maximo que consigue quien la robe es
 # reconstruir una de las webs de la lista. El token de Coolify ni siquiera esta
 # aqui, vive en el servidor.
+#
+# Puerta de calidad (D37 de docs/specs/rediseno-elementoweb/DECISIONES.md): el job
+# `verificar` corre `npm run verify`, el mismo comando que se corre en local, con
+# Chrome del runner. `desplegar` depende de el: un cambio que rompe el validador
+# del marcador, el SEO, los enlaces o la accesibilidad no se publica. `verificar`
+# tambien corre en ramas y pull requests; solo `main` despliega.
 name: Desplegar en Netcup
 
 on:
   push:
-    branches: [main]
+    branches: ['**']
+  pull_request:
   workflow_dispatch:
-
-concurrency:
-  group: deploy-elementoweb
-  cancel-in-progress: false
+    inputs:
+      skip_checks:
+        description: 'Reversion de emergencia: despliega SIN correr verify'
+        type: boolean
+        default: false
+      motivo:
+        description: 'Motivo escrito del salto (obligatorio si skip_checks)'
+        type: string
+        default: ''
 
 env:
   NETCUP_HOST: 159.195.234.239
@@ -31,9 +43,66 @@ env:
   DOMINIO: elementoweb.com
 
 jobs:
-  desplegar:
+  verificar:
+    if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.skip_checks) }}
     runs-on: ubuntu-latest
+    concurrency:
+      group: verificar-${{ github.ref }}
+      cancel-in-progress: true
     steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Comprobar que el runner trae Chrome
+        run: |
+          set -euo pipefail
+          google-chrome --version
+          echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+
+      # Mismo punto de entrada que en local. La fecha del validador es la del
+      # commit, para que el resultado no dependa del reloj del runner.
+      - name: npm run verify
+        run: npm run verify
+
+  desplegar:
+    needs: verificar
+    # `always()` deja correr este job cuando verificar se omitio a proposito
+    # (skip_checks); en cualquier otro caso exige que verificar haya salido bien.
+    if: >-
+      ${{ always()
+      && github.ref == 'refs/heads/main'
+      && github.event_name != 'pull_request'
+      && (needs.verificar.result == 'success'
+          || (github.event_name == 'workflow_dispatch' && inputs.skip_checks)) }}
+    runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-elementoweb
+      cancel-in-progress: false
+    steps:
+      - name: Registrar el salto de la verificacion
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.skip_checks }}
+        env:
+          MOTIVO: ${{ inputs.motivo }}
+        run: |
+          set -euo pipefail
+          if [ -z "${MOTIVO//[[:space:]]/}" ]; then
+            echo '::error::skip_checks exige un motivo escrito en la entrada "motivo".'
+            exit 1
+          fi
+          {
+            echo '### Despliegue SIN verify'
+            echo
+            echo "Motivo: ${MOTIVO}"
+            echo "Disparado por: ${GITHUB_ACTOR}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Preparar la llave
         run: |
           set -euo pipefail

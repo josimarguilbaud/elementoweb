@@ -2,9 +2,10 @@
 // desbordamiento horizontal, si la navbar se sale de la pantalla o si el CTA principal queda oculto.
 //   npm run build && npx astro preview --port 4610 &   → node scripts/qa-responsive.mjs http://localhost:4610
 import { chromium } from 'playwright-core';
+import { rutaChrome } from './chrome.mjs';
 
 const BASE = process.argv[2] || 'http://localhost:4610';
-const EXE = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium';
+const EXE = rutaChrome() || '/opt/pw-browsers/chromium';
 const PAGES = ['/', '/precios/', '/contacto/', '/diseno-web-panama/', '/miami/', '/casos-de-exito/tramitapa/', '/recursos/calculadora-costo-total-web/', '/blog/cuanto-cuesta-diseno-web-panama/', '/comparativas/web-a-medida-vs-suscripcion/', '/nosotros/', '/guias/', '/guias/diseno-web-por-industria/', '/servicios/diseno-web-corporativo-panama/'];
 const SIZES = [[320, 640], [360, 740], [390, 844], [430, 932], [768, 1024], [820, 1180], [1024, 768], [1280, 800], [1440, 900], [844, 390]];
 

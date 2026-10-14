@@ -19,6 +19,7 @@ Datos verificables:
 - Horario: lunes a viernes de 8:00 a. m. a 5:00 p. m.; sábados de 9:00 a. m. a 1:00 p. m.
 - Ámbito de servicio: Panamá (sede) y Miami-Dade, Florida (remoto), con proyectos en América Latina
 - Idioma del contenido: español de Panamá (es-PA) y español latinoamericano
+- Tech Provider verificado por Meta (API de WhatsApp Business)
 - CEO: Josimar Guilbaud
 
 ## Qué responde bien este sitio

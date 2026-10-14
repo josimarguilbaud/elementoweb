@@ -246,6 +246,9 @@ Tope de US$ 10 en fal para esta etapa. Modelo superior (`fal-ai/nano-banana-pro`
 ### D47. Orden de trabajo
 Se construye en continuo y en este orden: ola 1 (pilar, corporativo, SEO, Google Ads); pauta y contenido (Meta, contenido de Instagram, email, WhatsApp); formatos web (tiendas, landing, rediseño); el resto. Cada tanda pasa `npm run verify` y se mide con Lighthouse local (D6, D40); el dueño aprueba cada push. La puerta de PageSpeed Insights de D14 se aplica cuando exista la clave; mientras tanto la medida es Lighthouse local y así lo dice la etiqueta. La afirmación «Meta Verified» sigue bloqueada (D11) hasta que el dueño la confirme.
 
+### D48. Credenciales confirmadas (14-oct-2026; resuelve esa parte de D11 y de la Puerta B)
+El dueño confirmó que Elemento Web es Tech Provider de Meta con el negocio verificado, y que tiene la insignia de Google Partner. La credencial de Meta se escribe **«Tech Provider verificado por Meta»** (en texto largo: proveedor de tecnología verificado por Meta para la API de WhatsApp Business). No se escribe «Meta Verified Tech Provider»: «Meta Verified» es la insignia pagada de los perfiles, otro producto, y por eso sigue en `scripts/afirmaciones-bloqueadas.json`. Lo que la credencial no permite afirmar: «sin riesgo de bloqueo», «tu número está protegido», integración de Instagram o soporte directo de Meta. Google Partner se publica solo con el enlace al perfil público de Partner y la insignia oficial que entrega el programa. «100% interno» y «equipo interno» siguen sin confirmar.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

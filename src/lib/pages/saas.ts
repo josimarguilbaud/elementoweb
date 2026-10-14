@@ -296,7 +296,7 @@ export const saasPages: PageData[] = [
         otraCotizacion: true,
         criterios: [
           { criterio: 'Precio publicado', nosotros: 'Desde $349 al mes, con los planes en wazacrm.com', fuente: { slug: 'precios', label: 'Precios' } },
-          { criterio: 'Conexión con WhatsApp', nosotros: 'API oficial de Meta sobre tu número real' },
+          { criterio: 'Conexión con WhatsApp', nosotros: 'API oficial de Meta sobre tu número real; somos Tech Provider verificado por Meta' },
           { criterio: 'De dónde salen las respuestas', nosotros: 'Solo de documentos que apruebas' },
           { criterio: 'Costos de uso', nosotros: 'Meta e IA a precio de costo, sin margen' },
           { criterio: 'Tus datos', nosotros: 'Exportas contactos y conversaciones cuando quieras' },

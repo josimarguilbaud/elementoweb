@@ -1,4 +1,9 @@
 {
-  "_nota": "Afirmaciones sin verificar (D11, R33). El validador falla si el contenido de <main> de una página con anatomía v2 las contiene. Se retiran de esta lista solo cuando el dueño las confirma por escrito.",
-  "afirmaciones": ["Meta Verified", "100% interno", "equipo interno", "Equipo 100% interno"]
+  "_nota": "Afirmaciones sin verificar (D11, R33). El validador falla si el contenido de <main> de una página con anatomía v2 las contiene. Se retiran de esta lista solo cuando el dueño las confirma por escrito. «Meta Verified» se queda aunque la credencial esté confirmada (D48): es el nombre de otro producto de Meta; la credencial se escribe «Tech Provider verificado por Meta».",
+  "afirmaciones": [
+    "Meta Verified",
+    "100% interno",
+    "equipo interno",
+    "Equipo 100% interno"
+  ]
 }

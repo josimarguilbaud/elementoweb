@@ -167,13 +167,13 @@ export const core: PageData[] = [
   {
     slug: 'nosotros',
     title: 'Nosotros | Elemento Web, Software House en Panamá',
-    description: 'Elemento Web: agencia de diseño web y software house en Panamá. Meta Verified Tech Provider con tres productos SaaS propios en producción.',
+    description: 'Elemento Web: agencia de diseño web y software house en Panamá. Tech Provider verificado por Meta, con tres productos SaaS propios en producción.',
     h1: 'Diseñamos webs con disciplina de software',
     breadcrumb: 'Nosotros',
     creds: true,
     lead: [
       'Somos una software house panameña que diseña webs. La diferencia se nota en cómo construimos: con la disciplina de quien mantiene su propio producto.',
-      'Tres credenciales nos definen y las tres son verificables. Somos Meta Verified Tech Provider: Meta validó oficialmente nuestra capacidad técnica para integrar las APIs de WhatsApp e Instagram. Operamos tres SaaS propios (WazaCRM, NousCRM y Cifrao) con clientes reales. Y todo el desarrollo es de equipo interno: lo que te vendemos, lo hacemos nosotros.',
+      'Tres credenciales nos definen y las tres son verificables. Somos Tech Provider verificado por Meta: Meta verificó nuestro negocio para integrar la API de WhatsApp Business en nombre de nuestros clientes. Operamos tres SaaS propios (WazaCRM, NousCRM y Cifrao) con clientes reales. Y todo el desarrollo es de equipo interno: lo que te vendemos, lo hacemos nosotros.',
     ],
     heroCtas: [
       { label: 'Agendar una llamada', href: '/contacto/', primary: true },
@@ -226,7 +226,7 @@ export const core: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Qué es exactamente Meta Verified Tech Provider?', a: 'Una acreditación oficial de Meta para proveedores tecnológicos autorizados a integrar sus APIs de WhatsApp Business e Instagram. Significa verificación de números por el canal oficial y soporte directo, sin intermediarios improvisados.' },
+          { q: '¿Qué significa ser Tech Provider verificado por Meta?', a: 'Tech Provider es el programa de Meta para las empresas que conectan la API de WhatsApp Business en nombre de sus clientes. Para entrar, Meta verifica el negocio y revisa la aplicación. Para ti significa que tu número se conecta por el canal oficial de Meta, y no por herramientas no autorizadas que ponen en riesgo la línea.' },
           { q: '¿Subcontratan parte del trabajo?', a: 'No. Diseño, desarrollo, SEO técnico, integraciones, pauta publicitaria y contenido para redes son de equipo interno. Lo que no hacemos (registro de marca, fotografía o video de estudio) te lo decimos y te referimos con especialistas.' },
           { q: '¿Dónde están ubicados?', a: 'En Ciudad de Panamá, con trabajo remoto para todo el país y la región. Las reuniones presenciales se coordinan según el proyecto.' },
           { q: '¿Qué es Elemento Web?', a: 'Una agencia de diseño web y software house con sede en Ciudad de Panamá. Diseñamos sitios corporativos, tiendas online y landing pages, desarrollamos software a medida y operamos marketing digital, SEO y automatización con IA.' },

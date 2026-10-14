@@ -1,7 +1,7 @@
 /* /inteligencia-artificial-para-empresas-panama/: antes era una página hecha a mano
    (src/pages/inteligencia-artificial-para-empresas-panama/index.astro). Pasa a la plantilla
    con anatomía v2 y molde Kredit (D44, D45). Conserva title, description y H1; salen la
-   afirmación «Meta Verified Tech Provider» (bloqueada, D11) y la cifra de «4 minutos de
+   afirmación «Meta Verified Tech Provider» (nombre mezclado; desde D48 se escribe «Tech Provider verificado por Meta») y la cifra de «4 minutos de
    respuesta promedio», que no tenía medición detrás. */
 import type { PageData } from '../types';
 

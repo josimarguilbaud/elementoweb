@@ -260,7 +260,7 @@ export const blog4: PageData[] = [
         h2: 'La API oficial: por qué es el único camino serio',
         paragraphs: [
           'La API oficial de WhatsApp Business es la vía que Meta habilita para que las empresas envíen mensajes a escala sin romper las reglas. Con ella tu número queda verificado, puedes mandar campañas grandes y tener varias personas atendiendo el mismo número, todo de forma legítima y estable.',
-          'En Elemento Web somos <strong>Meta Verified Tech Provider</strong>, así que montamos tu WhatsApp masivo por la vía oficial, sin el riesgo de bloqueo de las herramientas piratas. Eso significa que tu número está protegido y tus campañas corren sin sustos. Puedes ver el detalle del servicio en <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp marketing masivo en Panamá</a>.',
+          'En Elemento Web somos <strong>Tech Provider verificado por Meta</strong>, así que montamos tu WhatsApp masivo por la vía oficial, no con herramientas piratas. Eso baja mucho el riesgo de bloqueo: la API oficial tiene reglas de calidad y de consentimiento, y las cuidamos por ti. Puedes ver el detalle del servicio en <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp marketing masivo en Panamá</a>.',
           'La API además se integra con lo demás: puedes conectar el WhatsApp a tu web, a un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> que responda al instante y a un CRM que ordene las conversaciones. El mensaje masivo abre la puerta; la atención cierra la venta.',
         ],
       },

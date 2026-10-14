@@ -31,7 +31,7 @@ Reglas:
 - Si un directorio pide código postal, déjalo vacío (Panamá no lo usa en las direcciones comerciales).
 - Si pide corregimiento, usa el mismo que aparezca en tu ficha de Google; no inventes uno distinto.
 - Logo: el mismo en todos. Fotos: las mismas que subas a la ficha de Google.
-- **No pongas «Meta Verified» en ningún directorio** hasta que lo confirmes (decisión D11).
+- Credenciales (confirmadas el 14-oct-2026, D48): escribe **«Tech Provider verificado por Meta»**, nunca «Meta Verified» (es otro producto de Meta). «Google Partner» va solo con el enlace a tu perfil público de Partner.
 - La web ya publica estos datos en el pie de página, en `/contacto/` y en el schema (desde el 13-oct-2026).
 
 ### Descripción corta (máx. 160 caracteres)
@@ -43,7 +43,7 @@ Agencia de diseño web en Panamá. Sitios corporativos, tiendas online y landing
 ### Descripción larga (español)
 
 ```
-Elemento Web es una agencia de diseño web en Ciudad de Panamá. Diseñamos y desarrollamos sitios corporativos (desde $1,250), tiendas online con Yappy y tarjeta (desde $1,950) y landing pages para campañas (desde $550), con cotización cerrada y por escrito antes de empezar. Cada sitio sale con SEO técnico, medición de contactos y WhatsApp conectado. También hacemos SEO y SEO local, Google Ads y Meta Ads, chatbots con IA, automatizaciones con n8n, integración de pagos con CyberSource y desarrollo a medida. Operamos nuestros propios productos de software: WazaCRM, NousCRM y Cifrao. Precios en USD, sin ITBMS.
+Elemento Web es una agencia de diseño web en Ciudad de Panamá. Diseñamos y desarrollamos sitios corporativos (desde $1,250), tiendas online con Yappy y tarjeta (desde $1,950) y landing pages para campañas (desde $550), con cotización cerrada y por escrito antes de empezar. Cada sitio sale con SEO técnico, medición de contactos y WhatsApp conectado. También hacemos SEO y SEO local, Google Ads y Meta Ads, chatbots con IA, automatizaciones con n8n, integración de pagos con CyberSource y desarrollo a medida. Somos Tech Provider verificado por Meta para la API de WhatsApp Business y operamos nuestros propios productos de software: WazaCRM, NousCRM y Cifrao. Precios en USD, sin ITBMS.
 ```
 
 ### Short description (English, for Clutch, GoodFirms, Sortlist, DesignRush, TechBehemoths)
@@ -55,7 +55,7 @@ Web design agency in Panama City. Corporate websites, online stores and landing 
 ### Long description (English)
 
 ```
-Elemento Web is a web design agency in Panama City. We design and build corporate websites (from $1,250), online stores with Yappy and card payments (from $1,950) and campaign landing pages (from $550), always with a fixed, written quote before work starts. Every site ships with technical SEO, lead tracking and WhatsApp built in. We also handle SEO and local SEO, Google Ads and Meta Ads, AI chatbots, n8n automations, CyberSource payment integrations and custom development. We run our own software products: WazaCRM, NousCRM and Cifrao. Prices in USD, excluding Panama sales tax (ITBMS).
+Elemento Web is a web design agency in Panama City. We design and build corporate websites (from $1,250), online stores with Yappy and card payments (from $1,950) and campaign landing pages (from $550), always with a fixed, written quote before work starts. Every site ships with technical SEO, lead tracking and WhatsApp built in. We also handle SEO and local SEO, Google Ads and Meta Ads, AI chatbots, n8n automations, CyberSource payment integrations and custom development. We are a Meta-verified Tech Provider for the WhatsApp Business API and run our own software products: WazaCRM, NousCRM and Cifrao. Prices in USD, excluding Panama sales tax (ITBMS).
 ```
 
 ### Servicios (para las casillas de cada directorio)

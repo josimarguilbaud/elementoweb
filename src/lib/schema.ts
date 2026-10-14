@@ -54,10 +54,9 @@ export function webSiteNode() {
   };
 }
 
-/* ProfessionalService solo en home y contacto. Dirección: TODO bloqueante
-   (sin dirección real verificada no se añade PostalAddress). El área servida sí
-   se puede declarar sin dirección: es el país y un radio sobre Ciudad de Panamá,
-   que es lo que responde a "agencia web cerca de mí". */
+/* ProfessionalService solo en home y contacto. La dirección, el horario y el mapa salen de la ficha de Google
+   Business Profile que el dueño compartió el 13-oct-2026 (site.ts): el mismo NAP que la ficha y los directorios.
+   El área servida es el país y un radio sobre Ciudad de Panamá, que es lo que responde a "agencia web cerca de mí". */
 export function localBusinessNode() {
   return {
     '@type': 'ProfessionalService',
@@ -67,6 +66,10 @@ export function localBusinessNode() {
     parentOrganization: { '@id': ORG_ID },
     telephone: site.phone.replace(/\s/g, '-'),
     email: site.email,
+    address: { '@type': 'PostalAddress', streetAddress: site.address.street, addressLocality: site.address.locality, addressCountry: site.address.country },
+    openingHoursSpecification: site.horario.map((h) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: h.dias, opens: h.abre, closes: h.cierra })),
+    hasMap: site.maps,
+    sameAs: [site.maps],
     priceRange: '$$',
     currenciesAccepted: 'USD',
     areaServed: [

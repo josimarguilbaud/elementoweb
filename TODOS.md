@@ -7,7 +7,7 @@
 
 **Why:** El análisis de Search Console y la memoria SEO del proyecto dicen que el cuello de botella es autoridad y edad del dominio, no el contenido: dominio registrado el 29-jul-2026, 0 enlaces externos, posición media 83 y 6 clics en dos meses. Reestructurar la home y los servicios mejora conversión y relevancia, pero no mueve la posición por sí solo.
 
-**Context:** Fuera del radio de impacto del plan de rediseño (`docs/specs/rediseno-elementoweb/SPEC.md`, S7) y requiere acciones del dueño (verificación de la ficha por teléfono o correo, permisos de clientes). Línea base en `audit/gsc-baseline-2026-09.md`. Primer paso: verificar la ficha de Google Business Profile y listar 10 directorios locales.
+**Context:** Fuera del radio de impacto del plan de rediseño (`docs/specs/rediseno-elementoweb/SPEC.md`, S7) y requiere acciones del dueño (verificación de la ficha por teléfono o correo, permisos de clientes). Línea base en `audit/gsc-baseline-2026-09.md`. El kit está listo en `docs/autoridad/KIT-AUTORIDAD.md` (13-oct-2026): datos idénticos para todos los directorios, los 10 directorios en orden, mensajes para reseñas y enlaces, y la plantilla de casos. La ficha de Google existe (Vía Grecia, PH Ventury Plaza) con 0 reseñas y 0 fotos: eso va primero.
 
 **Effort:** L
 **Priority:** P1
@@ -39,25 +39,13 @@
 **Priority:** P1
 **Depends on:** La clave gratuita de PageSpeed Insights en `~/.ssh/psi.key` (pendiente del dueño, D40).
 
-### Redirecciones 301 de tres URLs retiradas que aún tienen impresiones
-
-**What:** Agregar en `nginx.conf` tres 301: `/saas/chatmantis/` a `/saas/wazacrm/`, `/funcionalidades/chatbots-ia-web-chatmantis-panama/` a `/funcionalidades/chatbots-ia-web-wazacrm-panama/` y `/saas/wapycrm/` a `/saas/nouscrm/`, y sumar la comprobación a `scripts/check-prod.sh`.
-
-**Why:** Search Console todavía lista las tres (2, 1 y 1 impresiones en el rango 28-jul a 11-oct-2026) y hoy dan 404 en producción. Los renombres fueron `6e0c1ff` (ChatMantis a WazaCRM) y `408f1c9` (WapyCRM a NousCRM) y no dejaron redirección.
-
-**Context:** Hallazgo 5 de `audit/gsc-baseline-2026-10.md`. Son pocas impresiones, pero el 301 es la forma correcta de despedir una URL con historial. Cambia `nginx.conf`, así que se publica con el push y requiere la aprobación del dueño.
-
-**Effort:** S
-**Priority:** P3
-**Depends on:** Nada.
-
 ### Páginas de casos con métricas reales
 
 **What:** Publicar páginas de casos de éxito con cifras medidas (consultas, ventas, posición) cuando el cliente autorice.
 
 **Why:** El comprobante del sitio imprime «sin publicar aún» en la fila de casos; una cifra real con fecha y fuente es la prueba más fuerte frente a los competidores que prometen.
 
-**Context:** Hoy no hay datos publicables ni permisos (SPEC S8). El proyecto de portafolio con más datos es Panamá Worldwide Express. Antes de escribir nada, pedir al cliente qué cifras autoriza y su fuente.
+**Context:** Hoy no hay datos publicables ni permisos (SPEC S8). El proyecto de portafolio con más datos es Panamá Worldwide Express. Antes de escribir nada, pedir al cliente qué cifras autoriza y su fuente. El mensaje de autorización y la plantilla de datos por caso están en `docs/autoridad/KIT-AUTORIDAD.md`, sección 5.
 
 **Effort:** L
 **Priority:** P2

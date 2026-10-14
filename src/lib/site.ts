@@ -17,6 +17,14 @@ export const site = {
   email: 'hola@elementoweb.com',
   phone: '+507 6190-3007',
   phoneRaw: '50761903007',
+  /* Dirección y horario tal como los publica la ficha de Google Business Profile (13-oct-2026). Tienen que coincidir
+     letra por letra con la ficha y con cada directorio (docs/autoridad/KIT-AUTORIDAD.md): si cambia uno, cambian todos. */
+  address: { street: 'Vía Grecia, PH Ventury Plaza', locality: 'Panamá', country: 'PA', texto: 'Vía Grecia, PH Ventury Plaza, Panamá' },
+  horario: [
+    { dias: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], abre: '08:00', cierra: '17:00', texto: 'Lunes a viernes, 8:00 a. m. a 5:00 p. m.' },
+    { dias: ['Saturday'], abre: '09:00', cierra: '13:00', texto: 'Sábados, 9:00 a. m. a 1:00 p. m.' },
+  ],
+  maps: 'https://www.google.com/maps?cid=8956925184559299099',
   locale: 'es_PA',
   tagline: 'Agencia de diseño web en Panamá. Sitios de alto rendimiento respaldados por desarrollo a medida e inteligencia artificial.',
 };

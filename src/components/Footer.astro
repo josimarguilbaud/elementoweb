@@ -45,6 +45,8 @@ const serviceCols = [...cols, { title: 'Nuestros SaaS', hub: 'saas', links: saas
       <div class="mt-6 flex flex-col gap-2 text-sm text-white/60">
         <a href={`mailto:${site.email}`} class="transition hover:text-teal">{site.email}</a>
         <a href={waHref} class="transition hover:text-teal">WhatsApp {site.phone}</a>
+        <a href={site.maps} target="_blank" rel="noopener" class="transition hover:text-teal">{site.address.texto}<span class="sr-only"> (se abre Google Maps en otra pestaña)</span></a>
+        <span class="text-white/45">{site.horario.map((h) => h.texto).join(' · ')}</span>
       </div>
     </div>
     {serviceCols.map((c) => (

@@ -1,6 +1,7 @@
 /* PÁGINAS NÚCLEO: portafolio, nosotros, contacto y legales.
    (La home tiene su propia página: src/pages/index.astro) */
 import type { PageData } from '../types';
+import { site } from '../site';
 
 export const core: PageData[] = [
   /* ---------- CÓMO TRABAJAMOS ---------- */
@@ -274,6 +275,17 @@ export const core: PageData[] = [
           { h3: 'Diagnóstico', text: 'Videollamada sin costo para entender el problema a fondo.' },
           { h3: 'Propuesta', text: 'Alcance, tiempos y precio cerrado, por escrito.' },
           { h3: 'Arranque', text: 'Proyecto por etapas: con el anticipo del 50% arrancamos y avanzamos hasta la publicación. Plan mensual: pagas la puesta en marcha y empiezas con la primera cuota mensual.' },
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Dónde estamos y cuándo atendemos',
+        intro: 'Los mismos datos que aparecen en nuestra ficha de Google.',
+        items: [
+          `Dirección: <a href="${site.maps}" target="_blank" rel="noopener">${site.address.texto}</a> (ver en Google Maps)`,
+          ...site.horario.map((h) => `Horario: ${h.texto}`),
+          `Teléfono y WhatsApp: ${site.phone}`,
+          `Correo: <a href="mailto:${site.email}">${site.email}</a>`,
         ],
       },
       {

@@ -29,6 +29,10 @@ loc=$(hdr "$BASE/servicios" location); c=$(code "$BASE/servicios")
 eqc "/servicios responde 301" 301 "$c"
 case "$loc" in http://*) ko "/servicios: Location no debe ser http://" "/servicios/ (relativo) o https://…" "$loc";; /servicios/|https://*/servicios/) ok "/servicios → $loc (sin bajar a http)";; *) ko "/servicios: Location inesperado" "/servicios/" "${loc:-(vacío)}";; esac
 r=$(curl -sI -m 20 -o /dev/null -w '%{http_code} %{redirect_url}' "$BASE/crecimiento/mantenimiento-hosting-web-panama"); has "301 histórico de mantenimiento" "301" "$r"
+for par in "/saas/chatmantis/ /saas/wazacrm/" "/funcionalidades/chatbots-ia-web-chatmantis-panama/ /funcionalidades/chatbots-ia-web-wazacrm-panama/" "/saas/wapycrm/ /saas/nouscrm/"; do
+  set -- $par
+  r=$(curl -sI -m 20 -o /dev/null -w '%{http_code} %{redirect_url}' "$BASE$1"); has "301 $1 → $2" "301 " "$r"; has "$1 apunta a $2" "$2" "$r"
+done
 
 echo "== Códigos =="
 for p in / /precios/ /casos-de-exito/ /guias/ /miami/ /contacto/ /robots.txt /sitemap-index.xml /llms.txt /fonts/roboto-latin-wght-normal.woff2; do eqc "200 $p" 200 "$(code "$BASE$p")"; done

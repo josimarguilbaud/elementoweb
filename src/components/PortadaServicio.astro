@@ -1,13 +1,14 @@
 ---
 /* Portada de las páginas con anatomía v2 (D21, D45): póster marino con H1, bajada, botón del servicio, WhatsApp y
-   un comprobante corto; a la derecha la foto con su pie; abajo, el riel con datos de alcance. El comprobante de aquí
-   es solo visual: el que cuenta para el marcador (data-score) es el bloque `receipt` del cuerpo.
+   el precio y el plazo; a la derecha la foto con su pie; abajo, el riel con datos de alcance. Desde D49 el cuerpo ya
+   no pinta el comprobante: el precio y el plazo que cuentan para el marcador (data-score) son los de aquí.
    La foto se sirve en WebP a 1200 px (60 KB o menos, D14) con variantes de 480 y 800. */
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import type { PageData, Block } from '../lib/types';
 import { url, wa } from '../lib/site';
 import { heroFor } from '../lib/img';
+import PrecioPlazo from './PrecioPlazo.astro';
 
 interface Props { page: PageData; ctaText: string; contactHref: string; contactLabel: string }
 const { page, ctaText, contactHref, contactLabel } = Astro.props;
@@ -18,9 +19,6 @@ if (!base || !anchos.includes(1200)) throw new Error(`Portada v2 sin foto propia
 const srcset = anchos.map((w) => `${base}-${w}.webp ${w}w`).join(', ');
 const recibo = page.blocks.find((b) => b.type === 'receipt') as Extract<Block, { type: 'receipt' }> | undefined;
 const tieneFormulario = page.blocks.some((b) => b.type === 'form' || b.type === 'service-form');
-const precioTexto = !recibo ? null
-  : recibo.precio.estado === 'confirmado' ? `desde ${recibo.precio.desde}${recibo.precio.unidad ? ` ${recibo.precio.unidad}` : ''}`
-  : 'Cotización cerrada por escrito';
 ---
 <section class="ew-hero">
   <div class="ew-hero__grid">
@@ -36,12 +34,7 @@ const precioTexto = !recibo ? null
         <a href={tieneFormulario ? '#formulario' : contactHref} class="ew-btn ew-btn--primary">{contactLabel}</a>
         <a href={wa(ctaText)} target="_blank" rel="noopener" class="ew-btn ew-btn--ghost">Hablar por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
       </div>
-      {recibo && (
-        <dl class="ew-hero__recibo">
-          <div><dt>Precio</dt><dd>{precioTexto}</dd></div>
-          <div><dt>Plazo</dt><dd>{recibo.plazo}</dd></div>
-        </dl>
-      )}
+      {recibo && <PrecioPlazo recibo={recibo} />}
     </div>
     <figure class="ew-hero__media">
       <picture>

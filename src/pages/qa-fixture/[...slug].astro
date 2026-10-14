@@ -3,6 +3,8 @@
    Sin la variable getStaticPaths devuelve [] y la compilación normal no emite nada de esto. */
 import Base from '../../layouts/Base.astro';
 import Blocks from '../../components/Blocks.astro';
+import PrecioPlazo from '../../components/PrecioPlazo.astro';
+import type { Block } from '../../lib/types';
 import { pageJsonLd } from '../../lib/schema';
 import { pageTypeOf } from '../../lib/pages/kind';
 import { fixtures } from '../../lib/fixtures';
@@ -12,10 +14,12 @@ export function getStaticPaths() {
   return fixtures.map((p) => ({ params: { slug: p.slug.replace(/^qa-fixture\//, '') }, props: { page: p } }));
 }
 const { page } = Astro.props;
+// Igual que la portada v2 (D49): el precio y el plazo del marcador van arriba, no en un comprobante del cuerpo.
+const recibo = page.blocks.find((b) => b.type === 'receipt') as Extract<Block, { type: 'receipt' }> | undefined;
 ---
 <Base title={page.title} description={page.description} dark noindex jsonld={pageJsonLd(page)} pageType={pageTypeOf(page)} service={page.serviceKey ?? (page.blocks.find((b) => b.type === 'service-form') as any)?.servicio}>
   <section class="ew-sec" style="background:#0a1a3a;color:#f5fafc">
-    <div class="ew-wrap"><h1 class="ew-h2" style="color:#f5fafc">{page.h1}</h1></div>
+    <div class="ew-wrap"><h1 class="ew-h2" style="color:#f5fafc">{page.h1}</h1>{recibo && <PrecioPlazo recibo={recibo} />}</div>
   </section>
   <Blocks blocks={page.blocks} v2 />
 </Base>

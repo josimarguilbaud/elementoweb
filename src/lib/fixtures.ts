@@ -76,7 +76,7 @@ export const fixtures: PageData[] = [
   // Formulario por servicio (ServiceForm): con servicio preseleccionado y sin él.
   formularioPagina('qa-fixture/formulario', 'ecommerce'),
   formularioPagina('qa-fixture/formulario-libre'),
-  // Válida: precio confirmado, los 10 puntos (la medición queda en blanco honesto y la prueba es un proyecto real).
+  // Válida: precio confirmado y los 9 puntos (D49: la medición ya no se pinta; la prueba es un proyecto real).
   base('qa-fixture/servicio-valido', [showcase, includes, compare, faq(6)], { estado: 'confirmado', desde: '$1,250', unidad: 'por proyecto' }),
   // Precio propuesto: la portada dice cotización cerrada, no hay Offer en el schema.
   base('qa-fixture/servicio-propuesto', [showcase, includes, compare, faq(6)], { estado: 'propuesto', desde: '$300', unidad: 'al mes' }),

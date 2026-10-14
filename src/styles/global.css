@@ -139,27 +139,10 @@
 }
 .ew-h2 { font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.025em; color: var(--ew-text); }
 .ew-intro { max-width: 62ch; line-height: 1.65; color: var(--ew-muted); }
-/* Voz de datos: etiquetas, comprobantes y mediciones. */
+/* Voz de datos: etiquetas y fechas. */
 .ew-data { font-size: 0.78rem; font-weight: 500; line-height: 1.5; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ew-muted); font-variant-numeric: tabular-nums; }
 .ew-answer { font-size: calc(1.0625rem * 1.1); line-height: 1.65; color: var(--ew-text); max-width: 62ch; }
 .ew-answer a { color: var(--ew-accent-on-light); }
-
-.ew-receipt-shadow { max-width: 560px; filter: drop-shadow(10px 10px 0 var(--ew-surface-alt)); }
-.ew-receipt { --tooth: 9px; background: var(--ew-raised); color: var(--ew-text); border: 1px solid var(--ew-border); border-bottom: 0; border-radius: 6px 6px 0 0; padding: 20px 24px calc(20px + var(--tooth));
-  -webkit-mask: linear-gradient(#000 0 0) top / 100% calc(100% - var(--tooth)) no-repeat, conic-gradient(from -45deg at 50% 100%, #000 90deg, #0000 0) bottom / calc(var(--tooth) * 2) var(--tooth) repeat-x;
-  mask: linear-gradient(#000 0 0) top / 100% calc(100% - var(--tooth)) no-repeat, conic-gradient(from -45deg at 50% 100%, #000 90deg, #0000 0) bottom / calc(var(--tooth) * 2) var(--tooth) repeat-x; }
-.ew-receipt--compact { padding-top: 14px; padding-bottom: calc(14px + var(--tooth)); }
-.ew-receipt__head { padding-bottom: 10px; border-bottom: 1px solid var(--ew-border); }
-.ew-receipt dl { margin: 0; }
-.ew-row { display: flex; align-items: baseline; gap: 12px; padding: 11px 0; font-size: 0.95rem; }
-.ew-row dt { flex: 1 1 auto; display: flex; align-items: baseline; gap: 8px; color: var(--ew-muted); font-weight: 500; }
-.ew-row dt::after { content: ""; flex: 1 1 auto; min-width: 12px; border-bottom: 1.5px dotted var(--ew-border); transform: translateY(-3px); }
-.ew-row dd { margin: 0; flex: 0 1 60%; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
-.ew-row--blank dd { flex: 0 0 auto; font-weight: 500; color: var(--ew-muted); border: 1.5px dotted var(--ew-field); border-radius: 6px; padding: 1px 10px; }
-.ew-fig { background: var(--ew-marker); color: var(--ew-primary); padding: 0 6px; border-radius: 6px; font-weight: 700; }
-.ew-small { display: block; margin-top: 2px; font-size: 0.78rem; font-weight: 400; color: var(--ew-muted); }
-.ew-receipt__foot { list-style: none; margin: 8px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--ew-border); font-size: 0.8rem; color: var(--ew-muted); }
-.ew-receipt__foot li + li { margin-top: 2px; }
 
 .ew-blankbox { border: 1.5px dotted var(--ew-field); border-radius: 6px; padding: 16px 20px; max-width: 62ch; font-weight: 500; color: var(--ew-muted); }
 

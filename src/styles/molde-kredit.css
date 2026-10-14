@@ -23,6 +23,9 @@
 .ew-hero__recibo div { display: flex; flex-direction: column; gap: 2px; }
 .ew-hero__recibo dt { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ew-on-primary-muted); }
 .ew-hero__recibo dd { margin: 0; font-weight: 600; color: #fff; font-variant-numeric: tabular-nums; }
+.ew-hero__notas { list-style: none; margin: 10px 0 0; padding: 0; max-width: 34rem; font-size: 0.8125rem; line-height: 1.5; color: var(--ew-on-primary-muted); }
+.ew-hero__notas li + li { margin-top: 2px; }
+.ew-hero__notas a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
 .ew-hero__media { position: relative; margin: 0; aspect-ratio: 10 / 7; overflow: hidden; border-radius: 20px; background: var(--ew-primary-raised); box-shadow: 12px 12px 0 var(--ew-primary-raised); }
 .ew-hero__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .ew-hero__media figcaption { position: absolute; left: 14px; right: 14px; bottom: 14px; padding: 8px 12px; border-radius: 12px; font-size: 0.8rem; line-height: 1.4; color: #fff; background: rgba(10, 26, 58, .78); }

@@ -1,0 +1,23 @@
+---
+/* Precio y plazo del servicio bajo los botones de la portada (D49). Salen del bloque `receipt` de la página, que ya no
+   se pinta como comprobante: aquí van con el contrato data-* que lee el marcador (precio con su estado y su monto, y
+   plazo). Lo usan la portada v2 y la ruta de pruebas, para que las pruebas lean el mismo HTML que el sitio. */
+import type { Block } from '../lib/types';
+
+interface Props { recibo: Extract<Block, { type: 'receipt' }>; clase?: string }
+const { recibo, clase = 'ew-hero__recibo' } = Astro.props;
+const p = recibo.precio;
+const unidad = p.unidad ? ` ${p.unidad}` : '';
+const monto = p.estado === 'confirmado' && p.desde ? Number(p.desde.replace(/[^0-9.]/g, '')) : undefined;
+const texto = p.estado === 'confirmado' ? `desde ${p.desde}${unidad}`
+  : p.estado === 'propuesto' && p.desde ? `Cotización cerrada por escrito (referencia publicada: desde ${p.desde}${unidad})`
+  : 'Cotización cerrada por escrito';
+---
+<dl class={clase}>
+  <div data-score="precio" data-price-state={p.estado} data-amount={monto}><dt>Precio</dt><dd>{texto}</dd></div>
+  <div data-score="plazo"><dt>Plazo</dt><dd>{recibo.plazo}</dd></div>
+</dl>
+{/* Las condiciones del precio (lo que se paga aparte, lo que no se promete): antes iban al pie del comprobante. */}
+{recibo.pie && recibo.pie.length > 0 && (
+  <ul class="ew-hero__notas">{recibo.pie.map((n) => <li set:html={n}></li>)}</ul>
+)}

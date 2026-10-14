@@ -1,4 +1,4 @@
-/* Validador del marcador de 10 puntos (D7, D17, D35, D39). Lee dist/ y no importa TypeScript.
+/* Validador del marcador de 9 puntos (D7, D35, D39, D49). Lee dist/ y no importa TypeScript.
      node scripts/validar-marcador.mjs                  valida dist/ con el manifiesto de scripts/
      node scripts/validar-marcador.mjs --dist dist-fixture --manifiesto <archivo.json> --hoy 2026-10-13
    Sale con código 1 si hay errores; los avisos no fallan. Las reglas están en
@@ -16,8 +16,10 @@ const DIA = 86_400_000;
 export const PUNTOS = [
   ['alcance', 'Alcance'], ['entregables', 'Entregables'], ['precio', 'Precio de partida'], ['plazo', 'Plazo'],
   ['no-incluye', 'Qué no incluye'], ['faq', 'Preguntas frecuentes'], ['schema', 'Schema Service y FAQPage'],
-  ['medicion', 'Medición con fecha'], ['prueba', 'Prueba de proyecto'], ['comparacion', 'Comparación verificable'],
+  ['prueba', 'Prueba de proyecto'], ['comparacion', 'Comparación verificable'],
 ];
+// D49 (14-oct-2026): la medición con fecha ya no se muestra al visitante (el comprobante salió de las páginas), así que
+// dejó de ser un punto del marcador y la regla D17 ya no aplica. Las mediciones siguen en src/data/mediciones.json.
 
 const txt = (n) => (n ? n.text.replace(/\s+/g, ' ').trim() : '');
 const palabras = (t) => t.split(/\s+/).filter(Boolean).length;
@@ -39,7 +41,6 @@ export function analizar(html) {
   }
 
   const precioEl = q('[data-score="precio"]')[0];
-  const medEl = q('[data-score="medicion"]')[0];
   const resp = q('[data-block="answer"]')[0];
   const respTexto = resp ? txt(resp.querySelector('.ew-answer') ?? resp) : '';
 
@@ -53,7 +54,6 @@ export function analizar(html) {
     precio: precioEl ? { estado: precioEl.getAttribute('data-price-state'), monto: Number(precioEl.getAttribute('data-amount')) || null, texto: txt(precioEl) } : null,
     plazo: txt(q('[data-score="plazo"]')[0]),
     faq: { bloque: q('[data-score="faq"]').length > 0, visibles: q('[data-score="faq"] details').length, preguntas: q('[data-faq-q]').map(txt), respuestas: q('[data-faq-a]').map(txt) },
-    medicion: medEl ? { fecha: medEl.getAttribute('data-fecha') ?? '', metodo: medEl.getAttribute('data-metodo') ?? '' } : q('[data-blank="medicion"]').length ? 'blanco' : null,
     prueba: q('[data-score="prueba"]').length ? 'ok' : q('[data-blank="prueba"]').length ? 'blanco' : null,
     comparacion: q('[data-score="comparacion"] tbody tr').length,
     textoMain: main ? txt(main) : '',
@@ -169,26 +169,10 @@ export function evaluar(a, ctx) {
   const schemaOk = !!servicioNodo && !!faqNodo && !a.jsonldInvalido;
   punto('schema', schemaOk ? 'ok' : 'falta', `${servicioNodo ? 'Service' : 'sin Service'}, ${faqNodo ? 'FAQPage' : 'sin FAQPage'}`);
 
-  // 8: medición con fecha (el blanco honesto cumple).
-  if (a.medicion === 'blanco') punto('medicion', 'blanco', 'sin medir');
-  else if (!a.medicion) punto('medicion', 'falta', 'ni medición ni blanco honesto');
-  else {
-    if (!ISO.test(a.medicion.fecha) || !a.medicion.metodo) { err('la medición no declara fecha AAAA-MM-DD y método'); punto('medicion', 'falta', 'incompleta'); }
-    else {
-      punto('medicion', 'ok', `${a.medicion.fecha}, ${a.medicion.metodo}`);
-      const d = dias(a.medicion.fecha, hoy);
-      if (d < 0) err(`la fecha de la medición (${a.medicion.fecha}) es posterior a hoy`);
-      else if (d > 45) aviso(`la medición tiene ${d} días; se renueva con scripts/medir.mjs`);
-    }
-  }
-
-  // 9: prueba de proyecto (el blanco honesto cumple).
+  // 8: prueba de proyecto (el blanco honesto cumple).
   punto('prueba', a.prueba === 'ok' ? 'ok' : a.prueba === 'blanco' ? 'blanco' : 'falta', a.prueba ?? 'sin prueba ni blanco honesto');
 
-  // D17: la medición y la prueba no pueden estar en blanco a la vez.
-  if (a.medicion === 'blanco' && a.prueba === 'blanco') err('la medición y la prueba de proyecto están en blanco a la vez (D17)');
-
-  // 10: comparación con al menos 4 criterios (D28).
+  // 9: comparación con al menos 4 criterios (D28).
   punto('comparacion', a.comparacion >= 4 ? 'ok' : 'falta', `${a.comparacion} criterios (mínimo 4)`);
 
   // Enlazado interno del contenido (S3, R22): home, hub y 3 o más servicios.

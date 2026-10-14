@@ -1,4 +1,4 @@
-# Marcador de 10 puntos: contrato y reglas
+# Marcador de 9 puntos: contrato y reglas
 
 Fuente de verdad del validador `scripts/validar-marcador.mjs` (D7, D17, D35, D39 de `DECISIONES.md`). Lee `dist/`, no importa TypeScript y se prueba con `scripts/validar-marcador.test.mjs` sobre HTML real (compilación de pruebas: `npm run build:fixtures`).
 
@@ -10,28 +10,26 @@ Fuente de verdad del validador `scripts/validar-marcador.mjs` (D7, D17, D35, D39
 - `scripts/exclusiones-marcador.json` lista las páginas hechas a mano (IA y cybersource) con su motivo. No caduca: al migrar una página se quita de la lista.
 - Solo las páginas con `anatomia: 'v2'` en `PageData` emiten el contrato; las demás se renderizan igual que antes.
 
-## Los 10 puntos de una página de servicio
+## Los 9 puntos de una página de servicio
 
 | # | Punto | Dónde se emite | Se cumple si |
 |---|---|---|---|
 | 1 | Alcance | `includes`, lista «Incluye» (`data-score="alcance"`) | tiene al menos un elemento |
 | 2 | Entregables | `includes`, lista «Entregables» (`data-score="entregables"`) | al menos un elemento |
-| 3 | Precio | `receipt` (`data-score="precio"`, `data-price-state`, `data-amount`) | estado `confirmado`, `propuesto` o `cotizado`; coincide con el tipo de página y con el manifiesto (ver abajo) |
-| 4 | Plazo | `receipt` (`data-score="plazo"`) | texto no vacío |
+| 3 | Precio | portada, líneas bajo los botones (`PrecioPlazo`, que lee el bloque `receipt`; `data-score="precio"`, `data-price-state`, `data-amount`) | estado `confirmado`, `propuesto` o `cotizado`; coincide con el tipo de página y con el manifiesto (ver abajo) |
+| 4 | Plazo | portada (`PrecioPlazo`, `data-score="plazo"`) | texto no vacío |
 | 5 | Qué no incluye | `includes`, lista «No incluye» (`data-score="no-incluye"`) | al menos un elemento |
 | 6 | Preguntas frecuentes | `faq` (`data-score="faq"`) | 6 o más (8 o más en la pilar) y el schema FAQPage repite las mismas preguntas y respuestas |
 | 7 | Schema | JSON-LD | hay `Service` y `FAQPage`, el JSON-LD se puede leer |
-| 8 | Medición | `receipt` (`data-score="medicion"` o `data-blank="medicion"`) | fecha AAAA-MM-DD y método, o blanco honesto «sin medir» |
-| 9 | Prueba de proyecto | `showcase` o `projects` (`data-score="prueba"`) o `blank` (`data-blank="prueba"`) | proyecto real, o blanco honesto «sin publicar aún» |
-| 10 | Comparación | `compare` (`data-score="comparacion"`) | al menos 4 criterios (D28) |
+| 8 | Prueba de proyecto | `showcase` o `projects` (`data-score="prueba"`) o `blank` (`data-blank="prueba"`) | proyecto real, o blanco honesto «sin publicar aún» |
+| 9 | Comparación | `compare` (`data-score="comparacion"`) | al menos 4 criterios (D28) |
 
-El blanco honesto cumple los puntos 8 y 9 (R2); el validador informa por página cuántos puntos tienen evidencia y cuántos son blanco.
+D49 (14-oct-2026): el comprobante salió de las páginas, así que la medición con fecha ya no es un punto ni se muestra; las mediciones siguen en `src/data/mediciones.json` como control interno. El blanco honesto cumple el punto 8 (R2); el validador informa por página cuántos puntos tienen evidencia y cuántos son blanco.
 
 ## Reglas adicionales (errores)
 
 - **Respuesta citable** (servicios, pilar y home): bloque `answer` de 40 a 60 palabras con fecha AAAA-MM-DD que no sea posterior a hoy.
 - **Precio y Offer** (R27, D23): el precio `confirmado` exige `data-amount`, una cifra que esté entre los confirmados de `src/data/precios.json`, que el precio visible la repita y que el schema emita un `Offer` con el mismo `minPrice`. Un precio `propuesto` o `cotizado` nunca emite `Offer`. Una página `servicio-con-precio` solo puede estar `confirmado` y una `servicio-cotizado` nunca.
-- **D17**: la medición y la prueba de proyecto no pueden estar en blanco a la vez.
 - **Schema**: nunca `AggregateRating` ni `Review` (R19).
 - **Afirmaciones bloqueadas** (D11): el contenido de `<main>` no puede contener las de `scripts/afirmaciones-bloqueadas.json`.
 - **Portada**: toda imagen con `fetchpriority="high"` declara `width` y `height` y pesa 60 KB o menos si se puede pesar en `dist/`.

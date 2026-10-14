@@ -249,6 +249,9 @@ Se construye en continuo y en este orden: ola 1 (pilar, corporativo, SEO, Google
 ### D48. Credenciales confirmadas (14-oct-2026; resuelve esa parte de D11 y de la Puerta B)
 El dueño confirmó que Elemento Web es Tech Provider de Meta con el negocio verificado, y que tiene la insignia de Google Partner. La credencial de Meta se escribe **«Tech Provider verificado por Meta»** (en texto largo: proveedor de tecnología verificado por Meta para la API de WhatsApp Business). No se escribe «Meta Verified Tech Provider»: «Meta Verified» es la insignia pagada de los perfiles, otro producto, y por eso sigue en `scripts/afirmaciones-bloqueadas.json`. Lo que la credencial no permite afirmar: «sin riesgo de bloqueo», «tu número está protegido», integración de Instagram o soporte directo de Meta. Google Partner se publica solo con el enlace al perfil público de Partner y la insignia oficial que entrega el programa. «100% interno» y «equipo interno» siguen sin confirmar.
 
+### D49. Sin comprobante visible (14-oct-2026; reemplaza la parte visible de D21 y D22 y deja sin efecto D17)
+El dueño no quiere el comprobante en las páginas. El bloque `receipt` se queda en los datos, pero no se pinta: su precio y su plazo salen en la portada, bajo los botones (componente `PrecioPlazo`, que lleva el contrato `data-score` del marcador), y su precio confirmado sigue dando la `Offer` del schema. La medición con fecha (LCP) deja de mostrarse y de ser un punto del marcador, que pasa de 10 a 9 puntos; D17 ya no aplica. Las mediciones siguen en `src/data/mediciones.json` para control interno. Las notas al pie del comprobante (lo que se paga aparte, lo que no se promete) pasan a una línea pequeña bajo el precio y el plazo de la portada.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

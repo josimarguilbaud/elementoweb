@@ -9,14 +9,12 @@ import Ejemplo from './Ejemplo.astro';
 const ctaLabel = (n: string) => ({ landing: 'Cotizar mi landing', pyme: 'Cotizar mi web', ecommerce: 'Cotizar mi tienda' } as Record<string, string>)[planKey(n)] || 'Cotizar mi proyecto';
 import InfraReliability from './InfraReliability.astro';
 import SeoMomentum from './SeoMomentum.astro';
-import mediciones from '../data/mediciones.json';
 /* `v2` = la página usa la anatomía nueva (PageData.anatomia): los bloques existentes emiten además el contrato
    data-* que lee el validador. Sin `v2` el HTML de las páginas actuales no cambia ni un byte. */
 interface Props { blocks: Block[]; v2?: boolean }
 const { blocks, v2 = false } = Astro.props;
 /* '2026-10-13' → '13/10': sin Date, para no depender de la zona horaria del build. */
 const fechaCorta = (iso: string) => { const [, m, d] = iso.split('-'); return `${d}/${m}`; };
-const numero = (s?: string) => (s ? Number(s.replace(/[^0-9.]/g, '')) : undefined);
 /* D39: un bloque de la anatomía nueva con una lista vacía o un dato clave faltante rompe el build,
    para que el marcador nunca cuente algo que no está en la página. */
 if (v2) {
@@ -222,40 +220,7 @@ if (v2) {
       </section>
     )}
 
-    {b.type === 'receipt' && (() => {
-      const med = b.medicionId ? mediciones.mediciones.find((m) => m.id === b.medicionId) : undefined;
-      const p = b.precio;
-      return (
-        <section class="ew-sec" data-block="receipt">
-          <div class="ew-wrap">
-            <div class="ew-receipt-shadow"><div class={`ew-receipt${b.compacto ? ' ew-receipt--compact' : ''}`}>
-              <p class="ew-data ew-receipt__head">Comprobante · {b.titulo} · {fechaCorta(b.fecha)}{b.metodo ? ` · ${b.metodo}` : ''}</p>
-              <dl>
-                <div class="ew-row" data-score="precio" data-price-state={p.estado} data-amount={p.estado === 'confirmado' ? numero(p.desde) : undefined}>
-                  <dt>Precio de partida</dt>
-                  <dd>
-                    {p.estado === 'confirmado'
-                      ? <><span class="ew-fig">desde {p.desde}</span>{p.unidad ? ` ${p.unidad}` : ''}</>
-                      : 'Cotización cerrada por escrito'}
-                    {p.estado === 'propuesto' && !b.compacto && p.desde && <small class="ew-small">Referencia publicada: desde {p.desde}{p.unidad ? ` ${p.unidad}` : ''}; se confirma en tu cotización.</small>}
-                  </dd>
-                </div>
-                <div class="ew-row" data-score="plazo"><dt>Plazo</dt><dd>{b.plazo}</dd></div>
-                {med ? (
-                  <div class="ew-row" data-score="medicion" data-fecha={med.fecha} data-metodo={med.metodo}>
-                    <dt>Medición</dt>
-                    <dd><span class="ew-fig">{med.valor}</span> {med.metrica}<small class="ew-small">medido el {fechaCorta(med.fecha)} con {med.herramienta} ({med.metodo})</small></dd>
-                  </div>
-                ) : (
-                  <div class="ew-row ew-row--blank" data-blank="medicion"><dt>Medición</dt><dd>sin medir</dd></div>
-                )}
-              </dl>
-              {b.pie && b.pie.length > 0 && <ul class="ew-receipt__foot">{b.pie.map((f) => <li>{f}</li>)}</ul>}
-            </div></div>
-          </div>
-        </section>
-      );
-    })()}
+    {/* receipt: no se pinta (D49). Sus datos dan el precio y el plazo de la portada (PrecioPlazo) y la Offer del schema. */}
 
     {b.type === 'includes' && b.incluye.some((t) => typeof t !== 'string') && (
       <section class="ew-sec" data-block="includes">

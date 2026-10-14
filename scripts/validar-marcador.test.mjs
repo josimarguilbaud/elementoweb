@@ -1,4 +1,4 @@
-/* Pruebas del validador del marcador (D7, D17, D35, D38, D39): node --test scripts/validar-marcador.test.mjs
+/* Pruebas del validador del marcador (D7, D35, D38, D39, D49): node --test scripts/validar-marcador.test.mjs
    Usan HTML real: la compilación de pruebas (npm run build:fixtures → dist-fixture/) renderiza las páginas de
    ejemplo con los bloques de verdad, y las pruebas rompen un punto a la vez sobre esa salida. */
 import { test, before } from 'node:test';
@@ -33,12 +33,18 @@ before(() => {
   if (!existsSync(join(FIX, 'qa-fixture/servicio-valido/index.html'))) execSync('npm run build:fixtures', { cwd: RAIZ, stdio: 'ignore' });
 });
 
-test('la página de ejemplo válida cumple los 10 puntos sin errores (9 con evidencia y la medición en blanco honesto)', () => {
+test('la página de ejemplo válida cumple los 9 puntos sin errores, todos con evidencia (D49)', () => {
   const r = juzgar(leer('qa-fixture/servicio-valido'));
   assert.deepEqual(r.errores, []);
-  assert.equal(r.puntos.length, 10);
+  assert.equal(r.puntos.length, 9);
   assert.equal(r.puntos.filter((p) => p.estado === 'ok').length, 9);
-  assert.deepEqual(r.puntos.filter((p) => p.estado === 'blanco').map((p) => p.id), ['medicion']);
+  assert.ok(!r.puntos.some((p) => p.id === 'medicion'), 'la medición ya no es un punto (D49)');
+});
+
+test('el comprobante no se pinta: precio y plazo salen arriba, sin medición visible (D49)', () => {
+  const html = leer('qa-fixture/servicio-valido');
+  assert.doesNotMatch(html, /data-block="receipt"|Comprobante ·|data-score="medicion"|data-blank="medicion"/);
+  assert.match(html, /<dl class="ew-hero__recibo">\s*<div data-score="precio"/);
 });
 
 test('la salida real emite el contrato data-*: tipo de página, servicio y Offer solo con precio confirmado', () => {
@@ -58,9 +64,10 @@ test('el precio propuesto es válido: la portada dice cotización y no hay Offer
   assert.deepEqual(r.errores, []);
 });
 
-test('medición y prueba de proyecto en blanco a la vez se rechazan (D17)', () => {
+test('sin medición en la página, la prueba en blanco honesto ya no choca con D17 (D49)', () => {
   const r = evaluar(analizar(leer('qa-fixture/servicio-sin-prueba')), ctxServicio('qa-fixture/servicio-sin-prueba', { tipoPagina: 'servicio-cotizado' }));
-  assert.ok(r.errores.some((e) => /en blanco a la vez/.test(e)), r.errores.join(' | '));
+  assert.ok(!r.errores.some((e) => /en blanco a la vez/.test(e)), r.errores.join(' | '));
+  assert.equal(r.puntos.find((p) => p.id === 'prueba').estado, 'blanco');
 });
 
 // Cada punto se rompe de forma independiente y debe nombrarse en el error.
@@ -72,7 +79,6 @@ const ROMPER = {
   'no-incluye': (h) => h.replace('data-score="no-incluye"', 'data-x="no-incluye"'),
   faq: (h) => h.replace('data-score="faq"', 'data-x="faq"'),
   schema: (h) => h.replaceAll('"@type":"Service"', '"@type":"Servicio"'),
-  medicion: (h) => h.replace('data-blank="medicion"', 'data-x="medicion"'),
   prueba: (h) => h.replace('data-score="prueba"', 'data-x="prueba"'),
   comparacion: (h) => h.replace('data-score="comparacion"', 'data-x="comparacion"'),
 };
@@ -95,16 +101,6 @@ test('una comparación con menos de 4 criterios no cuenta (D28)', () => {
 test('los bloques vacíos no cuentan: ni listas ni preguntas ni criterios', () => {
   const sinAlcance = leer('qa-fixture/servicio-valido').replace(/(<ul data-score="alcance">)[\s\S]*?(<\/ul>)/, '$1$2');
   assert.ok(juzgar(sinAlcance).errores.some((e) => e.includes(etiqueta('alcance'))));
-});
-
-test('medición real: con fecha y método vale; sin método o con fecha futura falla; vieja solo avisa', () => {
-  const bloque = (f, m) => leer('qa-fixture/servicio-valido').replace('data-blank="medicion"', `data-score="medicion" data-fecha="${f}" data-metodo="${m}"`);
-  assert.deepEqual(juzgar(bloque('2026-10-10', 'Lighthouse móvil')).errores, []);
-  assert.ok(juzgar(bloque('2026-10-10', '')).errores.some((e) => /medición/i.test(e)));
-  assert.ok(juzgar(bloque('2026-12-01', 'Lighthouse')).errores.some((e) => /posterior a hoy/.test(e)));
-  const vieja = juzgar(bloque('2026-08-01', 'Lighthouse'));
-  assert.deepEqual(vieja.errores, []);
-  assert.ok(vieja.avisos.some((a) => /80 días|días; se renueva/.test(a)), vieja.avisos.join(' | '));
 });
 
 test('la fecha inyectable cambia el aviso de antigüedad de la respuesta citable', () => {

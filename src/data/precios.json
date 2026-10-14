@@ -9,7 +9,7 @@
     "hosting-compartido": { "nombre": "Hosting Compartido", "monto": 225, "unidad": "año", "fuente": "src/lib/site.ts pricing.hosting" },
     "hosting-cloud": { "nombre": "Hosting Cloud", "monto": 350, "unidad": "año", "fuente": "src/lib/site.ts pricing.hosting" },
     "hosting-vps": { "nombre": "VPS Dedicado", "monto": 550, "unidad": "año", "fuente": "src/lib/site.ts pricing.hosting" },
-    "mantenimiento": { "nombre": "Mantenimiento web", "monto": 59, "unidad": "mes", "desde": true, "fuente": "src/lib/site.ts pricing.separate" },
+    "mantenimiento": { "nombre": "Mantenimiento web", "monto": 99, "unidad": "mes", "desde": true, "fuente": "src/lib/site.ts pricing.separate" },
     "gestionada-puesta-en-marcha": { "nombre": "Web empresarial gestionada, puesta en marcha", "monto": 350, "unidad": "una vez", "fuente": "src/lib/site.ts pricing.managed" },
     "gestionada-mensual": { "nombre": "Web empresarial gestionada, mensualidad", "monto": 169, "unidad": "mes", "fuente": "src/lib/site.ts pricing.managed" },
     "gestionada-desde-el-mes-13": { "nombre": "Web empresarial gestionada, desde el mes 13", "monto": 94, "unidad": "mes", "fuente": "src/lib/site.ts pricing.managed" },

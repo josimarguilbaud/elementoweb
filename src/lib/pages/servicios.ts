@@ -42,7 +42,7 @@ const catalogGroups = [
     items: [
       { h3: 'SEO y posicionamiento', text: 'Contenido y autoridad para competir por las búsquedas que traen clientes, no solo visitas.', link: { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' } },
       { h3: 'SEO local y Google Maps', text: 'Aparecer en el mapa cuando buscan tu servicio cerca. Para negocios con puerta abierta, es el canal número uno.', link: { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local' } },
-      { h3: 'Mantenimiento web', text: 'Actualizaciones, respaldos verificados y monitoreo desde $59/mes. Tu sitio no se cae ni envejece.', link: { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' } },
+      { h3: 'Mantenimiento web', text: 'Actualizaciones, respaldos verificados y monitoreo desde $99/mes. Tu sitio no se cae ni envejece.', link: { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' } },
     ],
   },
   {
@@ -107,7 +107,7 @@ export const servicios: PageData[] = [
           ['Que te encuentren hoy, pagando por clic', '<a href="/marketing/google-ads-panama/">Google Ads</a> y <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a>', 'Referencia: $300 al mes de gestión'],
           ['Responder a toda hora por WhatsApp y la web', '<a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">Chatbot con IA</a>', 'WazaCRM desde $349 al mes'],
           ['Software que resuelva tu operación', '<a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">Desarrollo a medida</a>', '$2,900'],
-          ['Que tu web no se caiga ni envejezca', '<a href="/crecimiento/mantenimiento-web-panama/">Mantenimiento</a>', '$59 al mes'],
+          ['Que tu web no se caiga ni envejezca', '<a href="/crecimiento/mantenimiento-web-panama/">Mantenimiento</a>', '$99 al mes'],
         ],
         nota: 'Precios en USD, sin ITBMS (7%). Las referencias de pauta son el fee de gestión; la inversión publicitaria va aparte.',
       },
@@ -491,7 +491,7 @@ export const servicios: PageData[] = [
           ['Hosting', 'Incluido en la suscripción', 'Aparte, desde $350 al año con hosting gestionado'],
           ['Comisión por venta de la plataforma', 'Según el plan y la pasarela que uses', 'No hay'],
           ['Yappy y pasarela con tarjeta', 'Comisión por venta de cada proveedor de pago', 'Comisión por venta de cada proveedor de pago'],
-          ['Actualizaciones y seguridad', 'Las hace Shopify', 'Con mantenimiento desde $59 al mes'],
+          ['Actualizaciones y seguridad', 'Las hace Shopify', 'Con mantenimiento desde $99 al mes'],
           ['Conviene cuando', 'El equipo no es técnico y el catálogo es estándar', 'Necesitas reglas propias, integraciones o tienes volumen alto con margen ajustado'],
         ],
         nota: 'Las comisiones y suscripciones las fija cada proveedor y cambian: te las confirmamos por escrito con la cotización. Precios de Elemento Web sin ITBMS.',

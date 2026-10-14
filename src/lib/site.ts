@@ -210,7 +210,7 @@ export const legal: NavLink[] = [
 /* PRECIOS: confirmados por el cliente (jul 2026). Fuente única para todo el sitio. */
 export const pricing = {
   note: 'Precios en USD. No incluyen ITBMS (7%); se aplicará según corresponda.',
-  infra: 'Infraestructura anual desde $350: dominio, hosting cloud y certificado SSL. Mantenimiento web desde $59/mes.',
+  infra: 'Infraestructura anual desde $350: dominio, hosting cloud y certificado SSL. Mantenimiento web desde $99/mes.',
   tiers: [
     {
       name: 'Landing Page',
@@ -275,7 +275,7 @@ export const pricing = {
     items: [
       { name: 'Dominio, hosting y certificado SSL', text: 'Infraestructura anual desde $350 (hosting cloud; hay niveles desde $225 hasta $550 al año según el proyecto). No está incluida en el precio del proyecto.' },
       { name: 'Correo corporativo', text: 'Desde $60 al año. No incluido.' },
-      { name: 'Mantenimiento', text: 'Desde $59 al mes si lo contratas. No incluido.' },
+      { name: 'Mantenimiento', text: 'Desde $99 al mes si lo contratas. No incluido.' },
       { name: 'Licencias y comisiones de terceros', text: 'Plugins, temas, pasarelas de pago y plataformas cobran sus propias licencias y comisiones; se detallan en la cotización.' },
       { name: 'Redacción de contenido, imágenes y logo con IA', text: 'Contenido desde $150, imágenes $100, logo desde $120. Se cotizan aparte y los apruebas antes de publicar.' },
     ],

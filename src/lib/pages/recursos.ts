@@ -154,7 +154,7 @@ export const recursos: PageData[] = [
         items: [
           { h3: 'Propiedad del sitio y del dominio', text: 'Con un proyecto único con nosotros, el dominio, el código y los accesos quedan a nombre de tu empresa. En una suscripción, el sitio normalmente vive dentro de la plataforma del proveedor: usas el servicio mientras pagas. Revisa quién es el titular del dominio y qué se puede llevar contigo.' },
           { h3: 'Costo total a 12 y a 36 meses', text: 'La suscripción reparte el costo en cuotas y exige poco dinero al inicio; el proyecto único concentra el pago al inicio y después baja a la infraestructura. Más abajo hay una cuenta con números para comparar ambos.' },
-          { h3: 'Soporte', text: 'En una suscripción, el soporte suele ser el del proveedor y sus canales; en un plan de agencia, el de la agencia. En un proyecto único, el soporte posterior depende de si contratas mantenimiento (desde $59/mes) o pides trabajo puntual. Pregunta siempre qué está incluido y en qué plazos se responde.' },
+          { h3: 'Soporte', text: 'En una suscripción, el soporte suele ser el del proveedor y sus canales; en un plan de agencia, el de la agencia. En un proyecto único, el soporte posterior depende de si contratas mantenimiento (desde $99/mes) o pides trabajo puntual. Pregunta siempre qué está incluido y en qué plazos se responde.' },
           { h3: 'Capacidad de salida y migración', text: 'Es uno de los puntos más importantes y de los menos mirados. Si el sitio está en una plataforma cerrada, sacar todo el contenido y el diseño puede ser parcial o imposible; verifícalo en los términos del proveedor antes de contratar. Con un sitio propio, mover el código a otro hosting es posible. Si algún día migras, la <a href="/recursos/checklist-migracion-seo/">checklist de migración SEO</a> te ayuda a no perder posicionamiento.' },
           { h3: 'Límites técnicos', text: 'Los constructores ofrecen las funciones que la plataforma soporta; lo que queda fuera se resuelve con extensiones o no se puede. Un sitio a medida no tiene ese techo, aunque cada funcionalidad extra implica trabajo y, a veces, costo aparte. Si tu proyecto es estándar, el límite quizá nunca te afecte.' },
           { h3: 'Velocidad', text: 'La velocidad depende de cómo esté construido cada sitio, no del modelo de pago. Hay sitios rápidos y lentos en ambos. Lo honesto es medir el caso concreto con la misma herramienta, por ejemplo PageSpeed Insights, y comparar. Detalles en la guía para <a href="/blog/como-mejorar-la-velocidad-de-tu-pagina-web/">mejorar la velocidad de tu web</a>.' },
@@ -166,7 +166,7 @@ export const recursos: PageData[] = [
         h2: 'La cuenta a 12 y 36 meses',
         paragraphs: [
           '<strong>Suscripción (ejemplo ilustrativo, no es un precio real):</strong> si una suscripción costara X al mes, en 12 meses serían 12×X y en 36 meses serían 36×X. Sustituye X por la cuota real que te cotice el proveedor y suma lo que no venga incluido (dominio, correo, extensiones, comisiones), si aplica.',
-          '<strong>Elemento Web (tarifas publicadas, sin ITBMS del 7%):</strong> proyecto único más infraestructura anual desde $350, que incluye dominio, hosting cloud y certificado SSL. El mantenimiento desde $59/mes es opcional y se suma solo si lo contratas.',
+          '<strong>Elemento Web (tarifas publicadas, sin ITBMS del 7%):</strong> proyecto único más infraestructura anual desde $350, que incluye dominio, hosting cloud y certificado SSL. El mantenimiento desde $99/mes es opcional y se suma solo si lo contratas.',
         ],
       },
       {
@@ -183,10 +183,10 @@ export const recursos: PageData[] = [
       {
         type: 'checklist',
         h2: 'Si además contratas mantenimiento',
-        intro: 'El mantenimiento desde $59/mes suma $708 por cada año ($59×12), $1,416 en 24 meses y $2,124 en 36 meses.',
+        intro: 'El mantenimiento desde $99/mes suma $1,188 por cada año ($99×12), $2,376 en 24 meses y $3,564 en 36 meses.',
         items: [
-          'Web empresarial con mantenimiento desde $59/mes: desde $2,308 a 12 meses y desde $4,424 a 36 meses',
-          'Landing Page con mantenimiento desde $59/mes: desde $1,608 a 12 meses y desde $3,724 a 36 meses',
+          'Web empresarial con mantenimiento desde $99/mes: desde $2,308 a 12 meses y desde $4,424 a 36 meses',
+          'Landing Page con mantenimiento desde $99/mes: desde $1,608 a 12 meses y desde $3,724 a 36 meses',
           'Son cifras «desde»: el alcance final se confirma por escrito en la cotización',
         ],
       },
@@ -239,7 +239,7 @@ export const recursos: PageData[] = [
           { q: '¿Una suscripción siempre sale más cara a largo plazo?', a: 'No podemos afirmarlo sin conocer la cuota real. La cuenta depende de X: multiplica la cuota por 12 y por 36 y compárala con el total del proyecto que te interesa. En un horizonte corto o con un sitio muy simple, la suscripción puede resultar más económica.' },
           { q: '¿Puedo empezar con una suscripción y pasar a un sitio a medida después?', a: 'Sí, es un camino común: pruebas la idea con poca inversión y migras cuando el negocio lo justifique. Al migrar, planifica las redirecciones y la migración de contenido; la <a href="/recursos/checklist-migracion-seo/">checklist de migración SEO</a> sirve para eso.' },
           { q: '¿Qué incluye la infraestructura anual de Elemento Web?', a: 'Desde $350 al año, incluye dominio, hosting cloud y certificado SSL. Hay niveles de hosting según el tráfico y las necesidades del proyecto; el detalle está en la página de precios.' },
-          { q: '¿El mantenimiento es obligatorio?', a: 'No. El mantenimiento web desde $59/mes es opcional. Puedes contratarlo, o pedir trabajo puntual cuando lo necesites.' },
+          { q: '¿El mantenimiento es obligatorio?', a: 'No. El mantenimiento web desde $99/mes es opcional. Puedes contratarlo, o pedir trabajo puntual cuando lo necesites.' },
           { q: '¿Cómo sé si mi caso pide un sitio a medida?', a: 'Si necesitas integraciones con otros sistemas, funcionalidad propia, un diseño fuera de plantilla o control total del sitio, probablemente sí. Si tu sitio es simple y quieres editarlo tú, revisa primero una suscripción. Si no estás seguro, cuéntanos tu caso y te damos una opinión sincera.' },
         ],
       },

@@ -80,7 +80,7 @@ export const blog6: PageData[] = [
         type: 'prose',
         h2: 'Cuánto cuesta un hosting que no te dé sustos',
         paragraphs: [
-          'En Elemento Web manejamos la infraestructura anual (dominio, hosting y certificado SSL) desde $350 al año, todo a nombre del cliente. A eso puedes sumar mantenimiento gestionado desde $59 al mes, que incluye actualizaciones, respaldos verificados y monitoreo para que el sitio no se caiga ni envejezca.',
+          'En Elemento Web manejamos la infraestructura anual (dominio, hosting y certificado SSL) desde $350 al año, todo a nombre del cliente. A eso puedes sumar mantenimiento gestionado desde $99 al mes, que incluye actualizaciones, respaldos verificados y monitoreo para que el sitio no se caiga ni envejezca.',
           'Sí, es más que un plan de dos dólares. Pero compara: un plan barato que se cae un día de campaña te puede costar más en ventas perdidas que un año entero de hosting serio. Y rehacer un sitio hackeado cuesta muchísimo más que haberlo protegido. Todo lo cerramos por escrito, con cotización cerrada, para que sepas exactamente qué pagas.',
           'Si quieres que revisemos tu hosting actual o migremos tu sitio a uno estable, escríbenos por WhatsApp. También puedes ver nuestro servicio de <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura en Panamá</a> con el detalle completo.',
         ],

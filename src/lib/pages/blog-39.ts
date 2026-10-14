@@ -274,7 +274,7 @@ export const blog39: PageData[] = [
         type: 'prose',
         h2: 'Infraestructura y mantenimiento: lo que se paga cada año o cada mes',
         paragraphs: [
-          'La implementación se paga una vez, pero una web necesita dónde vivir y alguien que la cuide. Nuestra infraestructura parte desde $350 al año, y el mantenimiento desde $59 al mes. Puedes ver el detalle en las páginas de <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura</a> y de <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento web</a>.',
+          'La implementación se paga una vez, pero una web necesita dónde vivir y alguien que la cuide. Nuestra infraestructura parte desde $350 al año, y el mantenimiento desde $99 al mes. Puedes ver el detalle en las páginas de <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura</a> y de <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento web</a>.',
           'Al comparar con otra cotización, suma estos costos recurrentes a lo largo de un año. Una implementación barata con mantenimiento caro, o sin mantenimiento definido, puede resultar más costosa que otra opción con el precio inicial más alto.',
         ],
       },
@@ -307,7 +307,7 @@ export const blog39: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes sobre el costo de una web para Miami',
         items: [
-          { q: '¿Cuánto cuesta una página web para un negocio en Miami con ustedes?', a: 'La implementación parte de $550 para una Landing, $1,250 para una Web empresarial de hasta 6 páginas en total, $1,950 para un E-commerce y $2,900 para un proyecto a medida. A eso se suma la infraestructura, desde $350 al año, y el mantenimiento, desde $59 al mes.' },
+          { q: '¿Cuánto cuesta una página web para un negocio en Miami con ustedes?', a: 'La implementación parte de $550 para una Landing, $1,250 para una Web empresarial de hasta 6 páginas en total, $1,950 para un E-commerce y $2,900 para un proyecto a medida. A eso se suma la infraestructura, desde $350 al año, y el mantenimiento, desde $99 al mes.' },
           { q: '¿Cuánto cobran otras agencias de Miami?', a: 'No lo sabemos con certeza y no queremos inventar rangos. Lo recomendable es pedir cotizaciones por escrito y compararlas con los cinco componentes: implementación, hosting y dominio, mantenimiento, contenido e impuestos.' },
           { q: '¿En qué moneda facturan?', a: 'En dólares estadounidenses, y la factura sale desde Panamá.' },
           { q: '¿Tengo que pagar impuestos adicionales?', a: 'Depende de tu situación y de cómo se facture. No damos por hecho ninguna exención: el tratamiento de impuestos se confirma en la cotización, y conviene que tu contador la revise.' },

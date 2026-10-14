@@ -184,7 +184,7 @@ export const blog2: PageData[] = [
         items: [
           { q: '¿Cuánto cuesta crear una tienda online en Panamá?', a: 'Nuestro e-commerce parte desde <strong>$1,950</strong> según el catálogo, las integraciones y el nivel de personalización. Antes de empezar recibes una cotización cerrada por escrito, sin costos sorpresa a mitad del proyecto.' },
           { q: '¿Necesito tener aviso de operación para vender online?', a: 'Para operar formalmente y activar cobros comerciales como el Botón de Pago Yappy, sí necesitas tu aviso de operación vigente. Es un requisito del banco, no algo que dependa de nosotros.' },
-          { q: '¿Puedo administrar la tienda yo mismo después?', a: 'Sí. Te entregamos la tienda a tu nombre y te capacitamos para cargar productos, ver pedidos y gestionar el día a día. Si prefieres delegarlo, ofrecemos planes de mantenimiento desde $59 al mes.' },
+          { q: '¿Puedo administrar la tienda yo mismo después?', a: 'Sí. Te entregamos la tienda a tu nombre y te capacitamos para cargar productos, ver pedidos y gestionar el día a día. Si prefieres delegarlo, ofrecemos planes de mantenimiento desde $99 al mes.' },
           { q: '¿Cuánto tarda tener la tienda lista?', a: 'Depende del tamaño del catálogo y de las integraciones. Una tienda bien planificada suele estar lista en pocas semanas; lo que más influye es la rapidez con la que nos entregas fotos, precios y textos.' },
           { q: '¿Sirve para vender en todo el país o solo en la ciudad?', a: 'Sirve para el alcance que tu logística soporte. Puedes empezar entregando en tu zona y ampliar cobertura a medida que ordenas los envíos. La tienda se configura según lo que puedas cumplir bien.' },
         ],
@@ -240,7 +240,7 @@ export const blog2: PageData[] = [
         h2: 'Costos reales: mensualidad vs. propiedad',
         paragraphs: [
           'Este es el punto donde más gente se equivoca al comparar. Shopify tiene un costo mensual claro y predecible que pagas mientras uses la plataforma; nunca dejas de pagarlo, pero a cambio no te preocupas por infraestructura. Es un gasto operativo constante.',
-          'WooCommerce, en cambio, no tiene mensualidad de plataforma: el complemento es gratuito. Pero necesitas pagar hosting, dominio y mantenimiento, y algunos complementos avanzados tienen su propio costo. En Elemento Web nuestra <strong>infraestructura anual parte desde $350</strong> y el mantenimiento desde $59 al mes; son cifras que puedes conocer de entrada, con cotización cerrada por escrito.',
+          'WooCommerce, en cambio, no tiene mensualidad de plataforma: el complemento es gratuito. Pero necesitas pagar hosting, dominio y mantenimiento, y algunos complementos avanzados tienen su propio costo. En Elemento Web nuestra <strong>infraestructura anual parte desde $350</strong> y el mantenimiento desde $99 al mes; son cifras que puedes conocer de entrada, con cotización cerrada por escrito.',
           'La cuenta honesta es esta: en volúmenes bajos, ambas se parecen; a medida que vendes más, WooCommerce suele salir más económico porque no escalas una mensualidad de plataforma. Pero WooCommerce exige más disciplina de mantenimiento. Comodidad o economía a largo plazo: ese es el verdadero intercambio.',
         ],
       },
@@ -298,7 +298,7 @@ export const blog2: PageData[] = [
           { q: '¿Cuál es más barata, Shopify o WooCommerce?', a: 'Depende del volumen. Shopify tiene una mensualidad fija; WooCommerce no cobra plataforma pero necesita hosting y mantenimiento. En ventas bajas se parecen; a mayor volumen, WooCommerce suele salir más económico a cambio de más responsabilidad técnica.' },
           { q: '¿Las dos aceptan Yappy?', a: 'Sí, ambas pueden integrar el Botón de Pago Yappy. La diferencia es que WooCommerce te da libertad total sin comisiones de plataforma por venta, mientras que Shopify puede aplicar un cargo extra si no usas su pasarela propia.' },
           { q: '¿Puedo migrar de una a otra después?', a: 'Se puede, pero cuesta tiempo y dinero porque hay que mover productos, pedidos y configuraciones. Por eso conviene elegir bien desde el inicio en lugar de rehacer la tienda más adelante.' },
-          { q: '¿WooCommerce es más difícil de mantener?', a: 'Requiere más atención: actualizaciones, copias de seguridad y seguridad del hosting. No es complicado si tienes un plan de mantenimiento; nosotros lo cubrimos desde $59 al mes para que no te preocupes por eso.' },
+          { q: '¿WooCommerce es más difícil de mantener?', a: 'Requiere más atención: actualizaciones, copias de seguridad y seguridad del hosting. No es complicado si tienes un plan de mantenimiento; nosotros lo cubrimos desde $99 al mes para que no te preocupes por eso.' },
           { q: '¿Con cuál posiciono mejor en Google?', a: 'Ambas pueden posicionar bien si están bien construidas. WordPress con WooCommerce tiene fama de flexible para contenido y SEO, pero lo que realmente decide es la estructura, la velocidad y el trabajo de posicionamiento, no la plataforma en sí.' },
         ],
       },

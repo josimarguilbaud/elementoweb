@@ -101,7 +101,7 @@ test('precios.json: cifras enteras positivas y sin ids repetidos entre confirmad
 test('precios.json: los precios de los cuatro formatos de web son los publicados', () => {
   const c = precios.confirmados;
   assert.deepEqual([c['web-landing'].monto, c['web-empresarial'].monto, c['web-ecommerce'].monto, c['web-medida'].monto], [550, 1250, 1950, 2900]);
-  assert.equal(c['mantenimiento'].monto, 59);
+  assert.equal(c['mantenimiento'].monto, 99); // el dueño lo subió de $59 a $99 el 14-oct-2026
   assert.equal(c['wazacrm'].monto, 349);
 });
 

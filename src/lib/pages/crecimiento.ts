@@ -17,7 +17,7 @@ export const crecimiento: PageData[] = [
       riel: [
         { k: 'SEO', v: 'Google y respuestas de IA' },
         { k: 'SEO local', v: 'El mapa de tu zona' },
-        { k: 'Mantenimiento', v: 'desde $59 al mes' },
+        { k: 'Mantenimiento', v: 'desde $99 al mes' },
         { k: 'Hosting', v: 'desde $225 al año' },
       ],
     },
@@ -28,8 +28,8 @@ export const crecimiento: PageData[] = [
     blocks: [
       {
         type: 'answer',
-        fecha: '2026-10-13',
-        text: 'Crecimiento digital en Panamá es lo que hacemos después de publicar tu web: SEO para aparecer en Google y en las respuestas de IA, SEO local para el mapa, mantenimiento desde $59 al mes y hosting desde $225 al año. Son servicios recurrentes y cancelables, con reporte de lo que se hizo y de lo que se midió.',
+        fecha: '2026-10-14',
+        text: 'Crecimiento digital en Panamá es lo que hacemos después de publicar tu web: SEO para aparecer en Google y en las respuestas de IA, SEO local para el mapa, mantenimiento desde $99 al mes y hosting desde $225 al año. Son servicios recurrentes y cancelables, con reporte de lo que se hizo y de lo que se midió.',
       },
       {
         type: 'tabla',
@@ -39,7 +39,7 @@ export const crecimiento: PageData[] = [
         filas: [
           ['Aparecer en Google cuando buscan lo que vendes', '<a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>', 'Se cotiza tras la auditoría', 'Técnica en semanas; posiciones competidas en 3 a 6 meses'],
           ['Salir en el mapa de tu zona', '<a href="/crecimiento/seo-local-google-maps-panama/">SEO local</a>', 'Se cotiza tras revisar tu ficha', 'Primeras señales en semanas'],
-          ['Que tu web no se caiga ni envejezca', '<a href="/crecimiento/mantenimiento-web-panama/">Mantenimiento web</a>', 'Desde $59 al mes', 'Desde el primer mes'],
+          ['Que tu web no se caiga ni envejezca', '<a href="/crecimiento/mantenimiento-web-panama/">Mantenimiento web</a>', 'Desde $99 al mes', 'Desde el primer mes'],
           ['Un servidor estable con dominio y SSL', '<a href="/crecimiento/hosting-infraestructura-panama/">Hosting e infraestructura</a>', 'Desde $225 al año', 'Al publicar'],
         ],
         nota: 'Precios en USD, sin ITBMS (7%).',
@@ -69,7 +69,7 @@ export const crecimiento: PageData[] = [
         items: [
           { h3: 'SEO y posicionamiento', text: 'Contenido y autoridad para competir por las búsquedas que traen clientes, no solo visitas.', link: { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' } },
           { h3: 'SEO local y Google Maps', text: 'Aparecer en el mapa cuando buscan tu servicio cerca. Para negocios con puerta abierta, es el canal número uno.', link: { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local' } },
-          { h3: 'Mantenimiento web', text: 'Actualizaciones, respaldos verificados y monitoreo desde $59/mes. Tu sitio no se cae ni envejece.', link: { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' } },
+          { h3: 'Mantenimiento web', text: 'Actualizaciones, respaldos verificados y monitoreo desde $99/mes. Tu sitio no se cae ni envejece.', link: { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' } },
         ],
       },
       {
@@ -82,7 +82,7 @@ export const crecimiento: PageData[] = [
           { q: '¿Por dónde conviene empezar?', a: 'Casi siempre por el mantenimiento, porque protege lo que ya invertiste. Si tu negocio depende de que te encuentren en Google, arrancamos en paralelo con <a href="/crecimiento/seo-local-google-maps-panama/">SEO local</a> (resultados más rápidos) y luego sumamos el <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO orgánico</a> para las búsquedas competidas.' },
           { q: '¿Reciben reportes o hay que pedirlos?', a: 'Cada servicio con componente mensual entrega un reporte que un dueño entiende: posiciones, tráfico, llamadas o estado del sitio según el caso. Nada de capturas sueltas ni jerga para justificar la factura.' },
           { q: '¿Trabajan con negocios fuera de la ciudad de Panamá?', a: 'Sí. Atendemos clientes en todo el país por WhatsApp y videollamada. Para el SEO local ajustamos la estrategia a tu zona de cobertura, sea Chitré, David, Coronado o el área metropolitana.' },
-          { q: '¿Cuánto cuesta mantener y hacer crecer un sitio al mes?', a: 'El mantenimiento arranca en $59 al mes e incluye actualizaciones, respaldos y monitoreo. La infraestructura (dominio, hosting cloud y SSL) va desde $350 al año, o $225 al año en el plan compartido. El SEO se cotiza por alcance, no por paquete cerrado, porque depende de cuántas búsquedas quieras disputar. Todos los precios son en dólares y no incluyen ITBMS (7%).' },
+          { q: '¿Cuánto cuesta mantener y hacer crecer un sitio al mes?', a: 'El mantenimiento arranca en $99 al mes e incluye actualizaciones, respaldos y monitoreo. La infraestructura (dominio, hosting cloud y SSL) va desde $350 al año, o $225 al año en el plan compartido. El SEO se cotiza por alcance, no por paquete cerrado, porque depende de cuántas búsquedas quieras disputar. Todos los precios son en dólares y no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO vale la pena invertir en crecimiento todavía?', a: 'Cuando el sitio aún no existe o está por rehacerse: posicionar una página que vas a botar en tres meses es tirar el trabajo. Tampoco conviene si tu negocio no tiene capacidad de atender más clientes; primero se arregla la operación y después se le abre la llave al tráfico. Y si todo tu negocio entra por referidos y no piensas cambiar eso, el mantenimiento sí, el SEO puede esperar.' },
         ],
       },
@@ -319,7 +319,7 @@ export const crecimiento: PageData[] = [
           { q: '¿Qué pasa con el SEO si dejo de pagarlo?', a: 'Las posiciones ganadas no desaparecen de un día para otro: el contenido publicado sigue trabajando. Lo que se detiene es el avance, y la competencia que sí sigue empujando termina pasándote con el tiempo.' },
           { q: '¿Las respuestas de IA matan el SEO?', a: 'Cambian qué contenido rinde. Un texto que da vueltas antes de responder no se cita; una respuesta directa, cerrada y verificable sí. Por eso el formato de pregunta y respuesta, las comparativas con criterio y los datos concretos rinden más que el artículo largo que rodea el tema.' },
           { q: '¿Debo medir mi posición en Google?', a: 'Es la métrica más engañosa: varía por dispositivo, ubicación e historial de quien busca. Mide tráfico orgánico, de qué página vino cada contacto y cuántas páginas distintas reciben visitas.' },
-          { q: '¿Qué gastos fijos hay que sostener además del SEO?', a: 'La infraestructura desde $350 al año y el mantenimiento desde $59 al mes, que es la base sobre la que el SEO se sostiene. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Qué gastos fijos hay que sostener además del SEO?', a: 'La infraestructura desde $350 al año y el mantenimiento desde $99 al mes, que es la base sobre la que el SEO se sostiene. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene contratar SEO?', a: 'Cuando necesitas ventas este mes: para eso está la pauta, que compra visibilidad hoy. Tampoco conviene sobre un sitio que vas a rehacer, ni cuando el negocio no puede atender más volumen del que ya tiene.' },
         ],
       },
@@ -580,7 +580,7 @@ export const crecimiento: PageData[] = [
     parent,
     anatomia: 'v2',
     serviceKey: 'revision',
-    title: 'Mantenimiento Web en Panamá | Planes desde $59/mes',
+    title: 'Mantenimiento Web en Panamá | Planes desde $99/mes',
     description: 'Mantenimiento web en Panamá: 3 planes según cuánto necesitas, con respaldos verificados, monitoreo y respuesta que se ajusta a tu negocio.',
     h1: 'Mantenimiento web que se ajusta a tu negocio',
     breadcrumb: 'Mantenimiento Web',
@@ -589,7 +589,7 @@ export const crecimiento: PageData[] = [
     portada: {
       pie: 'Los ataques no eligen empresas grandes: son robots que buscan sitios sin actualizar. El mantenimiento es lo que te saca de esa lista.',
       riel: [
-        { k: 'Precio', v: 'desde $59 al mes' },
+        { k: 'Precio', v: 'desde $99 al mes' },
         { k: 'Respaldos', v: 'Con restauración probada' },
         { k: 'Monitoreo', v: 'Alerta de caída inmediata' },
         { k: 'Permanencia', v: 'Ninguna: cambias de plan cuando quieras' },
@@ -598,14 +598,14 @@ export const crecimiento: PageData[] = [
     blocks: [
       {
         type: 'answer',
-        fecha: '2026-10-13',
-        text: 'Mantenemos sitios web en Panamá desde $59 al mes: actualizaciones de seguridad con respaldo previo, respaldos con restauración probada, monitoreo de caídas con alerta inmediata, certificado SSL renovado y reporte mensual del estado real. Tres planes según qué tan rápido necesitas respuesta y cuántas horas de cambios al mes, sin permanencia.',
+        fecha: '2026-10-14',
+        text: 'Mantenemos sitios web en Panamá desde $99 al mes: actualizaciones de seguridad con respaldo previo, respaldos con restauración probada, monitoreo de caídas con alerta inmediata, certificado SSL renovado y reporte mensual del estado real. Tres planes según qué tan rápido necesitas respuesta y cuántas horas de cambios al mes, sin permanencia.',
       },
       {
         type: 'receipt',
         titulo: 'Mantenimiento web',
         fecha: '2026-10-13',
-        precio: { estado: 'confirmado', desde: '$59', unidad: 'al mes, plan Básico' },
+        precio: { estado: 'confirmado', desde: '$99', unidad: 'al mes, plan Básico' },
         plazo: 'Arranca el mes en que lo contratas; la respuesta va del siguiente día hábil al mismo día, según el plan',
         medicionId: 'mantenimiento-lcp',
         pie: ['Precios en USD, sin ITBMS (7%).', 'Dominio y hosting se cotizan aparte como infraestructura.'],
@@ -618,7 +618,7 @@ export const crecimiento: PageData[] = [
         tiers: [
           {
             name: 'Básico',
-            price: '$59',
+            price: '$99',
             unit: '/mes',
             for: 'El piso: nunca contratamos por debajo de esto.',
             features: [
@@ -633,7 +633,7 @@ export const crecimiento: PageData[] = [
           },
           {
             name: 'Prioritario',
-            price: '$99',
+            price: '$169',
             unit: '/mes',
             featured: true,
             for: 'Para sitios que ya facturan o agendan y no pueden esperar.',
@@ -647,7 +647,7 @@ export const crecimiento: PageData[] = [
           },
           {
             name: 'Empresarial',
-            price: '$189',
+            price: '$319',
             unit: '/mes',
             for: 'Para operaciones que no se pueden dar el lujo de una caída.',
             features: [
@@ -707,7 +707,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'includes',
         h2: 'Qué incluye el mantenimiento',
-        intro: 'Desde $59 al mes en el plan Básico. Los planes Prioritario y Empresarial suman respuesta más rápida y horas de cambios.',
+        intro: 'Desde $99 al mes en el plan Básico. Los planes Prioritario y Empresarial suman respuesta más rápida y horas de cambios.',
         incluye: [
           { t: 'Actualizaciones con respaldo previo', d: 'Respaldamos antes de tocar nada y verificamos que todo siga igual.' },
           { t: 'Respaldos verificados', d: 'Con restauraciones de prueba periódicas y varias versiones hacia atrás.' },
@@ -777,7 +777,7 @@ export const crecimiento: PageData[] = [
         intro: 'Criterios que puedes verificar en esta página y pedirle a cualquier proveedor. Usa la última columna para comparar.',
         otraCotizacion: true,
         criterios: [
-          { criterio: 'Precio publicado', nosotros: 'Desde $59 al mes, tres planes con lo que incluye cada uno', fuente: { slug: 'precios', label: 'Precios' } },
+          { criterio: 'Precio publicado', nosotros: 'Desde $99 al mes, tres planes con lo que incluye cada uno', fuente: { slug: 'precios', label: 'Precios' } },
           { criterio: 'Respaldos', nosotros: 'Con restauración de prueba y su fecha en el reporte' },
           { criterio: 'Monitoreo', nosotros: 'Alerta de caída inmediata en los tres planes' },
           { criterio: 'Reporte', nosotros: 'Actualizaciones aplicadas, tiempo caído y velocidad, cada mes' },

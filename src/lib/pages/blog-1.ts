@@ -39,7 +39,7 @@ export const blog1: PageData[] = [
         paragraphs: [
           'Con esas variables en mente, estos son los puntos de partida reales que manejamos en <a href="/diseno-web-panama/">diseño web en Panamá</a>. Son precios de partida: cada proyecto se cotiza cerrado y por escrito antes de empezar, según sus páginas e integraciones.',
           'Una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page de alta conversión</a> parte desde $550. Es una sola página con una oferta y una acción, el destino ideal para tu pauta en Google o Meta. Una <strong>Web empresarial</strong> —el sitio de varias secciones que presenta a un negocio completo— parte desde $1,250, y es el formato que más contratan los comercios y profesionales panameños.',
-          'Una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online o e-commerce</a> parte desde $1,950, porque incluye catálogo, carrito, pasarelas de pago y la logística de venta. Un <strong>sitio corporativo a medida</strong>, con arquitectura amplia y contenido por servicio, se cotiza a medida desde $2,900. A eso se suma la infraestructura anual desde $350 y el mantenimiento desde $59 al mes, que mantienen el sitio en línea, respaldado y actualizado.',
+          'Una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online o e-commerce</a> parte desde $1,950, porque incluye catálogo, carrito, pasarelas de pago y la logística de venta. Un <strong>sitio corporativo a medida</strong>, con arquitectura amplia y contenido por servicio, se cotiza a medida desde $2,900. A eso se suma la infraestructura anual desde $350 y el mantenimiento desde $99 al mes, que mantienen el sitio en línea, respaldado y actualizado.',
         ],
       },
       {
@@ -101,7 +101,7 @@ export const blog1: PageData[] = [
           },
           {
             q: '¿El precio incluye el dominio y el hosting?',
-            a: 'El diseño se cotiza aparte del hosting. La <a href="/crecimiento/hosting-infraestructura-panama/">infraestructura anual parte desde $350</a> y el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento desde $59 al mes</a>, que mantiene tu sitio en línea, respaldado y actualizado. Te asesoramos y configuramos dominio y hosting como parte del proceso.',
+            a: 'El diseño se cotiza aparte del hosting. La <a href="/crecimiento/hosting-infraestructura-panama/">infraestructura anual parte desde $350</a> y el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento desde $99 al mes</a>, que mantiene tu sitio en línea, respaldado y actualizado. Te asesoramos y configuramos dominio y hosting como parte del proceso.',
           },
           {
             q: '¿Puedo pagar en cuotas o con Yappy?',
@@ -327,7 +327,7 @@ export const blog1: PageData[] = [
         type: 'prose',
         h2: 'Costos reales de cada plataforma en Panamá',
         paragraphs: [
-          'En costos, la diferencia no está tanto en el diseño inicial como en el modelo de gasto continuo. Con WordPress no pagas licencia de plataforma: tu gasto recurrente es el hosting y el mantenimiento. En nuestro caso, la <a href="/crecimiento/hosting-infraestructura-panama/">infraestructura anual parte desde $350</a> y el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento desde $59 al mes</a>. El sitio es tuyo por completo, sin mensualidad a un tercero.',
+          'En costos, la diferencia no está tanto en el diseño inicial como en el modelo de gasto continuo. Con WordPress no pagas licencia de plataforma: tu gasto recurrente es el hosting y el mantenimiento. En nuestro caso, la <a href="/crecimiento/hosting-infraestructura-panama/">infraestructura anual parte desde $350</a> y el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento desde $99 al mes</a>. El sitio es tuyo por completo, sin mensualidad a un tercero.',
           'Con Shopify pagas una suscripción mensual a la plataforma, que incluye el hosting y la seguridad, más comisiones de pago. No administras servidores porque eso ya está cubierto en la cuota. Es un gasto más predecible y despreocupado, a cambio de una dependencia mayor del ecosistema de Shopify.',
           'El diseño y desarrollo inicial se cotiza aparte en ambos casos y de forma cerrada por escrito. Como referencia general, una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online</a> parte desde $1,950 sin importar la plataforma; lo que cambia después es la estructura de gasto mensual. Si quieres el panorama completo de precios, lo desglosamos en <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a>.',
         ],

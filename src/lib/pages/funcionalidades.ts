@@ -829,7 +829,7 @@ export const funcionalidades: PageData[] = [
     description: 'Integramos CyberSource Unified Checkout en tu web en Panamá: tarjetas con 3-D Secure 2, webhooks y alcance PCI-DSS SAQ A. Desde $1,050, precio cerrado.',
     h1: 'Integración de CyberSource Unified Checkout',
     breadcrumb: 'Integración CyberSource',
-    service: { type: 'Integración de pasarela de pago con tarjeta' },
+    service: { type: 'Integración de pasarela de pago con tarjeta', catalogo: ['cybersource-esencial', 'cybersource-profesional', 'cybersource-avanzado'] },
     lead: ['Dejamos tu web cobrando con tarjeta de crédito y débito de verdad: firma en el servidor, autenticación 3-D Secure 2 y confirmación por webhook, para que ninguna orden se pierda porque alguien cerró la ventana.'],
     portada: {
       pie: 'Una integración de pagos mal hecha no falla con un error visible: falla cobrando de menos, registrando de más o dejando que alguien cambie el precio.',

@@ -3,6 +3,7 @@
 import { site, url, pricing } from './site';
 import { heroFor } from './img';
 import type { PageData } from './types';
+import precios from '../data/precios.json';
 
 const ORG_ID = `${site.domain}/#organizacion`;
 
@@ -179,9 +180,23 @@ function personNodes(page: PageData) {
   }];
 }
 
-/* /precios/: ofertas a partir de la fuente única de precios (site.ts). "Desde" = precio mínimo. */
+/* Catálogo de ofertas del servicio. /precios/: los formatos de site.ts y el plan mensual. Cualquier otra página: los ids
+   de precios.json que declare en service.catalogo, solo confirmados (R27). "Desde" = precio mínimo. */
 function offersNode(page: PageData) {
-  if (page.slug !== 'precios') return null;
+  if (page.slug !== 'precios') {
+    const ids = page.service?.catalogo;
+    if (!ids?.length) return null;
+    const confirmados = precios.confirmados as Record<string, { nombre: string; monto: number }>;
+    return {
+      '@type': 'OfferCatalog',
+      name: `${page.service!.name ?? page.h1}: alcances y precio de partida`,
+      itemListElement: ids.map((id) => {
+        const p = confirmados[id];
+        if (!p) throw new Error(`service.catalogo de ${page.slug}: «${id}» no está entre los precios confirmados de precios.json`);
+        return { '@type': 'Offer', name: p.nombre, priceSpecification: { '@type': 'PriceSpecification', minPrice: p.monto, priceCurrency: 'USD', valueAddedTaxIncluded: false }, seller: { '@id': ORG_ID } };
+      }),
+    };
+  }
   const num = (p: string) => Number(p.replace(/[^0-9.]/g, '').replace(/,/g, ''));
   return {
     '@type': 'OfferCatalog',

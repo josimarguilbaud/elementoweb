@@ -24,7 +24,19 @@ document.addEventListener('click', (e) => {
   const id = a.getAttribute('href');
   if (!id || id === '#') return;
   const el = document.querySelector(id);
-  if (el) { e.preventDefault(); lenis.scrollTo(el as HTMLElement, { offset: -80 }); }
+  if (!el) return;
+  e.preventDefault();
+  // El salto suave no mueve el foco ni la URL: se hacen a mano para que el teclado y el lector de pantalla
+  // sigan en el destino (p. ej. #formulario) y el ancla quede compartible (D50).
+  history.replaceState(null, '', id);
+  lenis.scrollTo(el as HTMLElement, {
+    offset: -80,
+    onComplete: () => {
+      const t = el as HTMLElement;
+      if (t.tabIndex < 0 && !t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1');
+      t.focus({ preventScroll: true });
+    },
+  });
 });
 
 /* ---- Reveals fade-up por scroll ---- */

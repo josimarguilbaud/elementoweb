@@ -252,6 +252,17 @@ El dueño confirmó que Elemento Web es Tech Provider de Meta con el negocio ver
 ### D49. Sin comprobante visible (14-oct-2026; reemplaza la parte visible de D21 y D22 y deja sin efecto D17)
 El dueño no quiere el comprobante en las páginas. El bloque `receipt` se queda en los datos, pero no se pinta: su precio y su plazo salen en la portada, bajo los botones (componente `PrecioPlazo`, que lleva el contrato `data-score` del marcador), y su precio confirmado sigue dando la `Offer` del schema. La medición con fecha (LCP) deja de mostrarse y de ser un punto del marcador, que pasa de 10 a 9 puntos; D17 ya no aplica. Las mediciones siguen en `src/data/mediciones.json` para control interno. Las notas al pie del comprobante (lo que se paga aparte, lo que no se promete) pasan a una línea pequeña bajo el precio y el plazo de la portada.
 
+### D50. Portada de agencia (14-oct-2026; resuelve la puerta de `PLAN-PORTADA.md` y enmienda D19, D20 y D21)
+El dueño respondió «dale con todo con lo más recomendable y despliega» a la puerta final de `PLAN-PORTADA.md`. Queda decidido:
+- **Versión corta** de la portada (9 secciones: héroe, franja de cifras, respuesta citable, mapa de 6 servicios, proyectos y clientes, proceso, industrias, preguntas y formulario). Escenas, maquetas, «lo que no hacemos» y comparación no van.
+- **La portada sale antes de la fase 3** con el `ContactForm` actual: el orden de fases pasa a 1, 2a, 2b, 3, 4 y 5 (enmienda D19 y la tabla de D1).
+- **El botón «Cotizar mi proyecto» baja al formulario de la misma portada** (`#formulario`), como las páginas v2 (enmienda D20 y D21).
+- **Posicionamiento:** el mapa conserva los 6 servicios, pero la bajada y la respuesta citable lideran con web que convierte más WhatsApp oficial (Tech Provider verificado por Meta).
+- **Tráfico:** la portada se construye en paralelo con una fuente de tráfico con fecha (ficha de Google con fotos y primeras reseñas, perfil en Clutch o la prueba de pauta hacia páginas de servicio, `TODOS.md`).
+- **Permisos:** se retiran los 26 logos sin confirmar (vuelven solo los que el dueño confirme con su nombre); se retira «equipo interno» y «100% interno» de la portada, `/nosotros/` y `/como-trabajamos/`; IA queda confirmada «desde $2,900 más el consumo de los modelos» (`confirmados.ia`); la captura de TramitaPa va en el héroe; el testimonio de TramitaPa sale de la portada y de su caso hasta que el cliente apruebe una frase sin resultado.
+- **H1:** se elige con el resultado de S5 (`audit/s5-agencia-diseno-web-2026-10.md`), según la recomendación del plan; si las dos SERP son casi iguales, se registra aquí la decisión de D18.
+- **Medición:** por sesión con página de entrada `/`: sesiones, `cta_click` y `click_whatsapp` por sesión, y `form_start` y `generate_lead` en cualquier página de esas sesiones. La línea base sale de GA4 entre el 30-sep y la fecha de publicación (GA4 tiene datos desde el 30-sep). Revisión a las 4 y 8 semanas. La meta de consultas por mes de D16 sigue pendiente del dueño; mientras, se compara contra la línea base.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

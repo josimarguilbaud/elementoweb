@@ -5,8 +5,14 @@
    2) Web3Forms    → site.ts → contactForm.web3formsKey
    Sin ninguno configurado, el formulario avisa y empuja a WhatsApp.
    El workflow de n8n listo para importar está en docs/contacto-n8n/. */
-import { contactForm } from '../lib/site';
+import { contactForm, site, wa } from '../lib/site';
+import formulario from '../data/formulario.json';
+import { claveDeServicio } from '../lib/servicio-clave';
 const { services, budgets, web3formsKey, endpoint } = contactForm;
+// Etiqueta del <select> → clave de formulario.json, para que cf:lead envíe la clave como el resto de eventos (D9, D50).
+const CLAVES = Object.fromEntries(services.map((s) => [s, claveDeServicio(s, formulario.servicios)]));
+const WA = wa('Hola, intenté enviar el formulario de elementoweb.com y no salió.');
+const EMAIL = site.email;
 ---
 <div id="formulario" class="scroll-mt-28 glass rounded-3xl p-6 sm:p-8">
   <form id="cform" novalidate aria-describedby="cerr">
@@ -41,7 +47,9 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
   </div>
 </div>
 
-<script define:vars={{ KEY: web3formsKey, ENDPOINT: endpoint }}>
+<noscript><p class="mt-3 text-center text-sm text-ink/80">El formulario necesita JavaScript. Escríbenos por <a class="font-semibold text-teal-deep underline" href={WA}>WhatsApp</a> o a <a class="font-semibold text-teal-deep underline" href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p></noscript>
+
+<script define:vars={{ KEY: web3formsKey, ENDPOINT: endpoint, CLAVES, WA, EMAIL }}>
   const form = document.getElementById('cform');
   const errEl = document.getElementById('cerr');
   if (form) {
@@ -135,7 +143,14 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
       errEl.classList.add('hidden');
       const btn = form.querySelector('button[type="submit"]');
       const label = btn.textContent;
-      const fail = (msg) => { errEl.textContent = msg; errEl.classList.remove('hidden'); sending = false; btn.disabled = false; btn.textContent = label; };
+      // El aviso de error trae las dos salidas que no dependen del formulario: WhatsApp y correo.
+      const fail = (msg) => {
+        errEl.textContent = msg + ' ';
+        const link = (href, txt) => { const a = document.createElement('a'); a.href = href; a.textContent = txt; a.className = 'underline'; return a; };
+        errEl.append(link(WA, 'Abrir WhatsApp'), ' · ', link('mailto:' + EMAIL, EMAIL));
+        errEl.classList.remove('hidden'); sending = false; btn.disabled = false; btn.textContent = label;
+      };
+      const clave = () => CLAVES[String(fd.get('servicio') || '').trim()] || 'definir';
       const success = () => {
         form.classList.add('hidden');
         const ok = document.getElementById('cok');
@@ -174,21 +189,21 @@ const { services, budgets, web3formsKey, endpoint } = contactForm;
             fecha: new Date().toISOString(),
           };
           const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: ctrl.signal });
-          if (res.ok) { success(); window.dispatchEvent(new CustomEvent('cf:lead', { detail: { id: attemptId, servicio: payload.servicio } })); }
-          else fail('No se pudo enviar. Intenta de nuevo o escríbenos por WhatsApp.');
+          if (res.ok) { success(); window.dispatchEvent(new CustomEvent('cf:lead', { detail: { id: attemptId, servicio: clave() } })); }
+          else fail('No se pudo enviar. Intenta de nuevo o escríbenos:');
         } else if (KEY) {
           // --- Backend 2: Web3Forms ---
           const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { Accept: 'application/json' }, body: fd, signal: ctrl.signal });
           const data = await res.json();
-          if (data.success) { success(); window.dispatchEvent(new CustomEvent('cf:lead', { detail: { id: attemptId, servicio: String(fd.get('servicio') || '') } })); }
-          else fail(data.message || 'No se pudo enviar. Intenta de nuevo o escríbenos por WhatsApp.');
+          if (data.success) { success(); window.dispatchEvent(new CustomEvent('cf:lead', { detail: { id: attemptId, servicio: clave() } })); }
+          else fail(data.message || 'No se pudo enviar. Intenta de nuevo o escríbenos:');
         } else {
-          fail('El formulario aún no está configurado. Escríbenos por WhatsApp mientras tanto.');
+          fail('El formulario aún no está configurado. Escríbenos mientras tanto:');
         }
       } catch (err) {
         fail(err && err.name === 'AbortError'
           ? 'La conexión tardó demasiado. Puedes intentar de nuevo: no se duplicará tu solicitud.'
-          : 'Error de conexión. Intenta de nuevo o escríbenos por WhatsApp.');
+          : 'Error de conexión. Intenta de nuevo o escríbenos:');
       } finally {
         clearTimeout(timer);
       }

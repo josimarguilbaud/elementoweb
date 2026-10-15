@@ -447,7 +447,7 @@ export const blog1: PageData[] = [
         paragraphs: [
           'La primera señal es que <strong>pregunta antes de cotizar</strong>. Una agencia seria quiere entender tu negocio, tu cliente y tu objetivo antes de darte un número. Quien te suelta un precio en el primer mensaje sin saber qué necesitas está vendiendo una plantilla, no una solución.',
           'La segunda es la <strong>transparencia</strong>: precio cerrado por escrito antes de empezar, alcance claro y sin cargos que aparecen a mitad del camino. La tercera es que tenga <strong>trabajo real que mostrar</strong> —un <a href="/portafolio/">portafolio</a> de sitios en línea, no solo maquetas bonitas— y que puedas verificar que esos proyectos existen y funcionan.',
-          'La cuarta señal, y una que pesa mucho, es la <strong>continuidad después del lanzamiento</strong>. Preguntar quién mantiene la web, cómo se administra y qué pasa si algo se rompe en seis meses separa a quien entrega y desaparece de quien construye una relación. Puedes conocer nuestro enfoque en <a href="/nosotros/">quiénes somos</a>.',
+          'La cuarta señal, y una que pesa mucho, es la <strong>continuidad después del lanzamiento</strong>. Preguntar quién mantiene la web, cómo se administra y qué pasa si algo se rompe en seis meses separa a quien entrega y desaparece de quien construye una relación. Puedes conocer nuestro enfoque como <a href="/">agencia de diseño web</a> en <a href="/nosotros/">quiénes somos</a>.',
         ],
       },
       {

@@ -10,10 +10,10 @@ Regla: **nunca** se envía nombre, correo, teléfono, mensaje ni URLs con datos 
 | `click_whatsapp` | Clic en cualquier enlace a wa.me / api.whatsapp.com | Microconversión | `location` (header, main, footer, other), `page_path` |
 | `click_phone` | Clic en enlace `tel:` | Microconversión | `location`, `page_path` |
 | `click_email` | Clic en enlace `mailto:` | Microconversión | `location`, `page_path` |
-| `cta_click` | Clic en un enlace a `/contacto/` | Microconversión | `location`, `service` (landing, pyme, ecommerce, medida; solo si el enlace lo trae), `page_path` |
+| `cta_click` | Clic en un enlace a `/contacto/`, o en el ancla exacta `#formulario` fuera de `/contacto/` (desde el 14-oct-2026, D50; antes esos clics no se medían) | Microconversión | `location` (`data-cta-loc` o header/main/footer), `service` (primero `?servicio=` o `data-service` del enlace; en `#formulario`, después `<main data-service>`; se omite si no hay), `page_path` |
 | `form_start` | Primer foco en el campo Nombre del formulario (una vez por carga) | Microconversión | `form`, `page_path` |
 | `form_error` | Envío con errores de validación | Diagnóstico | `form`, `fields` (nombres de campo, sin valores), `page_path` |
-| `generate_lead` | El backend (n8n) respondió OK al envío | **Conversión principal** | `form`, `service`, `lead_id` (UUID por intento), `page_path` |
+| `generate_lead` | El backend (n8n) respondió OK al envío | **Conversión principal** | `form`, `service` (clave; el formulario general de la portada y `/contacto/` mandaba la etiqueta de texto hasta el 14-oct-2026), `lead_id` (UUID por intento), `page_path` |
 | `pricing_view` | Carga de `/precios/` | Microconversión | `page_path` |
 | `case_study_view` | Carga de un caso individual de `/casos-de-exito/<caso>/` | Microconversión | `case_slug`, `page_path` |
 | `calculator_complete` | Primer cálculo en `/recursos/calculadora-costo-total-web/` | Microconversión | `page_path` |

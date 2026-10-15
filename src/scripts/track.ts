@@ -3,6 +3,8 @@
    teléfono, mensaje ni URLs con datos personales: solo ubicación y servicio.
    `service` es la CLAVE del servicio (src/data/formulario.json), p. ej. `ecommerce` (D9): la toma del enlace
    (/contacto/?servicio=…), de lo que informa el formulario o de <main data-service> en las páginas con servicio. */
+import { clicCta } from '../lib/clic-cta';
+
 type Params = Record<string, string | number>;
 const send = (name: string, params: Params = {}) => {
   const g = (window as any).gtag;
@@ -26,9 +28,10 @@ document.addEventListener('click', (e) => {
   if (href.includes('wa.me') || href.includes('api.whatsapp.com')) send('click_whatsapp', conServicio(undefined, { location: where(a) }));
   else if (href.startsWith('tel:')) send('click_phone', { location: where(a) });
   else if (href.startsWith('mailto:')) send('click_email', { location: where(a) });
-  else if (href.startsWith('/contacto/')) {
-    const servicio = new URL(a.href, location.origin).searchParams.get('servicio') || '';
-    send('cta_click', { location: where(a), ...(servicio ? { service: servicio } : {}) });
+  else {
+    // Botones de cotizar: enlaces a /contacto/ y el ancla #formulario de las páginas v2 y la portada (D50).
+    const cta = clicCta({ href, pagina: location.pathname, servicioEnlace: a.dataset.service || '', servicioPagina: servicioDePagina() });
+    if (cta) send('cta_click', { location: where(a), ...(cta.servicio ? { service: cta.servicio } : {}) });
   }
 });
 

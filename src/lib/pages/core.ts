@@ -78,7 +78,7 @@ export const core: PageData[] = [
       {
         type: 'cards',
         h2: 'Qué no incluimos',
-        intro: 'Somos una software house con equipo interno enfocado en diseño, desarrollo, SEO técnico y automatización. Lo que no hacemos, te lo decimos de frente y te referimos con quien sí lo hace bien.',
+        intro: 'Somos una software house enfocada en diseño, desarrollo, SEO técnico y automatización. Lo que no hacemos, te lo decimos de frente y te referimos con quien sí lo hace bien.',
         items: [
           { h3: 'Registro de marca y trámites legales', text: 'No tramitamos registro de marca, patentes ni gestiones legales. Te orientamos sobre qué necesitas y con quién resolverlo.' },
           { h3: 'Producción audiovisual profesional', text: 'No hacemos fotografía ni video de estudio. Si el proyecto lo necesita, coordinamos con productores de confianza.' },
@@ -173,7 +173,7 @@ export const core: PageData[] = [
     creds: true,
     lead: [
       'Somos una software house panameña que diseña webs. La diferencia se nota en cómo construimos: con la disciplina de quien mantiene su propio producto.',
-      'Tres credenciales nos definen y las tres son verificables. Somos Tech Provider verificado por Meta: Meta verificó nuestro negocio para integrar la API de WhatsApp Business en nombre de nuestros clientes. Operamos tres SaaS propios (WazaCRM, NousCRM y Cifrao) con clientes reales. Y todo el desarrollo es de equipo interno: lo que te vendemos, lo hacemos nosotros.',
+      'Dos credenciales nos definen y las dos son verificables. Somos Tech Provider verificado por Meta: Meta verificó nuestro negocio para integrar la API de WhatsApp Business en nombre de nuestros clientes. Y operamos tres SaaS propios en producción (WazaCRM, NousCRM y Cifrao). Josimar Guilbaud dirige la empresa y responde por cada proyecto que entregamos.',
     ],
     heroCtas: [
       { label: 'Agendar una llamada', href: '/contacto/', primary: true },
@@ -227,7 +227,7 @@ export const core: PageData[] = [
         h2: 'Preguntas frecuentes',
         items: [
           { q: '¿Qué significa ser Tech Provider verificado por Meta?', a: 'Tech Provider es el programa de Meta para las empresas que conectan la API de WhatsApp Business en nombre de sus clientes. Para entrar, Meta verifica el negocio y revisa la aplicación. Para ti significa que tu número se conecta por el canal oficial de Meta, y no por herramientas no autorizadas que ponen en riesgo la línea.' },
-          { q: '¿Subcontratan parte del trabajo?', a: 'No. Diseño, desarrollo, SEO técnico, integraciones, pauta publicitaria y contenido para redes son de equipo interno. Lo que no hacemos (registro de marca, fotografía o video de estudio) te lo decimos y te referimos con especialistas.' },
+          { q: '¿Qué no hacen?', a: 'Registro de marca, fotografía y video de estudio. Si tu proyecto los necesita, te lo decimos desde la propuesta y te referimos con especialistas.' },
           { q: '¿Dónde están ubicados?', a: 'En Ciudad de Panamá, con trabajo remoto para todo el país y la región. Las reuniones presenciales se coordinan según el proyecto.' },
           { q: '¿Qué es Elemento Web?', a: 'Una agencia de diseño web y software house con sede en Ciudad de Panamá. Diseñamos sitios corporativos, tiendas online y landing pages, desarrollamos software a medida y operamos marketing digital, SEO y automatización con IA.' },
           { q: '¿Quién dirige Elemento Web?', a: 'Josimar Guilbaud es el CEO de Elemento Web.' },

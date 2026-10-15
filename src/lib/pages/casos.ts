@@ -62,7 +62,6 @@ export const casos: PageData[] = [
         ],
       },
       { type: 'prose', h2: 'El sitio en vivo', paragraphs: ['TramitaPa · Trámites de visa · 2025. <a href="https://tramitapa.com" target="_blank" rel="noopener">Visitar tramitapa.com</a>.'] },
-      { type: 'prose', h2: 'Lo que dice el cliente', paragraphs: ['<p>«Rehicieron nuestro sitio y las consultas por WhatsApp se multiplicaron. Entienden de negocio, no solo de diseño.» — Jhair Davis, fundador de TramitaPa.</p>'] },
       { type: 'prose', h2: 'La solución en funcionamiento', paragraphs: ['El sitio está publicado y puedes recorrerlo en el enlace de arriba. Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: consultas calificadas recibidas por WhatsApp. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
       {
         type: 'related',

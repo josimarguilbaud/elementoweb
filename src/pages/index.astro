@@ -1,10 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import Pic from '../components/Pic.astro';
-import { site, cols, marketing, saas, pricing, industrias, url, wa, clientLogos, portfolio, portfolioCats, planKey } from '../lib/site';
+import { site, cols, marketing, saas, pricing, industrias, url, wa, portfolio, portfolioCats, planKey } from '../lib/site';
 import { ogFor } from '../lib/img';
 import ContactForm from '../components/ContactForm.astro';
 import { homeJsonLd } from '../lib/schema';
+import { proyectosDeClientes } from '../lib/portafolio';
 
 const solutions = [
   { n: '01', t: 'Diseño Web', d: 'Sitios corporativos, tiendas y landings que proyectan la solidez de tu empresa y convierten visitas en contratos.', tags: ['Astro', 'React', 'SEO técnico', 'Panel propio'], slug: 'servicios/diseno-web-corporativo-panama' },
@@ -145,28 +146,11 @@ const faqs: [string, string][] = [
   <!-- CIFRAS: solo las que se pueden comprobar (el portafolio, la página de SaaS, el precio publicado). -->
   <section aria-label="Elemento Web en cifras" class="border-t border-ink/8 bg-white">
     <dl class="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-8 px-6 py-10 md:grid-cols-4">
-      <div><dt class="sr-only">Proyectos publicados</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">{portfolio.length}</span><span class="mt-1 block text-sm text-ink/70">proyectos publicados que puedes <a href="/portafolio/" class="underline underline-offset-2">visitar hoy</a></span></dd></div>
+      <div><dt class="sr-only">Proyectos publicados</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">{proyectosDeClientes(portfolio).length}</span><span class="mt-1 block text-sm text-ink/70">proyectos publicados que puedes <a href="/portafolio/" class="underline underline-offset-2">visitar hoy</a></span></dd></div>
       <div><dt class="sr-only">Precio de partida</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">{pricing.tiers[0].price}</span><span class="mt-1 block text-sm text-ink/70">precio de partida publicado, con <a href="/precios/" class="underline underline-offset-2">cotización cerrada</a></span></dd></div>
       <div><dt class="sr-only">Tiempo de respuesta</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">Mismo día</span><span class="mt-1 block text-sm text-ink/70">hábil para responder tu solicitud</span></dd></div>
       <div><dt class="sr-only">Productos propios</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">{saas.length}</span><span class="mt-1 block text-sm text-ink/70"><a href="/saas/" class="underline underline-offset-2">productos de software propios</a> en producción</span></dd></div>
     </dl>
-  </section>
-
-  <!-- LOGOS DE CLIENTES -->
-  <section class="border-y border-ink/8 bg-white py-11">
-    <p class="reveal mb-8 text-center text-xs font-semibold uppercase tracking-[0.22em] text-ink/70">Empresas que confían en nosotros</p>
-    <div class="marquee-mask overflow-hidden">
-      <div class="marquee-track items-center" style="animation-duration:60s">
-        {/* alt vacio a proposito: son 52 imagenes (la tira va duplicada para el
-            bucle) y no tenemos el nombre de cada empresa. Repetir "Cliente de
-            Elemento Web" 52 veces le hace perder el tiempo a quien usa lector
-            de pantalla y no aporta nada; el rotulo de la seccion ya dice que
-            son. Cuando se sepan los nombres, cada logo lleva el suyo. */}
-        {[...clientLogos, ...clientLogos].map((f) => (
-          <img src={`/logos/${f}`} alt="" width="180" height="64" loading="lazy" class="mr-14 h-12 w-auto shrink-0 opacity-65 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 md:mr-16 md:h-14" style="mix-blend-mode:multiply" />
-        ))}
-      </div>
-    </div>
   </section>
 
   <!-- PORTAFOLIO -->
@@ -405,15 +389,6 @@ const faqs: [string, string][] = [
       <div class="reveal mt-8 text-center">
         <a href="/portafolio/" data-magnetic="0.3" class="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-teal hover:text-teal">Ver todo el portafolio <span aria-hidden="true">→</span></a>
       </div>
-
-      <figure class="reveal relative mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-10 md:p-16">
-        <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(ellipse 50% 80% at 80% 20%, rgba(94, 200, 232,0.18), transparent 70%)"></div>
-        <div class="relative">
-          <div class="mb-6 font-display text-6xl leading-none text-teal">“</div>
-          <blockquote class="max-w-4xl font-display text-[clamp(1.5rem,3.4vw,2.6rem)] font-bold leading-[1.2]">Rehicieron nuestro sitio y las consultas por WhatsApp se <span class="grad-text">multiplicaron</span>. Entienden de negocio, no solo de diseño.</blockquote>
-          <figcaption class="mt-8 flex items-center gap-4"><span class="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-teal to-violet font-bold text-ink">JD</span><div><div class="font-semibold text-white">Jhair Davis</div><div class="text-sm text-white/50">Fundador de TRAMITAPA</div></div></figcaption>
-        </div>
-      </figure>
     </div>
 
     <script>
@@ -647,12 +622,12 @@ const faqs: [string, string][] = [
     <div class="mx-auto max-w-7xl px-6">
       <div class="max-w-2xl">
         <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-paper px-4 py-1.5 text-xs font-semibold text-ink/70">Quiénes somos</p>
-        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Detrás de cada proyecto, un <span class="grad-text">equipo panameño</span> de verdad.</h2>
-        <p class="reveal mt-5 max-w-xl text-lg text-ink/70">Equipo 100% interno. No subcontratamos tu proyecto ni te dejamos en una cola de tickets: hablas directo con quien lo construye.</p>
+        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Quién está detrás.</h2>
+        <p class="reveal mt-5 max-w-xl text-lg text-ink/70">Una agencia de Ciudad de Panamá dirigida por Josimar Guilbaud, que responde por cada proyecto que entregamos. Te respondemos el mismo día hábil y la cotización llega cerrada y por escrito.</p>
       </div>
 
       <div class="reveal mt-9 flex flex-wrap gap-3">
-        {['Tech Provider verificado por Meta', 'Equipo 100% interno', '3 SaaS propios en producción', 'Cotización cerrada por escrito'].map((b) => (
+        {['Tech Provider verificado por Meta', '3 SaaS propios en producción', 'Cotización cerrada por escrito'].map((b) => (
           <span class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper px-4 py-2 text-sm font-medium text-ink/70"><span class="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-teal to-violet"></span>{b}</span>
         ))}
       </div>
@@ -661,7 +636,7 @@ const faqs: [string, string][] = [
         <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-gradient-to-br from-teal-deep/20 to-violet/25 font-display text-lg font-extrabold text-ink" aria-hidden="true">JG</span>
         <div><p class="font-display text-lg font-bold text-ink">Josimar Guilbaud</p><p class="text-sm text-ink/70">CEO de Elemento Web</p></div>
       </div>
-      <a href="/nosotros/" class="reveal mt-8 inline-flex items-center gap-2 text-sm font-semibold text-teal-deep">Conoce al equipo <span aria-hidden="true">→</span></a>
+      <a href="/nosotros/" class="reveal mt-8 inline-flex items-center gap-2 text-sm font-semibold text-teal-deep">Conoce la empresa <span aria-hidden="true">→</span></a>
 
       {/* Rejilla de personas: se enciende cuando haya fotos, nombres y cargos
           reales. Estaba publicada con "Nombre Apellido" cuatro veces.

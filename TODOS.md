@@ -57,7 +57,7 @@
 
 **Why:** Da tasa de conversión por palabra clave y por página en días, mientras el posicionamiento orgánico madura. Una agencia que vende Google Ads puede comprar el dato que le falta.
 
-**Context:** Sugerido por las dos voces independientes de la revisión del 12-oct-2026. No hay línea base de consultas; GA4 no tuvo datos hasta el 30-sep-2026. Presupuesto y cuenta de Ads los decide el dueño.
+**Context:** Sugerido por las dos voces independientes de la revisión del 12-oct-2026. No hay línea base de consultas; GA4 no tuvo datos hasta el 30-sep-2026. Presupuesto y cuenta de Ads los decide el dueño. La revisión CEO de la portada (14-oct-2026, `docs/specs/rediseno-elementoweb/PLAN-PORTADA.md`, UC1 y V11) la propone como la fuente de tráfico con fecha que mide si la portada nueva convierte; toda campaña de un servicio concreto (Google Ads, SEO local, tiendas) va a la página de ese servicio, no a la portada.
 
 **Effort:** S
 **Priority:** P2
@@ -123,5 +123,41 @@
 **Effort:** S
 **Priority:** P3
 **Depends on:** `scripts/check-prod.sh` con la sonda (T28).
+
+### Eventos por clic en las escenas y el mapa de servicios de la portada
+
+**What:** Enviar a GA4 un evento por cada clic en una escena («Por dónde se te van los clientes») y en cada fila del mapa de servicios de la portada, con la clave de servicio de `src/data/formulario.json` (y `definir` cuando el destino no tenga clave, como `/diseno-web-panama/` o `/marketing/`).
+
+**Why:** La portada recibe a quien llega por marca, directorios y enlaces del kit de autoridad; saber qué servicio buscan esos visitantes decide qué página reforzar primero.
+
+**Context:** Lo propuso la revisión CEO de la portada (14-oct-2026, `docs/specs/rediseno-elementoweb/PLAN-PORTADA.md`, X2) y se difirió porque el diseño de eventos es de la fase 3 (D1, D9): nombre del evento, parámetros, `docs/event-dictionary.md` y la prueba de `dataLayer`. Hoy `src/scripts/track.ts` no envía nada para enlaces internos comunes.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P3
+**Depends on:** Portada de agencia publicada (fase 2b) y la fase 3 de eventos.
+
+### Preguntas de la clave `definir` del formulario por servicio
+
+**What:** Revisar qué pregunta `ServiceForm` cuando el servicio es `definir` (la portada y las páginas sin clave): objetivo, presupuesto aproximado y urgencia, todas opcionales (D19).
+
+**Why:** El botón de la portada lleva a `definir`; sin esas tres respuestas, el equipo comercial tiene que diagnosticar a mano cada consulta antes de priorizarla.
+
+**Context:** Lo señaló la voz Codex de la revisión CEO de la portada (14-oct-2026, V12). Va con la fase 3, cuando se active `ServiceForm`; `src/data/formulario.json` define los campos de cada clave.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P3
+**Depends on:** Fase 3 (contrato v2 del flujo, D30 a D33).
+
+### Barra fija en móvil con «Cotizar» y WhatsApp
+
+**What:** Una barra fija abajo en móvil con el botón del servicio y WhatsApp, en las páginas de servicio (como pide D21) y, si se quiere, en la portada.
+
+**Why:** Las páginas v2 y la portada son largas; en el celular el botón queda lejos después del héroe.
+
+**Context:** D21 (`docs/specs/rediseno-elementoweb/DECISIONES.md`) la pide para las páginas de servicio y nunca se construyó: no existe en `src/` (la revisión de la portada del 14-oct-2026 lo comprobó). Es un componente nuevo para todo el sitio, así que salió del plan de la portada. Cuidar el CLS, que no tape el formulario ni el chat de WhatsApp, y medir antes y después con `form_start`.
+
+**Effort:** S (humano: M) / S (CC)
+**Priority:** P3
+**Depends on:** Nada.
 
 ## Completed

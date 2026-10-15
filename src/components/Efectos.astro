@@ -1,0 +1,9 @@
+---
+/* Efectos de movimiento del sitio (Lenis, GSAP, cursor y revelados). Va en un componente aparte para que una página
+   pueda no cargarlos: la portada no se anima (DESIGN.md, Motion; D50) y así no baja su JavaScript. */
+---
+<span class="cursor-ring" aria-hidden="true"><span class="cursor-ring-i"></span></span>
+<span class="cursor-dot" aria-hidden="true"></span>
+<script>
+  import '../scripts/effects.ts';
+</script>

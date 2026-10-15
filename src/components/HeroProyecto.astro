@@ -1,0 +1,42 @@
+---
+/* Captura de un proyecto real en el héroe de la portada (D50, B5a): navegador en 4:3 sin recorte y celular superpuesto
+   abajo a la derecha, con la composición `ew-dev` del molde y el modificador `ew-dev--hero`. No usa Ejemplo.astro,
+   cuyo tipo `web` fuerza `lazy`, una sola imagen y 16:10 con recorte.
+   En compacto un <picture> sirve solo la captura de celular (recortada arriba en una caja 3:2) y no descarga la de
+   escritorio, que a 358 px no se lee; el celular superpuesto va `lazy` y oculto, así que tampoco se descarga.
+   El corte entre compacto y escritorio sale de una sola constante: la usan el <source> y la hoja de abajo.
+   Todas las variantes que el navegador puede elegir pesan 60 KB o menos (lo comprueba el validador, prueba d). */
+interface Props {
+  dominio: string;
+  escritorio: { srcset: [string, number][]; src: string; width: number; height: number };
+  movil: { srcset: [string, number][]; src: string; width: number; height: number };
+  alt: string;
+  altMovil: string;
+  pie: string;
+  detalle?: string;
+  caso: string;
+}
+const { dominio, escritorio, movil, alt, altMovil, pie, detalle, caso } = Astro.props;
+const COMPACTO = 639;
+const media = `(max-width: ${COMPACTO}px)`;
+const srcset = (l: [string, number][]) => l.map(([s, w]) => `${s} ${w}w`).join(', ');
+const css = `@media ${media} {
+  .ew-dev--hero .ew-dev__browser img { aspect-ratio: 3 / 2; object-fit: cover; object-position: top; }
+  .ew-dev--hero .ew-dev__phone { display: none; }
+  .ew-dev--hero .ew-dev__stage { padding-bottom: 0; }
+}`;
+---
+<style is:inline set:html={css}></style>
+<figure class="ew-dev ew-dev--hero">
+  <div class="ew-dev__stage">
+    <div class="ew-dev__browser">
+      <div class="ew-dev__bar" aria-hidden="true"><i></i><i></i><i></i><span>{dominio}</span></div>
+      <picture>
+        <source media={media} srcset={srcset(movil.srcset)} sizes="calc(100vw - 32px)" width={movil.width} height={movil.height} />
+        <img src={escritorio.src} srcset={srcset(escritorio.srcset)} sizes="(min-width: 1024px) 520px, 92vw" width={escritorio.width} height={escritorio.height} alt={alt} loading="eager" fetchpriority="high" decoding="async" />
+      </picture>
+    </div>
+    <div class="ew-dev__phone"><img src={movil.src} width={movil.width} height={movil.height} alt={altMovil} loading="lazy" decoding="async" /></div>
+  </div>
+  <figcaption class="ew-dev__pie"><span class="ew-data">{pie}</span> · <a href={caso}>Ver el caso <span aria-hidden="true">→</span></a>{detalle && <span class="ew-dev__det">{detalle}</span>}</figcaption>
+</figure>

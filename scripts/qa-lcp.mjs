@@ -44,6 +44,20 @@ for (const [w, h] of [[1440, 900], [390, 844]]) {
         return out.slice(0, 3);
       });
       if (ocultos.length) linea(estricta, `${w}x${h} ${ruta} sin JavaScript: contenido de la primera pantalla oculto → ${ocultos.join(', ')}`);
+      // Portada (D50, prueba g): a 1440x900 se ven H1, bajada, botones, insignia y el pie de la captura; a 390x844 el
+      // botón principal queda dentro de la pantalla y la caja de la captura empieza antes del borde inferior.
+      if (ruta === '/') {
+        const m = await ps.evaluate(() => {
+          const abajo = (s) => { const e = document.querySelector(s); return e ? Math.round(e.getBoundingClientRect().bottom) : null; };
+          const arriba = (s) => { const e = document.querySelector(s); return e ? Math.round(e.getBoundingClientRect().top) : null; };
+          return { h1: abajo('.ew-hero h1'), boton: abajo('.ew-hero .ew-btn--primary'), wa: abajo('.ew-hero .ew-btn--ghost'), insignia: abajo('.ew-insignia'), pie: abajo('.ew-dev--hero figcaption'), caja: arriba('.ew-dev--hero .ew-dev__browser') };
+        });
+        const pide = w >= 1024 ? ['h1', 'boton', 'wa', 'insignia', 'pie'] : ['boton'];
+        const fuera = pide.filter((k) => m[k] === null || m[k] > h);
+        if (w < 1024 && (m.caja === null || m.caja >= h)) fuera.push('caja de la captura');
+        if (fuera.length) linea(true, `${w}x${h} /: fuera de la primera pantalla → ${fuera.join(', ')} (${JSON.stringify(m)})`);
+        else console.log(`✓ ${w}x${h} /: primera pantalla completa (${pide.join(', ')}${w < 1024 ? ', caja de la captura' : ''})`);
+      }
 
       await pj.goto(BASE + ruta, { waitUntil: 'load' });
       await pj.waitForTimeout(800);

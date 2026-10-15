@@ -17,8 +17,9 @@
 .ew-hero__h1 { margin-top: 16px; max-width: 18ch; font-size: clamp(2.15rem, 1.35rem + 3.1vw, 4rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.025em; color: #fff; }
 .ew-hero__lead { margin-top: 18px; max-width: 52ch; font-size: 1.125rem; line-height: 1.6; color: var(--ew-on-primary-muted); }
 .ew-hero__ctas { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
-.ew-btn--ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255, 255, 255, .4); }
-.ew-btn--ghost:hover { border-color: #fff; }
+/* Doble clase: la hoja global llega después de esta (va en línea en el <head>) y su `.ew-btn { border: 0 }` borraba el borde. */
+.ew-btn.ew-btn--ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255, 255, 255, .4); }
+.ew-btn.ew-btn--ghost:hover { border-color: #fff; }
 .ew-hero__recibo { margin: 24px 0 0; padding-top: 16px; max-width: 34rem; display: flex; flex-wrap: wrap; gap: 8px 32px; border-top: 1px solid rgba(255, 255, 255, .16); }
 .ew-hero__recibo div { display: flex; flex-direction: column; gap: 2px; }
 .ew-hero__recibo dt { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ew-on-primary-muted); }

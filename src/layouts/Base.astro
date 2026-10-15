@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import Efectos from '../components/Efectos.astro';
 import { site, analytics } from '../lib/site';
 
 interface Props {
@@ -24,8 +25,10 @@ interface Props {
   pageType?: string;
   /** Clave de servicio del formulario (D9): <main data-service>, la lee track.ts. */
   service?: string;
+  /** Carga los efectos de movimiento (effects.ts y el cursor). La portada no se anima (D50) y pasa false. */
+  efectos?: boolean;
 }
-const { title, description, current = '', jsonld, dark = false, image, noindex = false, ogType = 'website', published, pageType, service } = Astro.props;
+const { title, description, current = '', jsonld, dark = false, image, noindex = false, ogType = 'website', published, pageType, service, efectos = true } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.domain).href;
 const schemas = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
 /* og:image: usa la imagen de la página; si no, una por defecto. Siempre absoluta. */
@@ -88,12 +91,9 @@ const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.
     </main>
     <Footer />
 
-    <!-- cursor personalizado -->
-    <span class="cursor-ring" aria-hidden="true"><span class="cursor-ring-i"></span></span>
-    <span class="cursor-dot" aria-hidden="true"></span>
+    {efectos && <Efectos />}
 
     <script>
-      import '../scripts/effects.ts';
       import '../scripts/track.ts';
       // barra de progreso
       const bar = document.getElementById('scroll-progress');

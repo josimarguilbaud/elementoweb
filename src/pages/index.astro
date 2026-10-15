@@ -1,726 +1,205 @@
 ---
+/* Portada de agencia, versión corta (D50, tanda B de docs/specs/rediseno-elementoweb/PLAN-PORTADA.md): héroe con un
+   proyecto real, riel de servicios y franja de cifras; respuesta citable; mapa de 6 servicios; proyectos publicados;
+   proceso; industrias; preguntas; formulario. Los datos del mapa, el riel, el ItemList, las preguntas y la respuesta
+   salen de src/lib/portada.ts (una sola fuente). La portada no se anima: no carga effects.ts (DESIGN.md, Motion). */
 import Base from '../layouts/Base.astro';
-import Pic from '../components/Pic.astro';
-import { site, cols, marketing, saas, pricing, industrias, url, wa, portfolio, portfolioCats, planKey } from '../lib/site';
-import { ogFor } from '../lib/img';
+import Blocks from '../components/Blocks.astro';
 import ContactForm from '../components/ContactForm.astro';
+import HeroProyecto from '../components/HeroProyecto.astro';
+import { site, saas, pricing, industrias, url, wa, portfolio } from '../lib/site';
+import { ogFor } from '../lib/img';
 import { homeJsonLd } from '../lib/schema';
 import { proyectosDeClientes } from '../lib/portafolio';
-
-const solutions = [
-  { n: '01', t: 'Diseño Web', d: 'Sitios corporativos, tiendas y landings que proyectan la solidez de tu empresa y convierten visitas en contratos.', tags: ['Astro', 'React', 'SEO técnico', 'Panel propio'], slug: 'servicios/diseno-web-corporativo-panama' },
-  { n: '02', t: 'E-commerce', d: 'Tiendas pensadas para vender en Panamá: catálogo, carrito, Yappy y pasarelas locales.', tags: ['Yappy', 'Shopify', 'Inventario', 'Envíos'], slug: 'servicios/tiendas-online-ecommerce-panama' },
-  { n: '03', t: 'Marketing y Pauta', d: 'Google Ads, Meta Ads y contenido que traen clientes, no solo visitas. Fee claro; tu inversión va directo a la plataforma.', tags: ['Google Ads', 'Meta Ads', 'Reels', 'Email'], slug: 'marketing' },
-  { n: '04', t: 'IA y Automatización', d: 'Un ecosistema de IA privado para tu empresa: una base de conocimiento que responde con tu información y automatizaciones que ejecutan tareas 24/7, siempre con control humano.', tags: ['RAG privado', 'Chatbots IA', 'n8n', 'CRM'], slug: 'inteligencia-artificial-para-empresas-panama' },
-];
-const archCards = {
-  corporativo: { t: 'Diseño Web Corporativo', d: 'Para empresas que necesitan proyectar solidez: estructura clara, páginas optimizadas por servicio para Google (SEO) y panel autoadministrable.', tags: ['WordPress', 'SEO Técnico'], slug: 'servicios/diseno-web-corporativo-panama' },
-  landing: { t: 'Landing Pages de Conversión', d: 'Una sola página enfocada en una acción. El destino correcto para rentabilizar tus campañas de Meta y Google Ads.', slug: 'servicios/landing-pages-alta-conversion-panama' },
-  ecommerce: { t: 'E-Commerce & Yappy', d: 'Tiendas listas para vender en Panamá. Pasarelas locales, Shopify/WooCommerce y gestión de inventario.', slug: 'servicios/tiendas-online-ecommerce-panama' },
-  dev: { t: 'Desarrollo a Medida (Vue / React)', d: 'Cuando la plantilla se queda corta, programamos. Portales de clientes, conexiones vía API, integraciones con ERP y sistemas de reservas complejos.', slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama' },
-};
-const ecoSteps = [
-  { n: '01', t: 'Lead entra', d: 'Un cliente escribe por WhatsApp, tu web o Instagram.', teal: true },
-  { n: '02', t: 'IA interviene', d: 'El asistente responde, califica y resuelve lo básico al instante.', teal: false },
-  { n: '03', t: 'CRM agenda', d: 'Se registra el lead, se agenda la cita y se notifica a tu equipo.', teal: true },
-];
-const procSteps = [
-  { t: 'Diagnóstico', d: 'Entendemos tu negocio y objetivo. Sin costo ni compromiso.' },
-  { t: 'Diseño', d: 'Estructura y pantallas que apruebas antes de programar.' },
-  { t: 'Desarrollo', d: 'SEO técnico y velocidad desde el primer día, con demo online.' },
-  { t: 'Lanzamiento', d: 'Publicamos en tu dominio, medimos y capacitamos a tu equipo.' },
-];
-const folioCats = portfolioCats;
-const folioFeatured = portfolio.find((p) => p.featured)!;
-// Home: San Blas Full (destacado) + Remodelaciones JG + TramitaPa + Panama International Movers + CicloFrio. El resto vive en /portafolio/.
-const homeFolioDomains = ['remodelacionesjg.com', 'tramitapa.com', 'panamainternationalmovers.com', 'ciclofrio.com'];
-const folio = portfolio.filter((p) => !p.featured && homeFolioDomains.some((d) => p.href.includes(d)));
-const folioItems = [folioFeatured, ...folio];
-const indIcons = ['M12 3 4 7v5c0 4 3.5 7 8 8 4.5-1 8-4 8-8V7l-8-4Z','M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z','M6 3v7a2 2 0 0 0 4 0V3M8 10v11M16 3c-1.5 0-2 2-2 4s0 4 2 4 2-2 2-4-.5-4-2-4Zm0 8v10','M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5','M12 5v14M5 12h14M7 5h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z','M2 20h20M4 20V8l6-4 6 4M9 20v-5h4v5M18 20v-9l3 2v7','M12 4 2 9l10 5 10-5-10-5ZM6 12v5c0 1 3 2 6 2s6-1 6-2v-5','M6 6h12l1 14H5L6 6Zm3 0a3 3 0 0 1 6 0','M4 9v6M20 9v6M7 7v10M17 7v10M7 12h10','M14 6a4 4 0 0 0-5 5l-6 6 2 2 6-6a4 4 0 0 0 5-5l-2 2-2-2 2-2Z','M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10Z','M1 7h13v10H1zM14 10h4l3 3v4h-7'];
-const services2 = ['Diseño web / Sitio corporativo', 'Tienda online / E-commerce', 'Landing page', 'Marketing / Pauta', 'IA / Automatización', 'Otro'];
-
-/* WhatsApp del CTA que va debajo del portafolio. */
-const waHome = wa('Hola, vi su portafolio y quiero un diagnóstico para mi proyecto.');
+import { H1_PORTADA, filasMapa, itemListPortada, faqsPortada, respuestaPortada } from '../lib/portada';
+import precios from '../data/precios.json';
+/* Las hojas del molde y de la portada van en línea solo aquí (como en [...slug].astro): el resto del sitio no las baja. */
+import moldeCss from '../styles/molde-kredit.css?inline';
+import portadaCss from '../styles/portada.css?inline';
 
 const title = 'Agencia de Diseño Web en Panamá | Elemento Web';
-const description = 'Agencia de diseño web en Panamá. Páginas corporativas, tiendas online y landing pages con diseño a medida y SEO técnico. Solicita tu cotización.';
+const description = 'Agencia de diseño web en Panamá: sitios corporativos, tiendas online y landing pages, con SEO, Google Ads y WhatsApp. Pide tu cotización.';
+const bajada = 'Webs para empresas que quieren consultas, con WhatsApp por la API oficial. Precio publicado y respuesta el mismo día hábil.';
 
-const capCols = [...cols, { title: 'Marketing y Pauta', hub: 'marketing', links: marketing }, { title: 'Nuestros SaaS', hub: 'saas', links: saas.map((s) => ({ slug: s.slug, label: s.label })) }];
+const filas = filasMapa(precios);
+const faqs = faqsPortada(precios);
+const respuesta = respuestaPortada(precios);
+const jsonld = homeJsonLd(faqs, [itemListPortada(site.domain.replace(/\/$/, ''), filas)]);
 
-const saasProducts = [
-  { n: 'WazaCRM', tag: 'CRM de WhatsApp con IA', d: 'Atiende, cotiza, agenda y cobra dentro del chat, con embudo de ventas y bandeja compartida detrás.', c: '#0099cc', slug: 'saas/wazacrm' },
-  { n: 'NousCRM', tag: 'Cotizaciones y cobros', d: 'Cotiza, factura y cobra por WhatsApp: tu cliente abre todo sin crear cuenta.', c: '#5ec8e8', slug: 'saas/nouscrm' },
-  { n: 'Cifrao', tag: 'Software contable', d: 'Facturación, conciliación y cuentas por cobrar para empresas en Panamá.', c: '#f59e0b', slug: 'saas/cifrao' },
+const waCotizar = wa('Hola, quiero cotizar un proyecto con Elemento Web.');
+
+/* Proyectos publicados: TramitaPa no se repite (ya está en el héroe) y no entran productos propios. Cada uno enlaza a su
+   caso o, si no tiene, al sitio publicado. Las capturas son reales y viven en public/. */
+const proyectosHome = [
+  { t: 'San Blas Full', movil: '/images/ejemplos/movil-sanblasfull.webp', cap: 'sanblasfull' },
+  { t: 'Panama International Movers', movil: '/images/ejemplos/movil-movers.webp', cap: 'panamainternationalmovers-2026' },
+  { t: 'Remodelaciones JG', movil: '/images/ejemplos/movil-remodelacionesjg.webp', cap: 'remodelacionesjg' },
+  { t: 'CicloFrio', movil: '/images/ejemplos/movil-ciclofrio.webp', cap: 'ciclofrio' },
+].map((p) => {
+  const d = proyectosDeClientes(portfolio).find((x) => x.t === p.t);
+  if (!d) throw new Error(`Proyecto de la portada sin entrada de cliente en portfolio: ${p.t}`);
+  return { ...p, ...d, dominio: new URL(d.href).hostname.replace(/^www\./, '') };
+});
+
+const cifras = [
+  { v: String(proyectosDeClientes(portfolio).length), k: 'proyectos publicados que puedes <a href="/portafolio/">visitar hoy</a>' },
+  { v: pricing.tiers[0].price, k: 'precio de partida publicado, con <a href="/precios/">cotización cerrada</a>' },
+  { v: 'Mismo día', k: 'hábil para responder tu solicitud' },
+  { v: String(saas.length), k: '<a href="/saas/">productos de software propios</a> en producción' },
 ];
-const tools = [
-  { name: 'Node.js', ic: 'node' }, { name: 'Next.js', ic: 'nextjs' }, { name: 'React', ic: 'react' },
-  { name: 'Vue.js', ic: 'vue' }, { name: 'Astro', ic: 'astro' }, { name: 'Vite', ic: 'vite' },
-  { name: 'TypeScript', ic: 'typescript' }, { name: 'JavaScript', ic: 'javascript' }, { name: 'Tailwind CSS', ic: 'tailwind' },
-  { name: 'Laravel', ic: 'laravel' }, { name: 'PHP', ic: 'php' }, { name: 'Python', ic: 'python' },
-  { name: 'PostgreSQL', ic: 'postgresql' }, { name: 'MySQL', ic: 'mysql' }, { name: 'WordPress', ic: 'wordpress' },
-  { name: 'Docker', ic: 'docker' },
-];
-/* Estas cuatro preguntas se pintan en la portada Y alimentan el FAQPage del
-   JSON-LD (ver homeJsonLd). Son las que mas se buscan en el mercado, asi que
-   conviene que un motor generativo pueda citarlas textualmente. */
-const ctaLabel = (n: string) => ({ landing: 'Cotizar mi landing', pyme: 'Cotizar mi web', ecommerce: 'Cotizar mi tienda' } as Record<string, string>)[planKey(n)] || 'Cotizar mi proyecto';
-const faqs: [string, string][] = [
-  ['¿Cuánto cuesta una página web en Panamá?', 'Landing desde $550, corporativa desde $1,250 y e-commerce desde $1,950. Siempre con cotización cerrada antes de empezar.'],
-  ['¿Mi web va a aparecer en Google?', 'Se entrega con SEO técnico completo. Posicionar términos competitivos requiere además trabajo continuo de contenido, que ofrecemos por separado.'],
-  ['¿Cuánto tarda el desarrollo?', 'Una landing en 5 días hábiles; un sitio corporativo entre 2 y 3 semanas desde que recibimos tu contenido.'],
-  ['¿Cómo funciona el pago?', 'Hay dos modalidades. Proyecto por etapas: 50% para iniciar, 30% al aprobar el demo online y 20% para publicar en tu dominio. Plan mensual gestionado: $350 de puesta en marcha más $169 al mes durante 12 meses, y desde el mes 13 solo $94 al mes por el servicio continuo. Tarjeta, transferencia o Yappy.'],
-  ['¿En el plan mensual, la web es mía?', 'Sí. Dominio, hosting y accesos quedan a nombre de tu empresa. Si decides no continuar tras el mes 12, te entregamos la web y sus accesos; el detalle de cancelación se acuerda por escrito antes de empezar.'],
-];
+
+const pasos = {
+  type: 'steps' as const,
+  h2: 'Cómo trabajamos, en cuatro etapas',
+  intro: 'Cada etapa termina con algo que puedes revisar antes de seguir.',
+  items: [
+    { h3: 'Diagnóstico', text: 'Entendemos tu negocio y lo que quieres lograr, sin costo. <strong>Entregas:</strong> propuesta con alcance, precio y plazo por escrito.' },
+    { h3: 'Diseño', text: 'Estructura y pantallas de las páginas clave. <strong>Entregas:</strong> pantallas que apruebas antes de programar.' },
+    { h3: 'Desarrollo', text: 'Programamos con SEO técnico y velocidad desde el primer día. <strong>Entregas:</strong> demo en línea para revisar y pedir cambios.' },
+    { h3: 'Lanzamiento', text: 'Publicamos y conectamos la medición de contactos. <strong>Entregas:</strong> web en tu dominio, accesos a tu nombre y capacitación.' },
+  ],
+};
 ---
-<Base title={title} description={description} current="home" image={ogFor('')} jsonld={homeJsonLd(faqs)}>
-  {/* Sin pantalla de carga (D18): el visitante nuevo esperaba 1 a 1,5 s mirando el logo antes de ver la portada. */}
+<Base title={title} description={description} current="home" image={ogFor('')} jsonld={jsonld} dark pageType="home" efectos={false}>
+  <style slot="head" is:inline set:html={moldeCss + portadaCss}></style>
 
-  <!-- HERO -->
-  <!-- Hero compacto: antes el titular llegaba a 6.5rem y empujaba los botones
-       debajo del pliegue en un portatil de 900px de alto. Se baja el techo del
-       clamp y se aprietan los margenes para que el CTA se vea sin hacer scroll. -->
-  <section class="relative flex items-center overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16">
-    <div class="absolute inset-0 mesh"></div>
-    <div id="hero-glow" class="pointer-events-none absolute inset-0"></div>
-    <div class="relative mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
-      <p class="mb-6 inline-flex items-center gap-2.5 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-ink/70 shadow-sm backdrop-blur md:mb-7">
-        <span class="relative flex h-2.5 w-2.5"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet opacity-70"></span><span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-violet"></span></span>
-        Boutique de diseño y desarrollo
-      </p>
-      <h1 class="font-display text-[clamp(2.4rem,6.2vw,4.5rem)] font-extrabold leading-[1.05] tracking-tight text-ink">Diseño web en Panamá <br class="hidden sm:block" />que <span class="hero-outline italic pr-1">convierte</span> visitas en consultas.</h1>
-      <p class="mt-5 max-w-2xl text-base leading-relaxed text-ink/70 md:text-lg">Somos una agencia de <strong class="font-semibold text-ink/80">diseño web en Panamá</strong>. Creamos páginas corporativas, tiendas online y landing pages con diseño a medida, SEO técnico y precio cerrado.</p>
-      <div class="mt-8 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row sm:gap-5">
-        <a href="/contacto/#formulario" data-magnetic="0.35" class="group relative inline-flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-night px-8 py-3.5 text-base font-semibold text-white shadow-xl shadow-ink/25 transition-all hover:-translate-y-0.5 hover:bg-teal-deep sm:w-auto">
-          <span class="relative z-10">Cotizar mi página web</span>
-          <svg class="relative z-10 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="19" y2="5" /><polyline points="5 5 19 5 19 19" /></svg>
+  <!-- 1. Héroe: H1, bajada, botones, insignia y un proyecto real; abajo el riel y la franja de cifras -->
+  <section class="ew-hero ew-hero--home">
+    <div class="ew-hero__grid">
+      <div class="ew-hero__text">
+        <h1 class="ew-hero__h1">{H1_PORTADA}</h1>
+        <p class="ew-hero__lead">{bajada}</p>
+        <div class="ew-hero__ctas">
+          <a href="#formulario" class="ew-btn ew-btn--primary" data-cta-loc="hero" data-service="definir">Cotizar mi proyecto</a>
+          <a href={waCotizar} target="_blank" rel="noopener" class="ew-btn ew-btn--ghost" data-cta-loc="hero">Hablar por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
+        </div>
+        <a href="/nosotros/" class="ew-insignia">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></svg>
+          Tech Provider verificado por Meta
         </a>
-        <span class="hidden text-sm text-ink/70 sm:block">o</span>
-        <a href="/portafolio/" class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-ink/15 bg-white px-8 py-3.5 text-base font-semibold text-ink transition-all hover:border-ink/35 hover:shadow-md sm:w-auto">Ver proyectos reales</a>
       </div>
-      <nav aria-label="Elige tu mercado" class="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
-        <span class="text-ink/70">Trabajamos en:</span>
-        <a href="/diseno-web-panama/" class="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white px-4 py-2 font-semibold text-ink transition hover:border-ink/35 hover:shadow-sm"><span class="grid h-5 w-5 place-items-center rounded-full bg-night text-[9px] font-bold text-white" aria-hidden="true">PA</span>Panamá <span class="font-normal text-ink/70">· sede</span></a>
-        <a href="/miami/" class="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white px-4 py-2 font-semibold text-ink transition hover:border-ink/35 hover:shadow-sm"><span class="grid h-5 w-5 place-items-center rounded-full bg-teal-deep text-[9px] font-bold text-white" aria-hidden="true">US</span>Miami <span class="font-normal text-ink/70">· remoto, en español</span></a>
-      </nav>
-      <div class="mt-9 flex items-center justify-center gap-3 rounded-2xl border border-ink/10 bg-white/60 px-5 py-2.5 shadow-sm backdrop-blur">
-        <span class="grid h-8 w-8 place-items-center rounded-full bg-teal-deep/10 text-teal-deep"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></svg></span>
-        <div class="text-left"><p class="text-[10px] font-black uppercase leading-none tracking-widest text-ink/70">Verificado por Meta</p><p class="mt-1 text-sm font-bold leading-none text-ink/75">Tech Provider</p></div>
-      </div>
+      <HeroProyecto
+        dominio="tramitapa.com"
+        escritorio={{ src: '/portfolio/tramitapa-800.webp', width: 800, height: 600, srcset: [['/portfolio/tramitapa-480.webp', 480], ['/portfolio/tramitapa-800.webp', 800], ['/portfolio/tramitapa-hero-1200.webp', 1200]] }}
+        movil={{ src: '/images/ejemplos/movil-tramitapa.webp', width: 390, height: 844, srcset: [['/images/ejemplos/movil-tramitapa.webp', 390], ['/images/ejemplos/movil-tramitapa-780.webp', 780]] }}
+        alt="Portada del sitio de TramitaPa en una computadora: titular sobre la visa de Estados Unidos, botones para iniciar el trámite y escribir por WhatsApp"
+        altMovil="El mismo sitio de TramitaPa visto en un celular"
+        pie="Proyecto real · tramitapa.com · Trámites de visa, 2025"
+        detalle="Un sitio a medida enfocado en una sola acción: llevar la consulta de visa directo a WhatsApp."
+        caso="/casos-de-exito/tramitapa/"
+      />
     </div>
+    <nav aria-label="Servicios">
+      <ul class="ew-rail ew-rail--6">
+        {filas.map((f) => <li><a href={`${url(f.slug)}`}>{f.nombre}</a></li>)}
+      </ul>
+    </nav>
+    <section aria-label="Elemento Web en cifras">
+      <dl class="ew-cifras">
+        {cifras.map((c) => <div><dt class="sr-only">{c.k.replace(/<[^>]+>/g, '')}</dt><dd><span class="ew-cifras__v">{c.v}</span><span class="ew-cifras__k" set:html={c.k}></span></dd></div>)}
+      </dl>
+    </section>
   </section>
 
-  <style>
-    .hero-outline {
-      color: transparent;
-      -webkit-text-stroke: 2px rgba(51, 51, 51, 0.85);
-      text-stroke: 2px rgba(51, 51, 51, 0.85);
-    }
-    @media (max-width: 640px) {
-      .hero-outline { -webkit-text-stroke-width: 1.4px; text-stroke-width: 1.4px; }
-    }
-    /* Brillo que sigue al cursor sobre la grilla del hero */
-    #hero-glow {
-      background:
-        radial-gradient(circle 600px at var(--mx, 32%) var(--my, 28%), rgba(0, 153, 204, 0.10), transparent 70%),
-        radial-gradient(circle 720px at calc(100% - var(--mx, 32%)) calc(100% - var(--my, 28%)), rgba(94, 200, 232, 0.09), transparent 72%);
-      transition: background 0.3s ease-out;
-    }
-  </style>
+  <!-- 3. Respuesta citable con fecha -->
+  <Blocks v2 blocks={[{ type: 'answer', h2: 'En pocas palabras', text: respuesta.text, fecha: respuesta.fecha }]} />
 
-  <script>
-    const glow = document.getElementById('hero-glow');
-    const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (glow && fine && !reduce) {
-      let raf: number | undefined;
-      addEventListener('mousemove', (e) => {
-        if (raf) cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(() => {
-          glow.style.setProperty('--mx', (e.clientX / innerWidth) * 100 + '%');
-          glow.style.setProperty('--my', (e.clientY / innerHeight) * 100 + '%');
-        });
-      }, { passive: true });
-    }
-  </script>
-
-  <!-- CIFRAS: solo las que se pueden comprobar (el portafolio, la página de SaaS, el precio publicado). -->
-  <section aria-label="Elemento Web en cifras" class="border-t border-ink/8 bg-white">
-    <dl class="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-8 px-6 py-10 md:grid-cols-4">
-      <div><dt class="sr-only">Proyectos publicados</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">{proyectosDeClientes(portfolio).length}</span><span class="mt-1 block text-sm text-ink/70">proyectos publicados que puedes <a href="/portafolio/" class="underline underline-offset-2">visitar hoy</a></span></dd></div>
-      <div><dt class="sr-only">Precio de partida</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">{pricing.tiers[0].price}</span><span class="mt-1 block text-sm text-ink/70">precio de partida publicado, con <a href="/precios/" class="underline underline-offset-2">cotización cerrada</a></span></dd></div>
-      <div><dt class="sr-only">Tiempo de respuesta</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">Mismo día</span><span class="mt-1 block text-sm text-ink/70">hábil para responder tu solicitud</span></dd></div>
-      <div><dt class="sr-only">Productos propios</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">{saas.length}</span><span class="mt-1 block text-sm text-ink/70"><a href="/saas/" class="underline underline-offset-2">productos de software propios</a> en producción</span></dd></div>
-    </dl>
-  </section>
-
-  <!-- PORTAFOLIO -->
-  <section id="showcase" class="relative overflow-hidden bg-[#0a1118] py-28 text-white md:py-32">
-    <div class="absolute inset-0 mesh-dark opacity-40"></div>
-    <div class="sphere sphere-dark h-[420px] w-[420px] right-[-8rem] -top-10" style="background:#0077a3;opacity:.28"></div>
-    <div class="sphere sphere-dark h-[360px] w-[360px] left-[-6rem] bottom-0" style="background:#00688c;opacity:.32"></div>
-
-    <div class="relative mx-auto max-w-7xl px-6">
-      <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-        <div class="max-w-3xl">
-          <h2 class="reveal font-display text-[clamp(2.4rem,5.5vw,4.5rem)] font-extrabold leading-[1.05] tracking-tight text-white">Diseño que <br class="hidden sm:block" /><span class="text-[#00b4d8]">desafía lo común.</span></h2>
-          <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-white/60 md:text-xl">Creamos experiencias digitales que no solo se ven increíbles: <strong class="font-medium text-white">convierten y escalan</strong> el negocio de nuestros clientes.</p>
-        </div>
-        <div class="reveal flex flex-col items-start gap-4 lg:items-end">
-          <div role="group" aria-label="Filtrar proyectos" class="inline-flex flex-wrap gap-1 rounded-full border border-white/10 bg-[#111c27] p-1.5 shadow-lg">
-            {folioCats.map((c, i) => (
-              <button type="button" data-folio-filter={c.key} aria-pressed={i === 0 ? 'true' : 'false'} class="folio-tab rounded-full px-5 py-2.5 text-sm font-semibold text-white/60 transition-colors duration-300 hover:text-white">{c.label}</button>
-            ))}
-          </div>
-          <p class="text-xs font-medium text-white/60">Proyectos reales, en vivo · haz clic para expandir.</p>
-        </div>
-      </div>
-
-      <div class="folio-acc reveal mt-12" data-folio-acc>
-        {folioItems.map((p, i) => (
-          <article class={`folio-panel${i === 0 ? ' is-active' : ''}`} data-cat={p.cat}>
-            <div class="folio-media">
-              <Pic src={p.img} alt={`Sitio web de ${p.t}`} width={1200} height={900} sizes="(min-width:768px) 72vw, 100vw" />
-            </div>
-            <div class="folio-shade" aria-hidden="true"></div>
-            <button type="button" class="folio-toggle" aria-expanded={i === 0 ? 'true' : 'false'} aria-controls={`folio-c-${i}`} tabindex={i === 0 ? -1 : 0}>
-              <span class="folio-plus" aria-hidden="true">+</span>
-              <span class="folio-vtitle">{p.t}</span>
-              <span class="sr-only"> — ver el proyecto</span>
-            </button>
-            <div class="folio-content" id={`folio-c-${i}`}>
-              <div class="flex items-center gap-3">
-                <span class="rounded-full border border-[#00b4d8]/30 bg-[#111c27]/80 px-3 py-1 text-xs font-bold text-[#00b4d8] backdrop-blur-sm">{p.catLabel}</span>
-                <span class="text-xs font-medium text-white/60">{p.year}</span>
-              </div>
-              <h3 class="mt-4 font-display text-[clamp(1.75rem,3.2vw,2.5rem)] font-extrabold leading-[1.05] text-white">{p.t}</h3>
-              <p class="mt-3 text-sm leading-relaxed text-white/80 md:text-[0.9375rem]">{p.desc}</p>
-              {p.did && (
-                <div class="mt-4 rounded-xl border border-white/10 bg-[#111c27]/60 p-3.5 backdrop-blur-md">
-                  <p class="text-xs leading-relaxed text-white/80 md:text-sm"><strong class="font-bold text-[#00b4d8]">Qué resolvimos:</strong> {p.did}</p>
-                </div>
+  <!-- 5. Mapa de servicios -->
+  <section class="ew-sec ew-sec--alt" aria-labelledby="mapa-h2">
+    <div class="ew-wrap ew-wrap--ancho">
+      <h2 class="ew-h2" id="mapa-h2">Lo que hacemos</h2>
+      <p class="ew-intro">Seis servicios que se conectan: la web trae la consulta, el SEO y la publicidad traen la visita, WhatsApp y la IA la atienden.</p>
+      <ul class="ew-filas">
+        {filas.map((f) => (
+          <li class="ew-fila" id={`mapa-${f.id}`}>
+            <h3>{f.nombre}</h3>
+            <div>
+              <p class="ew-fila__que">{f.resuelve}{f.precio && <span class="ew-data">{f.precio}</span>}</p>
+              {f.secundarios.length > 0 && (
+                <ul class="ew-fila__mas">{f.secundarios.map((s) => <li><a href={url(s.slug)}>{s.label}</a></li>)}</ul>
               )}
-              <div class="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2">
-                <a href={p.href} target="_blank" rel="noopener" class="group inline-flex items-center gap-2 text-sm font-semibold text-[#00b4d8] transition-colors hover:text-white">Visitar sitio en vivo <span aria-hidden="true" class="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span></a>
-                {p.caso && <a href={url(p.caso)} class="inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-[#00b4d8]">Ver caso del proyecto <span aria-hidden="true">→</span></a>}
-              </div>
             </div>
-          </article>
-        ))}
-      </div>
-
-      <style>
-        /* Acordeón horizontal: la fila mide ~60vh y el panel activo crece con flex-grow. */
-        .folio-acc {
-          container-type: size; /* da cqw/cqh a las fotos y al texto para no depender del ancho animado del panel */
-          display: flex;
-          gap: 12px;
-          height: clamp(30rem, 60vh, 38.75rem);
-        }
-        .folio-panel {
-          position: relative;
-          flex: 0.5 1 0;
-          min-width: 0;
-          overflow: hidden;
-          border-radius: 1.5rem;
-          border: 1px solid rgba(255, 255, 255, 0.06);
-          background: #111c27;
-          transition: flex-grow 0.7s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease, box-shadow 0.4s ease;
-        }
-        .folio-panel[hidden] { display: none; }
-        .folio-panel.is-active {
-          flex-grow: 5;
-          border-color: rgba(0, 180, 216, 0.3);
-          box-shadow: 0 0 30px rgba(0, 180, 216, 0.1);
-        }
-
-        /* La foto tiene el ancho del panel ya expandido: al animar el panel solo se
-           revela o recorta, no se reescala fotograma a fotograma. */
-        .folio-media { position: absolute; inset: 0; }
-        .folio-media :global(img) {
-          position: absolute;
-          top: 0;
-          left: 50%;
-          width: max(100%, 72cqw);
-          max-width: none;
-          height: 100%;
-          transform: translateX(-50%);
-          object-fit: cover;
-          object-position: top;
-        }
-
-        /* Dos velos apilados (cambiar un degradado no se anima, la opacidad sí). */
-        .folio-shade { position: absolute; inset: 0; pointer-events: none; }
-        .folio-shade::before,
-        .folio-shade::after { content: ''; position: absolute; inset: 0; transition: opacity 0.5s ease; }
-        .folio-shade::before {
-          background: linear-gradient(to top, rgba(10, 17, 24, 0.95) 0%, rgba(10, 17, 24, 0.45) 55%, rgba(10, 17, 24, 0.15) 100%);
-          opacity: 0.8;
-        }
-        .folio-shade::after {
-          background: linear-gradient(to right, rgba(10, 17, 24, 0.97) 0%, rgba(10, 17, 24, 0.93) 46%, rgba(10, 17, 24, 0.4) 76%, rgba(10, 17, 24, 0) 100%);
-          opacity: 0;
-        }
-        .folio-panel:not(.is-active):hover .folio-shade::before { opacity: 0.55; }
-        .folio-panel.is-active .folio-shade::before { opacity: 0; }
-        .folio-panel.is-active .folio-shade::after { opacity: 1; }
-
-        /* Botón que cubre la tarjeta comprimida: es lo que se pulsa y se enfoca con teclado. */
-        .folio-toggle {
-          position: absolute;
-          inset: 0;
-          z-index: 1;
-          display: block;
-          width: 100%;
-          cursor: pointer;
-          color: rgba(255, 255, 255, 0.85);
-          text-align: center;
-        }
-        .folio-toggle:focus-visible { outline: 2px solid #00b4d8; outline-offset: -5px; border-radius: 1.5rem; }
-        .folio-panel.is-active .folio-toggle { pointer-events: none; }
-        .folio-plus {
-          position: absolute;
-          top: 1.25rem;
-          left: 50%;
-          display: grid;
-          place-items: center;
-          width: 2rem;
-          height: 2rem;
-          margin-left: -1rem;
-          border-radius: 9999px;
-          border: 1px solid rgba(0, 180, 216, 0.5);
-          background: rgba(10, 17, 24, 0.6);
-          color: #00b4d8;
-          font-size: 1.1rem;
-          line-height: 1;
-          transition: opacity 0.3s ease;
-        }
-        .folio-vtitle {
-          position: absolute;
-          bottom: 1.5rem;
-          left: 50%;
-          writing-mode: vertical-rl;
-          transform: translateX(-50%) rotate(180deg);
-          white-space: nowrap;
-          font-family: var(--font-display);
-          font-size: 1.05rem;
-          font-weight: 700;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
-          transition: opacity 0.3s ease;
-        }
-        .folio-panel.is-active .folio-plus,
-        .folio-panel.is-active .folio-vtitle { opacity: 0; }
-
-        /* Texto del panel activo. Ancho fijo (no depende del panel animado) y oculto
-           con visibility para que sus enlaces no entren en el tab mientras está cerrado. */
-        .folio-content {
-          position: absolute;
-          bottom: 2rem;
-          left: 2rem;
-          z-index: 2;
-          width: min(30rem, calc(68cqw - 4rem));
-          opacity: 0;
-          visibility: hidden;
-          transform: translate(-16px, 16px);
-          transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
-        }
-        .folio-panel.is-active .folio-content {
-          opacity: 1;
-          visibility: visible;
-          transform: none;
-          transition: opacity 0.45s ease 0.3s, transform 0.45s ease 0.3s, visibility 0s;
-        }
-
-        /* Filtros: el estado vive en aria-pressed, no en clases sueltas. */
-        .folio-tab[aria-pressed='true'] { background: #fff; color: #0a1118; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); }
-
-        /* Móvil: el acordeón pasa a vertical y el título deja de rotarse. */
-        @media (max-width: 767px) {
-          .folio-acc { flex-direction: column; gap: 8px; height: clamp(48rem, 90svh, 56rem); }
-          .folio-panel { border-radius: 1.25rem; }
-          .folio-media :global(img) {
-            left: 0;
-            width: 100%;
-            height: max(100%, 70cqh);
-            transform: none;
-          }
-          /* Fila comprimida: velo parejo y denso; con degradado, la cabecera blanca de la captura se cuela detrás del título. */
-          .folio-shade::before { background: rgba(10, 17, 24, 0.78); opacity: 1; }
-          .folio-panel:not(.is-active):hover .folio-shade::before { opacity: 1; }
-          .folio-shade::after {
-            background: linear-gradient(to top, rgba(10, 17, 24, 0.97) 0%, rgba(10, 17, 24, 0.88) 60%, rgba(10, 17, 24, 0.3) 100%);
-          }
-          .folio-toggle { text-align: left; }
-          .folio-toggle:focus-visible { border-radius: 1.25rem; }
-          .folio-plus { top: 50%; left: auto; right: 1rem; margin: -1rem 0 0; }
-          .folio-vtitle {
-            top: 50%;
-            bottom: auto;
-            left: 1.25rem;
-            writing-mode: horizontal-tb;
-            transform: translateY(-50%);
-            right: 3.5rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-size: 1rem;
-            letter-spacing: 0.01em;
-            text-transform: none;
-          }
-          .folio-content { left: 1.25rem; bottom: 1rem; width: calc(100cqw - 2.5rem); transform: translateY(16px); }
-        }
-
-        /* Sin JS no hay forma de expandir: todo el contenido queda apilado y visible. */
-        :global(html:not(.js)) .folio-acc { display: block; height: auto; container-type: normal; }
-        :global(html:not(.js)) .folio-panel { flex: none; min-height: 30rem; margin-bottom: 12px; }
-        :global(html:not(.js)) .folio-toggle,
-        :global(html:not(.js)) .folio-plus,
-        :global(html:not(.js)) .folio-vtitle { display: none; }
-        :global(html:not(.js)) .folio-media :global(img) { left: 0; width: 100%; transform: none; }
-        :global(html:not(.js)) .folio-shade::before { opacity: 0; }
-        :global(html:not(.js)) .folio-shade::after { opacity: 1; background: linear-gradient(to top, rgba(10, 17, 24, 0.97) 20%, rgba(10, 17, 24, 0.3)); }
-        :global(html:not(.js)) .folio-content { position: relative; inset: auto; width: auto; padding: 14rem 1.5rem 1.5rem; opacity: 1; visibility: visible; transform: none; }
-
-        @media (prefers-reduced-motion: reduce) {
-          .folio-panel, .folio-shade::before, .folio-shade::after, .folio-content, .folio-plus, .folio-vtitle { transition: none !important; }
-        }
-      </style>
-
-      <div class="reveal mt-8 text-center">
-        <a href="/portafolio/" data-magnetic="0.3" class="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:border-teal hover:text-teal">Ver todo el portafolio <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
-
-    <script>
-      const acc = document.querySelector<HTMLElement>('[data-folio-acc]');
-      if (acc) {
-        const panels = [...acc.querySelectorAll<HTMLElement>('.folio-panel')];
-        const tabs = document.querySelectorAll<HTMLButtonElement>('[data-folio-filter]');
-
-        // Un solo panel abierto; el botón del abierto sale del tab (su texto ya está a la vista).
-        const open = (target: HTMLElement) => {
-          panels.forEach((p) => {
-            const on = p === target;
-            p.classList.toggle('is-active', on);
-            const btn = p.querySelector<HTMLButtonElement>('.folio-toggle')!;
-            btn.setAttribute('aria-expanded', String(on));
-            btn.tabIndex = on ? -1 : 0;
-          });
-        };
-        panels.forEach((p) => p.querySelector('.folio-toggle')!.addEventListener('click', () => open(p)));
-
-        tabs.forEach((t) => t.addEventListener('click', () => {
-          const k = t.dataset.folioFilter;
-          tabs.forEach((x) => x.setAttribute('aria-pressed', String(x === t)));
-          panels.forEach((p) => p.classList.remove('is-active'));
-          const visible = panels.filter((p) => {
-            const show = k === 'all' || p.dataset.cat === k;
-            p.hidden = !show;
-            return show;
-          });
-          // Reflow antes de abrir: así el primer panel visible anima desde comprimido en vez de aparecer ya abierto.
-          void acc.offsetWidth;
-          if (visible[0]) open(visible[0]);
-        }));
-      }
-    </script>
-  </section>
-
-  <!-- SELECTOR DE NECESIDAD -->
-  <section id="necesidad" class="relative bg-white py-20 md:py-24">
-    <div class="mx-auto max-w-4xl px-6">
-      <div class="mx-auto mb-10 max-w-2xl text-center">
-        <h2 class="reveal font-display text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold leading-[1.05] text-ink">¿Qué necesita tu negocio <span class="grad-text">ahora</span>?</h2>
-        <p class="reveal mt-4 text-lg text-ink/70">Cuéntanos qué quieres conseguir y encuentra la opción adecuada para tu negocio.</p>
-      </div>
-      <ul class="reveal grid gap-3">
-        {[
-          ['Quiero presentar mi empresa', 'Web empresarial', 'Ver web empresarial', '/servicios/diseno-web-corporativo-panama/', 'pyme'],
-          ['Quiero promocionar una oferta', 'Landing page', 'Ver landing', '/servicios/landing-pages-alta-conversion-panama/', 'landing'],
-          ['Quiero vender o cobrar online', 'E-commerce', 'Ver tienda online', '/servicios/tiendas-online-ecommerce-panama/', 'ecommerce'],
-          ['Ya tengo web, pero recibo pocas consultas', 'Diagnóstico o rediseño', 'Revisar mi web', '/contacto/?servicio=revision#formulario', 'revision'],
-        ].map((n) => (
-          <li class="flex flex-col gap-4 rounded-2xl border border-ink/10 bg-paper p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-            <div><p class="font-display text-lg font-bold text-ink">{n[0]}</p><p class="mt-0.5 text-sm text-ink/70">Lo que necesitas: {n[1]}</p></div>
-            <div class="flex flex-wrap gap-3">
-              <a href={n[3]} class="inline-flex items-center rounded-full border border-ink/15 bg-white px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-ink/40">{n[2]}</a>
-              <a href={`/contacto/?servicio=${n[4]}#formulario`} class="inline-flex items-center rounded-full bg-night px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal-deep">Consultar este proyecto</a>
-            </div>
+            <a class="ew-fila__ir" href={url(f.slug)}>{f.ir} <span aria-hidden="true">→</span></a>
           </li>
         ))}
       </ul>
     </div>
   </section>
 
-  <!-- PRECIOS -->
-  <section id="precios" class="relative bg-paper py-28 md:py-32">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="mx-auto mb-16 max-w-2xl text-center">
-        <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Precios</p>
-        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Precios claros, sin <span class="grad-text">sorpresas después</span>.</h2>
-        <p class="reveal mt-5 text-lg text-ink/70">Cotización cerrada antes de empezar. Precios en USD, no incluyen ITBMS. <a href="/precios/" class="font-semibold text-teal-deep underline underline-offset-2">Ver qué incluye cada uno</a>.</p>
-        <p class="reveal mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-ink/70">Dominio, hosting, correo y mantenimiento se cotizan aparte. <a href="/precios/" class="font-semibold text-teal-deep underline underline-offset-2">Mira el desglose completo</a>.</p>
-        <p class="reveal mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold text-teal-deep">{Object.values(archCards).map((c) => <a href={url(c.slug)} class="underline underline-offset-2">{c.t}</a>)}</p>
-      </div>
-      <div class="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
-        {pricing.tiers.map((plan) => (
-          <div class={`reveal relative flex flex-col rounded-[1.75rem] p-8 ${plan.featured ? 'bg-gradient-to-b from-night to-night-2 text-white shadow-2xl shadow-teal-deep/25 md:-my-4 md:py-12' : 'border border-ink/10 bg-white text-ink'}`}>
-            {plan.featured && <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold text-night">Recomendado</span>}
-            <h3 class="font-display text-xl font-bold">{plan.name}</h3>
-            <div class="mt-6 flex items-end gap-1.5"><span class={`text-sm font-medium ${plan.featured ? 'text-white/50' : 'text-ink/70'}`}>desde</span><span class="font-display text-5xl font-extrabold tracking-tight">{plan.price}</span></div>
-            <ul class="mt-7 flex flex-col gap-3">{plan.features.map((f) => (<li class="flex items-start gap-3 text-sm"><span class={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${plan.featured ? 'bg-teal text-night' : 'bg-teal-deep text-white'}`}><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span><span class={plan.featured ? 'text-white/80' : 'text-ink/70'}>{f}</span></li>))}</ul>
-            <a href={`/contacto/?servicio=${planKey(plan.name)}#formulario`} aria-label={`Empezar con el plan ${plan.name}`} class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${plan.featured ? 'bg-teal text-night hover:bg-white' : 'border border-ink/15 text-ink hover:border-ink/40'}`}>{ctaLabel(plan.name)}</a>
-          </div>
-        ))}
-      </div>
-
-      <!-- Lo demás (qué incluyen todos, plan mensual completo, a medida) vive en /precios/: aquí solo dos accesos cortos. -->
-      <div class="mt-8 grid gap-4 md:grid-cols-2">
-        <a href="/precios/#plan-mensual" class="reveal group flex flex-col rounded-[1.75rem] border border-ink/10 bg-white p-7 transition hover:border-ink/30 hover:shadow-md">
-          <span class="text-xs font-semibold uppercase tracking-wide text-teal-deep">Plan mensual gestionado</span>
-          <span class="mt-2 font-display text-3xl font-extrabold text-ink">${pricing.managed.setup} + ${pricing.managed.monthly}<span class="text-base font-semibold text-ink/70"> al mes</span></span>
-          <span class="mt-2 text-sm leading-relaxed text-ink/70">Hasta 6 páginas, hosting, mantenimiento y 1 hora de cambios al mes, por 12 meses. Desde el mes 13, ${pricing.managed.afterYear} al mes.</span>
-          <span class="mt-4 text-sm font-semibold text-teal-deep">Ver el plan mensual <span aria-hidden="true" class="inline-block transition-transform group-hover:translate-x-0.5">→</span></span>
-        </a>
-        <a href={url('tecnologias/desarrollo-web-a-medida-vue-react-panama')} class="reveal group flex flex-col rounded-[1.75rem] bg-night p-7 text-white transition hover:shadow-xl">
-          <span class="text-xs font-semibold uppercase tracking-wide text-teal">{pricing.custom.eyebrow}</span>
-          <span class="mt-2 font-display text-3xl font-extrabold">desde {pricing.custom.price}</span>
-          <span class="mt-2 text-sm leading-relaxed text-white/70">Integraciones con CRM, ERP, pagos o inventario, portales de cliente y multi-idioma. Cotización cerrada tras el diagnóstico.</span>
-          <span class="mt-4 text-sm font-semibold text-teal">Ver desarrollo a medida <span aria-hidden="true" class="inline-block transition-transform group-hover:translate-x-0.5">→</span></span>
-        </a>
-      </div>
-
-      <p class="reveal mt-10 text-center text-sm text-ink/70" set:html={pricing.infra}></p>
-    </div>
-  </section>
-
-  <!-- GARANTÍA / CONFIANZA -->
-  <section class="relative bg-white py-24 md:py-28">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="reveal relative overflow-hidden rounded-[2.5rem] border border-ink/10 bg-paper p-10 md:p-16">
-        <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p class="mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Nuestro compromiso</p>
-            <h2 class="font-display text-[clamp(1.9rem,4vw,3rem)] font-extrabold leading-[1.05] text-ink">Sin letra chica. Sin <span class="grad-text">sorpresas</span>.</h2>
-            <p class="mt-5 max-w-md text-lg text-ink/70">Invertir en tu web no debería dar miedo. Por eso cada proyecto arranca con estas reglas claras, por escrito, desde el día uno.</p>
-          </div>
-          <div class="grid gap-3 sm:grid-cols-2">
-            {[
-              ['Cotización cerrada por escrito', 'El precio final se acuerda antes de empezar. Cero cargos sorpresa a mitad del proyecto.'],
-              ['Entregas por hito', 'Apruebas cada etapa antes de avanzar a la siguiente. Siempre sabes en qué punto va tu web.'],
-              ['Revisiones incluidas', 'Ajustes contemplados en cada fase para que el resultado sea el que necesitas.'],
-              ['Todo a tu nombre', 'Dominio, hosting y accesos quedan a nombre de tu empresa. La web es tuya, sin ataduras.'],
-              ['Diagnóstico sin costo', 'Empezamos entendiendo tu negocio. El diagnóstico y la propuesta no cuestan ni comprometen.'],
-              ['Equipo que responde', 'Acompañamiento real después del lanzamiento, no un correo que nadie contesta.'],
-            ].map((g) => (
-              <div class="rounded-2xl border border-ink/8 bg-white p-5">
-                <div class="flex items-center gap-2.5"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gradient-to-br from-teal to-teal-deep text-white"><svg width="11" height="9" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></span><h3 class="font-display text-sm font-bold text-ink">{g[0]}</h3></div>
-                <p class="mt-2 text-sm leading-relaxed text-ink/70">{g[1]}</p>
+  <!-- 7. Proyectos publicados y firma del fundador -->
+  <section class="ew-sec" aria-labelledby="proyectos-h2">
+    <div class="ew-wrap ew-wrap--ancho">
+      <h2 class="ew-h2" id="proyectos-h2">Proyectos publicados</h2>
+      <p class="ew-intro">Sitios de clientes en línea que puedes visitar hoy. El resto está en el <a class="ew-src" href="/portafolio/">portafolio</a>.</p>
+      <ul class="ew-proyectos">
+        {proyectosHome.map((p) => (
+          <li>
+            <figure class="ew-dev">
+              <div class="ew-dev__stage">
+                <div class="ew-dev__browser">
+                  <div class="ew-dev__bar" aria-hidden="true"><i></i><i></i><i></i><span>{p.dominio}</span></div>
+                  <img src={`/portfolio/${p.cap}-800.webp`} srcset={`/portfolio/${p.cap}-480.webp 480w, /portfolio/${p.cap}-800.webp 800w`} sizes="(min-width: 768px) 560px, 92vw" width="800" height="600" alt={`Portada del sitio de ${p.t} en una computadora`} loading="lazy" decoding="async" />
+                </div>
+                <div class="ew-dev__phone"><img src={p.movil} width="390" height="844" alt={`El sitio de ${p.t} en un celular`} loading="lazy" decoding="async" /></div>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA INTERMEDIO -->
-  <!-- Tras portafolio, formatos y precios: el visitante ya vio la prueba y lo que
-       cuesta cada cosa, y este es el primer boton de contacto fuera del nav. -->
-  <section class="relative overflow-hidden bg-night py-20 text-white md:py-24">
-    <div class="absolute inset-0 mesh-dark opacity-40"></div>
-    <div class="sphere sphere-dark h-[300px] w-[300px] left-1/2 -top-24 -translate-x-1/2" style="background:#00688c;opacity:.4"></div>
-    <div class="relative mx-auto max-w-3xl px-6 text-center">
-      <h2 class="reveal font-display text-[clamp(1.7rem,4vw,2.8rem)] font-extrabold leading-[1.08]">¿Tu web está ayudando a conseguir clientes?</h2>
-      <p class="reveal mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white/70">Revisamos tu página principal y te señalamos tres mejoras prioritarias en el mensaje, la experiencia móvil y el camino hacia la consulta.</p>
-      <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-4">
-        <a href="/contacto/?servicio=revision#formulario" data-magnetic="0.35" class="inline-flex items-center gap-2.5 rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-night shadow-2xl shadow-teal/25 transition-colors hover:bg-white">Solicitar revisión de mi web</a>
-        <a href="/contacto/?servicio=definir#formulario" class="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white/85 transition-colors hover:border-teal hover:text-teal">Aún no tengo web: ayúdame a definir mi proyecto</a>
-      </div>
-      <p class="reveal mt-5 text-sm text-white/60">Sin costo ni compromiso · Respuesta el mismo día hábil · También por <a href={waHome} class="underline underline-offset-2">WhatsApp</a></p>
-    </div>
-  </section>
-
-  <!-- SOLUCIONES -->
-  <section id="solutions" class="relative bg-paper py-28 md:py-32">
-    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 lg:grid-cols-12 lg:gap-8">
-      <div class="lg:col-span-4">
-        <div class="lg:sticky lg:top-28">
-          <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Soluciones</p>
-          <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Un solo equipo para toda tu <span class="grad-text">presencia digital</span>.</h2>
-          <p class="reveal mt-6 max-w-sm text-lg leading-relaxed text-ink/70">Una web bonita no basta: tiene que traer consultas. Por eso cubrimos del diseño al marketing y la automatización: atraemos, convertimos y medimos.</p>
-        </div>
-      </div>
-      <div class="lg:col-span-8">
-        <div class="flex flex-col gap-4">
-          {solutions.map((s) => (
-            <details class="group reveal overflow-hidden rounded-3xl border border-ink/10 bg-white transition-colors duration-500 open:border-transparent open:bg-night open:text-white open:shadow-2xl open:shadow-ink/30">
-              <summary class="flex cursor-pointer list-none items-center gap-5 p-7 [&::-webkit-details-marker]:hidden">
-                <span class="font-display text-sm font-bold text-ink/70 transition-colors group-open:text-teal">{s.n}</span>
-                <h3 class="font-display text-2xl font-bold text-ink transition-colors group-open:text-white md:text-3xl">{s.t}</h3>
-                <span class="ml-auto grid h-10 w-10 shrink-0 place-items-center rounded-full border border-ink/15 transition-all duration-300 group-open:rotate-45 group-open:border-teal group-open:bg-teal group-open:text-ink"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg></span>
-              </summary>
-              <div class="px-7 pb-8"><div class="ml-[2.4rem] max-w-xl">
-                <p class="text-base leading-relaxed text-white/70">{s.d}</p>
-                <div class="mt-5 flex flex-wrap gap-2">{s.tags.map((t) => <span class="rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/80">{t}</span>)}</div>
-                <a href={url(s.slug)} class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-teal">Ver servicio →</a>
-              </div></div>
-            </details>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESO -->
-  <section id="process" class="relative bg-white py-28 md:py-32">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="mb-16 max-w-2xl">
-        <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Cómo trabajamos</p>
-        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Cuatro etapas con entregas <span class="grad-text">verificables</span>.</h2>
-        <p class="reveal mt-5 text-lg text-ink/70">Proyecto por etapas: 50% al iniciar, 30% al aprobar el demo, 20% para publicar. O <a href="/precios/#plan-mensual" class="font-semibold text-teal-deep underline underline-offset-2">plan mensual gestionado</a> si prefieres cuotas. Sin misterio y sin desapariciones.</p>
-      </div>
-      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {procSteps.map((s, i) => (
-          <article class="reveal group relative overflow-hidden rounded-3xl border border-ink/10 bg-white p-7 transition-colors duration-500 hover:border-transparent hover:bg-night hover:text-white">
-            <div aria-hidden="true" class="font-display text-5xl font-extrabold text-ink/10 transition-colors duration-500 group-hover:text-teal">{String(i + 1).padStart(2, '0')}</div>
-            <h3 class="mt-5 font-display text-xl font-bold text-ink transition-colors duration-500 group-hover:text-white">{s.t}</h3>
-            <p class="mt-3 text-sm leading-relaxed text-ink/70 transition-colors duration-500 group-hover:text-white/60">{s.d}</p>
-          </article>
+              <figcaption class="ew-dev__pie">
+                <h3>{p.t}</h3>
+                <span class="ew-data">{p.catLabel} · {p.year}</span>
+                {p.did && <p>{p.did}</p>}
+                {p.caso
+                  ? <a href={url(p.caso)}>Ver el caso de {p.t} <span aria-hidden="true">→</span></a>
+                  : <a href={p.href} target="_blank" rel="noopener">Visitar {p.dominio}<span class="sr-only"> (se abre en otra pestaña)</span> <span aria-hidden="true">↗</span></a>}
+              </figcaption>
+            </figure>
+          </li>
         ))}
-      </div>
+      </ul>
+      <p class="ew-firma">Josimar Guilbaud, CEO. Responde por la empresa y por cada proyecto que entregamos. <a href="/nosotros/">Quiénes somos</a></p>
+    </div>
+  </section>
+  <section class="ew-sec ew-cta-rep" aria-label="Cotizar después de ver los proyectos">
+    <div class="ew-wrap"><div class="ew-cta-rep__btns">
+      <a href="#formulario" class="ew-btn ew-btn--solido" data-cta-loc="prueba" data-service="definir">Cotizar mi proyecto</a>
+      <a href={waCotizar} target="_blank" rel="noopener" class="ew-btn ew-btn--wa" data-cta-loc="prueba">Hablar por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
+    </div></div>
+  </section>
+
+  <!-- 10. Proceso con el entregable de cada etapa -->
+  <Blocks v2 blocks={[pasos]} />
+  <section class="ew-sec ew-sec--alt ew-cta-rep" aria-label="Cotizar después de ver el proceso">
+    <div class="ew-wrap"><div class="ew-cta-rep__btns">
+      <a href="#formulario" class="ew-btn ew-btn--solido" data-cta-loc="proceso" data-service="definir">Cotizar mi proyecto</a>
+      <a href={waCotizar} target="_blank" rel="noopener" class="ew-btn ew-btn--wa" data-cta-loc="proceso">Hablar por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
+    </div></div>
+  </section>
+
+  <!-- 11. Industrias -->
+  <section class="ew-sec" aria-labelledby="industrias-h2">
+    <div class="ew-wrap">
+      <h2 class="ew-h2" id="industrias-h2">Diseño web por industria</h2>
+      <ul class="ew-ind">
+        {industrias.map((i) => <li><a href={url(i.slug)}>{i.label}</a></li>)}
+        <li><a href="/industrias/">Ver todas las industrias <span aria-hidden="true">→</span></a></li>
+      </ul>
     </div>
   </section>
 
-  <!-- INDUSTRIAS -->
-  <section id="industries" class="relative overflow-hidden bg-night py-28 text-white md:py-32">
-    <div class="absolute inset-0 mesh-dark opacity-50"></div>
-    <div class="sphere sphere-dark h-[400px] w-[400px] left-[-6rem] top-1/3" style="background:#00688c;opacity:.35"></div>
-    <div class="sphere sphere-dark h-[340px] w-[340px] right-[-4rem] top-10" style="background:#0077a3;opacity:.3"></div>
-    <div class="relative mx-auto max-w-7xl px-6">
-      <div class="mb-14 max-w-2xl">
-        <p class="reveal mb-5 inline-block rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold text-white/60">Industrias</p>
-        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03]">Diseño web pensado para <span class="grad-text">tu industria</span>.</h2>
-        <p class="reveal mt-5 text-lg text-white/55">Cada rubro busca distinto y decide distinto. Conocemos el dolor de cada uno.</p>
-      </div>
-      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-        {industrias.slice(0, 12).map((ind, i) => (
-          <a href={url(ind.slug)} class="reveal group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-colors hover:border-teal/40 hover:bg-white/[0.06]">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/[0.06] text-teal transition-colors group-hover:bg-teal group-hover:text-ink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d={indIcons[i % indIcons.length]} /></svg></span>
-            <span class="font-display text-sm font-semibold leading-tight">{ind.label}</span>
-          </a>
-        ))}
-      </div>
-      <div class="reveal mt-8">
-        <a href="/industrias/" data-magnetic="0.3" class="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-teal hover:text-teal">Ver las 30 industrias <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
-  </section>
+  <!-- 12. Preguntas frecuentes (el mismo texto alimenta el FAQPage) -->
+  <Blocks v2 blocks={[{ type: 'faq', h2: 'Preguntas frecuentes', items: faqs }]} />
 
-  <!-- EQUIPO -->
-  <section class="relative bg-white py-28 md:py-32">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="max-w-2xl">
-        <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-paper px-4 py-1.5 text-xs font-semibold text-ink/70">Quiénes somos</p>
-        <h2 class="reveal font-display text-[clamp(2rem,4.5vw,3.4rem)] font-extrabold leading-[1.03] text-ink">Quién está detrás.</h2>
-        <p class="reveal mt-5 max-w-xl text-lg text-ink/70">Una agencia de Ciudad de Panamá dirigida por Josimar Guilbaud, que responde por cada proyecto que entregamos. Te respondemos el mismo día hábil y la cotización llega cerrada y por escrito.</p>
-      </div>
-
-      <div class="reveal mt-9 flex flex-wrap gap-3">
-        {['Tech Provider verificado por Meta', '3 SaaS propios en producción', 'Cotización cerrada por escrito'].map((b) => (
-          <span class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper px-4 py-2 text-sm font-medium text-ink/70"><span class="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-teal to-violet"></span>{b}</span>
-        ))}
-      </div>
-
-      <div class="reveal mt-8 flex items-center gap-4 rounded-3xl border border-ink/10 bg-paper p-5 sm:w-fit sm:pr-10">
-        <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-gradient-to-br from-teal-deep/20 to-violet/25 font-display text-lg font-extrabold text-ink" aria-hidden="true">JG</span>
-        <div><p class="font-display text-lg font-bold text-ink">Josimar Guilbaud</p><p class="text-sm text-ink/70">CEO de Elemento Web</p></div>
-      </div>
-      <a href="/nosotros/" class="reveal mt-8 inline-flex items-center gap-2 text-sm font-semibold text-teal-deep">Conoce la empresa <span aria-hidden="true">→</span></a>
-
-      {/* Rejilla de personas: se enciende cuando haya fotos, nombres y cargos
-          reales. Estaba publicada con "Nombre Apellido" cuatro veces.
-      <div class="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4">
-        {[
-          { n: 'Nombre Apellido', r: 'Dirección y estrategia' },
-          { n: 'Nombre Apellido', r: 'Diseño de producto' },
-          { n: 'Nombre Apellido', r: 'Desarrollo' },
-          { n: 'Nombre Apellido', r: 'Marketing e IA' },
-        ].map((m) => (
-          <div class="reveal group rounded-3xl border border-ink/10 bg-paper p-6 text-center transition-transform duration-500 hover:-translate-y-1.5">
-            <div class="relative mx-auto grid h-24 w-24 place-items-center overflow-hidden rounded-full bg-gradient-to-br from-teal-deep/15 to-violet/15">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-ink/25"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" stroke-linecap="round" /></svg>
-            </div>
-            <h3 class="mt-4 font-display text-base font-bold text-ink">{m.n}</h3>
-            <p class="mt-1 text-sm text-ink/70">{m.r}</p>
-          </div>
-        ))}
-      </div>
-      */}
-    </div>
-  </section>
-
-  <!-- IA Y AUTOMATIZACIÓN: complemento opcional -->
-  <section id="ecosystem" class="relative overflow-hidden bg-night-2 py-16 text-white md:py-20">
-    <div class="absolute inset-0 mesh-dark opacity-40"></div>
-    <div class="relative mx-auto flex max-w-5xl flex-col items-start gap-6 px-6 md:flex-row md:items-center md:justify-between">
-      <div class="max-w-2xl">
-        <p class="reveal text-xs font-semibold uppercase tracking-wider text-teal">Complemento opcional</p>
-        <h2 class="reveal mt-3 font-display text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold leading-[1.1]">IA y automatización para atender y agendar consultas</h2>
-        <p class="reveal mt-3 text-white/70">Si quieres ir más allá de la web, conectamos un asistente de IA y automatizaciones a tu WhatsApp y tu CRM. Lo cotizamos aparte y con supervisión humana.</p>
-      </div>
-      <a href="/inteligencia-artificial-para-empresas-panama/" class="reveal inline-flex shrink-0 items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-teal hover:text-teal">Ver IA y automatización <span aria-hidden="true">→</span></a>
-    </div>
-  </section>
-
-  <!-- SAAS: una frase y un enlace -->
-  <section class="relative bg-paper py-14">
-    <div class="mx-auto flex max-w-5xl flex-col items-start gap-4 px-6 md:flex-row md:items-center md:justify-between">
-      <p class="max-w-2xl text-lg text-ink/70">Además del trabajo para clientes, operamos tres productos propios en producción: <strong class="text-ink">WazaCRM</strong>, <strong class="text-ink">NousCRM</strong> y <strong class="text-ink">Cifrao</strong>.</p>
-      <a href="/saas/" class="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-teal-deep">Ver los productos <span aria-hidden="true">→</span></a>
-    </div>
-  </section>
-  <!-- FAQ -->
-  <section class="relative bg-white py-20 md:py-24">
-    <div class="mx-auto max-w-4xl px-6">
-      <h2 class="reveal mb-10 text-center font-display text-[clamp(1.8rem,4vw,3rem)] font-extrabold text-ink">Preguntas <span class="grad-text">frecuentes</span></h2>
-      <div class="flex flex-col gap-3">
-        {faqs.map(([q, a], i) => (
-          <details open={i === 0} class="group reveal rounded-2xl border border-ink/10 bg-white px-6 open:border-teal-deep/30">
-            <summary class="flex cursor-pointer list-none items-center gap-4 py-5 [&::-webkit-details-marker]:hidden">
-              <span class="font-display text-sm font-bold text-teal-deep">{String(i + 1).padStart(2, '0')}</span>
-              <span class="flex-1 font-display text-lg font-semibold text-ink">{q}</span>
-              <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ink/15 transition-transform duration-300 group-open:rotate-45 group-open:border-teal-deep group-open:bg-teal-deep group-open:text-white"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg></span>
-            </summary>
-            <p class="pb-6 pl-9 leading-relaxed text-ink/70">{a}</p>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="relative overflow-hidden bg-paper py-28 md:py-32">
-    <div class="absolute inset-0 mesh"></div>
-    <div class="sphere h-[420px] w-[420px] left-[-8rem] top-10" style="background:#0099cc;opacity:.28"></div>
-    <div class="sphere h-[360px] w-[360px] right-[-6rem] bottom-0" style="background:#5ec8e8;opacity:.22"></div>
-    <div class="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+  <!-- 13. Formulario -->
+  <section class="ew-sec ew-sec--alt" aria-labelledby="form-h2">
+    <div class="ew-wrap">
       <div>
-        <p class="reveal mb-5 inline-block rounded-full border border-ink/10 bg-white px-4 py-1.5 text-xs font-semibold text-ink/70">Contacto</p>
-        <h2 class="reveal font-display text-[clamp(2rem,4.6vw,3.6rem)] font-extrabold leading-[1.02] text-ink">Cuéntanos de tu <span class="grad-text">proyecto</span>.</h2>
-        <p class="reveal mt-6 max-w-md text-lg leading-relaxed text-ink/70">Completa el formulario y te respondemos el mismo día hábil con los siguientes pasos. Mientras más contexto, más útil será la primera respuesta.</p>
-        <ul class="reveal mt-8 flex flex-col gap-3">
-          {['Respuesta el mismo día hábil', 'Diagnóstico sin costo', 'Cotización cerrada, por escrito'].map((t) => (
-            <li class="flex items-center gap-3 text-ink/70"><span class="grid h-6 w-6 place-items-center rounded-full bg-teal-deep text-white"><svg width="11" height="9" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>{t}</li>
-          ))}
+        <h2 class="ew-h2" id="form-h2">Cuéntanos qué necesitas resolver primero</h2>
+        <ul class="ew-apoyo">
+          <li><span class="ew-sign" aria-hidden="true">+</span>Te respondemos el mismo día hábil.</li>
+          <li><span class="ew-sign" aria-hidden="true">+</span>El diagnóstico no tiene costo.</li>
+          <li><span class="ew-sign" aria-hidden="true">+</span>La cotización llega cerrada y por escrito antes de empezar.</li>
         </ul>
-        <p class="reveal mt-8 text-sm text-ink/70">¿Prefieres directo? <a href="https://wa.me/50761903007" target="_blank" rel="noopener" class="font-semibold text-teal-deep underline underline-offset-4">WhatsApp</a> o <a href="mailto:hola@elementoweb.com" class="font-semibold text-teal-deep underline underline-offset-4">hola@elementoweb.com</a>.</p>
+        <p>¿Prefieres directo? <a href={waCotizar} target="_blank" rel="noopener">WhatsApp</a> o <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
       </div>
-      <div class="reveal">
-        <ContactForm />
-      </div>
+      <ContactForm />
     </div>
   </section>
-
-
 </Base>

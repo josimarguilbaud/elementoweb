@@ -1500,5 +1500,7 @@ b6b y p1a. También autorizó el despliegue (D47) y el uso de fal para mejorar l
 - **CROSS-MODEL:** Claude (subagente) y Codex coincidieron en 6/6 dimensiones de CEO, 5/7 filas del litmus de diseño y 5/6 dimensiones de ingeniería; los desacuerdos se resolvieron en el plan o fueron a la puerta (UC2).
 - **VERDICT:** CEO + DESIGN CLEARED; eng review required (sus 24 hallazgos son trabajo mapeado en tareas, no decisiones abiertas).
 
-**UNRESOLVED DECISIONS:**
-- H1 final y D18 (portada y pilar separadas): se fijan con el resultado de S5, según la recomendación delegada por el dueño.
+**UNRESOLVED DECISIONS:** ninguna. H1 y D18 se resolvieron con S5 el 14-oct-2026
+(`audit/s5-agencia-diseno-web-2026-10.md`, D50): las SERP coinciden en 1 de 5, la portada y la pilar siguen separadas y
+el H1 es «Agencia de diseño web en Panamá: web, SEO, publicidad y WhatsApp». Queda pendiente solo el volumen del
+Planificador, que necesita la sesión de Google Ads del dueño.

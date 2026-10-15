@@ -102,18 +102,24 @@ export function breadcrumbNode(page: PageData) {
   };
 }
 
-export function faqNode(page: PageData) {
-  const block = page.blocks.find((b) => b.type === 'faq') as { items: { q: string; a: string }[] } | undefined;
-  if (!block?.items?.length) return null;
+/** FAQPage a partir de preguntas visibles: la respuesta va sin HTML y con espacios normalizados, igual que el texto
+    que lee el validador en [data-faq-a]. La usan las páginas del registro y la portada (D50). */
+export function faqPageNode(items: { q: string; a: string }[]) {
+  if (!items.length) return null;
   const strip = (h: string) => h.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
   return {
     '@type': 'FAQPage',
-    mainEntity: block.items.map((f) => ({
+    mainEntity: items.map((f) => ({
       '@type': 'Question',
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: strip(f.a) },
     })),
   };
+}
+
+export function faqNode(page: PageData) {
+  const block = page.blocks.find((b) => b.type === 'faq') as { items: { q: string; a: string }[] } | undefined;
+  return block?.items?.length ? faqPageNode(block.items) : null;
 }
 
 /* Oferta de la página (D23, R27): solo con anatomía v2 y precio CONFIRMADO. Un precio propuesto o
@@ -269,26 +275,12 @@ export function articleJsonLd(a: { title: string; description: string; slug: str
    tanto no era JSON-LD valido: la pagina mas importante del sitio tenia los
    datos estructurados rotos. Aqui va el grafo completo. */
 /**
- * Datos estructurados del home.
- *
- * Recibe las preguntas visibles de la portada porque eran las unicas del sitio
- * que no llegaban al JSON-LD: el resto de paginas si emiten FAQPage y el
- * home, que trae justo las preguntas que la gente busca ("cuanto cuesta una
- * pagina web en Panama"), se quedaba fuera.
+ * Datos estructurados del home (D50): organización, sitio, negocio local, los nodos propios de la portada (el ItemList
+ * del mapa de servicios) y el FAQPage de las preguntas visibles, limpiado con la misma función que faqNode.
  */
-export function homeJsonLd(faqs: [string, string][] = []) {
-  const faqNodeHome = faqs.length
-    ? {
-        '@type': 'FAQPage',
-        mainEntity: faqs.map(([q, a]) => ({
-          '@type': 'Question',
-          name: q,
-          acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() },
-        })),
-      }
-    : null;
+export function homeJsonLd(faqs: { q: string; a: string }[] = [], nodos: Record<string, unknown>[] = []) {
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@graph': [orgNode(), webSiteNode(), localBusinessNode(), faqNodeHome].filter(Boolean),
+    '@graph': [orgNode(), webSiteNode(), localBusinessNode(), ...nodos, faqPageNode(faqs)].filter(Boolean),
   });
 }

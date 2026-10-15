@@ -27,6 +27,15 @@ const dias = (iso, hoy) => Math.floor((hoy.getTime() - new Date(`${iso}T12:00:00
 const hrefsInternos = (nodo) => [...new Set(nodo.querySelectorAll('a[href]').map((a) => a.getAttribute('href')).filter((h) => h && h.startsWith('/') && !h.startsWith('//')).map((h) => h.split('#')[0].split('?')[0]))];
 const slugDeHref = (h) => h.replace(/^\/|\/$/g, '');
 
+/** Todas las fuentes que el navegador puede elegir para una imagen (D50, prueba d): su src, su srcset y los srcset
+    de los <source> de su <picture>. Una variante de más de 60 KB en cualquiera de ellas rompe el tope del LCP. */
+const urlsDeSrcset = (v) => (v ?? '').split(',').map((c) => c.trim().split(/\s+/)[0]).filter(Boolean);
+const fuentesDe = (img) => {
+  const pic = img.parentNode?.rawTagName?.toLowerCase() === 'picture' ? img.parentNode : null;
+  const deSources = pic ? pic.querySelectorAll('source').flatMap((s) => urlsDeSrcset(s.getAttribute('srcset'))) : [];
+  return [...new Set([img.getAttribute('src') ?? '', ...urlsDeSrcset(img.getAttribute('srcset')), ...deSources].filter(Boolean))];
+};
+
 /** Extrae del HTML lo que el marcador mide. No juzga: solo lee el contrato data-*. */
 export function analizar(html) {
   const raiz = parse(html, { blockTextElements: { script: true, style: true, pre: true } });
@@ -58,7 +67,7 @@ export function analizar(html) {
     comparacion: q('[data-score="comparacion"] tbody tr').length,
     textoMain: main ? txt(main) : '',
     hrefs: main ? hrefsInternos(main) : [],
-    portada: raiz.querySelectorAll('img[fetchpriority="high"]').map((i) => ({ src: i.getAttribute('src') ?? '', width: i.getAttribute('width'), height: i.getAttribute('height') })),
+    portada: raiz.querySelectorAll('img[fetchpriority="high"]').map((i) => ({ src: i.getAttribute('src') ?? '', width: i.getAttribute('width'), height: i.getAttribute('height'), fuentes: fuentesDe(i) })),
     jsonld,
     jsonldInvalido,
     jsonldTexto: JSON.stringify(jsonld),
@@ -120,9 +129,10 @@ export function evaluar(a, ctx) {
   if (a.portada.length) {
     for (const img of a.portada) {
       if (!Number(img.width) || !Number(img.height)) err(`la imagen de portada ${img.src} no declara width y height`);
-      if (img.src.startsWith('/') && dist) {
-        const f = join(dist, img.src.replace(/^\//, ''));
-        if (existsSync(f) && statSync(f).size > 60 * 1024) err(`la imagen de portada ${img.src} pesa ${Math.round(statSync(f).size / 1024)} KB; el tope es 60 KB`);
+      for (const src of img.fuentes ?? [img.src]) {
+        if (!src.startsWith('/') || !dist) continue;
+        const f = join(dist, src.replace(/^\//, ''));
+        if (existsSync(f) && statSync(f).size > 60 * 1024) err(`la imagen de portada ${src} pesa ${Math.round(statSync(f).size / 1024)} KB; el tope es 60 KB`);
       }
     }
   } else if (esServicio) aviso('sin imagen de portada con fetchpriority="high"');

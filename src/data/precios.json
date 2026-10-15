@@ -20,7 +20,8 @@
     "wazacrm": { "nombre": "WazaCRM", "monto": 349, "unidad": "mes", "desde": true, "fuente": "src/lib/pages/saas.ts" },
     "cybersource-esencial": { "nombre": "Integración CyberSource, alcance Esencial", "monto": 1050, "unidad": "proyecto", "fuente": "src/lib/pages/funcionalidades.ts (precio cerrado publicado en la página de CyberSource desde sep-2026)" },
     "cybersource-profesional": { "nombre": "Integración CyberSource, alcance Profesional", "monto": 2150, "unidad": "proyecto", "fuente": "src/lib/pages/funcionalidades.ts (precio cerrado publicado en la página de CyberSource desde sep-2026)" },
-    "cybersource-avanzado": { "nombre": "Integración CyberSource, alcance Avanzado", "monto": 3850, "unidad": "proyecto", "fuente": "src/lib/pages/funcionalidades.ts (precio cerrado publicado en la página de CyberSource desde sep-2026)" }
+    "cybersource-avanzado": { "nombre": "Integración CyberSource, alcance Avanzado", "monto": 3850, "unidad": "proyecto", "fuente": "src/lib/pages/funcionalidades.ts (precio cerrado publicado en la página de CyberSource desde sep-2026)" },
+    "ia": { "nombre": "IA y automatización para empresas", "monto": 2900, "unidad": "proyecto, más el consumo de los modelos", "desde": true, "fuente": "src/lib/pages/ia-empresas.ts (confirmado por el dueño el 14-oct-2026, D50 B4)" }
   },
   "propuestos": {
     "pauta-gestion": { "nombre": "Gestión de Google Ads y Meta", "monto": 300, "unidad": "mes", "desde": true, "fuente": "src/lib/pages/marketing.ts" },
@@ -31,6 +32,5 @@
     "automatizacion-n8n": { "nombre": "Automatización n8n", "monto": 300, "unidad": "por automatización", "desde": true, "fuente": "src/lib/pages/marketing.ts" },
     "logo-ia": { "nombre": "Logo e identidad básica con IA", "monto": 120, "unidad": "proyecto", "desde": true, "fuente": "src/lib/site.ts pricing.production" },
     "nouscrm": { "nombre": "NousCRM, precio de entrada", "monto": 20, "unidad": "mes", "desde": true, "fuente": "public/propuestas/nouscrm-presentacion (fijado por el dueño el 28-sep-2026)" }
-  },
-  "sinPrecio": ["seo", "ia"]
+  }
 }

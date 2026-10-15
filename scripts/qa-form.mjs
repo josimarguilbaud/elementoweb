@@ -16,6 +16,8 @@ const axeSrc = readFileSync(createRequire(import.meta.url).resolve('axe-core/axe
 const ENDPOINT = 'https://n8n.aiwebstudio.co/webhook/elementoweb-contacto';
 
 const srv = await servir('dist-fixture');
+// La portada (D50) usa el ContactForm del sitio real: se sirve dist/ aparte.
+const srvSitio = existsSync('dist/index.html') ? await servir('dist') : null;
 const nav = await chromium.launch({ executablePath: chrome });
 let fallos = 0, pruebas = 0;
 const ok = (nombre, cond, detalle = '') => { pruebas++; if (cond) console.log(`  ✓ ${nombre}`); else { fallos++; console.log(`  ✗ ${nombre}${detalle ? ` → ${detalle}` : ''}`); } };
@@ -203,9 +205,59 @@ try {
       await a.ctx.close();
     }
   }
+
+  console.log('Ancla #formulario en una página v2 (D50, tanda A)');
+  {
+    const { ctx, p, eventos } = await abrir();
+    await p.goto(`${srv.url}/qa-fixture/formulario/`); await listo(p);
+    await p.click('main a[href="#formulario"] >> nth=0');
+    await p.waitForTimeout(2500);
+    const cta = (await eventos()).filter((e) => e.n === 'cta_click');
+    ok('un clic en #formulario envía un solo cta_click con el servicio de la página', cta.length === 1 && cta[0].service === 'ecommerce', JSON.stringify(cta));
+    ok('tras el ancla el foco queda en el formulario y la URL lleva #formulario', await p.evaluate(() => document.activeElement?.id === 'formulario' && location.hash === '#formulario'));
+    await ctx.close();
+  }
+
+  // ---- Portada (D50, prueba h): ContactForm en / con error por campo, red caída y éxito, a 390 y 1440 ----
+  if (srvSitio) {
+    for (const [ancho, alto] of [[390, 844], [1440, 900]]) {
+      console.log(`Portada a ${ancho}x${alto}`);
+      let r = await abrir({ ancho, alto });
+      await r.p.goto(`${srvSitio.url}/`);
+      await r.p.click('.ew-hero a[data-cta-loc="hero"][href="#formulario"]');
+      await r.p.waitForTimeout(300);
+      const cta = (await r.eventos()).filter((e) => e.n === 'cta_click');
+      ok('«Cotizar mi proyecto» del héroe envía un solo cta_click con service=definir y location=hero', cta.length === 1 && cta[0].service === 'definir' && cta[0].location === 'hero', JSON.stringify(cta));
+      await r.p.keyboard.press('Tab');
+      ok('tras el ancla, Tab entra al formulario', await r.p.evaluate(() => !!document.activeElement?.closest('#formulario') && location.hash === '#formulario'));
+      await r.p.click('#cform button[type="submit"]');
+      ok('enviar vacío marca cada campo y lleva el foco al primero', await r.p.evaluate(() => document.activeElement?.id === 'cf-nombre' && document.getElementById('cf-email').getAttribute('aria-invalid') === 'true' && !document.getElementById('cerr').classList.contains('hidden')));
+      await r.ctx.close();
+
+      r = await abrir({ ancho, alto, respuesta: () => 'abortar' });
+      await r.p.goto(`${srvSitio.url}/`);
+      await r.p.fill('#cf-nombre', 'Ana Pérez'); await r.p.fill('#cf-email', 'ana@example.test'); await r.p.fill('#cf-telefono', '6123-4567');
+      await r.p.click('#cform button[type="submit"]');
+      await r.p.waitForSelector('#cerr a[href^="mailto:"]', { timeout: 8000 }).catch(() => {});
+      const enlaces = await r.p.evaluate(() => [...document.querySelectorAll('#cerr a')].map((a) => a.getAttribute('href').slice(0, 13)));
+      ok('una caída de red ofrece WhatsApp y correo, y no hay generate_lead', enlaces.includes('https://wa.me') && enlaces.some((h) => h.startsWith('mailto:')) && !(await r.eventos()).some((e) => e.n === 'generate_lead'), enlaces.join(','));
+      await r.ctx.close();
+
+      r = await abrir({ ancho, alto });
+      await r.p.goto(`${srvSitio.url}/`);
+      await r.p.fill('#cf-nombre', 'Ana Pérez'); await r.p.fill('#cf-email', 'ana@example.test'); await r.p.fill('#cf-telefono', '6123-4567');
+      await r.p.selectOption('#cf-servicio', 'Tienda online / E-commerce');
+      await r.p.click('#cform button[type="submit"]');
+      await r.p.waitForSelector('#cok:not(.hidden)', { timeout: 8000 }).catch(() => {});
+      const lead = (await r.eventos()).find((e) => e.n === 'generate_lead');
+      ok('el éxito muestra la confirmación y generate_lead lleva la clave del servicio', await r.p.isVisible('#cok') && lead?.service === 'ecommerce', JSON.stringify(lead));
+      await r.ctx.close();
+    }
+  } else console.log('Portada: sin dist/ (corre npm run build); se omite.');
 } finally {
   await nav.close();
   await srv.cerrar();
+  await srvSitio?.cerrar();
 }
 console.log(`\nqa-form: ${pruebas} comprobaciones · ${fallos} fallo(s)`);
 process.exit(fallos ? 1 : 0);

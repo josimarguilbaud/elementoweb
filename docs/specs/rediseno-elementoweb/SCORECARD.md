@@ -5,7 +5,7 @@ Fuente de verdad del validador `scripts/validar-marcador.mjs` (D7, D17, D35, D39
 ## Qué páginas valida
 
 - `scripts/paginas-comerciales.json` es el manifiesto: cada página comercial con su tipo (`servicio`, `pilar`, `hub`, `precios`, `home`), su fase y, si se sabe, el estado de precio esperado.
-- `faseActual` indica hasta qué fase está publicado el sitio (orden `1, 2a, 3, 2b, 4, 5`). Las páginas con fase menor o igual deben emitir `<main data-page-type>` y cumplir el marcador. En la fase 1 no se exige ninguna.
+- `faseActual` indica hasta qué fase está publicado el sitio (orden `1, 2a, 2b, 3, 4, 5`; la portada sale antes del formulario por servicio, D50). Las páginas con fase menor o igual deben emitir `<main data-page-type>` y cumplir el marcador. En la fase 1 no se exige ninguna.
 - Falla si una página emite `data-page-type` sin estar en el manifiesto, si un slug de una sección comercial (`servicios`, `crecimiento`, `marketing`, `tecnologias`, `funcionalidades`, `saas`) no está en el manifiesto ni en las exclusiones, y si una página excluida ya emite `data-page-type`.
 - `scripts/exclusiones-marcador.json` lista las páginas hechas a mano (IA y cybersource) con su motivo. No caduca: al migrar una página se quita de la lista.
 - Solo las páginas con `anatomia: 'v2'` en `PageData` emiten el contrato; las demás se renderizan igual que antes.

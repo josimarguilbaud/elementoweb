@@ -11,6 +11,7 @@ Cubre las 34 páginas del manifiesto [`scripts/paginas-comerciales.json`](../../
 3. **La asignación sigue la intención y lo que Search Console ya muestra**, no solo el volumen. Con posiciones de 60 a 100, el volumen dice qué se busca; el cruce consulta por página dice a quién se lo está dando Google hoy.
 4. **Los metadatos de las páginas comerciales están congelados** (D36, `scripts/cambios-permitidos.json`). Cada propuesta de abajo se pasa a ese archivo al empezar la fase que la aplica y se vacía al cerrarla. La pilar no cambia de title, H1 ni canonical.
 5. **Medidas fijas:** title hasta 60 caracteres y descripción hasta 155 en lo que se propone. Los actuales que superan eso se dejan hasta que su fase los toque.
+6. **Excepción a la regla 2 para la portada (D50, 14-oct-2026):** el title y el H1 de `/` contienen «diseño web en Panamá», la frase reservada a la pilar, porque la consulta de la portada se escribe «agencia de diseño web» + ciudad. La SERP de S5 (`audit/s5-agencia-diseno-web-2026-10.md`) muestra que las dos consultas devuelven resultados distintos, así que no compiten. Ninguna otra página tiene esta excepción.
 
 ## Hallazgos del cruce que cambian el plan
 
@@ -74,12 +75,12 @@ Solo lo que cambia en las fases 2a y 2b. `igual` significa que se conserva el ac
 | `/servicios/diseno-web-corporativo-panama/` | 2a | igual | igual | igual |
 | `/crecimiento/seo-posicionamiento-web-panama/` | 2a | igual | SEO en Panamá: contenido, técnica y autoridad para aparecer en Google, también para tiendas online. Sin promesas mágicas. | SEO y posicionamiento web en Panamá |
 | `/marketing/google-ads-panama/` | 2a | igual | igual | Google Ads en Panamá: aparece cuando te buscan |
-| `/` | 2b | igual | Agencia de diseño web en Panamá: sitios corporativos, tiendas online y landing pages, con SEO, Google Ads y WhatsApp. Pide tu cotización. | Agencia de diseño web en Panamá que convierte visitas en consultas |
+| `/` | 2b | igual | Agencia de diseño web en Panamá: sitios corporativos, tiendas online y landing pages, con SEO, Google Ads y WhatsApp. Pide tu cotización. | Agencia de diseño web en Panamá: web, SEO, publicidad y WhatsApp |
 | `/servicios/` | 2b | Servicios Web en Panamá \| Diseño, SEO, Ads y Software | Los servicios de Elemento Web en Panamá: páginas web, tiendas online, SEO, Google Ads, IA y software propio. Elige por lo que quieres lograr. | Servicios web en Panamá, por objetivo |
 | `/precios/` | 2b | Precios de Páginas Web en Panamá \| Elemento Web | Precios de páginas web en Panamá: landing desde $550, sitio corporativo desde $1,250 y tienda online desde $1,950. Qué incluye y qué se paga aparte. | igual |
 
 Notas:
-- El H1 de la portada es una **candidata**: lo decide el dueño en la Puerta B, viendo el resultado de S5 (demanda de «agencia de diseño web» en el Planificador de palabras clave y revisión de la SERP, que se anota en `audit/`). Search Console ya aporta un dato: 97 impresiones en 90 días en posición 90,4 con el dominio recién nacido. Si no se aprueba, la portada conserva el H1 actual y el cambio se cierra solo con la description.
+- **Resuelto el 14-oct-2026 (D50):** S5 eligió el H1 de la tabla; ver `audit/s5-agencia-diseno-web-2026-10.md`. Nota original: el H1 de la portada era una **candidata**: lo decide el dueño en la Puerta B, viendo el resultado de S5 (demanda de «agencia de diseño web» en el Planificador de palabras clave y revisión de la SERP, que se anota en `audit/`). Search Console ya aporta un dato: 97 impresiones en 90 días en posición 90,4 con el dominio recién nacido. Si no se aprueba, la portada conserva el H1 actual y el cambio se cierra solo con la description.
 - Los precios de los metadatos de `/precios/` salen de `src/data/precios.json` (`confirmados`). El title actual de `/precios/` mide 75 caracteres y Google lo corta; el nuevo mide 47.
 - El title del hub `/servicios/` deja de repetir «diseño web en Panamá» para no competir con la pilar.
 - La pilar no cambia de title, H1 ni canonical (D36). El corporativo no cambia de metadatos: su enfoque se corrige en el texto.

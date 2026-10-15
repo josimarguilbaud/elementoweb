@@ -161,6 +161,23 @@ test('la imagen de portada debe declarar dimensiones y pesar 60 KB o menos', () 
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
+test('el validador pesa todas las fuentes de la imagen de portada: srcset y <source> (D50, prueba d)', () => {
+  const base = leer('qa-fixture/servicio-valido');
+  const dir = mkdtempSync(join(tmpdir(), 'portada-'));
+  try {
+    writeFileSync(join(dir, 'chica.webp'), Buffer.alloc(20 * 1024));
+    writeFileSync(join(dir, 'grande.webp'), Buffer.alloc(61 * 1024));
+    writeFileSync(join(dir, 'movil.webp'), Buffer.alloc(62 * 1024));
+    const ctx = ctxServicio('qa-fixture/servicio-valido', { dist: dir });
+    const conSrcset = base.replace('<main', '<img src="/chica.webp" srcset="/chica.webp 480w, /grande.webp 1200w" width="1200" height="800" fetchpriority="high"><main');
+    assert.ok(evaluar(analizar(conSrcset), ctx).errores.some((e) => /grande\.webp pesa 61 KB/.test(e)));
+    const conSource = base.replace('<main', '<picture><source media="(max-width: 639px)" srcset="/movil.webp 780w" width="390" height="844"><img src="/chica.webp" width="1200" height="800" fetchpriority="high"></picture><main');
+    assert.ok(evaluar(analizar(conSource), ctx).errores.some((e) => /movil\.webp pesa 62 KB/.test(e)));
+    const todoChico = base.replace('<main', '<picture><source srcset="/chica.webp 390w"><img src="/chica.webp" srcset="/chica.webp 480w" width="1200" height="800" fetchpriority="high"></picture><main');
+    assert.ok(!evaluar(analizar(todoChico), ctx).errores.some((e) => /pesa/.test(e)));
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
 // ---- Manifiesto, exclusiones y fases (D5, D35) sobre un dist temporal ----
 function distTemporal(paginas) {
   const dir = mkdtempSync(join(tmpdir(), 'marcador-'));

@@ -1,7 +1,7 @@
 {
   "_nota": "Manifiesto de páginas comerciales (D35). Lista cada página que el marcador debe vigilar con su tipo, la fase en que se construye y, si se sabe, el estado de precio esperado. El validador (scripts/validar-marcador.mjs) exige que las páginas con fase <= faseActual existan en dist/, emitan <main data-page-type> y cumplan el marcador; falla si una página emite data-page-type sin estar aquí, si un slug de una sección comercial no está aquí ni en scripts/exclusiones-marcador.json, y si una página excluida ya emite data-page-type. Subir faseActual cuando se publica cada fase; la fase 1 no exige ninguna página.",
-  "ordenFases": ["1", "2a", "3", "2b", "4", "5"],
-  "faseActual": "2a",
+  "ordenFases": ["1", "2a", "2b", "3", "4", "5"],
+  "faseActual": "2b",
   "seccionesComerciales": ["servicios", "crecimiento", "marketing", "tecnologias", "funcionalidades", "saas"],
   "minEntrantes": 3,
   "paginas": [

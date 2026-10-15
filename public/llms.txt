@@ -1,8 +1,10 @@
 # Elemento Web
 
-> Agencia de diseño web y desarrollo de software en Panamá. Construye sitios
-> corporativos, tiendas en línea, landing pages y software a medida, y opera
-> marketing digital, SEO y automatización con IA para empresas panameñas.
+> Agencia de diseño web con sede en Ciudad de Panamá. Hace webs pensadas para
+> generar consultas, conectadas a WhatsApp por la API oficial como Tech Provider
+> verificado por Meta, y además SEO, publicidad en Google y Meta, WhatsApp
+> marketing e IA. Atiende empresas en Panamá y, a distancia y en español,
+> negocios de Miami. Landing desde $550, con cotización cerrada por escrito.
 
 Elemento Web es una agencia con sede en Panamá que atiende al mercado panameño
 y, de forma remota, a negocios hispanos de Miami-Dade (Florida, EE.UU.) y en

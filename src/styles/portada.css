@@ -1,0 +1,75 @@
+/* Portada de agencia (D50, tanda B). Va en línea solo en la portada, junto a la hoja del molde: las demás páginas no
+   pagan estos bytes. Toda adaptación del CSS compartido va como modificador (.ew-hero--home, .ew-rail--6,
+   .ew-dev--hero) para no mover las 33 páginas v2. Sin animación (DESIGN.md, Motion): la portada nunca se anima. */
+
+/* ---- Héroe: menú más 24 px de relleno arriba, para que botón e imagen entren en 390 por 844 ---- */
+.ew-hero--home { padding-top: 96px; }
+@media (min-width: 768px) { .ew-hero--home { padding-top: 112px; } }
+.ew-hero--home .ew-hero__h1 { margin-top: 0; max-width: 20ch; }
+.ew-hero--home .ew-hero__lead { max-width: 46ch; }
+.ew-hero--home a:focus-visible { outline: 3px solid var(--ew-accent-on-dark); outline-offset: 3px; }
+.ew-insignia { margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 6px 16px 6px 10px; border: 1px solid rgba(255, 255, 255, .24); border-radius: 9999px; font-size: 0.92rem; font-weight: 600; color: #fff; text-decoration: none; }
+.ew-insignia svg { flex: none; color: var(--ew-accent-on-dark); }
+.ew-insignia:hover { border-color: #fff; }
+
+/* ---- Captura del proyecto: navegador 4:3 sin recorte y celular superpuesto ---- */
+.ew-dev--hero { margin: 0; width: 100%; max-width: 560px; justify-self: end; }
+.ew-dev--hero .ew-dev__browser { border-color: rgba(255, 255, 255, .16); background: var(--ew-primary-raised); box-shadow: 12px 12px 0 var(--ew-primary-raised); }
+.ew-dev--hero .ew-dev__bar { border-bottom-color: rgba(10, 26, 58, .12); }
+.ew-dev--hero .ew-dev__browser img { aspect-ratio: 4 / 3; object-fit: contain; background: var(--ew-primary-raised); }
+.ew-dev--hero .ew-dev__phone { right: -3%; width: 27%; box-shadow: 8px 8px 0 var(--ew-primary-raised); }
+.ew-dev--hero .ew-dev__pie { margin-top: 18px; color: var(--ew-on-primary-muted); }
+.ew-dev--hero .ew-dev__pie .ew-data { color: var(--ew-on-primary-muted); }
+.ew-dev--hero .ew-dev__pie a { color: var(--ew-accent-on-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.ew-dev__det { display: block; margin-top: 4px; }
+
+/* ---- Riel con los 6 servicios: 2×3 en compacto, 3×2 de 640 a 1023 px y 6 columnas desde 1024 px ---- */
+.ew-rail.ew-rail--6 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; padding-top: 10px; padding-bottom: 10px; }
+@media (min-width: 640px) { .ew-rail.ew-rail--6 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .ew-rail.ew-rail--6 { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+.ew-rail--6 a { display: flex; align-items: center; min-height: 44px; font-weight: 600; line-height: 1.3; color: #fff; text-decoration: none; }
+.ew-rail--6 a:hover { color: var(--ew-accent-on-dark); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---- Franja de cifras: borde inferior de la banda del héroe ---- */
+.ew-cifras { position: relative; max-width: 1200px; margin: 0 auto; padding: 22px clamp(16px, 4vw, 32px) 30px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid rgba(255, 255, 255, .12); }
+@media (min-width: 768px) { .ew-cifras { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.ew-cifras dd { margin: 0; }
+.ew-cifras__v { display: block; font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; color: #fff; font-variant-numeric: tabular-nums; }
+.ew-cifras__k { display: block; margin-top: 2px; font-size: 0.92rem; line-height: 1.45; color: var(--ew-on-primary-muted); }
+.ew-cifras__k a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---- Mapa de servicios: filas, no tarjetas («Fila de servicio», DESIGN.md) ---- */
+.ew-filas { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ew-border); }
+.ew-fila { display: grid; gap: 8px; padding: 22px 0; border-bottom: 1px solid var(--ew-border); }
+@media (min-width: 768px) { .ew-fila { grid-template-columns: 15rem minmax(0, 1fr) auto; gap: 8px 32px; align-items: baseline; } }
+.ew-fila h3 { font-size: 1.4rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; color: var(--ew-text); }
+.ew-fila__que { max-width: 62ch; font-size: 1.0625rem; line-height: 1.65; color: var(--ew-muted); }
+.ew-fila__que .ew-data { margin-left: 6px; color: var(--ew-text); white-space: nowrap; }
+.ew-fila__mas { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 20px; }
+.ew-fila__mas a, .ew-fila__ir, .ew-ind a, .ew-firma a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 600; color: var(--ew-accent-on-light); text-decoration: underline; text-underline-offset: 2px; }
+.ew-fila__ir { white-space: nowrap; }
+@media (max-width: 767px) { .ew-fila__ir { display: flex; justify-content: space-between; width: 100%; } }
+
+/* ---- Proyectos publicados ---- */
+.ew-proyectos { list-style: none; margin: 0; padding: 0; display: grid; gap: 40px 32px; }
+@media (min-width: 768px) { .ew-proyectos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.ew-proyectos .ew-dev { margin: 0; }
+.ew-proyectos h3 { font-size: 1.4rem; font-weight: 700; color: var(--ew-text); }
+.ew-proyectos .ew-dev__pie p { margin-top: 4px; color: var(--ew-muted); }
+.ew-proyectos .ew-dev__pie a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 600; color: var(--ew-accent-on-light); text-decoration: underline; text-underline-offset: 2px; }
+.ew-firma { margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--ew-border); color: var(--ew-text); }
+
+/* ---- Botón repetido (después de la prueba y del proceso) ---- */
+.ew-sec.ew-cta-rep { padding-top: 0; }
+.ew-cta-rep__btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.ew-btn--solido { background: var(--ew-primary); color: var(--ew-on-primary); border-radius: 6px; }
+.ew-btn--solido:hover { background: var(--ew-primary-raised); }
+
+/* ---- Industrias en una línea de enlaces ---- */
+.ew-ind { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 22px; }
+
+/* ---- Formulario: tres líneas de apoyo ---- */
+.ew-apoyo { list-style: none; margin: 20px 0 0; padding: 0; }
+.ew-apoyo li { display: flex; gap: 12px; padding: 10px 0; border-top: 1px solid var(--ew-border); line-height: 1.5; color: var(--ew-text); }
+.ew-apoyo + p { margin-top: 18px; color: var(--ew-muted); }
+.ew-apoyo + p a { font-weight: 600; color: var(--ew-accent-on-light); text-decoration: underline; text-underline-offset: 2px; }

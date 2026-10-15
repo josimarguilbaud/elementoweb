@@ -15,11 +15,13 @@ export function getStaticPaths() {
 }
 const { page } = Astro.props;
 // Igual que la portada v2 (D49): el precio y el plazo del marcador van arriba, no en un comprobante del cuerpo.
+// Ancla al formulario, como el botón de las páginas v2: qa-form prueba que envía un solo cta_click (D50).
+const tieneFormulario = page.blocks.some((b) => b.type === 'service-form' || b.type === 'form');
 const recibo = page.blocks.find((b) => b.type === 'receipt') as Extract<Block, { type: 'receipt' }> | undefined;
 ---
 <Base title={page.title} description={page.description} dark noindex jsonld={pageJsonLd(page)} pageType={pageTypeOf(page)} service={page.serviceKey ?? (page.blocks.find((b) => b.type === 'service-form') as any)?.servicio}>
   <section class="ew-sec" style="background:#0a1a3a;color:#f5fafc">
-    <div class="ew-wrap"><h1 class="ew-h2" style="color:#f5fafc">{page.h1}</h1>{recibo && <PrecioPlazo recibo={recibo} />}</div>
+    <div class="ew-wrap"><h1 class="ew-h2" style="color:#f5fafc">{page.h1}</h1>{recibo && <PrecioPlazo recibo={recibo} />}{tieneFormulario && <p><a href="#formulario" style="color:#5ec8e8">Ir al formulario</a></p>}</div>
   </section>
   <Blocks blocks={page.blocks} v2 />
 </Base>

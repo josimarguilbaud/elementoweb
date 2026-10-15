@@ -160,4 +160,64 @@
 **Priority:** P3
 **Depends on:** Nada.
 
+### Llevar la piel grafito al hub `/servicios/` y a las páginas internas
+
+**What:** Incluir `src/styles/piel-grafito.css` en el hub `/servicios/`, la pilar `/diseno-web-panama/` y la página de SEO, y después en el resto de las 33 páginas v2.
+
+**Why:** La portada v2 (plan `docs/specs/rediseno-elementoweb/PLAN-PORTADA-V2.md`) estrena la piel grafito solo en `/`; quien hace clic pasa a páginas en marino. Las impresiones de Search Console están en la pilar (1.829) y en SEO (2.685), no en la portada (197).
+
+**Context:** El token `--ew-graphite` vive en los tokens globales y las reglas de la piel en `piel-grafito.css`, para que llevarla a otra página sea incluir esa hoja. Depende de la decisión Q1 del dueño en la puerta de /autoplan del 15-oct-2026.
+
+**Effort:** L (humano) / M (CC)
+**Priority:** P2
+**Depends on:** Q1 y que la portada v2 esté publicada.
+
+### Enlaces con UTM para medir a los prospectos de salida
+
+**What:** Poner `utm_source` en los enlaces a elementoweb.com de las propuestas, las demos de Fábrica de Webs y la firma de WhatsApp de Nicole.
+
+**Why:** Hoy la audiencia real de la portada son prospectos de salida, y GA4 no los separa del tráfico orgánico; la revisión CEO del 15-oct-2026 vio que la medición de la v2 no puede distinguirlos.
+
+**Context:** La medición de la v2 (D51) compara `generate_lead` por sesión con entrada en `/`. Con UTM se puede ver si los prospectos de Nicole consultan después de ver la portada.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P2
+**Depends on:** Nada.
+
+### Revisión semanal de los dominios del portafolio
+
+**What:** Que el workflow programado que ya existe revise cada semana los `href` de `portfolio` (`src/lib/site.ts`) y avise si alguno no responde o cambió de dueño.
+
+**Why:** La portada v2 enlaza sitios de clientes desde la cascada, el módulo de diseño y la sección de proyectos; si un dominio vence y otro lo registra, la portada enlazaría un sitio ajeno.
+
+**Context:** Hallazgo de la revisión de ingeniería del 15-oct-2026 (autoplan). Basta con comprobar estado HTTP y que el `<title>` siga teniendo el nombre del cliente.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P3 hasta publicar la portada v2; P1 desde ese día (la segunda pasada de ingeniería del 15-oct lo subió, porque la v2 enlaza 8 o más dominios de clientes).
+**Depends on:** Nada.
+
+### Sacar `docs/` del escaneo de Tailwind
+
+**What:** Agregar `@source not "../../docs";` a la hoja de Tailwind (Tailwind 4 lo admite) para que las clases que solo aparecen en los `.md` de `docs/` no entren a la hoja compartida.
+
+**Why:** Hoy Tailwind escanea `docs/`, así que escribir un plan o una spec puede cambiar la hoja que bajan todas las páginas; la portada v2 tuvo que comparar el conjunto de selectores en vez de los bytes por eso.
+
+**Context:** Hallazgo de la segunda pasada de ingeniería del 15-oct-2026 (autoplan, portada v2). Va en un commit propio, con el diff de selectores de la hoja antes y después revisado, porque toca la hoja de todas las páginas.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P3
+**Depends on:** Portada v2 publicada (para no mezclar los dos cambios de la hoja).
+
+### Unificar el mapa clave → opción del formulario
+
+**What:** Que `ContactForm.astro` arme su mapa `PLAN` desde `src/data/formulario.json` y `contactForm.services`, como hace la portada v2, en lugar de su lista escrita a mano.
+
+**Why:** Hoy `PLAN` tiene 7 claves y no incluye `pauta`, así que `/?servicio=pauta` no preelige nada, mientras que los botones de la portada v2 sí lo hacen.
+
+**Context:** La portada v2 resuelve `data-opcion` en el build sin tocar `ContactForm` (para no cambiar el HTML de otras páginas). Unificar cambia el comportamiento en todas las páginas con formulario; necesita su propia prueba en `qa-form`.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P3
+**Depends on:** Portada v2 publicada.
+
 ## Completed

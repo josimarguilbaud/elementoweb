@@ -56,7 +56,8 @@ html=$(curl -s -m 20 "$BASE/")
 echo "$html" | grep -q 'G-J0NHHRTV75' && ok "GA4 presente en la home" || ko "GA4 presente en la home" "G-J0NHHRTV75" "no encontrado"
 echo "$html" | grep -q 'fonts.googleapis.com' && ko "sin Google Fonts" "0 referencias" "hay referencias" || ok "sin Google Fonts"
 echo "$html" | grep -q '<link rel="canonical" href="https://elementoweb.com/"' && ok "canonical de la home" || ko "canonical de la home" "https://elementoweb.com/" "distinto"
-echo "$html" | grep -qi 'Agencia de diseño web en Panamá\. Páginas corporativas' && ok "meta descripción nueva" || ko "meta descripción nueva" "Agencia de diseño web en Panamá…" "distinta"
+echo "$html" | grep -qi 'Agencia de diseño web en Panamá: sitios corporativos, tiendas online' && ok "meta descripción de la portada (D50)" || ko "meta descripción de la portada (D50)" "Agencia de diseño web en Panamá: sitios corporativos…" "distinta"
+echo "$html" | grep -q 'Agencia de diseño web en Panamá: web, SEO, publicidad y WhatsApp</h1>' && ok "H1 de la portada (D50)" || ko "H1 de la portada (D50)" "Agencia de diseño web en Panamá: web, SEO…" "distinto"
 h=$(hdr "$BASE/robots.txt" content-type); has "robots.txt es texto" "text/plain" "$h"
 
 # Sondas del webhook de contacto (D41). Sin efecto: el honeypot se descarta y un lead inválido no guarda nada,

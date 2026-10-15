@@ -1,7 +1,11 @@
 ---
 import { cols, marketing, url } from '../lib/site';
-interface Props { current?: string; dark?: boolean }
-const { current = '', dark = false } = Astro.props;
+/* cotizar: destino de los dos «Cotizar» (píldora de escritorio y menú móvil). Por defecto van a /contacto/ sin
+   atributos de medición (track.ts los ubica por <header>); la portada los baja a su formulario y los mide como
+   header/definir (portada v2). */
+interface Props { current?: string; dark?: boolean; cotizar?: { href: string; ctaLoc: string; service: string } }
+const { current = '', dark = false, cotizar } = Astro.props;
+const cotizarHref = cotizar?.href ?? '/contacto/';
 ---
 <header id="nav" data-dark={dark ? '1' : '0'} class="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
   <div class="relative">
@@ -23,7 +27,7 @@ const { current = '', dark = false } = Astro.props;
         <a href="/nosotros/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'nosotros' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Nosotros</a>
       </div>
 
-      <a href="/contacto/" data-magnetic="0.4" class="cta-pill ml-1 hidden items-center gap-2 rounded-full bg-night px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-ink/20 transition-colors hover:bg-teal-deep sm:inline-flex">
+      <a href={cotizarHref} data-cta-loc={cotizar?.ctaLoc} data-service={cotizar?.service} data-magnetic="0.4" class="cta-pill ml-1 hidden items-center gap-2 rounded-full bg-night px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-ink/20 transition-colors hover:bg-teal-deep sm:inline-flex">
         Cotizar
         <span class="grid h-4 w-4 place-items-center rounded-full bg-teal text-night"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
       </a>
@@ -85,7 +89,7 @@ const { current = '', dark = false } = Astro.props;
     <a href="/industrias/" class="m-row font-display text-2xl font-bold">Industrias</a>
     <a href="/miami/" class="m-row font-display text-2xl font-bold">Miami</a>
     <a href="/blog/" class="m-row font-display text-2xl font-bold">Blog</a>
-    <a href="/contacto/" class="m-row mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-4 text-base font-semibold text-night">Cotizar mi proyecto</a>
+    <a href={cotizarHref} data-cta-loc={cotizar?.ctaLoc} data-service={cotizar?.service} class="m-row mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-4 text-base font-semibold text-night">Cotizar mi proyecto</a>
   </div>
 </div>
 

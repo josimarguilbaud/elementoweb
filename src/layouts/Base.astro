@@ -27,8 +27,12 @@ interface Props {
   service?: string;
   /** Carga los efectos de movimiento (effects.ts y el cursor). La portada no se anima (D50) y pasa false. */
   efectos?: boolean;
+  /** Bloque de cierre del pie (titular y botón que vuelven a pedir la consulta). La portada v2 pasa false. */
+  cierre?: boolean;
+  /** Destino y medición de los dos «Cotizar» del menú; sin él van a /contacto/ como hoy. */
+  navCotizar?: { href: string; ctaLoc: string; service: string };
 }
-const { title, description, current = '', jsonld, dark = false, image, noindex = false, ogType = 'website', published, pageType, service, efectos = true } = Astro.props;
+const { title, description, current = '', jsonld, dark = false, image, noindex = false, ogType = 'website', published, pageType, service, efectos = true, cierre = true, navCotizar } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.domain).href;
 const schemas = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
 /* og:image: usa la imagen de la página; si no, una por defecto. Siempre absoluta. */
@@ -85,11 +89,11 @@ const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.
     <!-- barra de progreso de scroll -->
     <div id="scroll-progress" class="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left scale-x-0 bg-gradient-to-r from-teal-deep via-teal to-violet"></div>
 
-    <Navbar current={current} dark={dark} />
+    <Navbar current={current} dark={dark} cotizar={navCotizar} />
     <main id="contenido" tabindex="-1" data-page-type={pageType} data-service={service}>
       <slot />
     </main>
-    <Footer />
+    <Footer cierre={cierre} />
 
     {efectos && <Efectos />}
 

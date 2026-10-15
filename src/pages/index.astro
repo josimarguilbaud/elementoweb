@@ -1,8 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import Pic from '../components/Pic.astro';
-import PricingExtras from '../components/PricingExtras.astro';
-import Preloader from '../components/Preloader.astro';
 import { site, cols, marketing, saas, pricing, industrias, url, wa, clientLogos, portfolio, portfolioCats, planKey } from '../lib/site';
 import { ogFor } from '../lib/img';
 import ContactForm from '../components/ContactForm.astro';
@@ -74,7 +72,7 @@ const faqs: [string, string][] = [
 ];
 ---
 <Base title={title} description={description} current="home" image={ogFor('')} jsonld={homeJsonLd(faqs)}>
-  <Preloader />
+  {/* Sin pantalla de carga (D18): el visitante nuevo esperaba 1 a 1,5 s mirando el logo antes de ver la portada. */}
 
   <!-- HERO -->
   <!-- Hero compacto: antes el titular llegaba a 6.5rem y empujaba los botones
@@ -143,6 +141,16 @@ const faqs: [string, string][] = [
       }, { passive: true });
     }
   </script>
+
+  <!-- CIFRAS: solo las que se pueden comprobar (el portafolio, la página de SaaS, el precio publicado). -->
+  <section aria-label="Elemento Web en cifras" class="border-t border-ink/8 bg-white">
+    <dl class="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-8 px-6 py-10 md:grid-cols-4">
+      <div><dt class="sr-only">Proyectos publicados</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">{portfolio.length}</span><span class="mt-1 block text-sm text-ink/70">proyectos publicados que puedes <a href="/portafolio/" class="underline underline-offset-2">visitar hoy</a></span></dd></div>
+      <div><dt class="sr-only">Precio de partida</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">{pricing.tiers[0].price}</span><span class="mt-1 block text-sm text-ink/70">precio de partida publicado, con <a href="/precios/" class="underline underline-offset-2">cotización cerrada</a></span></dd></div>
+      <div><dt class="sr-only">Tiempo de respuesta</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">Mismo día</span><span class="mt-1 block text-sm text-ink/70">hábil para responder tu solicitud</span></dd></div>
+      <div><dt class="sr-only">Productos propios</dt><dd><span class="block font-display text-4xl font-extrabold text-ink">{saas.length}</span><span class="mt-1 block text-sm text-ink/70"><a href="/saas/" class="underline underline-offset-2">productos de software propios</a> en producción</span></dd></div>
+    </dl>
+  </section>
 
   <!-- LOGOS DE CLIENTES -->
   <section class="border-y border-ink/8 bg-white py-11">
@@ -491,33 +499,20 @@ const faqs: [string, string][] = [
         ))}
       </div>
 
-      <PricingExtras mode="home" />
-
-      <!-- Franja premium: corporativo a medida -->
-      <div class="reveal relative mt-6 overflow-hidden rounded-[2rem] bg-night px-8 py-10 text-white md:px-12 md:py-12">
-        <div class="absolute inset-0 mesh-dark opacity-40"></div>
-        <div class="sphere sphere-dark h-[360px] w-[360px] right-[-6rem] -top-24" style="background:#5ec8e8;opacity:.35"></div>
-        <div class="sphere sphere-dark h-[300px] w-[300px] left-[-5rem] bottom-[-6rem]" style="background:#00688c;opacity:.4"></div>
-        <div class="relative grid gap-10 lg:grid-cols-[1.55fr_1fr] lg:items-center">
-          <div>
-            <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-teal"><span class="h-1.5 w-1.5 rounded-full bg-teal"></span>{pricing.custom.eyebrow}</span>
-            <h3 class="mt-4 font-display text-[clamp(1.7rem,3.4vw,2.6rem)] font-extrabold leading-[1.08]">Páginas web corporativas <span class="grad-text">a medida</span></h3>
-            <p class="mt-4 max-w-xl leading-relaxed text-white/60">{pricing.custom.text}</p>
-            <div class="mt-7 grid gap-x-6 gap-y-3 sm:grid-cols-2">
-              {pricing.custom.features.map((f) => (
-                <div class="flex items-center gap-2.5 text-sm text-white/75"><span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal/15 text-teal"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4.5 3.5 7 9 1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg></span>{f}</div>
-              ))}
-            </div>
-          </div>
-          <div class="lg:border-l lg:border-white/10 lg:pl-10">
-            <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-7 text-center">
-              <div class="text-sm font-medium text-white/45">desde</div>
-              <div class="font-display text-6xl font-extrabold leading-none">{pricing.custom.price}</div>
-              <p class="mx-auto mt-3 max-w-[16rem] text-sm text-white/50">Cotización cerrada por escrito tras el diagnóstico, sin compromiso.</p>
-              <a href={wa(pricing.custom.wa)} target="_blank" rel="noopener" data-magnetic="0.3" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-4 text-sm font-semibold text-night transition-colors hover:bg-white">{pricing.custom.cta}<span class="grid h-5 w-5 place-items-center rounded-full bg-night text-teal"><svg width="9" height="9" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span></a>
-            </div>
-          </div>
-        </div>
+      <!-- Lo demás (qué incluyen todos, plan mensual completo, a medida) vive en /precios/: aquí solo dos accesos cortos. -->
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        <a href="/precios/#plan-mensual" class="reveal group flex flex-col rounded-[1.75rem] border border-ink/10 bg-white p-7 transition hover:border-ink/30 hover:shadow-md">
+          <span class="text-xs font-semibold uppercase tracking-wide text-teal-deep">Plan mensual gestionado</span>
+          <span class="mt-2 font-display text-3xl font-extrabold text-ink">${pricing.managed.setup} + ${pricing.managed.monthly}<span class="text-base font-semibold text-ink/70"> al mes</span></span>
+          <span class="mt-2 text-sm leading-relaxed text-ink/70">Hasta 6 páginas, hosting, mantenimiento y 1 hora de cambios al mes, por 12 meses. Desde el mes 13, ${pricing.managed.afterYear} al mes.</span>
+          <span class="mt-4 text-sm font-semibold text-teal-deep">Ver el plan mensual <span aria-hidden="true" class="inline-block transition-transform group-hover:translate-x-0.5">→</span></span>
+        </a>
+        <a href={url('tecnologias/desarrollo-web-a-medida-vue-react-panama')} class="reveal group flex flex-col rounded-[1.75rem] bg-night p-7 text-white transition hover:shadow-xl">
+          <span class="text-xs font-semibold uppercase tracking-wide text-teal">{pricing.custom.eyebrow}</span>
+          <span class="mt-2 font-display text-3xl font-extrabold">desde {pricing.custom.price}</span>
+          <span class="mt-2 text-sm leading-relaxed text-white/70">Integraciones con CRM, ERP, pagos o inventario, portales de cliente y multi-idioma. Cotización cerrada tras el diagnóstico.</span>
+          <span class="mt-4 text-sm font-semibold text-teal">Ver desarrollo a medida <span aria-hidden="true" class="inline-block transition-transform group-hover:translate-x-0.5">→</span></span>
+        </a>
       </div>
 
       <p class="reveal mt-10 text-center text-sm text-ink/70" set:html={pricing.infra}></p>

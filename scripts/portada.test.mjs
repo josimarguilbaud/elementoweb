@@ -7,9 +7,14 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { parse } from 'node-html-parser';
-import { precioDesde, filasMapa, itemListPortada, faqsPortada, respuestaPortada, H1_PORTADA } from '../src/lib/portada.ts';
+import {
+  precioDesde, filasMapa, itemListPortada, faqsPortada, respuestaPortada, H1_PORTADA,
+  precioTexto, COMPACTO, mapaOpciones, opcionDe, modulosMarketing, aniosPortafolio, industriasDestacadas,
+  comparaPortada, noHacemosPortada, franjaPrecios, desarrolloPortada,
+} from '../src/lib/portada.ts';
 
 const precios = JSON.parse(readFileSync('src/data/precios.json', 'utf8'));
+const formulario = JSON.parse(readFileSync('src/data/formulario.json', 'utf8'));
 const DOMINIO = 'https://elementoweb.com';
 const montos = new Set(Object.values(precios.confirmados).map((p) => p.monto));
 const cifras = (t) => [...t.matchAll(/\$\s?([\d,]+(?:\.\d+)?)/g)].map((m) => Number(m[1].replace(/,/g, '')));
@@ -79,6 +84,100 @@ test('respuesta citable de 40 a 60 palabras, con fecha y enlaces a /nosotros/, P
 
 test('el H1 es el elegido tras S5 (D50)', () => {
   assert.equal(H1_PORTADA, 'Agencia de diseño web en Panamá: web, SEO, publicidad y WhatsApp');
+});
+
+// ---- Portada v2, T1: datos de las secciones nuevas (unidad, con datos de ejemplo salvo precios.json) ----
+test('precioTexto: «desde» sale del dato, la unidad pone el sufijo y la IA lleva el consumo de los modelos', () => {
+  assert.equal(precioTexto(precios, 'mantenimiento'), 'desde $99/mes');
+  assert.equal(precioTexto(precios, 'gestionada-puesta-en-marcha'), '$350');
+  assert.equal(precioTexto(precios, 'gestionada-mensual'), '$169/mes');
+  assert.equal(precioTexto(precios, 'hosting-compartido'), '$225/año');
+  assert.equal(precioTexto(precios, 'hosting-compartido', { desde: true }), 'desde $225/año');
+  assert.equal(precioTexto(precios, 'web-medida', { desde: true }), 'desde $2,900');
+  assert.equal(precioTexto(precios, 'ia'), 'desde $2,900 más el consumo de los modelos');
+});
+
+test('precioTexto: unidad desconocida, clave inexistente o propuesta rompen el build con un mensaje que las nombra', () => {
+  assert.throws(() => precioTexto(precios, 'imagenes-ia'), /imagenes-ia.*«set».*proyecto/);
+  assert.throws(() => precioTexto({ confirmados: { x: { monto: 1, unidad: 'mes por cuenta' } } }, 'x'), /x.*mes por cuenta/);
+  assert.throws(() => precioTexto(precios, 'no-existe'), /no-existe/);
+  assert.throws(() => precioTexto(precios, 'pauta-gestion'), /pauta-gestion/);
+});
+
+test('franja de precios y lista de desarrollo: textos exactos de la tabla de «Datos»', () => {
+  assert.deepEqual(franjaPrecios(precios).map((f) => `${f.nombre} · ${f.texto}`), [
+    'Web empresarial gestionada · $350 de puesta en marcha + $169/mes durante 12 meses',
+    'Mantenimiento · desde $99/mes',
+    'Hosting · desde $225/año',
+  ]);
+  const conPrecio = desarrolloPortada(precios).filter((d) => d.precio).map((d) => `${d.slug} ${d.precio}`);
+  assert.deepEqual(conPrecio, [
+    'tecnologias/desarrollo-web-a-medida-vue-react-panama desde $2,900',
+    'funcionalidades/integracion-cybersource-panama desde $1,050',
+    'crecimiento/mantenimiento-web-panama desde $99/mes',
+    'crecimiento/hosting-infraestructura-panama desde $225/año',
+  ]);
+});
+
+test('el corte de compacto vive en portada.ts (639 px), para MarcoCaptura y la prueba de paridad', () => {
+  assert.equal(COMPACTO, 639);
+});
+
+test('mapa clave → opción del formulario: cada «Cotizar» resuelve su opción y una clave sin opción rompe el build', () => {
+  const services = ['Landing page', 'Revisión de mi web', 'Ayúdame a definir mi proyecto'];
+  const servicios = [{ clave: 'landing', servicio: 'Landing page' }, { clave: 'revision', servicio: 'Revisión de mi web' }, { clave: 'definir', servicio: 'Ayúdame a definir mi proyecto' }, { clave: 'seo', servicio: 'SEO y posicionamiento' }];
+  const mapa = mapaOpciones(services, servicios);
+  assert.equal(opcionDe(mapa, 'revision', 'seo'), 'Revisión de mi web');
+  assert.equal(opcionDe(mapa, 'definir', 'hero'), undefined, '«definir» no cambia lo elegido');
+  assert.throws(() => opcionDe(mapa, 'seo', 'seo'), /sección «seo».*clave «seo».*Claves válidas: landing, revision$/);
+  assert.throws(() => opcionDe(mapa, 'nada', 'precios'), /sección «precios».*clave «nada»/);
+  const real = mapaOpciones(['Diseño web / Sitio corporativo', 'Tienda online / E-commerce', 'Landing page', 'Web empresarial gestionada — plan mensual', 'Revisión de mi web', 'Marketing digital / Pauta', 'Software a medida', 'Ayúdame a definir mi proyecto'], formulario.servicios);
+  for (const [clave, opcion] of [['landing', 'Landing page'], ['pyme', 'Diseño web / Sitio corporativo'], ['ecommerce', 'Tienda online / E-commerce'], ['medida', 'Software a medida'], ['mensual', 'Web empresarial gestionada — plan mensual'], ['revision', 'Revisión de mi web'], ['pauta', 'Marketing digital / Pauta']]) {
+    assert.equal(opcionDe(real, clave, 'prueba'), opcion, clave);
+  }
+});
+
+test('marketing se indexa por slug, no por posición, y un slug sin datos rompe el build', () => {
+  const lista = [{ slug: 'marketing/email-marketing-panama', label: 'Email Marketing' }, { slug: 'marketing/google-ads-panama', label: 'Google Ads' }];
+  assert.deepEqual(modulosMarketing(lista).map((m) => [m.slug, m.nombre]), [['marketing/email-marketing-panama', 'Email Marketing'], ['marketing/google-ads-panama', 'Google Ads']]);
+  for (const m of modulosMarketing(lista)) {
+    assert.ok(m.linea.length <= 70, `${m.slug}: ${m.linea.length} caracteres`);
+    assert.ok(m.maqueta, `${m.slug} sin maqueta`);
+  }
+  assert.throws(() => modulosMarketing([{ slug: 'marketing/nuevo-servicio', label: 'Nuevo' }]), /marketing\/nuevo-servicio/);
+});
+
+test('cada módulo de servicio tiene una línea propia de 70 caracteres o menos y una maqueta', () => {
+  for (const f of filasMapa(precios)) {
+    assert.ok(f.linea && f.linea.length <= 70, `${f.id}: «${f.linea}»`);
+    assert.ok(f.maqueta, `${f.id} sin maqueta`);
+  }
+});
+
+test('años del portafolio: mínimo y máximo, uno solo si coinciden, y un proyecto sin año rompe el build', () => {
+  assert.equal(aniosPortafolio([{ t: 'A', year: '2025' }, { t: 'B', year: '2026' }, { t: 'C', year: '2026' }]), '2025–2026');
+  assert.equal(aniosPortafolio([{ t: 'A', year: '2026' }, { t: 'B', year: '2026' }]), '2026');
+  assert.throws(() => aniosPortafolio([{ t: 'A', year: '2026' }, { t: 'Sin año' }]), /Sin año/);
+});
+
+test('industrias destacadas: las 8 por evidencia, en orden, y el resto como lista de texto', () => {
+  const slugs = ['abogados', 'bienes-raices', 'restaurantes', 'turismo-hoteles', 'clinicas-salud', 'constructoras', 'educacion', 'retail-moda', 'gimnasios-fitness', 'logistica-transporte']
+    .map((s) => ({ slug: `industrias/diseno-web-${s}-panama`, label: s }));
+  const { destacadas, resto } = industriasDestacadas(slugs);
+  assert.deepEqual(destacadas.map((d) => d.label), ['turismo-hoteles', 'constructoras', 'logistica-transporte', 'clinicas-salud', 'gimnasios-fitness', 'restaurantes', 'retail-moda', 'abogados']);
+  assert.deepEqual(resto.map((d) => d.label), ['bienes-raices', 'educacion']);
+  assert.throws(() => industriasDestacadas(slugs.filter((s) => s.label !== 'constructoras')), /constructoras/);
+});
+
+test('comparación y «lo que no hacemos»: cada fila con su ruta y una frase fuente completa', () => {
+  const filas = comparaPortada();
+  assert.equal(filas.length, 6);
+  for (const f of [...filas, ...noHacemosPortada()]) {
+    assert.match(f.ruta, /^\/.*\/$/, f.texto);
+    assert.ok(f.frase.length >= 15, `frase corta en «${f.texto}»`);
+  }
+  assert.equal(noHacemosPortada().length, 3);
+  assert.ok(filas.some((f) => f.frase === 'quedan a nombre de tu empresa al completar el pago'), 'la frase conserva su condición');
 });
 
 // ---- Sobre la portada compilada ----

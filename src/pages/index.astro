@@ -12,13 +12,14 @@ import ModuloBento from '../components/ModuloBento.astro';
 import Maqueta from '../components/Maqueta.astro';
 import CtaCotizar from '../components/CtaCotizar.astro';
 import Ejemplo from '../components/Ejemplo.astro';
-import { site, industrias, saas, contactForm, url, wa, portfolio } from '../lib/site';
+import TarjetaPrecio from '../components/TarjetaPrecio.astro';
+import { site, industrias, saas, contactForm, marketing, pricing, url, wa, portfolio } from '../lib/site';
 import { ogFor } from '../lib/img';
 import { homeJsonLd } from '../lib/schema';
 import { proyectosDeClientes } from '../lib/portafolio';
 import {
   H1_PORTADA, filasMapa, itemListPortada, faqsPortada, respuestaPortada, precioDesde, aniosPortafolio, mapaOpciones, opcionDe,
-  industriasDestacadas, desarrolloPortada, CODIGO_PORTADA,
+  industriasDestacadas, desarrolloPortada, CODIGO_PORTADA, modulosMarketing, franjaPrecios, comparaPortada, noHacemosPortada,
 } from '../lib/portada';
 import precios from '../data/precios.json';
 import formulario from '../data/formulario.json';
@@ -34,6 +35,8 @@ const bajada = `Diseño y desarrollo web premium, SEO profesional y marketing di
 
 const filas = filasMapa(precios);
 const faqs = faqsPortada(precios);
+const plazos = faqs.find((f) => f.q === '¿Cuánto tarda el proyecto?')?.a ?? '';
+if (!plazos) throw new Error('La portada necesita la pregunta «¿Cuánto tarda el proyecto?» para la nota de plazos del proceso');
 const respuesta = respuestaPortada(precios);
 const jsonld = homeJsonLd(faqs, [itemListPortada(site.domain.replace(/\/$/, ''), filas)]);
 
@@ -93,9 +96,32 @@ const pilaresSeo = [
 ];
 const desarrollo = desarrolloPortada(precios);
 
+/* 8. Marketing: los 6 servicios de la lista de site.ts, indexados por slug (sin precios: siguen propuestos, D23). */
+const modulosMkt = modulosMarketing(marketing).map((m) => ({ ...m, id: m.slug.split('/')[1] }));
+
+/* 10. Precios: tarjetas con «desde» (D23); la línea es la `ideal` de cada plan y la primera oración de A medida. */
+const tiers = pricing.tiers;
+const tarjetas = [
+  { nombre: 'Landing page', desde: precioDesde(precios, 'web-landing'), linea: tiers[0].ideal, clave: 'landing', destacada: !!tiers[0].featured },
+  { nombre: 'Web empresarial', desde: precioDesde(precios, 'web-empresarial'), linea: tiers[1].ideal, clave: 'pyme', destacada: !!tiers[1].featured },
+  { nombre: 'Tienda online', desde: precioDesde(precios, 'web-ecommerce'), linea: tiers[2].ideal, clave: 'ecommerce', destacada: !!tiers[2].featured },
+  { nombre: 'A medida', desde: precioDesde(precios, 'web-medida'), linea: pricing.custom.text.split(/(?<=\.)\s/)[0], clave: 'medida', destacada: false },
+];
+const franja = franjaPrecios(precios);
+
+/* 11. Compara antes de firmar: cada fila enlaza la página que publica la práctica. */
+const comparar = {
+  type: 'compare' as const,
+  h2: 'Compara antes de firmar',
+  intro: 'Pon tu otra cotización en la columna en blanco y compara punto por punto.',
+  otraCotizacion: true,
+  criterios: comparaPortada().map((c) => ({ criterio: c.texto, nosotros: 'Sí.', fuente: { slug: c.ruta.replace(/^\/|\/$/g, ''), label: 'Fuente' } })),
+};
+const noHacemos = noHacemosPortada();
+
 const pasos = {
   type: 'steps' as const,
-  h2: 'Cómo trabajamos, en cuatro etapas',
+  h2: 'Cuatro etapas.',
   intro: 'Cada etapa termina con algo que puedes revisar antes de seguir.',
   items: [
     { h3: 'Diagnóstico', text: 'Entendemos tu negocio y lo que quieres lograr, sin costo. <strong>Entregas:</strong> propuesta con alcance, precio y plazo por escrito.' },
@@ -309,31 +335,149 @@ const pasos = {
     </div>
   </section>
 
-  <!-- 10. Proceso con el entregable de cada etapa -->
-  <Blocks v2 blocks={[pasos]} />
-  <section class="ew-sec ew-sec--alt ew-cta-rep" aria-label="Cotizar después de ver el proceso">
-    <div class="ew-wrap"><div class="ew-cta-rep__btns">
-      <a href="#formulario" class="ew-btn ew-btn--solido" data-cta-loc="proceso" data-service="definir">Cotizar mi proyecto</a>
-      <a href={waCotizar} target="_blank" rel="noopener" class="ew-btn ew-btn--wa" data-cta-loc="proceso">Hablar por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
-    </div></div>
+  <!-- 8. Marketing digital (claro alterno): tres garantías publicadas y los 6 servicios de marketing, sin precios -->
+  <section id="marketing" class="pv2-sec pv2-sec--alt pv2-ancla" aria-labelledby="marketing-h2">
+    <div class="pv2-wrap">
+      <div>
+        <p class="ew-data pv2-rotulo">Marketing digital</p>
+        <h2 class="ew-h2" id="marketing-h2">Campañas que se miden hasta la consulta.</h2>
+      </div>
+      <ul class="pv2-garantias">
+        <li><span class="ew-sign" aria-hidden="true">+</span>La cuenta publicitaria queda a tu nombre</li>
+        <li><span class="ew-sign" aria-hidden="true">+</span>Tu inversión va directo a Google y Meta</li>
+        <li><span class="ew-sign" aria-hidden="true">+</span>WhatsApp por la API oficial</li>
+      </ul>
+      <div class="pv2-bento pv2-bento--marketing">
+        {modulosMkt.map((m) => (
+          <ModuloBento id={m.id} nombre={m.nombre} slug={m.slug} ir={`Ver ${m.nombre}`} linea={m.linea} ancho={m.ancho}>
+            {m.maqueta === 'google' && (
+              <Maqueta nombre="google" linea="un anuncio de búsqueda en Google">
+                <Ejemplo e={{ tipo: 'google', consulta: 'clínica dental cerca de mí', resultados: [{ clase: 'anuncio', sitio: 'Clínica de ejemplo', url: 'ejemplo.com', titulo: 'Clínica dental en Panamá | Agenda tu cita', texto: 'Limpieza, ortodoncia y urgencias. Escríbenos por WhatsApp.' }, { clase: 'organico', sitio: 'Otro negocio de ejemplo', url: 'otro-ejemplo.com', titulo: 'Odontología general y estética', texto: 'Horarios, ubicación y servicios.' }] }} />
+              </Maqueta>
+            )}
+            {m.maqueta === 'anuncio' && (
+              <Maqueta nombre="anuncio" linea="un anuncio en Facebook e Instagram">
+                <div class="pv2-anuncio">
+                  <p class="pv2-anuncio__top"><span class="pv2-anuncio__av"></span><span>Negocio de ejemplo<small>Publicidad</small></span></p>
+                  <div class="pv2-anuncio__arte"><p>Reserva tu cita por WhatsApp</p></div>
+                  <p class="pv2-anuncio__cta"><span>Enviar mensaje</span></p>
+                </div>
+              </Maqueta>
+            )}
+            {m.maqueta === 'parrilla' && (
+              <Maqueta nombre="parrilla" linea="la parrilla de publicaciones de la semana">
+                <ul class="pv2-parrilla">
+                  <li><span class="pv2-parrilla__c"></span><span><b>Lunes</b> Consejo del mes</span></li>
+                  <li><span class="pv2-parrilla__c pv2-parrilla__c--2"></span><span><b>Miércoles</b> Detrás de cámaras</span></li>
+                  <li><span class="pv2-parrilla__c pv2-parrilla__c--3"></span><span><b>Viernes</b> Novedad de la semana</span></li>
+                </ul>
+              </Maqueta>
+            )}
+            {m.maqueta === 'correo' && (
+              <Maqueta nombre="correo" linea="un correo a tus clientes">
+                <Ejemplo e={{ tipo: 'correo', remitente: 'Negocio de ejemplo', asunto: 'Llegaron los nuevos modelos', previa: 'Te los mostramos antes que a nadie', titular: 'Llegaron los nuevos modelos', texto: 'Pasa por la tienda o pide el tuyo por WhatsApp.', boton: 'Ver los modelos' }} />
+              </Maqueta>
+            )}
+            {m.maqueta === 'whatsapp-plantilla' && (
+              <Maqueta nombre="whatsapp-plantilla" linea="un mensaje de campaña por WhatsApp">
+                <Ejemplo e={{ tipo: 'whatsapp', negocio: 'Negocio de ejemplo', mensajes: [{ de: 'negocio', texto: 'Hola, María. Llegaron los modelos de la temporada.', hora: '9:00', botones: ['Ver catálogo'] }] }} />
+              </Maqueta>
+            )}
+            {m.maqueta === 'flujo' && (
+              <Maqueta nombre="flujo" linea="una consulta que pasa sola del formulario al CRM y a WhatsApp">
+                <Ejemplo e={{ tipo: 'flujo', titulo: 'Nueva consulta', pasos: [{ t: 'Formulario', d: 'La persona deja sus datos' }, { t: 'CRM', d: 'Se crea el contacto' }, { t: 'WhatsApp', d: 'Recibe la respuesta' }] }} />
+              </Maqueta>
+            )}
+          </ModuloBento>
+        ))}
+      </div>
+      <CtaCotizar loc="marketing" servicio="pauta" opcion={opcion('pauta', 'marketing')} texto="Cotizar marketing digital">
+        <a href="/marketing/" class="pv2-enlace">Ver todo el marketing digital <span aria-hidden="true">→</span></a>
+      </CtaCotizar>
+    </div>
   </section>
 
-  <!-- 12. Preguntas frecuentes (el mismo texto alimenta el FAQPage) -->
-  <Blocks v2 blocks={[{ type: 'faq', h2: 'Preguntas frecuentes', items: faqs }]} />
+  <!-- 9. Proceso (grafito): los pasos de hoy en cuatro etapas, plazos y su «Cotizar» -->
+  <div id="proceso" class="pv2-ancla pv2-banda--grafito">
+    <Blocks v2 blocks={[pasos]} />
+    <div class="pv2-wrap pv2-proceso__pie">
+      <p class="pv2-nota-plazo">{plazos}</p>
+      <p class="pv2-ir"><a href="/como-trabajamos/">Ver cómo trabajamos <span aria-hidden="true">→</span></a></p>
+      <CtaCotizar loc="proceso" servicio="definir" wa={waCotizar} />
+    </div>
+  </div>
 
-  <!-- 13. Formulario -->
-  <section class="ew-sec ew-sec--alt" aria-labelledby="form-h2">
-    <div class="ew-wrap">
+  <!-- 10. Precios (claro alterno): 4 tarjetas, la franja de planes y la nota de impuestos -->
+  <section id="precios" class="pv2-sec pv2-sec--alt pv2-ancla" aria-labelledby="precios-h2">
+    <div class="pv2-wrap">
+      <h2 class="ew-h2" id="precios-h2">Precios publicados. Sin sorpresas.</h2>
+      <div class="pv2-tarjetas">
+        {tarjetas.map((t) => <TarjetaPrecio nombre={t.nombre} desde={t.desde} linea={t.linea} clave={t.clave} opcion={opcion(t.clave, 'precios')} destacada={t.destacada} />)}
+      </div>
+      <div class="pv2-franja">
+        <ul>
+          {franja.map((f) => <li><span class="pv2-franja__t">{f.nombre} · {f.texto}</span><a href={url(f.slug)}>Ver detalle</a></li>)}
+        </ul>
+        <CtaCotizar loc="precios" servicio="mensual" opcion={opcion('mensual', 'precios')} texto="Cotizar un plan mensual" />
+      </div>
+      <p class="pv2-nota-precios">Precios en dólares, sin ITBMS (7%). Cotización cerrada por escrito antes de empezar. <a href="/precios/">Ver todos los precios <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+
+  <!-- 11. Compara antes de firmar (grafito): la tabla con fuentes y lo que no hacemos -->
+  <div id="compara" class="pv2-ancla pv2-banda--grafito">
+    <Blocks v2 blocks={[comparar]} />
+    <div class="pv2-wrap pv2-compara__pie">
+      <h3 class="pv2-nohacemos__h">Lo que no hacemos</h3>
+      <ul class="pv2-nohacemos">
+        {noHacemos.map((n) => <li><span>{n.texto}</span> <a href={n.ruta} class="ew-src">Fuente</a></li>)}
+      </ul>
+      <!-- Sin este «Cotizar», en compacto el tramo Precios → formulario pasa de 2.110 px (tabla + preguntas ≈ 3.200 px) -->
+      <CtaCotizar loc="compara" servicio="definir" texto="Pedir mi cotización por escrito" />
+    </div>
+  </div>
+
+  <!-- 12. Preguntas frecuentes (claro alterno; el mismo texto alimenta el FAQPage) -->
+  <div id="preguntas" class="pv2-ancla pv2-sec--alt">
+    <Blocks v2 blocks={[{ type: 'faq', h2: 'Preguntas frecuentes', items: faqs }]} />
+  </div>
+
+  <!-- 13. Contacto (grafito): el formulario en blanco y el contacto directo -->
+  <section class="pv2-sec pv2-banda--grafito pv2-contacto" aria-labelledby="form-h2">
+    <div class="pv2-wrap pv2-dos">
       <div>
-        <h2 class="ew-h2" id="form-h2">Cuéntanos qué necesitas resolver primero</h2>
+        <h2 class="ew-h2" id="form-h2">Cuéntanos qué necesitas resolver primero.</h2>
         <ul class="ew-apoyo">
           <li><span class="ew-sign" aria-hidden="true">+</span>Te respondemos el mismo día hábil.</li>
           <li><span class="ew-sign" aria-hidden="true">+</span>El diagnóstico no tiene costo.</li>
           <li><span class="ew-sign" aria-hidden="true">+</span>La cotización llega cerrada y por escrito antes de empezar.</li>
         </ul>
-        <p>¿Prefieres directo? <a href={waCotizar} target="_blank" rel="noopener">WhatsApp</a> o <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+        <p>¿Prefieres directo? <a href={waCotizar} target="_blank" rel="noopener">WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a> o <a href={`mailto:${site.email}`}>{site.email}</a>. También puedes ir a la <a href="/contacto/">página de contacto</a>.</p>
       </div>
-      <ContactForm />
+      <div>
+        <p id="pv2-servicio-elegido" class="sr-only" aria-live="polite"></p>
+        <ContactForm />
+      </div>
     </div>
   </section>
+
+  <script>
+    /* «Cotizar» con servicio (portada v2): deja elegida la opción del formulario (data-opcion) y la anuncia. No usa
+       preventDefault ni enfoca campos: el ancla hace el salto y enfoca el contenedor, así que no emite form_start. Si el
+       formulario ya se envió (#cform oculto) o el envío está en curso (botón deshabilitado), no hace nada. */
+    const contenedor = document.getElementById('formulario');
+    contenedor?.setAttribute('tabindex', '-1');
+    const vivo = document.getElementById('pv2-servicio-elegido');
+    document.addEventListener('click', (e) => {
+      const a = (e.target as Element | null)?.closest?.('a[href="#formulario"][data-opcion]') as HTMLAnchorElement | null;
+      if (!a) return;
+      const form = document.getElementById('cform');
+      const enviar = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+      const sel = document.getElementById('cf-servicio') as HTMLSelectElement | null;
+      if (!form || !sel || form.classList.contains('hidden') || enviar?.disabled) return;
+      sel.value = a.dataset.opcion ?? '';
+      sel.dispatchEvent(new Event('change', { bubbles: true }));
+      if (vivo) vivo.textContent = `Servicio elegido: ${a.dataset.opcion}`;
+    });
+  </script>
 </Base>

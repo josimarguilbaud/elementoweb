@@ -109,6 +109,7 @@
   .pv2-bento--servicios [data-modulo="ia"] { grid-column: span 1; }
 }
 .pv2-modulo { display: grid; grid-template-rows: auto auto 200px 1fr auto; gap: 10px; padding: 24px; border: 1px solid var(--ew-border); border-radius: 20px; background: var(--ew-raised); }
+.pv2-modulo--sin-precio { grid-template-rows: auto 200px 1fr auto; }
 .pv2-modulo h3 { font-size: 1.25rem; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; color: var(--ew-text); }
 .pv2-modulo__precio { color: var(--ew-text); }
 .pv2-modulo__vista { display: flex; flex-direction: column; gap: 6px; min-height: 0; }
@@ -120,6 +121,7 @@
 .pv2-modulo__enlaces { display: flex; flex-wrap: wrap; gap: 0 16px; }
 @media (max-width: 639px) {
   .pv2-modulo { grid-template-rows: auto auto 1fr auto; }
+  .pv2-modulo--sin-precio { grid-template-rows: auto 1fr auto; }
   .pv2-modulo__vista { display: none; }
 }
 .pv2-nota { font-size: 0.8125rem; line-height: 1.4; color: var(--ew-muted); }
@@ -170,11 +172,92 @@
 .pv2-pago__t { font-weight: 700; color: var(--ew-text); }
 .pv2-pago__ops { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 
-/* ---- Botón repetido (después de la prueba y del proceso) ---- */
-.ew-sec.ew-cta-rep { padding-top: 0; }
-.ew-cta-rep__btns { display: flex; flex-wrap: wrap; gap: 12px; }
-.ew-btn--solido { background: var(--ew-primary); color: var(--ew-on-primary); border-radius: 6px; }
-.ew-btn--solido:hover { background: var(--ew-primary-raised); }
+/* ---- 8. Marketing: tres garantías en una línea y el bento por slug. Rejilla: Google Ads a lo ancho en medio; desde
+   1024 px Google Ads doble y Automatizaciones a la fila entera; desde 1280 px Email y WhatsApp también dobles. ---- */
+.pv2-garantias { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.pv2-garantias li { display: flex; gap: 8px; font-weight: 600; line-height: 1.5; color: var(--ew-text); }
+@media (min-width: 640px) and (max-width: 1279px) {
+  .pv2-bento--marketing .pv2-modulo--doble:not([data-modulo="google-ads-panama"]) { grid-column: span 1; }
+}
+.pv2-enlace { display: inline-flex; align-items: center; gap: 6px; min-height: 52px; font-weight: 600; color: var(--ew-accent-on-light); text-decoration: underline; text-underline-offset: 2px; }
+.pv2-anuncio { padding: 12px; }
+.pv2-anuncio__top { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600; color: #1c2230; }
+.pv2-anuncio__top small { display: block; font-weight: 400; color: #4f5f75; }
+.pv2-anuncio__av { width: 28px; height: 28px; border-radius: 50%; background: var(--ew-accent); }
+.pv2-anuncio__arte { display: grid; place-items: end start; height: 96px; margin-top: 10px; padding: 12px; border-radius: 12px; background: linear-gradient(135deg, var(--ew-primary), var(--ew-primary-raised)); }
+.pv2-anuncio__arte p { font-weight: 700; line-height: 1.25; color: #fff; }
+.pv2-anuncio__cta { margin-top: 8px; display: flex; justify-content: flex-end; }
+.pv2-anuncio__cta span { padding: 4px 12px; border-radius: 6px; background: #eaf0f5; font-size: 0.8rem; font-weight: 600; color: #1c2230; }
+.pv2-parrilla { list-style: none; margin: 0; padding: 12px; display: grid; gap: 10px; }
+.pv2-parrilla li { display: flex; align-items: center; gap: 12px; font-size: 0.85rem; color: #1c2230; }
+.pv2-parrilla b { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4f5f75; }
+.pv2-parrilla__c { flex: none; width: 48px; height: 48px; border-radius: 6px; background: var(--ew-accent); }
+.pv2-parrilla__c--2 { background: var(--ew-primary-raised); }
+.pv2-parrilla__c--3 { background: #d4dee8; }
+
+/* ---- 9. Proceso (grafito): el bloque de pasos de hoy en una columna, 4 etapas en fila desde 1024 px con filete
+   superior y el número a 2 rem. Las anulaciones van juntas para no dejar una segunda columna implícita. ---- */
+#proceso > .ew-sec { padding: 64px 0 24px; background: transparent; }
+#proceso .ew-wrap:has(> .ew-h2) { grid-template-columns: minmax(0, 1fr); }
+#proceso .ew-wrap:has(> .ew-h2) > * { grid-column: 1; grid-row: auto; }
+#proceso .ew-pasos__n { font-size: 2rem; font-weight: 500; line-height: 1.1; color: var(--ew-accent-on-dark); }
+#proceso .ew-pasos li { border-top-color: rgba(255, 255, 255, .16); }
+@media (min-width: 640px) {
+  #proceso > .ew-sec { padding-top: 80px; }
+  #proceso .ew-pasos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
+}
+@media (min-width: 1024px) {
+  #proceso > .ew-sec { padding-top: 112px; }
+  #proceso .ew-pasos { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  #proceso .ew-pasos li { grid-template-columns: 1fr; gap: 12px; padding-top: 20px; }
+}
+.pv2-proceso__pie, .pv2-compara__pie { padding-bottom: 64px; }
+@media (min-width: 640px) { .pv2-proceso__pie, .pv2-compara__pie { padding-bottom: 80px; } }
+@media (min-width: 1024px) { .pv2-proceso__pie, .pv2-compara__pie { padding-bottom: 112px; } }
+.pv2-proceso__pie .pv2-nota-plazo { margin: 0; max-width: 70ch; }
+
+/* ---- 10. Precios: 4 tarjetas con filas alineadas (una sola destacada) y la franja de planes ---- */
+.pv2-tarjetas { display: grid; gap: 16px; }
+@media (min-width: 640px) { .pv2-tarjetas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .pv2-tarjetas { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.pv2-tarjeta { display: grid; grid-template-rows: auto auto 1fr auto; gap: 12px; padding: 28px 24px; border: 1px solid var(--ew-border); border-radius: 20px; background: var(--ew-raised); }
+.pv2-tarjeta--destacada { border: 2px solid var(--ew-accent); }
+.pv2-tarjeta h3 { font-size: 1.25rem; font-weight: 700; color: var(--ew-text); }
+.pv2-tarjeta__precio { font-size: 2.25rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; color: var(--ew-text); font-variant-numeric: tabular-nums; }
+.pv2-tarjeta__precio .ew-data { margin-right: 4px; color: var(--ew-muted); letter-spacing: 0.04em; }
+.pv2-tarjeta__linea { line-height: 1.55; color: var(--ew-muted); }
+.pv2-tarjeta .ew-btn { width: 100%; }
+.pv2-franja { display: grid; gap: 20px; padding: 24px; border: 1px solid var(--ew-border); border-radius: 20px; background: var(--ew-raised); }
+.pv2-franja ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+@media (min-width: 1024px) { .pv2-franja ul { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; } }
+.pv2-franja li { display: flex; flex-direction: column; gap: 2px; line-height: 1.5; color: var(--ew-text); }
+.pv2-franja a:not(.ew-btn), .pv2-nota-precios a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 600; color: var(--ew-accent-on-light); text-decoration: underline; text-underline-offset: 2px; }
+.pv2-nota-precios { line-height: 1.6; color: var(--ew-muted); }
+
+/* ---- 11. Compara (grafito): la tabla con su columna en blanco y «Lo que no hacemos» ---- */
+#compara > .ew-sec { padding: 64px 0 24px; }
+@media (min-width: 640px) { #compara > .ew-sec { padding-top: 80px; } }
+@media (min-width: 1024px) { #compara > .ew-sec { padding-top: 112px; } }
+#compara .ew-src { display: inline-flex; align-items: center; min-height: 44px; }
+.pv2-nohacemos__h { font-size: 1.25rem; font-weight: 700; color: var(--ew-text); }
+.pv2-nohacemos { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--ew-border); }
+.pv2-nohacemos li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0 16px; border-bottom: 1px solid var(--ew-border); color: var(--ew-text); }
+
+/* ---- 12. Preguntas: una columna en todos los anchos ---- */
+#preguntas > .ew-sec { padding: 64px 0; }
+@media (min-width: 640px) { #preguntas > .ew-sec { padding: 80px 0; } }
+@media (min-width: 1024px) { #preguntas > .ew-sec { padding: 112px 0; } }
+#preguntas .ew-wrap:has(> .ew-h2) { grid-template-columns: minmax(0, 1fr); }
+#preguntas .ew-wrap:has(> .ew-h2) > * { grid-column: 1; grid-row: auto; }
+#preguntas .ew-faq { max-width: 860px; }
+
+/* ---- 13. Contacto (grafito): el formulario en blanco opaco y un filete antes del pie ---- */
+.pv2-contacto { border-bottom: 1px solid rgba(255, 255, 255, .12); }
+/* El formulario lleva la columna ancha: con la de .pv2-dos sus campos en pareja quedan a 200 px y el rótulo
+   «Presupuesto estimado (opcional)» (208 px) se parte y descuadra los dos selectores. */
+@media (min-width: 1024px) { .pv2-contacto .pv2-dos { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 48px; } }
+.pv2-contacto .ew-apoyo + p a { color: var(--ew-accent-on-light); }
+#formulario:focus { outline: none; }
 
 /* ---- Formulario: tres líneas de apoyo ---- */
 .ew-apoyo { list-style: none; margin: 20px 0 0; padding: 0; }

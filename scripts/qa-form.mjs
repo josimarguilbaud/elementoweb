@@ -253,6 +253,67 @@ try {
       ok('el éxito muestra la confirmación y generate_lead lleva la clave del servicio', await r.p.isVisible('#cok') && lead?.service === 'ecommerce', JSON.stringify(lead));
       await r.ctx.close();
     }
+
+    // ---- Portada v2: «Cotizar» con servicio (data-opcion), foco al contenedor, región aria-live y estados del envío ----
+    console.log('Portada v2: «Cotizar» con servicio a 1440x900');
+    {
+      const r = await abrir({ ancho: 1440, alto: 900 });
+      await r.p.goto(`${srvSitio.url}/`);
+      const estado = () => r.p.evaluate(() => ({ sel: document.getElementById('cf-servicio').value, web: !document.getElementById('wrap-web').classList.contains('hidden'), vivo: document.getElementById('pv2-servicio-elegido')?.textContent || '', foco: document.activeElement?.id || '' }));
+      await r.p.click('#seo a[data-cta-loc="seo"][href="#formulario"]');
+      await r.p.waitForTimeout(300);
+      let st = await estado();
+      ok('«Pedir revisión de mi web» deja «Revisión de mi web», muestra el campo de la web y lo anuncia', st.sel === 'Revisión de mi web' && st.web && /Servicio elegido: Revisión de mi web/.test(st.vivo), JSON.stringify(st));
+      ok('tras el clic el foco queda en #formulario (el contenedor, no un campo)', st.foco === 'formulario', st.foco);
+      ok('un clic en «Cotizar» no emite form_start', !(await r.eventos()).some((e) => e.n === 'form_start'));
+      await r.p.keyboard.press('Tab');
+      ok('el siguiente Tab entra al primer campo', await r.p.evaluate(() => document.activeElement?.id === 'cf-nombre'));
+      await r.p.click('#marketing a[data-cta-loc="marketing"][href="#formulario"]');
+      await r.p.waitForTimeout(200);
+      ok('«Cotizar marketing digital» deja «Marketing digital / Pauta»', (await estado()).sel === 'Marketing digital / Pauta');
+      await r.p.click('.ew-hero a[data-cta-loc="hero"][href="#formulario"]');
+      await r.p.waitForTimeout(200);
+      ok('un clic posterior en el héroe (definir) no cambia lo elegido', (await estado()).sel === 'Marketing digital / Pauta');
+      await r.p.evaluate(() => { document.querySelector('#cform button[type="submit"]').disabled = true; });
+      await r.p.click('#precios a[data-service="landing"][href="#formulario"]');
+      await r.p.waitForTimeout(200);
+      ok('con el envío en curso (botón deshabilitado), un «Cotizar» no cambia nada', (await estado()).sel === 'Marketing digital / Pauta');
+      await r.p.evaluate(() => { document.querySelector('#cform button[type="submit"]').disabled = false; document.getElementById('cform').classList.add('hidden'); });
+      await r.p.click('#precios a[data-service="landing"][href="#formulario"]');
+      await r.p.waitForTimeout(200);
+      ok('con el formulario ya enviado (#cform oculto), un «Cotizar» no cambia nada', (await estado()).sel === 'Marketing digital / Pauta');
+      await r.ctx.close();
+    }
+    console.log('Portada v2: los «Cotizar» del menú bajan al formulario');
+    {
+      const r = await abrir({ ancho: 1280, alto: 800 });
+      await r.p.goto(`${srvSitio.url}/`);
+      await r.p.evaluate(() => scrollTo(0, 1500));
+      await r.p.waitForTimeout(300);
+      await r.p.click('#navpill a.cta-pill');
+      await r.p.waitForTimeout(500);
+      const cta = (await r.eventos()).filter((e) => e.n === 'cta_click');
+      ok('escritorio (desde 640 px): el «Cotizar» del menú baja a #formulario y se mide header/definir', await r.p.evaluate(() => location.hash === '#formulario' && document.getElementById('formulario').getBoundingClientRect().top < innerHeight) && cta.at(-1)?.location === 'header' && cta.at(-1)?.service === 'definir', JSON.stringify(cta));
+      await r.ctx.close();
+    }
+    {
+      const r = await abrir({ ancho: 390, alto: 844 });
+      await r.p.goto(`${srvSitio.url}/`);
+      await r.p.click('#mnav-toggle');
+      await r.p.waitForTimeout(900);
+      await r.p.click('#mnav a[href="#formulario"]');
+      await r.p.waitForTimeout(900);
+      ok('menú móvil (bajo 1024 px): su «Cotizar» baja a #formulario y cierra el menú', await r.p.evaluate(() => location.hash === '#formulario' && document.getElementById('formulario').getBoundingClientRect().top < innerHeight && document.getElementById('mnav').dataset.open !== '1'));
+      await r.ctx.close();
+    }
+    console.log('Portada v2: los campos en pareja del formulario quedan alineados');
+    for (const ancho of [640, 768, 1024, 1280, 1440]) {
+      const r = await abrir({ ancho, alto: 900 });
+      await r.p.goto(`${srvSitio.url}/`);
+      const tops = await r.p.evaluate(() => ['cf-nombre', 'cf-empresa', 'cf-servicio', 'cf-presupuesto'].map((id) => Math.round(document.getElementById(id).getBoundingClientRect().top + scrollY)));
+      ok(`${ancho} px: «¿Qué necesitas?» y «Presupuesto estimado» a la misma altura (el rótulo no se parte en dos líneas)`, tops[0] === tops[1] && tops[2] === tops[3], tops.join(' / '));
+      await r.ctx.close();
+    }
   } else console.log('Portada: sin dist/ (corre npm run build); se omite.');
 } finally {
   await nav.close();

@@ -21,6 +21,8 @@
   --ew-text: #1c2230; --ew-muted: #4f5f75; --ew-border: #d4dee8; --ew-raised: #ffffff; --ew-surface-alt: #eaf0f5;
   --ew-accent-on-light: #00688c; --ew-field: #6b7b92;
 }
+/* El .glass de ContactForm pasa a blanco opaco sobre grafito: es el mismo contenedor, no una tarjeta dentro de otra. */
+.pv2-banda--grafito .glass { background: var(--ew-raised); -webkit-backdrop-filter: none; backdrop-filter: none; border: 1px solid var(--ew-border); border-radius: 20px; box-shadow: none; color: var(--ew-text); }
 /* Foco: anillo cian claro sobre grafito; dentro del formulario blanco vuelve al cian oscuro. */
 .pv2-banda--grafito a:focus-visible, .pv2-banda--grafito button:focus-visible, .pv2-banda--grafito summary:focus-visible { outline: 3px solid var(--ew-accent-on-dark); outline-offset: 3px; }
 .pv2-banda--grafito .glass a:focus-visible, .pv2-banda--grafito .glass button:focus-visible { outline-color: var(--ew-accent-on-light); }

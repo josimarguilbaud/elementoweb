@@ -412,6 +412,101 @@ test('7. desarrollo: lista con precios confirmados, 3 SaaS propios y «Cotizar d
   assert.equal(cta?.getAttribute('data-service'), 'medida');
 });
 
+// ---- Portada v2, T4: secciones 8 a 13 ----
+const textoMain = (ruta) => { const r = pagina(`dist${ruta}index.html`); return textoDe(r.querySelector('main') ?? r); };
+
+test('orden completo: respuesta, proyectos, industrias, servicios, SEO, desarrollo, marketing, proceso, precios, compara, preguntas y el formulario', conDist, () => {
+  const ids = home().querySelector('main').querySelectorAll('.pv2-ancla, #formulario').map((e) => e.getAttribute('id'));
+  assert.deepEqual(ids, ['proyectos', 'industrias', 'servicios', 'seo', 'desarrollo', 'marketing', 'proceso', 'precios', 'compara', 'preguntas', 'formulario']);
+});
+
+test('8. marketing: rótulo, H2 sin palabras reservadas, 6 módulos iguales a los del hub /marketing/ y sin precios', conDist, () => {
+  const s = seccion('marketing');
+  assert.equal(textoDe(s.querySelector('.pv2-rotulo')), 'Marketing digital');
+  assert.equal(textoDe(s.querySelector('h2')), 'Campañas que se miden hasta la consulta.');
+  const delHub = [...new Set(pagina('dist/marketing/index.html').querySelectorAll('main a[href^="/marketing/"]').map((a) => a.getAttribute('href')).filter((h) => h !== '/marketing/'))];
+  const modulos = s.querySelectorAll('.pv2-modulo').map((m) => m.querySelector('.pv2-modulo__enlaces a').getAttribute('href'));
+  assert.deepEqual([...modulos].sort(), [...delHub].sort(), 'los módulos son los servicios del hub de marketing');
+  assert.doesNotMatch(textoDe(s), /\$\s?\d/, 'marketing no lleva precios (siguen propuestos)');
+  const cta = s.querySelector('a[href="#formulario"][data-cta-loc="marketing"]');
+  assert.equal(cta?.getAttribute('data-service'), 'pauta');
+  assert.equal(textoDe(cta), 'Cotizar marketing digital');
+  assert.ok(s.querySelector('a[href="/marketing/"]'), 'enlace al hub de marketing');
+});
+
+test('9. proceso: sobre grafito, cuatro etapas, plazos, «Ver cómo trabajamos» y su «Cotizar»', conDist, () => {
+  const s = seccion('proceso');
+  assert.ok(s.classList.contains('pv2-banda--grafito'));
+  assert.equal(textoDe(s.querySelector('h2')), 'Cuatro etapas.');
+  assert.equal(s.querySelectorAll('.ew-pasos > li').length, 4);
+  assert.match(textoDe(s), /De 5 días hábiles para una landing a 5 semanas para una tienda online/);
+  assert.ok(s.querySelector('a[href="/como-trabajamos/"]'));
+  assert.equal(s.querySelector('a[href="#formulario"][data-cta-loc="proceso"]')?.getAttribute('data-service'), 'definir');
+});
+
+test('10. precios: 4 tarjetas con «desde», la destacada es la de pricing (primario) y la franja con los textos de «Datos»', conDist, () => {
+  const s = seccion('precios');
+  const tarjetas = s.querySelectorAll('.pv2-tarjeta');
+  assert.deepEqual(tarjetas.map((t) => `${textoDe(t.querySelector('h3'))} · ${textoDe(t.querySelector('.pv2-tarjeta__precio'))}`), ['Landing page · desde $550', 'Web empresarial · desde $1,250', 'Tienda online · desde $1,950', 'A medida · desde $2,900']);
+  assert.deepEqual(tarjetas.map((t) => t.querySelector('a[href="#formulario"]').getAttribute('data-service')), ['landing', 'pyme', 'ecommerce', 'medida']);
+  assert.deepEqual(tarjetas.map((t) => t.classList.contains('pv2-tarjeta--destacada')), [false, true, false, false]);
+  assert.deepEqual(tarjetas.map((t) => t.querySelector('a[href="#formulario"]').classList.contains('pv2-btn--contorno')), [true, false, true, true]);
+  assert.deepEqual(s.querySelectorAll('.pv2-franja li').map((li) => textoDe(li.querySelector('.pv2-franja__t'))), franjaPrecios(precios).map((f) => `${f.nombre} · ${f.texto}`));
+  assert.equal(s.querySelector('.pv2-franja a[href="#formulario"]')?.getAttribute('data-service'), 'mensual');
+  assert.match(textoDe(s), /Precios en dólares, sin ITBMS \(7%\)\. Cotización cerrada por escrito antes de empezar\./);
+  assert.ok(s.querySelector('a[href="/precios/"]'));
+});
+
+test('11. compara: cada fila enlaza la página que publica la práctica y esa página contiene la frase; «Lo que no hacemos» igual', conDist, () => {
+  const s = seccion('compara');
+  assert.ok(s.classList.contains('pv2-banda--grafito'));
+  const filas = s.querySelectorAll('.ew-cmp tbody tr');
+  assert.deepEqual(filas.map((f) => textoDe(f.querySelector('th'))), comparaPortada().map((c) => c.texto));
+  comparaPortada().forEach((c, i) => {
+    assert.ok(filas[i].querySelector(`a.ew-src[href="${c.ruta}"]`), `«${c.texto}» no enlaza ${c.ruta}`);
+    assert.ok(filas[i].querySelector('.ew-cell-blank'), `«${c.texto}» sin la columna en blanco`);
+    assert.ok(textoMain(c.ruta).includes(c.frase), `${c.ruta} no contiene «${c.frase}» (fila «${c.texto}»)`);
+  });
+  const lineas = s.querySelectorAll('.pv2-nohacemos li');
+  assert.deepEqual(lineas.map((l) => textoDe(l.querySelector('span'))), noHacemosPortada().map((n) => n.texto));
+  noHacemosPortada().forEach((n, i) => {
+    assert.ok(lineas[i].querySelector(`a[href="${n.ruta}"]`), `«${n.texto}» no enlaza ${n.ruta}`);
+    assert.ok(textoMain(n.ruta).includes(n.frase), `${n.ruta} no contiene «${n.frase}»`);
+  });
+});
+
+test('11. compara: cierra con su «Cotizar» (compara/definir) después de «Lo que no hacemos» (tramo Precios → formulario en compacto)', conDist, () => {
+  const s = seccion('compara');
+  const cta = s.querySelector('.pv2-compara__pie a[href="#formulario"][data-cta-loc="compara"]');
+  assert.ok(cta, 'Compara sin su «Cotizar»');
+  assert.equal(cta.getAttribute('data-service'), 'definir');
+  assert.equal(cta.getAttribute('data-opcion'), undefined, '«definir» no cambia lo elegido');
+});
+
+test('12. preguntas: las 8 de la portada en acordeón, la primera abierta y las demás cerradas', conDist, () => {
+  const d = seccion('preguntas').querySelectorAll('details');
+  assert.equal(d.length, faqsPortada(precios).length);
+  assert.deepEqual(d.map((x) => x.hasAttribute('open')), d.map((_, i) => i === 0));
+});
+
+test('13. contacto: sobre grafito, el formulario único y la región aria-live del servicio elegido', conDist, () => {
+  const form = home().querySelector('#formulario');
+  const banda = form.closest('.pv2-banda--grafito');
+  assert.ok(banda, 'el formulario va en la franja grafito de Contacto');
+  assert.equal(textoDe(banda.querySelector('h2')), 'Cuéntanos qué necesitas resolver primero.');
+  const vivo = home().querySelector('#pv2-servicio-elegido');
+  assert.equal(vivo?.getAttribute('aria-live'), 'polite');
+});
+
+test('general: la hoja de la piel tiene la regla de impresión de las franjas grafito', () => {
+  assert.match(readFileSync('src/styles/piel-grafito.css', 'utf8'), /@media print\s*\{[^}]*\.pv2-banda--grafito/);
+});
+
+test('general: el <body> de la portada tiene 1.400 elementos o menos (umbral de DOM excesivo de Lighthouse)', conDist, () => {
+  const n = home().querySelector('body').querySelectorAll('*').length;
+  assert.ok(n <= 1400, `la portada tiene ${n} elementos`);
+});
+
 test('general: cada «Cotizar» con clave lleva un data-opcion que existe en el selector del formulario', conDist, () => {
   const raiz = home();
   const opciones = new Set(raiz.querySelectorAll('#cf-servicio option').map((o) => textoDe(o)));
@@ -460,8 +555,10 @@ test('la portada no se anima ni carga los efectos (DESIGN.md, Motion)', conDist,
   const main = raiz.querySelector('main');
   assert.equal(main.getAttribute('data-page-type'), 'home');
   assert.equal(main.getAttribute('data-service'), undefined, 'data-service va en los enlaces, no en <main>');
-  for (const sel of ['.reveal', '.grad-text', '.marquee-track', '.sphere', '.mesh', '.mesh-dark']) assert.equal(main.querySelectorAll(sel).length, 0, sel);
-  assert.equal(raiz.querySelectorAll('.cursor-ring').length, 0, 'sin cursor personalizado');
+  // En todo el documento, solo clases de movimiento; los fondos decorativos (.mesh*) siguen acotados a <main>, porque el
+  // pie y el menú móvil traen mesh-dark en todas las páginas.
+  for (const sel of ['.reveal', '.grad-text', '.marquee-track', '.sphere', '.spin-slow', '.spin-rev', '.floaty', '.cursor-ring']) assert.equal(raiz.querySelectorAll(sel).length, 0, sel);
+  for (const sel of ['.mesh', '.mesh-dark']) assert.equal(main.querySelectorAll(sel).length, 0, sel);
   const scripts = raiz.querySelectorAll('script[src]').map((x) => x.getAttribute('src'));
   assert.ok(!scripts.some((src) => /Efectos/.test(src)), 'la portada no baja effects.ts (Lenis, GSAP)');
   for (const a of raiz.querySelectorAll('a[data-cta-loc="hero"][href="#formulario"]')) assert.equal(a.getAttribute('data-service'), 'definir');

@@ -1,0 +1,15 @@
+---
+/* Tarjeta de precio de la portada v2: nombre, «desde $X» (D23), una línea y «Cotizar» con su clave. Filas alineadas
+   (nombre, precio, línea, botón abajo). Solo la destacada (la `featured` de pricing) lleva el primario; las otras, el
+   botón de contorno. */
+interface Props { nombre: string; desde: string; linea: string; clave: string; opcion: string; destacada?: boolean }
+const { nombre, desde, linea, clave, opcion, destacada = false } = Astro.props;
+if (!nombre || !desde || !linea || !clave || !opcion) throw new Error(`TarjetaPrecio «${nombre}»: faltan datos`);
+if (!/^desde \$/.test(desde)) throw new Error(`TarjetaPrecio «${nombre}»: el precio se lee «desde $X» (D23), llegó «${desde}»`);
+---
+<article class={destacada ? 'pv2-tarjeta pv2-tarjeta--destacada' : 'pv2-tarjeta'}>
+  <h3>{nombre}</h3>
+  <p class="pv2-tarjeta__precio"><span class="ew-data">desde</span> {desde.replace(/^desde /, '')}</p>
+  <p class="pv2-tarjeta__linea">{linea}</p>
+  <a href="#formulario" class={destacada ? 'ew-btn ew-btn--primary' : 'ew-btn pv2-btn--contorno'} data-cta-loc="precios" data-service={clave} data-opcion={opcion}>Cotizar</a>
+</article>

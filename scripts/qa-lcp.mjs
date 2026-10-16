@@ -111,6 +111,34 @@ for (const w of [1024, 1280]) {
   else console.log(`✓ ${w} /: texto del héroe hasta ${r.texto} px, cascada desde ${r.cascada} px`);
   await ctx.close();
 }
+
+// Portada (v2): en cada módulo del bento (con precio o sin él, como los de marketing) la vista mide 200 px y la línea
+// va justo debajo; si una parte falta y las filas se corren, la fila de 200 px cae en la línea y deja un hueco.
+for (const w of [768, 1024, 1280]) {
+  const ctx = await b.newContext({ viewport: { width: w, height: 800 } });
+  const pg = await ctx.newPage();
+  await pg.goto(BASE + '/', { waitUntil: 'load' });
+  const malos = await pg.evaluate(() => [...document.querySelectorAll('.pv2-modulo')].flatMap((m) => {
+    const v = m.querySelector('.pv2-modulo__vista').getBoundingClientRect();
+    const l = m.querySelector('.pv2-modulo__linea').getBoundingClientRect();
+    const hueco = Math.round(l.top - v.bottom);
+    return Math.abs(v.height - 200) > 1 || hueco > 12 ? [`${m.dataset.modulo} (vista ${Math.round(v.height)} px, hueco ${hueco} px)`] : [];
+  }));
+  if (malos.length) linea(true, `${w} /: módulos con la vista o la línea fuera de su fila: ${malos.join(', ')}`);
+  else console.log(`✓ ${w} /: en todos los módulos la vista mide 200 px y la línea va debajo`);
+  await ctx.close();
+}
+
+// Portada (v2): en «Lo que no hacemos» cada «Fuente» va a la derecha de su fila, también cuando el texto se parte.
+for (const w of [390, 1280]) {
+  const ctx = await b.newContext({ viewport: { width: w, height: 800 } });
+  const pg = await ctx.newPage();
+  await pg.goto(BASE + '/', { waitUntil: 'load' });
+  const bordes = await pg.evaluate(() => [...document.querySelectorAll('.pv2-nohacemos li a')].map((a) => Math.round(a.getBoundingClientRect().right)));
+  if (new Set(bordes).size !== 1) linea(true, `${w} /: los «Fuente» de «Lo que no hacemos» no quedan alineados a la derecha (${bordes.join(', ')} px)`);
+  else console.log(`✓ ${w} /: los ${bordes.length} «Fuente» de «Lo que no hacemos» alineados a la derecha`);
+  await ctx.close();
+}
 await b.close();
 console.log(`\nqa-lcp: ${estrictas.length} página(s) estricta(s), ${informativas.length} informativa(s), ${fallos} fallo(s)`);
 process.exit(fallos ? 1 : 0);

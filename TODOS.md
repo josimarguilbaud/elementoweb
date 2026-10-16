@@ -25,6 +25,18 @@
 **Priority:** P1
 **Depends on:** Nada; Search Console ya tiene la propiedad.
 
+### Medir la portada v2 después de publicarla
+
+**What:** El día P (publicación de la v2, se anota en D51): Lighthouse móvil y LCP en producción con `node scripts/medir.mjs https://elementoweb.com/ --id portada --metrica rendimiento` y `--metrica lcp`. En P + 14 y P + 28 días: Search Console de «agencia de diseño web» y «diseño web panama» contra `audit/gsc-baseline-2026-10.md`. En P + 4 y P + 8 semanas: GA4 por sesión con entrada en `/` (`cta_click`, `click_whatsapp`, `form_start`, `generate_lead`) contra el 30-sep al 14-oct.
+
+**Why:** La v2 es una decisión de marca del dueño, no un experimento; la medición sirve para detectar daño (caída de consultas o de rendimiento) a tiempo.
+
+**Context:** Reglas en D51 de `docs/specs/rediseno-elementoweb/DECISIONES.md`: reversión si Lighthouse baja de 85 o el LCP pasa de 3,5 s (D14); Search Console es solo lectura; GA4 solo concluye con al menos 300 sesiones y 5 `generate_lead` por ventana (si no, «datos insuficientes» y se repite a las 12 semanas). P + 14 y P + 28 reemplazan las lecturas del 28-oct y el 11-nov de la portada D50; las del 28-nov y el 28-dic siguen. Al publicar, poner aquí las fechas reales.
+
+**Effort:** S
+**Priority:** P1
+**Depends on:** Portada v2 publicada (push a `main` con permiso del dueño).
+
 ### Volver a medir en producción las páginas del molde Kredit
 
 **What:** Tras publicar la tanda del molde Kredit (D44), correr `node scripts/medir.mjs https://elementoweb.com/<ruta>/ --id <id> --escribir` para cada id de `src/data/mediciones.json` (las 24 páginas de servicio y la pilar, más precios, IA para empresas y CyberSource desde el 13-oct-2026) y publicar el cambio.
@@ -215,6 +227,18 @@
 **Why:** Hoy `PLAN` tiene 7 claves y no incluye `pauta`, así que `/?servicio=pauta` no preelige nada, mientras que los botones de la portada v2 sí lo hacen.
 
 **Context:** La portada v2 resuelve `data-opcion` en el build sin tocar `ContactForm` (para no cambiar el HTML de otras páginas). Unificar cambia el comportamiento en todas las páginas con formulario; necesita su propia prueba en `qa-form`.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P3
+**Depends on:** Portada v2 publicada.
+
+### Contraste de la hora ocupada en la maqueta de agenda del molde
+
+**What:** Subir el color de `.ew-agenda__ocupada` en `src/styles/molde-kredit.css` (`#8a95a3`, 3,04:1 sobre la maqueta) a uno que pase 4,5:1, por ejemplo `--ew-muted`, y conservar el tachado y el borde punteado que dicen «ocupada».
+
+**Why:** El `qa-a11y` de la portada v2 mide el texto de las maquetas aunque vayan con `aria-hidden`, y encontró esa hora en 3,04:1. En `/` ya se corrigió solo para la portada (D51); las páginas v2 que usan la agenda del molde siguen igual.
+
+**Context:** El cambio toca el CSS en línea de las páginas con anatomía v2, así que va en un commit propio con su comparación de HTML; las maquetas son decorativas, por eso axe no lo marca.
 
 **Effort:** S (humano) / S (CC)
 **Priority:** P3

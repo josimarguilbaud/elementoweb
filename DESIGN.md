@@ -5,6 +5,7 @@ description: Agencia que muestra evidencia auditable (comprobantes, precios y me
 colors:
   primary: "#0a1a3a"
   primary-raised: "#123a6b"
+  graphite: "#0e0f11"
   on-primary: "#f5fafc"
   on-primary-muted: "#b9cad5"
   accent: "#0099cc"
@@ -133,6 +134,22 @@ Ancho máximo 1200 px, márgenes laterales de 16 a 32 px. Base de 8 px. Ritmo de
 
 **Portada como póster:** H1 y texto a la izquierda; a la derecha una ilustración del servicio con un comprobante superpuesto; en el borde inferior, un riel: en la home, los nombres de los 6 servicios sin cifras (para no volver a vender solo web); en una página de servicio, los datos de alcance de ese servicio. Debe caber en 1440 por 900 y en 390 por 844 con el botón principal visible. La ilustración nunca va sola: en la misma pantalla lleva un artefacto de prueba (comprobante, captura o tabla).
 
+**Variante «portada grafito» (solo `/`, desde el 15-oct-2026, D51):** reemplaza en la portada a «Portada como póster»; las páginas de servicio siguen con su portada marino.
+- **Fondos:** `graphite` en el héroe y en las franjas de Industrias, SEO, Proceso, Compara y Contacto; `surface` en la respuesta citable y en Desarrollo; `surface-alt` en Proyectos, Servicios, Marketing, Precios y Preguntas (sobre `surface-alt` los módulos blancos se leen). Relleno vertical 112, 80 y 64 px. La cuadrícula de 56 px va solo en el héroe; las franjas son grafito liso.
+- **Dentro de una franja grafito** se redefinen los tokens en vez de pisar regla por regla: el texto pasa a `on-primary`, el texto secundario a `on-primary-muted`, los enlaces y el anillo de foco a `accent-on-dark`, los filetes a blanco al 16 % y las superficies elevadas a transparente. El formulario de Contacto (blanco opaco) y las maquetas vuelven a los valores claros, y el anillo de foco dentro del formulario vuelve a `accent-on-light`. Al imprimir, las franjas salen en tinta sobre blanco. Las reglas viven en `src/styles/piel-grafito.css`; llevar la piel a otra página es incluir esa hoja.
+- **Héroe:** H1 a tamaño de subtítulo (la frase de SEO de D50), frase de display (Roboto 800, `clamp(2.5rem, 1.6rem + 4vw, 4.5rem)`), bajada, botón cian y WhatsApp, y la cascada de 4 capturas reales de proyectos, estática. En compacto, la captura de celular recortada a 3:2.
+- **Menú fijo:** en la portada va en blanco opaco al bajar (el `.glass` translúcido deja sus enlaces cerca de 2,6:1 sobre grafito).
+- **Módulo bento** (Servicios y Marketing): H3, precio en voz de datos si lo hay, vista de 200 px, una línea de 70 caracteres o menos y los enlaces abajo; el módulo no es un enlace. En compacto, sin vista.
+- **Botón de contorno:** transparente, borde de 1,5 px en `primary` y texto `primary`; solo en las tres tarjetas de precio no destacadas. Chrome lo pinta de 1 px (redondea todo borde a píxeles enteros).
+
+**Excepciones a este documento en `/` (15-oct-2026):**
+1. «Fila de servicio (mapa de la home)»: en la portada el mapa pasa a bento de 6 módulos; las filas siguen en los hubs.
+2. «Tarjetas dentro de tarjetas»: dentro de un módulo la maqueta va sin borde ni sombra propios, sobre `surface-alt` con radio 12.
+3. «Tres tarjetas iguales en fila»: Servicios y Marketing usan rejillas de dos tamaños; Precios son 4 tarjetas de precio (artefacto real); Industrias son imágenes con rótulo, sin borde ni fondo.
+4. «Botón sólido (cuerpo)»: los «Cotizar» de las secciones usan el botón primario cian; en Precios solo la tarjeta destacada lo lleva y las otras tres van con el de contorno.
+5. Valores fuera de la escala: `#1A1C20`, fondo de reserva de los marcos de captura (si una captura no carga, se ven la barra y el dominio), con su sombra desplazada en `#1D2026`; tamaños de 1,125 rem (bajada del héroe y nombre de proyecto), 1,25 rem (H3 de módulos y tarjetas), 2 rem (número de etapa), 2,25 rem (precio de tarjeta) y 0,8125 rem (nota «Ejemplo»).
+6. Maquetas: imitan interfaces ajenas (resultado de Google, anuncio de Meta, editor de código, mapa, tienda, agenda), así que llevan los radios (4, 8 y 10 px y círculos) y colores de esa interfaz, no los de la marca. Su texto cumple AA igual: `qa-a11y` lo mide aunque vayan con `aria-hidden`.
+
 **Anatomía de toda página de servicio (orden de lectura):** portada (H1, bajada de 15 a 20 palabras, botón y comprobante) → respuesta citable de 40 a 60 palabras con fecha → prueba (comprobante, captura de proyecto y medición en un solo sistema) → qué incluye, entregables y qué no incluye → cómo lo hacemos y plazo, con el botón repetido → por qué es mejor, con criterios que el visitante pueda verificar → preguntas frecuentes → formulario → servicios relacionados. En móvil hay una barra fija con el botón del servicio y WhatsApp.
 
 **Marcador de 10 puntos por página de servicio:** alcance, entregables, precio de partida, plazo, qué no incluye, FAQ de 6 o más, schema Service y FAQPage, una medición real, una prueba de proyecto, y una comparación con criterios verificables. Toda afirmación comparativa se basa en la oferta publicada, nunca en un ataque a terceros.
@@ -190,3 +207,4 @@ Radios 6, 12 y 20 px; la píldora completa queda para la barra de navegación y 
 | 2026-10-12 | Acento único: cian | La categoría local es toda cálida; el cian marca verificación y coincide con las ilustraciones |
 | 2026-10-12 | Cuerpo claro, sin modo oscuro | Se lee, se compara y se llena un formulario; la portada oscura impone confianza |
 | 2026-10-13 | Secciones de servicio con el molde de la propuesta de Kredit y fotos realistas en la portada | Instrucción del dueño: cada servicio explica qué incluye, cómo se vería el entregable con ejemplos, cómo se mide y qué se entrega. Reemplaza la ilustración 3D de portada (D44 y D45) |
+| 2026-10-15 | Variante «portada grafito» en `/` | El dueño eligió entre los mockups de fal la dirección grafito con el cian de la marca (no la lima del mockup) y aprobó el plan de 13 secciones con cascada de capturas reales; las 6 excepciones quedan escritas en «Layout». Detalle en D51 |

@@ -177,6 +177,14 @@ export const industrias: NavLink[] = [
   { slug: 'industrias/diseno-web-eventos-catering-bodas-panama', label: 'Eventos, Catering y Bodas' },
   { slug: 'industrias/diseno-web-consultoras-servicios-profesionales-panama', label: 'Consultoras y Servicios Profesionales' },
   { slug: 'industrias/diseno-web-arquitectos-diseno-interiores-panama', label: 'Arquitectos y Diseño de Interiores' },
+  /* Las seis siguientes ya estaban publicadas pero faltaban aquí, así que la portada no las enlazaba (15-oct-2026,
+     portada v2: la lista tiene que coincidir con las páginas de /industrias/ para que «Ver las N industrias» sea cierto). */
+  { slug: 'industrias/diseno-web-agencias-aduana-zona-libre-panama', label: 'Agencias de Aduana y Zona Libre' },
+  { slug: 'industrias/diseno-web-aire-acondicionado-refrigeracion-panama', label: 'Aire Acondicionado y Refrigeración' },
+  { slug: 'industrias/diseno-web-cooperativas-financieras-panama', label: 'Cooperativas y Financieras' },
+  { slug: 'industrias/diseno-web-imprentas-publicidad-panama', label: 'Imprentas y Publicidad' },
+  { slug: 'industrias/diseno-web-navieras-servicios-maritimos-panama', label: 'Navieras y Servicios Marítimos' },
+  { slug: 'industrias/diseno-web-seguridad-vigilancia-panama', label: 'Seguridad y Vigilancia' },
 ];
 
 export const marketing: NavLink[] = [

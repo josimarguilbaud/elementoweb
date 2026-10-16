@@ -1,0 +1,11 @@
+---
+/* Envoltorio de una maqueta de la portada v2 (D44): el contenedor lleva el nombre único (data-maqueta), data-nosnippet
+   (Google solo lo respeta en div, span y section: solo frena sus fragmentos) y aria-hidden, sin nada enfocable
+   adentro. Afuera, visible y legible, la nota «Ejemplo» con una línea que dice qué muestra. Una captura real de un
+   proyecto no es una maqueta: va en MarcoCaptura, nunca aquí. */
+interface Props { nombre: string; linea: string; clase?: string }
+const { nombre, linea, clase = '' } = Astro.props;
+if (!nombre || !linea) throw new Error('Maqueta: faltan nombre o línea');
+---
+<div class={`pv2-maqueta ${clase}`.trim()} data-maqueta={nombre} data-nosnippet aria-hidden="true"><slot /></div>
+<p class="pv2-nota"><span class="ew-data">Ejemplo</span> · {linea}</p>

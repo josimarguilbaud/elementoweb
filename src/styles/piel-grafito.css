@@ -16,8 +16,8 @@
   background: var(--ew-graphite);
   color: var(--ew-on-primary);
 }
-/* El formulario blanco de Contacto vuelve a los valores claros. */
-.pv2-banda--grafito .glass {
+/* El formulario blanco de Contacto y las maquetas (objetos claros sobre la franja) vuelven a los valores claros. */
+.pv2-banda--grafito .glass, .pv2-banda--grafito .pv2-maqueta {
   --ew-text: #1c2230; --ew-muted: #4f5f75; --ew-border: #d4dee8; --ew-raised: #ffffff; --ew-surface-alt: #eaf0f5;
   --ew-accent-on-light: #00688c; --ew-field: #6b7b92;
 }

@@ -57,6 +57,17 @@ for (const [w, h] of [[1440, 900], [390, 844]]) {
         if (w < 1024 && (m.caja === null || m.caja >= h)) fuera.push('caja de la captura');
         if (fuera.length) linea(true, `${w}x${h} /: fuera de la primera pantalla → ${fuera.join(', ')} (${JSON.stringify(m)})`);
         else console.log(`✓ ${w}x${h} /: primera pantalla completa (${pide.join(', ')}${w < 1024 ? ', caja de la captura' : ''})`);
+        // Compacto: entre un «Cotizar» y el siguiente (o el formulario) no hay más de 2,5 pantallas (2.110 px a 390x844).
+        if (w < 640) {
+          const tramos = await ps.evaluate(() => {
+            const ys = [...document.querySelectorAll('main a[href="#formulario"][data-cta-loc], #formulario')]
+              .map((a) => ({ l: a.dataset.ctaLoc || 'formulario', y: Math.round(a.getBoundingClientRect().top + scrollY) }));
+            return ys.slice(1).map((c, i) => ({ de: ys[i].l, a: c.l, px: c.y - ys[i].y }));
+          });
+          const largos = tramos.filter((t) => t.px > 2110);
+          if (largos.length) linea(true, `${w}x${h} /: tramos de más de 2.110 px entre «Cotizar» → ${largos.map((t) => `${t.de}→${t.a} ${t.px} px`).join(', ')}`);
+          else console.log(`✓ ${w}x${h} /: ${tramos.length} tramos entre «Cotizar», el más largo de ${Math.max(...tramos.map((t) => t.px))} px`);
+        }
       }
 
       await pj.goto(BASE + ruta, { waitUntil: 'load' });

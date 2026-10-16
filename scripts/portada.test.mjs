@@ -315,6 +315,146 @@ test('1. héroe: riel de los 6 servicios y línea de confianza enlazada a /nosot
   assert.equal(confianza.text.replace(/\s+/g, ' ').trim(), 'Tech Provider verificado por Meta · Respuesta el mismo día hábil');
 });
 
+// ---- Portada v2, T3: secciones 3 a 7 y reglas generales de la página ----
+const fuenteSite = readFileSync('src/lib/site.ts', 'utf8');
+const bloqueSite = (nombre) => { const i = fuenteSite.indexOf(`export const ${nombre} =`); assert.ok(i >= 0, `site.ts sin ${nombre}`); return fuenteSite.slice(i, fuenteSite.indexOf('];', i)); };
+// Oráculos independientes de la portada: el texto de site.ts y las páginas construidas de /industrias/.
+const clientesPortafolio = () => bloqueSite('portfolio').split('\n').filter((l) => /^\s*\{ t: '/.test(l) && !/propio: true/.test(l)).length;
+const paginasIndustria = () => readdirSync('dist/industrias', { withFileTypes: true }).filter((d) => d.isDirectory() && existsSync(`dist/industrias/${d.name}/index.html`)).map((d) => `/industrias/${d.name}/`);
+const seccion = (id) => home().querySelector(`#${id}`);
+const textoDe = (n) => n.text.replace(/\s+/g, ' ').trim();
+
+test('3. orden: la respuesta citable va primero tras el héroe y siguen proyectos, industrias, servicios, SEO y desarrollo', conDist, () => {
+  const main = home().querySelector('main');
+  const ids = main.querySelectorAll('.pv2-ancla').map((e) => e.getAttribute('id'));
+  assert.deepEqual(ids.slice(0, 5), ['proyectos', 'industrias', 'servicios', 'seo', 'desarrollo']);
+  const html = main.innerHTML;
+  assert.ok(html.indexOf('data-block="answer"') < html.indexOf('id="proyectos"'), 'la respuesta citable va antes de proyectos');
+  for (const id of ids) assert.equal(main.querySelectorAll(`#${id}`).length, 1, `#${id} existe una vez`);
+  assert.match(readFileSync('src/styles/piel-grafito.css', 'utf8'), /\.pv2-ancla\s*\{\s*scroll-margin-top:\s*7rem/);
+});
+
+test('3. proyectos: N sitios de clientes (N del portafolio), 4 capturas que no se repiten y el botón de la prueba', conDist, () => {
+  const s = seccion('proyectos');
+  const n = clientesPortafolio();
+  assert.equal(textoDe(s.querySelector('h2')), `${n} sitios en línea que puedes visitar hoy.`);
+  assert.doesNotMatch(textoDe(s.querySelector('h2')), /clientes/i, 'la cifra de sitios no va junto a «clientes»');
+  const dominios = s.querySelectorAll('.pv2-marco .ew-dev__bar span').map(textoDe);
+  assert.deepEqual(dominios, ['maximpresiones.com', 'lavidaesbellapanama.com', 'panamaworldwideexpress.com', 'grupoviesa.com']);
+  for (const img of s.querySelectorAll('.pv2-marco img')) assert.match(img.getAttribute('alt'), /^Web de /);
+  const enCascada = home().querySelectorAll('.pv2-cascada .ew-dev__bar span').map(textoDe);
+  const enDiseno = home().querySelectorAll('#servicios .pv2-marco .ew-dev__bar span').map(textoDe);
+  const todas = [...enCascada, ...enDiseno, ...dominios];
+  assert.equal(new Set(todas).size, todas.length, `una captura se repite: ${todas.join(', ')}`);
+  const cta = s.querySelector('a[href="#formulario"][data-cta-loc="prueba"]');
+  assert.equal(cta?.getAttribute('data-service'), 'definir');
+  assert.ok(s.querySelector('a[href="/portafolio/"]'), 'enlace «Ver el portafolio»');
+  assert.deepEqual(s.querySelectorAll('a[href^="/casos-de-exito/"]').map((a) => a.getAttribute('href')), ['/casos-de-exito/san-blas-full/', '/casos-de-exito/panama-international-movers/', '/casos-de-exito/tramitapa/']);
+});
+
+test('4. industrias: 8 fichas por evidencia (≤ 40 KB, alt vacío), las N páginas enlazadas y «Ver las N industrias»', conDist, () => {
+  const s = seccion('industrias');
+  assert.ok(s.classList.contains('pv2-banda--grafito') || s.closest?.('.pv2-banda--grafito'), 'industrias va sobre grafito (d9)');
+  const fichas = s.querySelectorAll('.pv2-ficha');
+  assert.equal(fichas.length, 8);
+  assert.deepEqual(fichas.map((f) => f.getAttribute('href')), ['turismo-hoteles', 'constructoras', 'logistica-transporte', 'clinicas-salud', 'gimnasios-fitness', 'restaurantes', 'retail-moda', 'abogados'].map((x) => `/industrias/diseno-web-${x}-panama/`));
+  for (const f of fichas) {
+    const img = f.querySelector('img');
+    assert.equal(img.getAttribute('alt'), '');
+    assert.ok(img.getAttribute('width') && img.getAttribute('height'));
+    const fuentes = img.getAttribute('srcset') ? img.getAttribute('srcset').split(', ') : [img.getAttribute('src')];
+    for (const src of fuentes) {
+      assert.ok(existeExacto(src), `no existe ${src}`);
+      assert.ok(pesoKB(src) <= 40, `${src} pesa ${pesoKB(src).toFixed(1)} KB`);
+    }
+  }
+  const paginas = paginasIndustria();
+  const enlazadas = new Set(home().querySelectorAll('main a').map((a) => a.getAttribute('href')));
+  for (const p of paginas) assert.ok(enlazadas.has(p), `la portada no enlaza ${p}`);
+  const todas = s.querySelector('a[href="/industrias/"]');
+  assert.equal(textoDe(todas), `Ver las ${paginas.length} industrias →`);
+  assert.equal(s.querySelector('a[href="#formulario"]')?.getAttribute('data-cta-loc'), 'industrias');
+});
+
+test('5. servicios: 6 módulos iguales a filasMapa, con su maqueta y el botón al final', conDist, () => {
+  const s = seccion('servicios');
+  assert.equal(textoDe(s.querySelector('h2')), 'Seis servicios, un solo proveedor.');
+  const modulos = s.querySelectorAll('.pv2-modulo');
+  const filas = filasMapa(precios);
+  assert.deepEqual(modulos.map((m) => textoDe(m.querySelector('h3'))), filas.map((f) => f.nombre));
+  modulos.forEach((m, i) => {
+    assert.ok(m.querySelector(`a[href="/${filas[i].slug}/"]`), `${filas[i].nombre} enlaza su página`);
+    if (filas[i].precio) assert.equal(textoDe(m.querySelector('.pv2-modulo__precio')), filas[i].precio);
+    assert.equal(textoDe(m.querySelector('.pv2-modulo__linea')), filas[i].linea);
+  });
+  assert.equal(textoDe(s.querySelector('.pv2-marco .ew-dev__bar span')), 'tramitapa.com', 'diseño web lleva la captura real de TramitaPa');
+  const cta = s.querySelector('a[href="#formulario"][data-cta-loc="servicios"]');
+  assert.equal(cta?.getAttribute('data-service'), 'definir');
+});
+
+test('6. SEO: rótulo con la palabra del dueño, H2 sin palabras reservadas y «Pedir revisión de mi web»', conDist, () => {
+  const s = seccion('seo');
+  assert.equal(textoDe(s.querySelector('.pv2-rotulo')), 'SEO profesional');
+  assert.equal(textoDe(s.querySelector('h2')), 'Que te encuentren en Google, en Maps y en ChatGPT.');
+  const cta = s.querySelector('a[href="#formulario"][data-cta-loc="seo"]');
+  assert.equal(cta?.getAttribute('data-service'), 'revision');
+  assert.equal(textoDe(cta), 'Pedir revisión de mi web');
+  assert.ok(s.querySelector('a[href="/crecimiento/seo-posicionamiento-web-panama/"]'));
+});
+
+test('7. desarrollo: lista con precios confirmados, 3 SaaS propios y «Cotizar desarrollo a medida» (medida)', conDist, () => {
+  const s = seccion('desarrollo');
+  assert.equal(textoDe(s.querySelector('.pv2-rotulo')), 'Desarrollo web a medida');
+  assert.equal(textoDe(s.querySelector('h2')), 'Cuando una plantilla no alcanza.');
+  assert.deepEqual(s.querySelectorAll('.pv2-lista a').map((a) => a.getAttribute('href')), desarrolloPortada(precios).map((d) => `/${d.slug}/`));
+  assert.equal(textoDe(s.querySelector('.pv2-saas')), '3 productos de software propios en producción: WazaCRM, NousCRM y Cifrao.');
+  const cta = s.querySelector('a[href="#formulario"][data-cta-loc="desarrollo"]');
+  assert.equal(cta?.getAttribute('data-service'), 'medida');
+});
+
+test('general: cada «Cotizar» con clave lleva un data-opcion que existe en el selector del formulario', conDist, () => {
+  const raiz = home();
+  const opciones = new Set(raiz.querySelectorAll('#cf-servicio option').map((o) => textoDe(o)));
+  for (const a of raiz.querySelectorAll('a[href="#formulario"][data-service]')) {
+    const clave = a.getAttribute('data-service');
+    if (clave === 'definir') { assert.equal(a.getAttribute('data-opcion'), undefined, 'definir no cambia lo elegido'); continue; }
+    assert.ok(opciones.has(a.getAttribute('data-opcion')), `${a.getAttribute('data-cta-loc')}/${clave}: «${a.getAttribute('data-opcion')}» no es una opción del formulario`);
+  }
+});
+
+test('general: cada enlace interno de la portada lleva a una página que existe', conDist, () => {
+  for (const a of home().querySelectorAll('a[href^="/"]')) {
+    const href = a.getAttribute('href').split('#')[0];
+    if (!href || href.startsWith('//')) continue;
+    const ruta = href === '/' ? 'dist/index.html' : `dist${href}${href.endsWith('/') ? 'index.html' : ''}`;
+    assert.ok(existsSync(ruta), `${href} no existe en dist/`);
+  }
+});
+
+test('general: maquetas marcadas («Ejemplo» afuera, data-nosnippet, aria-hidden, nada enfocable, sin estrellas, nombres únicos)', conDist, () => {
+  const maquetas = home().querySelectorAll('.pv2-maqueta');
+  assert.ok(maquetas.length > 0, 'no hay maquetas');
+  const nombres = maquetas.map((m) => m.getAttribute('data-maqueta'));
+  assert.equal(new Set(nombres).size, nombres.length, `data-maqueta repetido: ${nombres.join(', ')}`);
+  for (const m of maquetas) {
+    assert.equal(m.tagName, 'DIV', 'data-nosnippet solo vale en div, span y section');
+    assert.equal(m.getAttribute('data-nosnippet'), '');
+    assert.equal(m.getAttribute('aria-hidden'), 'true');
+    assert.equal(m.querySelectorAll('a, button, input, select, textarea, [tabindex]').length, 0, `${m.getAttribute('data-maqueta')} tiene algo enfocable`);
+    assert.doesNotMatch(m.text, /★/, `${m.getAttribute('data-maqueta')} pinta estrellas`);
+    assert.equal(m.querySelectorAll('.pv2-marco').length, 0, 'una captura real no va dentro de una maqueta');
+    const nota = m.nextElementSibling;
+    assert.ok(nota?.classList.contains('pv2-nota') && /^Ejemplo · ./.test(textoDe(nota)), `${m.getAttribute('data-maqueta')} sin su nota «Ejemplo · …» afuera`);
+  }
+});
+
+test('general: los H2 de la portada no usan las palabras reservadas de la regla 2 de KEYWORDS.md', conDist, () => {
+  for (const h of home().querySelectorAll('main h2')) {
+    if (h.closest('.pv2-maqueta')) continue;
+    assert.doesNotMatch(textoDe(h), /\bSEO\b|desarrollo web a medida|marketing digital/i, textoDe(h));
+  }
+});
+
 test('la portada no se anima ni carga los efectos (DESIGN.md, Motion)', conDist, () => {
   const raiz = home();
   const main = raiz.querySelector('main');

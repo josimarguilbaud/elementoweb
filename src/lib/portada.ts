@@ -154,6 +154,16 @@ export function comparaPortada() {
   ];
 }
 
+/** Líneas del panel de código de Desarrollo (maqueta pv2-codigo): un fragmento de Astro sin claves ni datos reales.
+    Son cadenas para que el .astro las pinte con {linea} y no las compile como componentes. */
+export const CODIGO_PORTADA = [
+  '---',
+  "import Reserva from '../components/Reserva.astro';",
+  'const tours = await getTours();',
+  '---',
+  '<Reserva tours={tours} deposito="30%" />',
+];
+
 /** Lo que no hacemos: solo líneas con fuente publicada; la frase incluye la negación de la fuente. */
 export function noHacemosPortada() {
   return [

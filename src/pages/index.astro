@@ -7,12 +7,21 @@ import Base from '../layouts/Base.astro';
 import Blocks from '../components/Blocks.astro';
 import ContactForm from '../components/ContactForm.astro';
 import CascadaProyectos from '../components/CascadaProyectos.astro';
-import { site, industrias, url, wa, portfolio } from '../lib/site';
+import MarcoCaptura from '../components/MarcoCaptura.astro';
+import ModuloBento from '../components/ModuloBento.astro';
+import Maqueta from '../components/Maqueta.astro';
+import CtaCotizar from '../components/CtaCotizar.astro';
+import Ejemplo from '../components/Ejemplo.astro';
+import { site, industrias, saas, contactForm, url, wa, portfolio } from '../lib/site';
 import { ogFor } from '../lib/img';
 import { homeJsonLd } from '../lib/schema';
 import { proyectosDeClientes } from '../lib/portafolio';
-import { H1_PORTADA, filasMapa, itemListPortada, faqsPortada, respuestaPortada, precioDesde, aniosPortafolio } from '../lib/portada';
+import {
+  H1_PORTADA, filasMapa, itemListPortada, faqsPortada, respuestaPortada, precioDesde, aniosPortafolio, mapaOpciones, opcionDe,
+  industriasDestacadas, desarrolloPortada, CODIGO_PORTADA,
+} from '../lib/portada';
 import precios from '../data/precios.json';
+import formulario from '../data/formulario.json';
 /* Las hojas del molde y de la portada van en línea solo aquí (como en [...slug].astro): el resto del sitio no las baja. */
 import moldeCss from '../styles/molde-kredit.css?inline';
 import pielCss from '../styles/piel-grafito.css?inline';
@@ -30,19 +39,6 @@ const jsonld = homeJsonLd(faqs, [itemListPortada(site.domain.replace(/\/$/, ''),
 
 const waCotizar = wa('Hola, quiero cotizar un proyecto con Elemento Web.');
 
-/* Proyectos publicados: TramitaPa no se repite (ya está en el héroe) y no entran productos propios. Cada uno enlaza a su
-   caso o, si no tiene, al sitio publicado. Las capturas son reales y viven en public/. */
-const proyectosHome = [
-  { t: 'San Blas Full', movil: '/images/ejemplos/movil-sanblasfull.webp', cap: 'sanblasfull' },
-  { t: 'Panama International Movers', movil: '/images/ejemplos/movil-movers.webp', cap: 'panamainternationalmovers-2026' },
-  { t: 'Remodelaciones JG', movil: '/images/ejemplos/movil-remodelacionesjg.webp', cap: 'remodelacionesjg' },
-  { t: 'CicloFrio', movil: '/images/ejemplos/movil-ciclofrio.webp', cap: 'ciclofrio' },
-].map((p) => {
-  const d = proyectosDeClientes(portfolio).find((x) => x.t === p.t);
-  if (!d) throw new Error(`Proyecto de la portada sin entrada de cliente en portfolio: ${p.t}`);
-  return { ...p, ...d, dominio: new URL(d.href).hostname.replace(/^www\./, '') };
-});
-
 const dominio = (href: string) => new URL(href).hostname.replace(/^www./, '');
 const cascada = [
   { t: 'San Blas Full', cap: '/portfolio/sanblasfull' },
@@ -56,6 +52,46 @@ const cascada = [
 });
 const movilFrente = { srcset: [['/images/ejemplos/movil-sanblasfull-390.webp', 390], ['/images/ejemplos/movil-sanblasfull-780.webp', 780]] as [string, number][], width: 390, height: 260 };
 const anios = aniosPortafolio(proyectosDeClientes(portfolio));
+
+/* «Cotizar» con clave: la opción del selector del formulario se resuelve aquí; una clave sin opción rompe el build. */
+const mapa = mapaOpciones(contactForm.services, formulario.servicios);
+const opcion = (clave: string, loc: string) => opcionDe(mapa, clave, loc);
+
+/* 3. Proyectos: los 4 que no están en la cascada ni en el módulo de diseño; KL Contable no se destaca. */
+const nClientes = proyectosDeClientes(portfolio).length;
+const casos = proyectosDeClientes(portfolio).filter((p) => p.caso);
+const proyectosV2 = [
+  { t: 'Max Impresiones', cap: '/portfolio/maximpresiones' },
+  { t: 'La Vida es Bella', cap: '/portfolio/lavidaesbella' },
+  { t: 'Panamá Worldwide Express', cap: '/portfolio/panamaworldwideexpress' },
+  { t: 'Grupo Viesa', cap: '/portfolio/grupoviesa' },
+].map((p) => {
+  const d = proyectosDeClientes(portfolio).find((x) => x.t === p.t);
+  if (!d) throw new Error(`Proyecto de la portada sin entrada de cliente en portfolio: ${p.t}`);
+  return { ...p, ...d, dominio: dominio(d.href) };
+});
+
+/* 4. Industrias: 8 por evidencia con el héroe de su página; tres usan variantes propias de 40 KB o menos. */
+const { destacadas, resto: industriasResto } = industriasDestacadas(industrias);
+const PROPIAS: Record<string, [string, number, number]> = {
+  'turismo-hoteles': ['-640', 640, 448], constructoras: ['-560', 560, 392], 'logistica-transporte': ['-560', 560, 392],
+};
+const fichas = destacadas.map((i) => {
+  const base = `/images/hero/${i.slug.replace('industrias/', 'industrias--')}`;
+  const propia = Object.entries(PROPIAS).find(([k]) => i.slug === `industrias/diseno-web-${k}-panama`);
+  return propia
+    ? { ...i, src: `${base}${propia[1][0]}.webp`, srcset: undefined, width: propia[1][1], height: propia[1][2] }
+    : { ...i, src: `${base}-480.webp`, srcset: `${base}-480.webp 480w, ${base}-800.webp 800w`, width: 480, height: 336 };
+});
+
+/* 6. SEO: cuatro pilares. 7. Desarrollo: la lista con precios confirmados. */
+const pilaresSeo = [
+  { t: 'SEO técnico.', d: 'Velocidad, indexación y datos estructurados.' },
+  { t: 'Contenido.', d: 'Páginas que responden lo que tu cliente busca.' },
+  { t: 'SEO local.', d: 'Tu negocio visible en Google Maps.' },
+  { t: 'GEO.', d: 'Respuestas que ChatGPT y Perplexity pueden citar.' },
+];
+const desarrollo = desarrolloPortada(precios);
 
 const pasos = {
   type: 'steps' as const,
@@ -101,64 +137,176 @@ const pasos = {
   <!-- 3. Respuesta citable con fecha -->
   <Blocks v2 blocks={[{ type: 'answer', h2: 'En pocas palabras', text: respuesta.text, fecha: respuesta.fecha }]} />
 
-  <!-- 5. Mapa de servicios -->
-  <section class="ew-sec ew-sec--alt" aria-labelledby="mapa-h2">
-    <div class="ew-wrap ew-wrap--ancho">
-      <h2 class="ew-h2" id="mapa-h2">Lo que hacemos</h2>
-      <p class="ew-intro">Seis servicios que se conectan: la web trae la consulta, el SEO y la publicidad traen la visita, WhatsApp y la IA la atienden.</p>
-      <ul class="ew-filas">
-        {filas.map((f) => (
-          <li class="ew-fila" id={`mapa-${f.id}`}>
-            <h3>{f.nombre}</h3>
-            <div>
-              <p class="ew-fila__que">{f.resuelve}{f.precio && <span class="ew-data">{f.precio}</span>}</p>
-              {f.secundarios.length > 0 && (
-                <ul class="ew-fila__mas">{f.secundarios.map((s) => <li><a href={url(s.slug)}>{s.label}</a></li>)}</ul>
-              )}
-            </div>
-            <a class="ew-fila__ir" href={url(f.slug)}>{f.ir} <span aria-hidden="true">→</span></a>
+  <!-- 3. Proyectos (claro alterno): sitios de clientes en línea, casos documentados y la firma del CEO -->
+  <section id="proyectos" class="pv2-sec pv2-sec--alt pv2-ancla" aria-labelledby="proyectos-h2">
+    <div class="pv2-wrap">
+      <h2 class="ew-h2" id="proyectos-h2">{nClientes} sitios en línea que puedes visitar hoy.</h2>
+      <p class="pv2-casos"><span class="ew-data">Casos documentados</span>{casos.map((c) => <a href={url(c.caso)}>{c.t}</a>)}</p>
+      <ul class="pv2-proyectos">
+        {proyectosV2.map((p) => (
+          <li>
+            <MarcoCaptura cap={p.cap} dominio={p.dominio} alt={`Web de ${p.t}`} sizes="(min-width: 1024px) 560px, (min-width: 640px) 45vw, 92vw">
+              <Fragment slot="pie"><span class="pv2-proyecto__t">{p.t}</span> <span class="ew-data">{p.tag} · {p.year}</span> <a href={p.href} target="_blank" rel="noopener">Visitar sitio<span class="sr-only"> (se abre en otra pestaña)</span> <span aria-hidden="true">↗</span></a></Fragment>
+            </MarcoCaptura>
           </li>
         ))}
       </ul>
+      <p class="pv2-ir"><a href="/portafolio/">Ver el portafolio <span aria-hidden="true">→</span></a></p>
+      <p class="ew-firma">Josimar Guilbaud, CEO. Responde por la empresa y por cada proyecto que entregamos. <a href="/nosotros/">Quiénes somos</a></p>
+      <CtaCotizar loc="prueba" servicio="definir" wa={waCotizar} />
     </div>
   </section>
 
-  <!-- 7. Proyectos publicados y firma del fundador -->
-  <section class="ew-sec" aria-labelledby="proyectos-h2">
-    <div class="ew-wrap ew-wrap--ancho">
-      <h2 class="ew-h2" id="proyectos-h2">Proyectos publicados</h2>
-      <p class="ew-intro">Sitios de clientes en línea que puedes visitar hoy. El resto está en el <a class="ew-src" href="/portafolio/">portafolio</a>.</p>
-      <ul class="ew-proyectos">
-        {proyectosHome.map((p) => (
+  <!-- 4. Industrias (grafito): 8 por evidencia, el resto como enlaces de texto y el hub -->
+  <section id="industrias" class="pv2-sec pv2-banda--grafito pv2-ancla" aria-labelledby="industrias-h2">
+    <div class="pv2-wrap">
+      <h2 class="ew-h2" id="industrias-h2">Diseño web por industria</h2>
+      <ul class="pv2-fichas">
+        {fichas.map((f) => (
           <li>
-            <figure class="ew-dev">
-              <div class="ew-dev__stage">
-                <div class="ew-dev__browser">
-                  <div class="ew-dev__bar" aria-hidden="true"><i></i><i></i><i></i><span>{p.dominio}</span></div>
-                  <img src={`/portfolio/${p.cap}-800.webp`} srcset={`/portfolio/${p.cap}-480.webp 480w, /portfolio/${p.cap}-800.webp 800w`} sizes="(min-width: 768px) 560px, 92vw" width="800" height="600" alt={`Portada del sitio de ${p.t} en una computadora`} loading="lazy" decoding="async" />
-                </div>
-                <div class="ew-dev__phone"><img src={p.movil} width="390" height="844" alt={`El sitio de ${p.t} en un celular`} loading="lazy" decoding="async" /></div>
-              </div>
-              <figcaption class="ew-dev__pie">
-                <h3>{p.t}</h3>
-                <span class="ew-data">{p.catLabel} · {p.year}</span>
-                {p.did && <p>{p.did}</p>}
-                {p.caso
-                  ? <a href={url(p.caso)}>Ver el caso de {p.t} <span aria-hidden="true">→</span></a>
-                  : <a href={p.href} target="_blank" rel="noopener">Visitar {p.dominio}<span class="sr-only"> (se abre en otra pestaña)</span> <span aria-hidden="true">↗</span></a>}
-              </figcaption>
-            </figure>
+            <a class="pv2-ficha" href={url(f.slug)}>
+              <img src={f.src} srcset={f.srcset} sizes={f.srcset ? '(min-width: 1024px) 270px, 45vw' : undefined} width={f.width} height={f.height} alt="" loading="lazy" decoding="async" />
+              <span class="pv2-ficha__t">{f.label} <span aria-hidden="true">→</span></span>
+            </a>
           </li>
         ))}
       </ul>
-      <p class="ew-firma">Josimar Guilbaud, CEO. Responde por la empresa y por cada proyecto que entregamos. <a href="/nosotros/">Quiénes somos</a></p>
+      <div class="pv2-mas">
+        <p class="ew-data">Más industrias</p>
+        <ul class="pv2-mas__lista">{industriasResto.map((i) => <li><a href={url(i.slug)}>{i.label}</a></li>)}</ul>
+      </div>
+      <p class="pv2-ir"><a href="/industrias/">Ver las {industrias.length} industrias <span aria-hidden="true">→</span></a></p>
+      <CtaCotizar loc="industrias" servicio="definir" wa={waCotizar} />
     </div>
   </section>
-  <section class="ew-sec ew-cta-rep" aria-label="Cotizar después de ver los proyectos">
-    <div class="ew-wrap"><div class="ew-cta-rep__btns">
-      <a href="#formulario" class="ew-btn ew-btn--solido" data-cta-loc="prueba" data-service="definir">Cotizar mi proyecto</a>
-      <a href={waCotizar} target="_blank" rel="noopener" class="ew-btn ew-btn--wa" data-cta-loc="prueba">Hablar por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
-    </div></div>
+
+  <!-- 5. Servicios (bento, claro alterno): los 6 servicios del ItemList, cada uno con su maqueta -->
+  <section id="servicios" class="pv2-sec pv2-sec--alt pv2-ancla" aria-labelledby="servicios-h2">
+    <div class="pv2-wrap">
+      <h2 class="ew-h2" id="servicios-h2">Seis servicios, un solo proveedor.</h2>
+      <div class="pv2-bento pv2-bento--servicios">
+        {filas.map((f) => (
+          <ModuloBento id={f.id} nombre={f.nombre} slug={f.slug} ir={f.ir} linea={f.linea} precio={f.precio} ancho={f.id === 'diseno-web' || f.id === 'publicidad' ? 2 : undefined}
+            secundarios={[...f.secundarios.map((s) => ({ label: s.label, href: url(s.slug) })), ...(f.id === 'publicidad' || f.id === 'whatsapp' ? [{ label: 'Ver detalle ↓', href: '#marketing' }] : [])]}>
+            {f.id === 'diseno-web' && (
+              <div class="pv2-prueba">
+                <MarcoCaptura cap="/portfolio/tramitapa" dominio="tramitapa.com" alt="Web de TramitaPa, tramitapa.com, hecha por Elemento Web" sizes="(min-width: 1280px) 560px, (min-width: 640px) 60vw, 92vw">
+                  <Fragment slot="pie"><span class="ew-data">tramitapa.com · proyecto publicado</span></Fragment>
+                </MarcoCaptura>
+              </div>
+            )}
+            {f.id === 'tiendas' && (
+              <Maqueta nombre="tienda" linea="ficha de producto con pago por Yappy o tarjeta">
+                <div class="pv2-tienda">
+                  <p class="ew-dev__bar"><i></i><i></i><i></i><span>tienda.ejemplo.com</span></p>
+                  <div class="pv2-tienda__cuerpo">
+                    <span class="pv2-tienda__foto"></span>
+                    <div>
+                      <p class="pv2-tienda__nombre">Producto de ejemplo</p>
+                      <p class="pv2-tienda__ops"><span>S</span><span class="pv2-sel">M</span><span>L</span></p>
+                      <p class="pv2-tienda__envio">Envío a todo Panamá</p>
+                      <span class="pv2-tienda__btn">Pagar con Yappy o tarjeta</span>
+                    </div>
+                  </div>
+                </div>
+              </Maqueta>
+            )}
+            {f.id === 'seo' && (
+              <Maqueta nombre="mapa" linea="un negocio destacado en Google Maps">
+                <div class="pv2-mapa">
+                  <span class="pv2-mapa__pin"></span>
+                  <div class="pv2-mapa__ficha">
+                    <p class="pv2-mapa__nombre">Negocio de ejemplo</p>
+                    <p class="pv2-mapa__cat">Abierto · Cierra a las 6:00 p. m.</p>
+                    <p class="pv2-mapa__btns"><span>Cómo llegar</span><span>Llamar</span><span>Sitio web</span></p>
+                  </div>
+                </div>
+              </Maqueta>
+            )}
+            {f.id === 'publicidad' && (
+              <Maqueta nombre="campanas" linea="las campañas medidas hasta la consulta">
+                <table class="ew-cmp pv2-campanas">
+                  <thead><tr><th scope="col">Campaña</th><th scope="col">Clics</th><th scope="col">Consultas</th></tr></thead>
+                  <tbody>
+                    {[1, 2, 3].map(() => <tr><th scope="row"><span class="pv2-esqueleto"></span></th><td class="ew-cell-blank" data-label="Clics"></td><td class="ew-cell-blank" data-label="Consultas"></td></tr>)}
+                  </tbody>
+                </table>
+              </Maqueta>
+            )}
+            {f.id === 'whatsapp' && (
+              <Maqueta nombre="whatsapp-conversacion" linea="una conversación por la API oficial">
+                <Ejemplo e={{ tipo: 'whatsapp', negocio: 'Negocio de ejemplo', mensajes: [{ de: 'cliente', texto: 'Hola, ¿tienen espacio el sábado?', hora: '10:02' }, { de: 'negocio', texto: 'Hola. Sí: el sábado hay espacio a las 10:00 y a las 3:00. ¿Cuál prefieres?', hora: '10:03' }] }} />
+              </Maqueta>
+            )}
+            {f.id === 'ia' && (
+              <Maqueta nombre="asistente" linea="un asistente que responde con tu información">
+                <Ejemplo e={{ tipo: 'asistente', pregunta: '¿Hacen envíos a Chiriquí?', respuesta: 'Sí. Según la política de envíos del negocio, llegan a todo Panamá en 2 a 4 días hábiles.', fuentes: ['Política de envíos', 'Preguntas frecuentes'] }} />
+              </Maqueta>
+            )}
+          </ModuloBento>
+        ))}
+      </div>
+      <CtaCotizar loc="servicios" servicio="definir" wa={waCotizar} />
+    </div>
+  </section>
+
+  <!-- 6. SEO profesional (grafito): técnica, contenido, SEO local y GEO -->
+  <section id="seo" class="pv2-sec pv2-banda--grafito pv2-ancla" aria-labelledby="seo-h2">
+    <div class="pv2-wrap pv2-dos">
+      <div>
+        <p class="ew-data pv2-rotulo">SEO profesional</p>
+        <h2 class="ew-h2" id="seo-h2">Que te encuentren en Google, en Maps y en ChatGPT.</h2>
+        <p class="pv2-intro">Técnica, contenido y autoridad para aparecer en Google, Google Maps y en las respuestas de ChatGPT y Perplexity.</p>
+        <ol class="pv2-pilares">
+          {pilaresSeo.map((p, i) => <li><span class="pv2-pilares__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><span><strong>{p.t}</strong> {p.d}</span></li>)}
+        </ol>
+        <p class="pv2-nota-plazo">Búsquedas competidas: de 3 a 6 meses para ver avances claros.</p>
+        <CtaCotizar loc="seo" servicio="revision" opcion={opcion('revision', 'seo')} texto="Pedir revisión de mi web">
+          <a href="/crecimiento/seo-posicionamiento-web-panama/" class="ew-btn ew-btn--ghost">Ver SEO</a>
+        </CtaCotizar>
+      </div>
+      <div class="pv2-lateral">
+        <Maqueta nombre="informe" linea="lo que revisamos primero en una web">
+          <Ejemplo e={{ tipo: 'informe', titulo: 'Revisión SEO', sitio: 'ejemplo.com', filas: [{ k: 'Velocidad en celular', v: 'Bien', estado: 'bien' }, { k: 'Títulos y descripciones', v: 'Revisar', estado: 'ojo' }, { k: 'Ficha de Google Maps', v: 'Falta', estado: 'mal' }, { k: 'Datos estructurados', v: 'Revisar', estado: 'ojo' }], pie: 'Cada punto con su arreglo y su prioridad.' }} />
+        </Maqueta>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Desarrollo web a medida (claro): la lista con precios confirmados, tres paneles y los SaaS propios -->
+  <section id="desarrollo" class="pv2-sec pv2-sec--surface pv2-ancla" aria-labelledby="desarrollo-h2">
+    <div class="pv2-wrap pv2-dos">
+      <div>
+        <p class="ew-data pv2-rotulo">Desarrollo web a medida</p>
+        <h2 class="ew-h2" id="desarrollo-h2">Cuando una plantilla no alcanza.</h2>
+        <ul class="pv2-lista">
+          {desarrollo.map((d) => <li><a href={url(d.slug)}>{d.label}</a>{d.precio && <span class="ew-data">{d.precio}</span>}</li>)}
+        </ul>
+        <p class="pv2-saas">{saas.length} productos de software propios en producción: {saas.map((s, i) => <>{i > 0 && (i === saas.length - 1 ? ' y ' : ', ')}<a href={url(s.slug)}>{s.label}</a></>)}.</p>
+        <CtaCotizar loc="desarrollo" servicio="medida" opcion={opcion('medida', 'desarrollo')} texto="Cotizar desarrollo a medida" wa={waCotizar} />
+      </div>
+      <div class="pv2-paneles">
+        <div class="pv2-panel">
+          <Maqueta nombre="codigo" linea="el código de un sitio a medida">
+            <pre class="pv2-codigo"><code>{CODIGO_PORTADA.map((linea) => <span>{linea}</span>)}</code></pre>
+          </Maqueta>
+        </div>
+        <div class="pv2-panel pv2-panel--2">
+          <Maqueta nombre="agenda" linea="reservas con depósito en línea">
+            <Ejemplo e={{ tipo: 'agenda', negocio: 'Clínica de ejemplo', servicio: 'Consulta general', dias: [{ d: 'Lun 20' }, { d: 'Mar 21', sel: true }, { d: 'Mié 22' }], horas: [{ h: '9:00', libre: true }, { h: '10:30', libre: false }, { h: '11:00', libre: true, sel: true }, { h: '3:00', libre: true }], boton: 'Confirmar cita' }} />
+          </Maqueta>
+        </div>
+        <div class="pv2-panel pv2-panel--3">
+          <Maqueta nombre="pago" linea="un pago con Yappy o tarjeta">
+            <div class="pv2-pago">
+              <p class="pv2-pago__t">Pagar con</p>
+              <p class="pv2-pago__ops"><span class="pv2-sel">Yappy</span><span>Tarjeta</span><span>Transferencia</span></p>
+              <span class="pv2-pago__btn">Pagar</span>
+            </div>
+          </Maqueta>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- 10. Proceso con el entregable de cada etapa -->
@@ -168,17 +316,6 @@ const pasos = {
       <a href="#formulario" class="ew-btn ew-btn--solido" data-cta-loc="proceso" data-service="definir">Cotizar mi proyecto</a>
       <a href={waCotizar} target="_blank" rel="noopener" class="ew-btn ew-btn--wa" data-cta-loc="proceso">Hablar por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
     </div></div>
-  </section>
-
-  <!-- 11. Industrias -->
-  <section class="ew-sec" aria-labelledby="industrias-h2">
-    <div class="ew-wrap">
-      <h2 class="ew-h2" id="industrias-h2">Diseño web por industria</h2>
-      <ul class="ew-ind">
-        {industrias.map((i) => <li><a href={url(i.slug)}>{i.label}</a></li>)}
-        <li><a href="/industrias/">Ver todas las industrias <span aria-hidden="true">→</span></a></li>
-      </ul>
-    </div>
   </section>
 
   <!-- 12. Preguntas frecuentes (el mismo texto alimenta el FAQPage) -->

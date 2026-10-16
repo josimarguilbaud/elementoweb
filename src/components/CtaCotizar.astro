@@ -1,0 +1,21 @@
+---
+/* Botón «Cotizar» de la portada v2: baja al formulario (#formulario) con su ubicación y la clave del servicio para la
+   medición (track.ts), y la opción del selector que deja elegida (data-opcion, resuelta en el build con opcionDe).
+   «definir» no lleva opción: no cambia lo elegido. Va con el botón de WhatsApp cuando se pasa `wa`. */
+interface Props {
+  loc: string;
+  servicio: string;
+  opcion?: string;
+  texto?: string;
+  wa?: string;
+  clase?: string;
+}
+const { loc, servicio, opcion, texto = 'Cotizar mi proyecto', wa, clase = '' } = Astro.props;
+if (!loc || !servicio) throw new Error('CtaCotizar: faltan loc o servicio');
+if (servicio !== 'definir' && !opcion) throw new Error(`CtaCotizar (${loc}): la clave «${servicio}» necesita su opción del formulario`);
+---
+<div class={`pv2-ctas ${clase}`.trim()}>
+  <a href="#formulario" class="ew-btn ew-btn--primary" data-cta-loc={loc} data-service={servicio} data-opcion={opcion}>{texto}</a>
+  {wa && <a href={wa} target="_blank" rel="noopener" class="ew-btn ew-btn--wa" data-cta-loc={loc}>Hablar por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>}
+  <slot />
+</div>

@@ -5,7 +5,8 @@
      a un id que existe; (f) cada @id del ItemList existe como Service en su página; la portada no se anima. */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
+import { dirname, basename } from 'node:path';
 import { parse } from 'node-html-parser';
 import {
   precioDesde, filasMapa, itemListPortada, faqsPortada, respuestaPortada, H1_PORTADA,
@@ -241,6 +242,77 @@ test('pie y menú en la portada: sin bloque de cierre y los dos «Cotizar» del 
     assert.equal(a.getAttribute('data-cta-loc'), 'header');
     assert.equal(a.getAttribute('data-service'), 'definir');
   }
+});
+
+// ---- Portada v2, T2: héroe con la cascada de proyectos ----
+const archivoPublico = (src) => `dist${src.split(' ')[0]}`;
+const pesoKB = (src) => statSync(archivoPublico(src)).size / 1024;
+const existeExacto = (src) => { const ruta = archivoPublico(src); return existsSync(ruta) && readdirSync(dirname(ruta)).includes(basename(ruta)); };
+
+test('1. héroe: H1 de S5 a tamaño de subtítulo, frase de display, bajada y botones', conDist, () => {
+  const heroe = home().querySelector('.ew-hero');
+  const h1 = heroe.querySelector('h1');
+  assert.equal(h1.text.trim(), H1_PORTADA);
+  assert.equal(h1.innerHTML.trim(), H1_PORTADA, 'el H1 no lleva etiquetas internas (check-prod busca …WhatsApp</h1>)');
+  assert.ok(h1.classList.contains('pv2-h1--subtitulo'), 'Q2 por defecto: H1 a tamaño de subtítulo');
+  const display = heroe.querySelector('.pv2-display');
+  assert.equal(display?.tagName, 'P', 'la frase de display es un párrafo, no un encabezado');
+  assert.equal(display.text.trim(), 'Construimos webs como software.');
+  assert.equal(heroe.querySelector('.ew-hero__lead').text.trim(), 'Diseño y desarrollo web premium, SEO profesional y marketing digital. Desde $550, con cotización cerrada por escrito.');
+  const boton = heroe.querySelector('a.ew-btn--primary[href="#formulario"]');
+  assert.equal(boton?.getAttribute('data-cta-loc'), 'hero');
+  assert.equal(boton.getAttribute('data-service'), 'definir');
+  assert.equal(home().querySelectorAll('.ew-cifras').length, 0, 'la franja de cifras de D50 sale');
+});
+
+test('1. héroe: cascada con 4 capturas reales en orden, la del frente es el LCP y las de atrás no compiten', conDist, () => {
+  const marcos = home().querySelectorAll('.pv2-cascada .pv2-marco');
+  assert.deepEqual(marcos.map((m) => m.querySelector('.ew-dev__bar span')?.text.trim()), ['sanblasfull.com', 'panamainternationalmovers.com', 'remodelacionesjg.com', 'ciclofrio.com']);
+  const [frente, ...atras] = marcos.map((m) => m.querySelector('img'));
+  assert.equal(frente.getAttribute('loading'), 'eager');
+  assert.equal(frente.getAttribute('fetchpriority'), 'high');
+  assert.match(frente.getAttribute('alt'), /San Blas Full, sanblasfull\.com, hecha por Elemento Web/);
+  assert.deepEqual(frente.getAttribute('srcset').split(', ').map((s) => s.split(' ')[1]), ['480w', '800w', '1000w']);
+  for (const img of atras) {
+    assert.equal(img.getAttribute('loading'), 'lazy');
+    assert.equal(img.getAttribute('alt'), '', 'las de atrás son decorativas: el dominio va escrito en su barra');
+    assert.equal(img.getAttribute('fetchpriority'), 'low');
+    assert.equal(img.getAttribute('sizes'), '340px');
+    assert.equal(img.getAttribute('style'), undefined, 'sin opacity para atenuarlas');
+  }
+  const pie = home().querySelector('.pv2-cascada__pie a');
+  assert.equal(pie?.getAttribute('href'), '/portafolio/');
+  assert.equal(pie.text.replace(/\s+/g, ' ').trim(), 'Proyectos publicados · 2025–2026');
+});
+
+test('1. héroe: en compacto la captura de celular recortada a 3:2, con el corte de COMPACTO en el HTML y en portada.css', conDist, () => {
+  const source = home().querySelector('.pv2-cascada .pv2-marco picture source');
+  assert.equal(source?.getAttribute('media'), `(max-width: ${COMPACTO}px)`);
+  assert.deepEqual(source.getAttribute('srcset').split(', '), ['/images/ejemplos/movil-sanblasfull-390.webp 390w', '/images/ejemplos/movil-sanblasfull-780.webp 780w']);
+  assert.equal(source.getAttribute('width'), '390');
+  assert.equal(source.getAttribute('height'), '260');
+  assert.match(readFileSync('src/styles/portada.css', 'utf8'), new RegExp(`max-width:\\s*${COMPACTO}px`), 'portada.css repite el corte de COMPACTO');
+});
+
+test('1. héroe: toda variante de la primera pantalla existe con su nombre exacto y pesa 60 KB o menos', conDist, () => {
+  const raiz = home();
+  const frente = raiz.querySelector('.pv2-cascada .pv2-marco img');
+  const fuentes = [...frente.getAttribute('srcset').split(', '), ...raiz.querySelector('.pv2-cascada picture source').getAttribute('srcset').split(', ')];
+  for (const src of fuentes) {
+    assert.ok(existeExacto(src), `no existe ${archivoPublico(src)} (con mayúsculas exactas)`);
+    assert.ok(pesoKB(src) <= 60, `${src} pesa ${pesoKB(src).toFixed(1)} KB`);
+  }
+  for (const img of raiz.querySelectorAll('.ew-hero img')) {
+    assert.ok(img.getAttribute('width') && img.getAttribute('height'), `${img.getAttribute('src')} sin width/height`);
+  }
+});
+
+test('1. héroe: riel de los 6 servicios y línea de confianza enlazada a /nosotros/', conDist, () => {
+  const heroe = home().querySelector('.ew-hero');
+  assert.deepEqual(heroe.querySelectorAll('.ew-rail--6 a').map((a) => a.getAttribute('href')), filasMapa(precios).map((f) => `/${f.slug}/`));
+  const confianza = heroe.querySelector('a.pv2-confianza');
+  assert.equal(confianza?.getAttribute('href'), '/nosotros/');
+  assert.equal(confianza.text.replace(/\s+/g, ' ').trim(), 'Tech Provider verificado por Meta · Respuesta el mismo día hábil');
 });
 
 test('la portada no se anima ni carga los efectos (DESIGN.md, Motion)', conDist, () => {

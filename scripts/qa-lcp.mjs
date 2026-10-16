@@ -44,15 +44,15 @@ for (const [w, h] of [[1440, 900], [390, 844]]) {
         return out.slice(0, 3);
       });
       if (ocultos.length) linea(estricta, `${w}x${h} ${ruta} sin JavaScript: contenido de la primera pantalla oculto → ${ocultos.join(', ')}`);
-      // Portada (D50, prueba g): a 1440x900 se ven H1, bajada, botones, insignia y el pie de la captura; a 390x844 el
-      // botón principal queda dentro de la pantalla y la caja de la captura empieza antes del borde inferior.
+      // Portada (v2): a 1440x900 se ven H1, frase de display, bajada, botones, línea de confianza y la captura del frente
+      // completa; a 390x844 el botón principal queda dentro de la pantalla y la caja de la captura empieza antes del borde.
       if (ruta === '/') {
         const m = await ps.evaluate(() => {
           const abajo = (s) => { const e = document.querySelector(s); return e ? Math.round(e.getBoundingClientRect().bottom) : null; };
           const arriba = (s) => { const e = document.querySelector(s); return e ? Math.round(e.getBoundingClientRect().top) : null; };
-          return { h1: abajo('.ew-hero h1'), boton: abajo('.ew-hero .ew-btn--primary'), wa: abajo('.ew-hero .ew-btn--ghost'), insignia: abajo('.ew-insignia'), pie: abajo('.ew-dev--hero figcaption'), caja: arriba('.ew-dev--hero .ew-dev__browser') };
+          return { h1: abajo('.ew-hero h1'), display: abajo('.ew-hero .pv2-display'), bajada: abajo('.ew-hero .ew-hero__lead'), boton: abajo('.ew-hero .ew-btn--primary'), wa: abajo('.ew-hero .ew-btn--ghost'), confianza: abajo('.pv2-confianza'), frente: abajo('.pv2-cascada__marco--frente .ew-dev__browser'), caja: arriba('.pv2-cascada__marco--frente .ew-dev__browser') };
         });
-        const pide = w >= 1024 ? ['h1', 'boton', 'wa', 'insignia', 'pie'] : ['boton'];
+        const pide = w >= 1024 ? ['h1', 'display', 'bajada', 'boton', 'wa', 'confianza', 'frente'] : ['boton'];
         const fuera = pide.filter((k) => m[k] === null || m[k] > h);
         if (w < 1024 && (m.caja === null || m.caja >= h)) fuera.push('caja de la captura');
         if (fuera.length) linea(true, `${w}x${h} /: fuera de la primera pantalla → ${fuera.join(', ')} (${JSON.stringify(m)})`);
@@ -61,6 +61,17 @@ for (const [w, h] of [[1440, 900], [390, 844]]) {
 
       await pj.goto(BASE + ruta, { waitUntil: 'load' });
       await pj.waitForTimeout(800);
+      // Portada (v2) a 1440: imágenes pedidas en la carga y su peso; la del frente se pide antes que las de atrás.
+      if (ruta === '/' && w === 1440) {
+        const imgs = await pj.evaluate(() => performance.getEntriesByType('resource').filter((r) => r.initiatorType === 'img')
+          .map((r) => ({ n: new URL(r.name).pathname, t: Math.round(r.startTime), kb: Math.round((r.encodedBodySize || 0) / 1024) })));
+        const frente = imgs.find((i) => /sanblasfull-(480|800|1000)\.webp$/.test(i.n));
+        const atras = imgs.filter((i) => /(panamainternationalmovers-2026|remodelacionesjg|ciclofrio)-\d+\.webp$/.test(i.n));
+        const kb = imgs.reduce((a, i) => a + i.kb, 0);
+        if (!frente) linea(true, '1440x900 /: la captura del frente no se pidió');
+        else if (atras.some((i) => i.t < frente.t)) linea(true, `1440x900 /: una captura de atrás se pidió antes que la del frente (${JSON.stringify(atras)})`);
+        else console.log(`✓ 1440x900 /: ${imgs.length} imágenes en la carga (${kb} KB); la del frente (${frente.n.split('/').pop()}) se pidió primero`);
+      }
       const lcp = await pj.evaluate(() => new Promise((res) => {
         const fin = (e) => res(e ? { t: Math.round(e.startTime), tag: e.element?.tagName?.toLowerCase() ?? '?', reveal: !!e.element?.closest?.('.reveal') } : null);
         try { new PerformanceObserver((l) => fin(l.getEntries().at(-1))).observe({ type: 'largest-contentful-paint', buffered: true }); } catch { res(null); }
@@ -73,6 +84,21 @@ for (const [w, h] of [[1440, 900], [390, 844]]) {
     }
   }
   await sinJs.close(); await conJs.close();
+}
+
+// Portada (v2): a 1024 y 1280 el texto del héroe no se superpone con la cascada (los marcos van en cqi del escenario).
+for (const w of [1024, 1280]) {
+  const ctx = await b.newContext({ viewport: { width: w, height: 800 } });
+  const pg = await ctx.newPage();
+  await pg.goto(BASE + '/', { waitUntil: 'load' });
+  const r = await pg.evaluate(() => {
+    const texto = [...document.querySelectorAll('.ew-hero__text > *')].map((e) => e.getBoundingClientRect().right);
+    const marcos = [...document.querySelectorAll('.pv2-cascada__marco')].map((e) => e.getBoundingClientRect().left);
+    return { texto: Math.round(Math.max(...texto)), cascada: Math.round(Math.min(...marcos)), scroll: document.documentElement.scrollWidth > innerWidth };
+  });
+  if (r.texto > r.cascada || r.scroll) linea(true, `${w} /: el texto del héroe (hasta ${r.texto} px) se cruza con la cascada (desde ${r.cascada} px) o hay scroll horizontal`);
+  else console.log(`✓ ${w} /: texto del héroe hasta ${r.texto} px, cascada desde ${r.cascada} px`);
+  await ctx.close();
 }
 await b.close();
 console.log(`\nqa-lcp: ${estrictas.length} página(s) estricta(s), ${informativas.length} informativa(s), ${fallos} fallo(s)`);

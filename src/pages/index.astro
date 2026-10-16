@@ -6,20 +6,22 @@
 import Base from '../layouts/Base.astro';
 import Blocks from '../components/Blocks.astro';
 import ContactForm from '../components/ContactForm.astro';
-import HeroProyecto from '../components/HeroProyecto.astro';
-import { site, saas, pricing, industrias, url, wa, portfolio } from '../lib/site';
+import CascadaProyectos from '../components/CascadaProyectos.astro';
+import { site, industrias, url, wa, portfolio } from '../lib/site';
 import { ogFor } from '../lib/img';
 import { homeJsonLd } from '../lib/schema';
 import { proyectosDeClientes } from '../lib/portafolio';
-import { H1_PORTADA, filasMapa, itemListPortada, faqsPortada, respuestaPortada } from '../lib/portada';
+import { H1_PORTADA, filasMapa, itemListPortada, faqsPortada, respuestaPortada, precioDesde, aniosPortafolio } from '../lib/portada';
 import precios from '../data/precios.json';
 /* Las hojas del molde y de la portada van en línea solo aquí (como en [...slug].astro): el resto del sitio no las baja. */
 import moldeCss from '../styles/molde-kredit.css?inline';
+import pielCss from '../styles/piel-grafito.css?inline';
 import portadaCss from '../styles/portada.css?inline';
 
 const title = 'Agencia de Diseño Web en Panamá | Elemento Web';
 const description = 'Agencia de diseño web en Panamá: sitios corporativos, tiendas online y landing pages, con SEO, Google Ads y WhatsApp. Pide tu cotización.';
-const bajada = 'Webs para empresas que quieren consultas, con WhatsApp por la API oficial. Precio publicado y respuesta el mismo día hábil.';
+const desde = precioDesde(precios, 'web-landing');
+const bajada = `Diseño y desarrollo web premium, SEO profesional y marketing digital. ${desde.charAt(0).toUpperCase()}${desde.slice(1)}, con cotización cerrada por escrito.`;
 
 const filas = filasMapa(precios);
 const faqs = faqsPortada(precios);
@@ -41,12 +43,19 @@ const proyectosHome = [
   return { ...p, ...d, dominio: new URL(d.href).hostname.replace(/^www\./, '') };
 });
 
-const cifras = [
-  { v: String(proyectosDeClientes(portfolio).length), k: 'proyectos publicados que puedes <a href="/portafolio/">visitar hoy</a>' },
-  { v: pricing.tiers[0].price, k: 'precio de partida publicado, con <a href="/precios/">cotización cerrada</a>' },
-  { v: 'Mismo día', k: 'hábil para responder tu solicitud' },
-  { v: String(saas.length), k: '<a href="/saas/">productos de software propios</a> en producción' },
-];
+const dominio = (href: string) => new URL(href).hostname.replace(/^www./, '');
+const cascada = [
+  { t: 'San Blas Full', cap: '/portfolio/sanblasfull' },
+  { t: 'Panama International Movers', cap: '/portfolio/panamainternationalmovers-2026' },
+  { t: 'Remodelaciones JG', cap: '/portfolio/remodelacionesjg' },
+  { t: 'CicloFrio', cap: '/portfolio/ciclofrio' },
+].map((p) => {
+  const d = proyectosDeClientes(portfolio).find((x) => x.t === p.t);
+  if (!d) throw new Error(`Proyecto de la cascada sin entrada de cliente en portfolio: ${p.t}`);
+  return { ...p, dominio: dominio(d.href) };
+});
+const movilFrente = { srcset: [['/images/ejemplos/movil-sanblasfull-390.webp', 390], ['/images/ejemplos/movil-sanblasfull-780.webp', 780]] as [string, number][], width: 390, height: 260 };
+const anios = aniosPortafolio(proyectosDeClientes(portfolio));
 
 const pasos = {
   type: 'steps' as const,
@@ -61,44 +70,32 @@ const pasos = {
 };
 ---
 <Base title={title} description={description} current="home" image={ogFor('')} jsonld={jsonld} dark pageType="home" efectos={false} cierre={false} navCotizar={{ href: '#formulario', ctaLoc: 'header', service: 'definir' }}>
-  <style slot="head" is:inline set:html={moldeCss + portadaCss}></style>
+  <style slot="head" is:inline set:html={moldeCss + pielCss + portadaCss}></style>
 
-  <!-- 1. Héroe: H1, bajada, botones, insignia y un proyecto real; abajo el riel y la franja de cifras -->
+  <!-- 1. Héroe (grafito): H1 de S5, frase de display, bajada, botones y línea de confianza; a la derecha la cascada de
+       proyectos reales; abajo el riel de los 6 servicios -->
   <section class="ew-hero ew-hero--home">
     <div class="ew-hero__grid">
       <div class="ew-hero__text">
-        <h1 class="ew-hero__h1">{H1_PORTADA}</h1>
+        <h1 class="ew-hero__h1 pv2-h1--subtitulo">{H1_PORTADA}</h1>
+        <p class="pv2-display">Construimos webs como software.</p>
         <p class="ew-hero__lead">{bajada}</p>
         <div class="ew-hero__ctas">
           <a href="#formulario" class="ew-btn ew-btn--primary" data-cta-loc="hero" data-service="definir">Cotizar mi proyecto</a>
           <a href={waCotizar} target="_blank" rel="noopener" class="ew-btn ew-btn--ghost" data-cta-loc="hero">Hablar por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
         </div>
-        <a href="/nosotros/" class="ew-insignia">
+        <a href="/nosotros/" class="pv2-confianza">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></svg>
-          Tech Provider verificado por Meta
+          Tech Provider verificado por Meta · Respuesta el mismo día hábil
         </a>
       </div>
-      <HeroProyecto
-        dominio="tramitapa.com"
-        escritorio={{ src: '/portfolio/tramitapa-800.webp', width: 800, height: 600, srcset: [['/portfolio/tramitapa-480.webp', 480], ['/portfolio/tramitapa-800.webp', 800], ['/portfolio/tramitapa-hero-1200.webp', 1200]] }}
-        movil={{ src: '/images/ejemplos/movil-tramitapa.webp', width: 390, height: 844, srcset: [['/images/ejemplos/movil-tramitapa.webp', 390], ['/images/ejemplos/movil-tramitapa-780.webp', 780]] }}
-        alt="Portada del sitio de TramitaPa en una computadora: titular sobre la visa de Estados Unidos, botones para iniciar el trámite y escribir por WhatsApp"
-        altMovil="El mismo sitio de TramitaPa visto en un celular"
-        pie="Proyecto real · tramitapa.com · Trámites de visa, 2025"
-        detalle="Un sitio a medida enfocado en una sola acción: llevar la consulta de visa directo a WhatsApp."
-        caso="/casos-de-exito/tramitapa/"
-      />
+      <CascadaProyectos proyectos={cascada} anios={anios} movil={movilFrente} />
     </div>
     <nav aria-label="Servicios">
       <ul class="ew-rail ew-rail--6">
         {filas.map((f) => <li><a href={`${url(f.slug)}`}>{f.nombre}</a></li>)}
       </ul>
     </nav>
-    <section aria-label="Elemento Web en cifras">
-      <dl class="ew-cifras">
-        {cifras.map((c) => <div><dt class="sr-only">{c.k.replace(/<[^>]+>/g, '')}</dt><dd><span class="ew-cifras__v">{c.v}</span><span class="ew-cifras__k" set:html={c.k}></span></dd></div>)}
-      </dl>
-    </section>
   </section>
 
   <!-- 3. Respuesta citable con fecha -->

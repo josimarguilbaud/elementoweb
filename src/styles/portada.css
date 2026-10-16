@@ -1,27 +1,45 @@
-/* Portada de agencia (D50, tanda B). Va en línea solo en la portada, junto a la hoja del molde: las demás páginas no
-   pagan estos bytes. Toda adaptación del CSS compartido va como modificador (.ew-hero--home, .ew-rail--6,
-   .ew-dev--hero) para no mover las 33 páginas v2. Sin animación (DESIGN.md, Motion): la portada nunca se anima. */
+/* Portada (D50; v2 desde el 15-oct). Va en línea solo en la portada, después del molde y de piel-grafito.css: las demás
+   páginas no pagan estos bytes. Toda adaptación del CSS compartido va como modificador o selector compuesto para no
+   mover las 33 páginas v2. Sin animación (DESIGN.md, Motion): la portada nunca se anima. */
 
-/* ---- Héroe: menú más 24 px de relleno arriba, para que botón e imagen entren en 390 por 844 ---- */
-.ew-hero--home { padding-top: 96px; }
-@media (min-width: 768px) { .ew-hero--home { padding-top: 112px; } }
-.ew-hero--home .ew-hero__h1 { margin-top: 0; max-width: 20ch; }
-.ew-hero--home .ew-hero__lead { max-width: 46ch; }
+/* ---- Héroe (portada v2): grafito con la cuadrícula de 56 px (solo aquí, DESIGN.md), H1 de S5 a tamaño de subtítulo
+   (Q2), frase de display (Q3: peso en --pv2-display-peso) y la cascada de proyectos a la derecha. ---- */
+.ew-hero.ew-hero--home { background: var(--ew-graphite); padding-top: 96px; }
+@media (min-width: 768px) { .ew-hero.ew-hero--home { padding-top: 112px; } }
+.ew-hero.ew-hero--home::before {
+  background-image: linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px);
+  background-position: center top;
+}
+@media (min-width: 1024px) { .ew-hero--home .ew-hero__grid { grid-template-columns: minmax(0, 1fr) min(560px, 48%); gap: 48px; } }
+.ew-hero--home .ew-hero__h1.pv2-h1--subtitulo { margin-top: 0; max-width: 34ch; font-size: 1.25rem; font-weight: 600; line-height: 1.3; letter-spacing: 0; color: var(--ew-on-primary); }
+.ew-hero--home .ew-hero__h1.pv2-h1--etiqueta { margin-top: 0; max-width: 40ch; font-size: 0.78rem; font-weight: 500; line-height: 1.5; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ew-on-primary-muted); }
+.pv2-display { margin-top: 12px; max-width: 14ch; font-size: clamp(2.5rem, 1.6rem + 4vw, 4.5rem); font-weight: var(--pv2-display-peso, 800); line-height: 1.02; letter-spacing: -0.025em; color: #fff; }
+.ew-hero--home .ew-hero__lead { max-width: 46ch; font-size: 1.125rem; }
 .ew-hero--home a:focus-visible { outline: 3px solid var(--ew-accent-on-dark); outline-offset: 3px; }
-.ew-insignia { margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 6px 16px 6px 10px; border: 1px solid rgba(255, 255, 255, .24); border-radius: 9999px; font-size: 0.92rem; font-weight: 600; color: #fff; text-decoration: none; }
-.ew-insignia svg { flex: none; color: var(--ew-accent-on-dark); }
-.ew-insignia:hover { border-color: #fff; }
+.pv2-confianza { margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 6px 16px 6px 10px; border: 1px solid rgba(255, 255, 255, .24); border-radius: 9999px; font-size: 0.92rem; font-weight: 600; color: #fff; text-decoration: none; }
+.pv2-confianza svg { flex: none; color: var(--ew-accent-on-dark); }
+.pv2-confianza:hover { border-color: #fff; }
 
-/* ---- Captura del proyecto: navegador 4:3 sin recorte y celular superpuesto ---- */
-.ew-dev--hero { margin: 0; width: 100%; max-width: 560px; justify-self: end; }
-.ew-dev--hero .ew-dev__browser { border-color: rgba(255, 255, 255, .16); background: var(--ew-primary-raised); box-shadow: 12px 12px 0 var(--ew-primary-raised); }
-.ew-dev--hero .ew-dev__bar { border-bottom-color: rgba(10, 26, 58, .12); }
-.ew-dev--hero .ew-dev__browser img { aspect-ratio: 4 / 3; object-fit: contain; background: var(--ew-primary-raised); }
-.ew-dev--hero .ew-dev__phone { right: -3%; width: 27%; box-shadow: 8px 8px 0 var(--ew-primary-raised); }
-.ew-dev--hero .ew-dev__pie { margin-top: 18px; color: var(--ew-on-primary-muted); }
-.ew-dev--hero .ew-dev__pie .ew-data { color: var(--ew-on-primary-muted); }
-.ew-dev--hero .ew-dev__pie a { color: var(--ew-accent-on-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
-.ew-dev__det { display: block; margin-top: 4px; }
+/* ---- Cascada: en compacto y medio solo la captura del frente a todo el ancho; desde 1024 px las cuatro apiladas en
+   plano. Marcos y desplazamientos van en cqi del escenario: a 560 px son 400 y 340 px con pasos de −48 y −40 px, y a
+   1024 px el marco de más atrás no sale hacia la columna de texto. ---- */
+.pv2-cascada .pv2-marco { margin: 0; }
+.pv2-cascada .ew-dev__browser { border-color: rgba(255, 255, 255, .16); background: #1a1c20; box-shadow: 12px 12px 0 #1d2026; }
+.pv2-cascada__marco:not(.pv2-cascada__marco--frente) { display: none; }
+.pv2-cascada__pie { margin-top: 18px; }
+.pv2-cascada__pie a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ew-on-primary-muted); text-decoration: underline; text-underline-offset: 3px; }
+.pv2-cascada__pie .ew-data { color: inherit; }
+/* Corte de compacto: igual a COMPACTO de src/lib/portada.ts (la prueba de paridad lo vigila). */
+@media (max-width: 639px) { .pv2-cascada__marco--frente .ew-dev__browser img { aspect-ratio: 3 / 2; } }
+@media (min-width: 1024px) {
+  .pv2-cascada { container-type: inline-size; }
+  .pv2-cascada__escenario { position: relative; height: calc(66cqi + 28px); }
+  .pv2-cascada .pv2-cascada__marco { display: block; position: absolute; width: 60.7cqi; }
+  .pv2-cascada .pv2-cascada__marco--frente { width: 71.4cqi; right: 0; bottom: 0; z-index: 4; }
+  .pv2-cascada .pv2-cascada__marco--1 { left: 20cqi; bottom: 13.8cqi; z-index: 3; }
+  .pv2-cascada .pv2-cascada__marco--2 { left: 11.4cqi; bottom: 20.9cqi; z-index: 2; }
+  .pv2-cascada .pv2-cascada__marco--3 { left: 2.8cqi; bottom: 28cqi; z-index: 1; }
+}
 
 /* ---- Riel con los 6 servicios: 2×3 en compacto, 3×2 de 640 a 1023 px y 6 columnas desde 1024 px ---- */
 .ew-rail.ew-rail--6 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; padding-top: 10px; padding-bottom: 10px; }
@@ -29,14 +47,6 @@
 @media (min-width: 1024px) { .ew-rail.ew-rail--6 { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
 .ew-rail--6 a { display: flex; align-items: center; min-height: 44px; font-weight: 600; line-height: 1.3; color: #fff; text-decoration: none; }
 .ew-rail--6 a:hover { color: var(--ew-accent-on-dark); text-decoration: underline; text-underline-offset: 3px; }
-
-/* ---- Franja de cifras: borde inferior de la banda del héroe ---- */
-.ew-cifras { position: relative; max-width: 1200px; margin: 0 auto; padding: 22px clamp(16px, 4vw, 32px) 30px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; border-top: 1px solid rgba(255, 255, 255, .12); }
-@media (min-width: 768px) { .ew-cifras { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-.ew-cifras dd { margin: 0; }
-.ew-cifras__v { display: block; font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; color: #fff; font-variant-numeric: tabular-nums; }
-.ew-cifras__k { display: block; margin-top: 2px; font-size: 0.92rem; line-height: 1.45; color: var(--ew-on-primary-muted); }
-.ew-cifras__k a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
 
 /* ---- Mapa de servicios: filas, no tarjetas («Fila de servicio», DESIGN.md) ---- */
 .ew-filas { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ew-border); }

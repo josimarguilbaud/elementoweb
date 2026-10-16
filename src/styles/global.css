@@ -122,7 +122,7 @@
    bloques nuevos (answer, receipt, includes, compare, blank): las páginas actuales no cambian.
    Contraste comprobado en DESIGN.md: texto 1c2230 y secundario 4f5f75 sobre f8f9fa >= 4,5:1. */
 :root {
-  --ew-primary: #0a1a3a; --ew-primary-raised: #123a6b; --ew-on-primary: #f5fafc; --ew-on-primary-muted: #b9cad5;
+  --ew-graphite: #0e0f11; --ew-primary: #0a1a3a; --ew-primary-raised: #123a6b; --ew-on-primary: #f5fafc; --ew-on-primary-muted: #b9cad5;
   --ew-accent: #0099cc; --ew-accent-on-light: #00688c; --ew-accent-on-dark: #5ec8e8; --ew-marker: #aee8ff;
   --ew-surface: #f8f9fa; --ew-surface-alt: #eaf0f5; --ew-raised: #ffffff;
   --ew-text: #1c2230; --ew-muted: #4f5f75; --ew-border: #d4dee8; --ew-field: #6b7b92;

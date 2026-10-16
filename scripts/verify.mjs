@@ -53,7 +53,8 @@ function terminar(codigo) {
 const npm = (nombre, ...a) => paso(nombre, NPM[0], [...NPM.slice(1), ...a]);
 npm('build (astro build)', 'run', 'build');
 npm('compilación de pruebas (páginas de ejemplo del marcador)', 'run', 'build:fixtures');
-npm('pruebas unitarias (node:test)', 'test');
+// VERIFY=1: las pruebas de dist/ (portada.test.mjs) fallan si dist/ falta o quedó más viejo que src/ o public/.
+paso('pruebas unitarias (node:test)', NPM[0], [...NPM.slice(1), 'test'], { env: { ...process.env, VERIFY: '1' } });
 paso('FORMULARIO.md coincide con src/data/formulario.json', process.execPath, ['scripts/gen-formulario-md.mjs', '--check']);
 paso('qa-seo (title, canonical, schema)', process.execPath, ['scripts/qa-seo.mjs']);
 paso('SEO congelado (metadatos y schema no cambian sin permiso, D36)', process.execPath, ['scripts/seo-congelado.mjs']);

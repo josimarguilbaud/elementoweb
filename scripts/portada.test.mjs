@@ -1,8 +1,10 @@
 /* Portada de agencia, tanda B (D50): node --test scripts/portada.test.mjs
    - Reglas puras de src/lib/portada.ts: precios leídos por clave, mapa de 6 filas, riel sin cifras, ItemList por @id,
      preguntas y respuesta citable.
-   - Sobre dist/ (si existe): (b) toda cifra «$N» del <main> de / está confirmada; (e) los anclas #formulario apuntan
-     a un id que existe; (f) cada @id del ItemList existe como Service en su página; la portada no se anima. */
+   - Sobre dist/ (al día; ver estadoDist): (b) toda cifra «$N» del <main> de / está confirmada; (e) los anclas
+     #formulario apuntan a un id que existe; (f) cada @id del ItemList existe como Service en su página; la portada no
+     se anima; y las secciones 1 a 13 de la v2.
+   Ciclo rápido sin HTML: SOLO_UNIDAD=1 node --test scripts/portada.test.mjs */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
@@ -182,9 +184,31 @@ test('comparación y «lo que no hacemos»: cada fila con su ruta y una frase fu
 });
 
 // ---- Sobre la portada compilada ----
+// dist/ falta o está desactualizado si algún archivo de src/ o public/, astro.config.mjs o package-lock.json es más nuevo
+// que dist/index.html. Con VERIFY=1 (lo pasa scripts/verify.mjs) o en CI eso falla; fuera de ahí las pruebas de dist/ se
+// saltan con el mensaje, para que una propuesta nueva en public/ no ponga en rojo `npm test`. SOLO_UNIDAD=1 las salta
+// siempre (ciclo rápido).
 const HOME = 'dist/index.html';
-const conDist = { skip: !existsSync(HOME) && 'sin dist/: corre npm run build' };
+const masNuevo = (rutas) => {
+  let max = { t: 0, f: '' };
+  const ver = (f) => { const s = statSync(f); if (s.isDirectory()) readdirSync(f).forEach((n) => ver(`${f}/${n}`)); else if (s.mtimeMs > max.t) max = { t: s.mtimeMs, f }; };
+  rutas.filter((r) => existsSync(r)).forEach(ver);
+  return max;
+};
+const estadoDist = () => {
+  if (!existsSync(HOME)) return 'dist/ desactualizado: corre npm run build (falta dist/index.html)';
+  const n = masNuevo(['src', 'public', 'astro.config.mjs', 'package-lock.json']);
+  return n.t > statSync(HOME).mtimeMs ? `dist/ desactualizado: corre npm run build (${n.f} es más nuevo que ${HOME})` : null;
+};
+const ESTRICTO = process.env.VERIFY === '1' || !!process.env.CI;
+const SOLO_UNIDAD = process.env.SOLO_UNIDAD === '1';
+const viejo = SOLO_UNIDAD ? null : estadoDist();
+const conDist = { skip: SOLO_UNIDAD ? 'SOLO_UNIDAD=1: sin las pruebas de dist/' : !ESTRICTO && viejo ? viejo : false };
 const home = () => parse(readFileSync(HOME, 'utf8'));
+
+test('dist/ existe y está al día con src/, public/, astro.config.mjs y package-lock.json (falla con VERIFY=1 o en CI)', { skip: SOLO_UNIDAD ? 'SOLO_UNIDAD=1' : !ESTRICTO && viejo ? viejo : false }, () => {
+  assert.equal(viejo, null, viejo ?? '');
+});
 
 test('(b) toda cifra «$N» del contenido de la portada está en confirmados', conDist, () => {
   const main = home().querySelector('main');

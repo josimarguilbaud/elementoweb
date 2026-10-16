@@ -129,6 +129,60 @@ for (const w of [768, 1024, 1280]) {
   await ctx.close();
 }
 
+// Portada (v2): estilo calculado, porque global.css llega después del CSS en línea y a igual especificidad gana (no hay
+// prueba estática de la cascada). Fondo de cada sección según «Sistema visual» del plan; el borde del botón de contorno
+// sigue ahí (`.ew-btn { border: 0 }` de global.css lo borraría; se declara de 1,5 px, pero Chrome 155 redondea todo borde
+// a píxeles CSS enteros a cualquier densidad y lo pinta de 1 px); una sola columna en #proceso y #preguntas; encabezados
+// de .ew-cmp legibles sobre grafito (su fondo es blanco al 6 %, así que se compone con el de abajo); y el .glass de
+// Contacto en blanco.
+{
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });
+  const pg = await ctx.newPage();
+  await pg.goto(BASE + '/', { waitUntil: 'load' });
+  const r = await pg.evaluate(() => {
+    const efectivo = (el) => {
+      const capas = [];
+      for (let e = el; e; e = e.parentElement) {
+        const [r, g, b, a = 1] = (getComputedStyle(e).backgroundColor.match(/[\d.]+/g) || []).map(Number);
+        if (a > 0) capas.push([r, g, b, a]);
+        if (a === 1) break;
+      }
+      const base = capas.at(-1)?.[3] === 1 ? capas.pop() : [255, 255, 255, 1];
+      const [r, g, b] = capas.reverse().reduce(([R, G, B], [r, g, b, a]) => [r * a + R * (1 - a), g * a + G * (1 - a), b * a + B * (1 - a)], base);
+      return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
+    };
+    const lum = (rgb) => { const [r, g, b] = rgb.match(/\d+/g).slice(0, 3).map((v) => { const c = v / 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+    const contraste = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
+    const fondos = Object.fromEntries([['héroe', '.ew-hero'], ['respuesta', 'main > section.ew-sec'], ['proyectos', '#proyectos'], ['industrias', '#industrias'], ['servicios', '#servicios'], ['seo', '#seo'], ['desarrollo', '#desarrollo'], ['marketing', '#marketing'], ['proceso', '#proceso'], ['precios', '#precios'], ['compara', '#compara'], ['preguntas', '#preguntas'], ['contacto', '.pv2-contacto']]
+      .map(([n, s]) => [n, document.querySelector(s) ? efectivo(document.querySelector(s)) : 'falta']));
+    const c = getComputedStyle(document.querySelector('.ew-btn.pv2-btn--contorno'));
+    const izq = (s) => Math.round(document.querySelector(s).getBoundingClientRect().left);
+    const th = document.querySelector('#compara .ew-cmp th');
+    return {
+      fondos, borde: `${c.borderTopStyle} ${c.borderTopColor}`, bordeAncho: parseFloat(c.borderTopWidth),
+      primario: getComputedStyle(document.documentElement).getPropertyValue('--ew-primary').trim(),
+      columnas: { proceso: [izq('#proceso .ew-h2'), izq('#proceso .ew-pasos')], preguntas: [izq('#preguntas .ew-h2'), izq('#preguntas .ew-faq')] },
+      th: Math.round(contraste(getComputedStyle(th).color, efectivo(th)) * 10) / 10,
+      glass: getComputedStyle(document.querySelector('.pv2-contacto .glass')).backgroundColor,
+    };
+  });
+  const GRAFITO = 'rgb(14, 15, 17)', CLARO = 'rgb(248, 249, 250)', ALTERNO = 'rgb(234, 240, 245)';
+  const mapa = { 'héroe': GRAFITO, respuesta: CLARO, proyectos: ALTERNO, industrias: GRAFITO, servicios: ALTERNO, seo: GRAFITO, desarrollo: CLARO, marketing: ALTERNO, proceso: GRAFITO, precios: ALTERNO, compara: GRAFITO, preguntas: ALTERNO, contacto: GRAFITO };
+  const malos = Object.entries(mapa).filter(([n, v]) => r.fondos[n] !== v).map(([n, v]) => `${n} ${r.fondos[n]} (va ${v})`);
+  if (malos.length) linea(true, `1440 /: fondos de sección fuera del mapa: ${malos.join(', ')}`);
+  else console.log(`✓ 1440 /: los ${Object.keys(mapa).length} fondos de sección siguen el mapa (grafito, claro y alterno)`);
+  if (r.bordeAncho < 1 || r.borde !== 'solid rgb(10, 26, 58)') linea(true, `1440 /: el botón de contorno perdió su borde (${r.bordeAncho} px ${r.borde}; va sólido en --ew-primary ${r.primario})`);
+  else console.log(`✓ 1440 /: el botón de contorno conserva su borde (${r.bordeAncho} px calculado, ${r.borde})`);
+  const unaColumna = Object.entries(r.columnas).filter(([, [h, l]]) => h !== l).map(([n, [h, l]]) => `${n} (H2 ${h} px, lista ${l} px)`);
+  if (unaColumna.length) linea(true, `1440 /: dos columnas donde va una: ${unaColumna.join(', ')}`);
+  else console.log('✓ 1440 /: #proceso y #preguntas en una columna (H2 y lista comparten el borde izquierdo)');
+  if (r.th < 4.5) linea(true, `1440 /: los encabezados de .ew-cmp quedan a ${r.th}:1 sobre grafito (mínimo 4,5:1)`);
+  else console.log(`✓ 1440 /: encabezados de .ew-cmp a ${r.th}:1 sobre grafito`);
+  if (r.glass !== 'rgb(255, 255, 255)') linea(true, `1440 /: el formulario de Contacto no va en blanco (${r.glass})`);
+  else console.log('✓ 1440 /: el formulario de Contacto va en blanco opaco');
+  await ctx.close();
+}
+
 // Portada (v2): en «Lo que no hacemos» cada «Fuente» va a la derecha de su fila, también cuando el texto se parte.
 for (const w of [390, 1280]) {
   const ctx = await b.newContext({ viewport: { width: w, height: 800 } });

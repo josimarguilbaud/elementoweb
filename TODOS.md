@@ -27,15 +27,15 @@
 
 ### Medir la portada v2 después de publicarla
 
-**What:** El día P (publicación de la v2, se anota en D51): Lighthouse móvil y LCP en producción con `node scripts/medir.mjs https://elementoweb.com/ --id portada --metrica rendimiento` y `--metrica lcp`. En P + 14 y P + 28 días: Search Console de «agencia de diseño web» y «diseño web panama» contra `audit/gsc-baseline-2026-10.md`. En P + 4 y P + 8 semanas: GA4 por sesión con entrada en `/` (`cta_click`, `click_whatsapp`, `form_start`, `generate_lead`) contra el 30-sep al 14-oct.
+**What:** La v2 se publicó el 15-oct-2026 (día P, D51); el día P ya se midió (Lighthouse móvil en producción 92/100, LCP 1,8 s). Falta: Search Console de «agencia de diseño web» y «diseño web panama» contra `audit/gsc-baseline-2026-10.md` el **29-oct-2026** (P + 14) y el **12-nov-2026** (P + 28); GA4 por sesión con entrada en `/` (`cta_click`, `click_whatsapp`, `form_start`, `generate_lead`) contra el 30-sep al 14-oct el **12-nov-2026** (P + 4 semanas) y el **10-dic-2026** (P + 8 semanas). En la primera lectura de GA4, copiar a D51 la línea base del 30-sep al 14-oct, que no se copió antes de publicar.
 
 **Why:** La v2 es una decisión de marca del dueño, no un experimento; la medición sirve para detectar daño (caída de consultas o de rendimiento) a tiempo.
 
-**Context:** Reglas en D51 de `docs/specs/rediseno-elementoweb/DECISIONES.md`: reversión si Lighthouse baja de 85 o el LCP pasa de 3,5 s (D14); Search Console es solo lectura; GA4 solo concluye con al menos 300 sesiones y 5 `generate_lead` por ventana (si no, «datos insuficientes» y se repite a las 12 semanas). P + 14 y P + 28 reemplazan las lecturas del 28-oct y el 11-nov de la portada D50; las del 28-nov y el 28-dic siguen. Al publicar, poner aquí las fechas reales.
+**Context:** Reglas en D51 de `docs/specs/rediseno-elementoweb/DECISIONES.md`: reversión si Lighthouse baja de 85 o el LCP pasa de 3,5 s (D14); Search Console es solo lectura; GA4 solo concluye con al menos 300 sesiones y 5 `generate_lead` por ventana (si no, «datos insuficientes» y se repite a las 12 semanas). P + 14 y P + 28 reemplazan las lecturas del 28-oct y el 11-nov de la portada D50; las del 28-nov y el 28-dic siguen. Si GA4 no llega al umbral, la lectura de las 12 semanas cae el 7-ene-2027.
 
 **Effort:** S
 **Priority:** P1
-**Depends on:** Portada v2 publicada (push a `main` con permiso del dueño).
+**Depends on:** Nada; la v2 está publicada desde el 15-oct-2026.
 
 ### Volver a medir en producción las páginas del molde Kredit
 
@@ -205,7 +205,7 @@
 **Context:** Hallazgo de la revisión de ingeniería del 15-oct-2026 (autoplan). Basta con comprobar estado HTTP y que el `<title>` siga teniendo el nombre del cliente.
 
 **Effort:** S (humano) / S (CC)
-**Priority:** P3 hasta publicar la portada v2; P1 desde ese día (la segunda pasada de ingeniería del 15-oct lo subió, porque la v2 enlaza 8 o más dominios de clientes).
+**Priority:** P1 desde el 15-oct-2026, día en que se publicó la portada v2 (la segunda pasada de ingeniería del 15-oct lo dejó así, porque la v2 enlaza 8 o más dominios de clientes).
 **Depends on:** Nada.
 
 ### Sacar `docs/` del escaneo de Tailwind

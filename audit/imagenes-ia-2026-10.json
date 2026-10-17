@@ -1,7 +1,7 @@
 {
   "_nota": "Registro de gasto en fal (D46: tope de US$ 10 aprobado por el dueño el 13-oct-2026). Una fila por generación cobrada, con su request_id para rastrearla en el historial de fal. Precios tomados de la API de precios de fal el 13-oct-2026: nano-banana-pro US$ 0,15 y nano-banana-2 US$ 0,08 por imagen a 1K.",
   "tope": 10,
-  "gastado": 6.42,
+  "gastado": 6.87,
   "generaciones": [
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2e71-75c1-a49e-c745a53357fc", "uso": "portada diseno-web-panama" },
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2eca-7e42-934f-a8dba3fddcf6", "uso": "portada servicios/diseno-web-corporativo-panama" },
@@ -56,6 +56,9 @@
     { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14099-2e61-72b2-b0dd-6c328fd25cda", "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)" },
     { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a149fd-4cd2-71f3-b6bd-5eabb6297085", "uso": "portada v2: estilo A, dos columnas para la sección Servicios (pedido del dueño: está apiñada)" },
     { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a149fd-4d0f-7bf3-8f3c-0837bf6176fc", "uso": "portada v2: estilo B, índice con vista grande para la sección Servicios (pedido del dueño: está apiñada)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a149fd-4d26-7743-8452-96b16aa4ac5d", "uso": "portada v2: estilo C, filas editoriales para la sección Servicios (pedido del dueño: está apiñada)" }
+    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a149fd-4d26-7743-8452-96b16aa4ac5d", "uso": "portada v2: estilo C, filas editoriales para la sección Servicios (pedido del dueño: está apiñada)" },
+    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14a05-0cf0-7f52-9a53-650ba5485baf", "uso": "portada v2: estilo D, destacado y rejilla para la sección Servicios (segunda tanda, pedido del dueño)" },
+    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14a05-0d2e-7100-be49-1bc66a8c27b2", "uso": "portada v2: estilo E, dos grupos para la sección Servicios (segunda tanda, pedido del dueño)" },
+    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14a05-0d26-7e91-9c6e-85c526cbb0ba", "uso": "portada v2: estilo F, tres por dos con aire para la sección Servicios (segunda tanda, pedido del dueño)" }
   ]
 }

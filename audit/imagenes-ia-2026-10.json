@@ -1,7 +1,8 @@
 {
-  "_nota": "Registro de gasto en fal (D46: tope de US$ 10 aprobado por el dueño el 13-oct-2026). Una fila por generación cobrada, con su request_id para rastrearla en el historial de fal. Precios tomados de la API de precios de fal el 13-oct-2026: nano-banana-pro US$ 0,15 y nano-banana-2 US$ 0,08 por imagen a 1K.",
-  "tope": 10,
-  "gastado": 7.77,
+  "_nota": "Registro de gasto en fal (D46: tope de US$ 10 aprobado por el dueño el 13-oct-2026). Una fila por generación cobrada, con su request_id para rastrearla en el historial de fal. Precios tomados de la API de precios de fal el 13-oct-2026: nano-banana-pro US$ 0,15 y nano-banana-2 US$ 0,08 por imagen a 1K. El tope del archivo pasa a US$ 25 el 20-oct-2026: los 10 de D46 más los 15 de la tanda de IA creativa (D52.4), que se lleva aparte en tandas. Las filas de esa tanda se escriben con scripts/gasto-ia.mjs antes de cobrar (reservado → pendiente → confirmado).",
+  "tope": 25,
+  "gastado": 9.63,
+  "tandas": { "marketing-ia": { "tope": 15, "gastado": 1.86 } },
   "generaciones": [
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2e71-75c1-a49e-c745a53357fc", "uso": "portada diseno-web-panama" },
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2eca-7e42-934f-a8dba3fddcf6", "uso": "portada servicios/diseno-web-corporativo-panama" },
@@ -53,7 +54,7 @@
     { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14099-2e66-7da1-9f2e-3766feacf3d5", "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)" },
     { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14099-2e60-7510-b51b-070398d5efbd", "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)" },
     { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14099-2e58-79a0-a70d-a54ffe1b7d3b", "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14099-2e61-72b2-b0dd-6c328fd25cda", "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)" },
+    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14099-2e61-72b2-b0dd-6c328fd25cda", "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)" },
     { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a149fd-4cd2-71f3-b6bd-5eabb6297085", "uso": "portada v2: estilo A, dos columnas para la sección Servicios (pedido del dueño: está apiñada)" },
     { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a149fd-4d0f-7bf3-8f3c-0837bf6176fc", "uso": "portada v2: estilo B, índice con vista grande para la sección Servicios (pedido del dueño: está apiñada)" },
     { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a149fd-4d26-7743-8452-96b16aa4ac5d", "uso": "portada v2: estilo C, filas editoriales para la sección Servicios (pedido del dueño: está apiñada)" },
@@ -65,6 +66,12 @@
     { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14a19-2e2d-7ee0-ac92-35eaa65fd57e", "uso": "portada v2: bodegón 3D del panel de SEO y SEO local (prototipo de Servicios apilados)" },
     { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14a19-2e48-7d51-a1ee-82935b6d0502", "uso": "portada v2: bodegón 3D del panel de Publicidad en Google y Meta (prototipo de Servicios apilados)" },
     { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14a19-2e4a-73c1-a6d5-59daa86be6fc", "uso": "portada v2: bodegón 3D del panel de WhatsApp marketing (prototipo de Servicios apilados)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14a19-2e6b-76c2-a6b7-38a91788cede", "uso": "portada v2: bodegón 3D del panel de IA y automatización (prototipo de Servicios apilados)" }
+    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14a19-2e6b-76c2-a6b7-38a91788cede", "uso": "portada v2: bodegón 3D del panel de IA y automatización (prototipo de Servicios apilados)" },
+    { "id": "mkia-1", "fecha": "2026-10-20", "hora": "2026-10-20T05:14:04.164Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a157bb-411f-7c32-84fa-50ee83dc7a5b", "uso": "ia-videos-1-partida", "tanda": "marketing-ia", "estado": "confirmado" },
+    { "id": "mkia-2", "fecha": "2026-10-20", "hora": "2026-10-20T05:14:04.164Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a157bb-4128-7070-ba34-e1d74f893bff", "uso": "ia-videos-2-partida", "tanda": "marketing-ia", "estado": "confirmado" },
+    { "id": "mkia-3", "fecha": "2026-10-20", "hora": "2026-10-20T05:14:04.164Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a157bb-4121-7ac3-a213-86768a23d7b6", "uso": "portada-videos-publicitarios", "tanda": "marketing-ia", "estado": "confirmado" },
+    { "id": "mkia-4", "fecha": "2026-10-20", "hora": "2026-10-20T05:15:06.701Z", "modelo": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video", "costo": 0.7, "request_id": "01a157bc-2cf0-7ac2-9766-42a1db947378", "uso": "ia-videos-1-crudo", "tanda": "marketing-ia", "estado": "confirmado" },
+    { "id": "mkia-5", "fecha": "2026-10-20", "hora": "2026-10-20T05:15:06.701Z", "modelo": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video", "costo": 0.7, "request_id": "01a157bc-2d2b-7020-9095-6d93e50e0868", "uso": "ia-videos-2-crudo", "tanda": "marketing-ia", "estado": "confirmado" },
+    { "id": "mkia-6", "fecha": "2026-10-20", "hora": "2026-10-20T05:15:28.937Z", "modelo": "fal-ai/elevenlabs/tts/multilingual-v2", "costo": 0.01, "request_id": "01a157bc-7555-7ee0-bef2-7adb3a41146f", "uso": "ia-videos-1-voz", "tanda": "marketing-ia", "estado": "confirmado" }
   ]
 }

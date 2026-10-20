@@ -119,7 +119,10 @@ for (const [w, h] of [[390, 844], [768, 1024], [1280, 800]]) {
       return { es: el.matches('#cform button[type="submit"]'), ok: cs.outlineStyle !== 'none' && parseFloat(cs.outlineWidth) >= 2 && r >= 3, detalle: `${cs.outlineStyle} ${cs.outlineWidth} ${cs.outlineColor} (${r.toFixed(2)}:1 sobre blanco)` };
     });
     if (!boton.es || !boton.ok) anotar('portada-foco', 'Foco visible dentro del formulario blanco', '/ (1280)', [`botón de envío: ${boton.es ? boton.detalle : 'el Tab no llegó'}`]);
-    // Orden de tabulación: desde el inicio, el Tab llega a cada «Cotizar» y a cada pregunta.
+    // Orden de tabulación: desde el inicio, el Tab llega a cada «Cotizar» y a cada pregunta. Con la CPU frenada 4 veces,
+    // como un runner de CI: así se vio en CI que los paneles de Servicios devolvían el foco hacia atrás (D53).
+    const cdp = await p.context().newCDPSession(p);
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
     await p.goto(BASE + '/', { waitUntil: 'load' });
     await p.evaluate(() => { document.querySelectorAll('main a[href="#formulario"][data-cta-loc], #preguntas summary').forEach((el, i) => { if (el.checkVisibility()) el.dataset.qaTab = String(i); }); });
     const faltan = new Set(await p.evaluate(() => [...document.querySelectorAll('[data-qa-tab]')].map((el) => el.dataset.qaTab)));
@@ -130,7 +133,8 @@ for (const [w, h] of [[390, 844], [768, 1024], [1280, 800]]) {
       if (k) faltan.delete(k);
     }
     if (faltan.size) anotar('portada-tab', 'El Tab no llega a cada «Cotizar» y a cada pregunta', '/ (1280)', await p.evaluate((ks) => ks.map((k) => document.querySelector(`[data-qa-tab="${k}"]`).textContent.trim().slice(0, 40)), [...faltan]));
-    else console.log(`✓ / (1280): el Tab llega a los ${total} «Cotizar» y preguntas`);
+    else console.log(`✓ / (1280): el Tab llega a los ${total} «Cotizar» y preguntas (CPU ×4)`);
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 });
   }
 }
 await b.close();

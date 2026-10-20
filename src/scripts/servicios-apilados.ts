@@ -61,15 +61,22 @@ export function apilar(raiz: HTMLElement) {
 
     // Con teclado: al enfocar un enlace de un panel que todavía no entró, la página baja hasta ese panel. Si el salto cruza
     // el inicio de la pila, ScrollTrigger la fija y el navegador suelta el foco: se le devuelve sin volver a desplazar.
+    // Solo se devuelve si el foco se perdió (quedó en <body>) y al último enlace enfocado: con Tabs rápidos el foco ya pasó
+    // al siguiente, y devolverlo al anterior lo haría retroceder en bucle (lo encontró qa-a11y en CI).
+    let ultimo: HTMLElement | null = null;
     const alEnfocar = (e: FocusEvent) => {
       const destino = e.target as HTMLElement;
+      ultimo = destino;
       const i = paneles.findIndex((p) => p.contains(destino));
       const st = tl.scrollTrigger;
       if (i < 0 || !st) return;
       const y = st.labelToScroll(`panel-${i}`);
       if (Math.abs(scrollY - y) <= 4) return;
       scrollTo({ top: y, behavior: 'auto' });
-      requestAnimationFrame(() => requestAnimationFrame(() => { if (document.activeElement !== destino) destino.focus({ preventScroll: true }); }));
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        const activo = document.activeElement;
+        if (ultimo === destino && (!activo || activo === document.body)) destino.focus({ preventScroll: true });
+      }));
     };
     raiz.addEventListener('focusin', alEnfocar);
     return () => { raiz.classList.remove('pv2-anim'); raiz.removeEventListener('focusin', alEnfocar); };

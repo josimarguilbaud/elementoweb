@@ -34,9 +34,9 @@ const asignacion = tabla('Asignación').map(([ruta, fase, principal, secundarias
 }));
 const rutaManifiesto = (p) => (p.slug === '' ? '/' : `/${p.slug}/`);
 
-test('la tabla cubre exactamente las 34 páginas del manifiesto, con su fase', () => {
+test('la tabla cubre exactamente las 35 páginas del manifiesto, con su fase', () => {
   const esperadas = new Map(manifiesto.paginas.map((p) => [rutaManifiesto(p), p.fase]));
-  assert.equal(esperadas.size, 34);
+  assert.equal(esperadas.size, 35);
   assert.deepEqual(asignacion.map((a) => a.ruta).sort(), [...esperadas.keys()].sort());
   for (const a of asignacion) assert.equal(a.fase, esperadas.get(a.ruta), `fase de ${a.ruta}`);
 });
@@ -104,9 +104,9 @@ test('el panel GEO es un subconjunto exacto de docs/geo-panel-preguntas.md', () 
   assert.equal(new Set(panel.map((f) => f[0])).size, 10, 'preguntas repetidas');
 });
 
-test('el apéndice trae los metadatos actuales de las 34 páginas', () => {
+test('el apéndice trae los metadatos actuales de las 35 páginas', () => {
   const apendice = tabla('Apéndice: metadatos actuales (congelados, D36)');
-  assert.equal(apendice.length, 34);
+  assert.equal(apendice.length, 35);
   const snapshot = JSON.parse(leer('audit/seo-snapshot.json'));
   for (const [ruta, title] of apendice) {
     const e = snapshot[sinComillas(ruta)];

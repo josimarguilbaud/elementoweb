@@ -200,6 +200,7 @@ export const iaEmpresas: PageData[] = [
           { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones con n8n' },
           { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Desarrollo a medida' },
           { slug: 'saas/wazacrm', label: 'WazaCRM' },
+          { slug: 'marketing/videos-publicitarios-panama', label: 'Videos publicitarios con IA' },
           { slug: 'blog/inteligencia-artificial-para-pequenas-empresas-en-panama', label: 'Guía: IA para pequeñas empresas' },
         ],
       },

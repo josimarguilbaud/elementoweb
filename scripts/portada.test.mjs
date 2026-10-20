@@ -1,7 +1,7 @@
 /* Portada de agencia, tanda B (D50): node --test scripts/portada.test.mjs
    - Reglas puras de src/lib/portada.ts: precios leídos por clave, mapa de 6 filas, riel sin cifras, ItemList por @id,
      preguntas y respuesta citable.
-   - Sobre dist/ (al día; ver estadoDist): (b) toda cifra «$N» del <main> de / está confirmada; (e) los anclas
+   - Sobre dist/ (al día; ver scripts/lib/dist-guard.mjs): (b) toda cifra «$N» del <main> de / está confirmada; (e) los anclas
      #formulario apuntan a un id que existe; (f) cada @id del ItemList existe como Service en su página; la portada no
      se anima; y las secciones 1 a 13 de la v2.
    Ciclo rápido sin HTML: SOLO_UNIDAD=1 node --test scripts/portada.test.mjs */
@@ -10,6 +10,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
 import { dirname, basename } from 'node:path';
 import { parse } from 'node-html-parser';
+import { guardaDist } from './lib/dist-guard.mjs';
 import {
   precioDesde, filasMapa, itemListPortada, faqsPortada, respuestaPortada, H1_PORTADA,
   precioTexto, COMPACTO, mapaOpciones, opcionDe, modulosMarketing, aniosPortafolio, industriasDestacadas,
@@ -189,21 +190,7 @@ test('comparación y «lo que no hacemos»: cada fila con su ruta y una frase fu
 // saltan con el mensaje, para que una propuesta nueva en public/ no ponga en rojo `npm test`. SOLO_UNIDAD=1 las salta
 // siempre (ciclo rápido).
 const HOME = 'dist/index.html';
-const masNuevo = (rutas) => {
-  let max = { t: 0, f: '' };
-  const ver = (f) => { const s = statSync(f); if (s.isDirectory()) readdirSync(f).forEach((n) => ver(`${f}/${n}`)); else if (s.mtimeMs > max.t) max = { t: s.mtimeMs, f }; };
-  rutas.filter((r) => existsSync(r)).forEach(ver);
-  return max;
-};
-const estadoDist = () => {
-  if (!existsSync(HOME)) return 'dist/ desactualizado: corre npm run build (falta dist/index.html)';
-  const n = masNuevo(['src', 'public', 'astro.config.mjs', 'package-lock.json']);
-  return n.t > statSync(HOME).mtimeMs ? `dist/ desactualizado: corre npm run build (${n.f} es más nuevo que ${HOME})` : null;
-};
-const ESTRICTO = process.env.VERIFY === '1' || !!process.env.CI;
-const SOLO_UNIDAD = process.env.SOLO_UNIDAD === '1';
-const viejo = SOLO_UNIDAD ? null : estadoDist();
-const conDist = { skip: SOLO_UNIDAD ? 'SOLO_UNIDAD=1: sin las pruebas de dist/' : !ESTRICTO && viejo ? viejo : false };
+const { ESTRICTO, SOLO_UNIDAD, viejo, conDist } = guardaDist();
 const home = () => parse(readFileSync(HOME, 'utf8'));
 
 test('dist/ existe y está al día con src/, public/, astro.config.mjs y package-lock.json (falla con VERIFY=1 o en CI)', { skip: SOLO_UNIDAD ? 'SOLO_UNIDAD=1' : !ESTRICTO && viejo ? viejo : false }, () => {
@@ -448,7 +435,9 @@ test('8. marketing: rótulo, H2 sin palabras reservadas, 6 módulos iguales a lo
   const s = seccion('marketing');
   assert.equal(textoDe(s.querySelector('.pv2-rotulo')), 'Marketing digital');
   assert.equal(textoDe(s.querySelector('h2')), 'Campañas que se miden hasta la consulta.');
-  const delHub = [...new Set(pagina('dist/marketing/index.html').querySelectorAll('main a[href^="/marketing/"]').map((a) => a.getAttribute('href')).filter((h) => h !== '/marketing/'))];
+  // Las páginas de IA creativa (D52) están en la tabla del hub pero no son módulos de la portada: van en su grupo propio.
+  const IA_CREATIVA = ['/marketing/videos-publicitarios-panama/'];
+  const delHub = [...new Set(pagina('dist/marketing/index.html').querySelectorAll('main a[href^="/marketing/"]').map((a) => a.getAttribute('href')).filter((h) => h !== '/marketing/' && !IA_CREATIVA.includes(h)))];
   const modulos = s.querySelectorAll('.pv2-modulo').map((m) => m.querySelector('.pv2-modulo__enlaces a').getAttribute('href'));
   assert.deepEqual([...modulos].sort(), [...delHub].sort(), 'los módulos son los servicios del hub de marketing');
   assert.doesNotMatch(textoDe(s), /\$\s?\d/, 'marketing no lleva precios (siguen propuestos)');

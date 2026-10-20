@@ -9,6 +9,7 @@
     { "slug": "servicios/diseno-web-corporativo-panama", "tipo": "servicio", "fase": "2a", "precio": "confirmado" },
     { "slug": "crecimiento/seo-posicionamiento-web-panama", "tipo": "servicio", "fase": "2a", "precio": "cotizado" },
     { "slug": "marketing/google-ads-panama", "tipo": "servicio", "fase": "2a", "precio": "propuesto" },
+    { "slug": "marketing/videos-publicitarios-panama", "tipo": "servicio", "fase": "2b", "precio": "confirmado" },
 
     { "slug": "", "tipo": "home", "fase": "2b" },
     { "slug": "servicios", "tipo": "hub", "fase": "2b" },

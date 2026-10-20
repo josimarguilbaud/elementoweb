@@ -1177,11 +1177,19 @@
  },
  "/marketing/": {
   "title": "Marketing Digital y Pauta en Panamá | Google, Meta y Más",
-  "description": "Marketing digital en Panamá: Google Ads, Facebook e Instagram Ads, contenido para redes, email marketing y automatizaciones. Fee claro, tu inversión aparte.",
+  "description": "Marketing digital en Panamá: Google Ads, Meta Ads, contenido, email y WhatsApp masivo, más videos publicitarios hechos con IA y revisados a mano.",
   "h1": "Marketing digital que trae clientes",
   "canonical": "https://elementoweb.com/marketing/",
   "robots": "index, follow, max-image-preview:large",
-  "schema": "0b9e5c00c5"
+  "schema": "276129f67b"
+ },
+ "/marketing/videos-publicitarios-panama/": {
+  "title": "Videos Publicitarios con IA en Panamá | Reels y Anuncios",
+  "description": "Videos publicitarios con IA en Panamá: 4 videos verticales de 15 a 30 s para Reels y anuncios, con guion, voz y subtítulos, revisados a mano.",
+  "h1": "Videos publicitarios con IA para tu negocio",
+  "canonical": "https://elementoweb.com/marketing/videos-publicitarios-panama/",
+  "robots": "index, follow, max-image-preview:large",
+  "schema": "81b99a6a3c"
  },
  "/marketing/whatsapp-marketing-masivo-panama/": {
   "title": "WhatsApp Marketing Masivo en Panamá | API Oficial",

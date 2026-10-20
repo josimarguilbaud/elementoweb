@@ -1,0 +1,7 @@
+{
+  "nota_general": "Videos de ejemplo de las páginas de IA creativa (D52), hechos por Elemento Web para negocios ficticios: no son clientes ni personas reales. Cada uno parte de una imagen de fal-ai/nano-banana-pro animada con fal-ai/kling-video/v2.5-turbo/pro/image-to-video (10 s) y recomprimida con ffmpeg 8.1.2 a H.264 High, yuv420p, 1280 px de alto. La voz es de fal-ai/elevenlabs/tts/multilingual-v2 y los subtítulos, en Roboto, salen de sus marcas de tiempo sobre el guion. crf es el del archivo que quedó.",
+  "videos": [
+    { "archivo": "ia-videos-1.mp4", "modelo": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video", "voz": "fal-ai/elevenlabs/tts/multilingual-v2 (voz Laura, es)", "crf": 28, "descripcion": "Acercamiento lento a una taza de café humeante junto a una bolsa de granos; voz y subtítulos con el guion del ejemplo" },
+    { "archivo": "ia-videos-2.mp4", "modelo": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video", "crf": 28, "descripcion": "Arco de cámara alrededor de un frasco de sérum sin etiqueta sobre pizarra mojada; sin voz" }
+  ]
+}

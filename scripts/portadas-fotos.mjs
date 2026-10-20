@@ -4,33 +4,18 @@
    el ImageObject del schema), rehace las variantes WebP de 480, 800, 1200 y 1600, con la de 1200 en 58 KB o menos
    (es la que sirve la portada v2, tope de 60 KB de D14), y el recorte para compartir public/images/og/<slug>.jpg
    a 1200x630. Imprime el peso de cada archivo. No toca src/lib/heroes.ts: si el slug es nuevo, correr después
-   node scripts/heroes-manifest.mjs. */
+   node scripts/heroes-manifest.mjs. Se puede importar sin efectos: el CLI corre solo si es el script principal. */
 import sharp from 'sharp';
 import { mkdirSync, statSync, existsSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { webpConTope } from './lib/webp.mjs';
+
+export { webpConTope };
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const TOPE_1200 = 58 * 1024;
 const kb = (f) => `${Math.round(statSync(f).size / 1024)} KB`;
-
-/* Baja la calidad hasta 54; si la foto tiene mucho detalle fino (murales, estantes llenos), suaviza apenas antes de
-   seguir bajando, porque un desenfoque de 0,4 a 0,8 px no se nota a 1200 px y la calidad 40 sí. */
-async function webpConTope(entrada, ancho, salida, tope) {
-  const intentos = [74, 70, 66, 62, 58, 54].map((q) => ({ q, s: 0, m: 0 }))
-    .concat([0.4, 0.6, 0.8].flatMap((s) => [62, 58, 54].map((q) => ({ q, s, m: 0 }))))
-    // Fotos con grano del modelo: un filtro de mediana quita el grano y respeta los bordes mejor que el desenfoque.
-    .concat([66, 62, 58, 54, 50].map((q) => ({ q, s: 0, m: 3 })))
-    .concat([58, 54].map((q) => ({ q, s: 0, m: 5 })));
-  for (const { q, s, m } of intentos) {
-    let img = sharp(entrada).resize({ width: ancho });
-    if (m) img = img.median(m);
-    if (s) img = img.blur(s);
-    const info = await img.webp({ quality: q, effort: 6 }).toFile(salida);
-    if (!tope || info.size <= tope) return m ? `${q}+mediana${m}` : s ? `${q}+blur${s}` : q;
-  }
-  throw new Error(`no se pudo dejar ${salida} bajo ${Math.round(tope / 1024)} KB`);
-}
 
 async function instalar(foto, slug) {
   if (!existsSync(foto)) throw new Error(`no existe ${foto}`);
@@ -58,6 +43,8 @@ async function instalar(foto, slug) {
   console.log(lineas.join('\n'));
 }
 
-const args = process.argv.slice(2);
-if (!args.length || args.length % 2) { console.error('Uso: node scripts/portadas-fotos.mjs <foto.jpg> <slug> [...]'); process.exit(2); }
-for (let i = 0; i < args.length; i += 2) await instalar(args[i], args[i + 1]);
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const args = process.argv.slice(2);
+  if (!args.length || args.length % 2) { console.error('Uso: node scripts/portadas-fotos.mjs <foto.jpg> <slug> [...]'); process.exit(2); }
+  for (let i = 0; i < args.length; i += 2) await instalar(args[i], args[i + 1]);
+}

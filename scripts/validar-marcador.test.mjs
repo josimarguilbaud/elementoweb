@@ -14,6 +14,13 @@ const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const FIX = join(RAIZ, 'dist-fixture');
 const precios = JSON.parse(readFileSync(join(RAIZ, 'src/data/precios.json'), 'utf8'));
 const HOY = new Date('2026-10-20T12:00:00Z');
+/* «El sitio real» usa la misma fecha que scripts/verify.mjs: VALIDAR_HOY o la del último commit. Así una respuesta citable
+   escrita hoy no falla por una fecha fija vieja, y una con fecha futura sigue fallando (D52). */
+const HOY_REAL = (() => {
+  let d = process.env.VALIDAR_HOY;
+  if (!d) { try { d = execSync('git log -1 --format=%cs', { cwd: RAIZ, stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim(); } catch { d = new Date().toISOString().slice(0, 10); } }
+  return new Date(`${d}T12:00:00Z`);
+})();
 
 const manifiestoFixture = {
   ordenFases: ['1', '2a'], faseActual: '1', seccionesComerciales: [],
@@ -236,7 +243,7 @@ test('enlazado entrante (D36): una página comercial que nadie enlaza desde su c
 
 test('el sitio real: toda página comercial tiene al menos 3 enlaces entrantes desde su contenido (si hay dist)', { skip: !existsSync(join(RAIZ, 'dist/index.html')) }, () => {
   const manifiesto = JSON.parse(readFileSync(join(RAIZ, 'scripts/paginas-comerciales.json'), 'utf8'));
-  const { errores } = validarDist({ dist: join(RAIZ, 'dist'), manifiesto, exclusiones: JSON.parse(readFileSync(join(RAIZ, 'scripts/exclusiones-marcador.json'), 'utf8')).exclusiones, precios, hoy: HOY });
+  const { errores } = validarDist({ dist: join(RAIZ, 'dist'), manifiesto, exclusiones: JSON.parse(readFileSync(join(RAIZ, 'scripts/exclusiones-marcador.json'), 'utf8')).exclusiones, precios, hoy: HOY_REAL });
   assert.deepEqual(errores, []);
 });
 
@@ -245,7 +252,7 @@ test('el manifiesto real y las exclusiones reales son coherentes con la fase 1',
   const { exclusiones } = JSON.parse(readFileSync(join(RAIZ, 'scripts/exclusiones-marcador.json'), 'utf8'));
   const slugs = manifiesto.paginas.map((p) => p.slug);
   assert.equal(new Set(slugs).size, slugs.length, 'slugs repetidos en el manifiesto');
-  assert.equal(manifiesto.paginas.filter((p) => p.tipo === 'servicio').length, 25, '25 páginas de servicio');
+  assert.equal(manifiesto.paginas.filter((p) => p.tipo === 'servicio').length, 26, '26 páginas de servicio (con Videos publicitarios, D52)');
   assert.equal(manifiesto.paginas.filter((p) => p.tipo === 'hub').length, 6, '6 hubs');
   for (const e of exclusiones) assert.ok(slugs.includes(e.slug), `${e.slug} excluida y no listada`);
   const formulario = JSON.parse(readFileSync(join(RAIZ, 'src/data/formulario.json'), 'utf8'));

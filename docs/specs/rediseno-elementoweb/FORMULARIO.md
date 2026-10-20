@@ -152,6 +152,7 @@ Una página sin clave propia usa `definir`. El mapa se pasa a `PageData.serviceK
 | `marketing/email-marketing-panama` | `definir` |
 | `marketing/whatsapp-marketing-masivo-panama` | `whatsapp` |
 | `marketing/automatizaciones-n8n-panama` | `automatizacion` |
+| `marketing/videos-publicitarios-panama` | `definir` |
 | `inteligencia-artificial-para-empresas-panama` | `ia` |
 | `crecimiento/seo-posicionamiento-web-panama` | `seo` |
 | `crecimiento/seo-local-google-maps-panama` | `seo` |

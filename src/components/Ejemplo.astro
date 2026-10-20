@@ -2,9 +2,13 @@
 /* Una maqueta de «Así se vería» (D44): el entregable dibujado en HTML y CSS. Todo es un ejemplo y lo dice; ninguna
    maqueta afirma un resultado ni usa logos de terceros. Las imágenes son locales, con alt y medidas reales. */
 import type { Ejemplo } from '../lib/types';
+import { assertTipoEjemplo, fichaVideo } from '../lib/ejemplos';
 interface Props { e: Ejemplo }
 const { e } = Astro.props;
+assertTipoEjemplo(e.tipo);
 const inicialDe = (s: string) => s.replace(/^www\./, '').trim().charAt(0).toUpperCase();
+/* El id de la ficha sale del nombre del archivo, para que sea único en la página (aria-describedby). */
+const idFicha = e.tipo === 'video' ? `ficha-${e.src.split('/').pop()!.replace(/\.mp4$/, '')}` : '';
 ---
 {e.tipo === 'google' && (
   <figure class="ew-mock ew-serp">
@@ -204,6 +208,26 @@ const inicialDe = (s: string) => s.replace(/^www\./, '').trim().charAt(0).toUppe
       {e.filas.map((f) => <li><span class={`ew-inf__dot ew-inf__dot--${f.estado}`} aria-hidden="true"></span><span class="ew-inf__k">{f.k}</span><span class="ew-inf__v">{f.v}</span><span class="sr-only">{f.estado === 'bien' ? '(bien)' : f.estado === 'ojo' ? '(revisar)' : '(mal)'}</span></li>)}
     </ul>
     <p class="ew-inf__pie">{e.pie}</p>
+  </figure>
+)}
+
+{e.tipo === 'foto' && (
+  <figure class="ew-mock ew-foto">
+    {e.etiqueta && <p class="ew-data ew-foto__etq">{e.etiqueta}</p>}
+    <img src={e.img.src} alt={e.img.alt} width={e.img.width} height={e.img.height} loading="lazy" decoding="async" />
+    <figcaption><span class="ew-data">{e.pie}</span></figcaption>
+  </figure>
+)}
+
+{e.tipo === 'video' && (
+  <figure class="ew-mock ew-vid">
+    {/* Sin autoplay; `muted` solo si no tiene voz. El texto de respaldo enlaza el mismo archivo. */}
+    <video controls preload="none" playsinline muted={!e.voz} poster={e.poster.src} width={e.poster.width} height={e.poster.height} aria-label={e.poster.alt} aria-describedby={idFicha}>
+      <source src={e.src} type="video/mp4" />
+      Tu navegador no reproduce este video: <a href={e.src}>descárgalo</a>.
+    </video>
+    <figcaption><span class="ew-data">{e.pie}</span><span class="ew-vid__ficha" id={idFicha}>{fichaVideo(e)}</span></figcaption>
+    {e.voz && e.guion && <details class="ew-vid__guion"><summary>Ver guion</summary><p>{e.guion}</p></details>}
   </figure>
 )}
 

@@ -1,0 +1,5 @@
+{
+  "_nota": "Rutas cuyo <main> puede cambiar en la tanda de IA creativa (D52, AC14) y páginas nuevas. Lo lee scripts/comparar-main.mjs contra el build de la línea base. Menú y pie cambian en todas las páginas y se declaran aparte.",
+  "cambian": ["/marketing/", "/servicios/", "/inteligencia-artificial-para-empresas-panama/"],
+  "nuevas": ["/marketing/videos-publicitarios-panama/"]
+}

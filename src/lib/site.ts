@@ -6,6 +6,7 @@
 
 import precios from '../data/precios.json';
 import formulario from '../data/formulario.json';
+import iaCreativaData from '../data/ia-creativa.json';
 
 /* Cifras confirmadas: salen de src/data/precios.json (D39). El validador del marcador lee el mismo archivo. */
 const usd = (n: number) => '$' + n.toLocaleString('en-US');
@@ -195,6 +196,10 @@ export const marketing: NavLink[] = [
   { slug: 'marketing/whatsapp-marketing-masivo-panama', label: 'WhatsApp Marketing' },
   { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones (n8n)' },
 ];
+
+/* Producción con IA (D52): las páginas de IA creativa que salen en esta tanda, desde src/data/ia-creativa.json. El menú y
+   el pie las muestran como grupo propio, después del de marketing, con las mismas clases. */
+export const iaCreativa: NavLink[] = iaCreativaData.paginas.map((p) => ({ slug: p.slug, label: p.etiqueta }));
 
 export const saas: (NavLink & { blurb: string })[] = [
   { slug: 'saas/wazacrm', label: 'WazaCRM', blurb: 'CRM de WhatsApp con IA: atiende, cotiza, agenda y cobra en piloto automático.' },

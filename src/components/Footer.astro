@@ -1,5 +1,5 @@
 ---
-import { site, cols, marketing, saas, legal, url, wa } from '../lib/site';
+import { site, cols, marketing, iaCreativa, saas, legal, url, wa } from '../lib/site';
 const waHref = wa('Hola, quiero cotizar un proyecto web.');
 /* Enlaces de red interna del pie: Miami (servicio remoto) e industrias con más prueba. */
 const miamiLinks = [
@@ -64,6 +64,11 @@ const { cierre = true } = Astro.props;
   <div class="relative mx-auto max-w-7xl border-t border-white/10 px-6 py-6">
     <p class="text-xs font-semibold uppercase tracking-wider text-white/40">Marketing digital y pauta</p>
     <div class="mt-4 flex flex-wrap gap-x-7 gap-y-2.5 text-sm">{marketing.map((m) => <a href={url(m.slug)} class="text-white/60 transition hover:text-teal">{m.label}</a>)}</div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl border-t border-white/10 px-6 py-6">
+    <p class="text-xs font-semibold uppercase tracking-wider text-white/40">Producción con IA</p>
+    <div class="mt-4 flex flex-wrap gap-x-7 gap-y-2.5 text-sm">{iaCreativa.map((m) => <a href={url(m.slug)} class="text-white/60 transition hover:text-teal">{m.label}</a>)}</div>
   </div>
 
   <div class="relative mx-auto max-w-7xl border-t border-white/10 px-6 py-6">

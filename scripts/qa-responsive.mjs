@@ -3,10 +3,11 @@
 //   npm run build && npx astro preview --port 4610 &   → node scripts/qa-responsive.mjs http://localhost:4610
 import { chromium } from 'playwright-core';
 import { rutaChrome } from './chrome.mjs';
+import { readFileSync } from 'node:fs';
 
 const BASE = process.argv[2] || 'http://localhost:4610';
 const EXE = rutaChrome() || '/opt/pw-browsers/chromium';
-const PAGES = ['/', '/precios/', '/contacto/', '/diseno-web-panama/', '/miami/', '/casos-de-exito/tramitapa/', '/recursos/calculadora-costo-total-web/', '/blog/cuanto-cuesta-diseno-web-panama/', '/comparativas/web-a-medida-vs-suscripcion/', '/nosotros/', '/guias/', '/guias/diseno-web-por-industria/', '/servicios/diseno-web-corporativo-panama/'];
+const PAGES = ['/', '/precios/', '/contacto/', '/diseno-web-panama/', '/miami/', '/casos-de-exito/tramitapa/', '/recursos/calculadora-costo-total-web/', '/blog/cuanto-cuesta-diseno-web-panama/', '/comparativas/web-a-medida-vs-suscripcion/', '/nosotros/', '/guias/', '/guias/diseno-web-por-industria/', '/servicios/diseno-web-corporativo-panama/', ...JSON.parse(readFileSync('src/data/ia-creativa.json', 'utf8')).paginas.map((p) => `/${p.slug}/`)]; // + IA creativa (D52)
 const SIZES = [[320, 640], [360, 740], [390, 844], [430, 932], [768, 1024], [820, 1180], [1024, 768], [1280, 800], [1440, 900], [844, 390]];
 
 const b = await chromium.launch({ executablePath: EXE });

@@ -12,6 +12,8 @@ import { rutaChrome } from './chrome.mjs';
 const BASE = process.argv[2] || 'http://localhost:4610';
 const EXE = rutaChrome() || '/opt/pw-browsers/chromium';
 const LCP_MAX_MS = 2500;
+// Páginas de IA creativa que salen en esta tanda (D52): llevan además la medida de primera pantalla.
+const IA_CREATIVA = JSON.parse(readFileSync('src/data/ia-creativa.json', 'utf8')).paginas.map((p) => `/${p.slug}/`);
 
 const recorrer = (d) => readdirSync(d).flatMap((n) => { const p = join(d, n); return statSync(p).isDirectory() ? recorrer(p) : [p]; });
 const estrictas = recorrer('dist').filter((f) => f.endsWith('.html') && /data-page-type="/.test(readFileSync(f, 'utf8')))
@@ -68,6 +70,20 @@ for (const [w, h] of [[1440, 900], [390, 844]]) {
           if (largos.length) linea(true, `${w}x${h} /: tramos de más de 2.110 px entre «Cotizar» → ${largos.map((t) => `${t.de}→${t.a} ${t.px} px`).join(', ')}`);
           else console.log(`✓ ${w}x${h} /: ${tramos.length} tramos entre «Cotizar», el más largo de ${Math.max(...tramos.map((t) => t.px))} px`);
         }
+      }
+
+      // IA creativa (D52): a 1440x900 el H1, el precio y el botón principal terminan dentro de la primera pantalla, y cada
+      // <video> mide 900 px de alto o menos; a 390x844, el botón principal. Si no cabe, se acorta el H1 o la bajada.
+      if (IA_CREATIVA.includes(ruta)) {
+        const m = await ps.evaluate(() => {
+          const abajo = (s) => { const e = document.querySelector(s); return e ? Math.round(e.getBoundingClientRect().bottom) : null; };
+          return { h1: abajo('.ew-hero__h1'), precio: abajo('[data-score="precio"]'), boton: abajo('.ew-hero .ew-btn--primary'), videos: [...document.querySelectorAll('main video')].map((v) => Math.round(v.getBoundingClientRect().height)) };
+        });
+        const pide = w >= 1024 ? ['h1', 'precio', 'boton'] : ['boton'];
+        const fuera = pide.filter((k) => m[k] === null || m[k] > h);
+        if (w >= 1024 && m.videos.some((v) => v > 900)) fuera.push(`video de ${Math.max(...m.videos)} px`);
+        if (fuera.length) linea(true, `${w}x${h} ${ruta}: fuera de la primera pantalla o demasiado alto → ${fuera.join(', ')} (${JSON.stringify(m)})`);
+        else console.log(`✓ ${w}x${h} ${ruta}: primera pantalla con ${pide.join(', ')}${w >= 1024 ? `; ${m.videos.length} videos de ${m.videos.join(', ')} px` : ''}`);
       }
 
       await pj.goto(BASE + ruta, { waitUntil: 'load' });

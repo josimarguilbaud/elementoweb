@@ -39,7 +39,7 @@
 
 ### Volver a medir en producción las páginas del molde Kredit
 
-**What:** Tras publicar la tanda del molde Kredit (D44), correr `node scripts/medir.mjs https://elementoweb.com/<ruta>/ --id <id> --escribir` para cada id de `src/data/mediciones.json` (las 24 páginas de servicio y la pilar, más precios, IA para empresas y CyberSource desde el 13-oct-2026) y publicar el cambio.
+**What:** Tras publicar la tanda del molde Kredit (D44), correr `node scripts/medir.mjs https://elementoweb.com/<ruta>/ --id <id> --escribir` para cada id de `src/data/mediciones.json` (las 24 páginas de servicio y la pilar, más precios, IA para empresas y CyberSource desde el 13-oct-2026, y videos-ia-lcp de Videos publicitarios desde el 20-oct-2026) y publicar el cambio.
 
 **Why:** Las mediciones del 13-oct-2026 se hicieron con Lighthouse sobre el build local (`astro preview`), porque producción todavía servía las páginas viejas. La cifra visible tiene que ser la de la página publicada, servida por nginx desde Netcup.
 
@@ -243,5 +243,119 @@
 **Effort:** S (humano) / S (CC)
 **Priority:** P3
 **Depends on:** Portada v2 publicada.
+
+## IA creativa (D52)
+
+### Medir las páginas de IA creativa
+
+**What:** Leer, desde el día de publicación P (20-oct-2026, `/marketing/videos-publicitarios-panama/`):
+- Día P y P + 28 (17-nov-2026): las 2 preguntas GEO nuevas, «¿Quién hace videos con IA para empresas en Panamá?» y «¿Cuánto cuesta un anuncio hecho con IA en Panamá?», con el método de `docs/geo-panel-preguntas.md` (sesión nueva, mismos motores, capturas). Van aparte del panel de 10 de D13.
+- P + 28: la inspección de URL de Search Console (indexada sí o no) y las impresiones de «videos publicitarios».
+- P + 56 (15-dic-2026): las impresiones por URL. La línea base es 0, así que la meta de D13 («el doble de impresiones») se lee como 1 impresión o más.
+- P + 28 y P + 56: las consultas que llegaron desde la página, por el `origen` de los envíos del formulario (correo de n8n), y los clics de WhatsApp en GA4 si el evento existe; si no existe, se anota y se cuenta solo el formulario.
+
+**Why:** La página sale sin búsquedas propias en Search Console (0 de 257 consultas de oct-2026) y con 10 a 100 búsquedas al mes en el Planificador. Sin fecha de lectura no se sabe si vale la pena seguir con las otras páginas.
+
+**Context:** Regla de decisión: si a P + 28 ningún motor cita a Elemento Web y la página no está indexada o tiene 0 impresiones, se adelanta su artículo de blog (abajo) y se hace una acción de autoridad del kit (`docs/autoridad/KIT-AUTORIDAD.md`, por ejemplo el alta en Sortlist), porque el freno documentado es la autoridad del dominio. Lectura GEO del día P: pendiente, la hace Claude en el navegador del dueño con su permiso o el dueño.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P2
+**Depends on:** Publicación (20-oct-2026).
+
+### Fotografía de producto con IA: falta la foto «antes»
+
+**What:** Construir `/marketing/fotografia-de-producto-panama/` (`fotos-producto-ia`, US$ 480, ya en `precios.json`) cuando llegue la foto de celular del dueño de un producto sin marca (G4): `rotate()` y sin EXIF, 2 o 3 «después» con `fal-ai/nano-banana-pro/edit`, portada con la foto «después» en una laptop, hoja de contactos y la página con el mismo molde que Videos.
+
+**Why:** La página no llegó a su mínimo de ejemplos («antes» y 2 «después») porque la foto no llegó antes del build, y por la regla de D52 no salió en esta tanda.
+
+**Context:** Slug congelado en D52. Si el dueño prefiere una foto de stock con licencia libre (Unsplash o Pexels), hace falta su permiso para descargarla y su fila en `public/images/ejemplos/CREDITOS.json`. Los conteos literales de las pruebas pasan de 26 a 27 servicios.
+
+**Effort:** M (humano) / S (CC)
+**Priority:** P2
+**Depends on:** La foto del dueño.
+
+### Secciones de Anuncios con IA y de Avatares y voz
+
+**What:** Planificar las 2 secciones que la medición del 20-oct-2026 dejó sin página propia (`MKIA-DEMANDA`): página anfitriona, `id` del bloque y enlaces con ancla, `service.catalogo` y sus pruebas de `offers`, `llms.txt` y KEYWORDS, con una revisión de ingeniería antes de construir. Precios decididos: `anuncios-ia` US$ 780 por 5 creativos y `avatar-ia` US$ 150 por video (no están en `precios.json`).
+
+**Why:** «anuncios con ia» y las 4 palabras de avatar traen solo herramientas en Google; con «panamá», la intención de anuncios es pauta en redes, que ya cubre la página de Meta Ads (`audit/demanda-ia-creativa-2026-10.md`).
+
+**Context:** El avatar se hace con `fal-ai/kling-video/ai-avatar/v2/pro` (D6), no con Higgsfield.
+
+**Effort:** M (humano) / M (CC)
+**Priority:** P3
+**Depends on:** La lectura de P + 28 de Videos.
+
+### Un artículo de blog por servicio de IA
+
+**What:** Un artículo por página de IA creativa, por ejemplo «cuánto cuesta un video publicitario con IA en Panamá», enlazado a su página.
+
+**Why:** Las palabras de servicio tienen poco volumen y mucha intención de herramienta; un artículo informativo capta la búsqueda que hoy se llevan Canva y HeyGen y la lleva al paquete.
+
+**Context:** El blog estaba fuera del radio de D52. Se adelanta si la lectura de P + 28 da 0 impresiones.
+
+**Effort:** M (humano) / S (CC)
+**Priority:** P3
+**Depends on:** Medir las páginas de IA creativa.
+
+### Caso real con piezas de IA de un cliente, con permiso
+
+**What:** Reemplazar el bloque «Casos de clientes» en blanco de la página de Videos por un caso real, con el permiso del cliente y una métrica medida.
+
+**Why:** Hoy los ejemplos son de negocios ficticios hechos por nosotros, y la página lo dice.
+
+**Context:** Mismo criterio de permisos que los logos de clientes (D50).
+
+**Effort:** M (humano) / S (CC)
+**Priority:** P3
+**Depends on:** El primer cliente del paquete.
+
+### Paquete recurrente de IA creativa atado a la pauta
+
+**What:** Un plan mensual de videos (y, si salen, anuncios) junto a la gestión de pauta, con su precio en `precios.json`.
+
+**Why:** Es el segundo multiplicador de la épica: el paquete de un solo pago no repite. Hoy la página dice «se cotiza aparte», sin cifra (U3).
+
+**Context:** El dueño decide el precio con su regla de siempre: el punto medio del mercado publicado, con fuentes.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P2
+**Depends on:** Decisión de precio del dueño.
+
+### Superlativos sin fuente fuera del radio de D52
+
+**What:** Quitar «Creativos que detienen el scroll» de la página de Meta Ads (`src/lib/pages/marketing.ts`, bloque «Qué incluye»), «El canal con mejor retorno» de la descripción congelada de Email marketing (necesita un permiso de D36 en `scripts/cambios-permitidos.json`) y del blog (`src/lib/pages/blog-4.ts`).
+
+**Why:** Son afirmaciones sin fuente. El hub y `/servicios/` ya no las dicen desde el 20-oct-2026.
+
+**Context:** La descripción de Email marketing está en el snapshot de `seo-congelado`.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P3
+**Depends on:** —
+
+### Regenerar los ejemplos de IA creativa
+
+**What:** Cada 6 meses, o cuando cambie el modelo, rehacer los videos y la portada de ejemplo con su propio tope de gasto y archivos con nombre nuevo (`-v2`, por la caché de 30 días de nginx).
+
+**Why:** Los ejemplos envejecen con los modelos: un video de 2026 se verá viejo en 2027.
+
+**Context:** El método está en D52 («Método de los videos con voz») y en `scripts/gasto-ia.mjs`.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P3
+**Depends on:** —
+
+### Muestras personalizadas de anuncios con IA para prospectar
+
+**What:** 3 piezas hechas para un negocio concreto de Panamá, que Nicole envía con la página de Videos como destino; reusa el patrón de Fábrica de Webs.
+
+**Why:** Una muestra hecha para el prospecto vende más que un ejemplo genérico.
+
+**Context:** El gasto de cada muestra va en `audit/imagenes-ia-2026-10.json` con `scripts/gasto-ia.mjs` y una tanda propia.
+
+**Effort:** M (humano) / S (CC)
+**Priority:** P2
+**Depends on:** —
 
 ## Completed

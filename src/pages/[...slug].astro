@@ -12,6 +12,8 @@ import { pageTypeOf } from '../lib/pages/kind';
 /* La hoja del molde Kredit va en línea y solo en las páginas v2: una hoja importada aquí la bajarían las ~180
    páginas de esta ruta (Astro agrupa el CSS por ruta, no por componente renderizado). */
 import moldeCss from '../styles/molde-kredit.css?inline';
+/* Los estilos de las maquetas `foto` y `video` (IA creativa, D52), también en línea y solo donde se usan. */
+import mediaCss from '../styles/ejemplo-media.css?inline';
 
 export function getStaticPaths() {
   // El home vive en index.astro; aquí van todas las demás páginas del registro.
@@ -22,6 +24,7 @@ export function getStaticPaths() {
 
 const { page } = Astro.props;
 const v2 = page.anatomia === 'v2';
+const usaMedia = page.blocks.some((b) => b.type === 'ejemplos' && b.items.some((e) => e.tipo === 'foto' || e.tipo === 'video'));
 const hero = heroFor(page, 1600, 0.7);
 const intro = page.lead.slice(1);
 const cta = page.cta ?? {};
@@ -51,6 +54,7 @@ const dateLabel = page.date
 ---
 <Base title={page.title} description={page.description} dark image={ogFor(page.slug)} jsonld={jsonld} ogType={isBlog ? 'article' : 'website'} published={isBlog ? page.date : undefined} pageType={pageTypeOf(page)} service={page.anatomia === 'v2' ? page.serviceKey : undefined}>
   {v2 && <style slot="head" is:inline set:html={moldeCss}></style>}
+  {usaMedia && <style slot="head" is:inline set:html={mediaCss}></style>}
   {v2 ? <PortadaServicio page={page} ctaText={ctaText} contactHref={contactHref} contactLabel={contactLabel} /> : (
   <section class="relative overflow-hidden bg-night pt-36 pb-20 text-white md:pt-44 md:pb-24">
     <div class="absolute inset-0 mesh-dark opacity-50"></div>

@@ -1,0 +1,14 @@
+/* Maquetas `foto` y `video` de «Así se vería» (IA creativa, D52). Va en línea solo en las páginas que las usan
+   ([...slug].astro), no en molde-kredit.css, que también entra en la portada y no tiene margen de CSS (D51).
+   Usa los tokens --ew- de global.css, la caja .ew-mock de molde-kredit.css y la escala de DESIGN.md. */
+.ew-vid, .ew-foto { padding: 12px; }
+.ew-vid video { display: block; margin: 0 auto; width: auto; max-width: 100%; height: auto; max-height: 75vh; aspect-ratio: 9 / 16; border-radius: 12px; background: var(--ew-graphite); }
+.ew-vid figcaption, .ew-foto figcaption { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; }
+.ew-vid__ficha { font-size: 0.78rem; color: var(--ew-muted); font-variant-numeric: tabular-nums; }
+.ew-vid__guion { margin-top: 10px; border-top: 1px solid var(--ew-border); padding-top: 10px; }
+.ew-vid__guion summary { cursor: pointer; font-size: 0.92rem; font-weight: 600; color: var(--ew-text); }
+.ew-vid__guion p { margin: 8px 0 0; font-size: 0.92rem; line-height: 1.55; color: var(--ew-text); }
+.ew-foto__etq { margin: 0 0 8px; }
+.ew-foto img { display: block; width: 100%; height: auto; border-radius: 12px; }
+/* Bajo 768 px los ejemplos van en 1 columna: antes y después quedan apilados, con la etiqueta encima de cada foto. */
+@media (max-width: 767px) { .ew-ejemplos { grid-template-columns: minmax(0, 1fr); } }

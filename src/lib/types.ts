@@ -28,7 +28,8 @@ export type Block =
   | { type: 'ejemplos'; h2: string; intro?: string; items: Ejemplo[]; nota: string; columnas?: 1 | 2 | 3 }
   /* Tabla de ejemplo (campañas y palabras, pilares del mes, páginas del sitio). */
   | { type: 'tabla'; h2: string; intro?: string; columnas: string[]; filas: string[][]; nota?: string }
-  | { type: 'blank'; punto: 'prueba'; h2?: string }
+  /* `texto` reemplaza el aviso fijo cuando no hay clientes esperando permiso (un servicio nuevo, D52). */
+  | { type: 'blank'; punto: 'prueba'; h2?: string; texto?: string }
   /* Formulario por servicio (D10). Existe pero NINGUNA página lo usa hasta la fase 3: reemplaza al bloque `form` cuando n8n acepte el contrato v2. */
   | { type: 'service-form'; h2?: string; intro?: string; servicio?: string }
   | { type: 'showcase'; id?: string; ctaLabel?: string; extraViews?: { label: string; src: string }[]; h2: string; intro?: string; project?: string; image?: { src: string; alt: string; width: number; height: number; caption: string }; notes: { label: string; text: string }[]; caption?: string };
@@ -73,7 +74,13 @@ export type Ejemplo =
   /** Reseña de Google con la respuesta del negocio. */
   | { tipo: 'resena'; negocio: string; autor: string; inicial: string; estrellas: number; hace: string; texto: string; respuesta: string; respondio: string }
   /** Ficha de auditoría de un sitio de ejemplo: cada fila con su estado (bien, revisar, mal). */
-  | { tipo: 'informe'; titulo: string; sitio: string; filas: { k: string; v: string; estado: 'bien' | 'ojo' | 'mal' }[]; pie: string };
+  | { tipo: 'informe'; titulo: string; sitio: string; filas: { k: string; v: string; estado: 'bien' | 'ojo' | 'mal' }[]; pie: string }
+  /** Foto hecha por nosotros (IA creativa, D52): `etiqueta` «Antes» o «Después» encima; `pie` empieza con «Ejemplo ·». */
+  | { tipo: 'foto'; img: ImgEjemplo; etiqueta?: 'Antes' | 'Después'; pie: string }
+  /** Video hecho por nosotros (IA creativa, D52): MP4 H.264 en public/videos/ia-creativa/, sin autoplay, con póster.
+   *  `duracion` y `bytes` son los del archivo (las prueba scripts/marketing-ia.test.mjs); con `voz`, `guion` es su
+   *  transcripción, que se muestra en «Ver guion». */
+  | { tipo: 'video'; src: string; poster: ImgEjemplo; duracion: number; bytes: number; voz: boolean; guion?: string; pie: string };
 
 /** Estado del precio (D23): solo 'confirmado' puede emitir Offer y llevar cifra en la portada. */
 export type PriceState = 'confirmado' | 'propuesto' | 'cotizado';

@@ -50,8 +50,15 @@ const catalogGroups = [
     hub: 'marketing',
     items: [
       { h3: 'Google Ads', text: 'Aparece cuando tu cliente busca lo que vendes. Gestión de campañas de búsqueda, display y remarketing.', link: { slug: 'marketing/google-ads-panama', label: 'Google Ads' } },
-      { h3: 'Facebook e Instagram Ads', text: 'Campañas en Meta para descubrimiento, captación y ventas, con creativos que detienen el scroll.', link: { slug: 'marketing/facebook-instagram-ads-panama', label: 'Meta Ads' } },
+      { h3: 'Facebook e Instagram Ads', text: 'Campañas en Meta para descubrimiento, captación y ventas, con varias versiones de creativo por campaña.', link: { slug: 'marketing/facebook-instagram-ads-panama', label: 'Meta Ads' } },
       { h3: 'Contenido, Email y Automatización', text: 'Contenido para redes con Reels, email marketing, WhatsApp masivo y automatizaciones con n8n.', link: { slug: 'marketing', label: 'Ver todo Marketing' } },
+    ],
+  },
+  {
+    title: 'Producción con IA',
+    hub: 'marketing',
+    items: [
+      { h3: 'Videos publicitarios con IA', text: '4 videos verticales de 15 a 30 s para Reels y anuncios, con guion, voz y subtítulos, revisados a mano. Desde $500.', link: { slug: 'marketing/videos-publicitarios-panama', label: 'Videos publicitarios' } },
     ],
   },
   {

@@ -52,7 +52,7 @@ Estas páginas están escritas para responder preguntas concretas y son las más
 ## Servicios
 
 - [Servicios](https://elementoweb.com/servicios/): diseño web corporativo, e-commerce, landing pages y rediseño.
-- [Marketing](https://elementoweb.com/marketing/): Google Ads, Meta Ads, contenido, email y WhatsApp masivo.
+- [Marketing](https://elementoweb.com/marketing/): Google Ads, Meta Ads, contenido, email y WhatsApp masivo, y producción con IA.
 - [Crecimiento](https://elementoweb.com/crecimiento/): SEO, SEO local, mantenimiento y hosting.
 - [Tecnologías](https://elementoweb.com/tecnologias/): WordPress, Shopify y desarrollo a medida con Vue o React.
 - [Funcionalidades](https://elementoweb.com/funcionalidades/): chatbots con IA, reservas y citas, pasarelas de pago.
@@ -61,7 +61,7 @@ Estas páginas están escritas para responder preguntas concretas y son las más
 
 ## Mapa de servicios
 
-Una página por servicio, agrupadas por tema. Los precios están en [Precios](https://elementoweb.com/precios/); donde un servicio se cotiza, la página lo dice.
+Una página por servicio, agrupadas por tema. Los precios están en [Precios](https://elementoweb.com/precios/); donde un servicio se cotiza, la página lo dice. Los paquetes de producción con IA tienen su precio en su propia página.
 
 Diseño web:
 - [Diseño web corporativo](https://elementoweb.com/servicios/diseno-web-corporativo-panama/): estructura clara, SEO por servicio y panel autoadministrable.
@@ -82,6 +82,7 @@ Marketing:
 - [Email marketing](https://elementoweb.com/marketing/email-marketing-panama/): newsletters, automatizaciones y recuperación de clientes.
 - [WhatsApp marketing masivo](https://elementoweb.com/marketing/whatsapp-marketing-masivo-panama/): campañas con la API oficial de WhatsApp Business.
 - [Automatizaciones con n8n](https://elementoweb.com/marketing/automatizaciones-n8n-panama/): flujos que conectan herramientas y eliminan trabajo manual repetitivo.
+- [Videos publicitarios con IA](https://elementoweb.com/marketing/videos-publicitarios-panama/): 4 videos verticales de 15 a 30 s con guion, voz y subtítulos, revisados a mano; desde $500 por paquete de 4 videos.
 
 Tecnologías:
 - [Diseño web en WordPress](https://elementoweb.com/tecnologias/diseno-web-wordpress-panama/): temas desarrollados a medida, autoadministrables.

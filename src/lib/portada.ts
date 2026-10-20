@@ -18,16 +18,7 @@ export interface FilaMapa {
   slug: string;
   precio: string | null;
   secundarios: Enlace[];
-  /** Panel apilado de Servicios (D53): texto de 60 a 200 caracteres, de 5 a 6 ítems de lo que incluye, el «Cotizar» con la
-   *  clave del formulario que deja elegida y la imagen aprobada (public/images/portada/servicios/, 640 y 960 px). */
-  texto: string;
-  incluye: string[];
-  cotizar: { texto: string; servicio: string };
-  imagen: { src: string; src640: string; alt: string; width: number; height: number; nota?: string };
 }
-
-const imagenPanel = (id: string, alt: string, height: number, nota?: string) =>
-  ({ src: `/images/portada/servicios/${id}-960.webp`, src640: `/images/portada/servicios/${id}-640.webp`, alt, width: 960, height, nota });
 
 /** Corte de compacto (D27): bajo este ancho el héroe sirve la captura de celular. Lo leen MarcoCaptura y la prueba
     de paridad con portada.css, que lo repite fijo (un .astro no se puede importar desde node --test). */
@@ -190,61 +181,36 @@ export function filasMapa(precios: Precios): FilaMapa[] {
       resuelve: 'Sitios corporativos y landing pages para empresas que necesitan que su web traiga consultas, no solo que exista.',
       linea: 'Sitios y landing pages pensados para que tu web traiga consultas.', maqueta: 'captura-tramitapa',
       secundarios: [{ label: 'Ver casos', slug: 'casos-de-exito' }, { label: '¿Ya tienes web? Rediseño', slug: 'servicios/redisenio-web-panama' }],
-      texto: 'Sitios y landing pages pensados para que tu web traiga consultas. Diseño a medida sobre tu marca, sin plantillas revendidas ni constructores pesados.',
-      incluye: ['Diseño a medida', 'Responsivo de verdad', 'SEO técnico', 'Velocidad', 'WhatsApp con el mensaje escrito', 'Formularios conectados'],
-      cotizar: { texto: 'Cotizar diseño web', servicio: 'pyme' },
-      imagen: imagenPanel('diseno-web', 'La web de TramitaPa, tramitapa.com, hecha por Elemento Web, en una laptop y un celular', 1200, 'tramitapa.com · proyecto publicado'),
     },
     {
       id: 'tiendas', nombre: 'Tiendas online', ir: 'Ver tiendas online', slug: 'servicios/tiendas-online-ecommerce-panama', precio: precioDesde(precios, 'web-ecommerce'),
       resuelve: 'Para negocios que quieren vender y cobrar en línea con Yappy y tarjeta, con inventario y envíos en Panamá.',
       linea: 'Vende y cobra en línea con Yappy y tarjeta, con envíos en Panamá.', maqueta: 'tienda',
       secundarios: [],
-      texto: 'Vende y cobra en línea con Yappy y tarjeta, con envíos en Panamá. Cotización cerrada según catálogo e integraciones.',
-      incluye: ['Catálogo y carrito', 'Yappy y tarjeta', 'Envíos por zona', 'Fichas que venden', 'Correos automáticos', 'Carritos abandonados'],
-      cotizar: { texto: 'Cotizar mi tienda', servicio: 'ecommerce' },
-      imagen: imagenPanel('tiendas', 'Ilustración: caja de envío abierta con un pedido y una terminal de pago', 1192),
     },
     {
       id: 'seo', nombre: 'SEO y SEO local', ir: 'Ver SEO y SEO local', slug: 'crecimiento/seo-posicionamiento-web-panama', precio: null,
       resuelve: 'Para aparecer en Google y en Google Maps cuando te buscan, con contenido y técnica.',
       linea: 'Para aparecer en Google y en Google Maps cuando te buscan.', maqueta: 'mapa',
       secundarios: [{ label: 'SEO local en Google Maps', slug: 'crecimiento/seo-local-google-maps-panama' }],
-      texto: 'Para aparecer en Google y en Google Maps cuando te buscan. Arranca con una auditoría: antes de cobrar un solo mes te decimos en qué estás parado.',
-      incluye: ['Auditoría inicial', 'Base técnica', 'Mapa de palabras clave', 'Contenido mensual', 'Datos estructurados', 'SEO local en Google Maps'],
-      cotizar: { texto: 'Pedir revisión de mi web', servicio: 'revision' },
-      imagen: imagenPanel('seo', 'Ilustración: un pin de mapa sobre la maqueta de una ciudad costera', 1192),
     },
     {
       id: 'publicidad', nombre: 'Publicidad en Google y Meta', ir: 'Ver publicidad en Google y Meta', slug: 'marketing/google-ads-panama', precio: null,
       resuelve: 'Campañas en Google, Facebook e Instagram medidas hasta la consulta; tu inversión va directo a la plataforma.',
       linea: 'Google, Facebook e Instagram, medidos hasta la consulta.', maqueta: 'campanas',
       secundarios: [{ label: 'Facebook e Instagram Ads', slug: 'marketing/facebook-instagram-ads-panama' }],
-      texto: 'Google, Facebook e Instagram, medidos hasta la consulta. La inversión publicitaria va aparte, directo a Google y a Meta.',
-      incluye: ['Investigación de palabras clave', 'Campañas por intención', 'Anuncios completos', 'Públicos de remarketing', 'Píxel y API de conversiones', 'Palabras negativas desde el día uno'],
-      cotizar: { texto: 'Cotizar publicidad', servicio: 'pauta' },
-      imagen: imagenPanel('publicidad', 'Ilustración: anuncios en tarjetas de vidrio que caen sobre una diana', 1192),
     },
     {
       id: 'whatsapp', nombre: 'WhatsApp marketing', ir: 'Ver WhatsApp marketing', slug: 'marketing/whatsapp-marketing-masivo-panama', precio: null,
       resuelve: 'Mensajes y seguimiento por la API oficial de WhatsApp, para que tus clientes vuelvan a comprar.',
       linea: 'Mensajes y seguimiento por la API oficial de WhatsApp.', maqueta: 'whatsapp-conversacion',
       secundarios: [],
-      texto: 'Mensajes y seguimiento por la API oficial de WhatsApp. El costo de los mensajes lo cobra Meta, desde tu cuenta.',
-      incluye: ['Alta del número en la API oficial', 'Plantillas aprobadas', 'Segmentación', 'Campañas', 'Consentimiento y bajas', 'Respuestas en WazaCRM'],
-      // WhatsApp no tiene opción propia en el selector del formulario: deja elegido «Marketing digital / Pauta», como #marketing.
-      cotizar: { texto: 'Cotizar WhatsApp', servicio: 'pauta' },
-      imagen: imagenPanel('whatsapp', 'Ilustración: globos de conversación sobre un celular', 1192),
     },
     {
       id: 'ia', nombre: 'IA y automatización', ir: 'Ver IA y automatización', slug: 'inteligencia-artificial-para-empresas-panama', precio: precioDesde(precios, 'ia'),
       resuelve: 'Asistentes que responden con tu información y automatizaciones que cotizan y agendan, con control humano.',
       linea: 'Asistentes con tu información y automatizaciones con control humano.', maqueta: 'asistente',
       secundarios: [{ label: 'Automatizaciones con n8n', slug: 'marketing/automatizaciones-n8n-panama' }],
-      texto: 'Asistentes con tu información y automatizaciones con control humano. Cada respuesta dice de qué documento y página sale.',
-      incluye: ['Diagnóstico sin costo', 'Base de conocimiento privada', 'Respuestas con cita', 'Permisos por rol', 'Automatización de procesos'],
-      cotizar: { texto: 'Cotizar IA', servicio: 'ia' },
-      imagen: imagenPanel('ia', 'Ilustración: esfera de vidrio con un núcleo cian, como un asistente de IA', 1192),
     },
   ];
 }

@@ -139,8 +139,7 @@ Ancho máximo 1200 px, márgenes laterales de 16 a 32 px. Base de 8 px. Ritmo de
 - **Dentro de una franja grafito** se redefinen los tokens en vez de pisar regla por regla: el texto pasa a `on-primary`, el texto secundario a `on-primary-muted`, los enlaces y el anillo de foco a `accent-on-dark`, los filetes a blanco al 16 % y las superficies elevadas a transparente. El formulario de Contacto (blanco opaco) y las maquetas vuelven a los valores claros, y el anillo de foco dentro del formulario vuelve a `accent-on-light`. Al imprimir, las franjas salen en tinta sobre blanco. Las reglas viven en `src/styles/piel-grafito.css`; llevar la piel a otra página es incluir esa hoja.
 - **Héroe:** H1 a tamaño de subtítulo (la frase de SEO de D50), frase de display (Roboto 800, `clamp(2.5rem, 1.6rem + 4vw, 4.5rem)`), bajada, botón cian y WhatsApp, y la cascada de 4 capturas reales de proyectos, estática. En compacto, la captura de celular recortada a 3:2.
 - **Menú fijo:** en la portada va en blanco opaco al bajar (el `.glass` translúcido deja sus enlaces cerca de 2,6:1 sobre grafito).
-- **Paneles apilados** (Servicios de la portada, D53): número «01 / 06», H3 grande, precio en voz de datos si lo hay, texto, lista de lo que incluye, su «Cotizar» y la imagen del servicio. Sin el efecto son una lista; con el efecto, la pila se fija y cada panel tapa al anterior.
-- **Módulo bento** (Marketing): H3, precio en voz de datos si lo hay, vista de 200 px, una línea de 70 caracteres o menos y los enlaces abajo; el módulo no es un enlace. En compacto, sin vista.
+- **Módulo bento** (Servicios y Marketing): H3, precio en voz de datos si lo hay, vista de 200 px, una línea de 70 caracteres o menos y los enlaces abajo; el módulo no es un enlace. En compacto, sin vista.
 - **Botón de contorno:** transparente, borde de 1,5 px en `primary` y texto `primary`; solo en las tres tarjetas de precio no destacadas. Chrome lo pinta de 1 px (redondea todo borde a píxeles enteros).
 
 **Excepciones a este documento en `/` (15-oct-2026):**
@@ -196,7 +195,7 @@ Radios 6, 12 y 20 px; la píldora completa queda para la barra de navegación y 
 - **Approach:** intentional, solo bajo la primera pantalla.
 - **Easing:** enter(ease-out) exit(ease-in) move(ease-in-out)
 - **Duration:** revelado 200 ms (opacidad y 8 px de desplazamiento); impresión del comprobante 350 ms (`clip-path`). Se anima solo `opacity`, `transform` y `clip-path`.
-- **The one authored moment:** el comprobante de la sección de prueba, que se imprime al llegar a la vista (no el de la portada). La portada no se anima, con una excepción que eligió el dueño el 20-oct-2026 (D53): los paneles apilados de Servicios, con GSAP y ScrollTrigger cargados aparte, después de la carga. Con `prefers-reduced-motion` todo aparece sin transición, y sin JavaScript todo es visible. El script pesa menos de 2 KB y no entra ninguna librería.
+- **The one authored moment:** el comprobante de la sección de prueba, que se imprime al llegar a la vista (no el de la portada). La portada nunca se anima. Con `prefers-reduced-motion` todo aparece sin transición, y sin JavaScript todo es visible. El script pesa menos de 2 KB y no entra ninguna librería.
 
 ## Decisions Log
 | Date | Decision | Rationale |

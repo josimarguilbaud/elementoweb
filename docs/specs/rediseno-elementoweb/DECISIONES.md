@@ -334,6 +334,15 @@ Fuente: decisiones del dueño del 17-oct (D52.1 a D52.4 de la spec), la puerta f
   - `T4` = «Más», como hoy.
   - `T5` = conteos literales, editados una sola vez con N = 1 (34 → 35 páginas y 25 → 26 servicios); pasan a 27 cuando salga Fotografía de producto.
 
+### D53. Paneles apilados en Servicios de la portada (20-oct-2026; enmienda D51 y la regla de movimiento de `DESIGN.md`)
+Fuente: el «me gusta» del dueño al prototipo de paneles apilados (con el pedido de imágenes que representen cada servicio, ya generadas en `aa173af`) y la tarjeta D9 del 20-oct-2026, «B: igual al prototipo, con GSAP», después de ver que el cambio no había llegado al home. Plan: `PLAN-SERVICIOS-APILADOS.md`. Queda decidido:
+- La sección 5 de la portada deja el bento de 6 módulos y pasa a 6 paneles apilados: número, H3, precio confirmado, texto, lista de lo que incluye, su «Cotizar» y la imagen del servicio. Los datos salen de `filasMapa`; el ItemList del schema no cambia.
+- El efecto es el del prototipo: la pila se fija debajo del menú, cada panel entra y tapa al anterior, que se encoge a 0,88 y se oscurece; el H3 entra desde 0,72 y las palabras se revelan. Sin JavaScript, con «reducir movimiento» o con menos de 560 px de alto, los paneles son una lista.
+- **Peso.** El núcleo de GSAP ya estaba en el JS inicial de todas las páginas, por el menú móvil (`Navbar.astro`). Lo nuevo es ScrollTrigger y el módulo del efecto (`src/scripts/servicios-apilados.ts`), unos 18 KB gzip, que se cargan con `import()` cuando el navegador queda libre después de la carga o al acercarse a la sección. El JS inicial del home sube 1.185 B (34.118 → 35.303 B) por el cargador y el ayudante de `import()`, y su máximo pasa a 36.400 B. El CSS queda en 26.876 B.
+- **Diferencias declaradas con el prototipo.** Las palabras se revelan desde `--ew-muted` y no desde `#c3ccd6`, que no pasa WCAG AA. Al enfocar con teclado un enlace de un panel que no entró, la página baja hasta él y le devuelve el foco. Cada panel lleva su «Cotizar» con la opción del servicio (`pyme`, `ecommerce`, `revision`, `pauta`, `pauta` para WhatsApp, que no tiene opción propia, e `ia`). El botón final de la sección sigue con `definir`.
+- **Reglas que cambian:** `DESIGN.md` («la portada no se anima», con esta excepción) y las pruebas 5 y «la portada no se anima» de `scripts/portada.test.mjs`. `qa-lcp` comprueba el efecto a 1440 y 390, el teclado y «reducir movimiento».
+- Las maquetas del bento de Servicios (tienda, mapa y campañas) salen del CSS; el bento sigue en la sección de Marketing.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

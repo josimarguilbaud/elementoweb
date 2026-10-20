@@ -29,10 +29,7 @@ prototipo con «me gusta» y pedido imágenes que representen cada servicio; las
 - **Contraste.** El prototipo revelaba las palabras desde `#c3ccd6` (1,6:1 sobre blanco, falla WCAG AA y `qa-a11y`). Se
   revelan desde `--ew-muted` (`#4f5f75`, 6,5:1) hasta `--ew-text`. El efecto es más sutil y la página sigue en AA.
 - **Teclado.** Con la pila fija, al enfocar un enlace de un panel que todavía no entró, la página se desplaza hasta ese
-  panel, para que el foco nunca quede fuera de la vista. Si el salto cruza el inicio de la pila y el navegador suelta el
-  foco (queda en `<body>`), se le devuelve al último enlace enfocado, nunca a uno anterior: el primer intento lo devolvía
-  siempre y, con Tabs rápidos, el foco retrocedía en bucle. Lo encontró `qa-a11y` en CI (run 39503408790) y ahora su
-  prueba del Tab corre con la CPU frenada 4 veces.
+  panel, para que el foco nunca quede fuera de la vista.
 - **«Cotizar» por panel.** Cada panel lleva su «Cotizar» con `data-cta-loc="servicios"` y la clave de su servicio, que deja
   elegida su opción. Además mantiene el tramo de 2.110 px entre «Cotizar» que `qa-lcp` mide a 390 px.
 - **CSS.** Las reglas del prototipo pasan a `src/styles/portada.css` con los tokens `--ew-`. Se quitan del CSS las reglas

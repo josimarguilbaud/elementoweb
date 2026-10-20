@@ -206,71 +206,34 @@ const pasos = {
     </div>
   </section>
 
-  <!-- 5. Servicios (bento, claro alterno): los 6 servicios del ItemList, cada uno con su maqueta -->
+  <!-- 5. Servicios (claro alterno): los 6 servicios del ItemList en paneles apilados, cada uno con su imagen (D53) -->
   <section id="servicios" class="pv2-sec pv2-sec--alt pv2-ancla" aria-labelledby="servicios-h2">
     <div class="pv2-wrap">
       <h2 class="ew-h2" id="servicios-h2">Seis servicios, un solo proveedor.</h2>
-      <div class="pv2-bento pv2-bento--servicios">
-        {filas.map((f) => (
-          <ModuloBento id={f.id} nombre={f.nombre} slug={f.slug} ir={f.ir} linea={f.linea} precio={f.precio} ancho={f.id === 'diseno-web' || f.id === 'publicidad' ? 2 : undefined}
-            secundarios={[...f.secundarios.map((s) => ({ label: s.label, href: url(s.slug) })), ...(f.id === 'publicidad' || f.id === 'whatsapp' ? [{ label: 'Ver detalle ↓', href: '#marketing' }] : [])]}>
-            {f.id === 'diseno-web' && (
-              <div class="pv2-prueba">
-                <MarcoCaptura cap="/portfolio/tramitapa" dominio="tramitapa.com" alt="Web de TramitaPa, tramitapa.com, hecha por Elemento Web" sizes="(min-width: 1280px) 560px, (min-width: 640px) 60vw, 92vw">
-                  <Fragment slot="pie"><span class="ew-data">tramitapa.com · proyecto publicado</span></Fragment>
-                </MarcoCaptura>
+      {/* Paneles apilados (D53): sin JS, con «reducir movimiento» o con poco alto, una lista; con el efecto, la pila se fija
+         y cada panel tapa al anterior (src/scripts/servicios-apilados.ts, GSAP con import() diferido). */}
+      <div class="pv2-ap-pila">
+        <div class="pv2-ap-escena">
+          {filas.map((f, i) => (
+            <article class="pv2-ap-panel" data-panel={f.id} aria-labelledby={`panel-${f.id}`}>
+              <p class="ew-data pv2-ap-panel__n" aria-hidden="true">{`${String(i + 1).padStart(2, '0')} / ${String(filas.length).padStart(2, '0')}`}</p>
+              <div class="pv2-ap-panel__cuerpo">
+                <h3 id={`panel-${f.id}`}>{f.nombre}</h3>
+                {f.precio && <p class="ew-data pv2-ap-panel__precio">{f.precio}</p>}
+                <p class="pv2-ap-panel__texto" data-revelar>{f.texto}</p>
+                <ul class="pv2-ap-panel__lista">{f.incluye.map((x) => <li>{x}</li>)}</ul>
+                <CtaCotizar loc="servicios" servicio={f.cotizar.servicio} opcion={opcion(f.cotizar.servicio, 'servicios')} texto={f.cotizar.texto} clase="pv2-ap-panel__acciones">
+                  <a class="pv2-ap-panel__enlace" href={url(f.slug)}>{f.ir} <span aria-hidden="true">→</span></a>
+                  {f.secundarios.map((s) => <a class="pv2-ap-panel__enlace" href={url(s.slug)}>{s.label}</a>)}
+                </CtaCotizar>
               </div>
-            )}
-            {f.id === 'tiendas' && (
-              <Maqueta nombre="tienda" linea="ficha de producto con pago por Yappy o tarjeta">
-                <div class="pv2-tienda">
-                  <p class="ew-dev__bar"><i></i><i></i><i></i><span>tienda.ejemplo.com</span></p>
-                  <div class="pv2-tienda__cuerpo">
-                    <span class="pv2-tienda__foto"></span>
-                    <div>
-                      <p class="pv2-tienda__nombre">Producto de ejemplo</p>
-                      <p class="pv2-tienda__ops"><span>S</span><span class="pv2-sel">M</span><span>L</span></p>
-                      <p class="pv2-tienda__envio">Envío a todo Panamá</p>
-                      <span class="pv2-tienda__btn">Pagar con Yappy o tarjeta</span>
-                    </div>
-                  </div>
-                </div>
-              </Maqueta>
-            )}
-            {f.id === 'seo' && (
-              <Maqueta nombre="mapa" linea="un negocio destacado en Google Maps">
-                <div class="pv2-mapa">
-                  <span class="pv2-mapa__pin"></span>
-                  <div class="pv2-mapa__ficha">
-                    <p class="pv2-mapa__nombre">Negocio de ejemplo</p>
-                    <p class="pv2-mapa__cat">Abierto · Cierra a las 6:00 p. m.</p>
-                    <p class="pv2-mapa__btns"><span>Cómo llegar</span><span>Llamar</span><span>Sitio web</span></p>
-                  </div>
-                </div>
-              </Maqueta>
-            )}
-            {f.id === 'publicidad' && (
-              <Maqueta nombre="campanas" linea="las campañas medidas hasta la consulta">
-                <table class="ew-cmp pv2-campanas">
-                  <thead><tr><th scope="col">Campaña</th><th scope="col">Clics</th><th scope="col">Consultas</th></tr></thead>
-                  <tbody>
-                    {[1, 2, 3].map(() => <tr><th scope="row"><span class="pv2-esqueleto"></span></th><td class="ew-cell-blank" data-label="Clics"></td><td class="ew-cell-blank" data-label="Consultas"></td></tr>)}
-                  </tbody>
-                </table>
-              </Maqueta>
-            )}
-            {f.id === 'whatsapp' && (
-              <Maqueta nombre="whatsapp-conversacion" linea="una conversación por la API oficial">
-                <Ejemplo e={{ tipo: 'whatsapp', negocio: 'Negocio de ejemplo', mensajes: [{ de: 'cliente', texto: 'Hola, ¿tienen espacio el sábado?', hora: '10:02' }, { de: 'negocio', texto: 'Hola. Sí: el sábado hay espacio a las 10:00 y a las 3:00. ¿Cuál prefieres?', hora: '10:03' }] }} />
-              </Maqueta>
-            )}
-            {f.id === 'ia' && (
-              <Maqueta nombre="asistente" linea="un asistente que responde con tu información">
-                <Ejemplo e={{ tipo: 'asistente', pregunta: '¿Hacen envíos a Chiriquí?', respuesta: 'Sí. Según la política de envíos del negocio, llegan a todo Panamá en 2 a 4 días hábiles.', fuentes: ['Política de envíos', 'Preguntas frecuentes'] }} />
-              </Maqueta>
-            )}
-          </ModuloBento>
-        ))}
+              <div class="pv2-ap-panel__vista">
+                <img src={f.imagen.src} srcset={`${f.imagen.src640} 640w, ${f.imagen.src} 960w`} sizes="(min-width: 900px) 560px, 92vw" width={f.imagen.width} height={f.imagen.height} alt={f.imagen.alt} loading="lazy" decoding="async" />
+                {f.imagen.nota && <p class="ew-data pv2-ap-panel__nota">{f.imagen.nota}</p>}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
       <CtaCotizar loc="servicios" servicio="definir" wa={waCotizar} />
     </div>
@@ -479,5 +442,22 @@ const pasos = {
       sel.dispatchEvent(new Event('change', { bubbles: true }));
       if (vivo) vivo.textContent = `Servicio elegido: ${a.dataset.opcion}`;
     });
+  </script>
+  <script>
+    /* Paneles apilados de Servicios (D53). ScrollTrigger y el módulo del efecto van en un import() aparte, que se pide solo
+       cuando la sección se acerca a menos de 2 pantallas: no entra al JS inicial ni corre durante la carga (pedirlo en el
+       tiempo libre después de la carga subió el TBT de Lighthouse de 92 a 80 en producción y se revirtió). Con «reducir
+       movimiento» o con poco alto no se pide: los paneles quedan como lista. */
+    const raiz = document.getElementById('servicios');
+    if (raiz && matchMedia('(min-height: 560px) and (prefers-reduced-motion: no-preference)').matches) {
+      let pedido = false;
+      const cargar = () => {
+        if (pedido) return;
+        pedido = true;
+        import('../scripts/servicios-apilados').then((m) => m.apilar(raiz)).catch(() => { /* sin el efecto, la lista sigue completa */ });
+      };
+      const io = new IntersectionObserver((e) => { if (e.some((x) => x.isIntersecting)) { io.disconnect(); cargar(); } }, { rootMargin: '200% 0px' });
+      io.observe(raiz);
+    }
   </script>
 </Base>

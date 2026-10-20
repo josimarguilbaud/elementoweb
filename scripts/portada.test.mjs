@@ -8,7 +8,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
-import { dirname, basename } from 'node:path';
+import { dirname, basename, join } from 'node:path';
 import { parse } from 'node-html-parser';
 import { guardaDist } from './lib/dist-guard.mjs';
 import {
@@ -155,6 +155,17 @@ test('cada módulo de servicio tiene una línea propia de 70 caracteres o menos 
   for (const f of filasMapa(precios)) {
     assert.ok(f.linea && f.linea.length <= 70, `${f.id}: «${f.linea}»`);
     assert.ok(f.maqueta, `${f.id} sin maqueta`);
+  }
+});
+
+// protects=el contenido de los paneles apilados de Servicios (D53); fails_when=a un servicio le falta su texto, su lista o la clave de su «Cotizar»; no_claim=que el texto venda
+test('cada panel de servicio tiene texto, de 5 a 6 ítems de lo que incluye y la clave de su «Cotizar» (D53)', () => {
+  const claves = new Set(formulario.servicios.map((s) => s.clave));
+  for (const f of filasMapa(precios)) {
+    assert.ok(f.texto && f.texto.length >= 60 && f.texto.length <= 200, `${f.id}: texto de 60 a 200 caracteres`);
+    assert.ok(Array.isArray(f.incluye) && f.incluye.length >= 5 && f.incluye.length <= 6, `${f.id}: de 5 a 6 ítems`);
+    assert.ok(f.cotizar?.texto && claves.has(f.cotizar.servicio), `${f.id}: «Cotizar» con una clave del formulario`);
+    assert.ok(f.imagen?.src && f.imagen.alt && f.imagen.width && f.imagen.height, `${f.id}: imagen con alt y medidas`);
   }
 });
 
@@ -387,20 +398,36 @@ test('4. industrias: 8 fichas por evidencia (≤ 40 KB, alt vacío), las N pági
   assert.equal(s.querySelector('a[href="#formulario"]')?.getAttribute('data-cta-loc'), 'industrias');
 });
 
-test('5. servicios: 6 módulos iguales a filasMapa, con su maqueta y el botón al final', conDist, () => {
+// protects=los 6 paneles apilados de Servicios (D53); fails_when=un panel falta, cambia de orden o pierde su precio, texto, lista, «Cotizar» o imagen; no_claim=el efecto de desplazamiento (lo mide qa-lcp)
+test('5. servicios: 6 paneles en el orden de filasMapa, con texto, lista, «Cotizar» e imagen, y el botón al final', conDist, () => {
   const s = seccion('servicios');
   assert.equal(textoDe(s.querySelector('h2')), 'Seis servicios, un solo proveedor.');
-  const modulos = s.querySelectorAll('.pv2-modulo');
+  const paneles = s.querySelectorAll('.pv2-ap-panel');
   const filas = filasMapa(precios);
-  assert.deepEqual(modulos.map((m) => textoDe(m.querySelector('h3'))), filas.map((f) => f.nombre));
-  modulos.forEach((m, i) => {
-    assert.ok(m.querySelector(`a[href="/${filas[i].slug}/"]`), `${filas[i].nombre} enlaza su página`);
-    if (filas[i].precio) assert.equal(textoDe(m.querySelector('.pv2-modulo__precio')), filas[i].precio);
-    assert.equal(textoDe(m.querySelector('.pv2-modulo__linea')), filas[i].linea);
+  assert.deepEqual(paneles.map((p) => textoDe(p.querySelector('h3'))), filas.map((f) => f.nombre));
+  paneles.forEach((p, i) => {
+    const f = filas[i];
+    assert.equal(textoDe(p.querySelector('.pv2-ap-panel__n')), `0${i + 1} / 06`);
+    assert.ok(p.querySelector(`a[href="/${f.slug}/"]`), `${f.nombre} enlaza su página`);
+    if (f.precio) assert.equal(textoDe(p.querySelector('.pv2-ap-panel__precio')), f.precio);
+    else assert.equal(p.querySelector('.pv2-ap-panel__precio'), null, `${f.nombre} sin precio confirmado no lleva cifra`);
+    assert.equal(textoDe(p.querySelector('.pv2-ap-panel__texto')), f.texto);
+    assert.deepEqual(p.querySelectorAll('.pv2-ap-panel__lista li').map(textoDe), f.incluye);
+    const cot = p.querySelector('a[href="#formulario"][data-cta-loc="servicios"]');
+    assert.equal(cot?.getAttribute('data-service'), f.cotizar.servicio, `${f.nombre}: clave del «Cotizar»`);
+    assert.ok(cot.getAttribute('data-opcion'), `${f.nombre}: el «Cotizar» deja elegida su opción`);
+    assert.equal(textoDe(cot), f.cotizar.texto);
+    const img = p.querySelector('.pv2-ap-panel__vista img');
+    assert.equal(img.getAttribute('src'), f.imagen.src);
+    assert.match(img.getAttribute('srcset'), new RegExp(`${f.imagen.src640} 640w`));
+    assert.deepEqual([img.getAttribute('width'), img.getAttribute('height')], [String(f.imagen.width), String(f.imagen.height)]);
+    assert.equal(img.getAttribute('loading'), 'lazy');
+    assert.equal(img.getAttribute('alt'), f.imagen.alt);
+    assert.ok(existsSync(join('dist', f.imagen.src)) && existsSync(join('dist', f.imagen.src640)), `${f.imagen.src} en dist/`);
   });
-  assert.equal(textoDe(s.querySelector('.pv2-marco .ew-dev__bar span')), 'tramitapa.com', 'diseño web lleva la captura real de TramitaPa');
-  const cta = s.querySelector('a[href="#formulario"][data-cta-loc="servicios"]');
-  assert.equal(cta?.getAttribute('data-service'), 'definir');
+  assert.equal(textoDe(paneles[0].querySelector('.pv2-ap-panel__nota')), 'tramitapa.com · proyecto publicado', 'diseño web lleva la web real de TramitaPa');
+  const cta = s.querySelectorAll('a[href="#formulario"][data-cta-loc="servicios"]').at(-1);
+  assert.equal(cta?.getAttribute('data-service'), 'definir', 'el botón final de la sección no cambia lo elegido');
 });
 
 test('6. SEO: rótulo con la palabra del dueño, H2 sin palabras reservadas y «Pedir revisión de mi web»', conDist, () => {
@@ -563,7 +590,39 @@ test('general: los H2 de la portada no usan las palabras reservadas de la regla 
   }
 });
 
-test('la portada no se anima ni carga los efectos (DESIGN.md, Motion)', conDist, () => {
+// protects=que los estilos de los paneles apilados no le peguen a otra sección; fails_when=una clase pv2-ap-* sale de #servicios o el bloque CSS de D53 vuelve a usar .pv2-panel (que es de Desarrollo); no_claim=otras colisiones de nombres
+test('los paneles apilados usan solo clases pv2-ap-* dentro de #servicios y no tocan el .pv2-panel de Desarrollo (D53)', conDist, () => {
+  const raiz = home();
+  const fuera = raiz.querySelectorAll('[class*="pv2-ap-"]').filter((e) => !e.closest('#servicios'));
+  assert.deepEqual(fuera.map((e) => e.getAttribute('class')), [], 'clases pv2-ap-* fuera de #servicios');
+  assert.equal(raiz.querySelectorAll('#servicios .pv2-panel').length, 0, '#servicios no usa .pv2-panel');
+  assert.ok(raiz.querySelectorAll('#desarrollo .pv2-panel').length > 0, 'Desarrollo conserva sus .pv2-panel');
+  const css = readFileSync('src/styles/portada.css', 'utf8');
+  const bloque = css.slice(css.indexOf('/* ---- 5. Servicios: paneles apilados'), css.indexOf('/* ---- Bento (lo usa la sección de Marketing)'));
+  assert.ok(bloque.length > 200, 'se encontró el bloque CSS de D53');
+  assert.doesNotMatch(bloque, /\.pv2-panel\b(?!-)/, 'el bloque CSS de D53 no tiene reglas para .pv2-panel');
+});
+
+// protects=que el efecto de Servicios no pese en la carga; fails_when=ScrollTrigger entra al JS inicial; no_claim=que el efecto se vea (lo mide qa-lcp)
+test('la portada solo anima los paneles de Servicios, con ScrollTrigger fuera del JS inicial (DESIGN.md, Motion; D53)', conDist, () => {
+  const iniciales = [...home().querySelectorAll('script[src]').map((x) => x.getAttribute('src')), ...home().querySelectorAll('link[rel="modulepreload"]').map((x) => x.getAttribute('href'))]
+    .filter((src) => src?.startsWith('/'));
+  assert.ok(iniciales.length > 0, 'la portada tiene JS inicial que revisar');
+  // Se siguen los imports estáticos (no los import(), que son la carga diferida). El núcleo de GSAP ya venía en el JS inicial
+  // por el menú móvil (Navbar.astro); lo nuevo de D53 es ScrollTrigger, que solo puede llegar con el import() diferido.
+  const vistos = new Set();
+  const pendientes = iniciales.map((s) => join('dist', s));
+  while (pendientes.length) {
+    const archivo = pendientes.pop();
+    if (vistos.has(archivo)) continue;
+    vistos.add(archivo);
+    const js = readFileSync(archivo, 'utf8');
+    assert.doesNotMatch(js, /pinSpacing|_scrollers/, `${archivo}: ScrollTrigger entra al JS inicial`);
+    for (const m of js.matchAll(/(?:^|[;}\s])(?:import|export)\s*(?:[\w*{}\s,$]+from\s*)?["'](\.\/[^"']+\.js)["']/g)) pendientes.push(join(dirname(archivo), m[1]));
+  }
+});
+
+test('la portada no carga los efectos viejos (DESIGN.md, Motion)', conDist, () => {
   const raiz = home();
   const main = raiz.querySelector('main');
   assert.equal(main.getAttribute('data-page-type'), 'home');

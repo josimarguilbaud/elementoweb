@@ -209,6 +209,48 @@ for (const w of [390, 1280]) {
   else console.log(`✓ ${w} /: los ${bordes.length} «Fuente» de «Lo que no hacemos» alineados a la derecha`);
   await ctx.close();
 }
+
+// Portada: paneles apilados de Servicios (D53). Con JS, el efecto se activa, la pila queda fija con el primer panel a la
+// vista y, más abajo, el segundo panel ya tapó al primero; con «reducir movimiento» no se activa y quedan como lista.
+for (const [movimiento, w, h] of [['no-preference', 1440, 900], ['no-preference', 390, 844], ['reduce', 1440, 900]]) {
+  const ctx = await b.newContext({ viewport: { width: w, height: h }, reducedMotion: movimiento });
+  const pg = await ctx.newPage();
+  await pg.goto(BASE + '/', { waitUntil: 'load' });
+  await pg.evaluate(() => document.getElementById('servicios').scrollIntoView());
+  const activo = await pg.waitForSelector('#servicios.pv2-ap-activo', { timeout: 8000 }).then(() => true, () => false);
+  if (movimiento === 'reduce') {
+    if (activo) linea(true, `${w}x${h} / con «reducir movimiento»: los paneles de Servicios se animan`);
+    else console.log(`✓ ${w}x${h} / con «reducir movimiento»: los paneles de Servicios quedan como lista`);
+    await ctx.close();
+    continue;
+  }
+  if (!activo) { linea(true, `${w}x${h} /: los paneles de Servicios no se activaron`); await ctx.close(); continue; }
+  const medida = () => pg.evaluate(() => {
+    const p = [...document.querySelectorAll('#servicios .pv2-ap-panel')].map((e) => { const r = e.getBoundingClientRect(); return { top: Math.round(r.top), bottom: Math.round(r.bottom) }; });
+    return { p, alto: innerHeight };
+  });
+  const y0 = await pg.evaluate(() => document.getElementById('servicios').querySelector('.pv2-ap-pila').getBoundingClientRect().top + scrollY);
+  await pg.evaluate((y) => scrollTo(0, y), y0);
+  await pg.waitForTimeout(600);
+  const inicio = await medida();
+  await pg.evaluate((dy) => scrollBy(0, dy), Math.round(h * 1.6));
+  await pg.waitForTimeout(1500);
+  const despues = await medida();
+  const primeroVisible = inicio.p[0].top >= 0 && inicio.p[0].top < inicio.alto && inicio.p[1].top >= inicio.alto - 2;
+  // A 1,6 pantallas el panel 2 todavía entra: basta con que haya subido más de media pantalla y el 1 siga fijo arriba.
+  const segundoTapa = despues.p[1].top < inicio.p[1].top - despues.alto / 2 && despues.p[0].top <= inicio.p[0].top && despues.p[0].top > 0;
+  if (!primeroVisible || !segundoTapa) linea(true, `${w}x${h} /: la pila de Servicios no se comporta (inicio ${JSON.stringify(inicio.p.slice(0, 2))}, después ${JSON.stringify(despues.p.slice(0, 2))})`);
+  else console.log(`✓ ${w}x${h} /: Servicios fija la pila; el panel 2 entra y tapa al 1 al bajar`);
+  // Con teclado, desde antes de la sección: enfocar el «Cotizar» del panel 4 baja hasta él y el foco no se pierde.
+  await pg.evaluate(() => scrollTo(0, 0));
+  await pg.waitForTimeout(300);
+  await pg.focus('#servicios .pv2-ap-panel:nth-of-type(4) a.ew-btn');
+  await pg.waitForTimeout(1200);
+  const foco = await pg.evaluate(() => { const a = document.activeElement; const r = a.getBoundingClientRect(); return { cotizar: a.matches('#servicios .pv2-ap-panel:nth-of-type(4) a.ew-btn'), top: Math.round(r.top), bottom: Math.round(r.bottom), alto: innerHeight }; });
+  if (!foco.cotizar || foco.top < 0 || foco.bottom > foco.alto) linea(true, `${w}x${h} /: con teclado, el «Cotizar» del panel 4 de Servicios queda fuera de la vista o pierde el foco (${JSON.stringify(foco)})`);
+  else console.log(`✓ ${w}x${h} /: con teclado, el «Cotizar» del panel 4 de Servicios queda enfocado y a la vista`);
+  await ctx.close();
+}
 await b.close();
 console.log(`\nqa-lcp: ${estrictas.length} página(s) estricta(s), ${informativas.length} informativa(s), ${fallos} fallo(s)`);
 process.exit(fallos ? 1 : 0);

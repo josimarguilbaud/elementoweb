@@ -25,6 +25,10 @@
     { "archivo": "nouscrm-tel-factura.webp", "origen": "Captura de NousCRM con datos de demostración (public/propuestas/nouscrm-presentacion, 29-sep-2026)", "descripcion": "Pantalla real del producto; empresas, montos y personas ficticios" },
     { "archivo": "nouscrm-tel-cobrar.webp", "origen": "Captura de NousCRM con datos de demostración (public/propuestas/nouscrm-presentacion, 29-sep-2026)", "descripcion": "Pantalla real del producto; empresas, montos y personas ficticios" },
     { "archivo": "ia-videos-1-poster.webp", "origen": "IA (fal · nano-banana-pro, kling-video v2.5-turbo pro; cuadro de 1 s del video, 20-oct-2026)", "descripcion": "Taza de café humeante y bolsa de granos sobre una mesa de madera, con el subtítulo del ejemplo; negocio de ejemplo" },
-    { "archivo": "ia-videos-2-poster.webp", "origen": "IA (fal · nano-banana-pro, kling-video v2.5-turbo pro; cuadro de 0 s del video, 20-oct-2026)", "descripcion": "Frasco de sérum sin etiqueta sobre pizarra mojada junto a una hoja de monstera; negocio de ejemplo" }
+    { "archivo": "ia-videos-2-poster.webp", "origen": "IA (fal · nano-banana-pro, kling-video v2.5-turbo pro; cuadro de 0 s del video, 20-oct-2026)", "descripcion": "Frasco de sérum sin etiqueta sobre pizarra mojada junto a una hoja de monstera; negocio de ejemplo" },
+    { "archivo": "ia-inmobiliario-1-poster.webp", "origen": "IA (fal · nano-banana-pro, kling-video v3 pro; cuadro de 2 s del video, 21-oct-2026)", "descripcion": "Sala de un apartamento ficticio frente al mar, con el subtítulo del ejemplo" },
+    { "archivo": "ia-inmobiliario-2-poster.webp", "origen": "IA (fal · nano-banana-pro, kling-video v3 pro; cuadro de 2 s del video vertical, 21-oct-2026)", "descripcion": "Sala del apartamento ficticio en vertical, con el subtítulo del ejemplo" },
+    { "archivo": "ia-inmobiliario-render.webp", "origen": "IA (fal · nano-banana-pro, 21-oct-2026)", "descripcion": "Render fijo de la sala del apartamento ficticio, la imagen de partida del recorrido" },
+    { "archivo": "ia-inmobiliario-cuadro.webp", "origen": "IA (fal · kling-video v3 pro; cuadro de 4,6 s del clip de la sala, 21-oct-2026)", "descripcion": "El mismo ambiente al final del movimiento de cámara: mismos muebles, sin ambientes agregados" }
   ]
 }

@@ -280,6 +280,16 @@
       "herramienta": "Lighthouse",
       "fecha": "2026-10-20",
       "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
+    },
+    {
+      "id": "video-inmobiliario-lcp",
+      "url": "http://localhost:4602/marketing/video-inmobiliario-panama/",
+      "metrica": "LCP",
+      "valor": "2,3 s",
+      "valorNumerico": 2336,
+      "herramienta": "Lighthouse",
+      "fecha": "2026-10-21",
+      "metodo": "móvil, 150 ms de latencia simulada, mediana de 5 corridas, Lighthouse 13.5.0"
     }
   ]
 }

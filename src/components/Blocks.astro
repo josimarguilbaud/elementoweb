@@ -6,13 +6,14 @@ import { pricing, url, wa, portfolio, portfolioCats, planKey } from '../lib/site
 import ContactForm from './ContactForm.astro';
 import ServiceForm from './ServiceForm.astro';
 import Ejemplo from './Ejemplo.astro';
+import PlanesTabs from './PlanesTabs.astro';
 const ctaLabel = (n: string) => ({ landing: 'Cotizar mi landing', pyme: 'Cotizar mi web', ecommerce: 'Cotizar mi tienda' } as Record<string, string>)[planKey(n)] || 'Cotizar mi proyecto';
 import InfraReliability from './InfraReliability.astro';
 import SeoMomentum from './SeoMomentum.astro';
 /* `v2` = la página usa la anatomía nueva (PageData.anatomia): los bloques existentes emiten además el contrato
    data-* que lee el validador. Sin `v2` el HTML de las páginas actuales no cambia ni un byte. */
-interface Props { blocks: Block[]; v2?: boolean }
-const { blocks, v2 = false } = Astro.props;
+interface Props { blocks: Block[]; v2?: boolean; servicio?: string }
+const { blocks, v2 = false, servicio = 'definir' } = Astro.props;
 /* '2026-10-13' → '13/10': sin Date, para no depender de la zona horaria del build. */
 const fechaCorta = (iso: string) => { const [, m, d] = iso.split('-'); return `${d}/${m}`; };
 /* D39: un bloque de la anatomía nueva con una lista vacía o un dato clave faltante rompe el build,
@@ -30,6 +31,7 @@ if (v2) {
     if (b.type === 'includes' && (!b.incluye.length || !b.entregables.length || !b.noIncluye.length)) falla('alguna de las tres listas está vacía');
     if (b.type === 'compare' && !b.criterios.length) falla('sin criterios');
     if (b.type === 'ejemplos' && (!b.items.length || !b.nota.trim())) falla('sin maquetas o sin la nota de ejemplo');
+    if (b.type === 'planes-tabs' && (!b.planes.length || !b.media.length || !b.checklist.length || !b.nota.trim())) falla('sin planes, sin videos, sin checklist o sin la nota de ejemplo');
     if (b.type === 'tabla' && (!b.filas.length || b.filas.some((f) => f.length !== b.columnas.length))) falla('tabla vacía o con filas que no tienen todas las columnas');
     if (b.type === 'faq' && !b.items.length) falla('sin preguntas');
   }
@@ -262,6 +264,8 @@ if (v2) {
         </div>
       </section>
     )}
+
+    {b.type === 'planes-tabs' && <PlanesTabs b={b} servicio={servicio} />}
 
     {b.type === 'tabla' && (
       <section class="ew-sec" data-block="tabla">

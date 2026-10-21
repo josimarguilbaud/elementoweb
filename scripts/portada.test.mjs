@@ -511,7 +511,7 @@ test('8. marketing: rótulo, H2, 3 garantías con check, 6 filas iguales a los s
   assert.deepEqual(garantias.map(textoDe), ['La cuenta publicitaria queda a tu nombre', 'Tu inversión va directo a Google y Meta', 'WhatsApp por la API oficial']);
   for (const g of garantias) assert.ok(g.querySelector('svg[aria-hidden="true"]') && !g.querySelector('.ew-sign'), 'cada garantía lleva el check, no el «+»');
   // Las páginas de IA creativa (D52) están en la tabla del hub pero no son filas de la portada: van en su grupo propio.
-  const IA_CREATIVA = ['/marketing/videos-publicitarios-panama/'];
+  const IA_CREATIVA = ['/marketing/videos-publicitarios-panama/', '/marketing/video-inmobiliario-panama/'];
   const delHub = [...new Set(pagina('dist/marketing/index.html').querySelectorAll('main a[href^="/marketing/"]').map((a) => a.getAttribute('href')).filter((h) => h !== '/marketing/' && !IA_CREATIVA.includes(h)))];
   const lista = s.querySelector('ul.pv2-vit__lista');
   assert.equal(lista?.getAttribute('role'), 'list');

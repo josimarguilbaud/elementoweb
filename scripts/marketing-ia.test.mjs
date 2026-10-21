@@ -11,6 +11,7 @@ import { join } from 'node:path';
 import sharp from 'sharp';
 import { revisarRegistro, CAMPOS_FILA } from './gasto-ia.mjs';
 import { assertTipoEjemplo, fichaVideo, TIPOS_EJEMPLO } from '../src/lib/ejemplos.ts';
+import { montoDe, extraNarracion, formatoPrecio } from '../src/lib/planes.ts';
 import { marketingPages } from '../src/lib/pages/marketing.ts';
 import { analizar } from './validar-marcador.mjs';
 import { estadoDist, guardaDist } from './lib/dist-guard.mjs';
@@ -58,6 +59,36 @@ test('montos: las claves de IA creativa de esta tanda tienen el precio que decid
   for (const id of ['anuncios-ia', 'avatar-ia']) {
     assert.ok(!(id in c) && !(id in precios.propuestos), `${id} no entra a precios.json en esta tanda`);
   }
+});
+
+// protects=los precios del video inmobiliario que decidió el dueño (D55.2, D55.5); fails_when=una clave falta, cambia de monto o de fuente; no_claim=que el precio sea el de mercado
+test('montos: las 4 claves del video inmobiliario tienen el precio que decidió el dueño (D55)', () => {
+  const c = precios.confirmados;
+  const esperado = {
+    'video-inmobiliario-unidad': { monto: 550, unidad: 'video' },
+    'video-inmobiliario-proyecto': { monto: 1450, unidad: 'proyecto' },
+    'video-inmobiliario-preventa': { monto: 2400, unidad: 'proyecto' },
+    'narracion-subtitulos': { monto: 150, unidad: 'video' },
+  };
+  for (const [id, e] of Object.entries(esperado)) {
+    assert.ok(c[id], `falta confirmados.${id} en precios.json`);
+    assert.equal(c[id].monto, e.monto, `${id}.monto`);
+    assert.equal(c[id].unidad, e.unidad, `${id}.unidad`);
+    assert.equal(c[id].fuente, 'src/lib/pages/marketing.ts', `${id}.fuente`);
+    assert.ok(c[id].nombre, `${id}.nombre`);
+  }
+});
+
+// protects=la cuenta del extra y del total de cada plan; fails_when=una clave ausente pinta $undefined o el extra no multiplica; no_claim=las cifras del HTML (eso lo prueba la de dist/)
+test('planes: montoDe rompe con una clave ausente, extraNarracion multiplica y formatoPrecio separa miles (CV6, EV9)', () => {
+  assert.throws(() => montoDe(precios.confirmados, 'no-existe'), /VINM-PRECIO: falta confirmados\.no-existe/);
+  assert.throws(() => montoDe({ x: { nombre: 'x', monto: 'mil', unidad: 'u', fuente: 'f' } }, 'x'), /no es un número válido/);
+  assert.equal(extraNarracion(150, 4), 600);
+  assert.equal(extraNarracion(90, 4), 360, 'otro monto cambia el extra');
+  assert.equal(extraNarracion(150, 0), 0);
+  assert.throws(() => extraNarracion(150, 1.5), TypeError);
+  assert.equal(formatoPrecio(1450), '$1,450');
+  assert.equal(formatoPrecio(550), '$550');
 });
 
 // protects=que ninguna maqueta quede en blanco en silencio; fails_when=un tipo sin rama en Ejemplo.astro no rompe; no_claim=que la rama pinte bien
@@ -344,6 +375,41 @@ test('gasto: un uso incorrecto sale con 2', () => {
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
+// protects=que el tope de una tanda nueva sea el escrito y no uno inventado (EV7); fails_when=--tanda con una tanda que no existe la crea con tope 15; no_claim=el tope del archivo
+test('gasto: --tanda con una tanda que no existe sale con MKIA-TANDA y no escribe', () => {
+  const { dir, archivo, env } = registroDePrueba();
+  try {
+    const antes = readFileSync(archivo, 'utf8');
+    const r = correr(GASTO, ['--tanda', 'video-inmobilario', 'reservar', 'pieza', 'fal-ai/x', '0.15'], env());
+    assert.equal(r.status, 1, r.stderr);
+    assert.match(r.stderr, /MKIA-TANDA: la tanda video-inmobilario no existe/);
+    assert.equal(readFileSync(archivo, 'utf8'), antes);
+    assert.equal(correr(GASTO, ['--tanda'], env()).status, 2, '--tanda sin nombre es un uso incorrecto');
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
+// protects=el registro de un gasto ya cobrado en su tanda, con su tope (SR16, EV15); fails_when=registrar no deja la fila confirmada en la tanda pedida o pasa el tope sin sobrepaso; no_claim=que el costo sea el cobrado
+test('gasto: registrar anota un cobro ya hecho en la tanda pedida y respeta su tope', () => {
+  const { dir, archivo, env, leer } = registroDePrueba();
+  try {
+    const reg = JSON.parse(readFileSync(archivo, 'utf8'));
+    reg.tandas['video-inmobiliario'] = { tope: 1, gastado: 0 };
+    writeFileSync(archivo, JSON.stringify(reg));
+    const r = correr(GASTO, ['--tanda', 'video-inmobiliario', 'registrar', 'render sala', 'fal-ai/nano-banana-pro', '0.15', 'req-1'], env());
+    assert.equal(r.status, 0, r.stderr);
+    const f = leer().generaciones.find((g) => g.request_id === 'req-1');
+    assert.deepEqual([f.tanda, f.estado, f.costo], ['video-inmobiliario', 'confirmado', 0.15]);
+    assert.equal(leer().tandas['video-inmobiliario'].gastado, 0.15);
+    assert.equal(leer().tandas['marketing-ia'].gastado, 0, 'la otra tanda no cambia');
+    const caro = correr(GASTO, ['--tanda', 'video-inmobiliario', 'registrar', 'clip', 'fal-ai/kling', '0.90', 'req-2'], env());
+    assert.equal(caro.status, 1, 'pasa el tope de US$ 1');
+    assert.equal(leer().generaciones.find((g) => g.request_id === 'req-2').estado, 'sobrepaso');
+    const sinTanda = correr(GASTO, ['registrar', 'demo Luxor500', 'fal-ai/kling', '0.70', 'req-3', '--sin-tanda'], env());
+    assert.equal(sinTanda.status, 0, sinTanda.stderr);
+    assert.equal(leer().generaciones.find((g) => g.request_id === 'req-3').tanda, undefined, 'un trabajo de cliente va sin tanda');
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
 // protects=el camino feliz del registro de gasto; fails_when=una transición válida no deja la fila confirmada o los totales no cuadran; no_claim=el costo real de fal
 test('gasto: reservar → enviado → confirmar deja la fila confirmada y recalcula los totales en centavos', () => {
   const { dir, env, leer, fila } = registroDePrueba();
@@ -464,6 +530,7 @@ test('gasto: el registro real está conciliado, cuadra en centavos y no pasa sus
   const real = JSON.parse(readFileSync('audit/imagenes-ia-2026-10.json', 'utf8'));
   assert.deepEqual(revisarRegistro(real), []);
   assert.equal(real.tandas?.['marketing-ia']?.tope, 15, 'tope de la tanda: US$ 15 (D52.4)');
+  assert.equal(real.tandas?.['video-inmobiliario']?.tope, 10, 'tope de la tanda: US$ 10 (D55, G4)');
   // La revisión ve los dos casos que no se cuelan: una fila sin conciliar y una fila con campos fuera de la lista.
   const conPendiente = structuredClone(real);
   conPendiente.generaciones.push({ id: 'mkia-x', fecha: '2026-10-20', hora: T0, modelo: 'fal-ai/x', costo: 0.15, request_id: 'r', uso: 'u', tanda: 'marketing-ia', estado: 'pendiente' });
@@ -483,7 +550,9 @@ const ORDEN_BLOQUES = ['answer', 'receipt', 'ejemplos', 'blank', 'includes', 'st
 const DOMINIO = 'https://elementoweb.com';
 const nombreDe = (slug) => slug.split('/').pop();
 const paginaDe = (slug) => marketingPages.find((p) => p.slug === slug);
-const videosDe = (p) => p.blocks.filter((b) => b.type === 'ejemplos').flatMap((b) => b.items).filter((e) => e.tipo === 'video');
+// Los videos de «Así se vería» y los del collage de `planes-tabs` (D55, EV1): las mismas pruebas para todos.
+const videosDe = (p) => p.blocks.flatMap((b) => (b.type === 'ejemplos' ? b.items : b.type === 'planes-tabs' ? b.media : [])).filter((e) => e.tipo === 'video');
+const planesDe = (p) => p.blocks.find((b) => b.type === 'planes-tabs')?.planes ?? null;
 const htmlDe = (slug) => readFileSync(`dist/${slug}/index.html`, 'utf8');
 const enPublico = (src) => join('public', src);
 const enDist = (src) => join('dist', src);
@@ -553,8 +622,10 @@ for (const ia of IA) {
     assert.equal(recibo.precio.estado, 'confirmado');
     assert.equal(Number(recibo.precio.desde.replace(/[^0-9]/g, '')), precios.confirmados[ia.precio].monto);
     assert.equal(recibo.medicionId, ia.medicionId);
-    assert.deepEqual(p.blocks.map((b) => b.type), ORDEN_BLOQUES);
-    assert.deepEqual(p.service?.catalogo, [ia.precio]);
+    // Cada página con su orden (EV2): el de ia-creativa.json, o el de Videos si no lo declara.
+    assert.deepEqual(p.blocks.map((b) => b.type), ia.orden ?? ORDEN_BLOQUES);
+    // Con planes, el catálogo son sus claves (SR4); sin planes, la clave única de la página.
+    assert.deepEqual(p.service?.catalogo, planesDe(p) ? planesDe(p).map((x) => x.clave) : [ia.precio]);
     for (const v of videosDe(p)) {
       if (!v.voz) continue;
       assert.ok(v.guion, `${v.src}: un video con voz lleva guion`);
@@ -591,19 +662,39 @@ for (const ia of IA) {
   });
 
   // protects=que toda cifra de la página sea su monto; fails_when=una cifra o una minPrice distinta del monto; no_claim=que el monto sea el correcto (eso es montos)
-  test(`${nombre}: servicio con precio, cifras y las dos minPrice iguales al monto`, conDist, () => {
+  test(`${nombre}: servicio con precio, cifras y las minPrice iguales a los montos`, conDist, () => {
     const a = analizar(htmlDe(ia.slug));
     const monto = precios.confirmados[ia.precio].monto;
     assert.equal(a.pageType, 'servicio-con-precio');
     assert.equal(a.precio.monto, monto);
     const main = parse(htmlDe(ia.slug)).querySelector('main');
     for (const sel of main.querySelectorAll('select')) sel.remove();
+    const planes = planesDe(p);
+    // Con planes (EV9) cada panel se revisa aparte y fuera de los paneles solo vale el monto de la página.
+    if (planes) {
+      const extra = precios.confirmados['narracion-subtitulos'].monto;
+      for (const x of planes) {
+        const panel = main.querySelector(`#plan-${x.clave}`);
+        assert.ok(panel, `falta el panel #plan-${x.clave}`);
+        const base = precios.confirmados[x.clave].monto;
+        const validas = new Set([base, base + extra * x.bloquesNarracion]);
+        if (x.bloquesNarracion) validas.add(extra * x.bloquesNarracion);
+        for (const m of panel.text.matchAll(/\$\s?([\d,]+)/g)) assert.ok(validas.has(Number(m[1].replace(/,/g, ''))), `cifra $${m[1]} en el panel de ${x.clave}`);
+        panel.remove();
+      }
+      for (const tab of main.querySelectorAll('[data-plan-tab]')) {
+        const x = planes.find((y) => y.clave === tab.getAttribute('data-plan-tab'));
+        for (const m of tab.text.matchAll(/\$\s?([\d,]+)/g)) assert.equal(Number(m[1].replace(/,/g, '')), precios.confirmados[x.clave].monto, `cifra $${m[1]} en la pestaña de ${x.clave}`);
+        tab.remove();
+      }
+    }
     for (const m of main.text.matchAll(/\$\s?([\d,]+)/g)) assert.equal(Number(m[1].replace(/,/g, '')), monto, `cifra $${m[1]} en el <main>`);
     const servicio = a.jsonld.find((n) => n['@type'] === 'Service');
     const minimos = [];
     const buscar = (o) => { if (o && typeof o === 'object') for (const [k, v] of Object.entries(o)) k === 'minPrice' ? minimos.push(v) : buscar(v); };
     buscar(servicio);
-    assert.deepEqual(minimos, [monto, monto], 'offers y hasOfferCatalog con el mismo monto');
+    const catalogo = planes ? planes.map((x) => precios.confirmados[x.clave].monto) : [monto];
+    assert.deepEqual(minimos, [monto, ...catalogo], 'offers con el monto de la página y hasOfferCatalog con el de cada plan');
   });
 
   // protects=el schema y el botón principal de cada página nueva; fails_when=el FAQPage difiere de lo visible, falta primaryImageOfPage o el botón dice otra cosa; no_claim=que Google muestre el resultado enriquecido
@@ -652,8 +743,42 @@ for (const ia of IA) {
     const main = parse(htmlDe(ia.slug)).querySelector('main');
     assert.ok(main.querySelectorAll('h2').some((h) => h.text.trim() === '¿Cuándo te basta la herramienta gratis?'));
     const noIncluye = main.querySelector('[data-score="no-incluye"] li');
-    assert.ok(noIncluye && /Contenido para redes|gestión de Meta Ads|set de imágenes/.test(noIncluye.text), 'la frontera es el primer «No incluye»');
+    assert.ok(noIncluye && /Contenido para redes|gestión de Meta Ads|set de imágenes|Videos publicitarios/.test(noIncluye.text), 'la frontera es el primer «No incluye»');
     assert.ok(!main.text.includes('falta la autorización del cli'));
+  });
+
+  // protects=que no se publique texto provisional (EV10); fails_when=queda un centinela PENDIENTE- en la página; no_claim=texto provisional sin centinela
+  test(`${nombre}: sin centinelas PENDIENTE- en dist/`, conDist, () => {
+    assert.ok(!htmlDe(ia.slug).includes('PENDIENTE-'), 'queda un texto provisional (PENDIENTE-) en la página');
+  });
+
+  if (!planesDe(p)) continue;
+
+  // protects=el bloque de planes de la variante 4 (D55.1, DV2, DV6, DV7, EV3); fails_when=falta un panel, su «para quién», su botón o su WhatsApp con el plan, o el checklist no es el aprobado; no_claim=cómo se ve
+  test(`${nombre}: planes con «Para quién es», plazo, botón al formulario con el plan y WhatsApp sin cifra`, conDist, () => {
+    const main = parse(htmlDe(ia.slug)).querySelector('main');
+    const bloque = main.querySelector('[data-block="planes-tabs"]');
+    assert.ok(bloque, 'falta el bloque planes-tabs');
+    assert.equal(videosDe(p).length, 2, 'el collage tiene exactamente 2 videos (EV1)');
+    assert.equal(bloque.querySelectorAll('video').length, 2);
+    for (const x of planesDe(p)) {
+      const panel = bloque.querySelector(`#plan-${x.clave}`);
+      assert.ok(panel.querySelector('h3'), `${x.clave}: sin JS cada plan es una sección con H3 (EV11)`);
+      assert.match(panel.text, /Para quién es/, `${x.clave}: «Para quién es»`);
+      assert.match(panel.text, /días hábiles/, `${x.clave}: plazo`);
+      const cotizar = panel.querySelector('a[data-cotizar]');
+      assert.equal(cotizar?.getAttribute('href'), `/contacto/?servicio=${p.serviceKey}&plan=${x.clave}#formulario`, `${x.clave}: botón al formulario con el plan`);
+      const whats = panel.querySelector('a[href^="https://wa.me/"]');
+      const texto = decodeURIComponent(whats.getAttribute('href').split('text=')[1] ?? '');
+      assert.ok(texto.includes(x.nombre), `${x.clave}: el WhatsApp nombra el plan`);
+      assert.ok(!/\$\s?\d/.test(texto), `${x.clave}: el WhatsApp no lleva cifra (D23)`);
+    }
+    const checks = bloque.querySelectorAll('[data-checklist] li').map((li) => li.text.trim());
+    assert.deepEqual(checks, ['Horizontal y vertical', 'Música incluida', 'Revisión humana', '2 rondas de cambios']);
+    const incluye = main.querySelector('[data-block="includes"]').text;
+    for (const c of checks) assert.ok(incluye.toLowerCase().includes(c.toLowerCase()), `«${c}» también en «Qué incluye»`);
+    for (const f of ['versión vertical', 'Imágenes ilustrativas, sujetas a cambios']) assert.ok(main.text.includes(f), `falta «${f}»`);
+    assert.ok(!bloque.toString().includes('role="tablist"'), 'sin JS no hay roles de pestañas en el HTML (EV11)');
   });
 }
 

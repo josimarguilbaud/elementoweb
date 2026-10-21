@@ -1,0 +1,62 @@
+/* Bloque `planes-tabs` (video inmobiliario, D55, variante 4). Va en línea solo en las páginas que lo usan
+   ([...slug].astro), como ejemplo-media.css. Tokens de DESIGN.md (DV8): banda surface-alt, panel y pestaña activa
+   raised con barra de 3 px en accent-on-light, pestañas inactivas surface-alt, marcos blancos de radio 20 con sombra
+   desplazada de 10 px sin desenfoque en accent, check en accent-on-light. Ningún color nuevo. */
+.ew-planes__top { display: grid; gap: 28px; align-items: center; }
+.ew-planes__texto .ew-intro { margin: 0; }
+.ew-planes__checks { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.ew-planes__checks li { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--ew-text); }
+.ew-planes__checks svg { flex: none; color: var(--ew-accent-on-light); }
+
+/* Collage: 16:9 grande y 9:16 al lado, en marcos blancos con sombra desplazada. */
+.ew-planes__media { display: grid; gap: 22px; align-items: end; }
+.ew-planes__media .ew-vid { margin: 0; padding: 10px; border: 1px solid var(--ew-border); border-radius: 20px; background: var(--ew-raised); box-shadow: 10px 10px 0 var(--ew-accent); }
+.ew-planes__media .ew-vid video { width: 100%; max-height: none; border-radius: 12px; }
+.ew-planes__media .ew-vid:first-child video { aspect-ratio: 16 / 9; }
+.ew-planes__media .ew-vid:last-child video { aspect-ratio: 9 / 16; }
+.ew-planes__media .ew-vid figcaption { font-size: 0.8125rem; }
+
+/* Pestañas: sin JS la barra no existe y los 3 planes se ven apilados como secciones. */
+.ew-planes__tabs { margin-top: 36px; }
+.ew-planes__lista { display: none; }
+.js .ew-planes__lista { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ew-planes__tab { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 64px; padding: 10px 8px; border: 1px solid var(--ew-border); border-bottom: 0; background: var(--ew-surface-alt); color: var(--ew-muted); font: inherit; cursor: pointer; }
+.ew-planes__tab:first-child { border-radius: 12px 0 0 0; }
+.ew-planes__tab:last-child { border-radius: 0 12px 0 0; }
+.ew-planes__tab[aria-selected="true"] { background: var(--ew-raised); color: var(--ew-text); box-shadow: inset 0 3px 0 var(--ew-accent-on-light); }
+.ew-planes__tab:focus-visible { outline: 3px solid var(--ew-accent-on-light); outline-offset: -3px; }
+.ew-planes__tab-nombre { font-size: 0.95rem; font-weight: 600; }
+.ew-planes__tab-precio { font-size: 1.125rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+.ew-plan { padding: 24px; border: 1px solid var(--ew-border); background: var(--ew-raised); }
+.ew-plan + .ew-plan { margin-top: 16px; }
+.js .ew-plan { border-radius: 0 0 12px 12px; }
+.js .ew-plan + .ew-plan { margin-top: 0; }
+.js .ew-plan:not([data-activo]) { display: none; }
+.ew-plan:focus-visible { outline: 3px solid var(--ew-accent-on-light); outline-offset: 2px; }
+.ew-plan__h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 14px; font-size: 1.25rem; font-weight: 700; color: var(--ew-text); }
+.ew-plan__chip { padding: 3px 9px; border-radius: 9999px; background: var(--ew-surface-alt); color: var(--ew-accent-on-light); }
+.ew-plan__filas { display: grid; gap: 10px; margin: 0; }
+.ew-plan__filas div { display: grid; gap: 2px; }
+.ew-plan__filas dt { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ew-muted); }
+.ew-plan__filas dd { margin: 0; color: var(--ew-text); }
+.ew-plan__precio { margin: 18px 0 0; }
+.ew-plan__monto { font-size: 2.25rem; font-weight: 800; letter-spacing: -0.025em; font-variant-numeric: tabular-nums; color: var(--ew-text); }
+.ew-plan__extra { margin: 4px 0 0; font-size: 0.95rem; color: var(--ew-muted); font-variant-numeric: tabular-nums; }
+.ew-plan__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+
+@media (min-width: 768px) {
+  .ew-planes__top { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 40px; }
+  .ew-planes__media { grid-template-columns: minmax(0, 1.75fr) minmax(0, 0.85fr); }
+  .ew-planes__media .ew-vid:last-child video { max-height: 520px; }
+  .ew-plan__filas { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+}
+/* Móvil (DV9): una columna; el 9:16 al 60 % y centrado, con la sombra dentro del margen de 16 px. */
+@media (max-width: 767px) {
+  .ew-planes__media .ew-vid:last-child { width: 60%; justify-self: center; }
+  .ew-planes__media .ew-vid:last-child video { max-height: 480px; }
+  .ew-planes__media .ew-vid { margin-right: 10px; }
+  .ew-planes__tab-nombre { font-size: 0.9rem; }
+  .ew-planes__tab-precio { font-size: 0.95rem; }
+  .ew-plan { padding: 18px; }
+}

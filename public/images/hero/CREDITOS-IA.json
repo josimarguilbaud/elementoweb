@@ -23,6 +23,7 @@
     { "archivo": "servicios.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Diseñadora y dueño de negocio revisan maquetas de una web en una oficina con vista a la ciudad; logo de la laptop borrado" },
     { "archivo": "precios.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Dueña de un negocio revisa una cotización impresa en su escritorio" },
     { "archivo": "inteligencia-artificial-para-empresas-panama.jpg", "modelo": "fal-ai/nano-banana-2", "descripcion": "Gerente de operaciones y su colega revisan las respuestas de un asistente de IA interno" },
-    { "archivo": "marketing--videos-publicitarios-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Dueña de un café del Casco Viejo graba con el celular un video de su café; en la pantalla, el cuadro subtitulado del video de ejemplo (compuesto con scripts/componer-pantallas.mjs, 20-oct-2026, a 2K)" }
+    { "archivo": "marketing--videos-publicitarios-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Dueña de un café del Casco Viejo graba con el celular un video de su café; en la pantalla, el cuadro subtitulado del video de ejemplo (compuesto con scripts/componer-pantallas.mjs, 20-oct-2026, a 2K)" },
+    { "archivo": "marketing--video-inmobiliario-panama.jpg", "modelo": "fal-ai/nano-banana-pro", "descripcion": "Oficina de ventas de una torre en preventa en Ciudad de Panamá: maqueta, planos y una laptop con un cuadro del recorrido de ejemplo (pantalla compuesta con scripts/componer-pantallas.mjs), 21-oct-2026 (request_id 01a1605e-5a5b-7311-9b89-c46e87546881)" }
   ]
 }

@@ -59,6 +59,7 @@ const catalogGroups = [
     hub: 'marketing',
     items: [
       { h3: 'Videos publicitarios con IA', text: '4 videos verticales de 15 a 30 s para Reels y anuncios, con guion, voz y subtítulos, revisados a mano. Desde $500.', link: { slug: 'marketing/videos-publicitarios-panama', label: 'Videos publicitarios' } },
+      { h3: 'Video inmobiliario con IA', text: 'Recorridos de 20 a 60 s hechos a partir de los renders o fotos de tu proyecto, en horizontal y vertical, revisados a mano. Desde $550.', link: { slug: 'marketing/video-inmobiliario-panama', label: 'Video inmobiliario' } },
     ],
   },
   {

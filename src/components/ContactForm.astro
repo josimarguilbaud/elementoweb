@@ -87,6 +87,11 @@ const EMAIL = site.email;
       const k = new URLSearchParams(location.search).get('servicio');
       const sel = document.getElementById('cf-servicio');
       if (k && PLAN[k] && sel) sel.value = PLAN[k];
+      // El botón «Cotizar este plan» del video inmobiliario (D55, EV4) trae ?plan=: el mensaje empieza con él.
+      const PLANES_VIDEO = { 'video-inmobiliario-unidad': 'Unidad', 'video-inmobiliario-proyecto': 'Proyecto', 'video-inmobiliario-preventa': 'Preventa' };
+      const plan = PLANES_VIDEO[new URLSearchParams(location.search).get('plan')];
+      const msg = document.getElementById('cf-mensaje');
+      if (plan && msg && !msg.value) msg.value = `Plan de interés: ${plan} (video inmobiliario).\n`;
     } catch (e) {}
     try { applyMode();
     } catch (e) {}

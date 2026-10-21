@@ -201,6 +201,7 @@ export const iaEmpresas: PageData[] = [
           { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Desarrollo a medida' },
           { slug: 'saas/wazacrm', label: 'WazaCRM' },
           { slug: 'marketing/videos-publicitarios-panama', label: 'Videos publicitarios con IA' },
+          { slug: 'marketing/video-inmobiliario-panama', label: 'Video inmobiliario con IA' },
           { slug: 'blog/inteligencia-artificial-para-pequenas-empresas-en-panama', label: 'Guía: IA para pequeñas empresas' },
         ],
       },

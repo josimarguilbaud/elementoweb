@@ -146,6 +146,7 @@ export const HERO_ALTS: Record<string, string> = {
   'marketing/facebook-instagram-ads-panama': 'Dos jóvenes se ríen mientras miran su feed en el celular sentados en la Cinta Costera, con los rascacielos de Panamá al fondo',
   'marketing/google-ads-panama': 'Hombre busca un servicio en su celular de noche en la mesa de su cocina, con las luces de Ciudad de Panamá en la ventana',
   'marketing/videos-publicitarios-panama': 'Foto hecha con IA: la dueña de un café del Casco Viejo graba con su celular un video de su café, con el cuadro subtitulado en la pantalla',
+  'marketing/video-inmobiliario-panama': 'Foto hecha con IA: oficina de ventas de una torre en preventa en Ciudad de Panamá, con la maqueta, los planos y una laptop que muestra el recorrido en video de un apartamento',
   'marketing': 'Avenida comercial al atardecer con tráfico, peatones y rótulos luminosos, donde el marketing digital busca clientes',
   'miami/diseno-web-brickell': 'Rascacielos de vidrio azul vistos desde la calle, con palmeras y avenida al pie, para diseño web en Brickell',
   'miami/diseno-web-coral-gables': 'Calle sombreada por banianos junto a fachadas mediterráneas con toldos verdes y un sedán, para diseño web en Coral Gables',

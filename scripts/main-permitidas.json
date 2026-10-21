@@ -1,5 +1,5 @@
 {
-  "_nota": "Rutas cuyo <main> puede cambiar en la vitrina de Marketing de la portada (D54) y páginas nuevas. Lo lee scripts/comparar-main.mjs contra el build del commit de partida. Menú y pie no cambian en D54. Antes (D52): /marketing/, /servicios/ y /inteligencia-artificial-para-empresas-panama/, y nueva /marketing/videos-publicitarios-panama/.",
-  "cambian": ["/"],
-  "nuevas": []
+  "_nota": "Rutas cuyo <main> puede cambiar y páginas nuevas, contra el build del commit de partida. D55 (video inmobiliario): /marketing/ (fila de la tabla), /servicios/ (tarjeta del catálogo), /inteligencia-artificial-para-empresas-panama/ y /marketing/videos-publicitarios-panama/ (un relacionado cada una), /contacto/ no cambia su <main>; nueva /marketing/video-inmobiliario-panama/. Antes (D54): la vitrina de Marketing de la portada. Lo lee scripts/comparar-main.mjs contra el build del commit de partida. Menú y pie no cambian en D54. Antes (D52): /marketing/, /servicios/ y /inteligencia-artificial-para-empresas-panama/, y nueva /marketing/videos-publicitarios-panama/.",
+  "cambian": ["/marketing/", "/servicios/", "/inteligencia-artificial-para-empresas-panama/", "/marketing/videos-publicitarios-panama/"],
+  "nuevas": ["/marketing/video-inmobiliario-panama/"]
 }

@@ -8,6 +8,10 @@
      node scripts/gasto-ia.mjs borrar <id>                       quita una reserva cuyo envío dio error
      node scripts/gasto-ia.mjs asumido <id>                      reservado sin request_id, 24 h después
      node scripts/gasto-ia.mjs aprobar-sobrepaso <id>            sobrepaso → confirmado, con la nota del dueño en D52
+     node scripts/gasto-ia.mjs registrar <pieza> <modelo> <costo> <request_id> [--sin-tanda]
+                                                                 un cobro ya hecho (D55, SR16): confirmado de una vez
+   `--tanda <id>` delante de la orden elige la tanda (por defecto marketing-ia). Una tanda que no está en el archivo
+   sale con MKIA-TANDA: nunca se crea con un tope inventado (D55, EV7). `--sin-tanda` anota un trabajo de cliente.
    La reserva usa el máximo facturable del trabajo y el chequeo suma el lote entero más lo ya comprometido: si no cabe en
    el tope de la tanda (o en el del archivo), sale con MKIA-TOPE y no reserva nada. Un costo real que deja la tanda sobre
    su tope queda en `sobrepaso` y bloquea toda reserva nueva. Los totales se suman en centavos. Mientras reescribe el
@@ -19,7 +23,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
-const TANDA = 'marketing-ia';
+const TANDA_DEFECTO = 'marketing-ia';
 const HORAS_ASUMIDO = 24;
 export const CAMPOS_FILA = ['id', 'fecha', 'hora', 'modelo', 'costo', 'request_id', 'uso', 'tanda', 'estado'];
 const ESTADOS = ['reservado', 'pendiente', 'confirmado', 'fallido', 'asumido', 'sobrepaso'];
@@ -95,8 +99,24 @@ const monto = (t, minimo) => {
 };
 
 function leerOrden(argv) {
+  let tanda = TANDA_DEFECTO;
+  if (argv[0] === '--tanda') {
+    if (!argv[1] || argv[1].startsWith('-')) uso();
+    tanda = argv[1];
+    argv = argv.slice(2);
+  }
+  const o = leerOrdenSinTanda(argv);
+  return { ...o, tanda };
+}
+
+function leerOrdenSinTanda(argv) {
   const [orden, ...a] = argv;
   if (orden === undefined) return { orden: 'estado' };
+  if (orden === 'registrar') {
+    const sinTanda = a.at(-1) === '--sin-tanda';
+    const r = sinTanda ? a.slice(0, -1) : a;
+    return r.length === 4 ? { orden, uso: r[0], modelo: r[1], c: monto(r[2], 0), requestId: r[3], sinTanda } : uso();
+  }
   if (orden === 'reservar') {
     if (a.length === 0 || a.length % 3 !== 0) uso();
     const lote = [];
@@ -110,8 +130,10 @@ function leerOrden(argv) {
 }
 
 function aplicar(reg, o, ahora) {
+  const TANDA = o.tanda;
   reg.tandas ??= {};
-  reg.tandas[TANDA] ??= { tope: 15, gastado: 0 };
+  if (TANDA === TANDA_DEFECTO) reg.tandas[TANDA] ??= { tope: 15, gastado: 0 };
+  if (!reg.tandas[TANDA]) regla(`MKIA-TANDA: la tanda ${TANDA} no existe en el registro; agrégala con su tope en "tandas" antes de usarla`);
   const filas = reg.generaciones;
   const buscar = (id) => filas.find((g) => g.id === id) ?? regla(`MKIA-GASTO: no hay una fila ${id}`);
   const exigir = (g, ...desde) => desde.includes(g.estado) || regla(`MKIA-GASTO: ${o.orden} no vale desde «${g.estado}» (${g.id}); vale desde ${desde.join(' o ')}`);
@@ -119,7 +141,21 @@ function aplicar(reg, o, ahora) {
   const topeTanda = centavos(reg.tandas[TANDA].tope);
   const salida = [];
 
-  if (o.orden === 'reservar') {
+  if (o.orden === 'registrar') {
+    if ([o.uso, o.modelo, o.requestId].some((t) => PROHIBIDO.test(t))) regla('MKIA-GASTO: la pieza, el modelo o el request_id traen https?:// o token=');
+    if (filas.some((g) => g.request_id === o.requestId)) regla(`MKIA-GASTO: ya hay una fila con request_id ${o.requestId}`);
+    const n = Math.max(0, ...filas.map((g) => Number(/^mkia-(\d+)$/.exec(g.id ?? '')?.[1] ?? -1))) + 1;
+    const fecha = new Date(Date.parse(ahora) - 5 * 3600e3).toISOString().slice(0, 10); // hora de Panamá
+    const enTanda = !o.sinTanda;
+    const tandaDespues = s.tanda(TANDA) + (enTanda ? o.c : 0);
+    const estado = (enTanda && tandaDespues > topeTanda) || s.gastado + o.c > centavos(reg.tope) ? 'sobrepaso' : 'confirmado';
+    const fila = { id: `mkia-${n}`, fecha, hora: ahora, modelo: o.modelo, costo: dolares(o.c), request_id: o.requestId, uso: o.uso };
+    if (enTanda) fila.tanda = TANDA;
+    fila.estado = estado;
+    filas.push(fila);
+    salida.push(`${fila.id}: ${estado}, ${o.uso}, ${fmt(o.c)}${enTanda ? ` en ${TANDA}` : ', sin tanda'}`);
+    o.id = fila.id;
+  } else if (o.orden === 'reservar') {
     const sobrepaso = filas.find((g) => g.tanda === TANDA && g.estado === 'sobrepaso');
     if (sobrepaso) regla(`MKIA-TOPE: la fila ${sobrepaso.id} está en sobrepaso; no se reserva nada hasta que el dueño lo apruebe en D52 (aprobar-sobrepaso ${sobrepaso.id})`);
     const lote = o.lote.reduce((t, p) => t + p.c, 0);
@@ -169,7 +205,7 @@ function aplicar(reg, o, ahora) {
   return salida;
 }
 
-function resumen(reg) {
+function resumen(reg, TANDA) {
   const s = sumas(reg);
   const tope = reg.tandas?.[TANDA]?.tope ?? 15;
   const abiertas = reg.generaciones.filter((g) => g.tanda === TANDA && (COMPROMETIDO.has(g.estado) || g.estado === 'sobrepaso'));
@@ -189,11 +225,13 @@ function main() {
     o = leerOrden(process.argv.slice(2));
   } catch (e) {
     if (!(e instanceof Uso)) throw e;
-    console.error('MKIA-GASTO: uso: node scripts/gasto-ia.mjs [reservar <pieza> <modelo> <estimado> … | enviado <id> <request_id> | confirmar <id> <costo> | fallido <id> | borrar <id> | asumido <id> | aprobar-sobrepaso <id>]');
+    console.error('MKIA-GASTO: uso: node scripts/gasto-ia.mjs [--tanda <id>] [reservar <pieza> <modelo> <estimado> … | enviado <id> <request_id> | confirmar <id> <costo> | fallido <id> | borrar <id> | asumido <id> | aprobar-sobrepaso <id> | registrar <pieza> <modelo> <costo> <request_id> [--sin-tanda]]');
     return 2;
   }
   if (o.orden === 'estado') {
-    console.log(resumen(JSON.parse(readFileSync(archivo, 'utf8'))));
+    const reg = JSON.parse(readFileSync(archivo, 'utf8'));
+    if (o.tanda !== TANDA_DEFECTO && !reg.tandas?.[o.tanda]) { console.error(`MKIA-TANDA: la tanda ${o.tanda} no existe en el registro`); return 1; }
+    console.log(resumen(reg, o.tanda));
     return 0;
   }
   mkdirSync(dirname(bloqueo), { recursive: true });
@@ -218,10 +256,11 @@ function main() {
     writeFileSync(`${archivo}.tmp`, serializar(reg));
     renameSync(`${archivo}.tmp`, archivo);
     console.log(salida.join('\n'));
-    console.log(resumen(reg));
+    console.log(resumen(reg, o.tanda));
     const sobrepaso = reg.generaciones.find((g) => g.id === o.id && g.estado === 'sobrepaso');
     if (sobrepaso) {
-      console.error(`MKIA-TOPE: el costo real de ${sobrepaso.id} deja la tanda en sobrepaso (${fmt(centavos(reg.tandas[TANDA].gastado))} de ${fmt(centavos(reg.tandas[TANDA].tope))}). No se reserva nada más hasta que el dueño lo apruebe en D52.`);
+      const t = reg.tandas[o.tanda];
+      console.error(`MKIA-TOPE: el costo real de ${sobrepaso.id} deja la tanda en sobrepaso (${fmt(centavos(t.gastado))} de ${fmt(centavos(t.tope))}). No se reserva nada más hasta que el dueño lo apruebe.`);
       return 1;
     }
     return 0;

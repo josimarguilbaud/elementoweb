@@ -55,7 +55,7 @@ test('formulario.json: el texto de `servicio` conserva las 11 etiquetas que n8n 
 test('formulario.json: el mapa de páginas apunta a claves y páginas que existen', () => {
   const registro = paginasDelRegistro();
   const claves = new Set(CLAVES);
-  assert.equal(Object.keys(formulario.paginas).length, 26, 'son 26 páginas de servicio (con Videos publicitarios, D52)');
+  assert.equal(Object.keys(formulario.paginas).length, 27, 'son 27 páginas de servicio (con Videos publicitarios, D52, y Video inmobiliario, D55)');
   for (const [slug, clave] of Object.entries(formulario.paginas)) {
     assert.ok(claves.has(clave), `${slug} → clave desconocida ${clave}`);
     // Las páginas hechas a mano (IA, cybersource) viven en src/pages/<slug>/index.astro y no en el registro.

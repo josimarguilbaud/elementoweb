@@ -1,6 +1,7 @@
 {
   "_nota": "Fuente única de las páginas de IA creativa que salen en esta tanda (D52). Lista solo páginas: los paquetes sin búsquedas (Anuncios y Avatares y voz) van como secciones con su propio plan. site.ts arma iaCreativa desde aquí, y scripts/marketing-ia.test.mjs compara este conjunto con el manifiesto, marketingPages, formulario.paginas, KEYWORDS, llms.txt, HERO_SLUGS, mediciones.json y los enlaces del hub, del catálogo y de related.",
   "paginas": [
-    { "slug": "marketing/videos-publicitarios-panama", "etiqueta": "Videos publicitarios", "precio": "videos-ia", "medicionId": "videos-ia-lcp", "serviceKey": "definir" }
+    { "slug": "marketing/videos-publicitarios-panama", "etiqueta": "Videos publicitarios", "precio": "videos-ia", "medicionId": "videos-ia-lcp", "serviceKey": "definir" },
+    { "slug": "marketing/video-inmobiliario-panama", "etiqueta": "Video inmobiliario", "precio": "video-inmobiliario-unidad", "medicionId": "video-inmobiliario-lcp", "serviceKey": "definir", "orden": ["answer", "receipt", "planes-tabs", "ejemplos", "blank", "includes", "steps", "tabla", "compare", "faq", "form", "related"] }
   ]
 }

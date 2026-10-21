@@ -83,6 +83,7 @@ Marketing:
 - [WhatsApp marketing masivo](https://elementoweb.com/marketing/whatsapp-marketing-masivo-panama/): campañas con la API oficial de WhatsApp Business.
 - [Automatizaciones con n8n](https://elementoweb.com/marketing/automatizaciones-n8n-panama/): flujos que conectan herramientas y eliminan trabajo manual repetitivo.
 - [Videos publicitarios con IA](https://elementoweb.com/marketing/videos-publicitarios-panama/): 4 videos verticales de 15 a 30 s con guion, voz y subtítulos, revisados a mano; desde $500 por paquete de 4 videos.
+- [Video inmobiliario con IA](https://elementoweb.com/marketing/video-inmobiliario-panama/): recorridos de 20 a 60 s hechos con IA a partir de los renders o fotos de un proyecto, en horizontal y vertical, revisados a mano; desde $550 por el video de una unidad.
 
 Tecnologías:
 - [Diseño web en WordPress](https://elementoweb.com/tecnologias/diseno-web-wordpress-panama/): temas desarrollados a medida, autoadministrables.

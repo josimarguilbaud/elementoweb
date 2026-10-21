@@ -26,6 +26,9 @@ export type Block =
   | { type: 'includes'; h2: string; intro?: string; incluye: (string | ItemDetalle)[]; entregables: string[]; noIncluye: string[]; medimos?: string[] }
   /* «Así se vería» (D44): maquetas del entregable hechas en HTML. Nunca afirman un resultado. */
   | { type: 'ejemplos'; h2: string; intro?: string; items: Ejemplo[]; nota: string; columnas?: 1 | 2 | 3 }
+  /* Planes en pestañas con el collage de ejemplo (video inmobiliario, D55, variante 4). Los precios salen de
+     precios.json por `clave`; el extra de narración, de `extra.clave` × `bloquesNarracion` de cada plan. */
+  | { type: 'planes-tabs'; h2: string; intro: string; checklist: string[]; media: Ejemplo[]; nota: string; planes: PlanVideo[]; extra: { clave: string } }
   /* Tabla de ejemplo (campañas y palabras, pilares del mes, páginas del sitio). */
   | { type: 'tabla'; h2: string; intro?: string; columnas: string[]; filas: string[][]; nota?: string }
   /* `texto` reemplaza el aviso fijo cuando no hay clientes esperando permiso (un servicio nuevo, D52). */
@@ -33,6 +36,10 @@ export type Block =
   /* Formulario por servicio (D10). Existe pero NINGUNA página lo usa hasta la fase 3: reemplaza al bloque `form` cuando n8n acepte el contrato v2. */
   | { type: 'service-form'; h2?: string; intro?: string; servicio?: string }
   | { type: 'showcase'; id?: string; ctaLabel?: string; extraViews?: { label: string; src: string }[]; h2: string; intro?: string; project?: string; image?: { src: string; alt: string; width: number; height: number; caption: string }; notes: { label: string; text: string }[]; caption?: string };
+
+/** Un plan de `planes-tabs` (D55): precio por `clave` de precios.json; `bloquesNarracion` = videos que pagan el extra
+ *  (0 cuando la narración va incluida). `activo` marca la pestaña abierta por defecto. */
+export interface PlanVideo { clave: string; nombre: string; paraQuien: string; entregables: string; plazo: string; bloquesNarracion: number; narracionIncluida?: boolean; chip?: string; activo?: boolean }
 
 /** Elemento de «Qué incluye» con título y explicación (molde Kredit, D44). */
 export interface ItemDetalle { t: string; d: string }

@@ -252,7 +252,7 @@ test('el manifiesto real y las exclusiones reales son coherentes con la fase 1',
   const { exclusiones } = JSON.parse(readFileSync(join(RAIZ, 'scripts/exclusiones-marcador.json'), 'utf8'));
   const slugs = manifiesto.paginas.map((p) => p.slug);
   assert.equal(new Set(slugs).size, slugs.length, 'slugs repetidos en el manifiesto');
-  assert.equal(manifiesto.paginas.filter((p) => p.tipo === 'servicio').length, 26, '26 páginas de servicio (con Videos publicitarios, D52)');
+  assert.equal(manifiesto.paginas.filter((p) => p.tipo === 'servicio').length, 27, '27 páginas de servicio (con Videos publicitarios, D52, y Video inmobiliario, D55)');
   assert.equal(manifiesto.paginas.filter((p) => p.tipo === 'hub').length, 6, '6 hubs');
   for (const e of exclusiones) assert.ok(slugs.includes(e.slug), `${e.slug} excluida y no listada`);
   const formulario = JSON.parse(readFileSync(join(RAIZ, 'src/data/formulario.json'), 'utf8'));

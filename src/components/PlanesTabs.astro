@@ -1,0 +1,114 @@
+---
+/* Planes en pestañas con el collage de ejemplo (video inmobiliario, D55, variante 4 aprobada por el dueño).
+   Sin JS cada plan es una sección con su H3, una debajo de otra; el script agrega los roles de pestañas (EV11).
+   La clase `js` se pone en <html> antes de pintar el bloque, así el CSS oculta los paneles inactivos sin salto.
+   Toda cifra sale de precios.json (EV9): base del plan y total con narración = base + extra × bloquesNarracion. */
+import type { Block } from '../lib/types';
+import Ejemplo from './Ejemplo.astro';
+import precios from '../data/precios.json';
+import { montoDe, extraNarracion, formatoPrecio } from '../lib/planes';
+import { wa } from '../lib/site';
+
+interface Props { b: Extract<Block, { type: 'planes-tabs' }>; servicio: string }
+const { b, servicio } = Astro.props;
+const conf = precios.confirmados as Record<string, Parameters<typeof montoDe>[0][string]>;
+const montoExtra = montoDe(conf, b.extra.clave);
+const planes = b.planes.map((p) => {
+  const base = montoDe(conf, p.clave);
+  const extra = extraNarracion(montoExtra, p.bloquesNarracion);
+  return { ...p, base, extra, total: base + extra };
+});
+const activo = planes.find((p) => p.activo)?.clave ?? planes[0].clave;
+---
+<section class="ew-sec ew-sec--alt ew-planes" data-block="planes-tabs" data-planes>
+  <script is:inline>document.documentElement.classList.add('js');</script>
+  <div class="ew-wrap ew-wrap--ancho">
+    <h2 class="ew-h2">{b.h2}</h2>
+    <div class="ew-planes__top">
+      <div class="ew-planes__texto">
+        <p class="rt ew-intro" set:html={b.intro}></p>
+        <ul class="ew-planes__checks" data-checklist>
+          {b.checklist.map((c) => (
+            <li><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>{c}</li>
+          ))}
+        </ul>
+      </div>
+      <div class="ew-planes__media">{b.media.map((e) => <Ejemplo e={e} />)}</div>
+    </div>
+    <p class="ew-data ew-mock-nota">{b.nota}</p>
+
+    <div class="ew-planes__tabs">
+      <div class="ew-planes__lista" data-tablist>
+        {planes.map((p) => (
+          <button type="button" class="ew-planes__tab" data-plan-tab={p.clave} id={`tab-${p.clave}`} aria-pressed={p.clave === activo ? 'true' : 'false'}>
+            <span class="ew-planes__tab-nombre">{p.nombre}</span>
+            <span class="ew-planes__tab-precio">{formatoPrecio(p.base)}</span>
+          </button>
+        ))}
+      </div>
+      {planes.map((p) => (
+        <section class="ew-plan" id={`plan-${p.clave}`} data-plan-panel={p.clave} data-activo={p.clave === activo ? '' : undefined}>
+          <h3 class="ew-plan__h3">{p.nombre}{p.chip && <span class="ew-data ew-plan__chip">{p.chip}</span>}</h3>
+          <dl class="ew-plan__filas">
+            <div><dt>Para quién es</dt><dd>{p.paraQuien}</dd></div>
+            <div><dt>Qué recibes</dt><dd>{p.entregables}</dd></div>
+            <div><dt>Plazo</dt><dd>{p.plazo}</dd></div>
+          </dl>
+          <p class="ew-plan__precio"><span class="ew-plan__monto">{formatoPrecio(p.base)}</span></p>
+          <p class="ew-plan__extra">{p.narracionIncluida ? 'Narración y subtítulos incluidos.' : `Con narración y subtítulos: ${formatoPrecio(p.total)} (+${formatoPrecio(p.extra)}).`}</p>
+          <div class="ew-plan__ctas">
+            <a class="ew-btn ew-btn--primary" data-cotizar href={`/contacto/?servicio=${servicio}&plan=${p.clave}#formulario`}>Cotizar este plan</a>
+            <a class="ew-btn ew-btn--wa" href={wa(`Hola, quiero cotizar el plan ${p.nombre} de video inmobiliario.`)} target="_blank" rel="noopener">WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  /* Pestañas WAI-ARIA (DV10, EV11): los roles, tabindex y hidden los pone este script; sin él quedan 3 secciones. */
+  for (const raiz of document.querySelectorAll<HTMLElement>('[data-planes]')) {
+    const lista = raiz.querySelector<HTMLElement>('[data-tablist]');
+    const tabs = [...raiz.querySelectorAll<HTMLButtonElement>('[data-plan-tab]')];
+    const paneles = [...raiz.querySelectorAll<HTMLElement>('[data-plan-panel]')];
+    if (!lista || !tabs.length) continue;
+    lista.setAttribute('role', 'tablist');
+    lista.setAttribute('aria-label', 'Planes');
+    const elegir = (i: number, foco: boolean) => {
+      tabs.forEach((t, j) => {
+        const on = i === j;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        paneles[j].hidden = !on;
+        paneles[j].toggleAttribute('data-activo', on);
+      });
+      if (foco) tabs[i].focus();
+    };
+    tabs.forEach((t, i) => {
+      t.removeAttribute('aria-pressed');
+      t.setAttribute('role', 'tab');
+      t.setAttribute('aria-controls', paneles[i].id);
+      paneles[i].setAttribute('role', 'tabpanel');
+      paneles[i].setAttribute('aria-labelledby', t.id);
+      paneles[i].tabIndex = 0;
+      t.addEventListener('click', () => elegir(i, false));
+      t.addEventListener('keydown', (ev) => {
+        const n = tabs.length;
+        const destino = { ArrowRight: (i + 1) % n, ArrowLeft: (i - 1 + n) % n, Home: 0, End: n - 1 }[ev.key];
+        if (destino === undefined) return;
+        ev.preventDefault();
+        elegir(destino, true);
+      });
+    });
+    // #plan-<clave> en la URL abre ese plan; getElementById no rompe con un hash raro (EV11).
+    let hash = '';
+    try { hash = decodeURIComponent(location.hash.slice(1)); } catch { hash = ''; }
+    const pedido = hash ? paneles.findIndex((p) => p === document.getElementById(hash)) : -1;
+    const inicial = pedido >= 0 ? pedido : Math.max(0, paneles.findIndex((p) => p.hasAttribute('data-activo')));
+    elegir(inicial, false);
+    // Un solo video suena a la vez (CV7).
+    const videos = [...raiz.querySelectorAll<HTMLVideoElement>('video')];
+    for (const v of videos) v.addEventListener('play', () => { for (const o of videos) if (o !== v) o.pause(); });
+  }
+</script>

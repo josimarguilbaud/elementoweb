@@ -31,7 +31,7 @@
 
 **Why:** La v2 es una decisión de marca del dueño, no un experimento; la medición sirve para detectar daño (caída de consultas o de rendimiento) a tiempo.
 
-**Context:** Reglas en D51 de `docs/specs/rediseno-elementoweb/DECISIONES.md`: reversión si Lighthouse baja de 85 o el LCP pasa de 3,5 s (D14); Search Console es solo lectura; GA4 solo concluye con al menos 300 sesiones y 5 `generate_lead` por ventana (si no, «datos insuficientes» y se repite a las 12 semanas). P + 14 y P + 28 reemplazan las lecturas del 28-oct y el 11-nov de la portada D50; las del 28-nov y el 28-dic siguen. Si GA4 no llega al umbral, la lectura de las 12 semanas cae el 7-ene-2027.
+**Context:** Reglas en D51 de `docs/specs/rediseno-elementoweb/DECISIONES.md`: reversión si Lighthouse baja de 85 o el LCP pasa de 3,5 s (D14); Search Console es solo lectura; GA4 solo concluye con al menos 300 sesiones y 5 `generate_lead` por ventana (si no, «datos insuficientes» y se repite a las 12 semanas). P + 14 y P + 28 reemplazan las lecturas del 28-oct y el 11-nov de la portada D50; las del 28-nov y el 28-dic siguen. Si GA4 no llega al umbral, la lectura de las 12 semanas cae el 7-ene-2027. Todas estas lecturas incluyen D53 (20-oct) y la vitrina de D54 desde su publicación, que tiene su propia lectura a 28 días: regla, ventanas y línea base en D54 y en `audit/ga4-portada-linea-base-2026-10.md`. Al leer GA4, filtrar por `hostName` (hay visitas de `localhost` de antes del 21-oct).
 
 **Effort:** S
 **Priority:** P1
@@ -136,13 +136,46 @@
 **Priority:** P3
 **Depends on:** `scripts/check-prod.sh` con la sonda (T28).
 
+### Diagnosticar los ~300 ms de TBT del home
+
+**What:** Encontrar de dónde salen los unos 300 ms de TBT que quedan en el home con Lighthouse móvil en producción.
+D53 ya descartó que vengan de su efecto. Después, bajarlos.
+
+**Why:** La mediana del home quedó en 90, justo en el umbral de D14 en el que la fase siguiente no avanza. Cada cambio
+nuevo al home, como la vitrina de D54, sale sin margen.
+
+**Context:** Lo midió D53 el 20-oct-2026 (`DECISIONES.md`, D53, «Publicación»). Lo difirió la revisión CEO de
+`PLAN-MARKETING-VITRINA.md` (autoplan del 20-oct) porque está fuera de su radio. Se empieza con el perfil de rendimiento
+de Chrome a CPU ×4 sobre el home de producción: tareas largas, scripts del menú (GSAP), gtag diferido y la hidratación
+de islas.
+
+**Effort:** M (humano) / S (CC)
+**Priority:** P2
+**Depends on:** nada.
+
+### Sumar `comparar-main` y `selectores-hoja` al CI
+
+**What:** Hacer que el CI construya el commit base y corra `scripts/comparar-main.mjs` y `scripts/selectores-hoja.mjs`
+contra el build nuevo, para que dejen de ser pasos a mano antes de cada publicación.
+
+**Why:** Hoy no forman parte de `npm run verify` (`verify.mjs:60`) y el CI no los exige. Un cambio que altera el
+`<main>` de otra página o mete utilidades nuevas en la hoja compartida solo se descubre si alguien se acuerda de
+correrlos.
+
+**Context:** Lo difirió la re-revisión de ingeniería de `PLAN-MARKETING-VITRINA.md` (D54, autoplan del 21-oct-2026),
+donde siguen como pasos a mano. Hace falta un segundo build del commit base en el job, lo que suma tiempo al despliegue.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P3
+**Depends on:** nada.
+
 ### Eventos por clic en las escenas y el mapa de servicios de la portada
 
 **What:** Enviar a GA4 un evento por cada clic en una escena («Por dónde se te van los clientes») y en cada fila del mapa de servicios de la portada, con la clave de servicio de `src/data/formulario.json` (y `definir` cuando el destino no tenga clave, como `/diseno-web-panama/` o `/marketing/`).
 
 **Why:** La portada recibe a quien llega por marca, directorios y enlaces del kit de autoridad; saber qué servicio buscan esos visitantes decide qué página reforzar primero.
 
-**Context:** Lo propuso la revisión CEO de la portada (14-oct-2026, `docs/specs/rediseno-elementoweb/PLAN-PORTADA.md`, X2) y se difirió porque el diseño de eventos es de la fase 3 (D1, D9): nombre del evento, parámetros, `docs/event-dictionary.md` y la prueba de `dataLayer`. Hoy `src/scripts/track.ts` no envía nada para enlaces internos comunes.
+**Context:** Lo propuso la revisión CEO de la portada (14-oct-2026, `docs/specs/rediseno-elementoweb/PLAN-PORTADA.md`, X2) y se difirió porque el diseño de eventos es de la fase 3 (D1, D9): nombre del evento, parámetros, `docs/event-dictionary.md` y la prueba de `dataLayer`. Desde D54 (21-oct-2026) ya existe el camino: un enlace con `data-content-id` manda `select_content` (`clasificarClic` en `src/lib/clic-cta.ts`, prueba en `qa-lcp`), y las 6 filas de la vitrina de Marketing ya lo usan. Para las escenas y el mapa falta poner `data-content-id` y, si hace falta, `data-content-type`.
 
 **Effort:** S (humano) / S (CC)
 **Priority:** P3

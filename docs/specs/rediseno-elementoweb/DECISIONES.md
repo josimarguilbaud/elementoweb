@@ -345,6 +345,89 @@ Fuente: el «me gusta» del dueño al prototipo de paneles apilados (con el pedi
 - **Primera publicación revertida (20-oct-2026).** `246c3a4` no pasó CI: el Tab retrocedía en bucle dentro de los paneles (corregido en `8e7fb96`, y la prueba del Tab de `qa-a11y` corre ahora con la CPU frenada 4 veces). Ya publicado, Lighthouse móvil del home dio 79 a 83 (TBT de 478 a 640 ms), por debajo del umbral de 85 de D14, porque ScrollTrigger se pedía en el tiempo libre después de la carga. Se revirtió en `ce1a4b0`. Además, la clase `.pv2-panel` ya era de la sección Desarrollo, y el CSS nuevo le cambió el aspecto mientras estuvo publicado. La segunda versión pide ScrollTrigger solo al acercarse a la sección (Lighthouse local de 99 en 5 de 6 corridas, igual que sin el efecto) y usa clases `pv2-ap-*`, con una prueba de que no salen de `#servicios`.
 - **Publicación (20-oct-2026).** `2e29bbf`, despliegue 39507053192 en verde, `check-prod` con 39 ok. Lighthouse móvil del home en producción, 5 corridas desde la PC del dueño: de 87 a 91 (mediana 90), LCP 1,75 s y CLS 0, sin pedir ScrollTrigger. Queda por encima del umbral de D14, y el TBT que sigue (unos 300 ms) no viene del efecto. En producción se comprobó que la pila se fija, que el foco con teclado queda a la vista y que Desarrollo conserva su aspecto. Las lecturas de la portada v2 (D51: GSC del 29-oct y del 12-nov, GA4 del 12-nov y del 10-dic) incluyen desde hoy este cambio, y así se anota al leerlas.
 
+### D54. Vitrina en Marketing digital de la portada (21-oct-2026; reemplaza el bento de la sección 8)
+Fuente:
+- la tarjeta D11 del 20-oct-2026, «2 Vitrina», elegida entre 4 maquetas de fal en
+  `docs/specs/rediseno-elementoweb/mockups-marketing/`;
+- el plan `PLAN-MARKETING-VITRINA.md`, revisado con autoplan en dos voces;
+- la puerta revisión 1 (`uc1a uc2b d1a … d7a p1a`) y la revisión 2 (`d8a p1a`).
+
+La fuente única para implementar es la «Especificación final D54» del bloque aceptado de ingeniería del plan. Queda
+decidido:
+- **Sección.** La sección 8 deja el bento de 6 módulos y pasa a la vitrina:
+  - a la izquierda, el escenario con una escena por servicio, apiladas en la misma celda (solo la activa se ve);
+  - a la derecha, la lista numerada de 6 filas enlace, con su línea (40 caracteres o menos) y «Se mide: A · B · C».
+
+  Los 3 indicadores de cada fila salen de los `medimos` que ya publica la página del servicio. `modulosMarketing()`
+  rompe el build si no coinciden: editar los `medimos` de `src/lib/pages/marketing.ts` puede romper el despliegue del
+  home, y el error nombra el slug y los dos archivos.
+- **UC1 = a.** El dueño mantuvo la vitrina completa, con las 6 escenas y el cambio al pasar el mouse, contra la
+  recomendación de las dos voces (vitrina estática o posponer). Es su dirección, con su contexto de venta en escritorio.
+- **Comportamiento.**
+  - La escena cambia solo con puntero fino desde 1024 px (movimiento real y unos 100 ms sobre la fila) o con el foco
+    de teclado desde 640 px.
+  - Se queda hasta que se active otra y no se anima (d3).
+  - En táctil y por debajo de 640 px queda la escena 1 (d6).
+  - Sin JavaScript, la escena 1 y la lista completa.
+- **Desvío declarado de la especificación.** Cada escena se dibuja a 520 × 300 px y se escala con `zoom`, en 9
+  escalones de `@container` según el ancho del escenario. Reemplaza la letra en `em` sobre un `clamp` y los celulares en
+  `cqi` del plan. Motivos, medidos en el spike:
+  - escala todo junto, letra y marcos;
+  - respeta los rem del usuario;
+  - cuesta menos CSS;
+  - la letra más chica de las maquetas queda en 10,2 px a 1024 px.
+
+  La letra chica del molde (hora, barra, remitente) va a 12 px de diseño solo dentro de la vitrina.
+- **Medidas.**
+  - **CSS** del home: 27.290 B (tope 27.600). No hizo falta ningún recorte de d7 ni subir el tope.
+  - **JS:** 35.796 B (tope 36.400), por el script de la vitrina y el clasificador de clics.
+  - **DOM:** 1.321 elementos en el `<body>` (tope 1.400; antes 1.246).
+  - **Alto de la lista:** a 1280 px pasa en 121 px la columna izquierda, aun con el relleno de las filas en 12 px (spec,
+    d2). Se acepta y la prueba cuenta renglones en vez de altos.
+- **Medición (UC2 = b).**
+  - **Línea base:** `audit/ga4-portada-linea-base-2026-10.md`.
+  - **Dimensiones:** el 21-oct se registraron `location` y `service` en GA4 (tarjeta D18).
+  - **Evento nuevo:** `select_content` por clic en una fila, que cuenta como mínimo (d8).
+  - **Pruebas sin hits:** todas las pruebas con navegador bloquean GA (`scripts/lib/sin-ga.mjs`). Ya había visitas de
+    `localhost` en GA4.
+  - **Regla de decisión** (bloque «Medición endurecida» del plan): ventanas de 28 días, A del 17-sep al 14-oct y C los
+    28 días después de publicar.
+    - Medidas: las vistas de `/marketing/*` desde la portada y los `cta_click` de Marketing, por cada 1.000 sesiones
+      que entran por `/`.
+    - La tasa «sube» si crece un 20 % o más, con 30 eventos o más en cada ventana. Con menos, «datos insuficientes» y
+      se repite a los 56 días.
+    - La línea base dio 3 vistas en la ventana A, así que hoy la lectura apunta a «datos insuficientes».
+- **Rendimiento.** Línea base del 21-oct, con el mismo script que la compuerta: Lighthouse móvil del home en
+  producción, mediana de 5 corridas, 99/100 (`audit/baseline-perf.md`). D53 había dado 90 el 20-oct.
+- **Reglas que cambian:**
+  - `DESIGN.md`: la vitrina reemplaza al módulo bento, se reescriben las excepciones 1, 2 y 5 y se quita Marketing de la
+    3;
+  - `docs/event-dictionary.md`: `select_content` y el estado de las dimensiones;
+  - `src/styles/global.css`: Tailwind ya no lee `docs/` ni `audit/`. `selectores-hoja` contra d87ff7a da +0 −1: sale
+    `.inline`, que solo venía de la documentación y no usa ninguna página. `comparar-main` da 250 páginas iguales y solo
+    cambia `/`;
+  - pruebas: `portada.test.mjs` (8. marketing, «Se mide», validación, colisión de clases y bloque CSS sin transición),
+    `tanda-a.test.mjs` (`clasificarClic`), `qa-lcp` (geometría a 6 anchos, mouse, rueda, Tab, toque, 390 y 320 px) y
+    `qa-a11y` (filas de 44 px, clic en cada parte de la fila, contraste de las 6 escenas).
+  - Se borra `ModuloBento.astro`.
+- **«CRM · Origen: Google Ads»** (d1) se apoya en lo ya publicado en `src/lib/pages/blog-39.ts:163` («Registra el lead en
+  el CRM con su origen»).
+- **WebKit (21-oct-2026).** La geometría corrió una vez en el WebKit de Playwright (webkit-2359) a 390, 768, 1024, 1280 y
+  1440 px:
+  - la tarjeta es igual en las 6 escenas;
+  - nada queda fuera de su tarjeta;
+  - el `zoom` escala igual que en Chromium;
+  - la letra mínima es 10,2 px a 1024.
+
+  En ese WebKit de Windows toda la página se ve en peso fino (Roboto variable). Pasa en toda la portada y no viene de
+  D54.
+- **Pendiente:**
+  - la publicación, con el permiso del dueño;
+  - la prueba en un iPhone o iPad real (el doble toque de iOS no se ejercita en WebKit de escritorio);
+  - la lectura a los 28 días, con fecha al publicar.
+
+  Las lecturas de la portada v2 (D51) incluyen la vitrina desde su publicación.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

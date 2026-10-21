@@ -46,6 +46,15 @@ Medido sobre `dist/` local con `node scripts/presupuestos.mjs --medir`, en gzip 
 
 Unos 54 KB de JS por página vienen de `effects.ts` (gsap, lenis y ScrollTrigger), que `Base.astro` carga en todas las páginas. D40 pide que las páginas de servicio no los carguen salvo necesidad: es la mejor palanca de rendimiento disponible y se hace en la fase 2a.
 
+## Línea base de D54 (21-oct-2026)
+
+- **Medida:** `node scripts/medir.mjs https://elementoweb.com/ --id portada --metrica rendimiento`, sin `--escribir`.
+- **Herramienta:** Lighthouse 13.5.0, móvil, mediana de 5 corridas. No hay clave de PSI.
+- **Resultado:** rendimiento **99/100**.
+- **Contexto:** D53 midió de 87 a 91 (mediana 90) el 20-oct con el mismo comando. La diferencia no está explicada;
+  puede venir de la carga de la máquina durante la medición, que mueve sobre todo el TBT. La compuerta de D14 después de publicar D54 se mide con este
+  mismo script.
+
 ## Cómo repetirla
 
 ```bash

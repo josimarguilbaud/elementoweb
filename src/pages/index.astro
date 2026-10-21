@@ -8,7 +8,6 @@ import Blocks from '../components/Blocks.astro';
 import ContactForm from '../components/ContactForm.astro';
 import CascadaProyectos from '../components/CascadaProyectos.astro';
 import MarcoCaptura from '../components/MarcoCaptura.astro';
-import ModuloBento from '../components/ModuloBento.astro';
 import Maqueta from '../components/Maqueta.astro';
 import CtaCotizar from '../components/CtaCotizar.astro';
 import Ejemplo from '../components/Ejemplo.astro';
@@ -298,7 +297,7 @@ const pasos = {
     </div>
   </section>
 
-  <!-- 8. Marketing digital (claro alterno): tres garantías publicadas y los 6 servicios de marketing, sin precios -->
+  <!-- 8. Marketing digital (claro alterno): garantías, la vitrina (D54) con una escena por servicio y la lista, sin precios -->
   <section id="marketing" class="pv2-sec pv2-sec--alt pv2-ancla" aria-labelledby="marketing-h2">
     <div class="pv2-wrap">
       <div>
@@ -306,59 +305,135 @@ const pasos = {
         <h2 class="ew-h2" id="marketing-h2">Campañas que se miden hasta la consulta.</h2>
       </div>
       <ul class="pv2-garantias">
-        <li><span class="ew-sign" aria-hidden="true">+</span>La cuenta publicitaria queda a tu nombre</li>
-        <li><span class="ew-sign" aria-hidden="true">+</span>Tu inversión va directo a Google y Meta</li>
-        <li><span class="ew-sign" aria-hidden="true">+</span>WhatsApp por la API oficial</li>
+        {['La cuenta publicitaria queda a tu nombre', 'Tu inversión va directo a Google y Meta', 'WhatsApp por la API oficial'].map((g) => (
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" /></svg>{g}</li>
+        ))}
       </ul>
-      <div class="pv2-bento pv2-bento--marketing">
-        {modulosMkt.map((m) => (
-          <ModuloBento id={m.id} nombre={m.nombre} slug={m.slug} ir={`Ver ${m.nombre}`} linea={m.linea} ancho={m.ancho}>
-            {m.maqueta === 'google' && (
-              <Maqueta nombre="google" linea="un anuncio de búsqueda en Google">
-                <Ejemplo e={{ tipo: 'google', consulta: 'clínica dental cerca de mí', resultados: [{ clase: 'anuncio', sitio: 'Clínica de ejemplo', url: 'ejemplo.com', titulo: 'Clínica dental en Panamá | Agenda tu cita', texto: 'Limpieza, ortodoncia y urgencias. Escríbenos por WhatsApp.' }, { clase: 'organico', sitio: 'Otro negocio de ejemplo', url: 'otro-ejemplo.com', titulo: 'Odontología general y estética', texto: 'Horarios, ubicación y servicios.' }] }} />
-              </Maqueta>
-            )}
-            {m.maqueta === 'anuncio' && (
-              <Maqueta nombre="anuncio" linea="un anuncio en Facebook e Instagram">
-                <div class="pv2-anuncio">
-                  <p class="pv2-anuncio__top"><span class="pv2-anuncio__av"></span><span>Negocio de ejemplo<small>Publicidad</small></span></p>
-                  <div class="pv2-anuncio__arte"><p>Reserva tu cita por WhatsApp</p></div>
-                  <p class="pv2-anuncio__cta"><span>Enviar mensaje</span></p>
+      <div class="pv2-vit">
+        <div class="pv2-vit__escenario">
+          {modulosMkt.map((m, i) => (
+            <div class={`pv2-vit__escena${i === 0 ? ' pv2-vit__escena--activa' : ''}`} data-escena={m.id}>
+              <Maqueta nombre={m.maqueta} linea={m.nota} clase="pv2-vit__tarjeta">
+                <div class="pv2-vit__lienzo">
+                  {m.maqueta === 'google' && (
+                    <div class="pv2-vit__comp pv2-vit__comp--google">
+                      <div class="ew-dev__browser pv2-vit__nav">
+                        <p class="ew-dev__bar"><i></i><i></i><i></i><span>google.com</span></p>
+                        <Ejemplo e={{ tipo: 'google', consulta: 'clínica dental cerca de mí', resultados: [{ clase: 'anuncio', sitio: 'Clínica de ejemplo', url: 'ejemplo.com', titulo: 'Clínica dental en Panamá | Agenda tu cita', texto: 'Limpieza, ortodoncia y urgencias. Escríbenos por WhatsApp.' }, { clase: 'organico', sitio: 'Otro negocio de ejemplo', url: 'otro-ejemplo.com', titulo: 'Odontología general y estética', texto: 'Horarios, ubicación y servicios.' }] }} />
+                      </div>
+                      <div class="pv2-vit__lado">
+                        <p class="ew-data pv2-vit__origen">CRM · Origen: Google Ads</p>
+                        <div class="ew-dev__phone">
+                          <Ejemplo e={{ tipo: 'whatsapp', negocio: 'Clínica de ejemplo', mensajes: [{ de: 'cliente', texto: 'Hola, vi su anuncio. ¿Tienen cita el sábado?', hora: '10:24' }] }} />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  {m.maqueta === 'anuncio' && (
+                    <div class="pv2-vit__comp">
+                      <div class="ew-dev__phone">
+                        <div class="pv2-anuncio">
+                          <p class="pv2-anuncio__top"><span class="pv2-anuncio__av"></span><span>Negocio de ejemplo<small>Publicidad</small></span></p>
+                          <div class="pv2-anuncio__arte"><p>Reserva tu cita por WhatsApp</p></div>
+                          <p class="pv2-anuncio__cta"><span>Enviar mensaje</span></p>
+                        </div>
+                      </div>
+                      <div class="ew-dev__phone">
+                        <Ejemplo e={{ tipo: 'whatsapp', negocio: 'Negocio de ejemplo', mensajes: [{ de: 'cliente', texto: 'Hola, vi el anuncio. ¿Tienen cita esta semana?', hora: '6:12' }] }} />
+                      </div>
+                    </div>
+                  )}
+                  {m.maqueta === 'parrilla' && (
+                    <div class="pv2-vit__comp">
+                      <div class="ew-dev__phone">
+                        <ul class="pv2-parrilla">
+                          <li><span class="pv2-parrilla__c"></span><span><b>Lunes</b> Consejo del mes</span></li>
+                          <li><span class="pv2-parrilla__c pv2-parrilla__c--2"></span><span><b>Miércoles</b> Detrás de cámaras</span></li>
+                          <li><span class="pv2-parrilla__c pv2-parrilla__c--3"></span><span><b>Viernes</b> Novedad de la semana</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                  {m.maqueta === 'correo' && (
+                    <div class="pv2-vit__comp">
+                      <div class="ew-dev__browser pv2-vit__nav pv2-vit__nav--correo">
+                        <p class="ew-dev__bar"><i></i><i></i><i></i><span>Bandeja de entrada</span></p>
+                        <Ejemplo e={{ tipo: 'correo', remitente: 'Negocio de ejemplo', asunto: 'Llegaron los nuevos modelos', previa: 'Te los mostramos antes que a nadie', titular: 'Llegaron los nuevos modelos', texto: 'Pasa por la tienda o pide el tuyo por WhatsApp.', boton: 'Ver los modelos' }} />
+                      </div>
+                    </div>
+                  )}
+                  {m.maqueta === 'whatsapp-plantilla' && (
+                    <div class="pv2-vit__comp">
+                      <div class="ew-dev__phone">
+                        <Ejemplo e={{ tipo: 'whatsapp', negocio: 'Negocio de ejemplo', mensajes: [{ de: 'negocio', texto: 'Hola, María. Llegaron los modelos de la temporada.', hora: '9:00', botones: ['Ver catálogo'] }] }} />
+                      </div>
+                    </div>
+                  )}
+                  {m.maqueta === 'flujo' && (
+                    <div class="pv2-vit__comp">
+                      <Ejemplo e={{ tipo: 'flujo', titulo: 'Nueva consulta', pasos: [{ t: 'Formulario', d: 'La persona deja sus datos' }, { t: 'CRM', d: 'Se crea el contacto' }, { t: 'WhatsApp', d: 'Recibe la respuesta' }] }} />
+                    </div>
+                  )}
                 </div>
               </Maqueta>
-            )}
-            {m.maqueta === 'parrilla' && (
-              <Maqueta nombre="parrilla" linea="la parrilla de publicaciones de la semana">
-                <ul class="pv2-parrilla">
-                  <li><span class="pv2-parrilla__c"></span><span><b>Lunes</b> Consejo del mes</span></li>
-                  <li><span class="pv2-parrilla__c pv2-parrilla__c--2"></span><span><b>Miércoles</b> Detrás de cámaras</span></li>
-                  <li><span class="pv2-parrilla__c pv2-parrilla__c--3"></span><span><b>Viernes</b> Novedad de la semana</span></li>
-                </ul>
-              </Maqueta>
-            )}
-            {m.maqueta === 'correo' && (
-              <Maqueta nombre="correo" linea="un correo a tus clientes">
-                <Ejemplo e={{ tipo: 'correo', remitente: 'Negocio de ejemplo', asunto: 'Llegaron los nuevos modelos', previa: 'Te los mostramos antes que a nadie', titular: 'Llegaron los nuevos modelos', texto: 'Pasa por la tienda o pide el tuyo por WhatsApp.', boton: 'Ver los modelos' }} />
-              </Maqueta>
-            )}
-            {m.maqueta === 'whatsapp-plantilla' && (
-              <Maqueta nombre="whatsapp-plantilla" linea="un mensaje de campaña por WhatsApp">
-                <Ejemplo e={{ tipo: 'whatsapp', negocio: 'Negocio de ejemplo', mensajes: [{ de: 'negocio', texto: 'Hola, María. Llegaron los modelos de la temporada.', hora: '9:00', botones: ['Ver catálogo'] }] }} />
-              </Maqueta>
-            )}
-            {m.maqueta === 'flujo' && (
-              <Maqueta nombre="flujo" linea="una consulta que pasa sola del formulario al CRM y a WhatsApp">
-                <Ejemplo e={{ tipo: 'flujo', titulo: 'Nueva consulta', pasos: [{ t: 'Formulario', d: 'La persona deja sus datos' }, { t: 'CRM', d: 'Se crea el contacto' }, { t: 'WhatsApp', d: 'Recibe la respuesta' }] }} />
-              </Maqueta>
-            )}
-          </ModuloBento>
-        ))}
+            </div>
+          ))}
+        </div>
+        <ul class="pv2-vit__lista" role="list" data-cta-loc="marketing">
+          {modulosMkt.map((m, i) => (
+            <li class={`pv2-vit__fila${i === 0 ? ' pv2-vit__fila--activa' : ''}`} data-fila={m.id}>
+              <span class="pv2-vit__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <h3><a href={url(m.slug)} data-content-id={m.id}>{m.nombre}</a></h3>
+                <p class="pv2-vit__linea">{m.linea}</p>
+                <p class="pv2-vit__mide"><span class="ew-data">Se mide:</span> {m.mide.join(' · ')}</p>
+              </div>
+              <span class="pv2-vit__flecha" aria-hidden="true">→</span>
+            </li>
+          ))}
+        </ul>
+        <CtaCotizar loc="marketing" servicio="pauta" opcion={opcion('pauta', 'marketing')} texto="Cotizar marketing digital" clase="pv2-vit__pie">
+          <a href="/marketing/" class="pv2-enlace">Ver todo el marketing digital <span aria-hidden="true">→</span></a>
+        </CtaCotizar>
       </div>
-      <CtaCotizar loc="marketing" servicio="pauta" opcion={opcion('pauta', 'marketing')} texto="Cotizar marketing digital">
-        <a href="/marketing/" class="pv2-enlace">Ver todo el marketing digital <span aria-hidden="true">→</span></a>
-      </CtaCotizar>
     </div>
   </section>
+
+  <script>
+    // Vitrina de Marketing (D54): la escena sigue a la fila con intención de puntero (desde 1024 px) o al foco del teclado.
+    const lista = document.querySelector<HTMLElement>('.pv2-vit__lista');
+    if (lista) {
+      const fino = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 1024px)');
+      const ancho = matchMedia('(min-width: 640px)');
+      let candidata: Element | null = null;
+      let reloj = 0;
+      const activar = (fila: HTMLElement) => {
+        const escena = document.querySelector(`.pv2-vit__escena[data-escena="${fila.dataset.fila}"]`);
+        if (!escena) return;
+        document.querySelector('.pv2-vit__fila--activa')?.classList.remove('pv2-vit__fila--activa');
+        document.querySelector('.pv2-vit__escena--activa')?.classList.remove('pv2-vit__escena--activa');
+        fila.classList.add('pv2-vit__fila--activa');
+        escena.classList.add('pv2-vit__escena--activa');
+      };
+      lista.addEventListener('pointermove', (e) => {
+        if (!fino.matches || (e.pointerType !== 'mouse' && e.pointerType !== 'pen') || !(e.movementX || e.movementY)) return;
+        const fila = (e.target as Element).closest<HTMLElement>('.pv2-vit__fila');
+        if (!fila || fila === candidata) return;
+        candidata = fila;
+        clearTimeout(reloj);
+        reloj = window.setTimeout(() => activar(fila), 100);
+      });
+      lista.addEventListener('pointerout', (e) => {
+        if (candidata && !candidata.contains(e.relatedTarget as Node | null)) { clearTimeout(reloj); candidata = null; }
+      });
+      lista.addEventListener('focusin', (e) => {
+        const fila = (e.target as Element).closest<HTMLElement>('.pv2-vit__fila');
+        let visible = false;
+        try { visible = (e.target as Element).matches(':focus-visible'); } catch { /* sin :focus-visible */ }
+        if (fila && visible && ancho.matches) activar(fila);
+      });
+    }
+  </script>
 
   <!-- 9. Proceso (grafito): los pasos de hoy en cuatro etapas, plazos y su «Cotizar» -->
   <div id="proceso" class="pv2-ancla pv2-banda--grafito">

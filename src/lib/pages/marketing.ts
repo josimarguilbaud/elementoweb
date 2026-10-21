@@ -1,7 +1,9 @@
 /* SILO MARKETING: pauta, contenido, email y automatización.
    Modelo de cobro: fee de gestión mensual (nos pagan a nosotros) + inversión
    publicitaria aparte (va directo a Google/Meta desde la cuenta del cliente).
-   ⚠️ PRECIOS PROPUESTOS por confirmar con el cliente — ver README. */
+   ⚠️ PRECIOS PROPUESTOS por confirmar con el cliente — ver README.
+   La portada (src/lib/portada.ts) importa este archivo y las pruebas lo cargan en Node: aquí solo cabe `import type`.
+   Los `medimos` de cada página alimentan «Se mide» de la vitrina de la portada (D54): cambiarlos puede romper su build. */
 import type { PageData } from '../types';
 
 const parent = { slug: 'marketing', label: 'Marketing' };

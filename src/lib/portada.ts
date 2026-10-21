@@ -1,6 +1,8 @@
 /* Portada de agencia (D50, tanda B): una sola fuente para el mapa de servicios, el riel, el ItemList, las preguntas y la
    respuesta citable. Funciones puras que reciben `precios` (src/data/precios.json) para que scripts/portada.test.mjs las
    pruebe sin compilar Astro. Vive fuera de src/lib/pages/ para que [...slug].astro no la publique como página. */
+// Con la extensión: scripts/portada.test.mjs carga este módulo en Node. marketing.ts solo admite `import type`.
+import { marketingPages } from './pages/marketing.ts';
 
 export interface Precio { nombre?: string; monto: number; unidad?: string; desde?: boolean }
 export interface Precios { confirmados: Record<string, Precio>; [k: string]: unknown }
@@ -109,21 +111,36 @@ export function opcionDe(mapa: Record<string, string>, clave: string, seccion: s
   return opcion;
 }
 
-/* Marketing por slug (no por posición: la lista de site.ts la comparten el menú y el pie). Líneas acortadas de la
-   description publicada de cada página. `ancho`: 2 = celda doble desde 1024 px; 'fila' = fila entera. */
-const MARKETING: Record<string, { linea: string; maqueta: string; ancho?: 2 | 'fila' }> = {
-  'marketing/google-ads-panama': { linea: 'Aparece cuando tu cliente busca; tu inversión va directo a Google.', maqueta: 'google', ancho: 2 },
-  'marketing/facebook-instagram-ads-panama': { linea: 'Segmentación, creativos y ventas; tu inversión va directo a Meta.', maqueta: 'anuncio' },
-  'marketing/contenido-redes-sociales-panama': { linea: 'Publicaciones, diseño gráfico y Reels para mantener tu marca viva.', maqueta: 'parrilla' },
-  'marketing/email-marketing-panama': { linea: 'Newsletters y recuperación de clientes, sobre una base que es tuya.', maqueta: 'correo', ancho: 2 },
-  'marketing/whatsapp-marketing-masivo-panama': { linea: 'Campañas por la API oficial de WhatsApp Business.', maqueta: 'whatsapp-plantilla', ancho: 2 },
-  'marketing/automatizaciones-n8n-panama': { linea: 'Conectamos tus herramientas para quitar el trabajo manual repetitivo.', maqueta: 'flujo', ancho: 'fila' },
+/* Vitrina de Marketing (D54), por slug (no por posición: la lista de site.ts la comparten el menú y el pie). `linea`: 40
+   caracteres o menos, sin repetir las garantías; `nota`: la línea de la nota «Ejemplo» de su escena; `mide`: 3
+   indicadores tomados de los `medimos` que ya publica la página del servicio. Editar esos `medimos` puede romper el
+   build de la portada: el error nombra el slug y los dos archivos. */
+interface DatoMarketing { linea: string; maqueta: string; nota: string; mide: string[] }
+const MARKETING: Record<string, DatoMarketing> = {
+  'marketing/google-ads-panama': { linea: 'Aparece cuando tu cliente busca.', maqueta: 'google', nota: 'un anuncio de búsqueda en Google que termina en WhatsApp', mide: ['CTR', 'Costo por clic', 'Costo por consulta'] },
+  'marketing/facebook-instagram-ads-panama': { linea: 'Segmentación, creativos y ventas.', maqueta: 'anuncio', nota: 'un anuncio en Instagram que abre un chat', mide: ['Alcance', 'CTR', 'Costo por mensaje'] },
+  'marketing/contenido-redes-sociales-panama': { linea: 'Publicaciones, diseño y Reels.', maqueta: 'parrilla', nota: 'la parrilla de publicaciones de la semana', mide: ['Alcance', 'Guardados', 'Mensajes iniciados'] },
+  'marketing/email-marketing-panama': { linea: 'Newsletters sobre una base que es tuya.', maqueta: 'correo', nota: 'un correo a tus clientes', mide: ['Entregabilidad', 'Clics', 'Ventas atribuidas'] },
+  'marketing/whatsapp-marketing-masivo-panama': { linea: 'Campañas masivas a tu lista de clientes.', maqueta: 'whatsapp-plantilla', nota: 'un mensaje de campaña por WhatsApp', mide: ['Lectura', 'Tasa de respuesta', 'Bajas y reportes'] },
+  'marketing/automatizaciones-n8n-panama': { linea: 'Del formulario al CRM, sin copiar datos.', maqueta: 'flujo', nota: 'una consulta que pasa sola del formulario al CRM y a WhatsApp', mide: ['Ejecuciones al mes', 'Horas devueltas', 'Errores evitados'] },
 };
 
-export function modulosMarketing(lista: Enlace[]) {
+interface PaginaMedible { slug: string; blocks?: { medimos?: string[] }[] }
+
+export function modulosMarketing(lista: Enlace[], datos: Record<string, DatoMarketing> = MARKETING, paginas: PaginaMedible[] = marketingPages) {
+  const error = (slug: string, motivo: string) =>
+    new Error(`Vitrina de marketing, «${slug}»: ${motivo}. Revisa src/lib/portada.ts (MARKETING) y src/lib/pages/marketing.ts (medimos).`);
+  const sobrantes = Object.keys(datos).filter((s) => !lista.some((l) => l.slug === s));
+  if (sobrantes.length) throw error(sobrantes.join(', '), 'tiene datos en la portada pero ya no está en la lista de marketing de site.ts');
   return lista.map((l) => {
-    const d = MARKETING[l.slug];
-    if (!d) throw new Error(`La lista de marketing de site.ts tiene «${l.slug}» y la portada no tiene sus datos (línea y maqueta) en portada.ts`);
+    const d = datos[l.slug];
+    if (!d) throw error(l.slug, 'está en la lista de marketing de site.ts y la portada no tiene sus datos (línea, maqueta, nota y «Se mide»)');
+    if (!d.linea || d.linea.length > 40) throw error(l.slug, `la línea tiene que tener 40 caracteres o menos y tiene ${d.linea.length}`);
+    const bloques = (paginas.find((p) => p.slug === l.slug)?.blocks ?? []).filter((b) => b.medimos);
+    if (bloques.length !== 1) throw error(l.slug, `su página tiene ${bloques.length} bloques con medimos y hace falta exactamente uno`);
+    if (d.mide.length !== 3) throw error(l.slug, `«Se mide» lleva ${d.mide.length} indicadores y tiene que llevar 3`);
+    const sinPublicar = d.mide.filter((i) => !bloques[0].medimos!.includes(i));
+    if (sinPublicar.length) throw error(l.slug, `«Se mide» usa ${sinPublicar.map((i) => `«${i}»`).join(', ')}, que no está en los medimos publicados de su página`);
     return { slug: l.slug, nombre: l.label, ...d };
   });
 }

@@ -16,6 +16,7 @@ import {
   precioTexto, COMPACTO, mapaOpciones, opcionDe, modulosMarketing, aniosPortafolio, industriasDestacadas,
   comparaPortada, noHacemosPortada, franjaPrecios, desarrolloPortada,
 } from '../src/lib/portada.ts';
+import { marketingPages } from '../src/lib/pages/marketing.ts';
 
 const precios = JSON.parse(readFileSync('src/data/precios.json', 'utf8'));
 const formulario = JSON.parse(readFileSync('src/data/formulario.json', 'utf8'));
@@ -141,14 +142,57 @@ test('mapa clave → opción del formulario: cada «Cotizar» resuelve su opció
   }
 });
 
-test('marketing se indexa por slug, no por posición, y un slug sin datos rompe el build', () => {
-  const lista = [{ slug: 'marketing/email-marketing-panama', label: 'Email Marketing' }, { slug: 'marketing/google-ads-panama', label: 'Google Ads' }];
-  assert.deepEqual(modulosMarketing(lista).map((m) => [m.slug, m.nombre]), [['marketing/email-marketing-panama', 'Email Marketing'], ['marketing/google-ads-panama', 'Google Ads']]);
-  for (const m of modulosMarketing(lista)) {
-    assert.ok(m.linea.length <= 70, `${m.slug}: ${m.linea.length} caracteres`);
-    assert.ok(m.maqueta, `${m.slug} sin maqueta`);
+// La lista de marketing de site.ts (no se puede importar en Node: lee JSON sin atributo de importación).
+const LISTA_MARKETING = [
+  { slug: 'marketing/google-ads-panama', label: 'Google Ads' },
+  { slug: 'marketing/facebook-instagram-ads-panama', label: 'Facebook e Instagram Ads' },
+  { slug: 'marketing/contenido-redes-sociales-panama', label: 'Contenido para Redes' },
+  { slug: 'marketing/email-marketing-panama', label: 'Email Marketing' },
+  { slug: 'marketing/whatsapp-marketing-masivo-panama', label: 'WhatsApp Marketing' },
+  { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones (n8n)' },
+];
+const medimosDe = (slug) => marketingPages.find((p) => p.slug === slug).blocks.find((b) => b.medimos).medimos;
+
+// protects=que la vitrina publique «Se mide» con indicadores que la página de cada servicio ya publica (D54, d2); fails_when=se quita una validación o los datos de portada.ts se desalinean; no_claim=que los indicadores sean los mejores
+test('vitrina de marketing: los 6 servicios, en el orden de la lista, con línea de 40 o menos, nota y 3 indicadores publicados', () => {
+  const mods = modulosMarketing(LISTA_MARKETING);
+  assert.deepEqual(mods.map((m) => [m.slug, m.nombre]), LISTA_MARKETING.map((l) => [l.slug, l.label]));
+  for (const m of mods) {
+    assert.ok(m.linea && m.linea.length <= 40, `${m.slug}: «${m.linea}» (${m.linea.length})`);
+    assert.ok(m.maqueta && m.nota, `${m.slug} sin maqueta o nota`);
+    assert.equal(m.mide.length, 3, `${m.slug}: ${m.mide.length} indicadores`);
+    for (const i of m.mide) assert.ok(medimosDe(m.slug).includes(i), `${m.slug}: «${i}» no está en sus medimos`);
   }
-  assert.throws(() => modulosMarketing([{ slug: 'marketing/nuevo-servicio', label: 'Nuevo' }]), /marketing\/nuevo-servicio/);
+  assert.doesNotMatch(mods.map((m) => m.linea).join(' '), /API oficial|a tu nombre|directo a Google/, 'las líneas no repiten las garantías');
+});
+
+test('vitrina de marketing: se indexa por slug, no por posición, y un slug sin datos rompe el build', () => {
+  const datos = { 'marketing/a': { linea: 'Línea A.', maqueta: 'a', nota: 'nota a', mide: ['x', 'y', 'z'] }, 'marketing/b': { linea: 'Línea B.', maqueta: 'b', nota: 'nota b', mide: ['x', 'y', 'z'] } };
+  const paginas = [{ slug: 'marketing/a', blocks: [{ medimos: ['x', 'y', 'z'] }] }, { slug: 'marketing/b', blocks: [{ medimos: ['x', 'y', 'z'] }] }];
+  assert.deepEqual(modulosMarketing([{ slug: 'marketing/b', label: 'B' }, { slug: 'marketing/a', label: 'A' }], datos, paginas).map((m) => m.slug), ['marketing/b', 'marketing/a']);
+  assert.throws(() => modulosMarketing([{ slug: 'marketing/nuevo', label: 'N' }, ...LISTA_MARKETING]), /marketing\/nuevo.*src\/lib\/portada\.ts/s);
+});
+
+test('vitrina de marketing: rompen el build una línea de 41, 2 o 4 indicadores, uno no publicado, medimos ausente o doble y una entrada sobrante', () => {
+  const base = () => ({ 'marketing/a': { linea: 'Línea corta.', maqueta: 'a', nota: 'nota a', mide: ['x', 'y', 'z'] } });
+  const pags = (blocks) => [{ slug: 'marketing/a', blocks }];
+  const lista = [{ slug: 'marketing/a', label: 'A' }];
+  const ok = pags([{ medimos: ['x', 'y', 'z', 'w'] }]);
+  assert.equal(modulosMarketing(lista, base(), ok).length, 1);
+  const casos = [
+    ['línea de 41', (d) => { d['marketing/a'].linea = 'x'.repeat(41); }, ok],
+    ['2 indicadores', (d) => { d['marketing/a'].mide = ['x', 'y']; }, ok],
+    ['4 indicadores', (d) => { d['marketing/a'].mide = ['x', 'y', 'z', 'w']; }, ok],
+    ['indicador no publicado', (d) => { d['marketing/a'].mide = ['x', 'y', 'no-está']; }, ok],
+    ['sin medimos', () => {}, pags([{ type: 'prose' }])],
+    ['medimos doble', () => {}, pags([{ medimos: ['x', 'y', 'z'] }, { medimos: ['x', 'y', 'z'] }])],
+    ['entrada sobrante', (d) => { d['marketing/viejo'] = { linea: 'x', maqueta: 'v', nota: 'v', mide: ['x', 'y', 'z'] }; }, ok],
+  ];
+  for (const [nombre, cambiar, paginas] of casos) {
+    const d = base();
+    cambiar(d);
+    assert.throws(() => modulosMarketing(lista, d, paginas), (e) => /marketing\/(a|viejo)/.test(e.message) && /src\/lib\/portada\.ts/.test(e.message) && /src\/lib\/pages\/marketing\.ts/.test(e.message), nombre);
+  }
 });
 
 test('cada módulo de servicio tiene una línea propia de 70 caracteres o menos y una maqueta', () => {
@@ -458,20 +502,75 @@ test('orden completo: respuesta, proyectos, industrias, servicios, SEO, desarrol
   assert.deepEqual(ids, ['proyectos', 'industrias', 'servicios', 'seo', 'desarrollo', 'marketing', 'proceso', 'precios', 'compara', 'preguntas', 'formulario']);
 });
 
-test('8. marketing: rótulo, H2 sin palabras reservadas, 6 módulos iguales a los del hub /marketing/ y sin precios', conDist, () => {
+// protects=el contenido y los enlaces de la vitrina en el HTML sin JS (D54); fails_when=una fila o una escena falta, sobra o no coincide; no_claim=la apariencia (la miden qa-lcp y qa-a11y)
+test('8. marketing: rótulo, H2, 3 garantías con check, 6 filas iguales a los servicios del hub, 6 escenas y sin precios', conDist, () => {
   const s = seccion('marketing');
   assert.equal(textoDe(s.querySelector('.pv2-rotulo')), 'Marketing digital');
   assert.equal(textoDe(s.querySelector('h2')), 'Campañas que se miden hasta la consulta.');
-  // Las páginas de IA creativa (D52) están en la tabla del hub pero no son módulos de la portada: van en su grupo propio.
+  const garantias = s.querySelectorAll('.pv2-garantias li');
+  assert.deepEqual(garantias.map(textoDe), ['La cuenta publicitaria queda a tu nombre', 'Tu inversión va directo a Google y Meta', 'WhatsApp por la API oficial']);
+  for (const g of garantias) assert.ok(g.querySelector('svg[aria-hidden="true"]') && !g.querySelector('.ew-sign'), 'cada garantía lleva el check, no el «+»');
+  // Las páginas de IA creativa (D52) están en la tabla del hub pero no son filas de la portada: van en su grupo propio.
   const IA_CREATIVA = ['/marketing/videos-publicitarios-panama/'];
   const delHub = [...new Set(pagina('dist/marketing/index.html').querySelectorAll('main a[href^="/marketing/"]').map((a) => a.getAttribute('href')).filter((h) => h !== '/marketing/' && !IA_CREATIVA.includes(h)))];
-  const modulos = s.querySelectorAll('.pv2-modulo').map((m) => m.querySelector('.pv2-modulo__enlaces a').getAttribute('href'));
-  assert.deepEqual([...modulos].sort(), [...delHub].sort(), 'los módulos son los servicios del hub de marketing');
+  const lista = s.querySelector('ul.pv2-vit__lista');
+  assert.equal(lista?.getAttribute('role'), 'list');
+  assert.equal(lista.getAttribute('data-cta-loc'), 'marketing');
+  const filas = lista.querySelectorAll('li.pv2-vit__fila');
+  assert.equal(filas.length, 6);
+  const enlaces = filas.map((f) => f.querySelector('h3 a'));
+  assert.deepEqual(enlaces.map((a) => a.getAttribute('href')).sort(), [...delHub].sort(), 'las filas son los servicios del hub de marketing');
+  const hijos = (e, clase) => e.childNodes.filter((n) => n.classList?.contains(clase));
+  const escenas = hijos(s.querySelector('.pv2-vit__escenario'), 'pv2-vit__escena');
+  assert.deepEqual(escenas.map((e) => e.getAttribute('data-escena')), filas.map((f) => f.getAttribute('data-fila')), 'una escena por fila, en el mismo orden');
+  assert.deepEqual(enlaces.map((a) => a.getAttribute('data-content-id')), filas.map((f) => f.getAttribute('data-fila')), 'el enlace lleva el id de su fila');
+  for (const e of escenas) {
+    const t = hijos(e, 'pv2-maqueta')[0];
+    assert.ok(t?.classList.contains('pv2-vit__tarjeta') && hijos(t, 'pv2-vit__lienzo').length === 1, `${e.getAttribute('data-escena')}: tarjeta con su lienzo`);
+    assert.ok(t.nextElementSibling?.classList.contains('pv2-nota'), `${e.getAttribute('data-escena')}: nota hermana de la tarjeta`);
+  }
+  assert.equal(s.querySelectorAll('.pv2-vit__fila--activa').length, 1);
+  assert.equal(s.querySelectorAll('.pv2-vit__escena--activa').length, 1);
+  assert.ok(filas[0].classList.contains('pv2-vit__fila--activa') && escenas[0].classList.contains('pv2-vit__escena--activa'), 'sin JS, la fila 1 y la escena 1');
+  for (const f of filas) for (const sel of ['.pv2-vit__num', '.pv2-vit__flecha']) assert.equal(f.querySelector(sel)?.getAttribute('aria-hidden'), 'true', sel);
   assert.doesNotMatch(textoDe(s), /\$\s?\d/, 'marketing no lleva precios (siguen propuestos)');
   const cta = s.querySelector('a[href="#formulario"][data-cta-loc="marketing"]');
   assert.equal(cta?.getAttribute('data-service'), 'pauta');
   assert.equal(textoDe(cta), 'Cotizar marketing digital');
   assert.ok(s.querySelector('a[href="/marketing/"]'), 'enlace al hub de marketing');
+  assert.equal(s.querySelectorAll('.pv2-bento, .pv2-modulo').length, 0, 'el bento ya no está');
+});
+
+// protects=que «Se mide» diga en la portada lo que publica la página del servicio (d2); fails_when=el texto y los datos se desalinean; no_claim=que el renglón quepa (lo mide qa-lcp)
+test('8. marketing: cada fila lleva su línea y «Se mide: A · B · C» con los datos de portada.ts', conDist, () => {
+  const mods = modulosMarketing(LISTA_MARKETING);
+  const filas = seccion('marketing').querySelectorAll('.pv2-vit__fila');
+  for (const [i, f] of filas.entries()) {
+    assert.equal(textoDe(f.querySelector('h3')), mods[i].nombre);
+    assert.equal(textoDe(f.querySelector('.pv2-vit__linea')), mods[i].linea);
+    assert.equal(textoDe(f.querySelector('.pv2-vit__mide')), `Se mide: ${mods[i].mide.join(' · ')}`);
+  }
+});
+
+// protects=que los estilos de la vitrina no le peguen a otra sección; fails_when=una clase pv2-vit sale de #marketing; no_claim=otras colisiones
+test('8. marketing: las clases pv2-vit solo viven dentro de #marketing y la sección no usa set:html', conDist, () => {
+  const fuera = home().querySelectorAll('[class*="pv2-vit"]').filter((e) => !e.closest('#marketing'));
+  assert.deepEqual(fuera.map((e) => e.getAttribute('class')), []);
+  const fuente = readFileSync('src/pages/index.astro', 'utf8');
+  const bloque = fuente.slice(fuente.indexOf('<!-- 8. Marketing digital'), fuente.indexOf('<!-- 9. Proceso'));
+  assert.ok(bloque.length > 200, 'se encontró la sección 8 en index.astro');
+  assert.doesNotMatch(bloque, /set:html/, 'la nota y «Se mide» se renderizan con {}, no con set:html');
+});
+
+// protects=que la portada no se anime fuera de D53 (DESIGN.md, Motion; d3); fails_when=la vitrina suma un fundido o el corte del bloque queda vacío; no_claim=none beyond protects
+test('8. marketing: el bloque CSS de la vitrina no declara transition ni animation', () => {
+  const css = readFileSync('src/styles/portada.css', 'utf8');
+  const ini = css.indexOf('/* ---- 8. Marketing: vitrina');
+  const fin = css.indexOf('/* ---- 9. Proceso');
+  assert.ok(ini >= 0 && fin > ini && fin - ini > 200, 'se encontró el bloque CSS de la vitrina');
+  const bloque = css.slice(ini, fin);
+  assert.doesNotMatch(bloque, /\btransition\b|\banimation\b/);
+  assert.doesNotMatch(bloque.replace(/\/\*[\s\S]*?\*\//g, ''), /:hover[^{]*\{[^}]*\b(display|visibility|content)\s*:/, 'ningún :hover muestra u oculta contenido (doble toque de iOS)');
 });
 
 test('9. proceso: sobre grafito, cuatro etapas, plazos, «Ver cómo trabajamos» y su «Cotizar»', conDist, () => {
@@ -598,7 +697,10 @@ test('los paneles apilados usan solo clases pv2-ap-* dentro de #servicios y no t
   assert.equal(raiz.querySelectorAll('#servicios .pv2-panel').length, 0, '#servicios no usa .pv2-panel');
   assert.ok(raiz.querySelectorAll('#desarrollo .pv2-panel').length > 0, 'Desarrollo conserva sus .pv2-panel');
   const css = readFileSync('src/styles/portada.css', 'utf8');
-  const bloque = css.slice(css.indexOf('/* ---- 5. Servicios: paneles apilados'), css.indexOf('/* ---- Bento (lo usa la sección de Marketing)'));
+  const ini = css.indexOf('/* ---- 5. Servicios: paneles apilados');
+  const fin = css.indexOf('/* ---- Maquetas y notas de la portada');
+  assert.ok(ini >= 0 && fin > ini, 'se encontraron el bloque CSS de D53 y el que le sigue');
+  const bloque = css.slice(ini, fin);
   assert.ok(bloque.length > 200, 'se encontró el bloque CSS de D53');
   assert.doesNotMatch(bloque, /\.pv2-panel\b(?!-)/, 'el bloque CSS de D53 no tiene reglas para .pv2-panel');
 });

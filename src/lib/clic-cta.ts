@@ -17,3 +17,24 @@ export function clicCta({ href, pagina, servicioEnlace, servicioPagina }: ClicCt
   if (href === '#formulario' && !pagina.startsWith('/contacto/')) return { servicio: servicioEnlace || servicioPagina };
   return null;
 }
+
+/* Qué evento manda un clic, uno solo y en este orden: WhatsApp, teléfono, correo, `cta_click` y, al final,
+   `select_content` para un enlace con data-content-id (las filas de la vitrina de Marketing, D54). */
+export interface Clic extends ClicCta {
+  contentId: string;
+  contentType: string;
+}
+export type EventoClic =
+  | { nombre: 'click_whatsapp' | 'click_phone' | 'click_email' }
+  | { nombre: 'cta_click'; servicio: string }
+  | { nombre: 'select_content'; contentType: string; contentId: string };
+
+export function clasificarClic(c: Clic): EventoClic | null {
+  if (c.href.includes('wa.me') || c.href.includes('api.whatsapp.com')) return { nombre: 'click_whatsapp' };
+  if (c.href.startsWith('tel:')) return { nombre: 'click_phone' };
+  if (c.href.startsWith('mailto:')) return { nombre: 'click_email' };
+  const cta = clicCta(c);
+  if (cta) return { nombre: 'cta_click', servicio: cta.servicio };
+  if (c.contentId) return { nombre: 'select_content', contentType: c.contentType || 'servicio', contentId: c.contentId };
+  return null;
+}

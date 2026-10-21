@@ -4,6 +4,7 @@
 // el éxito solo con {"ok": true}; sin JavaScript; teclado; móvil; y axe (WCAG 2.x AA).
 //   node scripts/qa-form.mjs
 import { chromium } from 'playwright-core';
+import { contextoSinGa } from './lib/sin-ga.mjs';
 import { readFileSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { rutaChrome } from './chrome.mjs';
@@ -24,7 +25,7 @@ const ok = (nombre, cond, detalle = '') => { pruebas++; if (cond) console.log(` 
 
 /** Contexto con gtag simulado y el webhook simulado. `respuesta` decide qué contesta n8n a cada POST. */
 async function abrir({ ancho = 1280, alto = 900, js = true, respuesta = () => ({ status: 200, body: { ok: true } }) } = {}) {
-  const ctx = await nav.newContext({ viewport: { width: ancho, height: alto }, javaScriptEnabled: js });
+  const ctx = await contextoSinGa(nav, { viewport: { width: ancho, height: alto }, javaScriptEnabled: js });
   const peticiones = [];
   // Base.astro define gtag() y empuja a dataLayer aunque gtag.js no cargue; los eventos se leen de ahí (cadena real).
   await ctx.route(ENDPOINT, async (route) => {

@@ -3,6 +3,7 @@
 // detectar (contraste, nombres, etiquetas, roles); NO sustituye la revisión con lector de pantalla.
 //   npx astro preview --port 4610 &   → node scripts/qa-a11y.mjs http://localhost:4610
 import { chromium } from 'playwright-core';
+import { contextoSinGa } from './lib/sin-ga.mjs';
 import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { rutaChrome } from './chrome.mjs';
@@ -18,7 +19,7 @@ const PAGES = [...new Set(['/', '/marketing/', '/precios/', '/contacto/', '/dise
 const b = await chromium.launch({ executablePath: EXE });
 const seen = new Map();
 for (const [w, h] of [[390, 844], [1280, 800]]) {
-  const p = await (await b.newContext({ viewport: { width: w, height: h } })).newPage();
+  const p = await (await contextoSinGa(b, { viewport: { width: w, height: h } })).newPage();
   for (const path of PAGES) {
     await p.goto(BASE + path, { waitUntil: 'load' });
     await p.addStyleTag({ content: '.reveal{opacity:1!important;transform:none!important}' });
@@ -74,7 +75,7 @@ const contrastes = () => {
     if (peor < minimo(cs)) malos.push(`${nombre} «${el.textContent.trim().slice(0, 30)}» ${peor.toFixed(2)}:1 (mínimo ${minimo(cs)})`);
   };
   const conTexto = (el) => [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()) && el.checkVisibility({ opacityProperty: true, visibilityProperty: true }) && el.getBoundingClientRect().width > 1;
-  for (const [nombre, sel] of [['héroe', '.ew-hero *'], ['etapa', '.ew-pasos__n'], ['signo', '.ew-sign'], ['dominio', '.ew-dev__bar span'], ['maqueta', '.pv2-maqueta *']]) {
+  for (const [nombre, sel] of [['héroe', '.ew-hero *'], ['etapa', '.ew-pasos__n'], ['signo', '.ew-sign'], ['dominio', '.ew-dev__bar span'], ['maqueta', '.pv2-maqueta *'], ['nota', '.pv2-nota, .pv2-nota *'], ['fila de la vitrina', '.pv2-vit__fila *']]) {
     for (const el of document.querySelectorAll(sel)) if (conTexto(el) && !el.closest('.sr-only')) medir(el, getComputedStyle(el), nombre);
   }
   for (const td of document.querySelectorAll('.ew-cmp td')) {
@@ -83,19 +84,42 @@ const contrastes = () => {
   }
   return malos;
 };
-// Objetivos de 44 px: enlaces de módulo, fuentes y fichas de industria.
-const objetivos = () => [...document.querySelectorAll('.pv2-modulo__enlaces a, .ew-src, .pv2-ficha')]
+// Objetivos de 44 px: filas de la vitrina (el enlace se estira con ::after), fuentes y fichas de industria.
+const objetivos = () => [...document.querySelectorAll('.pv2-vit__fila, .ew-src, .pv2-ficha')]
   .filter((a) => a.checkVisibility()).filter((a) => a.getBoundingClientRect().height < 44)
   .map((a) => `${a.className || a.textContent.trim().slice(0, 24)} ${Math.round(a.getBoundingClientRect().height)} px`);
+// Vitrina (D54): la fila entera es el blanco del clic. En el número, la línea, «Se mide», la flecha y el centro de cada
+// fila, elementFromPoint devuelve el enlace de la fila (un hijo posicionado taparía el ::after).
+const clicsFila = () => [...document.querySelectorAll('.pv2-vit__fila')].flatMap((f) => {
+  f.scrollIntoView({ block: 'center', behavior: 'instant' });
+  const a = f.querySelector('h3 a');
+  return [['número', '.pv2-vit__num'], ['línea', '.pv2-vit__linea'], ['se mide', '.pv2-vit__mide'], ['flecha', '.pv2-vit__flecha'], ['centro', null]].flatMap(([n, s]) => {
+    const r = (s ? f.querySelector(s) : f).getBoundingClientRect();
+    return document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2) === a ? [] : [`${f.dataset.fila} en ${n}`];
+  });
+});
+const escenas = () => document.querySelectorAll('.pv2-vit__escena').length;
+const activarEscena = (i) => document.querySelectorAll('.pv2-vit__escena').forEach((e, j) => e.classList.toggle('pv2-vit__escena--activa', j === i));
 
 for (const [w, h] of [[390, 844], [768, 1024], [1280, 800]]) {
-  const p = await (await b.newContext({ viewport: { width: w, height: h } })).newPage();
+  const p = await (await contextoSinGa(b, { viewport: { width: w, height: h } })).newPage();
   await p.goto(BASE + '/', { waitUntil: 'load' });
   if (w === 768) await axePortada(p, '768');
   const bajos = await p.evaluate(contrastes);
   if (bajos.length) anotar('portada-contraste-calculado', 'Contraste calculado fuera de axe (aria-hidden, héroe, td::before)', `/ (${w})`, bajos);
   const chicos = await p.evaluate(objetivos);
   if (chicos.length) anotar('portada-objetivo-44', 'Objetivos de toque de menos de 44 px', `/ (${w})`, chicos);
+  const sinClic = await p.evaluate(clicsFila);
+  if (sinClic.length) anotar('portada-vitrina-clic', 'Puntos de la fila de la vitrina que no llevan al enlace', `/ (${w})`, sinClic);
+  if (w === 768 || w === 1280) {
+    // Contraste de las 6 escenas: las ocultas no se miden (visibility: hidden), así que se activa una por una.
+    for (let i = 0, n = await p.evaluate(escenas); i < n; i++) {
+      await p.evaluate(activarEscena, i);
+      const malos = (await p.evaluate(contrastes)).filter((m) => /^(maqueta|nota) /.test(m));
+      if (malos.length) anotar('portada-vitrina-contraste', 'Contraste de las escenas de la vitrina', `/ (${w}, escena ${i + 1})`, malos);
+    }
+    await p.evaluate(activarEscena, 0);
+  }
   if (w === 1280) {
     // El menú fijo sobre grafito: axe con la página desplazada hasta #seo y hasta #compara. Desplazado, el menú pasa a
     // blanco opaco y axe ya puede medir la marca «elemento web», cuyo « web» va al 60 %: es logotipo, exento de

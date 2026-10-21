@@ -1,4 +1,8 @@
 @import "tailwindcss";
+/* Tailwind no lee la documentación ni las auditorías (D54): un plan o un informe sin rastrear con palabras como «static»
+   metía utilidades nuevas en la hoja compartida de todas las páginas. */
+@source not "../../docs";
+@source not "../../audit";
 
 /* Una sola familia en todo el sitio: Roboto (decisión del dueño, ver DESIGN.md).
    Autoalojada y variable (eje de peso 100-900, subconjunto latin: cubre español), porque

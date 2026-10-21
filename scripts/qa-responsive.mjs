@@ -2,6 +2,7 @@
 // desbordamiento horizontal, si la navbar se sale de la pantalla o si el CTA principal queda oculto.
 //   npm run build && npx astro preview --port 4610 &   → node scripts/qa-responsive.mjs http://localhost:4610
 import { chromium } from 'playwright-core';
+import { contextoSinGa } from './lib/sin-ga.mjs';
 import { rutaChrome } from './chrome.mjs';
 import { readFileSync } from 'node:fs';
 
@@ -13,7 +14,7 @@ const SIZES = [[320, 640], [360, 740], [390, 844], [430, 932], [768, 1024], [820
 const b = await chromium.launch({ executablePath: EXE });
 let fails = 0, checks = 0;
 for (const [w, h] of SIZES) {
-  const ctx = await b.newContext({ viewport: { width: w, height: h } });
+  const ctx = await contextoSinGa(b, { viewport: { width: w, height: h } });
   const p = await ctx.newPage();
   for (const path of PAGES) {
     await p.goto(BASE + path, { waitUntil: 'load' });

@@ -2,11 +2,12 @@
 // verificar). No sustituye probar con NVDA / VoiceOver / TalkBack: ver docs/checklist-lector-pantalla.md.
 //   npx astro preview --port 4610 &   → node scripts/qa-sr.mjs http://localhost:4610
 import { chromium } from 'playwright-core';
+import { contextoSinGa } from './lib/sin-ga.mjs';
 const BASE = process.argv[2] || 'http://localhost:4610';
 const EXE = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium';
 const PAGES = ['/', '/precios/', '/contacto/', '/diseno-web-panama/', '/miami/', '/nosotros/', '/casos-de-exito/tramitapa/', '/recursos/calculadora-costo-total-web/', '/guias/', '/blog/cuanto-cuesta-diseno-web-panama/', '/servicios/diseno-web-corporativo-panama/'];
 const b = await chromium.launch({ executablePath: EXE });
-const p = await (await b.newContext({ viewport: { width: 1280, height: 800 } })).newPage();
+const p = await (await contextoSinGa(b, { viewport: { width: 1280, height: 800 } })).newPage();
 let fails = 0; const bad = (path, m) => { fails++; console.log(`✗ ${path}  ${m}`); };
 for (const path of PAGES) {
   await p.goto(BASE + path, { waitUntil: 'load' });

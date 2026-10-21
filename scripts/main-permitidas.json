@@ -1,5 +1,5 @@
 {
-  "_nota": "Rutas cuyo <main> puede cambiar en la tanda de IA creativa (D52, AC14) y páginas nuevas. Lo lee scripts/comparar-main.mjs contra el build de la línea base. Menú y pie cambian en todas las páginas y se declaran aparte.",
-  "cambian": ["/marketing/", "/servicios/", "/inteligencia-artificial-para-empresas-panama/"],
-  "nuevas": ["/marketing/videos-publicitarios-panama/"]
+  "_nota": "Rutas cuyo <main> puede cambiar en la vitrina de Marketing de la portada (D54) y páginas nuevas. Lo lee scripts/comparar-main.mjs contra el build del commit de partida. Menú y pie no cambian en D54. Antes (D52): /marketing/, /servicios/ y /inteligencia-artificial-para-empresas-panama/, y nueva /marketing/videos-publicitarios-panama/.",
+  "cambian": ["/"],
+  "nuevas": []
 }

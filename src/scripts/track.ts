@@ -3,7 +3,7 @@
    teléfono, mensaje ni URLs con datos personales: solo ubicación y servicio.
    `service` es la CLAVE del servicio (src/data/formulario.json), p. ej. `ecommerce` (D9): la toma del enlace
    (/contacto/?servicio=…), de lo que informa el formulario o de <main data-service> en las páginas con servicio. */
-import { clicCta } from '../lib/clic-cta';
+import { clasificarClic } from '../lib/clic-cta';
 
 type Params = Record<string, string | number>;
 const send = (name: string, params: Params = {}) => {
@@ -21,18 +21,20 @@ const conServicio = (servicio: string | undefined, extra: Params = {}): Params =
   return s ? { service: s, ...extra } : extra;
 };
 
+// Un solo evento por clic (clasificarClic): WhatsApp, teléfono, correo, «Cotizar» (enlaces a /contacto/ y el ancla
+// #formulario, D50) y, al final, select_content para los enlaces con data-content-id (filas de la vitrina, D54).
 document.addEventListener('click', (e) => {
   const a = (e.target as HTMLElement).closest('a') as HTMLAnchorElement | null;
   if (!a) return;
-  const href = a.getAttribute('href') || '';
-  if (href.includes('wa.me') || href.includes('api.whatsapp.com')) send('click_whatsapp', conServicio(undefined, { location: where(a) }));
-  else if (href.startsWith('tel:')) send('click_phone', { location: where(a) });
-  else if (href.startsWith('mailto:')) send('click_email', { location: where(a) });
-  else {
-    // Botones de cotizar: enlaces a /contacto/ y el ancla #formulario de las páginas v2 y la portada (D50).
-    const cta = clicCta({ href, pagina: location.pathname, servicioEnlace: a.dataset.service || '', servicioPagina: servicioDePagina() });
-    if (cta) send('cta_click', { location: where(a), ...(cta.servicio ? { service: cta.servicio } : {}) });
-  }
+  const ev = clasificarClic({
+    href: a.getAttribute('href') || '', pagina: location.pathname, servicioEnlace: a.dataset.service || '', servicioPagina: servicioDePagina(),
+    contentId: a.dataset.contentId || '', contentType: a.dataset.contentType || '',
+  });
+  if (!ev) return;
+  if (ev.nombre === 'click_whatsapp') send(ev.nombre, conServicio(undefined, { location: where(a) }));
+  else if (ev.nombre === 'cta_click') send(ev.nombre, { location: where(a), ...(ev.servicio ? { service: ev.servicio } : {}) });
+  else if (ev.nombre === 'select_content') send(ev.nombre, { content_type: ev.contentType, content_id: ev.contentId, location: where(a) });
+  else send(ev.nombre, { location: where(a) });
 });
 
 window.addEventListener('cf:start', (e) => send('form_start', conServicio((e as CustomEvent).detail?.servicio, { form: 'contacto' })));

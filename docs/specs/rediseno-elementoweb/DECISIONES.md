@@ -421,12 +421,23 @@ decidido:
 
   En ese WebKit de Windows toda la página se ve en peso fino (Roboto variable). Pasa en toda la portada y no viene de
   D54.
-- **Pendiente:**
-  - la publicación, con el permiso del dueño;
-  - la prueba en un iPhone o iPad real (el doble toque de iOS no se ejercita en WebKit de escritorio);
-  - la lectura a los 28 días, con fecha al publicar.
-
-  Las lecturas de la portada v2 (D51) incluyen la vitrina desde su publicación.
+- **Publicación (21-oct-2026)**, con permiso del dueño (tarjeta D19).
+  - Commits `f26d0dc` (código) y `9561c50` (documentos). Despliegue 39631381188 en verde y `check-prod` con 39 ok.
+  - **Rendimiento:** Lighthouse móvil en producción, mediana de 5 corridas, 90/100, LCP 1,7 s, CLS 0.
+    - Tres corridas más dieron 89 a 91, con TBT de 293 a 345 ms.
+    - El TBT viene del script del menú (`Navbar`, tarea larga de 239 ms), del cargador de D53 y de gtag.js. El script de
+      la vitrina no aparece.
+    - Es el mismo 90 que midió D53 el 20-oct. El 99 de la línea base de la mañana fue el valor raro.
+    - Queda en el umbral de D14, sin revertir. Sigue la entrada de `TODOS.md` sobre el TBT.
+  - **GA4 Tiempo real:** un clic real en la fila de Automatizaciones dejó `select_content` con
+    `content_id = automatizaciones-n8n-panama`.
+  - **Ojo al leer:** las corridas de Lighthouse en producción bajan gtag.js y cuentan en GA4 como visitas nuevas a `/`.
+    El 21-oct fueron 13, con `hostName` `elementoweb.com`, así que el filtro de host no las saca. Al leer la ventana C,
+    restarlas en los días con mediciones.
+  - **Lectura de la regla:** ventana C del 21-oct al 17-nov-2026, lectura el **18-nov-2026**. Con «datos
+    insuficientes», se repite el **16-dic-2026** (56 días).
+- **Pendiente:** la prueba en un iPhone o iPad real; el doble toque de iOS no se ejercita en WebKit de escritorio.
+- Las lecturas de la portada v2 (D51) incluyen la vitrina desde el 21-oct-2026.
 
 ## 3. Responsables y dependencias humanas
 

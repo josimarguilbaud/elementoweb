@@ -153,6 +153,33 @@ de islas.
 **Priority:** P2
 **Depends on:** nada.
 
+### Leer la vitrina de Marketing (D54) a los 28 días
+
+**What:** El **18-nov-2026**, comparar la ventana C (21-oct al 17-nov-2026) con la A (17-sep al 14-oct) en GA4, con la
+definición exacta de `audit/ga4-portada-linea-base-2026-10.md`. Las medidas son dos tasas, por cada 1.000 sesiones que
+entran por `/`:
+- las vistas de `/marketing/*` con referente `https://elementoweb.com/`;
+- los `cta_click` con `location = marketing`.
+
+Además, el reparto de `select_content` por fila y por dispositivo. Exportar las CSV a `audit/` y anotar el resultado en
+D54.
+
+**Why:** Es la regla de decisión que el dueño aceptó con UC2:
+- una tasa «sube» si crece un 20 % o más, con 30 eventos o más en cada ventana;
+- si ninguna sube con datos suficientes, la vitrina estática (UC1 b) vuelve como candidata;
+- con menos de 30 eventos es «datos insuficientes» y la lectura se repite el **16-dic-2026**.
+
+**Context:**
+- Filtrar por `hostName` `elementoweb.com` y `www.elementoweb.com`.
+- Restar las visitas de las corridas de Lighthouse en producción, que bajan gtag.js. El 21-oct fueron 13.
+- `location` se registró como dimensión el 21-oct-2026, así que `cta_click` por `location` cuenta solo desde ese día. En
+  la ventana A no se puede separar.
+- La línea base dio 3 vistas en la ventana A: lo esperable es «datos insuficientes».
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P2
+**Depends on:** Nada; la vitrina está publicada desde el 21-oct-2026.
+
 ### Sumar `comparar-main` y `selectores-hoja` al CI
 
 **What:** Hacer que el CI construya el commit base y corra `scripts/comparar-main.mjs` y `scripts/selectores-hoja.mjs`

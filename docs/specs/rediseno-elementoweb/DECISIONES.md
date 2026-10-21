@@ -439,6 +439,46 @@ decidido:
 - **Pendiente:** la prueba en un iPhone o iPad real; el doble toque de iOS no se ejercita en WebKit de escritorio.
 - Las lecturas de la portada v2 (D51) incluyen la vitrina desde el 21-oct-2026.
 
+### D55. Página propia de video inmobiliario con IA (21-oct-2026)
+Fuente:
+- el pedido de Ilitch por WhatsApp (renders de apartamentos animados) y la demo Luxor500, que no se envió;
+- la tarjeta del 21-oct: variante 4 de 4 maquetas de fal (`docs/specs/rediseno-elementoweb/mockups-video-inmobiliario/`),
+  precios $550 / $1,450 / $2,400, página propia y extra «Narración + subtítulos» a $150 por video con la música incluida;
+- el plan `SPEC-VIDEO-INMOBILIARIO.md`, revisado con autoplan (CEO, diseño e ingeniería), y su puerta: Preventa con más
+  (6 cortes verticales de 15 s y narración incluida), tope de la tanda US$ 10, plazos 5 / 10 / 15 días hábiles;
+- la medición de demanda del 21-oct (`audit/demanda-video-inmobiliario-2026-10.md`): «video inmobiliario» da 10–100
+  búsquedas al mes en Panamá y la SERP tiene 3 proveedores locales. Se publica como página propia (G1).
+
+Queda decidido:
+- **URL:** `/marketing/video-inmobiliario-panama/`, title «Video Inmobiliario con IA en Panamá | Preventa y Recorridos»
+  (59 caracteres), anatomía v2 con orden propio de bloques (`ia-creativa.json` → `orden`).
+- **Bloque nuevo `planes-tabs`** (`PlanesTabs.astro`, `planes-tabs.css` en línea solo donde se usa):
+  - collage de 2 videos (16:9 y 9:16) con checklist, y los 3 planes en pestañas WAI-ARIA;
+  - sin JavaScript, los 3 planes salen apilados como secciones con su H3; los roles los pone el script (EV11);
+  - Proyecto abre por defecto; `#plan-<clave>` abre otro plan;
+  - cada cifra sale de `precios.json` con `montoDe()` y el total con narración es base + $150 × bloques (`src/lib/planes.ts`);
+  - «Cotizar este plan» lleva `?plan=` al formulario de contacto, que escribe «Plan de interés» en el mensaje.
+- **Desvío declarado de DV3 y DV11.** Cada video del collage usa `Ejemplo.astro` con su propia ficha y su guion, en vez
+  del pie único con descargas. La prueba existente de videos exige una ficha por video, y separar el núcleo de `Ejemplo`
+  tocaba una página publicada. Los enlaces de descarga no se publican.
+- **Ejemplo:** proyecto ficticio, 18,2 s, con voz, subtítulos y música. Horizontal de 1,85 MB y vertical de 1,85 MB (H.264,
+  CRF 30 y 28). Los cuatro recortes verticales conservan el elemento principal, así que no se regeneró nada.
+- **Gasto:** la tanda `video-inmobiliario` lleva US$ 4,39 de US$ 10. La demo Luxor500 va sin tanda. El registro
+  (`audit/imagenes-ia-2026-10.json`) sube su tope total a US$ 35. Se agregaron `registrar` y `--tanda` a `gasto-ia.mjs`.
+- **Rendimiento:** Lighthouse móvil en local, mediana de 5 corridas, LCP 2,3 s (`video-inmobiliario-lcp`).
+- **SEO congelado:** el snapshot suma solo la URL nueva (8 líneas). Los 82 cambios ya permitidos de fases anteriores
+  siguen fuera del snapshot; reescribirlo entero rompía el apéndice de `KEYWORDS.md` y no es de esta fase.
+- **Términos de uso comercial de las herramientas (EV14, leídos el 21-oct-2026):**
+  - **fal** (términos del 8-sep-2026): no reclama propiedad intelectual sobre lo generado, no la cede expresamente y el
+    uso es a riesgo del cliente. Las fichas de Kling v3 Pro, nano-banana-pro y ElevenLabs Music llevan la marca
+    «Commercial use». La de nano-banana-pro dice «Commercial use enabled through fal.ai».
+  - **ElevenLabs Music:** la página vigente de sus términos dio 404. Las versiones de agosto y de noviembre de 2025
+    permiten uso comercial en planes pagos, salvo televisión, radio, cine, publicidad en esos medios, transmisiones en
+    vivo, videojuegos y eventos masivos. No cubren expresamente el acceso por fal.
+  - **Decisión del dueño (21-oct-2026, tarjeta):** como la licencia de la música no está confirmada para anuncios, el
+    checklist y la lista de lo incluido dicen «Música incluida» y no «Música con licencia» (enmienda DV7). La licencia
+    de uso comercial por escrito que da Elemento Web sobre el video no cambia.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

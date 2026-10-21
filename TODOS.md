@@ -318,9 +318,22 @@ donde siguen como pasos a mano. Hace falta un segundo build del commit base en e
 
 **Context:** Regla de decisión: si a P + 28 ningún motor cita a Elemento Web y la página no está indexada o tiene 0 impresiones, se adelanta su artículo de blog (abajo) y se hace una acción de autoridad del kit (`docs/autoridad/KIT-AUTORIDAD.md`, por ejemplo el alta en Sortlist), porque el freno documentado es la autoridad del dominio. Lectura GEO del día P: pendiente, la hace Claude en el navegador del dueño con su permiso o el dueño.
 
+**Video inmobiliario (D55, E3 y CV5):** `/marketing/video-inmobiliario-panama/` se mide igual desde su propio día P (el día que se publique): P, P + 28 y P + 56, con la indexación, las impresiones de «video inmobiliario» y la pregunta GEO «¿Cuánto cuesta un video inmobiliario con IA en Panamá?». Regla de P + 56: con 0 consultas desde la página y menos de 50 impresiones de «video inmobiliario», el dueño decide entre pasarla a bloque dentro de Videos o dejarla solo como destino de venta directa sin más inversión SEO. Se cuentan además las reuniones que lleguen por contacto directo (Nicole, Ilitch).
+
 **Effort:** S (humano) / S (CC)
 **Priority:** P2
 **Depends on:** Publicación (20-oct-2026).
+
+### Video inmobiliario (D55): pendientes que el plan dejó fuera
+
+Diferidos por la revisión del plan del 21-oct-2026 (`docs/specs/rediseno-elementoweb/SPEC-VIDEO-INMOBILIARIO.md`). Ninguno bloquea la página.
+
+- **Caso real Luxor500.** What: reemplazar o acompañar el ejemplo ficticio con el demo de Luxor500 (El Cangrejo). Why: una promotora compra con un proyecto real a la vista. Context: el demo está hecho (3 clips, 14 s) y respaldado en `~/.gstack/projects/josimarguilbaud-elementoweb/assets/video-inmobiliario-20261021/luxor500-demo-cliente/`; falta el permiso escrito del cliente de Ilitch (puerta G6). Effort: S/S. Priority: P2. Depends on: el permiso.
+- **Muestras para promotoras.** What: Nicole o Ilitch mandan una muestra hecha con los renders públicos de 3 preventas activas, con la página como destino. Why: el comprador son unas decenas de promotoras; el SEO llega tarde en un dominio nuevo. Context: extiende «3 piezas para un negocio concreto» (abajo); cuesta unos US$ 2-3 por muestra; puerta T4. Effort: M/S. Priority: P2. Depends on: la página publicada y T4.
+- **Artículo de precio.** What: «cuánto cuesta un video de preventa en Panamá», enlazado a la página. Why: responde la pregunta GEO de precio. Context: extiende «un artículo por página de IA creativa». Effort: M/S. Priority: P3. Depends on: la lectura P+28.
+- **Narración en inglés.** What: ofrecer la narración en inglés como extra para compradores extranjeros de preventa. Why: buena parte de la preventa en Panamá se vende afuera. Context: precio sin investigar; seguir la regla de precios de mercado. Effort: S/S. Priority: P3. Depends on: un primer cliente que lo pida.
+- **Landing de Ads para validar demanda.** What: una campaña chica de Google Ads a la página durante 2 semanas. Why: valida la demanda en semanas y no en meses. Context: idea de la revisión CEO; decide el dueño si invierte. Effort: S/S. Priority: P3. Depends on: la página publicada.
+- **Web de preventa con video incluido.** What: un paquete «web del proyecto + video» para promotoras. Why: une el video con la prioridad del sitio, «diseño web panamá». Context: idea de la revisión CEO. Effort: M/M. Priority: P3. Depends on: un primer cliente de video.
 
 ### Fotografía de producto con IA: falta la foto «antes»
 

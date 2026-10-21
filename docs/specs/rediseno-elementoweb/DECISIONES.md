@@ -478,6 +478,10 @@ Queda decidido:
   - **Decisión del dueño (21-oct-2026, tarjeta):** como la licencia de la música no está confirmada para anuncios, el
     checklist y la lista de lo incluido dicen «Música incluida» y no «Música con licencia» (enmienda DV7). La licencia
     de uso comercial por escrito que da Elemento Web sobre el video no cambia.
+- **Publicación (21-oct-2026)**, con permiso del dueño (tarjeta). Commits `645d211` (código) y `75219e2` (documentos),
+  despliegue 39687923909 en verde. En producción: 200, en el sitemap y LCP móvil 2,3 s (Lighthouse, mediana de 5
+  corridas), igual que en local.
+- **Pendiente:** la demo Luxor500 no se ha enviado a Ilitch; los casos y muestras para prospectos siguen en `TODOS.md`.
 
 ## 3. Responsables y dependencias humanas
 

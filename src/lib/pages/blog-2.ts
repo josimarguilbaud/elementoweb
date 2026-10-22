@@ -12,59 +12,56 @@ export const blog2: PageData[] = [
     date: '2026-07-18',
     heroImage: {
       src: '/images/blog/como-integrar-yappy-tu-tienda-online.jpg',
-      alt: 'Persona pagando desde su celular con una aplicacion de banca movil en Panama',
+      alt: 'Teléfono móvil con ondas de pago sin contacto, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Yappy se volvió la forma preferida de pagar en Panamá, y si tu tienda online no lo acepta estás dejando ventas sobre la mesa. La buena noticia es que integrarlo es más sencillo de lo que parece.',
-      'En esta guía te explicamos qué es el Botón de Pago Yappy, qué necesitas para activarlo, los pasos reales para conectarlo a tu web y cómo aprovecharlo para cobrar sin fricción.',
+      'Para integrar Yappy en tu tienda online en Panamá necesitas el Botón de Pago Yappy comercial del Banco General: cuenta comercial, aviso de operación vigente y una tienda funcional. Con las credenciales aprobadas, Elemento Web lo conecta a WooCommerce, Shopify o a una web a medida por API, activa la confirmación automática y lo prueba con una compra real.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Qué es el Botón de Pago Yappy y por qué importa en Panamá',
+        h2: '¿Qué es el Botón de Pago Yappy?',
         paragraphs: [
-          'Yappy es la billetera digital del Banco General que hoy usan cientos de miles de panameños para enviarse dinero entre personas. Lo que muchos negocios todavía no aprovechan es que existe una versión comercial: el <strong>Botón de Pago Yappy</strong>, pensado para cobrar en una tienda online sin que el cliente tenga que escribir un número de celular ni salir de tu sitio.',
-          'La diferencia es importante. El Yappy personal sirve para transferencias entre amigos y familiares; el comercial te da un botón integrado en el checkout, confirma el pago de forma automática y te permite llevar un registro ordenado de cada transacción. Para un negocio serio, esa automatización es la que ahorra horas de conciliación manual.',
-          'En el mercado panameño esto pesa mucho. Muchos clientes no tienen tarjeta de crédito o simplemente prefieren no darla por internet, pero casi todos tienen Yappy. Ofrecerlo baja la barrera de compra y transmite confianza local, algo que una pasarela extranjera no siempre logra.',
+          'Yappy es la billetera digital del Banco General que los panameños usan para enviarse dinero entre personas. Su versión comercial, el <strong>Botón de Pago Yappy</strong>, sirve para cobrar en una tienda online sin que el cliente escriba un número de celular ni salga del sitio.',
+          'El Yappy personal sirve para transferencias entre amigos y familiares. El Botón de Pago comercial se integra al checkout, confirma cada pago de forma automática y deja un registro de cada transacción, lo que elimina la conciliación manual.',
+          'En Panamá muchos compradores no tienen tarjeta de crédito o prefieren no darla por internet, pero la mayoría tiene Yappy. Ofrecerlo en el checkout baja la barrera de compra con un canal de pago que el cliente ya conoce.',
         ],
       },
       {
         type: 'prose',
         h2: 'Requisitos para activar el Botón de Pago Yappy',
         paragraphs: [
-          'Antes de tocar tu web necesitas cumplir con lo que el banco pide. El Botón de Pago Yappy es un producto comercial, así que se solicita como negocio, no como persona natural con una cuenta personal.',
-          'En términos generales vas a necesitar una cuenta comercial en el Banco General, tu <strong>aviso de operación</strong> vigente, los datos de tu empresa o negocio y una tienda online funcional donde se instalará el botón. El banco valida tu actividad comercial antes de habilitarte, y ese proceso lo gestionas directamente con ellos.',
-          'Nuestra recomendación honesta: gestiona la aprobación del banco en paralelo mientras construimos la tienda. Así, cuando el sitio esté listo, solo conectamos las credenciales y sales a vender el mismo día. Puedes ver todo lo que cubre el <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">servicio de integración de Yappy y pasarelas de pago</a> para entender el alcance completo.',
+          'El Botón de Pago Yappy se solicita como negocio, no como persona natural. El Banco General pide una cuenta comercial, el <strong>aviso de operación</strong> vigente, los datos de tu empresa y una tienda online funcional donde instalar el botón. El banco valida tu actividad comercial antes de habilitarte, y ese trámite lo gestionas directamente con ellos.',
+          'Gestiona la aprobación del banco en paralelo mientras se construye la tienda: cuando el sitio esté listo, solo se conectan las credenciales y puedes vender el mismo día. El alcance completo está en el <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">servicio de integración de Yappy y pasarelas de pago</a>.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Pasos para integrar Yappy en tu tienda',
-        intro: 'El proceso varía un poco según tu plataforma, pero la lógica es siempre la misma. Estos son los pasos generales de principio a fin.',
+        h2: 'Cómo integrar Yappy en tu tienda online paso a paso',
+        intro: 'Los pasos son los mismos en cualquier plataforma; solo cambia el método de conexión del paso 3.',
         items: [
-          { h3: 'Solicita el Botón de Pago al banco', text: 'Contacta al Banco General con tus documentos de negocio y pide activar el Botón de Pago Yappy comercial. Ellos validan tu aviso de operación y tu cuenta antes de darte acceso.' },
-          { h3: 'Obtén tus credenciales', text: 'Una vez aprobado, el banco te entrega las llaves técnicas (identificadores y secretos) que conectan tu tienda con Yappy. Guárdalas con cuidado, son la puerta a tus cobros.' },
-          { h3: 'Instala el módulo o la integración', text: 'Si usas WooCommerce o Shopify, se instala el módulo correspondiente; si tu web es a medida, se conecta por API. Aquí es donde entra el trabajo técnico que hacemos por ti.' },
-          { h3: 'Configura la confirmación automática', text: 'Se define la URL de notificación para que, cuando el cliente pague, tu tienda marque el pedido como pagado sin intervención manual. Este paso es el que evita errores y descuadres.' },
-          { h3: 'Haz una compra de prueba real', text: 'Antes de publicar, procesa una transacción de verdad por un monto pequeño y confirma que el dinero llega y el pedido cambia de estado. Nunca lances sin probar en vivo.' },
+          { h3: 'Solicita el Botón de Pago al banco', text: 'Pide al Banco General el Botón de Pago Yappy comercial con tus documentos de negocio. El banco valida tu aviso de operación y tu cuenta antes de darte acceso.' },
+          { h3: 'Obtén tus credenciales', text: 'Tras la aprobación, el banco entrega las llaves técnicas (identificadores y secretos) que conectan tu tienda con Yappy. Guárdalas como cualquier contraseña de cobro.' },
+          { h3: 'Instala el módulo o la integración', text: 'En WooCommerce o Shopify se instala el módulo correspondiente; en una web a medida, la conexión se hace por API.' },
+          { h3: 'Configura la confirmación automática', text: 'Se define la URL de notificación para que la tienda marque el pedido como pagado en cuanto el cliente paga, sin intervención manual ni descuadres.' },
+          { h3: 'Haz una compra de prueba real', text: 'Antes de publicar, procesa una transacción real por un monto pequeño y confirma que el dinero llega y el pedido cambia de estado.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'Comisiones, tiempos y qué esperar del dinero',
+        h2: 'Comisiones de Yappy y tiempos de abono',
         paragraphs: [
-          'Toda forma de cobro digital tiene un costo, y Yappy comercial no es la excepción: el banco cobra una comisión por transacción según el acuerdo que tengas con ellos. Ese porcentaje lo define el Banco General, no nosotros, así que confírmalo por escrito con tu ejecutivo antes de decidir precios.',
-          'La ventaja frente a las pasarelas de tarjeta es que el dinero se mueve dentro del sistema bancario panameño, lo que suele traducirse en abonos ágiles a tu cuenta y menos fricción por rechazos. Aun así, siempre te conviene comparar: Yappy para el cliente local que no usa tarjeta, y una pasarela con tarjeta para quien prefiere ese medio o compra desde el exterior.',
-          'Lo inteligente no es elegir uno u otro, sino <strong>ofrecer ambos</strong> en el checkout. Cada cliente paga como le resulta cómodo, y tú no pierdes la venta por no tener su método favorito.',
+          'El Banco General cobra una comisión por transacción según el acuerdo comercial que tengas con el banco. Ese porcentaje no lo define Elemento Web: confírmalo por escrito con tu ejecutivo antes de fijar tus precios.',
+          'Frente a las pasarelas de tarjeta, el dinero de Yappy se mueve dentro del sistema bancario panameño, lo que suele traducirse en abonos ágiles y menos rechazos. Yappy cubre al cliente local que no usa tarjeta; una pasarela con tarjeta cubre a quien la prefiere o compra desde el exterior. Por eso conviene <strong>ofrecer ambos</strong> en el checkout.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Ventajas de vender con Yappy en tu web',
+        h2: 'Ventajas de cobrar con Yappy en tu web',
         paragraphs: [
-          'Más allá de lo técnico, Yappy resuelve un problema muy panameño: la confianza. Cuando un comprador ve el logo de Yappy en tu checkout sabe que está pagando por un canal que ya conoce y usa a diario, y eso reduce el abandono en el momento decisivo de la compra.',
-          'También ordena tu operación. En lugar de recibir capturas de pantalla por WhatsApp y verificar transferencias a mano, cada pago queda registrado y asociado a un pedido. Si vendes volumen, esa diferencia te devuelve horas cada semana y elimina el riesgo de dar por pagado algo que nunca llegó.',
-          'Si además conectas tu tienda con <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reservas o citas online</a> o con un flujo de atención por WhatsApp, Yappy se vuelve la pieza que cierra el círculo: el cliente descubre, decide y paga sin salir de tu ecosistema.',
+          'Ver el logo de Yappy en el checkout le indica al comprador panameño que paga por un canal que usa a diario, y eso reduce el abandono en el último paso de la compra.',
+          'Yappy también ordena la operación: en lugar de recibir capturas de pantalla por WhatsApp y verificar transferencias a mano, cada pago queda registrado y asociado a su pedido, sin riesgo de dar por pagado algo que nunca llegó.',
+          'Si tu tienda se conecta además con <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reservas o citas online</a> o con atención por WhatsApp, Yappy cierra el ciclo: el cliente descubre, decide y paga sin salir de tu sitio.',
         ],
       },
       {
@@ -90,7 +87,7 @@ export const blog2: PageData[] = [
           { slug: 'blog/metodos-de-pago-online-en-panama', label: 'Métodos de pago online en Panamá' },
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online en Panamá' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },
-        
+
           { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Diseño web para retail y moda' },
           { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Diseño web para restaurantes' },
         ],
@@ -113,69 +110,63 @@ export const blog2: PageData[] = [
     date: '2026-07-04',
     heroImage: {
       src: '/images/blog/como-crear-una-tienda-online-en-panama.jpg',
-      alt: 'Mujer joven empacando productos en una caja de cartón sobre una mesa de madera, para armar una tienda online en Panamá',
+      alt: 'Caja de envío abierta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Montar una tienda online en Panamá dejó de ser un proyecto reservado a grandes empresas. Con las plataformas y los medios de pago actuales, cualquier negocio puede vender por internet de forma profesional.',
-      'Esta guía te lleva de cero a vender: cómo elegir plataforma, armar el catálogo, cobrar con Yappy y tarjeta, y resolver la parte que a todos preocupa, los envíos y la logística dentro del país.',
+      'Para crear una tienda online en Panamá define primero qué vendes, a quién y cómo entregas. Después elige plataforma (Shopify o WooCommerce), carga el catálogo con fotos y precios, conecta Yappy y una pasarela con tarjeta, configura envíos por zona y prueba una compra completa antes de publicar. Así arma Elemento Web cada tienda.',
     ],
     blocks: [
       {
         type: 'prose',
         h2: 'Antes de vender: define qué, a quién y cómo entregas',
         paragraphs: [
-          'El error más común es empezar por la plataforma. Antes de eso, necesitas claridad en tres cosas: qué vendes, quién es tu cliente y cómo le vas a entregar el producto. Una tienda que vende joyas artesanales a todo el país no se arma igual que una que reparte comida caliente en la ciudad.',
-          'Escribe una lista realista de tus productos, cuántas variantes tienen (tallas, colores, sabores) y en qué zonas puedes entregar. Ese inventario mental define después el catálogo, los costos de envío y hasta la plataforma más conveniente. Saltarte este paso significa rehacer trabajo más adelante.',
-          'También define tu diferencia. En Panamá ya hay competencia online en casi todos los rubros, así que piensa qué te hace distinto: precio, rapidez de entrega, atención personalizada o un producto que nadie más tiene. Esa respuesta es la que después ordena todo el mensaje de tu tienda.',
+          'Empezar por la plataforma es el error más común. Antes, haz una lista de tus productos, sus variantes (tallas, colores, sabores) y las zonas donde puedes entregar. Una tienda de joyas artesanales para todo el país no se arma igual que una que reparte comida caliente en la ciudad: esa lista define el catálogo, los costos de envío y la plataforma.',
+          'Define también tu diferencia frente a la competencia online que ya existe en casi todos los rubros en Panamá: precio, rapidez de entrega, atención personalizada o un producto exclusivo. Esa respuesta ordena después el mensaje de toda la tienda.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Elegir la plataforma correcta para tu tienda',
+        h2: '¿Qué plataforma usar para una tienda online en Panamá?',
         paragraphs: [
-          'Aquí no hay una respuesta única, hay una respuesta correcta para tu caso. Las opciones más usadas en Panamá son Shopify y WooCommerce sobre WordPress, y cada una sirve mejor a un tipo de negocio.',
-          '<strong>Shopify</strong> es ideal si quieres empezar rápido, con poco mantenimiento técnico y no te molesta pagar una mensualidad. <strong>WooCommerce</strong> te da más control y sin comisiones de plataforma, a cambio de más responsabilidad sobre el hosting y las actualizaciones. Si dudas, escribimos una comparación honesta en <a href="/blog/shopify-vs-woocommerce-panama/">Shopify vs WooCommerce en Panamá</a> que te ayuda a decidir.',
-          'Para catálogos grandes, integraciones especiales o un rendimiento exigente, a veces conviene una tienda a medida. Lo importante es que la plataforma se elija por tu negocio, no por moda. Si quieres que lo definamos contigo, ese es justo el punto de partida de nuestro <a href="/servicios/tiendas-online-ecommerce-panama/">servicio de tiendas online</a>.',
+          'Las plataformas más usadas en Panamá son Shopify y WooCommerce sobre WordPress. <strong>Shopify</strong> conviene si quieres empezar rápido, con poco mantenimiento técnico y una mensualidad fija. <strong>WooCommerce</strong> da más control y no cobra comisiones de plataforma, a cambio de hacerte cargo del hosting y las actualizaciones. La comparación completa está en <a href="/blog/shopify-vs-woocommerce-panama/">Shopify vs WooCommerce en Panamá</a>.',
+          'Para catálogos grandes, integraciones especiales o un rendimiento exigente, a veces conviene una tienda a medida. Elegir la plataforma según tu negocio es el punto de partida de nuestro <a href="/servicios/tiendas-online-ecommerce-panama/">servicio de tiendas online</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Arma un catálogo que venda, no solo que exista',
+        h2: 'Cómo armar un catálogo que venda',
         paragraphs: [
-          'El catálogo es el corazón de tu tienda. Un producto con foto oscura, descripción de una línea y sin precio no vende, por bueno que sea. Cada ficha necesita fotos claras, una descripción que responda las dudas del cliente y el precio visible sin sorpresas.',
-          'Organiza los productos en categorías lógicas para que la gente encuentre lo que busca en pocos clics. Si vendes ropa, separa por tipo y talla; si vendes servicios, agrupa por resultado. Una buena estructura de catálogo también ayuda a que Google entienda tu tienda y la muestre a quien busca lo que ofreces.',
-          'No subestimes las fotos. En Panamá el comprador no puede tocar el producto, así que la imagen es tu vendedor. Invertir en fotografía decente rinde más que casi cualquier otra mejora visual de la tienda.',
+          'Cada ficha de producto necesita fotos claras, una descripción que responda las dudas del cliente y el precio visible. Como el comprador no puede tocar el producto, la foto hace el trabajo del vendedor: invertir en fotografía rinde más que casi cualquier otra mejora visual.',
+          'Organiza los productos en categorías lógicas para que el cliente encuentre lo que busca en pocos clics: ropa por tipo y talla, servicios por resultado. Esa estructura también ayuda a Google a entender tu tienda y mostrarla a quien busca lo que vendes.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Los pasos para lanzar tu tienda de 0 a vender',
-        intro: 'Este es el camino real que seguimos con nuestros clientes, ordenado para que no te saltes nada crítico.',
+        h2: 'Pasos para crear una tienda online en Panamá',
+        intro: 'El orden que seguimos en Elemento Web para pasar de cero a vender sin saltarse nada crítico.',
         items: [
-          { h3: 'Registra tu dominio y define la marca', text: 'Consigue un dominio propio (tunegocio.com) y ten listo tu logo y colores. Vender desde un dominio propio transmite mucha más confianza que un subdominio gratuito.' },
-          { h3: 'Monta la plataforma y el diseño', text: 'Se instala la tienda, se aplica tu identidad visual y se configura para que se vea bien en el celular, que es donde compra la mayoría en Panamá.' },
-          { h3: 'Carga el catálogo con fotos y precios', text: 'Se suben los productos con sus variantes, descripciones y precios. Aquí decides también qué mostrar primero y qué destacar.' },
-          { h3: 'Configura los pagos', text: 'Se conecta el Botón de Pago Yappy y una pasarela de tarjeta para no perder ninguna venta. Este paso define cómo entra el dinero a tu cuenta.' },
-          { h3: 'Define envíos y zonas de entrega', text: 'Se configuran las tarifas de envío por zona o el retiro en tienda, según tu operación. El cliente debe saber cuánto y cuándo llega antes de pagar.' },
-          { h3: 'Prueba todo y lanza', text: 'Se hace una compra de prueba completa, se revisa el flujo en el celular y recién ahí se publica. Nunca lanzamos algo sin probar el checkout en vivo.' },
+          { h3: 'Registra tu dominio y define la marca', text: 'Consigue un dominio propio (tunegocio.com) y ten listo tu logo y colores. Un dominio propio transmite más confianza que un subdominio gratuito.' },
+          { h3: 'Monta la plataforma y el diseño', text: 'Se instala la tienda, se aplica tu identidad visual y se optimiza para celular, que es donde compra la mayoría en Panamá.' },
+          { h3: 'Carga el catálogo con fotos y precios', text: 'Se suben los productos con variantes, descripciones y precios, y se decide qué destacar primero.' },
+          { h3: 'Configura los pagos', text: 'Se conecta el Botón de Pago Yappy y una pasarela de tarjeta para cubrir a ambos tipos de cliente.' },
+          { h3: 'Define envíos y zonas de entrega', text: 'Se configuran las tarifas por zona o el retiro en tienda. El cliente debe saber cuánto cuesta y cuándo llega antes de pagar.' },
+          { h3: 'Prueba todo y lanza', text: 'Se hace una compra de prueba completa, se revisa el flujo en el celular y solo entonces se publica.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'Pagos: Yappy y tarjeta, la combinación ganadora en Panamá',
+        h2: '¿Qué métodos de pago ofrecer en tu tienda online?',
         paragraphs: [
-          'De nada sirve una tienda bonita si el cliente no puede pagar como quiere. En Panamá eso significa, casi siempre, ofrecer <strong>Yappy y tarjeta</strong> juntos. Muchos compradores no usan tarjeta en línea, pero casi todos tienen Yappy; otros prefieren la tarjeta o compran desde el exterior.',
-          'El Botón de Pago Yappy confirma los pagos de forma automática y transmite confianza local; una pasarela con tarjeta amplía tu alcance. Combinarlos reduce el abandono del carrito en el peor momento, que es cuando el cliente ya decidió comprar y no encuentra su método. Si quieres el detalle técnico, revisa cómo <a href="/blog/como-integrar-yappy-tu-tienda-online/">integrar Yappy en tu tienda online</a>.',
-          'Evita depender solo de transferencias manuales con captura por WhatsApp. Funciona al principio, pero cuando crece el volumen se vuelve un caos de verificaciones y errores. Automatizar el cobro es lo que te deja tiempo para vender.',
+          'En Panamá conviene ofrecer <strong>Yappy y tarjeta</strong> juntos. Muchos compradores no usan tarjeta en línea pero tienen Yappy; otros prefieren la tarjeta o compran desde el exterior. Combinarlos evita perder al cliente que ya decidió comprar y no encuentra su método. El detalle técnico está en cómo <a href="/blog/como-integrar-yappy-tu-tienda-online/">integrar Yappy en tu tienda online</a>.',
+          'Las transferencias manuales con captura por WhatsApp funcionan al principio, pero con volumen se convierten en verificaciones y errores. El Botón de Pago Yappy y la pasarela confirman cada pago de forma automática.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Envíos y logística local: el punto que hace o rompe la venta',
+        h2: 'Envíos y logística local en Panamá',
         paragraphs: [
-          'La logística es donde muchas tiendas panameñas tropiezan. Puedes tener el mejor producto, pero si el envío es caro, lento o incierto, el cliente no vuelve. Define desde el inicio si entregas tú mismo, si usas un servicio de mensajería o si combinas ambos según la zona.',
-          'Sé transparente con los tiempos y costos. Es preferible decir la verdad (entrega en 2 a 3 días hábiles en la ciudad) que prometer algo que no cumples. También decide bien tu política de zonas: cubrir todo el país desde el día uno puede ser un problema si no tienes la operación para sostenerlo.',
-          'Una opción muy usada y rentable en Panamá es ofrecer <strong>retiro en punto</strong> o coordinar la entrega por WhatsApp para zonas específicas. Empezar acotado y crecer con orden es mejor que prometer de más y quedar mal.',
+          'Si el envío es caro, lento o incierto, el cliente no vuelve. Define desde el inicio si entregas tú, si usas un servicio de mensajería o si combinas ambos según la zona, y publica tiempos y costos reales (por ejemplo, entrega en 2 a 3 días hábiles en la ciudad).',
+          'Cubrir todo el país desde el primer día es un riesgo si tu operación no lo sostiene. Una opción rentable en Panamá es ofrecer <strong>retiro en punto</strong> o coordinar la entrega por WhatsApp en zonas específicas, y ampliar la cobertura a medida que ordenas los envíos.',
         ],
       },
       {
@@ -196,7 +187,7 @@ export const blog2: PageData[] = [
           { slug: 'blog/shopify-vs-woocommerce-panama', label: 'Shopify vs WooCommerce en Panamá' },
           { slug: 'blog/como-integrar-yappy-tu-tienda-online', label: 'Cómo integrar Yappy en tu tienda' },
           { slug: 'blog/metodos-de-pago-online-en-panama', label: 'Métodos de pago online en Panamá' },
-        
+
           { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Diseño web para retail y moda' },
           { slug: 'industrias/diseno-web-importadoras-distribuidoras-panama', label: 'Diseño web para importadoras' },
         ],
@@ -219,61 +210,56 @@ export const blog2: PageData[] = [
     date: '2026-06-20',
     heroImage: {
       src: '/images/blog/shopify-vs-woocommerce-panama.jpg',
-      alt: 'Dos carretas de mano vacías, una de madera y otra metálica, contra una pared beige, al comparar plataformas de tienda online',
+      alt: 'Dos carritos de compra de diseños distintos, lado a lado, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Shopify o WooCommerce es la primera gran decisión de cualquiera que quiere vender online en Panamá. Y como toda decisión de base, cambiarla después cuesta tiempo y dinero.',
-      'Aquí no vamos a decirte que una es mejor sin más. Vamos a comparar costos, comisiones, control y mantenimiento con honestidad, para que elijas la que de verdad le conviene a tu negocio.',
+      'Entre Shopify vs WooCommerce en Panamá, Shopify conviene si quieres lanzar rápido con una mensualidad fija y sin administrar hosting. WooCommerce conviene si buscas control total, cero comisiones de plataforma por venta y costos que no crecen con tu volumen, a cambio de más mantenimiento técnico. Elemento Web trabaja con ambas y recomienda según tu catálogo y volumen.',
     ],
     blocks: [
       {
         type: 'prose',
         h2: 'La diferencia de fondo entre Shopify y WooCommerce',
         paragraphs: [
-          'La distinción clave es esta: Shopify es un servicio que alquilas y WooCommerce es un software que instalas. Con <strong>Shopify</strong> pagas una mensualidad y ellos se encargan del hosting, la seguridad y las actualizaciones; tú solo administras tu tienda. Con <strong>WooCommerce</strong>, que es un complemento gratuito de WordPress, tú (o tu proveedor) controlan todo, incluido el hosting y el mantenimiento.',
-          'Esa diferencia lo explica casi todo lo demás. Shopify cambia comodidad por menos control y una cuota fija; WooCommerce cambia control total por más responsabilidad técnica. Ninguna es superior en abstracto: la correcta depende de cómo es tu negocio y de cuánto quieres involucrarte en lo técnico.',
-          'Si quieres una mirada más amplia sobre qué tecnología conviene según el caso, la desarrollamos en <a href="/blog/diferencia-wordpress-shopify-diseno-web/">la diferencia entre WordPress y Shopify</a>. Aquí nos concentramos en la decisión de e-commerce.',
+          'Shopify es un servicio que alquilas y WooCommerce es un software que instalas. Con <strong>Shopify</strong> pagas una mensualidad y la plataforma se encarga del hosting, la seguridad y las actualizaciones. <strong>WooCommerce</strong> es un complemento gratuito de WordPress: tú o tu proveedor controlan todo, incluido el hosting y el mantenimiento.',
+          'De esa diferencia sale todo lo demás: Shopify cambia control por comodidad y una cuota fija; WooCommerce cambia comodidad por control y más responsabilidad técnica. La comparación más amplia entre ambas tecnologías está en <a href="/blog/diferencia-wordpress-shopify-diseno-web/">la diferencia entre WordPress y Shopify</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Costos reales: mensualidad vs. propiedad',
+        h2: '¿Cuánto cuesta Shopify vs WooCommerce?',
         paragraphs: [
-          'Este es el punto donde más gente se equivoca al comparar. Shopify tiene un costo mensual claro y predecible que pagas mientras uses la plataforma; nunca dejas de pagarlo, pero a cambio no te preocupas por infraestructura. Es un gasto operativo constante.',
-          'WooCommerce, en cambio, no tiene mensualidad de plataforma: el complemento es gratuito. Pero necesitas pagar hosting, dominio y mantenimiento, y algunos complementos avanzados tienen su propio costo. En Elemento Web nuestra <strong>infraestructura anual parte desde $350</strong> y el mantenimiento desde $99 al mes; son cifras que puedes conocer de entrada, con cotización cerrada por escrito.',
-          'La cuenta honesta es esta: en volúmenes bajos, ambas se parecen; a medida que vendes más, WooCommerce suele salir más económico porque no escalas una mensualidad de plataforma. Pero WooCommerce exige más disciplina de mantenimiento. Comodidad o economía a largo plazo: ese es el verdadero intercambio.',
+          'Shopify tiene una mensualidad predecible que pagas mientras uses la plataforma, sin preocuparte por infraestructura. WooCommerce no cobra mensualidad de plataforma, pero requiere hosting, dominio y mantenimiento, y algunos complementos avanzados tienen costo propio. En Elemento Web la <strong>infraestructura anual parte desde $350</strong> y el mantenimiento desde $99 al mes, con cotización cerrada por escrito.',
+          'Con pocas ventas, ambas cuestan parecido. Al crecer el volumen, WooCommerce suele salir más económico porque no escalas una mensualidad de plataforma, aunque exige más disciplina de mantenimiento.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Comisiones por venta y pagos en Panamá',
+        h2: '¿Shopify o WooCommerce cobran comisión por venta en Panamá?',
         paragraphs: [
-          'Aquí hay un detalle que en Panamá importa mucho. Shopify tiene su propio sistema de pagos, y cuando usas una pasarela externa en lugar del suyo, puede aplicar una comisión adicional por transacción, además de lo que ya cobra tu procesador de pago. Ese pequeño porcentaje, multiplicado por cada venta, suma con el tiempo.',
-          'WooCommerce no cobra comisión por venta: lo que pagas es únicamente la comisión de tu pasarela o de Yappy. En un mercado donde <a href="/blog/como-integrar-yappy-tu-tienda-online/">integrar el Botón de Pago Yappy</a> es casi obligatorio, tener libertad total para conectar el método local sin recargos de plataforma es una ventaja concreta.',
-          'No es que Shopify sea caro por esto, es que conviene tenerlo en cuenta. Si vendes mucho volumen y usas pagos locales, esas comisiones marcan diferencia. Si vendes poco o valoras la simplicidad, quizás no las notes.',
+          'Shopify tiene su propio sistema de pagos; si usas una pasarela externa en su lugar, puede aplicar una comisión adicional por transacción, además de la de tu procesador. Multiplicada por cada venta, esa diferencia suma.',
+          'WooCommerce no cobra comisión por venta: solo pagas la de tu pasarela o de Yappy. Como en Panamá <a href="/blog/como-integrar-yappy-tu-tienda-online/">integrar el Botón de Pago Yappy</a> es casi obligatorio, conectar el método local sin recargos de plataforma es una ventaja concreta si vendes volumen; con pocas ventas, la diferencia apenas se nota.',
         ],
       },
       {
         type: 'checklist',
         h2: 'Elige Shopify si te identificas con esto',
-        intro: 'Shopify brilla cuando priorizas rapidez y tranquilidad técnica por encima del control total.',
+        intro: 'Shopify conviene cuando priorizas rapidez y tranquilidad técnica sobre el control total.',
         items: [
-          'Quieres lanzar rápido y no te interesa administrar hosting ni actualizaciones.',
+          'Quieres lanzar rápido sin administrar hosting, seguridad ni actualizaciones.',
           'Prefieres una cuota mensual fija y predecible antes que gestionar costos por separado.',
-          'No tienes ni quieres tener conocimientos técnicos, y valoras el soporte de plataforma.',
+          'No quieres ocuparte de lo técnico y valoras el soporte de la plataforma.',
           'Tu catálogo es estándar y no necesitas integraciones muy particulares.',
-          'Te da tranquilidad que la seguridad y el mantenimiento no dependan de ti.',
         ],
       },
       {
         type: 'checklist',
         h2: 'Elige WooCommerce si te identificas con esto',
-        intro: 'WooCommerce conviene cuando quieres control, ahorro a largo plazo y flexibilidad total.',
+        intro: 'WooCommerce conviene cuando quieres control, ahorro a largo plazo y flexibilidad.',
         items: [
           'Quieres control total sobre el diseño, los datos y las integraciones de tu tienda.',
-          'Buscas evitar comisiones de plataforma por venta y depender solo de tu pasarela y Yappy.',
-          'Planeas crecer en volumen y prefieres que los costos no escalen con una mensualidad de plataforma.',
-          'Ya tienes o planeas tener un contenido o blog fuerte en WordPress junto a la tienda.',
+          'Buscas evitar comisiones de plataforma por venta y pagar solo las de tu pasarela y Yappy.',
+          'Planeas crecer en volumen y no quieres que los costos escalen con una mensualidad de plataforma.',
+          'Tienes o planeas un blog o contenido fuerte en WordPress junto a la tienda.',
           'Cuentas con un proveedor que se encargue del mantenimiento y las copias de seguridad.',
         ],
       },
@@ -284,11 +270,10 @@ export const blog2: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Nuestra recomendación honesta según tu caso',
+        h2: '¿Shopify o WooCommerce? Recomendación según tu caso',
         paragraphs: [
-          'Si estás empezando, quieres algo simple y valoras no preocuparte por la parte técnica, Shopify es una elección muy sólida y te deja concentrarte en vender. Si en cambio buscas control, planeas crecer en volumen y quieres exprimir cada peso de comisión, WooCommerce suele rendir mejor a mediano plazo, siempre que tengas el mantenimiento cubierto.',
-          'Lo que no recomendamos es elegir por moda o por lo que usó un conocido. Tu decisión debe salir de tu catálogo, tu volumen esperado, tu presupuesto y cuánto quieres involucrarte en lo técnico. Nosotros trabajamos con ambas y te recomendamos con argumentos, no por comodidad nuestra.',
-          'Si quieres que revisemos tu caso concreto y te digamos con franqueza cuál te conviene, ese análisis es parte de nuestro <a href="/servicios/tiendas-online-ecommerce-panama/">servicio de tiendas online</a>. Preferimos que arranques bien a que arranques rápido y tengas que rehacerlo.',
+          'Si estás empezando y no quieres ocuparte de lo técnico, Shopify te deja concentrarte en vender. Si buscas control, planeas crecer en volumen y quieres reducir comisiones, WooCommerce suele rendir mejor a mediano plazo, siempre que tengas el mantenimiento cubierto.',
+          'Decide según tu catálogo, tu volumen esperado, tu presupuesto y cuánto quieres involucrarte en lo técnico, no por lo que usó un conocido. Ese análisis de tu caso concreto es parte de nuestro <a href="/servicios/tiendas-online-ecommerce-panama/">servicio de tiendas online</a>.',
         ],
       },
       {
@@ -309,7 +294,7 @@ export const blog2: PageData[] = [
           { slug: 'tecnologias/diseno-web-shopify-panama', label: 'Diseño web con Shopify' },
           { slug: 'tecnologias/diseno-web-wordpress-panama', label: 'Diseño web con WordPress' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },
-        
+
           { slug: 'industrias/diseno-web-retail-moda-panama', label: 'Diseño web para retail y moda' },
           { slug: 'industrias/diseno-web-arquitectos-diseno-interiores-panama', label: 'Diseño web para arquitectos' },
         ],
@@ -332,68 +317,62 @@ export const blog2: PageData[] = [
     date: '2026-06-06',
     heroImage: {
       src: '/images/blog/como-vender-por-whatsapp-en-panama.jpg',
-      alt: 'Comerciante panameno atendiendo pedidos de clientes por WhatsApp desde su telefono',
+      alt: 'Teléfono móvil con dos burbujas de conversación, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'En Panamá casi todo se cierra por WhatsApp. El problema no es que la gente escriba, es que muchos negocios pierden ventas por responder tarde, desordenado o cuando el cliente ya compró en otro lado.',
-      'En esta guía te mostramos cómo vender por WhatsApp de forma profesional: configurar WhatsApp Business, armar el catálogo, usar respuestas rápidas, conectar tu web y automatizar con un chatbot de IA sin perder el trato humano.',
+      'Para vender por WhatsApp en Panamá sin perder ventas, pasa de tu WhatsApp personal a WhatsApp Business (gratis), comparte tu catálogo en el chat, responde en minutos con respuestas rápidas y conecta un botón de WhatsApp desde tu web. Cuando el volumen crezca, suma un chatbot de IA que atienda las preguntas repetitivas a cualquier hora.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Por qué WhatsApp vende tanto en Panamá',
+        h2: '¿Por qué WhatsApp vende tanto en Panamá?',
         paragraphs: [
-          'WhatsApp es, para muchos negocios panameños, el verdadero mostrador. Es donde el cliente pregunta el precio, pide fotos, negocia el envío y finalmente decide. Ignorar ese canal o atenderlo mal es como tener una tienda con la puerta entreabierta.',
-          'La razón es cultural: al panameño le gusta preguntar antes de comprar y prefiere el trato directo. Un mensaje se siente más cercano y confiable que un formulario frío. Por eso, incluso teniendo una tienda online, gran parte de las ventas terminan pasando por un chat.',
-          'El reto no es estar en WhatsApp, es <strong>vender bien</strong> por WhatsApp. Y eso requiere orden, rapidez y algunas herramientas que la mayoría de negocios no aprovecha. Ahí está la diferencia entre un chat caótico y una máquina de cerrar ventas.',
+          'Para muchos negocios panameños, WhatsApp es el verdadero mostrador: ahí el cliente pregunta el precio, pide fotos, negocia el envío y decide. Al panameño le gusta preguntar antes de comprar y prefiere el trato directo, así que incluso con tienda online gran parte de las ventas pasa por un chat.',
+          'Las ventas se pierden por responder tarde, de forma desordenada o cuando el cliente ya compró en otro lado. <strong>Vender bien</strong> por WhatsApp requiere orden, rapidez y las herramientas que se explican abajo.',
         ],
       },
       {
         type: 'prose',
         h2: 'Empieza con WhatsApp Business, no con el personal',
         paragraphs: [
-          'El primer paso es dejar de vender desde tu WhatsApp personal y pasar a <strong>WhatsApp Business</strong>, que es gratuito y está pensado justo para esto. Separa tu vida de tu negocio y te da herramientas que el personal no tiene.',
-          'Con WhatsApp Business configuras un perfil de empresa con tu horario, dirección, sitio web y una descripción de lo que vendes. Eso solo ya transmite profesionalismo: el cliente ve que trata con un negocio serio y no con un número cualquiera. Aprovecha también el mensaje de bienvenida y el de ausencia para que nadie quede sin respuesta cuando no estás.',
-          'Es un cambio pequeño con impacto grande. La mayoría de negocios que dan el salto notan de inmediato que se ven más ordenados y que pierden menos mensajes en el camino.',
+          '<strong>WhatsApp Business</strong> es gratuito y separa tu negocio de tu vida personal. Permite configurar un perfil de empresa con horario, dirección, sitio web y descripción, para que el cliente vea que trata con un negocio y no con un número cualquiera.',
+          'Activa también el mensaje de bienvenida y el de ausencia: así nadie queda sin respuesta cuando no estás atendiendo.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Catálogo y respuestas rápidas: tu tiempo vale',
+        h2: 'Catálogo y respuestas rápidas en WhatsApp Business',
         paragraphs: [
-          'El <strong>catálogo</strong> de WhatsApp Business te permite mostrar tus productos con foto, precio y descripción dentro del propio chat. En vez de reenviar las mismas fotos cien veces al día, compartes tu catálogo y el cliente ve todo de una. Es rápido para ti y cómodo para él.',
-          'Las <strong>respuestas rápidas</strong> son el otro gran ahorro de tiempo. Puedes guardar mensajes predefinidos para las preguntas de siempre (precios, métodos de pago, zonas de envío) y enviarlos con un atajo. Responder al instante, aunque sea con una plantilla bien hecha, evita que el cliente se enfríe o se vaya a la competencia.',
-          'La velocidad es todo en WhatsApp. Un cliente que pregunta un precio y no recibe respuesta en minutos muchas veces ya está escribiéndole a otro. Las herramientas están para que no dependas de estar pegado al teléfono todo el día.',
+          'El <strong>catálogo</strong> de WhatsApp Business muestra tus productos con foto, precio y descripción dentro del chat. En vez de reenviar las mismas fotos todo el día, compartes el catálogo con un enlace.',
+          'Las <strong>respuestas rápidas</strong> guardan mensajes para las preguntas de siempre (precios, métodos de pago, zonas de envío) y se envían con un atajo. Un cliente que pregunta un precio y no recibe respuesta en minutos muchas veces ya le escribe a la competencia.',
         ],
       },
       {
         type: 'prose',
         h2: 'Conecta tu web con WhatsApp para no perder a nadie',
         paragraphs: [
-          'WhatsApp y tu página web no compiten, se complementan. La web genera confianza, muestra tu catálogo completo y aparece en Google; WhatsApp cierra la venta con el trato cercano. La clave es conectarlos para que el visitante pase de uno al otro sin fricción.',
-          'Lo básico es un botón de WhatsApp visible en tu web que abra el chat con un mensaje ya escrito, del tipo "Hola, vi tu página y me interesa este producto". Así el cliente llega listo para comprar y tú ya sabes de dónde viene. Si además vendes con carrito, el checkout puede convivir con la opción de coordinar por chat para quien lo prefiera.',
-          'Este puente entre web y WhatsApp es una de las cosas más rentables que puedes montar. Si aún no tienes una web que alimente ese flujo, es exactamente lo que resolvemos con nuestro <a href="/servicios/diseno-web-corporativo-panama/">diseño web</a> pensado para el mercado panameño.',
+          'La web genera confianza, muestra el catálogo completo y aparece en Google; WhatsApp cierra la venta con trato cercano. Lo básico es un botón de WhatsApp visible en tu web que abra el chat con un mensaje ya escrito, del tipo “Hola, vi tu página y me interesa este producto”: el cliente llega listo para comprar y sabes de dónde viene.',
+          'Si vendes con carrito, el checkout puede convivir con la opción de coordinar por chat. Si aún no tienes una web que alimente ese flujo, es lo que resuelve nuestro <a href="/servicios/diseno-web-corporativo-panama/">diseño web</a> para el mercado panameño.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Automatiza con un chatbot de IA sin perder el trato humano',
+        h2: 'Automatiza WhatsApp con un chatbot de IA sin perder el trato humano',
         paragraphs: [
-          'Llega un punto en que responder todo a mano es insostenible. Ahí entra un <strong>chatbot con inteligencia artificial</strong>, que atiende las preguntas frecuentes al instante, a cualquier hora, y solo te pasa la conversación cuando de verdad hace falta una persona.',
-          'Un buen chatbot no reemplaza el trato humano, lo protege. Se ocupa del "¿cuánto cuesta?", "¿hacen envíos?" y "¿aceptan Yappy?" para que tú te concentres en cerrar las ventas que importan. Eso es justo lo que hace <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">WazaCRM, nuestro chatbot de IA</a>: responde en tu tono, con tu información, y no deja a nadie esperando de madrugada.',
-          'Cuando ya vendes en volumen, también puedes dar el salto a campañas: enviar promociones y novedades a tus clientes por el canal que más abren. Eso lo cubrimos en <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp marketing masivo</a>, siempre con las reglas del juego claras para no caer en spam.',
+          'Cuando responder todo a mano ya no es sostenible, un <strong>chatbot con inteligencia artificial</strong> atiende las preguntas frecuentes al instante y a cualquier hora (“¿cuánto cuesta?”, “¿hacen envíos?”, “¿aceptan Yappy?”) y pasa la conversación a una persona cuando hace falta. Eso hace <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">WazaCRM, nuestro chatbot de IA</a>: responde en tu tono y con tu información.',
+          'Con volumen, el siguiente paso son las campañas: promociones y novedades a clientes que aceptaron recibirlas. Eso lo cubre <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp marketing masivo</a>, con reglas claras para no caer en spam.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Pasos para montar tu venta por WhatsApp',
-        intro: 'Sigue este orden para pasar de un chat improvisado a un canal de ventas que funciona.',
+        h2: 'Pasos para vender por WhatsApp en Panamá',
+        intro: 'El orden para pasar de un chat improvisado a un canal de ventas.',
         items: [
-          { h3: 'Instala WhatsApp Business', text: 'Migra desde tu número o crea uno nuevo para el negocio, y completa el perfil de empresa con horario, web y descripción.' },
-          { h3: 'Arma tu catálogo', text: 'Sube tus productos con foto, precio y descripción para compartirlos con un solo enlace en vez de repetir fotos.' },
-          { h3: 'Configura respuestas rápidas y automáticas', text: 'Crea plantillas para las preguntas de siempre y activa mensajes de bienvenida y ausencia para no dejar a nadie sin respuesta.' },
-          { h3: 'Conecta tu web al chat', text: 'Agrega un botón de WhatsApp con mensaje predefinido para que los visitantes de tu página lleguen listos para comprar.' },
-          { h3: 'Suma un chatbot de IA cuando el volumen crezca', text: 'Automatiza las consultas repetitivas y reserva tu tiempo para cerrar las ventas y atender los casos que necesitan una persona.' },
+          { h3: 'Instala WhatsApp Business', text: 'Migra tu número o crea uno nuevo para el negocio, y completa el perfil de empresa con horario, web y descripción.' },
+          { h3: 'Arma tu catálogo', text: 'Sube tus productos con foto, precio y descripción para compartirlos con un solo enlace.' },
+          { h3: 'Configura respuestas rápidas y automáticas', text: 'Crea plantillas para las preguntas de siempre y activa los mensajes de bienvenida y ausencia.' },
+          { h3: 'Conecta tu web al chat', text: 'Agrega un botón de WhatsApp con mensaje predefinido en tu página.' },
+          { h3: 'Suma un chatbot de IA cuando el volumen crezca', text: 'Automatiza las consultas repetitivas y reserva tu tiempo para cerrar ventas y atender los casos que necesitan una persona.' },
         ],
       },
       {
@@ -414,7 +393,7 @@ export const blog2: PageData[] = [
           { slug: 'marketing/whatsapp-marketing-masivo-panama', label: 'WhatsApp marketing masivo' },
           { slug: 'blog/chatbots-con-ia-para-negocios-en-panama', label: 'Chatbots con IA para negocios' },
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online en Panamá' },
-        
+
           { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Diseño web para restaurantes' },
           { slug: 'industrias/diseno-web-belleza-spa-panama', label: 'Diseño web para belleza y spas' },
         ],
@@ -437,53 +416,49 @@ export const blog2: PageData[] = [
     date: '2026-05-23',
     heroImage: {
       src: '/images/blog/metodos-de-pago-online-en-panama.jpg',
-      alt: 'Distintos metodos de pago digital y tarjetas sobre un escritorio en Panama',
+      alt: 'Tarjetas de pago en abanico junto a unas monedas, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'El método de pago no es un detalle técnico: es el último paso entre el cliente decidido y tu venta cerrada. Si no ofreces la forma de pago que esa persona prefiere, la pierdes justo al final.',
-      'En esta guía repasamos el panorama real de pagos online en Panamá (Yappy, pasarelas con tarjeta y transferencias) con sus pros y contras, para que elijas la combinación que más vende en tu negocio.',
+      'Los principales métodos de pago online en Panamá son el Botón de Pago Yappy, las pasarelas con tarjeta Visa y Mastercard, la transferencia bancaria y el pago contra entrega. La combinación que recomienda Elemento Web para una tienda online es Yappy más una pasarela con tarjeta, con transferencia o contra entrega solo como respaldo.',
     ],
     blocks: [
       {
         type: 'prose',
         h2: 'El pago es donde se gana o se pierde la venta',
         paragraphs: [
-          'Puedes tener la mejor tienda, buenas fotos y un precio justo, pero si el cliente llega al momento de pagar y no encuentra su método, se va. El abandono de carrito por falta de opciones de pago es de los más frustrantes porque ocurre con alguien que ya había decidido comprar.',
-          'En Panamá esto tiene un matiz propio. No todos usan tarjeta de crédito en línea, muchos desconfían de meterla en sitios que no conocen, y una parte importante prefiere pagar por canales locales. Por eso, copiar la configuración de pagos de una tienda extranjera casi nunca funciona aquí.',
-          'La regla de oro es simple: <strong>ofrece más de un método</strong> y asegúrate de incluir el que tu cliente panameño usa a diario. Cada opción que agregas bien pensada es una razón menos para que abandone la compra.',
+          'Si el cliente llega al checkout y no encuentra su método de pago, abandona una compra que ya había decidido. En Panamá no todos usan tarjeta de crédito en línea, muchos desconfían de darla en sitios que no conocen y una parte importante prefiere canales locales, así que copiar la configuración de pagos de una tienda extranjera casi nunca funciona.',
+          'La regla: <strong>ofrece más de un método</strong> e incluye el que tu cliente panameño usa a diario.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Yappy: el método local que casi todos prefieren',
+        h2: 'Yappy: el método de pago local en Panamá',
         paragraphs: [
-          'Yappy se convirtió en la forma de pago más natural para el panameño. Su versión comercial, el <strong>Botón de Pago Yappy</strong>, se integra en el checkout de tu tienda y confirma los pagos de forma automática, sin que el cliente tenga que salir de tu sitio ni enviarte una captura.',
-          'Sus ventajas son claras: confianza local altísima, dinero que se mueve dentro del sistema bancario panameño y una experiencia cómoda para quien no usa tarjeta. Su contra principal es que requiere gestionarlo como negocio con el Banco General (aviso de operación y cuenta comercial) y paga una comisión que define el banco. Vale la pena confirmar ese porcentaje por escrito antes de fijar precios.',
-          'Para la mayoría de tiendas panameñas, Yappy no es opcional: es el método base. Si quieres el detalle de cómo activarlo, lo explicamos paso a paso en <a href="/blog/como-integrar-yappy-tu-tienda-online/">cómo integrar Yappy en tu tienda online</a>.',
+          'El <strong>Botón de Pago Yappy</strong>, versión comercial de Yappy, se integra en el checkout y confirma los pagos de forma automática, sin que el cliente salga de tu sitio ni te envíe una captura.',
+          'Ventajas: confianza local, dinero que se mueve dentro del sistema bancario panameño y comodidad para quien no usa tarjeta. Contras: se gestiona como negocio con el Banco General (aviso de operación y cuenta comercial) y paga una comisión que define el banco; confirma ese porcentaje por escrito antes de fijar precios.',
+          'Para la mayoría de tiendas panameñas, Yappy es el método base. El proceso de activación está en <a href="/blog/como-integrar-yappy-tu-tienda-online/">cómo integrar Yappy en tu tienda online</a>.',
         ],
       },
       {
         type: 'prose',
         h2: 'Pasarelas con tarjeta: alcance nacional e internacional',
         paragraphs: [
-          'Las <strong>pasarelas de pago con tarjeta</strong> procesan Visa y Mastercard, tanto de crédito como de débito. Son indispensables si vendes a clientes que prefieren la tarjeta o que compran desde el exterior, donde Yappy no llega.',
-          'Su gran ventaja es el alcance: cualquiera con una tarjeta puede pagarte, esté donde esté. A cambio, suelen cobrar una comisión por transacción más una tarifa fija, y el proceso de aprobación como comercio puede pedir más requisitos. También conviene tener presente que algunas tarjetas se rechazan por seguridad, así que tener Yappy como respaldo evita perder esas ventas.',
-          'La lectura correcta no es "tarjeta o Yappy", sino entender que cubren públicos distintos. La tarjeta te abre el mercado internacional y a quienes ya la usan con comodidad; Yappy te asegura al cliente local que no quiere darla en línea.',
+          'Las <strong>pasarelas de pago con tarjeta</strong> procesan Visa y Mastercard de crédito y débito. Son indispensables para clientes que prefieren la tarjeta o compran desde el exterior, donde Yappy no llega.',
+          'Suelen cobrar un porcentaje por transacción más una tarifa fija, y la aprobación como comercio puede pedir más requisitos. Algunas tarjetas se rechazan por seguridad del banco emisor; tener Yappy como alternativa evita perder esas ventas. Tarjeta y Yappy cubren públicos distintos: la primera abre el mercado internacional, el segundo asegura al cliente local que no quiere dar su tarjeta en línea.',
         ],
       },
       {
         type: 'prose',
         h2: 'Transferencia bancaria y pago contra entrega: útiles pero con cuidado',
         paragraphs: [
-          'La <strong>transferencia bancaria</strong> tradicional y el pago con captura por WhatsApp funcionan y son de confianza para muchos, sobre todo en montos altos. El problema es que dependen de verificación manual: alguien de tu equipo tiene que revisar que el dinero llegó antes de despachar, y eso no escala bien cuando crece el volumen.',
-          'El <strong>pago contra entrega</strong> (pagar al recibir) reduce el miedo del cliente que compra por primera vez y no confía todavía en tu tienda. Su riesgo es operativo: pedidos que no se concretan, cambios de opinión y dinero en efectivo circulando. Conviene usarlo con criterio, por zonas o por tipo de cliente, no como única opción.',
-          'Ninguno de los dos está mal; simplemente no deberían ser tu único método. Sirven muy bien como complemento de Yappy y tarjeta, para captar a quien todavía no se anima a pagar de otra forma.',
+          'La <strong>transferencia bancaria</strong> y el pago con captura por WhatsApp generan confianza, sobre todo en montos altos, pero dependen de verificación manual: alguien debe confirmar que el dinero llegó antes de despachar, y eso no escala con el volumen.',
+          'El <strong>pago contra entrega</strong> reduce el miedo de quien compra por primera vez, pero trae riesgo operativo: pedidos que no se concretan, cambios de opinión y efectivo circulando. Úsalo por zonas o tipo de cliente. Ninguno de los dos debería ser tu único método.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Cómo elegir tu combinación de métodos de pago',
-        intro: 'No se trata de tenerlos todos, sino de tener los correctos para tu cliente. Revisa estos puntos antes de decidir.',
+        h2: '¿Cómo elegir los métodos de pago online para tu tienda en Panamá?',
+        intro: 'No se trata de tenerlos todos, sino los correctos para tu cliente.',
         items: [
           'Incluye siempre Yappy: es el método que tu cliente panameño usa y espera encontrar.',
           'Suma una pasarela con tarjeta si vendes a clientes con tarjeta o desde el exterior.',
@@ -500,11 +475,10 @@ export const blog2: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La estrategia que más vende en Panamá',
+        h2: 'La combinación de métodos de pago que recomendamos en Panamá',
         paragraphs: [
-          'Después de trabajar con tiendas de distintos rubros, la conclusión se repite: la combinación que más vende en Panamá es <strong>Yappy más una pasarela con tarjeta</strong>, con transferencia o contra entrega como respaldo para casos puntuales. Así cubres al cliente local, al que usa tarjeta y al que compra desde afuera.',
-          'Lo importante es que cada método esté bien integrado y probado en vivo antes de lanzar. Un botón de pago que falla o un checkout confuso hace más daño que no tener esa opción. Por eso el cobro es una parte central de nuestro <a href="/servicios/tiendas-online-ecommerce-panama/">servicio de tiendas online</a> y del trabajo de <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">integración de Yappy y pasarelas de pago</a>.',
-          'Si ya tienes tienda y sientes que pierdes ventas en el último paso, muchas veces el arreglo es justamente este: revisar y ampliar los métodos de pago. Es una de las mejoras con mejor retorno que puedes hacer.',
+          'La combinación que recomendamos es <strong>Yappy más una pasarela con tarjeta</strong>, con transferencia o contra entrega como respaldo para casos puntuales: así cubres al cliente local, al que usa tarjeta y al que compra desde afuera.',
+          'Cada método debe estar integrado y probado en vivo antes de lanzar; un botón de pago que falla hace más daño que no tener esa opción. Por eso el cobro es parte central de nuestro <a href="/servicios/tiendas-online-ecommerce-panama/">servicio de tiendas online</a> y del trabajo de <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">integración de Yappy y pasarelas de pago</a>. Si ya tienes tienda y pierdes ventas en el último paso, revisar y ampliar los métodos de pago suele ser el primer arreglo.',
         ],
       },
       {
@@ -525,7 +499,7 @@ export const blog2: PageData[] = [
           { slug: 'blog/como-integrar-yappy-tu-tienda-online', label: 'Cómo integrar Yappy en tu tienda' },
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online en Panamá' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },
-        
+
           { slug: 'industrias/diseno-web-agencias-viajes-tours-panama', label: 'Diseño web para agencias de viajes' },
           { slug: 'industrias/diseno-web-turismo-hoteles-panama', label: 'Diseño web para turismo y hoteles' },
         ],

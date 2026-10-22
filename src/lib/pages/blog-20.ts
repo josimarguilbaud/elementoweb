@@ -15,25 +15,24 @@ export const blog20: PageData[] = [
     date: '2026-08-23',
     heroImage: {
       src: '/images/blog/diseno-web-para-gimnasios-panama.jpg',
-      alt: 'Interior de un gimnasio moderno con máquinas y pesas ordenadas, iluminación natural, sin personas ni logotipos visibles',
+      alt: 'Pesa rusa, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Alguien ve tu Instagram un domingo en la noche y decide que este es el mes en que por fin va a entrenar. Busca tu web con las ganas todavía calientes, compara precio y ambiente contra otras dos opciones cerca de su casa o su trabajo en menos de un minuto, y decide con la que le puso menos pasos entre "me interesa" y "ya soy socio". Nadie elige por el logo más bonito: elige la que no lo hizo esperar.',
-      'La mayoría de las webs de gimnasios en Panamá pierden esa decisión sin darse cuenta, no por falta de tráfico sino por fricción entre que alguien quiere empezar y que efectivamente paga. En esta guía repasamos cómo diseñar esa inscripción y esa reserva de clases sin fricción, por qué las fotos y el video reales de tus instalaciones pesan más que cualquier descripción, cómo mostrar precios de membresía sin generar la llamada de "¿cuánto cuesta?" que casi nadie hace, y también cuándo, con honestidad, todavía no conviene invertir en ella.',
+      'El diseño web para gimnasios en Panamá vende membresías cuando quita pasos entre "quiero empezar" y "ya pagué": precios de cada plan a la vista, inscripción con pago en línea, reserva de clases desde el celular y fotos reales del local. Así lo construimos en Elemento Web, en Ciudad de Panamá, para gimnasios, estudios boutique y boxes.',
+      'Esta guía explica dónde se enfría el prospecto, cómo mostrar precios sin forzar la llamada, por qué las fotos reales pesan más que cualquier descripción y cuándo, con honestidad, todavía no conviene invertir.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'La fricción real no está en atraer: está entre "quiero empezar" y "ya pagué"',
+        h2: '¿Dónde pierde socios la web de un gimnasio?',
         paragraphs: [
-          'Comparado con un abogado o una clínica, un gimnasio no vende algo que dé miedo decidir: vende un impulso, y los impulsos se enfrían rápido. El problema no suele ser conseguir la visita —con pauta o buen SEO local eso se resuelve— sino lo que pasa después: si inscribirse significa "pasa por el local" o "te llamamos mañana", ese impulso del domingo en la noche tiene que sobrevivir hasta que alguien de tu equipo conteste. Para entonces, la mayoría ya se inscribió en otro lado o simplemente no volvió a pensarlo.',
-          'Lo mismo pasa con el que sí compara con calma antes de decidir: revisa precios, ve un par de fotos, y elige con la opción que le resolvió todo ahí mismo, sin tener que escribir para preguntar lo básico. Nuestra <a href="/industrias/diseno-web-gimnasios-fitness-panama/">página de diseño web para gimnasios y fitness</a> entra en el detalle completo de cómo estructuramos esa web punta a punta, desde la inscripción hasta la retención del socio ya inscrito.',
+          'Un gimnasio vende un impulso, y los impulsos se enfrían rápido. Alguien decide un domingo en la noche que este mes empieza, busca tu web y compara precio y ambiente contra otras dos opciones en menos de un minuto. Elige la que le puso menos pasos, no la del logo más bonito.',
+          'El prospecto se pierde en cinco puntos: si la primera foto es de stock o el sitio tarda en cargar, cierra la pestaña; si no encuentra el precio, no escribe; si inscribirse significa "pasa por el local" o "te llamamos", el pico de motivación baja antes de que alguien conteste; si no puede pagar en línea a las once de la noche, lo pierdes cuando ya había dicho que sí; y si reservar clase exige otro WhatsApp cada semana, ahí empiezan las cancelaciones tempranas. El detalle de cómo estructuramos esa web, de la inscripción a la retención, está en nuestra <a href="/industrias/diseno-web-gimnasios-fitness-panama/">página de diseño web para gimnasios y fitness</a>.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Lo que la web de un gimnasio en Panamá necesita para convertir, no solo para verse bien',
-        intro: 'Si tu web no cumple con esto, buena parte de las visitas que sí estaban interesadas se inscriben en otro gimnasio.',
+        h2: '¿Qué necesita el diseño web para gimnasios para convertir?',
         items: [
           'Inscripción de membresía en línea con pago inicial, sin tener que ir al local ni esperar una llamada',
           'Horario de clases real y actualizado, con cupos disponibles a la vista',
@@ -46,34 +45,21 @@ export const blog20: PageData[] = [
         ],
       },
       {
-        type: 'steps',
-        h2: 'De "quiero empezar" a "ya pagué": dónde se pierde el prospecto en el camino',
-        intro: 'Cada uno de estos cinco pasos es un punto donde alguien motivado puede enfriarse y no volver.',
-        items: [
-          { h3: '1. Encuentra tu gimnasio', text: 'Llega por Google, Instagram o una recomendación. Si la primera foto que ve es de banco de imágenes o el sitio tarda en cargar en su celular, decide en segundos si sigue mirando o cierra la pestaña.' },
-          { h3: '2. Busca el precio', text: 'Quiere saber cuánto cuesta antes de escribir. Si no lo encuentra y la web solo dice "consulta nuestros planes", buena parte simplemente no manda el mensaje: prefiere seguir comparando antes que preguntar.' },
-          { h3: '3. Decide inscribirse', text: 'Aquí está el pico de motivación. Si inscribirse significa "pasa por el local" o "te llamamos", ese pico ya empezó a bajar antes de que alguien de tu equipo conteste.' },
-          { h3: '4. Paga', text: 'El que decidió a las once de la noche desde el sofá no va a esperar hasta mañana para pagar en persona. Sin pago en línea, lo pierdes justo en el momento en que ya había dicho que sí.' },
-          { h3: '5. Reserva su primera clase', text: 'Si reservar cupo significa otro mensaje de WhatsApp, la misma fricción del principio se repite cada semana, y es justo ahí donde empiezan las cancelaciones tempranas.' },
-        ],
-      },
-      {
         type: 'cards',
-        h2: 'No todo negocio fitness necesita lo mismo',
-        intro: 'Un gimnasio de pesas, un estudio boutique y un box de crossfit compiten distinto, aunque las tres palabras terminen en "fitness".',
+        h2: '¿Qué necesita cada tipo de negocio fitness?',
+        intro: 'Un gimnasio de pesas, un estudio boutique y un box de crossfit compiten distinto.',
         items: [
-          { h3: 'Gimnasio grande, varias sedes', text: 'Compite por volumen: horario extenso, variedad de máquinas y clases, y planes familiares o corporativos. La reserva de clases y el pago recurrente en línea son la prioridad número uno.' },
-          { h3: 'Estudio boutique (yoga, pilates, spinning)', text: 'Compite por experiencia y comunidad, con cupo limitado por clase. Ahí la reserva con cupo real pesa incluso más que en un gimnasio grande, porque el cupo lleno es literal, no una forma de decir.' },
-          { h3: 'Box de crossfit o entrenamiento funcional', text: 'Compite por resultados visibles y comunidad cerrada. El contenido que convierte son transformaciones reales y el perfil de los coaches, más que el catálogo de máquinas.' },
+          { h3: 'Gimnasio grande, varias sedes', text: 'Compite por volumen: horario extenso, variedad de máquinas y clases, y planes familiares o corporativos. La <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reserva de clases</a> y el pago recurrente en línea son la prioridad.' },
+          { h3: 'Estudio boutique (yoga, pilates, spinning)', text: 'Compite por experiencia y comunidad, con cupo limitado por clase. La reserva con cupo real pesa todavía más, porque el cupo lleno es literal.' },
+          { h3: 'Box de crossfit o entrenamiento funcional', text: 'Compite por resultados visibles y comunidad cerrada. Convierten las transformaciones reales y el perfil de los coaches, más que el catálogo de máquinas.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'Fotos y video reales, no el banco de imágenes de modelos fitness',
+        h2: '¿Por qué usar fotos y video reales de tu gimnasio?',
         paragraphs: [
-          'El truco se nota siempre: una foto de banco de imágenes con un modelo perfecto entrenando solo, en un gimnasio genérico que no es el tuyo. El prospecto que va a decidir con su cuerpo y su dinero real no se identifica con eso, y sospecha —con razón— que le estás mostrando algo que no va a encontrar cuando llegue.',
-          'Lo que sí convence es exactamente lo contrario: tu equipo, tu piso, tu recepción, una clase real con gente real entrenando, aunque no sean modelos. Un video corto de una clase grupal a buena hora dice más que cualquier párrafo sobre "equipo de última generación", y no hace falta una producción cara: buena luz natural y un celular alcanzan, siempre que sea tu espacio real y no el de un banco de imágenes.',
-          'Esto incluye mostrar el gimnasio a la hora en que de verdad lo va a usar: si trabaja hasta las seis, quiere saber cómo se ve a las siete, no a las diez de la mañana cuando está vacío. El que llega sabiendo qué esperar se queda; el que se lleva una sorpresa, cancela al mes.',
+          'Una foto de stock con un modelo entrenando solo en un gimnasio que no es el tuyo hace sospechar que no encontrará eso al llegar. Convence lo contrario: tu equipo, tu piso, tu recepción y una clase real con gente real. Un video corto de una clase grupal dice más que cualquier frase sobre "equipo de última generación", y basta un celular con buena luz natural.',
+          'Muestra el gimnasio a la hora en que el prospecto lo va a usar: si trabaja hasta las seis, quiere ver cómo se ve a las siete, no a las diez de la mañana vacío. El que llega sabiendo qué esperar se queda; el que se lleva una sorpresa cancela al mes.',
         ],
       },
       {
@@ -83,20 +69,18 @@ export const blog20: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Precios de membresía claros: evita la llamada que casi nadie hace',
+        h2: '¿Debe un gimnasio publicar el precio de sus membresías?',
         paragraphs: [
-          '"Consulta nuestros planes" suena prudente y en la práctica cuesta clientes. Esconder el precio para forzar el contacto funciona con un servicio complejo cotizado a medida, no con una membresía de gimnasio: el prospecto ya trae en la cabeza un rango de lo que está dispuesto a pagar, y si tu web no se lo confirma en diez segundos, sigue comparando en la pestaña de al lado en lugar de escribirte.',
-          'Mostrar los planes uno al lado del otro —mensual, trimestral, anual, paquete de clases sueltas— con el precio y qué incluye cada uno, deja que el prospecto se ubique solo antes de escribir, y filtra desde la web a quien de verdad puede pagar tu tarifa. Sumarle cobro en línea con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy o tarjeta</a>, incluyendo cobro recurrente mensual si tu operación lo necesita, cierra el ciclo completo: decide, ve el precio, paga, ya es socio, todo en la misma sesión.',
-          'Una web así —planes visibles, inscripción y reserva de clases— normalmente entra en el rango de una <a href="/servicios/diseno-web-corporativo-panama/">Web empresarial</a>, desde $1,250. Si además vas a cobrar la membresía en línea de forma recurrente, sube al rango de tienda en línea, desde $1,950. A eso se suma la infraestructura anual —dominio, hosting y certificado SSL—, recomendada en el plan Cloud a $350 al año para un sitio que cobra y agenda todos los días, y el mantenimiento mensual desde $99 al mes (conviene el plan de $169 si tu web procesa pagos con regularidad, por la prioridad de respuesta). Todos los precios son en dólares y no incluyen el 7% de ITBMS.',
+          'Sí. "Consulta nuestros planes" funciona con un servicio cotizado a medida, no con una membresía: el prospecto ya trae un rango en la cabeza y, si tu web no se lo confirma en diez segundos, sigue comparando. Muestra los planes lado a lado —mensual, trimestral, anual, paquete de clases sueltas— con precio y qué incluye cada uno. Con cobro en línea por <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy o tarjeta</a>, incluido el recurrente mensual, el prospecto decide, paga y ya es socio en la misma sesión.',
+          'Una web con planes visibles, inscripción y reserva de clases entra en el rango de una <a href="/servicios/diseno-web-corporativo-panama/">Web empresarial</a>, desde $1,250. Con cobro recurrente de la membresía en línea, sube al rango de tienda en línea, desde $1,950. Se suma la infraestructura anual —dominio, hosting y SSL—, recomendada en el plan Cloud a $350 al año, y el mantenimiento desde $99 al mes (conviene el de $169 si la web procesa pagos con regularidad, por la prioridad de respuesta). Precios en dólares, sin el 7% de ITBMS.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene: el gimnasio de barrio con lista de espera',
+        h2: '¿Cuándo no conviene invertir en la web de un gimnasio?',
         paragraphs: [
-          'Nada de esto tiene sentido si tu gimnasio ya está a capacidad y tienes lista de espera para entrar. Si cada cupo que se libera lo llena alguien que ya te conocía o que llegó recomendado, invertir en inscripción en línea, reserva de clases y cobro recurrente es resolver un problema que no tienes: no te falta gente pidiendo entrar, te falta espacio.',
-          'En ese escenario rinde mucho más una ficha de Google Business bien trabajada —gratis— con fotos reales, horario correcto y reseñas, que cualquier funcionalidad de reserva o pago en línea. Nuestra guía de <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a> entra en el detalle de cómo aparecer cuando alguien busca "gimnasio cerca de mí", justo el tipo de búsqueda que le sirve a un negocio de barrio con capacidad tope.',
-          'Donde sí se justifica la inversión completa es cuando quieres crecer más allá del barrio: abrir una segunda sede, vender planes anuales o corporativos, competir contra una cadena que ya tiene reserva e inscripción en línea, o cuando la lista de espera de hoy es la señal de que ya es hora de expandirte y necesitas la web lista para ese siguiente paso.',
+          'Cuando ya estás a capacidad y tienes lista de espera: no te falta gente, te falta espacio. Ahí rinde más una ficha de Google Business gratuita con fotos reales, horario correcto y reseñas. Nuestra guía de <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a> explica cómo aparecer cuando alguien busca "gimnasio cerca de mí".',
+          'La inversión completa se justifica cuando quieres crecer más allá del barrio: abrir una segunda sede, vender planes anuales o corporativos, competir contra una cadena que ya tiene inscripción en línea, o cuando la lista de espera indica que es hora de expandirte.',
         ],
       },
       {

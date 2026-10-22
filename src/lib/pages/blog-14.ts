@@ -15,26 +15,25 @@ export const blog14: PageData[] = [
     date: '2026-09-20',
     heroImage: {
       src: '/images/blog/diseno-web-para-clinicas-esteticas-panama.jpg',
-      alt: 'Sala de tratamiento de una clínica estética moderna, minimalista y de líneas limpias',
+      alt: 'Frasco gotero de sérum junto a un espejo compacto, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Antes de escribirte, la paciente típica ya hizo su propia investigación: comparó fotos de antes y después en dos o tres clínicas, buscó el nombre del médico y decidió en privado si vale la pena preguntar. Tu web no compite por ser la más vistosa. Compite por ser la que le quita el miedo primero y le da un motivo concreto para escribir hoy, no "después lo pienso".',
-      'Diseñar la web de una clínica estética tiene reglas que no aplican igual a un restaurante o una ferretería: hay consentimiento del paciente de por medio, hay pudor en la consulta y hay un precio que casi nadie se atreve a preguntar en persona. En esta guía repasamos qué de verdad mueve la aguja en este rubro —la galería, las reservas, el precio y la discreción— y también cuándo conviene esperar antes de invertir en una web grande.',
+      'El diseño web para clínicas estéticas en Panamá convierte cuando le quita el miedo a la paciente antes de la primera consulta: galería de antes y después con consentimiento escrito para internet, una página por tratamiento, reserva de valoración en línea, un rango o "desde" por tratamiento y un WhatsApp discreto. En Elemento Web, ese formato arranca desde $1,250 más ITBMS.',
     ],
     blocks: [
       {
         type: 'prose',
         h2: 'La galería de antes y después vende más que cualquier texto, pero el consentimiento no es un detalle',
         paragraphs: [
-          'En estética nadie se convence leyendo una descripción del tratamiento. Se convence viendo el resultado en una piel, un cuerpo o un rostro parecido al suyo. Por eso la galería de antes y después es, con diferencia, la pieza que más empuja a un paciente indeciso a pedir una valoración: es la única prueba que responde de verdad a la pregunta que lo trajo hasta tu web, que es "¿esto me va a servir a mí?".',
-          'Pero esa misma galería es información sensible sobre el cuerpo de otra persona, y ahí la conversación deja de ser solo de diseño. Publicar el caso de un paciente sin su autorización específica para internet no es un descuido menor: primero es una falta ética hacia alguien que confió su rostro o su cuerpo a tu clínica, y después es un problema legal si esa persona reclama. El consentimiento del tratamiento y el consentimiento para publicar esas fotos en tu web o tus redes son dos documentos distintos, y el segundo no es opcional ni negociable por bien que haya quedado el resultado.',
-          'En la práctica, eso significa tener el permiso por escrito antes de subir la foto, no después; poder retirar un caso si el paciente cambia de opinión más adelante; y no depender de fotos de banco de imágenes disfrazadas de casos propios, porque un paciente de estética reconoce esa treta más rápido que en cualquier otro rubro. Ya entramos en el detalle de cómo estructurar esa prueba visual, tratamiento por tratamiento, en nuestra guía de <a href="/industrias/diseno-web-clinicas-esteticas-panama/">diseño web para clínicas estéticas</a>.',
+          'Antes de escribir, la paciente típica compara fotos de antes y después en dos o tres clínicas y busca el nombre del médico. La galería es la pieza que más empuja a un paciente indeciso a pedir una valoración, porque es la única prueba que responde "¿esto me va a servir a mí?".',
+          'Esa galería es información sensible sobre el cuerpo de otra persona. Publicar un caso sin autorización específica para internet es una falta ética hacia quien confió su rostro o su cuerpo a la clínica, y un problema legal si esa persona reclama. El consentimiento del tratamiento y el consentimiento para publicar las fotos en la web o en redes son dos documentos distintos, y el segundo no es opcional.',
+          'En la práctica: permiso por escrito antes de subir la foto, posibilidad de retirar un caso si el paciente cambia de opinión, y nada de fotos de banco disfrazadas de casos propios, porque un paciente de estética reconoce esa treta rápido. Cómo estructurar esa prueba visual tratamiento por tratamiento lo detallamos en la guía de <a href="/industrias/diseno-web-clinicas-esteticas-panama/">diseño web para clínicas estéticas</a>.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Qué debe incluir sí o sí la web de una clínica estética',
-        intro: 'Antes de pensar en colores o tipografía, revisa que tu web tenga esto. Si te faltan más de dos, hay consultas que ya estaban decididas y que se te están yendo con la competencia.',
+        h2: '¿Qué debe incluir el diseño web de una clínica estética?',
+        intro: 'Si a la web de tu clínica le faltan más de dos de estos ocho puntos, hay consultas ya decididas que se están yendo con la competencia.',
         items: [
           'Galería de antes y después reales, con consentimiento firmado y específico para publicarse en internet',
           'Una página por tratamiento, no una lista de doce servicios en viñetas',
@@ -50,18 +49,18 @@ export const blog14: PageData[] = [
         type: 'prose',
         h2: 'Reservas online: la diferencia entre preguntar y quedarse con la duda',
         paragraphs: [
-          'Pedir una cita de estética por teléfono tiene una fricción que en otros rubros no existe: hay que decir en voz alta, a una recepcionista que no conoces, qué te quieres hacer. Para bastante gente esa sola llamada alcanza para posponerlo otra semana más, sobre todo si decidió preguntar a las diez de la noche, que es cuando muchas personas por fin se animan a resolver algo que llevaban meses pensando.',
-          'Un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas y citas online</a> le quita esa fricción de encima: el paciente ve la disponibilidad real, elige el horario que le acomoda y confirma sin hablar con nadie hasta el día de la cita. Los recordatorios automáticos, de paso, atacan el otro problema típico de la agenda de una clínica: las ausencias de último momento, que en un cupo de valoración cuestan un tiempo del médico que no se recupera.',
-          'Esto no reemplaza al WhatsApp, lo complementa. Hay pacientes que solo quieren elegir un horario y seguir con su día, y hay quien primero necesita resolver una duda íntima antes de comprometerse con una fecha. Tu web tiene que ofrecer las dos puertas de entrada, no obligar a todos a pasar por la misma.',
+          'Pedir una cita de estética por teléfono obliga a decir en voz alta, a una recepcionista desconocida, qué te quieres hacer. Esa llamada basta para posponerlo otra semana, sobre todo a las diez de la noche, cuando mucha gente por fin se anima a resolverlo.',
+          'Un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas y citas online</a> quita esa fricción: el paciente ve la disponibilidad real, elige horario y confirma sin hablar con nadie. Los recordatorios automáticos reducen las ausencias de último momento, que en un cupo de valoración cuestan tiempo del médico que no se recupera.',
+          'La reserva no reemplaza al WhatsApp, lo complementa: unos pacientes solo quieren elegir horario y otros necesitan resolver una duda íntima antes de comprometerse con una fecha. La web de la clínica debe ofrecer las dos puertas.',
         ],
       },
       {
         type: 'prose',
         h2: 'Discreción: aquí un WhatsApp privado pesa más que en otros rubros',
         paragraphs: [
-          'Mucha gente busca un tratamiento estético sin querer que se note, ni frente a su familia, ni frente a su pareja, ni frente a nadie que use el mismo teléfono. Eso cambia decisiones de diseño que en otros negocios son puramente estéticas. Un chat emergente que salta a los tres segundos anunciando el nombre completo de la clínica y una promoción puede ser justo la razón por la que alguien cierra la pestaña en lugar de escribir.',
-          'El mensaje precargado del botón de WhatsApp también importa más de lo que parece: ese texto queda escrito en el chat de quien te escribe, visible si alguien más toma su teléfono ese día. Un "Hola, quisiera más información" abre la conversación igual de bien que un "Hola, quiero cotizar botox" y no expone nada por adelantado. El detalle se conversa ya adentro, en privado.',
-          'La discreción también debería pensarse en la pauta, si la usas. Un anuncio de remarketing que le repite a alguien, en la pantalla de una tablet o un teléfono compartido en casa, el tratamiento exacto que estuvo mirando, genera el efecto contrario al que buscas. Vale la pena conversarlo con quien maneje tus campañas de <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a>, para decidir juntos qué tan explícitos son los creativos que le vuelven a aparecer a quien visitó tu web.',
+          'Mucha gente busca un tratamiento estético sin que se note frente a su familia, su pareja o quien use el mismo teléfono. Un chat emergente que salta a los tres segundos con el nombre de la clínica y una promoción puede ser la razón por la que alguien cierra la pestaña.',
+          'El mensaje precargado del botón de WhatsApp queda escrito en el chat de quien te escribe, visible si alguien más toma su teléfono. Un "Hola, quisiera más información" abre la conversación igual de bien que "Hola, quiero cotizar botox" y no expone nada; el detalle se conversa adentro, en privado.',
+          'Lo mismo aplica a la pauta: un anuncio de remarketing que repite el tratamiento exacto en una tablet o un teléfono compartido genera el efecto contrario. Conviene decidir con quien maneje tus campañas de <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a> qué tan explícitos son los creativos que ve quien visitó tu web.',
         ],
       },
       {
@@ -71,20 +70,20 @@ export const blog14: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Precios orientativos vs. ocultar todo: qué genera más consultas reales',
+        h2: '¿Debe una clínica estética publicar sus precios?',
         paragraphs: [
-          'Es tentador no publicar ni un número: "cada caso es distinto", "mejor que pregunten", "no quiero que me comparen solo por precio". El problema es que ocultar el precio por completo no protege tu margen: llena tu WhatsApp de mensajes de gente que solo quiere saber si le alcanza, mientras tu equipo cotiza todo el día a curiosos que nunca tuvieron el presupuesto y el paciente que sí lo tenía se cansó de esperar respuesta y escribió a la clínica de al lado.',
-          'Lo que funciona, y lo vemos una y otra vez, es publicar un rango o un "desde" por tratamiento junto con el precio de la primera valoración. Eso filtra de entrada a quien no estaba ni cerca de tu presupuesto, le da seguridad a quien sí puede pagarlo, y deja el número exacto donde tiene que quedar: en la consulta, después de evaluar el caso real de esa persona. No es publicar una lista de precios cerrada; es dejar de fingir que el dinero no es parte de la decisión.',
-          'Es, de hecho, el mismo principio con el que trabajamos nosotros: no cobramos igual a todos, pero publicamos el piso. El formato que mejor le sirve a una clínica —con página por tratamiento, galería y reserva— es una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> desde $1,250 (más ITBMS del 7%); un proyecto a medida más grande, desde $2,900. El número exacto sale después de conversar el alcance, pero nadie tiene que escribirnos a ciegas para saber si está en el rango.',
+          'Ocultar todo el precio ("cada caso es distinto", "mejor que pregunten") no protege el margen: llena el WhatsApp de gente que solo quiere saber si le alcanza, el equipo cotiza el día entero a curiosos sin presupuesto y el paciente que sí lo tenía se cansa de esperar y escribe a otra clínica.',
+          'Funciona publicar un rango o un "desde" por tratamiento junto con el precio de la primera valoración. Eso filtra a quien no está cerca del presupuesto, da seguridad a quien puede pagarlo y deja el número exacto para la consulta, después de evaluar el caso real.',
+          'Elemento Web sigue el mismo principio: publica el piso. El formato que mejor sirve a una clínica —página por tratamiento, galería y reserva— es una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> desde $1,250 (más ITBMS del 7%); un proyecto a medida más grande, desde $2,900. El número exacto sale después de conversar el alcance.',
         ],
       },
       {
         type: 'prose',
         h2: 'Cuándo NO conviene invertir todavía en una web grande',
         paragraphs: [
-          'Si tu clínica acaba de abrir y todavía no tienes tus propios casos —con consentimiento y bien fotografiados— para armar una galería real, no tiene sentido salir a publicar una web grande con una promesa que no puedes cumplir todavía. Rellenarla con fotos de banco de imágenes disfrazadas de resultados propios es, en este rubro más que en ningún otro, la forma más rápida de que un paciente informado desconfíe y se vaya.',
-          'En ese momento conviene algo más simple y honesto: una web centrada en el médico, su formación, el equipo con el que trabaja y cómo agendar una primera valoración, sin prometer una galería que todavía no existe. La galería de antes y después se suma después, en cuanto haya tres o cuatro casos propios bien documentados y con permiso para publicarse. Es mejor crecer la web en ese orden que mentir desde el día uno.',
-          'Tampoco conviene si tu agenda ya está llena varias semanas por delante: traer más consultas a una agenda saturada solo produce pacientes frustrados esperando turno. Y si lo que necesitas es llenar la agenda este mismo mes, la respuesta no es una web más grande, es <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento</a> bien enfocado o pauta bien dirigida, dos cosas que toman su tiempo y que nadie te puede prometer con el primer lugar garantizado en Google.',
+          'Si la clínica acaba de abrir y aún no tiene casos propios con consentimiento y bien fotografiados, una web grande promete una galería que no existe. Rellenarla con fotos de banco disfrazadas de resultados propios es la forma más rápida de que un paciente informado desconfíe.',
+          'En esa etapa conviene una web más simple centrada en el médico, su formación, el equipo y cómo agendar la primera valoración. La galería de antes y después se suma cuando haya tres o cuatro casos propios documentados y con permiso para publicarse.',
+          'Tampoco conviene con la agenda llena varias semanas por delante: más consultas solo producen pacientes frustrados esperando turno. Y si necesitas llenar la agenda este mes, la respuesta no es una web más grande sino <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento</a> bien enfocado o pauta bien dirigida; ambos toman tiempo, y nadie puede prometer el primer lugar en Google.',
         ],
       },
       {

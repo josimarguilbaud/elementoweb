@@ -19,25 +19,24 @@ export const blog40: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/blog/como-crear-una-tienda-online-en-panama.jpg',
-      alt: 'Persona comprando desde el celular en una tienda online con carrito y método de pago',
+      alt: 'Caja de envío abierta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Nuestro paquete de E-commerce parte desde $1,950 (precios en USD, sin ITBMS del 7%). Incluye hasta 25 productos cargados, categorías y carrito, configuración de pagos y envíos (las pasarelas y su cantidad se definen en la cotización), pruebas de compra y capacitación para gestionar pedidos. El precio final sube o se queda en ese piso según el tamaño de tu catálogo y las integraciones que necesites.',
+      'En Elemento Web, una tienda online en Panamá parte desde $1,950 (USD, sin ITBMS del 7%). Incluye hasta 25 productos cargados, categorías y carrito, pagos y envíos configurados, pruebas de compra y capacitación para gestionar pedidos. El precio final depende del tamaño del catálogo y de las integraciones que necesites.',
       'Esta guía no repite la <a href="/blog/cuanto-cuesta-diseno-web-panama/">guía general de precios</a>: se centra en lo que solo aplica a una tienda, es decir, qué mueve el costo, qué se cotiza aparte y en qué casos una tienda completa es más de lo que tu negocio necesita.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Qué incluye el precio base de una tienda online',
+        h2: '¿Qué incluye el precio base de una tienda online?',
         paragraphs: [
-          'El paquete E-commerce de $1,950 cubre lo que una tienda necesita para vender: hasta 25 productos cargados, categorías y carrito, configuración de pagos y envíos (las pasarelas y su cantidad se definen en la cotización), pruebas de compra y capacitación para gestionar pedidos. Los precios vigentes están siempre en la página de <a href="/precios/">precios</a>.',
-          'El detalle de lo que incluye, con la lógica de cómo lo construimos, está en la página de <a href="/servicios/tiendas-online-ecommerce-panama/">tiendas online y e-commerce</a>. Aquí nos concentramos en el costo.',
+          'El paquete E-commerce de $1,950 cubre lo que una tienda necesita para vender, desde el catálogo inicial hasta la primera compra de prueba. Las pasarelas de pago y su cantidad se definen en la cotización. Cómo construimos cada pieza está en la página de <a href="/servicios/tiendas-online-ecommerce-panama/">tiendas online y e-commerce</a>, y los precios vigentes, siempre en la página de <a href="/precios/">precios</a>.',
         ],
       },
       {
         type: 'cards',
-        h2: 'Qué determina el costo final de tu tienda',
-        intro: 'El piso de $1,950 se mueve por estos factores. Los dejamos claros desde la cotización.',
+        h2: '¿Qué determina el costo final de una tienda online?',
+        intro: 'El piso de $1,950 se mueve por estos factores, y los dejamos claros desde la cotización.',
         items: [
           { h3: 'Tamaño del catálogo', text: 'No es lo mismo cargar veinte productos con pocas variantes que un catálogo grande con tallas, colores y categorías. Más productos y más variantes significan más trabajo de carga y de orden.' },
           { h3: 'Medios de pago', text: 'Yappy y las pasarelas locales están dentro del paquete. Cada método se prueba antes de abrir la tienda; cuanto más particular sea tu forma de cobrar, más trabajo de integración hay.' },
@@ -48,8 +47,8 @@ export const blog40: PageData[] = [
       },
       {
         type: 'checklist',
-        h2: 'Qué se paga aparte del paquete',
-        intro: 'Nada de esto es una sorpresa si se habla desde el principio. Estos son los conceptos que suman al precio base.',
+        h2: '¿Qué se paga aparte de la tienda online?',
+        intro: 'Estos conceptos suman al precio base y se hablan desde la cotización.',
         items: [
           'Infraestructura anual: desde $350 con dominio, hosting cloud y certificado SSL. Hosting compartido $225 al año, cloud $350 y VPS $550; para un e-commerce grande o de alta demanda el nivel lo definimos según el proyecto',
           'Mantenimiento web: desde $99 al mes, con actualizaciones, respaldos verificados y monitoreo',
@@ -63,19 +62,18 @@ export const blog40: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cómo se paga el proyecto',
+        h2: '¿Cómo se paga una tienda online?',
         paragraphs: [
-          'El pago se divide en tres partes: 50% al iniciar, 30% en el avance y 20% al entregar. Así cada etapa está respaldada y ambas partes saben qué se debe en cada momento.',
-          'Antes de cerrar, recibes una cotización con el alcance por escrito: qué entra, qué no y qué conceptos van aparte. Si durante el proyecto aparece algo que cambia el alcance, se te dice antes de hacerlo, no en la factura.',
+          'En tres partes: 50% al iniciar, 30% en el avance y 20% al entregar. Antes de cerrar recibes una cotización con el alcance por escrito —qué entra, qué no y qué va aparte—, y si algo cambia el alcance durante el proyecto, se te dice antes de hacerlo, no en la factura.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene una tienda online completa',
+        h2: '¿Cuándo NO conviene una tienda online completa?',
         paragraphs: [
-          'Si tu catálogo son unos pocos productos y toda la venta ya ocurre por WhatsApp, una tienda completa puede ser infraestructura de más. En ese caso una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> ($550) con tus productos y un botón directo de contacto o de pago te resuelve, y puedes crecer a tienda cuando las ventas lo justifiquen.',
-          'Tampoco conviene si todavía no tienes resuelta la logística. Una tienda que vende y no entrega a tiempo genera reclamos, no clientes; conviene tener claro cómo se despacha antes de abrir la caja registradora.',
-          'Y si no vas a tener a nadie que cargue productos, atienda pedidos y actualice el inventario, la tienda se quedará desactualizada. Es mejor una web simple bien mantenida que una tienda abandonada.',
+          'Si tu catálogo son unos pocos productos y toda la venta ya ocurre por WhatsApp, una tienda completa puede ser infraestructura de más. Una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> ($550) con tus productos y un botón directo de contacto o de pago te resuelve, y puedes crecer a tienda cuando las ventas lo justifiquen.',
+          'Tampoco conviene si aún no tienes resuelta la logística: una tienda que vende y no entrega a tiempo genera reclamos, no clientes.',
+          'Y si nadie va a cargar productos, atender pedidos y actualizar el inventario, la tienda se quedará desactualizada. Es mejor una web simple bien mantenida que una tienda abandonada.',
         ],
       },
       {
@@ -120,25 +118,24 @@ export const blog40: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/blog/landing-page-vs-sitio-web-cual-necesitas.jpg',
-      alt: 'Landing page de una sola pantalla con un botón de contacto destacado y una diana que representa una campaña enfocada',
+      alt: 'Diana con un dardo en el centro, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Una landing page en Elemento Web cuesta $550 (USD, sin ITBMS del 7%). Es una página enfocada en conversión, con diseño a medida, responsive y un botón directo a WhatsApp, con entrega en 5 días hábiles desde recibir el contenido y aprobar el alcance.',
+      'Una landing page en Panamá con Elemento Web cuesta $550 (USD, sin ITBMS del 7%): una página enfocada en conversión, con diseño a medida, responsive y botón directo a WhatsApp, entregada en 5 días hábiles desde recibir el contenido y aprobar el alcance. Hosting, contenido y mantenimiento se pagan aparte.',
       'La <a href="/blog/cuanto-cuesta-diseno-web-panama/">guía general de precios</a> compara todos los paquetes. Aquí respondemos solo esta pregunta: qué hay detrás de esos $550, qué se suma aparte y cuándo una landing no es la herramienta correcta.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Qué incluye el precio de $550',
+        h2: '¿Qué incluye una landing page de $550?',
         paragraphs: [
-          'El paquete Landing Page incluye una página enfocada en conversión, diseño a medida, responsive, un botón directo a WhatsApp y entrega en 5 días hábiles desde recibir el contenido y aprobar el alcance. Es un solo destino con una sola acción: la que quieres que haga tu visitante.',
-          'Sirve como destino de una campaña, de una oferta o de un servicio concreto. Si quieres entender bien en qué se diferencia de un sitio con varias páginas, lo explicamos en <a href="/blog/landing-page-vs-sitio-web-cual-necesitas/">landing page vs sitio web</a>, y el detalle del servicio está en <a href="/servicios/landing-pages-alta-conversion-panama/">landing pages de alta conversión</a>.',
+          'Un solo destino con una sola acción: la que quieres que haga tu visitante. Sirve para una campaña, una oferta o un servicio concreto. En qué se diferencia de un sitio con varias páginas lo explicamos en <a href="/blog/landing-page-vs-sitio-web-cual-necesitas/">landing page vs sitio web</a>, y el detalle del servicio está en <a href="/servicios/landing-pages-alta-conversion-panama/">landing pages de alta conversión</a>.',
         ],
       },
       {
         type: 'cards',
-        h2: 'Qué determina el costo de una landing',
-        intro: 'El piso es $550. Estos son los factores que pueden moverlo.',
+        h2: '¿Qué determina el costo de una landing page?',
+        intro: 'El piso es $550. Estos factores pueden moverlo.',
         items: [
           { h3: 'Si ya tienes el contenido', text: 'Los textos y las imágenes son la parte que más retrasa una landing. Si no los tienes listos, hay opciones de producción con precio fijo (ver abajo), y así el proyecto no se detiene.' },
           { h3: 'Idiomas', text: 'Cada idioma adicional requiere estructura y contenido extra, con el etiquetado SEO correcto por idioma. Se cotiza aparte.' },
@@ -148,7 +145,7 @@ export const blog40: PageData[] = [
       },
       {
         type: 'checklist',
-        h2: 'Qué se paga aparte de los $550',
+        h2: '¿Qué se paga aparte de los $550?',
         intro: 'Todo esto se aclara en la cotización, antes de empezar.',
         items: [
           'Hosting, dominio y SSL: infraestructura anual desde $350 (dominio, hosting cloud y certificado SSL). Para una landing con tráfico moderado también existe el hosting compartido, a $225 al año',
@@ -162,19 +159,18 @@ export const blog40: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cómo se paga',
+        h2: '¿Cómo se paga una landing page?',
         paragraphs: [
-          'El proyecto se paga en tres partes: 50% al iniciar, 30% en el avance y 20% al entregar. La cotización detalla el alcance por escrito, y cualquier cambio se conversa antes de hacerlo.',
-          'Tu dominio queda a tu nombre. Los detalles de infraestructura están en la página de <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura</a>.',
+          'En tres partes: 50% al iniciar, 30% en el avance y 20% al entregar. La cotización detalla el alcance por escrito, y cualquier cambio se conversa antes de hacerlo. Tu dominio queda a tu nombre; los detalles de infraestructura están en la página de <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene una landing page',
+        h2: '¿Cuándo NO conviene una landing page?',
         paragraphs: [
-          'Si ofreces varios servicios distintos y cada uno necesita explicarse, una sola página se queda corta: mezclar todo en un mismo scroll confunde al visitante. Ahí conviene una web con páginas por servicio, como la <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a>.',
-          'Tampoco conviene si quieres posicionar varios servicios en Google, porque cada búsqueda distinta pide su propia página. Una landing puede recibir visitas, pero no reemplaza una estructura pensada para buscadores.',
-          'Y si todavía no sabes qué oferta quieres presentar, conviene definirla primero. Una landing solo puede ordenar una propuesta que ya está clara; no la inventa por ti.',
+          'Si ofreces varios servicios distintos y cada uno necesita explicarse, una sola página se queda corta y mezclarlo todo en un scroll confunde al visitante. Ahí conviene una web con páginas por servicio, como la <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a>.',
+          'Tampoco si quieres posicionar varios servicios en Google: cada búsqueda distinta pide su propia página, y una landing no reemplaza una estructura pensada para buscadores.',
+          'Y si aún no sabes qué oferta presentar, defínela primero: una landing ordena una propuesta clara, no la inventa por ti.',
         ],
       },
       {
@@ -221,13 +217,13 @@ export const blog40: PageData[] = [
       alt: 'Panel de monitoreo de un sitio web con estado, respaldos y actualizaciones',
     },
     lead: [
-      'El mantenimiento web en Elemento Web parte desde $99 al mes (USD, sin ITBMS del 7%). Hay tres planes: Básico a $99, Prioritario a $169 y Empresarial a $319. Los tres incluyen la misma base; lo que cambia es la velocidad de respuesta y las horas de cambios incluidas cada mes.',
+      'El mantenimiento web en Panamá con Elemento Web parte desde $99 al mes (USD, sin ITBMS del 7%). Hay tres planes: Básico a $99, Prioritario a $169 y Empresarial a $319. Los tres incluyen la misma base; lo que cambia es la velocidad de respuesta y las horas de cambios incluidas cada mes.',
       'Esta guía se centra en el costo: qué compras en cada plan, qué queda fuera y cuándo no necesitas contratarlo con nosotros. El detalle técnico está en la página de <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento web</a>.',
     ],
     blocks: [
       {
         type: 'cards',
-        h2: 'Qué cambia entre los tres planes',
+        h2: '¿Qué cambia entre los tres planes de mantenimiento web?',
         intro: 'La base es la misma en los tres: actualizaciones de seguridad, respaldos automáticos con restauración verificada, monitoreo de caídas con alerta, certificado SSL con renovación automática, ajustes menores de contenido y reporte mensual.',
         items: [
           { h3: 'Básico, $99 al mes', text: 'La base completa, con respuesta el siguiente día hábil. Es el piso: no contratamos por debajo de esto.' },
@@ -237,17 +233,17 @@ export const blog40: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Qué determina el plan que te toca',
+        h2: '¿Qué plan de mantenimiento necesita tu web?',
         paragraphs: [
-          'La decisión se reduce a dos preguntas. Primera: ¿qué pasa si tu sitio se cae o falla? Si tu web ya factura, agenda o recibe clientes a diario, el tiempo de respuesta importa más, y ahí los planes Prioritario o Empresarial tienen sentido. Si es una web informativa, el Básico suele bastar.',
-          'Segunda: ¿cuántos cambios haces al mes? El plan Básico cubre ajustes menores de contenido, como textos e imágenes. Si tu equipo pide cambios con frecuencia, las horas incluidas en Prioritario y Empresarial evitan cotizar cada cosa por separado. Páginas nuevas o funciones nuevas se cotizan aparte.',
+          'Depende de dos preguntas. Primera: ¿qué pasa si tu sitio se cae? Si tu web factura, agenda o recibe clientes a diario, el tiempo de respuesta pesa más y ahí tienen sentido el Prioritario o el Empresarial. Para una web informativa, el Básico suele bastar.',
+          'Segunda: ¿cuántos cambios haces al mes? El Básico cubre ajustes menores de contenido, como textos e imágenes. Si tu equipo pide cambios seguido, las horas incluidas en Prioritario y Empresarial evitan cotizar cada cosa. Páginas o funciones nuevas se cotizan aparte.',
           'Puedes cambiar de plan cuando quieras, sin permanencia; el ajuste aplica desde el siguiente ciclo de facturación.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Qué se paga aparte del mantenimiento',
-        intro: 'El plan mensual no cubre todo lo que necesita una web para funcionar. Esto es lo que va por separado.',
+        h2: '¿Qué se paga aparte del mantenimiento web?',
+        intro: 'El plan mensual no cubre todo lo que una web necesita para funcionar.',
         items: [
           'Infraestructura anual: desde $350 con dominio, hosting cloud y certificado SSL. Hosting compartido $225 al año, cloud $350 y VPS $550',
           'Páginas nuevas o funciones nuevas: se cotizan aparte, y te lo decimos antes de hacerlas',
@@ -257,10 +253,10 @@ export const blog40: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO necesitas contratar mantenimiento con nosotros',
+        h2: '¿Cuándo NO necesitas contratar mantenimiento con nosotros?',
         paragraphs: [
-          'Si tu sitio es estático, no tiene panel ni formularios y alguien de tu equipo sabe renovar el dominio y el certificado, puedes vivir sin un plan mensual. También si tu proveedor actual ya cubre las actualizaciones y los respaldos: pagar dos veces por lo mismo no mejora nada.',
-          'Tampoco es obligatorio contratarlo con nosotros: tú o tu equipo técnico pueden encargarse. Lo innegociable es que alguien lo haga, porque un sitio sin dueño, sobre todo en WordPress, termina comprometido, y recuperarlo cuesta más que el plan Básico.',
+          'Si tu sitio es estático, sin panel ni formularios, y alguien de tu equipo sabe renovar el dominio y el certificado, puedes vivir sin un plan mensual. También si tu proveedor actual ya cubre actualizaciones y respaldos: pagar dos veces por lo mismo no mejora nada.',
+          'Tú o tu equipo técnico pueden encargarse. Lo innegociable es que alguien lo haga: un sitio sin dueño, sobre todo en WordPress, termina comprometido, y recuperarlo cuesta más que el plan Básico.',
           'Y si el sitio ya fue hackeado o su base es muy frágil, lo primero no es un plan mensual sino sanearlo o, en algunos casos, un <a href="/servicios/redisenio-web-panama/">rediseño</a>.',
         ],
       },
@@ -305,7 +301,7 @@ export const blog40: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/blog/cuando-hacer-rediseno-pagina-web.jpg',
-      alt: 'Comparación entre un sitio web antiguo y su versión rediseñada en pantalla',
+      alt: 'Bote de pintura con una brocha encima, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Un rediseño en Elemento Web se mueve en el rango de un sitio nuevo, desde $1,250 (USD, sin ITBMS del 7%), más la auditoría y la migración. El precio cerrado se da después de auditar tu sitio actual, porque depende de su estado y del alcance.',
@@ -314,16 +310,15 @@ export const blog40: PageData[] = [
     blocks: [
       {
         type: 'prose',
-        h2: 'Por qué el rediseño no tiene un precio único',
+        h2: '¿Por qué rediseñar una página web no tiene un precio único?',
         paragraphs: [
-          'Un sitio nuevo se cotiza sobre una hoja en blanco. Un rediseño parte de algo que ya existe, y eso cambia el trabajo: hay que inventariar las páginas, saber cuáles reciben visitas y cuáles tienen enlaces externos, y planificar las redirecciones 301 para conservar lo que ya posiciona.',
-          'Por eso la auditoría y el mapa de redirecciones son etapas obligatorias de nuestro proceso, no un extra. El alcance real del servicio está en la página de <a href="/servicios/redisenio-web-panama/">rediseño web</a>.',
+          'Un sitio nuevo se cotiza sobre una hoja en blanco; un rediseño parte de algo que ya existe. Hay que inventariar las páginas, saber cuáles reciben visitas y cuáles tienen enlaces externos, y planificar las redirecciones 301 para conservar lo que ya posiciona. Por eso la auditoría y el mapa de redirecciones son etapas obligatorias de nuestro proceso, no un extra. El alcance del servicio está en la página de <a href="/servicios/redisenio-web-panama/">rediseño web</a>.',
         ],
       },
       {
         type: 'cards',
-        h2: 'Qué determina el costo de un rediseño',
-        intro: 'Como referencia, el rango parte del precio de un sitio nuevo. Estos factores lo mueven.',
+        h2: '¿Qué determina el costo de un rediseño web?',
+        intro: 'El rango parte del precio de un sitio nuevo. Estos factores lo mueven.',
         items: [
           { h3: 'Tamaño del sitio actual', text: 'Cuántas páginas hay que revisar, conservar y redirigir. Un sitio pequeño no se trabaja igual que uno con muchas páginas y entradas de blog.' },
           { h3: 'Estado técnico de la base', text: 'Si la base es sana, a veces basta una modernización parcial (tipografía, estructura, velocidad). Si es frágil o está comprometida, hay que sanearla primero o reconstruir.' },
@@ -334,7 +329,7 @@ export const blog40: PageData[] = [
       },
       {
         type: 'checklist',
-        h2: 'Qué se paga aparte',
+        h2: '¿Qué se paga aparte en un rediseño?',
         intro: 'Para que la cotización sea cerrada, estos conceptos se definen desde el inicio.',
         items: [
           'Auditoría y migración: se suman al precio base del sitio nuevo y se cierran tras auditar',
@@ -350,7 +345,7 @@ export const blog40: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Qué revisar antes de pedir una cotización',
+        h2: '¿Qué preparar antes de pedir una cotización de rediseño?',
         paragraphs: [
           'Para que la auditoría sea rápida, ten a mano los accesos al dominio y al hosting (aparecen siempre a última hora) y anota los números actuales: visitas mensuales, cuántas llegan de buscadores, cuántos contactos entran al mes y la velocidad en celular. Sin esos datos no se puede demostrar después si el rediseño mejoró algo.',
           'También conviene conocer los pasos para no perder posicionamiento. Nuestra <a href="/recursos/checklist-migracion-seo/">checklist de migración SEO</a> recoge qué hacer antes, durante y después de un cambio de sitio.',
@@ -358,10 +353,10 @@ export const blog40: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene rediseñar todavía',
+        h2: '¿Cuándo NO conviene rediseñar todavía?',
         paragraphs: [
-          'Cuando el sitio funciona y lo que falta es contenido o difusión. Rediseñar por aburrimiento reinicia el trabajo de posicionamiento sin ganar nada a cambio.',
-          'Tampoco cuando estás en temporada alta: un rediseño mueve direcciones y conviene hacerlo en un mes tranquilo, no la semana antes de tu pico de ventas. Y si tu sitio actual no recibe visitas de Google ni tiene nada que conservar, quizás no necesitas un rediseño sino un sitio nuevo desde cero, que suele salir más simple.',
+          'Cuando el sitio funciona y lo que falta es contenido o difusión: rediseñar por aburrimiento reinicia el trabajo de posicionamiento sin ganar nada.',
+          'Tampoco en temporada alta: un rediseño mueve direcciones y conviene hacerlo en un mes tranquilo, no la semana antes de tu pico de ventas. Y si tu sitio no recibe visitas de Google ni tiene nada que conservar, quizás no necesitas un rediseño sino un sitio nuevo desde cero, que suele salir más simple.',
           'Para saber si te toca, revisa <a href="/blog/cuando-hacer-rediseno-pagina-web/">cuándo hacer el rediseño de tu página web</a>.',
         ],
       },
@@ -415,15 +410,15 @@ export const blog40: PageData[] = [
     blocks: [
       {
         type: 'prose',
-        h2: 'Qué es lo que se paga en un proyecto a medida',
+        h2: '¿Qué se paga en un proyecto de desarrollo web a medida?',
         paragraphs: [
-          'En un paquete cerrado, el alcance está definido de antemano. En un proyecto a medida, el alcance se construye contigo: arquitectura y diseño 100% a tu medida, integraciones con tus sistemas y funcionalidad hecha para tu operación. Se desarrolla con Vue o React, el mismo stack con el que construimos nuestros propios productos SaaS.',
-          'El punto de partida es un diagnóstico. Con él se define qué se construye, en qué orden y con qué integraciones, y se te entrega una cotización con el alcance por escrito. El detalle técnico está en la página de <a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">desarrollo a medida con Vue y React</a>.',
+          'En un paquete cerrado, el alcance está definido de antemano. En un proyecto a medida se construye contigo: arquitectura y diseño 100% a tu medida, integraciones con tus sistemas y funcionalidad hecha para tu operación. Se desarrolla con Vue o React, el mismo stack de nuestros propios productos SaaS.',
+          'El punto de partida es un diagnóstico que define qué se construye, en qué orden y con qué integraciones, y termina en una cotización con el alcance por escrito. El detalle técnico está en la página de <a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">desarrollo a medida con Vue y React</a>.',
         ],
       },
       {
         type: 'cards',
-        h2: 'Qué determina el costo de un desarrollo a medida',
+        h2: '¿Qué determina el costo de un desarrollo web a medida?',
         intro: 'El piso es $2,900. Estos factores explican por qué dos proyectos a medida pueden costar muy distinto.',
         items: [
           { h3: 'Integraciones con tus sistemas', text: 'Conectar la web con un CRM, un ERP, pagos o inventario por API. Cada sistema tiene sus reglas, y el trabajo depende de cuántos y de qué tan documentados estén.' },
@@ -435,7 +430,7 @@ export const blog40: PageData[] = [
       },
       {
         type: 'checklist',
-        h2: 'Qué se paga aparte del desarrollo',
+        h2: '¿Qué se paga aparte del desarrollo a medida?',
         intro: 'Lo dejamos claro en la cotización, no a mitad del proyecto.',
         items: [
           'Infraestructura anual: desde $350 con dominio, hosting cloud y SSL. Para proyectos a medida o de alta demanda suele corresponder el VPS dedicado, a $550 al año; el nivel se define según el proyecto',
@@ -451,14 +446,14 @@ export const blog40: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cómo se paga',
+        h2: '¿Cómo se paga un desarrollo a medida?',
         paragraphs: [
-          'El pago se divide en tres partes: 50% al iniciar, 30% en el avance y 20% al entregar. Cada etapa queda respaldada por un alcance escrito y aprobado, y cualquier cambio de alcance se conversa antes de hacerse.',
+          'En tres partes: 50% al iniciar, 30% en el avance y 20% al entregar. Cada etapa queda respaldada por un alcance escrito y aprobado, y cualquier cambio de alcance se conversa antes de hacerse.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene un desarrollo a medida',
+        h2: '¿Cuándo NO conviene un desarrollo a medida?',
         paragraphs: [
           'Si tu necesidad cabe en un paquete, un desarrollo a medida es pagar de más. Una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> desde $1,250, con hasta 6 páginas en total, o una tienda desde $1,950, cubren la mayoría de los negocios que solo necesitan presencia o venta en línea.',
           'Tampoco conviene si todavía no sabes qué quieres que haga el sistema. Un proyecto a medida necesita reglas claras; si el proceso de tu negocio aún cambia cada semana, lo sensato es empezar con algo más simple y aprender con el uso.',

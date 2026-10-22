@@ -17,14 +17,18 @@ export const core: PageData[] = [
       { label: 'Ver precios', href: '/servicios/#precios' },
     ],
     lead: [
-      'Los malentendidos caros casi siempre nacen de lo que no se dijo al principio. Por eso ponemos todo sobre la mesa antes de que firmes: cómo se paga, qué necesitamos de ti, qué corre por tu cuenta y qué no hacemos.',
-      'Ninguna de estas condiciones es letra chica. Son las mismas que te repetimos en la propuesta y en el contrato, porque un cliente que entiende las reglas es un cliente que vuelve.',
+      'Así trabajamos: antes de que firmes ponemos sobre la mesa cómo se paga, qué necesitamos de ti, qué corre por tu cuenta y qué no hacemos. Son las mismas condiciones de la propuesta y del contrato.',
     ],
     blocks: [
       {
+        type: 'answer',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, trabaja con cotización cerrada por escrito y pago en tres etapas: 50% para iniciar, 30% al aprobar el demo y 20% para publicar. Incluye 2 rondas de revisión y 30 días de garantía. Dominio, código y accesos quedan a nombre de tu empresa; Meta, IA y pasarelas se pagan directo.',
+        fecha: '2026-10-22',
+      },
+      {
         type: 'steps',
-        h2: 'El proceso, de principio a fin',
-        intro: 'Cuatro etapas con entregas que puedes revisar. Sin desapariciones a mitad del proyecto.',
+        h2: 'Cómo trabajamos: el proceso de principio a fin',
+        intro: 'Cuatro etapas, cada una con una entrega que revisas antes de pagar la siguiente.',
         items: [
           { h3: 'Inicio (50%)', text: 'Con el anticipo del 50% arrancamos. Definimos la estructura y el diseño, y los apruebas antes de programar.' },
           { h3: 'Demo online (30%)', text: 'Montamos el sitio completo en un demo en línea para que lo veas funcionando y lo apruebes. Aquí abonas el 30%.' },
@@ -35,7 +39,7 @@ export const core: PageData[] = [
       {
         type: 'checklist',
         h2: 'Qué necesitamos de ti',
-        intro: 'Los tiempos de entrega se cuentan desde que recibimos esto. Y si no lo tienes completo, no es un bloqueo: lo generamos por ti con IA (ver abajo).',
+        intro: 'Los tiempos de entrega se cuentan desde que recibimos esto. Si no lo tienes completo, lo generamos con IA (ver abajo).',
         items: [
           'Los textos base, o la información para que los redactemos contigo',
           'Tu logo en buena calidad, o lo diseñamos con IA si no lo tienes',
@@ -51,12 +55,9 @@ export const core: PageData[] = [
       },
       {
         type: 'checklist',
-        h2: 'Estructura y formas de pago',
-        intro: 'El pago se divide en tres etapas atadas a lo que puedes ver: arranque, demo aprobado y publicación. Así ni tú ni nosotros asumimos todo el riesgo de una vez.',
+        h2: 'Formas de pago y condiciones',
+        intro: 'Además de las tres etapas del proceso (50%, 30% y 20%), estas son las condiciones de cobro.',
         items: [
-          '50% para iniciar: confirma el proyecto y cubre el arranque',
-          '30% al aprobar el demo online, con el sitio completo funcionando',
-          '20% para publicar en tu dominio final y recibir los accesos',
           'Formas de pago: tarjeta de crédito o débito, transferencia bancaria y Yappy',
           'Los servicios mensuales (mantenimiento, licencias) se facturan por adelantado',
           'El cobro mensual arranca cuando el sitio pasa a producción',
@@ -67,7 +68,7 @@ export const core: PageData[] = [
       {
         type: 'cards',
         h2: 'Costos de terceros que pagas directamente',
-        intro: 'Algunos servicios consumen plataformas externas. <strong>Estos consumos se configuran en tus propias cuentas y los pagas directo al proveedor, por uso, sin margen nuestro.</strong> Así tienes control y visibilidad total del gasto.',
+        intro: '<strong>Los consumos de plataformas externas se configuran en tus propias cuentas y los pagas directo al proveedor, por uso, sin margen nuestro.</strong> Así ves exactamente cuánto gastas.',
         items: [
           { h3: 'Meta (WhatsApp Business API)', text: 'Meta cobra por conversación de WhatsApp, con tarifas que varían según el tipo y el país. Se paga desde tu propia cuenta de Meta.' },
           { h3: 'Motor de inteligencia artificial', text: 'El chatbot con IA consume el servicio de OpenAI o Anthropic por uso. Se paga desde tu cuenta del proveedor, según el volumen de conversaciones.' },
@@ -78,7 +79,7 @@ export const core: PageData[] = [
       {
         type: 'cards',
         h2: 'Qué no incluimos',
-        intro: 'Somos una software house enfocada en diseño, desarrollo, SEO técnico y automatización. Lo que no hacemos, te lo decimos de frente y te referimos con quien sí lo hace bien.',
+        intro: 'Lo que no hacemos te lo decimos de frente, y te referimos con quien sí lo hace.',
         items: [
           { h3: 'Registro de marca y trámites legales', text: 'No tramitamos registro de marca, patentes ni gestiones legales. Te orientamos sobre qué necesitas y con quién resolverlo.' },
           { h3: 'Producción audiovisual profesional', text: 'No hacemos fotografía ni video de estudio. Si el proyecto lo necesita, coordinamos con productores de confianza.' },
@@ -89,7 +90,7 @@ export const core: PageData[] = [
       {
         type: 'checklist',
         h2: 'Nuestras garantías',
-        intro: 'Lo que sí te aseguramos por escrito.',
+        intro: 'Lo que te aseguramos por escrito.',
         items: [
           'El dominio, el código y todos los accesos quedan a nombre de tu empresa al completar el pago',
           '30 días de garantía por fallas técnicas después de la entrega',
@@ -129,8 +130,7 @@ export const core: PageData[] = [
     h1: 'Portafolio',
     breadcrumb: 'Portafolio',
     lead: [
-      'Sitios reales, en producción, que trabajan por sus dueños todos los días. Son proyectos a medida, con más de 30 páginas internas y SEO avanzado pensado para Google y los motores de búsqueda con IA. Estos son algunos de los que hemos construido para empresas en Panamá y la región.',
-      'Un buen portafolio no es una galería bonita: es la prueba de que entendemos distintos negocios —turismo, construcción, servicios profesionales, trámites— y sabemos convertir cada uno en una web que capta clientes.',
+      'Portafolio de diseño web de Elemento Web: sitios reales, en producción, construidos a medida para empresas en Panamá y la región, en turismo, construcción, servicios profesionales y trámites.',
     ],
     heroCtas: [
       { label: 'Cotizar mi proyecto', href: '/contacto/', primary: true },
@@ -138,8 +138,13 @@ export const core: PageData[] = [
     ],
     blocks: [
       {
+        type: 'answer',
+        text: 'El portafolio de Elemento Web, agencia de marketing digital y diseño web en Ciudad de Panamá, reúne sitios publicados y en vivo para turismo, logística, contabilidad, trámites y construcción. Cada proyecto enlaza al sitio real. Cuatro tienen caso documentado: TramitaPa, San Blas Full, KL Contable y Panama International Movers.',
+        fecha: '2026-10-22',
+      },
+      {
         type: 'projects',
-        h2: 'Proyectos que hemos construido',
+        h2: 'Proyectos de diseño web en Panamá',
         intro: 'Cada uno está en vivo. Haz clic para visitarlo, o filtra por tipo de proyecto.',
       },
       {
@@ -154,6 +159,7 @@ export const core: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'casos-de-exito', label: 'Casos de éxito' },
           { slug: 'industrias', label: 'Diseño web por industria' },
           { slug: 'servicios', label: 'Servicios' },
           { slug: 'nosotros', label: 'Nosotros' },
@@ -172,8 +178,8 @@ export const core: PageData[] = [
     breadcrumb: 'Nosotros',
     creds: true,
     lead: [
-      'Somos una software house panameña que diseña webs. La diferencia se nota en cómo construimos: con la disciplina de quien mantiene su propio producto.',
-      'Dos credenciales nos definen y las dos son verificables. Somos Tech Provider verificado por Meta: Meta verificó nuestro negocio para integrar la API de WhatsApp Business en nombre de nuestros clientes. Y operamos tres SaaS propios en producción (WazaCRM, NousCRM y Cifrao). Josimar Guilbaud dirige la empresa y responde por cada proyecto que entregamos.',
+      'Somos una agencia panameña de marketing digital y proyectos de IA, con el diseño web como pilar. Construimos con la disciplina de quien mantiene su propio software.',
+      'Dos credenciales verificables nos definen. Somos Tech Provider verificado por Meta: Meta verificó nuestro negocio para integrar la API de WhatsApp Business en nombre de nuestros clientes. Y operamos tres SaaS propios en producción (WazaCRM, NousCRM y Cifrao). Josimar Guilbaud dirige la empresa y responde por cada proyecto.',
     ],
     heroCtas: [
       { label: 'Agendar una llamada', href: '/contacto/', primary: true },
@@ -181,12 +187,17 @@ export const core: PageData[] = [
     ],
     blocks: [
       {
+        type: 'answer',
+        text: 'Elemento Web es una agencia de marketing digital, proyectos de IA y diseño web con sede en Ciudad de Panamá, dirigida por Josimar Guilbaud. Es Tech Provider verificado por Meta para la API de WhatsApp Business y opera tres SaaS propios en producción: WazaCRM, NousCRM y Cifrao. Publica sus precios: landing desde $550.',
+        fecha: '2026-10-22',
+      },
+      {
         type: 'prose',
         h2: 'Por qué operar software propio nos hace mejor agencia',
         paragraphs: [
           'Una agencia tradicional entrega el proyecto y pasa al siguiente. Si la base técnica era frágil, el costo aparece meses después y lo paga el cliente. El incentivo está torcido desde el diseño.',
           'Nosotros vivimos del otro lado también: cuando nuestro software falla, la factura del servidor, la madrugada de soporte y el cliente molesto son nuestros. <strong>Esa experiencia enseña qué decisiones técnicas importan de verdad</strong> y cuáles son teatro.',
-          'Por eso insistimos en lo que parece menor: respaldos que se prueban, código documentado, accesos a nombre del cliente. No son buenas prácticas de manual; son las que nos han salvado a nosotros.',
+          'Por eso insistimos en lo que parece menor: respaldos que se prueban, código documentado, accesos a nombre del cliente.',
         ],
       },
       {
@@ -202,24 +213,12 @@ export const core: PageData[] = [
         h2: 'Elemento Web en una página',
         intro: 'Lo esencial, con enlaces a la evidencia de cada punto.',
         items: [
-          { h3: 'Qué somos', text: 'Una agencia de diseño web y software house con sede en Ciudad de Panamá. Diseñamos y desarrollamos sitios, tiendas online y software a medida, y operamos marketing digital, SEO y automatización con IA.', link: { slug: 'servicios', label: 'Ver los servicios' } },
+          { h3: 'Qué somos', text: 'Una agencia de marketing digital y proyectos de IA con sede en Ciudad de Panamá, con el diseño web como pilar. Hacemos pauta, contenido, SEO y automatización con IA, y diseñamos sitios, tiendas online y software a medida.', link: { slug: 'servicios', label: 'Ver los servicios' } },
           { h3: 'Dónde trabajamos', text: 'En Panamá, y de forma remota con negocios hispanos de Miami-Dade, en español y en dólares. No tenemos oficina en Miami.', link: { slug: 'miami', label: 'Ver el servicio para Miami' } },
           { h3: 'Qué tecnología usamos', text: 'Astro, React, Vue, WordPress y Shopify, según lo que necesite el proyecto. También operamos tres productos SaaS propios en producción.', link: { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Ver desarrollo a medida' } },
           { h3: 'Qué hemos hecho', text: 'Sitios para turismo, logística, contabilidad, servicios de trámites y más. Cada caso cuenta el problema y lo que construimos; las cifras se publican solo cuando están medidas.', link: { slug: 'casos-de-exito', label: 'Ver los casos' } },
           { h3: 'Cuánto cobramos', text: 'Precios publicados en dólares y sin sorpresas: landing desde $550, sitio corporativo desde $1,250 (hasta 6 páginas en total), tienda online desde $1,950 y proyectos a medida desde $2,900. No incluyen ITBMS.', link: { slug: 'precios', label: 'Ver los precios' } },
-          { h3: 'Cómo trabajamos', text: 'Cotización cerrada por escrito, demo en línea antes de publicar y pago en tres etapas (50%, 30% y 20%). Dominio, código y accesos quedan a nombre de tu empresa.', link: { slug: 'como-trabajamos', label: 'Ver el proceso' } },
-        ],
-      },
-      {
-        type: 'checklist',
-        h2: 'Cómo trabajamos',
-        items: [
-          'Cotización cerrada antes de empezar, sin sorpresas',
-          'Entregas por etapa que puedes revisar y aprobar',
-          'Dominio, código y accesos a nombre de tu empresa',
-          'SEO técnico y velocidad de serie, no como extra',
-          'Capacitación grabada para tu equipo',
-          'Respuesta el mismo día hábil, en español claro',
+          { h3: 'Cómo trabajamos', text: 'Cotización cerrada por escrito, demo en línea antes de publicar y pago en tres etapas (50%, 30% y 20%). SEO técnico y velocidad de serie, capacitación grabada y respuesta el mismo día hábil. Dominio, código y accesos quedan a nombre de tu empresa.', link: { slug: 'como-trabajamos', label: 'Ver el proceso' } },
         ],
       },
       {

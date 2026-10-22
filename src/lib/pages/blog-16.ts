@@ -14,51 +14,48 @@ export const blog16: PageData[] = [
     date: '2026-09-22',
     heroImage: {
       src: '/images/blog/diseno-web-para-talleres-automotrices-panama.jpg',
-      alt: 'Taller mecánico moderno y organizado, con elevador de autos y herramientas ordenadas en la pared',
+      alt: 'Pistón de motor con su biela, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Nadie te avisa que no confía en tu taller. Simplemente no te escribe, y se va al que sí mostró un precio, una foto de un trabajo real o una reseña antes de que tuviera que preguntar.',
-      'El rubro automotriz carga una sospecha que pocos negocios arrastran igual: la idea de que el mecánico va a inflar el precio o inventar un daño que no existe. Una web no borra esa desconfianza con una frase bonita — la baja mostrando lo que la mayoría de los talleres esconde: precio, agenda y prueba de que el trabajo se hizo bien. En esta guía vemos qué debe tener sí o sí la web de un taller en Panamá, y también cuándo, honestamente, no conviene invertir en una.',
+      'El diseño web para talleres automotrices en Panamá tiene un trabajo principal: bajar la sospecha de que el mecánico va a inflar el precio. Lo logra con seis cosas: precios de referencia por servicio, agenda de citas online, especialidades visibles, fotos de trabajos reales, reseñas y un WhatsApp directo. Así lo planteamos en Elemento Web, en Ciudad de Panamá.',
+      'Nadie te avisa que no confía en tu taller: simplemente no escribe y se va al que mostró un precio o una reseña antes de que tuviera que preguntar. Esta guía repasa cada elemento y también cuándo no conviene invertir en una web.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'La desconfianza es el obstáculo número uno, no el precio',
+        h2: '¿Por qué la desconfianza pesa más que el precio en un taller?',
         paragraphs: [
-          'Compara cómo decide un cliente en otros rubros. Para escoger un restaurante mira fotos del plato y el ambiente. Para escoger un gimnasio mira el horario y el precio del plan. Para escoger un taller, la primera pregunta casi nunca es "¿qué tan bueno es?" — es "¿me van a ver la cara?". Esa pregunta silenciosa decide, antes que cualquier otra cosa, si el cliente levanta el teléfono o sigue buscando.',
-          'Esa sospecha no nace de la nada: casi todo el que maneja tiene una historia, propia o de un conocido, de un diagnóstico inflado o un repuesto que nunca se cambió de verdad. No hace falta que te haya pasado a ti como taller — el cliente llega cargando la desconfianza de otro taller, y tu web arranca con ese peso encima aunque no tengas nada que ver.',
-          'Por eso una web de taller no compite mostrando lo bonita que es la fachada o lo moderno del logo: compite mostrando evidencia. Precio antes de llamar, agenda sin depender de que alguien conteste, fotos del trabajo terminado y reseñas de gente real. Cada uno de esos elementos responde, sin que nadie lo diga en voz alta, la pregunta que el cliente se hace en silencio.',
+          'Para escoger un restaurante, el cliente mira fotos del plato; para escoger un gimnasio, el horario y el precio del plan. Para escoger un taller, la primera pregunta es "¿me van a ver la cara?". Casi todo el que maneja tiene una historia, propia o de un conocido, de un diagnóstico inflado o un repuesto que nunca se cambió, y llega a tu web cargando esa desconfianza aunque no tengas nada que ver.',
+          'Por eso la web de un taller no compite con una fachada bonita: compite con evidencia. Precio antes de llamar, agenda sin depender de que alguien conteste, fotos del trabajo terminado y reseñas de gente real responden esa pregunta sin que nadie la diga en voz alta.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Lo que la web de un taller necesita sí o sí',
-        intro: 'No hace falta un sitio grande ni caro. Hace falta que resuelva estas seis cosas, más o menos en este orden de importancia.',
+        h2: '¿Qué debe tener el diseño web para talleres automotrices?',
+        intro: 'No hace falta un sitio grande ni caro. Hacen falta estas seis cosas, más o menos en este orden de importancia.',
         items: [
           { h3: 'Precios de referencia por servicio', text: 'Un rango para lo que sí se puede cerrar sin ver el carro —cambio de aceite, alineación, frenos por eje— quita la primera excusa para no llamar. No hace falta el precio exacto, hace falta no esconderlo del todo.' },
-          { h3: 'Agenda de citas online', text: 'Poder reservar un horario sin depender de que alguien conteste el teléfono, sobre todo fuera de horario de oficina, es la diferencia entre una cita agendada y un cliente que ya escribió a otro taller.' },
+          { h3: 'Agenda de citas online', text: 'Reservar sin depender de que alguien conteste el teléfono, sobre todo fuera de horario de oficina, es la diferencia entre una cita agendada y un cliente que ya escribió a otro taller.' },
           { h3: 'Marcas y especialidades visibles', text: 'Decir en qué marcas, sistemas o problemas eres fuerte —cajas automáticas, diésel, una marca específica— filtra al cliente correcto y justifica un precio que no compite solo por ser el más barato.' },
-          { h3: 'Fotos reales del taller y del trabajo', text: 'El cliente quiere ver dónde va a dejar su carro y qué aspecto tiene un trabajo bien hecho antes de confiarte el suyo. Fotos propias, no de banco de imágenes, del antes y el después de reparaciones reales.' },
-          { h3: 'Reseñas visibles, no solo en Google', text: 'Aunque vivan en tu ficha de Google, mostrar algunas en la web —con nombre y, si se puede, con el trabajo que hicieron— ahorra el paso de que el cliente tenga que salir a buscarlas por su cuenta.' },
-          { h3: 'Ubicación, horario y WhatsApp directo', text: 'Con el carro varado, nadie quiere adivinar si el taller ya cerró o dónde queda exactamente. Dirección con mapa, horario real y un WhatsApp que responda son lo mínimo para no perder al cliente con prisa.' },
+          { h3: 'Fotos reales del taller y del trabajo', text: 'El cliente quiere ver dónde va a dejar su carro y cómo se ve un trabajo bien hecho. Fotos propias del antes y el después de reparaciones reales, no de banco de imágenes.' },
+          { h3: 'Reseñas visibles, no solo en Google', text: 'Mostrar algunas en la web —con nombre y, si se puede, con el trabajo que se hizo— ahorra que el cliente tenga que salir a buscarlas por su cuenta.' },
+          { h3: 'Ubicación, horario y WhatsApp directo', text: 'Con el carro varado, nadie quiere adivinar si el taller ya cerró o dónde queda. Dirección con mapa, horario real y un WhatsApp que responda son lo mínimo para no perder al cliente con prisa.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'Precios orientativos: por qué esconderlo todo ahuyenta más que aclara',
+        h2: '¿Debe un taller publicar precios si cada carro es distinto?',
         paragraphs: [
-          'El miedo más común de un taller a publicar precios es "cada carro es distinto, no puedo dar un número fijo". Es cierto, y nadie te pide que lo hagas. El problema no es publicar un precio exacto: es no publicar nada. Cuando la web de un taller no menciona ni siquiera cuánto cuesta un cambio de aceite, el cliente no piensa "debe ser complicado de cotizar" — piensa "algo están escondiendo", y sigue buscando otro taller sin que tú te enteres de que perdiste esa consulta.',
-          'Un rango de referencia para los servicios que sí se pueden cerrar sin ver el carro —cambio de aceite, alineación, frenos por eje, revisión pre-compra— resuelve esto sin comprometerte a un número que después no puedas sostener. Para lo que de verdad depende del diagnóstico, la solución no es esconder el precio: es publicar el precio de la cita de diagnóstico misma, y dejar claro que de ahí sale un presupuesto por escrito antes de tocar el carro.',
-          'Cobrar por ese diagnóstico, dicho con claridad en la web, no espanta al cliente serio — filtra al que está llamando a cinco talleres pidiendo un número por teléfono sin que nadie haya visto el carro. El que solo compara el precio más bajo que le dieron sin diagnóstico rara vez es un cliente que vale la pena perseguir; el que paga por un diagnóstico honesto sí lo es, y normalmente vuelve.',
+          'Sí, como rango. Nadie te pide un número fijo; el problema es no publicar nada. Cuando la web no menciona ni cuánto cuesta un cambio de aceite, el cliente piensa "algo están escondiendo" y sigue buscando sin que te enteres de que perdiste la consulta.',
+          'Un rango para lo que se puede cerrar sin ver el carro —aceite, alineación, frenos por eje, revisión pre-compra— resuelve esto sin comprometerte. Para lo que depende del diagnóstico, publica el precio de la cita de diagnóstico y deja claro que de ahí sale un presupuesto por escrito antes de tocar el carro. Cobrar ese diagnóstico filtra al que llama a cinco talleres pidiendo un número por teléfono; el que paga por un diagnóstico honesto normalmente vuelve.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Agendar en línea para no perder el día completo',
+        h2: '¿Para qué le sirve a un taller agendar citas en línea?',
         paragraphs: [
-          'En un taller sin agenda, el día se organiza solo, y casi nunca a tu favor: el que llega primero sin cita ocupa el elevador, el que llamó ayer se queda esperando en la sala mientras el mecánico atiende al que golpeó la puerta hace diez minutos, y el que de verdad tenía prisa —el carro varado, la cita que coordinó con su jefe para faltar al trabajo— termina esperando igual que todos los demás.',
-          'Una <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">agenda de citas online</a> no elimina la urgencia real, pero sí ordena lo que se puede ordenar: el mantenimiento planeado, el cambio de aceite, la revisión pre-compra. Esos clientes reservan un bloque, llegan sabiendo que los van a atender, y el taller sabe con antelación qué se necesita ese día —qué repuesto tener a mano, qué elevador va a estar ocupado— en vez de improvisar cada mañana.',
-          'El resultado no es solo comodidad para el cliente: es capacidad real para el taller. Cada hora que hoy se va en contestar el teléfono para coordinar una fecha es una hora que un mecánico no está trabajando en un carro. Ordenar eso con una agenda simple libera tiempo de taller sin contratar a nadie más.',
+          'Sin agenda, el que llega sin cita ocupa el elevador y el que llamó ayer espera en la sala. Una <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">agenda de citas online</a> no elimina la urgencia real, pero ordena lo planeable: mantenimiento, cambio de aceite, revisión pre-compra. El cliente reserva un bloque y el taller sabe con antelación qué repuesto tener a mano y qué elevador estará ocupado.',
+          'También libera capacidad: cada hora que hoy se va en coordinar fechas por teléfono es una hora en que un mecánico no trabaja en un carro. Ordenar eso con una agenda simple libera tiempo de taller sin contratar a nadie más.',
         ],
       },
       {
@@ -68,29 +65,26 @@ export const blog16: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Reseñas: el activo más valioso en un rubro de baja confianza',
+        h2: '¿Por qué las reseñas pesan tanto en un taller mecánico?',
         paragraphs: [
-          'En casi cualquier otro negocio, una reseña de tres estrellas entre puros cincos apenas se nota. En un taller pesa distinto: el cliente que está decidiendo a quién confiarle el carro busca activamente la reseña mala, para leer cómo respondió el taller. Esa respuesta —tranquila, con solución, sin ponerse a la defensiva— convence más que veinte reseñas perfectas sin responder.',
-          'La razón es simple: nadie puede verificar por adelantado si el diagnóstico va a ser honesto. La reseña es el sustituto de esa verificación. "Me dijeron exactamente lo que tenía, me lo explicaron y el precio fue el que me dijeron por WhatsApp" vale, en este rubro, más que cualquier frase de la propia web sobre "calidad y confianza".',
-          'Conseguirlas no depende de la suerte: se piden en el momento exacto en que el cliente recoge el carro contento, con un enlace directo que lo lleve a dejarla en dos toques. Y se responde cada una, buena o mala, porque esa respuesta pública es, para el que todavía no te conoce, la prueba de cómo tratas a alguien cuando algo no salió perfecto.',
+          'Porque nadie puede verificar por adelantado si el diagnóstico será honesto, y la reseña sustituye esa verificación. El cliente que decide a quién confiarle el carro busca la reseña mala para leer cómo respondió el taller: una respuesta tranquila y con solución convence más que veinte reseñas perfectas sin responder. "Me dijeron lo que tenía y el precio fue el que me dijeron por WhatsApp" vale más que cualquier frase de la web sobre "calidad y confianza".',
+          'Se piden en el momento en que el cliente recoge el carro contento, con un enlace directo para dejarla en dos toques, y se responde cada una, buena o mala.',
         ],
       },
       {
         type: 'prose',
         h2: 'Ubicación, horario y un WhatsApp que sepa qué preguntar',
         paragraphs: [
-          'Cuando el carro falla, la búsqueda es casi siempre la misma: "taller cerca de mí" o "taller [marca] cerca de mí", desde el celular, muchas veces con el motor apagado a un lado de la calle. Esa búsqueda no perdona ambigüedad: el que aparece primero, con dirección clara y un horario que diga si está abierto ahora mismo, se queda con la llamada. Dominar ese momento es, en buena parte, trabajo de <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y una ficha de Google Maps bien trabajada</a>, no solo de la web.',
-          'El WhatsApp cumple un papel distinto al de la emergencia: es donde el cliente que no tiene prisa pregunta antes de manejar hasta el taller. Ahí vale la pena pedir marca, modelo, año y el síntoma antes de dar cualquier número — no para hacer esperar al cliente, sino para no regalar una cifra que después no se sostiene y que termina siendo la razón por la que no vuelve.',
-          'Un mensaje de bienvenida que pida esos tres o cuatro datos, en vez de un "hola, cuénteme" abierto, ahorra varias vueltas de mensajes y deja al cliente con la sensación de que está hablando con alguien que sabe lo que hace antes de haber puesto un pie en el taller.',
+          'Cuando el carro falla, la búsqueda es "taller cerca de mí" o "taller [marca] cerca de mí", desde el celular. Se queda con la llamada el que aparece primero con dirección clara y un horario que diga si está abierto ahora. Eso es, en buena parte, trabajo de <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y una ficha de Google Maps bien trabajada</a>, no solo de la web.',
+          'El WhatsApp atiende al que pregunta antes de manejar hasta el taller. Un mensaje de bienvenida que pida marca, modelo, año y síntoma, en vez de un "hola, cuénteme", ahorra varias vueltas y evita regalar una cifra que después no se sostiene.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene invertir en una web de taller',
+        h2: '¿Cuándo no conviene invertir en una web de taller?',
         paragraphs: [
-          'No todo taller necesita esto ahora, y decirlo con honestidad vale más que vender una web que no se va a usar. Si tu taller es pequeño, de barrio, con dos o tres mecánicos y la agenda llena de clientes fijos que ya te conocen y ya confían en ti, una web nueva no te va a traer más trabajo del que ya puedes atender — te va a traer más llamadas de gente nueva a la que no le vas a poder responder rápido, y eso termina dañando la reputación que construiste a punta de boca a boca.',
-          'En ese caso, lo que rinde más no es un sitio propio: es una ficha de Google Business Profile completa —horario real, fotos, categoría correcta— que atienda a quien ya te busca por nombre, sin abrir la puerta a un volumen que no tienes cómo manejar. La web empieza a tener sentido cuando quieres crecer, sumar una especialidad, atraer clientes fuera de tu zona habitual o cuando la agenda empieza a tener huecos que antes no tenía.',
-          'Y si decides dar el paso, no siempre hace falta empezar grande: para un taller de un solo local y un mensaje claro, una <a href="/servicios/landing-pages-alta-conversion-panama/">landing enfocada en la llamada y la ubicación</a> resuelve casi todo. El sitio con página por especialidad tiene sentido cuando de verdad manejas varias líneas —mecánica, latonería, aire acondicionado— y quieres que cada una aparezca por su cuenta en Google.',
+          'Si tu taller es de barrio, con dos o tres mecánicos y la agenda llena de clientes fijos, una web nueva te traerá llamadas de gente a la que no podrás responder rápido, y eso daña la reputación que construiste de boca en boca. En ese caso rinde más una ficha de Google Business Profile completa —horario real, fotos, categoría correcta—. La web tiene sentido cuando quieres sumar una especialidad, atraer clientes de otra zona o la agenda empieza a tener huecos.',
+          'Y no siempre hace falta empezar grande: para un taller de un solo local, una <a href="/servicios/landing-pages-alta-conversion-panama/">landing enfocada en la llamada y la ubicación</a> resuelve casi todo. El sitio con página por especialidad conviene cuando manejas varias líneas —mecánica, latonería, aire acondicionado— y quieres que cada una aparezca por su cuenta en Google.',
         ],
       },
       {

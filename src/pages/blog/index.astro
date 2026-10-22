@@ -22,21 +22,18 @@ const jsonld = { '@context': 'https://schema.org', '@type': 'Blog', name: `Blog 
   jsonld={jsonld}
 >
   <!-- HERO -->
-  <section class="relative overflow-hidden bg-night pt-36 pb-16 text-white md:pt-44 md:pb-20">
-    <div class="absolute inset-0 mesh-dark opacity-50"></div>
-    <div class="sphere sphere-dark h-[440px] w-[440px] -left-24 -top-16" style="background:#00688c;opacity:.4"></div>
-    <div class="sphere sphere-dark h-[360px] w-[360px] right-[-6rem] top-20" style="background:#5ec8e8;opacity:.3"></div>
-    <div class="relative mx-auto max-w-7xl px-6">
-      <nav aria-label="Ruta de navegación" class="reveal flex items-center gap-2 text-sm text-white/45">
-        <a href="/" class="transition hover:text-teal">Inicio</a><span>/</span><span class="text-white/75">Blog</span>
+  <section class="bg-humo pb-14 pt-[calc(var(--nav-h)+40px)] text-negro md:pb-16 md:pt-[calc(var(--nav-h)+72px)]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <nav aria-label="Ruta de navegación" class="flex items-center gap-2 text-sm text-gris-texto">
+        <a href="/" class="underline underline-offset-2 hover:text-negro">Inicio</a><span aria-hidden="true">/</span><span class="text-negro">Blog</span>
       </nav>
-      <h1 class="reveal mt-5 max-w-3xl font-display text-[clamp(2.2rem,5.2vw,4rem)] font-extrabold leading-[1.03]">Aprende a hacer crecer tu negocio <span class="grad-text">en internet</span>.</h1>
-      <p class="reveal mt-6 max-w-2xl text-lg leading-relaxed text-white/60">Guías claras y sin relleno sobre diseño web, e-commerce, SEO, marketing digital e inteligencia artificial, escritas para el mercado panameño.</p>
+      <h1 class="mt-5 max-w-3xl font-display text-[clamp(2.2rem,1.4rem+3.4vw,4rem)] font-extrabold leading-[1.03] tracking-[-0.025em]">Aprende a hacer crecer tu negocio <span class="text-gris">en internet</span>.</h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-gris-texto">Guías claras y sin relleno sobre diseño web, e-commerce, SEO, marketing digital e inteligencia artificial, escritas para el mercado panameño.</p>
     </div>
   </section>
 
   <!-- LISTADO -->
-  <section class="bg-paper py-20">
+  <section class="bg-white py-20">
     <div class="mx-auto max-w-7xl px-6">
       <nav aria-label="Guías por tema" class="mb-10 rounded-3xl border border-ink/10 bg-white p-6">
         <p class="font-display text-lg font-bold text-ink">Explora por tema</p>

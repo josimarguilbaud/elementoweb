@@ -15,26 +15,25 @@ export const blog13: PageData[] = [
     date: '2026-09-19',
     heroImage: {
       src: '/images/blog/diseno-web-para-constructoras-panama.jpg',
-      alt: 'Obra de construcción con estructura de acero, grúas de fondo y cielo despejado',
+      alt: 'Casco de obra sobre una viga de acero, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Un cliente que va a construir o remodelar está por comprometer una cantidad de dinero que casi nunca arriesga en otra decisión de compra. No lo convence un eslogan ni una plantilla con foto de casco amarillo de banco de imágenes: lo convence lo que puede comprobar. Obra entregada, con fecha, con fotos y con alguien real detrás, o no hay trato.',
-      'La mayoría de las webs de constructoras en Panamá se diseñan como una tarjeta de presentación cuando deberían diseñarse como un expediente de evidencia. En esta guía repasamos qué debe tener sí o sí la web de una constructora, por qué conviene ser honesto sobre el precio antes de pisar el terreno, y en qué casos —siendo igual de honestos— la web no es lo que te va a traer el próximo contrato.',
+      'El diseño web para constructoras en Panamá convence cuando muestra evidencia comprobable: portafolio con fotos fechadas de antes, durante y después de cada obra, idoneidad y permisos a la vista, testimonios con nombre y un cotizador que pida tipo de proyecto, metraje y zona, en vez de prometer un precio exacto sin visitar el sitio.',
     ],
     blocks: [
       {
         type: 'prose',
         h2: 'El portafolio no es una vitrina: es lo que cierra el trato',
         paragraphs: [
-          'En casi cualquier otro rubro el portafolio es un adorno que acompaña la venta. En construcción es la venta. El cliente no está comprando una promesa de diseño ni una lista de servicios: está comprando la certeza de que, si te paga, el proyecto se termina. Y esa certeza solo la da ver trabajo real, terminado, con fotos que no son un render ni una foto de stock con un casco amarillo.',
-          'Lo que de verdad mueve la decisión es el avance de obra documentado: fotos fechadas que muestran cómo se veía el sitio el primer día, cómo iba a la mitad y cómo quedó al entregar. No hace falta una producción cara; alcanza con una foto tomada con el celular cada semana, ordenada por fecha, sin editar de más. Esa bitácora ataca directamente el miedo más común en este rubro: que la obra se quede a medias.',
-          'Organiza el portafolio por proyecto, no por servicio genérico: ubicación o zona, tipo de trabajo (obra nueva, remodelación, ampliación), metraje aproximado, tiempo que tomó y fotos de antes y después. Así lo organizamos en nuestro propio <a href="/portafolio/">portafolio</a>, donde por ejemplo Remodelaciones JG, una empresa de remodelación y construcción en Panamá, se presenta con sus trabajos reales, no con texto de relleno sobre "calidad y compromiso". Cada proyecto bien documentado es además una página más que Google puede mostrarle a quien busca una constructora en su zona, que es la lógica detrás del <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento web</a>.',
+          'En construcción el portafolio es la venta. El cliente que va a construir o remodelar compromete más dinero que en casi cualquier otra compra, y lo que compra es la certeza de que el proyecto se termina. Esa certeza solo la da trabajo real y terminado, no un render ni una foto de stock con casco amarillo.',
+          'Lo que mueve la decisión es el avance de obra documentado: fotos fechadas del sitio el primer día, a la mitad y al entregar. Alcanza con una foto de celular cada semana, ordenada por fecha. Esa bitácora ataca el miedo más común del rubro: que la obra se quede a medias.',
+          'Organiza el portafolio por proyecto, no por servicio genérico: zona, tipo de trabajo (obra nueva, remodelación, ampliación), metraje aproximado, duración y fotos de antes y después. Así está nuestro propio <a href="/portafolio/">portafolio</a>, donde Remodelaciones JG, empresa de remodelación y construcción en Panamá, se presenta con sus trabajos reales. Cada proyecto documentado es además una página que Google puede mostrar a quien busca una constructora en su zona, la lógica del <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento web</a>.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Lo que no puede faltar en la web de una constructora en Panamá',
-        intro: 'No hace falta que la web tenga cien secciones. Hace falta que no le falte ninguna de estas.',
+        h2: 'Diseño web para constructoras en Panamá: ¿qué no puede faltar?',
+        intro: 'Seis piezas; a la web de una constructora no le puede faltar ninguna.',
         items: [
           { h3: 'Portafolio con fotos reales y fechadas', text: 'Cada proyecto con sus propias fotos de antes, durante y después, y con la fecha visible. Sin fecha, una foto de "avance" no prueba nada.' },
           { h3: 'Certificaciones, permisos y años en el mercado', text: 'Idoneidad del responsable, permisos en regla y desde cuándo opera la empresa, a la vista y no escondidos en un PDF que nadie abre.' },
@@ -46,17 +45,17 @@ export const blog13: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Por qué no deberías prometer un precio exacto sin visitar el proyecto',
+        h2: '¿Debe una constructora publicar precios en su web?',
         paragraphs: [
-          'Una obra tiene demasiadas variables para cotizarse a ciegas: el acceso al terreno, el estado de una estructura existente si es remodelación, el tipo de suelo, los permisos que ya estén o no tramitados, los acabados que el cliente todavía no ha decidido. Poner en la web una calculadora que escupe un precio final por metro cuadrado, sin que nadie haya pisado el sitio, es prometer algo que después vas a tener que corregir hacia arriba. Y esa corrección es la que rompe la confianza, no el precio en sí.',
-          'Lo que sí puede hacer la web es dar un primer estimado honesto con muy pocos datos: tipo de proyecto (obra nueva, remodelación, ampliación), metraje aproximado y zona. Con esos tres campos alcanza para devolver un rango razonable y, más importante, para filtrar: separar al que busca información de rutina del que de verdad está por decidir. El precio cerrado llega después, cuando alguien de tu equipo ya vio el sitio en persona.',
-          'Esto no es una limitación técnica, es una decisión de honestidad que también vende. Decir con claridad que <strong>necesitas ver el proyecto para dar un número real</strong> transmite más seriedad que un simulador que le pone precio a algo que nadie ha medido. Aplicamos la misma lógica en nuestros propios servicios: los precios de referencia de una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> están publicados desde el inicio, y el número final de un proyecto a medida se cierra después de entender el alcance real, no antes.',
+          'Un rango sí; un precio exacto sin visitar el proyecto, no. Una obra tiene demasiadas variables para cotizarse a ciegas: acceso al terreno, estado de la estructura existente si es remodelación, tipo de suelo, permisos tramitados o pendientes y acabados sin decidir. Una calculadora que da un precio final por metro cuadrado sin que nadie pise el sitio obliga a corregir hacia arriba después, y esa corrección es la que rompe la confianza.',
+          'Con tres campos —tipo de proyecto (obra nueva, remodelación, ampliación), metraje aproximado y zona— la web puede devolver un rango razonable y separar al que busca información del que está por decidir. El precio cerrado llega cuando alguien del equipo ya vio el sitio en persona.',
+          'Decir que <strong>necesitas ver el proyecto para dar un número real</strong> transmite más seriedad que un simulador. Elemento Web aplica la misma lógica: los precios de referencia de una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> están publicados, y el número final de un proyecto a medida se cierra después de entender el alcance.',
         ],
       },
       {
         type: 'checklist',
         h2: 'Certificaciones y permisos: la confianza que no se puede improvisar',
-        intro: 'En construcción, la confianza no es una sensación: son documentos concretos que el cliente puede verificar. Si tu web no los muestra, alguien va a asumir que no los tienes.',
+        intro: 'En construcción la confianza son documentos que el cliente puede verificar. Si la web no los muestra, el cliente asume que no los tienes.',
         items: [
           'Idoneidad del ingeniero o arquitecto responsable, con su número de registro',
           'Permisos de construcción vigentes y en qué etapa está cada trámite',
@@ -76,18 +75,18 @@ export const blog13: PageData[] = [
         type: 'prose',
         h2: 'Testimonios reales, con el proyecto al lado',
         paragraphs: [
-          'Un testimonio genérico —"muy profesionales, quedamos encantados"— no cuesta nada escribirlo y por eso no convence a nadie. Cualquiera puede inventarlo, y el cliente que está evaluando si arriesgar su dinero contigo lo sabe. Lo que sí pesa es un testimonio con nombre y apellido, la empresa o el proyecto al que pertenece, y —siempre que se pueda— la foto del trabajo terminado justo al lado.',
-          'La forma más simple de conseguirlos es pedirlos en el momento correcto: apenas se entrega un proyecto y el cliente está contento, no meses después cuando ya se le olvidó el detalle. Pide una frase corta y honesta, y publícala junto a la ficha de ese mismo proyecto en el portafolio, no en una página de "testimonios" separada y sin contexto que nadie relaciona con nada concreto.',
-          'Esto pesa todavía más cuando el proyecto se vende sobre plano, antes de existir. Si tu constructora maneja preventas inmobiliarias, un comprador que va a pagar durante meses por algo que todavía no puede pisar necesita ver referencias de proyectos anteriores con nombre y fecha; lo desarrollamos a fondo en <a href="/industrias/diseno-web-constructoras-panama/">diseño web para constructoras y promotoras</a>.',
+          'Un testimonio genérico —"muy profesionales, quedamos encantados"— lo puede inventar cualquiera, y el cliente que evalúa arriesgar su dinero lo sabe. Pesa el testimonio con nombre y apellido, la empresa o el proyecto, y la foto del trabajo terminado al lado.',
+          'Pídelo apenas se entrega el proyecto, cuando el cliente está contento, no meses después. Una frase corta, publicada en la ficha de ese proyecto dentro del portafolio, no en una página de "testimonios" sin contexto.',
+          'Pesa todavía más cuando el proyecto se vende sobre plano. Un comprador de preventa inmobiliaria que va a pagar durante meses por algo que no puede pisar necesita referencias de proyectos anteriores con nombre y fecha; lo desarrollamos en <a href="/industrias/diseno-web-constructoras-panama/">diseño web para constructoras y promotoras</a>.',
         ],
       },
       {
         type: 'prose',
         h2: 'Cuándo una web NO es la prioridad para una constructora',
         paragraphs: [
-          'Hay que ser honestos: si tu constructora vive casi por completo de licitaciones públicas o de contratos corporativos que llegan por relación directa o por proceso de adjudicación, una web de conversión no es lo que te va a traer el próximo contrato. Ahí te evalúan <strong>por expediente</strong> —capacidad financiera, fianzas, referencias, experiencia certificada— no por lo que encuentran buscando en Google.',
-          'Eso no significa que no debas tener presencia en internet. Significa que no vale la pena invertir en un formulario de cotización optimizado, en testimonios en video o en una bitácora de avance pensada para convencer a un comprador que nunca va a llegar por ese camino. En ese caso, con un sitio institucional sobrio que respalde tu seriedad cuando alguien del comité verifica quién eres, es suficiente.',
-          'La web sí importa, y mucho, cuando del otro lado hay una persona o una empresa que decide sin pliego de licitación de por medio: el dueño de una casa que quiere remodelar, un desarrollador mediano que vende directo al público, una empresa que necesita ampliar su local. Ese cliente sí te compara con otros buscando en Google o en redes, y ahí es donde todo lo anterior —portafolio, certificaciones, testimonios, cotización honesta— realmente decide.',
+          'Si tu constructora vive casi por completo de licitaciones públicas o de contratos corporativos por relación directa o adjudicación, una web de conversión no te va a traer el próximo contrato. Ahí te evalúan <strong>por expediente</strong> —capacidad financiera, fianzas, referencias, experiencia certificada—, no por lo que aparece en Google.',
+          'En ese caso no vale la pena invertir en un cotizador optimizado, testimonios en video o una bitácora de avance para un comprador que no llega por ese camino. Basta un sitio institucional sobrio que respalde tu seriedad cuando alguien del comité verifica quién eres.',
+          'La web sí decide cuando del otro lado hay alguien que elige sin pliego de licitación: el dueño de una casa que quiere remodelar, un desarrollador mediano que vende directo al público, una empresa que necesita ampliar su local. Ese cliente compara constructoras en Google o en redes, y ahí portafolio, certificaciones, testimonios y cotización honesta definen a quién escribe.',
         ],
       },
       {

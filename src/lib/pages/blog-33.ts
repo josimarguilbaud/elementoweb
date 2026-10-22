@@ -1,10 +1,7 @@
 /* BLOG — Lote 33: guía long-form sobre diseño web para navieras y servicios
    marítimos en Panamá. PageData con parent { slug: 'blog' }; el listado /blog
    la recoge por fecha y categoría. Enlaces internos solo a slugs reales del
-   sitio (verificados contra industrias-3.ts, servicios.ts y crecimiento.ts).
-   ⚠️ Este archivo todavía no está importado en src/lib/pages/index.ts (se
-   generó junto a otros lotes de blog en paralelo); falta agregar
-   `import { blog33 } from './blog-33'` y `...blog33` al array final. */
+   sitio (verificados contra industrias-3.ts, servicios.ts y crecimiento.ts). */
 import type { PageData } from '../types';
 
 export const blog33: PageData[] = [
@@ -19,78 +16,71 @@ export const blog33: PageData[] = [
     date: '2026-09-05',
     heroImage: {
       src: '/images/blog/diseno-web-para-navieras-panama.jpg',
-      alt: 'Buque de carga grande atracado en una terminal portuaria, con contenedores apilados y grúas pórtico bajo un cielo despejado',
+      alt: 'Ancla de barco, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Un operador en Hamburgo, un agente en Singapur o un charterer en Houston escribe "ship agency Panama" o "bunkering services Panama Canal" y abre las primeras cuatro o cinco webs que le devuelve Google. No va a llamar a ninguna todavía: va a comparar certificaciones, cobertura de puertos y capacidad operativa en la pantalla, en inglés, sin que nadie le explique nada por teléfono. Esa comparación silenciosa decide quién entra a la lista corta y quién no.',
-      'La mayoría de las webs de navieras y proveedores marítimos en Panamá pierden esa decisión antes de que alguien escriba un correo: hablan de "servicios marítimos integrales" sin decir qué carga manejan, publican certificaciones sin número ni vigencia y dejan el inglés para "cuando haya tiempo". En esta guía repasamos qué credenciales de verdad mueven la aguja, por qué el inglés casi nunca es opcional en este rubro, cómo se ve el contenido técnico específico frente al genérico, y también cuándo, con honestidad, todavía no conviene invertir en una web así.',
+      'El diseño web para navieras y servicios marítimos en Panamá gana contratos cuando publica credenciales verificables (certificaciones con número y vigencia, flota, puertos, seguros), una página técnica por servicio y una versión en inglés. En Elemento Web, una landing parte desde $550, una Web empresarial desde $1,250 y un proyecto bilingüe a medida desde $2,900.',
+      'Un operador en Hamburgo, un agente en Singapur o un charterer en Houston busca «ship agency Panama» o «bunkering services Panama Canal» y compara certificaciones, cobertura de puertos y capacidad operativa en pantalla, en inglés, sin llamar a nadie. Esa comparación decide quién entra a la lista corta, y la mayoría de las webs del rubro la pierden con «servicios marítimos integrales» y certificaciones sin número ni vigencia.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Por qué aquí la web hace el trabajo que en otros rubros hace una visita',
+        h2: '¿Por qué en servicios marítimos la web hace el trabajo de una visita?',
         paragraphs: [
-          'En la mayoría de los rubros, el cliente puede visitar el local, llamar y hacer preguntas, o pedirle una referencia a un conocido antes de decidir. En servicios marítimos, casi nunca. El comprador —un armador, un operador, un agente internacional o un charterer— evalúa proveedores desde otro país, en otro huso horario y casi siempre en otro idioma, y lo único que tiene enfrente para decidir es lo que encuentra en la web.',
-          'Eso cambia la función de cada página. No es una vitrina que acompaña a un vendedor: es, en la práctica, todo el proceso de evaluación. Si la información que ese comprador necesita para justificar la contratación —muchas veces dentro de un proceso formal de aprobación de proveedor dentro de su propia empresa— no está publicada con el detalle correcto, no hay llamada de seguimiento que la reemplace.',
-          'Nuestra <a href="/industrias/diseno-web-navieras-servicios-maritimos-panama/">página de diseño web para navieras y servicios marítimos</a> entra en el detalle completo de cómo estructuramos esa evaluación por tipo de comprador. Aquí nos enfocamos en las cuatro decisiones de contenido que, en nuestra experiencia, más pesan a la hora de ganar o perder ese primer filtro.',
+          'En la mayoría de los rubros el cliente puede visitar el local, llamar o pedir una referencia antes de decidir. En servicios marítimos, casi nunca: el armador, el operador, el agente internacional o el charterer evalúa proveedores desde otro país, en otro huso horario y casi siempre en otro idioma. Lo único que tiene enfrente es tu web.',
+          'Esa web es, en la práctica, todo el proceso de evaluación. Muchas veces el comprador debe justificar la contratación dentro de un proceso formal de aprobación de proveedor; si la información que necesita no está publicada con el detalle correcto, ninguna llamada de seguimiento la reemplaza. Nuestra página de <a href="/industrias/diseno-web-navieras-servicios-maritimos-panama/">diseño web para navieras y servicios marítimos</a> detalla cómo estructuramos esa evaluación por tipo de comprador.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Las credenciales que de verdad deciden el contrato',
-        intro: 'Un comprador internacional no puede visitar tus instalaciones antes de decidir. Todo lo que necesita verificar tiene que estar publicado, con el dato exacto, no como adjetivo.',
+        h2: '¿Qué credenciales revisa un comprador marítimo antes de contratar?',
+        intro: 'Todo lo que necesita verificar tiene que estar publicado con el dato exacto, no como adjetivo.',
         items: [
           'Certificaciones y licencias con número y fecha de vigencia, no solo el logo del sello',
           'Capacidad de carga y composición de la flota: cuántas unidades, qué capacidad, qué antigüedad',
           'Cobertura real de puertos y fondeaderos: Balboa, Cristóbal, Colón, Manzanillo, o el punto exacto donde opera su buque',
           'Seguros de responsabilidad civil, con el monto de cobertura publicado',
-          'Años de operación y el tipo de cliente que atiendes habitualmente (armador, agencia, naviera, industria)',
-          'Contacto de emergencia 24/7 visible en cada página, no escondido dentro de "Contacto"',
+          'Años de operación y el tipo de cliente que atiendes (armador, agencia, naviera, industria)',
+          'Contacto de emergencia 24/7 visible en cada página, no escondido dentro de «Contacto»',
           'Tiempo de respuesta comprometido para solicitudes urgentes',
-          'Fotos reales de flota, equipo o instalaciones propias, nunca un banco de imágenes de un buque genérico',
+          'Fotos reales de flota, equipo o instalaciones propias, nunca un buque genérico de banco de imágenes',
         ],
       },
       {
         type: 'prose',
-        h2: 'Contenido técnico específico, no "servicios marítimos integrales"',
+        h2: 'Contenido técnico específico, no «servicios marítimos integrales»',
         paragraphs: [
-          '"Servicios marítimos integrales" o "soluciones logísticas a su medida" no le dicen nada a un comprador que ya sabe exactamente qué necesita. Ese comprador busca "reefer cargo agent Panama" o "underwater hull cleaning Balboa", no "servicios integrales", y una página que no usa ese vocabulario específico no aparece en su búsqueda ni responde su pregunta cuando llega.',
-          'La especificidad no es un detalle de redacción: es lo que separa a un proveedor real de uno que subcontrata todo. Decir qué tipo de carga manejas —general, contenedorizada, granel sólido o líquido, refrigerada, sobredimensionada o de proyecto— y en qué puertos, es información que un intermediario no puede replicar con la misma seguridad.',
-          '<strong>Cada servicio necesita su propia página, con su propio vocabulario técnico</strong>, de la misma forma en que cada área de práctica necesita la suya en la web de un abogado. Mezclar bunkering, husbandry, agenciamiento y servicios subacuáticos en una sola página de "Servicios" diluye a los cuatro y no compite bien en ninguno.',
+          'El comprador que ya sabe qué necesita busca «reefer cargo agent Panama» o «underwater hull cleaning Balboa», no «servicios integrales». Una página sin ese vocabulario no aparece en su búsqueda ni responde su pregunta cuando llega. Decir qué carga manejas —general, contenedorizada, granel sólido o líquido, refrigerada, sobredimensionada o de proyecto— y en qué puertos es información que un intermediario no puede replicar con la misma seguridad.',
+          '<strong>Cada servicio necesita su propia página, con su propio vocabulario técnico.</strong> Mezclar bunkering, husbandry, agenciamiento y servicios subacuáticos en una sola página de «Servicios» diluye a los cuatro y no compite bien en ninguno.',
         ],
       },
       {
         type: 'steps',
         h2: 'De lo genérico a lo específico, servicio por servicio',
-        intro: 'La misma información se puede escribir en genérico o en específico. Solo una de las dos versiones convence a alguien que ya conoce el rubro.',
+        intro: 'La misma información escrita en genérico o en específico. Solo la segunda convence a alguien que conoce el rubro.',
         items: [
-          { h3: 'Agenciamiento naviero', text: 'No "gestionamos su buque en Panamá", sino qué trámites cubres exactamente —practicaje, recalada, despacho de zarpe— y en qué puertos.' },
-          { h3: 'Bunkering y abastecimiento', text: 'No "abastecimiento de combustible", sino qué tipos de combustible, con qué capacidad de suministro y en qué fondeaderos.' },
-          { h3: 'Husbandry y crew change', text: 'No "atención a la tripulación", sino qué gestionas en concreto: cambio de tripulación entre océanos, visas, alojamiento, transporte.' },
-          { h3: 'Ship chandling y servicios subacuáticos', text: 'No "suministros y mantenimiento", sino qué suministras o inspeccionas, y con qué certificación respaldas ese trabajo.' },
+          { h3: 'Agenciamiento naviero', text: 'No «gestionamos su buque en Panamá», sino qué trámites cubres —practicaje, recalada, despacho de zarpe— y en qué puertos.' },
+          { h3: 'Bunkering y abastecimiento', text: 'No «abastecimiento de combustible», sino qué tipos de combustible, con qué capacidad de suministro y en qué fondeaderos.' },
+          { h3: 'Husbandry y crew change', text: 'No «atención a la tripulación», sino qué gestionas: cambio de tripulación entre océanos, visas, alojamiento, transporte.' },
+          { h3: 'Ship chandling y servicios subacuáticos', text: 'No «suministros y mantenimiento», sino qué suministras o inspeccionas y con qué certificación respaldas ese trabajo.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'El inglés no es un plus: es la mitad del negocio',
+        h2: '¿Necesita una naviera en Panamá su web en inglés?',
         paragraphs: [
-          'Panamá compite por naturaleza en un mercado internacional: el Canal, el registro de buques más grande del mundo y una posición que ninguna otra plaza puede copiar hacen que buena parte del cliente potencial de una naviera o proveedor marítimo panameño esté, literalmente, en otro continente. Ese cliente busca en inglés, con la terminología del sector, y compara Panamá contra otras plazas antes de escribir.',
-          'Una web solo en español lo deja fuera de la conversación por completo. Y una traducción automática suele ser peor que no tenerla: en un rubro técnico, un término mal traducido de forma literal se lee como amateurismo y descalifica antes de la primera línea.',
-          'Aquí conviene ser honestos con el presupuesto: la versión en inglés no viene incluida por defecto en ningún paquete. Se cotiza como contenido adicional, sobre las páginas de servicio que sí vendes internacionalmente —no hace falta traducir el sitio completo—, y en la práctica suele ser lo que empuja un proyecto del rango de Web empresarial hacia un proyecto corporativo a medida. No es un costo escondido: traducir bien contenido técnico es trabajo real, y cobrarlo aparte es más honesto que subirlo al precio base sin decirlo.',
+          'En la mayoría de los casos, sí. El Canal, el registro de buques más grande del mundo y una posición geográfica que ninguna otra plaza puede copiar hacen que buena parte del cliente potencial esté en otro continente. Ese cliente busca en inglés, con la terminología del sector, y compara Panamá contra otras plazas antes de escribir.',
+          'Una web solo en español lo deja fuera. Una traducción automática suele ser peor: en un rubro técnico, un término traducido de forma literal se lee como amateurismo y descalifica antes de la primera línea.',
+          'La versión en inglés no viene incluida por defecto en ningún paquete. Se cotiza como contenido adicional, solo sobre las páginas de servicio que vendes internacionalmente, y en la práctica suele llevar el proyecto de Web empresarial a un proyecto corporativo a medida. Traducir bien contenido técnico es trabajo real, y cobrarlo aparte es más transparente que subirlo al precio base sin decirlo.',
         ],
       },
       {
-        type: 'statement',
-        text: 'Nadie va a visitar tus oficinas antes de decidir si te contrata.',
-        strong: 'Tu web hace esa evaluación completa, en los dos idiomas, o la pierdes ante quien sí la hace.',
-      },
-      {
         type: 'prose',
-        h2: 'Cuándo NO conviene invertir todavía en esta web',
+        h2: '¿Cuándo no conviene invertir todavía en la web de una naviera?',
         paragraphs: [
-          'No toda naviera o proveedor marítimo necesita el mismo nivel de inversión, y decirlo con honestidad ahorra dinero mal gastado. Si tu operación trabaja prácticamente al cien por ciento a través de agentes o brókers externos —ellos consiguen la carga, ellos negocian, ellos mantienen la relación con el cliente final— y no tienes ningún interés en captar clientes de forma directa, invertir en una web bilingüe extensa, con página propia por servicio y por puerto, es pagar por una capacidad que no vas a usar.',
-          'En ese caso, lo honesto es una presencia simple: una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> desde $550 más ITBMS que confirme que existes, muestre tus certificaciones básicas y dé un canal de contacto directo, es suficiente. El bróker que te subcontrata no decide por tu web; decide por la relación que ya tiene contigo.',
-          'Donde sí se justifica ir más allá —una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> bilingüe, con página propia por línea de servicio y por cobertura de puerto— es cuando quieres reducir la dependencia de esos intermediarios y competir directo por el cliente internacional que hoy le está pagando el margen a una agencia de fuera. Es una decisión de negocio antes que de diseño: primero decide si quieres captar directo, después se diseña la web que lo soporta.',
+          'Si tu operación trabaja casi al cien por ciento a través de agentes o brókers externos —ellos consiguen la carga, negocian y mantienen la relación con el cliente final— y no te interesa captar clientes directos, una web bilingüe extensa con página por servicio y por puerto es pagar una capacidad que no vas a usar.',
+          'Ahí basta una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> desde $550 más ITBMS que confirme que existes, muestre tus certificaciones básicas y dé un canal de contacto directo. El bróker que te subcontrata decide por la relación que ya tiene contigo, no por tu web.',
+          'Sí se justifica una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> bilingüe, con página por línea de servicio y por cobertura de puerto, cuando quieres reducir la dependencia de intermediarios y competir directo por el cliente internacional que hoy le paga el margen a una agencia de fuera. Primero se decide si quieres captar directo; después se diseña la web que lo soporta.',
         ],
       },
       {

@@ -169,7 +169,7 @@ if (v2) {
         <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {b.items.map((it, i) => (
             <article class="reveal group rounded-3xl border border-ink/10 bg-white p-7 transition-colors duration-500 hover:border-transparent hover:bg-night hover:text-white">
-              <div aria-hidden="true" class="font-display text-4xl font-extrabold text-ink/10 transition-colors duration-500 group-hover:text-teal">{String(i + 1).padStart(2, '0')}</div>
+              <div aria-hidden="true" class="font-display text-4xl font-extrabold text-ink/10 transition-colors duration-500 group-hover:text-negro">{String(i + 1).padStart(2, '0')}</div>
               <h3 class="mt-4 font-display text-lg font-bold text-ink transition-colors duration-500 group-hover:text-white">{it.h3}</h3>
               <p class="mt-2 text-sm leading-relaxed text-ink/70 transition-colors duration-500 group-hover:text-white/60" set:html={it.text}></p>
             </article>

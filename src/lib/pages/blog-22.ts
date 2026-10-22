@@ -15,26 +15,25 @@ export const blog22: PageData[] = [
     date: '2026-08-25',
     heroImage: {
       src: '/images/blog/diseno-web-para-logistica-transporte-panama.jpg',
-      alt: 'Interior de una bodega logística moderna con contenedores de carga organizados por color y camiones de reparto estacionados bajo luz natural',
+      alt: 'Camión de reparto a escala, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Un gerente de compras que necesita mover carga de Colón a David, o una empresa que busca transporte de última milla en la ciudad, escribe "transporte de carga Panamá" o "empresa de logística Panamá" con una decisión que tomar antes de fin de semana. Abre cuatro o cinco resultados, los compara en un par de minutos y descarta los que no le dan nada concreto en los primeros segundos. No está buscando quién dice ser "el líder en soluciones logísticas": está buscando quién puede probar que no le va a fallar la carga.',
-      'La mayoría de las webs de transporte y logística en Panamá pierden esa decisión sin darse cuenta: hablan en superlativos, mezclan todos los servicios en una sola página y no dejan cotizar sin escribir primero. En esta guía repasamos qué credenciales debe mostrar la web para pasar el primer filtro B2B, cómo diseñar un cotizador que reemplace el ida y vuelta de correos, por qué la cobertura de rutas se revisa antes que el precio, y cuándo, con honestidad, todavía no conviene invertir en ella.',
+      'El diseño web para logística y transporte en Panamá convence a un comprador B2B con evidencia, no con adjetivos: RUC y años de operación visibles, seguro de carga y certificaciones con vigencia, rutas nombradas una por una, flota real y un cotizador que pida origen, destino y tipo de carga. Así lo construimos en Elemento Web, Ciudad de Panamá.',
+      'El gerente de compras que busca "transporte de carga Panamá" abre cuatro o cinco resultados y descarta en segundos los que no le dan nada concreto. Esta guía explica qué mostrar, cómo diseñar el cotizador, cuánto cuesta y cuándo todavía no conviene invertir.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Por qué la confianza en logística se construye con evidencia, no con adjetivos',
+        h2: '¿Por qué en logística la confianza se construye con evidencia?',
         paragraphs: [
-          'Nadie contrata transporte de carga como quien elige un restaurante por las fotos. La persona que llega a la web de una empresa de logística está evaluando a quién le va a confiar mercancía que probablemente vale más que el flete mismo, y muchas veces tiene que justificar esa elección ante su jefe o ante finanzas. Por eso no decide por diseño bonito: decide por señales verificables de que la operación es real y responde si algo sale mal.',
-          'Ahí está la diferencia con la mayoría de los negocios. Un restaurante compite con fotos que dan hambre; una tienda compite con precio y disponibilidad. Una empresa de transporte compite con evidencia: seguro de carga vigente, certificaciones del sector, flota real, cobertura de rutas nombrada una por una, y clientes que lo confirmen. Quitar cualquiera de esas señales no simplifica la web: la hace ver como una opción informal más, justo lo que un comprador corporativo evita.',
-          'Esto no es un detalle de diseño, es la estrategia completa. Antes de elegir plantilla o colores hay que decidir qué credenciales va a mostrar la web y en qué orden, porque de eso depende si el comprador te pone en la lista corta o sigue buscando. Nuestra <a href="/industrias/diseno-web-logistica-transporte-panama/">página de diseño web para logística y transporte</a> entra en el detalle de cómo montamos esa evidencia para una operación en Panamá.',
+          'Quien llega a la web de una empresa de logística va a confiarle mercancía que suele valer más que el flete, y muchas veces tiene que justificar la elección ante su jefe o ante finanzas. No decide por diseño: decide por señales verificables de que la operación es real y responde si algo sale mal. Quitar cualquiera de esas señales no simplifica la web: la hace ver como una opción informal más.',
+          'Por eso, antes de elegir plantilla o colores, hay que decidir qué credenciales mostrará la web y en qué orden. Nuestra <a href="/industrias/diseno-web-logistica-transporte-panama/">página de diseño web para logística y transporte</a> detalla cómo montamos esa evidencia para una operación en Panamá.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Lo que la web de una empresa de logística y transporte en Panamá debe tener sí o sí',
-        intro: 'Si tu web —o la de tu operación— no muestra esto, no importa qué tan bien se vea: le falta lo que un comprador B2B revisa antes de escribir.',
+        h2: '¿Qué debe tener el diseño web para logística y transporte?',
+        intro: 'Lo que un comprador B2B revisa antes de escribir, por bien que se vea la web.',
         items: [
           'RUC, razón social y años de operación visibles, no escondidos en el pie de página',
           'Cobertura geográfica clara, con las rutas o zonas que cubres nombradas una por una',
@@ -48,23 +47,22 @@ export const blog22: PageData[] = [
       },
       {
         type: 'steps',
-        h2: 'Un cotizador de envío en vez de un formulario genérico de contacto',
-        intro: 'El cuello de botella de casi toda operación de transporte no es conseguir consultas: es el ida y vuelta de correos preguntando lo que faltó. Un cotizador bien diseñado pide justo lo necesario para dar un estimado.',
+        h2: '¿Qué debe pedir un cotizador de envío en la web?',
+        intro: 'El cuello de botella no es conseguir consultas: es el ida y vuelta de correos preguntando lo que faltó. Un cotizador pide justo lo necesario para un estimado.',
         items: [
-          { h3: '1. Origen y destino', text: 'Lo primero, porque de ahí sale la mitad del cálculo. Si cubres varias rutas o países, una lista o un mapa clicable evita que alguien escriba a mano un destino que ni siquiera cubres.' },
-          { h3: '2. Tipo de carga y modo', text: 'Marítimo, aéreo, terrestre o multimodal, y si es carga general, refrigerada o peligrosa. Cada modo tiene un cálculo distinto, y preguntarlo de entrada evita cotizar a ciegas.' },
-          { h3: '3. Peso, volumen o contenedor', text: 'Contenedor completo o carga suelta, y peso o dimensiones aproximadas. Con eso —no antes— se puede dar un número real en vez de un rango que no compromete a nadie.' },
-          { h3: '4. Fecha estimada e incoterm si aplica', text: 'Cuándo necesita moverse la carga y, si el cliente ya lo sabe, en qué incoterm. Quien no lo sepa, que pueda dejarlo en blanco: no es el momento de exigir jerga de comercio exterior a un importador pequeño.' },
-          { h3: '5. Cómo prefiere que lo contacten', text: 'Correo, llamada o WhatsApp. Dejar elegir el canal sube la tasa de respuesta, porque quien compra transporte para su empresa no revisa todos los canales con la misma prisa.' },
+          { h3: '1. Origen y destino', text: 'De ahí sale la mitad del cálculo. Si cubres varias rutas o países, una lista o un mapa clicable evita que alguien escriba un destino que no cubres.' },
+          { h3: '2. Tipo de carga y modo', text: 'Marítimo, aéreo, terrestre o multimodal, y si es carga general, refrigerada o peligrosa. Cada modo tiene un cálculo distinto.' },
+          { h3: '3. Peso, volumen o contenedor', text: 'Contenedor completo o carga suelta, y peso o dimensiones aproximadas. Con eso se puede dar un número real en vez de un rango que no compromete a nadie.' },
+          { h3: '4. Fecha estimada e incoterm si aplica', text: 'Cuándo debe moverse la carga y, si el cliente lo sabe, en qué incoterm. Que se pueda dejar en blanco: no hay que exigir jerga de comercio exterior a un importador pequeño.' },
+          { h3: '5. Cómo prefiere que lo contacten', text: 'Correo, llamada o WhatsApp. Dejar elegir el canal sube la tasa de respuesta.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'Cobertura geográfica: lo primero que revisa un comprador antes de escribir',
+        h2: '¿Cómo mostrar la cobertura de rutas en la web?',
         paragraphs: [
-          'Antes de llenar cualquier formulario, quien busca transporte quiere saber una cosa muy simple: si tú cubres su ruta. Panamá funciona como bisagra regional —Zona Libre de Colón, puerto y tránsito hacia Centroamérica y el Caribe—, y esa posición es una ventaja competitiva real que casi ninguna web comunica con claridad. Decir "cobertura nacional e internacional" no dice nada; nombrar las rutas, las ciudades y los países sí.',
-          'Un mapa simple con las rutas marcadas, o al menos una lista ordenada por zona —área metropolitana, interior, fronteras, marítimo internacional—, resuelve en diez segundos lo que un párrafo de texto no resuelve en dos minutos. Es información que el comprador va a buscar de todos modos; la diferencia es si la encuentra en tu web o en la de otro.',
-          'Y conviene mostrarlo con evidencia, no solo con la lista: fotos reales de bodega, patio y flota, y casos concretos por tipo de operación (importación, mudanza internacional, carga refrigerada, última milla). Puedes ver cómo lo organizamos en la práctica en nuestro <a href="/portafolio/">portafolio</a>, con proyectos reales de mudanzas y carga internacional en Panamá.',
+          'Nombrándolas. Antes de llenar cualquier formulario, el comprador quiere saber si cubres su ruta. Panamá es bisagra regional —Zona Libre de Colón, puerto y tránsito hacia Centroamérica y el Caribe—, una ventaja que casi ninguna web comunica: "cobertura nacional e internacional" no dice nada; nombrar rutas, ciudades y países sí. Un mapa con las rutas o una lista por zona (área metropolitana, interior, fronteras, marítimo internacional) lo resuelve en diez segundos.',
+          'Acompáñalo con fotos reales de bodega, patio y flota, y casos por tipo de operación: importación, mudanza internacional, carga refrigerada, última milla. Puedes ver cómo lo organizamos en nuestro <a href="/portafolio/">portafolio</a>, con proyectos de mudanzas y carga internacional en Panamá.',
         ],
       },
       {
@@ -74,29 +72,26 @@ export const blog22: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'SEO por ruta y tipo de servicio: cada búsqueda es distinta',
+        h2: '¿Por qué hacer una página por ruta o tipo de servicio?',
         paragraphs: [
-          'Nadie escribe en Google "empresa de logística en Panamá" cuando tiene una carga que mover esta semana. Escribe "transporte de carga Colón a David", "mudanza internacional desde Panamá" o "carga refrigerada Panamá ciudad". Son búsquedas distintas, con una urgencia detrás, y Google las trata como preguntas distintas.',
-          'Si todos tus servicios viven apretados en una sola página de "Servicios", le pides a esa página que responda cinco preguntas a la vez, y normalmente no gana ninguna. Con una página por tipo de carga o por ruta principal —el problema en el idioma del cliente, la cobertura exacta y el cotizador como llamado a la acción— compites de verdad en las búsquedas donde ese comprador ya te está buscando.',
-          'No hay atajo honesto: nadie garantiza el primer lugar en Google, y quien lo prometa está exagerando. Lo que sí es cierto es que el contenido específico, sostenido en el tiempo, tiene muchas más posibilidades de aparecer que una sola página genérica. Lo explicamos con más detalle en nuestra guía de <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento web</a>.',
+          'Quien tiene una carga que mover esta semana no busca "empresa de logística en Panamá": busca "transporte de carga Colón a David", "mudanza internacional desde Panamá" o "carga refrigerada Panamá ciudad". Google las trata como preguntas distintas, y una sola página de "Servicios" que intenta responder cinco a la vez normalmente no gana ninguna.',
+          'Una página por tipo de carga o ruta principal —el problema en el idioma del cliente, la cobertura exacta y el cotizador— compite en las búsquedas donde ese comprador ya te busca. Nadie puede garantizar el primer lugar, pero el contenido específico y sostenido tiene muchas más posibilidades que una página genérica. Lo explicamos en nuestra guía de <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento web</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuánto cuesta la web de una empresa de logística en Panamá',
+        h2: '¿Cuánto cuesta la web de una empresa de logística en Panamá?',
         paragraphs: [
-          'Depende de cuántos servicios vas a mostrar y de si necesitas cotizador o portal de seguimiento. Una <a href="/servicios/diseno-web-corporativo-panama/">Web empresarial</a> de hasta 6 páginas —una por tipo de servicio o ruta principal, con cotizador y blog— parte de $1,250 y es el punto de partida recomendado para la mayoría de las operaciones de transporte y logística. Una landing enfocada, si solo necesitas presencia y contacto directo, parte de $550. Los precios son en dólares y no incluyen el 7% de ITBMS.',
-          'Un portal de seguimiento de envíos o una integración con tu sistema de operaciones ya no es un paquete cerrado: es desarrollo a medida desde $2,900, según qué tan a fondo se integre con lo que ya usas. Un e-commerce completo (desde $1,950) casi nunca aplica en este rubro, salvo que además de transportar vendas insumos o repuestos con carrito y pago en línea.',
-          'A esto se suma la infraestructura —Hosting Compartido $225/año, Cloud $350/año o VPS Dedicado $550/año, todos con dominio y SSL incluidos— y el mantenimiento mensual, con tres niveles: Básico $99, Prioritario $169 y Empresarial $319. Si el cotizador o el rastreo son parte de tu operación diaria, el plan Empresarial está pensado justo para negocios que no se pueden dar el lujo de una caída; si tu web es más una carta de presentación, el Básico cubre lo esencial. El detalle completo está en nuestra guía de <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura</a>.',
+          'Una <a href="/servicios/diseno-web-corporativo-panama/">Web empresarial</a> de hasta 6 páginas —una por servicio o ruta principal, con cotizador y blog— parte de $1,250 y es el punto de partida recomendado para la mayoría de las operaciones. Una landing enfocada, solo con presencia y contacto directo, parte de $550. Un portal de seguimiento de envíos o una integración con tu sistema de operaciones es desarrollo a medida desde $2,900. Un e-commerce (desde $1,950) solo aplica si además vendes insumos o repuestos con carrito y pago en línea.',
+          'Se suma la infraestructura —Hosting Compartido $225/año, Cloud $350/año o VPS Dedicado $550/año, con dominio y SSL incluidos— y el mantenimiento mensual: Básico $99, Prioritario $169 y Empresarial $319. Si el cotizador o el rastreo son parte de tu operación diaria, conviene el Empresarial; si la web es una carta de presentación, el Básico cubre lo esencial. Precios en dólares, sin el 7% de ITBMS. Más detalle en nuestra guía de <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene invertir todavía en la web de tu operación de transporte',
+        h2: '¿Cuándo no conviene invertir todavía en la web de tu operación de transporte?',
         paragraphs: [
-          'No toda empresa de transporte necesita este aparato de confianza B2B, y decirlo con honestidad ahorra dinero mal gastado. Si trabajas en exclusiva para dos o tres clientes fijos, con contrato renovado cada año, y no tienes ninguna intención de captar carga nueva por tu cuenta, gran parte de lo anterior —cotizador público, SEO por ruta, cobertura detallada— es una inversión que no vas a usar. Ese cliente ya te conoce; no te está comparando en Google.',
-          'En ese caso rinde más algo simple: una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> desde $550 con tus datos, tu RUC, tus certificaciones y un WhatsApp directo para lo administrativo, sin pretender competir por tráfico frío que no necesitas.',
-          'Donde sí se justifica el paquete completo —la Web empresarial desde $1,250, con cotizador, cobertura y una página por servicio— es cuando quieres dejar de depender solo de esos dos o tres contratos, cuando manejas rutas o modos que compiten por búsquedas distintas, o cuando ya perdiste una cotización frente a un competidor que simplemente se veía más serio en Google.',
+          'Si trabajas en exclusiva para dos o tres clientes fijos con contrato anual y no buscas carga nueva, el cotizador público, el SEO por ruta y la cobertura detallada son una inversión que no usarás: ese cliente no te compara en Google. Ahí rinde más una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> desde $550 con tus datos, RUC, certificaciones y un WhatsApp directo para lo administrativo.',
+          'La Web empresarial desde $1,250, con cotizador, cobertura y una página por servicio, se justifica cuando quieres dejar de depender de esos contratos, cuando manejas rutas o modos que compiten por búsquedas distintas, o cuando ya perdiste una cotización frente a un competidor que se veía más serio en Google.',
         ],
       },
       {

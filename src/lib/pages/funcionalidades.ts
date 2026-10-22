@@ -22,14 +22,13 @@ export const funcionalidades: PageData[] = [
       ],
     },
     lead: [
-      'Una web moderna no solo informa: cobra, responde y agenda. Estas tres funcionalidades hacen la diferencia entre un folleto y una herramienta.',
-      'Cada una se integra a tu sitio actual o al que construyamos juntos. Y las tres comparten un objetivo: que el visitante complete la acción sin fricción y sin esperar a que alguien de tu equipo esté disponible.',
+      'Cobrar, responder y agendar: tres funcionalidades que se integran en tu sitio actual o en uno nuevo para que el visitante complete la acción sin esperar a tu equipo.',
     ],
     blocks: [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Integramos en tu página web las funcionalidades que cobran, responden y agendan: Botón de Pago Yappy y tarjeta, CyberSource con 3-D Secure, chatbot con IA que responde con tu información y pasa a una persona cuando no sabe, y reservas online con recordatorios y depósito. Funcionan en tu sitio actual o en uno nuevo.',
+        text: 'Elemento Web, desde Ciudad de Panamá, integra en tu página web funciones que cobran, responden y agendan: Botón de Pago Yappy y tarjeta, CyberSource desde $1,050 con 3-D Secure, chatbot con IA sobre WazaCRM desde $349 al mes, y reservas online con recordatorios y depósito. Funcionan en tu sitio actual, tras una revisión técnica, o en uno nuevo.',
       },
       {
         type: 'tabla',
@@ -64,16 +63,6 @@ export const funcionalidades: PageData[] = [
         nota: 'Ninguna de estas tres cosas espera a que alguien de tu equipo esté disponible.',
       },
       {
-        type: 'cards',
-        h2: 'Qué puedes integrar',
-        items: [
-          { h3: 'Yappy y pasarelas de pago', text: 'Cobra en tu web como pagan los panameños: Botón de Pago Yappy oficial más tarjetas. Sin transferencias por captura de pantalla.', link: { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y Pasarelas' } },
-          { h3: 'Integración de CyberSource', text: 'Si tu banco te dio las llaves de CyberSource, dejamos tu web cobrando con tarjeta de verdad: firma en el servidor, 3-D Secure 2 y confirmación por webhook.', link: { slug: 'funcionalidades/integracion-cybersource-panama', label: 'Integración CyberSource' } },
-          { h3: 'Chatbot con IA', text: 'Un asistente entrenado con tu información que responde en tu web, WhatsApp e Instagram las 24 horas. Con WazaCRM, nuestro producto.', link: { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' } },
-          { h3: 'Reservas y citas online', text: 'Tu cliente agenda solo, con disponibilidad real, recordatorios automáticos y pago anticipado si lo necesitas.', link: { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' } },
-        ],
-      },
-      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -93,7 +82,7 @@ export const funcionalidades: PageData[] = [
         intro: 'Sin sorpresas: revisamos, cotizamos cerrado y recién ahí tocamos tu web.',
         items: [
           { h3: 'Revisión técnica', text: 'Vemos sobre qué está construida tu web y si soporta la integración. Si la base no da, te lo decimos antes de cobrar nada.' },
-          { h3: 'Alcance y cotización cerrada', text: 'Definimos exactamente qué se integra y recibes una cotización cerrada por escrito antes de empezar. Cero letra chica.' },
+          { h3: 'Alcance y cotización cerrada', text: 'Definimos exactamente qué se integra y recibes una cotización cerrada por escrito antes de empezar.' },
           { h3: 'Integración y pruebas reales', text: 'Conectamos la funcionalidad y la probamos en ambiente real: un pago de prueba, una conversación real, una reserva de punta a punta.' },
           { h3: 'Publicación y acompañamiento', text: 'Publicamos cuando todo funciona y te mostramos cómo operarlo. Quedamos disponibles por WhatsApp para los primeros días.' },
         ],
@@ -112,9 +101,8 @@ export const funcionalidades: PageData[] = [
         type: 'prose',
         h2: 'Las tres funcionan mejor juntas',
         paragraphs: [
-          'Cada funcionalidad rinde sola, pero se potencian cuando conversan entre sí. El <strong>chatbot con IA</strong> agenda una cita, el <strong>sistema de reservas</strong> cobra el anticipo con Yappy y la <strong>pasarela de pago</strong> confirma todo sin que nadie de tu equipo levante un dedo. Ese es el escenario que buscamos: el visitante completa la acción de principio a fin.',
-          'También comparten la misma lógica de negocio: reducir la fricción y quitarle trabajo repetitivo a tu equipo. Un mensaje sin responder, un pago que quedó en "lo hago después" o una cita coordinada en diez mensajes son ventas que se enfrían. Automatizar esos tres momentos es donde una web deja de ser un folleto.',
-          'Y todo esto suma para tu <strong>posicionamiento</strong>: Google premia las webs donde el usuario completa lo que vino a hacer sin rebotar. Si quieres que además te encuentren, el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Panamá</a> hace que estas funcionalidades reciban el tráfico que merecen.',
+          'Conectadas, el <strong>chatbot con IA</strong> agenda la cita, el <strong>sistema de reservas</strong> cobra el anticipo con Yappy y la <strong>pasarela de pago</strong> confirma, sin que nadie de tu equipo intervenga. Un mensaje sin responder, un pago que quedó en "lo hago después" o una cita coordinada en diez mensajes son ventas que se enfrían: automatizar esos tres momentos es lo que convierte una web en herramienta.',
+          'Para que reciban tráfico, el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Panamá</a> te pone en el mapa de tu zona.',
         ],
       },
       { type: 'form', h2: 'Cuéntanos qué quieres que haga tu web', intro: 'Dinos en qué plataforma está tu sitio y qué quieres que resuelva solo: cobrar, responder o agendar.' },
@@ -158,7 +146,7 @@ export const funcionalidades: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Integramos el Botón de Pago Yappy y pasarelas con tarjeta en tu web o tienda en Panamá: el cliente paga en la misma página, el pedido queda confirmado y ligado a su orden, y también puedes cobrar por WhatsApp con enlaces de pago. Probamos cobros reales antes de publicar. En tiendas nuevas nuestras va incluida.',
+        text: 'Elemento Web, desde Ciudad de Panamá, integra Yappy en tu página web o tienda: Botón de Pago Yappy oficial y tarjeta en la misma página, cada pago ligado a su orden y enlaces de pago para cobrar por WhatsApp. Probamos un cobro real antes de publicar, con 30 días de garantía. En tiendas nuevas desde $1,950 va incluido.',
       },
       {
         type: 'receipt',
@@ -226,7 +214,7 @@ export const funcionalidades: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué integramos',
+        h2: 'Qué incluye integrar Yappy en tu página web',
         intro: 'La integración es un trabajo de una vez, con 30 días de garantía por fallas técnicas. En tiendas nuevas nuestras va incluida.',
         incluye: [
           { t: 'Botón de Pago Yappy', d: 'El oficial de Banco General, en tu web o tienda.' },
@@ -245,7 +233,7 @@ export const funcionalidades: PageData[] = [
       {
         type: 'checklist',
         h2: 'Qué hace falta para empezar a cobrar en línea',
-        intro: 'Lo que hay que tener listo antes de que nada de esto se pueda configurar.',
+        intro: 'Lo que tu empresa debe tener listo antes de configurar cualquier pasarela.',
         items: [
           'Empresa constituida con aviso de operación vigente',
           'Cuenta bancaria a nombre de la empresa, no personal',
@@ -272,29 +260,24 @@ export const funcionalidades: PageData[] = [
         type: 'prose',
         h2: 'Qué necesitas para cobrar en línea en Panamá',
         paragraphs: [
-          'Para el <strong>Botón de Pago Yappy</strong> necesitas una cuenta comercial en Banco General y tu registro de comercio. Nosotros gestionamos la parte técnica: credenciales, integración, confirmaciones y pruebas.',
-          'Para <strong>tarjetas</strong>, las pasarelas disponibles en Panamá evalúan tu actividad comercial y volumen. Te orientamos sobre cuál conviene según tu banco y tu ticket promedio, y preparamos la documentación técnica que piden.',
-          'El resultado: el cliente paga en tu página, tú recibes la confirmación al instante y el pedido queda registrado. <strong>Nada de perseguir capturas de pantalla</strong> a las once de la noche.',
+          'Para el <strong>Botón de Pago Yappy</strong> necesitas una cuenta comercial en Banco General y tu registro de comercio. Para <strong>tarjetas</strong>, las pasarelas disponibles en Panamá evalúan tu actividad comercial y tu volumen; te orientamos sobre cuál conviene según tu banco y tu ticket promedio.',
+          'De nuestro lado va la parte técnica: credenciales, integración, confirmaciones, pruebas y la documentación técnica que pide cada pasarela.',
         ],
       },
       {
         type: 'prose',
         h2: 'La conciliación es el trabajo que aparece después',
         paragraphs: [
-          'Cobrar en línea resuelve un problema y crea otro que nadie menciona en la venta: saber qué pago corresponde a qué pedido.',
-          'Con transferencias es evidente: llegan montos a la cuenta y alguien tiene que emparejarlos con pedidos, muchas veces persiguiendo comprobantes por WhatsApp. Con pasarelas es más sutil pero también existe: el dinero llega en depósitos agrupados con la comisión ya descontada, y cuadrar eso con las ventas del día requiere método.',
-          'La integración bien hecha reduce mucho ese trabajo, porque el pedido queda marcado como pagado automáticamente cuando la pasarela confirma. Lo que no desaparece es la conciliación contable de fin de mes, que sigue necesitando que los datos estén ordenados.',
-          '<strong>Vale la pena definir desde el inicio quién concilia y con qué frecuencia.</strong> Es la tarea que se acumula en silencio y termina explotando en el cierre del año.',
+          'Cobrar en línea crea otra tarea: saber qué pago corresponde a qué pedido. Con transferencias, alguien empareja montos con pedidos persiguiendo comprobantes; con pasarelas, el dinero llega en depósitos agrupados con la comisión descontada. La integración marca el pedido como pagado cuando la pasarela confirma, pero la conciliación contable de fin de mes sigue necesitando datos ordenados.',
+          '<strong>Vale la pena definir desde el inicio quién concilia y con qué frecuencia.</strong> Es la tarea que se acumula en silencio hasta el cierre del año.',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: cuántos pagos se completan',
         paragraphs: [
-          'El número que importa no es cuántos pagos entraron, es qué porcentaje de los que empezaron a pagar terminaron. La diferencia entre esos dos es dinero que estuvo a un paso de entrar.',
-          'Si mucha gente abandona en el paso del pago, hay tres sospechosos habituales y en este orden: falta el método que esperaban, aparece un costo que no estaba antes, o el proceso pide crear cuenta. Los tres se arreglan sin publicidad.',
-          'El segundo dato es el reparto por método. Suele desmentir suposiciones: negocios convencidos de que su clientela paga con tarjeta descubren que la mayoría usa Yappy, o al revés. Ese dato decide dónde vale la pena reducir fricción.',
-          'Y los pagos fallidos por causa. <strong>Un pico de fallos técnicos puede pasar semanas desapercibido</strong> mientras se pierden ventas que el negocio ni sabe que existieron.',
+          'El número que importa es qué porcentaje de los que empezaron a pagar terminaron. Si abandonan en el pago, los sospechosos son tres, en este orden: falta el método que esperaban, aparece un costo nuevo o el proceso pide crear cuenta.',
+          'Después, el reparto por método, que suele desmentir lo que el negocio suponía sobre Yappy y tarjeta, y los pagos fallidos por causa: <strong>un pico de fallos técnicos puede pasar semanas desapercibido</strong> si nadie lo mide.',
         ],
       },
       {
@@ -380,7 +363,7 @@ export const funcionalidades: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Implementamos chatbots con IA para tu página web en Panamá: un asistente que responde con tu información aprobada, admite cuando no sabe y pasa la conversación a tu equipo con el contexto, capta datos, agenda citas y une web, WhatsApp e Instagram en una bandeja. Corre sobre WazaCRM, nuestro producto, y queda en marcha en unas 2 semanas.',
+        text: 'Elemento Web, desde Ciudad de Panamá, implementa un chatbot con IA para tu página web: responde solo con tu información aprobada, admite cuando no sabe y pasa la conversación a tu equipo con el contexto, agenda citas y une web, WhatsApp e Instagram en una bandeja. Corre sobre WazaCRM, desde $349 al mes, y arranca en unas 2 semanas.',
       },
       {
         type: 'receipt',
@@ -451,7 +434,7 @@ export const funcionalidades: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué hace el asistente',
+        h2: 'Qué incluye el chatbot para tu página web',
         intro: 'La implementación se cotiza cerrada. La licencia de WazaCRM es mensual y el consumo de Meta y del motor de IA se paga por uso desde tus cuentas.',
         incluye: [
           { t: 'Responde con tu información', d: 'Busca en los documentos que aprobaste antes de responder (técnica RAG).' },
@@ -482,55 +465,38 @@ export const funcionalidades: PageData[] = [
         type: 'prose',
         h2: 'Por qué no inventa respuestas',
         paragraphs: [
-          'El miedo justificado con la IA es que improvise. Se controla con la técnica correcta: <strong>RAG</strong> (generación aumentada por recuperación). Antes de responder, el asistente busca en los documentos que tú aprobaste (precios, requisitos, políticas) y construye la respuesta solo desde ahí.',
-          'Cuando la información no está en sus documentos, lo dice y deriva a tu equipo. <strong>Preferimos un asistente que derive de más a uno que invente</strong>: el segundo destruye la confianza de tu cliente en una sola conversación mala.',
+          'El riesgo con la IA es que improvise, y se controla con <strong>RAG</strong> (generación aumentada por recuperación): antes de responder, el asistente busca en los documentos que tú aprobaste (precios, requisitos, políticas) y construye la respuesta solo desde ahí. Si la información no está, lo dice y deriva a tu equipo: <strong>preferimos un asistente que derive de más a uno que invente</strong>.',
           'La conexión con WhatsApp e Instagram usa las APIs oficiales de Meta, no soluciones no oficiales que Meta bloquea sin aviso.',
-        ],
-      },
-      {
-        type: 'prose',
-        h2: 'Lo que un asistente no debe hacer nunca',
-        paragraphs: [
-          'La mayoría de los fracasos con asistentes de IA no vienen de que responda mal: vienen de haberle dado tareas que no le tocaban.',
-          'Un asistente no debe cerrar ventas complejas ni negociar precios fuera de lo publicado. No debe dar diagnósticos médicos, asesoría legal ni recomendaciones financieras, aunque el cliente insista. Y no debe manejar un reclamo delicado: alguien molesto que recibe una respuesta automática se enoja el doble.',
-          'Tampoco debe inventar. Cuando la pregunta sale de lo que tiene documentado, la respuesta correcta es decir que no lo sabe y ofrecer pasar a una persona. Un asistente que improvisa genera compromisos que el negocio después tiene que cumplir o desmentir, y las dos salidas son malas.',
-          '<strong>El límite se define antes de encenderlo</strong>, no cuando aparece el primer problema. Y esa lista de límites es tan importante como el contenido con el que se le entrena.',
         ],
       },
       {
         type: 'prose',
         h2: 'El traspaso a un humano es la función más importante',
         paragraphs: [
-          'Suena contradictorio y es la clave de que la gente acepte hablar con un asistente: saber que hay una salida.',
-          'El traspaso tiene que cumplir tres condiciones. Estar siempre disponible, no escondido tras cinco intentos fallidos. Llevar el contexto, para que el cliente no tenga que repetir lo que ya escribió, que es lo que más molesta de estos sistemas. Y ser honesto sobre el horario: si nadie va a responder hasta mañana, hay que decirlo en vez de dejar a la persona esperando.',
-          'Bien montado, el asistente actúa como un filtro: resuelve lo repetitivo (precios, horarios, ubicación, qué documentos hacen falta) y le entrega a tu equipo solo las conversaciones que de verdad necesitan una persona, ya con el contexto recogido.',
-          '<strong>El objetivo no es que el asistente atienda todo.</strong> Es que tu equipo deje de contestar veinte veces al día la misma pregunta y pueda dedicarse a las conversaciones que cierran.',
+          'La gente acepta hablar con un asistente cuando sabe que hay una salida. El traspaso cumple tres condiciones: siempre disponible, no escondido tras cinco intentos; con el contexto, para que el cliente no repita lo que ya escribió; y honesto sobre el horario si nadie va a responder hasta mañana.',
+          'Así el asistente funciona como filtro: resuelve lo repetitivo (precios, horarios, ubicación, documentos) y entrega a tu equipo solo las conversaciones que necesitan una persona.',
         ],
       },
       {
         type: 'prose',
         h2: 'De qué se alimenta, y por qué eso decide si funciona',
         paragraphs: [
-          'Un asistente es tan bueno como el contenido que le das. Ese es el trabajo real del proyecto y donde casi nadie pone el esfuerzo.',
-          'Lo que necesita no es un documento corporativo: son respuestas concretas a lo que la gente pregunta de verdad. Precios o rangos, horarios, ubicación y cómo llegar, qué incluye cada servicio, plazos, formas de pago, qué documentos hacen falta, política de cambios.',
-          'La mejor fuente para armarlo está en tu propio WhatsApp: las últimas doscientas conversaciones muestran exactamente qué se pregunta y con qué palabras. Es mucho más útil que cualquier manual redactado desde cero.',
-          '<strong>Y hay que mantenerlo.</strong> Un asistente entrenado con precios del año pasado da respuestas equivocadas con total seguridad, que es peor que no responder. Actualizarlo cuando cambian precios u horarios es parte del servicio, no un extra.',
+          'Un asistente es tan bueno como su contenido: respuestas concretas a lo que la gente pregunta de verdad, como precios o rangos, horarios, ubicación, qué incluye cada servicio, plazos, formas de pago y política de cambios. La mejor fuente son tus últimas doscientas conversaciones de WhatsApp, que muestran qué se pregunta y con qué palabras.',
+          '<strong>Y hay que mantenerlo:</strong> entrenado con precios del año pasado, responde mal con total seguridad. Actualizarlo cuando cambian precios u horarios es parte del servicio.',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: cuántas conversaciones resolvió solo',
         paragraphs: [
-          'La métrica central es qué porcentaje de conversaciones terminó sin que interviniera una persona. Es el trabajo que el asistente absorbió y se puede traducir directamente en horas de equipo.',
-          'La segunda, y la más útil para mejorarlo, es la lista de preguntas que no supo responder. Cada una es un hueco en su contenido, y revisarla cada semana al principio hace que el asistente mejore rápido.',
-          'El tercero es qué pasó después del traspaso: de las conversaciones que llegaron a una persona, cuántas terminaron en venta. Si esa tasa es alta, el filtro está funcionando y te está entregando gente calificada.',
-          'Y el horario de las conversaciones. <strong>La proporción que ocurre fuera del horario de atención suele ser la sorpresa</strong>, porque son consultas que antes simplemente se perdían.',
+          'La métrica central es el porcentaje de conversaciones que terminó sin intervención de una persona: trabajo absorbido que se traduce en horas de equipo. La más útil para mejorarlo es la lista de preguntas que no supo responder, revisada cada semana al principio.',
+          'Después, cuántas conversaciones traspasadas terminaron en venta, que dice si el filtro entrega gente calificada, y qué proporción llega fuera del horario de atención: consultas que antes se perdían.',
         ],
       },
       {
         type: 'cards',
         h2: 'Dónde rinde más un asistente con IA',
-        intro: 'Cualquier negocio con muchas consultas repetidas gana; estos son los casos donde el retorno se nota primero.',
+        intro: 'Rinde en cualquier negocio con muchas consultas repetidas; en estos tres se nota primero.',
         items: [
           { h3: 'Negocios que agendan citas', text: 'El asistente responde dudas y agenda directo en tu sistema de reservas, sin que nadie coordine por chat.', link: { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' } },
           { h3: 'Tiendas y catálogos', text: 'Responde por talla, precio y disponibilidad, y deriva al cobro con Yappy cuando el cliente decide comprar.', link: { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Cobro con Yappy' } },
@@ -611,7 +577,7 @@ export const funcionalidades: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Ponemos reservas y citas online en tu web en Panamá: tu cliente agenda solo con tu disponibilidad real, recibe confirmación y recordatorios por correo y WhatsApp, y puede dejar un depósito con Yappy o tarjeta. La agenda se sincroniza con tu calendario, admite varios profesionales o sedes y te devuelve las horas de coordinar citas por chat.',
+        text: 'Elemento Web, desde Ciudad de Panamá, instala sistemas de reservas online en tu web: el cliente agenda solo con tu disponibilidad real, recibe confirmación y recordatorios por correo y WhatsApp, y puede dejar un depósito con Yappy o tarjeta. La agenda se sincroniza con tu calendario y admite varios profesionales o sedes, con 30 días de garantía.',
       },
       {
         type: 'receipt',
@@ -678,7 +644,7 @@ export const funcionalidades: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye el sistema',
+        h2: 'Qué incluye el sistema de reservas online',
         intro: 'Se cotiza cerrado tras revisar tu flujo de citas.',
         incluye: [
           { t: 'Disponibilidad real', d: 'Calendario sincronizado en dos direcciones: sin citas dobles.' },
@@ -724,9 +690,7 @@ export const funcionalidades: PageData[] = [
         type: 'prose',
         h2: 'El depósito es lo que de verdad corta las ausencias',
         paragraphs: [
-          'Poner la agenda en línea resuelve la mitad del problema: el cliente reserva sin llamar. La otra mitad (que aparezca) necesita algo más que un recordatorio.',
-          'Los recordatorios ayudan y no bastan. El que iba a faltar igual falta, y ese hueco de una hora un sábado ya no se recupera. Lo que sí cambia el comportamiento es que haya algo en juego, aunque sea poco.',
-          'Un depósito pequeño al reservar hace que la persona avise cuando no puede ir, y ese aviso te devuelve el cupo con tiempo de llenarlo. No es por el dinero: es por el compromiso. La objeción de siempre es que espanta clientes, y en la práctica espanta exactamente a quien iba a faltar.',
+          'La agenda en línea hace que el cliente reserve sin llamar; que aparezca necesita algo más que un recordatorio. Un depósito pequeño al reservar hace que la persona avise cuando no puede ir, y ese aviso te devuelve el cupo con tiempo de llenarlo. Espanta exactamente a quien iba a faltar.',
           'Se monta dentro del propio flujo de reserva con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy o pasarela</a>, y conviene aplicarlo solo donde la ausencia duele: servicios largos, horarios pico y citas de ticket alto.',
         ],
       },
@@ -734,9 +698,7 @@ export const funcionalidades: PageData[] = [
         type: 'prose',
         h2: 'Dos calendarios sin sincronizar generan citas dobles',
         paragraphs: [
-          'Es el fallo más común al poner una agenda en línea y el que peor cae en el cliente: reservó, llegó, y el espacio estaba ocupado.',
-          'Ocurre cuando la agenda web vive por su cuenta y el equipo sigue anotando citas en otro lado, sea un cuaderno, una hoja de cálculo o el calendario del teléfono de alguien. Las dos agendas creen que la hora está libre.',
-          'La solución técnica es sincronización en dos direcciones: si alguien bloquea una hora en el calendario interno, esa hora desaparece de la web al instante, y viceversa. Sin eso, el sistema en línea es una promesa que el negocio no puede cumplir.',
+          'El cliente reservó, llegó y el espacio estaba ocupado: pasa cuando la agenda web vive por su cuenta y el equipo sigue anotando en un cuaderno, una hoja de cálculo o el teléfono de alguien. La solución técnica es sincronización en dos direcciones: si alguien bloquea una hora en el calendario interno, desaparece de la web al instante, y viceversa.',
           '<strong>Y hay una decisión de operación detrás, no solo técnica:</strong> hay que acordar que la agenda oficial es una sola. Un equipo que sigue anotando aparte convierte cualquier sistema en un problema nuevo.',
         ],
       },
@@ -744,10 +706,8 @@ export const funcionalidades: PageData[] = [
         type: 'prose',
         h2: 'Qué medir: reservas sin intervención y ausencias',
         paragraphs: [
-          'El número que justifica el sistema es cuántas reservas se completaron <strong>sin que nadie del equipo tuviera que intervenir</strong>. Ese es el trabajo que se dejó de hacer, y puesto en horas al mes es lo que el sistema devuelve.',
-          'El segundo es la tasa de ausencia, comparada antes y después. Si el depósito está activo en algunos servicios y no en otros, la comparación entre ellos dice si conviene extenderlo.',
-          'El tercero es el horario en que se reserva. Casi siempre sorprende: una porción grande de las reservas ocurre fuera del horario de atención, de noche o en fin de semana. Esas son las que directamente no existían antes, porque no había a quién llamar.',
-          'Y la ocupación por franja horaria, que dice qué horas se llenan solas y cuáles hay que promocionar. Es información de negocio, no solo de sistema.',
+          'El número que justifica el sistema es cuántas reservas se completaron <strong>sin que nadie del equipo tuviera que intervenir</strong>: puesto en horas al mes, es lo que el sistema devuelve. Después, la tasa de ausencia antes y después, comparando servicios con y sin depósito para saber si conviene extenderlo.',
+          'Y cuándo se reserva: las reservas de noche o en fin de semana no existían antes porque no había a quién llamar, y la ocupación por franja dice qué horas se llenan solas y cuáles hay que promocionar.',
         ],
       },
       {
@@ -844,7 +804,7 @@ export const funcionalidades: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Integramos CyberSource Unified Checkout en tu web en Panamá para cobrar con tarjeta de crédito y débito: firma HMAC en el servidor, 3-D Secure 2 y confirmación por webhook. Hay tres alcances con precio cerrado: $1,050, $2,150 y $3,850, sin ITBMS. Tu servidor nunca toca los datos de la tarjeta, así que tu cumplimiento queda en PCI-DSS SAQ A.',
+        text: 'Elemento Web, desde Ciudad de Panamá, integra CyberSource Unified Checkout en tu web para cobrar con tarjeta de crédito y débito: firma HMAC en el servidor, 3-D Secure 2 y confirmación por webhook. Tres alcances con precio cerrado: $1,050, $2,150 y $3,850, sin ITBMS. Tu servidor nunca toca la tarjeta, así que tu cumplimiento queda en PCI-DSS SAQ A.',
       },
       {
         type: 'receipt',

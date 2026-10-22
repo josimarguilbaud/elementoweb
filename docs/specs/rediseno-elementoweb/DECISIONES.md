@@ -524,6 +524,26 @@ con la respuesta «rec» (corrida main-20261021-231921).
   portada (`portada-v3`) y después el menú y el pie (`80f2bf6`); se puede revertir solo la portada y dejar el menú.
 - **Pendiente:** medir GSC y GA4 contra la línea base, como en D51, con el corte del 22-oct a las 06:27 UTC.
 
+### D57. Páginas internas en monocromo, sin redundancia y con respuestas directas (22-oct-2026)
+Pedido del dueño: «Trabaja en todas las secciones internas para pasarla al mono cromo. Termina todas las páginas
+internas. Mejóralas quita lo redundante en esas páginas. Siempre pensando en el seo y Geo avanzado. Cuando termines
+comitea y despliega», con una plantilla común, mockups de fal e imágenes nuevas, usando agentes.
+- **Plantilla:** los nombres de color del tema (`night`, `teal`, `teal-deep`, `violet`) y los tokens `--ew-` se
+  conservan pero valen negro, blanco y grises (el error y el éxito conservan su color). Así ~250 páginas y ~200 clases
+  cambian sin tocarlas una a una. Héroe claro `#F5F5F5` para las páginas v2 y las antiguas, como el de la portada v3.
+  Se quitó el bloque de cierre de la plantilla antigua: repetía el del pie.
+- **Mockups:** `~/.gstack/projects/josimarguilbaud-elementoweb/designs/internas-v3/` (servicio y blog), US$ 0,75.
+- **Imágenes:** renders de cromo plateado sobre `#F5F5F5`, uno por tema, para los 81 héroes de `public/images/hero/`
+  (con sus imágenes para compartir) y para las portadas propias de blog e industrias. `heroFor()` ya no enlaza Unsplash.
+  Tanda `internas-v3` con tope de US$ 27 (se subió de 20 a 27 para cubrir blog e industrias).
+- **Contenido (6 agentes, uno por grupo de archivos):** el primer párrafo de cada página responde la pregunta en 40 a
+  60 palabras con la palabra clave y datos concretos; H2 en forma de pregunta donde hay búsqueda real; fuera párrafos y
+  bloques repetidos, frases de relleno, cierres «escríbenos» dentro del cuerpo y afirmaciones sin fuente. Sin cambios en
+  slug, title, description, H1, breadcrumb, fecha ni FAQ (salvo dos preguntas duplicadas en `/industrias/`).
+- **SEO congelado:** el schema de las páginas cuya imagen de portada cambió difiere solo en los campos de la imagen
+  (comprobado comparando el JSON-LD contra una compilación sin las imágenes nuevas); cada una tiene su permiso con este
+  motivo en `scripts/cambios-permitidos.json`.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

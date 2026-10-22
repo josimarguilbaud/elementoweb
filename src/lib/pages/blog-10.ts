@@ -16,30 +16,27 @@ export const blog10: PageData[] = [
     date: '2026-09-16',
     heroImage: {
       src: '/images/blog/diseno-web-para-restaurantes-panama.jpg',
-      alt: 'Plato gourmet bien emplatado sobre una mesa de restaurante, con luz cálida de ambiente',
+      alt: 'Bandeja con campana de servir entreabierta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Nadie decide dónde va a comer parado en la puerta de tu restaurante. Lo decide antes, en el celular, comparando dos o tres opciones en menos de un minuto: el menú, las fotos, el horario, si hay mesa o si conviene pedir para la casa. Ese minuto lo gana quien muestra esa información rápido y bien, no quien tiene la carta más bonita impresa junto a la entrada.',
-      'En esta guía vemos qué de verdad decide si la web de un restaurante en Panamá vende: el menú visual con fotos reales del plato, por qué el mapa de Google pesa más que la propia página para "cerca de mí", si conviene reserva de mesa o pedido para llevar según cómo vendes, y también cuándo un restaurante todavía no necesita invertir en esto.',
+      'El diseño web para restaurantes en Panamá vende cuando el cliente, desde el celular y en menos de un minuto, ve menú con fotos reales, precios, horario de hoy, ubicación y cómo reservar o pedir. En Elemento Web, una landing con menú y WhatsApp parte de $550 y una Web empresarial con reservas, de $1,250, sin ITBMS.',
     ],
     blocks: [
       {
         type: 'prose',
         h2: 'El menú visual decide antes de que el cliente llegue',
         paragraphs: [
-          'En un restaurante, la venta casi nunca empieza en la puerta: empieza en el celular, minutos u horas antes, cuando alguien decide dónde va a comer. Mira dos o tres opciones, compara fotos y precios, y elige. Si tu web no le muestra el plato tal como es, perdiste esa decisión sin enterarte siquiera.',
-          'Por eso el menú visual, con fotos reales de tus platos —tomadas en tu cocina, con tu vajilla, tu porción real—, es la pieza más importante de la web de un restaurante. Pesa más que la animación de portada, que la tipografía elegida o que cualquier otro detalle de diseño. Una foto de banco de imágenes, por bonita que sea, no es tu comida, y el cliente lo nota apenas se sienta a la mesa.',
-          'El otro extremo, igual de común, es el menú en PDF, muchas veces fotografiado con el celular o escaneado hace años: hay que descargarlo, ampliarlo con los dedos y a veces ni siquiera se lee bien el precio. Un menú en página real, organizado por categorías, se lee cómodo y se actualiza en minutos. Repasamos cada pieza de esa web, sede por sede si tienes varias, en <a href="/industrias/diseno-web-restaurantes-panama/">diseño web para restaurantes</a>.',
+          'La venta de un restaurante empieza en el celular, minutos u horas antes de llegar: el cliente compara dos o tres opciones por fotos y precios, y elige. Por eso el menú con fotos reales de tus platos —tomadas en tu cocina, con tu vajilla y tu porción real— es la pieza más importante de la web, por encima de la animación de portada o la tipografía. Una foto de banco de imágenes no es tu comida, y el cliente lo nota al sentarse a la mesa.',
+          'El otro error común es el menú en PDF, escaneado o fotografiado hace años: hay que descargarlo, ampliarlo con los dedos y a veces el precio no se lee. Un menú en página real, organizado por categorías, se lee cómodo y se actualiza en minutos. Repasamos cada pieza de esa web, sede por sede si tienes varias, en <a href="/industrias/diseno-web-restaurantes-panama/">diseño web para restaurantes</a>.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Lo que no puede faltar en la web de un restaurante',
-        intro: 'Si tu web ya cumple con todo esto, tienes lo esencial resuelto. Si falla en varios puntos, ahí está la prioridad.',
+        h2: '¿Qué debe tener la web de un restaurante en Panamá?',
         items: [
           'Menú en página real, no en PDF, organizado por categorías y con precios visibles',
-          'Fotos reales de los platos y del local, no banco de imágenes genérico',
-          'Ubicación, horario y botón de WhatsApp visibles sin tener que buscarlos',
+          'Fotos reales de los platos y del local, no banco de imágenes',
+          'Ubicación, horario de hoy y botón de WhatsApp visibles sin hacer scroll',
           'Reserva de mesa o pedido para llevar, según cómo vendas de verdad',
           'Ficha de Google Business Profile con el mismo horario y menú que la web',
           'Carga rápida en el celular, incluso con datos móviles y poca señal',
@@ -49,20 +46,18 @@ export const blog10: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'SEO local: el mapa es el buscador para "cerca de mí"',
+        h2: 'SEO local para restaurantes: el mapa decide las búsquedas "cerca de mí"',
         paragraphs: [
-          'Nadie que busca "restaurante cerca de mí" o "dónde comer cerca" pasa primero por un buscador tradicional: pasa por el mapa. Google le muestra tres negocios con fotos, calificación y horario, y la decisión ocurre ahí, muchas veces sin llegar a abrir ninguna web. Para un restaurante, esa cajita de mapa es el canal número uno, por encima del sitio propio.',
-          'Esa cajita se alimenta de tu ficha de Google Business Profile, no de tu web. Si tiene fotos viejas, un horario que no coincide con la realidad o el menú desactualizado, estás perdiendo clientes que ya te habían encontrado. Ya escribimos una guía completa sobre <a href="/blog/optimizar-google-business-profile-panama/">cómo optimizar tu ficha de Google</a>, con los pasos para dejarla lista.',
-          'La web entra después: su trabajo es sostener lo que el mapa promete, con el mismo horario, el mismo menú y una carga rápida en el celular. Esto se trabaja como una estrategia continua, no como un botón que se aprieta una vez —lo profundizamos en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>—, y como con cualquier SEO, nadie te puede garantizar el primer lugar: lo que sí se puede es dejar de perder clientes por una ficha o una web descuidadas.',
+          'Quien busca "restaurante cerca de mí" o "dónde comer cerca" decide en el mapa de Google: tres negocios con fotos, calificación y horario, muchas veces sin abrir ninguna web. Esa cajita se alimenta de tu ficha de Google Business Profile, no de tu sitio; con fotos viejas, horario equivocado o menú desactualizado, pierdes clientes que ya te habían encontrado. Los pasos para dejarla lista están en nuestra guía sobre <a href="/blog/optimizar-google-business-profile-panama/">cómo optimizar tu ficha de Google</a>.',
+          'La web sostiene lo que el mapa promete: el mismo horario, el mismo menú y una carga rápida en el celular. Es un trabajo continuo, que profundizamos en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>; nadie puede garantizar el primer lugar, pero sí dejar de perder clientes por una ficha o una web descuidadas.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Reservas o pedidos para llevar: dos modelos, dos webs distintas',
+        h2: '¿Reservas online o pedidos para llevar? Dos modelos, dos webs',
         paragraphs: [
-          'No toda web de restaurante necesita lo mismo, porque no todos venden igual. Si tu fuerte es la mesa —cenas, grupos, ocasiones especiales—, lo que más importa es que reservar sea fácil sin depender de que alguien conteste el teléfono en hora pico. Una <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reserva online</a> conectada a tu disponibilidad real confirma sola y llena mesas mientras la cocina trabaja.',
-          'Si en cambio vives del para llevar y el delivery, el problema es otro: las plataformas externas cobran una comisión importante en cada pedido y se quedan con el contacto del cliente, que termina siendo suyo, no tuyo. Un pedido directo desde tu web, coordinado por WhatsApp y cobrado con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy o tarjeta</a>, te deja el margen completo con el cliente que ya te conoce y repite.',
-          'La mayoría de los restaurantes en Panamá viven un poco de cada modelo, y está bien que la web lo refleje: reserva para el grupo del sábado, pedido directo para quien ya sabe qué va a pedir un martes cualquiera. Lo que no conviene es construir la web pensando solo en el modelo que menos usas.',
+          'Si tu fuerte es la mesa —cenas, grupos, ocasiones especiales—, lo prioritario es reservar sin depender de que alguien conteste el teléfono en hora pico. Una <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reserva online</a> conectada a tu disponibilidad real confirma sola mientras la cocina trabaja.',
+          'Si vives del para llevar y el delivery, las plataformas externas cobran comisión en cada pedido y se quedan con el contacto del cliente. Un pedido directo desde tu web, coordinado por WhatsApp y cobrado con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy o tarjeta</a>, te deja el margen completo con el cliente que ya te conoce. La mayoría de los restaurantes en Panamá combinan ambos modelos; la web debe priorizar el que más usas.',
         ],
       },
       {
@@ -76,26 +71,20 @@ export const blog10: PageData[] = [
         ],
       },
       {
-        type: 'statement',
-        text: 'El cliente no elige tu restaurante en tu web.',
-        strong: 'Lo elige en el mapa, con hambre, en menos de un minuto.',
-      },
-      {
         type: 'prose',
         h2: 'Ubicación, horario y WhatsApp: lo que se ve sin buscar',
         paragraphs: [
-          'Quien busca dónde comer casi nunca está de humor para investigar. Quiere saber, en el mismo primer vistazo y sin hacer scroll, dónde queda el lugar, si está abierto ahora mismo y cómo escribir para preguntar o reservar. Si esa información está escondida detrás de un menú de tres niveles, perdiste al cliente apurado, que es la mayoría.',
-          'Esto no es un detalle de diseño: es una decisión de prioridad. La ubicación con mapa, el horario de hoy —no solo el horario general— y un botón de WhatsApp fijo, visibles desde el celular sin tener que buscarlos, valen más que cualquier sección institucional sobre la historia del restaurante.',
-          'Todo esto además tiene que cargar rápido con datos móviles, no solo con el wifi del local, porque la decisión ocurre casi siempre antes de llegar. Si sospechas que tu web tiene ese problema en general, conviene revisarla completa: escribimos una guía aparte sobre <a href="/blog/diseno-web-responsive-mobile-first-panama/">diseño responsive pensado primero para el celular</a>.',
+          'Quien busca dónde comer quiere saber, en el primer vistazo y sin hacer scroll, dónde queda el lugar, si está abierto ahora y cómo escribir para reservar. La ubicación con mapa, el horario de hoy —no solo el general— y un botón de WhatsApp fijo valen más que una sección sobre la historia del restaurante.',
+          'Todo eso tiene que cargar rápido con datos móviles, no solo con el wifi del local, porque la decisión ocurre antes de llegar. Para revisar ese punto en toda la web, escribimos una guía sobre <a href="/blog/diseno-web-responsive-mobile-first-panama/">diseño responsive pensado primero para el celular</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene invertir en una web propia (todavía)',
+        h2: '¿Cuándo no conviene que un restaurante invierta en web propia?',
         paragraphs: [
-          'No todo restaurante necesita esto ahora, y decirlo con honestidad ahorra un gasto que no tocaba todavía. Si tu negocio vive casi al cien por ciento de las apps de delivery, no tienes local para recibir gente y ningún cliente te ha pedido un canal directo, una web completa es una inversión adelantada a su momento. Antes de pagar por un canal propio, conviene que exista, aunque sea de a poco, la demanda que lo justifique.',
-          'Lo mismo pasa con el local de barrio, informal, de toda la vida: la fonda o el puesto donde la clientela es fija, llega por recomendación y por el letrero de la esquina, no por una búsqueda en Google. Ahí muchas veces alcanza con tener bien resuelta la ficha de Google Business Profile, que es gratis, antes de pagar por un sitio completo que casi nadie va a visitar.',
-          'La señal de que sí llegó el momento suele ser concreta: clientes recurrentes que preguntan si pueden pedir directo, una comisión de delivery que empieza a doler en el margen, o una segunda sede que ya no se puede explicar bien por WhatsApp. Ahí la web deja de ser un gasto estético y se vuelve la herramienta que faltaba.',
+          'Si tu negocio vive casi por completo de las apps de delivery, no tienes local para recibir gente y ningún cliente te ha pedido un canal directo, una web completa se adelanta a la demanda.',
+          'Tampoco la necesita todavía la fonda o el puesto de barrio con clientela fija, que llega por recomendación y por el letrero de la esquina: ahí suele bastar con una ficha de Google Business Profile bien resuelta, que es gratis.',
+          'Las señales de que sí llegó el momento son concretas: clientes recurrentes que preguntan si pueden pedir directo, una comisión de delivery que ya pesa en el margen, o una segunda sede que no se puede explicar bien por WhatsApp.',
         ],
       },
       {

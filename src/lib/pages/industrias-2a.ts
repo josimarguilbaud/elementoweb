@@ -18,13 +18,12 @@ export const industrias2a: PageData[] = [
     heroImage: { src: '/images/industrias/diseno-web-contadores-panama.jpg', alt: 'Escritorio de un contador con estados financieros, calculadora y documentos fiscales' },
     lead: [
       'Un cliente te va a entregar sus números, su planilla y su relación con la DGI. No contrata al primero que aparece: contrata al que se ve serio.',
-      'En contabilidad la web no cierra la venta, construye la confianza que la hace posible. El empresario que busca contador llega con miedo a las multas, a los reparos y a que le manejen mal el ITBMS. Una web que transmite orden, idoneidad y cumplimiento lo convence de dar el primer paso; una improvisada lo manda al siguiente nombre de la lista.',
+      'El diseño web para contadores en Panamá que hacemos en Elemento Web, desde Ciudad de Panamá, incluye una página por servicio (contabilidad mensual, planilla, ITBMS, renta, constitución de empresas), la idoneidad del CPA, artículos sobre el calendario fiscal de la DGI y un formulario que filtra por tipo de cliente. El formato típico es una web empresarial desde $1,250.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué necesita la web de un contador o firma contable',
-        intro: 'La web de una firma contable vende una sola cosa antes que un servicio: la tranquilidad de que sus números quedan en buenas manos.',
+        h2: '¿Qué debe tener la web de un contador en Panamá?',
         items: [
           'Una página por servicio: contabilidad mensual, planilla, ITBMS, renta, auditoría, constitución de empresas',
           'Idoneidad del CPA y del equipo, visible y verificable, con número de registro',
@@ -38,31 +37,28 @@ export const industrias2a: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La confianza es tu producto, y se diseña',
+        h2: '¿Cómo transmite seriedad la web de una firma contable?',
         paragraphs: [
-          'Nadie entrega su contabilidad por impulso. El cliente compara dos o tres firmas, revisa quién las respalda y decide por una sensación difícil de fingir: seriedad. Esa sensación se construye con detalles concretos, no con adjetivos. La idoneidad del contador con su número de registro, los años de experiencia, el tipo de empresas que ya atiendes y un lenguaje que demuestra que dominas el terreno fiscal panameño pesan más que cualquier promesa.',
-          'El error común es una web que habla de la firma en abstracto: "brindamos servicios contables de calidad". Eso no dice nada. El cliente quiere ver que entiendes <strong>su</strong> problema: que sabes de la declaración de ITBMS mensual, del cierre de renta, de la planilla del Seguro Social, del reporte a la Superintendencia si aplica. Cuando la web habla ese idioma, el visitante siente que ya lo entendieron antes de la primera reunión.',
-          'Y como manejas información sensible, la web tiene que respirar reserva. Un formulario que pide cifras de facturación por un canal abierto asusta; uno que pide solo lo necesario para agendar una consulta y ofrece WhatsApp o correo para lo demás transmite el cuidado que el cliente espera de quien va a ver sus números.',
+          'Nadie entrega su contabilidad por impulso: el cliente compara dos o tres firmas y elige la que se ve seria. Eso se demuestra con datos, no con adjetivos: la idoneidad del contador con su número de registro, los años de ejercicio, el tipo de empresas que ya atiendes.',
+          '«Brindamos servicios contables de calidad» no dice nada. El cliente quiere ver que entiendes <strong>su</strong> problema: la declaración de ITBMS mensual, el cierre de renta, la planilla de la Caja de Seguro Social, el reporte a la Superintendencia si aplica. Y como se trata de información sensible, el formulario pide solo lo necesario para agendar; las cifras van por otro canal.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Una página por servicio: así te encuentra el cliente correcto',
+        h2: 'Una página por servicio contable: así te encuentra el cliente correcto',
         paragraphs: [
-          'El empresario no busca "contador" a secas. Busca "declaracion de renta Panama", "contador para planilla", "constitucion de sociedad anonima Panama" o "quien me lleva el ITBMS". Si todos tus servicios viven amontonados en una sola pagina de "Servicios", no compites en ninguna de esas busquedas concretas.',
-          'Cada servicio merece su propia URL, con el problema explicado en el idioma del cliente, qué incluye, para quién es y qué plazos maneja. Una página para renta de persona natural, otra para contabilidad mensual de PYME, otra para constitución de empresas. <strong>Así se posiciona una firma contable: servicio por servicio</strong>, capturando a cada cliente en el momento exacto de su necesidad.',
-          'Ese contenido tambien te ahorra tiempo: las mismas preguntas que respondes veinte veces por WhatsApp (cuando vence el ITBMS, que gastos son deducibles, cuanto cuesta llevar una contabilidad) se convierten en articulos que trabajan solos, atraen busquedas y llegan al cliente con la duda ya medio resuelta. Si ademas usas <a href="/saas/cifrao/">Cifrao</a> para la gestion contable, la web puede presentar ese respaldo tecnologico como un diferenciador frente al contador que aun trabaja todo en hojas de calculo sueltas.',
+          'El empresario no busca «contador» a secas. Busca «declaración de renta Panamá», «contador para planilla», «constitución de sociedad anónima Panamá» o «quién me lleva el ITBMS». Si todos tus servicios viven en una sola página de «Servicios», no compites en ninguna de esas búsquedas.',
+          'Cada servicio merece su propia URL: el problema en el idioma del cliente, qué incluye, para quién es y qué plazos maneja. Renta de persona natural, contabilidad mensual de PYME y constitución de empresas son tres páginas, no una. <strong>Así se posiciona una firma contable: servicio por servicio.</strong>',
+          'Si llevas la gestión contable en <a href="/saas/cifrao/">Cifrao</a>, la web lo presenta como diferenciador frente al contador que todavía trabaja en hojas de cálculo sueltas.',
         ],
       },
       {
         type: 'steps',
         h2: 'Cómo trabajamos tu web de firma contable',
-        intro: 'El mismo proceso ordenado que un cliente espera de su contador, aplicado a tu web.',
         items: [
-          { h3: 'Mapa de servicios y clientes', text: 'Listamos cada servicio que ofreces y a qué tipo de cliente atiende (persona natural, PYME, sociedad, Zona Libre) para decidir qué merece página propia y posicionable.' },
-          { h3: 'Contenido con autoridad fiscal', text: 'Redactamos cada servicio con dominio real del terreno panameño: plazos, obligaciones y beneficios, sin jerga vacía y sin prometer lo que la normativa no permite.' },
-          { h3: 'Confianza y captación', text: 'Montamos idoneidad, equipo, recursos y un formulario que filtra la consulta, con WhatsApp directo para lo que el cliente prefiere no escribir en un formulario.' },
-          { h3: 'Publicación y crecimiento', text: 'Dejamos el blog listo para que cada duda fiscal frecuente se convierta en un artículo que capta clientes, y el sitio preparado para SEO local en Panamá.' },
+          { h3: 'Mapa de servicios y clientes', text: 'Listamos cada servicio y a qué cliente atiende (persona natural, PYME, sociedad, Zona Libre) para decidir qué merece página propia.' },
+          { h3: 'Contenido con autoridad fiscal', text: 'Redactamos cada servicio con plazos, obligaciones y documentos del sistema panameño, sin jerga vacía y sin prometer lo que la normativa no permite.' },
+          { h3: 'Calendario fiscal en el blog', text: 'Dejamos un artículo por vencimiento (renta, ITBMS, planilla) para captar búsquedas en las semanas de más demanda.' },
         ],
       },
       {
@@ -76,28 +72,20 @@ export const industrias2a: PageData[] = [
         ],
       },
       {
-        type: 'statement',
-        text: 'Un contador vende tranquilidad. Una web desordenada vende justo lo contrario: si tu sitio se ve improvisado, el cliente asume que así llevarás sus números.',
-        strong: 'si tu sitio se ve improvisado, el cliente asume que así llevarás sus números',
-      },
-            {
         type: 'prose',
-        h2: 'El calendario fiscal es tu calendario editorial',
+        h2: '¿Qué contenido trae clientes a una firma contable en Panamá?',
         paragraphs: [
-          'La demanda de servicios contables en Panamá no es pareja: se dispara en fechas concretas. Declaración de renta, informes de ITBMS, planilla, declaración jurada de rentas de personas jurídicas, cierre fiscal. En cada una de esas fechas hay miles de personas buscando en Google qué les toca y hasta cuándo.',
-          'Casi ninguna firma contable panameña capta ese tráfico, porque publica sobre sus servicios en vez de sobre las fechas. Un artículo que explique bien un vencimiento —a quién aplica, qué documentos hacen falta, qué pasa si se presenta tarde— llega justo cuando el cliente potencial está preocupado y buscando.',
-          'La ventaja de este contenido es que se escribe una vez y sirve todos los años, actualizando fechas y montos. Un buen artículo sobre la declaración de renta trabaja cada marzo sin que nadie lo toque.',
-          '<strong>Y llega al cliente en el peor momento posible para él, que es el mejor para ti:</strong> cuando ya se dio cuenta de que no lo va a resolver solo. Ese es el que contrata, no el que investiga en agosto.',
+          'El del calendario fiscal. La demanda se dispara en fechas concretas: declaración de renta, informes de ITBMS, planilla, declaración jurada de rentas de personas jurídicas, cierre fiscal. En cada una hay miles de personas buscando qué les toca y hasta cuándo.',
+          'Casi ninguna firma panameña capta ese tráfico, porque escribe sobre sus servicios y no sobre las fechas. Un artículo que explique un vencimiento (a quién aplica, qué documentos hacen falta, qué pasa si se presenta tarde) se escribe una vez y sirve cada año actualizando fechas y montos.',
+          '<strong>Llega al cliente cuando ya se dio cuenta de que no lo va a resolver solo:</strong> ese es el que contrata, no el que investiga en agosto.',
         ],
       },
       {
         type: 'prose',
         h2: 'El cliente de enero y el de la semana del vencimiento no son el mismo',
         paragraphs: [
-          'A una firma contable le llegan dos clientes muy distintos. El de enero busca ordenarse: quiere un contador para el año, compara, pregunta por servicios mensuales, decide con calma. El de la semana del vencimiento tiene un problema encima y necesita a alguien hoy.',
-          'La mayoría de las webs del rubro solo le hablan al primero. Explican los servicios, la trayectoria de la firma, la filosofía de trabajo. Todo correcto y todo inútil para el que llegó con la fecha en el cuello, que solo quiere saber si le pueden atender ahora y cuánto cuesta.',
-          'Se resuelve con dos caminos visibles desde la portada: uno para el que quiere asesoría continua y otro para el que necesita resolver un trámite puntual. Cada uno con su propia página, su propio tono y su propia forma de contacto: formulario para el primero, WhatsApp directo para el segundo.',
-          'El cliente de urgencia además suele convertirse en cliente fijo si lo sacas del apuro. <strong>Atenderlo bien es la puerta de entrada más barata que tiene una firma contable</strong>, y casi nadie la abre.',
+          'El de enero busca ordenarse: compara, pregunta por servicios mensuales y decide con calma. El de la semana del vencimiento tiene la fecha encima y solo quiere saber si lo atienden hoy y cuánto cuesta. La mayoría de las webs del rubro solo le hablan al primero.',
+          'Se resuelve con dos caminos desde la portada: asesoría continua (página propia y formulario) y trámite puntual (página propia y WhatsApp directo). El cliente de urgencia suele quedarse como cliente fijo si lo sacas del apuro: <strong>es la puerta de entrada más barata de una firma contable.</strong>',
         ],
       },
       {
@@ -119,20 +107,17 @@ export const industrias2a: PageData[] = [
         type: 'prose',
         h2: 'Los documentos del cliente no deberían viajar por WhatsApp',
         paragraphs: [
-          'La operación real de casi toda firma contable panameña funciona así: el cliente manda las facturas por WhatsApp, a veces fotografiadas de mala manera, al celular personal de alguien del equipo. Funciona hasta que deja de funcionar.',
-          'El problema no es solo de orden. Ahí viajan datos financieros, planillas con salarios y cédulas de empleados: datos personales bajo la <strong>Ley 81 de 2019</strong>, y algunos de terceros que ni siquiera son tu cliente. Que vivan en el rollo de fotos de un teléfono personal es un riesgo que nadie ve hasta que hay un problema.',
-          'La web puede ser la puerta de una solución simple: un área de cliente donde cada empresa sube sus documentos a su propia carpeta, con acceso por usuario y registro de qué se subió y cuándo. No hace falta un sistema caro; hace falta que deje de ser un chat.',
-          'Eso además elimina la pregunta más repetida de la firma —"¿me mandaste ya la factura de tal cosa?"— porque queda registrado. <strong>Es de los pocos cambios que mejoran el cumplimiento y la operación diaria al mismo tiempo.</strong>',
+          'En casi toda firma contable panameña el cliente manda las facturas por WhatsApp, a veces mal fotografiadas, al celular personal de alguien del equipo. Ahí viajan planillas con salarios y cédulas de empleados: datos personales bajo la <strong>Ley 81 de 2019</strong>, algunos de terceros que ni siquiera son tu cliente.',
+          'La alternativa es simple: un área de cliente en la web donde cada empresa sube sus documentos a su propia carpeta, con acceso por usuario y registro de qué se subió y cuándo. Desaparece el «¿ya me mandaste la factura?» y <strong>mejoran a la vez el cumplimiento y la operación diaria.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: consultas por tipo de servicio y cuántas quedan',
         paragraphs: [
-          'La métrica que importa en una firma contable no es el tráfico, es cuántas consultas llegaron y de qué tipo: asesoría mensual, trámite puntual, constitución de sociedad, auditoría. Son negocios distintos con márgenes muy distintos.',
-          'El dato que más falta hace es la proporción entre consultas de urgencia y de servicio continuo. Si el noventa por ciento son urgencias, la web está captando bien en las fechas fuertes pero no está construyendo cartera recurrente, que es donde está la estabilidad de la firma.',
-          'Vale la pena medir también cuántos clientes de trámite puntual se convirtieron después en clientes mensuales. Ese número dice si el seguimiento posterior funciona, y casi siempre se puede mejorar con un recordatorio automático antes del siguiente vencimiento.',
-          'Y de qué contenido venía cada consulta: si tus artículos de calendario fiscal generan la mitad de los contactos del año, ya sabes qué escribir. Lo dejamos medido en un tablero corto; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'No el tráfico, sino cuántas consultas llegaron y de qué tipo: asesoría mensual, trámite puntual, constitución de sociedad, auditoría. Son negocios con márgenes muy distintos.',
+          'El dato clave es la proporción entre urgencias y servicio continuo: si el noventa por ciento son urgencias, la web capta en las fechas fuertes pero no construye cartera recurrente. Mide también cuántos clientes de trámite puntual pasan a mensuales; un recordatorio automático antes del siguiente vencimiento suele subir ese número.',
+          'Y de qué artículo venía cada consulta, para saber qué escribir. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -178,13 +163,12 @@ export const industrias2a: PageData[] = [
     heroImage: { src: '/images/industrias/diseno-web-agencias-viajes-tours-panama.jpg', alt: 'Cayos de San Blas con una ruta turística marcada y una tableta con itinerario y botón de reserva para agencias de tours' },
     lead: [
       'El viajero sueña con San Blas o Bocas desde el celular, a las once de la noche. Si en ese momento no puede reservar contigo, mañana reserva con otro.',
-      'Tu agencia trabaja el paquete, arma el itinerario y aún así muchas ventas se te van por depender del WhatsApp saturado o de intermediarios que se llevan margen. Una web propia con paquetes claros, disponibilidad y reserva con depósito convierte al viajero en el momento en que está más motivado, sin que nadie más se meta en medio.',
+      'El diseño web para agencias de viajes y tours en Panamá que hacemos en Elemento Web incluye una página por destino o tour (San Blas, Bocas del Toro, Boquete), reserva online con depósito por Yappy o tarjeta, políticas de cancelación publicadas, paquetes por temporada editables por ti y versión en inglés para el turista que llega.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué necesita la web de una agencia de viajes o tour operador',
-        intro: 'El viajero compra una experiencia que todavía no vive: la web tiene que hacerla tangible y fácil de reservar.',
+        h2: '¿Qué debe tener la web de una agencia de viajes o tour operador?',
         items: [
           'Una página por destino o tour (San Blas, Bocas del Toro, Boquete, city tour) posicionable por separado',
           'Fotos y video propios del tour real, no imágenes de banco',
@@ -198,30 +182,27 @@ export const industrias2a: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Reserva directa: recupera la venta que hoy se va por el camino',
+        h2: '¿Cómo se reserva un tour en línea sin depender del WhatsApp?',
         paragraphs: [
-          'Muchas agencias venden solo por WhatsApp: el viajero escribe, alguien responde cuando puede, se manda el precio, el cliente lo piensa y muchas veces desaparece. En hora pico o de noche, esa conversación se enfría y la venta se pierde. La agencia trabajó el interés y no lo cobró.',
-          'La <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reserva online</a> cierra ese hueco: el viajero elige fecha, ve el cupo disponible y confirma con un <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">depósito por Yappy o tarjeta</a> en el momento en que está más entusiasmado. El depósito además compromete: reduce los "confirmo y luego no aparece" que descuadran un tour de cupo limitado.',
-          'Esto no elimina el WhatsApp, lo ordena. El canal sigue para dudas y para cerrar al que necesita hablar, pero la reserva con depósito captura al que ya decidió. <strong>La venta que hoy depende de que alguien conteste a tiempo pasa a cerrarse sola, las 24 horas.</strong>',
+          'La agencia que vende solo por WhatsApp pierde la venta cuando nadie contesta a tiempo: el viajero escribe a las once de la noche, recibe el precio al día siguiente y ya reservó con otro.',
+          'La <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reserva online</a> cierra ese hueco: el viajero elige fecha, ve el cupo y confirma con un <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">depósito por Yappy o tarjeta</a>. El WhatsApp sigue para dudas y para quien necesita hablar, pero el que ya decidió reserva solo, las 24 horas.',
         ],
       },
       {
         type: 'prose',
         h2: 'Menos dependencia de intermediarios y de la temporada',
         paragraphs: [
-          'Cuando tus tours se venden solo a traves de otras agencias, plataformas o revendedores, cada reserva llega con una comision descontada y sin el dato del cliente. Sirven para llenar cupos sueltos, pero no pueden ser tu unico canal: te dejan sin margen y sin base de viajeros a quien volver a venderle. Tu web propia es el activo donde el turista ve tu tour, te paga a ti y queda en tu lista para el proximo viaje.',
-          'El otro reto del rubro es la temporada. Los precios, los cupos y hasta qué tours conviene promocionar cambian entre temporada seca, verde, feriados largos y fin de año. Por eso dejamos los paquetes, las fechas y los precios bajo tu control, editables al momento: lanzas una promo de temporada baja, cierras un tour lleno o destacas el paquete de Carnaval sin depender de nadie. <strong>La agencia que reacciona rápido a la temporada vende; la que llega tarde ve pasar el feriado.</strong>',
+          'Cuando tus tours se venden solo a través de otras agencias, plataformas o revendedores, cada reserva llega con la comisión descontada y sin el dato del cliente. Sirven para llenar cupos sueltos, pero en tu web el turista te paga a ti y queda en tu lista para el próximo viaje.',
+          'Los precios, los cupos y los tours que conviene promocionar cambian entre temporada seca, verde, feriados largos, Carnaval y fin de año. Por eso los paquetes, las fechas y los precios quedan editables por ti: lanzas la promo de temporada baja o cierras un tour lleno sin depender de nadie.',
         ],
       },
       {
         type: 'steps',
         h2: 'Cómo trabajamos tu web de agencia de viajes',
-        intro: 'De vender por WhatsApp a un sistema que reserva y cobra solo.',
         items: [
-          { h3: 'Un tour, una página', text: 'Armamos cada destino o tour como página propia con fotos reales, itinerario, qué incluye, punto de salida y precio. Cada uno posiciona por su búsqueda: "tour a San Blas", "paquete Bocas del Toro".' },
-          { h3: 'Reserva con depósito', text: 'Montamos la reserva online con disponibilidad por fecha y pago de depósito por Yappy o tarjeta, para asegurar el cupo y comprometer al viajero.' },
-          { h3: 'Bilingüe y para el celular', text: 'Servimos el sitio en español e inglés con URLs por idioma y todo optimizado para el celular, donde el viajero de verdad decide y reserva.' },
-          { h3: 'Paquetes y temporadas en tu control', text: 'Te dejamos editando precios, cupos y promociones de temporada tú mismo, sin llamar a la agencia cada vez que cambia un feriado.' },
+          { h3: 'Un tour, una página', text: 'Cada destino o tour lleva fotos reales, itinerario, qué incluye, punto de salida y precio, y posiciona por su búsqueda: «tour a San Blas», «paquete Bocas del Toro».' },
+          { h3: 'Disponibilidad y depósito', text: 'Montamos la disponibilidad por fecha y el cobro del depósito, con la política de cancelación junto al botón de reservar.' },
+          { h3: 'Inglés solo donde vende', text: 'Traducimos las páginas de los tours que compran extranjeros, con URLs por idioma, en lugar de la web entera.' },
         ],
       },
       {
@@ -235,28 +216,19 @@ export const industrias2a: PageData[] = [
         ],
       },
       {
-        type: 'statement',
-        text: 'El viajero decide cuando está motivado, no cuando tú puedes contestar. Una web que reserva y cobra sola vende en ese instante exacto.',
-        strong: 'una web que reserva y cobra sola vende en ese instante exacto',
-      },
-            {
         type: 'prose',
         h2: 'El que ya sabe a dónde va y el que todavía sueña compran distinto',
         paragraphs: [
-          'A una agencia le llegan dos viajeros. Uno ya decidió el destino y busca precio y fecha: "paquete a Cartagena", "tour a San Blas desde Panamá". El otro no ha decidido nada, tiene una semana de vacaciones y busca ideas: "a dónde viajar en octubre", "destinos baratos desde Panamá".',
-          'El segundo es un tercio más difícil de captar y vale mucho más, porque quien te ayuda a decidir el destino suele quedarse con la venta completa. Y casi ninguna agencia panameña le habla: todas publican paquetes cerrados para el que ya sabe.',
-          'Atender al indeciso no exige más inventario, exige contenido: comparativas honestas entre destinos, qué se hace en cada uno, cuánto cuesta realmente una semana, en qué mes conviene ir y cuándo hay temporada de lluvia. Eso posiciona en búsquedas donde no compite nadie.',
-          '<strong>Y llega antes que el competidor.</strong> Cuando ese viajero por fin busque "paquete a Medellín", ya va a saber a quién escribirle, porque fuiste tú quien le ayudó a elegir Medellín.',
+          'Un viajero ya decidió y busca precio y fecha: «paquete a Cartagena», «tour a San Blas desde Panamá». El otro tiene una semana libre y busca ideas: «a dónde viajar en octubre», «destinos baratos desde Panamá». Casi todas las agencias panameñas le hablan solo al primero.',
+          'Al indeciso se le capta con contenido, no con más inventario: comparativas entre destinos, qué se hace en cada uno, cuánto cuesta una semana y en qué mes conviene ir. Quien le ayuda a elegir el destino suele quedarse con la venta completa.',
         ],
       },
       {
         type: 'prose',
-        h2: 'El depósito y la política de cancelación deciden la reserva',
+        h2: '¿Qué política de depósito y cancelación publicar?',
         paragraphs: [
-          'Comprar un viaje es comprometer dinero por algo que ocurre en tres meses. La primera pregunta real del cliente nunca es el precio: es qué pasa si algo cambia.',
-          'Y la mayoría de las agencias no lo publica. El cliente pregunta por WhatsApp, la respuesta llega a media tarde, y para entonces ya se estaba mirando otra opción. Esa fricción cuesta más reservas que cualquier diferencia de precio.',
-          'Lo que hay que publicar es concreto: cuánto es el depósito para apartar, hasta cuándo se puede cancelar y con qué penalidad, si el pago se puede fraccionar y hasta qué fecha, y qué pasa si la aerolínea cambia el vuelo. Con eso resuelto, el cliente decide sin necesitar a nadie.',
-          'Y el depósito online, con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy o tarjeta</a>, es lo que convierte una conversación en una reserva. <strong>Una reserva sin depósito no es una reserva</strong>: es una intención que se cae con la primera oferta que aparezca.',
+          'La primera pregunta real de quien compra un viaje para dentro de tres meses no es el precio: es qué pasa si algo cambia. Si la respuesta depende de un WhatsApp que llega a media tarde, el cliente ya está mirando otra opción.',
+          'Publica cuánto es el depósito para apartar, hasta cuándo se cancela y con qué penalidad, si el pago se fracciona y hasta qué fecha, y qué pasa si la aerolínea cambia el vuelo. <strong>Una reserva sin depósito no es una reserva</strong>: es una intención que se cae con la primera oferta que aparezca.',
         ],
       },
       {
@@ -268,7 +240,7 @@ export const industrias2a: PageData[] = [
           'Sin decir qué incluye y qué no: vuelo, traslados, comidas, entradas',
           'Nada sobre depósito, cancelación ni fraccionamiento del pago',
           'Fotos de banco del destino en vez de fotos de tus propios viajes',
-          'Sin licencia de operador turístico ni registro visible',
+          'Sin licencia de operador turístico ni registro ante la ATP visible',
           'Salidas publicadas sin fecha o con fechas del año pasado',
           'Sin forma de apartar que no sea escribir y esperar respuesta',
           'Nada sobre requisitos de entrada: visa, pasaporte, vacunas',
@@ -278,20 +250,16 @@ export const industrias2a: PageData[] = [
         type: 'prose',
         h2: 'Dos negocios distintos: el panameño que sale y el turista que llega',
         paragraphs: [
-          'Muchas agencias panameñas hacen las dos cosas —emisivo y receptivo— con la misma web, en español, apuntando al mismo público. Son negocios diferentes, con clientes que buscan distinto y pagan distinto.',
-          'El receptivo, el turista que viene a Panamá, es el de mayor margen y el peor atendido. Busca en inglés, compara con operadores internacionales, y necesita cosas que la web local no da: precios en dólares con todo incluido, políticas claras, pago con tarjeta internacional y respuesta en su huso horario.',
-          'Ese viajero además busca la experiencia, no el traslado: "San Blas tour from Panama City", "Panama Canal tour", "Boquete coffee tour". Son búsquedas con volumen y con competencia mayormente extranjera, que revende tu propio producto con un margen encima.',
-          '<strong>Una sección en inglés bien hecha te pone a competir por tu propio cliente</strong>, en vez de recibirlo a través de un intermediario que se lleva la diferencia. No hace falta traducir la web entera: bastan las páginas de los tours que sí vendes a extranjeros.',
+          'Muchas agencias panameñas hacen emisivo y receptivo con la misma web, en español, para el mismo público. Son negocios distintos. El receptivo, el turista que viene a Panamá, es el de mayor margen y el peor atendido: busca en inglés, compara con operadores internacionales y espera precio en dólares con todo incluido, políticas claras y pago con tarjeta internacional.',
+          'Busca la experiencia: «San Blas tour from Panama City», «Panama Canal tour», «Boquete coffee tour». Son búsquedas dominadas por revendedores extranjeros de tu propio producto. <strong>Una sección en inglés con los tours que vendes a extranjeros te pone a competir por tu propio cliente.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: reservas con depósito y de qué contenido vinieron',
         paragraphs: [
-          'La métrica que cuenta no es la consulta, es la reserva con depósito. Una agencia puede tener el WhatsApp lleno todo el día y cerrar poco, y ese contraste es exactamente lo que hay que medir.',
-          'El corte más útil es por origen: cuántas reservas vinieron de una búsqueda del destino, cuántas de contenido de inspiración y cuántas de pauta. Si el contenido de "a dónde viajar en octubre" genera reservas meses después, ese es el activo a construir, y sin medirlo se abandona por parecer que no vende.',
-          'También conviene separar emisivo de receptivo, porque tienen márgenes y ciclos muy distintos y mezclarlos esconde cuál de los dos sostiene el año.',
-          'Y la tasa de conversión de consulta a depósito. Si es baja, el problema casi nunca es el precio: es que la política de cancelación y lo que incluye el paquete no están publicados y el cliente se enfría esperando respuesta. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'La métrica es la reserva con depósito, no la consulta: un WhatsApp lleno todo el día puede cerrar poco. Córtala por origen (búsqueda del destino, contenido de inspiración, pauta) y separa emisivo de receptivo, que tienen márgenes y ciclos distintos.',
+          'Si la conversión de consulta a depósito es baja, casi nunca es el precio: falta publicar la política de cancelación o lo que incluye el paquete. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -336,13 +304,12 @@ export const industrias2a: PageData[] = [
     heroImage: { src: '/images/industrias/diseno-web-importadoras-distribuidoras-panama.jpg', alt: 'Almacén de distribución con estanterías de mercancía y montacargas' },
     lead: [
       'Panamá es el hub que redistribuye a media región, pero muchas importadoras siguen vendiendo con un catálogo en PDF que se manda por correo y ya nadie abre.',
-      'Tu comprador B2B (el dueño de la ferretería, el gerente de compras del supermercado, el minorista que busca proveedor) investiga en línea antes de llamar. Si tu web no muestra las líneas que manejas y no transmite que eres un proveedor formal y con respaldo, ese cliente le compra al distribuidor que sí se lo dejó claro.',
+      'El diseño web para importadoras y distribuidoras en Panamá que hacemos en Elemento Web es un sitio B2B: catálogo por línea y marca representada, fichas con empaque por caja, lista descargable con fecha, precios mayoristas solo para clientes registrados y formulario de apertura de cuenta, con RUC, cobertura y, si aplica, operación en Zona Libre visibles.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué necesita la web de una importadora o distribuidora',
-        intro: 'El comprador mayorista no compra por impulso: evalúa proveedor, líneas, respaldo y condiciones. La web tiene que responder eso.',
+        h2: '¿Qué debe tener la web de una importadora o distribuidora?',
         items: [
           'Catálogo por línea de producto y por marca representada, navegable y buscable',
           'Fichas con especificaciones, presentación, empaque por caja y disponibilidad',
@@ -358,28 +325,25 @@ export const industrias2a: PageData[] = [
         type: 'prose',
         h2: 'La credibilidad es lo primero que compra un cliente B2B',
         paragraphs: [
-          'En una compra mayorista hay dinero y continuidad en juego: el minorista que te elige como proveedor apuesta a que vas a tener inventario, cumplir plazos y respaldar lo que vende. Por eso, antes de mirar precios, evalúa si eres un proveedor formal y estable. La web es donde se gana o se pierde esa primera impresión.',
-          'Señales concretas hacen el trabajo: los años en el mercado, las marcas que representas (sobre todo si tienes exclusividad de alguna), una bodega real que se muestra, el RUC y los datos formales visibles, y las líneas de producto bien organizadas. <strong>Un distribuidor que se muestra con transparencia se ve como un socio; uno con una web pobre o un catálogo desactualizado se ve como un intermediario de paso.</strong>',
-          'El otro gran enemigo es el catalogo en PDF que se manda por correo. Se desactualiza el mismo dia que cambia un precio, no lo lee Google y obliga al comprador a bajar un archivo pesado para buscar un producto. Un catalogo web se navega por linea y marca, se actualiza al momento y aparece cuando el comprador busca "distribuidor de" tal producto en Panama.',
+          'El minorista que te elige como proveedor apuesta a que tendrás inventario, cumplirás plazos y respaldarás lo que vendes. Antes de mirar precios, comprueba que eres un proveedor formal y estable.',
+          'Lo demuestran los años en el mercado, las marcas que representas (sobre todo si tienes exclusividad), una bodega real en fotos, el RUC y la razón social visibles. <strong>Un distribuidor que se muestra con transparencia se ve como un socio; uno con un catálogo desactualizado, como un intermediario de paso.</strong>',
         ],
       },
       {
         type: 'prose',
-        h2: 'Captar clientes B2B, no vender al consumidor final',
+        h2: '¿Debe vender en línea una importadora?',
         paragraphs: [
-          'Una importadora no vende como una tienda: rara vez cobra en línea al consumidor final. Su web tiene otro trabajo, más valioso: captar al comprador mayorista y darle todo para decidir contactarte. Por eso el objetivo no es un carrito, sino una solicitud de cotización o de apertura de cuenta bien filtrada, que llegue a tu equipo comercial con el cliente ya calificado.',
-          'Cuando el modelo lo pide, montamos una zona privada para clientes registrados: precios mayoristas, disponibilidad y pedidos visibles solo para quien ya tiene cuenta, protegiendo tus condiciones de la competencia y del consumidor final. El resto del sitio hace de vitrina pública que atrae y filtra. Para el seguimiento de esos prospectos, la web puede entregar el lead directo a un CRM y, si quieres automatizar respuestas, sumar un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">asistente con IA</a> que atiende las consultas repetidas de disponibilidad y líneas.',
+          'Rara vez al consumidor final. El objetivo no es un carrito, sino una solicitud de cotización o de apertura de cuenta que llegue a tu equipo comercial con el cliente ya calificado: empresa, zona, líneas de interés.',
+          'Ese lead puede entrar directo a un CRM, y un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">asistente con IA</a> puede contestar las consultas repetidas de disponibilidad y líneas.',
         ],
       },
       {
         type: 'steps',
         h2: 'Cómo trabajamos tu web de importadora o distribuidora',
-        intro: 'De un catálogo en PDF a una plataforma que capta y califica clientes B2B.',
         items: [
-          { h3: 'Estructura del catálogo', text: 'Organizamos tu inventario por línea de producto y por marca representada, con los filtros que tu comprador mayorista usa de verdad, para que encuentre en dos clics.' },
-          { h3: 'Fichas y respaldo', text: 'Diseñamos la ficha de producto con especificaciones, presentación y empaque por caja, y montamos la sección de marcas, cobertura y credibilidad que un cliente B2B revisa antes de confiar.' },
-          { h3: 'Captación calificada', text: 'Configuramos el formulario de cotización o apertura de cuenta mayorista que filtra al cliente y lo entrega calificado a tu equipo o CRM, en lugar de correos sueltos.' },
-          { h3: 'Zona privada y actualización', text: 'Si vendes B2B cerrado, montamos el acceso para clientes registrados con precios y pedidos, y te dejamos actualizando catálogo y listas desde el panel, sin depender del programador.' },
+          { h3: 'Estructura del catálogo', text: 'Organizamos el inventario por línea y marca, con los filtros que usa tu comprador mayorista.' },
+          { h3: 'Captación calificada', text: 'Configuramos el formulario de cotización o apertura de cuenta y lo conectamos a tu equipo o CRM, en lugar de correos sueltos.' },
+          { h3: 'Zona privada y actualización', text: 'Si vendes B2B cerrado, montamos el acceso con precios y pedidos por cliente, y te dejamos actualizando catálogo y listas desde el panel.' },
         ],
       },
       {
@@ -393,28 +357,19 @@ export const industrias2a: PageData[] = [
         ],
       },
       {
-        type: 'statement',
-        text: 'En B2B el comprador ya te investigó antes de la primera llamada. Tu web decide si esa llamada ocurre o si se la hace a tu competencia.',
-        strong: 'tu web decide si esa llamada ocurre o si se la hace a tu competencia',
-      },
-            {
         type: 'prose',
-        h2: 'El catálogo que un comprador B2B necesita poder descargar',
+        h2: 'Catálogo web o catálogo en PDF: el comprador B2B necesita los dos',
         paragraphs: [
-          'El comprador de una distribuidora no navega tu web como un consumidor. Trabaja con listas: arma su pedido en una hoja de cálculo, lo pasa a su jefe, lo cruza con lo que ya tiene en bodega y después cotiza. Una web bonita que no se pueda exportar no le sirve de nada.',
-          'Por eso el catálogo descargable sigue siendo la pieza más pedida y la peor resuelta del rubro. Lo habitual es un PDF de sesenta páginas de hace dos años, con precios que ya no valen, que alguien manda por correo cuando lo piden.',
-          'Lo que funciona es tener las dos cosas: el catálogo navegable en la web, que es lo que posiciona en Google y lo que el comprador usa para descubrir; y una descarga actualizada —en PDF o mejor en hoja de cálculo— con códigos, empaque, unidad mínima y disponibilidad, que es lo que usa para trabajar.',
-          '<strong>Y con fecha visible de actualización.</strong> Un catálogo sin fecha se asume viejo, y el comprador que duda del catálogo duda del inventario.',
+          'El comprador mayorista trabaja con listas: arma el pedido en una hoja de cálculo, lo cruza con su bodega y después cotiza. Lo habitual en el rubro es un PDF de sesenta páginas de hace dos años, con precios que ya no valen, que Google no lee.',
+          'Lo que funciona es el catálogo navegable por línea y marca, que posiciona cuando alguien busca «distribuidor de» tal producto en Panamá, más una descarga actualizada (mejor en hoja de cálculo) con códigos, empaque, unidad mínima y disponibilidad. <strong>Con fecha visible:</strong> un catálogo sin fecha se asume viejo, y quien duda del catálogo duda del inventario.',
         ],
       },
       {
         type: 'prose',
         h2: 'Mostrar el producto sin publicar el precio mayorista',
         paragraphs: [
-          'La razón por la que la mayoría de las distribuidoras no publica catálogo es siempre la misma: no quieren que la competencia vea sus precios, ni que el cliente final compare con el detallista al que ellos mismos surten. Es una preocupación legítima.',
-          'La confusión está en creer que publicar catálogo obliga a publicar precio. Son dos cosas distintas. El catálogo público muestra qué distribuyes, de qué marcas, en qué presentaciones y empaques. El precio vive detrás de un registro: el cliente B2B se registra, tú lo apruebas, y ve su lista con sus condiciones.',
-          'Ese registro tiene un beneficio adicional que compensa el trabajo: te dice quién está mirando tu catálogo. Nombre de la empresa, RUC, zona, qué líneas le interesan. Es una base de prospectos calificados que hoy no tienes, porque el que mira un PDF por correo es invisible.',
-          'Y permite precios por nivel de cliente sin que nadie vea los del otro. <strong>Publicar qué vendes es visibilidad; publicar a cuánto es una decisión aparte</strong>, y confundirlas deja a muchas distribuidoras sin ninguna de las dos.',
+          'Muchas distribuidoras no publican catálogo para que la competencia no vea sus precios ni el cliente final compare con el detallista al que surten. Pero publicar catálogo no obliga a publicar precio: el catálogo público muestra marcas, presentaciones y empaques; el precio vive detrás de un registro que tú apruebas.',
+          'Ese registro te dice quién mira tu catálogo (empresa, RUC, zona, líneas de interés), una base de prospectos que el PDF por correo nunca te dio, y permite precios por nivel de cliente sin que nadie vea los del otro.',
         ],
       },
       {
@@ -436,20 +391,16 @@ export const industrias2a: PageData[] = [
         type: 'prose',
         h2: 'La Zona Libre y el stock local son argumento de venta, no un dato interno',
         paragraphs: [
-          'Panamá es hub, y eso da a las distribuidoras panameñas una ventaja competitiva concreta que casi ninguna comunica: la capacidad de tener producto disponible rápido, sin que el cliente tenga que importar y esperar semanas.',
-          'Para un comprador regional que evalúa entre importar directo o comprarte a ti, lo que decide es el tiempo y el riesgo, no solo el precio. Si tienes stock local, operación en Zona Libre de Colón, o capacidad de reexportación, eso vale y hay que decirlo con números: cuánto tarda un pedido a Ciudad de Panamá, cuánto al interior, cuánto a la región.',
-          'Lo mismo con la parte aburrida que a un comprador profesional le importa mucho: si manejas los trámites de importación, si el producto llega nacionalizado, qué documentación entregas, y si hay soporte o garantía local. Esa última pregunta decide compras completas en líneas técnicas.',
-          '<strong>Un comprador que puede llamar a alguien en Panamá cuando algo falla paga más</strong> que por un contenedor sin respaldo, y esa diferencia se comunica en la web o no se comunica en ningún lado.',
+          'Al comprador regional que duda entre importar directo o comprarte a ti lo decide el tiempo y el riesgo, no solo el precio. Si tienes stock local, operación en la Zona Libre de Colón o capacidad de reexportación, dilo con plazos: cuánto tarda un pedido a Ciudad de Panamá, al interior y a la región.',
+          'Publica también lo que un comprador profesional pregunta siempre: si el producto llega nacionalizado, qué documentación entregas y si hay soporte o garantía local. <strong>Poder llamar a alguien en Panamá cuando algo falla decide compras completas en líneas técnicas.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: solicitudes calificadas y qué líneas se consultan',
         paragraphs: [
-          'En B2B el volumen de tráfico dice poco. Lo que dice mucho es cuántas solicitudes llegaron de empresas reales, de qué tamaño, de qué zona y por qué línea de producto.',
-          'El corte por línea es el más accionable de todos. Si una marca que apenas promocionas concentra un tercio de las consultas, eso es información de negocio: puede que convenga ampliar esa línea, negociar mejores condiciones con ese proveedor o darle su propia página.',
-          'El segundo dato son los registros al área de clientes: cuántos se registraron, cuántos aprobaste y cuántos terminaron comprando. Ese embudo dice si tu catálogo está atrayendo compradores reales o curiosos, y suele revelar que el proceso de aprobación es demasiado lento.',
-          'Y de dónde vienen geográficamente. Muchas distribuidoras panameñas descubren aquí demanda de países que ni estaban trabajando, que es información que ningún vendedor iba a traer solo. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Cuántas solicitudes llegaron de empresas reales, de qué tamaño, de qué zona y por qué línea. Si una marca que apenas promocionas concentra muchas consultas, quizá convenga ampliarla, negociar con ese proveedor o darle página propia.',
+          'Mide el embudo del área de clientes (registrados, aprobados, compradores), que suele revelar una aprobación demasiado lenta, y el origen geográfico, que a veces muestra demanda de países que no estabas trabajando. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -494,13 +445,12 @@ export const industrias2a: PageData[] = [
     heroImage: { src: '/images/industrias/diseno-web-dentistas-odontologia-panama.jpg', alt: 'Consultorio dental moderno con sillón odontológico y equipo limpio' },
     lead: [
       'El paciente que busca dentista tiene miedo: al dolor, al costo y a caer en malas manos. Tu web es lo que calma ese miedo antes de que agende.',
-      'Nadie elige dentista por precio a ciegas. Compara consultorios, mira fotos del lugar, busca casos reales y decide por confianza. Una web con casos de antes y después, un equipo que se muestra y una cita que se agenda sin llamar convierte al que investiga en paciente sentado en tu sillón.',
+      'El diseño web para dentistas en Panamá que hacemos en Elemento Web incluye cita online con recordatorios automáticos, una página por tratamiento (ortodoncia, implantes, blanqueamiento, endodoncia) con casos de antes y después autorizados, perfil del odontólogo con idoneidad, seguros aceptados y ficha de Google alineada por barrio. Parte de una web empresarial desde $1,250.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué necesita la web de un consultorio dental',
-        intro: 'El paciente decide por confianza y por facilidad. La web tiene que dar las dos cosas en los primeros segundos.',
+        h2: '¿Qué debe tener la web de un consultorio dental en Panamá?',
         items: [
           'Agendamiento de citas online con disponibilidad real, sin llamar en horario de oficina',
           'Galería de casos de antes y después, con consentimiento del paciente',
@@ -514,31 +464,27 @@ export const industrias2a: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La cita online es la mejora que más pacientes te suma',
+        h2: '¿Por qué un consultorio dental necesita citas online?',
         paragraphs: [
-          'En un consultorio dental, quien contesta el teléfono suele ser la misma persona que asiste al odontólogo. Mientras atiende a un paciente en el sillón, el teléfono suena y nadie responde. Cada llamada perdida es un paciente que agendó con el siguiente consultorio de la búsqueda.',
-          'El <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">agendamiento online</a> elimina esa fila invisible: el paciente ve los horarios disponibles y confirma solo, a cualquier hora, incluso de noche que es cuando muchos por fin se deciden a resolver ese diente. Los recordatorios automáticos atacan el otro sangrado silencioso del rubro: las ausencias, esos huecos en la agenda que ya no se recuperan.',
-          'Y como el paciente muchas veces llega con miedo, la cita online baja la barrera: agendar sin tener que explicar por teléfono qué le duele es mucho más fácil para el que posterga la visita justo por nervios. <strong>Menos fricción para agendar es, directamente, más pacientes en el sillón.</strong>',
+          'En un consultorio dental quien contesta el teléfono suele ser quien asiste al odontólogo. Mientras atiende en el sillón, el teléfono suena y nadie responde: ese paciente agenda con el siguiente consultorio de la búsqueda.',
+          'Con el <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">agendamiento online</a> el paciente ve los horarios y confirma solo, incluso de noche, sin explicar por teléfono qué le duele, que es justo lo que frena al que posterga por nervios. Los recordatorios automáticos atacan el otro hueco del rubro: las ausencias.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Los casos de antes y después son tu mejor vendedor',
+        h2: 'Casos de antes y después y un consultorio que se deja ver',
         paragraphs: [
-          'En odontologia, sobre todo en la estetica, se compra con los ojos. Una galeria de casos reales de antes y despues (con el consentimiento del paciente) demuestra tu trabajo mejor que cualquier lista de servicios. El que quiere alinearse los dientes o ponerse implantes necesita ver resultados de tu mano, no fotos de banco de una sonrisa perfecta que no es de tu consultorio.',
-          'Esas fotos hacen dos cosas a la vez: prueban tu nivel y ayudan al paciente a imaginarse el resultado, que es lo que empuja la decision de un tratamiento de ticket alto. Cada tratamiento con su galeria propia posiciona ademas en las busquedas: "ortodoncia invisible Panama", "implantes dentales", "blanqueamiento". <strong>El paciente que llega tras ver tus casos ya viene medio convencido</strong>, y decide mas por confianza que por precio.',
-          'El otro pilar es que el consultorio se muestre. Fotos reales del lugar limpio, del equipo moderno y del odontologo con su idoneidad calman el miedo de fondo: que el sitio no sea serio o higienico. Ver el lugar antes de ir hace que el paciente cruce la puerta con la decision ya tomada.',
+          'En odontología estética se compra con los ojos. Una galería de casos reales de antes y después, con consentimiento del paciente, prueba tu nivel y ayuda a imaginarse el resultado de un tratamiento de ticket alto. Las sonrisas de banco hacen lo contrario.',
+          'Fotos reales del consultorio limpio, del equipo y del odontólogo con su idoneidad calman el miedo de fondo: que el lugar no sea serio o higiénico.',
         ],
       },
       {
         type: 'steps',
         h2: 'Cómo trabajamos tu web de consultorio dental',
-        intro: 'Del teléfono que nadie contesta a una agenda que se llena sola.',
         items: [
-          { h3: 'Cita online conectada', text: 'Montamos el agendamiento con disponibilidad real y recordatorios automáticos, para descargar el teléfono del consultorio y reducir las ausencias que dejan huecos en la agenda.' },
-          { h3: 'Tratamientos y casos', text: 'Armamos una página por tratamiento con su galería de antes y después, cada una posicionable en las búsquedas del paciente que investiga su necesidad.' },
-          { h3: 'Confianza que se muestra', text: 'Trabajamos el perfil del odontólogo con idoneidad, las fotos reales del consultorio y las formas de pago, financiamiento y seguros que responden las dudas prácticas del paciente.' },
-          { h3: 'Presencia local impecable', text: 'Alineamos la web con tu ficha de Google Business y el Maps, para que el paciente que busca "dentista cerca de mí" te encuentre y agende sin fricción.' },
+          { h3: 'Cita online conectada', text: 'Agendamiento con disponibilidad real y recordatorios automáticos, para descargar el teléfono del consultorio.' },
+          { h3: 'Tratamientos y casos', text: 'Una página por tratamiento con su propia galería de antes y después.' },
+          { h3: 'Presencia local', text: 'Alineamos la web con tu ficha de Google Business y Maps para la búsqueda «dentista cerca de mí».' },
         ],
       },
       {
@@ -552,34 +498,25 @@ export const industrias2a: PageData[] = [
         ],
       },
       {
-        type: 'statement',
-        text: 'El paciente elige dentista por confianza, y la confianza se construye antes de la primera cita. Todo pasa en tu web: los casos, el equipo, el consultorio y lo fácil que sea agendar.',
-        strong: 'la confianza se construye antes de la primera cita',
-      },
-            {
         type: 'prose',
-        h2: 'Una página por tratamiento, no una lista de servicios',
+        h2: 'Una página por tratamiento dental, no una lista de servicios',
         paragraphs: [
-          'La mayoría de las webs dentales resuelven los tratamientos con una lista: ortodoncia, implantes, blanqueamiento, endodoncia, uno debajo del otro en la misma página. Es cómodo de armar y es el error que más pacientes cuesta, porque cada uno de esos tratamientos es una búsqueda distinta, hecha por una persona distinta, con un presupuesto distinto.',
-          'Quien busca "ortodoncia invisible" tiene veintitantos, quiere saber cuánto dura y cuánto cuesta al mes. Quien busca "implante dental" suele pasar de los cincuenta, ya perdió la pieza y necesita saber si duele y cuántas visitas son. Quien busca "endodoncia de urgencia" está con dolor ahora mismo y va a llamar al primero que le resuelva. Meterlos a los tres en la misma página obliga a hablarle a nadie en particular.',
-          'Una página por tratamiento le habla a cada uno en su idioma: el procedimiento explicado sin tecnicismos, cuánto suele tomar, qué se siente, cómo se paga y la galería de casos de ese tratamiento específico. Y de paso cada página compite por su propia búsqueda, que es como se gana volumen sin subirle el presupuesto a la pauta.',
-          '<strong>La regla es simple: si un paciente lo busca con esas palabras, merece su propia página.</strong> Cinco tratamientos bien trabajados rinden más que veinte mencionados de pasada.',
+          'Cada tratamiento es una búsqueda distinta de una persona distinta. Quien busca «ortodoncia invisible» quiere saber cuánto dura y cuánto cuesta al mes. Quien busca «implante dental» ya perdió la pieza y pregunta si duele y cuántas visitas son. Quien busca «endodoncia de urgencia» tiene dolor ahora y llama al primero que le resuelva.',
+          'Una página por tratamiento le responde a cada uno: el procedimiento sin tecnicismos, cuánto toma, qué se siente, cómo se paga y su galería de casos, y compite por su propia búsqueda. <strong>Si un paciente lo busca con esas palabras, merece su propia página:</strong> cinco tratamientos bien trabajados rinden más que veinte mencionados de pasada.',
         ],
       },
       {
         type: 'prose',
-        h2: 'El paciente te busca por barrio, no por "Panamá"',
+        h2: 'El paciente te busca por barrio, no por «Panamá»',
         paragraphs: [
-          'Nadie con dolor de muela busca "el mejor odontólogo de la República de Panamá". Busca "dentista cerca", "dentista en San Francisco", "ortodoncista Costa del Este", "endodoncia Bethania". La proximidad manda, porque un tratamiento dental no son dos visitas: son seis, ocho, a veces más, y nadie cruza la ciudad ocho veces si tiene algo decente a diez minutos.',
-          'Eso cambia dónde hay que pelear. No es contra todos los consultorios del país, es contra los que están en tu radio. Y esa pelea se gana con tres cosas que no dependen del tamaño de tu clínica: una ficha de <a href="/crecimiento/seo-local-google-maps-panama/">Google Business Profile</a> completa y con fotos reales, reseñas recientes de pacientes, y una web que diga con todas sus letras dónde estás, cómo se llega y dónde se estaciona.',
-          'El estacionamiento parece un detalle y no lo es. En Ciudad de Panamá, "¿dónde dejo el carro?" decide más citas de las que cualquiera admite. Ponlo en la página de contacto, con foto si hace falta.',
-          'Si tienes más de una sede, cada una necesita su propia página con su dirección, su horario y su teléfono. Una sola página que las mencione a todas no posiciona en ninguna de las dos zonas.',
+          'Nadie con dolor de muela busca «el mejor odontólogo de Panamá». Busca «dentista en San Francisco», «ortodoncista Costa del Este», «endodoncia Bethania». Un tratamiento son seis u ocho visitas, y nadie cruza la ciudad ocho veces si tiene algo decente a diez minutos.',
+          'Compites contra los consultorios de tu radio, y eso se gana con una ficha de <a href="/crecimiento/seo-local-google-maps-panama/">Google Business Profile</a> completa y con fotos reales, reseñas recientes y una web que diga dónde estás, cómo se llega y dónde se estaciona: en Ciudad de Panamá, «¿dónde dejo el carro?» decide citas. Con más de una sede, cada una lleva su propia página con dirección, horario y teléfono.',
         ],
       },
       {
         type: 'checklist',
         h2: 'Lo que espanta a un paciente antes de que agende',
-        intro: 'Todos estos los hemos visto en webs de consultorios reales. Cada uno manda pacientes al consultorio de al lado.',
+        intro: 'Cada uno manda pacientes al consultorio de al lado.',
         items: [
           'Fotos de banco: sonrisas perfectas de personas que nunca pisaron tu consultorio',
           'Precios ocultos por completo, sin ni siquiera un rango ni un "desde"',
@@ -595,20 +532,16 @@ export const industrias2a: PageData[] = [
         type: 'prose',
         h2: 'Los datos del paciente no son un detalle técnico',
         paragraphs: [
-          'Una web dental recoge cosas que no son un correo cualquiera: motivo de consulta, historial, a veces fotos de la boca del paciente. En Panamá eso cae bajo la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong>, y los datos de salud entran en la categoría sensible, la que más cuidado exige.',
-          'En la práctica esto no es un trámite de abogados, son decisiones de cómo está hecha la web. Que el sitio vaya en HTTPS y no en HTTP. Que el formulario diga qué se va a hacer con lo que el paciente escribe y quién lo va a leer. Que las fotos de casos tengan consentimiento por escrito, no un permiso verbal de hace tres años. Que los datos no se queden dando vueltas en la bandeja de entrada de un correo personal.',
-          'También importa quién más los ve. Si el formulario dispara un correo a una cuenta compartida por cuatro personas del consultorio, ahí hay un problema que nadie nota hasta que lo hay. Un buzón propio del consultorio, con acceso controlado, cuesta lo mismo y cambia la respuesta si algún día alguien pregunta.',
-          'Nosotros montamos la parte técnica: certificado, formularios con aviso de privacidad, almacenamiento con acceso controlado. <strong>El texto legal y el consentimiento clínico los revisa tu asesor</strong>, que es quien conoce tu operación; nosotros dejamos la web preparada para que ese texto tenga dónde vivir.',
+          'Una web dental recoge motivo de consulta, historial y a veces fotos de la boca del paciente. En Panamá eso cae bajo la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong>, y los datos de salud son de categoría sensible.',
+          'Se traduce en decisiones concretas: sitio en HTTPS, formulario que diga quién lee lo que el paciente escribe, consentimiento por escrito para cada foto de caso y un buzón del consultorio con acceso controlado, no un correo personal compartido por cuatro personas. Nosotros montamos la parte técnica; <strong>el texto legal y el consentimiento clínico los revisa tu asesor.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: citas agendadas, no visitas',
         paragraphs: [
-          'La pregunta que casi todo consultorio le hace a su web es cuántas visitas tuvo. Es la métrica más fácil de mirar y la que menos dice. Mil visitas al mes sin una sola cita agendada es una web que no está trabajando; doscientas visitas con quince citas es una web que se justifica por sí sola.',
-          'Lo que vale la pena mirar es corto: cuántas citas se agendaron online, cuántas conversaciones entraron por WhatsApp, cuántas llamadas salieron del botón de la web, y de qué tratamiento venía cada una. Ese último dato es el más útil de todos, porque te dice en qué tratamiento invertir tu tiempo y tu pauta, y cuál no vale la pena empujar.',
-          'El segundo número que casi nadie mira es la tasa de ausencia. Si de cada diez citas agendadas faltan tres, el problema no es de captación, es de recordatorios. Eso se arregla con automatización, no con más publicidad, y sale mucho más barato.',
-          'Lo dejamos medido desde el primer día, no como un informe que nadie abre sino como un tablero de tres o cuatro números que puedas revisar en dos minutos. El detalle de cómo lo planteamos está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Mil visitas sin una cita no sirven; doscientas con quince citas se justifican solas. Mide citas agendadas online, conversaciones por WhatsApp y llamadas desde el botón de la web, y de qué tratamiento venía cada una: eso te dice dónde invertir tiempo y pauta.',
+          'Mira también la tasa de ausencia: si faltan tres de cada diez citas, el problema son los recordatorios, no la captación, y se arregla con automatización. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {

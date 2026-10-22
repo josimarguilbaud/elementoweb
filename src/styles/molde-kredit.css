@@ -1,40 +1,37 @@
 /* Hoja del molde Kredit (D44, D45). Solo la cargan las páginas con anatomía v2: [...slug].astro la inyecta en
    línea en el <head> (presupuesto de CSS de D40: el resto del sitio no paga estos bytes). Usa los tokens --ew- de global.css. */
-/* ============ Portada con foto y molde Kredit (D44, D45) ============
-   Portada marina con cuadrícula fina de 56 px; cuerpo claro con «Qué incluye» detallado, maquetas de «Así se vería»,
+/* ============ Portada con foto y molde Kredit (D44, D45; monocromo desde D57) ============
+   Portada clara #F5F5F5 como la de la portada v3; cuerpo claro con «Qué incluye» detallado, maquetas de «Así se vería»,
    tabla de ejemplo y «Cómo lo medimos». Las maquetas imitan la interfaz real (Google, Instagram, WhatsApp, correo)
    con colores propios de cada una y sin logos; el resto usa los tokens --ew-. */
-.ew-hero { position: relative; overflow: hidden; background: var(--ew-primary); color: var(--ew-on-primary); padding: 132px 0 0; }
-@media (min-width: 768px) { .ew-hero { padding-top: 164px; } }
-.ew-hero::before { content: ""; position: absolute; inset: 0; pointer-events: none;
-  background-image: linear-gradient(rgba(255, 255, 255, .045) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px);
-  background-size: 56px 56px; }
+.ew-hero { position: relative; overflow: hidden; background: #f5f5f5; color: #0a0a0a; padding: calc(var(--nav-h) + 40px) 0 0; }
+@media (min-width: 768px) { .ew-hero { padding-top: calc(var(--nav-h) + 72px); } }
 .ew-hero__grid { position: relative; max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); display: grid; gap: 32px; align-items: center; }
 @media (min-width: 1024px) { .ew-hero__grid { grid-template-columns: 1.05fr 0.95fr; gap: 56px; } }
-.ew-hero__crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 0.85rem; color: var(--ew-on-primary-muted); }
-.ew-hero__crumbs a { color: var(--ew-on-primary-muted); text-decoration: underline; text-underline-offset: 2px; }
-.ew-hero__crumbs a:hover { color: #fff; }
-.ew-hero__h1 { margin-top: 16px; max-width: 18ch; font-size: clamp(2.15rem, 1.35rem + 3.1vw, 4rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.025em; color: #fff; }
-.ew-hero__lead { margin-top: 18px; max-width: 52ch; font-size: 1.125rem; line-height: 1.6; color: var(--ew-on-primary-muted); }
+.ew-hero__crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 0.875rem; color: #525252; }
+.ew-hero__crumbs a { color: #525252; text-decoration: underline; text-underline-offset: 2px; }
+.ew-hero__crumbs a:hover { color: #0a0a0a; }
+.ew-hero__h1 { margin-top: 16px; max-width: 18ch; font-size: clamp(2.15rem, 1.35rem + 3.1vw, 4rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.025em; color: #0a0a0a; }
+.ew-hero__lead { margin-top: 18px; max-width: 52ch; font-size: 1.125rem; line-height: 1.6; color: #525252; }
 .ew-hero__ctas { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
 /* Doble clase: la hoja global llega después de esta (va en línea en el <head>) y su `.ew-btn { border: 0 }` borraba el borde. */
-.ew-btn.ew-btn--ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255, 255, 255, .4); }
-.ew-btn.ew-btn--ghost:hover { border-color: #fff; }
-.ew-hero__recibo { margin: 24px 0 0; padding-top: 16px; max-width: 34rem; display: flex; flex-wrap: wrap; gap: 8px 32px; border-top: 1px solid rgba(255, 255, 255, .16); }
+.ew-btn.ew-btn--ghost { background: #fff; color: #0a0a0a; border: 1.5px solid #0a0a0a; }
+.ew-btn.ew-btn--ghost:hover { background: #f5f5f5; }
+.ew-hero__recibo { margin: 24px 0 0; padding-top: 16px; max-width: 34rem; display: flex; flex-wrap: wrap; gap: 8px 32px; border-top: 1px solid #e5e5e5; }
 .ew-hero__recibo div { display: flex; flex-direction: column; gap: 2px; }
-.ew-hero__recibo dt { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ew-on-primary-muted); }
-.ew-hero__recibo dd { margin: 0; font-weight: 600; color: #fff; font-variant-numeric: tabular-nums; }
-.ew-hero__notas { list-style: none; margin: 10px 0 0; padding: 0; max-width: 34rem; font-size: 0.8125rem; line-height: 1.5; color: var(--ew-on-primary-muted); }
+.ew-hero__recibo dt { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #525252; }
+.ew-hero__recibo dd { margin: 0; font-weight: 600; color: #0a0a0a; font-variant-numeric: tabular-nums; }
+.ew-hero__notas { list-style: none; margin: 10px 0 0; padding: 0; max-width: 34rem; font-size: 0.8125rem; line-height: 1.5; color: #525252; }
 .ew-hero__notas li + li { margin-top: 2px; }
-.ew-hero__notas a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
-.ew-hero__media { position: relative; margin: 0; aspect-ratio: 10 / 7; overflow: hidden; border-radius: 20px; background: var(--ew-primary-raised); box-shadow: 12px 12px 0 var(--ew-primary-raised); }
+.ew-hero__notas a { color: #0a0a0a; text-decoration: underline; text-underline-offset: 2px; }
+.ew-hero__media { position: relative; margin: 0; aspect-ratio: 10 / 7; overflow: hidden; border-radius: 16px; background: #e5e5e5; }
 .ew-hero__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .ew-hero__media figcaption { position: absolute; left: 14px; right: 14px; bottom: 14px; padding: 8px 12px; border-radius: 12px; font-size: 0.8rem; line-height: 1.4; color: #fff; background: rgba(10, 26, 58, .78); }
-.ew-rail { position: relative; max-width: 1200px; margin: 48px auto 0; padding: 18px clamp(16px, 4vw, 32px) 22px; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 24px; border-top: 1px solid rgba(255, 255, 255, .12); }
+.ew-rail { position: relative; max-width: 1200px; margin: 48px auto 0; padding: 18px clamp(16px, 4vw, 32px) 22px; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 24px; border-top: 1px solid #e5e5e5; }
 @media (min-width: 768px) { .ew-rail { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .ew-rail li { display: flex; flex-direction: column; gap: 2px; }
-.ew-rail__k { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ew-on-primary-muted); }
-.ew-rail__v { font-weight: 600; color: #fff; }
+.ew-rail__k { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #525252; }
+.ew-rail__v { font-weight: 600; color: #0a0a0a; }
 
 .ew-sec--alt { background: var(--ew-surface-alt); }
 /* Dos secciones claras seguidas no suman los dos rellenos: basta el de abajo de la primera. */
@@ -141,7 +138,7 @@
 .ew-wa { background: #efeae2; }
 .ew-wa__top { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--ew-primary); font-size: 0.9rem; font-weight: 600; color: #fff; }
 .ew-wa__top small { display: block; font-size: 0.72rem; font-weight: 400; color: var(--ew-on-primary-muted); }
-.ew-wa__av { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--ew-accent); font-weight: 800; color: var(--ew-primary); }
+.ew-wa__av { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--ew-accent); font-weight: 800; color: #fff; }
 .ew-wa__chat { display: flex; flex-direction: column; gap: 8px; padding: 14px; }
 .ew-wa__msg { position: relative; max-width: 86%; padding: 8px 10px 20px; border-radius: 10px; background: #fff; font-size: 0.85rem; line-height: 1.45; color: #111b21; box-shadow: 0 1px 0 rgba(11, 20, 26, .13); }
 .ew-wa__msg--cliente { align-self: flex-end; background: #d9fdd3; }

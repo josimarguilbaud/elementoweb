@@ -18,25 +18,26 @@ export const miamiPages2: PageData[] = [
     breadcrumb: 'Kendall',
     lead: [
       'Kendall es una de las zonas más pobladas y con más pequeños negocios y consultorios profesionales del suroeste de Miami-Dade.',
-      'Trabajamos remoto desde Panamá, en español, con el mismo precio y el mismo estándar técnico de cualquier proyecto nuestro.',
+      'Elemento Web hace diseño web para negocios y consultorios de Kendall desde Ciudad de Panamá, sin oficina en Miami: sitios en español o bilingües, con página por servicio, cita o WhatsApp en un toque y SEO local por barrio. Una landing parte desde $550 y un sitio corporativo desde $1,250, en USD y sin ITBMS.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que suele necesitar un negocio en Kendall',
+        h2: '¿Qué necesita el diseño web de un negocio en Kendall?',
         items: [
-          'Web en español, pensada para un cliente que busca en su idioma',
-          'Botón de WhatsApp visible para consultas rápidas',
-          'Precios o rangos claros, sin obligar a llamar para saber cuánto cuesta',
-          'SEO local para búsquedas tipo "diseño web en Kendall"',
-          'Diseño que carga rápido desde el celular, donde ocurre casi toda la búsqueda',
+          'Una página por servicio o especialidad, no todo en una sola lista',
+          'Cita en línea o WhatsApp en un toque, para el paciente o cliente que agenda desde el celular',
+          'Seguros o formas de pago aceptadas a la vista, si eres consultorio',
+          'SEO local con el barrio en el texto: Kendall, The Hammocks, Kendall West',
+          'Español primero e inglés como segundo idioma cuando la clientela es mixta',
         ],
       },
       {
         type: 'prose',
-        h2: 'Remoto desde Panamá, mismo resultado',
+        h2: '¿Qué tipo de web funciona en Kendall?',
         paragraphs: [
-          'Kendall tiene desde consultorios y despachos hasta comercio de barrio. En cualquiera de los dos casos, el negocio se atiende igual: en español, por WhatsApp, con un precio claro. Trabajar remoto desde Panamá no cambia esa dinámica, solo la estructura de costos detrás.',
+          'Kendall es un suburbio extenso con muchos consultorios médicos y dentales, despachos profesionales y comercio alrededor de Dadeland. El cliente busca por servicio y por cercanía, así que rinde una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> con una página por servicio y la dirección clara, más que una landing de una sola oferta.',
+          'Si el negocio vive de citas, el sistema de <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reservas y citas en línea</a> evita la llamada para agendar. Todo se coordina por WhatsApp y videollamada desde Panamá.',
         ],
       },
       {
@@ -70,25 +71,26 @@ export const miamiPages2: PageData[] = [
     breadcrumb: 'Westchester',
     lead: [
       'Westchester es una de las zonas de Miami-Dade con mayor concentración de negocios y familias cubanoamericanas, y casi todo el comercio se vive en español.',
-      'Construimos sitios pensados para ese cliente: directos, en español, con WhatsApp como canal principal.',
+      'Elemento Web hace diseño web para negocios hispanos de Westchester desde Ciudad de Panamá, sin oficina en Miami: sitios en español, con WhatsApp como canal principal, fotos reales, precios a la vista y reseñas visibles. Una landing tarda 5 días hábiles y parte desde $550; un sitio corporativo, desde $1,250. Se cobra en USD, sin ITBMS.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que suele necesitar un negocio en Westchester',
+        h2: '¿Qué necesita el diseño web de un negocio en Westchester?',
         items: [
-          'Web 100% en español, sin traducción de plantilla',
-          'WhatsApp visible desde el primer scroll',
-          'Fotos reales del negocio, no stock genérico',
+          'Todo en español, escrito para un cliente cubanoamericano que busca en su idioma',
+          'WhatsApp visible desde la primera pantalla',
+          'Reseñas y fotos reales del negocio, que confirman lo que el vecino ya te contó',
           'Precio o rango de precio a la vista',
-          'Carga rápida en celular',
+          'Dirección y horario claros, coherentes con tu ficha de Google',
         ],
       },
       {
         type: 'prose',
-        h2: 'El mismo idioma, el mismo canal de venta',
+        h2: '¿Para qué sirve una web si el negocio vive del boca a boca?',
         paragraphs: [
-          'En Westchester el negocio local vive del boca a boca y del WhatsApp, no de un formulario de contacto genérico. Diseñamos alrededor de eso: la web confirma lo que el cliente ya escuchó de un vecino, y el botón de WhatsApp cierra la conversación.',
+          'En Westchester buena parte de los clientes llega recomendada por un vecino o un familiar. Antes de escribir, casi todos buscan el nombre del negocio para confirmar: dónde queda, qué ofrece, cuánto cuesta. La web responde eso en una pantalla y el botón de WhatsApp abre la conversación.',
+          'Para ese uso basta una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a>; si tienes varias líneas de servicio, un sitio de varias páginas.',
         ],
       },
       {
@@ -122,25 +124,26 @@ export const miamiPages2: PageData[] = [
     breadcrumb: 'Brickell',
     lead: [
       'Brickell es el distrito financiero de Miami: bancos, gestoras, firmas legales y real estate de alto valor, con una base de clientes latinoamericana muy fuerte.',
-      'Aquí el diseño tiene que verse a la altura del sector financiero, con contenido bilingüe y credenciales visibles desde el primer scroll.',
+      'Elemento Web hace diseño web para firmas de Brickell desde Ciudad de Panamá, sin oficina en Miami: sitios bilingües español/inglés, diseño sobrio, licencias y trayectoria visibles, perfiles del equipo y un formulario que filtra la consulta antes de la llamada. Pensado para finanzas, legal y real estate con cliente latinoamericano. Se cobra en USD, sin ITBMS.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que suele necesitar una empresa en Brickell',
+        h2: '¿Qué necesita el diseño web de una empresa en Brickell?',
         items: [
-          'Diseño sobrio y de alto nivel visual: aquí el diseño genérico se nota',
-          'Contenido bilingüe español/inglés para cliente latinoamericano e internacional',
-          'Credenciales, licencias y trayectoria visibles',
-          'Formulario o WhatsApp que filtre el tipo de consulta antes de la llamada',
-          'Tiempos de carga rápidos: un cliente institucional no espera',
+          'Diseño sobrio y a medida: frente a un cliente que maneja capital, la plantilla se nota',
+          'Español e inglés con la misma profundidad, no una versión resumida del otro idioma',
+          'Licencias, registros y trayectoria verificables',
+          'Perfiles del equipo con formación e idiomas: muchos clientes eligen a la persona',
+          'Formulario que pregunte el tipo de consulta y el país del cliente antes de la llamada',
         ],
       },
       {
         type: 'prose',
-        h2: 'Nivel de Brickell, sin el costo de estar en Brickell',
+        h2: '¿Cómo debe verse la web de una firma financiera o legal en Brickell?',
         paragraphs: [
-          'Una firma en Brickell no puede permitirse un sitio que se vea genérico frente a clientes que manejan capital serio. El diseño tiene que transmitir lo mismo que la oficina: solidez. Entregamos ese nivel visual y técnico operando desde Panamá, sin cargar el costo de oficina en uno de los distritos más caros de EE.UU.',
+          'Como la oficina: sólida y sin estridencias. El cliente latinoamericano que busca banca privada, estructura legal o un condominio en Brickell compara firmas desde su país, y la web es lo primero que revisa. Pesa más una ficha de credenciales clara que una animación.',
+          'El formato habitual es una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> bilingüe. Las pautas por rubro están en <a href="/industrias/diseno-web-abogados-panama/">diseño web para abogados</a> y <a href="/industrias/diseno-web-bienes-raices-panama/">diseño web para bienes raíces</a>.',
         ],
       },
       {
@@ -174,25 +177,26 @@ export const miamiPages2: PageData[] = [
     breadcrumb: 'Coral Gables',
     lead: [
       'Coral Gables es una de las zonas de mayor poder adquisitivo de Miami-Dade, con boutiques, despachos profesionales y sedes de empresas latinoamericanas.',
-      'Un cliente de Coral Gables decide con la vista antes que con el precio: el diseño tiene que estar a ese nivel desde el primer segundo.',
+      'Elemento Web hace diseño web para boutiques, despachos y marcas de Coral Gables desde Ciudad de Panamá, sin oficina en Miami: diseño editorial a medida, fotografía cuidada (propia o generada con IA), versión bilingüe si hay cliente internacional y contacto discreto. Una landing parte desde $550 y un sitio corporativo desde $1,250, en USD y sin ITBMS.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que suele necesitar un negocio en Coral Gables',
+        h2: '¿Qué necesita el diseño web de un negocio en Coral Gables?',
         items: [
-          'Diseño editorial, cuidado, sin plantilla genérica',
-          'Fotografía de calidad del producto, servicio o equipo',
-          'Contenido bilingüe si el cliente incluye mercado internacional',
-          'Presencia de marca consistente con lo que se ve en la tienda o la oficina física',
-          'Formulario o WhatsApp discreto, sin sonar a venta agresiva',
+          'Diseño editorial a medida, coherente con la vitrina o la oficina',
+          'Fotografía de calidad del producto, el espacio o el equipo',
+          'Español e inglés si atiendes a clientes de fuera de Miami',
+          'Contacto discreto por formulario o WhatsApp, sin tono de venta agresiva',
+          'Carga rápida aun con fotos grandes',
         ],
       },
       {
         type: 'prose',
-        h2: 'Diseño que compite con la calle, no solo con Google',
+        h2: '¿Cómo sostiene la web la imagen de marca de un local en Coral Gables?',
         paragraphs: [
-          'En Coral Gables la vitrina física ya vende una idea de marca. La web tiene que sostener esa misma idea, no bajarla de nivel con un diseño de plantilla. Ese es el trabajo que hacemos: llevar el mismo cuidado visual del local a la pantalla.',
+          'En Miracle Mile y alrededores la vitrina ya vende una idea de marca. La web tiene que sostenerla con la misma tipografía, el mismo cuidado en las fotos y el mismo tono, en lugar de bajarla de nivel con una plantilla.',
+          'Coral Gables también reúne oficinas regionales de empresas latinoamericanas y despachos profesionales: para ellos, una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> bilingüe. Si no tienes fotos listas, se pueden generar con IA como parte del proyecto.',
         ],
       },
       {
@@ -226,25 +230,26 @@ export const miamiPages2: PageData[] = [
     breadcrumb: 'Homestead',
     lead: [
       'Homestead combina comercio local con una fuerte base agrícola e industrial en el extremo sur de Miami-Dade.',
-      'Construimos sitios simples y directos: precio claro, WhatsApp visible y contenido en español para el cliente que ya opera así todos los días.',
+      'Elemento Web hace diseño web para negocios de Homestead desde Ciudad de Panamá, sin oficina en Miami: sitios simples en español, rápidos en el celular, con WhatsApp como contacto, precios a la vista y catálogo de productos si vendes al mayor. Una landing tarda 5 días hábiles desde que recibimos el contenido y parte desde $550, sin ITBMS.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que suele necesitar un negocio en Homestead',
+        h2: '¿Qué necesita el diseño web de un negocio en Homestead?',
         items: [
-          'Web en español, directa y fácil de navegar desde el celular',
+          'Español primero, con inglés si atiendes a visitantes de los parques nacionales',
           'WhatsApp como canal principal de contacto',
-          'Catálogo simple de productos o servicios si aplica',
-          'Precio o rango de precio visible',
-          'Fotos reales del negocio o del campo/operación',
+          'Catálogo simple por línea de producto si eres vivero, finca o mayorista',
+          'Precio o rango de precio visible, o al menos el pedido mínimo',
+          'Fotos reales del negocio, del vivero o de la operación',
         ],
       },
       {
         type: 'prose',
-        h2: 'Simple y directo, como se vende en Homestead',
+        h2: '¿Qué web le sirve a un negocio agrícola o de comercio local en Homestead?',
         paragraphs: [
-          'Aquí no hace falta un sitio sofisticado: hace falta uno que cargue rápido, hable en español y lleve al cliente directo al WhatsApp. Ese es el enfoque, sin vestir el proyecto con funciones que nadie va a usar.',
+          'Homestead tiene dos clientes distintos: el comprador local o mayorista de los viveros y cultivos de The Redland, y el visitante que pasa camino a los parques nacionales Everglades y Biscayne. El primero quiere catálogo, mínimo de compra y WhatsApp; el segundo, ubicación, horario y algo en inglés.',
+          'Para casi todos basta una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> que cargue rápido con señal débil, sin funciones que nadie va a usar.',
         ],
       },
       {
@@ -278,18 +283,25 @@ export const miamiPages2: PageData[] = [
     breadcrumb: 'Sweetwater',
     lead: [
       'Sweetwater tiene una de las comunidades hispanas más densas de todo Miami-Dade, con comercio y servicios que operan casi enteramente en español.',
-      'El enfoque es el mismo que en el resto de nuestras páginas de Miami: web en español, WhatsApp visible, precio claro.',
+      'Elemento Web hace diseño web para negocios de Sweetwater desde Ciudad de Panamá, sin oficina en Miami: sitios en español, rápidos en el celular, con WhatsApp como contacto principal, menú o lista de precios a la vista y fotos reales. Una landing parte desde $550 y un sitio corporativo desde $1,250, cobrados en USD y sin ITBMS.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que suele necesitar un negocio en Sweetwater',
+        h2: '¿Qué necesita el diseño web de un negocio en Sweetwater?',
         items: [
-          'Web 100% en español',
+          'Todo en español, con el vocabulario de tu cliente',
           'WhatsApp como canal de contacto principal',
-          'Precio o rango de precio a la vista',
-          'Diseño simple, rápido de cargar en celular',
+          'Menú, servicios o lista de precios a la vista, no en un PDF',
+          'Horario y ubicación claros, coherentes con tu ficha de Google',
           'Fotos reales del negocio',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Qué web le sirve a un negocio de Sweetwater?',
+        paragraphs: [
+          'Sweetwater es pequeña y densa: comercio de barrio, restaurantes con una fuerte presencia nicaragüense y servicios para los estudiantes del campus principal de FIU, al lado. El cliente busca desde el celular, en español y cerca. Una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> con lo que vendes, el precio y un botón de WhatsApp cubre a la mayoría.',
         ],
       },
       {
@@ -322,17 +334,25 @@ export const miamiPages2: PageData[] = [
     breadcrumb: 'Hialeah Gardens',
     lead: [
       'Hialeah Gardens mezcla comercio local con negocios de logística y pequeña industria, en un entorno mayormente hispano.',
-      'Construimos sitios directos: en español cuando el cliente lo es, con catálogo simple si el negocio lo requiere, y WhatsApp como canal de cierre.',
+      'Elemento Web hace diseño web para negocios de Hialeah Gardens desde Ciudad de Panamá, sin oficina en Miami: sitios en español con catálogo por línea de producto para mayoristas y talleres, cotización por WhatsApp y precios o rangos claros. Una landing parte desde $550 y un sitio corporativo desde $1,250, en USD y sin ITBMS.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que suele necesitar un negocio en Hialeah Gardens',
+        h2: '¿Qué necesita el diseño web de un negocio en Hialeah Gardens?',
         items: [
-          'Web en español para comercio y servicio local',
-          'Catálogo o líneas de producto si el negocio es mayorista o industrial',
-          'WhatsApp visible para cotizaciones rápidas',
-          'Precio o rango de precio claro',
+          'Español para el comercio y el servicio local',
+          'Catálogo por línea de producto si eres mayorista, distribuidor o taller',
+          'Cotización por WhatsApp con los datos que necesitas: producto, cantidad y entrega',
+          'Precio, rango o pedido mínimo a la vista',
+          'Zona de entrega o cobertura explícita',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Qué web necesita un mayorista o taller en Hialeah Gardens?',
+        paragraphs: [
+          'En Hialeah Gardens conviven el comercio de barrio con bodegas, distribuidores y pequeña industria. Para el comprador profesional, la web es un catálogo: qué líneas manejas, en qué presentaciones y cómo se pide. Una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> con una página por línea le ahorra la llamada; la pauta B2B está en <a href="/industrias/diseno-web-importadoras-distribuidoras-panama/">diseño web para distribuidoras</a>.',
         ],
       },
       {
@@ -365,17 +385,25 @@ export const miamiPages2: PageData[] = [
     breadcrumb: 'Miami Lakes',
     lead: [
       'Miami Lakes es una comunidad planificada con fuerte presencia de oficinas corporativas y negocios profesionales, muchos con dueños o gerencia hispana.',
-      'El diseño aquí necesita verse igual de cuidado que en cualquier suburbio corporativo de EE.UU., sin el costo de estarlo.',
+      'Elemento Web hace diseño web para empresas y profesionales de Miami Lakes desde Ciudad de Panamá, sin oficina en Miami: sitios corporativos bilingües español/inglés, una página por servicio, equipo y credenciales visibles y un formulario que filtra la consulta. Un sitio corporativo parte desde $1,250, cobrado en USD y sin ITBMS.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que suele necesitar una empresa en Miami Lakes',
+        h2: '¿Qué necesita el diseño web de una empresa en Miami Lakes?',
         items: [
-          'Diseño corporativo limpio, sin plantilla genérica',
-          'Contenido bilingüe si atiende cliente hispano y angloparlante',
-          'Página de servicios clara para un comprador que compara opciones',
-          'Formulario o WhatsApp que filtre el tipo de consulta',
+          'Diseño corporativo limpio y a medida',
+          'Español e inglés cuando atiendes a cliente hispano y angloparlante',
+          'Una página por servicio para el comprador que compara opciones',
+          'Equipo, licencias y años de operación visibles',
+          'Formulario o WhatsApp que pregunte el tipo de consulta',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Qué web necesita una oficina o despacho en Miami Lakes?',
+        paragraphs: [
+          'Miami Lakes es una comunidad planificada, con un centro de oficinas y comercio en Main Street y muchas empresas de servicios con gerencia hispana. El cliente compara dos o tres proveedores antes de llamar, así que pesa una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> con servicios explicados por separado, credenciales y un contacto que llegue a la persona correcta.',
         ],
       },
       {
@@ -408,17 +436,25 @@ export const miamiPages2: PageData[] = [
     breadcrumb: 'Cutler Bay',
     lead: [
       'Cutler Bay es una comunidad residencial del sur de Miami-Dade con comercio y servicios de barrio en crecimiento.',
-      'Un sitio simple, en español cuando aplica, con WhatsApp y precio claro, es lo que rinde en este tipo de negocio.',
+      'Elemento Web hace diseño web para negocios locales de Cutler Bay desde Ciudad de Panamá, sin oficina en Miami: sitios simples y rápidos en el celular, en español o bilingües, con WhatsApp para consultas y citas, zonas de servicio y precio o rango claro. Una landing parte desde $550, cobrada en USD por tarjeta o transferencia y sin ITBMS.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que suele necesitar un negocio en Cutler Bay',
+        h2: '¿Qué necesita el diseño web de un negocio en Cutler Bay?',
         items: [
           'Web simple y rápida de cargar en celular',
-          'WhatsApp visible para consultas y citas',
+          'WhatsApp visible para consultas, citas y presupuestos',
+          'Zonas que atiendes, si el servicio es a domicilio',
           'Precio o rango de precio claro',
-          'Contenido en español si el cliente lo prefiere',
+          'Español, inglés o los dos, según tu clientela',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Qué web le sirve a un negocio de servicios en Cutler Bay?',
+        paragraphs: [
+          'Cutler Bay es sobre todo residencial, con comercio alrededor de Southland Mall y muchos servicios para el hogar que van a domicilio. Ese cliente busca «cerca de mí», compara dos opciones y escribe a la que dice con claridad qué zonas cubre y cuánto cuesta. Una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> con servicios, zonas y WhatsApp resuelve ese recorrido.',
         ],
       },
       {
@@ -450,17 +486,26 @@ export const miamiPages2: PageData[] = [
     breadcrumb: 'North Miami',
     lead: [
       'North Miami reúne un comercio diverso, con fuerte presencia hispana y caribeña, y negocios que necesitan verse serios sin gastar de más.',
-      'Construimos sitios directos: WhatsApp, precio claro y contenido en el idioma de tu cliente.',
+      'Elemento Web hace diseño web para negocios de North Miami desde Ciudad de Panamá, sin oficina en Miami: sitios en español, inglés o ambos según tu clientela, con WhatsApp como contacto principal, precio o rango visible y carga rápida en el celular. Una landing parte desde $550 y un sitio corporativo desde $1,250, en USD y sin ITBMS.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que suele necesitar un negocio en North Miami',
+        h2: '¿Qué necesita el diseño web de un negocio en North Miami?',
         items: [
-          'Web en español (o bilingüe si el negocio lo requiere)',
+          'El idioma de tu cliente: español, inglés o ambos desde el inicio',
           'WhatsApp como canal principal de contacto',
           'Precio o rango de precio visible',
+          'Dirección, horario y estacionamiento claros',
           'Diseño simple y rápido de cargar',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿En qué idioma debe estar la web de un negocio en North Miami?',
+        paragraphs: [
+          'Depende de quién te compra. North Miami mezcla clientela hispana, angloparlante y una comunidad haitiana grande, además de los estudiantes del campus de FIU en Biscayne Bay. Por eso aquí lo habitual es bilingüe español/inglés, con la página principal en el idioma de la mayoría de tus clientes.',
+          'Hacer bilingüe un sitio no es duplicar el trabajo: se arma con las dos versiones desde el principio, cada una con su dirección propia para que Google muestre la correcta. El formato suele ser una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> o, con varias líneas de servicio, una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a>.',
         ],
       },
       {

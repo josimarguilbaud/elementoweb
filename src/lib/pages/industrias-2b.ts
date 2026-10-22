@@ -18,18 +18,18 @@ export const industrias2b: PageData[] = [
     service: { type: 'Diseño web para corredores de seguros' },
     lead: [
       'Quien busca un seguro no compra por impulso: compara coberturas, pide varias cotizaciones y decide por confianza. Tu web tiene que ganar esa comparación antes de que suene el teléfono.',
-      'El corredor vive de la renovación y del boca a boca, pero capta poco por internet porque su web (cuando la tiene) es un folleto que enumera aseguradoras sin explicar nada. El asegurado no quiere una lista de logos: quiere entender qué ramo lo protege y cómo pedir una cotización sin dar media vida por adelantado.',
+      'Elemento Web, en Ciudad de Panamá, hace diseño web para corredores de seguros en Panamá con una página por ramo (auto, salud, vida, hogar, colectivo, fianzas), solicitud de cotización corta, sección de siniestros y recordatorios de renovación. El formato típico es una web corporativa desde $1,250; una landing para un solo ramo arranca desde $550.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué necesita la web de un corredor de seguros en Panamá',
-        intro: 'No es un catálogo de aseguradoras: es una máquina de aclarar dudas y filtrar solicitudes serias.',
+        h2: '¿Qué necesita la web de un corredor de seguros en Panamá?',
+        intro: 'No es un catálogo de aseguradoras: aclara dudas y filtra solicitudes serias.',
         items: [
           'Una página por ramo (auto, salud, vida, hogar, colectivo, fianzas)',
           'Solicitud de cotización que pide solo los datos mínimos para responder',
           'Explicación honesta de qué cubre y qué no cada tipo de póliza',
-          'Señales de respaldo: aseguradoras con las que trabajas y tu licencia de corredor',
+          'Señales de respaldo: aseguradoras con las que trabajas y tu licencia de corredor de la Superintendencia de Seguros y Reaseguros',
           'Canal directo por WhatsApp para dudas rápidas antes de cotizar',
           'Sección de renovación y siniestros para el cliente que ya tienes',
           'Contenido que responde las preguntas previas (deducible, cobertura, exclusiones)',
@@ -38,11 +38,11 @@ export const industrias2b: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Una página por ramo: así se posiciona y así se entiende',
+        h2: '¿Por qué una página por ramo de seguro?',
         paragraphs: [
-          'Nadie busca "corredor de seguros" a secas: busca "seguro de auto Panamá", "seguro de salud para la familia" o "fianza de cumplimiento". Si todos tus ramos viven apretados en una sola página, no compites en ninguna de esas búsquedas y, peor, obligas al visitante a leer sobre coberturas que no le interesan.',
-          'Cada ramo merece su propia URL, con el problema explicado en el idioma del cliente: qué cubre, qué deja fuera, cuándo conviene y qué necesita para cotizar. <strong>Así se posiciona un corredor: ramo por ramo</strong>, no con la marca genérica. Y de paso educas al asegurado, que llega a la cotización sabiendo lo que pide.',
-          'El contenido informativo hace el resto. Cada duda frecuente (qué es un deducible, cómo funciona un colectivo, qué exclusiones tiene un seguro de auto) es un artículo que atrae al siguiente cliente con la misma pregunta y que, de camino, deja claro que sabes de lo que hablas. Es el mismo principio del <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento por contenido</a>.',
+          'Nadie busca "corredor de seguros" a secas: busca "seguro de auto Panamá", "seguro de salud para la familia" o "fianza de cumplimiento". Si todos tus ramos viven en una sola página, no compites en ninguna de esas búsquedas y obligas al visitante a leer coberturas que no le interesan.',
+          'Cada ramo merece su propia URL: qué cubre, qué deja fuera, cuándo conviene y qué se necesita para cotizar. <strong>Así se posiciona un corredor: ramo por ramo</strong>, y el asegurado llega a la cotización sabiendo lo que pide.',
+          'Cada duda frecuente (qué es un deducible, cómo funciona un colectivo, qué exclusiones tiene un seguro de auto) es además un artículo que atrae al siguiente cliente con la misma pregunta. Es el principio del <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento por contenido</a>.',
         ],
       },
       {
@@ -62,40 +62,24 @@ export const industrias2b: PageData[] = [
           { h3: 'Mapeo de ramos y aseguradoras', text: 'Listamos los ramos que colocas y con qué compañías. Decidimos cuáles merecen página propia posicionable y cómo mostrar el respaldo sin convertir la web en un muro de logos.' },
           { h3: 'Redacción que aclara, no que asusta', text: 'Explicamos cada ramo en el idioma del cliente: qué cubre, qué no, cuándo conviene. Sin promesas de "el más barato" y sin jerga de póliza que espanta.' },
           { h3: 'Solicitud de cotización que filtra', text: 'Armamos el formulario por ramo pidiendo solo lo mínimo para responder. Y si lo activas, el <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">asistente con IA</a> resuelve las dudas básicas y solo te pasa la solicitud lista para cotizar.' },
-          { h3: 'Publicación y contenido continuo', text: 'Dejamos el blog listo para que cada pregunta frecuente se vuelva un artículo que capta clientes, y conectamos WhatsApp para la duda rápida que no espera un formulario.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'La confianza se gana explicando, no prometiendo el precio más bajo',
+        h2: '¿Se vende un seguro desde la web en Panamá?',
         paragraphs: [
-          'El seguro es un producto que el cliente compra con desconfianza: paga por algo que espera no usar y teme que, cuando lo use, aparezca la letra chica. El corredor que compite solo por "la cotización más barata" entra en una guerra que no gana y que además atrae al cliente que se va apenas otro le baje cinco dólares. La web que gana es la que explica: por qué esa cobertura, qué pasa en un siniestro, qué diferencia hay entre una póliza y otra.',
-          'Ese respaldo se diseña. Mostrar las aseguradoras con las que trabajas, tu licencia de corredor y una sección clara de siniestros dice más que cualquier eslogan. <strong>El asegurado no compra la póliza más barata: compra al corredor que confía que va a estar cuando lo necesite.</strong> Y esa confianza empieza en cómo se ve y qué dice tu web.',
-        ],
-      },
-      {
-        type: 'statement',
-        text: 'En seguros nadie recuerda al corredor hasta que hay un siniestro. La web es lo que hace que te recuerden antes, cuando toca decidir a quién comprarle.',
-        strong: 'la web es lo que hace que te recuerden antes',
-      },
-            {
-        type: 'prose',
-        h2: 'El asegurado compara en internet y contrata por teléfono',
-        paragraphs: [
-          'Es el patrón del rubro y conviene entenderlo antes de diseñar nada. Casi nadie contrata una póliza directamente desde una web en Panamá. Lo que sí hace todo el mundo es investigar antes: qué cubre, qué no cubre, cuánto cuesta más o menos, y sobre todo a quién llamar.',
-          'Esa investigación decide la venta aunque no la cierre. Cuando el asegurado por fin levanta el teléfono, ya eligió a quién llamar, y lo eligió leyendo. La web no es el punto de venta: es el filtro previo que determina si tu teléfono suena o suena el de otro corredor.',
-          'Eso cambia qué debe contener. No un cotizador complejo que casi nadie termina, sino contenido que responda de verdad: qué cubre cada ramo, qué exclusiones sorprenden, qué documentos piden, qué pasa al reclamar. El corredor que explica bien parece el que sabe, y ese es con el que la gente quiere hablar.',
-          '<strong>El objetivo de tu web no es cerrar la póliza, es ganarte la llamada.</strong> Diseñarla como tienda online es diseñar para un comportamiento que no existe.',
+          'Casi nunca se cierra ahí. El asegurado investiga en internet (qué cubre, qué no, cuánto cuesta más o menos, a quién llamar) y contrata por teléfono o WhatsApp. Cuando llama, ya eligió corredor, y lo eligió leyendo. <strong>El objetivo de la web no es cerrar la póliza, es ganarte la llamada.</strong>',
+          'Por eso no conviene un cotizador complejo que casi nadie termina, sino contenido que responda: qué cubre cada ramo, qué exclusiones sorprenden, qué documentos piden, qué pasa al reclamar. El corredor que explica bien parece el que sabe.',
+          'Competir solo por "la cotización más barata" atrae al cliente que se va apenas otro le baje cinco dólares. Mostrar las aseguradoras con las que trabajas, tu licencia y una sección clara de siniestros pesa más: el asegurado compra al corredor que confía que va a estar cuando lo necesite.',
         ],
       },
       {
         type: 'prose',
-        h2: 'La renovación es donde está el negocio, y casi nadie la trabaja',
+        h2: '¿Cómo ayuda la web a no perder renovaciones?',
         paragraphs: [
-          'Un corredor de seguros vive de la cartera, no de la venta nueva. Y la cartera se pierde en silencio: el asegurado no avisa que se va, simplemente no renueva, y muchas veces ni recuerda quién era su corredor hasta que necesita reclamar.',
-          'Casi todas las webs del rubro están diseñadas solo para captar. No hay nada para el cliente que ya tienes, que es justamente el que más fácil se pierde y más barato se retiene.',
-          'Lo que funciona es sencillo: un área donde el asegurado consulte sus pólizas y vencimientos, instrucciones claras de qué hacer ante un siniestro —el momento en que más te necesita y peor lo atiende el rubro— y recordatorios automáticos antes de cada renovación.',
-          'Ese recordatorio es probablemente la automatización más rentable que puede montar un corredor. <strong>Renovar es varias veces más barato que captar</strong>, y una llamada a tiempo antes del vencimiento evita la mayoría de las fugas. Lo montamos con <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones</a> conectadas a tu cartera.',
+          'Un corredor vive de la cartera, y la cartera se pierde en silencio: el asegurado no renueva y a veces ni recuerda quién era su corredor. Casi todas las webs del rubro están hechas solo para captar y no tienen nada para el cliente que ya tienes.',
+          'Lo que funciona: un área donde el asegurado consulte pólizas y vencimientos, instrucciones claras de qué hacer ante un siniestro y recordatorios automáticos antes de cada renovación.',
+          '<strong>Renovar es varias veces más barato que captar</strong>, y una llamada a tiempo antes del vencimiento evita la mayoría de las fugas. Lo montamos con <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones</a> conectadas a tu cartera.',
         ],
       },
       {
@@ -115,22 +99,20 @@ export const industrias2b: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El cotizador pide datos personales, y eso tiene reglas',
+        h2: '¿Qué datos puede pedir el cotizador de un corredor de seguros?',
         paragraphs: [
-          'Un formulario de cotización de seguros recoge más de lo que parece: cédula, edad, a veces condición de salud, datos del vehículo o de la vivienda. Varios de esos entran en lo que la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong> trata con más cuidado, especialmente los de salud.',
-          'La consecuencia práctica no es legal, es de diseño. Un formulario que pide veinte datos antes de dar nada convierte pésimo y encima acumula información sensible que después hay que custodiar. Pedir menos convierte mejor y reduce tu exposición: nombre, teléfono, ramo y poco más para una primera conversación.',
-          'Lo que sí hay que resolver bien es a dónde llega eso. No al correo personal del corredor ni a un WhatsApp compartido, sino a un buzón de la corredora con acceso controlado. Si trabajas con varios ejecutivos, con registro de quién atendió cada solicitud.',
-          'Montamos la parte técnica: HTTPS, formulario mínimo con aviso de privacidad y almacenamiento con acceso controlado. <strong>El texto legal lo revisa tu asesor</strong>; nosotros dejamos la web preparada para sostenerlo.',
+          'Un formulario de cotización recoge cédula, edad, a veces condición de salud, datos del vehículo o de la vivienda. La <strong>Ley 81 de 2019 de Protección de Datos Personales</strong> trata varios de esos con más cuidado, en especial los de salud.',
+          'Pedir menos convierte mejor y reduce tu exposición: nombre, teléfono y ramo bastan para una primera conversación. Lo recibido va a un buzón de la corredora con acceso controlado (no al correo personal del corredor ni a un WhatsApp compartido) y, con varios ejecutivos, con registro de quién atendió cada solicitud.',
+          'Montamos la parte técnica: HTTPS, formulario mínimo con aviso de privacidad y almacenamiento con acceso controlado. <strong>El texto legal lo revisa tu asesor.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: llamadas y solicitudes por ramo',
         paragraphs: [
-          'Como la venta se cierra por teléfono, medir solo los formularios enviados subestima el trabajo de la web. Hay que medir también las llamadas que salieron del botón del sitio y las conversaciones de WhatsApp, que en seguros suelen ser más que los formularios.',
-          'El corte que más sirve es por ramo. Auto, salud, vida, incendio y fianzas tienen comisiones y ciclos muy distintos, y saber de cuál viene cada contacto te dice qué página ampliar y en qué vale la pena pautar. Sin ese desglose, todo se ve igual de bien o igual de mal.',
-          'El segundo número es la tasa de renovación de la cartera. No sale de la web, pero la web influye directamente: si los recordatorios automáticos están funcionando, ese número sube, y es el que más impacta la facturación del año.',
-          'Y conviene separar el contacto de cliente nuevo del de cliente existente que viene a consultar algo. Son dos negocios distintos y mezclarlos esconde el problema. Lo dejamos medido en un tablero corto; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Como la venta se cierra por teléfono, se miden también las llamadas desde el botón del sitio y las conversaciones de WhatsApp, que en seguros suelen superar a los formularios.',
+          'El corte útil es por ramo: auto, salud, vida, incendio y fianzas tienen comisiones y ciclos distintos, y saber de cuál viene cada contacto dice qué página ampliar y dónde pautar. Conviene separar además el contacto de cliente nuevo del de cliente existente.',
+          'El segundo número es la tasa de renovación de la cartera: no sale de la web, pero sube si los recordatorios automáticos funcionan. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -176,13 +158,12 @@ export const industrias2b: PageData[] = [
     service: { type: 'Diseño web para concesionarios de autos' },
     lead: [
       'El comprador de un auto lo elige en el celular mucho antes de pisar el salón. Ve las fotos, calcula la letra y decide a cuál concesionario visitar. Si tu inventario no está en línea, no estás en esa lista.',
-      'Vender autos no es lo mismo que repararlos: aquí el cliente compra con los ojos y con la calculadora. Quiere ver el modelo real que hay en piso (no una foto de catálogo del fabricante), entender cuánto pagaría al mes y agendar el test drive sin llamar tres veces. El concesionario que no muestra su inventario en línea pierde el prospecto contra el que sí.',
+      'Elemento Web, en Ciudad de Panamá, hace diseño web para concesionarios de autos en Panamá: inventario en línea con fotos reales y filtros, ficha por vehículo con precio, simulador de financiamiento, agenda de prueba de manejo y WhatsApp por unidad. Un sitio de hasta 6 páginas arranca desde $1,250; con inventario que se actualiza solo, desde $2,900.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué necesita la web de un concesionario de autos en Panamá',
-        intro: 'El corazón es el inventario: fotos reales, filtros y una forma de dejar el interés antes de venir al salón.',
+        h2: '¿Qué necesita la web de un concesionario de autos en Panamá?',
         items: [
           'Inventario en línea con fotos reales de cada unidad, no del catálogo del fabricante',
           'Filtros por marca, modelo, año, precio, kilometraje y tipo (nuevo o usado)',
@@ -196,11 +177,11 @@ export const industrias2b: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El inventario es la web: si no está en línea, el prospecto no llega',
+        h2: '¿Por qué el inventario en línea decide la visita al salón?',
         paragraphs: [
-          'El comprador de auto hace todo el trabajo antes de visitarte: ve fotos, compara modelos, calcula la letra mensual y descarta concesionarios sin salir de su casa. Cuando llega al salón, ya casi decidió. Si tu web no muestra el inventario real (el auto que de verdad está en piso, con sus fotos), el prospecto se va al concesionario que sí lo muestra y tú te enteras de que existía cuando ya compró en otro lado.',
-          'Por eso el inventario en línea no es un adorno: es el motor. Cada unidad con su ficha, sus fotos reales y su precio, filtrable por lo que el comprador busca de verdad (marca, presupuesto, año). <strong>La foto de catálogo del fabricante no vende: vende el auto real que puede tocar el sábado.</strong> Y cada ficha necesita su botón para dejar el interés en caliente, sin obligar a llamar.',
-          'Un catálogo así funciona parecido a una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda en línea</a>, pero el cierre no es un pago: es un prospecto calificado y un test drive agendado. La diferencia técnica cambia todo el diseño.',
+          'El comprador de auto ve fotos, compara modelos, calcula la letra y descarta concesionarios desde el celular. Si tu web no muestra la unidad que de verdad está en piso, se va al concesionario que sí la muestra.',
+          'Cada unidad necesita su ficha con fotos reales, precio y filtros por marca, presupuesto y año, más un botón para dejar el interés sin llamar. <strong>La foto de catálogo del fabricante no vende: vende el auto real que puede tocar el sábado.</strong>',
+          'Un catálogo así funciona parecido a una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda en línea</a>, pero el cierre no es un pago: es un prospecto calificado y una prueba de manejo agendada.',
         ],
       },
       {
@@ -218,42 +199,32 @@ export const industrias2b: PageData[] = [
         h2: 'Cómo trabajamos tu web de concesionario',
         items: [
           { h3: 'Estructura del inventario', text: 'Definimos cómo se carga cada unidad, qué campos filtran (marca, año, precio, kilometraje) y cómo tu equipo sube y baja autos sin depender de nosotros. El inventario tiene que respirar solo.' },
-          { h3: 'Fichas que venden', text: 'Diseñamos la ficha por vehículo con galería de fotos reales, equipamiento claro y el precio visible. Cada una con su llamado: agendar test drive, solicitar financiamiento o escribir por WhatsApp.' },
           { h3: 'Captación de prospectos', text: 'Conectamos la solicitud de financiamiento, la valoración del usado y el <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">agendamiento de test drive</a> para que cada interés se convierta en un dato accionable para tu equipo de ventas.' },
           { h3: 'Publicación y medición', text: 'Publicamos, conectamos el seguimiento y dejamos todo listo para amplificar con <a href="/marketing/google-ads-panama/">Google Ads</a>, que en autos rinde: quien busca "camioneta 2024 Panamá" está a semanas de comprar.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'El financiamiento es la conversación que cierra la venta',
+        h2: '¿Cómo mostrar el financiamiento en la web de un concesionario?',
         paragraphs: [
-          'En Panamá muy pocos compran un auto de contado: casi todos financian. Por eso la pregunta que de verdad importa no es "cuánto cuesta", sino "cuánto pago al mes". El concesionario que responde esa pregunta en la web (con un simulador o al menos una solicitud de financiamiento clara) avanza la venta desde el celular; el que la esconde hasta la visita pierde al prospecto que quería tener la cifra antes de mover el carro.',
-          'Ese enfoque separa la venta de autos del taller. En un <a href="/industrias/diseno-web-talleres-automotriz-panama/">taller</a> el cliente llega con un problema y busca confianza en la reparación; en el concesionario llega con un deseo y busca que le hagan fácil la compra. <strong>La web de un concesionario no repara desconfianza: acelera una decisión que ya casi está tomada</strong>, y la letra mensual clara es lo que la empuja al sí.',
+          'En Panamá muy pocos compran un auto de contado: la pregunta que importa es "cuánto pago al mes". Un simulador con letra estimada según monto, inicial y plazo, o al menos una solicitud de financiamiento clara con los bancos con los que trabajas y el abono mínimo, avanza la venta desde el celular.',
+          'La aprobación y la tasa real dependen del banco o la financiera, y la web lo dice para no crear falsas expectativas. A diferencia de un <a href="/industrias/diseno-web-talleres-automotriz-panama/">taller</a>, donde el cliente busca confianza en la reparación, aquí llega con un deseo: <strong>la web acelera una decisión que ya casi está tomada.</strong>',
         ],
       },
       {
-        type: 'statement',
-        text: 'El comprador ya vio el auto en su celular antes de estacionarse en tu salón. Tu web no es el catálogo: es la primera prueba de manejo.',
-        strong: 'tu web es la primera prueba de manejo',
-      },
-            {
         type: 'prose',
-        h2: 'El usado deja más margen y casi siempre está peor publicado',
+        h2: '¿Qué debe tener la ficha de un auto usado?',
         paragraphs: [
-          'En un concesionario, el auto nuevo llega con el material de la marca: fotos de estudio, fichas técnicas, campañas. El usado no llega con nada, y suele publicarse con tres fotos tomadas de prisa en el patio, sin detalle y sin historia.',
-          'Es al revés de lo que conviene. El comprador de nuevo ya decidió el modelo y compara precio y disponibilidad. El de usado no ha decidido nada: compara unidades concretas, y cada duda que no le resuelvas la resuelve descartando.',
-          'Una ficha de usado que convierte tiene lo que ninguna tiene: kilometraje real, año, dueños anteriores, si tuvo mantenimiento en agencia, historial de choques, estado de llantas y batería, y muchas fotos con luz de día, incluidos los detalles feos. Publicar un rayón cuesta menos que perder la confianza cuando el cliente lo ve en persona.',
-          '<strong>La transparencia en usados no baja el precio, sube la conversión.</strong> El comprador que llega sabiendo exactamente qué va a ver llega a comprar, no a inspeccionar.',
+          'El auto nuevo llega con el material de la marca; el usado suele publicarse con tres fotos tomadas de prisa en el patio. Y el comprador de usado es el que compara unidades concretas: cada duda que no le resuelvas la resuelve descartando.',
+          'La ficha que convierte lleva kilometraje real, año, dueños anteriores, si tuvo mantenimiento en agencia, historial de choques, estado de llantas y batería, y muchas fotos con luz de día, incluidos los detalles feos. <strong>La transparencia en usados no baja el precio, sube la conversión.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Un lead de auto se enfría en minutos, no en días',
         paragraphs: [
-          'La compra de un vehículo es de las decisiones más largas que toma una familia, y sin embargo el contacto inicial tiene una ventana cortísima. Quien llena un formulario a las ocho de la noche está mirando cuatro concesionarios a la vez, y responde el que conteste primero.',
-          'La realidad de casi todos los concesionarios es otra: el lead llega a un correo, alguien lo revisa al día siguiente, lo asigna a un vendedor, y ese vendedor llama dos días después. Para entonces el cliente ya visitó otro patio.',
-          'La solución no es tener gente de guardia. Es automatizar la primera respuesta —un mensaje inmediato por WhatsApp confirmando qué unidad consultó, con la ficha y el enlace para agendar prueba de manejo— y que el lead entre directo al CRM asignado, no a un correo compartido.',
-          'Eso no cierra la venta, pero mantiene la conversación abierta hasta que un humano pueda tomarla. <strong>Y en este rubro, seguir en la conversación es la mitad del trabajo.</strong> Lo montamos con <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones y CRM</a>.',
+          'Quien llena un formulario a las ocho de la noche está mirando cuatro concesionarios a la vez y responde al que conteste primero. Lo habitual es otro: el lead llega a un correo, se asigna al día siguiente y el vendedor llama dos días después.',
+          'La solución es automatizar la primera respuesta (un WhatsApp inmediato con la ficha de la unidad consultada y el enlace para agendar prueba de manejo) y que el lead entre directo al CRM asignado. Lo montamos con <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones y CRM</a>.',
         ],
       },
       {
@@ -273,22 +244,18 @@ export const industrias2b: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La postventa es el negocio que no se acaba cuando entregas el carro',
+        h2: '¿Qué debe tener la sección de postventa de un concesionario?',
         paragraphs: [
-          'La venta de un vehículo ocurre una vez cada varios años. El taller, los repuestos y el mantenimiento ocurren varias veces al año, durante toda la vida del carro, y con márgenes que a menudo superan los de la venta.',
-          'Casi ninguna web de concesionario trabaja eso. Toda la comunicación apunta a captar comprador nuevo, y el cliente que ya compró queda sin canal, hasta que necesita servicio y descubre que es más fácil ir al taller de la esquina.',
-          'Lo que hace falta es una sección propia de servicio: agendar cita de mantenimiento en línea, precios de los servicios programados por kilometraje, disponibilidad de repuestos y estado de la garantía. Nada de eso es complejo y cambia la retención por completo.',
-          'Y el mantenimiento agendado es la mejor puerta a la siguiente venta: el cliente que vuelve al taller cada seis meses es al que le puedes ofrecer el cambio de unidad cuando llegue el momento. <strong>Perder al cliente después de entregarle el carro es perder dos negocios, no uno.</strong>',
+          'La venta ocurre una vez cada varios años; el taller, los repuestos y el mantenimiento, varias veces al año durante toda la vida del carro. Aun así, casi ninguna web de concesionario tiene canal para el cliente que ya compró.',
+          'La sección de servicio lleva cita de mantenimiento en línea, precios de los servicios programados por kilometraje, disponibilidad de repuestos y estado de la garantía. El cliente que vuelve al taller cada seis meses es al que le ofreces el cambio de unidad cuando llegue el momento.',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: leads por unidad y tiempo hasta la primera respuesta',
         paragraphs: [
-          'El primer número es el más incómodo y el más útil: cuánto tarda tu equipo en responder un lead. Medido en minutos, no en días. Casi ningún concesionario lo tiene medido, y casi todos descubren al medirlo que ahí se les va la mitad de las oportunidades.',
-          'El segundo es leads por unidad publicada. Una unidad con muchas visitas y ningún contacto tiene un problema de precio o de fotos, no de difusión, y esa distinción evita gastar en pauta para tapar un problema de publicación.',
-          'También conviene separar el interés en nuevo del interés en usado, porque son dos negocios distintos con dos ciclos distintos, y mezclarlos esconde cuál de los dos está funcionando.',
-          'Y las citas de prueba de manejo agendadas, que en este rubro es el paso que mejor predice la venta. Lo dejamos medido en un tablero corto; el planteamiento en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'El primer número es cuánto tarda tu equipo en responder un lead, medido en minutos. El segundo, leads por unidad publicada: una unidad con muchas visitas y ningún contacto tiene un problema de precio o de fotos, no de difusión.',
+          'Conviene separar el interés en nuevo del interés en usado, que tienen ciclos distintos, y contar las pruebas de manejo agendadas, el paso que mejor predice la venta. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -334,13 +301,12 @@ export const industrias2b: PageData[] = [
     service: { type: 'Diseño web para clínicas estéticas' },
     lead: [
       'Un tratamiento estético se decide con dos preguntas: se ve bien el resultado y confío en quien me lo va a hacer. Tu web tiene que responder ambas antes de que el paciente pida una cita.',
-      'La medicina estética vende un ticket alto sobre el propio cuerpo del paciente, así que la barrera no es el precio: es el miedo. Miedo al resultado, a la mano equivocada, a la mala experiencia que vio en redes. La web que gana no muestra descuentos: muestra resultados reales, credenciales médicas y una forma segura de dar el primer paso, que casi siempre es una valoración.',
+      'Elemento Web, en Ciudad de Panamá, hace diseño web para clínicas estéticas en Panamá con una página por procedimiento, galería de antes y después con consentimiento del paciente, credenciales del médico, precio «desde» por tratamiento y reserva de valoración en línea con recordatorio. El formato típico es una web corporativa desde $1,250.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué necesita la web de una clínica estética en Panamá',
-        intro: 'Aquí se compra con los ojos y con la confianza. La web tiene que servir las dos cosas sin caer en la promesa exagerada.',
+        h2: '¿Qué necesita la web de una clínica estética en Panamá?',
         items: [
           'Una página por tratamiento (botox, rellenos, láser, corporales, faciales)',
           'Antes y después reales, con el consentimiento del paciente',
@@ -354,11 +320,10 @@ export const industrias2b: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El resultado se muestra, no se promete: antes y después que convierten',
+        h2: '¿Cómo mostrar antes y después en la web de una clínica estética?',
         paragraphs: [
-          'En estética el paciente compra con los ojos. Ninguna descripción de un tratamiento convence tanto como ver el resultado en una persona real. El antes y después bien tomado (misma luz, mismo ángulo, con el consentimiento del paciente) es la prueba que mueve la reserva, mucho más que cualquier texto sobre la técnica. Una clínica que esconde sus resultados le pide al paciente un acto de fe que otra clínica no le pide.',
-          'Pero mostrar no es prometer. La ética médica y el sentido común marcan la línea: se muestra el resultado real de un caso, no se garantiza que a todos les pase igual. <strong>La clínica seria explica qué esperar y qué no</strong>, y esa honestidad, lejos de frenar, construye la confianza que cierra un ticket alto. El paciente que siente que le dijeron la verdad reserva con menos miedo.',
-          'Cada tratamiento merece su propia página, porque cada uno se busca por separado: "botox Panamá", "tratamiento de manchas", "criolipólisis". Es el mismo principio que usa un <a href="/industrias/diseno-web-belleza-spa-panama/">spa o centro de belleza</a>, pero aquí pesa además la credencial médica, que en estética no es un detalle: es la diferencia entre una clínica y una promoción de redes.',
+          'Ninguna descripción convence tanto como el resultado en una persona real. El antes y después bien tomado (misma luz, mismo ángulo y distancia, con consentimiento del paciente para publicarlo en internet) es la prueba que mueve la reserva.',
+          'Mostrar no es prometer: se muestra el resultado real de un caso, no se garantiza que a todos les pase igual. <strong>La clínica seria explica qué esperar y qué no</strong>, y esa honestidad baja el miedo que frena un ticket alto.',
         ],
       },
       {
@@ -375,43 +340,35 @@ export const industrias2b: PageData[] = [
         type: 'steps',
         h2: 'Cómo trabajamos tu web de clínica estética',
         items: [
-          { h3: 'Menú de tratamientos', text: 'Ordenamos tu oferta en páginas por tratamiento, cada una con su explicación, su antes y después y su precio de valoración. Definimos cuáles posicionar por separado y cuáles agrupar.' },
-          { h3: 'Prueba visual y credenciales', text: 'Montamos la galería de resultados reales con el marco de consentimiento correcto y damos peso a las credenciales del médico y a los equipos, que es lo que separa una clínica seria de una promoción.' },
+          { h3: 'Menú de tratamientos', text: 'Ordenamos tu oferta en páginas por tratamiento y definimos cuáles posicionar por separado y cuáles agrupar, empezando por los de mayor margen.' },
           { h3: 'Reserva de valoración', text: 'Conectamos el <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de citas</a> para que el paciente reserve su valoración en línea, con recordatorio automático que baja las ausencias, y WhatsApp para la duda íntima previa.' },
           { h3: 'Publicación y captación', text: 'Publicamos y dejamos listo el terreno para amplificar con <a href="/marketing/facebook-instagram-ads-panama/">Instagram Ads</a>, el canal natural de la estética, con las páginas de tratamiento como destino que convierte.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'El ticket alto no se cierra con descuento: se cierra con confianza',
+        h2: '¿Por qué la valoración es el primer paso y no la venta?',
         paragraphs: [
-          'Un tratamiento estético cuesta, y el paciente lo sabe. La tentación es competir por precio con promociones agresivas, pero eso atrae al paciente que se va a la próxima oferta y baja la percepción de tu clínica justo donde más importa: sobre su cara y su cuerpo, nadie quiere lo barato. La web que convierte en estética no grita descuentos: transmite que la clínica es limpia, seria, con manos capacitadas y resultados que se pueden ver.',
-          'Por eso el primer paso rara vez es la venta: es la valoración. Bajar la barrera a "ven, te evalúo y te digo con honestidad qué te conviene" convierte muchísimo mejor que "reserva tu botox hoy". <strong>La valoración es el mostrador donde se construye la confianza que justifica el ticket</strong>, y la web tiene que hacer que pedirla sea tan fácil como reservar una mesa. El diseño cuidado, ahí, no es vanidad: es coherencia. Nadie confía su rostro a una clínica cuya web se ve descuidada.',
+          'Competir con promociones agresivas atrae al paciente que se va a la próxima oferta: sobre su cara y su cuerpo, nadie quiere lo barato. "Ven, te evalúo y te digo con honestidad qué te conviene" convierte mejor que "reserva tu botox hoy".',
+          '<strong>La valoración es donde se construye la confianza que justifica el ticket</strong>, y la web tiene que hacer que pedirla sea tan fácil como reservar una mesa, con un diseño limpio y cuidado: nadie confía su rostro a una clínica cuya web se ve descuidada.',
         ],
       },
       {
-        type: 'statement',
-        text: 'En estética el paciente no compra un tratamiento: compra la confianza de que la mano que lo hace sabe lo que hace. Todo en la web trabaja para esa confianza o en contra de ella.',
-        strong: 'compra la confianza de que la mano que lo hace sabe lo que hace',
-      },
-            {
         type: 'prose',
         h2: 'Una página por procedimiento: así te encuentra quien ya decidió',
         paragraphs: [
-          'En estética el paciente rara vez busca "clínica estética". Busca el procedimiento con nombre y apellido: "ácido hialurónico Panamá", "depilación láser Costa del Este", "criolipólisis precio", "botox arrugas frente". Ya investigó, ya sabe qué quiere y está comparando dónde hacérselo.',
-          'Ese paciente es el más valioso que vas a recibir y es el que peor atiende una página de servicios que lista doce procedimientos en viñetas. Llega buscando una respuesta concreta y encuentra un catálogo.',
-          'Una página por procedimiento le da lo que vino a buscar: en qué consiste, cuánto dura la sesión, cuántas se necesitan, qué se siente, qué cuidados hay después, cuánto dura el resultado y desde cuánto sale. Con su galería de casos de ese procedimiento, no de la clínica en general.',
-          '<strong>Y compite por su propia búsqueda.</strong> Cinco procedimientos con página propia rinden más que veinte listados, y te permiten pautar sobre el que más margen deja en vez de sobre la clínica entera.',
+          'El paciente rara vez busca "clínica estética". Busca el procedimiento por su nombre: "ácido hialurónico Panamá", "depilación láser Costa del Este", "criolipólisis precio", "botox arrugas frente". Ya sabe qué quiere y compara dónde hacérselo, y una lista de doce procedimientos en viñetas no le responde.',
+          'Cada página explica en qué consiste, cuánto dura la sesión, cuántas se necesitan, qué se siente, qué cuidados hay después, cuánto dura el resultado y desde cuánto sale, con la galería de casos de ese procedimiento. Es el principio de un <a href="/industrias/diseno-web-belleza-spa-panama/">spa o centro de belleza</a>, pero aquí pesa además la credencial médica.',
+          '<strong>Cinco procedimientos con página propia rinden más que veinte listados</strong>, y te permiten pautar sobre el que más margen deja.',
         ],
       },
       {
         type: 'prose',
-        h2: 'La publicidad de estética tiene reglas propias',
+        h2: '¿Por qué rechazan los anuncios de una clínica estética?',
         paragraphs: [
-          'Meta y Google tratan la salud y la estética como categorías restringidas. Anuncios con antes y después demasiado explícitos, promesas de resultado o textos que señalan una condición física del usuario se rechazan, y una cuenta con rechazos repetidos termina limitada.',
-          'Eso tiene una consecuencia práctica que casi nadie anticipa: <strong>si tu captación depende solo de la pauta, estás construyendo sobre terreno prestado</strong>. Una cuenta restringida deja la agenda vacía de un día para otro y no hay a quién reclamarle.',
-          'La web resuelve eso porque el tráfico orgánico no se rechaza. Las páginas por procedimiento, el contenido que explica cada tratamiento y la ficha de Google no dependen de que un revisor apruebe un anuncio. Siguen trayendo pacientes mientras la pauta se resuelve.',
-          'Además, el material que sí puedes publicar en tu web —galerías completas, explicaciones detalladas, precios— es justo el que la pauta restringe. Los anuncios llevan a esas páginas y ahí sí se puede mostrar todo. Lo trabajamos en <a href="/marketing/facebook-instagram-ads-panama/">campañas de Meta</a> junto con el sitio, no por separado.',
+          'Meta y Google tratan la salud y la estética como categorías restringidas. Anuncios con antes y después explícitos, promesas de resultado o textos que señalan una condición física del usuario se rechazan, y una cuenta con rechazos repetidos termina limitada.',
+          '<strong>Si tu captación depende solo de la pauta, construyes sobre terreno prestado</strong>: una cuenta restringida deja la agenda vacía de un día para otro. Las páginas por procedimiento y la ficha de Google no dependen de que un revisor apruebe un anuncio.',
+          'Las galerías completas, las explicaciones y los precios que la pauta restringe sí caben en tu web, y los anuncios llevan ahí. Lo trabajamos en <a href="/marketing/facebook-instagram-ads-panama/">campañas de Meta</a> junto con el sitio.',
         ],
       },
       {
@@ -431,22 +388,18 @@ export const industrias2b: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Hablar de precio sin espantar y sin regalar el margen',
+        h2: '¿Se publican los precios en la web de una clínica estética?',
         paragraphs: [
-          'El precio es la pregunta que más llega por WhatsApp y la que más webs de estética evitan. Esconderlo del todo tiene un costo invisible: el paciente asume que es carísimo, o escribe solo para preguntar precio y desaparece, y tu equipo pasa el día contestando cotizaciones que no cierran.',
-          'Lo que funciona no es publicar la lista completa. Es publicar el <strong>desde</strong> por procedimiento y el precio de la valoración inicial. Eso filtra al que nunca iba a agendar, le da seguridad al que sí, y deja el precio final donde debe estar: en la consulta, después de evaluar el caso.',
-          'Los paquetes de sesiones también rinden bien publicados, porque el paciente de estética compara "cuánto me sale el tratamiento completo", no la sesión suelta. Y publicar el financiamiento disponible mueve tickets altos más que cualquier descuento.',
-          'La regla que aplicamos: <strong>si tu equipo la contesta veinte veces por semana por WhatsApp, esa respuesta debe estar en la web.</strong> No pierdes ventas por publicarla; ganas tiempo del equipo y filtras mejor.',
+          'Esconder el precio del todo hace que el paciente asuma que es carísimo o escriba solo para preguntarlo y desaparezca. Lo que funciona es publicar el <strong>desde</strong> por procedimiento y el precio de la valoración inicial; el precio final queda para la consulta, después de evaluar el caso.',
+          'Los paquetes de sesiones también rinden publicados, porque el paciente compara el tratamiento completo, no la sesión suelta, y el financiamiento disponible mueve tickets altos más que un descuento. La regla: <strong>si tu equipo la contesta veinte veces por semana por WhatsApp, esa respuesta va en la web.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: valoraciones agendadas y cuántas cierran',
         paragraphs: [
-          'En estética la métrica que importa no es la cita, es la <strong>valoración</strong>: la primera consulta donde se evalúa el caso y se cotiza. Y después, qué porcentaje de esas valoraciones termina en tratamiento.',
-          'Esos dos números juntos dicen cosas distintas. Muchas valoraciones que no cierran significa que la web está atrayendo al paciente equivocado, normalmente porque no habla de precio y llega gente fuera de rango. Pocas valoraciones con cierre alto significa que la captación está corta pero apunta bien, y ahí sí conviene invertir en visibilidad.',
-          'El tercer dato es de qué procedimiento venía cada valoración. Te dice cuál de tus páginas está trabajando y cuál no, y en un rubro donde el margen varía mucho entre procedimientos, eso decide dónde poner el esfuerzo.',
-          'Lo dejamos medido desde el arranque, en un tablero corto que se revisa en dos minutos. Cómo lo planteamos, en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'La métrica es la <strong>valoración</strong> agendada y qué porcentaje termina en tratamiento. Muchas valoraciones sin cierre indican que llega el paciente fuera de rango, casi siempre porque la web no habla de precio; pocas con cierre alto indican que conviene invertir en visibilidad.',
+          'El tercer dato es de qué procedimiento venía cada valoración: con márgenes tan distintos entre procedimientos, decide dónde poner el esfuerzo. Cómo lo planteamos, en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -492,13 +445,13 @@ export const industrias2b: PageData[] = [
     service: { type: 'Diseño web para veterinarias' },
     lead: [
       'Para tu cliente la mascota no es un animal: es de la familia. Elige veterinaria como elegiría pediatra, y la web es donde decide si te confía a su perro o a su gato.',
-      'La veterinaria vive de dos cosas: la urgencia (mi mascota está mal, ¿dónde la llevo ya?) y la relación de años (vacunas, controles, la misma clínica de siempre). La web tiene que servir a ambas: dar respuesta inmediata al que busca con angustia y hacer fácil la cita y el recordatorio al cliente fiel. La que solo pone una dirección y un teléfono pierde al primero y descuida al segundo.',
+      'Elemento Web, en Ciudad de Panamá, hace diseño web para veterinarias en Panamá: urgencias y horario visibles sin hacer scroll, cita en línea según tu disponibilidad real, recordatorios automáticos de vacunas por WhatsApp y una página por servicio (vacunación, esterilización, peluquería). El formato típico es una web corporativa desde $1,250; una landing, desde $550.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué necesita la web de una veterinaria en Panamá',
-        intro: 'Mitad respuesta rápida para la urgencia, mitad relación de confianza para el cliente de años.',
+        h2: '¿Qué necesita la web de una veterinaria en Panamá?',
+        intro: 'Mitad respuesta rápida para la urgencia, mitad relación de años con el cliente de vacunas y controles.',
         items: [
           'Servicios claros por área (consulta, cirugía, vacunación, peluquería, laboratorio)',
           'Cita en línea según la disponibilidad real de la clínica',
@@ -512,10 +465,10 @@ export const industrias2b: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La mascota es familia: la web tiene que tratarla así',
+        h2: '¿Cómo elige un dueño a la veterinaria de su mascota?',
         paragraphs: [
-          'Quien busca veterinaria no busca un proveedor: busca a alguien en quien confiar a un miembro de su familia. Ese detalle emocional cambia todo el diseño. El tono no puede ser frío ni clínico como el de un taller; tiene que transmitir el mismo cariño con el que el dueño trata a su mascota. Las fotos del equipo, la forma de hablar de los servicios y hasta los colores dicen, antes que cualquier texto, "aquí van a cuidar a tu perro como tú lo cuidas".',
-          'Al mismo tiempo, hay una urgencia real que atender. Buena parte de las búsquedas de veterinaria llegan con angustia: la mascota está decaída, vomitó, se lastimó. Ese dueño no quiere leer la historia de la clínica: quiere saber en un segundo si atienden ahora, dónde quedan y cómo llegar. <strong>La web tiene que responder la urgencia sin fricción</strong> y, al mismo tiempo, cuidar la relación larga del cliente que vuelve cada año. Servir a los dos es el reto, y el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local</a> es clave: el que busca "veterinaria cerca de mí" tiene que encontrarte a ti.',
+          'Quien busca veterinaria busca a alguien en quien confiar a un miembro de su familia. El tono no puede ser frío como el de un taller: las fotos del equipo real, la forma de hablar de los servicios y los colores dicen "aquí van a cuidar a tu perro como tú lo cuidas" antes que cualquier texto.',
+          'La web atiende además dos momentos distintos: la urgencia, que se resuelve con teléfono, horario y ubicación inmediatos, y la relación de años, que se sostiene con cita en línea y recordatorios. Para el primero el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local</a> es clave: el que busca "veterinaria cerca de mí" tiene que encontrarte a ti.',
         ],
       },
       {
@@ -534,30 +487,23 @@ export const industrias2b: PageData[] = [
         items: [
           { h3: 'Mapa de servicios y urgencias', text: 'Ordenamos tus servicios (consulta, cirugía, vacunación, peluquería, laboratorio) y decidimos qué va primero. Si atiendes urgencias, eso sube a lo más visible, porque es la búsqueda que no espera.' },
           { h3: 'Cita en línea y recordatorios', text: 'Conectamos el <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de citas</a> a tu disponibilidad real y dejamos listos los recordatorios de vacunas y controles, que traen de vuelta al cliente sin que tengas que perseguirlo.' },
-          { h3: 'Tono y confianza', text: 'Escribimos y diseñamos con el cariño que el dueño espera: fotos del equipo, lenguaje cercano y la capacidad médica clara. Nada de tono frío de taller; aquí se cuida a la familia.' },
           { h3: 'Publicación y visibilidad local', text: 'Publicamos y afinamos tu presencia en <a href="/crecimiento/seo-local-google-maps-panama/">Google Maps</a>, para que quien busque "veterinaria cerca de mí" en tu zona te encuentre a ti, con horario y ubicación correctos.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'Los recordatorios no son un extra: son lo que trae de vuelta al cliente',
+        h2: '¿Por qué los recordatorios de vacunas traen de vuelta al cliente?',
         paragraphs: [
-          'El negocio de una veterinaria no está solo en la primera visita: está en la relación de años. Un cachorro que llega para su primera vacuna debería volver toda su vida para refuerzos, desparasitación y controles. Pero el dueño ocupado olvida cuándo toca, y ahí se pierde la continuidad. El recordatorio automático (por correo o WhatsApp) resuelve justo eso: le avisa al dueño que llegó la fecha y le hace fácil reservar, sin que tu recepción tenga que llamar uno por uno.',
-          'Esa mecánica convierte la web en una herramienta de fidelización, no en un folleto. Cada mascota registrada es una relación que se mantiene sola con recordatorios oportunos. <strong>Un cliente al que le recuerdas la vacuna no se va a otra clínica: se queda porque le hiciste fácil cuidar a su mascota.</strong> Y esa comodidad, sumada a la cita en línea, es lo que distingue a la veterinaria moderna de la que todavía depende del cuaderno y del teléfono que nadie contesta a mediodía.',
+          'Un cachorro que llega a su primera vacuna debería volver toda su vida para refuerzos, desparasitación y controles, pero el dueño ocupado olvida cuándo toca. El recordatorio automático por correo o WhatsApp le avisa la fecha y le deja el enlace para reservar, sin que tu recepción llame uno por uno.',
+          '<strong>Un cliente al que le recuerdas la vacuna no se va a otra clínica.</strong> Cada mascota registrada es una relación que se mantiene sola, en lugar de depender del cuaderno y del teléfono que nadie contesta a mediodía.',
         ],
       },
       {
-        type: 'statement',
-        text: 'Nadie elige veterinaria por el precio de la consulta: la elige por confiar en quien va a atender a un miembro de su familia. La web es la primera impresión de esa confianza.',
-        strong: 'la web es la primera impresión de esa confianza',
-      },
-            {
         type: 'prose',
-        h2: 'La urgencia es a las once de la noche, y ahí se decide todo',
+        h2: '¿Qué debe mostrar la web de una veterinaria de urgencias?',
         paragraphs: [
-          'El momento en que una veterinaria gana un cliente para toda la vida casi nunca es una consulta programada. Es un domingo por la noche, con un perro que no para de vomitar y un dueño buscando en el celular "veterinaria 24 horas Panamá" o "veterinaria de urgencia cerca".',
-          'En ese momento nadie lee. Se busca un teléfono, se llama, y el que contesta se queda con el cliente. Si tu web tarda en cargar, esconde el número o no dice si atiendes urgencias, perdiste antes de empezar.',
-          'Por eso lo primero que trabajamos es lo aburrido: que el teléfono esté visible sin hacer scroll y sea tocable desde el celular, que el horario de urgencias esté arriba y no en el pie, y que la ficha de <a href="/crecimiento/seo-local-google-maps-panama/">Google Business Profile</a> diga la verdad sobre si abres domingo.',
+          'El cliente para toda la vida se gana un domingo por la noche, con un perro que no para de vomitar y un dueño buscando "veterinaria 24 horas Panamá" o "veterinaria de urgencia cerca". En ese momento nadie lee: se llama, y el que contesta se queda con el cliente.',
+          'Lo primero es lo aburrido: teléfono visible sin hacer scroll y tocable desde el celular, horario de urgencias arriba y no en el pie, carga rápida, y una ficha de <a href="/crecimiento/seo-local-google-maps-panama/">Google Business Profile</a> que diga la verdad sobre si abres domingo.',
           '<strong>Y si no atiendes 24 horas, dilo igual de claro.</strong> El dueño que llega de madrugada y encuentra una web que no lo aclara se lleva una mala experiencia y una reseña; el que lo lee y va a otro lado vuelve el lunes para la consulta normal.',
         ],
       },
@@ -565,10 +511,8 @@ export const industrias2b: PageData[] = [
         type: 'prose',
         h2: 'Una página por servicio, porque no es lo mismo vacunar que operar',
         paragraphs: [
-          'Una veterinaria vende cosas muy distintas bajo el mismo techo: consulta, vacunación, esterilización, cirugía, hospitalización, peluquería, alimento, a veces guardería. Cada una la busca una persona distinta con una preocupación distinta, y casi todas las webs del rubro las resuelven en una lista.',
-          'Quien busca "esterilización de gata precio" quiere saber cuánto cuesta y cuánto se queda internada. Quien busca "peluquería canina" quiere ver fotos y saber si atienden razas grandes. Quien busca "vacunas cachorro" quiere el esquema completo y en qué mes toca cada una. Son tres visitas distintas a tu web.',
-          'Una página por servicio responde eso y compite por su propia búsqueda. Además la peluquería y el alimento son puertas de entrada baratas: el dueño llega por un baño y termina haciendo las consultas ahí. Vale la pena tratarlas como servicios de verdad y no como una nota al pie.',
-          'Y publicar el esquema de vacunación con las edades es de lo que más tráfico recurrente trae, porque el dueño primerizo lo busca varias veces en los primeros meses.',
+          'Consulta, vacunación, esterilización, cirugía, hospitalización, peluquería, alimento y a veces guardería: cada servicio lo busca una persona distinta. Quien busca "esterilización de gata precio" quiere el costo y cuánto se queda internada; "peluquería canina", fotos y si atienden razas grandes; "vacunas cachorro", el esquema y en qué mes toca cada una.',
+          'Una página por servicio compite por su propia búsqueda. La peluquería y el alimento son puertas de entrada baratas: el dueño llega por un baño y termina haciendo las consultas ahí. Y el esquema de vacunación con las edades trae tráfico recurrente, porque el dueño primerizo lo busca varias veces en los primeros meses.',
         ],
       },
       {
@@ -590,20 +534,16 @@ export const industrias2b: PageData[] = [
         type: 'prose',
         h2: 'El expediente es de la mascota, pero los datos son del dueño',
         paragraphs: [
-          'Una web veterinaria suele recoger más de lo que parece: nombre y teléfono del dueño, dirección, a veces datos de pago y el historial de la mascota. El expediente clínico es del animal, pero los datos personales que lo acompañan son de una persona y caen bajo la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong>.',
-          'No es un tema de papeleo, son decisiones de construcción: sitio en HTTPS, formulario que explique qué se hace con lo que se escribe, y datos que no terminen en un correo personal ni en el WhatsApp del celular de alguien del equipo.',
-          'Ese último punto es el más común en el rubro. El WhatsApp de la clínica suele vivir en el teléfono personal de quien atiende, con años de conversaciones, fotos de heridas y datos de clientes. Cuando esa persona se va, se va el historial completo. Un número de empresa con varios usuarios lo resuelve y de paso permite que otro atienda cuando la persona está en consulta.',
-          'Montamos la parte técnica y dejamos la web preparada; <strong>el texto legal lo revisa tu asesor</strong>, que conoce tu operación.',
+          'La web recoge nombre, teléfono y dirección del dueño, a veces datos de pago y el historial de la mascota. Esos datos personales caen bajo la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong>: sitio en HTTPS, formulario que explique qué se hace con lo que se escribe y nada que termine en un correo personal.',
+          'El caso más común del rubro es el WhatsApp de la clínica en el teléfono personal de quien atiende, con años de conversaciones, fotos de heridas y datos de clientes. Un número de empresa con varios usuarios evita perder ese historial cuando la persona se va y permite que otro conteste mientras ella está en consulta. <strong>El texto legal lo revisa tu asesor.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: consultas agendadas y quién vuelve',
         paragraphs: [
-          'En veterinaria el negocio no está en la primera consulta, está en la recurrencia: vacunas, desparasitación, control, peluquería. Por eso el número más importante no es cuánta gente llega, es <strong>cuánta vuelve</strong>.',
-          'Lo que vale la pena medir es corto: cuántas citas se agendaron por la web, cuántas conversaciones entraron por WhatsApp, de qué servicio venía cada una, y qué porcentaje de clientes nuevos regresó dentro de los siguientes seis meses.',
-          'Ese último dato conecta directo con los recordatorios automáticos. Si la recurrencia es baja, casi nunca es porque el servicio fue malo: es porque nadie le avisó al dueño que tocaba la vacuna. Se arregla con automatización, no con publicidad, y sale mucho más barato.',
-          'También conviene separar las urgencias del resto, porque el cliente de urgencia llega distinto y se convierte en cliente fijo o desaparece según cómo lo trates después. Lo dejamos medido en un tablero corto; el detalle está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'El número clave es <strong>cuántos clientes vuelven</strong>: qué porcentaje de clientes nuevos regresó en los seis meses siguientes. Además, citas agendadas por la web, conversaciones de WhatsApp y de qué servicio venía cada una, con las urgencias separadas del resto.',
+          'Si la recurrencia es baja, casi nunca es por mal servicio: nadie le avisó al dueño que tocaba la vacuna, y eso se arregla con recordatorios automáticos, no con publicidad. El detalle está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {

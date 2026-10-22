@@ -19,12 +19,14 @@
      usado como fondo aplana y el degradado le saca un velo verdoso. Estos dos
      son el mismo gris llevado hacia el azul de marca, para devolver profundidad
      sin salirse de la paleta. El texto sigue en --color-ink. */
-  --color-night: #14232b;
-  --color-night-2: #0e1a20;
-  --color-teal: #0099cc;
-  --color-teal-deep: #00688c;
-  --color-violet: #5ec8e8;
-  --color-violet-deep: #0077a3;
+  /* Monocromo (D57): los nombres viejos se conservan para no tocar ~200 clases, pero ya no son cian ni marino.
+     night = fondo oscuro; teal = el acento SOBRE fondo oscuro (blanco); teal-deep = el acento sobre fondo claro (negro). */
+  --color-night: #0a0a0a;
+  --color-night-2: #171717;
+  --color-teal: #ffffff;
+  --color-teal-deep: #0a0a0a;
+  --color-violet: #a3a3a3;
+  --color-violet-deep: #525252;
   /* Monocromo de la portada v3 (D56): menú, pie y portada. Texto sobre blanco: negro, gris-texto o gris; sobre humo:
      negro o gris-texto; sobre negro: blanco o gris-claro. gris-claro y filete nunca van en texto sobre fondo claro. */
   --color-negro: #0a0a0a;
@@ -48,9 +50,10 @@
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.03em; line-height: 1.02; }
   a { color: inherit; }
   /* Indicador de foco visible y consistente (3:1 sobre fondo claro y oscuro) */
-  :where(a, button, summary, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid var(--color-teal); outline-offset: 3px; border-radius: 6px; }
-  ::selection { background: var(--color-teal); color: #05201c; }
-  :focus-visible { outline: 2px solid var(--color-teal-deep); outline-offset: 3px; }
+  /* Anillo de foco en el color del texto: negro sobre claro y blanco sobre oscuro, sin depender del fondo. */
+  :where(a, button, summary, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 6px; }
+  ::selection { background: #0a0a0a; color: #fff; }
+  :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
   .lenis.lenis-smooth { scroll-behavior: auto !important; }
 }
 
@@ -62,9 +65,11 @@
   .glass-dark { background: rgba(255,255,255,.06); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.12); box-shadow: 0 24px 70px -30px rgba(0,0,0,.6); }
   .mesh { background-image: linear-gradient(to right, rgba(51, 51, 51,.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(51, 51, 51,.045) 1px, transparent 1px); background-size: 46px 46px; -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 78%); mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 78%); }
   .mesh-dark { background-image: linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 46px 46px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%); }
-  .sphere { position: absolute; border-radius: 9999px; filter: blur(100px); mix-blend-mode: multiply; pointer-events: none; }
+  /* Las esferas de color (cian y violeta en línea) no van en el monocromo (D57). */
+  .sphere { display: none; }
   .sphere-dark { mix-blend-mode: screen; }
-  .grad-text { background: linear-gradient(105deg, var(--color-teal-deep), var(--color-teal) 45%, var(--color-violet)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  /* Monocromo (D57): sin degradado; el texto destacado toma el color del bloque. */
+  .grad-text { color: inherit; }
   /* Solo se oculta si hay JS (clase .js en <html>): sin JS, o si el script tarda,
      el contenido se ve igual. */
   .js .reveal { opacity: 0; transform: translateY(18px); }
@@ -136,11 +141,12 @@ footer .bg-negro :focus-visible { outline-color: #fff; }
    bloques nuevos (answer, receipt, includes, compare, blank): las páginas actuales no cambian.
    Contraste comprobado en DESIGN.md: texto 1c2230 y secundario 4f5f75 sobre f8f9fa >= 4,5:1. */
 :root {
-  --ew-graphite: #0e0f11; --ew-primary: #0a1a3a; --ew-primary-raised: #123a6b; --ew-on-primary: #f5fafc; --ew-on-primary-muted: #b9cad5;
-  --ew-accent: #0099cc; --ew-accent-on-light: #00688c; --ew-accent-on-dark: #5ec8e8; --ew-marker: #aee8ff;
-  --ew-surface: #f8f9fa; --ew-surface-alt: #eaf0f5; --ew-raised: #ffffff;
-  --ew-text: #1c2230; --ew-muted: #4f5f75; --ew-border: #d4dee8; --ew-field: #6b7b92;
-  --ew-error: #b42318; --ew-ok: #167a58; --ew-whatsapp: #25d366; --ew-on-whatsapp: #06260f;
+  /* Monocromo (D57): mismos nombres, valores de la portada v3. El error y el éxito conservan su color (estado). */
+  --ew-graphite: #0a0a0a; --ew-primary: #0a0a0a; --ew-primary-raised: #262626; --ew-on-primary: #ffffff; --ew-on-primary-muted: #a3a3a3;
+  --ew-accent: #0a0a0a; --ew-accent-on-light: #0a0a0a; --ew-accent-on-dark: #ffffff; --ew-marker: #e5e5e5;
+  --ew-surface: #ffffff; --ew-surface-alt: #f5f5f5; --ew-raised: #ffffff;
+  --ew-text: #0a0a0a; --ew-muted: #525252; --ew-border: #e5e5e5; --ew-field: #737373;
+  --ew-error: #b42318; --ew-ok: #167a58; --ew-whatsapp: #0a0a0a; --ew-on-whatsapp: #ffffff;
 }
 .ew-sec { padding: 56px 0; }
 @media (min-width: 1024px) { .ew-sec { padding: 80px 0; } }
@@ -210,8 +216,8 @@ textarea.ew-in { min-height: 112px; resize: vertical; }
 .ew-err[hidden] { display: none; }
 .ew-hint { margin: 6px 0 0; font-size: 0.85rem; color: var(--ew-muted); }
 .ew-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 0 28px; border: 0; border-radius: 9999px; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
-.ew-btn--primary { background: var(--ew-accent); color: var(--ew-primary); }
-.ew-btn--primary:hover { background: var(--ew-accent-on-dark); }
+.ew-btn--primary { background: var(--ew-accent); color: #fff; }
+.ew-btn--primary:hover { background: var(--ew-primary-raised); }
 .ew-btn--primary:disabled { opacity: 0.7; cursor: progress; }
 .ew-btn--wa { background: var(--ew-whatsapp); color: var(--ew-on-whatsapp); }
 .ew-btn:focus-visible { outline: 3px solid var(--ew-accent-on-light); outline-offset: 3px; }

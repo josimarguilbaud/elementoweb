@@ -16,26 +16,24 @@ export const blog28: PageData[] = [
     date: '2026-08-31',
     heroImage: {
       src: '/images/blog/diseno-web-para-ferreterias-panama.jpg',
-      alt: 'Interior de una ferretería organizada, con estanterías llenas de herramientas y materiales de construcción bajo luz industrial',
+      alt: 'Martillo cruzado con un destornillador, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
-      'Un contratista necesita cien bloques y una funda de cemento para el lunes, y a un vecino se le rompió el tubo del lavamanos un domingo en la noche: los dos van a hacer lo mismo antes de mover un dedo — buscar en el celular quién tiene el producto y puede resolverlo hoy. Si tu ferretería no aparece ahí con una respuesta clara, perdiste esa venta sin enterarte.',
-      'El mostrador sigue siendo el corazón del negocio y no va a dejar de serlo. Pero ya no es la única puerta de entrada: cadenas y tiendas en línea llevan años mostrando su inventario antes de que el cliente salga de casa. En esta guía vemos qué necesita de verdad la web de una ferretería o distribuidora de materiales en Panamá —catálogo con disponibilidad real, categorías que no se vuelvan un caos, cotización rápida para el contratista— y también cuándo, con honestidad, todavía no conviene invertir en ella.',
+      'El diseño web para ferreterías en Panamá sirve para que el cliente sepa, desde el celular, que tienes el producto antes de salir de casa: catálogo por categorías del rubro, buscador por nombre, marca o código, precio y disponibilidad cuando es posible, y cotización de pedidos de obra para contratistas. Así lo armamos en Elemento Web, en Ciudad de Panamá.',
+      'Un contratista que necesita cien bloques para el lunes y un vecino con el tubo del lavamanos roto un domingo buscan lo mismo: quién lo tiene hoy. Esta guía explica qué publicar, por dónde empezar, cuánto cuesta y cuándo todavía no conviene.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'La decisión ya no se toma parado frente al mostrador',
+        h2: '¿Por qué una ferretería necesita mostrar su catálogo en línea?',
         paragraphs: [
-          'Antes, escoger ferretería era casi automático: entrabas a la que te quedaba más cerca o a la que conocías de toda la vida, y ahí se acababa la comparación. Hoy esa decisión casi siempre ya se tomó antes de salir de casa — el cliente escribe en el celular qué necesita, ve quién lo tiene y a cuánto, y sale sabiendo exactamente adónde ir. Si tu ferretería no aparece en esa búsqueda, ni siquiera entra en la comparación.',
-          'Esto no es un fenómeno lejano ni exclusivo de las cadenas grandes: pasa todos los días, con el vecino que busca "ferretería cerca de mí" desde el celular o con el contratista que compara precio y existencia en tres proveedores antes de hacer un pedido grande. Se queda con la venta el que responde primero y sin rodeos, así su local esté más lejos que el de al lado.',
-          'Nada de esto reemplaza el mostrador —seguirá siendo el corazón del negocio—, pero deja de ser la única puerta de entrada. Cada producto publicado con precio y disponibilidad real es una venta que se puede cerrar a las nueve de la noche o un domingo, cuando la tienda está cerrada pero el cliente sigue buscando. El detalle completo de cómo lo estructuramos está en nuestra <a href="/industrias/diseno-web-ferreterias-materiales-panama/">página de diseño web para ferreterías</a>.',
+          'Porque la elección de ferretería ya no se hace frente al mostrador. El vecino busca "ferretería cerca de mí" y el contratista compara precio y existencia en tres proveedores antes de un pedido grande; se queda con la venta el que responde primero y sin rodeos, aunque su local quede más lejos. Si tu ferretería no aparece en esa búsqueda, ni entra en la comparación.',
+          'El mostrador sigue siendo el corazón del negocio, pero deja de ser la única puerta: cada producto publicado con precio y disponibilidad es una venta que se puede cerrar a las nueve de la noche o un domingo. El detalle de cómo lo estructuramos está en nuestra <a href="/industrias/diseno-web-ferreterias-materiales-panama/">página de diseño web para ferreterías</a>.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Lo que necesita la web de una ferretería para competir en serio',
-        intro: 'Si tu web —o la que estás por encargar— no resuelve esto, no importa cuán bien se vea: le falta lo que de verdad convierte una visita en una venta.',
+        h2: '¿Qué necesita el diseño web de una ferretería para competir?',
         items: [
           'Categorías reales del rubro —plomería, eléctrico, pintura, ferretería general, materiales de construcción— en vez de un solo listado gigante',
           'Precio visible en la ficha siempre que sea posible: un "consulte" en cada producto empuja a llamar por algo que debería verse de un vistazo',
@@ -49,22 +47,21 @@ export const blog28: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Categorías claras, porque el catálogo de una ferretería es enorme',
+        h2: '¿Cómo organizar el catálogo de una ferretería con cientos de productos?',
         paragraphs: [
-          'Plomería, eléctrico, pintura, tornillería, herramienta manual y eléctrica, materiales de construcción: una ferretería mediana fácilmente maneja varios cientos de referencias distintas. Meter todo eso en una sola página de "Productos" no simplifica nada — esconde la mayor parte del catálogo detrás de un scroll que casi nadie termina de revisar.',
-          'La estructura pesa tanto como el contenido. Categorías y subcategorías pensadas como las nombra el cliente —no como está acomodado el almacén— evitan que alguien abandone la búsqueda a medio camino. Sumarle un buscador que funcione por nombre, marca o código resuelve el resto: el que ya sabe qué quiere no debería tener que navegar ni una sola categoría para encontrarlo.',
-          'No es un detalle menor de diseño: es la diferencia entre un catálogo que se usa y uno que se abre una vez, no muestra nada claro, y no se vuelve a abrir. <strong>Un catálogo grande mal organizado convence menos que no tener catálogo</strong>, porque le confirma al cliente la sospecha de que ahí tampoco va a encontrar lo que busca rápido.',
+          'Por categorías y subcategorías como las nombra el cliente, no como está acomodado el almacén. Una ferretería mediana maneja varios cientos de referencias —plomería, eléctrico, pintura, tornillería, herramienta manual y eléctrica, materiales de construcción—, y meterlas en una sola página de "Productos" esconde la mayor parte detrás de un scroll que casi nadie termina.',
+          'El buscador por nombre, marca o código resuelve el resto: quien ya sabe qué quiere no debería navegar ninguna categoría. <strong>Un catálogo grande mal organizado convence menos que no tener catálogo</strong>, porque confirma la sospecha de que ahí tampoco se encuentra nada rápido.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Catálogo, cotización o tienda completa: no hace falta empezar por lo más caro',
-        intro: 'No todas las ferreterías necesitan lo mismo desde el primer día. De menos a más inversión, esto es lo que resuelve cada nivel.',
+        h2: '¿Catálogo, cotización o tienda completa: por dónde empezar?',
+        intro: 'No hace falta empezar por lo más caro. De menos a más inversión:',
         items: [
-          { h3: '1. Catálogo con disponibilidad y WhatsApp', text: 'Publicas el inventario con ficha, precio y disponibilidad, y el cliente cierra por chat o en el mostrador. Sin carrito ni pasarela de pago — el paso mínimo para dejar de ser invisible en una búsqueda.' },
-          { h3: '2. Cotización para pedidos de obra', text: 'Un formulario donde el contratista arma su lista desde el catálogo sin moverse de la obra, indica cantidades y la envía ordenada. Le ahorra dictar un audio de tres minutos, y a ti te ahorra transcribirlo a mano.' },
-          { h3: '3. Tienda con carrito y pago en línea', text: 'Cuando ya hay volumen que lo justifica, sumas <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy o tarjeta</a>, gestión de inventario y checkout completo, con retiro en tienda como alternativa a la entrega.' },
-          { h3: '4. Definir la logística antes que el diseño', text: 'Si vas a entregar a obra, decide desde qué monto es gratis y hasta dónde llegas antes de publicarlo. Prometer una entrega que después no puedes cumplir pesa más en contra que no tener el dato publicado.' },
+          { h3: '1. Catálogo con disponibilidad y WhatsApp', text: 'Publicas el inventario con ficha, precio y disponibilidad, y el cliente cierra por chat o en el mostrador. Sin carrito ni pasarela: el paso mínimo para dejar de ser invisible.' },
+          { h3: '2. Cotización para pedidos de obra', text: 'El contratista arma su lista desde el catálogo, indica cantidades y la envía ordenada, en vez de dictar un audio de tres minutos que alguien transcribe a mano.' },
+          { h3: '3. Tienda con carrito y pago en línea', text: 'Cuando el volumen lo justifica, sumas <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy o tarjeta</a>, gestión de inventario y checkout completo, con retiro en tienda como alternativa a la entrega.' },
+          { h3: '4. Definir la logística antes que el diseño', text: 'Si vas a entregar a obra, decide desde qué monto es gratis y hasta dónde llegas antes de publicarlo. Prometer una entrega que no puedes cumplir pesa más que no tener el dato.' },
         ],
       },
       {
@@ -74,29 +71,26 @@ export const blog28: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'No hace falta un sistema de inventario perfecto para publicar el catálogo',
+        h2: '¿Cómo publicar el catálogo si el stock cambia a diario?',
         paragraphs: [
-          'La duda más común, y la más razonable, suena así: "mi stock cambia a diario, ¿cómo publico algo que puede estar mal en una hora?". Tiene sentido — mostrar disponibilidad falsa es peor que no decir nada, porque le promete al cliente algo que después no cumples.',
-          'La salida práctica es separar el catálogo en dos capas. La ficha del producto —qué es, para qué sirve, marca, medida, foto— casi nunca cambia, y esa se puede publicar completa desde el día uno. El precio y la existencia sí cambian, y para esos alcanza con empezar con un botón de WhatsApp que diga "preguntar disponibilidad", hasta que tengas cómo mantenerlo al día en la propia web.',
-          'Con eso ya resolviste lo que hoy es imposible sin ir o llamar: que el cliente sepa que tienes el producto. Para las líneas de mayor rotación y precio estable —las que más se buscan— sí vale la pena publicar precio real desde el arranque, aunque el resto del catálogo empiece más simple.',
+          'Separándolo en dos capas. La ficha del producto —qué es, para qué sirve, marca, medida, foto— casi nunca cambia y se publica completa desde el día uno. Precio y existencia sí cambian: para esos basta empezar con un botón de WhatsApp de "preguntar disponibilidad" hasta que puedas mantenerlos al día en la web, porque mostrar disponibilidad falsa es peor que no decir nada.',
+          'Así ya resuelves lo que hoy exige ir o llamar: que el cliente sepa que tienes el producto. En las líneas de mayor rotación y precio estable, las más buscadas, sí vale publicar precio real desde el arranque.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuánto cuesta y qué versión te conviene',
+        h2: '¿Cuánto cuesta la web de una ferretería en Panamá?',
         paragraphs: [
-          'Depende de cuánto de esto quieras resolver de una vez. Si tu ferretería es de un solo local y por ahora solo quieres presencia y un WhatsApp directo, sin catálogo, una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> parte de $550. Si quieres el catálogo organizado por categoría con cotización por WhatsApp pero sin vender en línea todavía, una <a href="/servicios/diseno-web-corporativo-panama/">Web empresarial</a> de hasta 6 páginas parte de $1,250. Y si ya vas a vender en línea de verdad —carrito, Yappy o tarjeta, gestión de inventario—, es un proyecto de <a href="/servicios/tiendas-online-ecommerce-panama/">tienda en línea</a> desde $1,950.',
-          'Para una ferretería que ya es cadena o distribuidora, con varias sucursales o la necesidad de conectar el catálogo a un sistema de inventario propio, el proyecto pasa a ser a medida, desde $2,900, con esa integración dentro del alcance.',
-          'A eso se suma la infraestructura anual —dominio, hosting y SSL—, que también depende del proyecto: $225 en el plan compartido para un catálogo simple, $350 en el plan cloud que recomendamos para la mayoría, o $550 en un VPS dedicado si la tienda ya mueve tráfico alto. El mantenimiento, para que el catálogo no se quede desactualizado ni el sitio se vuelva un blanco fácil, arranca en $99 al mes y sube a $169 o $319 según qué tan rápido necesites respuesta. Todos los precios están en dólares y no incluyen el 7% de ITBMS. El desglose completo está en nuestra guía de <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a>.',
+          'Solo presencia y un WhatsApp directo, sin catálogo: una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> desde $550. Catálogo por categoría con cotización por WhatsApp, sin vender en línea: una <a href="/servicios/diseno-web-corporativo-panama/">Web empresarial</a> de hasta 6 páginas desde $1,250. Venta en línea con carrito, Yappy o tarjeta y gestión de inventario: <a href="/servicios/tiendas-online-ecommerce-panama/">tienda en línea</a> desde $1,950. Una cadena o distribuidora con varias sucursales o catálogo conectado a un sistema de inventario propio pasa a proyecto a medida desde $2,900.',
+          'Se suma la infraestructura anual —dominio, hosting y SSL—: $225 en el plan compartido para un catálogo simple, $350 en el cloud que recomendamos para la mayoría o $550 en un VPS dedicado si la tienda ya mueve tráfico alto. El mantenimiento arranca en $99 al mes y sube a $169 o $319 según la rapidez de respuesta que necesites. Precios en dólares, sin el 7% de ITBMS; el desglose está en <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene montar un catálogo en línea',
+        h2: '¿Cuándo no conviene a una ferretería montar un catálogo en línea?',
         paragraphs: [
-          'No toda ferretería necesita esto ahora, y decirlo con honestidad ahorra una inversión que no se va a recuperar pronto. Si tu negocio es una ferretería de barrio, prácticamente de puro paso, con una clientela fija que ya sabe que tienes lo que busca y compra en el mostrador sin pensarlo, un catálogo en línea no te va a traer más ventas de las que ya haces — te va a traer el trabajo de mantenerlo actualizado sin un cliente nuevo detrás.',
-          'Tampoco conviene si no tienes cómo despachar un pedido. Si vender por internet implica prometer entrega y no tienes quién la haga ni el volumen para justificar contratar a alguien, el catálogo genera una expectativa que no puedes cumplir, y eso pesa más en contra que a favor. Ahí rinde más una ficha de Google Business Profile completa —horario real, fotos, categoría correcta— y un WhatsApp que responda rápido, sin abrir una puerta que del otro lado no puedes atender.',
-          'El catálogo empieza a justificarse cuando quieres captar al cliente que hoy se va a la cadena o a otra ferretería porque no sabía que tú también lo tenías, cuando el negocio de obra y contratistas ya pesa lo suficiente como para que cotizar rápido marque la diferencia, o cuando el trabajo de <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a> ya te trae búsquedas que hoy no tienes cómo responder sin catálogo.',
+          'Si eres una ferretería de barrio, de paso, con clientela fija que compra en el mostrador sin pensarlo, un catálogo en línea te traerá el trabajo de mantenerlo sin un cliente nuevo detrás. Tampoco conviene si vender por internet implica prometer entrega y no tienes quién la haga. Ahí rinde más una ficha de Google Business Profile completa —horario real, fotos, categoría correcta— y un WhatsApp que responda rápido.',
+          'El catálogo se justifica cuando quieres captar al cliente que hoy se va a la cadena porque no sabía que tú también lo tenías, cuando el negocio de obra y contratistas pesa lo suficiente como para que cotizar rápido marque la diferencia, o cuando el trabajo de <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a> ya te trae búsquedas que no puedes responder sin catálogo.',
         ],
       },
       {

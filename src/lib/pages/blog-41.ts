@@ -20,14 +20,14 @@ export const blog41: PageData[] = [
       alt: 'Avenida costera de Miami con torres de vidrio y palmeras frente al mar, para elegir agencia de diseño web en español',
     },
     lead: [
-      'Elige la agencia que trabaje en español de verdad (no solo que traduzca), que te muestre su proceso por escrito, que deje el dominio y el código a tu nombre, y que te diga qué pasa después de publicar. Dónde esté su oficina importa menos que esas cinco cosas.',
-      'Esta guía te da los criterios, las preguntas que puedes hacerle a cualquier agencia y una sección honesta sobre cuándo conviene una con oficina en Miami y cuándo una remota como la nuestra. Somos de Panamá y trabajamos 100% remoto; lo decimos desde ya para que lo tengas en cuenta al leer.',
+      'Para elegir una agencia de diseño web en Miami si tu negocio opera en español, prioriza cinco cosas: que trabaje en español nativo (no que traduzca), que muestre su proceso por escrito, que deje el dominio y el código a tu nombre, que defina el mantenimiento y que explique cómo medirás las consultas. La ubicación de su oficina importa menos.',
+      'Lo decimos desde ya: Elemento Web es de Panamá y trabaja 100% remoto. Esta guía te da los criterios, las preguntas que puedes hacerle a cualquier agencia y cuándo conviene una con oficina en Miami y cuándo una remota.',
     ],
     blocks: [
       {
         type: 'cards',
-        h2: 'Siete criterios para comparar agencias',
-        intro: 'Úsalos como una lista para comparar cotizaciones por escrito, no solo por precio.',
+        h2: '¿Qué criterios usar para comparar agencias de diseño web en Miami?',
+        intro: 'Siete criterios para comparar cotizaciones por escrito, no solo por precio.',
         items: [
           { h3: '1. Español nativo', text: 'Que quien escribe y quien te atiende piense en español. Pide ver textos reales en español de trabajos anteriores, no una plantilla en inglés traducida. Pregunta quién revisa el contenido final.' },
           { h3: '2. Proceso claro', text: 'Etapas, entregables y tiempos escritos: qué recibes primero, cuándo ves una demo y cuántas rondas de cambios incluye la cotización. Un proceso que no se puede explicar en un párrafo suele improvisarse.' },
@@ -40,8 +40,8 @@ export const blog41: PageData[] = [
       },
       {
         type: 'checklist',
-        h2: 'Preguntas para hacerle a cualquier agencia',
-        intro: 'Funcionan igual con una agencia de Miami, de otra ciudad o con nosotros. Pide las respuestas por escrito.',
+        h2: '¿Qué preguntarle a una agencia antes de contratarla?',
+        intro: 'Sirven con una agencia de Miami, de otra ciudad o con nosotros. Pide las respuestas por escrito.',
         items: [
           '¿Quién escribe los textos en español y quién los revisa antes de publicar?',
           '¿Qué incluye exactamente la cotización y qué queda fuera?',
@@ -57,26 +57,26 @@ export const blog41: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cuándo conviene una agencia con oficina en Miami y cuándo una remota como nosotros',
+        h2: '¿Agencia con oficina en Miami o agencia remota: cuál te conviene?',
         paragraphs: [
-          'Conviene una agencia con oficina en Miami si para ti es importante reunirte en persona, hacer sesiones de trabajo presenciales, sesiones de fotos o video coordinadas con el equipo, o si tu proyecto exige alguien presente en tu local con frecuencia. Esa cercanía es un valor real y no lo minimizamos.',
-          'Una agencia remota como Elemento Web puede convenirte si tu trabajo con el proveedor ya ocurre por WhatsApp, correo y videollamada, si tu web se construye con contenido que tú envías y revisas a distancia, y si quieres precios publicados en dólares. Tenemos sede en Panamá, trabajamos 100% remoto con negocios de Miami-Dade y no tenemos oficina en Miami; el contacto es por WhatsApp y videollamada, en tu horario de oficina.',
-          'No comparamos precios con otras agencias porque no tenemos datos verificados de ellas. Lo más sano es pedir la misma información a dos o tres proveedores, remotos o locales, y compararla por alcance, plazos, propiedad y mantenimiento. Si quieres ver cómo trabajamos con negocios de la zona, empieza por <a href="/miami/diseno-web-en-miami-en-espanol/">diseño web en Miami en español</a>.',
+          'Conviene una agencia con oficina en Miami si para ti es importante reunirte en persona, hacer sesiones de trabajo presenciales o de fotos y video con el equipo, o si tu proyecto exige a alguien en tu local con frecuencia. Esa cercanía es un valor real.',
+          'Una agencia remota como Elemento Web puede convenirte si tu trabajo con el proveedor ya ocurre por WhatsApp, correo y videollamada, si envías y revisas el contenido a distancia y si quieres precios publicados en dólares. Tenemos sede en Panamá, trabajamos con negocios de Miami-Dade sin oficina en Miami, y respondemos por WhatsApp y videollamada en tu horario de oficina.',
+          'No comparamos precios con otras agencias porque no tenemos datos verificados de ellas. Pide la misma información a dos o tres proveedores, remotos o locales, y compárala por alcance, plazos, propiedad y mantenimiento. Cómo trabajamos con negocios de la zona está en <a href="/miami/diseno-web-en-miami-en-espanol/">diseño web en Miami en español</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué precios puedes esperar de nosotros',
+        h2: '¿Cuánto cobra Elemento Web por una web para un negocio de Miami?',
         paragraphs: [
-          'Nuestros precios están publicados en dólares: Landing desde $550, Web empresarial desde $1,250 (hasta 6 páginas en total), E-commerce desde $1,950 y proyectos a medida desde $2,900. El detalle de cada plan está en <a href="/precios/">precios</a>, y para un análisis de qué influye en el costo, tienes <a href="/blog/cuanto-cuesta-pagina-web-miami/">cuánto cuesta una página web en Miami</a>.',
+          'Los precios están publicados en dólares: Landing desde $550, Web empresarial desde $1,250 (hasta 6 páginas en total), E-commerce desde $1,950 y proyectos a medida desde $2,900. El detalle de cada plan está en <a href="/precios/">precios</a>, y para un análisis de qué influye en el costo, tienes <a href="/blog/cuanto-cuesta-pagina-web-miami/">cuánto cuesta una página web en Miami</a>.',
           'Facturamos en USD desde nuestra empresa en Panamá. El tratamiento fiscal de tu factura se confirma en la cotización, antes de que pagues nada.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene contratar una agencia (o esta guía no te aplica)',
+        h2: '¿Cuándo NO conviene contratar una agencia?',
         paragraphs: [
-          'Si tu negocio apenas está probando la idea y todavía no sabes qué vendes ni a quién, una agencia puede ser prematura: una página muy simple o una ficha en redes te da información más barata. Contratar antes de tener claro el mensaje suele terminar en rehacer el trabajo.',
+          'Si tu negocio apenas prueba la idea y todavía no sabes qué vendes ni a quién, una agencia es prematura: una página muy simple o una ficha en redes te da información más barata, y contratar antes de tener claro el mensaje suele terminar en rehacer el trabajo.',
           'Tampoco conviene si no puedes dedicar tiempo a enviar textos, fotos y revisiones. Ninguna agencia, local o remota, puede inventar el contenido de tu negocio por ti. Y si tu prioridad es tener a alguien presencial cada semana, elige un proveedor local desde el principio.',
         ],
       },
@@ -122,13 +122,13 @@ export const blog41: PageData[] = [
       alt: 'Edificio comercial de una planta color arena con palmeras y dos autos al atardecer, sobre diseño web para negocios en Miami',
     },
     lead: [
-      'La web de un negocio hispano de Miami-Dade necesita, como mínimo: textos en español nativo, un botón de WhatsApp visible, precios o rangos a la vista, información pensada para búsquedas locales en español, carga rápida en el celular y, solo si tu cliente lo pide, una versión en inglés bien hecha.',
-      'No es una lista de adornos: cada punto responde a cómo un cliente hispano suele buscar, comparar y escribirte. Te explicamos cada pieza con ejemplos por tipo de negocio, sin cifras inventadas, y también cuándo no hace falta tanto.',
+      'El diseño web para negocios hispanos de Miami-Dade necesita, como mínimo: textos en español nativo, un botón de WhatsApp visible, precios o rangos a la vista, información pensada para búsquedas locales en español, carga rápida en el celular y, solo si tu cliente lo pide, una versión en inglés bien hecha.',
+      'Cada punto responde a cómo un cliente hispano suele buscar, comparar y escribirte. Abajo va cada pieza con ejemplos por tipo de negocio, sin cifras inventadas, y cuándo no hace falta tanto.',
     ],
     blocks: [
       {
         type: 'cards',
-        h2: 'Lo que necesita la web de un negocio hispano en Miami',
+        h2: '¿Qué necesita la web de un negocio hispano en Miami?',
         intro: 'Estas piezas se aplican a casi cualquier negocio; el orden de prioridad cambia según lo que vendas.',
         items: [
           { h3: 'Español nativo', text: 'Textos escritos pensando en cómo habla tu cliente, no traducidos palabra por palabra de una plantilla en inglés. Vocabulario claro, tildes correctas y un tono que suene a tu negocio.' },
@@ -142,7 +142,7 @@ export const blog41: PageData[] = [
       },
       {
         type: 'cards',
-        h2: 'Ejemplos por tipo de negocio',
+        h2: '¿Cómo cambia la prioridad según el tipo de negocio?',
         intro: 'No son casos reales ni datos de mercado: son ejemplos de cómo cambia la prioridad según el negocio.',
         items: [
           { h3: 'Restaurante o cafetería', text: 'Menú legible desde el celular (en la página, no solo en un PDF), horario, ubicación y botón para pedir o reservar por WhatsApp. Si tiene local, la ficha de Google Business Profile pesa mucho.' },
@@ -155,15 +155,15 @@ export const blog41: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cómo lo trabajamos y cuánto cuesta',
+        h2: '¿Cómo trabaja Elemento Web con negocios de Miami y cuánto cuesta?',
         paragraphs: [
-          'Trabajamos desde Panamá, 100% remoto, con negocios de Miami-Dade: coordinamos por WhatsApp y videollamada, mostramos una demo en línea antes de publicar y cobramos por etapas. Facturamos en USD y no tenemos oficina en Miami. Tienes la explicación de la oferta en <a href="/miami/diseno-web-en-miami-en-espanol/">diseño web en Miami en español</a>.',
-          'Los precios publicados son: Landing desde $550, Web empresarial desde $1,250 (hasta 6 páginas en total), E-commerce desde $1,950 y proyectos a medida desde $2,900. Puedes ver el detalle en <a href="/precios/">precios</a>. El tratamiento fiscal de tu factura se confirma en la cotización.',
+          'Trabajamos desde Panamá, 100% remoto y sin oficina en Miami: coordinamos por WhatsApp y videollamada, mostramos una demo en línea antes de publicar, cobramos por etapas y facturamos en USD. La oferta completa está en <a href="/miami/diseno-web-en-miami-en-espanol/">diseño web en Miami en español</a>.',
+          'Precios publicados: Landing desde $550, Web empresarial desde $1,250 (hasta 6 páginas en total), E-commerce desde $1,950 y proyectos a medida desde $2,900. El detalle está en <a href="/precios/">precios</a>, y el tratamiento fiscal de tu factura se confirma en la cotización.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene invertir en todo esto',
+        h2: '¿Cuándo NO conviene invertir en todo esto?',
         paragraphs: [
           'Si tu negocio recibe casi todos sus clientes por recomendación y todavía no necesitas que te encuentren nuevos, una landing sencilla con tus servicios y un botón de WhatsApp suele ser suficiente. No hace falta una web de muchas páginas para empezar.',
           'La versión bilingüe tampoco conviene si nadie va a mantener el inglés al día o si tus clientes no lo piden: es mejor un solo idioma bien cuidado. Y el SEO local rinde poco si no tienes tiempo para publicar contenido o pedir reseñas; en ese caso, mejor mejorar primero lo que ya tienes.',

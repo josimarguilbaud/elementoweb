@@ -16,7 +16,7 @@ export const industrias3: PageData[] = [
     description: 'Diseño web para agencias de aduana y empresas de Zona Libre de Colón: cotización de trámites, seguimiento de expedientes y captación de importadores.',
     h1: 'Diseño web para agencias de aduana y Zona Libre',
     breadcrumb: 'Aduanas y Zona Libre',
-    heroImage: { src: '/images/industrias/diseno-web-agencias-aduana-zona-libre-panama.jpg', alt: 'Contenedores apilados en una zona franca panameña bajo luz tropical' },
+    heroImage: { src: '/images/industrias/diseno-web-agencias-aduana-zona-libre-panama.jpg', alt: 'Sello de goma, en cromo plateado, render 3D sobre fondo gris claro' },
     service: { type: 'Diseño web para agencias de aduana y Zona Libre' },
     lead: [
       'El importador que te busca tiene mercancía detenida o a punto de llegar. No está comparando filosofías de servicio: está buscando quién le contesta hoy y le explica qué sigue.',
@@ -117,7 +117,7 @@ export const industrias3: PageData[] = [
     description: 'Diseño web para navieras, agencias navieras y servicios marítimos en Panamá: credenciales, cobertura de puertos y captación de clientes internacionales.',
     h1: 'Diseño web para navieras y servicios marítimos',
     breadcrumb: 'Navieras y Marítimo',
-    heroImage: { src: '/images/industrias/diseno-web-navieras-servicios-maritimos-panama.jpg', alt: 'Buque de carga atravesando una esclusa al atardecer' },
+    heroImage: { src: '/images/industrias/diseno-web-navieras-servicios-maritimos-panama.jpg', alt: 'Timón de barco, en cromo plateado, render 3D sobre fondo gris claro' },
     service: { type: 'Diseño web para navieras y servicios marítimos' },
     lead: [
       'Tu cliente casi nunca está en Panamá. Es un armador, un operador o un agente que evalúa proveedores desde otro país, en otro idioma y en otro huso horario, y lo único que puede evaluar antes de escribirte es tu web.',
@@ -218,7 +218,7 @@ export const industrias3: PageData[] = [
     description: 'Diseño web para cooperativas de ahorro y crédito y financieras en Panamá: simulador de préstamo, afiliación en línea, transparencia de tasas y confianza.',
     h1: 'Diseño web para cooperativas y financieras',
     breadcrumb: 'Cooperativas y Financieras',
-    heroImage: { src: '/images/industrias/diseno-web-cooperativas-financieras-panama.jpg', alt: 'Edificio de columnas con una solicitud de préstamo en el móvil, un escudo con candado y monedas, para cooperativas y financieras' },
+    heroImage: { src: '/images/industrias/diseno-web-cooperativas-financieras-panama.jpg', alt: 'Edificio clásico de columnas, en cromo plateado, render 3D sobre fondo gris claro' },
     service: { type: 'Diseño web para cooperativas de ahorro y crédito' },
     lead: [
       'Tu socio no es un cliente: es dueño de la cooperativa. Eso cambia todo lo que la web tiene que comunicar, y es justo lo que las webs del rubro suelen olvidar cuando copian el tono de un banco.',
@@ -319,7 +319,7 @@ export const industrias3: PageData[] = [
     description: 'Diseño web para empresas de aire acondicionado y refrigeración en Panamá: emergencias, contratos de mantenimiento y captación de clientes comerciales.',
     h1: 'Diseño web para aire acondicionado y refrigeración',
     breadcrumb: 'Aire Acondicionado',
-    heroImage: { src: '/images/industrias/diseno-web-aire-acondicionado-refrigeracion-panama.jpg', alt: 'Manos de un técnico trabajando en la tubería de cobre de un condensador exterior' },
+    heroImage: { src: '/images/industrias/diseno-web-aire-acondicionado-refrigeracion-panama.jpg', alt: 'Copo de nieve, en cromo plateado, render 3D sobre fondo gris claro' },
     service: { type: 'Diseño web para empresas de aire acondicionado y refrigeración' },
     lead: [
       'En Panamá el aire acondicionado no es un lujo: es infraestructura. Cuando se daña, nadie investiga con calma. Busca en el celular quién puede ir hoy y llama al primero que le dé una respuesta clara.',
@@ -420,7 +420,7 @@ export const industrias3: PageData[] = [
     description: 'Diseño web para empresas de seguridad y vigilancia en Panamá: licencias visibles, propuestas para licitaciones, monitoreo y captación de personal.',
     h1: 'Diseño web para empresas de seguridad y vigilancia',
     breadcrumb: 'Seguridad y Vigilancia',
-    heroImage: { src: '/images/industrias/diseno-web-seguridad-vigilancia-panama.jpg', alt: 'Vestíbulo de un edificio comercial al amanecer con puesto de control vacío' },
+    heroImage: { src: '/images/industrias/diseno-web-seguridad-vigilancia-panama.jpg', alt: 'Candado cerrado, en cromo plateado, render 3D sobre fondo gris claro' },
     service: { type: 'Diseño web para empresas de seguridad y vigilancia' },
     lead: [
       'Nadie contrata seguridad por precio. Se contrata por confianza, y esa confianza se evalúa antes de la primera reunión, revisando si tu empresa se ve seria o improvisada.',
@@ -521,7 +521,7 @@ export const industrias3: PageData[] = [
     description: 'Diseño web para imprentas, gran formato y agencias de publicidad en Panamá: cotización en línea, envío de artes y captación de clientes corporativos.',
     h1: 'Diseño web para imprentas y publicidad',
     breadcrumb: 'Imprentas y Publicidad',
-    heroImage: { src: '/images/industrias/diseno-web-imprentas-publicidad-panama.jpg', alt: 'Pliegos de vinil impreso apilados y enrollados en un taller de gran formato' },
+    heroImage: { src: '/images/industrias/diseno-web-imprentas-publicidad-panama.jpg', alt: 'Pila de hojas con la esquina en abanico, en cromo plateado, render 3D sobre fondo gris claro' },
     service: { type: 'Diseño web para imprentas y empresas de publicidad' },
     lead: [
       'Una imprenta se pasa el día cotizando. Llega una consulta por WhatsApp sin medidas, sin cantidad y sin material, alguien pregunta lo que falta, y el cliente ya pidió precio en otros dos lados.',

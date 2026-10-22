@@ -15,7 +15,7 @@ export const blog8: PageData[] = [
     date: '2026-09-14',
     heroImage: {
       src: '/images/blog/diseno-web-para-abogados-panama.jpg',
-      alt: 'Escritorio de un despacho de abogados con documentos legales y una balanza de la justicia, estantería con libros de derecho de fondo',
+      alt: 'Mazo de juez sobre su base, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para abogados en Panamá genera consultas cuando muestra señales de confianza verificables: número de colegiado visible, una página por área de práctica, un formulario que pregunta tipo de caso y urgencia, y ninguna promesa de resultado. En Elemento Web, una landing para un abogado parte de $550 y una Web empresarial con varias áreas, de $1,250, más ITBMS.',

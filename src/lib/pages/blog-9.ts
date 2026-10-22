@@ -15,7 +15,7 @@ export const blog9: PageData[] = [
     date: '2026-09-15',
     heroImage: {
       src: '/images/blog/diseno-web-para-clinicas-salud-panama.jpg',
-      alt: 'Recepción y sala de espera de una clínica moderna, con sillas cómodas y luz natural',
+      alt: 'Estetoscopio, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para clínicas en Panamá funciona cuando el paciente confirma en segundos especialidad, médico, seguros aceptados, horario y cómo agendar. Lo esencial: una página por especialidad, fotos reales, idoneidad visible, citas online y un formulario que nunca pide síntomas. En Elemento Web, una Web empresarial de hasta 6 páginas parte de $1,250 más ITBMS.',

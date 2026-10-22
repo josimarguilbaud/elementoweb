@@ -16,7 +16,7 @@ export const blog7: PageData[] = [
     date: '2026-07-31',
     heroImage: {
       src: '/images/blog/diseno-web-responsive-mobile-first-panama.jpg',
-      alt: 'Persona navegando una página web en su celular en Panamá',
+      alt: 'Teléfono móvil de pie junto a una tableta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web responsive hace que un mismo sitio se adapte solo a celular, tablet y computadora. En Panamá la mayoría de las visitas a webs de negocios llega desde el teléfono, por eso en Elemento Web diseñamos primero para móvil: texto legible sin zoom, botones para el pulgar, WhatsApp a un toque y carga rápida con datos móviles.',
@@ -332,7 +332,7 @@ export const blog7: PageData[] = [
     date: '2026-07-28',
     heroImage: {
       src: '/images/blog/como-aumentar-ventas-tienda-online-panama.jpg',
-      alt: 'Pila de cajas de cartón selladas con cinta en la puerta de un depósito pequeño, en una guía para vender más online',
+      alt: 'Caja registradora antigua, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para aumentar las ventas de tu tienda online en Panamá, tapa primero las fugas de conversión antes de pagar más pauta: acelera la carga en el celular, acepta Yappy además de tarjeta y transferencia, deja el WhatsApp a la vista, simplifica el checkout y recupera los carritos abandonados. Son nueve ajustes que se aplican sin rehacer la tienda.',
@@ -432,7 +432,7 @@ export const blog7: PageData[] = [
     date: '2026-07-27',
     heroImage: {
       src: '/images/blog/carritos-abandonados-como-recuperar-ventas.jpg',
-      alt: 'Carrito con un solo producto abandonado en un pasillo de supermercado lleno, como un carrito abandonado en tienda online',
+      alt: 'Carrito de compras volcado, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para recuperar carritos abandonados, primero reduce la fricción de la tienda —envío visible desde el inicio, compra sin cuenta, Yappy y checkout corto— y después envía dos o tres recordatorios automáticos con enlace directo al pago, el primero a las pocas horas. En Panamá, WhatsApp suele ser el canal donde más clientes leen y responden.',
@@ -531,7 +531,7 @@ export const blog7: PageData[] = [
     date: '2026-07-26',
     heroImage: {
       src: '/images/blog/como-elegir-palabras-clave-seo-panama.jpg',
-      alt: 'Hombre de espaldas en una parada de bus mirando un celular, con buses al fondo, en una guía de palabras clave para SEO',
+      alt: 'Llave antigua, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para elegir palabras clave de SEO que traigan clientes en Panamá, parte de cómo te busca el cliente, prioriza las búsquedas con intención de compra y con "en Panamá" o tu zona, suma frases de cola larga con menos competencia y asigna una palabra clave principal por página: servicios para las de contratar, blog para las de aprender.',
@@ -628,7 +628,7 @@ export const blog7: PageData[] = [
     date: '2026-07-25',
     heroImage: {
       src: '/images/blog/optimizar-google-business-profile-panama.jpg',
-      alt: 'Negocio local apareciendo en Google Maps en Panamá',
+      alt: 'Cinco estrellas en arco, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para optimizar tu ficha de Google Business Profile en Panamá, reclámala y verifícala, completa todos los campos con la categoría más precisa, sube fotos reales, pide reseñas y responde todas, y mantén horario y teléfono al día. La ficha es gratis y es la que te hace aparecer en el recuadro de Google Maps con tres negocios.',
@@ -733,7 +733,7 @@ export const blog7: PageData[] = [
     date: '2026-07-24',
     heroImage: {
       src: '/images/blog/embudo-de-ventas-para-negocios-panama.jpg',
-      alt: 'Diagrama de un embudo de ventas para un negocio en Panamá',
+      alt: 'Embudo con esferas que caen, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Un embudo de ventas es el recorrido que lleva a una persona de no conocerte a comprarte y volver. Para un negocio en Panamá tiene cuatro etapas —atracción, interés, decisión y fidelización— y suele romperse en dos puntos: cuando la web o el WhatsApp no convierten el interés en consulta, y cuando falta seguimiento después de la primera consulta.',
@@ -830,7 +830,7 @@ export const blog7: PageData[] = [
     date: '2026-07-23',
     heroImage: {
       src: '/images/blog/automatizar-seguimiento-clientes-panama.jpg',
-      alt: 'Silla de barbero vacía con una toalla en el apoyabrazos, en una guía sobre automatizar el seguimiento de clientes',
+      alt: 'Bumerán, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Automatizar el seguimiento de clientes es usar un CRM, mensajes por WhatsApp y flujos automáticos para que ninguna consulta quede sin respuesta ni sin recordatorio. En Panamá, donde el seguimiento vive en WhatsApp, Elemento Web lo monta con WazaCRM, automatizaciones n8n y un chatbot con IA, para rescatar los "lo pienso" sin contratar más gente.',

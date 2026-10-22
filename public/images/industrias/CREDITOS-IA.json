@@ -1,0 +1,23 @@
+{
+  "nota_general": "Renders 3D generados con IA para las portadas de las páginas de industrias de elementoweb.com (22-oct-2026): un objeto de cromo plateado sobre fondo gris claro #F5F5F5, a juego con las portadas de las páginas internas. Sustituyen a las fotos anteriores con el mismo nombre. No hay personas, texto, logos ni marcas dentro de la imagen. Una generación por imagen a 1K (3:2), con el fondo nivelado a #F5F5F5 y recortada a cada variante existente (jpg 1600x1073, webp 480 y 800).",
+  "imagenes": [
+    { "archivo": "diseno-web-agencias-aduana-zona-libre-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Sello de goma, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-agencias-viajes-tours-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Palmera sobre una isla pequeña, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-aire-acondicionado-refrigeracion-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Copo de nieve, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-arquitectos-diseno-interiores-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Maqueta de una casa moderna, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-clinicas-esteticas-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Flor de loto, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-concesionarios-autos-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Auto deportivo sin marca a escala, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-consultoras-servicios-profesionales-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Bombilla, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-contadores-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Libro contable cerrado con una pluma encima, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-cooperativas-financieras-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Edificio clásico de columnas, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-dentistas-odontologia-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Cepillo de dientes y espejo dental cruzados, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-eventos-catering-bodas-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Pastel de bodas de tres pisos, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-ferreterias-materiales-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Llave ajustable con tuercas y tornillos, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-importadoras-distribuidoras-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Montacargas a escala, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-imprentas-publicidad-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Pila de hojas con la esquina en abanico, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-navieras-servicios-maritimos-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Timón de barco, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-seguridad-vigilancia-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Candado cerrado, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-seguros-corredores-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Escudo protector, en cromo plateado, render 3D sobre fondo gris claro" },
+    { "archivo": "diseno-web-veterinarias-panama.jpg", "modelo": "google/nano-banana-2.1", "fecha": "22-oct-2026", "descripcion": "Collar de mascota con placa redonda, en cromo plateado, render 3D sobre fondo gris claro" }
+  ]
+}

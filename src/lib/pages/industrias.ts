@@ -79,9 +79,7 @@ export const industriasPages: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Mi industria no está en la lista?', a: 'La lista muestra donde tenemos experiencia acumulada, no un límite. Escríbenos: el proceso de diagnóstico funciona para cualquier rubro y te decimos con franqueza si conocemos el terreno o lo estaríamos aprendiendo contigo.' },
           { q: '¿Qué cambia entre industrias?', a: 'La estructura de venta: qué información va primero, qué pruebas de confianza pesan y qué acción se pide. Un restaurante convierte con el menú y la reserva; una firma legal con autoridad y una consulta bien filtrada.' },
-          { q: '¿Los precios varían por industria?', a: 'No: los rangos son los mismos (landing desde $550, corporativa desde $1,250, e-commerce desde $1,950). Lo que varía es el alcance funcional que cada rubro suele necesitar.' },
           { q: '¿Cómo saben qué necesita mi industria si no me conocen todavía?', a: 'Partimos de lo acumulado en cada sector y lo afinamos contigo en el diagnóstico. Tú conoces tu negocio mejor que nadie; nosotros sabemos cómo se traduce eso en una web que posiciona y convierte. El cruce de ambos es lo que arma la estructura correcta.' },
           { q: '¿Y si mi negocio encaja en dos industrias a la vez?', a: 'Pasa seguido: una constructora que también vende como inmobiliaria, un spa que además tiene tienda de productos. Tomamos las funciones que cada faceta necesita y las combinamos en un solo sitio coherente, sin duplicar ni forzar plantillas.' },
           { q: '¿Cuánto cuesta la web de mi rubro?', a: 'El rubro cambia el contenido y la estructura, no la lista de precios: landing desde $550, sitio de hasta 6 páginas desde $1,250, tienda desde $1,950 y proyecto a medida desde $2,900. Lo que cambia entre una firma legal y un restaurante es qué páginas necesitas y en qué orden aparecen, no la tarifa. Los precios no incluyen ITBMS (7%).' },

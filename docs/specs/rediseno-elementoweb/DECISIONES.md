@@ -514,8 +514,15 @@ con la respuesta «rec» (corrida main-20261021-231921).
   en `7d61092`, despliegue 39734037789 en verde. `check-prod.sh`: 39 ok. Día P a las 06:36–06:37 UTC, 3 corridas de
   Lighthouse local contra producción (restarlas de GA4): rendimiento móvil 98, LCP 1,4 s, TBT 82 ms; no hace falta
   revertir. En local, antes del merge: 98, TBT 114 ms.
-- **Pendiente:** el ensayo de la reversión no se hizo antes del merge (se publicó enseguida por pedido del dueño);
-  medir GSC y GA4 contra la línea base, como en D51, con el corte del 22-oct a las 06:27 UTC.
+- **Ensayo de la reversión (22-oct-2026, después de publicar, en la rama desechable `ensayo-reversion-v3`, borrada y
+  nunca subida):** `git revert -m 1 portada-v3` y luego `git revert -m 1 80f2bf6`. Resultado: `src/`, `public/`,
+  `scripts/`, `package.json`, `package-lock.json` y `.github/` quedan idénticos a `9036cff` (la portada v2); build,
+  236 pruebas, presupuestos y SEO congelado en verde en 47 s. **Lección para el runbook:** el primer revert choca en
+  `DECISIONES.md` y, sin cuidado, revertiría registros que deben quedarse. Antes de `git revert --continue`:
+  `git checkout HEAD -- docs/specs/rediseno-elementoweb/DECISIONES.md audit/imagenes-ia-2026-10.json docs/specs/rediseno-elementoweb/creditos-portada-v3.json`
+  (el gasto de IA ya ocurrió y los créditos documentan imágenes reales). La reversión completa son dos commits: primero la
+  portada (`portada-v3`) y después el menú y el pie (`80f2bf6`); se puede revertir solo la portada y dejar el menú.
+- **Pendiente:** medir GSC y GA4 contra la línea base, como en D51, con el corte del 22-oct a las 06:27 UTC.
 
 ## 3. Responsables y dependencias humanas
 

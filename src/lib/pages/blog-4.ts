@@ -21,43 +21,42 @@ export const blog4: PageData[] = [
       alt: 'Dos vallas publicitarias en blanco sobre postes metálicos, con palmeras y cielo azul, para comparar Google Ads y Facebook Ads',
     },
     lead: [
-      'Es la pregunta que nos hacen casi todas las semanas: si tengo un presupuesto limitado, pongo la plata en Google o en Facebook. La respuesta corta es que dependen de cosas distintas y sirven para momentos distintos del cliente.',
-      'En esta guía te explicamos la diferencia real entre los dos canales, cuándo conviene cada uno según lo que vendes, cómo repartir el presupuesto sin quemarlo y por qué, cuando el dinero alcanza, lo mejor casi siempre es usarlos juntos.',
+      'Google Ads vs Facebook Ads en Panamá: Google Ads conviene cuando la gente ya busca lo que vendes (servicios profesionales, salud, reparaciones), porque captura intención de compra. Facebook e Instagram Ads conviene cuando tu producto se vende mostrándolo, porque genera demanda nueva. Si el presupuesto alcanza para los dos, en Elemento Web los combinamos: Meta siembra, Google cosecha.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'La diferencia de fondo: intención contra descubrimiento',
+        h2: 'Google Ads vs Facebook Ads: intención contra descubrimiento',
         paragraphs: [
-          'Google Ads trabaja sobre <strong>intención</strong>. Alguien escribe "plomero urgente en Panamá" o "clínica dental San Francisco" porque ya tiene el problema y está buscando la solución. Tu anuncio aparece justo en ese momento. No creas la necesidad: te pones enfrente de quien ya la tiene y está listo para actuar.',
-          'Facebook e Instagram Ads trabajan sobre <strong>descubrimiento</strong>. Nadie abre Instagram a buscar tu producto; entra a ver a sus amigos, memes y videos. Tu anuncio interrumpe ese scroll. Por eso Meta es tan bueno para dar a conocer algo que la gente todavía no sabe que quiere, y por eso el creativo (la imagen o el video) pesa muchísimo más ahí que en Google.',
-          'Esa sola distinción explica casi todas las decisiones que siguen. Google captura demanda que ya existe; Meta genera demanda nueva. Uno cosecha, el otro siembra. Y un negocio sano necesita las dos cosas, aunque casi nunca al mismo tiempo ni con el mismo presupuesto.',
+          'Google Ads trabaja sobre <strong>intención</strong>. Alguien escribe "plomero urgente en Panamá" o "clínica dental San Francisco" porque ya tiene el problema y busca la solución. El anuncio aparece en ese momento: no creas la necesidad, te pones enfrente de quien ya la tiene.',
+          'Facebook e Instagram Ads trabajan sobre <strong>descubrimiento</strong>. Nadie abre Instagram a buscar tu producto; el anuncio interrumpe el scroll. Por eso Meta sirve para dar a conocer algo que la gente todavía no sabe que quiere, y por eso el creativo (imagen o video) pesa mucho más en Meta que en Google.',
+          'En resumen: Google captura demanda que ya existe y Meta genera demanda nueva. Un negocio necesita las dos cosas, aunque casi nunca al mismo tiempo ni con el mismo presupuesto.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo conviene Google Ads',
+        h2: '¿Cuándo conviene Google Ads en Panamá?',
         paragraphs: [
-          'Google Ads rinde primero cuando vendes algo que la gente <strong>busca activamente</strong>: servicios profesionales, reparaciones, salud, legal, contabilidad, cursos, repuestos, mudanzas. Si existe una palabra clave con intención clara, ahí hay dinero esperando y lo único que hace falta es aparecer bien y mandar el clic a un buen destino.',
-          'La ventaja es la calidad del tráfico: quien busca "abogado de tránsito en Panamá" está mucho más cerca de contratar que quien vio tu anuncio de pasada. La desventaja es que compites por esas palabras, y en rubros disputados el clic sale más caro. Por eso importa tanto la relevancia entre la palabra, el anuncio y la página a la que llega.',
-          'Aquí una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page de alta conversión</a> hace la diferencia entre pagar clics que se pierden y clics que se vuelven llamadas. Si quieres profundizar, tenemos una guía completa de <a href="/marketing/google-ads-panama/">Google Ads en Panamá</a> con cómo estructuramos las campañas.',
+          'Google Ads rinde primero cuando vendes algo que la gente <strong>busca activamente</strong>: servicios profesionales, reparaciones, salud, legal, contabilidad, cursos, repuestos, mudanzas. Si existe una palabra clave con intención clara, basta con aparecer bien y mandar el clic a un buen destino.',
+          'La ventaja es la calidad del tráfico: quien busca "abogado de tránsito en Panamá" está más cerca de contratar que quien vio un anuncio de pasada. La desventaja es la competencia por esas palabras: en rubros disputados el clic sale más caro, y por eso importa la relevancia entre palabra clave, anuncio y página de destino.',
+          'Una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page de alta conversión</a> separa los clics que se pierden de los que se vuelven llamadas. Cómo estructuramos las campañas está en la guía de <a href="/marketing/google-ads-panama/">Google Ads en Panamá</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo conviene Facebook e Instagram Ads',
+        h2: '¿Cuándo conviene Facebook e Instagram Ads?',
         paragraphs: [
-          'Meta Ads rinde cuando tu producto <strong>entra por los ojos</strong> o cuando la compra es más emocional que urgente: moda, comida, belleza, gimnasios, inmobiliaria, turismo, productos nuevos que nadie está buscando todavía. Si necesitas mostrar antes de que la gente entienda por qué te necesita, este es tu canal.',
-          'Su fuerza real está en tres cosas: <strong>públicos</strong> muy afinados (intereses, comportamiento, públicos similares a tus mejores clientes), <strong>creativos</strong> en video que detienen el scroll y, sobre todo, <strong>retargeting</strong>: volver a mostrarte a quien ya visitó tu web o interactuó contigo. Ese retargeting suele ser lo más rentable de todo Meta, porque le hablas a gente que ya te conoce.',
-          'La contra es que llegas a gente que no te estaba buscando, así que el mensaje tiene que ganarse la atención en el primer segundo. Un mal creativo quema presupuesto sin importar cuán bien segmentes. Vemos esto a fondo en <a href="/marketing/facebook-instagram-ads-panama/">Facebook e Instagram Ads en Panamá</a>.',
+          'Meta Ads rinde cuando el producto <strong>entra por los ojos</strong> o la compra es más emocional que urgente: moda, comida, belleza, gimnasios, inmobiliaria, turismo y productos nuevos que nadie busca todavía.',
+          'Su fuerza está en tres cosas: <strong>públicos</strong> afinados (intereses, comportamiento, públicos similares a tus mejores clientes), <strong>creativos</strong> en video que detienen el scroll y <strong>retargeting</strong>, que vuelve a mostrar tu anuncio a quien ya visitó tu web o interactuó contigo. El retargeting suele ser lo más rentable de Meta porque le habla a gente que ya te conoce.',
+          'La contra: llegas a gente que no te buscaba, así que el mensaje tiene que ganarse la atención en el primer segundo, y un mal creativo quema presupuesto aunque la segmentación sea buena. Más detalle en <a href="/marketing/facebook-instagram-ads-panama/">Facebook e Instagram Ads en Panamá</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'El destino importa tanto como el canal',
+        h2: 'El destino del clic importa tanto como el canal',
         paragraphs: [
-          'Aquí está el error que más caro sale: elegir bien el canal y mandar el tráfico a un mal destino. Un clic de Google que aterriza en una página lenta, confusa o sin un botón claro de contacto se pierde igual que uno de Meta. El anuncio abre la puerta; la web decide si la persona entra o se va.',
-          'Por eso, antes de encender pauta, revisamos a dónde llega el clic. A veces conviene una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> dedicada a una sola campaña, con un solo mensaje y una sola acción. Otras veces basta con ajustar una página existente. Lo que no funciona nunca es tráfico pagado hacia una web que no fue pensada para convertir. Si tu sitio ya tiene años, vale la pena mirar un <a href="/servicios/redisenio-web-panama/">rediseño enfocado en conversión</a> antes de invertir en pauta.',
+          'El error más caro es elegir bien el canal y mandar el tráfico a una página lenta, confusa o sin un botón claro de contacto. Ese clic se pierde igual venga de Google o de Meta: el anuncio trae la visita y la web decide si se convierte.',
+          'Antes de encender pauta revisamos a dónde llega el clic. A veces conviene una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> dedicada a una sola campaña, con un mensaje y una acción; otras basta con ajustar una página existente. Si tu sitio ya tiene años, conviene evaluar un <a href="/servicios/redisenio-web-panama/">rediseño enfocado en conversión</a> antes de invertir en pauta.',
         ],
       },
       {
@@ -68,7 +67,7 @@ export const blog4: PageData[] = [
       {
         type: 'checklist',
         h2: 'Cómo decidir por dónde empezar',
-        intro: 'Si tuvieras que elegir uno solo para arrancar, responde estas preguntas antes de gastar el primer dólar.',
+        intro: 'Si solo puedes arrancar con un canal, responde esto antes de invertir.',
         items: [
           '¿La gente busca activamente lo que vendes en Google? Si sí, empieza por Google Ads.',
           '¿Tu producto se vende mostrándolo (foto o video)? Si sí, empieza por Meta Ads.',
@@ -80,11 +79,11 @@ export const blog4: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Por qué lo ideal es combinarlos',
+        h2: '¿Por qué combinar Google Ads y Facebook Ads?',
         paragraphs: [
-          'Cuando el presupuesto lo permite, la mejor estrategia casi nunca es Google o Meta: es Google y Meta trabajando juntos. Meta siembra: da a conocer tu marca y genera visitas. Google cosecha: cuando esa gente ya interesada te busca por nombre, apareces de primero. Y el retargeting de Meta cierra a quien visitó y no compró.',
-          'Ese circuito (descubrir, buscar, recuperar) es más rentable que cualquier canal por separado, porque cada plataforma hace lo que mejor sabe. No hace falta un presupuesto grande para empezarlo; hace falta orden y medición, para saber qué está aportando cada peso. Si quieres ver los dos canales lado a lado con más detalle, lee también <a href="/blog/cuanto-invertir-en-publicidad-digital-en-panama/">cuánto invertir en publicidad digital en Panamá</a>.',
-          'En Elemento Web hacemos el anuncio y el destino, así que las campañas y tu web hablan el mismo idioma. Cobramos un fee de gestión claro y tu inversión publicitaria va directo a Google o Meta desde tu propia cuenta, siempre bajo tu control.',
+          'Con presupuesto para ambos, Google y Meta rinden más juntos que por separado. Meta da a conocer la marca y genera visitas; Google aparece cuando esa gente ya interesada te busca por nombre; el retargeting de Meta recupera a quien visitó y no compró.',
+          'Ese circuito (descubrir, buscar, recuperar) no exige un presupuesto grande, pero sí orden y medición para saber qué aporta cada canal. Para fijar el monto, lee <a href="/blog/cuanto-invertir-en-publicidad-digital-en-panama/">cuánto invertir en publicidad digital en Panamá</a>.',
+          'En Elemento Web hacemos el anuncio y el destino, así que campaña y web llevan el mismo mensaje. Cobramos un fee de gestión aparte y la inversión publicitaria va directo a Google o Meta desde tu propia cuenta.',
         ],
       },
       {
@@ -132,41 +131,38 @@ export const blog4: PageData[] = [
       alt: 'Manos contando monedas viejas apiladas sobre una mesa de madera gastada, en una guía de presupuesto para publicidad digital',
     },
     lead: [
-      'Es la pregunta con la que arranca casi todo negocio que quiere pautar, y no tiene una respuesta de tabla. No existe un número mágico que sirva para todos, porque el presupuesto correcto depende de tu margen, tu objetivo y cuánto puedes pagar por un cliente sin perder dinero.',
-      'Lo que sí existe es un método para llegar a ese número sin adivinar. En esta guía te mostramos cómo definir tu inversión, qué es el costo por lead, por qué conviene una fase de prueba y cómo evitar el error más caro de todos: quemar plata mandándola a un destino que no convierte.',
+      '¿Cuánto invertir en publicidad digital en Panamá? No hay un monto único: el presupuesto sale de tu margen y de cuánto puedes pagar por un lead sin perder dinero. En Elemento Web lo calculamos con el valor de tu cliente y tu tasa de cierre, arrancamos con una fase de prueba de varias semanas y escalamos solo lo que trae leads rentables.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'No hay un número mágico, hay un cálculo',
+        h2: 'El presupuesto de publicidad digital sale de un cálculo',
         paragraphs: [
-          'Cuando alguien nos pregunta "¿cuánto invierto?", la respuesta honesta es otra pregunta: ¿cuánto vale para ti un cliente nuevo? Un negocio que gana 50 dólares por venta no puede pautar igual que uno que gana 2,000 por contrato. El presupuesto no sale de lo que gasta el vecino, sale de tu propia matemática.',
-          'La idea es sencilla: si sabes cuánto te deja en promedio un cliente y cuántos de tus interesados terminan comprando, puedes calcular cuánto puedes pagar por atraer a cada interesado. Ese es tu techo. Mientras la pauta traiga clientes por debajo de ese techo, estás ganando; por encima, estás perdiendo, sin importar cuántos "me gusta" veas.',
-          'Por eso no arrancamos preguntando por el presupuesto, sino por el negocio. El número sale del margen, no del antojo.',
+          'Antes de "¿cuánto invierto?" va otra pregunta: ¿cuánto vale para ti un cliente nuevo? Un negocio que gana 50 dólares por venta no puede pautar igual que uno que gana 2,000 por contrato. El presupuesto sale de tu propia matemática, no de lo que gasta la competencia.',
+          'Si sabes cuánto te deja en promedio un cliente y cuántos interesados terminan comprando, puedes calcular cuánto pagar por atraer a cada interesado. Ese es tu techo: por debajo de él la pauta gana dinero; por encima lo pierde, sin importar cuántos "me gusta" veas.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Costo por lead: la métrica que manda',
+        h2: '¿Qué es el costo por lead y por qué manda?',
         paragraphs: [
-          'Un <strong>lead</strong> es una persona interesada que te dejó su contacto o te escribió: una llamada, un formulario, un WhatsApp. El <strong>costo por lead</strong> es cuánto te costó, en pauta, conseguir cada uno de esos contactos. Es la métrica que de verdad importa, mucho más que el costo por clic o el alcance.',
-          'Con el costo por lead y tu tasa de cierre (cuántos leads se vuelven clientes) sabes tu costo por venta real. Si cierras uno de cada cuatro interesados y cada lead te cuesta cierta cantidad, tu costo por cliente es cuatro veces eso. Comparas ese número con lo que te deja un cliente y sabes al instante si la pauta te conviene o no.',
-          'Todo esto exige medir bien. Por eso configuramos el seguimiento de conversiones antes de encender la primera campaña. Si te interesa el tema de medición, tenemos una guía de <a href="/blog/como-medir-los-resultados-de-tu-pagina-web/">cómo medir los resultados de tu página web</a> que se conecta directo con esto.',
+          'Un <strong>lead</strong> es una persona interesada que te dejó su contacto o te escribió: una llamada, un formulario, un WhatsApp. El <strong>costo por lead</strong> es cuánto te costó en pauta conseguir cada contacto, y pesa más que el costo por clic o el alcance.',
+          'Con el costo por lead y tu tasa de cierre (cuántos leads se vuelven clientes) sabes tu costo por venta real. Si cierras uno de cada cuatro interesados, tu costo por cliente es cuatro veces el costo por lead. Compara esa cifra con lo que te deja un cliente y sabrás si la pauta conviene.',
+          'Ese cálculo exige medir bien, así que configuramos el seguimiento de conversiones antes de encender la primera campaña. El detalle está en <a href="/blog/como-medir-los-resultados-de-tu-pagina-web/">cómo medir los resultados de tu página web</a>.',
         ],
       },
       {
         type: 'prose',
         h2: 'La fase de prueba: no apuestes todo el primer mes',
         paragraphs: [
-          'Nadie acierta el público, el mensaje y el canal perfectos en el primer intento. Por eso la primera etapa de cualquier pauta es una <strong>fase de prueba</strong>: se invierte una cantidad controlada para aprender qué funciona, no para vender a lo grande. Los primeros días son de datos; el algoritmo necesita señales para afinar a quién mostrarte.',
-          'En esa fase probamos varios ángulos de mensaje y creativo, vemos cuál genera leads más baratos y recortamos lo que no rinde. Solo cuando algo demuestra que funciona, se escala. Meter todo el presupuesto de golpe antes de saber qué sirve es la forma más rápida de quemarlo.',
-          'Lo bueno es que no necesitas un presupuesto grande para probar. Necesitas orden, medición y paciencia para dejar que los datos hablen antes de decidir.',
+          'La primera etapa de cualquier pauta es una <strong>fase de prueba</strong>: una inversión controlada para aprender qué público, mensaje y canal funcionan. Los primeros días son de datos; el algoritmo necesita señales para afinar a quién mostrar el anuncio.',
+          'En esa fase probamos varios ángulos de mensaje y creativo, medimos cuál genera leads más baratos y recortamos lo que no rinde. Solo se escala lo que demuestra resultados; meter todo el presupuesto de golpe antes de saber qué sirve es la forma más rápida de quemarlo. Para probar no hace falta un presupuesto grande, sino orden y medición.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Cómo definir tu presupuesto paso a paso',
-        intro: 'Un método simple para llegar a un número con lógica en vez de al tanteo.',
+        h2: 'Cómo definir tu presupuesto de pauta paso a paso',
+        intro: 'Cinco pasos para llegar a un número con lógica.',
         items: [
           { h3: '1. Calcula cuánto vale un cliente', text: 'Toma lo que te deja en promedio una venta (o el valor de un cliente en el tiempo, si es recurrente). Ese número es la base de todo lo demás.' },
           { h3: '2. Estima tu tasa de cierre', text: 'De cada diez interesados que te contactan, cuántos compran. Aunque sea aproximado al inicio, te da un punto de partida para calcular tu costo por venta.' },
@@ -179,9 +175,8 @@ export const blog4: PageData[] = [
         type: 'prose',
         h2: 'El error que más caro sale: buen anuncio, mal destino',
         paragraphs: [
-          'Puedes tener el mejor presupuesto y la mejor segmentación, y aun así perder si el tráfico llega a una web lenta, confusa o sin un botón claro de contacto. El anuncio solo compra la visita; el destino decide si se convierte en cliente. Pagar clics para mandarlos a una página que no vende es literalmente quemar dinero.',
-          'Por eso, antes de hablar de presupuesto de pauta, revisamos a dónde llega el clic. Muchas veces la mejor inversión inicial no es más pauta, sino una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page de conversión</a> o un ajuste a tu sitio. Una misma campaña puede rendir el doble solo con un destino mejor armado.',
-          'Si aún no tienes web, vale la pena saber que en Elemento Web una landing arranca en $550 y una web PYME en $1,250, con cotización cerrada por escrito según el alcance. A veces esa inversión rinde más que subir el presupuesto de anuncios.',
+          'Un buen presupuesto y una buena segmentación igual pierden si el tráfico llega a una web lenta, confusa o sin un botón claro de contacto. El anuncio compra la visita; el destino decide si se convierte en cliente.',
+          'Antes de fijar el presupuesto de pauta revisamos a dónde llega el clic. A veces la mejor inversión inicial no es más pauta, sino una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page de conversión</a> o un ajuste al sitio. En Elemento Web una landing arranca en $550 y una web PYME en $1,250, con cotización cerrada por escrito según el alcance.',
         ],
       },
       {
@@ -191,10 +186,10 @@ export const blog4: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Fee de gestión e inversión: no los confundas',
+        h2: '¿Qué diferencia hay entre fee de gestión e inversión publicitaria?',
         paragraphs: [
-          'Al presupuestar pauta hay dos costos distintos. Uno es <strong>nuestro fee de gestión</strong>: lo que pagas por crear, optimizar y reportar las campañas. El otro es <strong>la inversión publicitaria</strong>: el dinero que se muestra en anuncios, que va directo a Google o Meta desde tu propia cuenta. No intermediamos tu inversión ni le aplicamos margen.',
-          'Separar esos dos números te deja ver con claridad cuánto va a trabajo y cuánto va a mostrar tus anuncios. Y como la cuenta queda a tu nombre, controlas la inversión y te llevas el historial si algún día cambias de rumbo. Para ver los canales en detalle, revisa <a href="/marketing/google-ads-panama/">Google Ads</a> y <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a>, o compáralos en <a href="/blog/google-ads-vs-facebook-ads-en-panama/">Google Ads vs Facebook Ads</a>.',
+          'Al presupuestar pauta hay dos costos. El <strong>fee de gestión</strong> paga crear, optimizar y reportar las campañas. La <strong>inversión publicitaria</strong> es el dinero que se gasta en anuncios y va directo a Google o Meta desde tu propia cuenta; no la intermediamos ni le aplicamos margen.',
+          'Separar los dos números muestra cuánto va a trabajo y cuánto a anuncios. Como la cuenta queda a tu nombre, controlas la inversión y conservas el historial si cambias de agencia. Para ver los canales en detalle, revisa <a href="/marketing/google-ads-panama/">Google Ads</a> y <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a>, o compáralos en <a href="/blog/google-ads-vs-facebook-ads-en-panama/">Google Ads vs Facebook Ads</a>.',
         ],
       },
       {
@@ -242,41 +237,38 @@ export const blog4: PageData[] = [
       alt: 'Mensajes de WhatsApp que se segmentan en tres flujos hacia distintos grupos de clientes en una campaña masiva',
     },
     lead: [
-      'WhatsApp es el canal donde de verdad está tu cliente en Panamá: lo abre todos los días y ahí sí lee. Por eso tantos negocios quieren mandar campañas masivas. El problema es que casi todos lo hacen mal, y terminan con el número bloqueado.',
-      'Hacer WhatsApp masivo bien no es cargar contactos en una app pirata y disparar. Es usar la API oficial, mensajes con permiso y plantillas aprobadas. En esta guía te explicamos cómo se hace de forma correcta, cómo evitar el bloqueo y en qué casos de verdad rinde.',
+      'Para hacer campañas de WhatsApp masivo en Panamá sin que bloqueen tu número necesitas tres cosas: la WhatsApp Business API oficial de Meta, contactos con opt-in (que aceptaron recibir tus mensajes) y plantillas aprobadas por Meta. Elemento Web, Tech Provider verificado por Meta, monta las campañas por esa vía; las apps no oficiales con bases compradas terminan en bloqueo.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Qué es (y qué no es) WhatsApp masivo',
+        h2: '¿Qué es WhatsApp masivo y qué no lo es?',
         paragraphs: [
-          'WhatsApp masivo bien hecho es enviar mensajes a muchos contactos a la vez usando la <strong>WhatsApp Business API oficial</strong> de Meta, con permiso de la gente y con mensajes que Meta aprobó previamente. Es una herramienta seria de marketing, no un truco.',
-          'Lo que <strong>no</strong> es: cargar una base comprada en una app no oficial o en un chip con un multiplicador de mensajes y disparar promociones a desconocidos. Eso va contra las reglas de WhatsApp y termina casi siempre igual: el número marcado como spam y bloqueado, a veces de forma permanente. Perder el WhatsApp del negocio es perder un canal de ventas entero.',
-          'La diferencia entre las dos cosas es enorme, y confundirlas sale caro. Todo lo que sigue asume que lo haces por la vía oficial, que es la única que protege tu número y tu marca.',
+          'WhatsApp masivo bien hecho es enviar mensajes a muchos contactos a la vez con la <strong>WhatsApp Business API oficial</strong> de Meta, con permiso de cada contacto y con plantillas que Meta aprobó antes del envío.',
+          'Lo que <strong>no</strong> es: cargar una base comprada en una app no oficial o en un chip con multiplicador de mensajes y disparar promociones a desconocidos. Eso va contra las reglas de WhatsApp y suele terminar con el número marcado como spam y bloqueado, a veces de forma permanente, lo que deja al negocio sin ese canal de ventas.',
         ],
       },
       {
         type: 'prose',
-        h2: 'La API oficial: por qué es el único camino serio',
+        h2: '¿Por qué usar la API oficial de WhatsApp Business?',
         paragraphs: [
-          'La API oficial de WhatsApp Business es la vía que Meta habilita para que las empresas envíen mensajes a escala sin romper las reglas. Con ella tu número queda verificado, puedes mandar campañas grandes y tener varias personas atendiendo el mismo número, todo de forma legítima y estable.',
-          'En Elemento Web somos <strong>Tech Provider verificado por Meta</strong>, así que montamos tu WhatsApp masivo por la vía oficial, no con herramientas piratas. Eso baja mucho el riesgo de bloqueo: la API oficial tiene reglas de calidad y de consentimiento, y las cuidamos por ti. Puedes ver el detalle del servicio en <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp marketing masivo en Panamá</a>.',
-          'La API además se integra con lo demás: puedes conectar el WhatsApp a tu web, a un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> que responda al instante y a un CRM que ordene las conversaciones. El mensaje masivo abre la puerta; la atención cierra la venta.',
+          'La API oficial es la vía que Meta habilita para que las empresas envíen mensajes a escala dentro de sus reglas. Con ella el número queda verificado, puedes mandar campañas grandes y varias personas pueden atender el mismo número.',
+          'En Elemento Web somos <strong>Tech Provider verificado por Meta</strong> y montamos el WhatsApp masivo por la API oficial, no con herramientas no autorizadas. Eso reduce el riesgo de bloqueo, porque la API tiene reglas de calidad y consentimiento que cuidamos en cada envío. El detalle del servicio está en <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp marketing masivo en Panamá</a>.',
+          'La API también se conecta a tu web, a un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> que responde al instante y a un CRM que ordena las conversaciones. El envío masivo abre la conversación; la atención cierra la venta.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Opt-in y plantillas aprobadas: las dos reglas de oro',
+        h2: 'Opt-in y plantillas aprobadas: las dos reglas de WhatsApp masivo',
         paragraphs: [
-          'La primera regla es el <strong>opt-in</strong>: solo le escribes a quien te dio permiso de escribirle. Ese permiso puede venir de un formulario en tu web, de una casilla que la persona marcó, de una compra o de que ella misma te escribió primero. Mandarle a quien no lo pidió es la receta directa del bloqueo, y además molesta a tu propia audiencia.',
-          'La segunda regla son las <strong>plantillas aprobadas</strong>. Para iniciar una conversación (no responder), el mensaje tiene que ser una plantilla que Meta revisó y autorizó antes. No puedes improvisar el texto de un envío masivo: se redacta, se envía a aprobación y, una vez aprobada, se usa. Las plantillas útiles y no invasivas se aprueban sin problema; las que parecen spam agresivo, no.',
-          'Estas dos reglas no son burocracia: son lo que mantiene tu número vivo. Un negocio que respeta el opt-in y usa plantillas aprobadas puede hacer campañas por años sin un solo bloqueo.',
+          'La primera regla es el <strong>opt-in</strong>: solo le escribes a quien te dio permiso. Ese permiso puede venir de un formulario en tu web, una casilla marcada, una compra o un mensaje que la persona te envió primero. Escribir a quien no lo pidió lleva directo al bloqueo.',
+          'La segunda son las <strong>plantillas aprobadas</strong>. Para iniciar una conversación (no para responder), el mensaje tiene que ser una plantilla que Meta revisó y autorizó: se redacta, se envía a aprobación y luego se usa. Las plantillas útiles y no invasivas se aprueban; las que parecen spam agresivo, no.',
         ],
       },
       {
         type: 'checklist',
         h2: 'Lo que necesitas antes de tu primera campaña',
-        intro: 'Con esto en orden, tu WhatsApp masivo corre estable y sin riesgo para tu número.',
+        intro: 'Seis requisitos para que la campaña corra estable y sin poner en riesgo tu número.',
         items: [
           'WhatsApp Business API oficial configurada (no un chip con app pirata).',
           'Número verificado y perfil de empresa completo, con nombre, logo y descripción.',
@@ -288,11 +280,10 @@ export const blog4: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cómo evitar el bloqueo',
+        h2: '¿Cómo evitar que bloqueen tu número de WhatsApp?',
         paragraphs: [
-          'El bloqueo casi siempre viene de tres cosas: escribir a quien no dio permiso, mandar demasiado y muy seguido, y usar mensajes que la gente reporta como spam. Meta mira las señales de calidad de tu número, y si muchos te bloquean o reportan, te baja la calificación y limita tus envíos hasta cortarlos.',
-          'La forma de evitarlo es simple de decir y disciplinada de cumplir: escribe solo a quien te dio opt-in, manda contenido que aporte (no solo "compra"), respeta la frecuencia y facilita darse de baja. Un contacto que se va tranquilo vale más que uno que te reporta. Menos ruido y más relevancia mantienen tu número sano.',
-          'También ayuda calentar el número de a poco en vez de disparar miles el primer día, y segmentar para que cada mensaje le llegue a quien de verdad le interesa. La calidad del número es un activo: se cuida.',
+          'El bloqueo casi siempre viene de tres cosas: escribir a quien no dio permiso, mandar demasiado y muy seguido, y usar mensajes que la gente reporta como spam. Meta mide la calidad de cada número; si muchos contactos lo bloquean o reportan, baja su calificación y limita los envíos hasta cortarlos.',
+          'Para evitarlo: escribe solo a contactos con opt-in, manda contenido que aporte (no solo "compra"), respeta la frecuencia y facilita darse de baja. Calienta el número de a poco en vez de disparar miles el primer día, y segmenta para que cada mensaje llegue a quien le interesa.',
         ],
       },
       {
@@ -302,11 +293,11 @@ export const blog4: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Casos donde de verdad funciona',
+        h2: '¿En qué casos funciona una campaña de WhatsApp masivo?',
         paragraphs: [
-          'WhatsApp masivo bien hecho rinde en cosas concretas: avisar una promoción a clientes que ya te compraron, recordar una cita o un pago, confirmar un pedido, recuperar a alguien que dejó un carrito, anunciar algo nuevo a tu propia base. En todos esos casos le escribes a gente que ya te conoce y que agradece el mensaje.',
-          'Donde no funciona es como sustituto de la publicidad para conseguir clientes nuevos y fríos: para eso están <a href="/marketing/google-ads-panama/">Google Ads</a> y <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a>. WhatsApp brilla con tu audiencia propia, no con desconocidos. Piensa en él como el canal para hablarle a quien ya levantó la mano.',
-          'Combinado con una buena web que capte los opt-in y un chatbot que atienda al instante, el WhatsApp se vuelve una máquina de repetición de compra. Si vendes por ahí, te puede interesar también <a href="/blog/como-vender-por-whatsapp-en-panama/">cómo vender por WhatsApp en Panamá</a>.',
+          'WhatsApp masivo rinde en casos concretos: avisar una promoción a clientes que ya compraron, recordar una cita o un pago, confirmar un pedido, recuperar un carrito abandonado o anunciar algo nuevo a tu propia base. En todos le escribes a gente que ya te conoce.',
+          'No sustituye a la publicidad para conseguir clientes nuevos: para eso están <a href="/marketing/google-ads-panama/">Google Ads</a> y <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a>. WhatsApp funciona con tu audiencia propia, la que ya levantó la mano.',
+          'Con una web que capte los opt-in y un chatbot que atienda al instante, WhatsApp impulsa la recompra. Para la parte de atención y cierre, lee <a href="/blog/como-vender-por-whatsapp-en-panama/">cómo vender por WhatsApp en Panamá</a>.',
         ],
       },
       {
@@ -354,41 +345,39 @@ export const blog4: PageData[] = [
       alt: 'Un sobre que libera correos de boletín junto a un editor de plantillas y un gráfico de crecimiento de email marketing',
     },
     lead: [
-      'A muchos les suena viejo, pero el email sigue siendo el canal con mejor retorno del marketing digital, y por una razón simple: es tuyo. No dependes del algoritmo de nadie ni pagas por cada alcance. Tu lista es un activo que te pertenece.',
-      'En esta guía te mostramos cómo hacer email marketing de verdad en 2026: construir una lista propia (no comprada), montar las automatizaciones que trabajan solas y cuidar la entregabilidad para que tus correos lleguen a la bandeja de entrada y no al spam.',
+      'El email marketing para negocios en Panamá funciona porque la lista es tuya: no dependes de un algoritmo ni pagas por alcance. Para que rinda en 2026 hacen falta una lista propia con permiso (nunca comprada), tres automatizaciones (bienvenida, carrito abandonado y reactivación) y buena entregabilidad, con tu dominio autenticado para llegar a la bandeja de entrada y no al spam.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Por qué el email sigue rindiendo',
+        h2: '¿Por qué el email marketing sigue funcionando?',
         paragraphs: [
-          'En redes sociales alquilas la atención: el algoritmo decide a cuántos de tus seguidores les muestra tu publicación, y cada vez son menos sin pagar. En email, en cambio, eres dueño del canal. Escribes a tu lista y llega a tu lista, sin intermediario cobrando por el alcance.',
-          'Ese detalle lo cambia todo. Una lista de correos bien cuidada es un activo que puedes usar cuantas veces quieras sin volver a pagar por conseguir a esa gente. Por eso decimos que en marketing digital, construir lista propia es de las inversiones más rentables que existen.',
-          'Además, el email le habla a gente que ya te conoce y te dio permiso: clientes, interesados, suscriptores. No es tráfico frío, es tu audiencia. Y a esa audiencia se le vende mucho mejor que a un desconocido.',
+          'En redes sociales el algoritmo decide a cuántos seguidores les muestra cada publicación, y sin pagar son cada vez menos. En email eres dueño del canal: escribes a tu lista y le llega a tu lista, sin intermediario cobrando por el alcance.',
+          'Una lista bien cuidada se puede usar cuantas veces quieras sin volver a pagar por conseguir esos contactos. Además le habla a gente que ya te dio permiso (clientes, interesados, suscriptores), no a tráfico frío.',
         ],
       },
       {
         type: 'prose',
         h2: 'Lista propia: nunca compres correos',
         paragraphs: [
-          'La base de todo es una <strong>lista propia y con permiso</strong>. Se construye ofreciendo algo a cambio del correo: un descuento, una guía útil, acceso a novedades, un recurso que a tu cliente le sirva. La gente te da su email porque quiere saber de ti, y ese permiso es lo que hace que después abran tus correos.',
-          'Comprar bases de datos es el error clásico, y sale caro: esos contactos no te conocen, no te pidieron nada y te van a marcar como spam. Eso no solo no vende, sino que arruina tu reputación de envío y hace que hasta tus correos legítimos terminen en spam. Una lista comprada es un pasivo, no un activo.',
-          'La lista se alimenta desde tu web: formularios de suscripción, un pop-up bien puesto, la casilla en el checkout de tu <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online</a>. Tu sitio es la máquina de captar correos; el email es donde esos correos se vuelven ventas.',
+          'La base es una <strong>lista propia y con permiso</strong>. Se construye ofreciendo algo a cambio del correo: un descuento, una guía útil, acceso a novedades. Ese permiso es lo que hace que después abran tus correos.',
+          'Comprar bases de datos sale caro: esos contactos no te conocen, te marcan como spam y arruinan tu reputación de envío, al punto de que hasta tus correos legítimos terminan en spam. Una lista comprada es un pasivo.',
+          'La lista se alimenta desde tu web: formularios de suscripción, un pop-up bien puesto o la casilla en el checkout de tu <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online</a>. La web capta los correos; el email los convierte en ventas.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Automatizaciones: el email que trabaja solo',
+        h2: 'Tres automatizaciones de email que todo negocio necesita',
         paragraphs: [
-          'La magia del email moderno está en las <strong>automatizaciones</strong>: secuencias que se envían solas cuando pasa algo, sin que tengas que escribir nada cada vez. Se configuran una vez y trabajan por meses. Estas son las tres que casi todo negocio debería tener.',
-          'La <strong>bienvenida</strong>: cuando alguien se suscribe o compra por primera vez, recibe una secuencia que le cuenta quién eres, qué ofreces y por qué confiar en ti. Es el momento de mayor interés, y desperdiciarlo es tirar el mejor cliente potencial. El <strong>carrito abandonado</strong>: si alguien agregó productos y no terminó, un recordatorio automático recupera una parte de esas ventas que ya estaban casi hechas.',
-          'Y la <strong>reactivación</strong>: a los clientes que hace tiempo no te compran, una secuencia que los invita a volver, a veces con un incentivo. Recuperar a un cliente que ya te conoce es más barato que conseguir uno nuevo. Estas automatizaciones se pueden conectar con el resto de tu operación usando <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones con n8n</a>.',
+          'Las <strong>automatizaciones</strong> son secuencias que se envían solas cuando pasa algo. Se configuran una vez y trabajan por meses.',
+          'La <strong>bienvenida</strong> llega cuando alguien se suscribe o compra por primera vez: cuenta quién eres, qué ofreces y por qué confiar en ti, en el momento de mayor interés. El <strong>carrito abandonado</strong> le recuerda a quien agregó productos y no terminó la compra, y recupera una parte de esas ventas.',
+          'La <strong>reactivación</strong> invita a volver a los clientes que hace tiempo no compran, a veces con un incentivo; recuperar a un cliente que ya te conoce cuesta menos que conseguir uno nuevo. Estas secuencias se conectan con el resto de tu operación mediante <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones con n8n</a>, y forman parte de nuestro servicio de <a href="/marketing/email-marketing-panama/">email marketing en Panamá</a>.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Cómo montar tu email marketing',
-        intro: 'Un orden sensato para arrancar sin complicarte y crecer con base.',
+        h2: 'Cómo montar tu email marketing paso a paso',
+        intro: 'Cinco pasos en orden para arrancar y crecer.',
         items: [
           { h3: '1. Elige tu plataforma de envío', text: 'Una herramienta de email marketing que maneje listas, plantillas, automatizaciones y reportes de apertura y clics. La plataforma es la que cuida tu reputación de envío.' },
           { h3: '2. Pon a captar tu web', text: 'Instala formularios y una oferta clara para que la gente deje su correo. Sin captación, la lista no crece y no hay a quién escribirle.' },
@@ -399,17 +388,16 @@ export const blog4: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Entregabilidad: llegar a la bandeja, no al spam',
+        h2: '¿Cómo evitar que tus correos lleguen a spam?',
         paragraphs: [
-          'De nada sirve un correo genial si termina en spam. La <strong>entregabilidad</strong> es el arte de que tus correos lleguen a la bandeja de entrada, y depende de tu reputación como remitente. Los proveedores de correo vigilan cómo te trata tu propia gente: si te abren, es buena señal; si te ignoran o te marcan como spam, mala.',
-          'Se cuida con cosas concretas: configurar bien la autenticación técnica de tu dominio (los registros que le dicen a Gmail que eres tú), enviar solo a quien te dio permiso, limpiar los correos que rebotan, no usar asuntos engañosos y facilitar la baja. Una lista pequeña y comprometida entrega mejor que una grande y fría.',
-          'Cuidar la entregabilidad es cuidar el canal entero. Un remitente con buena reputación llega a la bandeja; uno con mala reputación desaparece en spam por más bonito que sea el correo. Es trabajo técnico y de disciplina, y es lo que separa el email que vende del que nadie ve.',
+          'La <strong>entregabilidad</strong> es la capacidad de que tus correos lleguen a la bandeja de entrada, y depende de tu reputación como remitente. Gmail y los demás proveedores miran cómo reacciona tu lista: si abren tus correos, es buena señal; si los ignoran o los marcan como spam, mala.',
+          'Se cuida con acciones concretas: autenticar tu dominio (los registros técnicos que le confirman a Gmail que eres tú), enviar solo a quien dio permiso, limpiar los correos que rebotan, no usar asuntos engañosos y facilitar la baja. Una lista pequeña y comprometida entrega mejor que una grande y fría.',
         ],
       },
       {
         type: 'statement',
         text: 'Tu lista de correos es tuya. Las redes son alquiladas.',
-        strong: 'Por eso el email sigue siendo el canal de mejor retorno.',
+        strong: 'Por eso escribirle a tu lista no depende de ningún algoritmo.',
       },
       {
         type: 'faq',
@@ -456,41 +444,39 @@ export const blog4: PageData[] = [
       alt: 'Creador de contenido grabando un Reel con el celular para redes sociales',
     },
     lead: [
-      'Publicar por publicar no es marketing de contenidos. Muchos negocios en Panamá suben cosas a Instagram sin rumbo, se cansan a las pocas semanas y concluyen que las redes no sirven. El problema no fue la red: fue la falta de estrategia y de constancia.',
-      'El marketing de contenidos bien hecho construye una marca que la gente sigue, confía y termina comprando. En esta guía te mostramos cómo armar una estrategia por pilares, por qué los Reels mandan, cómo sostener la constancia sin quemarte y cómo llevar ese contenido hacia tu web, que es donde se cierra la venta.',
+      'El marketing de contenidos para redes sociales en Panamá funciona cuando hay estrategia y constancia: tres o cuatro pilares de contenido, video corto (Reels) como formato principal, un calendario que puedas sostener por meses y un camino claro hacia tu web, donde se cierra la venta. En Elemento Web conectamos ese contenido con tu sitio y tu pauta.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'El contenido es un activo, no un relleno',
+        h2: 'El contenido en redes es un activo, no un relleno',
         paragraphs: [
-          'El error de fondo es tratar el contenido como algo que hay que "llenar": subir cualquier cosa para no dejar el perfil vacío. Así se produce ruido, no marca. El buen contenido es un activo que trabaja para ti: educa a tu cliente, muestra que sabes de lo tuyo y construye la confianza que después se convierte en venta.',
-          'La gente rara vez compra la primera vez que te ve. Te sigue, te observa un tiempo, se convence de que sabes lo que haces, y entonces compra. El contenido es ese tiempo de cortejo: cada pieza suma a que confíen en ti o resta si es floja. Por eso importa la calidad y la intención, no solo la cantidad.',
-          'Pensar el contenido como activo cambia cómo lo produces: dejas de improvisar y empiezas a construir. Cada Reel, cada publicación, aporta a una imagen de marca coherente que se acumula con el tiempo.',
+          'Muchos negocios suben cosas a Instagram sin rumbo para no dejar el perfil vacío, se cansan a las pocas semanas y concluyen que las redes no sirven. El problema es la falta de estrategia: así se produce ruido, no marca.',
+          'La gente rara vez compra la primera vez que te ve: te sigue, te observa un tiempo y compra cuando se convence de que sabes lo que haces. Cada pieza de contenido suma confianza o la resta, así que importan la calidad y la intención, no solo la cantidad.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Estrategia por pilares: de qué vas a hablar',
+        h2: '¿Qué son los pilares de contenido y cómo se definen?',
         paragraphs: [
-          'Antes de grabar nada, define tus <strong>pilares de contenido</strong>: tres o cuatro temas de los que tu marca va a hablar siempre. Por ejemplo, un restaurante podría tener platos, detrás de cámara y clientes; un estudio de abogados, dudas comunes, casos y consejos prácticos. Los pilares te dan de qué hablar sin quedarte en blanco.',
-          'Con los pilares definidos, cada pieza cumple un rol: unas <strong>educan</strong> (enseñan algo útil), otras <strong>conectan</strong> (muestran el lado humano de tu marca) y otras <strong>venden</strong> (invitan a la acción). El mix importa: si todo es venta, la gente se cansa; si nada vende, no hay negocio. El equilibrio es lo que hace que te sigan y aun así compren.',
-          'Esta estrategia es la base de un servicio de <a href="/marketing/contenido-redes-sociales-panama/">contenido para redes sociales en Panamá</a> que rinda. Sin pilares, el contenido es improvisación; con pilares, es construcción de marca. Y una marca construida vende mucho más fácil.',
+          'Los <strong>pilares de contenido</strong> son tres o cuatro temas de los que tu marca habla siempre. Un restaurante podría tener platos, detrás de cámara y clientes; un estudio de abogados, dudas comunes, casos y consejos prácticos. Definirlos antes de grabar evita quedarse sin ideas.',
+          'Dentro de los pilares, cada pieza cumple un rol: unas <strong>educan</strong> (enseñan algo útil), otras <strong>conectan</strong> (muestran el lado humano de la marca) y otras <strong>venden</strong> (invitan a la acción). Si todo es venta, la gente se cansa; si nada vende, no hay negocio.',
+          'Los pilares son la base de nuestro servicio de <a href="/marketing/contenido-redes-sociales-panama/">contenido para redes sociales en Panamá</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Reels y video: el formato que hoy manda',
+        h2: 'Reels y video corto: el formato que hoy manda en redes',
         paragraphs: [
-          'Si tuvieras que apostar por un formato hoy, es el <strong>video corto</strong>: Reels en Instagram, videos en TikTok. Las plataformas lo empujan porque es lo que la gente consume, y por eso un Reel bueno llega a mucha más gente que una foto. El video es donde está el alcance sin pagar.',
-          'No hace falta producción de cine. Con un celular, buena luz y un mensaje claro se hacen Reels que funcionan. Lo que sí importa es el primer segundo: si no enganchas de una, la gente sigue el scroll. Por eso el gancho inicial (una pregunta, un dato, una promesa) pesa más que la calidad de la cámara.',
-          'El video corto también es el mejor amigo de la pauta: un Reel que funciona orgánicamente suele funcionar aún mejor como anuncio en <a href="/marketing/facebook-instagram-ads-panama/">Facebook e Instagram Ads</a>. El contenido alimenta la pauta y la pauta amplifica el contenido; los dos juntos rinden más que por separado.',
+          'Hoy el formato con más alcance orgánico es el <strong>video corto</strong>: Reels en Instagram y videos en TikTok. Las plataformas lo empujan porque es lo que la gente consume, y un buen Reel llega a más personas que una foto.',
+          'No hace falta producción de cine: con un celular, buena luz y un mensaje claro se hacen Reels que funcionan. Lo decisivo es el primer segundo; el gancho inicial (una pregunta, un dato, una promesa) pesa más que la calidad de la cámara.',
+          'Un Reel que funciona de forma orgánica suele rendir aún mejor como anuncio en <a href="/marketing/facebook-instagram-ads-panama/">Facebook e Instagram Ads</a>: el contenido alimenta la pauta y la pauta amplifica el contenido.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Cómo sostener la constancia sin quemarte',
-        intro: 'La constancia es lo que separa a los que construyen marca de los que abandonan a las tres semanas. Estas prácticas la hacen sostenible.',
+        h2: 'Cómo sostener la constancia en redes sin quemarte',
+        intro: 'Seis prácticas para mantener el ritmo por meses en lugar de abandonar a las tres semanas.',
         items: [
           'Define un calendario realista: mejor pocas piezas fijas que muchas insostenibles.',
           'Graba en tandas: junta varios Reels en una sola sesión en vez de improvisar a diario.',
@@ -502,11 +488,11 @@ export const blog4: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Del contenido a la web: donde se cierra la venta',
+        h2: '¿Cómo llevar el contenido de redes sociales a tu web?',
         paragraphs: [
-          'Aquí está el paso que casi todos olvidan. Las redes son de alquiler: no eres dueño de tus seguidores ni del algoritmo, y un cambio de reglas puede borrar tu alcance de la noche a la mañana. Por eso el contenido no puede terminar en la red; tiene que <strong>llevar a tu web</strong>, que sí es tuya.',
-          'El circuito sano es este: el contenido atrae en redes, mueve a la gente a tu web y ahí capturas el contacto o cierras la venta, con un formulario, una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> o una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online</a>. Así conviertes seguidores prestados en clientes y contactos que sí te pertenecen. La red es la vitrina; la web es la caja registradora.',
-          'Sin ese puente hacia la web, el mejor contenido se queda en likes que no pagan cuentas. Con él, cada Reel es una puerta que lleva a alguien un paso más cerca de comprarte. Si quieres medir si todo ese trabajo se traduce en resultados, revisa <a href="/blog/como-medir-los-resultados-de-tu-pagina-web/">cómo medir los resultados de tu web</a>.',
+          'Las redes son de alquiler: no eres dueño de tus seguidores ni del algoritmo, y un cambio de reglas puede borrar tu alcance de un día para otro. Por eso el contenido tiene que <strong>llevar a tu web</strong>, que sí es tuya.',
+          'El circuito es: el contenido atrae en redes, lleva a la gente a tu web y ahí capturas el contacto o cierras la venta con un formulario, una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> o una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online</a>. Así los seguidores se vuelven contactos y clientes que te pertenecen. La red es la vitrina; la web es la caja registradora.',
+          'Para saber si el contenido se traduce en visitas, contactos y ventas, revisa <a href="/blog/como-medir-los-resultados-de-tu-pagina-web/">cómo medir los resultados de tu web</a>.',
         ],
       },
       {

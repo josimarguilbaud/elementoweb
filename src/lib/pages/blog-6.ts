@@ -16,27 +16,25 @@ export const blog6: PageData[] = [
     date: '2026-07-10',
     heroImage: { src: '/images/blog/hosting-panama-evitar-hosting-barato.jpg', alt: 'Servidores de un centro de datos con luces indicando actividad' },
     lead: [
-      'El hosting es donde vive tu página web. Es lo que la mantiene encendida, rápida y accesible las 24 horas. Y es, casi siempre, la parte donde más gente intenta ahorrar de la manera equivocada.',
-      'Ahorrar cuatro o cinco dólares al mes en hosting parece inteligente hasta el día que el sitio se cae en plena campaña, o carga tan lento que el cliente se va antes de ver tu teléfono. En esta guía te explicamos qué esconde el hosting barato y qué mirar de verdad antes de contratar.',
+      'Un hosting barato en Panamá casi nunca ahorra dinero: para vender planes de dos dólares al mes, el proveedor mete cientos de sitios en un mismo servidor y recorta soporte, respaldos y seguridad. El costo llega después, en caídas, lentitud y sitios hackeados. En Elemento Web, dominio, hosting y SSL a tu nombre parten de $350 al año.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Qué estás pagando realmente cuando pagas hosting',
+        h2: '¿Qué pagas realmente cuando contratas hosting?',
         paragraphs: [
-          'El hosting es el servidor donde se guardan los archivos de tu web y desde donde se sirven a cada visitante. Cuando alguien escribe tu dirección o te encuentra en Google, su navegador le pide esos archivos a ese servidor. Si el servidor está saturado, lejos o mal configurado, esa entrega tarda o falla. Nada de lo demás importa si esa base no es sólida.',
-          'El problema del hosting barato no es el precio en sí, es lo que se recorta para llegar a ese precio. Para vender un plan de dos dólares, el proveedor mete cientos o miles de sitios en un mismo servidor, ofrece cero soporte real y recorta en respaldos y seguridad. Tú no ves ese recorte el primer día. Lo ves el día que algo se rompe.',
-          'Un buen hosting es casi invisible: el sitio simplemente está siempre rápido y disponible, y nadie piensa en él. Un mal hosting se hace notar en el peor momento posible, normalmente cuando tienes visitas de verdad.',
+          'El hosting es el servidor donde se guardan los archivos de tu web y desde donde se entregan a cada visitante. Cuando alguien escribe tu dirección o te encuentra en Google, su navegador le pide esos archivos al servidor. Si el servidor está saturado, lejos o mal configurado, la entrega tarda o falla.',
+          'El problema del hosting barato no es el precio, sino lo que se recorta para llegar a él: cientos o miles de sitios por servidor, soporte mínimo y respaldos y seguridad recortados. Ese recorte no se nota el primer día; se nota el día que algo se rompe, normalmente cuando tienes visitas de verdad.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Los cuatro riesgos del hosting barato',
+        h2: '¿Cuáles son los riesgos del hosting barato?',
         paragraphs: [
-          '<strong>Caídas.</strong> El síntoma más obvio. Cuando cientos de sitios comparten un servidor sobrevendido, basta con que uno reciba un pico de tráfico o sea atacado para que todos se ralenticen o se caigan. Tu web depende de vecinos que no elegiste. Y las caídas nunca avisan: llegan justo cuando lanzaste una promo por WhatsApp y toda tu gente entra a la vez.',
-          '<strong>Lentitud.</strong> Un sitio lento espanta clientes y a Google no le gusta. Si tu servidor está saturado o físicamente lejos de tus visitantes, cada página tarda segundos de más en cargar. En Panamá, donde mucha gente entra desde el celular con datos, esos segundos son la diferencia entre una consulta y un cliente que cerró la pestaña.',
-          '<strong>Seguridad.</strong> Los planes baratos suelen quedarse atrás en actualizaciones y aislamiento entre cuentas. Si un sitio del servidor es hackeado, el resto queda expuesto. Un sitio comprometido puede terminar enviando spam, mostrando publicidad ajena o, peor, marcado por Google como "sitio engañoso", lo que ahuyenta a cualquiera que te busque.',
-          '<strong>Soporte inexistente.</strong> Cuando algo falla, quieres una respuesta rápida de alguien que entienda tu caso. El hosting ultrabarato responde con tickets automáticos, en otro idioma y con horas o días de demora. Mientras tanto, tu web sigue caída y tú perdiendo llamadas.',
+          '<strong>Caídas.</strong> En un servidor sobrevendido, basta con que un sitio vecino reciba un pico de tráfico o un ataque para que todos se ralenticen o se caigan. Suele pasar justo cuando lanzas una promo por WhatsApp y toda tu gente entra a la vez.',
+          '<strong>Lentitud.</strong> Si el servidor está saturado o lejos de tus visitantes, cada página tarda segundos de más, y Google tiene en cuenta la velocidad. En Panamá, donde mucha gente entra desde el celular con datos, esos segundos separan una consulta de una pestaña cerrada.',
+          '<strong>Seguridad.</strong> Los planes baratos suelen quedarse atrás en actualizaciones y en aislamiento entre cuentas: si un sitio del servidor es hackeado, el resto queda expuesto. Un sitio comprometido puede enviar spam, mostrar publicidad ajena o quedar marcado por Google como "sitio engañoso".',
+          '<strong>Soporte inexistente.</strong> El hosting ultrabarato responde con tickets automáticos, en otro idioma y con horas o días de demora. Mientras tanto, tu web sigue caída y tú pierdes llamadas.',
         ],
       },
       {
@@ -46,23 +44,22 @@ export const blog6: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Tipos de hosting: cuál necesita tu negocio',
+        h2: '¿Qué tipo de hosting necesita un negocio en Panamá?',
         paragraphs: [
-          '<strong>Hosting compartido.</strong> Tu sitio comparte un servidor con muchos otros. Es lo más económico y, bien gestionado, sirve perfectamente para una web corporativa o una landing con tráfico normal. El problema no es compartir: es compartir en un servidor sobrevendido sin límites ni mantenimiento.',
-          '<strong>Hosting gestionado.</strong> Aquí alguien se ocupa por ti de las actualizaciones, los respaldos, la seguridad y el monitoreo. Pagas un poco más, pero no tienes que aprender de servidores ni estar pendiente. Para la mayoría de negocios en Panamá, esta es la opción sensata: te dedicas a vender, no a administrar tecnología.',
-          '<strong>Servidor dedicado o en la nube.</strong> El sitio tiene recursos propios. Tiene sentido cuando el tráfico o la tienda en línea ya justifican el costo. La mayoría de las PYME no lo necesita al arrancar, y ofrecértelo de entrada suele ser una venta inflada. Mejor empezar bien dimensionado y escalar cuando los números lo pidan.',
-          'La pregunta correcta no es "cuál es el más barato", sino "cuál soporta lo que hace mi negocio sin fallar". Una tienda que factura no puede vivir en el mismo plan de dos dólares que un blog personal.',
+          '<strong>Hosting compartido.</strong> Tu sitio comparte servidor con otros. Es lo más económico y, bien gestionado, sirve para una web corporativa o una landing con tráfico normal. El problema no es compartir, sino compartir un servidor sobrevendido y sin mantenimiento.',
+          '<strong>Hosting gestionado.</strong> Alguien se ocupa por ti de actualizaciones, respaldos, seguridad y monitoreo. Cuesta un poco más, pero no tienes que aprender de servidores. Para la mayoría de negocios en Panamá es la opción sensata.',
+          '<strong>Servidor dedicado o en la nube.</strong> El sitio tiene recursos propios. Se justifica cuando el tráfico o una tienda en línea con muchas ventas lo pagan; la mayoría de las PYME no lo necesita al arrancar. Una tienda que factura no puede vivir en el plan de dos dólares de un blog personal, pero tampoco necesita empezar sobredimensionada.',
         ],
       },
       {
         type: 'checklist',
         h2: 'Qué mirar antes de contratar un hosting',
-        intro: 'Antes de pagar, revisa estos puntos. Si el proveedor no puede responderlos con claridad, es una señal.',
+        intro: 'Si el proveedor no puede responder estos puntos con claridad, es una señal de alerta.',
         items: [
-          'Respaldos automáticos diarios y, sobre todo, que se puedan restaurar de verdad (un respaldo que no se prueba no existe).',
+          'Respaldos automáticos diarios que se puedan restaurar de verdad (un respaldo que no se prueba no existe).',
           'Certificado SSL incluido, para que tu web cargue con candado (https) y no salga marcada como "no segura".',
-          'Soporte real, en tu idioma y con tiempos de respuesta claros, no solo un formulario que nadie contesta.',
-          'Servidores cercanos o con buena red hacia Panamá y Latinoamérica, para que el sitio cargue rápido a tu público.',
+          'Soporte en tu idioma y con tiempos de respuesta claros, no solo un formulario.',
+          'Servidores con buena red hacia Panamá y Latinoamérica, para que el sitio cargue rápido a tu público.',
           'Actualizaciones y seguridad gestionadas, no libradas a que tú te acuerdes de hacerlas.',
           'El dominio y el hosting a nombre de tu empresa, con tus accesos: nunca en la cuenta personal de un tercero.',
         ],
@@ -71,18 +68,16 @@ export const blog6: PageData[] = [
         type: 'prose',
         h2: 'El dominio y el hosting deben estar a tu nombre',
         paragraphs: [
-          'Este punto merece su propio apartado porque es donde más negocios en Panamá quedan atrapados. Es muy común que un conocido o una agencia registre el dominio y contrate el hosting en su propia cuenta "para agilizar". El día que quieres cambiar de proveedor, actualizar el sitio o simplemente dejar de trabajar con esa persona, descubres que no controlas nada de lo tuyo.',
-          'El dominio es tu identidad en internet y el hosting es tu casa. Ambos deben estar registrados a nombre de tu empresa, con tus datos y tus accesos. En <a href="/nosotros/">Elemento Web</a> lo hacemos siempre así: tú eres el dueño de tu dominio y tu hosting desde el primer día, aunque nosotros lo administremos. Si mañana quieres irte, te llevas todo sin pedir permiso.',
-          'Tenemos un artículo dedicado a esto que vale la pena leer: <a href="/blog/como-elegir-el-dominio-web-perfecto/">cómo elegir el dominio web perfecto</a>. La propiedad de tus activos digitales no es un detalle técnico, es una decisión de negocio.',
+          'En Panamá es común que un conocido o una agencia registre el dominio y contrate el hosting en su propia cuenta "para agilizar". El día que quieres cambiar de proveedor o dejar de trabajar con esa persona, descubres que no controlas nada de lo tuyo.',
+          'El dominio y el hosting deben estar registrados a nombre de tu empresa, con tus datos y tus accesos. En <a href="/nosotros/">Elemento Web</a> lo hacemos siempre así, aunque nosotros los administremos: si mañana quieres irte, te llevas todo sin pedir permiso. Más detalle en <a href="/blog/como-elegir-el-dominio-web-perfecto/">cómo elegir el dominio web perfecto</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuánto cuesta un hosting que no te dé sustos',
+        h2: '¿Cuánto cuesta un hosting confiable en Panamá?',
         paragraphs: [
-          'En Elemento Web manejamos la infraestructura anual (dominio, hosting y certificado SSL) desde $350 al año, todo a nombre del cliente. A eso puedes sumar mantenimiento gestionado desde $99 al mes, que incluye actualizaciones, respaldos verificados y monitoreo para que el sitio no se caiga ni envejezca.',
-          'Sí, es más que un plan de dos dólares. Pero compara: un plan barato que se cae un día de campaña te puede costar más en ventas perdidas que un año entero de hosting serio. Y rehacer un sitio hackeado cuesta muchísimo más que haberlo protegido. Todo lo cerramos por escrito, con cotización cerrada, para que sepas exactamente qué pagas.',
-          'Si quieres que revisemos tu hosting actual o migremos tu sitio a uno estable, escríbenos por WhatsApp. También puedes ver nuestro servicio de <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura en Panamá</a> con el detalle completo.',
+          'En Elemento Web la infraestructura anual (dominio, hosting y certificado SSL) parte de $350 al año, todo a nombre del cliente. Puedes sumar mantenimiento gestionado desde $99 al mes, con actualizaciones, respaldos verificados y monitoreo. El detalle está en nuestro servicio de <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura en Panamá</a>.',
+          'Es más que un plan de dos dólares, pero un plan barato que se cae un día de campaña puede costar más en ventas perdidas que un año de hosting serio, y rehacer un sitio hackeado cuesta más que haberlo protegido. Todo va con cotización cerrada por escrito.',
         ],
       },
       {
@@ -128,45 +123,39 @@ export const blog6: PageData[] = [
     date: '2026-06-26',
     heroImage: { src: '/images/blog/como-elegir-el-dominio-web-perfecto.jpg', alt: 'Barra de dirección web con candado y un globo terráqueo que ilustran cómo elegir el dominio de un negocio' },
     lead: [
-      'El dominio es tu dirección en internet: eso que la gente escribe para encontrarte y que aparece en tu tarjeta, tu Instagram y tus correos. Es la primera impresión de tu marca antes de que abran siquiera tu página.',
-      'Elegirlo bien parece sencillo hasta que te sientas a hacerlo y descubres que todo lo bueno "ya está tomado". En esta guía vas a decidir con criterio: qué extensión usar, cómo dar con un nombre que se recuerde y qué errores te pueden costar caro después.',
+      'Para elegir el dominio web de tu negocio en Panamá, toma el .com si está libre, o el .com.pa si tu marca es muy local o el .com ya está tomado. Que sea corto, sin guiones ni números, que se dicte por teléfono sin deletrear y que quede a nombre de tu empresa. En Elemento Web va incluido en la infraestructura desde $350 al año.',
     ],
     blocks: [
       {
         type: 'prose',
         h2: 'Qué es un dominio y por qué pesa tanto',
         paragraphs: [
-          'Un dominio es el nombre que la gente teclea para llegar a tu web, por ejemplo tunegocio.com. Detrás hay tecnología que lo conecta con tu hosting, pero para tu cliente es simplemente tu nombre en internet. Y como todo nombre, comunica antes de que digas nada.',
-          'Un dominio corto y claro transmite seriedad y facilita que te recomienden de boca en boca. Uno largo, con guiones y números, genera desconfianza y errores al escribirlo. La diferencia no es estética: es cuántas personas llegan a tu sitio en lugar de terminar en el de otro por teclear mal.',
-          'Además, el dominio es un activo que te acompaña por años. Cambiarlo después es costoso: pierdes posicionamiento en Google, tienes que rehacer material impreso y reeducar a tus clientes. Vale la pena pensarlo bien una vez y quedarte con él.',
+          'Un dominio es el nombre que la gente teclea para llegar a tu web, por ejemplo tunegocio.com. Técnicamente apunta a tu hosting; para tu cliente es tu nombre en internet, el que aparece en tu tarjeta, tu Instagram y tus correos.',
+          'Un dominio corto y claro facilita que te recomienden de boca en boca. Uno largo, con guiones y números, genera desconfianza y errores al escribirlo, y esos errores mandan visitas al sitio de otro.',
+          'Cambiar de dominio después es costoso: pierdes posicionamiento en Google, rehaces el material impreso y reeducas a tus clientes. Conviene decidirlo bien una vez.',
         ],
       },
       {
         type: 'prose',
-        h2: '.com o .com.pa: cuál te conviene en Panamá',
+        h2: '¿.com o .com.pa: cuál conviene a un negocio en Panamá?',
         paragraphs: [
-          'El <strong>.com</strong> sigue siendo el rey. Es el que la gente asume por defecto, el que se recuerda sin esfuerzo y el que da imagen de marca establecida. Si tu .com está disponible y encaja con tu nombre, cómpralo sin pensarlo mucho. Sirve igual dentro y fuera de Panamá.',
-          'El <strong>.com.pa</strong> y el <strong>.pa</strong> dejan claro que eres un negocio panameño, y eso puede sumar confianza local. Son buena opción si tu .com ideal ya está tomado, o si tu negocio es marcadamente local (un restaurante, una clínica, un taller de barrio). No te penaliza en Google frente a un .com; simplemente comunica algo distinto.',
-          'Nuestra recomendación práctica: si puedes, asegura el .com. Si tu marca es muy panameña o el .com no está disponible, el .com.pa es una alternativa perfectamente válida. Y si el presupuesto lo permite, registra ambos y redirige uno al otro, para que nadie llegue a la versión equivocada ni un competidor te la quite.',
+          'El <strong>.com</strong> es la extensión que la gente asume por defecto y se recuerda sin esfuerzo. Si tu .com está disponible y encaja con tu nombre, cómpralo; sirve igual dentro y fuera de Panamá.',
+          'El <strong>.com.pa</strong> y el <strong>.pa</strong> dejan claro que eres un negocio panameño, lo que puede sumar confianza local. Son buena opción si tu .com ya está tomado o si tu negocio es marcadamente local (un restaurante, una clínica, un taller de barrio). No penalizan en Google frente a un .com; comunican algo distinto.',
+          'Si el presupuesto lo permite, registra ambos y redirige uno al otro, para que nadie llegue a la versión equivocada ni un competidor se quede con ella.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Un nombre corto, claro y fácil de dictar',
+        h2: '¿Cómo debe ser el nombre de un dominio?',
         paragraphs: [
-          'La mejor prueba para un dominio es el "test del teléfono": imagina que se lo dictas a alguien por WhatsApp o en una llamada. Si tienes que deletrear, aclarar "con guion" o repetir tres veces, el nombre es demasiado complicado. El dominio ideal se entiende a la primera.',
-          'Apunta a algo corto, sin guiones y sin números. Evita las palabras que se escriben distinto a como suenan o que se prestan a confusión entre la ese y la ce, la be y la ve. Si tu marca tiene una grafía rara, considera registrar también la versión "como suena" para no perder a quien la escriba de oído.',
-          'Que sea fácil de recordar importa tanto como que sea fácil de escribir. Un nombre con significado, ligado a lo que haces o a tu marca, se queda en la cabeza. Uno genérico y lleno de palabras clave (tipo mejoresserviciospanama24.com) se olvida y, encima, huele a spam.',
+          'La prueba más útil es el "test del teléfono": dicta el dominio en una llamada o una nota de voz de WhatsApp. Si tienes que deletrear, aclarar "con guion" o repetirlo tres veces, es demasiado complicado.',
+          'Apunta a algo corto, sin guiones ni números. Evita palabras que se escriben distinto a como suenan o que confunden la ese con la ce y la be con la ve. Si tu marca tiene una grafía rara, registra también la versión "como suena".',
+          'Un nombre ligado a tu marca o a lo que haces se recuerda. Uno genérico y lleno de palabras clave (tipo mejoresserviciospanama24.com) se olvida y parece spam.',
         ],
-      },
-      {
-        type: 'statement',
-        text: 'Si no puedes dictar tu dominio por teléfono sin deletrearlo, todavía no es el correcto.',
-        strong: 'Si no puedes dictar tu dominio por teléfono sin deletrearlo, todavía no es el correcto.',
       },
       {
         type: 'checklist',
-        h2: 'Checklist para elegir tu dominio',
+        h2: 'Checklist para elegir el dominio web de tu negocio',
         intro: 'Antes de registrar, pásalo por esta lista. Si cumple la mayoría, vas bien encaminado.',
         items: [
           'Es corto y se entiende a la primera al dictarlo en voz alta.',
@@ -182,8 +171,8 @@ export const blog6: PageData[] = [
         type: 'prose',
         h2: 'El error más caro: que el dominio no esté a tu nombre',
         paragraphs: [
-          'Este es el error que más dolores de cabeza causa en Panamá. Por ahorrar tiempo, mucha gente deja que un conocido, un primo "que sabe de computadoras" o una agencia registre el dominio en su propia cuenta. Todo va bien hasta que quieres migrar de proveedor, o esa relación se enfría, y descubres que no eres dueño de tu propio nombre.',
-          'Sin acceso al dominio no puedes cambiar de hosting, no puedes renovarlo si el tercero desaparece, y en el peor caso pierdes la dirección que tus clientes ya conocen. Recuperarlo puede ser imposible o costar mucho dinero. Es un secuestro silencioso que se descubre demasiado tarde.',
+          'Por ahorrar tiempo, mucha gente en Panamá deja que un conocido, un primo "que sabe de computadoras" o una agencia registre el dominio en su propia cuenta. Todo va bien hasta que quieres migrar de proveedor, o esa relación se enfría, y descubres que no eres dueño de tu propio nombre.',
+          'Sin acceso al dominio no puedes cambiar de hosting ni renovarlo si el tercero desaparece, y puedes perder la dirección que tus clientes ya conocen. Recuperarlo puede ser imposible o costar mucho dinero.',
           'La regla es simple e innegociable: <strong>el dominio se registra a nombre de tu empresa, con tu correo y tus accesos.</strong> En <a href="/nosotros/">Elemento Web</a> siempre entregamos el control al cliente; nosotros lo administramos si quieres, pero el dueño eres tú. El mismo principio aplica al <a href="/blog/hosting-panama-evitar-hosting-barato/">hosting</a>: tu casa digital, a tu nombre.',
         ],
       },
@@ -191,9 +180,8 @@ export const blog6: PageData[] = [
         type: 'prose',
         h2: 'Ya tengo el dominio, ¿ahora qué?',
         paragraphs: [
-          'Registrar el dominio es el primer paso, pero un dominio solo no es una web. Necesitas conectarlo a un hosting y montar el sitio que tus clientes van a ver. Si ya tienes claro tu nombre, el siguiente movimiento natural es diseñar la página que vive en esa dirección.',
-          'En Elemento Web incluimos el registro y la configuración del dominio dentro de la infraestructura anual desde $350 (dominio, hosting y SSL, todo a tu nombre), y sobre eso construimos tu sitio. Puedes empezar por una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> desde $550 o una web corporativa. Todo con cotización cerrada por escrito.',
-          'Si aún dudas entre dos o tres nombres, escríbenos por WhatsApp con tus opciones y te ayudamos a decidir, revisamos disponibilidad y lo dejamos registrado a tu nombre el mismo día.',
+          'Un dominio solo no es una web: hay que conectarlo a un hosting y montar el sitio que tus clientes van a ver.',
+          'En Elemento Web el registro y la configuración del dominio van dentro de la infraestructura anual desde $350 (dominio, hosting y SSL, todo a tu nombre), y sobre eso construimos tu sitio: una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> desde $550 o una web corporativa, con cotización cerrada por escrito. Si dudas entre dos o tres nombres, revisamos disponibilidad y lo dejamos registrado a tu nombre el mismo día.',
         ],
       },
       {
@@ -237,17 +225,16 @@ export const blog6: PageData[] = [
     date: '2026-06-12',
     heroImage: { src: '/images/blog/por-que-tu-negocio-necesita-una-pagina-web.jpg', alt: 'Local con toldo que se convierte en una ventana de navegador y recibe clientes que llegan desde un mapa' },
     lead: [
-      '"Yo con mi Instagram tengo suficiente." Lo escuchamos todo el tiempo, y se entiende: las redes son gratis, rápidas y ahí está tu gente. Pero construir tu negocio solo sobre redes es levantar tu casa en un terreno alquilado.',
-      'En 2026, una página web propia dejó de ser un lujo para volverse la base sobre la que se apoya todo lo demás. En este artículo te explicamos, sin humo, por qué tu negocio en Panamá la necesita y qué te da que las redes, por diseño, no pueden darte.',
+      'Sí, tu negocio en Panamá necesita una página web propia en 2026. Las redes sociales no son tuyas y pueden suspender tu cuenta sin aviso, casi no aparecen en Google cuando alguien busca tu servicio y no dan la confianza de un sitio propio que atiende 24/7. En Elemento Web, una landing parte de $550 y una web PYME de $1,250.',
     ],
     blocks: [
       {
         type: 'prose',
         h2: 'Tus redes no son tuyas (y pueden desaparecer)',
         paragraphs: [
-          'Tu perfil de Instagram o tu página de Facebook no te pertenecen: son de la plataforma. Ellos ponen las reglas, deciden a cuánta gente le muestran tus publicaciones y pueden suspender tu cuenta sin previo aviso por un reporte, un error del sistema o un cambio de política. Le ha pasado a negocios serios de la noche a la mañana.',
-          'Cuando eso ocurre, pierdes de golpe tus seguidores, tus fotos, tus mensajes y tu única vitrina. No hay a quién reclamarle de forma efectiva. Todo lo que construiste durante años vive en una cuenta que no controlas y que te pueden apagar.',
-          'Una página web, en cambio, es tuya. El dominio está a tu nombre, el contenido lo controlas tú y nadie decide por ti quién la ve. Las redes son fantásticas para atraer y conversar, pero deben apuntar a un lugar que sí sea tu propiedad: tu web.',
+          'Tu perfil de Instagram o tu página de Facebook pertenecen a la plataforma. Ella pone las reglas, decide a cuánta gente muestra tus publicaciones y puede suspender tu cuenta sin aviso por un reporte, un error del sistema o un cambio de política.',
+          'Cuando eso ocurre, pierdes de golpe seguidores, fotos, mensajes y tu única vitrina, sin nadie a quien reclamar de forma efectiva.',
+          'Una página web, en cambio, es tuya: el dominio está a tu nombre, el contenido lo controlas tú y nadie decide quién la ve. Las redes sirven para atraer y conversar, pero deben apuntar a tu web.',
         ],
       },
       {
@@ -259,27 +246,24 @@ export const blog6: PageData[] = [
         type: 'prose',
         h2: 'La web da la confianza que las redes no alcanzan',
         paragraphs: [
-          'Cuando alguien está a punto de gastar dinero contigo, especialmente si el monto es alto, te investiga. Y un perfil de redes con cuatro fotos no basta para convencerlo. La gente busca una web: quiere ver tus servicios explicados, tus precios o rangos, tus trabajos anteriores y una forma seria de contactarte.',
-          'Una página web propia proyecta que eres un negocio establecido, no alguien que improvisa desde el celular. Ese detalle marca la diferencia entre "parece serio, le escribo" y "mmm, no sé, mejor busco otro". La web es tu carta de presentación trabajando por ti las 24 horas.',
-          'Ese efecto se multiplica cuando muestras <a href="/portafolio">trabajos reales</a>, reseñas y una identidad cuidada. En un mercado como el panameño, donde mucho se mueve por confianza y recomendación, tener dónde respaldar esa recomendación con una web sólida cierra ventas que de otro modo se enfrían.',
+          'Cuando alguien está a punto de gastar dinero contigo, sobre todo si el monto es alto, te investiga, y un perfil con cuatro fotos no basta. Busca una web con tus servicios explicados, tus precios o rangos, tus trabajos anteriores y una forma seria de contactarte.',
+          'Una página web propia separa "parece serio, le escribo" de "mejor busco otro", y pesa más cuando muestra <a href="/portafolio">trabajos reales</a>, reseñas y una identidad cuidada. En el mercado panameño, donde mucho se mueve por recomendación, la web es donde esa recomendación se confirma.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Que te encuentren en Google cuando te buscan',
+        h2: '¿Por qué una página web hace que tu negocio aparezca en Google?',
         paragraphs: [
-          'Piensa en cómo buscas tú un servicio que no conoces: abres Google y escribes "plomero en Costa del Este", "clínica dental Chitré" o "repuestos para nevera Panamá". Miles de personas hacen exactamente eso cada día buscando lo que tú vendes. Si no tienes web, en esa búsqueda no existes.',
-          'Las redes sociales casi no aparecen en Google para esas búsquedas; las páginas web sí. Tener un sitio bien hecho te da la oportunidad de aparecer justo cuando alguien tiene la intención de comprar, que es el mejor momento posible. Ese cliente no te sigue todavía, no te conoce: te está buscando, y quieres estar ahí.',
-          'Esto se potencia con el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>, que pone tu negocio en el mapa cuando buscan "cerca de mí". Sin una web como base, esa maquinaria de encontrabilidad simplemente no arranca. Si quieres profundizar, lee <a href="/blog/como-aparecer-primero-en-google-en-panama/">cómo aparecer primero en Google en Panamá</a>.',
+          'Quien no te conoce te busca en Google: "plomero en Costa del Este", "clínica dental Chitré" o "repuestos para nevera Panamá". Las redes sociales casi no aparecen en esas búsquedas; las páginas web sí. Sin web, en esa búsqueda no existes.',
+          'Ese cliente todavía no te sigue, pero tiene intención de comprar. El <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a> pone tu negocio en el mapa cuando buscan "cerca de mí", y necesita una web como base. Para profundizar, lee <a href="/blog/como-aparecer-primero-en-google-en-panama/">cómo aparecer primero en Google en Panamá</a>.',
         ],
       },
       {
         type: 'prose',
         h2: 'Tu vendedor que no duerme: el canal 24/7',
         paragraphs: [
-          'Tu negocio tiene horario; tu web no. A las once de la noche, un domingo o mientras atiendes a otro cliente, tu página sigue mostrando tus servicios, resolviendo dudas y dejando que alguien te escriba por WhatsApp con un clic. Cada visita es una oportunidad que no tuviste que atender en persona.',
-          'Y puedes ir más allá de la vitrina estática. Una web hoy integra botón de WhatsApp, <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reservas y citas en línea</a> para que agenden solos, <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">pagos con Yappy</a> y hasta un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con inteligencia artificial</a> que responde preguntas frecuentes cuando tú no puedes. Tu web trabaja mientras tú descansas.',
-          'Ese es el salto de mentalidad: la web no es un folleto digital que se cuelga y se olvida, es un canal activo que atrae, convence y convierte todos los días. Para muchos negocios en Panamá es, de hecho, su mejor vendedor.',
+          'Tu negocio tiene horario; tu web no. A las once de la noche, un domingo o mientras atiendes a otro cliente, tu página muestra tus servicios, resuelve dudas y deja que alguien te escriba por WhatsApp con un clic.',
+          'Una web también integra <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reservas y citas en línea</a> para que agenden solos, <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">pagos con Yappy</a> y un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con inteligencia artificial</a> que responde preguntas frecuentes cuando tú no puedes. Deja de ser un folleto digital y pasa a ser un canal que atrae, convence y convierte.',
         ],
       },
       {
@@ -297,9 +281,8 @@ export const blog6: PageData[] = [
         type: 'prose',
         h2: 'La web y las redes juegan en el mismo equipo',
         paragraphs: [
-          'Nada de esto significa abandonar tus redes. Al contrario: la web y las redes se potencian. Las redes atraen, conversan y generan cercanía; la web da confianza, aparece en Google y cierra. Trabajan mejor juntas que separadas.',
-          'El error es depender de un solo canal, y peor si es uno que no controlas. Con una web propia en el centro, tus redes tienen a dónde llevar a la gente, tu publicidad tiene dónde aterrizar y tu negocio tiene una base que no te pueden apagar. Conoce nuestro enfoque de <a href="/diseno-web-panama/">diseño web en Panamá</a> pensado exactamente para eso.',
-          'Si llevas tiempo diciendo "algún día hago mi web", 2026 es el año. Escríbenos por WhatsApp y conversamos tu caso sin compromiso; te decimos con honestidad por dónde te conviene empezar.',
+          'Tener web no significa abandonar tus redes. Las redes atraen, conversan y generan cercanía; la web da confianza, aparece en Google y cierra.',
+          'El error es depender de un solo canal, y peor si no lo controlas. Con una web propia en el centro, tus redes tienen a dónde llevar a la gente, tu publicidad tiene dónde aterrizar y tu negocio tiene una base que no te pueden apagar. Ese es el enfoque de nuestro <a href="/diseno-web-panama/">diseño web en Panamá</a>.',
         ],
       },
       {
@@ -345,17 +328,15 @@ export const blog6: PageData[] = [
     date: '2026-05-29',
     heroImage: { src: '/images/blog/como-medir-los-resultados-de-tu-pagina-web.jpg', alt: 'Manos arrugando recibos de papel con códigos de barras sobre un mostrador, en una guía para medir los resultados de tu web' },
     lead: [
-      'Tienes tu página web publicada. Bien. Ahora viene la pregunta que casi nadie sabe responder con números: ¿está funcionando? ¿Te trae clientes o solo se ve bonita?',
-      'La buena noticia es que una web se puede medir con precisión, a diferencia de un anuncio en radio o un volante. La mala es que la mayoría mira los datos equivocados y se emociona con cifras que no pagan facturas. En esta guía separamos las métricas que importan de las que solo alimentan el ego.',
+      'Para medir los resultados de tu página web, cuenta conversiones (clics a WhatsApp, formularios, citas y ventas) y de qué canal llegan, no el total de visitas. Google Analytics y Search Console son gratuitos y, configurados a nombre de tu empresa, muestran cuántos clientes empezaron en tu web. En Panamá, el clic a WhatsApp suele ser la conversión clave.',
     ],
     blocks: [
       {
         type: 'prose',
         h2: 'Métricas de vanidad vs. métricas que pagan',
         paragraphs: [
-          'Las <strong>métricas de vanidad</strong> son las que se ven grandes y hacen sentir bien, pero no te dicen si el negocio mejora. El total de visitas por sí solo es la más típica: puedes tener miles de visitas de gente que entró por error, no era tu público o se fue en dos segundos. Un número alto no es lo mismo que un buen resultado.',
-          'Las <strong>métricas que importan</strong> se conectan con dinero: ¿cuántas de esas visitas te escribieron por WhatsApp, llenaron el formulario, agendaron o compraron? Diez visitas que generan tres consultas valen más que mil que no generan ninguna. La pregunta correcta nunca es "cuánta gente entró", sino "cuánta gente hizo algo".',
-          'Cambiar de mentalidad es el primer paso. Deja de perseguir el número grande y empieza a perseguir la acción: contacto, reserva, venta. Todo lo demás es contexto para entender por qué esas acciones suben o bajan.',
+          'Las <strong>métricas de vanidad</strong> se ven grandes pero no dicen si el negocio mejora. El total de visitas es la más típica: pueden ser miles de personas que entraron por error, no eran tu público o se fueron en dos segundos.',
+          'Las <strong>métricas que importan</strong> se conectan con dinero: cuántas visitas te escribieron por WhatsApp, llenaron el formulario, agendaron o compraron. Diez visitas que generan tres consultas valen más que mil que no generan ninguna. La pregunta no es "cuánta gente entró", sino "cuánta gente hizo algo".',
         ],
       },
       {
@@ -365,35 +346,35 @@ export const blog6: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Las métricas que de verdad importan',
+        h2: '¿Qué métricas de una página web importan?',
         paragraphs: [
-          '<strong>Conversiones.</strong> La reina. Una conversión es cualquier acción valiosa: un clic al botón de WhatsApp, un formulario enviado, una cita agendada, una compra. Es lo más cercano a "esta web me trajo un cliente". Todo lo que midas debe apuntar, al final, a entender y aumentar estas conversiones.',
-          '<strong>Origen del tráfico.</strong> Saber de dónde llega tu gente lo cambia todo. ¿Vienen de Google (búsqueda orgánica), de tus redes, de un anuncio o escribiendo tu dirección directamente? Esto te dice qué canal funciona y dónde vale la pena invertir más. Sin origen, estás midiendo a ciegas.',
-          '<strong>Páginas más vistas.</strong> Te muestran qué le interesa a tu público y qué se ignora. Si tu página de servicios recibe mucho y la de precios nada, tienes una pista de dónde se traba la decisión. Los datos te señalan qué mejorar.',
-          '<strong>Comportamiento en el sitio.</strong> Cuánto tiempo se quedan y si navegan o se van de inmediato. Un porcentaje alto de gente que entra y sale al instante puede indicar que la página carga lento, no comunica claro o atrae al público equivocado. Es una señal, no una condena: te dice dónde mirar.',
+          '<strong>Conversiones.</strong> Una conversión es cualquier acción valiosa: un clic al botón de WhatsApp, un formulario enviado, una cita agendada, una compra. Es lo más cercano a "esta web me trajo un cliente", y el resto de métricas sirve para entender por qué suben o bajan.',
+          '<strong>Origen del tráfico.</strong> Si la gente llega desde Google (búsqueda orgánica), tus redes, un anuncio o escribiendo tu dirección, cada canal rinde distinto. El origen te dice qué funciona y dónde invertir más.',
+          '<strong>Páginas más vistas.</strong> Muestran qué le interesa a tu público y qué se ignora. Si tu página de servicios recibe mucho y la de precios nada, ahí hay una pista de dónde se traba la decisión.',
+          '<strong>Comportamiento en el sitio.</strong> Cuánto tiempo se quedan y si navegan o se van de inmediato. Mucha gente que entra y sale al instante puede indicar que la página carga lento, no comunica claro o atrae al público equivocado.',
         ],
       },
       {
         type: 'prose',
         h2: 'Google Analytics y Search Console: tus dos herramientas base',
         paragraphs: [
-          '<strong>Google Analytics</strong> te dice qué pasa dentro de tu web: cuánta gente entra, de dónde viene, qué páginas ve y cuántos hacen la acción que te importa. Es gratis y, bien configurado con tus conversiones marcadas (clic a WhatsApp, formulario, compra), se vuelve tu tablero de control. Sin configurar esas conversiones, solo verás números sueltos.',
-          '<strong>Google Search Console</strong>, también gratis, te muestra cómo te ve Google: con qué palabras te encuentra la gente, en qué posición apareces y cuántos hacen clic. Es la herramienta clave para entender y mejorar tu <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento SEO</a>. Analytics mide a los que ya entraron; Search Console mide cómo llegan.',
-          'Las dos juntas te dan la foto completa: Search Console te dice cómo te encuentran, Analytics qué hacen una vez dentro. Ambas deben estar instaladas y a nombre de tu empresa desde que se publica el sitio. Si tu web no las tiene, estás manejando sin tablero.',
+          '<strong>Google Analytics</strong> mide qué pasa dentro de tu web: cuánta gente entra, de dónde viene, qué páginas ve y cuántos hacen la acción que te importa. Es gratis y, con tus conversiones marcadas (clic a WhatsApp, formulario, compra), se vuelve tu tablero de control. Sin esas conversiones, solo verás números sueltos.',
+          '<strong>Google Search Console</strong>, también gratis, muestra cómo te ve Google: con qué palabras te encuentran, en qué posición apareces y cuántos hacen clic. Es la herramienta base para mejorar tu <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento SEO</a>.',
+          'Search Console mide cómo llegan; Analytics, qué hacen una vez dentro. Ambas deben estar instaladas y a nombre de tu empresa desde que se publica el sitio.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Medir el WhatsApp: la conversión clave en Panamá',
+        h2: '¿Cómo medir los clics a WhatsApp desde tu web?',
         paragraphs: [
-          'En Panamá, buena parte de las ventas empiezan por WhatsApp, así que medir cuánta gente pasa de tu web a escribirte es de las métricas más valiosas que tienes. No basta con poner el botón: hay que saber cuántos lo pulsan y desde qué página lo hacen.',
-          'Esto se configura marcando el clic al botón de WhatsApp como una conversión en Analytics. Así sabes si tu web realmente está generando conversaciones o solo visitas que no llaman. Y descubres qué página convierte mejor: quizá tu landing de un servicio específico genera más chats que la página de inicio, y eso te dice dónde poner el foco.',
-          'Si además usas un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> o un CRM, puedes ir más allá y medir cuántas de esas conversaciones terminan en venta. Ahí cierras el círculo completo: de la visita al chat, y del chat al cliente. Ese es el dato que de verdad manda.',
+          'En Panamá buena parte de las ventas empieza por WhatsApp, así que medir cuánta gente pasa de tu web a escribirte es de los datos más valiosos. No basta con poner el botón: hay que saber cuántos lo pulsan y desde qué página.',
+          'Se configura marcando el clic al botón de WhatsApp como conversión en Google Analytics. Así sabes si la web genera conversaciones y qué página convierte más: quizá la landing de un servicio específico genera más chats que la página de inicio.',
+          'Con un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> o un CRM puedes medir además cuántas de esas conversaciones terminan en venta, y cerrar el recorrido completo: de la visita al chat, y del chat al cliente.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Checklist de medición para tu web',
+        h2: 'Checklist para medir los resultados de tu página web',
         intro: 'Si tu web cumple estos puntos, estás midiendo con criterio y no a ciegas.',
         items: [
           'Google Analytics instalado y a nombre de tu empresa desde el primer día.',
@@ -409,9 +390,8 @@ export const blog6: PageData[] = [
         type: 'prose',
         h2: 'De los números a las decisiones',
         paragraphs: [
-          'Medir no sirve de nada si no cambias algo con lo que ves. El valor de los datos está en las decisiones que provocan. Si Search Console te dice que apareces para una búsqueda pero casi nadie hace clic, quizá tu título en Google no atrae y hay que mejorarlo. Si mucha gente entra y se va rápido, tal vez la página carga lento o no comunica claro.',
-          'La rutina sana es simple: revisa tus datos con una periodicidad razonable, hazte una pregunta concreta ("¿qué canal me trae más consultas?", "¿qué página convierte peor?") y ajusta. Pequeñas mejoras sostenidas rinden mucho más que rediseñar todo por corazonada. Los números te dicen dónde, tú decides el qué.',
-          'Si te abruma configurar todo esto o interpretarlo, es normal: por eso lo incluimos y lo explicamos en un lenguaje que un dueño entiende. Escríbenos por WhatsApp y revisamos si tu web está midiendo lo correcto, o si lleva meses ciega. También te puede servir <a href="/blog/como-aparecer-primero-en-google-en-panama/">esta guía para aparecer primero en Google</a>.',
+          'Medir solo sirve si cambias algo con lo que ves. Si Search Console muestra que apareces para una búsqueda pero casi nadie hace clic, el título que muestra Google no atrae y hay que mejorarlo. Si mucha gente entra y se va rápido, revisa la velocidad o la claridad de la página.',
+          'La rutina es simple: revisa los datos cada mes, hazte una pregunta concreta ("¿qué canal me trae más consultas?", "¿qué página convierte peor?") y ajusta. Pequeñas mejoras sostenidas rinden más que rediseñar todo por corazonada. Para el lado de Google, sigue con <a href="/blog/como-aparecer-primero-en-google-en-panama/">esta guía para aparecer primero en Google</a>.',
         ],
       },
       {
@@ -457,36 +437,34 @@ export const blog6: PageData[] = [
     date: '2026-05-15',
     heroImage: { src: '/images/blog/tendencias-de-diseno-web-2026-panama.jpg', alt: 'Fachada moderna de concreto y vidrio con balcones curvos y una palmera, para ilustrar tendencias de diseño web en 2026' },
     lead: [
-      'Cada año aparece una nueva lista de tendencias de diseño web, y cada año hay negocios que gastan dinero persiguiendo modas que no les sirven de nada. Lo llamativo no siempre vende, y muchas veces estorba.',
-      'Este artículo es distinto. En lugar de listar efectos de moda, separamos las tendencias 2026 que de verdad ayudan a tu negocio en Panamá de las que puedes ignorar con total tranquilidad. Diseño con criterio, no diseño para ganar premios que nadie te va a dar.',
+      'Las tendencias de diseño web 2026 que sí sirven a un negocio en Panamá son cuatro: velocidad, diseño móvil primero, minimalismo funcional y accesibilidad, más IA aplicada con criterio, como chatbots que atienden 24/7. Las animaciones pesadas, las modas estéticas y la complejidad innecesaria se pueden ignorar: ralentizan el sitio en el celular y distraen del botón de WhatsApp.',
     ],
     blocks: [
       {
         type: 'prose',
         h2: 'La regla de oro: la tendencia sirve a tu negocio, no al revés',
         paragraphs: [
-          'Antes de cualquier tendencia, un principio: el diseño de tu web existe para que un cliente te encuentre, entienda qué ofreces y te contacte. Punto. Toda moda que ayude a eso vale la pena; toda moda que lo estorbe, aunque se vea espectacular, es un lastre.',
-          'Muchos "sitios de tendencia" priorizan impresionar a otros diseñadores por encima de servir al dueño del negocio. Animaciones que marean, textos ilegibles sobre fondos de moda, cargas eternas por perseguir un efecto. Se ven en un portafolio, no venden en la vida real.',
-          'Con ese filtro en mente, veamos qué tendencias de 2026 pasan la prueba de "¿esto me trae clientes?" y cuáles no. Spoiler: las mejores tendencias suelen ser las menos llamativas.',
+          'El diseño de tu web existe para que un cliente te encuentre, entienda qué ofreces y te contacte. Una tendencia que ayuda a eso vale la pena; una que lo estorba, aunque se vea espectacular, es un lastre.',
+          'Muchos "sitios de tendencia" buscan impresionar a otros diseñadores: animaciones que marean, textos ilegibles sobre fondos de moda, cargas eternas por perseguir un efecto. Lucen en un portafolio, pero no venden.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Tendencias que sí valen la pena en 2026',
+        h2: '¿Qué tendencias de diseño web 2026 valen la pena?',
         paragraphs: [
-          '<strong>Velocidad ante todo.</strong> No es glamorosa, pero es la tendencia más rentable. Los sitios rápidos convierten más y Google los prefiere. En 2026 el foco está en webs ligeras que cargan al instante, incluso desde el celular con datos móviles, algo clave en Panamá. Un sitio que carga rápido le gana a uno bonito que tarda, siempre.',
-          '<strong>Móvil primero, de verdad.</strong> La mayoría de tus clientes te ve desde el teléfono, así que el diseño se piensa primero para esa pantalla y luego se adapta a la computadora, no al revés. Botones cómodos para el dedo, textos legibles sin hacer zoom y el WhatsApp siempre a mano. Esto dejó de ser tendencia para ser obligación.',
-          '<strong>Minimalismo funcional.</strong> Menos ruido, más claridad. Espacios en blanco, una jerarquía visual que guía el ojo y un solo mensaje claro por sección. No es minimalismo por moda estética, es quitar todo lo que distrae de la acción que quieres: que te contacten. Lo simple, bien hecho, convierte.',
-          '<strong>Accesibilidad.</strong> Diseñar para que todos puedan usar tu web: buen contraste, textos legibles, navegación clara. Beneficia a personas con dificultades visuales y, de paso, a todos los demás y al SEO. En 2026 es tanto una buena práctica como una ventaja competitiva silenciosa.',
+          '<strong>Velocidad ante todo.</strong> Los sitios rápidos convierten más y Google tiene en cuenta la velocidad. En 2026 el foco está en webs ligeras que cargan rápido incluso desde el celular con datos móviles, algo clave en Panamá.',
+          '<strong>Móvil primero, de verdad.</strong> La mayoría de tus clientes te ve desde el teléfono, así que el diseño se piensa primero para esa pantalla y luego se adapta a la computadora. Botones cómodos para el dedo, textos legibles sin hacer zoom y el WhatsApp siempre a mano.',
+          '<strong>Minimalismo funcional.</strong> Espacios en blanco, una jerarquía visual que guía el ojo y un solo mensaje por sección. No es una moda estética: es quitar lo que distrae de la acción que buscas, que te contacten.',
+          '<strong>Accesibilidad.</strong> Buen contraste, textos legibles y navegación clara para que cualquiera pueda usar tu web. Beneficia a personas con dificultades visuales, al resto de visitantes y al SEO.',
         ],
       },
       {
         type: 'prose',
         h2: 'La IA en el diseño web: útil con criterio',
         paragraphs: [
-          'La inteligencia artificial es la gran protagonista de 2026, pero conviene separar el uso útil del humo. Lo que sí aporta valor real a tu negocio son los <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbots con IA</a> que responden preguntas frecuentes a cualquier hora, califican al cliente y lo pasan a WhatsApp cuando hace falta. Eso es la IA trabajando para ti mientras duermes.',
-          'También ayuda la IA como herramienta de trabajo interno: para agilizar textos, generar imágenes de apoyo o automatizar tareas repetidas con flujos como los de <a href="/marketing/automatizaciones-n8n-panama/">n8n</a>. Bien usada, te ahorra horas y hace tu operación más ágil.',
-          'Lo que no recomendamos es la IA como truco de venta vacío: webs generadas de golpe sin estrategia, textos genéricos que suenan a robot o "efectos de IA" que solo suman peso y confunden. La pregunta de siempre: ¿esto le sirve a mi cliente o solo suena moderno? Si es lo segundo, sáltalo.',
+          'En 2026 conviene separar el uso útil de la inteligencia artificial del humo. Aportan valor los <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbots con IA</a> que responden preguntas frecuentes a cualquier hora, califican al cliente y lo pasan a WhatsApp cuando hace falta.',
+          'La IA también sirve como herramienta de trabajo: agilizar textos, generar imágenes de apoyo o automatizar tareas repetidas con flujos como los de <a href="/marketing/automatizaciones-n8n-panama/">n8n</a>.',
+          'No la recomendamos como truco de venta: webs generadas de golpe sin estrategia, textos genéricos que suenan a robot o "efectos de IA" que solo suman peso. La pregunta es si le sirve a tu cliente o solo suena moderno.',
         ],
       },
       {
@@ -496,11 +474,11 @@ export const blog6: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Tendencias que puedes ignorar sin culpa',
+        h2: '¿Qué tendencias de diseño web puedes ignorar?',
         paragraphs: [
-          '<strong>Animaciones pesadas y efectos exagerados.</strong> Elementos que se mueven por todos lados, desplazamientos raros que confunden, videos de fondo que devoran datos. Se ven "modernos" un segundo y luego marean, ralentizan el sitio y espantan al cliente que solo quería tu teléfono. Lo llamativo no es lo mismo que lo efectivo.',
-          '<strong>Tendencias visuales puramente estéticas.</strong> Cada año hay un estilo de moda: colores, texturas o efectos que serán viejos en doce meses. Si construyes tu web alrededor de una moda pasajera, en un año se verá anticuada. Mejor un diseño limpio y atemporal que envejezca bien y no te obligue a rehacerlo pronto.',
-          '<strong>Complejidad porque sí.</strong> Menús rebuscados, pasos extra, "experiencias interactivas" que estorban. Cada clic o segundo de más que le pides a tu cliente es una oportunidad de que se vaya. La simplicidad casi siempre le gana a la sofisticación cuando el objetivo es vender.',
+          '<strong>Animaciones pesadas y efectos exagerados.</strong> Elementos que se mueven por todos lados, desplazamientos que confunden y videos de fondo que consumen datos. Marean, ralentizan el sitio y espantan al cliente que solo quería tu teléfono.',
+          '<strong>Tendencias visuales puramente estéticas.</strong> Colores, texturas o efectos de moda que se verán viejos en doce meses. Un diseño limpio y atemporal envejece mejor y no te obliga a rehacerlo pronto.',
+          '<strong>Complejidad porque sí.</strong> Menús rebuscados, pasos extra y "experiencias interactivas" que estorban. Cada clic o segundo de más que le pides a tu cliente es una oportunidad de que se vaya.',
         ],
       },
       {
@@ -520,9 +498,8 @@ export const blog6: PageData[] = [
         type: 'prose',
         h2: 'Diseño con criterio, hecho para el mercado panameño',
         paragraphs: [
-          'La conclusión de 2026 es la misma de siempre, solo que más clara: las mejores tendencias son las que sirven a tu cliente, no las que impresionan a otros diseñadores. Velocidad, móvil primero, claridad, accesibilidad y una pizca de IA bien usada. Lo demás, con pinzas.',
-          'En <a href="/diseno-web-panama/">Elemento Web</a> diseñamos con ese criterio, pensando en cómo compra la gente en Panamá: desde el celular, con datos, buscando confianza y con ganas de escribir por WhatsApp. Aplicamos las tendencias que suman y descartamos las que solo estorban, con cotización cerrada por escrito para que sepas exactamente qué pagas.',
-          'Si tu web se ve anticuada o está llena de efectos que no venden, quizá no necesita seguir una moda, sino un <a href="/servicios/redisenio-web-panama/">rediseño con estrategia</a>. Escríbenos por WhatsApp y conversamos qué conviene a tu negocio, sin humo ni tendencias por tendencia.',
+          'En <a href="/diseno-web-panama/">Elemento Web</a> diseñamos pensando en cómo compra la gente en Panamá: desde el celular, con datos, buscando confianza y con ganas de escribir por WhatsApp. Aplicamos las tendencias que suman y descartamos las que estorban, con cotización cerrada por escrito.',
+          'Si tu web se ve anticuada o está llena de efectos que no venden, quizá no necesita seguir una moda, sino un <a href="/servicios/redisenio-web-panama/">rediseño con estrategia</a>.',
         ],
       },
       {

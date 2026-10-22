@@ -20,46 +20,42 @@ export const blog3: PageData[] = [
       alt: 'Esquina de calle al atardecer con locales de toldos y vitrinas iluminadas, en una guía para aparecer en Google en Panamá',
     },
     lead: [
-      '"Quiero salir de primero en Google" es la frase que más escuchamos. Es una meta legítima, pero casi siempre viene con una idea equivocada de cómo se logra.',
-      'No hay un botón, ni un pago mágico, ni un truco que te ponga arriba de un día para otro. Lo que sí existe es un método, y en esta guía te explicamos cómo funciona de verdad el ranking de Google y qué depende de ti.',
+      'Para aparecer primero en Google en Panamá necesitas tres cosas a la vez: contenido que responda la búsqueda exacta de tu cliente, autoridad (reseñas, enlaces y menciones locales) y un sitio rápido en el celular. No hay pago ni truco que lo acelere: en búsquedas competidas, el movimiento serio suele tomar de tres a seis meses.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Qué significa "aparecer primero" y por qué la pregunta importa',
+        h2: '¿Qué significa "aparecer primero" en Google?',
         paragraphs: [
-          'Antes de perseguir el primer lugar hay que aclarar una cosa: primero, <strong>¿para qué búsqueda?</strong> No es lo mismo aparecer de primero cuando alguien escribe el nombre exacto de tu empresa que cuando escribe "abogado de migración en Panamá". La primera es fácil y casi automática; la segunda es una posición peleada por decenas de negocios.',
-          'La búsqueda que de verdad te trae clientes es la segunda: la que hace una persona que todavía no te conoce y tiene un problema que tú resuelves. Esa es la que vale oro, y también la más difícil. Cuando alguien nos pide "salir de primero", lo que en realidad quiere es aparecer arriba en esas búsquedas comerciales, delante de la competencia.',
-          'Entender esto cambia toda la estrategia. No trabajas para "estar en Google" (ahí ya estás), trabajas para posicionarte en las palabras exactas que escribe tu cliente cuando tiene la billetera en la mano.',
+          'Primero hay que definir <strong>para qué búsqueda</strong>. Aparecer de primero con el nombre exacto de tu empresa es fácil y casi automático. Aparecer de primero cuando alguien escribe "abogado de migración en Panamá" es una posición que pelean decenas de negocios.',
+          'La búsqueda que trae clientes es la segunda: la de una persona que todavía no te conoce y tiene un problema que tú resuelves. El objetivo real no es "estar en Google" (ya estás), sino posicionarte en las frases exactas que escribe tu cliente justo antes de contratar.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cómo decide Google qué página va primero',
+        h2: '¿Cómo decide Google qué página va primero?',
         paragraphs: [
-          'Google no ordena resultados al azar ni por quien pague más (eso son los anuncios, que van marcados como "Patrocinado"). El orden orgánico responde a tres grandes preguntas que el buscador se hace por cada resultado: ¿esta página <strong>responde</strong> lo que la persona buscó?, ¿el sitio es <strong>confiable</strong> en ese tema?, y ¿ofrece una <strong>buena experiencia</strong> a quien la visita?',
-          'La relevancia se construye con contenido: una página que trata a fondo el tema, con las palabras que la gente realmente usa, gana frente a una página vaga o genérica. La confianza se construye con autoridad: enlaces de otros sitios, reseñas, trayectoria y coherencia. Y la experiencia se mide con señales técnicas: que el sitio cargue rápido, se vea bien en el celular y no llene la pantalla de ventanas molestas.',
-          'Ningún factor solo te pone de primero. Es la suma. Un sitio rapidísimo pero con contenido pobre no sube; un gran contenido en un sitio lento y sin autoridad tampoco. Por eso el <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento SEO</a> es un trabajo de varios frentes a la vez, no un ajuste puntual.',
+          'El orden orgánico no se compra: lo pagado son los anuncios, marcados como "Patrocinado". Para cada resultado, Google evalúa tres cosas: si la página <strong>responde</strong> lo que la persona buscó, si el sitio es <strong>confiable</strong> en ese tema y si ofrece una <strong>buena experiencia</strong> a quien la visita.',
+          'La relevancia sale del contenido: una página que trata el tema a fondo, con las palabras que la gente usa. La confianza sale de la autoridad: enlaces de otros sitios, reseñas y trayectoria. La experiencia se mide con señales técnicas: velocidad, buena visualización en el celular y ausencia de ventanas molestas.',
+          'Ningún factor por sí solo te pone de primero. Un sitio rápido con contenido pobre no sube, y un buen contenido en un sitio lento y sin autoridad tampoco. Por eso el <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento SEO</a> trabaja los tres frentes a la vez.',
         ],
       },
       {
         type: 'prose',
         h2: 'Contenido: responder la intención de búsqueda, no rellenar de palabras',
         paragraphs: [
-          'El error más viejo del SEO es repetir la palabra clave cincuenta veces esperando engañar a Google. Eso dejó de funcionar hace más de una década. Hoy el buscador entiende el significado, no solo las letras, y premia a la página que de verdad resuelve la duda de quien busca.',
-          'La clave es la <strong>intención de búsqueda</strong>: qué espera encontrar la persona. Si alguien busca "cuánto cuesta una página web en Panamá", quiere rangos, factores y honestidad, no un folleto de ventas. Si busca "cómo elegir un diseñador web", quiere criterios. Tu contenido debe darle exactamente eso, mejor que cualquier competidor.',
-          'En la práctica esto significa páginas de servicio claras, y artículos que respondan las preguntas reales de tus clientes, como este mismo blog. Cada pieza bien hecha es una puerta de entrada más a tu sitio desde Google.',
+          'Repetir la palabra clave cincuenta veces dejó de funcionar hace más de una década. Google entiende el significado de la búsqueda y premia la página que resuelve la duda.',
+          'La clave es la <strong>intención de búsqueda</strong>: qué espera encontrar la persona. Quien busca "cuánto cuesta una página web en Panamá" quiere rangos y factores, no un folleto de ventas; quien busca "cómo elegir un diseñador web" quiere criterios. En la práctica, eso se traduce en una página clara por servicio y en artículos que respondan las preguntas reales de tus clientes. Cada uno es una puerta de entrada más desde Google.',
         ],
       },
       {
         type: 'checklist',
         h2: 'Los fundamentos que no puedes saltarte',
-        intro: 'Antes de soñar con el primer lugar, revisa que tu sitio cumpla lo básico. Sin esto, ninguna estrategia avanzada funciona.',
+        intro: 'Sin esta base, ninguna estrategia avanzada de SEO funciona.',
         items: [
           'Cada página tiene un título (title) y una meta descripción únicos y con la palabra clave principal.',
-          'El sitio carga rápido y se ve perfecto en el celular, que es donde busca la mayoría en Panamá.',
+          'El sitio carga rápido y se ve bien en el celular, que es donde busca la mayoría en Panamá.',
           'Existe una página específica por cada servicio o producto importante, no todo amontonado en una sola.',
-          'El contenido responde de verdad la pregunta del usuario, con profundidad y en su idioma.',
           'El sitio está verificado en Google Search Console para saber qué páginas indexa Google.',
           'Tienes una ficha de Google Business Profile activa si atiendes clientes locales.',
           'La estructura de enlaces internos conecta tus páginas entre sí de forma lógica.',
@@ -67,20 +63,18 @@ export const blog3: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Autoridad: por qué Google confía en unos sitios más que en otros',
+        h2: 'Autoridad: por qué Google confía más en unos sitios que en otros',
         paragraphs: [
-          'Imagina dos negocios que dicen ser los mejores plomeros de la ciudad. Uno lo dice solo en su web; del otro hablan bien en directorios, blogs, reseñas y otras páginas que enlazan a su sitio. Google interpreta esos enlaces y menciones como votos de confianza, y le da ventaja al segundo.',
-          'A esto se le llama autoridad, y se construye con el tiempo: reseñas reales de clientes, presencia en directorios serios de Panamá, colaboraciones, contenido tan bueno que otros lo citan. No se compra en paquetes de "1000 enlaces por $20" (eso te penaliza, no te ayuda) y no aparece de la noche a la mañana.',
-          'Para un negocio local panameño, la autoridad más valiosa suele venir de las reseñas de Google y de aparecer bien referenciado en el ecosistema local. Es lento, pero es lo que separa a los que se quedan arriba de los que suben y bajan.',
+          'Imagina dos plomeros de la misma ciudad. Del primero solo habla su propia web; del segundo hablan directorios, blogs, reseñas y otras páginas que enlazan a su sitio. Google interpreta esos enlaces y menciones como votos de confianza y le da ventaja al segundo.',
+          'La autoridad se construye con tiempo: reseñas reales de clientes, presencia en directorios serios de Panamá, colaboraciones y contenido que otros citan. No se compra en paquetes de "1000 enlaces por $20": eso te penaliza. Para un negocio local panameño, la fuente de autoridad más valiosa suele ser las reseñas de Google.',
         ],
       },
       {
         type: 'prose',
-        h2: 'SEO técnico: la base invisible que sostiene todo',
+        h2: 'SEO técnico: la base que sostiene todo',
         paragraphs: [
-          'Puedes tener el mejor contenido del país, pero si Google no puede leer tu sitio o si carga tan lento que la gente se va, no vas a posicionar. El SEO técnico es la plomería invisible: velocidad, estructura de código, versión móvil, indexación correcta y datos estructurados que ayudan al buscador a entender tu página.',
-          'La velocidad merece atención aparte porque afecta al ranking y a la conversión al mismo tiempo. Un sitio que tarda en cargar pierde visitantes antes de mostrar nada. Si sospechas que ese es tu caso, revisa nuestra guía de <a href="/blog/como-mejorar-la-velocidad-de-tu-pagina-web/">cómo mejorar la velocidad de tu página web</a>.',
-          'Lo bueno del SEO técnico es que muchos de sus problemas se arreglan una vez y quedan resueltos. Por eso, en un sitio nuevo bien construido, gran parte de esta base ya viene incluida desde el primer día.',
+          'Si Google no puede leer tu sitio, o si carga tan lento que la gente se va, el contenido no posiciona. El SEO técnico cubre velocidad, estructura de código, versión móvil, indexación correcta y datos estructurados que ayudan al buscador a entender cada página.',
+          'La velocidad afecta al ranking y a la conversión al mismo tiempo; si sospechas que ese es tu problema, revisa la guía de <a href="/blog/como-mejorar-la-velocidad-de-tu-pagina-web/">cómo mejorar la velocidad de tu página web</a>. Muchos fallos técnicos se arreglan una vez y quedan resueltos, y en un sitio nuevo bien construido esa base viene incluida desde el primer día.',
         ],
       },
       {
@@ -90,11 +84,10 @@ export const blog3: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Expectativas realistas: cuánto tarda de verdad',
+        h2: '¿Cuánto tarda aparecer primero en Google en Panamá?',
         paragraphs: [
-          'Aquí es donde muchas agencias mienten y nosotros preferimos ser francos. El SEO orgánico no da resultados en dos semanas. Para palabras clave competidas en Panamá, hablar de tres a seis meses para ver movimiento serio es lo normal, y a veces más según el punto de partida y la competencia.',
-          'Si alguien te promete el primer lugar en Google en un mes garantizado, desconfía: o va a usar técnicas que te van a penalizar después, o simplemente no va a cumplir. Lo honesto es medir avances graduales: subir de la página cinco a la dos, de la dos al top tres, y de ahí pelear el primer lugar.',
-          'La buena noticia es que ese avance es acumulativo y duradero. A diferencia de los anuncios, que dejan de traer visitas el día que dejas de pagar, una buena posición orgánica te sigue trayendo clientes mes tras mes. Es una carrera de fondo, no un sprint, y por eso vale la pena empezarla cuanto antes.',
+          'Para palabras clave competidas en Panamá, lo normal es ver movimiento serio entre tres y seis meses, y a veces más, según el punto de partida del sitio y la competencia. El SEO orgánico no da resultados en dos semanas.',
+          'Desconfía de quien prometa el primer lugar en un mes: o usará técnicas que te penalizan después, o no cumplirá. Lo medible es el avance gradual: de la página cinco a la dos, de la dos al top tres y de ahí al primer lugar. A diferencia de los anuncios, que dejan de traer visitas el día que dejas de pagar, ese avance se acumula y se sostiene.',
         ],
       },
       {
@@ -144,41 +137,40 @@ export const blog3: PageData[] = [
       alt: 'Vista aérea tilt-shift de una esquina de ciudad con techos de zinc y una plaza, en una guía de SEO local y Google Maps',
     },
     lead: [
-      'Cuando alguien en la ciudad de Panamá busca "farmacia cerca de mí" o "mecánico en Costa del Este", Google no le muestra el sitio web mejor posicionado del mundo: le muestra los negocios más cercanos y mejor valorados. Ese es el terreno del SEO local.',
-      'Si tienes un negocio con dirección física o que atiende una zona concreta, este canal puede ser tu mayor fuente de clientes. Y lo mejor: no depende de un sitio web enorme, sino de hacer bien un puñado de cosas.',
+      'El SEO local es el trabajo para que tu negocio aparezca en Google Maps y en el "pack local" cuando alguien en Ciudad de Panamá busca "farmacia cerca de mí" o "mecánico en Costa del Este". Depende de tres cosas: una ficha de Google Business Profile verificada y completa, reseñas recientes y los mismos datos de contacto en toda la web.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Qué es el SEO local y en qué se diferencia del SEO normal',
+        h2: '¿Qué es el SEO local y en qué se diferencia del SEO normal?',
         paragraphs: [
-          'El SEO local es la práctica de posicionar tu negocio en las búsquedas con intención geográfica: las que incluyen una ciudad, una zona o el famoso "cerca de mí". Su gran diferencia con el SEO tradicional es que el factor decisivo no es solo tu web, sino tu presencia en el <strong>mapa de Google</strong>.',
-          'Cuando buscas un servicio local, Google muestra arriba un bloque especial con un mapa y tres negocios destacados, conocido como el "pack local". Aparecer ahí vale más que estar de primero en los resultados normales, porque es lo primero que ve el usuario y de donde salen las llamadas y las visitas.',
-          'Para un restaurante, una clínica, un taller o cualquier negocio con puerta abierta, dominar el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Google Maps</a> suele ser el canal digital número uno, por encima incluso de un sitio web perfecto.',
+          'El SEO local posiciona tu negocio en búsquedas con intención geográfica: las que incluyen una ciudad, una zona o "cerca de mí". A diferencia del SEO tradicional, el factor decisivo no es solo tu web, sino tu presencia en el <strong>mapa de Google</strong>.',
+          'En esas búsquedas, Google muestra arriba un mapa con tres negocios destacados, el llamado "pack local". Es lo primero que ve el usuario y de ahí salen las llamadas y las visitas, así que aparecer en él suele valer más que el primer resultado orgánico.',
+          'Para un restaurante, una clínica, un taller o cualquier negocio con puerta abierta, el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Google Maps</a> suele pesar más que un sitio web perfecto. No exige un sitio enorme, sino hacer bien un puñado de cosas.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Tu Google Business Profile es el corazón de todo',
+        h2: '¿Qué es Google Business Profile y por qué es la base del SEO local?',
         paragraphs: [
-          'El Google Business Profile (antes Google My Business) es la ficha gratuita que representa a tu negocio en Google y en Maps. Es, sin exagerar, la herramienta de marketing local más poderosa que existe, y muchos negocios en Panamá la tienen abandonada o ni siquiera reclamada.',
-          'Una ficha bien trabajada incluye tu categoría correcta, horarios reales, teléfono con WhatsApp, fotos actualizadas, descripción con tus servicios y publicaciones frecuentes. Cada uno de esos datos le dice a Google que tu negocio está activo y merece mostrarse. Una ficha vacía o con datos viejos manda la señal contraria.',
-          'Lo primero, siempre, es reclamar y verificar tu ficha. Si no la controlas tú, no puedes optimizarla, y peor aún, cualquiera podría reportar datos incorrectos sobre tu negocio sin que lo notes.',
+          'Google Business Profile (antes Google My Business) es la ficha gratuita que representa a tu negocio en Google y en Maps. Muchos negocios en Panamá la tienen abandonada o ni siquiera reclamada.',
+          'Una ficha bien trabajada lleva la categoría correcta, horarios reales, teléfono con WhatsApp, fotos actualizadas, una descripción con tus servicios y publicaciones frecuentes. Esos datos le indican a Google que el negocio está activo; una ficha vacía o con datos viejos manda la señal contraria.',
+          'El primer paso es reclamar y verificar la ficha. Sin verificación no puedes editarla, y cualquiera podría reportar datos incorrectos sobre tu negocio sin que lo notes.',
         ],
       },
       {
         type: 'prose',
         h2: 'Reseñas: la moneda del SEO local',
         paragraphs: [
-          'Las reseñas de Google son, después de la ficha, el factor que más mueve la aguja en el mapa. No solo influyen en tu posición: son lo que convence al cliente de elegirte. Entre dos negocios parecidos, la gente casi siempre llama al de más estrellas y más comentarios recientes.',
-          'La estrategia honesta es simple: pide reseñas de forma sistemática a tus clientes satisfechos, facilítales el enlace directo, y <strong>responde todas</strong>, las buenas y las malas. Responder una crítica con calma y solución dice más de tu negocio que diez estrellas. Lo que nunca debes hacer es comprar reseñas falsas: Google las detecta y puede penalizarte.',
-          'Un flujo constante de reseñas nuevas también le indica a Google que tu negocio sigue vivo y atendiendo. Un negocio con cincuenta reseñas del año pasado y ninguna reciente pierde terreno frente a uno que suma comentarios cada semana.',
+          'Después de la ficha, las reseñas de Google son el factor que más mueve tu posición en el mapa, y además pesan en la decisión: entre dos negocios parecidos, la gente suele llamar al de más estrellas y comentarios recientes.',
+          'Pide reseñas de forma sistemática a los clientes satisfechos, dales el enlace directo y <strong>responde todas</strong>, buenas y malas; una crítica respondida con calma y una solución habla bien de tu negocio. Nunca compres reseñas falsas: Google las detecta y puede penalizar la ficha.',
+          'La frecuencia también cuenta. Un negocio con cincuenta reseñas del año pasado y ninguna reciente pierde terreno frente a uno que suma comentarios cada semana.',
         ],
       },
       {
         type: 'steps',
         h2: 'Cómo optimizar tu presencia local paso a paso',
-        intro: 'Este es el orden que seguimos con nuestros clientes locales. Puedes empezar tú mismo hoy con los primeros pasos.',
+        intro: 'Este es el orden que seguimos en Elemento Web con negocios locales; los primeros pasos los puedes dar tú hoy.',
         items: [
           { h3: 'Reclama y verifica tu ficha', text: 'Toma control de tu Google Business Profile. Sin verificación no puedes editar ni proteger tu información.' },
           { h3: 'Completa cada campo al 100%', text: 'Categoría correcta, horarios, teléfono con WhatsApp, servicios, área de cobertura y una descripción con tus palabras clave locales.' },
@@ -190,20 +182,18 @@ export const blog3: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'NAP y coherencia: el detalle que muchos ignoran',
+        h2: '¿Qué es el NAP y por qué afecta tu posición en Google Maps?',
         paragraphs: [
-          'NAP son las siglas en inglés de Nombre, Dirección y Teléfono (Name, Address, Phone). El principio es sencillo pero crítico: esos tres datos deben ser <strong>exactamente iguales</strong> en todos los lugares donde tu negocio aparece en internet: tu web, tu ficha de Google, directorios, redes sociales.',
-          'Si en tu web dice "Calle 50" pero en un directorio dice "Cll. 50" y en otro un teléfono viejo, Google recibe señales confusas sobre cuál es la información correcta y confía menos en tu negocio. Esa inconsistencia frena tu posicionamiento sin que te des cuenta.',
-          'Ordenar el NAP es una tarea de una sola vez que muchos negocios nunca hacen. Corregirlo es de las acciones de SEO local con mejor relación esfuerzo-resultado que existen.',
+          'NAP son las siglas en inglés de Nombre, Dirección y Teléfono (Name, Address, Phone). Esos tres datos deben ser <strong>exactamente iguales</strong> en tu web, tu ficha de Google, los directorios y las redes sociales.',
+          'Si tu web dice "Calle 50", un directorio dice "Cll. 50" y otro muestra un teléfono viejo, Google recibe señales confusas y confía menos en tu negocio. Ordenar el NAP se hace una sola vez y es de las tareas de SEO local con mejor relación esfuerzo-resultado.',
         ],
       },
       {
         type: 'prose',
         h2: 'Las búsquedas "cerca de mí" y el celular',
         paragraphs: [
-          'La explosión del SEO local vino con el celular. Hoy la mayoría de las búsquedas locales en Panamá se hacen desde el teléfono, muchas veces con intención inmediata: alguien que necesita algo ahora y va a llamar o visitar en los próximos minutos.',
-          'Eso hace que tu sitio web deba estar impecable en móvil y que tu ficha tenga el botón de llamar y la ruta a un clic de distancia. Un cliente que busca "ferretería cerca de mí" a las 3 de la tarde no va a leer tu historia: quiere teléfono, horario y ubicación al instante.',
-          'Por eso el SEO local y una web rápida y móvil van de la mano. La ficha te hace aparecer; el sitio y el WhatsApp cierran la visita. Si vendes o agendas, integrar canales como <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reservas y citas online</a> convierte esa búsqueda en un cliente confirmado.',
+          'La mayoría de las búsquedas locales en Panamá se hacen desde el teléfono y con intención inmediata: alguien que va a llamar o visitar en los próximos minutos. Quien busca "ferretería cerca de mí" a las 3 de la tarde quiere teléfono, horario y ubicación, no tu historia.',
+          'Por eso la ficha necesita el botón de llamar y la ruta a un clic, y la web debe funcionar bien en el móvil. La ficha te hace aparecer; el sitio y el WhatsApp cierran la visita. Si vendes o agendas, las <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reservas y citas online</a> convierten esa búsqueda en un cliente confirmado.',
         ],
       },
       {
@@ -255,41 +245,38 @@ export const blog3: PageData[] = [
       alt: 'Mensajero en moto con un gran cajón de reparto por una calle colonial, como metáfora de la velocidad de carga de tu web',
     },
     lead: [
-      'Una página lenta pierde clientes antes de mostrar lo que ofrece. Cada segundo de más en cargar es gente que se va, ventas que no ocurren y posiciones que Google no te da.',
-      'La buena noticia es que la velocidad se puede medir y mejorar con acciones concretas. En esta guía te explicamos por qué importa tanto, qué la vuelve lenta y qué hacer para acelerar tu sitio.',
+      'Para mejorar la velocidad de carga de tu página web, empieza por lo que más pesa: comprime las imágenes y sírvelas en WebP, sal del hosting barato, activa la caché y quita los plugins y scripts que no usas. Mide antes y después con PageSpeed Insights: la meta de Google es que el contenido principal aparezca en menos de 2,5 segundos.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Por qué la velocidad afecta tu SEO y tus ventas',
+        h2: '¿Por qué la velocidad de carga afecta tu SEO y tus ventas?',
         paragraphs: [
-          'La velocidad de carga golpea tu negocio por dos lados al mismo tiempo. Por un lado, Google la usa como factor de posicionamiento: entre dos sitios parecidos, favorece al más rápido porque ofrece mejor experiencia. Por otro lado, afecta directamente la conversión: la gente impaciente abandona un sitio que tarda, y ese abandono se traduce en ventas perdidas.',
-          'Piénsalo desde el cliente. Alguien busca tu servicio, hace clic en tu web y ve una pantalla en blanco por varios segundos. La mayoría no espera: vuelve atrás y entra a tu competencia. No importa lo bueno que sea tu contenido si nunca llega a verlo.',
-          'En Panamá esto pesa aún más porque gran parte del tráfico entra desde el celular y desde redes móviles que no siempre son rápidas. Un sitio pesado castiga justo a los usuarios que más te conviene retener.',
+          'La velocidad pega por dos lados. Google la usa como factor de posicionamiento: entre dos sitios parecidos, favorece al más rápido. Y afecta la conversión: quien hace clic en tu web y ve una pantalla en blanco por varios segundos suele volver atrás y entrar a la competencia sin llegar a ver tu contenido.',
+          'En Panamá pesa más porque gran parte del tráfico entra desde el celular y desde redes móviles que no siempre son rápidas. Un sitio pesado castiga justo a esos usuarios.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué son los Core Web Vitals',
+        h2: '¿Qué son los Core Web Vitals?',
         paragraphs: [
-          'Google mide la experiencia de carga con un conjunto de métricas llamadas <strong>Core Web Vitals</strong>. No hace falta ser técnico para entender qué evalúan: básicamente responden tres preguntas sobre cómo se siente tu sitio al usarlo.',
-          'La primera es cuánto tarda en aparecer el contenido principal (el LCP): idealmente, en menos de dos segundos y medio. La segunda es qué tan rápido responde el sitio cuando el usuario interactúa, por ejemplo al tocar un botón. Y la tercera es la estabilidad visual: que los elementos no salten ni se muevan mientras carga, obligándote a perseguir un botón que se corre.',
-          'Estas métricas son públicas y medibles con herramientas gratuitas de Google como PageSpeed Insights. Te dan una nota clara y, mejor aún, te dicen qué está frenando tu sitio para que sepas por dónde empezar.',
+          'Los <strong>Core Web Vitals</strong> son las métricas con las que Google mide cómo se siente un sitio al usarlo. Son tres: cuánto tarda en aparecer el contenido principal (LCP, idealmente menos de 2,5 segundos), qué tan rápido responde el sitio cuando el usuario toca un botón, y la estabilidad visual, es decir, que los elementos no salten mientras la página carga.',
+          'Se miden gratis con PageSpeed Insights de Google, que da una nota para móvil y escritorio y señala qué está frenando tu sitio para que sepas por dónde empezar.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Las causas más comunes de una web lenta',
+        h2: '¿Por qué una página web carga lento? Las causas más comunes',
         paragraphs: [
-          'La razón número uno de lentitud que vemos en Panamá son las <strong>imágenes sin optimizar</strong>. Fotos de varios megabytes subidas tal cual salen de la cámara o del celular pesan diez o veinte veces lo que deberían. Solo comprimir y redimensionar imágenes ya transforma muchos sitios.',
-          'La segunda causa suele ser el <strong>hosting barato</strong>. Un servidor lento o saturado por compartirlo con cientos de sitios arrastra todo tu rendimiento, hagas lo que hagas por encima. Si pagas dos dólares al mes por tu hosting, ese suele ser el cuello de botella. Lo explicamos a fondo en <a href="/blog/hosting-panama-evitar-hosting-barato/">por qué evitar el hosting barato</a>.',
-          'Otras causas frecuentes: exceso de plugins en WordPress, plantillas recargadas, código pesado, demasiados scripts de terceros (chats, píxeles, banners) y falta de caché. Cada uno suma milisegundos que, juntos, vuelven el sitio pesado.',
+          'La causa más frecuente que vemos en Panamá son las <strong>imágenes sin optimizar</strong>: fotos de varios megabytes subidas tal cual salen de la cámara o del celular, que pesan diez o veinte veces lo necesario. Comprimirlas y redimensionarlas ya transforma muchos sitios.',
+          'La segunda es el <strong>hosting barato</strong>. Un servidor lento o compartido con cientos de sitios arrastra todo el rendimiento; si pagas dos dólares al mes, ese suele ser el cuello de botella. Lo explicamos en <a href="/blog/hosting-panama-evitar-hosting-barato/">por qué evitar el hosting barato</a>.',
+          'Otras causas frecuentes: exceso de plugins en WordPress, plantillas recargadas, demasiados scripts de terceros (chats, píxeles, banners) y falta de caché.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Qué hacer para acelerar tu sitio',
-        intro: 'Ordenadas más o menos por impacto. Las primeras suelen dar la mayor mejora con el menor esfuerzo.',
+        h2: 'Cómo mejorar la velocidad de carga de tu sitio',
+        intro: 'Ordenadas aproximadamente por impacto: las primeras suelen dar la mayor mejora con el menor esfuerzo.',
         items: [
           'Optimiza todas las imágenes: comprímelas y sírvelas en formatos modernos como WebP.',
           'Migra a un hosting de calidad si estás en un servidor barato y saturado.',
@@ -310,9 +297,8 @@ export const blog3: PageData[] = [
         type: 'prose',
         h2: 'Cuándo optimizar y cuándo rehacer el sitio',
         paragraphs: [
-          'A veces la lentitud se resuelve con optimización puntual: comprimir imágenes, limpiar plugins, mejorar el hosting. Pero hay casos en que el problema es de raíz: una plantilla pesada, un sitio construido sobre capas y capas de parches, o una tecnología que ya no da más. Ahí, optimizar es ponerle curitas a algo que necesita cirugía.',
-          'Nuestro criterio es honesto: si el sitio se puede acelerar con ajustes, te lo decimos y no te vendemos uno nuevo. Pero si la base está tan comprometida que cada mejora choca contra otra, a menudo sale más rentable un <a href="/servicios/redisenio-web-panama/">rediseño web</a> sobre una base moderna y rápida que seguir peleando con lo viejo.',
-          'La ventaja de construir bien desde el principio es que la velocidad viene incluida. Un sitio hecho con tecnología actual y un buen hosting nace rápido, sin necesidad de optimizaciones de emergencia después.',
+          'Si la lentitud viene de imágenes, plugins o hosting, se resuelve con ajustes puntuales. Si viene de la raíz (una plantilla pesada, un sitio hecho de capas de parches o una tecnología que ya no da más), optimizar es ponerle curitas a algo que necesita cirugía.',
+          'Si el sitio se acelera con ajustes, en Elemento Web te lo decimos y no te vendemos uno nuevo. Si cada mejora choca con otra, suele salir más rentable un <a href="/servicios/redisenio-web-panama/">rediseño web</a> sobre una base moderna con buen hosting, que nace rápida y no necesita optimizaciones de emergencia después.',
         ],
       },
       {
@@ -362,44 +348,40 @@ export const blog3: PageData[] = [
       alt: 'Barra de búsqueda sobre tres resultados donde el primero destaca con estrella, ubicación y gráfico en alza: SEO para pymes',
     },
     lead: [
-      'El SEO no es solo para grandes empresas con presupuestos enormes. Una pyme panameña puede posicionarse muy bien si enfoca su esfuerzo donde de verdad cuenta, en lugar de intentar competir en todo a la vez.',
-      'Esta guía es para dueños de negocios que quieren empezar con lo que tienen: tiempo, sentido común y un presupuesto ajustado. Nada de tecnicismos innecesarios, solo pasos que puedes dar desde hoy.',
+      'El SEO para pymes en Panamá empieza por lo que cuesta tiempo y no dinero: una ficha de Google Business Profile completa y con reseñas, tres o cuatro palabras clave locales, una página por servicio y artículos que respondan las dudas de tus clientes. La ficha puede dar señales en semanas; la web, en algunos meses.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Por qué el SEO es el mejor aliado de una pyme',
+        h2: '¿Por qué el SEO le conviene a una pyme en Panamá?',
         paragraphs: [
-          'Para un negocio pequeño, cada dólar de marketing tiene que rendir. Ahí el SEO tiene una ventaja enorme frente a la publicidad pagada: el tráfico que consigues no se detiene cuando dejas de invertir. Una página bien posicionada te sigue trayendo clientes mes tras mes sin pagar por cada clic.',
-          'La publicidad es un grifo: mientras pagas, sale agua; cuando cierras, se acaba. El SEO es un pozo: cuesta cavarlo, pero luego te da agua por mucho tiempo. Para una pyme que no puede quemar presupuesto en anuncios todos los meses, esa diferencia lo cambia todo.',
-          'Además, no necesitas ganarle a las grandes cadenas en todo. Necesitas ganar en <strong>tu nicho y tu zona</strong>: las búsquedas específicas y locales donde una empresa enfocada puede superar a un gigante genérico. Ahí es donde una pyme juega con ventaja.',
+          'En una pyme cada dólar de marketing tiene que rendir. La publicidad es un grifo: sale agua mientras pagas y se corta cuando cierras. El SEO es un pozo: cuesta cavarlo, pero una página bien posicionada sigue trayendo clientes mes tras mes sin pagar por cada clic.',
+          'Tampoco necesitas ganarle a las grandes cadenas en todo. Necesitas ganar en <strong>tu nicho y tu zona</strong>: búsquedas específicas y locales donde una empresa enfocada puede superar a un competidor genérico.',
         ],
       },
       {
         type: 'prose',
         h2: 'Empieza por las palabras clave locales',
         paragraphs: [
-          'El error clásico de una pyme es querer posicionar palabras enormes y competidísimas, como "abogado" o "restaurante" a secas. Contra eso pelea todo el país y es casi imposible ganar con poco presupuesto. La jugada inteligente es lo contrario: apuntar a búsquedas más específicas y locales.',
-          '"Abogado de sucesiones en Panamá", "restaurante de mariscos en Casco Antiguo", "taller de aires acondicionados en San Miguelito". Estas búsquedas tienen menos volumen, sí, pero mucha más intención de compra y muchísima menos competencia. Quien las busca sabe lo que quiere y está cerca de decidir.',
-          'Piensa como tu cliente: ¿qué escribiría en Google justo antes de contratarte? Esas frases son tus palabras clave. Empieza por tres o cuatro y construye tu contenido alrededor de ellas, sin dispersarte en todo el universo de tu sector.',
+          'Palabras enormes como "abogado" o "restaurante" a secas las pelea todo el país, y con poco presupuesto es casi imposible ganarlas. Apunta a búsquedas específicas y locales: "abogado de sucesiones en Panamá", "restaurante de mariscos en Casco Antiguo", "taller de aires acondicionados en San Miguelito".',
+          'Esas búsquedas tienen menos volumen, pero más intención de compra y mucha menos competencia. Para encontrarlas, pregúntate qué escribiría tu cliente en Google justo antes de contratarte. Empieza por tres o cuatro frases y construye tu contenido alrededor de ellas.',
         ],
       },
       {
         type: 'prose',
         h2: 'Tu ficha de Google: la victoria más rápida',
         paragraphs: [
-          'Si tienes que elegir una sola cosa para empezar, empieza por tu Google Business Profile. Es gratis, es rápido de montar y para una pyme local suele dar el resultado más inmediato de todo el SEO. Reclamar, verificar y completar tu ficha te puede poner en el mapa en cuestión de días.',
-          'Completa todo: categoría correcta, horarios, teléfono con WhatsApp, fotos reales, servicios y una buena descripción. Luego pide reseñas a tus clientes contentos de forma constante y respóndelas todas. Ese flujo de reseñas es de lo que más te posiciona en el mapa y de lo que más convence a quien te encuentra.',
-          'Profundizamos en esto en nuestra guía de <a href="/blog/que-es-el-seo-local-y-google-maps-panama/">SEO local y Google Maps</a>, pero el mensaje para una pyme es claro: esta es tu prioridad número uno y no cuesta nada más que un poco de tiempo.',
+          'Si solo puedes hacer una cosa, optimiza tu Google Business Profile. Es gratis, se monta rápido y para una pyme local suele dar el resultado más inmediato de todo el SEO: reclamarla, verificarla y completarla te puede poner en el mapa en cuestión de días.',
+          'Completa categoría, horarios, teléfono con WhatsApp, fotos reales, servicios y descripción; luego pide reseñas de forma constante y respóndelas todas. El paso a paso está en la guía de <a href="/blog/que-es-el-seo-local-y-google-maps-panama/">SEO local y Google Maps</a>.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Tu plan de SEO en cinco pasos para arrancar',
-        intro: 'Un orden realista para una pyme que empieza. No hace falta hacerlo todo en una semana: avanza un paso a la vez.',
+        h2: 'Plan de SEO para pymes en cinco pasos',
+        intro: 'Un orden realista para empezar. No hace falta hacerlo todo en una semana: avanza un paso a la vez.',
         items: [
           { h3: 'Define tus palabras clave locales', text: 'Anota las tres o cuatro frases que escribiría tu cliente ideal justo antes de contratarte, siempre con tu zona o ciudad.' },
-          { h3: 'Optimiza tu ficha de Google', text: 'Reclámala, complétala al 100% y arranca un flujo constante de reseñas. Es tu victoria más rápida y es gratis.' },
+          { h3: 'Optimiza tu ficha de Google', text: 'Reclámala, complétala al 100% y arranca un flujo constante de reseñas.' },
           { h3: 'Ordena tu web por servicios', text: 'Crea una página clara por cada servicio principal, con su palabra clave, en lugar de amontonar todo en la página de inicio.' },
           { h3: 'Publica contenido que responda dudas', text: 'Escribe respuestas a las preguntas reales de tus clientes. Cada artículo útil es una puerta más desde Google a tu negocio.' },
           { h3: 'Mide y ajusta', text: 'Instala Google Search Console y revisa qué búsquedas te traen visitas. Refuerza lo que funciona y corrige lo que no.' },
@@ -409,18 +391,16 @@ export const blog3: PageData[] = [
         type: 'prose',
         h2: 'Contenido: responde las preguntas de tus clientes',
         paragraphs: [
-          'No necesitas ser escritor ni publicar todos los días. Necesitas responder, mejor que nadie, las preguntas que tus clientes ya te hacen. Piensa en las dudas que te llegan por WhatsApp o en el mostrador: cada una es un tema de contenido que otros también están buscando en Google.',
-          'Un dentista puede escribir sobre "cuánto dura un blanqueamiento" o "duele una limpieza dental". Un contador, sobre plazos de declaraciones. Un taller, sobre cada cuánto cambiar ciertas piezas. Ese contenido posiciona, genera confianza y hace que la gente te elija porque ya le ayudaste antes de contratarte.',
-          'La calidad vence a la cantidad. Es mejor un artículo realmente útil al mes que diez textos vacíos. Y con el tiempo, ese contenido se acumula y se convierte en un activo que trabaja por ti sin parar. Si el tiempo te falta, el <a href="/marketing/contenido-redes-sociales-panama/">contenido para redes y web</a> se puede delegar.',
+          'No hace falta publicar todos los días. Cada duda que te llega por WhatsApp o en el mostrador es un tema que otras personas también buscan en Google. Un dentista puede escribir sobre "cuánto dura un blanqueamiento" o "duele una limpieza dental"; un contador, sobre plazos de declaraciones; un taller, sobre cada cuánto cambiar ciertas piezas.',
+          'Un artículo útil al mes vale más que diez textos vacíos, y con el tiempo ese contenido se acumula como un activo que posiciona y genera confianza antes de que te contraten. Si te falta tiempo, el <a href="/marketing/contenido-redes-sociales-panama/">contenido para redes y web</a> se puede delegar.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué puedes hacer tú y cuándo pedir ayuda',
+        h2: '¿Qué SEO puede hacer una pyme por su cuenta y cuándo pedir ayuda?',
         paragraphs: [
-          'Buena parte del SEO para pymes es 100% tuyo y no cuesta dinero: cuidar tu ficha de Google, pedir reseñas, escribir sobre lo que sabes, mantener tus datos coherentes. Empezar por ahí ya te pone por delante de la mayoría de tu competencia, que ni siquiera hace lo básico.',
-          'Donde conviene pedir ayuda es en la parte técnica y estratégica: que tu web esté bien construida y sea rápida, que la estructura de páginas tenga sentido, que la estrategia de palabras clave y autoridad esté bien planteada. Ahí una mano profesional evita meses de esfuerzo mal dirigido.',
-          'No hace falta contratar todo de golpe. Muchas pymes empiezan haciendo ellas lo accionable y suman un servicio de <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento SEO</a> cuando el negocio lo pide y el presupuesto lo permite. Lo importante es arrancar; el SEO premia la constancia más que el gasto.',
+          'Sin gastar dinero puedes cuidar tu ficha de Google, pedir reseñas, escribir sobre lo que sabes y mantener tus datos coherentes. Con eso ya te adelantas a los competidores locales que ni siquiera hacen lo básico.',
+          'La ayuda profesional rinde más en la parte técnica y estratégica: una web rápida y bien construida, una estructura de páginas lógica y un plan de palabras clave y autoridad bien planteado. Muchas pymes empiezan por lo accionable y suman un servicio de <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento SEO</a> cuando el presupuesto lo permite; el SEO premia la constancia más que el gasto.',
         ],
       },
       {
@@ -470,50 +450,48 @@ export const blog3: PageData[] = [
       alt: 'Lupa sobre una cuadrícula de resultados de búsqueda con una tarjeta oculta y una brújula que marca el camino hacia arriba',
     },
     lead: [
-      'Invertiste en una página web, la publicaste, y cuando buscas tu negocio en Google no aparece por ningún lado. Es una de las frustraciones más comunes, y casi siempre tiene una explicación concreta.',
-      'La buena noticia es que la mayoría de las causas se pueden diagnosticar y resolver. Aquí repasamos las ocho razones más frecuentes por las que un sitio no aparece en Google y qué hacer en cada caso.',
+      'Si tu página no aparece en Google, la causa casi siempre es concreta: o el sitio no está indexado (es nuevo, tiene un noindex activo o no está en Search Console), o está indexado pero mal posicionado (sin SEO, lento o con poco contenido). Para saber cuál es tu caso, busca site:tudominio.com en Google.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Primero: "no aparecer" puede significar dos cosas distintas',
+        h2: '¿Mi página no está indexada o está mal posicionada?',
         paragraphs: [
-          'Antes de entrar en las causas, hay que distinguir dos situaciones muy diferentes que la gente confunde. Una es que tu sitio <strong>no esté indexado</strong>: Google literalmente no lo tiene en su base de datos, así que no puede mostrarlo aunque quiera. La otra es que sí esté indexado pero <strong>mal posicionado</strong>: aparece, pero tan abajo que nadie lo ve.',
-          'La forma rápida de saber cuál es tu caso: busca en Google <strong>site:tudominio.com</strong> (con tu dirección real). Si salen páginas de tu sitio, estás indexado y el problema es de posicionamiento. Si no sale nada, el problema es de indexación, que es más grave y más urgente.',
-          'Este simple truco te ahorra mucho tiempo, porque la solución es completamente distinta según el caso. Con eso claro, veamos las ocho razones más comunes.',
+          '"No aparecer" puede ser dos problemas distintos. Si tu sitio <strong>no está indexado</strong>, Google no lo tiene en su base de datos y no puede mostrarlo. Si está indexado pero <strong>mal posicionado</strong>, aparece, pero tan abajo que nadie lo ve.',
+          'Para distinguirlos, busca en Google <strong>site:tudominio.com</strong> con tu dirección real. Si salen páginas de tu sitio, el problema es de posicionamiento. Si no sale nada, es de indexación, que es más grave y más urgente. La solución cambia por completo según el caso.',
         ],
       },
       {
         type: 'prose',
         h2: 'Razones de indexación: cuando Google ni te ve',
         paragraphs: [
-          '<strong>1. Tu sitio es demasiado nuevo.</strong> Google necesita tiempo para descubrir e indexar un sitio recién publicado. Puede tardar desde unos días hasta varias semanas. Si tu web tiene poco tiempo, a veces solo hay que esperar y ayudar al proceso.',
-          '<strong>2. El sitio está bloqueado para Google.</strong> Muchas veces la web se construye con una opción activada que le dice a los buscadores "no me indexes" (una etiqueta noindex o un ajuste en el archivo robots). Es habitual dejarla puesta durante el desarrollo y olvidar quitarla al publicar. Es una de las causas más frecuentes y más fáciles de resolver.',
-          '<strong>3. No está en Google Search Console.</strong> Sin esta herramienta gratuita de Google no puedes pedir que indexe tus páginas, ni ver qué problemas detecta, ni enviar tu mapa del sitio. Verificar tu sitio ahí es de las primeras cosas que hay que hacer, y muchas webs simplemente nunca lo hicieron.',
+          '<strong>1. Tu sitio es demasiado nuevo.</strong> Google puede tardar desde unos días hasta varias semanas en descubrir e indexar un sitio recién publicado.',
+          '<strong>2. El sitio está bloqueado para Google.</strong> Una etiqueta noindex o un ajuste en el archivo robots les dice a los buscadores que no indexen el sitio. Es habitual dejarla puesta durante el desarrollo y olvidar quitarla al publicar: es una de las causas más frecuentes y de las más fáciles de resolver.',
+          '<strong>3. No está en Google Search Console.</strong> Sin esta herramienta gratuita de Google no puedes pedir que indexe tus páginas, ver qué problemas detecta ni enviar tu mapa del sitio. Muchas webs nunca se verificaron ahí.',
         ],
       },
       {
         type: 'prose',
         h2: 'Razones de posicionamiento: apareces, pero nadie te encuentra',
         paragraphs: [
-          '<strong>4. Tu sitio no tiene SEO.</strong> Estás indexado, pero sin títulos optimizados, sin contenido enfocado en lo que busca la gente y sin las palabras clave correctas. Google no tiene motivos para mostrarte arriba. Es como tener una tienda hermosa en un callejón sin letrero.',
-          '<strong>5. Compites por palabras imposibles.</strong> Si intentas posicionar términos genéricos y competidísimos desde un sitio nuevo, es normal no aparecer en las primeras páginas. La solución es apuntar a búsquedas más específicas y locales, como explicamos en la <a href="/blog/seo-para-pymes-en-panama-guia/">guía de SEO para pymes</a>.',
-          '<strong>6. Tu web es lenta o no funciona en móvil.</strong> Google prioriza la experiencia, y un sitio pesado o roto en celular pierde posiciones. Si sospechas de esto, revisa <a href="/blog/como-mejorar-la-velocidad-de-tu-pagina-web/">cómo mejorar la velocidad de tu página web</a>. La velocidad y el móvil son requisitos, no extras.',
+          '<strong>4. Tu sitio no tiene SEO.</strong> Está indexado, pero sin títulos optimizados ni contenido enfocado en las palabras que busca la gente, así que Google no tiene motivos para mostrarlo arriba. Es como una tienda hermosa en un callejón sin letrero.',
+          '<strong>5. Compites por palabras imposibles.</strong> Con un sitio nuevo, es normal no aparecer en las primeras páginas para términos genéricos y muy competidos. La solución es apuntar a búsquedas más específicas y locales, como explica la <a href="/blog/seo-para-pymes-en-panama-guia/">guía de SEO para pymes</a>.',
+          '<strong>6. Tu web es lenta o no funciona en móvil.</strong> Google prioriza la experiencia, y un sitio pesado o roto en el celular pierde posiciones. Para corregirlo, revisa <a href="/blog/como-mejorar-la-velocidad-de-tu-pagina-web/">cómo mejorar la velocidad de tu página web</a>.',
         ],
       },
       {
         type: 'prose',
         h2: 'Razones estructurales y de contenido',
         paragraphs: [
-          '<strong>7. Estructura y contenido pobres.</strong> Un sitio con una sola página que amontona todo, textos mínimos o contenido copiado le da poco material a Google para posicionar. Cada servicio importante merece su propia página con contenido real y útil. Sin sustancia, no hay ranking.',
-          '<strong>8. Penalización o problemas técnicos graves.</strong> Es la causa menos común, pero existe: técnicas de SEO prohibidas del pasado, enlaces tóxicos comprados, o errores técnicos serios pueden hacer que Google te ignore o te penalice. Aquí hace falta un diagnóstico profesional para identificar y limpiar el problema.',
-          'La mayoría de los sitios que "no aparecen" combinan varias de estas razones a la vez: son nuevos, sin SEO, un poco lentos y con estructura pobre. Por eso el diagnóstico ordenado es clave: no se trata de adivinar, sino de revisar punto por punto.',
+          '<strong>7. Estructura y contenido pobres.</strong> Un sitio de una sola página que amontona todo, con textos mínimos o contenido copiado, le da poco material a Google para posicionar. Cada servicio importante necesita su propia página con contenido real.',
+          '<strong>8. Penalización o problemas técnicos graves.</strong> Es la causa menos común: técnicas de SEO prohibidas usadas en el pasado, enlaces tóxicos comprados o errores técnicos serios pueden hacer que Google ignore o penalice el sitio. Detectarlo y limpiarlo requiere un diagnóstico profesional.',
+          'La mayoría de los sitios que no aparecen combinan varias de estas razones a la vez: son nuevos, no tienen SEO, cargan algo lento y tienen una estructura pobre.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Diagnóstico rápido: revisa esto tú mismo',
-        intro: 'Antes de asumir lo peor, verifica estos puntos. Muchos "misterios" se resuelven en minutos con esta lista.',
+        h2: 'Diagnóstico rápido: por qué tu página no aparece en Google',
+        intro: 'Muchos casos se resuelven en minutos revisando estos puntos tú mismo.',
         items: [
           'Busca site:tudominio.com en Google para saber si estás indexado o no.',
           'Confirma que tu sitio no tenga activada la opción de "desalentar a los buscadores" o noindex.',
@@ -531,11 +509,10 @@ export const blog3: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Qué hacer si ya revisaste todo y sigue sin aparecer',
+        h2: '¿Qué hacer si tu página sigue sin aparecer en Google?',
         paragraphs: [
-          'Si pasaste por la lista y tu sitio sigue sin aparecer, lo más probable es que haya una combinación de causas técnicas y de SEO que requiere una mirada experta. A veces el problema está en cómo se construyó el sitio de origen, y ninguna optimización superficial lo resuelve.',
-          'En esos casos hacemos una auditoría honesta: revisamos indexación, estructura, velocidad, contenido y posibles penalizaciones, y te decimos con claridad qué está fallando y qué se puede hacer. Si el arreglo es simple, te lo decimos; si la base está muy comprometida, valoramos si conviene un <a href="/servicios/redisenio-web-panama/">rediseño</a> junto con una estrategia de <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento SEO</a>.',
-          'Lo importante es no quedarse en la frustración de "mi web no sirve". Casi siempre sirve; solo hay que encontrar qué la frena y ordenar el trabajo para que Google, por fin, te muestre a quien te está buscando.',
+          'Si revisaste la lista y el sitio sigue sin aparecer, lo probable es una combinación de causas técnicas y de SEO, a veces originada en cómo se construyó el sitio, que ninguna optimización superficial resuelve.',
+          'En ese punto conviene una auditoría que revise indexación, estructura, velocidad, contenido y posibles penalizaciones, y que separe lo que se arregla con ajustes de lo que no. Si la base está muy comprometida, se valora un <a href="/servicios/redisenio-web-panama/">rediseño</a> junto con una estrategia de <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento SEO</a>.',
         ],
       },
       {

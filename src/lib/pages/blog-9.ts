@@ -18,25 +18,22 @@ export const blog9: PageData[] = [
       alt: 'Recepción y sala de espera de una clínica moderna, con sillas cómodas y luz natural',
     },
     lead: [
-      'Alguien busca "pediatra en San Francisco" o "dermatólogo para acné en Panamá" desde el celular, a las nueve de la noche, después de que el niño se quejó todo el día. Entra a tu web sin haber hablado nunca contigo, y en los primeros segundos decide algo que no tiene vuelta atrás: si te escribe o si prueba con la siguiente clínica de la lista de Google. Esa decisión no se parece en nada a comprar una camiseta online.',
-      'En salud la confianza se construye distinto, y una web genérica de plantilla lo delata de inmediato. En esta guía repasamos lo que de verdad importa en la web de una clínica o consultorio en Panamá: el agendamiento de citas, las páginas por especialidad, las señales de confianza que sí funcionan, qué información del paciente nunca debe pedirse por un formulario abierto, y también cuándo, honestamente, todavía no conviene invertir en todo esto.',
+      'El diseño web para clínicas en Panamá funciona cuando el paciente confirma en segundos especialidad, médico, seguros aceptados, horario y cómo agendar. Lo esencial: una página por especialidad, fotos reales, idoneidad visible, citas online y un formulario que nunca pide síntomas. En Elemento Web, una Web empresarial de hasta 6 páginas parte de $1,250 más ITBMS.',
     ],
     blocks: [
       {
         type: 'prose',
         h2: 'Por qué la confianza se gana distinto cuando se trata de tu salud',
         paragraphs: [
-          'Elegir un restaurante o una tienda online tolera el error: si sale mal, la próxima vez cambias de opción y ya. Elegir quién va a atender a tu hijo, a tu madre o a ti mismo no tolera el mismo margen. El paciente panameño investiga antes de escribir, compara dos o tres clínicas y decide, casi siempre, por señales de seriedad que percibe antes de la primera llamada.',
-          'Esas señales se rompen rápido. Una página que habla de "servicios médicos integrales" sin decir cuáles, fotos de banco de imágenes con un actor en bata blanca que aparece igual en veinte webs de clínicas de otro país, o ningún nombre de médico visible: todo eso el paciente lo lee, aunque no sepa explicarlo, como que esa clínica no se tomó en serio su propia web, y por extensión duda de que se tome en serio su atención.',
-          'Lo que sí genera confianza no es caro ni complicado: fotos reales de tu consultorio y de tu equipo, el nombre y la idoneidad de cada médico a la vista, contenido específico por especialidad escrito con seriedad, y respuestas a las preguntas que el paciente ya trae en la cabeza antes de escribir, como qué seguro aceptas o si atiendes los sábados.',
+          'Alguien busca "pediatra en San Francisco" o "dermatólogo para acné en Panamá" desde el celular, a las nueve de la noche, y entra a tu web sin haber hablado nunca contigo. Elegir quién va a atender a un hijo o a una madre no tolera el margen de error de elegir un restaurante: el paciente compara dos o tres clínicas y decide por las señales de seriedad que percibe antes de la primera llamada.',
+          'Esas señales se rompen rápido: "servicios médicos integrales" sin decir cuáles, fotos de stock con un actor en bata que aparece en veinte webs de otros países, o ningún nombre de médico visible. Lo que sí genera confianza no es caro: fotos reales del consultorio y del equipo, el nombre y la idoneidad de cada médico, contenido serio por especialidad y respuestas a las dudas previas, como qué seguro aceptas o si atiendes los sábados.',
         ],
       },
       {
         type: 'checklist',
         h2: 'Lo que la web de una clínica en Panamá necesita sí o sí',
-        intro: 'No hace falta que tu clínica tenga las ocho cosas el primer día, pero si le faltan varias, estás perdiendo pacientes en el camino sin darte cuenta.',
         items: [
-          'Agendamiento de citas online, no solo un teléfono que suena ocupado',
+          'Agendamiento de citas online, además del teléfono',
           'Una página propia por especialidad, no una lista genérica de "servicios médicos"',
           'Fotos reales de tu consultorio y tu equipo, nunca banco de imágenes',
           'Nombre, especialidad e idoneidad de cada médico, visibles y verificables',
@@ -48,52 +45,43 @@ export const blog9: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cada especialidad es una búsqueda distinta, con su propio paciente',
+        h2: 'Diseño web para clínicas: una página por especialidad',
         paragraphs: [
-          'Nadie busca en Google "clínica". Busca "pediatra en San Francisco", "cardiólogo cerca de Vía España" o "ginecólogo que atienda los sábados". Cada especialidad es, para efectos de una web, casi un negocio aparte: tiene su propio paciente, su propia urgencia y su propio momento de búsqueda. Es la misma lógica detrás de nuestra <a href="/industrias/diseno-web-clinicas-salud-panama/">página de diseño web para clínicas y salud</a>, y aplica igual dentro de tu propio sitio.',
-          'Meter a los ocho médicos de tu clínica en una sola cuadrícula —foto, nombre, especialidad— es prolijo y no le habla a nadie en particular. La página intenta responder a todo el mundo y termina sin aparecer para ninguna búsqueda concreta, porque Google tampoco sabe a quién mostrarla primero.',
-          'Una página por especialidad, en cambio, sí compite: explica qué se atiende, qué señales llevan a consultar, cómo es la primera cita y con qué seguros trabaja. De paso, le ahorra a recepción buena parte de las llamadas de "¿ustedes atienden esto?". Nadie te puede prometer el primer lugar en una búsqueda competida —quien lo haga, miente—, pero sin esa página propia ni siquiera entras a competir.',
+          'Nadie busca en Google "clínica". Busca "pediatra en San Francisco", "cardiólogo cerca de Vía España" o "ginecólogo que atienda los sábados". Cada especialidad tiene su propio paciente, su urgencia y su momento de búsqueda; es la lógica de nuestra <a href="/industrias/diseno-web-clinicas-salud-panama/">página de diseño web para clínicas y salud</a>. Una cuadrícula con los ocho médicos de la clínica intenta responder a todos y no aparece para ninguna búsqueda concreta.',
+          'Una página por especialidad explica qué se atiende, qué señales llevan a consultar, cómo es la primera cita y con qué seguros se trabaja, y de paso ahorra a recepción buena parte de las llamadas de "¿ustedes atienden esto?". Nadie puede prometer el primer lugar en una búsqueda competida, pero sin esa página propia la clínica ni siquiera compite.',
         ],
       },
       {
         type: 'prose',
-        h2: 'El agendamiento online reduce llamadas; no las reemplaza del todo',
+        h2: '¿El agendamiento de citas online reemplaza las llamadas?',
         paragraphs: [
-          'Tu recepción atiende el mostrador y el teléfono al mismo tiempo, y el teléfono casi siempre pierde. Cada llamada que nadie contesta es un paciente que prueba con el siguiente número de la lista. Un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas y citas online</a> le da a ese paciente disponibilidad real, a cualquier hora, sin depender de que alguien conteste.',
-          'Pero sería deshonesto decir que la agenda online elimina el teléfono. Siempre va a haber pacientes que prefieren llamar: alguien mayor, alguien con una urgencia, alguien con una duda antes de decidir. Un buen sistema de citas no esconde el número de la clínica; convive con él y se lleva el volumen repetitivo, no la excepción que sí necesita una voz humana.',
-          'Lo que sí cambia de raíz son las ausencias. Un recordatorio automático el día antes de la cita reduce esos huecos en la agenda que, en una especialidad de alta demanda, cuestan más que cualquier campaña de pauta. Y si tu clínica ya usa un sistema de agenda propio, lo primero que revisamos es si conviene integrarlo o si es mejor no duplicar lo que ya funciona.',
-        ],
-      },
-      {
-        type: 'statement',
-        text: 'Un sistema de citas online no reemplaza a tu recepcionista.',
-        strong: 'Le quita las llamadas repetitivas para que atienda bien las que sí necesitan una persona.',
-      },
-      {
-        type: 'prose',
-        h2: 'Privacidad del paciente: lo que tu formulario nunca debe pedir',
-        paragraphs: [
-          'Una web de clínica recoge, sin proponérselo, lo que la Ley 81 de 2019 de Protección de Datos Personales considera datos sensibles: motivo de consulta, síntomas, a veces resultados. No es lo mismo que un correo pidiendo una cotización, y tratarlo igual es un riesgo real, no solo legal.',
-          'La regla práctica es simple: el formulario público sirve para coordinar, no para consultar. Pide nombre, teléfono, la especialidad de interés y una preferencia de horario; nunca invites a describir el síntoma, adjuntar un resultado de laboratorio o contar el historial en un campo de texto abierto.',
-          'Lo mismo aplica al WhatsApp de la clínica. Si vive en el celular personal de alguien de recepción, el día que esa persona se va, las conversaciones —con lo que los pacientes escribieron ahí— se van con ella. Un número de empresa con acceso controlado resuelve el problema operativo y el de privacidad al mismo tiempo, y es de las correcciones más baratas y más pasadas por alto que existen.',
+          'Las reduce, no las reemplaza. Tu recepción atiende el mostrador y el teléfono a la vez, y cada llamada sin contestar es un paciente que prueba con otro número. Un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas y citas online</a> le da disponibilidad real a cualquier hora y se lleva el volumen repetitivo; el número de la clínica sigue visible para quien prefiere llamar: alguien mayor, una urgencia, una duda antes de decidir.',
+          'Lo que sí cambia son las ausencias: un recordatorio automático el día antes de la cita reduce los huecos en la agenda de las especialidades de alta demanda. Si la clínica ya usa un sistema de agenda propio, primero se evalúa si conviene integrarlo en vez de duplicarlo.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Reducir la fricción del paciente sin ocupar a recepción todo el día',
+        h2: 'Privacidad del paciente: lo que el formulario de una clínica nunca debe pedir',
         paragraphs: [
-          'Antes de escribir, el paciente ya se hizo las mismas cuatro o cinco preguntas: ¿aceptan mi seguro?, ¿a qué hora abren?, ¿dónde queda exactamente?, ¿necesito cita o puedo llegar directo? Si tu web no responde eso a simple vista, buena parte simplemente no escribe: llama a la siguiente clínica que sí lo aclaró. Muchos, de hecho, ni siquiera llegan a tu web: te encuentran primero en el mapa cuando buscan "cerca de mí", terreno de tu <a href="/crecimiento/seo-local-google-maps-panama/">ficha de Google y el SEO local</a>, y una ficha con el horario viejo manda pacientes a la clínica de al lado aunque tu sitio esté impecable.',
-          'Una sección de preguntas frecuentes bien pensada resuelve parte del problema, pero no todo: alguien va a preguntar un domingo a las nueve de la noche, cuando recepción lleva horas cerrada. Ahí es donde un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> rinde de verdad: responde con la información real de tu clínica —seguros, horario, ubicación, qué llevar a la primera cita— a cualquier hora, y cuando la pregunta ya es clínica, la deriva a una persona en vez de improvisar.',
-          'Esa distinción no es opcional: un asistente de este tipo debe tener prohibido dar diagnósticos o interpretar síntomas, y decirlo con todas sus letras cuando corresponde. Su trabajo es absorber las preguntas repetidas del día para que tu equipo se dedique a las que sí necesitan criterio médico, no a competir con él.',
+          'La web de una clínica recoge, sin proponérselo, lo que la Ley 81 de 2019 de Protección de Datos Personales considera datos sensibles: motivo de consulta, síntomas, a veces resultados. La regla práctica: el formulario público sirve para coordinar, no para consultar. Pide nombre, teléfono, especialidad de interés y preferencia de horario; nunca un campo abierto para síntomas, resultados de laboratorio o historial.',
+          'Lo mismo aplica al WhatsApp de la clínica. Si vive en el celular personal de alguien de recepción, el día que esa persona se va, las conversaciones de los pacientes se van con ella. Un número de empresa con acceso controlado resuelve el problema operativo y el de privacidad a la vez, y es una de las correcciones más baratas.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo, honestamente, no conviene invertir en todo esto',
+        h2: 'Cómo responder las dudas del paciente sin saturar a recepción',
         paragraphs: [
-          'Si acabas de abrir un consultorio y todavía no tienes flujo constante de pacientes, montar un sistema de citas online completo desde el primer día resuelve un problema que aún no tienes. Una agenda vacía no inspira confianza; inspira la pregunta contraria. En esa etapa rinde más una página clara, con tu especialidad bien explicada y un WhatsApp visible, y sumar el agendamiento cuando ya haya volumen real que lo justifique.',
-          'Lo mismo si tu clínica opera dentro de un hospital o una red que ya tiene su propio sistema de citas. Montar uno paralelo en tu página no suma: confunde al paciente sobre dónde reservar de verdad, y probablemente termina compitiendo con la agenda oficial de la institución. Ahí el trabajo de tu web es otro: mostrar tu perfil, tu especialidad y un enlace claro al sistema que ya existe, no duplicarlo.',
-          'En ambos casos el error no es tener menos web: es pagar por una pieza que hoy no resuelve nada. Una web completa, con agenda propia integrada, vale la inversión cuando hay especialidades que posicionar y pacientes privados que de verdad comparan antes de llamar. En Panamá eso parte desde $1,250 para un sitio de hasta 6 páginas y sube a proyectos a medida desde $2,900 con varias sedes o médicos; a eso se suma infraestructura desde $350 al año y <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento</a> desde $99 al mes. Ningún precio incluye ITBMS (7%).',
+          'Antes de escribir, el paciente ya se preguntó: ¿aceptan mi seguro?, ¿a qué hora abren?, ¿dónde queda?, ¿necesito cita? Si la web no lo responde a simple vista, llama a la siguiente clínica. Muchos ni llegan a la web: te encuentran en el mapa al buscar "cerca de mí", terreno de tu <a href="/crecimiento/seo-local-google-maps-panama/">ficha de Google y el SEO local</a>, y una ficha con el horario viejo manda pacientes a la clínica de al lado.',
+          'Una sección de preguntas frecuentes resuelve parte; para quien pregunta un domingo a las nueve de la noche, un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> responde con la información real de la clínica —seguros, horario, ubicación, qué llevar a la primera cita— y deriva a una persona cuando la pregunta es clínica. Ese asistente debe tener prohibido dar diagnósticos o interpretar síntomas.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Cuándo no conviene invertir todavía en la web de una clínica?',
+        paragraphs: [
+          'Si acabas de abrir un consultorio sin flujo constante de pacientes, un sistema de citas completo resuelve un problema que aún no tienes, y una agenda vacía no inspira confianza. Rinde más una página clara con tu especialidad y un WhatsApp visible, y sumar el agendamiento cuando haya volumen.',
+          'Si tu clínica opera dentro de un hospital o una red con su propio sistema de citas, una agenda paralela confunde al paciente sobre dónde reservar. La web debe mostrar tu perfil, tu especialidad y un enlace al sistema oficial.',
+          'Una web completa con agenda integrada vale la inversión cuando hay especialidades que posicionar y pacientes privados que comparan antes de llamar. En Panamá parte desde $1,250 para un sitio de hasta 6 páginas y sube a proyectos a medida desde $2,900 con varias sedes o médicos; a eso se suma infraestructura desde $350 al año y <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento</a> desde $99 al mes. Ningún precio incluye ITBMS (7%).',
         ],
       },
       {

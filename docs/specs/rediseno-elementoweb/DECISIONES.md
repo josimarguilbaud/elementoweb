@@ -583,6 +583,18 @@ comitea y despliega», con una plantilla común, mockups de fal e imágenes nuev
 - **Peso:** el efecto va en el bundle de la página; pedirlo con `import()` sumaba a cada página interna el ayudante de
   precarga de Vite. El presupuesto de JS de la portada pasa a 9.600 B (medido 9.248 B); las demás plantillas caben.
 - **Publicación:** despliegue 39826259416 en verde, `verify` en verde antes del merge, `check-prod.sh` 39 ok.
+- **Rehecho en claro, como el real de resend.com (22-oct-2026, pedido del dueño):** el dueño pidió invertirlo a fondo
+  blanco y texto negro y mirar el efecto real. Resend no ilumina la cara de las letras con luz especular: enciende el
+  contorno fino cerca del cursor con degradados radiales (radio 70 y 280), desenfoques de 2, 25 y 17, y bordes rojo y
+  azul que se separan con la velocidad. Se copió esa técnica con sus mismas cifras (por eso la forma va a unas 373
+  unidades de ancho), en negro sobre `bg-humo`, y la forma pasa a ser el wordmark de la tarjeta
+  (`src/data/marca-wordmark.json`). Con «reducir movimiento» no se monta y queda la forma tenue.
+- **Logo final de la tarjeta (mismo día):** el menú, el pie, el favicon y las imágenes para compartir de la portada y por
+  defecto usaban un cubo dibujado en código. Ahora llevan el logo de la tarjeta: la ficha navy con la E y WEB
+  (`icono-tile.png` → `public/marca/web/ficha-120.png`) y el wordmark «Elemento Web» en Quantify Bold como trazado SVG,
+  con el trazo de 3,6 unidades que iguala el peso de la tarjeta (`public/marca/web/wordmark.svg`). El favicon es la
+  ficha solo con la E (96 y 32 px, más 180 px para iPhone), porque WEB no se lee a 16 px. Merge en `main`, `verify` en
+  verde, despliegue 39834976112 en verde, `check-prod.sh` 39 ok.
 
 ## 3. Responsables y dependencias humanas
 

@@ -22,14 +22,13 @@ export const tecnologias: PageData[] = [
       ],
     },
     lead: [
-      'WordPress, Shopify o código a medida: cada uno gana en un escenario distinto. Elegimos por tu operación, no por nuestra comodidad.',
-      'Una agencia que solo domina una herramienta te recomendará siempre esa herramienta. Nosotros operamos las tres a diario (y nuestros propios productos SaaS corren sobre stack a medida), así que la recomendación sale del caso, no del catálogo.',
+      'WordPress, Shopify o código a medida: cada uno gana en un escenario distinto. Operamos los tres a diario, y nuestros productos SaaS corren sobre código propio, así que la recomendación sale de tu operación y no de nuestra comodidad.',
     ],
     blocks: [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Elegimos la tecnología de tu web por tu objetivo, no por costumbre: WordPress cuando tu equipo publica seguido, Shopify cuando quieres vender sin administrar servidores y desarrollo a medida con Vue, React y Laravel cuando las integraciones o el producto lo exigen. Operamos las tres a diario, en Panamá.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, elige la tecnología de tu web por tu objetivo: WordPress desde $1,250 cuando tu equipo publica seguido, Shopify desde $1,950 para vender sin administrar servidores, y desarrollo a medida con Vue, React y Laravel desde $2,900 cuando las integraciones lo exigen. La recomendación va por escrito, con su razón.',
       },
       {
         type: 'tabla',
@@ -64,21 +63,12 @@ export const tecnologias: PageData[] = [
         nota: 'La mejor tecnología es la que tu equipo puede operar sin nosotros el día que ya no estemos.',
       },
       {
-        type: 'cards',
-        h2: 'Tres caminos, un criterio',
-        items: [
-          { h3: 'WordPress', text: 'Cuando tu equipo publica contenido con frecuencia y necesita autonomía total. Temas propios, sin constructores pesados.', link: { slug: 'tecnologias/diseno-web-wordpress-panama', label: 'Diseño web WordPress' } },
-          { h3: 'Shopify', text: 'Cuando quieres vender rápido sin administrar servidores. La plataforma se encarga de la infraestructura; nosotros de que convierta.', link: { slug: 'tecnologias/diseno-web-shopify-panama', label: 'Diseño web Shopify' } },
-          { h3: 'A medida con Vue y React', text: 'Cuando el rendimiento, las integraciones o el producto mismo exigen código propio. El mismo stack de nuestros SaaS.', link: { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Desarrollo a medida' } },
-        ],
-      },
-      {
         type: 'prose',
         h2: 'Cómo decidimos',
         paragraphs: [
-          'Tres preguntas definen la tecnología. Primera: <strong>¿quién editará el contenido y con qué frecuencia?</strong> Si tu equipo publica cada semana, el panel de WordPress paga su peso en oro. Si el sitio cambia dos veces al año, hay opciones más rápidas.',
-          'Segunda: <strong>¿qué integraciones necesita tu operación?</strong> Inventario, facturación, CRM, reservas. Cada plataforma integra distinto, y forzar una integración contra la corriente sale caro para siempre.',
-          'Tercera: <strong>¿cuánto pesa la velocidad en tu negocio?</strong> Para una tienda o un sitio que recibe pauta, cada segundo de carga es dinero. Ahí el desarrollo a medida con generación estática no tiene rival.',
+          'Tres preguntas definen la tecnología. Primera: <strong>¿quién editará el contenido y con qué frecuencia?</strong> Si tu equipo publica cada semana, el panel de WordPress se paga solo; si el sitio cambia dos veces al año, hay opciones más rápidas y sin mantenimiento de plataforma.',
+          'Segunda: <strong>¿qué integraciones necesita tu operación?</strong> Inventario, facturación, CRM o reservas: cada plataforma integra distinto, y forzar una integración contra la corriente sale caro para siempre.',
+          'Tercera: <strong>¿cuánto pesa la velocidad en tu negocio?</strong> En una tienda o un sitio que recibe pauta, cada segundo de carga cuesta ventas, y ahí el desarrollo a medida con generación estática sirve las páginas como archivos.',
         ],
       },
       {
@@ -98,18 +88,18 @@ export const tecnologias: PageData[] = [
       {
         type: 'steps',
         h2: 'Cómo elegimos la tecnología de tu proyecto',
-        intro: 'No hay corazonada ni preferencia de agencia. Es un proceso corto y en orden.',
+        intro: 'Un proceso corto, en este orden.',
         items: [
-          { h3: '1. Diagnóstico de tu operación', text: 'Escuchamos cómo trabajas hoy: quién publica, qué vendes, con qué sistemas te toca integrar. La tecnología correcta se deduce de tu día a día, no de una moda.' },
+          { h3: '1. Diagnóstico de tu operación', text: 'Escuchamos cómo trabajas hoy: quién publica, qué vendes y con qué sistemas hay que integrar.' },
           { h3: '2. Prueba de las tres preguntas', text: 'Aplicamos el criterio de edición, integraciones y velocidad. Si dos apuntan a la misma plataforma, la decisión está clara; si compiten, te explicamos el intercambio.' },
-          { h3: '3. Recomendación por escrito', text: 'Recibes la tecnología propuesta con la razón concreta detrás y una cotización cerrada por escrito antes de empezar. Nada de sorpresas a mitad del proyecto.' },
+          { h3: '3. Recomendación por escrito', text: 'Recibes la tecnología propuesta con la razón concreta detrás y una cotización cerrada por escrito antes de empezar.' },
           { h3: '4. Construcción y entrega a tu nombre', text: 'Desarrollamos, capacitamos a tu equipo y te entregamos dominio, accesos y repositorio a nombre de tu empresa. Coordinamos todo por WhatsApp y el pago admite Yappy.' },
         ],
       },
       {
         type: 'cards',
         h2: 'Casos típicos y qué elegimos',
-        intro: 'Ejemplos reales de cómo cae la decisión según el negocio.',
+        intro: 'Cómo cae la decisión según el negocio.',
         items: [
           { h3: 'Empresa que publica seguido', text: 'Un despacho, una revista o una marca con blog activo necesita autonomía para publicar sin depender de nadie. Ahí WordPress con tema propio gana.', link: { slug: 'tecnologias/diseno-web-wordpress-panama', label: 'Ver WordPress' } },
           { h3: 'Marca que quiere vender ya', text: 'Catálogo claro, pagos con tarjeta y Yappy, envíos locales. Si no quieres administrar servidores, Shopify te pone a vender rápido.', link: { slug: 'tecnologias/diseno-web-shopify-panama', label: 'Ver Shopify' } },
@@ -157,7 +147,7 @@ export const tecnologias: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Diseñamos sitios en WordPress para empresas en Panamá desde $1,250: tema propio hecho para tu marca, sin plantillas compradas ni constructores visuales, solo los plugins indispensables y auditados, campos a la medida de tu contenido, SEO técnico y capacitación grabada para que tu equipo publique sin abrir un ticket.',
+        text: 'Elemento Web hace diseño web en WordPress en Panamá desde $1,250, desde Ciudad de Panamá: tema propio para tu marca, sin plantillas compradas ni constructores visuales, solo plugins indispensables y auditados, campos a la medida de tu contenido, SEO técnico y capacitación grabada. Hasta 6 páginas, en 2 a 3 semanas desde que recibimos tu contenido.',
       },
       {
         type: 'receipt',
@@ -217,7 +207,7 @@ export const tecnologias: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye un WordPress nuestro',
+        h2: 'Qué incluye el diseño web en WordPress',
         intro: 'Desde $1,250 con hasta 6 páginas, con cotización cerrada según páginas e integraciones.',
         incluye: [
           { t: 'Tema propio', d: 'Desarrollado para tu diseño, no una plantilla ajena forzada.' },
@@ -236,7 +226,7 @@ export const tecnologias: PageData[] = [
       {
         type: 'steps',
         h2: 'Cómo construimos tu WordPress',
-        intro: 'Sin plantillas compradas y sin constructores pesados. Este es el orden.',
+        intro: 'Cuatro pasos, en este orden.',
         items: [
           { h3: 'Diseño primero, código después', text: 'Definimos el diseño de tu marca antes de tocar WordPress. El tema se construye para ese diseño, no al revés forzando una plantilla ajena.' },
           { h3: 'Tema propio y liviano', text: 'Programamos el tema a medida, con solo los plugins indispensables y auditados. Cero código inflado que arrastre la velocidad de carga.' },
@@ -248,28 +238,22 @@ export const tecnologias: PageData[] = [
         type: 'prose',
         h2: 'Por qué no usamos constructores visuales',
         paragraphs: [
-          'Elementor y similares generan hasta diez veces más código del necesario para cada sección. Ese peso se paga en velocidad de carga, y la velocidad se paga en posiciones de Google y en conversiones perdidas.',
-          'Peor aún: el constructor te ata. Si algún día lo desinstalas, el diseño desaparece con él. <strong>Un tema a medida no tiene esa hipoteca</strong>: es tuyo, es liviano y cualquier desarrollador competente puede mantenerlo.',
-          'El panel que recibe tu equipo queda limpio: los campos exactos de tu contenido, sin cien opciones que nadie pidió.',
+          'Elementor y similares generan hasta diez veces más código del necesario por sección, y ese peso se paga en velocidad de carga. Además atan: si desinstalas el constructor, el diseño desaparece con él. <strong>Un tema a medida no tiene esa hipoteca</strong>: es tuyo, es liviano y cualquier desarrollador competente de WordPress puede mantenerlo.',
         ],
       },
       {
         type: 'prose',
         h2: 'Cuándo NO conviene WordPress',
         paragraphs: [
-          'WordPress mueve una porción enorme de la web y eso no lo convierte en la respuesta correcta para todo.',
-          'No conviene cuando el sitio es pequeño y no va a cambiar: una landing o un sitio de cinco páginas estáticas funciona más rápido y sin mantenimiento si se construye con tecnología estática. Poner WordPress ahí es asumir actualizaciones mensuales de por vida a cambio de nada.',
-          'Tampoco cuando nadie va a mantenerlo. WordPress necesita cuidado continuo, y un WordPress abandonado no se queda quieto: se vuelve un problema de seguridad. Si no hay presupuesto ni intención de mantenimiento, es mejor otra tecnología.',
-          'Y no conviene cuando el proyecto es realmente una aplicación (lógica compleja, cálculos, roles de usuario, integraciones profundas). Forzar eso dentro de WordPress con plugins produce algo frágil que cuesta más mantener que un <a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">desarrollo a medida</a>.',
+          'Cuando el sitio es pequeño y no va a cambiar: una landing o cinco páginas estáticas cargan más rápido y sin mantenimiento con tecnología estática. Cuando nadie va a mantenerlo: un WordPress abandonado se vuelve un problema de seguridad.',
+          'Y cuando el proyecto es realmente una aplicación (lógica compleja, cálculos, roles de usuario, integraciones profundas): forzarlo con plugins produce algo frágil que cuesta más mantener que un <a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">desarrollo a medida</a>.',
         ],
       },
       {
         type: 'prose',
         h2: 'Cada plugin es una deuda que se paga todos los meses',
         paragraphs: [
-          'Un plugin resuelve un problema hoy y crea una obligación permanente: actualizarlo, verificar que no rompa nada al actualizarse, y confiar en que su autor siga manteniéndolo dentro de tres años.',
-          'El problema no es tener plugins, es tener treinta. Cada uno multiplica las combinaciones posibles de fallo, y llega un punto donde nadie se atreve a actualizar por miedo a romper el sitio. Ese es exactamente el estado en el que un sitio termina hackeado.',
-          'También pesa en velocidad: muchos plugins cargan sus propios archivos en todas las páginas, incluso donde no se usan. Un sitio con demasiados plugins es lento por acumulación, no por una causa concreta que se pueda arreglar.',
+          'Un plugin resuelve un problema hoy y crea una obligación permanente: actualizarlo, comprobar que no rompa nada y confiar en que su autor lo siga manteniendo. Con treinta, nadie se atreve a actualizar por miedo a romper el sitio, que es el estado en el que termina hackeado; y como muchos cargan sus archivos en todas las páginas, el sitio se vuelve lento por acumulación.',
           '<strong>La regla que aplicamos es preguntar si vale su costo anual de mantenimiento</strong>, no si resuelve el problema. Muchos se sustituyen por unas líneas de código que no hay que actualizar nunca.',
         ],
       },
@@ -277,26 +261,21 @@ export const tecnologias: PageData[] = [
         type: 'prose',
         h2: 'Por dónde entran los sitios de WordPress que se caen',
         paragraphs: [
-          'Casi ninguna intrusión en WordPress es un ataque dirigido. Son sistemas automáticos que recorren internet probando lo mismo en millones de sitios, y entran por unas pocas puertas conocidas.',
-          'La primera es un plugin o tema desactualizado con una vulnerabilidad ya publicada. La segunda son contraseñas débiles en la administración, probadas por fuerza bruta. La tercera son temas o plugins descargados de sitios que regalan versiones de pago, que muchas veces vienen con código malicioso incluido.',
-          'Las defensas son proporcionalmente simples: actualizar, contraseñas fuertes con doble factor, limitar los intentos de acceso, no instalar nada de origen dudoso y tener respaldo fuera del servidor.',
-          '<strong>Nada de eso es sofisticado y por eso funciona:</strong> los sistemas automáticos buscan lo fácil, y un sitio que cumple lo básico deja de ser lo fácil.',
+          'Casi ninguna intrusión es un ataque dirigido: son sistemas automáticos que prueban lo mismo en millones de sitios y entran por tres puertas conocidas. Un plugin o tema desactualizado con una vulnerabilidad publicada, contraseñas débiles probadas por fuerza bruta, y temas de pago descargados gratis que traen código malicioso.',
+          'Las defensas son simples y por eso funcionan: actualizar, contraseñas fuertes con doble factor, límite de intentos de acceso, nada de origen dudoso y respaldo fuera del servidor.',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir en un WordPress',
         paragraphs: [
-          'Además del tráfico y los contactos, un WordPress tiene métricas de salud que conviene vigilar porque avisan antes del problema.',
-          'La velocidad en celular es la primera, y hay que medirla cada cierto tiempo, no solo al lanzar. Los sitios de WordPress se degradan: se suman plugins, se cargan imágenes sin optimizar, y un sitio que arrancó rápido puede estar lento un año después sin que nadie lo notara.',
-          'La segunda es el número de plugins activos y cuántos están desactualizados. Es el mejor indicador anticipado de riesgo que existe en esta plataforma.',
-          'Y los intentos de acceso fallidos. Un pico repentino indica que alguien está probando entrar, y detectarlo a tiempo permite cerrar la puerta antes de que la encuentren abierta.',
+          'La velocidad en celular, medida cada cierto tiempo y no solo al lanzar, porque los sitios se degradan al sumar plugins e imágenes sin optimizar. El número de plugins activos y desactualizados, el mejor indicador anticipado de riesgo en esta plataforma. Y los intentos de acceso fallidos: un pico repentino avisa que alguien está probando entrar.',
         ],
       },
       {
         type: 'cards',
         h2: 'Para quién encaja WordPress',
-        intro: 'No es para todos. Estos son los perfiles donde rinde de verdad.',
+        intro: 'Los tres perfiles donde más rinde.',
         items: [
           { h3: 'Equipos que publican seguido', text: 'Si tu empresa saca noticias, artículos o novedades cada semana, la autonomía del panel de WordPress paga su peso en oro.', link: { slug: 'servicios/diseno-web-corporativo-panama', label: 'Web corporativa' } },
           { h3: 'Marcas que quieren blog', text: 'El contenido orgánico es de los canales más rentables a largo plazo. WordPress trae el blog listo y se lleva bien con una estrategia de SEO.', link: { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO' } },
@@ -375,7 +354,7 @@ export const tecnologias: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Diseñamos tiendas Shopify en Panamá desde $1,950: diseño de tu marca, catálogo cargado con fichas que venden, Botón de Pago Yappy y tarjeta, zonas de envío con ITBMS bien configurado, correos de pedido, recuperación de carritos y píxeles de pauta. Antes de recomendarla, hacemos la cuenta de mensualidad, comisión y apps con tu volumen.',
+        text: 'Elemento Web hace diseño web en Shopify en Panamá desde $1,950, desde Ciudad de Panamá: tienda con tu marca, hasta 25 productos cargados, Botón de Pago Yappy y tarjeta, envíos por zona con ITBMS bien configurado, recuperación de carritos y píxeles de pauta. Antes de recomendarla, calculamos mensualidad, comisiones y apps con tu volumen de ventas.',
       },
       {
         type: 'receipt',
@@ -446,7 +425,7 @@ export const tecnologias: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué configuramos en tu Shopify',
+        h2: 'Qué incluye el diseño web en Shopify',
         intro: 'Desde $1,950 según catálogo e integraciones, con cotización cerrada por escrito.',
         incluye: [
           { t: 'Diseño de tu marca', d: 'La tienda alineada a tu identidad, no la plantilla tal como viene.' },
@@ -465,7 +444,7 @@ export const tecnologias: PageData[] = [
       {
         type: 'steps',
         h2: 'Cómo dejamos tu Shopify lista para Panamá',
-        intro: 'Activar una plantilla no es tener una tienda. Este es el trabajo real.',
+        intro: 'Cuatro pasos antes de abrir la tienda.',
         items: [
           { h3: 'Marca y catálogo', text: 'Alineamos el diseño a tu marca y cargamos el catálogo con fichas de producto pensadas para decidir la compra, no solo para listar.' },
           { h3: 'Pagos que usa tu cliente', text: 'Configuramos tarjetas y el <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Botón de Pago Yappy</a>, la forma que el comprador panameño realmente usa. El pago que falta es la venta que se pierde.' },
@@ -486,19 +465,15 @@ export const tecnologias: PageData[] = [
         type: 'prose',
         h2: 'Lo que hay que resolver para vender en Panamá desde Shopify',
         paragraphs: [
-          'Shopify está pensado para mercados donde todo el mundo paga con tarjeta y los envíos los resuelve un operador nacional. Panamá no funciona exactamente así, y esas diferencias hay que configurarlas a mano.',
-          'El pago es la primera. Hay que resolver cómo se cobra con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a>, que para buena parte del país es la forma natural de pagar, además de la tarjeta. Sin esa opción, una porción del mercado no completa la compra.',
-          'La segunda son los impuestos: el ITBMS tiene que quedar bien configurado y mostrarse con claridad, no como una sorpresa en el último paso.',
-          'Y la tercera es el envío, que en Panamá se comporta distinto dentro y fuera de la ciudad. Hay que definir zonas con costos y plazos realistas, y activar el retiro en tienda, que en la práctica funciona mejor de lo que muchos esperan.',
+          'Shopify está pensado para mercados donde todos pagan con tarjeta y un operador nacional resuelve los envíos; en Panamá hay tres cosas que configurar a mano. El cobro con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a> además de la tarjeta, porque sin él una parte del mercado no completa la compra. El ITBMS, que debe verse con claridad y no aparecer en el último paso.',
+          'Y el envío, que se comporta distinto dentro y fuera de la ciudad: zonas con costos y plazos realistas, más el retiro en tienda como opción.',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué pasa si algún día quieres salirte',
         paragraphs: [
-          'Es la pregunta que nadie hace al empezar y la que más cuesta cuando llega. Shopify es un servicio alquilado: la tienda vive en su infraestructura y funciona con su lenguaje de plantillas.',
-          'Lo que sí puedes llevarte son tus datos: productos, clientes y pedidos se exportan. Lo que no se lleva es el diseño, que está construido para Shopify y hay que rehacer, ni las personalizaciones hechas con sus apps.',
-          'El punto delicado son las direcciones de las páginas. Shopify impone su propia estructura de URLs, y al migrar esa estructura cambia. Sin un mapa de redirecciones bien hecho, se pierde el posicionamiento acumulado, que suele ser el activo más valioso de una tienda con años.',
+          'Shopify es un servicio alquilado: la tienda vive en su infraestructura y usa su lenguaje de plantillas. Te llevas tus datos (productos, clientes y pedidos se exportan), pero no el diseño ni las personalizaciones hechas con apps. Y como Shopify impone su estructura de URLs, al migrar cambian las direcciones: sin un mapa de redirecciones se pierde el posicionamiento acumulado.',
           '<strong>No es un argumento contra Shopify:</strong> es un argumento para elegir a conciencia, sabiendo que la salida tiene un costo. Si el volumen y las necesidades son estables, ese costo puede no llegar nunca.',
         ],
       },
@@ -506,10 +481,8 @@ export const tecnologias: PageData[] = [
         type: 'prose',
         h2: 'Qué medir en una tienda Shopify',
         paragraphs: [
-          'Shopify reporta mucho y casi todo el mundo mira lo mismo: ventas totales. Es el número que menos ayuda a decidir.',
-          'Lo que dice dónde actuar es el embudo: cuántos vieron producto, cuántos agregaron al carrito, cuántos iniciaron el pago y cuántos terminaron. La caída entre iniciar el pago y terminar es la más cara de todas y casi siempre se explica por el envío o por la falta de la forma de pago que la gente esperaba.',
-          'El segundo número es el costo real por venta, sumando comisión y apps. Es el que dice si la plataforma sigue siendo la correcta a tu volumen actual, y conviene recalcularlo cada año.',
-          'Y el ticket promedio, que orienta si conviene trabajar en vender más por pedido en vez de conseguir más pedidos, casi siempre más barato de lograr.',
+          'Las ventas totales son el número que menos ayuda a decidir. El embudo dice dónde actuar: cuántos vieron producto, agregaron al carrito, iniciaron el pago y terminaron. La caída entre iniciar el pago y terminar es la más cara, y casi siempre se explica por el envío o por la forma de pago que faltaba.',
+          'Después, el costo real por venta sumando comisión y apps, recalculado cada año para saber si la plataforma sigue siendo la correcta a tu volumen, y el ticket promedio, que dice si conviene vender más por pedido antes que buscar más pedidos.',
         ],
       },
       {
@@ -584,7 +557,7 @@ export const tecnologias: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Desarrollamos software y sitios web a medida en Panamá desde $2,900 con Vue 3, React y Laravel, el mismo stack de nuestros SaaS en producción: portales de clientes, plataformas e integraciones con ERP, pagos o inventario. Trabajamos por entregas funcionales con cotización cerrada por etapa, y el repositorio y la documentación quedan a tu nombre.',
+        text: 'Elemento Web hace desarrollo web a medida en Panamá desde $2,900 con Vue 3, React y Laravel, el mismo stack de sus SaaS en producción: portales de clientes, plataformas e integraciones con ERP, pagos o inventario. Trabaja desde Ciudad de Panamá por entregas funcionales con cotización cerrada por etapa, y el repositorio queda a nombre de tu empresa.',
       },
       {
         type: 'receipt',
@@ -663,7 +636,7 @@ export const tecnologias: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye un desarrollo a medida',
+        h2: 'Qué incluye el desarrollo web a medida en Panamá',
         intro: 'Desde $2,900, con cotización cerrada por escrito en cada etapa.',
         incluye: [
           { t: 'Diagnóstico sin costo', d: 'Para definir el alcance real y la línea base antes de cotizar.' },
@@ -682,7 +655,7 @@ export const tecnologias: PageData[] = [
       {
         type: 'steps',
         h2: 'Cómo trabajamos un desarrollo a medida',
-        intro: 'Sin cheques en blanco ni proyectos que no terminan nunca. Este es el método.',
+        intro: 'Por etapas, con precio cerrado en cada una.',
         items: [
           { h3: 'Diagnóstico sin costo', text: 'Una sesión para entender tu operación y qué debe resolver el software. De ahí sale el alcance real, no una lista de deseos sin fin.' },
           { h3: 'Dimensionamiento y rango', text: 'Dividimos el proyecto en entregas funcionales y recibes un rango realista, con cotización cerrada por escrito por etapa antes de invertir más tiempo.' },
@@ -694,45 +667,37 @@ export const tecnologias: PageData[] = [
         type: 'prose',
         h2: 'Nuestro stack y por qué',
         paragraphs: [
-          '<strong>Vue 3 y React</strong> en el frontend: interfaces rápidas, componentes reutilizables y estado predecible. <strong>Laravel</strong> en el backend: autenticación, permisos, colas y auditoría resueltos con un framework maduro. <strong>Docker</strong> en infraestructura: el mismo código corre igual en desarrollo y producción.',
-          'Para sitios públicos usamos generación estática cuando aplica: páginas servidas como archivos, con tiempos de carga que ningún CMS tradicional alcanza. Es la misma arquitectura de este sitio.',
-          'Todo se entrega documentado y con el repositorio a tu nombre. <strong>La continuidad no puede depender de nosotros</strong>: ese es el diseño, no una promesa.',
+          'Vue 3 y React en el frontend, Laravel en el backend y Docker en infraestructura. Para sitios públicos usamos generación estática cuando aplica: páginas servidas como archivos, la misma arquitectura de este sitio. Todo se entrega documentado y con el repositorio a tu nombre: <strong>la continuidad no puede depender de nosotros</strong>.',
         ],
       },
       {
         type: 'prose',
         h2: 'El software propio no se termina: se mantiene',
         paragraphs: [
-          'Es la parte que casi nadie presupuesta y la que decide si el proyecto sobrevive. Un desarrollo a medida no acaba el día que se entrega: empieza ahí.',
-          'Las dependencias que usa se actualizan, y quedarse atrás demasiados años convierte una actualización sencilla en una reescritura. Los navegadores cambian. Aparecen requisitos nuevos, y cada cambio en el negocio se traduce en trabajo de desarrollo, porque no hay un proveedor que lo saque en su próxima versión.',
-          'Por eso, antes de empezar, hay que responder quién va a mantener esto y con qué presupuesto anual. Si no hay respuesta, el proyecto va a funcionar dos años y después se va a volver un problema del que nadie quiere hacerse cargo.',
-          '<strong>Un software a medida sin plan de mantenimiento es una deuda con fecha diferida.</strong> Y esa deuda vence siempre en el peor momento.',
+          'Un desarrollo a medida empieza el día que se entrega: las dependencias se actualizan, los navegadores cambian y cada cambio del negocio es trabajo de desarrollo, porque no hay un proveedor que lo saque en su próxima versión. Quedarse atrás años convierte una actualización sencilla en una reescritura.',
+          'Antes de empezar hay que responder quién lo va a mantener y con qué presupuesto anual. <strong>Un software a medida sin plan de mantenimiento es una deuda con fecha diferida.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'De quién es el código, y por qué preguntarlo antes',
         paragraphs: [
-          'Es la pregunta más incómoda de hacerle a un proveedor y la que más problemas evita. Cuando alguien construye software para tu empresa, hay que dejar por escrito quién es dueño del resultado.',
-          'Si el código es tuyo, puedes cambiar de proveedor, contratar a otro para ampliarlo o llevártelo internamente. Si es del proveedor y solo tienes licencia de uso, dependes de él para siempre, incluidos sus plazos y sus precios.',
-          'Hay tres cosas concretas que conviene tener claras desde el inicio: dónde vive el código y si tienes acceso al repositorio, quién controla los servidores y los dominios, y qué documentación se entrega al final. La respuesta a la tercera suele ser «ninguna», y es lo que hace que cambiar de proveedor cueste tanto.',
-          'Nosotros entregamos el código y los accesos, y documentamos. <strong>No por generosidad: porque un cliente atrapado es un cliente que se va en cuanto puede</strong>, y porque un proyecto que solo entiende quien lo escribió es frágil.',
+          'Si el código es tuyo, puedes cambiar de proveedor, ampliarlo con otro o llevártelo internamente; si solo tienes licencia de uso, dependes del proveedor, de sus plazos y de sus precios. Antes de firmar conviene dejar por escrito dónde vive el código y si tienes acceso al repositorio, quién controla servidores y dominios, y qué documentación se entrega al final.',
+          'Nosotros entregamos el código, los accesos y la documentación, porque un proyecto que solo entiende quien lo escribió es frágil.',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir en un desarrollo a medida',
         paragraphs: [
-          'Un desarrollo a medida no se mide en visitas: se mide en si resolvió el problema que lo justificó.',
-          'Por eso el número que hay que definir es antes de empezar, no después: qué proceso se va a acortar, cuántas horas se van a devolver al mes, cuántos errores manuales se van a evitar.',
-          'Durante la operación, lo que se vigila es distinto: cuántos errores registra el sistema, qué funciones se usan de verdad y cuáles nadie tocó nunca. Esa segunda lista suele ser larga y es información valiosa: son las funciones que se pidieron, se pagaron y no hacían falta.',
-          'Y el tiempo de respuesta ante un fallo. <strong>En software propio no hay un proveedor externo que lo resuelva</strong>, así que ese número depende enteramente del acuerdo de mantenimiento que tengas.',
+          'Un desarrollo a medida se mide en si resolvió el problema que lo justificó, y ese número se define antes de empezar: qué proceso se acorta, cuántas horas se devuelven al mes, cuántos errores manuales se evitan.',
+          'En operación se vigilan los errores que registra el sistema, qué funciones se usan de verdad (la lista de las que nadie tocó suele ser larga) y el tiempo de respuesta ante un fallo, que en software propio depende del acuerdo de mantenimiento que tengas.',
         ],
       },
       {
         type: 'cards',
         h2: 'Qué construimos a medida',
-        intro: 'Cuando la plantilla se queda corta, esto es lo que programamos.',
+        intro: 'Tres tipos de proyecto que no caben en una plantilla.',
         items: [
           { h3: 'Portales de cliente', text: 'Un espacio donde tus clientes consultan estados, suben documentos o gestionan sus trámites sin llamarte. Menos correos, más autoservicio.', link: { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas y citas' } },
           { h3: 'Plataformas con IA', text: 'Chatbots y flujos inteligentes conectados a tu operación, el mismo tipo de producto que corre en nuestro WazaCRM.', link: { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA' } },

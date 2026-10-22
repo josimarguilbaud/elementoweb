@@ -92,14 +92,13 @@ export const servicios: PageData[] = [
       ],
     },
     lead: [
-      'Diseño web, tecnología, funcionalidades, crecimiento y software propio: todo lo que ofrece la agencia, en un solo lugar.',
-      'No partimos de una plantilla: partimos de la pregunta de negocio. ¿Necesitas proyectar solidez, vender productos, convertir una campaña, automatizar tu atención o posicionarte en Google? Cada respuesta tiene su propia página, con su propio alcance y precio.',
+      'Diseño web, tecnología, funcionalidades, crecimiento, marketing y software propio de Elemento Web, ordenados por lo que quieres lograr: proyectar solidez, vender en línea, convertir una campaña, atender a toda hora o aparecer en Google.',
     ],
     blocks: [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Elemento Web ofrece en Panamá landing pages desde $550, sitios corporativos desde $1,250, tiendas online desde $1,950, SEO y SEO local, Google Ads y Meta, chatbots con IA, automatizaciones, mantenimiento y software propio. Cada servicio tiene su página con alcance, plazo y precio, y toda cotización es cerrada y por escrito antes de empezar.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, ofrece landing pages desde $550, sitios corporativos desde $1,250, tiendas online desde $1,950 y desarrollo a medida desde $2,900, además de SEO, Google Ads y Meta, chatbots con IA y mantenimiento desde $99 al mes. Cada servicio publica su alcance, plazo y precio, con cotización cerrada por escrito.',
       },
       {
         type: 'tabla',
@@ -169,7 +168,7 @@ export const servicios: PageData[] = [
       {
         type: 'steps',
         h2: 'Cómo trabajamos',
-        intro: 'Cuatro etapas con entregas verificables. Sin misterio y sin desapariciones.',
+        intro: 'Cuatro etapas, cada una con una entrega que puedes revisar.',
         items: [
           { h3: 'Diagnóstico', text: 'Entendemos tu negocio, a quién le vendes y qué acción debe tomar el visitante.' },
           { h3: 'Estructura y diseño', text: 'Arquitectura de la información y pantallas aprobadas antes de programar.' },
@@ -231,7 +230,7 @@ export const servicios: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Diseñamos sitios web corporativos en Panamá desde $1,250 para empresas que venden servicios y necesitan proyectar solidez: hasta 6 páginas con una página por servicio, SEO técnico, formularios y WhatsApp, y panel autoadministrable con capacitación grabada. Se entrega en 2 a 3 semanas desde que recibimos tu contenido, con cotización cerrada por escrito.',
+        text: 'Elemento Web hace diseño web corporativo en Panamá desde $1,250 para empresas de servicios en Ciudad de Panamá y el resto del país: hasta 6 páginas, una por servicio, con SEO técnico, formularios, WhatsApp y panel autoadministrable con capacitación grabada. Se entrega en 2 a 3 semanas desde que recibimos tu contenido, con cotización cerrada.',
       },
       {
         type: 'receipt',
@@ -287,29 +286,24 @@ export const servicios: PageData[] = [
         type: 'prose',
         h2: 'Por qué una página por servicio',
         paragraphs: [
-          'El error más común de los sitios corporativos es la página única de "Servicios" con una lista de todo. Google indexa páginas, no listas: una página por servicio explica mejor tu oferta y da a cada búsqueda un destino claro. Ayuda a organizarla, pero no garantiza posicionamiento.',
-          'Nosotros estructuramos el sitio como lo busca tu cliente: <strong>una página por servicio, cada una respondiendo una intención de búsqueda concreta</strong>. Esa arquitectura es la diferencia entre aparecer y no existir.',
-          'Además cada página termina en una acción específica, con el mensaje de WhatsApp ya escrito. El cliente que llega desde Google te escribe listo para hablar de su caso, no para preguntar qué haces.',
+          'El error más común de los sitios corporativos es una sola página de "Servicios" con una lista de todo. Google indexa páginas, no listas: una página por servicio explica mejor tu oferta y le da a cada búsqueda un destino claro. Ayuda a posicionar, pero no lo garantiza.',
+          'Cada página responde una intención de búsqueda concreta y termina en una acción: WhatsApp con el servicio ya escrito en el mensaje. Quien llega desde Google te escribe para hablar de su caso, no para preguntar qué haces.',
         ],
       },
-            {
+      {
         type: 'prose',
         h2: 'Cuándo NO necesitas un sitio corporativo',
         paragraphs: [
-          'Vender el proyecto equivocado es la forma más rápida de perder un cliente, así que conviene decirlo: hay casos donde un sitio corporativo es la opción cara e innecesaria.',
-          'Si todo tu negocio depende de una sola campaña con una sola oferta, lo que necesitas es una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a>, no un sitio de ocho páginas. Si vendes producto físico con inventario y quieres cobrar en línea, necesitas una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda</a>. Y si ya tienes un sitio que funciona pero se ve viejo, muchas veces sale mejor un <a href="/servicios/redisenio-web-panama/">rediseño</a> que empezar de cero.',
-          'El sitio corporativo tiene sentido cuando vendes servicios, cuando el cliente investiga antes de contratarte, y cuando tienes más de una cosa que ofrecer y cada una merece explicarse aparte. Ahí la estructura por páginas es lo que te hace aparecer en Google y lo que le permite al cliente entender qué haces.',
-          '<strong>Regla corta:</strong> una oferta y una campaña, landing. Producto con inventario, tienda. Varios servicios que se investigan, sitio corporativo.',
+          'Si todo tu negocio depende de una sola campaña con una sola oferta, necesitas una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a>, no un sitio de ocho páginas. Si vendes producto físico con inventario y quieres cobrar en línea, una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda</a>. Y si ya tienes un sitio que funciona pero se ve viejo, muchas veces sale mejor un <a href="/servicios/redisenio-web-panama/">rediseño</a> que empezar de cero.',
+          '<strong>Regla corta:</strong> una oferta y una campaña, landing. Producto con inventario, tienda. Varios servicios que el cliente investiga antes de contratarte, sitio corporativo: ahí la estructura por páginas es lo que te hace aparecer en Google.',
         ],
       },
       {
         type: 'prose',
         h2: 'Cuánto cuesta y cuánto tarda, con números',
         paragraphs: [
-          'Es la pregunta que todo cliente hace primero y que casi ninguna agencia panameña responde en su web. La escondemos menos: un sitio corporativo se mueve en rangos según cuántas páginas tenga, cuánto contenido haya que producir y qué integraciones necesite.',
-          'Lo que empuja el precio hacia arriba, en orden de peso: la cantidad de páginas de servicio, si hay que redactar el contenido desde cero, si necesita panel autoadministrable, si lleva integraciones con CRM o sistemas internos, y si hay versión en otro idioma.',
-          'En plazo, lo que manda no es el diseño ni la programación: es el contenido. Un proyecto con textos, fotos y logos listos avanza según lo previsto; uno donde el contenido se va escribiendo sobre la marcha se alarga con facilidad. <strong>Es la causa número uno de retraso en este tipo de proyecto</strong>, y no depende de nosotros.',
-          'El desglose completo por tipo de proyecto está en <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a> y los plazos reales en <a href="/blog/cuanto-tiempo-toma-hacer-una-pagina-web/">cuánto tiempo toma</a>.',
+          'Desde $1,250 con hasta 6 páginas, y entre 2 y 3 semanas desde que recibimos tu contenido. Lo que sube el precio, en orden de peso: la cantidad de páginas de servicio, la redacción desde cero, el panel autoadministrable, las integraciones con CRM o sistemas internos y la versión en otro idioma.',
+          'En plazo manda el contenido, no el diseño ni la programación: con textos, fotos y logo listos el proyecto avanza según lo previsto; si el contenido se escribe sobre la marcha, se alarga. El desglose está en <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a> y los plazos en <a href="/blog/cuanto-tiempo-toma-hacer-una-pagina-web/">cuánto tiempo toma</a>.',
         ],
       },
       {
@@ -331,10 +325,8 @@ export const servicios: PageData[] = [
         type: 'prose',
         h2: 'Qué medir después de lanzar',
         paragraphs: [
-          'Un sitio corporativo no se mide en visitas. Se mide en cuántas solicitudes de contacto reales entraron, de qué página vinieron y cuántas terminaron en propuesta.',
-          'El corte por página de servicio es el más útil de todos. Si una de tus cinco páginas concentra la mitad de los contactos, eso te dice qué servicio empujar comercialmente y cuál necesita otro enfoque, y suele contradecir lo que el equipo intuía.',
-          'El segundo número es de dónde llegó cada visita: búsqueda, referido, redes o pauta. Es lo que justifica —o desmiente— en qué canal estás invirtiendo, y casi nadie lo tiene separado por página de destino.',
-          'Dejamos eso medido desde el primer día en un tablero corto que se revisa en dos minutos. El planteamiento completo, en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Un sitio corporativo no se mide en visitas, sino en cuántas solicitudes de contacto reales entraron, de qué página vinieron y cuántas terminaron en propuesta. Si una de tus cinco páginas de servicio concentra la mitad de los contactos, ya sabes qué servicio empujar y cuál necesita otro enfoque.',
+          'El segundo número es de dónde llegó cada visita: búsqueda, referido, redes o pauta, separado por página de destino. Lo dejamos medido desde el primer día en un tablero corto; el planteamiento completo está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -371,7 +363,7 @@ export const servicios: PageData[] = [
       {
         type: 'steps',
         h2: 'Cómo construimos tu sitio corporativo',
-        intro: 'Un proceso claro, con hitos definidos y sin sorpresas. En cada etapa sabes qué se está haciendo y qué sigue.',
+        intro: 'Cuatro etapas; al cierre de cada una sabes qué se hizo y qué sigue.',
         items: [
           { h3: 'Estrategia y arquitectura', text: 'Definimos tu cliente ideal, las búsquedas que te traen negocio y la estructura del sitio: qué páginas crear y cómo enlazarlas para posicionar cada servicio.' },
           { h3: 'Diseño sobre tu marca', text: 'Diseñamos a medida respetando tu identidad —logo, colores, tono— y creamos una jerarquía visual que guía al visitante hacia la acción, sin ruido.' },
@@ -381,21 +373,12 @@ export const servicios: PageData[] = [
       },
       {
         type: 'cards',
-        h2: 'Para quién es este servicio',
-        intro: 'El diseño web corporativo brilla cuando la confianza es parte de la venta. Estos son los casos donde más rinde.',
+        h2: 'Para quién es el diseño web corporativo en Panamá',
+        intro: 'Rinde más cuando la confianza es parte de la venta.',
         items: [
           { h3: 'Empresas B2B y proveedores', text: 'Tu cliente investiga antes de contactarte. Un sitio sólido, con casos y páginas por servicio, es lo que inclina la balanza a tu favor frente a la competencia.' },
           { h3: 'Despachos y profesionales', text: 'Abogados, contadores, arquitectos, consultores. La percepción de seriedad se construye en los primeros segundos: tu web es tu primera reunión.' },
           { h3: 'Empresas en expansión', text: 'Si estás creciendo o entrando a nuevos mercados, necesitas una base digital escalable que sume páginas y servicios sin rehacerse cada año.' },
-        ],
-      },
-      {
-        type: 'prose',
-        h2: 'Qué separa un sitio corporativo que vende de uno que solo se ve bien',
-        paragraphs: [
-          'La mayoría de las webs corporativas en Panamá comete el mismo error: se diseñan para impresionar al dueño, no para convencer al cliente. Se llenan de fotos genéricas, frases vacías ("somos líderes en soluciones integrales") y un menú con quince opciones. El visitante no encuentra lo que busca y se va.',
-          'Un sitio que vende hace lo contrario: <strong>habla el idioma del cliente</strong>, responde sus dudas antes de que las haga y le muestra pruebas concretas de que puedes resolver su problema. Cada página tiene un propósito y termina en una acción. La estética está al servicio del mensaje, no al revés.',
-          'Esa diferencia no se ve en una captura de pantalla, se ve en los resultados: más consultas calificadas, menos curiosos, y un equipo comercial que recibe clientes que ya entienden lo que haces y llegan listos para hablar de su caso.',
         ],
       },
       { type: 'form', h2: 'Cotiza tu web corporativa', intro: 'Cuéntanos qué servicios ofreces y si ya tienes contenido: te respondemos con una propuesta cerrada.' },
@@ -441,7 +424,7 @@ export const servicios: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Desarrollamos tiendas online en Panamá desde $1,950: catálogo y carrito, Botón de Pago Yappy y una pasarela con tarjeta, envíos por zona con retiro en tienda, correos de pedido, recuperación de carritos y panel para tu equipo. Elegimos Shopify o WooCommerce según tu operación y entregamos con cotización cerrada por escrito.',
+        text: 'Elemento Web desarrolla tiendas online en Panamá desde $1,950, desde Ciudad de Panamá: catálogo con carga inicial de hasta 25 productos, Botón de Pago Yappy y tarjeta, envíos por zona con retiro en tienda, correos de pedido, recuperación de carritos y panel para tu equipo. Shopify o WooCommerce según tu operación, en 3 a 5 semanas.',
       },
       {
         type: 'receipt',
@@ -506,7 +489,7 @@ export const servicios: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye tu tienda online',
+        h2: 'Qué incluye tu tienda online en Panamá',
         intro: 'Desde $1,950, con cotización cerrada según catálogo e integraciones.',
         incluye: [
           { t: 'Catálogo y carrito', d: 'Carga inicial de hasta 25 productos, con categorías, variantes e inventario propio.' },
@@ -525,7 +508,7 @@ export const servicios: PageData[] = [
       {
         type: 'steps',
         h2: 'Cómo lanzamos tu tienda',
-        intro: 'Del catálogo a la primera venta con un proceso probado que reduce el riesgo en cada etapa.',
+        intro: 'Del catálogo a la primera venta, en cuatro etapas.',
         items: [
           { h3: 'Estrategia comercial', text: 'Definimos tu catálogo, márgenes, formas de pago y logística de envíos. Elegimos entre Shopify o WooCommerce según tu operación, no por moda.' },
           { h3: 'Montaje del catálogo', text: 'Cargamos productos con fichas orientadas a conversión: fotos, descripciones que venden, variantes y categorías pensadas para que el cliente encuentre y compre.' },
@@ -537,19 +520,15 @@ export const servicios: PageData[] = [
         type: 'prose',
         h2: 'Cobrar en línea en Panamá: lo que hay que resolver antes de vender',
         paragraphs: [
-          'Montar el catálogo es la parte fácil. Lo que decide si la tienda vende es el último paso, y en Panamá ese paso tiene particularidades que ninguna plantilla internacional resuelve sola.',
-          'La primera es <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a>. Para buena parte del país es la forma natural de pagar, y su ausencia manda al cliente de vuelta al mensaje directo, que es justo lo que la tienda venía a evitar. Con Yappy y tarjeta cubres casi todo el mercado.',
-          'La segunda es el ITBMS: el precio tiene que mostrarse con claridad, no aparecer como sorpresa al final. Y la tercera es el envío, que en Panamá es donde más carritos se pierden: costo visible antes del checkout, plazo distinto para ciudad y para interior, y retiro en tienda como opción, que funciona mejor de lo que muchos creen.',
-          '<strong>El envío que aparece de sorpresa en el último paso es la causa más común de carrito abandonado en Panamá.</strong> Lo desarrollamos en <a href="/blog/carritos-abandonados-como-recuperar-ventas/">cómo recuperar carritos abandonados</a>.',
+          'Lo que decide si una tienda vende en Panamá es el último paso, y tiene tres particularidades que una plantilla internacional no resuelve sola. La primera es <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a>: para buena parte del país es la forma natural de pagar, y sin él el cliente vuelve al mensaje directo. Con Yappy y tarjeta cubres casi todo el mercado.',
+          'La segunda es el ITBMS, que debe verse en el precio y no aparecer de sorpresa al final. La tercera es el envío: costo visible antes del pago, plazo distinto para ciudad e interior, y retiro en tienda como opción. Cómo recuperar las ventas que se caen ahí, en <a href="/blog/carritos-abandonados-como-recuperar-ventas/">cómo recuperar carritos abandonados</a>.',
         ],
       },
       {
         type: 'prose',
         h2: 'Shopify o WooCommerce: la regla de decisión, sin ideología',
         paragraphs: [
-          'Las dos plataformas funcionan y las dos se usan mal. La elección correcta depende de tres cosas concretas, no de cuál esté de moda.',
-          'La primera es quién va a operar la tienda. Si el equipo no es técnico y nadie va a encargarse de actualizaciones, <a href="/tecnologias/diseno-web-shopify-panama/">Shopify</a> se sostiene solo a cambio de una mensualidad y una comisión. Si tienes quien mantenga, WooCommerce sale más barato en el tiempo, y lo entregamos con <a href="/crecimiento/hosting-infraestructura-panama/">hosting gestionado</a>.',
-          'La segunda es cuánto necesitas salirte del molde. WooCommerce permite prácticamente cualquier cosa porque el código es tuyo; Shopify es más rígido y esa rigidez es justamente lo que lo mantiene estable. La tercera es el volumen: la comisión por transacción de Shopify empieza a pesar cuando la facturación sube.',
+          'Deciden tres cosas. Quién opera la tienda: si el equipo no es técnico, <a href="/tecnologias/diseno-web-shopify-panama/">Shopify</a> se sostiene solo a cambio de mensualidad y comisión; si hay quien mantenga, WooCommerce sale más barato en el tiempo y lo entregamos con <a href="/crecimiento/hosting-infraestructura-panama/">hosting gestionado</a>. Cuánto necesitas salirte del molde: WooCommerce permite casi todo porque el código es tuyo. Y el volumen: la comisión por venta de Shopify pesa más cuando la facturación sube.',
           '<strong>Regla corta:</strong> equipo no técnico y catálogo estándar, Shopify. Necesidades particulares, integraciones propias o volumen alto con margen ajustado, WooCommerce. La comparativa completa está en <a href="/blog/shopify-vs-woocommerce-panama/">Shopify vs WooCommerce en Panamá</a>.',
         ],
       },
@@ -572,16 +551,14 @@ export const servicios: PageData[] = [
         type: 'prose',
         h2: 'Qué medir: dónde se cae la gente antes de pagar',
         paragraphs: [
-          'La métrica que manda no es la visita ni siquiera la venta: es el embudo. Cuántos vieron un producto, cuántos agregaron al carrito, cuántos llegaron al pago y cuántos terminaron.',
-          'Ese desglose señala el problema con precisión. Si mucha gente agrega al carrito y abandona al ver el envío, el problema es el envío, y ninguna campaña de publicidad lo va a arreglar. Si nadie agrega al carrito, el problema está en la ficha del producto o en el precio.',
-          'El segundo dato es qué productos generan visitas sin venta. Suele haber artículos que atraen mucho y convierten poco, casi siempre por falta de tallas, fotos pobres o descripción que no responde la duda. Eso se arregla sin gastar un peso.',
-          'Y el ticket promedio, que es lo que dice si conviene trabajar en vender más por pedido en vez de en conseguir más pedidos. Lo dejamos medido desde el lanzamiento.',
+          'La métrica que manda es el embudo: cuántos vieron un producto, agregaron al carrito, llegaron al pago y terminaron. Si abandonan al ver el envío, el problema es el envío y ninguna campaña lo arregla; si nadie agrega al carrito, el problema está en la ficha o en el precio.',
+          'Después, qué productos reciben visitas sin venta (casi siempre por tallas, fotos o una duda sin responder) y el ticket promedio, que dice si conviene vender más por pedido antes que buscar más pedidos. Todo queda medido desde el lanzamiento.',
         ],
       },
       {
         type: 'cards',
         h2: 'Para quién es una tienda online',
-        intro: 'El e-commerce rinde distinto según tu modelo. Estos son los casos donde una tienda propia marca la diferencia.',
+        intro: 'Los tres casos donde una tienda propia rinde más.',
         items: [
           { h3: 'Comercios con inventario', text: 'Ropa, accesorios, tecnología, hogar. Si vendes productos físicos, una tienda propia te libera de las comisiones y las reglas de los marketplaces.' },
           { h3: 'Marcas que venden por redes', text: 'Si hoy vendes por DM y transferencia, una tienda profesionaliza el proceso: el cliente compra solo, paga con Yappy y tú dejas de perder ventas fuera de horario.' },
@@ -663,7 +640,7 @@ export const servicios: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Diseñamos landing pages en Panamá desde $550: una página de hasta 7 secciones con una sola oferta y una sola acción, botón de WhatsApp con el mensaje de la campaña ya escrito, formulario corto y medición de conversiones para Meta y Google Ads. Se entrega en 5 días hábiles desde recibir el contenido y aprobar el alcance.',
+        text: 'Elemento Web diseña landing pages en Panamá desde $550, desde Ciudad de Panamá: una página de hasta 7 secciones con una sola oferta y una sola acción, WhatsApp con el mensaje de la campaña ya escrito, formulario corto y conversiones medidas para Meta y Google Ads. Entrega en 5 días hábiles desde recibir el contenido y aprobar el alcance.',
       },
       {
         type: 'receipt',
@@ -736,8 +713,8 @@ export const servicios: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye tu landing',
-        intro: 'Desde $550, con hasta 7 secciones y 2 rondas de revisión del diseño. Entrega en 5 días hábiles desde recibir el contenido y aprobar el alcance.',
+        h2: 'Qué incluye tu landing page en Panamá',
+        intro: 'Desde $550, con hasta 7 secciones y 2 rondas de revisión del diseño.',
         incluye: [
           { t: 'Estructura de conversión', d: 'Promesa, prueba, oferta y acción, en el orden en que decide el visitante.' },
           { t: 'Tus textos, afinados', d: 'Titulares, orden y llamados a la acción a partir de tu material (la redacción desde cero se cotiza aparte).' },
@@ -759,22 +736,21 @@ export const servicios: PageData[] = [
         items: [
           { h3: 'Brief de la oferta', text: 'Entendemos tu oferta, tu público y la acción que quieres provocar. Definimos la promesa central y la objeción principal a resolver.' },
           { h3: 'Estructura y textos', text: 'Armamos la página con arquitectura de conversión, a partir de tu material: titular, prueba, beneficios, manejo de objeciones y llamado a la acción, en el orden que decide el visitante.' },
-          { h3: 'Diseño y velocidad', text: 'Diseñamos a medida y optimizamos la carga para pauta móvil. Una landing lenta quema presupuesto antes de que el visitante la vea.' },
+          { h3: 'Diseño y velocidad', text: 'Diseñamos a medida y optimizamos la carga para quien llega desde un anuncio en el celular.' },
           { h3: 'Medición y ajuste', text: 'Conectamos los eventos de conversión de Meta y Google Ads, publicamos y ajustamos tras la primera semana con datos reales de la campaña.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'Landing page o sitio web: la regla para decidir en un minuto',
+        h2: 'Una landing por oferta y por campaña',
         paragraphs: [
-          'Una landing existe para que el visitante haga una sola cosa; un sitio, para que encuentre entre varias. Si hay pauta detrás y una sola oferta, el destino debe ser una landing, sin menú y con una sola acción posible. Si el cliente necesita investigarte y comparar antes de escribir, necesitas un sitio.',
-          'Una landing alineada con tu campaña puede mejorar la conversión, porque el anuncio, el titular y la acción piden lo mismo. Medimos los resultados para identificar qué conviene ajustar, y lo recomendable es una landing por oferta y audiencia. Más detalle en <a href="/marketing/google-ads-panama/">Google Ads</a> y <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a>.',
+          'Si hay pauta detrás y una sola oferta, el destino debe ser una landing sin menú y con una sola acción posible. Cuando el anuncio, el titular y el botón piden lo mismo, el visitante no se pierde en el camino; por eso conviene una landing por oferta y audiencia, y medir cada una para saber qué ajustar. La pauta, en <a href="/marketing/google-ads-panama/">Google Ads</a> y <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a>.',
         ],
       },
       {
         type: 'cards',
         h2: 'Tipos de landing que construimos',
-        intro: 'No todas las campañas piden la misma página. Adaptamos la estructura al objetivo.',
+        intro: 'La estructura cambia según lo que la campaña tiene que conseguir.',
         items: [
           { h3: 'Captación de leads', text: 'Formulario corto o botón a WhatsApp para llenar tu pipeline. Ideal para servicios, consultorías e inmobiliarias que cierran por conversación.' },
           { h3: 'Venta directa', text: 'Una oferta con precio y botón de compra o pago con Yappy. Para productos, cursos, eventos y promociones con acción inmediata.' },
@@ -850,7 +826,7 @@ export const servicios: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Rediseñamos sitios web en Panamá cuidando el posicionamiento que ya ganaste: auditamos el sitio actual, inventariamos cada URL con sus visitas y enlaces, reconstruimos diseño, velocidad y estructura de venta, y aplicamos las redirecciones 301 el mismo día del lanzamiento. Después vigilamos Search Console para confirmar que el tráfico se mantiene. Cotización cerrada tras la auditoría.',
+        text: 'Elemento Web hace rediseño web en Panamá cuidando el posicionamiento ya ganado: audita el sitio, inventaría cada URL con sus visitas y enlaces, reconstruye diseño y velocidad, y aplica las redirecciones 301 el día del lanzamiento, sin cobrar aparte el mapa. Toma de 2 a 4 semanas y se cotiza cerrado tras la auditoría, desde Ciudad de Panamá.',
       },
       {
         type: 'receipt',
@@ -911,7 +887,7 @@ export const servicios: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye el rediseño',
+        h2: 'Qué incluye el rediseño web en Panamá',
         intro: 'Cotización cerrada después de la auditoría. Como referencia, un rediseño corporativo parte del precio de un <a href="/servicios/diseno-web-corporativo-panama/">sitio nuevo</a> más la auditoría y la migración.',
         incluye: [
           { t: 'Auditoría con datos', d: 'Velocidad, SEO actual, contenido que posiciona y fallas de conversión, con números de partida.' },
@@ -955,9 +931,7 @@ export const servicios: PageData[] = [
         type: 'prose',
         h2: 'Rediseñar o rehacer: cómo saber cuál te toca',
         paragraphs: [
-          'No son lo mismo y confundirlos cuesta caro en las dos direcciones. Rediseñar es cambiar la piel y la estructura conservando lo que funciona. Rehacer es empezar de cero, con dominio y contenido nuevos.',
-          'Conviene rediseñar cuando el sitio tiene historial que vale la pena conservar: páginas que ya posicionan en Google, contenido que trae visitas, enlaces de otros sitios apuntando al tuyo. Todo eso es un activo que se construyó con años y que se puede perder en una tarde si se rehace mal.',
-          'Conviene rehacer cuando la base es insalvable: una plataforma que ya no se actualiza, un sitio sin nada posicionado, o una estructura tan enredada que arreglarla cuesta más que empezar limpio.',
+          'Rediseñar es cambiar la piel y la estructura conservando lo que funciona; rehacer es empezar de cero. Conviene rediseñar cuando hay historial que conservar: páginas que posicionan, contenido que trae visitas, enlaces de otros sitios. Conviene rehacer cuando la base es insalvable: una plataforma que ya no se actualiza, nada posicionado o una estructura que cuesta más arreglar que empezar limpio.',
           '<strong>La pregunta que decide:</strong> ¿tu sitio actual recibe visitas desde Google? Si sí, hay algo que conservar y hay que auditar antes de tocar nada. Si no, no hay nada que perder.',
         ],
       },
@@ -965,10 +939,8 @@ export const servicios: PageData[] = [
         type: 'prose',
         h2: 'Las redirecciones son la parte aburrida que salva el proyecto',
         paragraphs: [
-          'Es el punto donde más rediseños se arruinan, y ocurre semanas después del lanzamiento, cuando el tráfico ya cayó y nadie sabe por qué.',
-          'Cuando un sitio cambia, las direcciones de las páginas suelen cambiar con él. Si nadie le dice a Google que la página vieja ahora vive en otra dirección, ese enlace muere: el visitante encuentra un error, y el posicionamiento que esa página tenía se pierde entero.',
-          'La solución es un mapa de redirecciones: una lista de cada dirección vieja y su equivalente nueva, aplicada el mismo día del lanzamiento. No es glamoroso y es lo que separa un rediseño que mantiene el tráfico de uno que lo tira.',
-          'Por eso empezamos por el inventario del sitio actual: qué páginas existen, cuáles reciben visitas y cuáles tienen enlaces externos. <strong>Ese inventario es lo que permite reducir el riesgo de perder lo ganado</strong>, y es exactamente lo que se salta quien rehace sin auditar. Paso a paso en el <a href="/recursos/checklist-migracion-seo/">checklist de migración SEO</a>.',
+          'Cuando un sitio cambia, las direcciones de sus páginas suelen cambiar con él. Si nadie le dice a Google dónde vive ahora cada página vieja, el enlace muere, el visitante encuentra un error y el posicionamiento de esa página se pierde. Pasa semanas después del lanzamiento, cuando el tráfico ya cayó, y por eso la auditoría y el mapa de redirecciones 301 son etapas obligatorias de nuestro proceso, no un extra.',
+          'El mapa sale del inventario del sitio actual: qué páginas existen, cuáles reciben visitas y cuáles tienen enlaces externos. <strong>Ese inventario es lo que permite reducir el riesgo de perder lo ganado</strong>, y es exactamente lo que se salta quien rehace sin auditar. Paso a paso en el <a href="/recursos/checklist-migracion-seo/">checklist de migración SEO</a>.',
         ],
       },
       {
@@ -990,25 +962,14 @@ export const servicios: PageData[] = [
         type: 'prose',
         h2: 'Qué medir: comparar contra el sitio viejo, no contra cero',
         paragraphs: [
-          'Un rediseño se mide comparando, y para poder comparar hay que anotar los números antes de tocar nada. Es el paso que casi todo el mundo se salta y después no puede demostrar si mejoró.',
-          'Lo mínimo que hay que registrar antes: visitas mensuales, cuántas llegaron de buscadores, cuántos contactos entraron al mes, velocidad en celular y cuántas páginas están indexadas. Con eso se puede afirmar algo después.',
-          'Tras el lanzamiento, la señal más importante en las primeras semanas es que el tráfico de buscadores no caiga. Una bajada sostenida casi siempre significa redirecciones mal hechas, y se arregla rápido si se detecta a tiempo. Por eso se vigila desde el primer día, no al mes.',
+          'Antes de tocar nada se anotan visitas mensuales, visitas desde buscadores, contactos al mes, velocidad en celular y páginas indexadas; sin esa línea base no hay forma de demostrar si el rediseño mejoró. Después, la señal de las primeras semanas es que el tráfico de buscadores no caiga: una bajada sostenida casi siempre es una redirección mal hecha, y se vigila desde el primer día.',
           '<strong>El objetivo del rediseño no es verse mejor: es convertir más.</strong> Si el sitio quedó precioso y los contactos bajaron, el rediseño salió mal aunque a todo el mundo le guste.',
-        ],
-      },
-      {
-        type: 'prose',
-        h2: 'El error caro: rehacer sin auditar',
-        paragraphs: [
-          'Es una historia frecuente: «rediseñamos la web hace seis meses, se ve preciosa, pero desde entonces no nos llega ni una consulta». Casi siempre la causa es la misma: alguien rehízo el sitio sin un mapa de URLs ni redirecciones, y Google perdió el rastro de todas las páginas que posicionaban.',
-          'El posicionamiento en Google es un activo que se construye durante años. Cada URL que posicionaba tenía autoridad acumulada. Cuando cambias la estructura sin redirigir las URLs antiguas a las nuevas, esa autoridad se pierde de la noche a la mañana: el sitio nuevo arranca de cero, como si acabara de nacer.',
-          'Por eso en nuestro proceso la <strong>auditoría y el mapa de redirecciones 301 son etapas obligatorias</strong>, no un extra que se cobra aparte. Un sitio bonito que nadie encuentra no es un rediseño: es un retroceso caro.',
         ],
       },
       {
         type: 'cards',
         h2: 'Qué mejora un rediseño bien hecho',
-        intro: 'No es solo estética. Un rediseño con estrategia mueve las métricas que importan para tu negocio.',
+        intro: 'Tres cambios que se miden, además de la estética.',
         items: [
           { h3: 'Velocidad y experiencia', text: 'Un sitio que carga rápido y se ve impecable en celular retiene más visitantes y convierte mejor. Google también lo premia con mejor posición.' },
           { h3: 'Estructura de conversión', text: 'Reorganizamos el contenido para que cada página guíe hacia una acción. El visitante deja de perderse y empieza a contactarte.' },

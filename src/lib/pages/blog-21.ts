@@ -18,23 +18,22 @@ export const blog21: PageData[] = [
       alt: 'Interior moderno de un salón de belleza con estaciones de peinado y espejos, luz suave y estética minimalista, sin personas visibles',
     },
     lead: [
-      'Nadie decide dónde cortarse el pelo o hacerse las uñas mirando la fachada del local. Decide viendo el trabajo de una persona: desliza el feed de Instagram, compara dos o tres perfiles, y cuando encuentra el corte, el diseño o el tratamiento que quiere, no está buscando "un salón": está buscando a esa estilista, ese barbero o esa cosmetóloga en particular, y quiere saber si tiene un cupo esta semana.',
-      'En esta guía repasamos lo que de verdad mueve la aguja en belleza y spas: una reserva que deje elegir profesional, no solo servicio; un portafolio de resultados reales que reemplace la descripción; y el recordatorio automático que ataca el ausentismo, uno de los gastos más caros y menos medidos del rubro. También decimos, con honestidad, cuándo todavía no conviene invertir en nada de esto.',
+      'El diseño web para salones de belleza y spas en Panamá llena la agenda con tres piezas: reserva en línea que deja elegir a la estilista o terapeuta, no solo el horario; un portafolio de resultados reales por servicio; y recordatorios automáticos contra el ausentismo. Así las armamos en Elemento Web, en Ciudad de Panamá.',
+      'La clienta no busca "un salón": busca a esa estilista, ese barbero o esa cosmetóloga cuyo trabajo vio en Instagram, y quiere saber si tiene cupo esta semana. Esta guía explica cada pieza, los precios y cuándo todavía no conviene invertir.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'En belleza no se elige un local: se elige a una persona',
+        h2: '¿Por qué en belleza se reserva con una persona y no con un local?',
         paragraphs: [
-          'Un restaurante compite por la mesa; una tienda, por el precio. Un salón o un spa compite por la fidelidad a una persona específica, y esa diferencia cambia todo lo que la web tiene que resolver. La clienta que vuelve cada seis semanas por su color no vuelve "al salón": vuelve a que la atienda su colorista, la que ya conoce su cabello y no tiene que empezar de cero cada vez.',
-          'La mayoría de las webs del rubro ignoran esto por completo. Ofrecen un formulario de reserva que pregunta el servicio y muestra un horario genérico, como si cualquier estilista disponible sirviera igual. Para el negocio es más simple de programar; para la clienta que quiere a "su" persona, es una razón para volver a escribir por WhatsApp y preguntar si esa estilista tiene espacio, que es exactamente el paso manual que la web debería haber evitado.',
-          'Resolver esto bien exige dos piezas que casi nunca van juntas en una web de salón: un perfil real por profesional (quién es, qué hace mejor, su propio trabajo) y una reserva que filtre disponibilidad por esa persona, no por el local completo. Entramos en el detalle de cómo estructurar las dos en nuestra guía de <a href="/industrias/diseno-web-belleza-spa-panama/">diseño web para belleza y spas</a>.',
+          'La clienta que vuelve cada seis semanas por su color no vuelve "al salón": vuelve con su colorista, la que ya conoce su cabello. Aun así, la mayoría de las webs del rubro ofrecen un formulario que pregunta el servicio y muestra un horario genérico, como si cualquier estilista sirviera igual. Resultado: la clienta vuelve a escribir por WhatsApp para preguntar si "su" persona tiene espacio, el paso manual que la web debía evitar.',
+          'Resolverlo exige dos piezas juntas: un perfil real por profesional (quién es, qué hace mejor, su propio trabajo) y una reserva que filtre disponibilidad por esa persona. El detalle está en nuestra guía de <a href="/industrias/diseno-web-belleza-spa-panama/">diseño web para belleza y spas</a>.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Lo que la web de un salón o spa necesita para convertir en reservas, no solo en "me gusta"',
-        intro: 'Si te faltan más de dos de estos, hay clientas que ya te encontraron y no supieron cómo reservar contigo.',
+        h2: '¿Qué debe tener el diseño web de un salón de belleza o spa?',
+        intro: 'Si te faltan más de dos, hay clientas que ya te encontraron y no supieron cómo reservar contigo.',
         items: [
           'Reserva en línea que deje elegir profesional específico, no solo un horario cualquiera',
           'Galería de resultados reales organizada por servicio (cortes, uñas, tratamientos), nunca banco de imágenes',
@@ -48,23 +47,22 @@ export const blog21: PageData[] = [
       },
       {
         type: 'steps',
-        h2: 'Cómo funciona una reserva por estilista, paso a paso',
-        intro: 'No es más complicado que cualquier sistema de reservas genérico. Es el mismo flujo, con un paso que la mayoría se salta.',
+        h2: '¿Cómo funciona una reserva por estilista, paso a paso?',
+        intro: 'Es el mismo flujo de cualquier sistema de reservas, con un paso que la mayoría se salta.',
         items: [
-          { h3: '1. Elegir el servicio', text: 'Corte, color, manicura, masaje: la clienta empieza igual que en cualquier sistema de reservas, eligiendo qué necesita.' },
-          { h3: '2. Elegir a la persona, no solo el horario', text: 'Aquí está la diferencia real: en vez de un calendario genérico del local, la clienta ve la disponibilidad de "su" estilista o de quien prefiera, y reserva directo con esa persona.' },
+          { h3: '1. Elegir el servicio', text: 'Corte, color, manicura, masaje: la clienta empieza eligiendo qué necesita.' },
+          { h3: '2. Elegir a la persona, no solo el horario', text: 'En vez de un calendario genérico del local, la clienta ve la disponibilidad de "su" estilista o de quien prefiera, y reserva directo con esa persona.' },
           { h3: '3. Confirmar, con anticipo si el servicio lo amerita', text: 'En tratamientos largos o de ticket alto, un pequeño anticipo por <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy o tarjeta</a> convierte una reserva en un compromiso real, no en una intención.' },
-          { h3: '4. Recordatorio automático, no un mensaje manual', text: 'El propio <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas</a> avisa un día antes, sin que nadie en el salón tenga que acordarse de hacerlo.' },
-          { h3: '5. Volver a reservar con la misma persona', text: 'Al salir de la cita, un enlace corto para agendar la próxima con el mismo profesional es lo que de verdad construye recurrencia, más que cualquier promoción.' },
+          { h3: '4. Recordatorio automático, no un mensaje manual', text: 'El propio <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas</a> avisa un día antes, sin que nadie en el salón tenga que acordarse.' },
+          { h3: '5. Volver a reservar con la misma persona', text: 'Al salir de la cita, un enlace corto para agendar la próxima con el mismo profesional construye recurrencia mejor que cualquier promoción.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'El portafolio visual: aquí se elige con los ojos',
+        h2: '¿Qué fotos debe mostrar el portafolio de un salón o spa?',
         paragraphs: [
-          'Nadie reserva un balayage, un diseño de uñas o un tratamiento facial leyendo que el salón ofrece "servicios de calidad". Se convence viendo el resultado en un cabello, unas manos o una piel parecida a la suya. El portafolio no es una sección decorativa de la web: es, con diferencia, lo que más empuja a reservar a quien todavía está comparando.',
-          'Por eso el banco de imágenes juega en contra en este rubro más que en casi cualquier otro. Una clienta que ya vio cientos de fotos de belleza en Instagram reconoce al instante una foto de stock, y lo que transmite no es "somos profesionales": transmite que ese salón no tiene trabajo propio que mostrar, que es la peor señal posible antes de confiarle el cabello o la piel a alguien.',
-          'Instagram y la web no compiten, se reparten el trabajo: Instagram es donde se descubre, pero no responde precio, duración ni disponibilidad real sin que alguien conteste un mensaje. Por eso una campaña de <a href="/marketing/facebook-instagram-ads-panama/">Facebook e Instagram Ads</a> rinde mucho más cuando manda el clic a una página con portafolio y reserva real, que cuando termina, otra vez, en una bandeja de mensajes directos sin responder.',
+          'Resultados propios, organizados por servicio. Nadie reserva un balayage, un diseño de uñas o un facial leyendo "servicios de calidad": se convence viendo el resultado en un cabello, unas manos o una piel parecida a la suya. Una clienta que ya vio cientos de fotos de belleza en Instagram reconoce al instante una foto de stock, y lo que entiende es que ese salón no tiene trabajo propio que mostrar.',
+          'Instagram y la web se reparten el trabajo: Instagram descubre, pero no responde precio, duración ni disponibilidad sin que alguien conteste. Por eso una campaña de <a href="/marketing/facebook-instagram-ads-panama/">Facebook e Instagram Ads</a> rinde más cuando manda el clic a una página con portafolio y reserva real que cuando termina en una bandeja de mensajes sin responder.',
         ],
       },
       {
@@ -74,29 +72,26 @@ export const blog21: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El ausentismo: el gasto silencioso que casi nadie mide en belleza',
+        h2: '¿Cómo reducir el ausentismo en un salón de belleza?',
         paragraphs: [
-          'Cada cita en un salón o spa reserva el tiempo de una persona específica, no de un mostrador. Cuando una clienta no llega y no avisa, ese bloque no se recupera: el estilista se queda sin ingresos por esa hora y, salvo que alguien de última hora cubra el hueco, el negocio también. Multiplicado por semana, es de lo que más margen se lleva en el rubro, y casi nadie lo mide como un número real.',
-          'Recordar por WhatsApp uno por uno funciona a medias y le cuesta tiempo a recepción, que ya está ocupada con quien sí está en el salón. Un recordatorio automático, disparado por el propio sistema de reservas un día antes, resuelve la parte del ausentismo que es simple olvido, sin sumarle trabajo a nadie.',
-          'Lo que el recordatorio no resuelve es a quien nunca pensó cumplir. Ahí es donde un anticipo pequeño, aplicado solo a los servicios donde el hueco duele de verdad, filtra distinto: la clienta que valora tu tiempo lo paga sin pensarlo, y la que iba a faltar generalmente ni siquiera llega a reservar.',
+          'Cada cita reserva el tiempo de una persona específica: si la clienta no llega ni avisa, ese bloque no se recupera y el estilista se queda sin ingresos por esa hora. Recordar por WhatsApp uno por uno funciona a medias y le quita tiempo a recepción. Un recordatorio automático disparado por el sistema de reservas un día antes resuelve el ausentismo que es simple olvido.',
+          'Para quien nunca pensó cumplir, funciona un anticipo pequeño aplicado solo a los servicios donde el hueco duele: la clienta que valora tu tiempo lo paga sin pensarlo, y la que iba a faltar normalmente ni reserva.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Precios reales: cuánto cuesta la web de un salón o spa en Panamá',
+        h2: '¿Cuánto cuesta la web de un salón o spa en Panamá?',
         paragraphs: [
-          'Para un salón con más de un estilista y servicios que se buscan por separado, la <strong>Web empresarial desde $1,250</strong> es el punto de partida habitual: página por servicio, reserva por profesional y blog para aparecer en búsquedas puntuales. Un salón unipersonal que recién arranca puede empezar con una <strong>landing page desde $550</strong>: presencia, portafolio inicial y WhatsApp directo, sin la estructura completa todavía. Si además vendes línea de productos propia en línea, es <strong>E-commerce desde $1,950</strong>; y una cadena con varias sedes, agendas independientes y cobro anticipado entra como <strong>proyecto corporativo desde $2,900</strong>.',
-          'A eso se suma la infraestructura, que no es opcional: dominio, hosting y certificado SSL van desde <strong>$225 al año</strong> en el plan compartido, <strong>$350 al año</strong> en el plan cloud (el recomendado para la mayoría) o <strong>$550 al año</strong> en VPS dedicado para operaciones grandes. El mantenimiento mensual —actualizaciones, respaldos y monitoreo— arranca en <strong>$99</strong>, sube a <strong>$169</strong> si tu agenda y tu facturación no pueden darse el lujo de una caída, y llega a <strong>$319</strong> para operaciones que no pueden esperar ni un día a que alguien responda.',
-          'Todos estos precios son en dólares y no incluyen el 7% de ITBMS. El desglose completo, con lo que suma o resta al costo según el proyecto, está en nuestra guía de <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a>.',
+          'Para un salón con más de un estilista y servicios que se buscan por separado, la <strong>Web empresarial desde $1,250</strong> es el punto de partida habitual: página por servicio, reserva por profesional y blog. Un salón unipersonal que arranca puede empezar con una <strong>landing page desde $550</strong>: portafolio inicial y WhatsApp directo. Si vendes línea de productos propia en línea, es <strong>E-commerce desde $1,950</strong>; una cadena con varias sedes, agendas independientes y cobro anticipado entra como <strong>proyecto corporativo desde $2,900</strong>.',
+          'La infraestructura —dominio, hosting y SSL— va desde <strong>$225 al año</strong> en el plan compartido, <strong>$350 al año</strong> en el cloud (el recomendado para la mayoría) o <strong>$550 al año</strong> en VPS dedicado. El mantenimiento mensual arranca en <strong>$99</strong>, sube a <strong>$169</strong> si tu agenda no puede darse el lujo de una caída y llega a <strong>$319</strong> para operaciones que no pueden esperar un día por respuesta. Precios en dólares, sin el 7% de ITBMS; el desglose está en <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene invertir todavía en todo esto',
+        h2: '¿Cuándo no conviene invertir todavía en la web de un salón?',
         paragraphs: [
-          'Si tu salón es unipersonal, la agenda ya se llena solo con referidos y no te interesa captar clientela nueva por internet, montar un sistema de reservas por profesional, portafolio y pauta es resolver un problema que hoy no tienes. Un perfil simple con tus datos, algunas fotos de tu trabajo y un botón de WhatsApp puede ser más que suficiente, y gastar de más ahí no te devuelve nada.',
-          'Tampoco conviene mostrar un portafolio a medias. Si apenas estás empezando y todavía no tienes fotos propias de resultados —solo un par de trabajos, con mala luz o de hace tiempo—, rellenar la web con imágenes de banco disfrazadas de trabajo propio se nota casi de inmediato en este rubro, y cuesta más confianza de la que ahorra tiempo. Mejor esperar a tener diez o doce fotos reales, buenas, y salir con eso.',
-          'Donde sí se justifica invertir es cuando ya tienes más de un profesional compitiendo por agenda propia, cuando dependes de clientela nueva y no solo de referidos, o cuando el ausentismo ya se nota en los números del mes. Ahí una reserva bien construida puede recuperar su costo en pocos meses.',
+          'Si tu salón es unipersonal, la agenda se llena con referidos y no buscas clientela nueva por internet, una reserva por profesional, portafolio y pauta resuelven un problema que no tienes: basta un perfil simple con fotos de tu trabajo y un botón de WhatsApp. Tampoco conviene salir con un portafolio a medias: rellenar con imágenes de banco disfrazadas de trabajo propio se nota y cuesta confianza. Mejor esperar a tener diez o doce fotos reales y buenas.',
+          'Sí se justifica cuando tienes más de un profesional con agenda propia, dependes de clientela nueva y no solo de referidos, o el ausentismo ya se nota en los números del mes.',
         ],
       },
       {

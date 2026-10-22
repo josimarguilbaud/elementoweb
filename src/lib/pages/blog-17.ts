@@ -19,23 +19,21 @@ export const blog17: PageData[] = [
       alt: 'Teléfono con calendario de reservas frente a un hotel boutique al atardecer, para hoteles y turismo en Panamá',
     },
     lead: [
-      'Un huésped te encuentra en Booking o Airbnb, mira las fotos, y antes de reservar abre otra pestaña y busca el nombre de tu hotel en Google. Ese segundo clic es la oportunidad más barata que vas a tener para recuperar la comisión — y se desperdicia cuando el sitio no le da ninguna razón para reservar ahí en vez de volver a la app.',
-      'Booking y Airbnb cobran entre el 15% y el 20% de cada reserva que pasa por ellos: una de cada cinco o seis noches, regalada. En esta guía vemos qué necesita de verdad la web de un hotel, posada u operador turístico para ganar esa reserva directa, y también cuándo, con honestidad, todavía no conviene meterse en esto.',
+      'El diseño web para hoteles y turismo en Panamá sirve para ganar la reserva directa que hoy paga entre 15% y 20% de comisión a Booking o Airbnb. Necesita motor de reservas con precio visible, una razón concreta para reservar directo, fotos reales de cada habitación y contenido de destino. Así lo armamos en Elemento Web, Ciudad de Panamá.',
+      'El momento clave llega cuando el huésped te encuentra en la OTA y busca el nombre de tu hotel en Google antes de reservar. Esta guía explica cómo ganar ese segundo clic y cuándo, con honestidad, todavía no conviene meterse en esto.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'El huésped ya te encontró en la OTA. Falta darle una razón para no reservar ahí',
+        h2: '¿Por qué un hotel que ya está en Booking necesita web propia?',
         paragraphs: [
-          'Nadie llega a Booking o Airbnb por accidente: son la puerta de entrada de casi todo el turismo que todavía no te conoce, y quitarte de ahí para "ahorrar comisión" espantaría al huésped nuevo antes de que exista. El problema no es aparecer en la OTA — es lo que pasa después, cuando ese mismo huésped, ya interesado, busca tu nombre para confirmar que el lugar es real antes de decidir dónde completar la reserva.',
-          'Si tu web no aparece, o aparece pero no dice nada que Booking no diga ya, ese huésped no tiene ningún motivo para cambiar de pestaña. Reserva donde ya tiene la tarjeta guardada y el proceso conocido, y la comisión se va con él. Si en cambio encuentra una tarifa mejor, una foto que confirma lo que vio, y un botón claro para reservar, la decisión cambia sin que tengas que convencerlo de nada raro.',
-          'Ese es el trabajo real de la web de un negocio turístico: no compite contra la OTA por visibilidad, compite por la decisión final del huésped que ya te encontró. Entramos en el detalle completo de cómo se arma esa web —motor de reservas, sincronización de canales, contenido bilingüe— en nuestra página de <a href="/industrias/diseno-web-turismo-hoteles-panama/">diseño web para turismo y hoteles</a>.',
+          'Booking y Airbnb son la puerta de entrada del turismo que todavía no te conoce; salirse para "ahorrar comisión" espantaría al huésped nuevo. El problema es lo que pasa después: ese huésped, ya interesado, busca tu nombre para confirmar que el lugar es real antes de decidir dónde completar la reserva.',
+          'Si tu web no aparece o no dice nada que Booking no diga ya, reserva donde tiene la tarjeta guardada y la comisión se va con él. Si encuentra una tarifa mejor, una foto que confirma lo que vio y un botón claro para reservar, la decisión cambia. La web no compite con la OTA por visibilidad: compite por la decisión final. El detalle técnico (motor de reservas, sincronización de canales, contenido bilingüe) está en nuestra página de <a href="/industrias/diseno-web-turismo-hoteles-panama/">diseño web para turismo y hoteles</a>.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Lo que necesita la web de un hotel u hospedaje para ganar la reserva directa',
-        intro: 'Sin esto, la web es una tarjeta de presentación bonita que no le quita ni una reserva a la OTA.',
+        h2: '¿Qué necesita el diseño web para hoteles para ganar la reserva directa?',
         items: [
           'Motor de reservas con disponibilidad real y pago en línea, no un formulario de "consultar disponibilidad"',
           'Una razón concreta para reservar directo: mejor tarifa, algo incluido o flexibilidad que la OTA no da',
@@ -49,23 +47,22 @@ export const blog17: PageData[] = [
       },
       {
         type: 'steps',
-        h2: 'Cómo convencer al huésped de reservar directo, no en la app',
-        intro: 'Pedirlo con un aviso de "reserva directo y ahorra" no alcanza si todo lo demás compite en desventaja. El orden importa.',
+        h2: '¿Cómo convencer al huésped de reservar directo y no en la app?',
+        intro: 'Un aviso de "reserva directo y ahorra" no alcanza si todo lo demás compite en desventaja. El orden importa.',
         items: [
           { h3: '1. Dale una razón real, no solo el pedido', text: 'Una tarifa un poco mejor, el desayuno incluido o una salida más tardía sin costo. Si tu precio es igual al de la OTA y no ofreces nada distinto, el huésped reserva donde ya confía, y con razón.' },
-          { h3: '2. Muestra precio y disponibilidad sin fricción', text: 'Un calendario real donde el huésped ve qué fechas hay y cuánto cuesta, sin escribir primero para preguntar. Cada paso de más antes del precio es una razón para volver a la OTA.' },
-          { h3: '3. Que la foto sea la habitación, no una idea de habitación', text: 'El huésped ya vio fotos en la OTA; en tu web busca confirmar que son reales. Si no coinciden con lo que va a encontrar, cancela o —peor— llega, se decepciona y lo escribe en la reseña.' },
-          { h3: '4. Que pagar ahí no genere desconfianza', text: 'Una pasarela reconocida, certificado de seguridad visible y una política de cancelación clara. El huésped que duda de la seguridad del pago prefiere la OTA aunque cueste más, porque ya confía en ese proceso.' },
+          { h3: '2. Muestra precio y disponibilidad sin fricción', text: 'Un calendario real donde el huésped ve qué fechas hay y cuánto cuesta, sin escribir primero. Cada paso de más antes del precio es una razón para volver a la OTA.' },
+          { h3: '3. Que la foto sea la habitación, no una idea de habitación', text: 'El huésped ya vio fotos en la OTA; en tu web busca confirmar que son reales. Si no coinciden con lo que va a encontrar, cancela o llega, se decepciona y lo escribe en la reseña.' },
+          { h3: '4. Que pagar ahí no genere desconfianza', text: 'Una pasarela reconocida, certificado de seguridad visible y una política de cancelación clara. El huésped que duda del pago prefiere la OTA aunque cueste más.' },
           { h3: '5. Dale un motivo para reservar directo la próxima vez', text: 'Un correo después del check-out con una tarifa para su próxima visita convierte al huésped que te conoció por la OTA en uno que, la segunda vez, ya no pasa por ahí.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'Fotos reales de las habitaciones, no banco de imágenes',
+        h2: '¿Por qué un hotel debe usar fotos reales y no de banco de imágenes?',
         paragraphs: [
-          'La foto de una cama perfecta con luz de estudio que no es tu cama, en una habitación que no es la tuya, es la manera más rápida de perder una reserva antes de que el huésped sepa explicar por qué desconfió. La compara sin pensarlo con las fotos —también cuidadas, pero reales, subidas por otros huéspedes— de la OTA, y la diferencia se nota aunque nadie la señale.',
-          'No hace falta una producción cara para resolverlo: una habitación bien tendida, cortinas abiertas y luz de mañana, tomada con el celular, transmite más confianza que una foto de stock impecable que no es la tuya. Lo que sí es innegociable es que sea tu habitación, tal cual el huésped la va a encontrar al abrir la puerta.',
-          'Y conviene fotografiar cada tipo de habitación por separado, no solo "la mejor" para la portada. El huésped que reserva la habitación estándar quiere ver la estándar, no la suite que nunca va a pisar — mostrarle otra cosa es la forma más segura de que la reseña hable de eso antes que de cualquier otra cosa.',
+          'Porque el huésped compara sin pensarlo la foto de estudio de una cama que no es la tuya con las fotos reales que otros huéspedes subieron a la OTA, y desconfía. No hace falta una producción cara: una habitación bien tendida, cortinas abiertas y luz de mañana, tomada con el celular, transmite más confianza que una foto de stock impecable.',
+          'Fotografía cada tipo de habitación por separado, no solo la mejor para la portada. Quien reserva la estándar quiere ver la estándar; mostrarle la suite es la forma más segura de que la reseña hable de eso.',
         ],
       },
       {
@@ -75,20 +72,18 @@ export const blog17: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La experiencia se vende, no solo el cuarto',
+        h2: '¿Cómo atrae reservas directas el contenido de destino?',
         paragraphs: [
-          'El viajero no busca "hotel en Bocas del Toro": busca "qué hacer en Bocas del Toro" o "mejor época para ir a San Blas", todavía sin decidir dónde hospedarse. Quien responde esa pregunta con contenido real —no una lista genérica copiada de otro sitio— se presenta antes que la OTA y antes que la competencia.',
-          'Una guía de la zona, con actividades cercanas, tiempos reales de traslado y recomendaciones concretas, hace lo que ninguna ficha de Booking hace: conecta al viajero con el lugar antes de que compare precios. De ahí a cotizar tu habitación o tu tour hay un solo clic, sin haber salido de tu sitio.',
-          'Nadie que prometa el primer lugar en Google al mes siguiente está siendo honesto contigo: el contenido de destino es una inversión de fondo, no un interruptor. Pero sostenido en el tiempo es, de lejos, el canal de reservas directas más barato que existe, porque sigue trabajando incluso cuando no estás pagando pauta. Lo explicamos con más detalle en nuestra guía de <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento web</a>.',
+          'El viajero no busca "hotel en Bocas del Toro": busca "qué hacer en Bocas del Toro" o "mejor época para ir a San Blas", todavía sin decidir dónde hospedarse. Una guía de la zona con actividades cercanas, tiempos reales de traslado y recomendaciones concretas te presenta antes que la OTA y conecta al viajero con el lugar antes de que compare precios. De ahí a cotizar tu habitación o tu tour hay un clic.',
+          'Es una inversión de fondo, no un interruptor: nadie puede prometer el primer lugar en Google al mes siguiente. Sostenido en el tiempo, sigue trayendo reservas cuando no estás pagando pauta. Lo explicamos en nuestra guía de <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento web</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene invertir todavía en reservas directas',
+        h2: '¿Cuándo no conviene invertir todavía en reservas directas?',
         paragraphs: [
-          'No todo negocio turístico necesita un motor de reservas propio hoy, y decirlo con honestidad ahorra un gasto que no se recupera. Si tienes entre cinco y diez habitaciones, vives lleno todo el año gracias a Booking o Airbnb, y no tienes a nadie dedicado a atender un canal de reservas aparte, montar un motor propio no te suma ingresos: te suma un calendario más que sincronizar y un riesgo real de doble reserva si algo falla entre canales.',
-          'En ese escenario rinde más una web simple y honesta: fotos reales, una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> que confirme que el lugar existe, cuente la experiencia y mande por WhatsApp o directo a tu perfil de Booking a quien todavía está decidiendo. Nada de eso compite con la OTA — la complementa, sin crear una operación que no tienes cómo sostener.',
-          'El motor de reservas propio empieza a justificarse cuando ya tienes huéspedes que repiten y te escriben directo, cuando la ocupación deja de estar garantizada todo el año, o cuando manejas suficientes habitaciones o tours como para que un quince o veinte por ciento de comisión sea una cifra que de verdad duele al cierre del mes. En una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> con varias páginas por tipo de habitación o experiencia, ese motor ya se integra de forma natural.',
+          'Si tienes entre cinco y diez habitaciones, vives lleno todo el año gracias a Booking o Airbnb y no tienes a nadie que atienda un canal aparte, un motor propio no te suma ingresos: te suma un calendario más que sincronizar y riesgo de doble reserva. Ahí rinde más una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> con fotos reales que confirme que el lugar existe, cuente la experiencia y mande por WhatsApp o a tu perfil de Booking a quien todavía decide.',
+          'El motor propio se justifica cuando tienes huéspedes que repiten y te escriben directo, cuando la ocupación deja de estar asegurada todo el año o cuando manejas suficientes habitaciones o tours para que un 15% o 20% de comisión duela al cierre del mes. En una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> con páginas por tipo de habitación o experiencia, ese motor se integra de forma natural.',
         ],
       },
       {

@@ -16,23 +16,22 @@ export const blog15: PageData[] = [
       alt: 'Consultorio dental moderno y luminoso con sillón dental y colores claros',
     },
     lead: [
-      'Nadie llega feliz a una cita con el dentista. Llega con una duda, un dolor o el recuerdo de una mala experiencia, y busca en el celular quién se la va a resolver sin sorpresas. Esa búsqueda —antes de la llamada, antes de la sala de espera, antes de sentarse en la silla— es la primera cita real que tiene con tu consultorio. Y la hace en tu web.',
-      'Si esa web se ve fría, muestra instrumentos en primer plano o no deja agendar sin llamar en horario de oficina, el paciente sigue buscando. En esta guía repasamos qué debe tener sí o sí la web de un consultorio dental en Panamá: reservas online, una página por especialidad, fotos que calman en lugar de asustar, los seguros bien visibles — y también cuándo, honestamente, invertir en esto todavía no te conviene.',
+      'El diseño web para dentistas en Panamá funciona cuando la web responde lo que el paciente teme antes de llamar: reserva de citas online con recordatorios, una página por especialidad, fotos reales del consultorio y del equipo, los seguros aceptados a la vista y un rango de precio. Es lo que armamos en Elemento Web, en Ciudad de Panamá.',
+      'Abajo explicamos cada punto y también cuándo, honestamente, invertir en marketing todavía no le conviene a tu consultorio.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'La ansiedad del paciente empieza en la web, no en la silla',
+        h2: '¿Por qué la web de un dentista tiene que calmar antes de vender?',
         paragraphs: [
-          'A la mayoría de la gente no le entusiasma ir al dentista. Es de las pocas citas que se posponen por meses, incluso con dolor, porque el miedo pesa más que la urgencia. Y ese miedo no empieza en la sala de espera: empieza en el celular, buscando "dentista cerca de mí" a las diez de la noche, decidiendo en los primeros segundos si ese consultorio se ve como un lugar seguro o como uno más para evitar.',
-          'Ahí es donde muchas webs dentales se disparan en el pie sin darse cuenta. Fotos de banco con pinzas, taladros y bocas abiertas en primer plano; plantillas frías con textos genéricos sobre "excelencia" y "tecnología de punta" que podrían ser de cualquier consultorio del mundo; ni una foto del equipo, ni un precio, ni una cara conocida. Todo eso confirma el miedo en lugar de calmarlo.',
-          'El trabajo de la web no es impresionar con tecnicismos: es bajar la guardia antes de que el paciente descuelgue el teléfono. Un espacio que se ve limpio y luminoso, un equipo que se muestra con nombre y cara, información clara sobre lo que cuesta y lo que cubre el seguro —eso convierte más que cualquier lista de servicios con palabras difíciles. Es la misma lógica que aplica a cualquier <a href="/industrias/diseno-web-clinicas-salud-panama/">clínica de salud</a>, solo que en dental el miedo pesa un poco más que en la mayoría.',
+          'La cita con el dentista es de las que más se posponen, incluso con dolor. El paciente decide en segundos, buscando "dentista cerca de mí" desde el celular, si un consultorio se ve como un lugar seguro. Fotos de banco con pinzas y taladros en primer plano, textos genéricos sobre "tecnología de punta" y ninguna cara del equipo confirman el miedo en lugar de calmarlo.',
+          'Lo que baja la guardia es concreto: un espacio limpio y luminoso, un equipo con nombre y cara, y claridad sobre lo que cuesta y lo que cubre el seguro. Es la misma lógica de cualquier <a href="/industrias/diseno-web-clinicas-salud-panama/">clínica de salud</a>, con más peso en dental porque el miedo es mayor.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Lo que tiene que tener sí o sí la web de un consultorio dental',
-        intro: 'Si tu web cumple con todo esto, va por buen camino. Si falla en varios puntos, estás perdiendo pacientes que ni te enteras que existieron.',
+        h2: '¿Qué debe incluir el diseño web para dentistas?',
+        intro: 'Ocho elementos que el paciente busca antes de escribirte. Si falta alguno, lo resuelve en la pestaña de al lado.',
         items: [
           'Sistema de reservas de citas online, con horarios reales y confirmación automática',
           'Una página propia por especialidad: ortodoncia, implantes, odontología general, estética dental',
@@ -46,11 +45,10 @@ export const blog15: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Reservas online: menos llamadas, más citas confirmadas',
+        h2: '¿Cómo ayudan las reservas online a un consultorio dental?',
         paragraphs: [
-          'En un consultorio dental normal, quien contesta el teléfono suele ser la misma persona que asiste al odontólogo. Mientras atiende a un paciente en la silla, el teléfono suena, nadie puede tomarlo, y quien llamaba —con una duda o ya decidido a agendar— cuelga y prueba con el siguiente resultado de Google. Esa llamada perdida casi nunca vuelve a intentarlo.',
-          'Un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas y citas online</a> elimina esa fila invisible. El paciente ve los horarios que de verdad están libres y confirma solo, sin hablar con nadie, a cualquier hora —incluida la noche, que es cuando mucha gente por fin junta el valor para resolver ese diente que viene posponiendo. Nadie decide ir al dentista en horario de oficina; decide cuando puede, y la web tiene que estar lista para recibir esa decisión en el momento en que ocurre.',
-          'Los recordatorios automáticos atacan el otro costo silencioso del rubro: las ausencias. Cada cita que se cae sin aviso es un espacio de agenda que ya no se recupera ese día. Y para el paciente ansioso, agendar en línea tiene un beneficio extra: no tiene que explicarle a una recepcionista por teléfono qué le duele o por qué no ha ido en tres años. Menos fricción para agendar es, sin rodeos, más pacientes sentados en la silla.',
+          'En muchos consultorios, quien contesta el teléfono es la misma persona que asiste al odontólogo. Mientras atiende en la silla, la llamada se pierde y el paciente prueba con el siguiente resultado de Google. Un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas y citas online</a> le deja ver los horarios libres y confirmar solo, a cualquier hora, incluida la noche, que es cuando mucha gente por fin decide resolver ese diente.',
+          'Los recordatorios automáticos atacan el otro costo del rubro: las ausencias, porque cada cita que se cae sin aviso es un espacio de agenda que no se recupera ese día. Y el paciente ansioso agenda sin tener que explicarle por teléfono a una recepcionista qué le duele o por qué no ha ido en tres años.',
         ],
       },
       {
@@ -60,30 +58,18 @@ export const blog15: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cada especialidad es una búsqueda distinta en Google',
+        h2: '¿Por qué una página por especialidad dental?',
         paragraphs: [
-          'La mayoría de las webs dentales resuelven sus especialidades con una lista: ortodoncia, implantes, odontología general, estética dental, una debajo de la otra en la misma página. Es lo más rápido de armar, y es el error que más pacientes cuesta, porque cada una de esas palabras es una búsqueda distinta, hecha por una persona distinta, con una urgencia y un presupuesto distintos.',
-          'Quien busca "ortodoncia" suele ser más joven y quiere saber cuánto le va a costar al mes, no de una vez. Quien busca "implantes dentales" ya perdió una pieza, tiene más dudas sobre el dolor y el número de visitas, y decide con más calma. Quien busca "odontología general" simplemente quiere un consultorio de confianza para toda la familia, cerca de casa. Y quien busca "estética dental" decide sobre todo con los ojos, viendo resultados reales. Meterlos a los cuatro en la misma página es hablarle a nadie en particular. Si tu consultorio ya tiene esto claro, vale la pena ver cómo lo estructuramos a fondo en nuestra <a href="/industrias/diseno-web-dentistas-odontologia-panama/">página sobre diseño web para dentistas y odontología</a>.',
-          'A eso se le suma que casi nadie busca "el mejor dentista de Panamá": busca "dentista cerca de mí" o el nombre de su barrio, porque un tratamiento dental no es una visita, son varias, y nadie cruza la ciudad seis veces si tiene algo decente a diez minutos. Ahí entra el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y una buena ficha de Google Maps</a>, junto con el <a href="/crecimiento/seo-posicionamiento-web-panama/">trabajo de SEO</a> de fondo en cada página de especialidad. Nadie te puede prometer el primer lugar —quien lo garantiza no está siendo honesto— pero sí se puede construir la base real para competir por esas búsquedas.',
-        ],
-      },
-      {
-        type: 'cards',
-        h2: 'Las primeras preguntas de un paciente nuevo',
-        intro: 'Antes de escribirte, casi todo paciente nuevo se hace las mismas tres preguntas en silencio. Si tu web no las contesta, las resuelve en la pestaña de al lado.',
-        items: [
-          { h3: '¿Aceptan mi seguro?', text: 'Es de las primeras cosas que busca cualquier paciente nuevo. Si tu web no lo dice en algún lugar visible, asume que no y sigue buscando.' },
-          { h3: '¿Cuánto cuesta, más o menos?', text: 'No hace falta una lista de precios exacta. Un rango o un "desde" filtra al que nunca iba a agendar y da seguridad al que sí está decidido.' },
-          { h3: '¿Este lugar se ve confiable?', text: 'Lo decide en segundos, con fotos reales del consultorio y del equipo, no con una plantilla genérica que podría pertenecer a cualquier clínica del mundo.' },
+          'Cada especialidad es una búsqueda distinta en Google, hecha por un paciente distinto. Quien busca "ortodoncia" suele ser más joven y quiere saber cuánto pagará al mes. Quien busca "implantes dentales" ya perdió una pieza y pregunta por el dolor y el número de visitas. Quien busca "odontología general" quiere un consultorio de confianza para la familia, cerca de casa. Y quien busca "estética dental" decide viendo resultados reales. Una lista en una sola página no le habla a ninguno; así lo estructuramos en nuestra <a href="/industrias/diseno-web-dentistas-odontologia-panama/">página sobre diseño web para dentistas y odontología</a>.',
+          'Además, casi nadie busca "el mejor dentista de Panamá": busca "dentista cerca de mí" o el nombre de su barrio, porque un tratamiento son varias visitas. Ahí entran el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y una buena ficha de Google Maps</a>, junto con el <a href="/crecimiento/seo-posicionamiento-web-panama/">trabajo de SEO</a> en cada página de especialidad: la base real para competir por esas búsquedas.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene invertir en marketing para tu consultorio',
+        h2: '¿Cuándo no conviene invertir en marketing para tu consultorio dental?',
         paragraphs: [
-          'No todo consultorio necesita más pacientes ahora mismo, y decirlo no es común pero es honesto. Si tu agenda ya está llena varias semanas hacia adelante, si no tienes otro odontólogo, otra silla o más horas que ofrecer, invertir en una web nueva o en marketing para atraer más pacientes no te conviene todavía —y lo decimos aunque signifique una venta menos para nosotros.',
-          'El problema no es solo que gastes de más. Una web que funciona bien genera consultas, y una consulta que nadie contesta en dos o tres días —porque la agenda real ya no tiene espacio— no se queda callada: se convierte en una reseña mala en Google, la primera cosa que ve el próximo paciente que sí tenías posibilidad de atender. El marketing que no puedes cumplir no atrae pacientes, atrae frustración con tu nombre puesto.',
-          'Lo que sí conviene en ese caso es resolver primero la capacidad: contratar a otro odontólogo, sumar horario, abrir una silla más, o al menos dejar clarísimo en la web actual los tiempos de espera reales para no generar expectativas que no vas a cumplir. Cuando ya tengas dónde poner a los pacientes nuevos, ahí sí una web pensada para captar rinde lo que promete.',
+          'Si tu agenda ya está llena varias semanas hacia adelante y no tienes otro odontólogo, otra silla o más horas que ofrecer, una web nueva o una campaña para atraer pacientes no te conviene todavía. Lo decimos aunque signifique una venta menos.',
+          'Una web que funciona genera consultas, y una consulta que nadie contesta en dos o tres días se convierte en una reseña mala en Google, lo primero que verá el próximo paciente. Primero resuelve la capacidad (otro odontólogo, más horario, una silla más) o al menos publica los tiempos de espera reales. Con espacio para pacientes nuevos, una web pensada para captar rinde lo que promete.',
         ],
       },
       {

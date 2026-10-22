@@ -1,5 +1,6 @@
 ---
 import { site, grupos, legal, url, wa } from '../lib/site';
+import SpotlightText from './SpotlightText.astro';
 /* Pie monocromo (D56): las 4 primeras columnas salen de `grupos` de site.ts (las mismas del menú) y la quinta es
    Empresa. Debajo, las franjas de red interna de Miami e industrias y los legales. */
 const waHref = wa('Hola, quiero cotizar un proyecto.');
@@ -36,6 +37,8 @@ const { cierre = true } = Astro.props;
     </a>
   </div>}
 
+  {/* Marca «linterna» antes de las columnas (D58): sigue al negro del cierre y en la portada abre su propia franja. */}
+  <div class={`bg-negro px-6 pb-10 ${cierre ? 'pt-2' : 'pt-14'}`}><SpotlightText text="elemento web" class="mx-auto max-w-7xl" /></div>
   <div class="border-t border-filete bg-humo">
     <div class="mx-auto grid max-w-7xl grid-cols-2 gap-x-8 gap-y-10 px-6 py-14 lg:grid-cols-[1.5fr_repeat(5,1fr)]">
       <div class="col-span-2 lg:col-span-1">

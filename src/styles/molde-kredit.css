@@ -42,6 +42,16 @@
 .ew-prosa p { font-size: 1.0625rem; line-height: 1.7; }
 .ew-prosa p + p { margin-top: 1em; }
 .ew-prosa strong { font-weight: 600; }
+/* Prosa con imagen (zigzag): en escritorio texto e imagen lado a lado y el lado se alterna de un bloque al siguiente;
+   en el móvil la imagen va debajo del texto. */
+.ew-zz { align-items: center; }
+.ew-zz__texto .ew-prosa { margin-top: 24px; }
+.ew-zz__foto { margin: 0; }
+.ew-zz__foto img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 16px; }
+@media (min-width: 1024px) {
+  .ew-zz { grid-template-columns: 1fr 1fr; gap: 64px; }
+  .ew-zz--inv .ew-zz__foto { order: -1; }
+}
 .ew-pasos { list-style: none; margin: 0; padding: 0; }
 .ew-pasos li { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 0; border-top: 1px solid var(--ew-border); }
 /* Etapas en columnas: cada una con su número arriba, como en la portada v3. */

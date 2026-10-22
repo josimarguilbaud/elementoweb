@@ -1,0 +1,465 @@
+{
+ "nota_general": "Fotos realistas a color generadas con IA para los bloques de prosa de las páginas de servicio de elementoweb.com (22-oct-2026). No muestran personas reales, texto, logos ni marcas. Una generación por imagen a 1K (3:2), recortada a 1200x800 con variantes WebP de 480, 800 y 1200.",
+ "imagenes": [
+  {
+   "archivo": "inteligencia-artificial-para-empresas-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A Panamanian technician in his thirties sits at a tidy desk in a bright Panama City office at dusk, calmly checking two monitors with soft blurred chart shapes, coffee beside him, a backup drive on the desk; through the window the lit skyline glows. Mood of quiet ongoing vigilance. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "diseno-web-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Over-the-shoulder view of the owner of a small bakery in El Cangrejo holding her phone, looking at a clean website with a large blurred button shape, while a customer waits at the counter with fresh bread behind glass. Warm morning light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "diseno-web-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A young Panamanian man on a sidewalk in Costa del Este looks at a phone map with blurred pins, then glances toward a mechanic workshop across the street where a mechanic waves; palm trees, midday tropical sun, cars softly blurred. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "diseno-web-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Two developers, a woman and a man in their thirties, sit at the same table with a small-business client in a modest Panama City studio, laptop screens blurred, blank sticky notes on a glass wall, the client pointing and nodding. Direct, close conversation. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "servicios--diseno-web-corporativo-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Overhead shot of a meeting table at an engineering firm: printed page mockups laid out side by side, each about a different service, with photos and colored blocks but no readable words, a consultant's hands arranging them in order. Soft window daylight. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "servicios--diseno-web-corporativo-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A food-truck owner in Casco Viejo hands a snack to a customer, offering just one featured dish, a single photo of it on a small stand; colonial facades and bougainvillea behind. Late afternoon golden light, wide street scene of a simple, focused business. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "servicios--diseno-web-corporativo-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A Panamanian couple who run a small accounting firm review a printed project timeline of three colored week blocks with a consultant across a wooden desk, a calculator nearby, nothing legible. Clear, honest planning mood, window light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "servicios--diseno-web-corporativo-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "At a small architecture office, a receptionist takes a phone call from a prospective client and jots on a notepad, while a monitor beside her shows a soft blurred bar chart; a colleague looks over. Busy weekday morning, natural light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "servicios--tiendas-online-ecommerce-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Close-up of a young woman's hand holding a phone at a clothing boutique counter, about to confirm a mobile payment, blurred checkout shapes on screen, folded colorful garments and a plain paper shopping bag nearby. Warm shop lighting. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "servicios--tiendas-online-ecommerce-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "The owner of a small cosmetics store weighs two options with an advisor at a stockroom table: shelves of unbranded product boxes, a laptop with a blurred interface, two open notebooks side by side. Practical decision-making, side angle, afternoon light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "servicios--tiendas-online-ecommerce-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A store manager at a home-goods shop studies four descending colored bars drawn on a whiteboard, marker in hand, thinking, while an employee packs orders into boxes in the background. Mixed daylight and warm interior light, medium shot. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "servicios--landing-pages-alta-conversion-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A smiling woman seated on a Panama City bus taps an ad on her phone and lands on a single clean page with one large blurred button shape; the city slides by blurred through the window. Close medium shot, morning commute light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "servicios--redisenio-web-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A renovation crew in an older Bella Vista house repaints walls and replaces fixtures while keeping the original patterned tiles and wooden beams; the foreman shows the owner what stays. Dust floating in sunbeams, wide interior shot. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "servicios--redisenio-web-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "In front of a closed old storefront in a Panama City neighborhood, the shop owner kindly walks a confused customer a few doors down to the bright new location, pointing the way. Colorful facades, sunny street, eye-level shot. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "servicios--redisenio-web-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A marketing coordinator at a clinic compares two printed line charts side by side, old site and new site, on a desk with a ruler and a highlighter, no readable numbers, looking satisfied. Top-down angle including her hands, morning light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Three people around a table at a restaurant office: a consultant counts on his fingers while the owner and the chef in whites listen closely; inventory boxes and a laptop with a blurred screen nearby. Warm tungsten and window light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--diseno-web-wordpress-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A carpenter in a Panama workshop compares a bulky, overbuilt shelf with a light, precise custom shelf he made, running his hand along the clean joinery; sawdust glowing in raking light. Medium close shot, warm wood tones. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--diseno-web-wordpress-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A small bakery stall at a weekend market in Panama, a single awning and a few baskets of bread, the owner serving quickly while neighbors smile; simple and unchanging. Bright morning light, compact wide scene. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--diseno-web-wordpress-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A small-business owner at her desk stares at a thick pile of monthly bills and envelopes, nothing legible, a laptop beside her with a blurred pop-up shape. Evening lamp light, tired, slightly worried expression, close medium shot. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--diseno-web-wordpress-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A security guard secures an electronics shop at night in Panama City: rolling shutter down, checking the side door and a heavy padlock; streetlights reflect on humid pavement. Three entry points closed, low angle. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--diseno-web-wordpress-panama-5.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A web technician times a phone loading a page with a handheld stopwatch, several test phones lined up on the desk, a clipboard with abstract tick marks, in a small Panama City agency office. Close-up, cool daylight. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--diseno-web-shopify-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A young artisan in her home studio in Panama photographs handmade jewelry on a light table for her online store, packed orders stacked nearby, a laptop with a blurred interface. Focused on selling, not on technology. Soft window light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--diseno-web-shopify-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A delivery rider on a motorbike receives a wrapped order from a shop owner at a storefront in Panama City, while she checks a payment confirmation on her phone with blurred shapes. Midday heat, vivid street colors. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--diseno-web-shopify-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Moving day at a rented boutique: employees carry plain cardboard boxes of products and customer files out to a van, while the custom shelves and decor stay behind in the empty space. Morning street light, wide shot through the doorway. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--diseno-web-shopify-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "An online shoe store owner and her assistant study a laptop with blurred step-like bar shapes, a few shoe boxes and half-packed bags on the table suggesting unfinished purchases. Afternoon office light, over-the-shoulder angle. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--desarrollo-web-a-medida-vue-react-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A development team in a Panama City coworking space hands a client a thick documentation binder and a USB drive across a desk, everyone smiling; code editors blurred on monitors behind. Clean modern interior, natural light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--desarrollo-web-a-medida-vue-react-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A mechanic performs routine service on a delivery van at a Panama City workshop, changing oil and checking parts while the business owner watches, tools neatly arranged, warm light through the open bay door. Ongoing care, medium wide shot. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--desarrollo-web-a-medida-vue-react-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A businesswoman and her lawyer review a contract at a desk in a Panama City office, her finger on a clause, a set of keys resting on the papers, nothing legible. Serious yet friendly mood, window light, close medium shot. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "tecnologias--desarrollo-web-a-medida-vue-react-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A logistics coordinator at a distribution warehouse leaves on time with a smile while a colleague shows her a tablet with blurred shapes of orders processed automatically; forklifts and pallets behind. Late afternoon light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A spa receptionist in Panama City relaxes as a client on her phone books a massage and pays a deposit, blurred chat and payment shapes on screen; calm spa interior with plants and rolled towels, soft daylight. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades--integracion-yappy-pasarelas-pago-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A coffee shop owner sits at a bank branch desk with a folder of business registration papers, meeting a bank advisor who reviews the documents, nothing legible. Professional, bright interior, both engaged, medium shot. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades--integracion-yappy-pasarelas-pago-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "An administrative assistant at a hardware store matches stacks of printed receipts with orders on a clipboard, a laptop with blurred table shapes beside her, highlighter in hand. Busy back office, fluorescent and window light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades--integracion-yappy-pasarelas-pago-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A customer at an outdoor café table hesitates over her phone checkout while a friend leans in; her finger hovers, blurred payment shapes on screen. A Casco Viejo plaza softly blurred behind, warm late light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades--chatbots-ia-web-wazacrm-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "At a travel agency in Panama City, an employee organizes a binder of approved documents and price sheets, nothing legible, next to a laptop with a blurred chat window. Methodical, close medium shot, daylight. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades--chatbots-ia-web-wazacrm-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A customer service agent wearing a headset at an insurance office smiles as she takes over a chat conversation on her monitor, blurred message shapes, a notepad with the customer's context beside her; colleagues working behind. Warm office light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades--chatbots-ia-web-wazacrm-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A clinic manager sits with a stack of printed customer conversations, lines blurred and unreadable, sorting the most frequent questions into piles with colored clips, in a bright Panama City clinic office. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades--chatbots-ia-web-wazacrm-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A small team at a weekly Monday meeting in a dental clinic reviews a short paper list and a tablet showing a blurred pie chart; one person takes notes. Morning light, relaxed collaborative mood, eye-level shot. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades--sistemas-reservas-citas-online-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A barber in a Panama City barbershop greets a client who arrives right on time, while a young man in the waiting area confirms a booking with a deposit on his phone, blurred interface. Warm tones, mirrors and leather chairs. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades--sistemas-reservas-citas-online-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A frustrated hair salon receptionist holding a paper notebook and a phone faces two clients who arrived for the same slot, both holding their phones; busy salon with dryers behind. Candid moment, natural window light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades--sistemas-reservas-citas-online-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A physiotherapy clinic manager reviews a tablet with blurred bar shapes while the waiting room behind her is calm and full, patients on time; plants and natural light, efficient atmosphere, shallow focus on her. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades--sistemas-reservas-citas-online-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A woman on a Panama City sidewalk searches on her phone with a blurred map, standing right outside a dermatology clinic entrance and booking on the spot; storefronts and a palm tree, bright day, eye-level. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "funcionalidades--integracion-cybersource-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Close-up of a customer's hands typing card details into a laptop at a home kitchen table, an embedded secure form shape blurred on screen, a bank card held out of focus with no visible numbers. Cozy evening light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A gardener tends a lush growing hedge in front of a small Panama City storefront, trimming and watering steadily while the owner opens the shop; the neighboring store looks neglected. Morning sun, vivid greens. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--seo-posicionamiento-web-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A university student in a Panama City café reads a short, clear answer on her laptop with blurred interface shapes, notebook open, iced coffee beside her; friends chatting behind. Quick answer moment, soft natural light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--seo-posicionamiento-web-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A restaurant owner on a Panama City rooftop looks from a running water tap to a large full water tank beside it, a literal contrast of flow and stored asset; city buildings behind, bright daylight. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--seo-posicionamiento-web-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "A coffee farmer in the highlands of Boquete, Panama, kneels to inspect young coffee plants months after planting, rows growing at different heights; misty mountains behind, soft morning light. Editorial documentary photograph, natural light, vivid true colors, shallow depth of field, full-frame camera, 3:2 landscape. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--seo-posicionamiento-web-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a Panamanian SEO consultant in her thirties sitting across a wooden table from a middle-aged hardware store owner in Panama City, walking him through a printed checklist of planned tasks while he listens with folded arms and a cautious half-smile. Afternoon window light, coffee cups, laptop with blurred interface shapes, shallow depth of field on their hands and faces, eye-level medium shot. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--seo-posicionamiento-web-panama-5.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a young receptionist at a physiotherapy clinic in Panama City answering a phone call from a new patient, notepad in hand, while a couple waits at the counter. Behind her a monitor glows with soft out-of-focus chart shapes. Warm morning light through blinds, teal and wood tones, shallow depth of field, slightly low three-quarter angle, the real business result in focus. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--seo-local-google-maps-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph inside a busy neighborhood bakery in Panama City: a smiling Afro-Panamanian owner in an apron hands a bag of pastries to a regular customer, who holds her phone ready to leave a review, screen blurred and unreadable. Golden morning light, shelves of bread, warm browns and yellows, shallow depth of field, over-the-counter angle. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--seo-local-google-maps-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Close editorial photograph of a small business owner's desk in a Panama City optical shop: business cards, a storefront awning photo, a smartphone and a laptop laid side by side, each showing the same blurred contact block layout, while the owner's hand compares them with a pen. Soft diffused daylight, clean blues and whites, top-down forty-five degree angle, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--seo-local-google-maps-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Street-level documentary photograph in a Panama City residential neighborhood like El Cangrejo: a young man walks his dog past a small corner laundromat and a family pharmacy, glancing at his phone with a blurred map shape, the shops just a block from his apartment building. Late afternoon golden light, tropical trees, colorful facades, wide shot at pedestrian height, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--seo-local-google-maps-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a worried Panamanian restaurant owner in his fifties seated alone at an empty table in his closed fonda during midday, phone face up beside a cup of coffee, screen blurred, chairs stacked behind him. Muted overcast light through the doorway, slightly cool tones contrasting warm wooden tables, side angle, shallow depth of field, quiet consequence of a suspended listing. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--seo-local-google-maps-panama-5.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a mechanic at a small auto repair workshop in Panama City answering a call on his phone, grease-stained hands, while a customer's car pulls into the bay guided by another worker. Bright tropical daylight spilling into the open garage, red toolboxes and blue overalls, dynamic three-quarter angle, shallow depth of field on the mechanic. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--mantenimiento-web-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a shocked boutique owner in Casco Viejo staring at her laptop on the shop counter late at night, the screen showing blurred, unreadable error-like shapes, her hand over her mouth. Racks of colorful dresses behind her in dim warm lamp light, cool screen glow on her face, shallow depth of field, close medium shot from the side. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--mantenimiento-web-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a calm web technician, Panamanian man in his late twenties, testing a backup restore at a tidy desk in a small Panama City office: one laptop and a second monitor showing matching blurred page layouts, a checklist clipboard beside him with a pen mid-tick. Soft north-window daylight, green plant, neutral greys with blue accents, over-the-shoulder angle, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--mantenimiento-web-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a young woman standing on a crowded Metro platform in Panama City, browsing a business website on her phone with one hand while holding a coffee, screen blurred and unreadable. Train arriving softly blurred behind her, mixed daylight and station lighting, commuters of varied ages, eye-level medium shot, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "crecimiento--hosting-infraestructura-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph inside a clean, well-lit data center aisle: a Latina systems engineer in her thirties kneels beside an open server rack checking cables with a flashlight, neat blue and green status lights around her, cold aisle airflow tiles underfoot. Cool white light with warm skin tones, low wide-angle perspective down the aisle, shallow depth of field on her hands. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "saas-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a small interior design studio in Panama City: in the foreground a saleswoman replies to a client on her phone, behind her a colleague prepares a quote at a laptop, and in the background the owner reviews payments on a tablet, all screens blurred. One continuous workflow across one room, warm afternoon light, plants and fabric samples, deep staging with shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "saas--wazacrm-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a customer service agent at a travel agency in Panama City receiving a handoff: she looks at her phone, screen blurred, then reaches for a printed binder of approved policies on her desk to answer a client's question correctly. Bright midday light, turquoise and sand tones, framed travel photos without text, medium close-up from slightly above, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "saas--wazacrm-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of an architect in a small Panama City studio sitting with a client over large paper floor plans and material samples, discussing a custom project face to face, a phone resting unused on the table. Soft window light, warm wood, concrete and green plants, overhead-side angle, shallow depth of field on their hands pointing at the plans. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "saas--wazacrm-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of the owner and manager of a family pharmacy in Panama City sitting at a back-office table with sticky notes, a notebook and a laptop, writing down the questions customers ask most: prices, hours, delivery. Notes are blank or show illegible scribbles only. Natural light from a high window, warm yellows and whites, top-down three-quarter angle, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "saas--nouscrm-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a small business owner and her accountant, a grey-haired Panamanian man, reviewing an organized folder of quotes and receipts together in a modest office in Panama City, laptop open with blurred tables. The accountant points with a pen while she listens. Soft daylight, warm neutral tones, eye-level two-shot, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "saas--nouscrm-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a young Panamanian man at a sidewalk café table in Panama City tapping his phone to pay an invoice straight from a chat message link, screen blurred and unreadable, iced coffee beside him. Bright late-morning light, colorful street behind softly blurred, relaxed expression, close medium shot from across the table, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "saas--cifrao-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a Panamanian accountant in her forties at her desk studying a printed bank statement with a highlighter, thinking carefully, while a laptop beside her shows blurred spreadsheet shapes. Bookshelf of binders behind her, warm desk lamp mixed with daylight, deep greens and browns, side profile close-up, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "saas--cifrao-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of two office staff at a small distribution company in Panama City sorting stacks of old ledgers, cardboard archive boxes and loose invoices on a long table, one typing into a laptop with blurred screen. Dust in the afternoon window light, warm tones, wide shot from the doorway showing the scale of the cleanup, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "saas--cifrao-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a relaxed finance manager at a mid-size company in Panama City closing her laptop at five in the afternoon, a nearly empty inbox tray beside her, colleagues leaving in the background. Warm golden light through glass, city skyline softly blurred outside the window, medium shot at desk height, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a restaurant owner in Panama City and a marketing manager sitting side by side at a table, the owner holding his own company card and phone while she points at a laptop showing blurred campaign dashboards. Transparent, collaborative mood, warm restaurant interior with plants, natural window light, eye-level two-shot, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a small creative team in a bright Panama City office gathered around one table: a designer sketches a landing page on paper while an ad specialist holds a phone with a blurred ad mockup next to it, both pointing at the same spot. Diverse ages and skin tones, daylight, colorful sticky notes without writing, overhead three-quarter angle, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--google-ads-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a homeowner in a Panama City apartment kitchen with water pooling under the sink, urgently searching on her phone with one hand while holding a towel, screen blurred. Morning daylight, white tiles and bright blue bucket, slightly high angle capturing the leak and her expression, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--google-ads-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a paid search specialist, young Panamanian woman with glasses, at a home-office desk in Panama City crossing off items on a long printed list with a red pen, illegible lines only, laptop beside her showing blurred tables. Afternoon light, teal walls, coffee mug, close over-the-shoulder angle focusing on the pen, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--google-ads-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of an artisan at a small handmade soap workshop in Panama City showing a novel product to a curious shopper who scrolls past it in a social feed on her phone, screen blurred. Colorful bars of soap, dried flowers, warm side light, medium shot, shallow depth of field, conveying a product people discover rather than search for. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--facebook-instagram-ads-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a content creator filming a short vertical video of a sizzling ceviche plate being served at a seaside restaurant in Panama City, the phone on a small gimbal, chef's hands in frame. Vivid colors of lime, red onion and turquoise bay behind, bright late-afternoon light, low angle close to the plate, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--facebook-instagram-ads-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of an aesthetic clinic owner in Panama City and a marketing advisor reviewing photos printed on a table, setting aside overly explicit before-and-after shots and choosing calm portraits of a smiling client instead. Clean white clinic setting, soft diffused light, pastel tones, overhead angle on their hands sorting images, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--facebook-instagram-ads-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a gym owner in Panama City gathering several small piles of coins on a wooden counter into one larger pile with both hands, a phone with a blurred ad screen beside it, members training in the softly blurred background. Warm gym lighting, saturated colors, close angle at counter height, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--facebook-instagram-ads-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a shopper at a bus stop in Panama City scrolling her phone and sighing at a repeated ad, thumb mid-swipe, screen blurred and unreadable, the same colorful product poster shape glimpsed again on the back of a passing bus, no words. Hazy tropical afternoon light, vivid street colors, medium shot, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--contenido-redes-sociales-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a social media manager photographing a neatly styled flat lay of handmade jewelry on a linen table in a small Casco Viejo boutique, the shop owner arranging a piece, a planning notebook with blank colored tabs nearby. Soft morning window light, cohesive coral and gold palette, overhead angle, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--contenido-redes-sociales-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a barber in a lively Panama City barbershop being filmed by a young colleague holding a phone vertically, recording a quick fade haircut for a short video. Neon-free warm practical lights, chrome chairs, client laughing, dynamic low handheld angle, shallow depth of field on the clippers. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--contenido-redes-sociales-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a flower shop owner in Panama City at her workbench in the early morning, arranging bouquets while a phone on a small tripod records her, a wall calendar with simple colored dots and no numbers or writing hanging behind her, showing steady weekly routine. Fresh daylight, saturated flowers, medium wide shot, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--contenido-redes-sociales-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a veterinarian in Panama City writing a long guide on her laptop at a quiet clinic desk after hours, her dog asleep by her feet, laptop screen blurred, a phone lying aside face down. Warm lamp and fading dusk light, calm earthy tones, side angle medium shot, shallow depth of field, suggesting lasting work. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--contenido-redes-sociales-panama-5.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of an industrial refrigeration engineer in Panama City inspecting a large compressor unit on a warehouse rooftop with a facility manager, tablet in hand with blurred interface, technical work far from social media. Bright hard tropical sun, steel and blue sky, wide shot at working height, shallow depth of field on the two men. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--email-marketing-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a calm IT technician in Panama City seated beside the owner of a small language school, configuring settings on a laptop with blurred unreadable panels while the owner watches her own phone receive an email notification shape. Soft daylight classroom with colorful chairs, over-the-shoulder two-shot, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--email-marketing-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a frustrated sales manager at a small office in Panama City pushing aside a purchased USB drive and a thick printed spreadsheet, while her phone on the desk shows a blurred inbox shape, colleagues busy behind her. Cool fluorescent light mixed with daylight, grey and muted blue tones, close angle across the desk, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--email-marketing-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a marketing coordinator at a mid-size retailer in Panama City studying a monitor with blurred bar chart shapes, finger tracing a line, while a colleague leans in holding a printed report with illegible lines. Modern office, plants, balanced daylight, two-person medium shot from the side, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--email-marketing-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a smiling customer at a specialty coffee shop counter in Panama City subscribing on a tablet held out by the barista, screen blurred and unreadable, bags of coffee and a grinder around them. Warm morning light, rich browns and greens, eye-level shot across the counter, shallow depth of field on their hands. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--whatsapp-marketing-masivo-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a worried electronics store owner in Panama City holding up a phone whose screen shows a blurred, greyed-out shape, while customers wait at the counter and his employee shrugs. Fluorescent store light, shelves of cables and accessories, tense mood, medium shot at counter height, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--whatsapp-marketing-masivo-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of an attendant at a car rental counter in Panama City replying quickly on a phone to a customer's incoming message, a wall clock with a plain face and no numerals behind her, keys and brochures without text on the counter. Bright clean daylight, white and orange tones, three-quarter angle, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--whatsapp-marketing-masivo-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a customer at a nail salon in Panama City checking a consent box on a tablet form held by the receptionist, screen blurred and unreadable, bright pastel interior, polish bottles in the background. Soft diffused daylight, cheerful mood, close medium shot focusing on her finger touching the screen, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--whatsapp-marketing-masivo-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a young salesperson at a furniture showroom in Panama City smiling as several customer replies arrive on his phone, screen blurred, while a couple tests a sofa nearby. Warm showroom lighting, rich fabric colors, medium shot from slightly below, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--automatizaciones-n8n-panama-1.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a developer and the operations manager of a logistics company in Panama City standing beside a compact server cabinet in their own small office comms room, the developer pointing at a laptop with blurred flow diagram shapes. Cool clean light, cable management, wide medium shot, shallow depth of field, conveying data kept in-house. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--automatizaciones-n8n-panama-2.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a hotel front desk manager in Panama City personally attending an upset guest, listening carefully with an open hand gesture, offering a solution face to face. Elegant lobby with tropical plants, warm afternoon light, empathetic mood, eye-level two-shot, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--automatizaciones-n8n-panama-3.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Documentary photograph of a technician in a small Panama City agency office noticing an alert on his phone at breakfast, screen blurred with a red indicator shape, and opening his laptop on the kitchen table to fix a broken workflow. Early morning light, coffee and fruit, focused expression, close side angle, shallow depth of field. Photorealistic, natural colors, no text, no logos, no watermarks."
+  },
+  {
+   "archivo": "marketing--automatizaciones-n8n-panama-4.jpg",
+   "modelo": "google/nano-banana-2.1",
+   "descripcion": "Editorial photograph of a real estate agent in Panama City leaving her office early to walk clients through a bright apartment with a skyline view, while in the background her desk sits clear, laptop closed. Golden late-afternoon light through floor-to-ceiling windows, warm and airy, wide shot, shallow depth of field on the agent and clients. Photorealistic, natural colors, no text, no logos, no watermarks."
+  }
+ ]
+}

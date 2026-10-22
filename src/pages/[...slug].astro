@@ -102,7 +102,7 @@ const dateLabel = page.date
     </section>
   )}
 
-  <Blocks blocks={page.blocks} v2={page.anatomia === 'v2'} servicio={page.serviceKey} />
+  <Blocks blocks={page.blocks} v2={page.anatomia === 'v2'} servicio={page.serviceKey} slug={page.slug} />
   {showNext && (
     <section class="mx-auto max-w-7xl px-6 pb-16" aria-labelledby="siguiente-paso">
       <div class="rounded-2xl border border-filete bg-white p-7 md:p-9">

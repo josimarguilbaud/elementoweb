@@ -566,6 +566,24 @@ comitea y despliega», con una plantilla común, mockups de fal e imágenes nuev
   y orden en `src/data/prosa-imagenes.json`, créditos en `public/images/prosa/CREDITOS-IA.json`. Merge `b4fe9f8`,
   `verify` en verde, despliegue 39820960147 en verde, `check-prod.sh` 39 ok.
 
+### D58. Marca «linterna» antes del pie (22-oct-2026)
+
+- **Pedido del dueño:** el efecto del wordmark grande del pie de resend.com en todas las páginas, sin WebGL y con
+  filtro SVG nativo, ajustado para que se vea premium y sutil.
+- **Qué hay:** `src/components/SpotlightText.astro` (props `text` y `fontSize`) en una franja negra entre el cierre y
+  las columnas del pie (`Footer.astro`). Filtro: alfa del texto subido, `feGaussianBlur`, `feSpecularLighting` con
+  `fePointLight`, `feComposite in` y `feMerge` con el texto base (blanco al 3,5 %, sin contorno porque Roboto variable
+  tiene trazos que se cruzan dentro de las letras). Una luz puntual no se apaga con la distancia y hacía brillar bordes
+  lejanos: la capa iluminada va además bajo una máscara radial que sigue a la luz, y esa es la caída.
+- **Movimiento:** `src/scripts/spotlight.ts` arranca cuando la franja se acerca a la pantalla, mueve luz y máscara con
+  un lerp en `requestAnimationFrame` y se detiene al llegar. En pantallas táctiles la luz recorre el texto sola mientras
+  está a la vista. Con «reducir movimiento» o `data-mov-off`, luz fija y tenue. Sin JS, solo el texto tenue.
+- **Ajuste final:** `surfaceScale` 5, `specularExponent` 36, `specularConstant` 0,6 con el cursor (0,48 en el barrido
+  táctil), `z` = 0,5 × tamaño de letra, desenfoque 0,018 × tamaño.
+- **Peso:** el efecto va en el bundle de la página; pedirlo con `import()` sumaba a cada página interna el ayudante de
+  precarga de Vite. El presupuesto de JS de la portada pasa a 9.600 B (medido 9.248 B); las demás plantillas caben.
+- **Publicación:** despliegue 39826259416 en verde, `verify` en verde antes del merge, `check-prod.sh` 39 ok.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

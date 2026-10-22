@@ -10,10 +10,17 @@ import PlanesTabs from './PlanesTabs.astro';
 const ctaLabel = (n: string) => ({ landing: 'Cotizar mi landing', pyme: 'Cotizar mi web', ecommerce: 'Cotizar mi tienda' } as Record<string, string>)[planKey(n)] || 'Cotizar mi proyecto';
 import InfraReliability from './InfraReliability.astro';
 import SeoMomentum from './SeoMomentum.astro';
+import prosaImagenes from '../data/prosa-imagenes.json';
 /* `v2` = la página usa la anatomía nueva (PageData.anatomia): los bloques existentes emiten además el contrato
    data-* que lee el validador. Sin `v2` el HTML de las páginas actuales no cambia ni un byte. */
-interface Props { blocks: Block[]; v2?: boolean; servicio?: string }
-const { blocks, v2 = false, servicio = 'definir' } = Astro.props;
+interface Props { blocks: Block[]; v2?: boolean; servicio?: string; slug?: string }
+const { blocks, v2 = false, servicio = 'definir', slug } = Astro.props;
+/* Imagen de cada bloque de prosa v2, por página y orden (src/data/prosa-imagenes.json). Con imagen, el bloque va en
+   zigzag: texto e imagen lado a lado, alternando el lado de un bloque al siguiente. */
+const fotos = prosaImagenes as Record<string, { alt: string; width: number; height: number }>;
+const clavePagina = slug === undefined ? null : slug.replace(/\//g, '--') || 'raiz';
+let ordenProsa = 0;
+const fotoProsa = () => { ordenProsa++; const id = clavePagina && `${clavePagina}-${ordenProsa}`; return id && fotos[id] ? { id, ...fotos[id], par: ordenProsa % 2 === 0 } : null; };
 /* '2026-10-13' → '13/10': sin Date, para no depender de la zona horaria del build. */
 const fechaCorta = (iso: string) => { const [, m, d] = iso.split('-'); return `${d}/${m}`; };
 /* D39: un bloque de la anatomía nueva con una lista vacía o un dato clave faltante rompe el build,
@@ -39,14 +46,26 @@ if (v2) {
 ---
 {blocks.map((b) => (
   <>
-    {b.type === 'prose' && v2 && (
+    {b.type === 'prose' && v2 && ((foto) => (
       <section class="ew-sec" data-block="prosa">
-        <div class="ew-wrap">
-          <h2 class="ew-h2">{b.h2}</h2>
-          <div class="ew-prosa rt">{b.paragraphs.map((p) => <p set:html={p}></p>)}</div>
-        </div>
+        {foto ? (
+          <div class={`ew-wrap ew-zz${foto.par ? ' ew-zz--inv' : ''}`}>
+            <div class="ew-zz__texto">
+              <h2 class="ew-h2">{b.h2}</h2>
+              <div class="ew-prosa rt">{b.paragraphs.map((p) => <p set:html={p}></p>)}</div>
+            </div>
+            <figure class="ew-zz__foto">
+              <Pic src={`/images/prosa/${foto.id}.jpg`} alt={foto.alt} width={foto.width} height={foto.height} sizes="(min-width: 1024px) 560px, 100vw" />
+            </figure>
+          </div>
+        ) : (
+          <div class="ew-wrap">
+            <h2 class="ew-h2">{b.h2}</h2>
+            <div class="ew-prosa rt">{b.paragraphs.map((p) => <p set:html={p}></p>)}</div>
+          </div>
+        )}
       </section>
-    )}
+    ))(fotoProsa())}
 
     {b.type === 'steps' && v2 && (
       <section class="ew-sec ew-sec--alt" data-block="pasos">

@@ -21,7 +21,7 @@ export const miamiPages: PageData[] = [
     heroImage: { src: '/images/hero/miami--diseno-web-en-miami-en-espanol.jpg', alt: 'Diseño web en Miami en español' },
     lead: [
       'Miami-Dade se vende y se compra en español. Tu web debería hablar el mismo idioma que tu cliente, no una traducción de plantilla.',
-      'Somos una agencia con sede en Panamá que trabaja 100% remoto para negocios hispanos de Miami: mismo huso horario (una hora de diferencia como mucho), precios en USD y el mismo proceso que usamos con nuestros clientes en Panamá. Aquí ves las zonas donde trabajamos; si buscas la oferta y cómo se cobra, está en <a href="/miami/diseno-web-en-miami-en-espanol/">páginas web para negocios hispanos de Miami</a>.',
+      'Elemento Web diseña páginas web en español para negocios hispanos de Miami-Dade desde Ciudad de Panamá, sin oficina en Miami: cero a una hora de diferencia horaria, precios en USD sin ITBMS (landing desde $550, corporativa desde $1,250) y demo antes de publicar. Abajo, las 12 zonas; la oferta completa está en <a href="/miami/diseno-web-en-miami-en-espanol/">diseño web en Miami en español</a>.',
     ],
     blocks: [
       {
@@ -45,22 +45,21 @@ export const miamiPages: PageData[] = [
       },
       {
         type: 'checklist',
-        h2: 'Por qué Panamá para un negocio de Miami',
+        h2: '¿Por qué contratar desde Panamá el diseño web de un negocio en Miami?',
         items: [
-          'Mismo huso horario: coordinamos sin el desfase de un equipo asiático o europeo',
-          'Mismo idioma nativo, no un traductor leyendo un brief en inglés',
-          'Precios en USD, sin conversión de moneda ni sorpresas cambiarias',
-          'La misma calidad técnica con la que operamos tres SaaS propios en producción',
-          'Comunicación directa por WhatsApp, en tu horario de oficina',
-          'Sin el costo de estructura de una agencia física en EE.UU.',
+          'Panamá está en UTC-5 todo el año: con Miami hay cero o una hora de diferencia, según el horario de verano',
+          'Español nativo en el texto y en la conversación, no un brief traducido',
+          'Precios en USD sin conversión de moneda, y sin ITBMS porque es un impuesto panameño',
+          'La misma base técnica con la que operamos tres SaaS propios en producción',
+          'Sin el costo de estructura de una agencia con oficina en EE.UU.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Remoto no significa a distancia',
+        h2: '¿Cómo funciona un proyecto web remoto entre Panamá y Miami?',
         paragraphs: [
-          '"Remoto" suena a que perdiste el control del proyecto. En la práctica es al revés: trabajamos con el mismo proceso que usamos con clientes en Panamá — demo online antes de publicar, tres pagos (no todo por adelantado) y un interlocutor fijo que conoce tu negocio, no un ticket de soporte genérico.',
-          'Lo que no necesitas para que una web funcione es que quien la construye esté sentado en tu misma ciudad. Lo que sí necesitas es que responda rápido, en tu idioma y en tu horario. Eso es exactamente lo que resolvemos operando desde Panamá.',
+          'Igual que con un cliente en Ciudad de Panamá: demo en línea antes de publicar, tres pagos en lugar de todo por adelantado y un interlocutor fijo que conoce tu negocio. Coordinamos por WhatsApp y videollamada en tu horario de oficina; no hay reuniones en persona porque no tenemos oficina en Miami.',
+          'Los formatos y precios son los de la <a href="/precios/">lista publicada</a>: <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a>, <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> o <a href="/servicios/tiendas-online-ecommerce-panama/">tienda en línea</a>. Lo que cambia por zona es el cliente: bilingüe y B2B en Doral o Brickell, comercio de barrio en español en Hialeah o Sweetwater.',
         ],
       },
       {
@@ -98,37 +97,37 @@ export const miamiPages: PageData[] = [
     breadcrumb: 'Diseño Web en Miami',
     lead: [
       'En buena parte de Miami-Dade el negocio se vende, se cobra y se atiende en español. Una web que no habla ese idioma nativo pierde al cliente antes de que lea la segunda línea.',
-      'Trabajamos remoto desde Panamá con negocios hispanos de Miami: mismo huso horario, precios en dólares y el mismo proceso que usamos en cada proyecto, con demo online antes de publicar y pago por etapas.',
+      'Elemento Web hace diseño web en español para negocios hispanos de Miami desde Ciudad de Panamá, sin oficina en Florida: texto en español nativo, WhatsApp como contacto principal, SEO local en español y opción bilingüe. Se cobra en USD por tarjeta o transferencia, sin ITBMS. Una landing tarda 5 días hábiles; un sitio corporativo, de 2 a 3 semanas.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que necesita la web de un negocio hispano en Miami',
+        h2: '¿Qué necesita la web de un negocio hispano en Miami?',
         items: [
-          'Contenido en español nativo, no traducido con IA sin revisión',
-          'Botón directo a WhatsApp: así se contacta un negocio hispano, no un formulario de contacto genérico',
-          'Precios en USD, claros desde la web, sin obligar a llamar para saber cuánto cuesta',
-          'SEO local para búsquedas en español ("diseño web en Miami", "página web para mi negocio")',
-          'Diseño que compite visualmente con agencias de EE.UU., sin el precio de EE.UU.',
-          'Un interlocutor fijo, no un call center que cambia de persona cada vez',
+          'Español nativo escrito para tu cliente, no una plantilla en inglés traducida con IA',
+          'Botón directo a WhatsApp, el canal por el que ya te escribe el cliente hispano',
+          'Precios o rangos en USD a la vista, sin obligar a llamar',
+          'SEO local para búsquedas en español como «diseño web en Miami» o «página web para mi negocio»',
+          'Inglés como segundo idioma cuando también atiendes al cliente angloparlante',
+          'Un interlocutor fijo durante todo el proyecto',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué cambia cuando tu agencia trabaja remoto desde Panamá',
+        h2: '¿Qué cambia si tu agencia de diseño web trabaja desde Panamá?',
         paragraphs: [
-          'Una agencia con oficina en Miami tiene una estructura de costos distinta a la nuestra, y eso puede reflejarse en sus precios. No comparamos cifras porque no tenemos datos verificados de otros proveedores: pide cotizaciones con alcance por escrito y compara.',
-          'Nosotros operamos desde Panamá con el mismo proceso que aplicamos con clientes en Panamá: demo en línea antes de publicar, pago por etapas y un interlocutor fijo. También mantenemos <a href="/saas/">tres productos SaaS propios en producción</a>. Lo que cambia es que no nos reunimos en persona: coordinamos por WhatsApp y videollamada.',
+          'La estructura de costos: no pagamos oficina en Miami, y eso no se carga al precio. No comparamos cifras con agencias locales porque no tenemos datos verificados de otros proveedores; pide cotizaciones con alcance por escrito y compara.',
+          'El proceso es el que usamos en Panamá: demo en línea antes de publicar, pago por etapas y un interlocutor fijo. La misma base técnica sostiene <a href="/saas/">tres productos SaaS propios en producción</a>. Lo único que no hay son reuniones en persona: todo se coordina por WhatsApp y videollamada. Los formatos y precios están en la <a href="/precios/">lista publicada</a>.',
         ],
       },
       {
         type: 'cards',
-        h2: 'A quién le sirve más',
-        intro: 'No es para todo el mundo. Estos son los negocios donde el ángulo "en español, remoto desde Panamá" rinde más.',
+        h2: '¿A qué negocios de Miami les conviene una agencia remota en español?',
+        intro: 'No a todos. Si valoras reunirte en persona, una agencia local te sirve mejor. Estos son los casos donde el modelo rinde más.',
         items: [
-          { h3: 'Negocios que ya atienden en español', text: 'Si tu cliente te escribe y te llama en español, tu web debería hacer lo mismo. Traducir una plantilla en inglés no es lo mismo que construirla pensando en cómo vende un hispanohablante.' },
-          { h3: 'Servicios profesionales y de confianza', text: 'Contadores, abogados, clínicas, agentes de seguros: rubros donde el cliente hispano prefiere explicar su caso en su idioma antes de decidir.' },
-          { h3: 'Negocios que ya compararon precios en Miami', text: 'Si ya pediste cotizaciones locales y el número te sorprendió, vale la pena comparar contra una estructura de costos distinta antes de resignarte a pagarlo.' },
+          { h3: 'Negocios que ya atienden en español', text: 'Si tu cliente te escribe y te llama en español, la web debe estar escrita para él desde el principio, no traducida de una plantilla en inglés.' },
+          { h3: 'Servicios profesionales y de confianza', text: 'Contadores, abogados, clínicas, agentes de seguros: rubros donde el cliente hispano prefiere explicar su caso en su idioma antes de decidir. Ver <a href="/industrias/">diseño web por industria</a>.' },
+          { h3: 'Negocios que ya pidieron cotizaciones en Miami', text: 'Si ya tienes propuestas locales, compáralas por escrito con la nuestra: alcance, plazo y precio, punto por punto.' },
         ],
       },
       {
@@ -165,26 +164,26 @@ export const miamiPages: PageData[] = [
     breadcrumb: 'Doral',
     lead: [
       'Doral se construyó alrededor del comercio internacional y el aeropuerto de Miami: aquí operan importadoras, oficinas regionales y profesionales que ya piensan en varios países a la vez.',
-      'Ese perfil de negocio no necesita explicarle a una agencia qué es trabajar remoto: ya lo hace todos los días. Trabajamos desde Panamá con el mismo estándar que exige un negocio acostumbrado a operar sin fronteras.',
+      'Elemento Web hace diseño web para empresas de Doral desde Ciudad de Panamá, sin oficina en Miami: sitios bilingües español/inglés, catálogo por línea de producto o servicio, credenciales a la vista y un contacto que filtra la consulta B2B antes de la llamada. Se cobra en USD, sin ITBMS, con demo antes de publicar y pago por etapas.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que suele necesitar un negocio en Doral',
+        h2: '¿Qué necesita el diseño web de una empresa en Doral?',
         items: [
-          'Presentación bilingüe (español/inglés) para clientes de la región y de EE.UU.',
-          'Credenciales y certificaciones visibles: aquí se decide con papeles, no solo con diseño',
-          'Catálogo o líneas de servicio claras para un comprador B2B que compara varias opciones',
-          'Formulario o WhatsApp que filtre el tipo de consulta antes de la llamada',
-          'Contenido pensado para un cliente que ya trabaja con proveedores en más de un país',
+          'Versión en español y en inglés pensada desde el inicio, para clientes de Latinoamérica y de EE.UU.',
+          'Licencias, certificaciones y años de operación visibles: el comprador B2B decide con papeles',
+          'Catálogo o líneas de servicio por página, para quien compara tres proveedores a la vez',
+          'Formulario o WhatsApp que pregunte volumen, origen y destino antes de la llamada',
+          'Cobertura explícita: qué países atiendes, desde qué bodega o puerto y en qué plazos',
         ],
       },
       {
         type: 'prose',
-        h2: 'Un negocio acostumbrado a lo internacional entiende lo remoto',
+        h2: '¿Por qué una empresa de Doral puede trabajar su web con una agencia en Panamá?',
         paragraphs: [
-          'Si tu empresa ya importa, exporta o coordina con oficinas en otros países, la idea de que tu proveedor de diseño web esté en Panamá no es un riesgo: es el mismo modelo con el que ya operas todos los días.',
-          'La diferencia está en el resultado: mismo nivel de exigencia técnica, comunicación en tu idioma y en tu horario, y una estructura de precio que no carga el costo de estar en uno de los códigos postales más caros de Florida.',
+          'Doral concentra importadoras, freight forwarders y oficinas regionales cerca del aeropuerto de Miami, muchas con dueños venezolanos, colombianos o centroamericanos. Son empresas que ya coordinan proveedores en varios países; un proveedor de diseño web en Panamá, a cero o una hora de diferencia, es el mismo modelo con el que operan.',
+          'El rubro decide la estructura más que la ciudad. Lo que aplicamos a una importadora o a una empresa de carga está detallado en <a href="/industrias/diseno-web-importadoras-distribuidoras-panama/">diseño web para importadoras</a> y <a href="/industrias/diseno-web-logistica-transporte-panama/">diseño web para logística</a>; el formato habitual es una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> bilingüe.',
         ],
       },
       {
@@ -218,26 +217,26 @@ export const miamiPages: PageData[] = [
     breadcrumb: 'Hialeah',
     lead: [
       'Hialeah es una de las ciudades con más pequeños negocios por habitante de Florida, y el día a día se vive casi enteramente en español.',
-      'Aquí una web genérica en inglés no conecta. Construimos sitios pensados para cómo un negocio de Hialeah realmente vende: en español, por WhatsApp, con precio claro desde el primer clic.',
+      'Elemento Web hace diseño web para negocios de Hialeah desde Ciudad de Panamá, sin oficina en Miami: sitios en español, rápidos en el celular, con WhatsApp visible, precios a la vista y fotos reales del local. Una landing parte desde $550 y un sitio de varias páginas desde $1,250, cobrados en USD y sin ITBMS.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que suele necesitar un negocio en Hialeah',
+        h2: '¿Qué necesita el diseño web de un negocio en Hialeah?',
         items: [
-          'Web 100% en español, sin traducción de plantilla',
-          'Botón de WhatsApp visible desde el primer scroll',
-          'Precios o rangos de precio claros: aquí se decide rápido si el número está a la vista',
-          'Fotos reales del negocio, no stock genérico que podría ser cualquier local',
-          'Diseño simple y rápido de cargar, pensado para que se abra bien desde el celular',
+          'Todo en español, escrito como habla tu cliente, sin plantilla traducida',
+          'Botón de WhatsApp visible desde la primera pantalla',
+          'Precios o rangos a la vista: aquí se decide rápido si el número está claro',
+          'Dirección, horario y mapa del local, coherentes con tu ficha de Google',
+          'Fotos reales del negocio, no imágenes de stock que podrían ser de cualquier local',
         ],
       },
       {
         type: 'prose',
-        h2: 'El comercio de barrio no necesita una web complicada, necesita una que convierta',
+        h2: '¿Qué web le sirve a un comercio de barrio en Hialeah?',
         paragraphs: [
-          'Un negocio de Hialeah no compite por tener la web más sofisticada de Miami: compite por aparecer cuando alguien busca en español y por convertir esa visita en un mensaje de WhatsApp. Eso es diseño enfocado en resultado, no en aparentar.',
-          'Trabajamos remoto desde Panamá con el mismo idioma y el mismo tipo de negocio que ya conocemos de sobra en nuestro propio mercado: pymes, comercio local, servicios de barrio. El terreno es el mismo aunque el país cambie.',
+          'Una corta y directa. El cliente de Hialeah busca en español y desde el celular («taller cerca de mí», «cake para cumpleaños en Hialeah») y decide en segundos entre los negocios que salen en el mapa. La web tiene que confirmar lo que vio ahí y llevarlo a un mensaje de WhatsApp.',
+          'Para la mayoría basta una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> con servicios, precios y ubicación; si vendes varias líneas o tienes más de un local, un sitio de varias páginas. Es el mismo tipo de pyme y comercio local con el que trabajamos en Panamá.',
         ],
       },
       {

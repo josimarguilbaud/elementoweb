@@ -15,7 +15,7 @@ export const industriasPages: PageData[] = [
     breadcrumb: 'Industrias',
     lead: [
       'Cada industria vende distinto: lo que convierte en una firma legal espanta en un restaurante. Por eso no diseñamos genérico.',
-      'Estas son las industrias donde ya conocemos el terreno: qué busca su cliente, qué pregunta antes de decidir y qué tiene que ver en la web para confiar. Ese conocimiento acumulado es lo que compras junto con el diseño.',
+      'El diseño web por industria de Elemento Web, en Ciudad de Panamá, ordena cada sitio según cómo compra el cliente de ese sector: páginas por especialidad, zona o servicio, la prueba de confianza que pesa y la acción que se pide. Cubrimos 30 nichos, de abogados a imprentas, con los mismos precios: landing desde $550, corporativa desde $1,250.',
     ],
     blocks: [
       {
@@ -57,16 +57,16 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Por qué el diseño por industria posiciona mejor que una plantilla genérica',
+        h2: '¿Por qué una web por industria posiciona mejor que una plantilla genérica?',
         paragraphs: [
-          'Una plantilla bonita puede servir a cualquier negocio, y ese es justo el problema: no dice nada específico de ninguno. Tu cliente no compara diseños, compara respuestas. El paciente quiere ver la especialidad; el comprador de propiedades, el filtro por zona; el comensal, el menú. Cuando la web responde la pregunta correcta en los primeros segundos, convierte; cuando obliga a buscar, pierde.',
-          'Google premia lo mismo. Los buscadores rara vez son "diseño web": son "abogado migratorio Panamá", "apartamento en venta Costa del Este", "spa cerca de mí". Cada uno se gana con una página construida para ese intento de búsqueda, no con una home que intenta hablarle a todos a la vez.',
-          'Por eso separamos el silo por sector. No es marketing: es que el orden de la información, las pruebas de confianza que pesan y la acción que se pide cambian de raíz según el rubro. <strong>Ese conocimiento del terreno es lo que compras junto con el diseño.</strong>',
+          'Una plantilla sirve a cualquier negocio porque no dice nada específico de ninguno. Tu cliente no compara diseños, compara respuestas: el paciente busca la especialidad; el comprador de propiedades, el filtro por zona; el comensal, el menú. Si la web responde eso en los primeros segundos, convierte.',
+          'Google premia lo mismo. Las búsquedas reales no son "diseño web": son "abogado migratorio Panamá", "apartamento en venta Costa del Este", "spa cerca de mí". Cada una se gana con una página construida para esa intención, no con una home que le habla a todos.',
+          'El orden de la información, las pruebas de confianza y la acción que se pide cambian de raíz según el rubro. <strong>Ese conocimiento del terreno es lo que compras junto con el diseño.</strong>',
         ],
       },
       {
         type: 'steps',
-        h2: 'Cómo adaptamos la web a tu sector',
+        h2: '¿Cómo se adapta el diseño web a cada industria?',
         intro: 'El proceso es el mismo; lo que cambia es a qué le prestamos atención en cada paso según tu industria.',
         items: [
           { h3: 'Diagnóstico del rubro', text: 'Entendemos quién decide la compra, qué investiga antes y qué lo hace desconfiar. No es lo mismo un comprador B2B de logística que unos padres eligiendo colegio.' },
@@ -74,11 +74,6 @@ export const industriasPages: PageData[] = [
           { h3: 'Funcionalidad según necesidad', text: 'Conectamos solo lo que tu rubro usa de verdad: reservas, catálogo con filtros, pagos con Yappy, citas online o portal de seguimiento.' },
           { h3: 'Contenido que responde y posiciona', text: 'Escribimos las páginas por especialidad, zona o servicio que capturan las búsquedas reales de tu cliente, no textos de relleno.' },
         ],
-      },
-      {
-        type: 'statement',
-        text: 'Una web genérica compite en precio; una web que domina su industria compite en confianza. En Panamá, la confianza es lo que cierra.',
-        strong: 'una web que domina su industria compite en confianza',
       },
       {
         type: 'faq',
@@ -152,12 +147,12 @@ export const industriasPages: PageData[] = [
     service: { type: 'Diseño web para firmas legales' },
     lead: [
       'Tu cliente potencial compara tres firmas antes de escribir. La web decide si tu firma está en esa lista corta o no.',
-      'En servicios legales la web no vende: filtra y da confianza. El visitante llega con un problema serio (una sociedad, un migratorio, un pleito) y busca señales de que tu firma lo resuelve. Encontrarlas en treinta segundos es diseño; no encontrarlas es un contrato perdido en silencio.',
+      'El diseño web para abogados en Panamá que hace Elemento Web parte de una página por área de práctica (corporativo, migratorio, laboral, marítimo), perfiles con idoneidad e idiomas, versión bilingüe y un formulario que filtra el caso antes de la llamada. El formato típico es una web corporativa desde $1,250, con datos tratados según la Ley 81 de 2019.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que la web de una firma legal en Panamá debe incluir',
+        h2: '¿Qué debe incluir la web de una firma legal en Panamá?',
         items: [
           'Una página por área de práctica (corporativo, migratorio, laboral, marítimo)',
           'Perfiles del equipo con credenciales verificables e idiomas',
@@ -171,11 +166,10 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Una página por área de práctica: la decisión que más pesa',
+        h2: '¿Por qué cada área de práctica necesita su propia página?',
         paragraphs: [
           'Nadie busca "bufete de abogados" a secas: busca "abogado migratorio Panamá" o "constitución de sociedades". Si todas tus áreas viven en una sola página de "Servicios", no compites en ninguna de esas búsquedas.',
-          'Cada área de práctica merece su propia URL, con el problema descrito en el idioma del cliente, los casos típicos que resuelves y una consulta específica como llamado. <strong>Así se posiciona una firma: área por área</strong>, no con la marca genérica.',
-          'El blog complementa: cada pregunta frecuente de tus clientes (requisitos, plazos, costos aproximados) es un artículo que te trae al siguiente cliente con la misma duda.',
+          'Cada área merece su propia URL, con el problema descrito en el idioma del cliente, los casos típicos que resuelves y una consulta específica como llamado. <strong>Así se posiciona una firma: área por área</strong>, no con la marca genérica.',
         ],
       },
       {
@@ -195,35 +189,34 @@ export const industriasPages: PageData[] = [
           { h3: 'Mapeo de áreas de práctica', text: 'Listamos cada área que atiendes y decidimos cuáles merecen su propia página posicionable y cuáles agrupar. No todas pesan igual en búsqueda.' },
           { h3: 'Redacción con autoridad, sin jerga vacía', text: 'Describimos cada área en el idioma del cliente: el problema, los casos típicos y qué esperar de la consulta. Seriedad sin promesas de resultado, que en este rubro están reguladas.' },
           { h3: 'Filtro de consultas', text: 'Configuramos el formulario y, si lo activas, el asistente con IA para que solo llegue a tu equipo el caso que sí atiendes, con los datos mínimos ya recogidos.' },
-          { h3: 'Publicación y contenido continuo', text: 'Dejamos el blog listo para que cada duda frecuente (requisitos, plazos, costos aproximados) se convierta en un artículo que capta al siguiente cliente.' },
+          { h3: 'Blog de trámites', text: 'Dejamos el blog listo para que cada duda frecuente (requisitos, plazos, costos aproximados) se convierta en un artículo que capta al siguiente cliente.' },
         ],
       },
       {
         type: 'prose',
-        h2: 'La discreción se diseña, no se promete',
+        h2: '¿Cómo transmite discreción la web de un abogado?',
         paragraphs: [
-          'En servicios legales el cliente llega con un asunto que preferiría no contarle a nadie. Un formulario que pide media vida antes de dar un teléfono, o un chat que expone su consulta en pantalla, lo espanta. La web tiene que transmitir reserva en cada detalle: pedir solo lo necesario, ofrecer un canal directo y dejar claro cómo se protege lo que comparte.',
-          'Ese mismo cuidado aplica al tono. La estridencia (superlativos, "somos los mejores", promesas de ganar el caso) resta credibilidad y además roza lo que la ética profesional permite anunciar. <strong>La sobriedad no es una decisión estética: es lo que un cliente serio espera de un abogado serio.</strong>',
+          'El cliente legal llega con un asunto que preferiría no contarle a nadie. Un formulario que pide media vida antes de dar un teléfono, o un chat que expone su consulta en pantalla, lo espanta. La web debe pedir solo lo necesario, ofrecer un canal directo y decir cómo se protege lo que comparte.',
+          'Lo mismo vale para el tono. Los superlativos y las promesas de ganar el caso restan credibilidad y rozan lo que la ética profesional permite anunciar. <strong>La sobriedad es lo que un cliente serio espera de un abogado serio.</strong>',
         ],
       },
             {
         type: 'prose',
-        h2: 'El contenido que capta consultas no habla de leyes, habla de trámites',
+        h2: '¿Qué contenido capta consultas legales en Google?',
         paragraphs: [
-          'La web de una firma legal suele explicar sus áreas de práctica en el lenguaje del despacho: derecho corporativo, litigios, propiedad intelectual. Correcto y poco útil para captar, porque el cliente no busca así. Busca su problema: "cómo constituir una sociedad anónima en Panamá", "qué pasa si no firmo la liquidación", "cuánto cuesta un divorcio de mutuo acuerdo".',
-          'Ahí está el tráfico, y casi ninguna firma panameña lo trabaja. Un artículo que explique bien un trámite concreto —los pasos, los documentos, los plazos, el costo aproximado— capta a quien todavía está averiguando, que es cuando aún no eligió abogado.',
-          'La objeción habitual es que explicar el trámite hace que el cliente lo resuelva solo. En la práctica ocurre lo contrario: el que lee el detalle entiende lo que implica y llama, y llega mucho mejor informado, con menos preguntas básicas y más disposición a pagar por hacerlo bien.',
-          '<strong>Es el activo más rentable de una firma pequeña.</strong> Diez artículos sobre trámites que tu firma resuelve a diario compiten con despachos mucho más grandes, porque los grandes rara vez escriben para el que todavía no es cliente.',
+          'Las firmas explican sus áreas en el lenguaje del despacho: derecho corporativo, litigios, propiedad intelectual. El cliente no busca así. Busca su problema: "cómo constituir una sociedad anónima en Panamá", "qué pasa si no firmo la liquidación", "cuánto cuesta un divorcio de mutuo acuerdo".',
+          'Un artículo que explique un trámite concreto (pasos, documentos, plazos, costo aproximado) capta a quien todavía está averiguando, que es cuando aún no eligió abogado. Explicarlo no hace que lo resuelva solo: llega mejor informado y más dispuesto a pagar por hacerlo bien.',
+          '<strong>Es el activo más rentable de una firma pequeña.</strong> Diez artículos sobre trámites que tu firma resuelve a diario compiten con despachos mucho más grandes, que rara vez escriben para el que todavía no es cliente.',
         ],
       },
       {
         type: 'prose',
-        h2: 'La consulta inicial: cómo se agenda y por qué conviene cobrarla',
+        h2: '¿Cómo se agenda la consulta inicial y conviene cobrarla?',
         paragraphs: [
-          'El cuello de botella de casi toda firma no es captar, es filtrar. Llegan llamadas de consultas que no son del área, casos sin viabilidad y gente buscando asesoría gratis. Cada una consume tiempo de alguien que factura por hora.',
-          'La web filtra antes de que suene el teléfono, si se le deja. Un formulario de consulta que pida el área, un resumen del caso y la urgencia deja al abogado decidir a qué responder primero. Y dice de entrada qué áreas no se atienden, que ahorra más llamadas de las que uno espera.',
-          'El segundo filtro es cobrar la consulta inicial. Publicar su precio en la web hace dos cosas a la vez: elimina al que buscaba asesoría gratis y le da al cliente serio una expectativa clara, que es justo lo que quiere antes de escribir a un abogado que no conoce.',
-          'Y agendar sin llamar importa más de lo que parece: buena parte de las consultas legales las inicia alguien que no puede hablar del tema desde su oficina. <strong>Poder reservar a las nueve de la noche, sin explicarle nada a nadie por teléfono, convierte mucho mejor.</strong>',
+          'El cuello de botella de una firma no es captar, es filtrar: consultas de otra área, casos sin viabilidad y gente buscando asesoría gratis, cada una a costa de alguien que factura por hora.',
+          'Un formulario que pida el área, un resumen del caso y la urgencia deja al abogado decidir a qué responder primero. Decir de entrada qué áreas no se atienden ahorra más llamadas de las que uno espera.',
+          'El segundo filtro es cobrar la consulta inicial y publicar su precio: elimina al que buscaba asesoría gratis y le da al cliente serio la expectativa clara que quiere antes de escribir.',
+          'Agendar sin llamar también pesa: muchas consultas legales las inicia alguien que no puede hablar del tema desde su oficina. <strong>Poder reservar a las nueve de la noche, sin explicarle nada a nadie por teléfono, convierte mucho mejor.</strong>',
         ],
       },
       {
@@ -243,22 +236,19 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Confidencialidad: lo que promete la web y lo que hace el servidor',
+        h2: '¿Qué exige la Ley 81 de 2019 al formulario de una firma legal?',
         paragraphs: [
-          'Toda firma dice en su web que la confidencialidad es sagrada, y muchas de esas webs mandan el formulario de contacto a un correo gratuito compartido por tres personas. La promesa y la infraestructura no coinciden, y el cliente que sabe de esto lo nota.',
-          'Al secreto profesional se le suma la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong>: lo que el cliente escribe en tu formulario son datos personales, y a veces sensibles, que hay que tratar en consecuencia. Sitio en HTTPS, formulario que diga quién lo recibe, y almacenamiento con acceso controlado y trazable.',
-          'El punto flojo más frecuente que encontramos es el mismo de siempre: los correos del formulario aterrizan en la bandeja personal de alguien de la firma. No hay control de quién los leyó ni qué se hizo con ellos, y el día que alguien pregunte no hay respuesta.',
-          'Nosotros montamos esa parte: certificado, formulario con aviso de privacidad, buzón de la firma con acceso controlado. <strong>El texto legal lo redacta la propia firma</strong>, que para eso es la que sabe; nosotros dejamos dónde vive y que la infraestructura lo respalde.',
+          'Muchas firmas prometen confidencialidad y mandan el formulario a un correo gratuito compartido por tres personas. La promesa y la infraestructura no coinciden, y el cliente que sabe de esto lo nota.',
+          'Al secreto profesional se le suma la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong>: lo que el cliente escribe son datos personales, a veces sensibles. Eso pide sitio en HTTPS, un formulario que diga quién lo recibe y almacenamiento con acceso controlado y trazable, no la bandeja personal de alguien de la firma.',
+          'Nosotros montamos esa parte: certificado, formulario con aviso de privacidad y buzón de la firma con acceso controlado. <strong>El texto legal lo redacta la propia firma</strong>; nosotros dejamos dónde vive y que la infraestructura lo respalde.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué medir: consultas calificadas, no visitas',
+        h2: '¿Qué medir en la web de una firma legal?',
         paragraphs: [
-          'Una firma legal no necesita tráfico, necesita consultas del área correcta y con caso viable. Medir visitas en este rubro es especialmente inútil, porque una web de abogados con mucho tráfico y ninguna consulta calificada solo está atrayendo a gente buscando asesoría gratis.',
-          'Lo que hay que mirar es cuántas consultas entraron, de qué área, y qué porcentaje se convirtió en caso. Ese último número, cruzado con el área, es la información más accionable que puede darte tu web: te dice qué área conviene trabajar más y cuál está atrayendo al cliente equivocado.',
-          'También vale medir de qué contenido venía cada consulta. Si tres artículos sobre trámites generan la mitad de tus consultas del año, ya sabes qué tipo de contenido escribir el próximo trimestre y cuál dejar de escribir.',
-          'Lo dejamos en un tablero corto que se revisa en dos minutos, no en un informe mensual. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Consultas por área de práctica y qué porcentaje se convirtió en caso. Cruzados, te dicen qué área conviene trabajar más y cuál atrae al cliente equivocado, como el que busca asesoría gratis.',
+          'También de qué artículo venía cada consulta: si tres textos sobre trámites generan la mitad de tus consultas, ya sabes qué escribir el próximo trimestre. Lo dejamos en un tablero que se revisa en dos minutos; el planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -304,12 +294,12 @@ export const industriasPages: PageData[] = [
     service: { type: 'Diseño web para inmobiliarias' },
     lead: [
       'El comprador filtra por zona, precio y recámaras antes de hablar contigo. Si tu web no filtra, el comprador se va a un portal que sí.',
-      'La inmobiliaria que depende solo de portales de terceros alquila su negocio: paga por destacar sus propias propiedades y compite en la misma vitrina con todos. Tu web propia es el activo donde el interesado ve solo tu inventario y te escribe solo a ti.',
+      'El diseño web para bienes raíces en Panamá que hace Elemento Web incluye catálogo con filtros por zona, precio y recámaras, fichas con precio, cuota de mantenimiento y botón de WhatsApp por propiedad, y páginas por zona como Costa del Este o Coronado. Un corredor empieza con una web corporativa desde $1,250; con catálogo, desde $1,950.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que la web de una inmobiliaria en Panamá debe incluir',
+        h2: '¿Qué debe incluir la web de una inmobiliaria en Panamá?',
         items: [
           'Catálogo con filtros: zona, tipo, precio, recámaras, estado',
           'Fichas con galería amplia, video y recorrido si existe',
@@ -323,20 +313,19 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Las páginas por zona son tu mina de oro',
+        h2: '¿Por qué una inmobiliaria necesita páginas por zona?',
         paragraphs: [
-          'Las búsquedas inmobiliarias son geográficas: "apartamento en venta Costa del Este", "casa en Coronado". Una página por zona, con las propiedades activas y una guía del área (precios promedio, plusvalía, estilo de vida) posiciona exactamente donde decide tu comprador.',
-          'Los portales no pueden darte eso: su página de zona muestra a toda tu competencia. <strong>La tuya muestra tu inventario y tu WhatsApp.</strong>',
-          'Para el corredor individual el mismo principio aplica en escala: una web con diez propiedades bien presentadas y tu cara visible genera más confianza que un perfil perdido entre miles.',
+          'Las búsquedas inmobiliarias son geográficas: "apartamento en venta Costa del Este", "casa en Coronado", "vivir en Casco Antiguo". Una página por zona, con las propiedades activas y una guía del área (precios promedio, plusvalía, estilo de vida), posiciona donde decide el comprador que todavía no eligió propiedad ni corredor.',
+          'La página de zona de un portal muestra a toda tu competencia. <strong>La tuya muestra tu inventario y tu WhatsApp</strong>, y casi ninguna inmobiliaria panameña escribe ese contenido.',
+          'Para el corredor individual aplica a escala: diez propiedades bien presentadas y tu cara visible generan más confianza que un perfil perdido entre miles.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Cómo trabajamos la web de una inmobiliaria',
+        h2: 'Cómo trabajamos el diseño web para bienes raíces',
         items: [
-          { h3: 'Estructura del catálogo', text: 'Definimos los filtros que tu comprador usa de verdad (zona, tipo, precio, recámaras, estado) y cómo se organiza el inventario para que encuentre en dos clics.' },
-          { h3: 'Fichas que venden', text: 'Diseñamos la ficha de propiedad con galería amplia, datos clave (metraje, mantenimiento, estado legal) y botón de WhatsApp con la referencia ya escrita.' },
-          { h3: 'Páginas por zona', text: 'Construimos las páginas geográficas que capturan "apartamento en venta Costa del Este" y similares, con tu inventario activo y una guía del área.' },
+          { h3: 'Estructura del catálogo', text: 'Definimos los filtros que tu comprador usa de verdad y cómo se organiza el inventario para que encuentre en dos clics.' },
+          { h3: 'Ficha y páginas por zona', text: 'Diseñamos la ficha con datos clave (metraje, mantenimiento, estado legal) y las páginas geográficas con tu inventario activo.' },
           { h3: 'Panel para administrar tú mismo', text: 'Te dejamos subiendo propiedades, cambiando precios y marcando vendido en minutos, sin depender de la agencia para cada movimiento.' },
         ],
       },
@@ -352,30 +341,20 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Las fotos y la velocidad deciden la primera impresión',
+        h2: '¿Conviene una web propia si ya publicas en los portales?',
         paragraphs: [
-          'En bienes raíces la primera impresión es visual y es en el celular. Una ficha con fotos oscuras, torcidas o insuficientes transmite descuido justo cuando el comprador está juzgando si eres serio con montos de seis cifras. Vale la pena la foto profesional; la web tiene que presentarla bien y cargarla rápido aunque la propiedad tenga treinta imágenes.',
-          'La velocidad no es un lujo técnico: un catálogo que tarda en cargar con datos móviles pierde al comprador antes de la primera ficha. <strong>Optimizamos para que decenas de fotos por propiedad se vean nítidas y carguen al instante</strong>, que es donde muchos sitios inmobiliarios fallan y ceden el comprador al portal.',
-        ],
-      },
-            {
-        type: 'prose',
-        h2: 'El portal te cobra por un cliente que podía ser tuyo',
-        paragraphs: [
-          'Casi toda inmobiliaria panameña vive de los portales. Publicas ahí porque ahí está la gente, pagas por destacar, y el comprador que aparece llegó al portal, no a ti. La próxima vez que busque, vuelve al portal, donde también están tus competidores con la misma propiedad.',
-          'No es un argumento para salirse: el portal funciona y hay que estar. Es un argumento para no depender solo de él. Cada mes que pagas por visibilidad prestada es un mes que no construiste visibilidad propia, y esa cuenta se paga con los años.',
-          'Lo que sí construye activo propio es el contenido por zona. "Vivir en Costa del Este", "comprar en Casco Antiguo", "apartamentos en Coronado": son búsquedas de gente que todavía no eligió propiedad ni corredor. Ahí no compites contra las mismas fichas del portal, compites contra nadie, porque casi ninguna inmobiliaria escribe eso.',
-          '<strong>Y el que llega por ese contenido llega distinto:</strong> sin comparar tu ficha con otras cinco idénticas, y hablando contigo desde el principio.',
+          'Casi toda inmobiliaria panameña vive de los portales: pagas por destacar y el comprador que aparece llegó al portal, no a ti. La próxima vez que busque vuelve ahí, donde están tus competidores con la misma propiedad.',
+          'El portal funciona y hay que estar; el punto es no depender solo de él. Cada mes de visibilidad prestada es un mes sin construir la propia. <strong>El que llega por tu web llega distinto:</strong> sin comparar tu ficha con otras cinco idénticas, y hablando contigo desde el principio.',
         ],
       },
       {
         type: 'prose',
-        h2: 'La ficha de propiedad decide en los primeros diez segundos',
+        h2: '¿Qué debe tener una ficha de propiedad para generar visitas?',
         paragraphs: [
-          'Una ficha en tu web puede hacer lo que la del portal no: cargar rápido, mostrar veinte fotos en buena resolución, incluir plano, video y recorrido, y no tener el teléfono de tres competidores al lado.',
-          'Lo que separa una ficha que convierte de una que no es aburridamente concreto. Precio visible, no "consultar". Metraje real y desglosado. Piso, orientación y vista, que en Panamá deciden. Cuota de mantenimiento, que es la pregunta silenciosa de todo comprador de PH. Amenidades del edificio y estado de entrega. Y ubicación con punto de referencia, no solo un pin.',
-          'El precio oculto merece párrafo aparte porque es el error más caro del rubro. "Precio a consultar" hace que la mayoría siga de largo; los pocos que escriben lo hacen solo para preguntar el precio, y ahí se va el día de tu equipo.',
-          'Las fotos son el otro cincuenta por ciento. <strong>En inmobiliario, fotos malas cuestan visitas más que precio alto</strong>, porque el comprador descarta desde el celular en segundos y no vuelve.',
+          'Una ficha en tu web puede hacer lo que la del portal no: mostrar veinte fotos en buena resolución, plano, video y recorrido, sin el teléfono de tres competidores al lado.',
+          'Lo que convierte es concreto. Precio visible, no "consultar". Metraje real y desglosado. Piso, orientación y vista, que en Panamá deciden. Cuota de mantenimiento, la pregunta silenciosa de todo comprador de PH. Amenidades, estado de entrega y ubicación con punto de referencia, no solo un pin.',
+          '"Precio a consultar" es el error más caro del rubro: la mayoría sigue de largo y los pocos que escriben solo preguntan el precio, y ahí se va el día de tu equipo.',
+          '<strong>Fotos malas cuestan más visitas que un precio alto</strong>, porque el comprador descarta desde el celular en segundos. Optimizamos para que treinta fotos por propiedad se vean nítidas y carguen rápido con datos móviles, que es donde muchos sitios inmobiliarios ceden el comprador al portal.',
         ],
       },
       {
@@ -397,20 +376,19 @@ export const industriasPages: PageData[] = [
         type: 'prose',
         h2: 'El comprador extranjero busca distinto y compra más caro',
         paragraphs: [
-          'Panamá recibe un flujo constante de compradores que no viven aquí: jubilados, inversionistas y gente que se muda por trabajo. Es el segmento de mayor ticket y el peor atendido por las webs del rubro, porque busca cosas que a nadie local se le ocurre publicar.',
-          'Ese comprador pregunta por el proceso, no por la propiedad: si un extranjero puede comprar a su nombre, qué impuestos hay, cómo funciona el fideicomiso, si hay financiamiento local para no residentes, cuánto tarda un traspaso. Una página que explique eso bien capta a alguien que todavía está decidiendo si compra en Panamá o en otro país.',
-          'También busca en inglés. Una versión en inglés de las páginas principales y de las fichas de mayor valor abre un mercado en el que casi ninguna inmobiliaria panameña compite, y donde el comprador está acostumbrado a webs mucho mejores que las de aquí.',
-          'Y como decide a distancia, el material pesa distinto: video del recorrido, del edificio y del barrio; fotos con luz de día; y respuesta rápida en su horario. <strong>Ese comprador no puede pasar a ver: la web es la visita.</strong>',
+          'Panamá recibe un flujo constante de compradores que no viven aquí: jubilados, inversionistas y gente que se muda por trabajo. Es el segmento de mayor ticket y el peor atendido por las webs del rubro.',
+          'Ese comprador pregunta por el proceso, no por la propiedad: si un extranjero puede comprar a su nombre, qué impuestos hay, cómo funciona el fideicomiso, si hay financiamiento local para no residentes, cuánto tarda un traspaso. Una página que lo explique capta a quien todavía decide entre Panamá y otro país.',
+          'También busca en inglés. Una versión en inglés de las páginas principales y de las fichas de mayor valor abre un mercado donde casi ninguna inmobiliaria panameña compite.',
+          'Como decide a distancia, pesan el video del recorrido, del edificio y del barrio, las fotos con luz de día y la respuesta rápida en su horario. <strong>Ese comprador no puede pasar a ver: la web es la visita.</strong>',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué medir: contactos por propiedad y por zona',
+        h2: '¿Qué medir en la web de una inmobiliaria?',
         paragraphs: [
-          'La métrica útil en inmobiliario no es el tráfico, es cuántos contactos generó cada propiedad y cada zona. Ese corte te dice qué inventario mover, cuál tiene el precio mal puesto y en qué zona conviene captar más exclusivas.',
-          'Una propiedad con muchas visitas y cero contactos casi siempre tiene un problema de precio o de fotos, no de difusión. Una con pocas visitas y buena conversión necesita visibilidad, no cambios. Sin ese cruce, se toman las dos decisiones al revés.',
-          'El segundo número es de dónde vino cada contacto: portal, búsqueda orgánica, redes o referido. Es el que justifica —o desmiente— lo que pagas en portales cada mes, y casi ninguna inmobiliaria lo tiene medido.',
-          'Y el tiempo desde el primer contacto hasta la visita. En un ciclo largo como este, saber que la mayoría de los cierres tardan tres meses evita apagar campañas que estaban funcionando. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Contactos por propiedad y por zona: te dicen qué inventario mover, cuál tiene el precio mal puesto y en qué zona captar más exclusivas. Muchas visitas y cero contactos casi siempre es precio o fotos; pocas visitas con buena conversión pide visibilidad, no cambios.',
+          'De dónde vino cada contacto (portal, búsqueda orgánica, redes o referido): es el número que justifica, o desmiente, lo que pagas en portales cada mes.',
+          'Y el tiempo del primer contacto a la visita. Si la mayoría de los cierres tarda tres meses, no apagas campañas que estaban funcionando. El detalle está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -456,12 +434,12 @@ export const industriasPages: PageData[] = [
     service: { type: 'Diseño web para restaurantes' },
     lead: [
       'Tu cliente busca el menú y el horario desde el celular. Si los encuentra en un PDF borroso de 2023, comió en otro lado.',
-      'Las apps de delivery se quedan con una comisión de cada pedido y con los datos de tu cliente. Sirven para descubrirte; no pueden ser tu único canal. La web propia toma pedidos y reservas sin regalar margen, y construye la lista de clientes que las apps te ocultan.',
+      'El diseño web para restaurantes en Panamá que hace Elemento Web pone el menú en página real (no PDF) que tu equipo actualiza en minutos, reserva de mesa con confirmación automática, pedido directo con Yappy sin comisión de app y ficha de Google Maps alineada. Con menú y reservas parte de $1,250; con pedidos en línea, desde $1,950.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que la web de un restaurante en Panamá debe incluir',
+        h2: '¿Qué debe incluir la web de un restaurante en Panamá?',
         items: [
           'Menú en HTML real (no PDF): legible, buscable y traducible',
           'Precios y horarios que tu equipo actualiza en minutos',
@@ -475,21 +453,18 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El menú en PDF te está costando clientes',
+        h2: '¿Por qué el menú de un restaurante no debe ir en PDF?',
         paragraphs: [
-          'El PDF obliga a descargar, hacer zoom y navegar a ciegas en una pantalla de seis pulgadas. Google tampoco lo lee bien: tus platos no aparecen en búsquedas. Un menú en página real se lee cómodo, se actualiza al momento y posiciona cada categoría.',
-          'La reserva por llamada tiene el mismo problema: depende de que alguien conteste en hora pico. La <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reserva online</a> confirma sola, recuerda sola y llena mesas mientras la cocina trabaja.',
-          'Y el pedido directo con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a> convierte a tus clientes frecuentes en pedidos sin comisión. Las apps para descubrirte; tu web para fidelizarlos.',
+          'El PDF obliga a descargar, hacer zoom y navegar a ciegas en una pantalla de seis pulgadas, y Google no lo lee bien: tus platos no aparecen en búsquedas. Un menú en página real se lee cómodo, se actualiza al momento y posiciona cada categoría.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Cómo trabajamos la web de un restaurante',
+        h2: 'Cómo trabajamos el diseño web para restaurantes',
         items: [
           { h3: 'Menú digital que tú controlas', text: 'Pasamos tu carta a página real, organizada por categorías, con precios y fotos. Te dejamos actualizándola y marcando agotados desde el panel, sin llamar a nadie.' },
           { h3: 'Reservas y pedidos', text: 'Conectamos la reserva de mesa con confirmación automática y, si vendes para llevar, el pedido directo con pago Yappy o tarjeta.' },
-          { h3: 'Presencia local impecable', text: 'Dejamos la ficha de Google Business y el Maps alineados con la web: horarios, fotos y menú coherentes en todos lados.' },
-          { h3: 'Optimización para el celular', text: 'Todo se prueba en la pantalla donde de verdad se usa: rápido con datos móviles, con el menú y el botón de reserva a un toque.' },
+          { h3: 'Presencia local', text: 'Dejamos la ficha de Google Business y el Maps alineados con la web: horarios, fotos y menú coherentes en todos lados, probados en el celular con datos móviles.' },
         ],
       },
       {
@@ -504,30 +479,29 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Las fotos que dan hambre no son un detalle: son la venta',
+        h2: '¿Por qué las fotos reales de tus platos venden más?',
         paragraphs: [
-          'En comida se compra con los ojos antes que con el estómago. Una foto real y bien tomada de tus platos hace más por la venta que cualquier descripción, y una foto de banco de imágenes (que no es tu comida) genera desconfianza en cuanto el cliente llega y el plato no se parece.',
-          'El otro factor silencioso es Google Maps. Muchos comensales nunca llegan a tu web: te encuentran, deciden y llegan directo desde la ficha del mapa. Por eso trabajamos la web y la ficha de negocio juntas, con <a href="/crecimiento/seo-local-google-maps-panama/">SEO local</a>. <strong>Aparecer bien en el momento del hambre vale más que cualquier campaña.</strong>',
+          'En comida se compra con los ojos. Una foto real y bien tomada de tus platos vende más que cualquier descripción, y una de banco de imágenes genera desconfianza en cuanto el plato llega y no se parece.',
         ],
       },
-            {
+      {
         type: 'prose',
-        h2: 'Las apps se llevan hasta un tercio de cada pedido',
+        h2: '¿Cuánto cobran las apps de delivery y cómo vender directo?',
         paragraphs: [
-          'Las plataformas de delivery resolvieron un problema real y cobran por ello una comisión que en Panamá suele moverse entre el veinte y el treinta por ciento. En un negocio donde el margen neto rara vez pasa del quince, eso significa que buena parte de los pedidos de app se trabajan a pérdida o al filo.',
-          'La salida no es pelearse con las apps: es no depender solo de ellas. El cliente que ya te conoce y pide siempre lo mismo no necesita la app para nada, y si le das un canal directo lo usa, sobre todo si le sale igual o mejor.',
-          'Un pedido directo desde tu web, con pago por <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a> y coordinación por WhatsApp, te deja la comisión completa. Aunque solo migres a una parte de los clientes recurrentes, el efecto en el margen se nota rápido, porque son justamente los que más piden.',
+          'Las plataformas de delivery cobran una comisión que en Panamá suele moverse entre el veinte y el treinta por ciento. En un negocio donde el margen neto rara vez pasa del quince, buena parte de los pedidos de app se trabajan a pérdida o al filo.',
+          'La salida no es pelearse con las apps, que sirven para descubrirte, sino no depender solo de ellas. El cliente que ya te conoce y pide siempre lo mismo usa un canal directo si se lo das.',
+          'Un pedido directo desde tu web, con pago por <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a> y coordinación por WhatsApp, te deja la comisión completa. Aunque solo migres a parte de los clientes recurrentes, el margen se nota rápido, porque son los que más piden.',
           '<strong>Y te quedas con el dato.</strong> En la app, el cliente es de la app: no sabes quién es, qué pide ni cómo contactarlo. En tu web es tuyo, y puedes avisarle de una promoción sin pagar por llegar a él.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Tu verdadera portada es Google Maps, no tu web',
+        h2: '¿Por qué Google Maps pesa más que la web de un restaurante?',
         paragraphs: [
-          'La búsqueda de restaurante ocurre casi siempre en el mapa. "Dónde comer cerca", "restaurante Casco Antiguo", "sushi Costa del Este": la gente decide desde el resultado de Maps, mirando fotos, precio aproximado, horario y reseñas, muchas veces sin entrar a ninguna web.',
-          'Eso convierte a la ficha de <a href="/crecimiento/seo-local-google-maps-panama/">Google Business Profile</a> en el activo digital más importante de un restaurante, por encima del sitio. Y casi siempre está descuidada: fotos viejas subidas por clientes, horario desactualizado, menú que no aparece y reseñas sin responder.',
-          'Lo que hay que tener ahí es concreto: fotos propias y recientes del local y de los platos, horario real incluyendo feriados, rango de precio, el menú enlazado, y respuesta a todas las reseñas, sobre todo a las malas. Responder una reseña negativa con calma vende más que diez positivas.',
-          'La web entra después, y su trabajo es sostener lo que el mapa promete: menú que carga rápido en el celular, reserva y pedido directo. <strong>El mapa trae, la web convierte, y la mayoría de los restaurantes trabajan solo la segunda mitad.</strong>',
+          'La búsqueda de restaurante ocurre casi siempre en el mapa. "Dónde comer cerca", "restaurante Casco Antiguo", "sushi Costa del Este": la gente decide desde Maps, mirando fotos, precio aproximado, horario y reseñas, muchas veces sin entrar a ninguna web.',
+          'Por eso la ficha de <a href="/crecimiento/seo-local-google-maps-panama/">Google Business Profile</a> es el activo digital más importante de un restaurante, y casi siempre está descuidada: fotos viejas subidas por clientes, horario desactualizado, menú que no aparece y reseñas sin responder.',
+          'Lo que debe tener: fotos propias y recientes del local y los platos, horario real incluyendo feriados, rango de precio, el menú enlazado y respuesta a todas las reseñas, sobre todo a las malas. Responder una negativa con calma vende más que diez positivas.',
+          'La web sostiene lo que el mapa promete: menú que carga rápido en el celular, reserva y pedido directo. <strong>El mapa trae, la web convierte, y la mayoría de los restaurantes trabajan solo la segunda mitad.</strong>',
         ],
       },
       {
@@ -547,22 +521,21 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Reservas, grupos y eventos: el ticket que no está en la app',
+        h2: '¿Cómo capta un restaurante reservas de grupos y eventos?',
         paragraphs: [
-          'El delivery se lleva toda la atención y el margen bueno suele estar en otro lado: la mesa grande. Un cumpleaños de veinte personas, un almuerzo de empresa, una cena de fin de año. Tickets altos, consumo alto y cero comisión de plataforma.',
-          'Ese cliente no busca en la app: busca en Google "restaurante para grupos en Panamá", "salón para cumpleaños", "almuerzo de empresa". Y busca cosas que ningún restaurante publica: si tienen salón privado, para cuántas personas, si hay menú cerrado por persona y a qué precio, si se puede llevar torta y si hay depósito.',
-          'Una página dedicada a grupos y eventos, con capacidad, fotos del espacio, menús cerrados con precio por persona y un formulario de solicitud, capta reservas que hoy simplemente se van a quien sí lo publica.',
-          'Y para la reserva normal, poder reservar sin llamar cambia el volumen. <strong>Buena parte de las reservas se intentan fuera del horario de atención</strong>, cuando la gente está planeando la semana, y ahí el teléfono no sirve.',
+          'El margen bueno suele estar en la mesa grande: un cumpleaños de veinte personas, un almuerzo de empresa, una cena de fin de año. Tickets altos y cero comisión de plataforma.',
+          'Ese cliente busca en Google "restaurante para grupos en Panamá", "salón para cumpleaños", "almuerzo de empresa", y quiere saber lo que casi nadie publica: si hay salón privado y para cuántas personas, menú cerrado y su precio por persona, si se puede llevar torta y si hay depósito.',
+          'Una página de grupos y eventos con capacidad, fotos del espacio, menús cerrados y formulario de solicitud capta reservas que hoy se van a quien sí lo publica.',
+          'Para la mesa normal, la <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reserva online</a> confirma y recuerda sola, sin depender de que alguien conteste en hora pico. <strong>Buena parte de las reservas se intentan fuera del horario de atención</strong>, cuando la gente planea la semana.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué medir: pedidos directos y cuánto te ahorraron',
+        h2: '¿Qué medir en la web de un restaurante?',
         paragraphs: [
-          'La métrica que importa en un restaurante con web es cuántos pedidos entraron por canal directo y cuánta comisión te ahorraste con ellos. Ese segundo número, calculado y puesto delante, es el que justifica todo lo demás.',
-          'Después, cuántas reservas se hicieron sin que nadie contestara el teléfono, y cuántas solicitudes de grupo o evento llegaron. Las de grupo hay que mirarlas aparte porque el ticket es de otra escala y merece su propio seguimiento.',
-          'También conviene mirar qué platos son los más vistos en el menú online. Suele sorprender: no siempre coinciden con los más pedidos en salón, y eso es información para decidir qué destacar, qué fotografiar mejor y qué sacar de la carta.',
-          'Y las reseñas: cuántas entran al mes y cuántas se respondieron. Es el número que más impacta la ficha de Maps, que es de donde viene la mayoría de tus clientes nuevos. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Pedidos por canal directo y cuánta comisión te ahorraste con ellos: ese número justifica todo lo demás. Después, reservas hechas sin llamar y solicitudes de grupo, que se siguen aparte porque el ticket es de otra escala.',
+          'Los platos más vistos en el menú online no siempre coinciden con los más pedidos en salón: es información para decidir qué destacar, qué fotografiar mejor y qué sacar de la carta.',
+          'Y las reseñas: cuántas entran al mes y cuántas se respondieron, el número que más impacta la ficha de Maps. El detalle está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -608,12 +581,12 @@ export const industriasPages: PageData[] = [
     service: { type: 'Diseño web para turismo y hotelería' },
     lead: [
       'Cada reserva que entra por una OTA te cuesta hasta una quinta parte de la tarifa. La reserva directa por tu web te la deja completa.',
-      'Booking y las agencias en línea son un canal, no el dueño de tu negocio. El viajero que ya te encontró ahí suele buscar tu web antes de confirmar: si le ofrece mejor tarifa directa, fotos reales y una reserva simple, esa comisión se queda contigo.',
+      'El diseño web para hoteles y turismo en Panamá que hace Elemento Web gira en torno a la reserva directa: motor con disponibilidad y pago en línea, incentivo visible frente a Booking, sitio bilingüe con URLs por idioma, páginas por habitación o tour y guías del destino, como San Blas o Bocas del Toro, conectadas a tu channel manager.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que la web de un negocio turístico en Panamá debe incluir',
+        h2: '¿Qué debe incluir la web de un hotel o negocio turístico en Panamá?',
         items: [
           'Motor de reserva directa con disponibilidad y pago en línea',
           'Incentivo visible por reservar directo (tarifa o beneficio)',
@@ -627,19 +600,17 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El contenido del destino trae al viajero antes que la OTA',
+        h2: '¿Cómo atrae reservas directas el contenido del destino?',
         paragraphs: [
-          'El viajero no empieza buscando hotel: empieza buscando "qué hacer en Bocas del Toro" o "mejor época para San Blas". Quien responde esas preguntas con contenido útil se presenta antes de que la OTA entre en juego.',
-          'Cada guía enlaza a tus experiencias y habitaciones: el lector pasa de investigar a cotizar sin salir de tu sitio. <strong>Ese embudo de contenido es la fuente de reservas directas más barata que existe</strong>, y trabaja todo el año.',
-          'Para el mercado internacional el sitio se sirve en inglés y español con etiquetado correcto por idioma. Un traductor automático mal configurado espanta más de lo que ayuda.',
+          'El viajero no empieza buscando hotel: empieza buscando "qué hacer en Bocas del Toro" o "mejor época para San Blas". Quien responde esas preguntas se presenta antes de que la OTA entre en juego.',
+          'Cada guía enlaza a tus experiencias y habitaciones, y el lector pasa de investigar a cotizar sin salir de tu sitio. <strong>Es la fuente de reservas directas más barata que existe</strong>, y trabaja todo el año.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Cómo trabajamos la web de un negocio turístico',
+        h2: 'Cómo trabajamos el diseño web para hoteles y turismo',
         items: [
           { h3: 'Reserva directa primero', text: 'Montamos el motor de reservas con disponibilidad real y pago en línea, y un incentivo visible por reservar directo. Esa es la pieza que recupera la comisión de las OTAs.' },
-          { h3: 'Contenido que vende el destino', text: 'Escribimos las guías del destino y las páginas por experiencia o tipo de habitación que capturan al viajero mientras aún planea, antes de que la OTA entre.' },
           { h3: 'Bilingüe de verdad', text: 'Servimos el sitio en español e inglés con URLs y etiquetado por idioma, no con un traductor automático que rompe la confianza del viajero internacional.' },
           { h3: 'Sincronización de canales', text: 'Conectamos con tu channel manager para que Booking, la web y demás canales compartan el mismo inventario y no haya sobreventa.' },
         ],
@@ -658,28 +629,26 @@ export const industriasPages: PageData[] = [
         type: 'prose',
         h2: 'La temporada manda: la web tiene que moverse con ella',
         paragraphs: [
-          'El turismo en Panamá vive de temporadas: seca, verde, feriados largos, fin de año. Los precios, la disponibilidad y hasta qué experiencias promocionas cambian a lo largo del año. Una web que obliga a llamar al programador para cambiar una tarifa o cerrar fechas llega siempre tarde a la temporada.',
-          'Por eso dejamos las tarifas, la disponibilidad y los paquetes en tu control, editables al momento. Puedes lanzar una promoción de temporada baja, cerrar fechas ocupadas o destacar el paquete de feriado sin depender de nadie. <strong>El negocio que reacciona rápido a la temporada llena; el que no, deja habitaciones vacías.</strong>',
-        ],
-      },
-            {
-        type: 'prose',
-        h2: 'La comisión de la OTA es el margen de tu mejor habitación',
-        paragraphs: [
-          'Las plataformas de reserva cobran comisiones que suelen ubicarse entre el quince y el veinte por ciento. En un hotel pequeño panameño, eso equivale a regalar una de cada cinco o seis noches vendidas.',
-          'Nadie sensato propone salirse: las OTA traen volumen y visibilidad que un hotel pequeño no consigue solo. Lo que sí tiene sentido es recuperar la reserva del huésped que ya te conoce, que es la más barata de todas y la que hoy se sigue yendo por comisión.',
-          'El patrón que funciona está probado: la OTA capta al huésped nuevo, y a partir de ahí el hotel trabaja la relación directa. Un correo antes de la llegada, un detalle en la habitación, y una razón concreta para reservar directo la próxima vez —mejor tarifa, salida tardía, algo incluido—.',
-          '<strong>Y la comparación de tarifa tiene que ser honesta.</strong> Si tu web cuesta lo mismo que la OTA sin ninguna ventaja, el huésped reserva donde ya tiene su tarjeta guardada, y con razón.',
+          'El turismo en Panamá vive de temporadas: seca, verde, feriados largos, fin de año. Precios, disponibilidad y experiencias promocionadas cambian durante el año, y una web que obliga a llamar al programador para cambiar una tarifa llega tarde a la temporada.',
+          'Por eso dejamos tarifas, disponibilidad y paquetes editables por ti: lanzar una promoción de temporada baja, cerrar fechas ocupadas o destacar el paquete de feriado sin depender de nadie. <strong>El negocio que reacciona rápido a la temporada llena; el que no, deja habitaciones vacías.</strong>',
         ],
       },
       {
         type: 'prose',
-        h2: 'Las reseñas se responden, y esa respuesta la lee el próximo huésped',
+        h2: '¿Cuánto cobran Booking y las OTA, y cómo recuperar la reserva directa?',
         paragraphs: [
-          'En turismo la reseña no es un comentario: es el principal argumento de venta de tu competencia si tú no la trabajas. Y lo que más pesa no es la cantidad de estrellas, es cómo responde el hotel a las malas.',
-          'Un viajero que compara dos hoteles con la misma nota se queda con el que contesta. Ver una respuesta calmada y concreta a una queja legítima —qué pasó, qué se hizo— comunica más sobre la gestión del lugar que veinte reseñas de cinco estrellas sin contexto.',
-          'Lo que no funciona es la respuesta genérica de plantilla. "Lamentamos su experiencia, valoramos su opinión" repetida quince veces se lee como automática y resta. Responder distinto a cada una, mencionando lo concreto, toma tiempo y es de las inversiones más rentables del rubro.',
-          'Y conviene pedirlas de forma sistemática, con un mensaje automático dos días después del checkout, cuando el recuerdo está fresco. <strong>Las reseñas no llegan solas: llegan a quien las pide.</strong>',
+          'Las plataformas de reserva cobran comisiones que suelen ubicarse entre el quince y el veinte por ciento. En un hotel pequeño panameño, eso equivale a regalar una de cada cinco o seis noches vendidas.',
+          'Las OTA traen volumen que un hotel pequeño no consigue solo, así que no se trata de salirse. Se trata de recuperar la reserva del huésped que ya te conoce: la OTA lo capta y el hotel trabaja la relación directa con un correo antes de la llegada y una razón concreta para reservar directo la próxima vez (mejor tarifa, salida tardía, algo incluido).',
+          '<strong>La comparación de tarifa tiene que ser honesta.</strong> Si tu web cuesta lo mismo que la OTA sin ninguna ventaja, el huésped reserva donde ya tiene su tarjeta guardada.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Cómo deben responder un hotel o un tour a las reseñas?',
+        paragraphs: [
+          'Lo que más pesa no es la cantidad de estrellas, es cómo responde el hotel a las malas. Entre dos hoteles con la misma nota, el viajero se queda con el que contesta: una respuesta calmada y concreta a una queja legítima (qué pasó, qué se hizo) dice más de la gestión que veinte reseñas de cinco estrellas.',
+          'La respuesta de plantilla repetida quince veces se lee automática y resta. Responder distinto a cada una, mencionando lo concreto, es de las inversiones más rentables del rubro.',
+          'Conviene pedirlas con un mensaje automático dos días después del checkout, con el recuerdo fresco. <strong>Las reseñas no llegan solas: llegan a quien las pide.</strong>',
         ],
       },
       {
@@ -701,20 +670,18 @@ export const industriasPages: PageData[] = [
         type: 'prose',
         h2: 'El viajero panameño del fin de semana largo es un negocio aparte',
         paragraphs: [
-          'Panamá tiene una cantidad notable de puentes y fines de semana largos, y alrededor de cada uno se mueve un flujo de turismo interno que llena hoteles de playa, montaña e interior. Es un cliente que busca distinto al extranjero y al que casi ninguna web le habla.',
-          'Ese viajero no planifica con seis meses: busca con dos o tres semanas de anticipación, compara precio total para la familia, y le importan cosas muy concretas —si hay piscina para niños, si se puede llevar mascota, cuánto se tarda manejando desde la ciudad, si hay parrilla—.',
-          'Y busca en español, con términos de temporada: "hoteles para el puente", "dónde ir en carnaval", "escapada de fin de semana desde Panamá". Ese contenido, publicado con anticipación, capta a alguien que todavía no eligió destino ni hotel.',
-          '<strong>El error de siempre es publicar la promoción de carnaval en carnaval.</strong> Cuando la búsqueda ocurre, el posicionamiento ya tenía que estar hecho: eso significa publicar con semanas de ventaja, no con días.',
+          'Panamá tiene muchos puentes y fines de semana largos, y cada uno mueve un turismo interno que llena hoteles de playa, montaña e interior. Busca distinto al extranjero y casi ninguna web le habla.',
+          'Ese viajero busca con dos o tres semanas de anticipación, compara precio total para la familia y pregunta lo concreto: si hay piscina para niños, si se puede llevar mascota, cuánto se tarda manejando desde la ciudad, si hay parrilla.',
+          'Y busca en español, con términos de temporada: "hoteles para el puente", "dónde ir en carnaval", "escapada de fin de semana desde Panamá". <strong>El error de siempre es publicar la promoción de carnaval en carnaval:</strong> para posicionar hay que publicar con semanas de ventaja, no con días.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué medir: reserva directa y cuánta comisión te ahorra',
+        h2: '¿Qué medir en la web de un hotel o un tour?',
         paragraphs: [
-          'El número que justifica todo es qué porcentaje de tus reservas entró por canal directo y cuánta comisión representó eso en dinero. Puesto en dólares al mes, esa cifra ordena cualquier discusión sobre si la web vale lo que cuesta.',
-          'Después, la mezcla de canales: OTA, directo, agencia, repetido. Ver cómo se mueve esa mezcla mes a mes dice si el trabajo de fidelización está funcionando o si el hotel sigue dependiendo por completo de las plataformas.',
-          'El tercer dato es la tasa de huéspedes que repiten. En turismo el repetido es el más rentable de todos: no cuesta comisión, no cuesta pauta y suele gastar más. Si es baja, el problema está en el seguimiento posterior, no en la captación.',
-          'Y vale medir qué contenido del destino trae reservas. Si un artículo sobre qué hacer en la zona genera reservas cada mes, ese es el activo a ampliar. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Qué porcentaje de reservas entró por canal directo y cuánta comisión representó en dólares al mes: esa cifra ordena cualquier discusión sobre si la web vale lo que cuesta.',
+          'La mezcla de canales (OTA, directo, agencia, repetido) mes a mes dice si la fidelización funciona. La tasa de huéspedes que repiten importa porque el repetido no cuesta comisión ni pauta y suele gastar más; si es baja, el problema está en el seguimiento posterior.',
+          'Y qué guía del destino trae reservas: ese es el activo a ampliar. El detalle está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -760,12 +727,12 @@ export const industriasPages: PageData[] = [
     service: { type: 'Diseño web para clínicas y salud' },
     lead: [
       'El paciente investiga síntomas, compara especialistas y decide por confianza. Tu web es tu primera consulta, antes de la consulta.',
-      'En salud las reglas cambian: el contenido debe ser serio y verificable, la privacidad no es negociable y la cita tiene que poder agendarse sin llamar en horario de oficina. Una web de salud que parece de venta agresiva destruye la confianza que el rubro exige.',
+      'El diseño web para clínicas y salud en Panamá que hace Elemento Web, en Ciudad de Panamá, incluye agenda de citas online con recordatorios, una página por especialidad, perfiles médicos con idoneidad, seguros aceptados y formularios alineados a la Ley 81 de 2019. Un consultorio parte desde $1,250; una clínica con agenda por médico, desde $2,900.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que la web de una clínica en Panamá debe incluir',
+        h2: '¿Qué debe incluir el diseño web de una clínica en Panamá?',
         items: [
           'Agendamiento de citas online con disponibilidad real',
           'Página por especialidad y por procedimiento frecuente',
@@ -779,21 +746,10 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La cita online es la mejora de mayor impacto',
+        h2: '¿Por qué la cita online es la mejora de mayor impacto?',
         paragraphs: [
-          'La recepción de una clínica atiende presencial y teléfono a la vez, y el teléfono pierde. Cada llamada no contestada es un paciente que probó con el siguiente especialista de la lista.',
-          'El <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">agendamiento online</a> elimina esa fila invisible: el paciente ve disponibilidad real y confirma solo, a cualquier hora. Los recordatorios automáticos atacan el otro sangrado silencioso: las ausencias.',
-          'El contenido por especialidad hace el resto: cada procedimiento explicado con seriedad posiciona en las búsquedas del paciente que investiga, y llega a la consulta con confianza ya construida.',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo trabajamos la web de una clínica',
-        items: [
-          { h3: 'Mapa de especialidades', text: 'Definimos una página por especialidad y por procedimiento frecuente, cada una posicionable en las búsquedas del paciente que investiga su síntoma.' },
-          { h3: 'Agenda de citas conectada', text: 'Integramos el agendamiento online con disponibilidad real y recordatorios automáticos, para descargar el teléfono de recepción y reducir ausencias.' },
-          { h3: 'Perfiles médicos verificables', text: 'Armamos el perfil de cada profesional con idoneidad, formación e idiomas. El paciente elige persona, y esas páginas son de las más visitadas.' },
-          { h3: 'Privacidad por diseño', text: 'Configuramos formularios que piden solo lo necesario para coordinar, con información cifrada y alineada a la Ley 81 de 2019 de protección de datos.' },
+          'La recepción de una clínica atiende presencial y teléfono a la vez, y el teléfono pierde: cada llamada no contestada es un paciente que prueba con el siguiente especialista de la lista.',
+          'El <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">agendamiento online</a> elimina esa fila invisible: el paciente ve disponibilidad real y confirma solo, a cualquier hora. Los recordatorios automáticos atacan el otro sangrado silencioso, las ausencias, que en un especialista de alta demanda cuestan más que en consulta general.',
         ],
       },
       {
@@ -808,25 +764,24 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Los seguros y las formas de pago deciden más de lo que parece',
+        h2: '¿Debe la web de una clínica decir qué seguros acepta?',
         paragraphs: [
-          'Una de las primeras preguntas del paciente panameño es práctica: "¿aceptan mi seguro?". Cuando esa respuesta no está en la web, muchos ni escriben; llaman a la siguiente clínica que sí lo aclara. Dejar visible qué seguros trabajas y qué formas de pago aceptas elimina una fricción que hace perder pacientes en silencio.',
-          'Lo mismo con la información de precios de consulta o procedimientos cuando es posible darla. No hace falta una lista completa; basta con orientar. <strong>La transparencia, en salud, se lee como respeto</strong>, y el paciente que llega ya informado ocupa menos tiempo de recepción y llega más decidido a la consulta.',
+          'Sí. Una de las primeras preguntas del paciente panameño es «¿aceptan mi seguro?». Si la respuesta no está en la web, muchos no escriben: llaman a la siguiente clínica que sí lo aclara. La lista de aseguradoras y formas de pago va visible y actualizada.',
+          'Lo mismo con el precio de la consulta inicial y, cuando se puede, un «desde» por procedimiento. <strong>La transparencia, en salud, se lee como respeto</strong>, y el paciente informado ocupa menos tiempo de recepción.',
         ],
       },
-            {
+      {
         type: 'prose',
-        h2: 'Ocho médicos en una sola página es ocho oportunidades perdidas',
+        h2: '¿Una página por especialidad o una cuadrícula de médicos?',
         paragraphs: [
           'La web típica de una clínica polivalente resuelve el cuerpo médico con una cuadrícula: foto, nombre, especialidad, y a veces ni el horario. Es ordenado y no sirve para captar, porque el paciente no busca "clínica". Busca "pediatra en Costa del Este", "ginecólogo que atiende sábados", "dermatólogo para acné".',
-          'Cada especialidad es una búsqueda con su propio volumen, su propio paciente y su propio momento de urgencia. Metidas todas en una cuadrícula, ninguna compite: la página trata de hablarle a todo el mundo y termina siendo el resultado número doce.',
-          'Una página por especialidad cambia eso. Qué se atiende, qué señales llevan a consultar, cómo es la primera cita, quién la atiende y su idoneidad, en qué horarios y con qué seguros. Esa página sí compite por su búsqueda, y de paso le ahorra a recepción la mitad de las llamadas de "¿ustedes atienden esto?".',
+          'Cada especialidad es una búsqueda con su propio volumen, paciente y urgencia; metidas en una cuadrícula, ninguna compite. Una página por especialidad cambia eso. Qué se atiende, qué señales llevan a consultar, cómo es la primera cita, quién la atiende y su idoneidad, en qué horarios y con qué seguros. Esa página sí compite por su búsqueda, y de paso le ahorra a recepción la mitad de las llamadas de "¿ustedes atienden esto?".',
           '<strong>El médico también gana.</strong> Un especialista con su propia página posicionada trae sus propios pacientes, y eso hace mucho más fácil retenerlo o sumar uno nuevo al cuerpo médico.',
         ],
       },
       {
         type: 'prose',
-        h2: 'El horario es tan buscado como la especialidad',
+        h2: '¿Por qué publicar el horario de la clínica en cada página?',
         paragraphs: [
           'En Panamá, media consulta se decide por un dato que casi ninguna web publica bien: cuándo abren. "Clínica que atienda sábado", "pediatra domingo", "laboratorio que abra temprano" son búsquedas reales de gente que trabaja de lunes a viernes y no puede pedir permiso.',
           'Si tu clínica atiende fines de semana, en horario extendido o sin cita previa, eso no puede estar escondido en un pie de página. Va arriba, en la ficha de <a href="/crecimiento/seo-local-google-maps-panama/">Google Business Profile</a>, y en cada página de especialidad, porque el horario del pediatra no siempre es el de la clínica.',
@@ -851,7 +806,7 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Los datos del paciente son categoría sensible',
+        h2: '¿Cómo protege la web los datos del paciente bajo la Ley 81 de 2019?',
         paragraphs: [
           'Una web de clínica recoge lo que la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong> considera datos sensibles: motivo de consulta, síntomas, a veces resultados. No es lo mismo que un correo de contacto y no se puede tratar igual.',
           'En la práctica son decisiones de cómo está construida la web, no papeleo. Que el sitio vaya en HTTPS. Que el formulario diga qué pasa con lo que el paciente escribe y quién lo va a leer. Que los mensajes no aterricen en un correo personal compartido por recepción, sino en un buzón de la clínica con acceso controlado y trazable.',
@@ -861,12 +816,10 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Qué medir: citas por especialidad, no visitas totales',
+        h2: '¿Qué medir en la web de una clínica?',
         paragraphs: [
-          'El número que casi toda clínica pide es cuántas visitas tuvo la web. Es el que menos dice. Lo que mueve la aguja es cuántas citas se agendaron, por qué canal y <strong>de qué especialidad</strong>.',
-          'Ese desglose por especialidad es el dato más útil que puede darte tu web, porque te dice dónde invertir. Si dermatología genera cuarenta citas al mes y nutrición dos, ya sabes qué página ampliar, en qué especialista vale la pena pautar y cuál necesita otra estrategia. Sin ese corte, la pauta se reparte por intuición.',
-          'El segundo número es la tasa de ausencia por especialidad. Un hueco en la agenda de un especialista de alta demanda cuesta mucho más que uno en consulta general, y casi siempre se arregla con recordatorios automáticos, no con más publicidad.',
-          'Lo dejamos medido desde el primer día como un tablero de cuatro o cinco números que se revisa en dos minutos, no como un informe mensual que nadie abre. El planteamiento completo está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Citas agendadas por canal y <strong>por especialidad</strong>, no visitas totales. Si dermatología genera cuarenta citas al mes y nutrición dos, ya sabes qué página ampliar, en qué especialista pautar y cuál necesita otra estrategia.',
+          'El segundo número es la tasa de ausencia por especialidad: un hueco en la agenda de un especialista de alta demanda cuesta más que uno en consulta general, y casi siempre se arregla con recordatorios automáticos, no con más publicidad. Lo dejamos medido desde el primer día; el planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -912,18 +865,18 @@ export const industriasPages: PageData[] = [
     service: { type: 'Diseño web para constructoras y promotoras' },
     lead: [
       'La preventa se decide con renders, planos y confianza en que la obra avanza. Tu web debe entregar las tres cosas mejor que el folleto.',
-      'Un proyecto inmobiliario es la compra más grande en la vida de tu cliente, hecha muchas veces sobre plano. La web que documenta el avance de obra, muestra cada modelo con su plano y responde el financiamiento con claridad convierte interesados en separaciones.',
+      'El diseño web para constructoras y promotoras en Panamá que hace Elemento Web, desde Ciudad de Panamá, incluye una página por proyecto, fichas por modelo con plano y metraje, bitácora de avance de obra con fotos fechadas, plan de pagos con porcentajes, proyectos entregados con fecha y formulario de preventa conectado a ventas.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que la web de una constructora en Panamá debe incluir',
+        h2: '¿Qué debe incluir el diseño web de una constructora en Panamá?',
         items: [
-          'Una página por proyecto con su propia identidad',
+          'Una página por proyecto con su propia identidad, ubicación y renders',
           'Fichas por modelo: plano, metraje, acabados y precio desde',
-          'Bitácora de avance de obra con fotos fechadas',
+          'Bitácora de avance de obra con fotos fechadas que tu equipo actualiza en minutos',
           'Simulador o guía clara de financiamiento y separación',
-          'Formulario de preventa conectado al equipo de ventas',
+          'Formulario de preventa y WhatsApp con el proyecto ya referenciado, conectados a tu equipo o a WazaCRM',
           'Trayectoria: proyectos entregados con fecha y ubicación',
           'Recorridos virtuales cuando el proyecto lo amerita',
           'Versión impecable en celular: ahí ve el cliente los renders',
@@ -931,21 +884,10 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El avance de obra publicado vende más que el render',
+        h2: '¿Por qué publicar el avance de obra en la web?',
         paragraphs: [
-          'El comprador sobre plano tiene un solo miedo real: que la obra no avance. La bitácora pública con fotos fechadas ataca ese miedo de frente, cada mes, sin que tu vendedor tenga que jurarlo por teléfono.',
+          'El comprador sobre plano tiene un solo miedo real: que la obra no avance. La bitácora pública con fotos fechadas ataca ese miedo cada mes, sin que tu vendedor tenga que jurarlo por teléfono.',
           'Es además tu mejor herramienta de seguimiento: cada actualización es una razón legítima para reactivar a los interesados fríos. "Ya vaciamos el piso 12" abre más conversaciones que cualquier promoción.',
-          'Los proyectos entregados cierran el círculo: fechas, ubicaciones y fotos reales de lo construido. <strong>En este rubro la trayectoria documentada es la moneda de confianza.</strong>',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo trabajamos la web de una constructora',
-        items: [
-          { h3: 'Una página por proyecto', text: 'Cada desarrollo recibe su propia página con identidad, ubicación, renders y modelos disponibles. Los proyectos no se amontonan en una sola sección.' },
-          { h3: 'Fichas por modelo', text: 'Detallamos cada modelo con plano, metraje, acabados y precio desde, para que el comprador entienda exactamente qué está separando.' },
-          { h3: 'Bitácora de avance', text: 'Montamos la bitácora de obra con fotos fechadas que tu equipo actualiza en minutos. Es la prueba de que el proyecto avanza y tu mejor razón para reactivar interesados.' },
-          { h3: 'Captación conectada a ventas', text: 'Los formularios de preventa y el WhatsApp con el proyecto ya referenciado entregan el lead directo a tu equipo o a WazaCRM para el seguimiento.' },
         ],
       },
       {
@@ -960,25 +902,23 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El financiamiento explicado con claridad cierra la separación',
+        h2: '¿Cómo explicar el financiamiento y el plan de pagos?',
         paragraphs: [
-          'Después del render, la pregunta que frena la separación es siempre la misma: "¿cómo lo pago?". El comprador quiere entender el abono inicial, el plan de pagos durante la construcción y qué pasa al momento de la escrituración. Cuando esa información está clara en la web, el interesado llega a la cita ya haciendo cuentas, no preguntando lo básico.',
-          'No hace falta prometer una tasa ni sustituir al banco: basta con explicar con honestidad la estructura de pago y guiar el siguiente paso. <strong>La claridad sobre el dinero convierte más que cualquier render</strong>, porque es la duda real que detiene la decisión.',
-        ],
-      },
-            {
-        type: 'prose',
-        h2: 'Vender lo que todavía no existe: qué mostrar en preventa',
-        paragraphs: [
-          'La preventa es el momento más difícil de comunicar de todo el rubro. El comprador tiene que poner dinero sobre un terreno vacío y un render, y lo único que puede evaluar es si confía en quien construye.',
-          'Por eso la web de una promotora en preventa no debería hablar del proyecto nuevo: debería hablar de los proyectos entregados. Cuántos, dónde, en qué año, entregados en qué plazo respecto al prometido. Ese último dato es el que ningún competidor publica y el que más tranquiliza a quien está a punto de separar.',
-          'Después sí el proyecto: plantas por modelo con metraje real, no solo renders; ubicación con lo que hay alrededor hoy, no lo que habrá; cronograma con hitos; y qué incluye la entrega, línea blanca y acabados detallados, que es donde nacen la mayoría de los reclamos.',
-          '<strong>El render vende el sueño y la evidencia cierra la separación.</strong> Una promotora que publica sus entregas anteriores con fechas compite en otra liga frente a una que solo muestra imágenes de un edificio que no existe.',
+          'Después del render, la pregunta que frena la separación es «¿cómo lo pago?». El comprador quiere entender el abono inicial, el plan de pagos durante la construcción y qué pasa al escriturar. Con eso claro en la web, el interesado llega a la cita haciendo cuentas, no preguntando lo básico.',
+          'No hace falta prometer una tasa ni sustituir al banco: basta con explicar la estructura de pago y guiar el siguiente paso. <strong>La claridad sobre el dinero convierte más que cualquier render.</strong>',
         ],
       },
       {
         type: 'prose',
-        h2: 'El comprador que decide desde fuera de Panamá',
+        h2: '¿Qué mostrar en la web de un proyecto en preventa?',
+        paragraphs: [
+          'En preventa el comprador pone dinero sobre un terreno vacío y un render; lo único que puede evaluar es si confía en quien construye. Por eso la web de una promotora en preventa debe hablar primero de los proyectos entregados. Cuántos, dónde, en qué año, entregados en qué plazo respecto al prometido. Ese último dato es el que ningún competidor publica y el que más tranquiliza a quien está a punto de separar.',
+          'Después sí el proyecto: plantas por modelo con metraje real, no solo renders; ubicación con lo que hay alrededor hoy, no lo que habrá; cronograma con hitos; y qué incluye la entrega, línea blanca y acabados detallados, que es donde nacen la mayoría de los reclamos. <strong>El render vende el sueño y la evidencia cierra la separación.</strong>',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Cómo vender preventa a un comprador que está fuera de Panamá?',
         paragraphs: [
           'Buena parte de la preventa panameña, sobre todo en playa y en zonas premium de la ciudad, la compra gente que no está aquí: inversionistas regionales, panameños en el exterior y extranjeros que planean mudarse.',
           'Ese comprador no puede pasar por la caseta de ventas, así que su decisión ocurre entera en tu web y en WhatsApp. Necesita cosas que las webs del rubro rara vez dan: recorrido en video del modelo y del avance real de obra, plano descargable con medidas, tabla de precios por modelo, y el plan de pagos completo con porcentajes y fechas.',
@@ -1003,22 +943,20 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Después de entregar el proyecto, la web sigue trabajando',
+        h2: '¿Qué hace la web después de entregar el proyecto?',
         paragraphs: [
-          'Casi toda promotora apaga su web cuando el proyecto se vende. Es entendible y es un desperdicio, porque en ese momento tienes doscientos propietarios que son tu mejor fuente de referidos y tu peor fuente de reclamos, según cómo los atiendas.',
+          'Casi toda promotora apaga su web cuando el proyecto se vende, justo cuando tiene doscientos propietarios que son su mejor fuente de referidos y su peor fuente de reclamos, según cómo los atienda.',
           'Un área de propietario resuelve las dos cosas: estado del proceso de entrega, documentos, manual de la vivienda, garantías vigentes y un canal formal para reportar detalles de postventa. Todo eso hoy suele vivir en grupos de WhatsApp donde el reclamo se mezcla con doscientos mensajes y nadie sabe qué se atendió.',
-          'Y tiene un efecto comercial directo: el propietario contento del proyecto anterior es quien recomienda el siguiente. Mantener ese canal abierto cuesta poco y alimenta la preventa del próximo proyecto sin gastar en pauta.',
-          'También importa para el histórico: cada proyecto entregado que se queda publicado con sus fotos reales y su fecha es la evidencia que va a vender el proyecto número cinco. <strong>Borrar el proyecto vendido es borrar tu propio historial.</strong>',
+          'El propietario contento del proyecto anterior es quien recomienda el siguiente, y cada proyecto entregado que se queda publicado con sus fotos reales y su fecha es la evidencia que va a vender el proyecto número cinco. <strong>Borrar el proyecto vendido es borrar tu propio historial.</strong>',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué medir: separaciones, no visitas al render',
+        h2: '¿Qué medir en la web de una constructora?',
         paragraphs: [
-          'El único número que importa en preventa es cuántas separaciones se generaron y de dónde vinieron. Todo lo demás es contexto.',
-          'El corte que hay que tener es por modelo. Si el modelo de dos habitaciones concentra las consultas y el de tres no se mueve, eso es información de precio y de mezcla de producto, no de marketing, y llega a tiempo para ajustar la estrategia comercial del proyecto.',
+          'Separaciones generadas, cortadas por modelo y por origen. Por modelo: si el de dos habitaciones concentra las consultas y el de tres no se mueve, eso es información de precio y de mezcla de producto, no de marketing, y llega a tiempo para ajustar la estrategia comercial del proyecto.',
           'El segundo dato es de dónde llega el comprador: búsqueda, pauta, referido o portal. En preventa la pauta suele ser cara, y saber qué porcentaje de las separaciones vino realmente de ahí evita seguir pagando por un canal que solo se lleva el crédito del referido que ya venía.',
-          'Y el tiempo entre primer contacto y separación, que en preventa se mide en semanas. Saberlo evita apagar campañas que todavía estaban madurando. Lo dejamos medido en un tablero corto; el planteamiento en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Y el tiempo entre primer contacto y separación, que en preventa se mide en semanas: saberlo evita apagar campañas que todavía estaban madurando. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -1064,12 +1002,12 @@ export const industriasPages: PageData[] = [
     service: { type: 'Diseño web para instituciones educativas' },
     lead: [
       'Matricular a un hijo es una decisión que los padres investigan durante semanas. Tu web es donde comparan tu colegio con los otros tres que también visitaron.',
-      'A diferencia de otros rubros, aquí el comprador no es quien recibe el servicio: son los padres decidiendo por sus hijos, con más ansiedad y más tiempo de investigación que en casi cualquier otra compra. La web tiene que responder esa ansiedad con información concreta, no con frases de misión y visión.',
+      'El diseño web para colegios e institutos en Panamá que hace Elemento Web, en Ciudad de Panamá, incluye proceso de admisión paso a paso con fechas, formulario de solicitud de cupo, mensualidades y becas publicadas, portal de padres con calendario y circulares, y versión bilingüe. Una web corporativa parte desde $1,250.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que la web de un colegio en Panamá debe incluir',
+        h2: '¿Qué debe incluir el diseño web de un colegio en Panamá?',
         items: [
           'Proceso de admisión explicado paso a paso, con fechas y requisitos',
           'Formulario de solicitud de cupo conectado a admisiones',
@@ -1083,21 +1021,10 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La decisión que más se investiga y menos se documenta',
+        h2: '¿Por qué publicar el proceso de admisión paso a paso?',
         paragraphs: [
-          'Casi todos los colegios describen su "modelo pedagógico integral" con las mismas palabras. Los padres ya no distinguen uno de otro por ese texto: buscan pruebas concretas, fotos reales del aula, el proceso exacto de admisión y cuánto cuesta de verdad, sin tener que llamar para averiguarlo.',
-          'El <strong>portal de padres</strong> es la pieza que más retiene después de la matrícula: calendario académico, circulares y estado de pagos en un solo lugar reducen las llamadas a secretaría y la fricción del día a día.',
-          'Y el proceso de admisión publicado paso a paso (requisitos, fechas de examen, entrevista, respuesta) convierte mejor que cualquier promesa: <strong>la claridad genera más confianza que el eslogan</strong>.',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo trabajamos la web de una institución educativa',
-        items: [
-          { h3: 'Proceso de admisión claro', text: 'Publicamos el paso a paso (requisitos, fechas, examen, entrevista, respuesta) y conectamos el formulario de solicitud de cupo directo con admisiones.' },
-          { h3: 'Información concreta, no folleto', text: 'Dejamos visible lo que los padres de verdad buscan: mensualidades, matrícula, becas, niveles y metodología. La claridad convierte más que la misión y visión.' },
-          { h3: 'Prueba real de la vida escolar', text: 'Usamos fotos y video reales de instalaciones y del día a día, con testimonios verificables de familias actuales.' },
-          { h3: 'Portal de padres', text: 'Montamos el portal con calendario, circulares y estado de pagos que reduce llamadas a secretaría y retiene después de la matrícula.' },
+          'Casi todos los colegios describen su "modelo pedagógico integral" con las mismas palabras, y los padres ya no los distinguen por ese texto. Lo que compara una familia es concreto: requisitos, fechas de examen, entrevista y cuándo llega la respuesta. <strong>La claridad genera más confianza que el eslogan.</strong>',
+          'Después de la matrícula, el <strong>portal de padres</strong> es la pieza que más retiene: calendario académico, circulares y estado de pagos en un solo lugar reducen las llamadas a secretaría.',
         ],
       },
       {
@@ -1112,17 +1039,17 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El calendario de admisiones manda: la web tiene que estar lista antes',
+        h2: '¿Cuándo debe estar lista la web para la temporada de admisiones?',
         paragraphs: [
-          'Las admisiones tienen temporada, y la decisión de los padres se concentra en pocas semanas. Un colegio con la web desactualizada, con las fechas del año pasado o sin el formulario de cupo abierto, pierde justo en el momento en que más lo buscan. La web debe llegar a esa ventana con la información del ciclo vigente y el proceso listo para recibir solicitudes.',
-          'Por eso dejamos las fechas, los requisitos y el estado de admisiones en tu control, para actualizarlos ciclo a ciclo sin depender de la agencia. <strong>En educación, llegar tarde a la temporada de admisiones es perder una generación completa de matrículas.</strong>',
+          'Antes de que abra. La decisión de los padres se concentra en pocas semanas, y un colegio con las fechas del año pasado o sin el formulario de cupo abierto pierde justo cuando más lo buscan.',
+          'Por eso las fechas, los requisitos y el estado de admisiones quedan en tu control, para actualizarlos ciclo a ciclo desde el panel sin depender de la agencia. <strong>Llegar tarde a la temporada es perder un año entero de matrículas.</strong>',
         ],
       },
-            {
+      {
         type: 'prose',
-        h2: 'Los padres comparan tres colegios, de noche y desde el celular',
+        h2: '¿Cómo comparan los padres tres colegios?',
         paragraphs: [
-          'La decisión de colegio es de las más investigadas que toma una familia y ocurre casi entera fuera del horario escolar. Los padres comparan de noche, después de acostar a los niños, desde el teléfono, con tres pestañas abiertas de tres colegios.',
+          'De noche, después de acostar a los niños, desde el teléfono y con tres pestañas abiertas. La decisión de colegio es de las más investigadas que toma una familia y ocurre casi entera fuera del horario escolar.',
           'Eso define cómo debe estar armada la web. Si la información que se compara —mensualidad, matrícula, horario, idiomas, transporte, requisitos de admisión— está repartida en cinco páginas o dentro de un PDF que hay que descargar, tu colegio pierde la comparación aunque sea el mejor de los tres.',
           'Lo que gana es una página que junte todo eso de forma escaneable, más una comparación honesta de qué tipo de familia encaja con tu proyecto educativo. Ese último punto asusta pero funciona: decir claramente para quién es tu colegio atrae a las familias correctas y evita las matrículas que se caen en el segundo trimestre.',
           '<strong>Y todo tiene que verse bien en un celular</strong>, porque es donde ocurre la comparación real, no en la computadora de la oficina.',
@@ -1130,10 +1057,9 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La mensualidad: el dato que todos buscan y casi nadie publica',
+        h2: '¿Debe un colegio publicar la mensualidad en su web?',
         paragraphs: [
-          'Es la primera pregunta de toda familia y la que más colegios esconden. El razonamiento habitual es que publicarla espanta, y en la práctica ocurre lo contrario: no publicarla hace que la familia asuma un número, casi siempre más alto, y descarte sin llamar.',
-          'Además carga a admisiones con decenas de llamadas cuyo único contenido es "¿cuánto cuesta?". Ese tiempo se podría estar usando en las familias que sí están en rango.',
+          'Sí. Es la primera pregunta de toda familia y la que más colegios esconden. No publicarla hace que la familia asuma un número, casi siempre más alto, y descarte sin llamar; además carga a admisiones con decenas de llamadas cuyo único contenido es "¿cuánto cuesta?".',
           'Lo que funciona es publicar la estructura completa: matrícula, mensualidad por nivel, cuántas mensualidades al año, y qué está incluido y qué no —libros, uniformes, transporte, alimentación, actividades—. Esa última parte evita el conflicto clásico del segundo mes, cuando llega un cobro que la familia no esperaba.',
           'Si hay becas o descuentos por hermanos, publicarlos también. <strong>Una familia que ve el número completo y decide seguir adelante llega mucho más comprometida</strong> que una que se enteró en la entrevista.',
         ],
@@ -1155,7 +1081,7 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Los datos de un menor exigen más cuidado que cualquier otro',
+        h2: '¿Cómo tratar los datos y las fotos de los alumnos en la web?',
         paragraphs: [
           'La web de un colegio recoge datos de niños: nombre, edad, a veces condición de salud o necesidades educativas, y fotos. Bajo la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong> esto exige el mayor cuidado, y el consentimiento lo da el padre o tutor, no el menor.',
           'La parte que más se descuida es la publicación de fotos. Un colegio publica cientos de imágenes al año en su web y sus redes, y con frecuencia el permiso es un párrafo firmado al matricular hace ocho años. Conviene que sea un consentimiento específico, renovable y revocable, y que exista una forma simple de retirar a un alumno de la publicación si la familia lo pide.',
@@ -1165,12 +1091,10 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Qué medir: solicitudes de admisión, no visitas',
+        h2: '¿Qué medir en la web de un colegio?',
         paragraphs: [
-          'Un colegio tiene una temporada y un cupo. Por eso la métrica que importa no es el tráfico anual sino cuántas solicitudes de información y de admisión entraron, en qué nivel, y en qué momento del calendario.',
-          'El corte por nivel es el más accionable. Si preescolar se llena solo y bachillerato no, el esfuerzo de comunicación no debería repartirse igual entre los dos. Y si un nivel concreto genera muchas consultas pero pocas matrículas, el problema está en la conversación posterior, no en la web.',
-          'El segundo dato es el momento. Las solicitudes se concentran en pocas semanas del calendario de admisiones, y saber exactamente cuáles permite tener la web y las campañas listas antes, no durante. Llegar tarde a esa ventana cuesta un año entero.',
-          'Y cuántas visitas al colegio se agendaron desde la web, que en educación es el paso que de verdad predice la matrícula. Lo dejamos medido en un tablero corto; el planteamiento en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Solicitudes de información y de admisión por nivel y por semana del calendario, no tráfico anual: un colegio tiene una temporada y un cupo. El corte por nivel es el más accionable. Si preescolar se llena solo y bachillerato no, el esfuerzo de comunicación no debería repartirse igual entre los dos. Y si un nivel concreto genera muchas consultas pero pocas matrículas, el problema está en la conversación posterior, no en la web.',
+          'Saber en qué semanas se concentran las solicitudes permite tener las campañas listas antes, no durante. Y cuenta cuántas visitas al colegio se agendaron desde la web, el paso que de verdad predice la matrícula. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -1216,16 +1140,17 @@ export const industriasPages: PageData[] = [
     service: { type: 'Diseño web para retail y moda' },
     lead: [
       'Si tu catálogo vive solo en Instagram, dependes de un algoritmo que no controlas y compites contra miles de cuentas idénticas.',
-      'Una tienda propia no reemplaza tus redes: las respalda. Instagram descubre; tu web vende, con catálogo permanente, checkout sin fricción y la credibilidad de un dominio propio que una cuenta de venta informal no tiene.',
+      'El diseño web para retail y moda en Panamá que hace Elemento Web, en Ciudad de Panamá, es una tienda online con catálogo por colección, variantes de talla y color con su propio stock, guía de tallas en centímetros, checkout con Yappy y tarjeta, envío visible e integración con Instagram Shopping. Parte desde $1,950.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que la tienda de retail y moda debe incluir',
+        h2: '¿Qué debe incluir una tienda online de retail y moda en Panamá?',
         items: [
           'Catálogo visual de alto impacto, fotos profesionales de producto',
           'Guía de tallas clara para reducir devoluciones',
           'Filtros por categoría, talla, color y precio',
+          'Talla y color como variantes con su propio inventario, para saber qué queda de cada combinación',
           'Checkout rápido con Yappy y tarjeta',
           'Integración con Instagram y catálogo de Meta',
           'Colecciones por temporada fáciles de actualizar',
@@ -1235,44 +1160,16 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Por qué una web te da credibilidad que Instagram no da',
+        h2: '¿Por qué una tienda de moda necesita web si ya vende por Instagram?',
         paragraphs: [
-          'Vender solo por Instagram funciona hasta que el cliente busca tu marca en Google y no encuentra nada: ese vacío genera duda, sobre todo con montos altos o compras nuevas.',
-          'Una tienda propia con dominio, catálogo completo y checkout profesional resuelve esa duda al instante. Y a diferencia de la cuenta social, <strong>no depende de que el algoritmo decida mostrar tu contenido</strong>: el cliente que ya te conoce entra directo a comprar.',
-          'La integración con Instagram Shopping conecta ambos mundos: sigues publicando donde tu audiencia ya está, pero cada publicación puede llevar directo al producto en tu propia tienda.',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo trabajamos tu tienda de retail y moda',
-        items: [
-          { h3: 'Catálogo visual', text: 'Montamos las fichas de producto con fotos profesionales, múltiples ángulos, video corto y guía de tallas clara para reducir devoluciones.' },
-          { h3: 'Variantes e inventario', text: 'Configuramos talla y color como variantes con su propio stock, para que sepas exactamente qué queda de cada combinación.' },
-          { h3: 'Checkout y pagos', text: 'Dejamos un checkout rápido con Yappy y tarjeta, y WhatsApp para consultas de disponibilidad en tiempo real.' },
-          { h3: 'Conexión con redes', text: 'Integramos el catálogo con Instagram y Facebook Shopping para que cada publicación lleve directo al producto en tu web.' },
-        ],
-      },
-      {
-        type: 'cards',
-        h2: 'Por qué tu web vende lo que Instagram no puede',
-        intro: 'Redes y tienda propia hacen trabajos distintos. Juntas venden más que cualquiera por separado.',
-        items: [
-          { h3: 'Instagram descubre', text: 'Es donde tu audiencia pasa el tiempo y te encuentra. Perfecto para mostrar, generar deseo y construir marca, pero no para gestionar catálogo ni cobrar en serio.' },
-          { h3: 'Tu web vende', text: 'Catálogo permanente, filtros, checkout profesional y un dominio propio que da la credibilidad que una cuenta de venta informal nunca tendrá.' },
-          { h3: 'El cliente frecuente', text: 'Quien ya te conoce no quiere revisar historias viejas para comprar de nuevo: entra directo a tu tienda, encuentra su talla y paga. Ese cliente es tu margen sin costo de pauta.' },
+          'Instagram descubre; la web vende. Vender solo por Instagram funciona hasta que el cliente busca tu marca en Google y no encuentra nada, y ese vacío genera duda con montos altos o compras nuevas. Una tienda con dominio propio, catálogo completo y checkout resuelve esa duda, y <strong>no depende de que el algoritmo decida mostrar tu contenido</strong>: el cliente frecuente entra directo, encuentra su talla y paga, sin costo de pauta.',
+          'La integración con Instagram y Facebook Shopping conecta ambos mundos: sigues publicando donde está tu audiencia y cada publicación lleva directo al producto en tu tienda.',
+          'La moda vive de rotación (colecciones, temporada, liquidaciones), así que las colecciones y etiquetas de temporada quedan en tu control para lanzarlas y retirarlas sin llamar al programador.',
         ],
       },
       {
         type: 'prose',
-        h2: 'La temporada y la colección mandan en moda',
-        paragraphs: [
-          'La moda vive de rotación: colecciones nuevas, temporada, liquidaciones, ediciones de campaña. Una tienda que obliga a llamar al programador para armar una colección o marcar una liquidación siempre llega tarde al momento de venta. Por eso dejamos las colecciones y las etiquetas de temporada en tu control, para lanzarlas y retirarlas tú mismo.',
-          'La guía de tallas es el otro detalle que muchos ignoran y que cuesta dinero. En moda panameña, con marcas de distintos orígenes, la talla no es universal, y una devolución se come el margen de varias ventas. <strong>Una guía de tallas clara por producto reduce devoluciones y la duda que frena la compra</strong> antes del checkout.',
-        ],
-      },
-            {
-        type: 'prose',
-        h2: 'Vender por mensaje directo tiene un costo que nadie calcula',
+        h2: '¿Cuánto cuesta vender solo por mensaje directo?',
         paragraphs: [
           'La operación típica de una tienda panameña de moda funciona así: se publica en Instagram, la clienta pregunta por mensaje, alguien contesta talla y precio, se coordina el pago por Yappy y se acuerda la entrega. Funciona, y por eso casi nadie lo cuestiona.',
           'El costo aparece cuando lo mides. Cada venta consume entre cinco y quince mensajes. Alguien tiene que estar disponible para contestarlos, casi siempre la misma persona que compra, empaca y factura. Y los mensajes llegan a cualquier hora, incluida la madrugada, que es cuando mucha gente compra ropa.',
@@ -1282,12 +1179,12 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La política de cambios es lo último que se lee y lo que decide',
+        h2: '¿Qué política de cambios y guía de tallas publicar?',
         paragraphs: [
           'En moda online, la objeción real nunca es el precio: es "¿y si no me queda?". Comprar ropa sin probársela es un salto de fe, y lo que sostiene ese salto es saber qué pasa si sale mal.',
           'Casi ninguna tienda panameña publica esto con claridad, y el resultado es previsible: la clienta pregunta por mensaje, la respuesta tarda, y la compra se enfría. O peor, compra, no le queda, y el reclamo se resuelve improvisando, con una clienta molesta que no vuelve.',
           'Lo que hay que publicar es corto y concreto: cuántos días hay para cambiar, si el cambio es por talla o también por devolución de dinero, quién paga el envío del cambio, y qué prendas están excluidas —ropa interior, trajes de baño, artículos en oferta—. Con eso resuelto, la duda deja de frenar la compra.',
-          'La otra mitad es la guía de tallas, y no una tabla genérica: medidas reales de tus prendas, en centímetros, y qué talla usa la modelo de la foto con su estatura. <strong>Eso baja los cambios más que cualquier política</strong>, y cada cambio evitado es margen que te quedas.',
+          'La otra mitad es la guía de tallas, y no una tabla genérica: con marcas de distintos orígenes la talla no es universal, así que van medidas reales de tus prendas, en centímetros, y qué talla usa la modelo de la foto con su estatura. <strong>Eso baja los cambios más que cualquier política</strong>, y cada cambio evitado es margen que te quedas.',
         ],
       },
       {
@@ -1307,9 +1204,9 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Pagar y entregar en Panamá, que es donde se cae la venta',
+        h2: '¿Qué pagos y envíos debe ofrecer una tienda de moda en Panamá?',
         paragraphs: [
-          'Se puede tener el producto correcto, el precio correcto y la foto correcta, y perder la venta en los últimos dos pasos. En Panamá esos dos pasos tienen particularidades que ninguna plantilla internacional resuelve sola.',
+          'La venta se pierde a menudo en los dos últimos pasos, pago y entrega, y en Panamá ambos tienen particularidades que ninguna plantilla internacional resuelve sola.',
           'En pago, <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a> no es opcional: para buena parte del país es la forma natural de pagar, y su ausencia manda a la clienta de vuelta al mensaje directo. Junto con tarjeta cubre casi todo el mercado. Y el precio tiene que incluir o mostrar el ITBMS con claridad, no como sorpresa al final.',
           'En entrega, lo que decide es la transparencia: costo visible antes del checkout, plazo realista para ciudad y para interior, y si hay retiro en tienda, que en Panamá funciona mejor de lo que muchos creen. La entrega a provincias sin especificar plazo ni costo es una de las principales causas de carrito abandonado.',
           'Y avisar. Un mensaje automático cuando el pedido sale y otro cuando llega elimina la mayoría de los "¿ya lo enviaron?" que hoy consumen el día del equipo. Lo desarrollamos en <a href="/blog/carritos-abandonados-como-recuperar-ventas/">cómo recuperar carritos abandonados</a>.',
@@ -1317,12 +1214,11 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Qué medir: pedidos y qué se abandona a mitad de camino',
+        h2: '¿Qué medir en una tienda online de moda?',
         paragraphs: [
-          'En una tienda online el número que manda es cuántos pedidos se completaron sin que nadie tuviera que contestar un mensaje. Ese es el que dice si la tienda está trabajando o si sigue siendo un catálogo bonito con venta por chat.',
-          'El segundo, y el más rentable de mirar, es dónde se cae la gente: cuántos agregan al carrito, cuántos llegan al pago y cuántos terminan. Si mucha gente abandona justo al ver el costo de envío, ya sabes qué arreglar, y no es la publicidad.',
+          'Primero, cuántos pedidos se completaron sin que nadie contestara un mensaje: dice si la tienda trabaja o si sigue siendo un catálogo con venta por chat. Segundo, dónde se cae la gente: cuántos agregan al carrito, cuántos llegan al pago y cuántos terminan. Si mucha gente abandona justo al ver el costo de envío, ya sabes qué arreglar, y no es la publicidad.',
           'También conviene mirar qué productos generan más visitas sin venta. Suele haber prendas que atraen mucho y convierten poco, casi siempre por falta de tallas o por fotos que no muestran la tela. Eso se arregla sin gastar un peso en pauta.',
-          'Y la tasa de cambios por producto, que dice qué prendas tienen problema de tallaje y hay que documentar mejor. Lo dejamos todo medido en un tablero corto; el planteamiento en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Y la tasa de cambios por producto, que dice qué prendas tienen problema de tallaje y hay que documentar mejor. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -1368,12 +1264,12 @@ export const industriasPages: PageData[] = [
     service: { type: 'Diseño web para gimnasios y estudios fitness' },
     lead: [
       'La mayoría de las membresías se cancelan en los primeros tres meses. Lo que retiene no es el equipo: es que reservar una clase sea fácil y que el socio sienta que pertenece a algo.',
-      'Tu web puede resolver ambas cosas: inscripción y reserva de clases sin fricción, y contenido que mantenga motivado al socio entre visita y visita. Un gimnasio que solo tiene una página con horarios en PDF está perdiendo la mitad de esa batalla antes de empezar.',
+      'El diseño web para gimnasios y fitness en Panamá que hace Elemento Web, en Ciudad de Panamá, incluye inscripción de membresía con pago en línea, horario de clases con cupos, reserva desde el celular con recordatorios, pase de prueba reservable sin vendedor y condiciones de cancelación publicadas. La base corporativa parte desde $1,250.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que la web de un gimnasio en Panamá debe incluir',
+        h2: '¿Qué debe incluir el diseño web de un gimnasio en Panamá?',
         items: [
           'Inscripción de membresía online con pago inicial',
           'Horario de clases en tiempo real, con cupos disponibles',
@@ -1387,21 +1283,11 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La reserva de clases es la funcionalidad que más retiene',
+        h2: '¿Por qué la reserva de clases online retiene socios?',
         paragraphs: [
-          'Cuando reservar una clase requiere llamar o escribir por WhatsApp a mano, el socio con poca disciplina simplemente no va. La fricción mata el hábito antes de que se forme.',
-          'Un sistema de <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reservas online</a> con recordatorio automático elimina esa fricción: el socio ve cupos disponibles, reserva en segundos y recibe un recordatorio que reduce las ausencias.',
-          'El contenido (rutinas, nutrición, logros de otros socios) hace el resto: mantiene al gimnasio presente en la cabeza del cliente los seis días que no viene a entrenar, que es exactamente cuando decide cancelar o no.',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo trabajamos la web de un gimnasio',
-        items: [
-          { h3: 'Inscripción sin fricción', text: 'Montamos la inscripción de membresía online con pago inicial, para que el prospecto motivado se convierta en socio en el momento, no cuando pase por el local.' },
-          { h3: 'Horario y reserva de clases', text: 'Configuramos el horario en tiempo real con cupos disponibles y reserva desde el celular, la funcionalidad que más ayuda a que el socio efectivamente venga.' },
-          { h3: 'Recordatorios que reducen ausencias', text: 'Activamos recordatorios automáticos de clase para atacar el "no show" y liberar cupos a tiempo para otro socio.' },
-          { h3: 'Comunidad y contenido', text: 'Dejamos el espacio para perfiles de entrenadores, testimonios reales y blog motivacional que mantienen al socio conectado entre visitas.' },
+          'Cuando reservar una clase requiere llamar o escribir por WhatsApp a mano, el socio con poca disciplina simplemente no va: la fricción mata el hábito antes de que se forme.',
+          'Un sistema de <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">reservas online</a> con recordatorio automático elimina esa fricción: el socio ve cupos, reserva en segundos, recibe un recordatorio y, si no puede ir, libera el cupo a tiempo para otro.',
+          'El contenido (rutinas, nutrición, logros de otros socios) mantiene al gimnasio presente los días que el socio no entrena, que es cuando decide cancelar o no. <strong>Retener un socio un mes más cuesta mucho menos que conseguir uno nuevo</strong> con pauta.',
         ],
       },
       {
@@ -1416,27 +1302,18 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Captar es caro; retener es donde está el negocio',
+        h2: '¿Debe un gimnasio publicar sus condiciones de cancelación?',
         paragraphs: [
-          'La pauta que trae socios nuevos cuesta cada mes, y la mayoría de las membresías se cancela en los primeros meses. Un gimnasio que solo invierte en captar y descuida la retención está llenando un balde con hueco: paga por entrar gente que se va antes de volverse rentable.',
-          'La web trabaja el otro lado de esa ecuación. La reserva fácil convierte la intención en hábito, el recordatorio reduce las ausencias que llevan al abandono, y el contenido mantiene al gimnasio presente los días que el socio no entrena. <strong>Retener un socio un mes más cuesta mucho menos que conseguir uno nuevo</strong>, y ahí es donde la web paga su inversión.',
-        ],
-      },
-            {
-        type: 'prose',
-        h2: 'La letra chica de la cancelación es la reseña de una estrella',
-        paragraphs: [
-          'Si lees las reseñas negativas de gimnasios en Panamá, la mayoría no habla del equipo ni de los entrenadores. Habla de lo mismo: que no lo dejaron cancelar, que le siguieron cobrando, que había una permanencia que nadie le explicó al inscribirse.',
-          'Ese daño es enorme y es evitable, porque casi siempre nace de una condición que existía pero estaba escondida. El socio no se enoja por la condición: se enoja por enterarse tarde.',
+          'Sí. Las reseñas negativas de gimnasios en Panamá rara vez hablan del equipo: hablan de que no los dejaron cancelar, de que les siguieron cobrando o de una permanencia que nadie explicó al inscribirse. El socio no se enoja por la condición: se enoja por enterarse tarde.',
           'Publicar las condiciones completas —permanencia si la hay, cómo se cancela, con cuántos días de aviso, si hay penalidad, si se puede congelar la membresía y por cuánto tiempo— parece contraproducente y hace lo contrario. Filtra al que iba a molestarse, y le da tranquilidad al que estaba dudando justo por miedo a quedar atrapado.',
           '<strong>La opción de congelar merece protagonismo propio.</strong> Es lo que la gente pregunta antes de firmar y lo que evita que cancele en lugar de pausar cuando se va de viaje o se lesiona.',
         ],
       },
       {
         type: 'prose',
-        h2: 'El pase de prueba es la puerta, si no obliga a hablar con un vendedor',
+        h2: '¿Cómo ofrecer el pase de prueba desde la web?',
         paragraphs: [
-          'Nadie se inscribe en un gimnasio que no conoce. Quiere ver el equipo, sentir el ambiente, saber si a las siete de la tarde hay que hacer fila para una máquina. El pase de prueba resuelve eso y casi todos los gimnasios lo ofrecen mal.',
+          'Nadie se inscribe en un gimnasio que no conoce: quiere ver el equipo, sentir el ambiente y saber si a las siete de la tarde hay fila para una máquina. El pase de prueba resuelve eso, y casi todos los gimnasios lo ofrecen mal.',
           'El patrón habitual es pedir que llames o que escribas para "coordinar tu visita", lo que en la práctica significa que un vendedor va a intentar cerrarte antes de dejarte entrenar. Mucha gente prefiere no pasar por eso y simplemente no va.',
           'Lo que funciona es que el pase se reserve solo desde la web, con día y hora, sin hablar con nadie. Llega, entrena, y si le gusta se inscribe. La conversación de venta ocurre después de la experiencia, que es cuando de verdad convierte.',
           'Y el contenido que acompaña importa: fotos reales del gimnasio a hora pico, no vacías; horarios de clases actualizados; y una idea honesta de qué tan lleno está. <strong>El socio que llega sabiendo qué va a encontrar se queda; el que se lleva una sorpresa cancela al mes.</strong>',
@@ -1459,7 +1336,7 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Enero decide el año, y se prepara en noviembre',
+        h2: '¿Cuándo preparar la web del gimnasio para la temporada de enero?',
         paragraphs: [
           'El rubro tiene una estacionalidad brutal. Entre la primera semana de enero y mediados de febrero se concentra una porción enorme de las inscripciones del año, con gente que busca activamente y compara varios gimnasios en pocos días.',
           'El problema es que casi todos los gimnasios empiezan a preparar esa temporada en enero, cuando la búsqueda ya está ocurriendo. El posicionamiento no funciona así: una página que se publica el 2 de enero no compite en la búsqueda del 3.',
@@ -1469,12 +1346,11 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Qué medir: inscripciones, sí, pero sobre todo permanencia',
+        h2: '¿Qué medir en la web de un gimnasio?',
         paragraphs: [
-          'Un gimnasio que solo mide inscripciones se está mirando la mitad buena de la foto. El negocio no está en captar: está en que el socio siga pagando el mes seis.',
-          'Los números que hay que tener son cuatro: cuántos pases de prueba se reservaron desde la web, cuántos se convirtieron en inscripción, cuántos socios siguen activos a los tres y a los seis meses, y cuántas cancelaciones hubo y por qué motivo.',
+          'Inscripciones, pero sobre todo permanencia: el negocio está en que el socio siga pagando el mes seis. Son cuatro números: cuántos pases de prueba se reservaron desde la web, cuántos se convirtieron en inscripción, cuántos socios siguen activos a los tres y a los seis meses, y cuántas cancelaciones hubo y por qué motivo.',
           'Ese último dato, el motivo de cancelación, es el más ignorado y el más útil. Si la mayoría cancela por mudanza no hay mucho que hacer; si cancela por horario de clases o por congestión a hora pico, eso se arregla operativamente y vale mucho más que cualquier campaña.',
-          'Y la conversión del pase de prueba, que dice si el problema está en atraer o en la experiencia del primer día. Lo dejamos medido en un tablero corto; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Y la conversión del pase de prueba, que dice si el problema está en atraer o en la experiencia del primer día. El detalle está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -1519,12 +1395,12 @@ export const industriasPages: PageData[] = [
     service: { type: 'Diseño web para talleres y negocios automotrices' },
     lead: [
       'Confiarle tu carro a un taller que no conoces da la misma ansiedad que confiarle tu salud a un médico nuevo. El rubro arrastra una desconfianza real sobre precios inflados y diagnósticos inventados.',
-      'La web que le gana a esa desconfianza es la que muestra precios claros por servicio, permite agendar sin llamar y prueba con fotos reales que el trabajo se hizo bien. Transparencia, no promesas, es lo que convierte en este rubro.',
+      'El diseño web para talleres automotrices en Panamá que hace Elemento Web, en Ciudad de Panamá, incluye precios cerrados por servicio, cita de diagnóstico con precio visible, agenda online, una página por marca o sistema que dominas, garantía publicada y ficha de Google Maps alineada. Una landing o corporativa parte de $550 a $1,250.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que la web de un taller en Panamá debe incluir',
+        h2: '¿Qué debe incluir el diseño web de un taller en Panamá?',
         items: [
           'Rango de precios claro por tipo de servicio',
           'Agenda de citas online, sin necesidad de llamar',
@@ -1538,21 +1414,11 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La transparencia de precios es tu ventaja competitiva',
+        h2: '¿Cómo consigue clientes la web de un taller en Panamá?',
         paragraphs: [
-          'La mayoría de los talleres esconde los precios porque "cada caso es distinto". Es cierto, pero el cliente lo interpreta como que hay algo que ocultar. Publicar rangos por tipo de servicio (cambio de aceite, frenos, diagnóstico) reduce esa sospecha antes de que exista.',
-          'La <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">cita online</a> resuelve el otro problema: el cliente con el carro varado no quiere esperar a que alguien conteste el teléfono. Ver disponibilidad y agendar en el momento es lo que gana esa urgencia.',
-          'Y como el negocio depende del vecindario, el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Google Maps</a> suele pesar más que cualquier otra estrategia digital para este rubro.',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo trabajamos la web de un taller',
-        items: [
-          { h3: 'Precios de referencia visibles', text: 'Publicamos rangos por tipo de servicio (aceite, frenos, diagnóstico) que reducen la sospecha de precios inflados antes de que exista.' },
-          { h3: 'Cita online sin llamar', text: 'Montamos la agenda para que el cliente con el carro varado vea disponibilidad y reserve en el momento, sin esperar a que alguien conteste.' },
-          { h3: 'Prueba del trabajo', text: 'Dejamos espacio para fotos de antes y después de reparaciones reales, testimonios verificables y la garantía explicada con claridad.' },
-          { h3: 'Presencia local dominante', text: 'Alineamos la web con la ficha de Google Maps, que en este rubro suele traer más clientes que el sitio mismo.' },
+          'Con tres piezas. La <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">cita online</a>: el cliente con el carro varado no quiere esperar a que alguien conteste el teléfono, quiere ver disponibilidad y agendar en el momento.',
+          'El <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Google Maps</a>: el negocio depende del vecindario y la búsqueda típica es "taller cerca de mí", así que la ficha de Google suele traer más clientes que el sitio mismo.',
+          'Y la prueba del trabajo: fotos de antes y después de reparaciones reales, testimonios verificables y la garantía por escrito, que es lo único que convence al cliente al que ya estafaron antes.',
         ],
       },
       {
@@ -1567,17 +1433,9 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La especialidad por marca es un imán de búsquedas',
+        h2: '¿Debe un taller publicar sus precios en la web?',
         paragraphs: [
-          'El dueño de un carro no busca "taller" a secas: busca "taller Toyota", "especialista en cajas automáticas", "mecánica de diésel". Un taller que deja claras las marcas y los sistemas en los que se especializa captura esas búsquedas específicas, donde hay menos competencia y el cliente llega más convencido de que está en el lugar correcto.',
-          'Esa especialización también justifica el precio y filtra al cliente equivocado. <strong>Mejor atraer al dueño de la marca que dominas que a todos los que solo comparan por precio</strong>, y una web que declara con claridad en qué es bueno hace exactamente ese trabajo de filtro.',
-        ],
-      },
-            {
-        type: 'prose',
-        h2: 'El teléfono del taller se va el día entero en cotizar',
-        paragraphs: [
-          'La rutina de casi todo taller panameño es la misma: suena el teléfono, alguien deja lo que estaba haciendo, y del otro lado hay una pregunta imposible de responder bien. "¿Cuánto me cobra por un cambio de clutch?". Sin saber el modelo, el año ni el estado, cualquier número es un riesgo.',
+          'Sí, los que se pueden cerrar. Esconderlos porque "cada caso es distinto" se lee como que hay algo que ocultar. Y la rutina de casi todo taller panameño confirma el costo: suena el teléfono, alguien deja lo que estaba haciendo, y del otro lado hay una pregunta imposible de responder bien. "¿Cuánto me cobra por un cambio de clutch?". Sin saber el modelo, el año ni el estado, cualquier número es un riesgo.',
           'Ese ciclo consume horas al día y casi nunca termina en cliente, porque quien llama está haciendo lo mismo con otros cuatro talleres y va a decidir por el número más bajo que le den por teléfono, que suele ser el del que menos sabe lo que va a encontrar.',
           'La web corta ese ciclo si se le deja hacer dos cosas. Publicar precios cerrados de los servicios que sí se pueden cerrar —cambio de aceite, alineación, frenos por eje, revisión pre-compra— y ofrecer una cita de diagnóstico para todo lo demás, con precio propio y visible.',
           '<strong>Cobrar el diagnóstico no espanta: filtra.</strong> El que llamaba a cinco talleres buscando el número más bajo no lo paga, y el cliente serio prefiere pagar veinte dólares por un diagnóstico honesto que recibir una cotización inventada por teléfono.',
@@ -1585,7 +1443,7 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Explicar el repuesto es lo que convierte una reparación en un cliente fijo',
+        h2: '¿Por qué explicar repuestos y garantía en la web del taller?',
         paragraphs: [
           'La desconfianza del rubro tiene un origen concreto: el cliente no sabe qué le pusieron. Original, alterno, remanufacturado, usado. Son cuatro cosas con precios y duraciones muy distintas, y en la mayoría de los talleres el cliente se entera de cuál le tocó cuando falla.',
           'Una página que explique esa diferencia con honestidad —cuándo conviene un original, cuándo un alterno bueno es suficiente, y cuándo no vale la pena ahorrar— hace algo que ninguna cantidad de publicidad logra: te convierte en el que explica en un rubro donde nadie explica.',
@@ -1610,22 +1468,21 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La especialidad publicada trae mejores clientes que el "hacemos de todo"',
+        h2: '¿Conviene una página por marca o especialidad del taller?',
         paragraphs: [
-          'Casi todo taller quiere parecer capaz de atender cualquier carro, y esa aspiración termina en una web que no dice nada. "Mecánica general, todas las marcas" no compite en ninguna búsqueda, porque nadie busca así.',
+          'Sí. "Mecánica general, todas las marcas" no compite en ninguna búsqueda, porque nadie busca así.',
           'La gente busca por marca y por síntoma: "taller Toyota Panamá", "especialista en cajas automáticas", "mecánico de diésel", "taller de aire acondicionado automotriz". Cada una de esas es una búsqueda con volumen real y con muy poca competencia bien hecha.',
-          'Una página por especialidad —por marca que dominas o por sistema en el que eres fuerte— captura esas búsquedas y atrae al cliente que ya sabe que tiene ese problema. Ese cliente compara menos por precio, porque busca a alguien que sepa, no a alguien que sea barato.',
+          'Una página por especialidad —por marca que dominas o por sistema en el que eres fuerte— captura esas búsquedas y atrae al cliente que ya sabe que tiene ese problema. Ese cliente compara menos por precio, porque busca a alguien que sepa, no a alguien que sea barato; la especialidad también justifica tu tarifa.',
           '<strong>Y no te quita el resto del trabajo.</strong> Seguir atendiendo todo lo demás no impide destacar en lo que haces mejor; solo cambia por qué te encuentran y con qué expectativa llegan.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué medir: citas agendadas y cuántos vuelven al mantenimiento',
+        h2: '¿Qué medir en la web de un taller?',
         paragraphs: [
-          'El número que importa en un taller no es cuánta gente visitó la web, es cuántas citas se agendaron sin que nadie contestara el teléfono, y de qué servicio.',
-          'El segundo, y donde está el negocio real, es la recurrencia: qué porcentaje de los clientes nuevos volvió al siguiente mantenimiento. Un taller vive de que el cliente regrese cada cinco mil kilómetros, y esa vuelta casi nunca se pierde por mal servicio: se pierde porque nadie le recordó.',
+          'Citas agendadas sin que nadie contestara el teléfono, por servicio. Y, donde está el negocio real, la recurrencia: qué porcentaje de los clientes nuevos volvió al siguiente mantenimiento. Un taller vive de que el cliente regrese cada cinco mil kilómetros, y esa vuelta casi nunca se pierde por mal servicio: se pierde porque nadie le recordó.',
           'Un recordatorio automático a los cuatro o cinco meses, con el kilometraje estimado y un enlace para agendar, recupera más facturación que cualquier campaña de captación, y cuesta una fracción. Lo montamos con <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones</a>.',
-          'Y vale medir cuántas consultas llegan por especialidad, porque ahí está la señal de qué página ampliar y en qué conviene formar al equipo. Lo dejamos en un tablero corto; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Y vale medir cuántas consultas llegan por especialidad, porque ahí está la señal de qué página ampliar y en qué conviene formar al equipo. El detalle está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -1670,12 +1527,12 @@ export const industriasPages: PageData[] = [
     service: { type: 'Diseño web para salones de belleza y spas' },
     lead: [
       'En belleza se elige con los ojos. Antes de reservar, el cliente quiere ver el trabajo real del estilista, no una foto de banco de imágenes.',
-      'La web correcta combina dos cosas que casi nunca van juntas en este rubro: un portafolio visual que muestre resultados reales y un sistema de reserva que elimine la fila de mensajes de WhatsApp sin responder.',
+      'El diseño web para salones de belleza y spas en Panamá que hace Elemento Web, en Ciudad de Panamá, incluye reserva por servicio y por estilista, depósito con Yappy contra ausencias, recordatorios, una página por servicio principal con duración y precio, portafolio de trabajos reales y tarjetas de regalo. Parte desde $1,250.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que la web de un salón o spa en Panamá debe incluir',
+        h2: '¿Qué debe incluir el diseño web de un salón de belleza o spa en Panamá?',
         items: [
           'Reserva de cita por servicio y por estilista específico',
           'Portafolio visual real de resultados, no stock genérico',
@@ -1689,21 +1546,10 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Reservar por estilista, no solo por servicio',
+        h2: '¿Por qué reservar por estilista y no solo por servicio?',
         paragraphs: [
-          'La mayoría de los sistemas de reserva genéricos solo preguntan qué servicio quieres. En belleza eso no basta: el cliente fiel elige a una persona, no un servicio. Poder reservar directamente con "su" estilista es lo que retiene, y lo que un sistema mal configurado suele ignorar.',
-          'El anticipo o depósito al reservar (con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a>) resuelve el problema más caro del rubro: las citas que no se presentan, que dejan un espacio vacío en la agenda del estilista sin poder llenarlo con alguien más.',
-          'Y el portafolio visual convierte mejor que cualquier descripción: <strong>el cliente que ve el resultado real de un corte o una manicura reserva con mucha más confianza</strong> que el que solo lee "servicios de calidad".',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo trabajamos la web de un salón o spa',
-        items: [
-          { h3: 'Reserva por servicio y por estilista', text: 'Montamos el sistema para que el cliente reserve el servicio con "su" profesional, no solo un horario genérico. Eso es lo que retiene al cliente fiel.' },
-          { h3: 'Anticipo contra ausencias', text: 'Configuramos el depósito al reservar con Yappy o tarjeta, la mejor defensa contra las citas que no se presentan y dejan un hueco imposible de llenar.' },
-          { h3: 'Portafolio visual real', text: 'Armamos la galería de resultados reales por servicio y estilista, que convierte mucho mejor que cualquier descripción.' },
-          { h3: 'Recordatorios y fidelización', text: 'Activamos recordatorios automáticos de cita y dejamos el espacio para paquetes y tarjetas de regalo que aumentan el ticket.' },
+          'Los sistemas de reserva genéricos solo preguntan qué servicio quieres. En belleza eso no basta: el cliente fiel elige a una persona. Poder reservar directamente con "su" estilista es lo que retiene, y lo que un sistema mal configurado suele ignorar.',
+          'El portafolio visual por servicio y por estilista hace el resto: <strong>el cliente que ve el resultado real de un corte o una manicura reserva con mucha más confianza</strong> que el que solo lee "servicios de calidad".',
         ],
       },
       {
@@ -1718,15 +1564,7 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'La ausencia sin aviso es el costo silencioso del rubro',
-        paragraphs: [
-          'En belleza cada cita ocupa el tiempo de un profesional que no puede atender a nadie más mientras espera. Un cliente que no se presenta y no avisa deja ese espacio muerto: no se cobra y ya no se puede llenar. Multiplicado por semana, es de lo que más margen se lleva en el rubro.',
-          'La web ataca ese costo por dos lados: el anticipo al reservar compromete al cliente, y el recordatorio automático reduce los olvidos genuinos. <strong>Una política de cancelación clara y un depósito razonable protegen la agenda</strong> sin espantar al cliente que sí piensa venir, que agradece encontrar cupo justamente porque el sistema filtra a los que no.',
-        ],
-      },
-            {
-        type: 'prose',
-        h2: 'Una página por servicio, porque no se busca "salón de belleza"',
+        h2: '¿Por qué una página por servicio y no una lista de precios?',
         paragraphs: [
           'Casi nadie busca "salón de belleza en Panamá". Se busca el servicio: "uñas acrílicas Costa del Este", "keratina precio", "balayage Panamá", "masaje descontracturante", "depilación con cera". Cada uno lo busca una clienta distinta con un presupuesto distinto y una urgencia distinta.',
           'La web típica del rubro los resuelve en una lista de servicios con precio al lado. Es útil para quien ya te conoce y es invisible para quien todavía no. No compite en ninguna de esas búsquedas.',
@@ -1736,9 +1574,9 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Instagram trae, la web cierra, y por eso hacen falta las dos',
+        h2: '¿Basta con Instagram para un salón de belleza?',
         paragraphs: [
-          'En belleza, Instagram es donde se descubre. Nadie discute eso. El problema es que Instagram no responde las preguntas que separan al curioso de la clienta: cuánto cuesta, cuánto dura, si hay cupo el sábado, dónde queda, si hay estacionamiento.',
+          'No. En belleza, Instagram es donde se descubre, pero no responde las preguntas que separan al curioso de la clienta: cuánto cuesta, cuánto dura, si hay cupo el sábado, dónde queda, si hay estacionamiento.',
           'Cuando esas respuestas viven solo en mensajes directos, tu equipo se convierte en un centro de llamadas. Cada duda es un mensaje, cada mensaje es una interrupción a mitad de un servicio, y buena parte se queda sin responder porque llegan en horario de trabajo, que es justo cuando estás con clientas.',
           'La web recoge todo eso una vez y lo deja disponible las veinticuatro horas. Instagram sigue haciendo lo que hace bien —mostrar el trabajo— y manda a la web a quien ya se interesó. Ahí reserva sola, sin que nadie tenga que contestar.',
           'Hay una razón más de fondo: <strong>la cuenta de Instagram no es tuya.</strong> Se puede bloquear, se puede perder, el alcance lo decide otro. Tu web y tu lista de clientas sí son tuyas. En <a href="/blog/por-que-tu-negocio-necesita-una-pagina-web/">por qué tu negocio necesita una página web</a> lo desarrollamos.',
@@ -1761,9 +1599,9 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El depósito de reserva es lo que corta las ausencias',
+        h2: '¿Conviene pedir depósito al reservar en un salón o spa?',
         paragraphs: [
-          'La ausencia sin aviso es el costo silencioso del rubro, y la mayoría de los salones la combaten recordando por WhatsApp. Ayuda, pero no resuelve: el que iba a faltar igual falta, y ese hueco de dos horas un sábado ya no se recupera.',
+          'Sí, en los servicios donde la ausencia cuesta caro. Cada cita ocupa a un profesional que no puede atender a nadie más mientras espera, y la clienta que no se presenta ni avisa deja ese espacio muerto. Recordar por WhatsApp ayuda con los olvidos genuinos, pero el que iba a faltar igual falta, y ese hueco de dos horas un sábado ya no se recupera.',
           'Lo que sí lo corta es pedir un depósito al reservar, aunque sea pequeño. No por el dinero: por el compromiso. Una clienta que puso diez dólares avisa si no puede ir, y ese aviso te devuelve el cupo con tiempo de llenarlo.',
           'La objeción de siempre es que pedir depósito espanta. En la práctica espanta exactamente a quien iba a faltar. La clienta que valora tu tiempo lo paga sin pensarlo, sobre todo en servicios largos o de ticket alto donde el hueco duele más.',
           'Se monta con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy o pasarela de pago</a> dentro del flujo de reserva, y aplicado solo a los servicios donde la ausencia cuesta caro. <strong>El objetivo no es cobrar por adelantado, es que quien reserva sienta que reservó de verdad.</strong>',
@@ -1771,12 +1609,11 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Qué medir: reservas online y cada cuánto vuelve una clienta',
+        h2: '¿Qué medir en la web de un salón o spa?',
         paragraphs: [
-          'En belleza el negocio está en la frecuencia. Una clienta de color que vuelve cada seis semanas vale muchísimo más que tres clientas de una sola vez, y ninguna métrica de visitas te dice cuál tienes.',
-          'Los números que importan son cuatro: cuántas reservas entraron por la web sin que nadie contestara un mensaje, de qué servicio, qué porcentaje de clientas nuevas volvió dentro de los tres meses, y la tasa de ausencia.',
+          'En belleza el negocio está en la frecuencia: una clienta de color que vuelve cada seis semanas vale más que tres clientas de una sola vez. Los números que importan son cuatro: cuántas reservas entraron por la web sin que nadie contestara un mensaje, de qué servicio, qué porcentaje de clientas nuevas volvió dentro de los tres meses, y la tasa de ausencia.',
           'La recurrencia es el que más dice. Si es baja, casi nunca es por el servicio: es porque nadie le recordó a la clienta que tocaba retoque. Un recordatorio automático a las cinco o seis semanas, con el enlace para reservar, recupera más facturación que cualquier campaña de captación.',
-          'Y la ausencia dice si el depósito está funcionando o si hace falta aplicarlo a más servicios. Lo dejamos todo medido en un tablero corto de revisar; el planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Y la ausencia dice si el depósito está funcionando o si hace falta aplicarlo a más servicios. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -1822,12 +1659,12 @@ export const industriasPages: PageData[] = [
     service: { type: 'Diseño web para empresas de logística y transporte' },
     lead: [
       'Un comprador B2B que va a confiar su carga a tu empresa no busca frases motivadoras: busca pruebas de que no vas a fallarle.',
-      'La web correcta muestra cobertura real, flota, seguros y certificaciones antes de pedir cualquier dato de contacto. En logística, la confianza se construye con evidencia verificable, no con "somos líderes en soluciones integrales".',
+      'El diseño web para empresas de logística y transporte en Panamá que hace Elemento Web, en Ciudad de Panamá, pone primero la evidencia: cobertura con mapa de rutas, flota, seguro de carga y certificaciones; suma un formulario de cotización de flete con origen, destino, carga e incoterm, y rastreo por referencia. Parte desde $1,250.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Lo que la web de una empresa de logística debe incluir',
+        h2: '¿Qué debe incluir el diseño web de una empresa de logística en Panamá?',
         items: [
           'Cobertura geográfica clara, idealmente con mapa de rutas',
           'Flota y capacidad de carga visibles',
@@ -1841,21 +1678,11 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El comprador B2B compra evidencia, no promesas',
+        h2: '¿Qué busca un comprador B2B en la web de un operador logístico?',
         paragraphs: [
-          'Quien decide contratar transporte para su empresa suele comparar varias opciones y necesita justificar la elección internamente. Tu web tiene que darle esa evidencia: qué seguros tienes, qué certificaciones, qué clientes similares ya confían en ti.',
-          'La informalidad es el competidor real de este rubro: muchas opciones sin web, sin seguro visible y sin trayectoria documentada. <strong>Una web seria es en sí misma una señal de formalidad</strong> frente a esa competencia.',
-          'Si tu operación lo permite, un portal simple de seguimiento de envío (aunque sea básico) diferencia mucho: el cliente corporativo valora poder verificar el estado de su carga sin tener que llamar.',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo trabajamos la web de una empresa de logística',
-        items: [
-          { h3: 'Evidencia de capacidad primero', text: 'Ponemos por delante lo que el comprador B2B revisa: cobertura con mapa de rutas, flota, capacidad de carga, seguros y certificaciones.' },
-          { h3: 'Casos por sector', text: 'Organizamos el servicio por tipo (importación, mudanzas, carga refrigerada, distribución) para que cada cliente se reconozca y encuentre lo suyo.' },
-          { h3: 'Cotización clara', text: 'Montamos el cotizador o formulario de solicitud que recoge los datos de la carga y llega directo a tu equipo comercial para responder rápido.' },
-          { h3: 'Seguimiento si tu operación lo permite', text: 'Evaluamos un portal de rastreo, aunque sea básico, que le deja al cliente verificar el estado de su carga sin tener que llamar.' },
+          'Evidencia, no promesas. Quien contrata transporte para su empresa compara varias opciones y necesita justificar la elección internamente: qué seguros tienes, qué certificaciones, qué clientes similares ya confían en ti. Los superlativos ("líderes en soluciones integrales") los escribe cualquiera.',
+          'La informalidad es el competidor real del rubro: muchas opciones sin web, sin seguro visible y sin trayectoria documentada. <strong>En B2B la web no cierra la venta, pero decide si llegas a la lista corta.</strong>',
+          'Por eso el servicio se organiza por tipo (importación, mudanzas, carga refrigerada, distribución), para que cada cliente se reconozca y encuentre lo suyo.',
         ],
       },
       {
@@ -1870,17 +1697,9 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Frente a la informalidad, la web seria ya es una ventaja',
+        h2: '¿Qué debe pedir el formulario de cotización de flete?',
         paragraphs: [
-          'Buena parte de la competencia en transporte y logística opera sin web, sin seguro visible y sin trayectoria documentada. Para el comprador corporativo eso es un riesgo que no puede asumir: necesita un proveedor que exista de verdad y responda si algo falla. Una web seria, con la información de respaldo a la vista, te separa de inmediato de esa informalidad.',
-          'No se trata de superlativos ("líderes en soluciones integrales") que cualquiera escribe. Se trata de evidencia verificable: qué transportas, para quién, con qué cobertura y qué te respalda. <strong>En B2B la web no cierra la venta, pero decide si llegas a la lista corta</strong>, y sin ella muchas veces ni te consideran.',
-        ],
-      },
-            {
-        type: 'prose',
-        h2: 'La cotización de flete es el formulario que más se abandona',
-        paragraphs: [
-          'Un operador logístico vive de cotizar, y la mayoría lo resuelve con un formulario genérico de contacto o con un correo. El resultado es previsible: llegan consultas sin la mitad de los datos, alguien tiene que escribir pidiendo lo que falta, y en ese ida y vuelta el cliente ya cotizó con otros dos.',
+          'Un operador logístico vive de cotizar, y la mayoría lo resuelve con un formulario genérico o un correo: llegan consultas sin la mitad de los datos, alguien escribe pidiendo lo que falta, y en ese ida y vuelta el cliente ya cotizó con otros dos.',
           'Un formulario de cotización bien armado pide exactamente lo que necesitas para dar un número y nada más: origen y destino, tipo de carga, peso y volumen o dimensiones, si es contenedor completo o carga suelta, incoterm si aplica, y fecha estimada. Con eso se cotiza; sin eso no.',
           'La clave es que sea corto y esté ordenado por lo que el cliente sabe. Pedir el código arancelario en el primer paso espanta a un importador pequeño que no lo tiene a mano; pedirlo después, cuando ya invirtió tiempo, funciona mucho mejor.',
           '<strong>Y publicar el plazo de respuesta.</strong> Decir "cotizamos en menos de 24 horas hábiles" y cumplirlo diferencia más que cualquier descripción de servicios, porque el comprador de flete está midiendo exactamente eso.',
@@ -1888,9 +1707,9 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: '"¿Dónde está mi carga?" es la pregunta que consume tu operación',
+        h2: '¿Necesita rastreo de envíos la web de una empresa de logística?',
         paragraphs: [
-          'Cualquiera que trabaje en logística sabe cuánto tiempo del día se va en responder esa pregunta. El cliente escribe, alguien busca en el sistema o llama al transportista, y contesta. Multiplicado por cien envíos activos, es una persona completa dedicada a informar.',
+          'Si tu operación lo permite, sí. "¿Dónde está mi carga?" consume buena parte del día: el cliente escribe, alguien busca en el sistema o llama al transportista, y contesta. Multiplicado por cien envíos activos, es una persona completa dedicada a informar.',
           'Un rastreo en línea, aunque sea básico, elimina la mayoría de esas consultas. No hace falta integración en tiempo real con GPS: basta con que el cliente pueda entrar con su número de referencia y ver el estado actualizado y la fecha estimada.',
           'Y hay un beneficio comercial que casi nadie calcula: el rastreo es de las pocas razones legítimas por las que un cliente entra a tu web varias veces al mes. Esa recurrencia es una ventaja que no tiene el competidor que informa por WhatsApp.',
           'Los avisos automáticos cierran el círculo. Un mensaje cuando la carga sale, cuando llega a aduana y cuando está lista para retiro reduce las consultas casi a cero y mejora la percepción de control, que es lo que el cliente B2B compra. Se monta con <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones</a>.',
@@ -1913,22 +1732,21 @@ export const industriasPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El seguro y las certificaciones deciden más que el precio',
+        h2: '¿Qué publicar sobre seguro de carga y certificaciones?',
         paragraphs: [
-          'Cuando una empresa elige operador logístico no compra transporte: compra la tranquilidad de que su carga llegue y de que si algo pasa, alguien responde. Por eso el precio importa menos de lo que parece y la evidencia de respaldo importa mucho más.',
-          'Lo que hay que publicar es concreto: si el seguro de carga está incluido o es opcional, qué cubre y hasta qué monto, qué pasa en caso de siniestro y cuánto tarda el proceso. Casi ningún operador panameño lo explica en su web, y es justo lo que el comprador pregunta en la primera llamada.',
+          'Quien elige operador logístico compra la tranquilidad de que su carga llegue y de que, si algo pasa, alguien responde; por eso el respaldo pesa más que el precio. Lo que hay que publicar es concreto: si el seguro de carga está incluido o es opcional, qué cubre y hasta qué monto, qué pasa en caso de siniestro y cuánto tarda el proceso. Casi ningún operador panameño lo explica en su web, y es justo lo que el comprador pregunta en la primera llamada.',
           'Las certificaciones y registros del sector merecen lugar propio, con logo, número y vigencia. Un comprador corporativo tiene que justificar su elección internamente, y esos datos son lo que pega en su informe.',
           'También ayuda mostrar la operación: fotos reales de bodega, flota y equipo de manejo. <strong>En un rubro donde conviven operadores serios con improvisados, mostrar activos propios es la forma más rápida de separarse del segundo grupo.</strong>',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué medir: cotizaciones, tiempo de respuesta y cuántas cierran',
+        h2: '¿Qué medir en la web de una empresa de logística?',
         paragraphs: [
-          'Los tres números que definen el negocio son cuántas solicitudes de cotización entraron, cuánto tardaste en responder cada una y qué porcentaje terminó en operación.',
+          'Tres números definen el negocio: cuántas solicitudes de cotización entraron, cuánto tardaste en responder cada una y qué porcentaje terminó en operación.',
           'El del tiempo de respuesta es el más accionable de los tres, y casi nadie lo mide. En flete, responder en cuatro horas contra responder en veinticuatro cambia la tasa de cierre de forma dramática, porque el comprador decide con las primeras cotizaciones que le llegan.',
           'El corte por tipo de servicio y por ruta es el segundo más útil. Saber que las consultas de aéreo cierran al doble que las de marítimo, o que cierta ruta concentra la demanda, orienta dónde poner comercial y qué contenido escribir.',
-          'Y el volumen de consultas de rastreo, que mide cuánto tiempo de tu equipo se está ahorrando la web. Es la forma más directa de justificar lo que cuesta. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Y el volumen de consultas de rastreo, que mide cuánto tiempo de tu equipo se está ahorrando la web. Es la forma más directa de justificar lo que cuesta. El detalle está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {

@@ -558,6 +558,13 @@ comitea y despliega», con una plantilla común, mockups de fal e imágenes nuev
   azul marino que quedaban en maquetas, pies de foto y etiquetas pasados a negro, y nueva imagen para compartir de la
   portada (`og/home.jpg`, antes mostraba la web de un cliente). Merge `bcc71e2`, `verify` en verde, despliegue
   39811274075 en verde, `check-prod.sh` 39 ok.
+- **Prosa en zigzag con fotos a color (22-oct-2026, pedido del dueño):** la prosa en una columna dejaba un vacío a la
+  derecha. Cada bloque de prosa de las páginas v2 va ahora junto a una foto que muestra lo que explica, alternando el
+  lado; en el móvil la foto va debajo. El dueño pidió fotos «no en monocromo», con color y que se vean reales: es la
+  excepción al monocromo, igual que las fotos de la portada (color solo en imágenes). 92 fotos con fal
+  (nano-banana-2.1, tanda `prosa-v3`, US$ 14,10 de 15; dos se regeneraron por texto falso legible), claves por página
+  y orden en `src/data/prosa-imagenes.json`, créditos en `public/images/prosa/CREDITOS-IA.json`. Merge `b4fe9f8`,
+  `verify` en verde, despliegue 39820960147 en verde, `check-prod.sh` 39 ok.
 
 ## 3. Responsables y dependencias humanas
 

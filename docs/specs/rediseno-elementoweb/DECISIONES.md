@@ -547,9 +547,10 @@ comitea y despliega», con una plantilla común, mockups de fal e imágenes nuev
   verde; `npm run verify` completo en verde antes del merge (Lighthouse móvil local 99, TBT 45 ms). En producción:
   `check-prod.sh` 39 ok y `/servicios/diseno-web-corporativo-panama/` con rendimiento móvil 96, LCP 1,9 s, TBT 183 ms
   (3 corridas a las 07:49 UTC, restarlas de GA4).
-- **Pendiente:** 29 portadas siguen con la foto anterior (11 del blog y las 18 de `public/images/industrias/`) porque la
-  cuenta de fal se quedó sin crédito (`403 balance_exhausted`); el objeto y el alt de cada una ya están definidos en el
-  scratchpad de la sesión (`blogimg-data.mjs`, índices 59 a 87). Gasto de la tanda: US$ 21,75 de US$ 27.
+- **Portadas que faltaban (22-oct-2026, 15:04 UTC):** el dueño recargó crédito en fal y se generaron las 29 restantes
+  (11 del blog y las 18 de `public/images/industrias/`), con sus alt y `CREDITOS-IA.json`. Merge `89ab488`; `verify`
+  en verde antes del merge y `check-prod.sh` 39 ok después. Blog e industrias quedan completos. Gasto de la tanda:
+  US$ 26,10 de US$ 27.
 
 ## 3. Responsables y dependencias humanas
 

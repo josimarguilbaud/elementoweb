@@ -18,12 +18,12 @@ export const industrias2c: PageData[] = [
     service: { type: 'Diseño web para ferreterías y materiales de construcción' },
     lead: [
       'Tu cliente ya no arranca en el mostrador: busca en el celular quién tiene el producto, a cuánto y si lo puede recoger hoy. Si tu ferretería no aparece con esa respuesta, compró en la de al lado.',
-      'El mostrador te limita a quien pasa por el frente. Una web con catálogo real, precios y disponibilidad convierte tu inventario en una vitrina que vende de noche, los domingos y a clientes que nunca habrían entrado a la tienda.',
+      'El diseño web para ferreterías en Panamá que hacemos en Elemento Web incluye catálogo por categoría con precio y disponibilidad, búsqueda por marca o código, cotización de obra y pago con Yappy o retiro en tienda. Un catálogo con cotización por WhatsApp arranca desde $1,250; la tienda con venta en línea, desde $1,950.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué necesita la web de una ferretería',
+        h2: '¿Qué debe tener la web de una ferretería en Panamá?',
         items: [
           'Catálogo por categoría: plomería, eléctrico, pintura, herramienta y materiales',
           'Precio y disponibilidad visibles, no un catálogo mudo que obliga a llamar',
@@ -37,21 +37,10 @@ export const industrias2c: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Competir más allá del mostrador',
+        h2: '¿Para qué le sirve una web a una ferretería de barrio?',
         paragraphs: [
-          'La ferretería tradicional vive de la cercanía: le compras a la que te queda de paso. Ese radio de cuadras es tu techo, y las cadenas grandes y las tiendas en línea ya se están comiendo ese radio con catálogos que el cliente revisa antes de salir de casa.',
-          'Una web con tu inventario real rompe ese techo. El cliente compara, ve que tienes el producto, y te escribe o te compra sin importar si tu local está a diez cuadras o al otro lado de la ciudad. <strong>Tu ventaja deja de ser la ubicación y pasa a ser tener lo que buscan, visible y disponible.</strong>',
-          'No es dejar el mostrador: es sumarle un segundo mostrador que atiende cuando la tienda está cerrada. Con una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda en línea</a> bien montada, el pedido entra solo y tu equipo solo lo prepara.',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo trabajamos tu web de ferretería',
-        items: [
-          { h3: 'Orden del catálogo', text: 'Estructuramos tus líneas por categoría y subcategoría como las busca el cliente, con búsqueda por marca y código. Un catálogo grande solo vende si se navega fácil.' },
-          { h3: 'Precios, stock y pago', text: 'Montamos las fichas con precio y disponibilidad, la venta en línea con Yappy o tarjeta y la opción de retiro en tienda. Definimos qué se vende en línea y qué solo se cotiza.' },
-          { h3: 'Panel para que tú mandes', text: 'Te dejamos actualizando precios, subiendo productos y marcando agotados en minutos. Nada de llamar al programador cada vez que sube el cemento.' },
-          { h3: 'Que te encuentren en Google', text: 'Optimizamos el catálogo para que tus productos aparezcan en las búsquedas y trabajamos el SEO local para el cliente que busca una ferretería cerca, listo para comprar.' },
+          'La ferretería tradicional vende en un radio de pocas cuadras, y las cadenas grandes y las tiendas en línea ya se comen ese radio con catálogos que el cliente revisa antes de salir de casa. Una web con tu inventario real rompe ese techo: <strong>tu ventaja deja de ser la ubicación y pasa a ser tener lo que buscan, visible y disponible.</strong>',
+          'No reemplaza el mostrador: suma uno que atiende de noche y los domingos. Con una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda en línea</a> el pedido entra solo y tu equipo lo prepara; con <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a> apareces cuando alguien busca «ferretería cerca» con la compra decidida.',
         ],
       },
       {
@@ -66,36 +55,27 @@ export const industrias2c: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El precio y la disponibilidad deciden la venta',
+        h2: '¿Por qué el precio y la disponibilidad deciden la venta?',
         paragraphs: [
-          'En ferretería el cliente rara vez es leal a una marca de tienda: es leal a quien tiene el producto, al precio justo, hoy. Un catálogo que muestra fotos bonitas pero esconde el precio y dice "consulte disponibilidad" pierde contra el que responde de una: sí lo tengo, cuesta esto, lo recoges o te lo llevo.',
-          'Por eso el corazón de la web no es el diseño: es que el precio y el stock estén al día y sean fáciles de actualizar. <strong>Un catálogo desactualizado es peor que no tener web</strong>, porque promete algo que no cumples. Te dejamos un panel donde cambiar un precio o marcar agotado toma segundos, para que el maestro de obra confíe en lo que ve.',
-          'Y cuando el pago es tan simple como un <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a>, el cliente cierra la compra desde la obra, sin cuadrar efectivo ni pasar por caja.',
-        ],
-      },
-      {
-        type: 'statement',
-        text: 'En ferretería no gana el que tiene la tienda más bonita, sino el que responde primero: sí lo tengo, cuesta esto, lo recoges hoy. Esa respuesta ahora se da en el celular.',
-        strong: 'el que responde primero: sí lo tengo, cuesta esto, lo recoges hoy',
-      },
-            {
-        type: 'prose',
-        h2: 'El maestro de obra y el de fin de semana no compran igual',
-        paragraphs: [
-          'Una ferretería atiende a dos clientes que no se parecen en nada. El profesional —maestro de obra, contratista, electricista— sabe exactamente qué quiere, lo pide por nombre técnico o por marca, compra volumen y le importa el precio y que esté disponible hoy. El particular llega el sábado con un problema, no con un producto: "se me está botando el lavamanos".',
-          'Casi todas las webs del rubro le hablan solo al primero, con un catálogo de códigos y referencias. El particular se pierde ahí, y es el que más margen deja.',
-          'Servir a los dos no exige dos webs, exige dos entradas. Una por categoría de producto, para el que sabe qué busca. Y otra por problema —"reparar una fuga", "instalar un abanico de techo", "pintar una habitación"— que lleve a la lista de lo que hace falta comprar para resolverlo.',
-          '<strong>Esa segunda entrada es tráfico que ninguna ferretería panameña está capturando</strong>, y convierte muy bien: quien busca cómo resolver algo termina comprando lo necesario a quien se lo explicó.',
+          'En ferretería el cliente es leal a quien tiene el producto, al precio justo, hoy. Un catálogo con fotos bonitas que esconde el precio pierde contra el que responde de una: sí lo tengo, cuesta esto, lo recoges o te lo llevo.',
+          'El corazón de la web es que precio y stock estén al día. <strong>Un catálogo desactualizado es peor que no tener web</strong>, porque promete algo que no cumples; por eso el panel permite cambiar un precio o marcar agotado en segundos. Y con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a> el cliente cierra la compra desde la obra, sin cuadrar efectivo ni pasar por caja.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cotizar rápido es la ventaja que decide una obra',
+        h2: 'Una entrada por producto y otra por problema',
         paragraphs: [
-          'La venta grande de una ferretería no es el cliente de mostrador: es la cotización de obra. Un contratista pide precio de cuarenta ítems a tres ferreterías, y muchas veces se decide por la que contestó primero con algo ordenado, no por la más barata.',
-          'Hoy eso suele funcionar por WhatsApp: llega una lista en foto o en audio, alguien la transcribe, busca precios uno por uno y arma la respuesta a mano. Toma horas y depende de que esa persona esté disponible.',
-          'La web puede recortar ese ciclo sin necesidad de una tienda online completa. Un formulario donde el contratista arme su lista desde el catálogo, indique cantidades y la envíe; y del otro lado, esa solicitud llega ordenada y lista para poner precios, no como un audio de tres minutos.',
-          'No hace falta publicar precios para que funcione. <strong>La ventaja no está en el precio, está en la velocidad y en el orden de la respuesta</strong>, que es lo que un contratista con obra parada valora de verdad.',
+          'El profesional pide por nombre técnico o por marca; el particular llega el sábado con un problema, no con un producto: "se me está botando el lavamanos". Casi todas las webs del rubro le hablan solo al primero, con códigos y referencias, y el particular, que es el que más margen deja, se pierde.',
+          'Servir a los dos no exige dos webs, exige dos entradas: una por categoría de producto y otra por problema —"reparar una fuga", "instalar un abanico de techo", "pintar una habitación"— que lleve a la lista de lo que hace falta comprar. <strong>Esa segunda entrada es tráfico que casi ninguna ferretería panameña captura</strong>, y quien busca cómo resolver algo termina comprándole a quien se lo explicó.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Cómo cotizar una lista de obra más rápido que la competencia?',
+        paragraphs: [
+          'La venta grande de una ferretería es la cotización de obra. Un contratista pide precio de cuarenta ítems a tres ferreterías y muchas veces elige a la que contestó primero con algo ordenado, no a la más barata.',
+          'Hoy esa lista llega por WhatsApp en foto o en audio, alguien la transcribe y busca precios uno por uno. La web recorta ese ciclo sin una tienda completa: un formulario donde el contratista arma su lista desde el catálogo con cantidades, y la solicitud llega ordenada y lista para poner precios.',
+          'No hace falta publicar precios para que funcione. <strong>La ventaja está en la velocidad y el orden de la respuesta</strong>, que es lo que valora un contratista con la obra parada.',
         ],
       },
       {
@@ -115,22 +95,18 @@ export const industrias2c: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Publicar inventario sin tener un sistema de inventario',
+        h2: '¿Se puede publicar el catálogo sin sistema de inventario?',
         paragraphs: [
-          'La objeción más frecuente del rubro es real: "no puedo publicar el catálogo porque el inventario cambia todos los días y no tengo sistema". Publicar disponibilidad falsa es peor que no publicar nada, así que la preocupación tiene sentido.',
-          'La salida no es esperar a tener un ERP. Es separar lo que cambia de lo que no. La ficha del producto —qué es, para qué sirve, marca, medidas, foto— no cambia nunca. La disponibilidad y el precio sí. Se puede publicar todo el catálogo con ficha completa y sin stock, y poner "consultar disponibilidad" con un botón a WhatsApp.',
-          'Eso ya resuelve el noventa por ciento del problema: el cliente descubre que tienes el producto, que es lo que hoy no puede saber sin ir. Y tú recibes una consulta concreta de un producto concreto, no un "¿tienen tubería?".',
-          'Los productos de alta rotación y precio estable sí conviene publicarlos con precio, aunque haya que revisarlos cada tanto. <strong>Empezar con cincuenta productos bien hechos vale más que esperar dos años al sistema perfecto.</strong>',
+          'Sí, separando lo que cambia de lo que no. La ficha del producto —qué es, para qué sirve, marca, medidas, foto— no cambia; el precio y el stock sí. Se publica el catálogo completo con ficha y un botón de "consultar disponibilidad" a WhatsApp, sin esperar a tener un ERP.',
+          'Con eso el cliente descubre que tienes el producto, que hoy no puede saber sin ir, y tú recibes una consulta concreta en lugar de un "¿tienen tubería?". Los productos de alta rotación y precio estable sí conviene publicarlos con precio. <strong>Cincuenta productos bien hechos valen más que esperar dos años al sistema perfecto.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: cotizaciones y qué producto se busca y no tienes',
         paragraphs: [
-          'La métrica que más rinde en una ferretería no es el pedido online, es la <strong>solicitud de cotización</strong>: cuántas entraron, de qué monto aproximado y cuántas se cerraron. Es donde está el volumen del negocio.',
-          'El segundo dato es oro y casi nadie lo mira: qué buscó la gente en tu catálogo y no encontró. Cada búsqueda sin resultado es un cliente que se fue a otra ferretería, y la lista de esas búsquedas es la mejor guía de compra de inventario que vas a tener, mucho mejor que la intuición.',
-          'También vale medir qué categorías generan más consultas de particulares y cuáles de profesionales, porque son dos negocios con márgenes distintos que conviene atender de forma distinta.',
-          'Y las consultas de disponibilidad por producto: si un artículo genera veinte consultas al mes, merece tener precio y stock publicados aunque el resto del catálogo no. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'La métrica que más rinde es la <strong>solicitud de cotización</strong>: cuántas entraron, de qué monto aproximado y cuántas se cerraron. Ahí está el volumen del negocio.',
+          'La segunda es qué buscó la gente en tu catálogo y no encontró: cada búsqueda sin resultado es un cliente que se fue a otra ferretería, y esa lista es mejor guía de compra que la intuición. Sumado a las consultas por producto, te dice qué artículo merece precio y stock publicados y qué categorías atraen a particulares o a profesionales. El detalle está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -175,12 +151,12 @@ export const industrias2c: PageData[] = [
     service: { type: 'Diseño web para eventos, catering y bodas' },
     lead: [
       'En eventos nadie contrata por una lista de servicios: contrata por lo que ve. La foto de tu último montaje vende más que mil palabras, y tu web es donde esa foto trabaja para ti a toda hora.',
-      'La novia, la empresa o la familia que organiza comparan tres o cuatro proveedores con el celular en la mano. Ganan los que muestran un portafolio que emociona, paquetes que se entienden y una forma fácil de apartar la fecha antes de que la tome otro.',
+      'El diseño web para eventos, catering y bodas en Panamá que hacemos en Elemento Web se arma alrededor del portafolio por tipo de evento, paquetes con rangos de inversión, calendario de fechas libres y un formulario que capta fecha, invitados y tipo de celebración. Un sitio con portafolio y captación parte desde $1,250.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué necesita la web de eventos y catering',
+        h2: '¿Qué debe tener la web de una empresa de eventos o catering?',
         items: [
           'Portafolio visual por tipo de evento: bodas, corporativos, cumpleaños, sociales',
           'Galerías de gran formato con fotos y video reales de tus montajes',
@@ -194,21 +170,10 @@ export const industrias2c: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Se compra con los ojos',
+        h2: '¿Por qué el portafolio vende más que el texto en eventos?',
         paragraphs: [
-          'En eventos el producto es una emoción futura: una boda soñada, un lanzamiento impecable, una fiesta que la gente recuerde. Nadie puede tocar eso antes de contratarlo, así que lo juzga por la evidencia visual de lo que ya hiciste. Una web con fotos pequeñas, pocas o de banco de imágenes mata la venta antes de la primera conversación.',
-          'Por eso construimos la web alrededor del portafolio, no del texto. Galerías amplias, montadas por tipo de evento, con foto y video reales que dejan sentir el ambiente. <strong>Cada evento bien documentado es un vendedor que trabaja para ti sin parar.</strong>',
-          'Y organizamos ese portafolio para que el cliente se proyecte: quien busca boda ve bodas, quien organiza un corporativo ve corporativos. Nadie tiene que imaginar si haces lo suyo; lo ve de una.',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo trabajamos tu web de eventos',
-        items: [
-          { h3: 'Curaduría del portafolio', text: 'Seleccionamos y organizamos tus mejores eventos por categoría. No es subir todo: es elegir lo que mejor te representa y montarlo para que impacte.' },
-          { h3: 'Paquetes que se entienden', text: 'Traducimos tu oferta a paquetes claros con qué incluye cada uno y desde qué inversión, para atraer al cliente correcto y filtrar al que no calza.' },
-          { h3: 'Captación con la fecha primero', text: 'Montamos el formulario y el sistema de reservas o citas que capta fecha, tipo de evento e invitados, y agenda la cita para cotizar sin perder el hilo.' },
-          { h3: 'Confianza y cierre', text: 'Sumamos testimonios reales y el botón de WhatsApp directo para que la emoción de la galería se convierta en una conversación de inmediato.' },
+          'En eventos el producto es una emoción futura: una boda, un lanzamiento, una fiesta. Nadie puede tocarlo antes de contratarlo, así que lo juzga por la evidencia visual de lo que ya hiciste. Fotos pequeñas, pocas o de banco de imágenes matan la venta antes de la primera conversación.',
+          'Por eso la web se construye alrededor de galerías amplias por tipo de evento, con foto y video reales de tus montajes: quien busca boda ve bodas y quien organiza un corporativo ve corporativos. <strong>Cada evento bien documentado es un vendedor que trabaja para ti sin parar.</strong>',
         ],
       },
       {
@@ -223,35 +188,19 @@ export const industrias2c: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Los paquetes claros y la fecha que se aparta',
+        h2: '¿Conviene publicar precios de bodas y eventos?',
         paragraphs: [
-          'La segunda gran fuga es la incertidumbre del precio y la disponibilidad. Un cliente que no entiende qué incluye tu servicio ni por dónde arranca la inversión duda, y la duda en eventos se traduce en escribirle al siguiente proveedor. Paquetes explicados con claridad (qué incluye, para cuántos invitados, desde qué monto) filtran y acercan al cliente correcto.',
-          'Y como aquí el recurso escaso es la fecha, la web tiene que empujar a apartarla. Con un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas o citas</a> el cliente solicita disponibilidad para su día y agenda una cita para cotizar sin el ida y vuelta de mensajes. <strong>En eventos, quien facilita apartar la fecha primero, gana el contrato.</strong>',
-        ],
-      },
-      {
-        type: 'statement',
-        text: 'En eventos el cliente no compra lo que prometes: compra lo que ya lograste y puede ver. Una web sin portafolio de peso es una tarjeta de presentación cara.',
-        strong: 'compra lo que ya lograste y puede ver',
-      },
-            {
-        type: 'prose',
-        h2: 'Cuarenta propuestas al mes y tres eventos: el problema real del rubro',
-        paragraphs: [
-          'Un negocio de eventos gasta una cantidad enorme de tiempo cotizando. Llega una consulta, hay que preguntar fecha, cantidad de personas, tipo de evento y presupuesto, armar una propuesta, mandarla y hacer seguimiento. Buena parte no llega a nada, y ese trabajo no se factura.',
-          'La causa casi nunca es el precio: es que el cliente llegó sin ninguna referencia. No sabía si un evento de cien personas contigo cuesta tres mil o quince mil, y pidió propuesta para averiguarlo.',
-          'Publicar rangos por tipo de evento y tamaño corta eso de raíz. No la propuesta final, que siempre es a medida, sino el orden de magnitud: "una boda de cien personas con nuestro servicio completo suele ubicarse entre tanto y tanto". El que no está en rango no pide propuesta, y el que sí llega mucho más avanzado.',
-          '<strong>Es el cambio que más tiempo libera en todo el rubro</strong>, y el que más miedo da hacer. En la práctica no espanta clientes: espanta cotizaciones que nunca iban a cerrar.',
+          'Un negocio de eventos gasta muchísimo tiempo cotizando: preguntar fecha, personas, tipo de evento y presupuesto, armar la propuesta y darle seguimiento. Buena parte no llega a nada, porque el cliente no tenía referencia: no sabía si un evento de cien personas contigo cuesta tres mil o quince mil.',
+          'Publicar rangos por tipo de evento y tamaño corta eso de raíz. No la propuesta final, sino el orden de magnitud y qué incluye cada paquete: mesas, mantelería, personal, montaje. El que no está en rango no pide propuesta y el que sí llega más avanzado. <strong>No espanta clientes: espanta cotizaciones que nunca iban a cerrar.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Tu inventario no son los platos, son las fechas',
         paragraphs: [
-          'Un negocio de eventos no vende comida ni decoración: vende días. Y los días son un inventario finito y perecedero, porque un sábado de noviembre que no se vendió no se recupera nunca.',
-          'Casi ninguna web del rubro trata la fecha como lo que es. El cliente pregunta si hay disponibilidad para el 15 de diciembre, alguien revisa una agenda y contesta horas después. En ese tiempo el cliente preguntó a otros tres.',
-          'Un calendario de disponibilidad, aunque sea simple —fechas libres, ocupadas y en opción— cambia esa conversación por completo. El cliente ve que su fecha está libre y pasa directo a apartar, sin intermediarios ni espera.',
-          'Y hace visible lo que de otro modo no se ve: las fechas flojas. Un martes de mayo vacío no se llena solo, pero sí se puede promocionar con un precio distinto si sabes con tiempo que está libre. <strong>Gestionar el calendario es gestionar el negocio</strong>, y hoy en la mayoría de los casos vive en la cabeza de una persona.',
+          'Un negocio de eventos vende días, y un sábado de noviembre que no se vendió no se recupera nunca. Aun así, casi todas las webs del rubro responden "¿tienen el 15 de diciembre?" horas después, cuando el cliente ya preguntó a otros tres.',
+          'Un calendario simple de fechas libres, ocupadas y en opción, conectado a un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas o citas</a>, deja que el cliente vea su fecha libre y agende la cita para cotizar sin ida y vuelta de mensajes.',
+          'Además hace visibles las fechas flojas: un martes de mayo vacío se puede promocionar con otro precio si sabes con tiempo que está libre. <strong>Gestionar el calendario es gestionar el negocio</strong>, y hoy casi siempre vive en la cabeza de una persona.',
         ],
       },
       {
@@ -273,20 +222,16 @@ export const industrias2c: PageData[] = [
         type: 'prose',
         h2: 'Los proveedores aliados son el canal que nadie trabaja',
         paragraphs: [
-          'Un evento involucra a mucha gente: local, catering, fotógrafo, música, decoración, planificador, transporte. Cada uno de ellos recibe consultas que no son de lo suyo, y las refiere a quien conoce.',
-          'Ese flujo de referidos entre proveedores es probablemente el mayor canal de captación del rubro y casi nadie lo trabaja de forma deliberada. Ocurre por amistad y por costumbre, no por estrategia.',
-          'La web puede ordenarlo. Una página de aliados donde publiques con quién trabajas habitualmente hace tres cosas: le da tranquilidad al cliente que quiere todo resuelto, genera un enlace mutuo que ayuda a ambos a posicionar, y te mantiene presente en la mente del proveedor que refiere.',
-          'Y el material que le facilitas al aliado importa. Un enlace a tu galería por tipo de evento, con precios de referencia, es infinitamente más fácil de reenviar que un "yo conozco a alguien". <strong>Facilitarle el reenvío al que te refiere es lo que multiplica los referidos.</strong>',
+          'Un evento involucra local, catering, fotógrafo, música, decoración, planificador y transporte. Cada uno recibe consultas que no son de lo suyo y las refiere a quien conoce: es quizá el mayor canal de captación del rubro, y casi nadie lo trabaja de forma deliberada.',
+          'Una página de aliados con quienes trabajas habitualmente tranquiliza al cliente que quiere todo resuelto, genera enlaces mutuos que ayudan a ambos a posicionar y te mantiene presente para quien refiere. <strong>Un enlace a tu galería por tipo de evento, con precios de referencia, se reenvía mucho más fácil que un "yo conozco a alguien".</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: consultas por tipo de evento y cuántas se apartan',
         paragraphs: [
-          'La métrica del rubro es cuántas consultas entraron, de qué tipo de evento y de qué tamaño, y cuántas terminaron con una fecha apartada y un depósito pagado.',
-          'El corte por tipo es el que ordena el negocio. Bodas, corporativo, quinceaños y cumpleaños tienen márgenes, ciclos y niveles de exigencia muy distintos. Si el corporativo cierra al triple y da menos trabajo, eso cambia dónde poner el esfuerzo comercial, y sin medirlo se decide por costumbre.',
-          'El segundo número es la ocupación del calendario por mes. Es el que anticipa el problema con tiempo de arreglarlo: ver en septiembre que noviembre está a media capacidad permite hacer algo; verlo en noviembre no.',
-          'Y la conversión de consulta a depósito. Si es baja y publicaste rangos, el problema está en la propuesta o en el tiempo de respuesta, no en la captación. Lo dejamos medido; el planteamiento en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Cuántas consultas entraron, de qué tipo de evento y tamaño, y cuántas terminaron con fecha apartada y depósito pagado. Bodas, corporativos, quinceaños y cumpleaños tienen márgenes y ciclos distintos: si el corporativo cierra al triple y da menos trabajo, eso cambia dónde poner el esfuerzo comercial.',
+          'La ocupación del calendario por mes anticipa el problema: ver en septiembre que noviembre está a media capacidad permite actuar. Y si la conversión de consulta a depósito es baja con rangos publicados, el problema está en la propuesta o en el tiempo de respuesta. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -332,12 +277,12 @@ export const industrias2c: PageData[] = [
     service: { type: 'Diseño web para consultoras y servicios profesionales' },
     lead: [
       'Vendes algo intangible: criterio, experiencia, resultados. Tu cliente no puede tocarlo antes de pagarlo, así que decide por las señales de autoridad que encuentra, y la primera es tu web.',
-      'Un consultor, un coach o una firma de servicios profesionales compite por contratos grandes con márgenes altos. A ese nivel el cliente no busca el más barato: busca al que le da más confianza. Una web que proyecta autoridad justifica tu tarifa antes de la primera reunión.',
+      'El diseño web para consultoras y consultores en Panamá que hacemos en Elemento Web gira en torno a la prueba: una página por servicio, casos con situación y resultado, perfil verificable del equipo, material que el comprador interno pueda reenviar y un primer paso concreto, como un diagnóstico. Una web corporativa así parte desde $1,250.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué necesita la web de una consultora',
+        h2: '¿Qué debe tener la web de una consultora en Panamá?',
         items: [
           'Una propuesta de valor clara: a quién ayudas y qué problema resuelves',
           'Casos de éxito o resultados con contexto, no solo logos de clientes',
@@ -353,19 +298,8 @@ export const industrias2c: PageData[] = [
         type: 'prose',
         h2: 'La autoridad se demuestra, no se declara',
         paragraphs: [
-          'Todo consultor dice ser experto; el cliente ya no lo cree por afirmarlo. La autoridad real se construye con evidencia: casos donde explicas el problema, lo que hiciste y el resultado; artículos donde demuestras cómo piensas; una trayectoria verificable. Eso convence a quien va a confiarte una decisión importante.',
-          'Una web que solo lista servicios con adjetivos ("soluciones integrales", "resultados garantizados") suena igual que toda tu competencia y no dice nada. <strong>El cliente de alto valor compra criterio demostrado, no promesas genéricas.</strong> Por eso trabajamos tu <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> alrededor de tus casos y tu forma de pensar, no de una plantilla de agencia.',
-          'Y como muchas decisiones empiezan en Google, ese contenido de autoridad también posiciona: cada artículo que responde la pregunta real de tu cliente ideal es una puerta de entrada. Es la base del <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento</a> que atrae al cliente correcto sin perseguirlo.',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo trabajamos tu web de consultoría',
-        items: [
-          { h3: 'Claridad de posicionamiento', text: 'Definimos a quién sirves, qué problema resuelves y qué te hace distinto. Sin esa claridad ningún diseño convierte; con ella, todo lo demás cae en su lugar.' },
-          { h3: 'Casos y prueba de autoridad', text: 'Estructuramos tus casos de éxito, credenciales y testimonios de forma que un cliente exigente vea evidencia real, no adjetivos.' },
-          { h3: 'Contenido que posiciona', text: 'Dejamos la base de contenido y SEO para que tus artículos capturen las búsquedas de tu cliente ideal y trabajen la autoridad a largo plazo.' },
-          { h3: 'Captación de alto valor', text: 'Diseñamos la llamada a la acción correcta (diagnóstico, sesión, consulta) y su formulario, para que llegue el cliente que sí calza con tu tarifa.' },
+          'Todo consultor dice ser experto. Una web que lista servicios con adjetivos ("soluciones integrales", "resultados garantizados") suena igual que toda la competencia. <strong>El cliente de alto valor compra criterio demostrado</strong>: casos, artículos que muestran cómo piensas y una trayectoria verificable. Por eso armamos tu <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> alrededor de esa evidencia, no de una plantilla.',
+          'Como muchas contrataciones empiezan en Google, ese contenido también posiciona: cada artículo que responde la pregunta real de tu cliente ideal es una puerta de entrada. Es la base del <a href="/crecimiento/seo-posicionamiento-web-panama/">posicionamiento</a> que atrae al cliente correcto sin perseguirlo.',
         ],
       },
       {
@@ -380,35 +314,18 @@ export const industrias2c: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Atraer al cliente correcto, no a cualquiera',
+        h2: '¿Cómo publicar casos de consultoría si el cliente exige confidencialidad?',
         paragraphs: [
-          'El error caro en servicios profesionales es una web que atrae volumen equivocado: consultas de gente que no puede pagar tu tarifa o que busca algo que no haces. Cada una de esas conversaciones te cuesta tiempo que no facturas. La web bien pensada filtra desde el primer momento.',
-          'Eso se logra siendo específico: a quién sirves, qué problema resuelves y qué nivel de compromiso implica trabajar contigo. Una llamada a la acción de alto valor (un diagnóstico, una sesión estratégica) atrae a quien va en serio y descarta al curioso. <strong>Menos consultas, pero de clientes que sí cierran, vale más que una bandeja llena de mensajes que no llegan a nada.</strong>',
-        ],
-      },
-      {
-        type: 'statement',
-        text: 'En servicios profesionales el cliente no compra tu tiempo: compra la confianza de que sabes resolver su problema. Esa confianza empieza a construirse o a perderse en tu web.',
-        strong: 'compra la confianza de que sabes resolver su problema',
-      },
-            {
-        type: 'prose',
-        h2: 'El caso de estudio es lo único que de verdad vende',
-        paragraphs: [
-          'Una consultora puede escribir tres párrafos brillantes sobre su metodología y no mover a nadie. El comprador de consultoría no compra método: compra la evidencia de que ya resolviste un problema parecido al suyo en un contexto parecido al suyo.',
-          'Ahí está el problema del rubro. Casi ninguna consultora publica casos, casi siempre por confidencialidad. Y es una barrera real, pero no absoluta: un caso se puede contar sin nombrar al cliente. "Distribuidora de consumo masivo, 80 empleados, operación en Panamá y Costa Rica" identifica el contexto sin identificar a nadie.',
-          'La estructura que funciona es corta: cuál era la situación, qué se hizo, qué cambió y en cuánto tiempo. Con números si se pueden dar, con órdenes de magnitud si no. Sin números, un caso es una anécdota.',
-          '<strong>Tres casos bien contados hacen más que veinte logos en una fila.</strong> El logo prueba que trabajaste con alguien; el caso prueba que sirvió de algo.',
+          'El comprador de consultoría no compra método: compra la evidencia de que ya resolviste un problema parecido al suyo en un contexto parecido. Casi ninguna consultora publica casos por confidencialidad, pero un caso se cuenta sin nombrar al cliente: "Distribuidora de consumo masivo, 80 empleados, operación en Panamá y Costa Rica" da el contexto sin identificar a nadie.',
+          'La estructura es corta: situación, qué se hizo, qué cambió y en cuánto tiempo, con números o al menos órdenes de magnitud. <strong>Tres casos bien contados hacen más que veinte logos en una fila</strong>: el logo prueba que trabajaste con alguien; el caso, que sirvió de algo.',
         ],
       },
       {
         type: 'prose',
         h2: 'A una consultoría no la contrata una persona, la aprueba un comité',
         paragraphs: [
-          'En consultoría B2B el que te contacta rara vez es el que firma. Suele ser un gerente que tiene el problema y que va a tener que defender la contratación ante su jefe, ante finanzas y a veces ante un comité. Tu web tiene dos audiencias: quien te encuentra y quien lo va a cuestionar.',
-          'Eso cambia qué debe contener. Además del contenido que capta —el que le habla al que tiene el problema— hace falta material que el interno pueda reenviar: una propuesta de valor en una frase, casos con números, credenciales del equipo, y algo descargable que sobreviva a un correo interno.',
-          'Ese material sirve exactamente donde tú no estás: en la reunión donde alguien pregunta "¿y estos quiénes son?". Si la respuesta es un enlace a una web con casos y equipo visible, la conversación avanza. Si es un PDF de veinte páginas o nada, se enfría.',
-          'Por eso conviene tener una página de credenciales pensada para eso: quién es el equipo, qué formación tiene, cuánto tiempo lleva, en qué industrias trabajó. <strong>No es vanidad, es munición para tu comprador interno.</strong>',
+          'En consultoría B2B quien te contacta rara vez firma: suele ser un gerente que tendrá que defender la contratación ante su jefe, finanzas o un comité. Tu web tiene dos audiencias, quien te encuentra y quien lo va a cuestionar.',
+          'Para la segunda hace falta material reenviable: propuesta de valor en una frase, casos con números y una página de credenciales con el equipo, su formación, sus años de trayectoria y las industrias donde trabajó, más un descargable que sobreviva a un correo interno. <strong>No es vanidad, es munición para tu comprador interno</strong> en la reunión donde alguien pregunta "¿y estos quiénes son?".',
         ],
       },
       {
@@ -428,22 +345,18 @@ export const industrias2c: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Publicar tarifas en consultoría: cuándo sí y cuándo no',
+        h2: '¿Debe una consultora publicar sus tarifas?',
         paragraphs: [
-          'Es la discusión eterna del rubro. Publicar honorarios espanta al cliente grande y no publicarlos hace perder tiempo con el que nunca podía pagarlo. Las dos cosas son ciertas, y por eso la respuesta no es una lista de precios.',
-          'Lo que funciona es publicar el <strong>rango de inversión típica de cada tipo de proyecto</strong>. No "la hora cuesta X", sino "un diagnóstico de este tipo suele ubicarse entre tanto y tanto, según el alcance". Eso filtra sin encasillar y deja el precio real donde debe estar: después de entender el problema.',
-          'La otra pieza que rinde es indicar el tamaño de cliente con el que trabajas. Decir que tu foco son empresas de cincuenta a trescientos empleados le ahorra la llamada al emprendedor de dos personas y te posiciona ante el que sí calza.',
-          'Si tu servicio es demasiado variable para dar rangos, hay un sustituto: publicar el precio o el formato del primer paso. Un diagnóstico inicial acotado, con precio cerrado y entregable claro, convierte muchísimo mejor que un "contáctanos para una propuesta a medida".',
+          'Publicar honorarios espanta al cliente grande y no publicarlos hace perder tiempo con quien nunca podía pagar. Lo que funciona es el <strong>rango de inversión típica por tipo de proyecto</strong>: "un diagnóstico de este tipo suele ubicarse entre tanto y tanto, según el alcance". Filtra sin encasillar y deja el precio real para después de entender el problema.',
+          'También rinde decir con qué tamaño de cliente trabajas: un foco en empresas de cincuenta a trescientos empleados le ahorra la llamada al emprendedor de dos personas. Si tu servicio es demasiado variable para dar rangos, publica el precio y el entregable del primer paso: un diagnóstico acotado atrae a quien va en serio y descarta al curioso.',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: consultas calificadas y de qué contenido vinieron',
         paragraphs: [
-          'Una consultora que mide visitas se está mintiendo. Su ciclo de venta es largo, el volumen es bajo por definición y un solo cliente bueno puede valer más que todo el tráfico del año.',
-          'Los números que sirven son tres: cuántas consultas llegaron, cuántas eran del perfil correcto en tamaño e industria, y de qué contenido venían. Ese tercero es el que cambia decisiones, porque en consultoría el contenido no es adorno: es el mecanismo de captación principal.',
-          'Si un artículo técnico que te costó una tarde escribir genera tres consultas calificadas al año, es el activo más rentable de la empresa y hay que escribir cinco más como ese. Sin ese dato, el contenido se escribe por intuición y se abandona a los seis meses porque "no se ve el resultado".',
-          'Vale la pena también medir el tiempo entre la primera visita y el contacto. En consultoría suele ser de semanas o meses, y saberlo evita conclusiones apresuradas sobre campañas que en realidad todavía están madurando. Lo dejamos medido; el planteamiento, en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Medir visitas no sirve en un rubro de ciclo largo y volumen bajo, donde un solo cliente bueno puede valer más que el tráfico del año. Sirven tres números: consultas recibidas, cuántas eran del perfil correcto en tamaño e industria, y de qué contenido venían.',
+          'Ese tercero cambia decisiones: si un artículo técnico genera tres consultas calificadas al año, conviene escribir cinco más como ese. Y medir el tiempo entre la primera visita y el contacto, que suele ser de semanas o meses, evita dar por muerta una campaña que todavía madura. El planteamiento está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {
@@ -488,40 +401,28 @@ export const industrias2c: PageData[] = [
     service: { type: 'Diseño web para arquitectos y diseño de interiores' },
     lead: [
       'Tu trabajo es visual por naturaleza, y tu web debería serlo aún más. Un cliente que ama un proyecto tuyo en pantalla ya llega convencido; uno que ve fotos apretadas en una plantilla genérica, se va.',
-      'Arquitectos y diseñadores de interiores venden una visión: cómo se verá y se sentirá un espacio que todavía no existe. Se contrata por el gusto y la confianza que transmite tu portafolio. Por eso tu web no puede verse como la de cualquier negocio; tiene que ser, ella misma, una muestra de tu criterio estético.',
+      'El diseño web para arquitectos y diseñadores de interiores en Panamá que hacemos en Elemento Web pone el portafolio al centro: una página por proyecto con ubicación, metraje, plantas y fotografía optimizada, categorías por tipología, honorarios explicados por fase e idoneidad visible del estudio. Un portafolio profesional suele partir desde $1,250.',
     ],
     blocks: [
       {
         type: 'checklist',
-        h2: 'Qué necesita la web de un arquitecto o interiorista',
+        h2: '¿Qué debe tener la web de un arquitecto o interiorista en Panamá?',
         items: [
           'Un portafolio protagonista, con proyectos a pantalla completa',
           'Una página por proyecto: fotos, concepto, retos y solución de diseño',
-          'Fotografía profesional bien presentada, sin comprimir ni recortar mal',
+          'Fotografía profesional optimizada: nítida en pantalla grande y rápida en celular',
           'Categorías por tipo: residencial, comercial, remodelación, interiorismo',
           'Un diseño sobrio que deje respirar tu trabajo, no que compita con él',
           'Tu proceso de trabajo explicado, del concepto a la entrega',
-          'Tu perfil o el del estudio con enfoque, formación y filosofía',
-          'Carga rápida y nitidez impecable en celular y en pantalla grande',
+          'Perfil del estudio con enfoque, formación e idoneidad de la Junta Técnica de Ingeniería y Arquitectura',
         ],
       },
       {
         type: 'prose',
         h2: 'El portafolio es el producto, y la web es el estuche',
         paragraphs: [
-          'Para un arquitecto o interiorista, el portafolio no es una sección de la web: es la web. El cliente llega a ver trabajo, y todo lo demás (el texto, los botones, el menú) debe apartarse para que tus proyectos ocupen el centro. Una plantilla recargada, con sombras, colores y tipografías que gritan, compite con tu diseño y lo apaga.',
-          'Por eso trabajamos con una estética deliberadamente sobria: mucho espacio en blanco, tipografía cuidada y foco absoluto en la imagen. <strong>La web de un diseñador es, ella misma, una prueba de su criterio.</strong> Si tu sitio no está bien diseñado, ningún cliente creerá que diseñará bien su casa.',
-          'Y cada proyecto merece su propia página, no una miniatura en una cuadrícula. Ahí es donde el cliente se enamora: fotografía a pantalla completa, el concepto detrás, el reto que resolviste y el antes y después que hace visible tu valor.',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo trabajamos tu web de arquitectura o interiorismo',
-        items: [
-          { h3: 'Curaduría y dirección visual', text: 'Elegimos tus proyectos más fuertes y definimos una estética sobria que ponga tu trabajo al frente. Menos, pero impecable, vende más que un catálogo desordenado.' },
-          { h3: 'Un proyecto, una página', text: 'Montamos cada proyecto como una historia visual: fotografía a pantalla completa, concepto, reto y solución. Es donde el cliente pasa de mirar a desear.' },
-          { h3: 'Fotografía que carga y se ve bien', text: 'Optimizamos cada imagen para que se vea nítida y cargue rápido en cualquier pantalla. En tu rubro, una foto lenta o mal comprimida es una venta perdida.' },
-          { h3: 'Proceso y contacto', text: 'Explicamos cómo trabajas del concepto a la entrega y dejamos una vía de contacto simple, para que el cliente enamorado dé el primer paso sin fricción.' },
+          'Para un arquitecto o interiorista el portafolio no es una sección: es la web. Una plantilla recargada, con sombras, colores y tipografías que gritan, compite con tu diseño y lo apaga. Por eso la estética es deliberadamente sobria: espacio en blanco, tipografía cuidada y foco en la imagen. <strong>Si tu sitio no está bien diseñado, ningún cliente creerá que diseñarás bien su casa.</strong>',
+          'Cada proyecto merece su propia página, no una miniatura en una cuadrícula: fotografía a pantalla completa, el concepto, el reto que resolviste y el antes y después. Ahí es donde el cliente pasa de mirar a desear.',
         ],
       },
       {
@@ -536,35 +437,25 @@ export const industrias2c: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Tu web se distingue de la de una constructora',
+        h2: '¿En qué se diferencia de la web de una constructora?',
         paragraphs: [
-          'A un arquitecto se le mide por el gusto; a una constructora, por cumplir la obra. Son ventas distintas y merecen webs distintas. Donde una <a href="/industrias/diseno-web-constructoras-panama/">constructora</a> necesita bitácora de avance, fichas de modelos y financiamiento, tú necesitas emoción, concepto y una fotografía que haga sentir el espacio.',
-          'El cliente de diseño no compra metros cuadrados: compra una visión y la confianza de que la vas a materializar con buen gusto. <strong>Tu web tiene que hacerlo soñar, no cotizar.</strong> El presupuesto y los detalles vienen después, en la conversación; el trabajo de la web es lograr que esa conversación ocurra porque quedó enamorado de lo que vio.',
+          'A un arquitecto se le mide por el gusto; a una constructora, por cumplir la obra. Donde una <a href="/industrias/diseno-web-constructoras-panama/">constructora</a> necesita bitácora de avance, fichas de modelos y financiamiento, un estudio necesita concepto y una fotografía que haga sentir el espacio. <strong>Tu web tiene que hacer soñar, no cotizar</strong>: el presupuesto viene después, en la conversación.',
         ],
       },
       {
-        type: 'statement',
-        text: 'Un arquitecto que muestra su trabajo en una web mal diseñada envía el peor mensaje posible: que el diseño no le importa tanto. Tu sitio es tu primera obra visible.',
-        strong: 'Tu sitio es tu primera obra visible',
-      },
-            {
         type: 'prose',
         h2: 'El proyecto que publicas define el proyecto que te llega',
         paragraphs: [
-          'Un portafolio no es un archivo de todo lo que hiciste: es una declaración de lo que quieres seguir haciendo. Si publicas veinte proyectos y quince son remodelaciones de cocina, te van a llegar remodelaciones de cocina, aunque tu ambición sea la obra completa.',
-          'Es la decisión estratégica más importante de la web de un estudio y casi siempre se toma por inercia, subiendo lo último terminado. Curar el portafolio hacia arriba —dejando fuera trabajos correctos pero pequeños— cambia el tipo de consulta que entra en cuestión de meses.',
-          'La otra cara es la especialización. Un estudio que publica solo residencial de alto nivel compite mejor por esos encargos que uno que muestra de todo un poco, aunque el segundo tenga más experiencia total. En un rubro que se elige por afinidad estética, parecer especialista vale más que parecer versátil.',
-          '<strong>Menos proyectos, mejor contados.</strong> Ocho obras con proceso, planta, materiales y fotografía profesional pesan más que treinta con dos fotos cada una.',
+          'Un portafolio es una declaración de lo que quieres seguir haciendo. Si publicas veinte proyectos y quince son remodelaciones de cocina, te llegarán remodelaciones de cocina aunque tu ambición sea la obra completa. Casi siempre se decide por inercia, subiendo lo último terminado; curarlo hacia arriba cambia el tipo de consulta en cuestión de meses.',
+          'En un rubro que se elige por afinidad estética, parecer especialista vale más que parecer versátil: un estudio que publica solo residencial de alto nivel compite mejor por esos encargos. <strong>Ocho obras con proceso, planta, materiales y fotografía profesional pesan más que treinta con dos fotos cada una.</strong>',
         ],
       },
       {
         type: 'prose',
-        h2: 'Hablar de honorarios sin que el cliente se asuste',
+        h2: '¿Cómo cobra un arquitecto en Panamá y cómo explicarlo en la web?',
         paragraphs: [
-          'El cliente de arquitectura casi nunca sabe cómo se cobra. Cree que el arquitecto cobra por plano, no entiende la diferencia entre anteproyecto y proyecto ejecutivo, y no imagina que la dirección de obra se cobra aparte. Esa confusión es la causa de la mitad de las conversaciones que no llegan a nada.',
-          'Una página que explique cómo se estructuran los honorarios en el rubro —por porcentaje de obra, por metro cuadrado o por fases, según el tipo de encargo— hace más por filtrar clientes que cualquier lista de precios. No hace falta publicar tu tarifa: hace falta que el cliente entienda el modelo antes de la primera reunión.',
-          'Explicar también qué incluye cada fase evita el conflicto más común del rubro, que es el cliente que creyó que la dirección de obra venía incluida. Ponerlo por escrito en la web te ahorra esa conversación incómoda a mitad de proyecto.',
-          'Y ayuda dar una referencia de escala: el tamaño mínimo de proyecto que tomas. <strong>Decir que trabajas desde cierta escala te ahorra diez reuniones al año</strong> y te posiciona ante el cliente que sí calza.',
+          'El cliente casi nunca sabe cómo se cobra: cree que el arquitecto cobra por plano, no distingue anteproyecto de proyecto ejecutivo y no imagina que la dirección de obra va aparte. Una página que explique los modelos del rubro —por porcentaje de obra, por metro cuadrado o por fases— filtra más que una lista de precios, sin publicar tu tarifa.',
+          'Detallar qué incluye cada fase evita el conflicto más común: el cliente que creyó que la dirección de obra venía incluida. Y dar una referencia de escala, el tamaño mínimo de proyecto que tomas, <strong>te ahorra reuniones con quien no calza</strong>.',
         ],
       },
       {
@@ -584,22 +475,18 @@ export const industrias2c: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Las fotos de tus proyectos no siempre son tuyas',
+        h2: '¿Puedo publicar las fotos de obra y de casas de clientes?',
         paragraphs: [
-          'Es el punto ciego más común en las webs de arquitectura. La fotografía de obra la suele hacer un fotógrafo profesional, y salvo que el contrato diga otra cosa, los derechos de esa imagen son suyos. Publicarlas sin acordar el uso es un problema silencioso hasta que aparece.',
-          'La solución no es dejar de publicar: es acordar por escrito, al contratar la sesión, para qué se van a usar las fotos —web, redes, prensa, concursos— y por cuánto tiempo. Cuesta lo mismo y evita el reclamo tres años después.',
-          'Lo mismo con el cliente. Muchas viviendas privadas se publican sin permiso explícito del propietario, y hay clientes a los que no les hace gracia que su casa sea identificable en internet. Basta con acordarlo en el contrato del encargo y, si hace falta, publicar sin dirección ni exteriores reconocibles.',
-          'Y el crédito al fotógrafo, aunque tengas los derechos, es de las cosas más baratas que puedes hacer por tu reputación en un gremio pequeño donde todos se conocen. <strong>Publicar bien también es una señal de cómo trabajas.</strong>',
+          'La fotografía de obra la suele hacer un fotógrafo profesional, y salvo que el contrato diga otra cosa, los derechos son suyos. Al contratar la sesión, acuerda por escrito el uso —web, redes, prensa, concursos— y el plazo; cuesta lo mismo y evita el reclamo años después. Darle crédito, aunque tengas los derechos, cuida tu reputación en un gremio pequeño.',
+          'Con el propietario pasa igual: muchas viviendas privadas se publican sin su permiso explícito. Basta acordarlo en el contrato del encargo y, si hace falta, publicar sin dirección ni exteriores reconocibles. <strong>Publicar bien también es una señal de cómo trabajas.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: consultas del tipo de proyecto que quieres',
         paragraphs: [
-          'Un estudio de arquitectura no necesita volumen: necesita los encargos correctos. Medir visitas es especialmente engañoso aquí, porque el portafolio atrae a mucha gente que mira por inspiración y nunca va a contratar.',
-          'Lo que hay que mirar es cuántas consultas llegaron y de qué tipo de encargo: obra nueva, remodelación, interiorismo, comercial, y en qué escala. Ese corte dice si el portafolio está atrayendo lo que quieres o lo que ya no.',
-          'Es el número que conecta directo con la decisión de qué publicar. Si el ochenta por ciento de las consultas son remodelaciones pequeñas y tu objetivo es obra completa, el problema no es la captación: es qué proyectos están arriba en tu portafolio.',
-          'También vale medir qué proyecto concreto vio la gente antes de escribir. Suele haber uno o dos que generan la mayoría de las consultas, y ese hallazgo cambia cómo ordenas la galería. Lo dejamos medido; el detalle en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
+          'Medir visitas engaña en arquitectura: el portafolio atrae a mucha gente que mira por inspiración y nunca contrata. Lo que importa es cuántas consultas llegaron y de qué encargo —obra nueva, remodelación, interiorismo, comercial— y en qué escala. Si la mayoría son remodelaciones pequeñas y buscas obra completa, el problema está en qué proyectos van arriba en tu portafolio.',
+          'También vale medir qué proyecto vio la gente antes de escribir: suele haber uno o dos que generan la mayoría de las consultas, y eso cambia cómo ordenas la galería. El detalle está en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.',
         ],
       },
       {

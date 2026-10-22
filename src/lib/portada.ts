@@ -1,8 +1,7 @@
-/* Portada de agencia (D50, tanda B): una sola fuente para el mapa de servicios, el riel, el ItemList, las preguntas y la
-   respuesta citable. Funciones puras que reciben `precios` (src/data/precios.json) para que scripts/portada.test.mjs las
-   pruebe sin compilar Astro. Vive fuera de src/lib/pages/ para que [...slug].astro no la publique como página. */
-// Con la extensión: scripts/portada.test.mjs carga este módulo en Node. marketing.ts solo admite `import type`.
-import { marketingPages } from './pages/marketing.ts';
+/* Portada de agencia: una sola fuente para los textos y enlaces de la portada v3 (D56), el ItemList de servicios, las
+   preguntas y la respuesta citable. Funciones puras que reciben `precios` (src/data/precios.json) para que
+   scripts/portada.test.mjs las pruebe sin compilar Astro. Vive fuera de src/lib/pages/ para que [...slug].astro no la
+   publique como página. */
 
 export interface Precio { nombre?: string; monto: number; unidad?: string; desde?: boolean }
 export interface Precios { confirmados: Record<string, Precio>; [k: string]: unknown }
@@ -31,9 +30,6 @@ export interface FilaMapa {
 const imagenPanel = (id: string, alt: string, height: number, nota?: string) =>
   ({ src: `/images/portada/servicios/${id}-960.webp`, src640: `/images/portada/servicios/${id}-640.webp`, alt, width: 960, height, nota });
 
-/** Corte de compacto (D27): bajo este ancho el héroe sirve la captura de celular. Lo leen MarcoCaptura y la prueba
-    de paridad con portada.css, que lo repite fijo (un .astro no se puede importar desde node --test). */
-export const COMPACTO = 639;
 export interface Pregunta { q: string; a: string }
 
 /** H1 elegido tras S5 (audit/s5-agencia-diseno-web-2026-10.md, D50). */
@@ -67,33 +63,6 @@ export function precioTexto(precios: Precios, clave: string, { desde }: { desde?
   return `${(desde ?? p.desde) ? 'desde ' : ''}$${p.monto.toLocaleString('en-US')}${SUFIJOS[unidad]}`;
 }
 
-/** Franja de Precios (portada v2). Excepciones a «desde por dato», con su motivo: el hosting compartido es el más
-    barato de tres planes (desde); la web gestionada es un plan cerrado y va sin «desde», como la publica /precios/. */
-export function franjaPrecios(precios: Precios) {
-  return [
-    {
-      nombre: 'Web empresarial gestionada', slug: 'precios', clave: 'mensual',
-      texto: `${precioTexto(precios, 'gestionada-puesta-en-marcha')} de puesta en marcha + ${precioTexto(precios, 'gestionada-mensual')} durante 12 meses`,
-    },
-    { nombre: 'Mantenimiento', slug: 'crecimiento/mantenimiento-web-panama', clave: 'mensual', texto: precioTexto(precios, 'mantenimiento') },
-    { nombre: 'Hosting', slug: 'crecimiento/hosting-infraestructura-panama', clave: 'mensual', texto: precioTexto(precios, 'hosting-compartido', { desde: true }) },
-  ];
-}
-
-/** Lista de Desarrollo web a medida: cada página y su precio solo si está confirmado. */
-export function desarrolloPortada(precios: Precios): (Enlace & { precio: string | null })[] {
-  return [
-    { label: 'A medida con React o Vue', slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', precio: precioTexto(precios, 'web-medida', { desde: true }) },
-    { label: 'WordPress sin plantillas', slug: 'tecnologias/diseno-web-wordpress-panama', precio: null },
-    { label: 'Tiendas en Shopify', slug: 'tecnologias/diseno-web-shopify-panama', precio: null },
-    { label: 'Pagos con Yappy y tarjeta', slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', precio: null },
-    { label: 'CyberSource Unified Checkout', slug: 'funcionalidades/integracion-cybersource-panama', precio: precioDesde(precios, 'cybersource-esencial') },
-    { label: 'Reservas y citas en línea', slug: 'funcionalidades/sistemas-reservas-citas-online-panama', precio: null },
-    { label: 'Mantenimiento', slug: 'crecimiento/mantenimiento-web-panama', precio: precioTexto(precios, 'mantenimiento') },
-    { label: 'Hosting', slug: 'crecimiento/hosting-infraestructura-panama', precio: precioTexto(precios, 'hosting-compartido', { desde: true }) },
-  ];
-}
-
 /** Mapa clave → opción del selector del formulario: la opción es la etiqueta `servicio` de formulario.json cuando
     ContactForm la ofrece en su lista. Se arma en el frontmatter de index.astro con los datos de site.ts. */
 export function mapaOpciones(services: string[], servicios: { clave: string; servicio: string }[]): Record<string, string> {
@@ -109,94 +78,6 @@ export function opcionDe(mapa: Record<string, string>, clave: string, seccion: s
     throw new Error(`El «Cotizar» de la sección «${seccion}» usa la clave «${clave}», que no tiene opción en el formulario. Claves válidas: ${validas.join(', ')}`);
   }
   return opcion;
-}
-
-/* Vitrina de Marketing (D54), por slug (no por posición: la lista de site.ts la comparten el menú y el pie). `linea`: 40
-   caracteres o menos, sin repetir las garantías; `nota`: la línea de la nota «Ejemplo» de su escena; `mide`: 3
-   indicadores tomados de los `medimos` que ya publica la página del servicio. Editar esos `medimos` puede romper el
-   build de la portada: el error nombra el slug y los dos archivos. */
-interface DatoMarketing { linea: string; maqueta: string; nota: string; mide: string[] }
-const MARKETING: Record<string, DatoMarketing> = {
-  'marketing/google-ads-panama': { linea: 'Aparece cuando tu cliente busca.', maqueta: 'google', nota: 'un anuncio de búsqueda en Google que termina en WhatsApp', mide: ['CTR', 'Costo por clic', 'Costo por consulta'] },
-  'marketing/facebook-instagram-ads-panama': { linea: 'Segmentación, creativos y ventas.', maqueta: 'anuncio', nota: 'un anuncio en Instagram que abre un chat', mide: ['Alcance', 'CTR', 'Costo por mensaje'] },
-  'marketing/contenido-redes-sociales-panama': { linea: 'Publicaciones, diseño y Reels.', maqueta: 'parrilla', nota: 'la parrilla de publicaciones de la semana', mide: ['Alcance', 'Guardados', 'Mensajes iniciados'] },
-  'marketing/email-marketing-panama': { linea: 'Newsletters sobre una base que es tuya.', maqueta: 'correo', nota: 'un correo a tus clientes', mide: ['Entregabilidad', 'Clics', 'Ventas atribuidas'] },
-  'marketing/whatsapp-marketing-masivo-panama': { linea: 'Campañas masivas a tu lista de clientes.', maqueta: 'whatsapp-plantilla', nota: 'un mensaje de campaña por WhatsApp', mide: ['Lectura', 'Tasa de respuesta', 'Bajas y reportes'] },
-  'marketing/automatizaciones-n8n-panama': { linea: 'Del formulario al CRM, sin copiar datos.', maqueta: 'flujo', nota: 'una consulta que pasa sola del formulario al CRM y a WhatsApp', mide: ['Ejecuciones al mes', 'Horas devueltas', 'Errores evitados'] },
-};
-
-interface PaginaMedible { slug: string; blocks?: { medimos?: string[] }[] }
-
-export function modulosMarketing(lista: Enlace[], datos: Record<string, DatoMarketing> = MARKETING, paginas: PaginaMedible[] = marketingPages) {
-  const error = (slug: string, motivo: string) =>
-    new Error(`Vitrina de marketing, «${slug}»: ${motivo}. Revisa src/lib/portada.ts (MARKETING) y src/lib/pages/marketing.ts (medimos).`);
-  const sobrantes = Object.keys(datos).filter((s) => !lista.some((l) => l.slug === s));
-  if (sobrantes.length) throw error(sobrantes.join(', '), 'tiene datos en la portada pero ya no está en la lista de marketing de site.ts');
-  return lista.map((l) => {
-    const d = datos[l.slug];
-    if (!d) throw error(l.slug, 'está en la lista de marketing de site.ts y la portada no tiene sus datos (línea, maqueta, nota y «Se mide»)');
-    if (!d.linea || d.linea.length > 40) throw error(l.slug, `la línea tiene que tener 40 caracteres o menos y tiene ${d.linea.length}`);
-    const bloques = (paginas.find((p) => p.slug === l.slug)?.blocks ?? []).filter((b) => b.medimos);
-    if (bloques.length !== 1) throw error(l.slug, `su página tiene ${bloques.length} bloques con medimos y hace falta exactamente uno`);
-    if (d.mide.length !== 3) throw error(l.slug, `«Se mide» lleva ${d.mide.length} indicadores y tiene que llevar 3`);
-    const sinPublicar = d.mide.filter((i) => !bloques[0].medimos!.includes(i));
-    if (sinPublicar.length) throw error(l.slug, `«Se mide» usa ${sinPublicar.map((i) => `«${i}»`).join(', ')}, que no está en los medimos publicados de su página`);
-    return { slug: l.slug, nombre: l.label, ...d };
-  });
-}
-
-/** «2025–2026» con el menor y el mayor año del portafolio; uno solo si coinciden. Un proyecto sin año rompe el build. */
-export function aniosPortafolio(portfolio: { t: string; year?: string }[]): string {
-  const sinAnio = portfolio.filter((p) => !p.year).map((p) => p.t);
-  if (sinAnio.length) throw new Error(`Proyectos del portafolio sin año: ${sinAnio.join(', ')}`);
-  const anios = portfolio.map((p) => Number(p.year));
-  const [min, max] = [Math.min(...anios), Math.max(...anios)];
-  return min === max ? String(min) : `${min}–${max}`;
-}
-
-/* Industrias de la portada por evidencia: las 3 con proyectos publicados, las 2 con más impresiones con héroe en
-   Search Console (audit/gsc-2026-10-paginas.tsv) y 3 más. */
-const DESTACADAS = ['turismo-hoteles', 'constructoras', 'logistica-transporte', 'clinicas-salud', 'gimnasios-fitness', 'restaurantes', 'retail-moda', 'abogados'];
-
-export function industriasDestacadas(lista: Enlace[]) {
-  const slug = (x: string) => `industrias/diseno-web-${x}-panama`;
-  const destacadas = DESTACADAS.map((x) => {
-    const i = lista.find((l) => l.slug === slug(x));
-    if (!i) throw new Error(`La industria destacada «${x}» no está en la lista de industrias de site.ts`);
-    return i;
-  });
-  return { destacadas, resto: lista.filter((l) => !destacadas.includes(l)) };
-}
-
-/** Compara antes de firmar: cada fila enlaza la página que publica esa práctica y la prueba busca la frase ahí. */
-export function comparaPortada() {
-  return [
-    { texto: 'Precio publicado', ruta: '/precios/', frase: 'Precios publicados y cotización cerrada por escrito' },
-    { texto: 'Cotización cerrada por escrito', ruta: '/como-trabajamos/', frase: 'Cotización cerrada por escrito antes de empezar' },
-    { texto: 'Alcance, tiempos y precio por escrito', ruta: '/contacto/', frase: 'Alcance, tiempos y precio cerrado, por escrito' },
-    { texto: 'Dominio, código y accesos a tu nombre al completar el pago', ruta: '/como-trabajamos/', frase: 'quedan a nombre de tu empresa al completar el pago' },
-    { texto: 'Respuesta el mismo día hábil', ruta: '/contacto/', frase: 'respondemos el mismo día hábil' },
-    { texto: 'WhatsApp por la API oficial', ruta: '/marketing/whatsapp-marketing-masivo-panama/', frase: 'Campañas por la API oficial de WhatsApp Business' },
-  ];
-}
-
-/** Líneas del panel de código de Desarrollo (maqueta pv2-codigo): un fragmento de Astro sin claves ni datos reales.
-    Son cadenas para que el .astro las pinte con {linea} y no las compile como componentes. */
-export const CODIGO_PORTADA = [
-  '---',
-  "import Reserva from '../components/Reserva.astro';",
-  'const tours = await getTours();',
-  '---',
-  '<Reserva tours={tours} deposito="30%" />',
-];
-
-/** Lo que no hacemos: solo líneas con fuente publicada; la frase incluye la negación de la fuente. */
-export function noHacemosPortada() {
-  return [
-    { texto: 'No revendemos plantillas', ruta: '/diseno-web-panama/', frase: 'sin plantillas revendidas' },
-    { texto: 'No prometemos el primer lugar en Google', ruta: '/crecimiento/seo-posicionamiento-web-panama/', frase: 'Si alguien te garantiza el primer lugar en Google' },
-    { texto: 'No intermediamos tu inversión publicitaria', ruta: '/marketing/google-ads-panama/', frase: 'No intermediamos tu inversión' },
-  ];
 }
 
 /** Las 6 filas del mapa (D19, D20). La URL principal es la que usan el riel y el ItemList. */
@@ -276,29 +157,100 @@ export function itemListPortada(dominio: string, filas: FilaMapa[]) {
   };
 }
 
-/** Respuesta citable (40 a 60 palabras): los mismos hechos que docs/autoridad/KIT-AUTORIDAD.md, no el mismo texto. */
-export function respuestaPortada(precios: Precios) {
+/* ============================================================
+   PORTADA V3 (D56): agencia de marketing digital + proyectos de IA, en monocromo. Sin precios ni sección de proyectos
+   (reglas del dueño del 21-oct-2026); el diseño web tiene su sección. Las URL son todas páginas que ya existen.
+   ============================================================ */
+
+/** Titular de display del héroe (un <p>; el H1 real es H1_PORTADA, en la etiqueta pequeña). */
+export const DISPLAY_PORTADA = ['Marketing que vende.', 'IA que trabaja.'];
+export const BAJADA_PORTADA = 'Campañas, contenido y agentes de IA para empresas en Panamá, sobre una web que convierte. Todo medido hasta la consulta.';
+
+/** Franja de 6 servicios del héroe: orienta, un enlace por servicio. */
+export const FRANJA_PORTADA: Enlace[] = [
+  { label: 'Google Ads', slug: 'marketing/google-ads-panama' },
+  { label: 'Meta Ads', slug: 'marketing/facebook-instagram-ads-panama' },
+  { label: 'SEO y GEO', slug: 'crecimiento/seo-posicionamiento-web-panama' },
+  { label: 'WhatsApp API', slug: 'marketing/whatsapp-marketing-masivo-panama' },
+  { label: 'Agentes IA', slug: 'inteligencia-artificial-para-empresas-panama' },
+  { label: 'Diseño web', slug: 'diseno-web-panama' },
+];
+
+export interface MitadDiptico { num: string; titulo: string; linea: string; enlaces: Enlace[]; img: { src: string; width: number; height: number; alt: string } }
+/** Díptico (#soluciones): hace elegir camino, 3 enlaces por mitad. */
+export const DIPTICO_PORTADA: MitadDiptico[] = [
+  {
+    num: '01', titulo: 'Marketing digital', linea: 'Campañas y contenido que traen clientes, medidos hasta la consulta.',
+    enlaces: [
+      { label: 'Google y Meta Ads', slug: 'marketing' },
+      { label: 'SEO y GEO', slug: 'crecimiento/seo-posicionamiento-web-panama' },
+      { label: 'WhatsApp Marketing', slug: 'marketing/whatsapp-marketing-masivo-panama' },
+    ],
+    img: { src: '/images/portada-v3/diptico-marketing-800.webp', width: 800, height: 520, alt: 'Una mano sostiene un celular con un anuncio patrocinado de una panadería en un café' },
+  },
+  {
+    num: '02', titulo: 'Proyectos de IA', linea: 'Agentes y automatizaciones que atienden, cotizan y agendan por ti.',
+    enlaces: [
+      { label: 'Agentes de IA', slug: 'inteligencia-artificial-para-empresas-panama' },
+      { label: 'Chatbots', slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama' },
+      { label: 'Automatización con n8n', slug: 'marketing/automatizaciones-n8n-panama' },
+    ],
+    img: { src: '/images/portada-v3/diptico-ia-800.webp', width: 800, height: 597, alt: 'Una profesional en una oficina de Ciudad de Panamá revisa una conversación con un asistente en su laptop' },
+  },
+];
+
+export interface TarjetaBento { id: string; titulo: string; linea: string; slug: string; ancha?: boolean; img?: { src: string; width: number; height: number }; nota: string }
+/** Bento: cómo se ve el resultado. Las maquetas son HTML y CSS; donde hay imagen (anuncio, videos) va a color. */
+export const BENTO_PORTADA: TarjetaBento[] = [
+  { id: 'publicidad', titulo: 'Publicidad en Google y Meta', linea: 'Anuncios que aparecen cuando tu cliente busca o navega.', slug: 'marketing', ancha: true, img: { src: '/images/portada-v3/bento-anuncio-600.webp', width: 600, height: 448 }, nota: 'un anuncio en el feed con su resultado de búsqueda' },
+  { id: 'seo', titulo: 'SEO y GEO', linea: 'Que Google y los asistentes de IA te encuentren y te citen.', slug: 'crecimiento/seo-posicionamiento-web-panama', nota: 'un resultado de Google y una respuesta de IA que te citan' },
+  { id: 'whatsapp', titulo: 'WhatsApp Marketing', linea: 'Campañas y seguimiento por la API oficial.', slug: 'marketing/whatsapp-marketing-masivo-panama', nota: 'un mensaje de campaña por WhatsApp' },
+  { id: 'agentes', titulo: 'Agentes de IA', linea: 'Responden con tu información y pasan el dato a tu CRM.', slug: 'inteligencia-artificial-para-empresas-panama', nota: 'un agente que responde y agenda' },
+  { id: 'contenido', titulo: 'Contenido con IA', linea: 'Videos y piezas para redes, hechos con IA.', slug: 'marketing/videos-publicitarios-panama', img: { src: '/images/portada-v3/bento-videos-600.webp', width: 600, height: 448 }, nota: 'miniaturas de videos para redes' },
+];
+
+/** Sección de diseño web: lista y tres capturas reales del portafolio (no las del mockup). */
+export const WEB_PORTADA = {
+  titulo: 'Webs que trabajan como un vendedor.',
+  linea: 'La base de todo: rápida, medible y a tu nombre.',
+  items: ['Sitios corporativos', 'Landing pages', 'Tiendas online con Yappy', 'Desarrollo a medida'],
+  capturas: [
+    { cap: '/portfolio/sanblasfull', t: 'San Blas Full' },
+    { cap: '/portfolio/panamainternationalmovers-2026', t: 'Panama International Movers' },
+    { cap: '/portfolio/remodelacionesjg', t: 'Remodelaciones JG' },
+  ],
+  movil: { src: '/images/ejemplos/movil-tramitapa.webp', t: 'TramitaPa' },
+};
+
+/** Bloque negro de proyectos de IA: el diagrama y la franja de confianza. */
+export const IA_PORTADA = {
+  titulo: 'Un agente que atiende mientras tú vendes.',
+  linea: 'Diagnóstico sin costo. Del primer mensaje al reporte, con control humano en cada paso.',
+  pasos: ['WhatsApp', 'Agente IA', 'CRM', 'Reporte'],
+  confianza: ['API oficial de WhatsApp', 'Tech Provider verificado por Meta', 'Respuesta el mismo día hábil'],
+};
+
+/** Respuesta citable (40 a 60 palabras, con fecha), reescrita para marketing + IA. Sin cifras: la portada no publica precios. */
+export function respuestaPortada() {
   return {
-    fecha: '2026-10-14',
+    fecha: '2026-10-22',
     text:
-      '<a href="/nosotros/">Elemento Web</a> es una agencia de diseño web con sede en Ciudad de Panamá. Atendemos ' +
-      '<a href="/diseno-web-panama/">empresas en Panamá</a> y, a distancia y en español, <a href="/miami/">negocios de Miami</a>. ' +
-      'Hacemos webs pensadas para generar consultas, conectadas a WhatsApp por la API oficial como Tech Provider verificado por Meta. ' +
-      `También SEO, publicidad e IA. Landing ${precioDesde(precios, 'web-landing')}, con cotización cerrada.`,
+      '<a href="/nosotros/">Elemento Web</a> es una agencia de marketing digital y proyectos de inteligencia artificial con sede en ' +
+      'Ciudad de Panamá. Hacemos campañas en Google y Meta, SEO, contenido con IA, agentes de IA y <a href="/diseno-web-panama/">diseño web</a> ' +
+      'para empresas en Panamá y <a href="/miami/">negocios de Miami</a>. Somos Tech Provider verificado por Meta para la API oficial de WhatsApp.',
   };
 }
 
-/** Preguntas de agencia (D50): el mismo texto alimenta el bloque visible y el FAQPage. */
-export function faqsPortada(precios: Precios): Pregunta[] {
-  const p = (k: string) => precioDesde(precios, k);
+/** Preguntas de la portada v3: el mismo texto alimenta el bloque visible y el FAQPage. Sin cifras «$». */
+export function faqsPortada(): Pregunta[] {
   return [
-    { q: '¿Cuánto cuesta una página web con Elemento Web?', a: `Landing ${p('web-landing')}, sitio corporativo ${p('web-empresarial')}, tienda online ${p('web-ecommerce')} y proyectos a medida ${p('web-medida')}. Sin ITBMS (7%). Siempre con cotización cerrada por escrito antes de empezar. El detalle está en <a href="/precios/">precios</a>.` },
-    { q: '¿Pueden hacer SEO o publicidad sin rehacer mi web?', a: 'Sí, si la base sirve. Primero revisamos tu web: si carga bien y se puede editar, trabajamos el <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a> o la <a href="/marketing/google-ads-panama/">publicidad</a> sobre lo que ya tienes. Si está por rehacerse, te lo decimos antes, porque posicionar una página que vas a cambiar es tirar el trabajo.' },
-    { q: 'Ya tengo web. ¿Me conviene rediseñarla?', a: 'Depende de qué falla. Con la revisión de tu web (la eliges en el formulario) te decimos si basta con corregir o si conviene un <a href="/servicios/redisenio-web-panama/">rediseño</a>, y por qué.' },
+    { q: '¿Qué hace una agencia de marketing digital como Elemento Web?', a: 'Planeamos y corremos <a href="/marketing/">campañas en Google y Meta</a>, <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y GEO</a>, contenido con IA y WhatsApp marketing por la API oficial. Todo se mide hasta la consulta, no solo hasta el clic.' },
+    { q: '¿Qué es un agente de IA y para qué le sirve a mi empresa?', a: 'Es un asistente que responde con la información de tu negocio, cotiza o agenda por WhatsApp y pasa los datos a tu CRM, con control humano. Cada respuesta dice de qué documento sale. Más en <a href="/inteligencia-artificial-para-empresas-panama/">IA para empresas</a>.' },
+    { q: '¿Siguen haciendo diseño web?', a: 'Sí. Hacemos sitios corporativos, landing pages, tiendas online con Yappy y desarrollo a medida. La web es la base que mide y convierte las campañas. Más en <a href="/diseno-web-panama/">diseño web en Panamá</a>.' },
+    { q: '¿Qué es la API oficial de WhatsApp y por qué importa?', a: 'Es la vía que Meta aprueba para que las empresas envíen mensajes y campañas sin arriesgar el número. Somos Tech Provider verificado por Meta y conectamos tu número a la API. Más en <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp marketing</a>.' },
     { q: '¿Trabajan con negocios fuera de Panamá?', a: 'Sí. Desde Ciudad de Panamá trabajamos a distancia y en español con negocios de todo el país y de <a href="/miami/">Miami</a>, por WhatsApp y videollamada. Facturamos en dólares. No tenemos oficina en Miami.' },
+    { q: '¿Cómo se cotiza un proyecto?', a: 'Nos cuentas qué quieres lograr en el formulario o por WhatsApp. El diagnóstico no tiene costo y recibes una cotización cerrada por escrito, con alcance, plazo y precio, antes de empezar. Los precios de partida están en <a href="/precios/">precios</a>.' },
     { q: '¿De quién son las cuentas de Google Ads y Meta?', a: 'Tuyas. Nosotros las gestionamos, pero la cuenta publicitaria queda a tu nombre y la inversión se carga ahí directamente. Si algún día cambias de agencia, te llevas el historial.' },
-    { q: '¿Cuánto tarda el proyecto?', a: 'De 5 días hábiles para una landing a 5 semanas para una tienda online, contados desde que recibimos tu contenido. El plazo exacto va por escrito en la cotización.' },
-    { q: '¿Cómo se paga?', a: 'En tres etapas: 50% para iniciar, 30% cuando apruebas el demo en línea y 20% para publicar en tu dominio. Aceptamos tarjeta, transferencia y Yappy.' },
-    { q: '¿El dominio y la web quedan a mi nombre?', a: 'Sí. El dominio queda a nombre de tu empresa. En el plan mensual gestionado, si cancelas antes de los 12 meses liquidas las cuotas pendientes del desarrollo y recibes los accesos y archivos.' },
   ];
 }
+

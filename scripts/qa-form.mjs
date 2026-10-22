@@ -225,10 +225,10 @@ try {
       console.log(`Portada a ${ancho}x${alto}`);
       let r = await abrir({ ancho, alto });
       await r.p.goto(`${srvSitio.url}/`);
-      await r.p.click('.ew-hero a[data-cta-loc="hero"][href="#formulario"]');
+      await r.p.click('#inicio a[data-cta-loc="hero"][href="#formulario"]');
       await r.p.waitForTimeout(300);
       const cta = (await r.eventos()).filter((e) => e.n === 'cta_click');
-      ok('«Cotizar mi proyecto» del héroe envía un solo cta_click con service=definir y location=hero', cta.length === 1 && cta[0].service === 'definir' && cta[0].location === 'hero', JSON.stringify(cta));
+      ok('«Empezar proyecto» del héroe envía un solo cta_click con service=definir y location=hero', cta.length === 1 && cta[0].service === 'definir' && cta[0].location === 'hero', JSON.stringify(cta));
       await r.p.keyboard.press('Tab');
       ok('tras el ancla, Tab entra al formulario', await r.p.evaluate(() => !!document.activeElement?.closest('#formulario') && location.hash === '#formulario'));
       await r.p.click('#cform button[type="submit"]');
@@ -255,37 +255,34 @@ try {
       await r.ctx.close();
     }
 
-    // ---- Portada v2: «Cotizar» con servicio (data-opcion), foco al contenedor, región aria-live y estados del envío ----
-    console.log('Portada v2: «Cotizar» con servicio a 1440x900');
+    // ---- Portada v3 (D56): CTA con servicio (data-opcion), foco al contenedor, región aria-live y estados del envío ----
+    console.log('Portada v3: CTA con servicio a 1440x900');
     {
       const r = await abrir({ ancho: 1440, alto: 900 });
       await r.p.goto(`${srvSitio.url}/`);
-      const estado = () => r.p.evaluate(() => ({ sel: document.getElementById('cf-servicio').value, web: !document.getElementById('wrap-web').classList.contains('hidden'), vivo: document.getElementById('pv2-servicio-elegido')?.textContent || '', foco: document.activeElement?.id || '' }));
-      await r.p.click('#seo a[data-cta-loc="seo"][href="#formulario"]');
+      const estado = () => r.p.evaluate(() => ({ sel: document.getElementById('cf-servicio').value, vivo: document.getElementById('pv3-servicio-elegido')?.textContent || '', foco: document.activeElement?.id || '' }));
+      await r.p.click('#ia a[data-cta-loc="ia"][href="#formulario"]');
       await r.p.waitForTimeout(300);
       let st = await estado();
-      ok('«Pedir revisión de mi web» deja «Revisión de mi web», muestra el campo de la web y lo anuncia', st.sel === 'Revisión de mi web' && st.web && /Servicio elegido: Revisión de mi web/.test(st.vivo), JSON.stringify(st));
+      ok('«Agendar diagnóstico» deja «Automatización / Inteligencia artificial» y lo anuncia', st.sel === 'Automatización / Inteligencia artificial' && /Servicio elegido: Automatización/.test(st.vivo), JSON.stringify(st));
       ok('tras el clic el foco queda en #formulario (el contenedor, no un campo)', st.foco === 'formulario', st.foco);
-      ok('un clic en «Cotizar» no emite form_start', !(await r.eventos()).some((e) => e.n === 'form_start'));
+      ok('un clic en un CTA no emite form_start', !(await r.eventos()).some((e) => e.n === 'form_start'));
       await r.p.keyboard.press('Tab');
       ok('el siguiente Tab entra al primer campo', await r.p.evaluate(() => document.activeElement?.id === 'cf-nombre'));
-      await r.p.click('#marketing a[data-cta-loc="marketing"][href="#formulario"]');
+      await r.p.click('#inicio a[data-cta-loc="hero"][href="#formulario"]');
       await r.p.waitForTimeout(200);
-      ok('«Cotizar marketing digital» deja «Marketing digital / Pauta»', (await estado()).sel === 'Marketing digital / Pauta');
-      await r.p.click('.ew-hero a[data-cta-loc="hero"][href="#formulario"]');
+      ok('un clic posterior en el héroe (definir) no cambia lo elegido', (await estado()).sel === 'Automatización / Inteligencia artificial');
+      await r.p.evaluate(() => { const s = document.getElementById('cf-servicio'); s.value = 'Ayúdame a definir mi proyecto'; document.querySelector('#cform button[type="submit"]').disabled = true; });
+      await r.p.click('#ia a[data-cta-loc="ia"][href="#formulario"]');
       await r.p.waitForTimeout(200);
-      ok('un clic posterior en el héroe (definir) no cambia lo elegido', (await estado()).sel === 'Marketing digital / Pauta');
-      await r.p.evaluate(() => { document.querySelector('#cform button[type="submit"]').disabled = true; });
-      await r.p.click('#precios a[data-service="landing"][href="#formulario"]');
-      await r.p.waitForTimeout(200);
-      ok('con el envío en curso (botón deshabilitado), un «Cotizar» no cambia nada', (await estado()).sel === 'Marketing digital / Pauta');
+      ok('con el envío en curso (botón deshabilitado), un CTA no cambia nada', (await estado()).sel === 'Ayúdame a definir mi proyecto');
       await r.p.evaluate(() => { document.querySelector('#cform button[type="submit"]').disabled = false; document.getElementById('cform').classList.add('hidden'); });
-      await r.p.click('#precios a[data-service="landing"][href="#formulario"]');
+      await r.p.click('#ia a[data-cta-loc="ia"][href="#formulario"]');
       await r.p.waitForTimeout(200);
-      ok('con el formulario ya enviado (#cform oculto), un «Cotizar» no cambia nada', (await estado()).sel === 'Marketing digital / Pauta');
+      ok('con el formulario ya enviado (#cform oculto), un CTA no cambia nada', (await estado()).sel === 'Ayúdame a definir mi proyecto');
       await r.ctx.close();
     }
-    console.log('Portada v2: los «Cotizar» del menú bajan al formulario');
+    console.log('Portada: los «Empezar proyecto» del menú bajan al formulario');
     {
       const r = await abrir({ ancho: 1280, alto: 800 });
       await r.p.goto(`${srvSitio.url}/`);
@@ -294,7 +291,7 @@ try {
       await r.p.click('#navpill a.cta-pill');
       await r.p.waitForTimeout(500);
       const cta = (await r.eventos()).filter((e) => e.n === 'cta_click');
-      ok('escritorio (desde 640 px): el «Cotizar» del menú baja a #formulario y se mide header/definir', await r.p.evaluate(() => location.hash === '#formulario' && document.getElementById('formulario').getBoundingClientRect().top < innerHeight) && cta.at(-1)?.location === 'header' && cta.at(-1)?.service === 'definir', JSON.stringify(cta));
+      ok('escritorio (desde 640 px): el «Empezar proyecto» del menú baja a #formulario y se mide header/definir', await r.p.evaluate(() => location.hash === '#formulario' && document.getElementById('formulario').getBoundingClientRect().top < innerHeight) && cta.at(-1)?.location === 'header' && cta.at(-1)?.service === 'definir', JSON.stringify(cta));
       await r.ctx.close();
     }
     {
@@ -304,10 +301,10 @@ try {
       await r.p.waitForTimeout(900);
       await r.p.click('#mnav a[href="#formulario"]');
       await r.p.waitForTimeout(900);
-      ok('menú móvil (bajo 1024 px): su «Cotizar» baja a #formulario y cierra el menú', await r.p.evaluate(() => location.hash === '#formulario' && document.getElementById('formulario').getBoundingClientRect().top < innerHeight && document.getElementById('mnav').dataset.open !== '1'));
+      ok('menú móvil (bajo 1200 px): su «Empezar proyecto» baja a #formulario y cierra el menú', await r.p.evaluate(() => location.hash === '#formulario' && document.getElementById('formulario').getBoundingClientRect().top < innerHeight && document.getElementById('mnav').dataset.open !== '1'));
       await r.ctx.close();
     }
-    console.log('Portada v2: los campos en pareja del formulario quedan alineados');
+    console.log('Portada: los campos en pareja del formulario quedan alineados');
     for (const ancho of [640, 768, 1024, 1280, 1440]) {
       const r = await abrir({ ancho, alto: 900 });
       await r.p.goto(`${srvSitio.url}/`);

@@ -483,6 +483,32 @@ Queda decidido:
   corridas), igual que en local.
 - **Pendiente:** la demo Luxor500 no se ha enviado a Ilitch; los casos y muestras para prospectos siguen en `TODOS.md`.
 
+### D56. Portada v3: agencia de marketing digital + proyectos de IA, en monocromo (22-oct-2026)
+Fuente: el plan `docs/specs/rediseno-elementoweb/PLAN-PORTADA-V3.md`, aprobado en la puerta de /autoplan del 22-oct-2026
+con la respuesta «rec» (corrida main-20261021-231921).
+- **Decisiones del dueño:** el H1 de D50 se conserva como etiqueta pequeña (uc1a); se construye ya y se publica después del
+  18-nov-2026, cuando estén las lecturas de D51 y D54 (uc2a); sin franja de pruebas (uc3b); dos PR, primero menú, pie y
+  `grupos` y después la portada (d1a); menú y pie monocromo en todo el sitio con los héroes marino de servicio intactos
+  (d2a); segundo botón del héroe «Ver soluciones» (d3a).
+- **PR-A** ([josimarguilbaud/elementoweb#1](https://github.com/josimarguilbaud/elementoweb/pull/1), rama
+  `feat/portada-v3-menu-pie`): `grupos` en `site.ts` con un dueño por enlace, megamenú y pie al estilo Stripe sin GSAP.
+- **PR-B** (rama `feat/portada-v3-home`, sobre la del PR-A): las 8 secciones, 6 imágenes de fal (tanda `portada-v3`,
+  US$ 0,75), `src/scripts/movimiento.ts` y `scripts/qa-movimiento.mjs`; la portada usa ContactForm (ServiceForm sigue
+  sin activar).
+- **Runbook de publicación y reversión:**
+  1. Integrar el PR-A y después el PR-B con merge commit (no squash ni rebase), y al integrar el PR-B:
+     `git tag portada-v3 <sha del merge>` y `git push origin portada-v3`, con permiso del dueño.
+  2. Día P: `node scripts/medir.mjs https://elementoweb.com/ --runs 3` y `bash scripts/check-prod.sh`; anotar cuántas
+     corridas de Lighthouse se hicieron y a qué hora, para restarlas de GA4.
+  3. Reversión pre-autorizada si el día P da Lighthouse móvil < 85 o LCP > 3,5 s. Paso 0: apagar el movimiento con
+     `MOVIMIENTO_ACTIVO = false` en `src/scripts/movimiento.ts` o `data-mov-off` en `<html>`. Si no basta,
+     `git log portada-v3..main -- src/components/Navbar.astro src/components/Footer.astro src/lib/site.ts scripts/ src/styles/ src/pages/index.astro`,
+     decidir commit por commit qué se conserva y `git revert -m 1 portada-v3`; si `verify` falla sobre la reversión, la
+     salida de emergencia es el `workflow_dispatch` con `skip_checks` de `deploy.yml`. Volver a publicar la v3 después
+     pide revertir la reversión.
+  4. Ensayo: antes del merge, la reversión se prueba en una rama desechable y se anota aquí.
+- **Pendiente:** ensayo de la reversión; medir GSC y GA4 contra la línea base, como en D51.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

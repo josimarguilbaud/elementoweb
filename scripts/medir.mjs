@@ -34,6 +34,7 @@ export function extraerDeLighthouse(lhr) {
   return {
     lcpMs: a['largest-contentful-paint'].numericValue,
     cls: a['cumulative-layout-shift']?.numericValue ?? null,
+    tbtMs: a['total-blocking-time']?.numericValue ?? null,
     rendimiento: Math.round((lhr.categories?.performance?.score ?? 0) * 100),
     version: lhr.lighthouseVersion ?? 'desconocida',
   };
@@ -79,11 +80,20 @@ async function medirConPsi(url, corridas, clave) {
   return out;
 }
 
-function medirConLighthouse(url, corridas) {
+/* El CLI de Lighthouse es una devDependency fijada (D56): se usa el de node_modules/.bin, así el CI no necesita nada
+   global. Sin node_modules, cae al CLI global si existe. */
+export const LIGHTHOUSE_FALTA = 'No se encontró el CLI de Lighthouse: corre npm ci (lighthouse está en devDependencies).';
+export function binLighthouse() {
+  const local = join(RAIZ, 'node_modules', '.bin', process.platform === 'win32' ? 'lighthouse.cmd' : 'lighthouse');
+  const bin = existsSync(local) ? `"${local}"` : 'lighthouse';
+  return spawnSync(bin, ['--version'], { shell: true, encoding: 'utf8' }).status === 0 ? bin : null;
+}
+
+export function medirConLighthouse(url, corridas, { cpu } = {}) {
   const chrome = rutaChrome();
   if (!chrome) throw new Error('No se encontró Chrome. Define CHROMIUM_PATH.');
-  const probe = spawnSync('lighthouse', ['--version'], { shell: true, encoding: 'utf8' });
-  if (probe.status !== 0) throw new Error('No se encontró el CLI de Lighthouse. Instálalo con: npm install -g lighthouse');
+  const bin = binLighthouse();
+  if (!bin) throw new Error(LIGHTHOUSE_FALTA);
   const out = [];
   // El informe va a un archivo, no a la salida estándar: en Windows el CLI sale con error EPERM al borrar el perfil
   // temporal de Chrome aunque la medición terminó, así que el código de salida no dice si hay informe.
@@ -91,7 +101,8 @@ function medirConLighthouse(url, corridas) {
   try {
     for (let i = 0; i < corridas; i++) {
       const archivo = join(carpeta, `informe-${i}.json`);
-      const r = spawnSync('lighthouse', [url, '--only-categories=performance', '--form-factor=mobile', '--output=json', `--output-path="${archivo}"`, '--quiet', '--chrome-flags="--headless=new --no-sandbox"'], { shell: true, encoding: 'utf8', env: { ...process.env, CHROME_PATH: chrome }, maxBuffer: 64 * 1024 * 1024 });
+      const extra = cpu ? [`--throttling.cpuSlowdownMultiplier=${cpu}`] : [];
+      const r = spawnSync(bin, [url, '--only-categories=performance', '--form-factor=mobile', '--output=json', `--output-path="${archivo}"`, '--quiet', '--chrome-flags="--headless=new --no-sandbox"', ...extra], { shell: true, encoding: 'utf8', env: { ...process.env, CHROME_PATH: chrome }, maxBuffer: 64 * 1024 * 1024 });
       if (!existsSync(archivo)) throw new Error(`Lighthouse no dejó informe (${r.status}): ${(r.stderr || '').slice(0, 300)}`);
       out.push(extraerDeLighthouse(JSON.parse(readFileSync(archivo, 'utf8'))));
     }
@@ -114,12 +125,17 @@ async function principal(args) {
   }
   const url = args.find((a) => /^https?:\/\//.test(a));
   const id = opcion(args, '--id');
-  if (!url || !id) { console.error('Uso: node scripts/medir.mjs <url> --id <id> [--metrica lcp|cls|rendimiento] [--escribir]'); return 2; }
+  const runs = opcion(args, '--runs') ? Number(opcion(args, '--runs')) : null;
+  if (runs !== null && !(Number.isInteger(runs) && runs > 0)) { console.error('--runs necesita un entero positivo'); return 2; }
+  if (!url || (!id && args.includes('--escribir'))) { console.error('Uso: node scripts/medir.mjs <url> [--id <id>] [--runs N] [--metrica lcp|cls|rendimiento] [--escribir]'); return 2; }
   const metrica = (opcion(args, '--metrica') ?? 'lcp').toLowerCase();
   const clave = claveDePsi();
   let corridas; let herramienta;
-  if (clave) { herramienta = 'PageSpeed Insights'; corridas = await medirConPsi(url, 3, clave); }
-  else { console.error('Sin clave en ~/.ssh/psi.key (la API de PageSpeed responde 429 sin clave): se usa Lighthouse local y la etiqueta lo dirá.'); herramienta = 'Lighthouse'; corridas = medirConLighthouse(url, 5); }
+  if (clave) { herramienta = 'PageSpeed Insights'; corridas = await medirConPsi(url, runs ?? 3, clave); }
+  else { console.error('Sin clave en ~/.ssh/psi.key (la API de PageSpeed responde 429 sin clave): se usa Lighthouse local y la etiqueta lo dirá.'); herramienta = 'Lighthouse'; corridas = medirConLighthouse(url, runs ?? 5); }
+  // Día P y diagnóstico: las medianas de TBT y rendimiento, además de la métrica pedida.
+  const tbts = corridas.map((c) => c.tbtMs).filter((x) => x != null);
+  console.log(`corridas: ${corridas.length} · rendimiento mediano ${mediana(corridas.map((c) => c.rendimiento))} · LCP mediano ${formatearLcp(mediana(corridas.map((c) => c.lcpMs)))}${tbts.length ? ` · TBT mediano ${Math.round(mediana(tbts))} ms` : ''}`);
   const fecha = (hoyTxt ?? new Date().toISOString().slice(0, 10));
   const m = construirMedicion({ id, url, metrica, corridas, herramienta, fecha, version: corridas[0].version });
   console.log(JSON.stringify(m, null, 2));

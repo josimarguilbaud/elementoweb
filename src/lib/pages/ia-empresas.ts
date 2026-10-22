@@ -15,7 +15,7 @@ export const iaEmpresas: PageData[] = [
     h1: 'Tu empresa, ahora con un cerebro propio.',
     breadcrumb: 'Inteligencia Artificial para Empresas',
     service: { type: 'Implementación de IA privada (RAG) y automatización de procesos', name: 'Inteligencia artificial para empresas en Panamá' },
-    lead: ['No solo centralizamos tu información: la ponemos a trabajar. Unimos una IA privada que entiende tu negocio con automatización de procesos, para que tu equipo le deje el trabajo repetitivo a las máquinas.'],
+    lead: ['Inteligencia artificial para empresas en Panamá: unimos una IA privada que entiende tu negocio con automatización de procesos, para que tu equipo le deje el trabajo repetitivo a las máquinas.'],
     portada: {
       pie: 'Una IA que responde con tus documentos y ejecuta en tus sistemas, con una persona aprobando lo que importa.',
       riel: [
@@ -29,7 +29,7 @@ export const iaEmpresas: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Implementamos inteligencia artificial para empresas en Panamá: una IA privada que responde con tus propios documentos y cita de dónde sacó cada respuesta, conectada a tus sistemas para ejecutar tareas con aprobación humana en lo sensible. Empezamos con un diagnóstico sin costo y un piloto acotado; los proyectos parten de $2,900 más el consumo de los modelos.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, implementa inteligencia artificial para empresas: una IA privada que responde con tus documentos y cita la fuente, conectada a tu CRM, ERP o WhatsApp para ejecutar tareas con aprobación humana en lo sensible. Empieza con un diagnóstico sin costo y un piloto; desde $2,900 más el consumo de los modelos.',
       },
       {
         type: 'receipt',
@@ -100,7 +100,7 @@ export const iaEmpresas: PageData[] = [
       },
       {
         type: 'tabla',
-        h2: 'Qué hace en cada área de tu empresa',
+        h2: 'Inteligencia artificial para empresas: qué hace en cada área',
         intro: 'La misma arquitectura sirve a varios departamentos. Se empieza por uno y se suman los demás:',
         columnas: ['Área', 'Entiende', 'Ejecuta', 'Se conecta con'],
         filas: [
@@ -114,7 +114,7 @@ export const iaEmpresas: PageData[] = [
       {
         type: 'includes',
         h2: 'Qué incluye el proyecto',
-        intro: 'Desde $2,900 por proyecto, porque siempre hay integraciones con lo que ya usas. Sube según cuántos procesos automaticemos y el volumen de tu operación.',
+        intro: 'Desde $2,900 por proyecto. Sube según cuántos procesos automaticemos y el volumen de tu operación.',
         incluye: [
           { t: 'Diagnóstico sin costo', d: 'Mapeamos tus procesos y detectamos dónde una IA ahorra más horas.' },
           { t: 'Base de conocimiento privada (RAG)', d: 'Tus manuales, contratos, listas de precios y procedimientos en PDF, Word o Drive, sincronizados: actualizas un documento y la IA lo asimila.' },
@@ -132,7 +132,7 @@ export const iaEmpresas: PageData[] = [
       {
         type: 'steps',
         h2: 'Cómo lo implementamos',
-        intro: 'Empezamos pequeño y demostramos valor antes de escalar, sin comprometer toda tu operación de golpe.',
+        intro: 'Un proceso primero; se escala cuando el piloto demuestra valor.',
         items: [
           { h3: '1. Diagnóstico', text: 'Mapeamos tus procesos y detectamos dónde una IA operativa ahorra más horas. Sin costo.' },
           { h3: '2. Diseño y piloto', text: 'Definimos la arquitectura y lanzamos un piloto acotado a un proceso concreto y medible.' },
@@ -143,13 +143,10 @@ export const iaEmpresas: PageData[] = [
       {
         type: 'cards',
         h2: 'Pensado para el entorno empresarial',
-        intro: 'Más allá de la eficiencia, la IA se implementa con control y trazabilidad de principio a fin.',
+        intro: 'Además de los permisos por rol, la auditoría y la aprobación humana que incluye el proyecto:',
         items: [
-          { h3: 'Gobernanza y permisos', text: 'La IA respeta la jerarquía de tu empresa: valida el rol de cada usuario y limita las respuestas a lo que esa persona ya puede ver.' },
-          { h3: 'Panel de horas y auditoría', text: 'Un tablero muestra horas ahorradas y tareas ejecutadas, con el registro de cada decisión y documento que la IA consultó.' },
           { h3: 'Donde tu equipo ya trabaja', text: 'Se consulta desde WhatsApp, Slack o Microsoft Teams. Sin aplicaciones nuevas que aprender.' },
           { h3: 'Visión y voz', text: 'Envías la foto de un recibo o una nota de voz: la IA extrae los datos, los valida contra tus políticas y los carga en el sistema.' },
-          { h3: 'Una persona en el circuito', text: 'Un copiloto, no un piloto automático a ciegas: antes de enviar pagos o correos externos, la IA se detiene y pide el visto bueno.' },
           { h3: 'Infraestructura dedicada', text: 'Corre en infraestructura dedicada, con respaldo continuo del historial y conmutación a otro proveedor de modelo si uno falla.' },
         ],
       },
@@ -157,8 +154,7 @@ export const iaEmpresas: PageData[] = [
         type: 'prose',
         h2: 'Un asistente de IA también necesita infraestructura',
         paragraphs: [
-          'No es solo un prompt bien escrito. Es un sistema que tiene que seguir respondiendo bien el día 200, no solo en la demostración del día uno.',
-          'Por eso vigilamos algo que un hosting normal no mide: si el modelo empieza a responder mal o más lento, no solo si el servidor sigue encendido. Cada conversación, documento consultado y acción ejecutada queda respaldado, y si algo falla se recupera el estado exacto de antes. Es la misma disciplina con la que operamos el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento de los sitios web</a> de nuestros clientes.',
+          'Un asistente de IA es un sistema que tiene que seguir respondiendo bien el día 200, no solo en la demostración del día uno. Por eso vigilamos algo que un hosting normal no mide: si el modelo empieza a responder mal o más lento, no solo si el servidor sigue encendido. Cada conversación, documento consultado y acción ejecutada queda respaldado, y si algo falla se recupera el estado exacto de antes. Es la misma disciplina con la que operamos el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento de los sitios web</a> de nuestros clientes.',
         ],
       },
       {

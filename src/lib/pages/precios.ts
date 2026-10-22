@@ -32,7 +32,7 @@ export const precios: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'En Panamá, una página web con Elemento Web cuesta desde $550 una landing page, desde $1,250 un sitio corporativo de hasta 6 páginas y desde $1,950 una tienda online con hasta 25 productos cargados. Los precios son en USD, sin ITBMS (7%), y cada proyecto se cierra por escrito antes de empezar. Hosting y dominio van aparte.',
+        text: 'Con Elemento Web, agencia de Ciudad de Panamá, una página web cuesta desde $550 una landing page, desde $1,250 un sitio corporativo de hasta 6 páginas y desde $1,950 una tienda online con hasta 25 productos cargados. Precios en USD, sin ITBMS (7%), cerrados por escrito antes de empezar. Dominio, hosting y SSL van aparte.',
       },
       {
         type: 'receipt',
@@ -43,11 +43,10 @@ export const precios: PageData[] = [
         medicionId: 'precios-lcp',
         pie: ['Dominio, hosting y mantenimiento se pagan aparte.', 'Precios en dólares, sin ITBMS (7%).'],
       },
-      { type: 'pricing', full: true, h2: 'Tres formatos, un precio de partida cada uno', intro: 'Elige por lo que necesita tu negocio, no por el precio: una landing sirve para una campaña, el sitio corporativo para presentar toda la empresa y la tienda para vender en línea. Si tu caso no encaja, el proyecto <a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">a medida</a> se cotiza según alcance.' },
+      { type: 'pricing', full: true, h2: 'Precios de páginas web en Panamá por formato', intro: 'Una landing sirve para una campaña, el sitio corporativo para presentar toda la empresa y la tienda para vender en línea. Si tu caso no encaja, el proyecto <a href="/tecnologias/desarrollo-web-a-medida-vue-react-panama/">a medida</a> se cotiza según alcance.' },
       {
         type: 'tabla',
         h2: 'Los tres formatos, lado a lado',
-        intro: 'Lo que cambia entre uno y otro, con el detalle de cada servicio en su página:',
         columnas: ['', 'Landing page', 'Web empresarial', 'Tienda online'],
         filas: [
           ['Sirve para', 'Una campaña o una sola oferta', 'Presentar toda la empresa y sus servicios', 'Vender productos en línea'],
@@ -117,7 +116,7 @@ export const precios: PageData[] = [
       {
         type: 'includes',
         h2: 'Qué incluye siempre y qué se paga aparte',
-        intro: 'La base es la misma en los tres formatos. Lo que va aparte también es igual, y lo ves antes de firmar.',
+        intro: 'La base y lo que va aparte son iguales en los tres formatos, y los ves antes de firmar.',
         incluye: [
           { t: 'Diseño adaptado', d: 'Se ve y funciona bien en celular y en computadora.' },
           { t: 'Formularios y WhatsApp', d: 'Configurados y comprobados antes de publicar.' },
@@ -131,7 +130,7 @@ export const precios: PageData[] = [
         noIncluye: ['Dominio, hosting y SSL: desde $350 al año', 'Correo corporativo: desde $60 al año', 'Mantenimiento: desde $99 al mes', 'Licencias y comisiones de terceros', 'Redacción de contenido, imágenes y logo'],
         medimos: ['Clics en WhatsApp', 'Envíos de formularios'],
       },
-      { type: 'extras', h2: 'Infraestructura anual: hosting, dominio y SSL', intro: 'Además del proyecto, tu sitio necesita dónde vivir. El nivel depende del tráfico, las integraciones y el control que necesites. Mantenimiento web desde $99/mes.' },
+      { type: 'extras', h2: 'Infraestructura anual: hosting, dominio y SSL', intro: 'El nivel de hosting depende del tráfico, las integraciones y el control que necesites. Mantenimiento web desde $99/mes.' },
       { type: 'production', h2: '¿No tienes textos, imágenes o logo?', intro: 'Se cotizan aparte del diseño y los apruebas antes de publicarlos.' },
       {
         type: 'faq',

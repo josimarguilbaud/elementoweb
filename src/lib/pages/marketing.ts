@@ -14,9 +14,8 @@ const modeloCobro = {
   type: 'prose' as const,
   h2: 'Cómo se cobra la pauta',
   paragraphs: [
-    'La pauta tiene dos costos distintos y conviene no confundirlos. El primero es <strong>nuestro fee de gestión</strong>: lo que nos pagas por crear, optimizar y reportar tus campañas. El segundo es <strong>la inversión publicitaria</strong>: el dinero que se muestra en anuncios, y ese va directo a Google o Meta desde tu propia cuenta.',
-    'No intermediamos tu inversión ni le aplicamos margen. La cargas en tu cuenta de anunciante, tú la ves y tú la controlas. Nosotros cobramos solo la gestión. Así sabes exactamente cuánto va a trabajo nuestro y cuánto va a mostrar tus anuncios.',
-    'Esto también significa que la cuenta publicitaria queda a tu nombre. Si algún día te vas, te llevas el historial y el aprendizaje del algoritmo. No es rehén de nadie.',
+    'La pauta tiene dos costos distintos. <strong>Nuestro fee de gestión</strong> paga crear, optimizar y reportar tus campañas. <strong>La inversión publicitaria</strong> es el dinero que se muestra en anuncios: va directo a Google o Meta desde tu propia cuenta, sin intermediación ni margen nuestro.',
+    'La cuenta publicitaria queda a tu nombre: tú ves y controlas la inversión, y si algún día te vas, te llevas el historial y el aprendizaje del algoritmo.',
   ],
 };
 
@@ -39,18 +38,17 @@ export const marketingPages: PageData[] = [
       ],
     },
     lead: [
-      'Tu web es el destino; el marketing es lo que lleva gente hasta ella. Hacemos las dos cosas, así que tus campañas y tu sitio hablan el mismo idioma.',
-      'Una campaña que manda el tráfico a una web que no convierte pierde dinero, y una web bonita sin tráfico no vende. Nosotros cerramos el círculo: atraemos, convertimos y medimos, con un fee de gestión claro y tu inversión publicitaria siempre bajo tu control.',
+      'Marketing digital en Panamá con la web como destino: hacemos las dos cosas, así que tus campañas y tu sitio hablan el mismo idioma. Atraemos, convertimos y medimos, con un fee de gestión claro y tu inversión publicitaria siempre bajo tu control.',
     ],
     blocks: [
       {
         type: 'answer',
         fecha: '2026-10-20',
-        text: 'Hacemos marketing digital en Panamá que trae clientes: Google Ads, Facebook e Instagram Ads, contenido para redes, email, WhatsApp marketing, automatizaciones con n8n y videos publicitarios hechos con IA. Cobramos un fee de gestión claro y tu inversión publicitaria va directo a la plataforma. Antes de pautar aseguramos el destino y la medición de conversiones.',
+        text: 'Elemento Web es una agencia de marketing digital y proyectos de IA en Ciudad de Panamá: Google Ads, Facebook e Instagram Ads, contenido para redes, email, WhatsApp marketing, automatizaciones con n8n y videos publicitarios. Cobramos un fee de gestión claro; tu inversión publicitaria va directo a la plataforma. Antes de pautar aseguramos el destino y la medición.',
       },
       {
         type: 'tabla',
-        h2: 'Elige por lo que quieres lograr',
+        h2: 'Marketing digital en Panamá: elige por lo que quieres lograr',
         intro: 'Cada canal resuelve algo distinto. Estas son las referencias publicadas de gestión y de producción:',
         columnas: ['Si quieres…', 'Servicio', 'Referencia publicada'],
         filas: [
@@ -84,18 +82,6 @@ export const marketingPages: PageData[] = [
         ],
         nota: 'Cuando el anuncio y el destino los hace el mismo equipo, nadie se culpa por la fuga: se mide de punta a punta.',
       },
-      {
-        type: 'cards',
-        h2: 'Qué hacemos en marketing',
-        items: [
-          { h3: 'Google Ads', text: 'Aparece justo cuando alguien busca lo que vendes. Búsqueda, display y remarketing gestionados y optimizados.', link: { slug: 'marketing/google-ads-panama', label: 'Google Ads' } },
-          { h3: 'Facebook e Instagram Ads', text: 'Campañas en Meta para descubrimiento, captación y ventas, con segmentación afinada y varias versiones de creativo por campaña. También ofrecemos trafficker dedicado si manejas varias cuentas.', link: { slug: 'marketing/facebook-instagram-ads-panama', label: 'Meta Ads' } },
-          { h3: 'Contenido para redes', text: 'Publicaciones, diseño gráfico y Reels que mantienen tu marca viva entre campaña y campaña.', link: { slug: 'marketing/contenido-redes-sociales-panama', label: 'Contenido para Redes' } },
-          { h3: 'Email marketing', text: 'Newsletters, automatizaciones y recuperación de clientes que ya te conocen, en una lista que es tuya.', link: { slug: 'marketing/email-marketing-panama', label: 'Email Marketing' } },
-          { h3: 'WhatsApp marketing masivo', text: 'Campañas por la API oficial de WhatsApp Business, dentro de las políticas de Meta. Somos Tech Provider verificado por Meta.', link: { slug: 'marketing/whatsapp-marketing-masivo-panama', label: 'WhatsApp Marketing' } },
-          { h3: 'Automatizaciones con n8n', text: 'Conectamos tus herramientas para que el marketing y las ventas funcionen sin trabajo manual repetitivo.', link: { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones n8n' } },
-        ],
-      },
       modeloCobro,
       {
         type: 'faq',
@@ -128,7 +114,7 @@ export const marketingPages: PageData[] = [
       {
         type: 'cards',
         h2: 'Para quién es este servicio',
-        intro: 'El marketing digital no le sirve igual a todos. Estos son los perfiles donde más rinde lo que hacemos.',
+        intro: 'Los tres perfiles donde más rinde lo que hacemos.',
         items: [
           { h3: 'Negocios que ya venden y quieren escalar', text: 'Si tu producto o servicio ya funciona de boca en boca, la pauta le echa gasolina a algo que ya arde. Es el escenario ideal: sabemos qué convence, solo hay que ponerlo frente a más gente.' },
           { h3: 'Negocios que lanzan algo nuevo', text: 'Un producto, una sucursal o una temporada. Cuando nadie te busca todavía porque no saben que existes, Meta y contenido construyen el conocimiento que después Google Ads cosecha.' },
@@ -139,9 +125,9 @@ export const marketingPages: PageData[] = [
         type: 'prose',
         h2: 'Un solo equipo para atraer y para convertir',
         paragraphs: [
-          'La mayoría de los negocios contrata la web por un lado y la pauta por otro, y ahí empieza el problema: la agencia de anuncios culpa a la web por no convertir, y la de web culpa a los anuncios por traer mal tráfico. En el medio, tu presupuesto se evapora sin que nadie se haga responsable del resultado.',
-          'Nosotros cerramos ese círculo porque hacemos las dos cosas. El anuncio y el destino se diseñan juntos: el mensaje que promete algo en el anuncio es el mismo que cumple en la landing, y la conversión se mide de punta a punta. Cuando algo no rinde, sabemos exactamente dónde está la fuga.',
-          'Y no todo es pauta. El <a href="/marketing/email-marketing-panama/">email</a>, el <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp</a> y las <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones</a> exprimen a los contactos que la pauta ya te consiguió, para que no pagues dos veces por el mismo cliente. Ese es el marketing que trae clientes y, sobre todo, que los conserva.',
+          'Cuando la web y la pauta las hacen dos proveedores, la agencia de anuncios culpa a la web por no convertir y la de web culpa a los anuncios por traer mal tráfico, y nadie responde por el resultado.',
+          'Nosotros diseñamos juntos el anuncio y el destino: lo que el anuncio promete es lo que cumple la landing, y la conversión se mide de punta a punta, así que sabemos dónde está la fuga. Si manejas varias marcas, cada cuenta de Meta tiene un trafficker dedicado.',
+          'Y no todo es pauta. El <a href="/marketing/email-marketing-panama/">email</a>, el <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp</a> por la API oficial (somos Tech Provider verificado por Meta) y las <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones</a> trabajan los contactos que la pauta ya te consiguió, para que no pagues dos veces por el mismo cliente.',
         ],
       },
       { type: 'form', h2: 'Hablemos de tu marketing', intro: 'Cuéntanos qué vendes, a quién y qué canal has probado: te decimos por dónde conviene empezar y con qué presupuesto.' },
@@ -170,7 +156,7 @@ export const marketingPages: PageData[] = [
     h1: 'Google Ads en Panamá: aparece cuando te buscan',
     breadcrumb: 'Google Ads',
     service: { type: 'Gestión de campañas de Google Ads' },
-    lead: ['Campañas de búsqueda en Google para que te encuentre quien ya está buscando lo que vendes, con la cuenta a tu nombre.'],
+    lead: ['Google Ads en Panamá: campañas de búsqueda para que te encuentre quien ya está buscando lo que vendes, con la cuenta a tu nombre.'],
     portada: {
       pie: 'Quien busca un servicio desde el celular ya decidió que lo necesita: ahí es donde aparece tu anuncio.',
       riel: [
@@ -184,7 +170,7 @@ export const marketingPages: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Gestionamos Google Ads en Panamá para negocios que quieren aparecer cuando alguien busca lo que venden. Creamos la cuenta a tu nombre, armamos campañas de búsqueda con palabras de intención y negativas desde el primer día, medimos las conversiones reales y cada mes reportamos qué búsquedas trajeron consultas. La inversión publicitaria va directo a Google.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, gestiona Google Ads para negocios que quieren aparecer cuando alguien busca lo que venden: cuenta a tu nombre, campañas de búsqueda con palabras de intención y negativas desde el primer día, conversiones medidas con GA4 y reporte mensual por búsqueda. La inversión publicitaria va directo a Google.',
       },
       {
         type: 'receipt',
@@ -235,7 +221,7 @@ export const marketingPages: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye la gestión',
+        h2: 'Qué incluye la gestión de Google Ads en Panamá',
         intro: 'Gestión con referencia publicada desde $300 al mes; se confirma en tu cotización. La inversión publicitaria va aparte, directo a Google.',
         incluye: [
           { t: 'Investigación de palabras clave', d: 'Volumen y costo por clic en Panamá para tu rubro, separando las búsquedas que compran de las que solo curiosean.' },
@@ -251,24 +237,10 @@ export const marketingPages: PageData[] = [
         noIncluye: ['La inversión publicitaria, que pagas directo a Google', 'Diseño de una página de destino nueva (se cotiza aparte)', 'Pauta en Meta, que es otro servicio'],
         medimos: ['Costo por clic', 'CTR', 'Costo por consulta', 'Tasa de conversión', 'Cuota de impresiones', 'Términos de búsqueda'],
       },
-      modeloCobro,
-      {
-        type: 'steps',
-        h2: 'Cómo montamos tu campaña',
-        intro: 'Una campaña que rinde no es cuestión de subir el presupuesto, sino de estructura. Este es el orden con el que trabajamos.',
-        items: [
-          { h3: 'Palabras con intención', text: 'Priorizamos términos concretos ("plomero de emergencia 24 horas Panamá") sobre genéricos ("plomería"): los primeros traen a quien tiene el problema y el dinero para resolverlo.' },
-          { h3: 'Estructura y anuncios', text: 'Agrupamos las palabras por tema para que cada anuncio le hable directo a esa búsqueda, con varias versiones de titular y descripción para probar.' },
-          { h3: 'Negativas', text: 'Le decimos a Google dónde NO pagar: "gratis", "empleo", "cómo hacerlo yo mismo". La lista se afina cada semana.' },
-          { h3: 'Destino y conversiones', text: 'Conectamos el anuncio a una página que cumple lo prometido y medimos la conversión real, no solo el clic.' },
-          { h3: 'Optimización', text: 'Semana a semana movemos presupuesto hacia lo que trae consultas. El aprendizaje se acumula y el costo por cliente baja con el tiempo.' },
-        ],
-      },
       {
         type: 'prose',
         h2: 'Búsqueda, Display y Performance Max: cuál sirve para qué',
         paragraphs: [
-          'Google no vende un solo producto publicitario y confundirlos es la causa más común de presupuesto quemado en Panamá.',
           'Las campañas de <strong>búsqueda</strong> muestran tu anuncio a quien ya está buscando lo que vendes. Es la que casi siempre conviene empezar, porque la intención de compra ya existe: alguien que escribe "plomero urgente Panamá" quiere un plomero ahora.',
           'Las de <strong>Display</strong> ponen banners en sitios de terceros a gente que no te estaba buscando. Sirven para recordar a quien ya te visitó, y son malas como primera campaña: mucho clic barato, casi ninguna venta.',
           '<strong>Performance Max</strong> mezcla todos los canales y decide sola dónde gastar. Rinde cuando ya hay historial de conversiones; arrancar con ella sin datos es entregarle el presupuesto a un sistema que todavía no sabe qué es un buen cliente para ti.',
@@ -290,14 +262,6 @@ export const marketingPages: PageData[] = [
         paragraphs: [
           'Si tu producto no se busca porque la gente no sabe que existe, no hay demanda que capturar: ahí funciona mejor <a href="/marketing/facebook-instagram-ads-panama/">Meta Ads</a>, que muestra a quien no te estaba buscando. Si tu margen y tu ticket son muy bajos, el costo por clic se come la ganancia antes de la primera venta.',
           'Si el destino del anuncio es malo —una portada genérica en vez de una <a href="/servicios/landing-pages-alta-conversion-panama/">landing</a>, o un sitio lento en celular— la campaña va a fallar sin importar cuán bien esté armada. Y con muy poca inversión diaria la campaña no acumula datos para optimizarse. <strong>Es más honesto no empezar que empezar con la mitad de lo necesario.</strong>',
-        ],
-      },
-      {
-        type: 'prose',
-        h2: 'Qué medir: costo por consulta, no costo por clic',
-        paragraphs: [
-          'El costo por clic es la métrica que más se mira y la que menos importa. Un clic barato que nunca compra es más caro que uno caro que compra.',
-          'Lo que hay que medir es la cadena completa: clics, conversiones y, de esas conversiones, cuántas terminaron en venta. Y el corte por término de búsqueda, no por campaña: dentro de una misma campaña suele haber tres o cuatro búsquedas que traen casi todo el negocio y una docena que solo consumen.',
         ],
       },
       {
@@ -357,7 +321,7 @@ export const marketingPages: PageData[] = [
     h1: 'Publicidad en Facebook e Instagram',
     breadcrumb: 'Facebook e Instagram Ads',
     service: { type: 'Gestión de campañas en Facebook e Instagram (Meta Ads)' },
-    lead: ['Anuncios en Facebook e Instagram para llegar a quien todavía no te busca y volver por quien ya te visitó.'],
+    lead: ['Publicidad en Facebook e Instagram en Panamá para llegar a quien todavía no te busca y volver por quien ya te visitó.'],
     portada: {
       pie: 'En el feed, tu anuncio compite con todo lo demás: por eso el mensaje va en grande y la acción, clara.',
       riel: [
@@ -371,7 +335,7 @@ export const marketingPages: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Gestionamos publicidad en Facebook e Instagram (Meta Ads) en Panamá para dar a conocer tu negocio, conseguir mensajes por WhatsApp o vender en tu tienda. Instalamos el píxel y la API de conversiones, probamos varios creativos por campaña, escalamos el que gana y te reportamos cada mes. La inversión publicitaria va directo a Meta desde tu cuenta.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, gestiona publicidad en Facebook e Instagram (Meta Ads) para dar a conocer tu negocio, conseguir mensajes por WhatsApp o vender en tu tienda: píxel y API de conversiones, varios creativos por campaña, escalamos el que gana y reportamos cada mes. La inversión va directo a Meta desde tu cuenta.',
       },
       {
         type: 'receipt',
@@ -419,7 +383,7 @@ export const marketingPages: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye la gestión',
+        h2: 'Qué incluye la publicidad en Facebook e Instagram',
         intro: 'Gestión con referencia publicada desde $300 al mes por cuenta; se confirma en tu cotización. La inversión publicitaria va aparte, directo a Meta.',
         incluye: [
           { t: 'Estrategia por objetivo', d: 'Reconocimiento, mensajes, leads o ventas: la campaña se arma según lo que quieres lograr, porque Meta optimiza hacia lo que le pidas.' },
@@ -449,19 +413,6 @@ export const marketingPages: PageData[] = [
         ],
         nota: 'Ejemplo: con 4 cuentas, el fee de gestión total es de $1,200 al mes; la inversión de cada una va aparte, directo a Meta desde su propia cuenta.',
       },
-      modeloCobro,
-      {
-        type: 'steps',
-        h2: 'Cómo estructuramos tu campaña en Meta',
-        intro: 'La segmentación afinada y el creativo correcto son lo que separa una campaña que vende de una que solo gasta.',
-        items: [
-          { h3: 'Objetivo real', text: 'Definimos qué quieres lograr de verdad: mensajes a WhatsApp, ventas en tu tienda o registro de interesados. La estructura cambia por completo según la meta.' },
-          { h3: 'Públicos', text: 'Audiencias frías, tibias y de remarketing; con tus mejores clientes creamos públicos similares para encontrar más gente parecida a quien ya te compra.' },
-          { h3: 'Píxel y conversiones', text: 'Instalamos el píxel de Meta y la API de conversiones para que el algoritmo aprenda de resultados reales y no de suposiciones.' },
-          { h3: 'Creativos por ángulos', text: 'Varias versiones (imagen, carrusel, Reel) con mensajes distintos. El primer segundo del video y el gancho del texto deciden si el usuario se detiene.' },
-          { h3: 'Escalar y podar', text: 'El creativo y el público que ganan reciben más presupuesto; los que pierden se apagan. Cada semana afinamos para bajar el costo por resultado.' },
-        ],
-      },
       {
         type: 'prose',
         h2: 'El creativo pesa más que la segmentación',
@@ -474,8 +425,7 @@ export const marketingPages: PageData[] = [
         type: 'prose',
         h2: 'Por qué te rechazan anuncios, y qué hacer',
         paragraphs: [
-          'Las categorías restringidas son la primera causa: salud, estética, finanzas, empleo y vivienda tienen reglas especiales. En estética, los antes y después demasiado explícitos y las promesas de resultado se rechazan de forma sistemática.',
-          'La segunda sorprende a mucha gente: los textos que señalan una característica personal del usuario. "¿Tienes sobrepeso?" viola la política porque implica que la plataforma sabe algo personal de quien lo lee; "baja de peso con…" sí pasa.',
+          'La primera causa son las categorías restringidas: salud, estética, finanzas, empleo y vivienda tienen reglas especiales, y en estética los antes y después demasiado explícitos y las promesas de resultado se rechazan siempre. La segunda, los textos que señalan una característica personal del usuario: "¿Tienes sobrepeso?" viola la política; "baja de peso con…" sí pasa.',
           '<strong>Una cuenta con rechazos repetidos termina limitada</strong>, lo que deja la captación en cero de un día para otro. Por eso conviene no depender solo de la pauta: el tráfico orgánico de tu web no lo puede rechazar nadie.',
         ],
       },
@@ -489,17 +439,9 @@ export const marketingPages: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El creativo se agota, y eso no es un error tuyo',
-        paragraphs: [
-          'Toda campaña de Meta que funciona termina bajando su rendimiento: la audiencia ya vio ese anuncio demasiadas veces y deja de reaccionar. La señal es que el costo por resultado sube sin que se haya cambiado nada; subirle presupuesto lo empeora.',
-          'Lo que funciona es rotar creativos antes de que se agoten: tres o cuatro variantes en circulación y una nueva de forma regular mantienen el costo estable y te dicen qué tipo de creativo funciona con tu audiencia.',
-        ],
-      },
-      {
-        type: 'prose',
         h2: 'Qué medir: costo por resultado y frecuencia',
         paragraphs: [
-          'El costo por resultado es la métrica base: cuánto pagas por cada acción que te importa. La segunda, y la que casi nadie mira, es la <strong>frecuencia</strong>: si sube junto con el costo por resultado, el problema es el creativo agotado.',
+          'El costo por resultado es la métrica base: cuánto pagas por cada acción que te importa. La segunda, y la que casi nadie mira, es la <strong>frecuencia</strong>: si sube junto con el costo por resultado, la audiencia ya vio demasiado el anuncio. Subir el presupuesto lo empeora; lo que funciona es tener tres o cuatro creativos en circulación y sumar uno nuevo de forma regular.',
           'El tercero es la calidad del resultado. Meta es muy bueno consiguiendo mensajes baratos, y muchos de esos mensajes no compran: si el costo por mensaje baja mientras el costo por venta sube, la campaña optimiza hacia la métrica equivocada.',
         ],
       },
@@ -560,7 +502,7 @@ export const marketingPages: PageData[] = [
     h1: 'Contenido para redes que sí mueve la marca',
     breadcrumb: 'Contenido para Redes',
     service: { type: 'Gestión de contenido para redes sociales' },
-    lead: ['Un mes de Instagram y Facebook entregado de una vez: calendario, diseño, textos y Reels con un trabajo cada uno.'],
+    lead: ['Manejo de Instagram y Facebook para negocios en Panamá: el mes completo entregado de una vez, con calendario, diseño, textos y Reels que tienen un trabajo cada uno.'],
     portada: {
       pie: 'Cada pieza se produce con un objetivo: que te visiten, que te escriban o que te guarden. Los likes no pagan la renta.',
       riel: [
@@ -574,7 +516,7 @@ export const marketingPages: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Manejamos el contenido de Instagram y Facebook de negocios en Panamá: plan mensual, diseño de cada pieza con tu identidad, textos con llamado a la acción y Reels editados para los primeros tres segundos. Entregamos el mes completo para que lo apruebes antes de publicar y medimos lo que hizo la gente: clics, mensajes y guardados, no solo seguidores.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, maneja el Instagram y Facebook de negocios panameños: plan mensual, diseño con tu identidad, textos con llamado a la acción y Reels editados para los primeros tres segundos. Entregamos el mes completo para aprobar antes de publicar y medimos clics, mensajes y guardados, no solo seguidores.',
       },
       {
         type: 'receipt',
@@ -637,21 +579,9 @@ export const marketingPages: PageData[] = [
         type: 'prose',
         h2: 'Manejo de Instagram para negocios en Panamá',
         paragraphs: [
-          'Manejar el Instagram de un negocio no es subir fotos cuando hay tiempo: es decidir qué se publica cada semana y para qué, mantener una línea visual reconocible y llevar a la gente a un lugar donde pueda comprar o escribir. Esa es la diferencia entre una cuenta que acompaña y una que vende.',
+          'Manejar el Instagram de un negocio es decidir qué se publica cada semana y para qué, mantener una línea visual reconocible y llevar a la gente a un lugar donde pueda comprar o escribir.',
           'El manejo que hacemos cubre el perfil completo: biografía y enlace, historias destacadas con lo que más preguntan tus clientes, publicaciones y carruseles con su objetivo, Reels producidos para el alcance y un reporte mensual de lo que la gente hizo. Si quieres, sumamos la respuesta a comentarios y mensajes.',
           'Y lo hacemos pensando en Panamá: horarios en los que tu público de verdad está en el celular, fechas del calendario local y un tono que suena a tu negocio y no a una plantilla traducida.',
-        ],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo producimos tu contenido mes a mes',
-        intro: 'El contenido que funciona no sale de la improvisación. Este es el proceso detrás de cada mes.',
-        items: [
-          { h3: 'Estrategia y línea visual', text: 'Pilares de contenido, tono de voz y una identidad gráfica consistente para que tu marca se reconozca de un vistazo.' },
-          { h3: 'Calendario', text: 'El mes completo: qué se publica, cuándo y con qué objetivo, con las fechas clave y las campañas de temporada.' },
-          { h3: 'Diseño y guiones', text: 'Piezas gráficas con tu identidad y guiones de Reels pensados para enganchar en los primeros tres segundos.' },
-          { h3: 'Producción de video', text: 'Editamos y producimos los Reels con el material acordado, cuidando ritmo, subtítulos y el gancho inicial.' },
-          { h3: 'Publicación y reporte', text: 'Programamos las piezas y al cierre del mes te entregamos lo que funcionó, para orientar el mes siguiente.' },
         ],
       },
       {
@@ -666,8 +596,7 @@ export const marketingPages: PageData[] = [
         type: 'prose',
         h2: 'Cuánto contenido hace falta de verdad',
         paragraphs: [
-          'La constancia importa más que la frecuencia. Tres publicaciones semanales sostenidas durante un año rinden muchísimo más que publicaciones diarias durante seis semanas seguidas de tres meses de silencio: el algoritmo penaliza el abandono más de lo que premia el volumen.',
-          '<strong>La pregunta correcta no es cuánto publicar, sino cuánto puedes sostener doce meses seguidos.</strong> Ese número, sea el que sea, es tu frecuencia.',
+          'La constancia importa más que la frecuencia: tres publicaciones semanales durante un año rinden más que publicaciones diarias durante seis semanas seguidas de tres meses de silencio. <strong>Tu frecuencia es la que puedes sostener doce meses seguidos.</strong>',
         ],
       },
       {
@@ -743,7 +672,7 @@ export const marketingPages: PageData[] = [
     h1: 'Email marketing: el canal que sí es tuyo',
     breadcrumb: 'Email Marketing',
     service: { type: 'Gestión de email marketing' },
-    lead: ['Newsletters y correos automáticos que llegan a la bandeja de entrada y traen de vuelta a tus clientes.'],
+    lead: ['Email marketing en Panamá: newsletters y correos automáticos que llegan a la bandeja de entrada y traen de vuelta a tus clientes.'],
     portada: {
       pie: 'Tu lista de correos no depende de ningún algoritmo: le escribes a quien te dio permiso, cuando tú decides.',
       riel: [
@@ -757,7 +686,7 @@ export const marketingPages: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Gestionamos email marketing en Panamá sobre una lista propia de gente que te dio permiso. Primero autenticamos tu dominio con SPF, DKIM y DMARC para que los correos lleguen a la bandeja de entrada; luego diseñamos newsletters con tu marca y configuramos los envíos automáticos de bienvenida, carrito abandonado y reactivación. Medimos entregas, clics y bajas.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, gestiona email marketing sobre una lista propia de gente que te dio permiso. Primero autenticamos tu dominio con SPF, DKIM y DMARC; luego diseñamos newsletters con tu marca y activamos los envíos automáticos de bienvenida, carrito abandonado y reactivación. Medimos entregas, clics y bajas, no solo aperturas.',
       },
       {
         type: 'receipt',
@@ -806,7 +735,7 @@ export const marketingPages: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye la gestión',
+        h2: 'Qué incluye la gestión de email marketing',
         intro: 'Gestión con referencia publicada desde $200 al mes, sobre la plataforma de envío que mejor se ajuste a tu volumen; se confirma en tu cotización.',
         incluye: [
           { t: 'Captación de correos', d: 'Formularios en tu web y tus redes, con un motivo real para suscribirse.' },
@@ -821,18 +750,6 @@ export const marketingPages: PageData[] = [
         entregables: ['Dominio autenticado (SPF, DKIM y DMARC)', 'Plantillas de boletín con tu marca', 'Serie de bienvenida y reactivación activas', 'Informe mensual con recomendaciones'],
         noIncluye: ['El costo de la plataforma de envío, que se paga directo al proveedor', 'Compra o alquiler de listas de correo, que no hacemos', 'Fotografía de producto (se cotiza aparte)'],
         medimos: ['Entregabilidad', 'Rebotes', 'Clics', 'Bajas y quejas', 'Ventas atribuidas', 'Crecimiento de la lista'],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo montamos tu email marketing',
-        intro: 'El email rinde cuando la base técnica está sana y los envíos son relevantes. Este es el orden.',
-        items: [
-          { h3: 'Captación', text: 'Formularios en tu web y tus redes, con un incentivo claro para suscribirse. Una lista propia, construida con permiso, es de los activos más valiosos de tu negocio.' },
-          { h3: 'Entregabilidad', text: 'SPF, DKIM y DMARC para que los servidores confíen en ti. Sin esta base, hasta el mejor correo cae en spam.' },
-          { h3: 'Plantillas y segmentación', text: 'Plantillas con tu identidad y la lista dividida por interés y comportamiento, para que cada persona reciba lo que le importa.' },
-          { h3: 'Automatizaciones', text: 'Bienvenida, carrito abandonado y reactivación: se arman una vez y recuperan ventas de forma constante.' },
-          { h3: 'Medición', text: 'Entregas, clics y conversiones; ajustamos asuntos, horarios y segmentos con números claros.' },
-        ],
       },
       {
         type: 'prose',
@@ -862,8 +779,7 @@ export const marketingPages: PageData[] = [
         type: 'prose',
         h2: 'Tu lista es tuya, y eso lo cambia todo',
         paragraphs: [
-          'En redes sociales le alquilas la audiencia al algoritmo: puede recortar tu alcance o cambiar las reglas de un día para otro. Con el email, nadie se interpone entre tu mensaje y tu cliente, y nadie te puede quitar esa lista.',
-          'Construir ese activo empieza en tu web: cada visitante que se suscribe es un contacto que capturaste una vez y puedes reactivar mil veces. Por eso el email y una buena web se potencian.',
+          'En redes le alquilas la audiencia al algoritmo, que puede recortar tu alcance de un día para otro. Con el email nadie se interpone entre tu mensaje y tu cliente, y nadie te puede quitar la lista. Ese activo se construye en tu web: cada visitante que se suscribe es un contacto que capturas una vez y puedes reactivar muchas.',
         ],
       },
       {
@@ -923,7 +839,7 @@ export const marketingPages: PageData[] = [
     h1: 'WhatsApp marketing, sin que te bloqueen',
     breadcrumb: 'WhatsApp Marketing',
     service: { type: 'Campañas de WhatsApp marketing masivo con API oficial' },
-    lead: ['Campañas por la API oficial de WhatsApp Business, con plantillas aprobadas y a contactos que aceptaron recibirlas.'],
+    lead: ['WhatsApp marketing masivo en Panamá por la API oficial de WhatsApp Business, con plantillas aprobadas y a contactos que aceptaron recibirlas.'],
     portada: {
       pie: 'El número por el que te escriben tus clientes vale más que cualquier campaña: por eso se cuida con la API oficial.',
       riel: [
@@ -937,7 +853,7 @@ export const marketingPages: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Hacemos campañas de WhatsApp marketing masivo en Panamá por la API oficial de WhatsApp Business, no con apps que ponen en riesgo tu número. Gestionamos la aprobación de las plantillas ante Meta, enviamos solo a contactos que aceptaron recibir mensajes y las respuestas llegan a WazaCRM. Meta cobra cada plantilla entregada según su categoría, desde tu cuenta.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá y Tech Provider verificado por Meta, hace campañas de WhatsApp marketing masivo por la API oficial de WhatsApp Business, no con apps que arriesgan tu número. Aprobamos las plantillas ante Meta, enviamos solo a contactos con consentimiento y las respuestas llegan a WazaCRM. Meta cobra cada plantilla entregada, desde tu cuenta.',
       },
       {
         type: 'receipt',
@@ -989,7 +905,7 @@ export const marketingPages: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye',
+        h2: 'Qué incluye el WhatsApp marketing masivo',
         intro: 'Implementación inicial más gestión de campañas con referencia publicada desde $150 al mes; se confirma en tu cotización. El costo de los mensajes lo cobra Meta, desde tu cuenta.',
         incluye: [
           { t: 'Alta del número en la API oficial', d: 'Verificación de tu cuenta comercial y del número de WhatsApp Business.' },
@@ -1004,18 +920,6 @@ export const marketingPages: PageData[] = [
         entregables: ['Número activo en la API oficial de WhatsApp Business', 'Plantillas aprobadas por Meta', 'Campañas del mes enviadas y medidas', 'Informe mensual de respuestas y bajas'],
         noIncluye: ['El costo de los mensajes que cobra Meta', 'Envíos a listas compradas o sin consentimiento, que no hacemos', 'Atención de las respuestas por nuestro equipo (la hace tu equipo o un asistente de IA)'],
         medimos: ['Tasa de respuesta', 'Bajas y reportes', 'Lectura', 'Costo por plantilla', 'Ventas en la conversación'],
-      },
-      {
-        type: 'steps',
-        h2: 'Cómo lanzamos una campaña por WhatsApp',
-        intro: 'Hacerlo por la API oficial tiene un orden que protege tu número y respeta las reglas de Meta.',
-        items: [
-          { h3: 'Verificación del número', text: 'Damos de alta tu número en la API oficial de WhatsApp Business y verificamos tu cuenta comercial. Es el paso que protege tu línea.' },
-          { h3: 'Consentimiento', text: 'Construimos o revisamos tu base de contactos que aceptaron recibir mensajes. Solo se envía a quien dio permiso.' },
-          { h3: 'Plantillas', text: 'Redactamos los mensajes y gestionamos su aprobación ante Meta. Una plantilla clara y bien categorizada se aprueba rápido.' },
-          { h3: 'Segmentación y envío', text: 'Cada grupo recibe lo relevante, respetando frecuencia y horarios para no saturar ni molestar.' },
-          { h3: 'Respuestas y métricas', text: 'Las respuestas caen en <a href="/saas/wazacrm/">WazaCRM</a>; medimos entrega, lectura y respuesta para afinar la siguiente campaña.' },
-        ],
       },
       {
         type: 'prose',
@@ -1108,7 +1012,7 @@ export const marketingPages: PageData[] = [
     h1: 'Automatizaciones con n8n',
     breadcrumb: 'Automatizaciones (n8n)',
     service: { type: 'Automatización de procesos con n8n' },
-    lead: ['Si alguien de tu equipo copia datos de un formulario al CRM, del CRM a una hoja de cálculo y de ahí a WhatsApp, ese proceso es una automatización esperando a existir.'],
+    lead: ['Automatizaciones con n8n en Panamá: si alguien de tu equipo copia datos de un formulario al CRM, del CRM a una hoja de cálculo y de ahí a WhatsApp, ese proceso es una automatización esperando a existir.'],
     portada: {
       pie: 'Las horas que tu equipo pasa copiando datos de una herramienta a otra no venden, no atienden y no deciden.',
       riel: [
@@ -1122,7 +1026,7 @@ export const marketingPages: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Automatizamos procesos con n8n en Panamá: conectamos tu web, tu CRM, WhatsApp, correo, hojas de cálculo y tienda para que los datos pasen solos, con reintentos y aviso de fallo el mismo día. Empezamos por el flujo que más horas consume, lo documentamos y medimos horas devueltas y errores evitados. Se cotiza por flujo.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, hace automatizaciones con n8n: conecta tu web, CRM, WhatsApp, correo, hojas de cálculo y tienda para que los datos pasen solos, con reintentos y aviso de fallo el mismo día. Empezamos por el flujo que más horas consume, lo documentamos y medimos horas devueltas y errores evitados. Se cotiza por flujo.',
       },
       {
         type: 'receipt',
@@ -1189,7 +1093,7 @@ export const marketingPages: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye cada automatización',
+        h2: 'Qué incluye cada automatización con n8n',
         intro: 'Se cotiza por flujo, desde $300 según la complejidad. Lo dimensionamos antes de empezar.',
         incluye: [
           { t: 'Mapa del proceso', d: 'Quién copia qué, de dónde a dónde y cuántas veces, tal como ocurre hoy.' },
@@ -1206,18 +1110,6 @@ export const marketingPages: PageData[] = [
         medimos: ['Ejecuciones al mes', 'Horas devueltas', 'Errores evitados', 'Tasa de fallo del flujo'],
       },
       {
-        type: 'steps',
-        h2: 'Cómo implementamos una automatización',
-        intro: 'No automatizamos todo de golpe. Empezamos por donde más duele y crecemos desde ahí.',
-        items: [
-          { h3: 'Mapa del proceso', text: 'Dibujamos el flujo manual tal como ocurre hoy: quién copia qué, de dónde a dónde y cuántas veces. Ver el proceso completo revela dónde están las horas perdidas y los errores.' },
-          { h3: 'Priorización', text: 'Elegimos el flujo que más tiempo consume y menos criterio humano requiere. Esa primera automatización libera horas reales rápido y financia las siguientes.' },
-          { h3: 'Construcción en n8n', text: 'Montamos el flujo conectando tus herramientas actuales, con la lógica que haga falta: condiciones, ramificaciones y filtros.' },
-          { h3: 'Pruebas y control de errores', text: 'Probamos con datos reales y añadimos reintentos y alertas: si un servicio se cae, la tarea se reintenta o te avisa, en lugar de perderse en silencio.' },
-          { h3: 'Puesta en marcha y ajuste', text: 'Dejamos el flujo trabajando solo y lo afinamos con el uso. Cuando ese proceso ya corre sin fricción, pasamos al siguiente candidato.' },
-        ],
-      },
-      {
         type: 'prose',
         h2: 'Por qué n8n y no otra herramienta',
         paragraphs: [
@@ -1230,30 +1122,24 @@ export const marketingPages: PageData[] = [
         type: 'prose',
         h2: 'Qué NO conviene automatizar',
         paragraphs: [
-          'Automatizar lo que no toca es la forma más rápida de que un proyecto de automatización se abandone a los tres meses.',
-          'No conviene automatizar un proceso que todavía cambia todas las semanas: la automatización se rompe cada vez que el proceso se mueve y termina generando más trabajo del que ahorra. Primero se estabiliza el proceso a mano, después se automatiza.',
-          'Tampoco conviene automatizar decisiones que requieren criterio. Aprobar un descuento, atender un reclamo delicado o decidir si un cliente es viable son cosas donde el error automático cuesta más que el tiempo humano que ahorra.',
-          'Y no conviene automatizar algo que ocurre tres veces al mes. La cuenta es simple: si el proceso toma diez minutos y ocurre tres veces al mes, son treinta minutos; montar y mantener la automatización cuesta más que eso. <strong>La automatización rinde en lo repetitivo y aburrido, no en lo importante y ocasional.</strong>',
+          'No conviene automatizar un proceso que todavía cambia todas las semanas (se rompe cada vez que el proceso se mueve; primero se estabiliza a mano), ni decisiones que requieren criterio, como aprobar un descuento o atender un reclamo delicado, donde el error automático cuesta más que el tiempo humano.',
+          'Tampoco algo que ocurre tres veces al mes: diez minutos por tres son treinta minutos, y montar y mantener el flujo cuesta más. <strong>La automatización rinde en lo repetitivo y aburrido, no en lo importante y ocasional.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Toda automatización se rompe alguna vez, y hay que planearlo',
         paragraphs: [
-          'Es la parte que nadie menciona al vender automatización y la que decide si el proyecto sobrevive: los flujos se rompen. Una API cambia, una contraseña expira, un servicio cae, alguien renombra una columna en la hoja de cálculo.',
-          'Lo grave no es que se rompa: es que se rompa en silencio. Un flujo que dejó de mandar los leads al CRM y nadie se enteró significa dos semanas de contactos perdidos que ya no se recuperan.',
-          'Por eso lo primero que montamos no es el flujo: es el aviso de fallo. Si algo se cae, alguien se entera el mismo día por WhatsApp o correo, con el detalle de qué paso falló.',
-          'También importa que quede documentado: qué hace cada flujo, qué lo dispara y a qué se conecta. <strong>Una automatización que solo entiende quien la montó es una dependencia, no una mejora.</strong>',
+          'Los flujos se rompen: una API cambia, una contraseña expira, alguien renombra una columna. Lo grave es que se rompa en silencio, porque un flujo que dejó de mandar leads al CRM sin que nadie lo note son semanas de contactos perdidos. Por eso lo primero que montamos es el aviso de fallo, el mismo día, por WhatsApp o correo y con el paso que falló.',
+          'Y cada flujo queda documentado: qué hace, qué lo dispara y a qué se conecta. <strong>Una automatización que solo entiende quien la montó es una dependencia, no una mejora.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: horas devueltas y errores evitados',
         paragraphs: [
-          'Una automatización se justifica con dos números y ninguno de los dos es técnico.',
-          'El primero son las <strong>horas devueltas</strong>: cuántas veces al mes corre el flujo, multiplicado por cuánto tomaba hacerlo a mano. Puesto en horas y en dinero, es lo que dice si valió la pena, y suele sorprender hacia arriba en procesos que nadie había cronometrado.',
-          'El segundo son los <strong>errores evitados</strong>. El dato que se copió mal, el lead que no se registró, el mensaje que nadie envió. Son costos invisibles porque nunca aparecen en una factura, pero un lead perdido por transcripción cuesta lo mismo que uno que nunca llegó.',
-          'Y la tasa de fallo del propio flujo: cuántas ejecuciones fallaron y por qué. <strong>Si ese número no se mira, la automatización deja de ser confiable sin que nadie lo note</strong>, que es exactamente como mueren la mayoría.',
+          'Las <strong>horas devueltas</strong> son las veces al mes que corre el flujo por lo que tomaba hacerlo a mano. Los <strong>errores evitados</strong> son el dato mal copiado, el lead sin registrar o el mensaje que nadie envió: no aparecen en una factura, pero un lead perdido por transcripción cuesta lo mismo que uno que nunca llegó.',
+          'Y la tasa de fallo del propio flujo: cuántas ejecuciones fallaron y por qué. <strong>Si ese número no se mira, la automatización deja de ser confiable sin que nadie lo note.</strong>',
         ],
       },
       {
@@ -1340,7 +1226,7 @@ export const marketingPages: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-20',
-        text: 'Hacemos videos publicitarios con IA para negocios en Panamá: 4 videos verticales de 15 a 30 segundos para Reels, historias y anuncios, desde $500 el paquete. Partimos de tu producto o de tus fotos, escribimos el guion, ponemos voz en español y subtítulos, y revisamos cada video a mano antes de entregarlo, con licencia de uso comercial por escrito.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, hace videos publicitarios con IA: 4 videos verticales de 15 a 30 segundos para Reels, historias y anuncios, desde $500 el paquete. Partimos de tu producto o tus fotos, escribimos el guion, ponemos voz en español y subtítulos, y revisamos cada video a mano. Entregamos licencia de uso comercial por escrito.',
       },
       {
         type: 'receipt',
@@ -1382,7 +1268,7 @@ export const marketingPages: PageData[] = [
       { type: 'blank', punto: 'prueba', h2: 'Casos de clientes', texto: 'Todavía no hay casos de clientes publicados: el servicio abrió en octubre de 2026. Los ejemplos de esta página los hicimos nosotros.' },
       {
         type: 'includes',
-        h2: 'Qué incluye el paquete',
+        h2: 'Qué incluye el paquete de videos publicitarios',
         intro: 'Un paquete cerrado desde $500 por 4 videos. La pauta va aparte.',
         incluye: [
           { t: 'Guion de cada video', d: 'Lo escribimos a partir de tu oferta, con el gancho en los primeros segundos, y lo apruebas antes de producir.' },
@@ -1491,7 +1377,7 @@ export const marketingPages: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-21',
-        text: 'Hacemos video inmobiliario con IA en Panamá: animamos los renders o fotos de tu proyecto en recorridos con movimiento de cámara, en horizontal y vertical, desde $550 por el video de una unidad. La IA mueve la cámara y no agrega muebles ni ambientes; revisamos cada video a mano y entregamos con licencia de uso comercial por escrito.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, hace video inmobiliario con IA: anima los renders o fotos de tu proyecto en recorridos con movimiento de cámara, en horizontal y vertical, desde $550 por el video de una unidad. La IA mueve la cámara sin agregar muebles ni ambientes; revisamos cada video a mano y damos licencia comercial por escrito.',
       },
       {
         type: 'receipt',
@@ -1551,7 +1437,7 @@ export const marketingPages: PageData[] = [
       { type: 'blank', punto: 'prueba', h2: 'Casos de clientes', texto: 'Todavía no hay casos de clientes publicados: el servicio abrió en octubre de 2026. El ejemplo de esta página lo hicimos nosotros.' },
       {
         type: 'includes',
-        h2: 'Qué incluye cada plan',
+        h2: 'Qué incluye cada plan de video inmobiliario',
         intro: 'Cada plan es un precio cerrado. La pauta va aparte.',
         incluye: [
           { t: 'Movimiento de cámara por ambiente', d: 'Acercamientos, desplazamientos laterales y giros suaves a partir de cada render o foto, sin rodaje.' },

@@ -15,7 +15,7 @@ export const blog25: PageData[] = [
     date: '2026-08-28',
     heroImage: {
       src: '/images/blog/diseno-web-para-seguros-panama.jpg',
-      alt: 'Escritorio de oficina con laptop, documentos y un paraguas negro abierto sobre la silla como símbolo de cobertura, con luz natural de ventana',
+      alt: 'Paraguas abierto, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para corredores de seguros en Panamá convierte cuando cada ramo (auto, salud, vida, colectivo) tiene su propia página, las aseguradoras y el número de corredor están a la vista y un cotizador corto pide solo el ramo y dos datos del riesgo. Así lo planteamos en Elemento Web, en Ciudad de Panamá.',

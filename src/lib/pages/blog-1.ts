@@ -17,7 +17,7 @@ export const blog1: PageData[] = [
     date: '2026-07-22',
     heroImage: {
       src: '/images/blog/cuanto-cuesta-diseno-web-panama.jpg',
-      alt: 'Laptop con un sitio web y tres paneles escalonados que representan los niveles de precio de una página web en Panamá',
+      alt: 'Etiqueta de precio junto a tres bloques escalonados, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Una página web en Panamá cuesta desde $550 si es una landing page y desde $1,250 si es una Web empresarial de varias secciones; una tienda online parte desde $1,950 y un sitio corporativo a medida desde $2,900. En Elemento Web el precio depende de páginas, funciones y trabajo estratégico, y se entrega cerrado y por escrito antes de empezar.',
@@ -148,7 +148,7 @@ export const blog1: PageData[] = [
     date: '2026-07-08',
     heroImage: {
       src: '/images/blog/errores-comunes-diseno-web-empresas.jpg',
-      alt: 'Ventana de navegador con señales de advertencia por diseño roto, carga lenta y enlace caído, y una llave que lo repara',
+      alt: 'Señal triangular de advertencia con una llave inglesa apoyada, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Los 7 errores de diseño web que más clientes les cuestan a las empresas en Panamá son no aparecer en Google, cargar lento, no tener botón de WhatsApp, meter todo en una sola página, fallar en el celular, no indicar el siguiente paso y usar contenido genérico. Casi todos se corrigen sin rehacer la web desde cero.',
@@ -282,7 +282,7 @@ export const blog1: PageData[] = [
     date: '2026-06-24',
     heroImage: {
       src: '/images/blog/diferencia-wordpress-shopify-diseno-web.jpg',
-      alt: 'Dos tarjetas enfrentadas, un constructor de páginas por bloques y una tienda online, para comparar plataformas de diseño web',
+      alt: 'Bloques de construcción apilados frente a una bolsa de compras, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'WordPress vs Shopify en Panamá: elige WordPress si tu web vive del contenido, el SEO y varias páginas de servicio, sin mensualidad de plataforma; elige Shopify si vender productos en línea es el corazón del negocio y no quieres administrar servidores. Ambas se integran con Yappy y WhatsApp, y una tienda online parte desde $1,950 en cualquiera de las dos.',
@@ -405,7 +405,7 @@ export const blog1: PageData[] = [
     date: '2026-06-10',
     heroImage: {
       src: '/images/blog/como-elegir-agencia-diseno-web-panama.jpg',
-      alt: 'Lupa sobre tres propuestas de sitio web, una marcada con una palomita, para elegir una agencia de diseño web en Panamá',
+      alt: 'Lupa sobre tres tarjetas, la del centro más alta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para elegir una agencia de diseño web en Panamá, revisa cuatro señales: que pregunte por tu negocio antes de cotizar, que entregue precio cerrado por escrito, que muestre sitios en línea verificables y que dé soporte después del lanzamiento. Exige también que el dominio, el hosting y los archivos queden a tu nombre.',
@@ -525,7 +525,7 @@ export const blog1: PageData[] = [
     date: '2026-05-27',
     heroImage: {
       src: '/images/blog/cuanto-tiempo-toma-hacer-una-pagina-web.jpg',
-      alt: 'Línea de tiempo con cinco etapas, del esquema al lanzamiento, que muestra cuánto tarda en hacerse una página web',
+      alt: 'Reloj de arena, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Hacer una página web en Panamá toma alrededor de una semana si es una landing page sencilla, de dos a tres semanas si es un sitio corporativo de varias páginas y de tres a cinco semanas si es una tienda online. En Elemento Web el plazo corre desde que llega el contenido base, que es lo que más retrasa cualquier proyecto.',

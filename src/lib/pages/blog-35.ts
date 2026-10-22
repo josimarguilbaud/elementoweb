@@ -16,7 +16,7 @@ export const blog35: PageData[] = [
     date: '2026-09-07',
     heroImage: {
       src: '/images/blog/diseno-web-para-aire-acondicionado-panama.jpg',
-      alt: 'Unidad split de aire acondicionado en una pared blanca de una habitación luminosa, para el diseño web de empresas de A/C',
+      alt: 'Unidad split de aire acondicionado, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para aire acondicionado en Panamá debe separar dos rutas: la emergencia, con WhatsApp y teléfono visibles, precio de la visita y zonas de cobertura, y el contrato de mantenimiento, con su propia página que explica visitas y frecuencia. En Elemento Web, una landing parte desde $550 y una web de hasta 6 páginas desde $1,250.',

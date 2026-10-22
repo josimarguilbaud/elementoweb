@@ -14,7 +14,7 @@ export const blog16: PageData[] = [
     date: '2026-09-22',
     heroImage: {
       src: '/images/blog/diseno-web-para-talleres-automotrices-panama.jpg',
-      alt: 'Taller mecánico moderno y organizado, con elevador de autos y herramientas ordenadas en la pared',
+      alt: 'Pistón de motor con su biela, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para talleres automotrices en Panamá tiene un trabajo principal: bajar la sospecha de que el mecánico va a inflar el precio. Lo logra con seis cosas: precios de referencia por servicio, agenda de citas online, especialidades visibles, fotos de trabajos reales, reseñas y un WhatsApp directo. Así lo planteamos en Elemento Web, en Ciudad de Panamá.',

@@ -18,7 +18,7 @@ export const blog4: PageData[] = [
     date: '2026-07-14',
     heroImage: {
       src: '/images/blog/google-ads-vs-facebook-ads-en-panama.jpg',
-      alt: 'Dos vallas publicitarias en blanco sobre postes metálicos, con palmeras y cielo azul, para comparar Google Ads y Facebook Ads',
+      alt: 'Dos megáfonos apuntando en direcciones opuestas, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Google Ads vs Facebook Ads en Panamá: Google Ads conviene cuando la gente ya busca lo que vendes (servicios profesionales, salud, reparaciones), porque captura intención de compra. Facebook e Instagram Ads conviene cuando tu producto se vende mostrándolo, porque genera demanda nueva. Si el presupuesto alcanza para los dos, en Elemento Web los combinamos: Meta siembra, Google cosecha.',
@@ -128,7 +128,7 @@ export const blog4: PageData[] = [
     date: '2026-06-30',
     heroImage: {
       src: '/images/blog/cuanto-invertir-en-publicidad-digital-en-panama.jpg',
-      alt: 'Manos contando monedas viejas apiladas sobre una mesa de madera gastada, en una guía de presupuesto para publicidad digital',
+      alt: 'Megáfono sobre una pila de monedas, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       '¿Cuánto invertir en publicidad digital en Panamá? No hay un monto único: el presupuesto sale de tu margen y de cuánto puedes pagar por un lead sin perder dinero. En Elemento Web lo calculamos con el valor de tu cliente y tu tasa de cierre, arrancamos con una fase de prueba de varias semanas y escalamos solo lo que trae leads rentables.',
@@ -234,7 +234,7 @@ export const blog4: PageData[] = [
     date: '2026-06-16',
     heroImage: {
       src: '/images/blog/como-hacer-campanas-de-whatsapp-masivo-en-panama.jpg',
-      alt: 'Mensajes de WhatsApp que se segmentan en tres flujos hacia distintos grupos de clientes en una campaña masiva',
+      alt: 'Avión de papel seguido de otros más pequeños, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para hacer campañas de WhatsApp masivo en Panamá sin que bloqueen tu número necesitas tres cosas: la WhatsApp Business API oficial de Meta, contactos con opt-in (que aceptaron recibir tus mensajes) y plantillas aprobadas por Meta. Elemento Web, Tech Provider verificado por Meta, monta las campañas por esa vía; las apps no oficiales con bases compradas terminan en bloqueo.',
@@ -342,7 +342,7 @@ export const blog4: PageData[] = [
     date: '2026-06-02',
     heroImage: {
       src: '/images/blog/email-marketing-para-negocios-en-panama.jpg',
-      alt: 'Un sobre que libera correos de boletín junto a un editor de plantillas y un gráfico de crecimiento de email marketing',
+      alt: 'Sobre de carta con la solapa abierta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El email marketing para negocios en Panamá funciona porque la lista es tuya: no dependes de un algoritmo ni pagas por alcance. Para que rinda en 2026 hacen falta una lista propia con permiso (nunca comprada), tres automatizaciones (bienvenida, carrito abandonado y reactivación) y buena entregabilidad, con tu dominio autenticado para llegar a la bandeja de entrada y no al spam.',
@@ -441,7 +441,7 @@ export const blog4: PageData[] = [
     date: '2026-05-19',
     heroImage: {
       src: '/images/blog/marketing-de-contenidos-para-redes-sociales-panama.jpg',
-      alt: 'Creador de contenido grabando un Reel con el celular para redes sociales',
+      alt: 'Teléfono en un trípode con aro de luz, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El marketing de contenidos para redes sociales en Panamá funciona cuando hay estrategia y constancia: tres o cuatro pilares de contenido, video corto (Reels) como formato principal, un calendario que puedas sostener por meses y un camino claro hacia tu web, donde se cierra la venta. En Elemento Web conectamos ese contenido con tu sitio y tu pauta.',

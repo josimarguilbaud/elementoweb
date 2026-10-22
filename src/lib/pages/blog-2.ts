@@ -12,7 +12,7 @@ export const blog2: PageData[] = [
     date: '2026-07-18',
     heroImage: {
       src: '/images/blog/como-integrar-yappy-tu-tienda-online.jpg',
-      alt: 'Persona pagando desde su celular con una aplicacion de banca movil en Panama',
+      alt: 'Teléfono móvil con ondas de pago sin contacto, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para integrar Yappy en tu tienda online en Panamá necesitas el Botón de Pago Yappy comercial del Banco General: cuenta comercial, aviso de operación vigente y una tienda funcional. Con las credenciales aprobadas, Elemento Web lo conecta a WooCommerce, Shopify o a una web a medida por API, activa la confirmación automática y lo prueba con una compra real.',
@@ -110,7 +110,7 @@ export const blog2: PageData[] = [
     date: '2026-07-04',
     heroImage: {
       src: '/images/blog/como-crear-una-tienda-online-en-panama.jpg',
-      alt: 'Mujer joven empacando productos en una caja de cartón sobre una mesa de madera, para armar una tienda online en Panamá',
+      alt: 'Caja de envío abierta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para crear una tienda online en Panamá define primero qué vendes, a quién y cómo entregas. Después elige plataforma (Shopify o WooCommerce), carga el catálogo con fotos y precios, conecta Yappy y una pasarela con tarjeta, configura envíos por zona y prueba una compra completa antes de publicar. Así arma Elemento Web cada tienda.',
@@ -210,7 +210,7 @@ export const blog2: PageData[] = [
     date: '2026-06-20',
     heroImage: {
       src: '/images/blog/shopify-vs-woocommerce-panama.jpg',
-      alt: 'Dos carretas de mano vacías, una de madera y otra metálica, contra una pared beige, al comparar plataformas de tienda online',
+      alt: 'Dos carritos de compra de diseños distintos, lado a lado, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Entre Shopify vs WooCommerce en Panamá, Shopify conviene si quieres lanzar rápido con una mensualidad fija y sin administrar hosting. WooCommerce conviene si buscas control total, cero comisiones de plataforma por venta y costos que no crecen con tu volumen, a cambio de más mantenimiento técnico. Elemento Web trabaja con ambas y recomienda según tu catálogo y volumen.',
@@ -317,7 +317,7 @@ export const blog2: PageData[] = [
     date: '2026-06-06',
     heroImage: {
       src: '/images/blog/como-vender-por-whatsapp-en-panama.jpg',
-      alt: 'Comerciante panameno atendiendo pedidos de clientes por WhatsApp desde su telefono',
+      alt: 'Teléfono móvil con dos burbujas de conversación, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para vender por WhatsApp en Panamá sin perder ventas, pasa de tu WhatsApp personal a WhatsApp Business (gratis), comparte tu catálogo en el chat, responde en minutos con respuestas rápidas y conecta un botón de WhatsApp desde tu web. Cuando el volumen crezca, suma un chatbot de IA que atienda las preguntas repetitivas a cualquier hora.',
@@ -416,7 +416,7 @@ export const blog2: PageData[] = [
     date: '2026-05-23',
     heroImage: {
       src: '/images/blog/metodos-de-pago-online-en-panama.jpg',
-      alt: 'Distintos metodos de pago digital y tarjetas sobre un escritorio en Panama',
+      alt: 'Tarjetas de pago en abanico junto a unas monedas, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Los principales métodos de pago online en Panamá son el Botón de Pago Yappy, las pasarelas con tarjeta Visa y Mastercard, la transferencia bancaria y el pago contra entrega. La combinación que recomienda Elemento Web para una tienda online es Yappy más una pasarela con tarjeta, con transferencia o contra entrega solo como respaldo.',

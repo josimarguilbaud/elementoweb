@@ -16,7 +16,7 @@ export const blog39: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/blog/diseno-web-para-turismo-hoteles-panama.jpg',
-      alt: 'Viajeros planificando un tour desde el celular, con un destino turístico de playa al fondo',
+      alt: 'Timbre de recepción junto a una llave de hotel con su etiqueta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para recibir reservas directas, tu web tiene que permitir que el viajero elija el tour, la fecha y el número de personas, pague un depósito y reciba una confirmación, todo sin depender de que alguien le conteste un mensaje. WhatsApp queda para lo que sí necesita conversación: dudas, casos especiales y tranquilidad antes de pagar.',
@@ -123,7 +123,7 @@ export const blog39: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/blog/como-medir-los-resultados-de-tu-pagina-web.jpg',
-      alt: 'Panel de analítica web en una pantalla de computadora con gráficas de visitas y conversiones',
+      alt: 'Gráfico circular con una porción separada, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para medir bien los leads de WhatsApp y de formulario hay que separar cuatro cosas que suelen mezclarse: el clic en el botón, la conversación que realmente empieza, el lead calificado y la venta. GA4 sirve para ver las dos primeras desde la web; el CRM es donde se registran las últimas dos.',
@@ -231,7 +231,7 @@ export const blog39: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/blog/cuanto-cuesta-diseno-web-panama.jpg',
-      alt: 'Calculadora, cuaderno y computadora portátil sobre un escritorio mientras se estima el presupuesto de un sitio web',
+      alt: 'Etiqueta de precio junto a tres bloques escalonados, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El costo de una página web para un negocio de Miami que contrata a una agencia en Panamá se calcula sumando cinco cosas: implementación, hosting y dominio, mantenimiento, contenido e impuestos aplicables. En Elemento Web, la implementación parte de $550 (Landing), $1,250 (Web empresarial), $1,950 (E-commerce) y $2,900 (a medida), en dólares.',

@@ -19,7 +19,7 @@ export const blog40: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/blog/como-crear-una-tienda-online-en-panama.jpg',
-      alt: 'Persona comprando desde el celular en una tienda online con carrito y método de pago',
+      alt: 'Caja de envío abierta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'En Elemento Web, una tienda online en Panamá parte desde $1,950 (USD, sin ITBMS del 7%). Incluye hasta 25 productos cargados, categorías y carrito, pagos y envíos configurados, pruebas de compra y capacitación para gestionar pedidos. El precio final depende del tamaño del catálogo y de las integraciones que necesites.',
@@ -118,7 +118,7 @@ export const blog40: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/blog/landing-page-vs-sitio-web-cual-necesitas.jpg',
-      alt: 'Landing page de una sola pantalla con un botón de contacto destacado y una diana que representa una campaña enfocada',
+      alt: 'Diana con un dardo en el centro, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Una landing page en Panamá con Elemento Web cuesta $550 (USD, sin ITBMS del 7%): una página enfocada en conversión, con diseño a medida, responsive y botón directo a WhatsApp, entregada en 5 días hábiles desde recibir el contenido y aprobar el alcance. Hosting, contenido y mantenimiento se pagan aparte.',
@@ -301,7 +301,7 @@ export const blog40: PageData[] = [
     date: '2026-09-30',
     heroImage: {
       src: '/images/blog/cuando-hacer-rediseno-pagina-web.jpg',
-      alt: 'Comparación entre un sitio web antiguo y su versión rediseñada en pantalla',
+      alt: 'Bote de pintura con una brocha encima, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Un rediseño en Elemento Web se mueve en el rango de un sitio nuevo, desde $1,250 (USD, sin ITBMS del 7%), más la auditoría y la migración. El precio cerrado se da después de auditar tu sitio actual, porque depende de su estado y del alcance.',

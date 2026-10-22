@@ -15,7 +15,7 @@ export const blog27: PageData[] = [
     date: '2026-08-30',
     heroImage: {
       src: '/images/blog/diseno-web-para-veterinarias-panama.jpg',
-      alt: 'Sala de espera de una clínica veterinaria moderna, luminosa y acogedora, con asientos cómodos y colores pasteles suaves',
+      alt: 'Huella de mascota, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para veterinarias en Panamá debe calmar a un dueño angustiado en segundos: cita en línea visible desde la portada con horarios reales, WhatsApp para la urgencia, horario y si atienden emergencias sin hacer scroll, una sección por servicio y fotos reales de la clínica y del equipo. Así lo construimos en Elemento Web, en Ciudad de Panamá.',

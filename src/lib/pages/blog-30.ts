@@ -16,7 +16,7 @@ export const blog30: PageData[] = [
     date: '2026-09-02',
     heroImage: {
       src: '/images/blog/diseno-web-para-consultoras-panama.jpg',
-      alt: 'Sala de reuniones de una consultora moderna con escritorio minimalista, laptop y libreta de apuntes, vista de la ciudad de fondo a través de ventanales',
+      alt: 'Caballo de ajedrez, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para consultoras en Panamá convierte cuando muestra evidencia: casos reales contados con situación, acción y resultado, una especialización explícita, credenciales verificables, un formulario que filtra por tipo de proyecto y presupuesto, y un blog activo. En Elemento Web, una landing parte desde $550 y una Web empresarial desde $1,250, sin ITBMS.',

@@ -16,7 +16,7 @@ export const blog10: PageData[] = [
     date: '2026-09-16',
     heroImage: {
       src: '/images/blog/diseno-web-para-restaurantes-panama.jpg',
-      alt: 'Plato gourmet bien emplatado sobre una mesa de restaurante, con luz cálida de ambiente',
+      alt: 'Bandeja con campana de servir entreabierta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para restaurantes en Panamá vende cuando el cliente, desde el celular y en menos de un minuto, ve menú con fotos reales, precios, horario de hoy, ubicación y cómo reservar o pedir. En Elemento Web, una landing con menú y WhatsApp parte de $550 y una Web empresarial con reservas, de $1,250, sin ITBMS.',

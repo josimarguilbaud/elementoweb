@@ -16,7 +16,7 @@ export const blog28: PageData[] = [
     date: '2026-08-31',
     heroImage: {
       src: '/images/blog/diseno-web-para-ferreterias-panama.jpg',
-      alt: 'Interior de una ferretería organizada, con estanterías llenas de herramientas y materiales de construcción bajo luz industrial',
+      alt: 'Martillo cruzado con un destornillador, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para ferreterías en Panamá sirve para que el cliente sepa, desde el celular, que tienes el producto antes de salir de casa: catálogo por categorías del rubro, buscador por nombre, marca o código, precio y disponibilidad cuando es posible, y cotización de pedidos de obra para contratistas. Así lo armamos en Elemento Web, en Ciudad de Panamá.',

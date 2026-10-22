@@ -17,7 +17,7 @@ export const blog3: PageData[] = [
     date: '2026-07-16',
     heroImage: {
       src: '/images/blog/como-aparecer-primero-en-google-en-panama.jpg',
-      alt: 'Esquina de calle al atardecer con locales de toldos y vitrinas iluminadas, en una guía para aparecer en Google en Panamá',
+      alt: 'Copa de trofeo, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para aparecer primero en Google en Panamá necesitas tres cosas a la vez: contenido que responda la búsqueda exacta de tu cliente, autoridad (reseñas, enlaces y menciones locales) y un sitio rápido en el celular. No hay pago ni truco que lo acelere: en búsquedas competidas, el movimiento serio suele tomar de tres a seis meses.',
@@ -134,7 +134,7 @@ export const blog3: PageData[] = [
     date: '2026-07-02',
     heroImage: {
       src: '/images/blog/que-es-el-seo-local-y-google-maps-panama.jpg',
-      alt: 'Vista aérea tilt-shift de una esquina de ciudad con techos de zinc y una plaza, en una guía de SEO local y Google Maps',
+      alt: 'Marcador de ubicación sobre un disco con cuadrícula de calles, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El SEO local es el trabajo para que tu negocio aparezca en Google Maps y en el "pack local" cuando alguien en Ciudad de Panamá busca "farmacia cerca de mí" o "mecánico en Costa del Este". Depende de tres cosas: una ficha de Google Business Profile verificada y completa, reseñas recientes y los mismos datos de contacto en toda la web.',
@@ -242,7 +242,7 @@ export const blog3: PageData[] = [
     date: '2026-06-18',
     heroImage: {
       src: '/images/blog/como-mejorar-la-velocidad-de-tu-pagina-web.jpg',
-      alt: 'Mensajero en moto con un gran cajón de reparto por una calle colonial, como metáfora de la velocidad de carga de tu web',
+      alt: 'Cronómetro, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para mejorar la velocidad de carga de tu página web, empieza por lo que más pesa: comprime las imágenes y sírvelas en WebP, sal del hosting barato, activa la caché y quita los plugins y scripts que no usas. Mide antes y después con PageSpeed Insights: la meta de Google es que el contenido principal aparezca en menos de 2,5 segundos.',
@@ -345,7 +345,7 @@ export const blog3: PageData[] = [
     date: '2026-06-04',
     heroImage: {
       src: '/images/blog/seo-para-pymes-en-panama-guia.jpg',
-      alt: 'Barra de búsqueda sobre tres resultados donde el primero destaca con estrella, ubicación y gráfico en alza: SEO para pymes',
+      alt: 'Lupa sobre un brote de planta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El SEO para pymes en Panamá empieza por lo que cuesta tiempo y no dinero: una ficha de Google Business Profile completa y con reseñas, tres o cuatro palabras clave locales, una página por servicio y artículos que respondan las dudas de tus clientes. La ficha puede dar señales en semanas; la web, en algunos meses.',
@@ -447,7 +447,7 @@ export const blog3: PageData[] = [
     date: '2026-05-21',
     heroImage: {
       src: '/images/blog/por-que-mi-pagina-no-aparece-en-google.jpg',
-      alt: 'Lupa sobre una cuadrícula de resultados de búsqueda con una tarjeta oculta y una brújula que marca el camino hacia arriba',
+      alt: 'Brújula abierta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Si tu página no aparece en Google, la causa casi siempre es concreta: o el sitio no está indexado (es nuevo, tiene un noindex activo o no está en Search Console), o está indexado pero mal posicionado (sin SEO, lento o con poco contenido). Para saber cuál es tu caso, busca site:tudominio.com en Google.',

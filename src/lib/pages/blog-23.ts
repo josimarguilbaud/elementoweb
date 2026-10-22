@@ -15,7 +15,7 @@ export const blog23: PageData[] = [
     date: '2026-08-26',
     heroImage: {
       src: '/images/blog/diseno-web-para-agencias-de-viajes-panama.jpg',
-      alt: 'Islotes de San Blas con palmeras y un teléfono de vidrio con calendario y mapa que ilustran las reservas de una agencia de viajes',
+      alt: 'Maleta de viaje rígida con el asa extendida, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para agencias de viajes en Panamá genera reservas cuando el viajero puede cerrar solo, a cualquier hora: una página por tour, itinerario con qué incluye y qué no, fotos y video propios, y reserva online con depósito por Yappy o tarjeta. Así construimos estas webs en Elemento Web, en Ciudad de Panamá.',

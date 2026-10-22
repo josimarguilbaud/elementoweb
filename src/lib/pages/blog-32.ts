@@ -16,7 +16,7 @@ export const blog32: PageData[] = [
     date: '2026-09-04',
     heroImage: {
       src: '/images/blog/diseno-web-para-agencias-aduaneras-panama.jpg',
-      alt: 'Puerto de carga con contenedores apilados y grúas pórtico al fondo, bajo un cielo despejado',
+      alt: 'Contenedor de carga, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para agencias de aduana en Panamá capta al importador primerizo cuando explica el proceso en español simple, cotiza con pocos datos (mercancía, valor, origen), muestra el estado del expediente sin llamar y publica licencia y cobertura. En Elemento Web, una landing parte desde $550 y una Web empresarial desde $1,250, más ITBMS.',

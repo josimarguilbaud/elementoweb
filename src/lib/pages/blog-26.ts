@@ -18,7 +18,7 @@ export const blog26: PageData[] = [
     date: '2026-08-29',
     heroImage: {
       src: '/images/blog/diseno-web-para-concesionarios-autos-panama.jpg',
-      alt: 'Vestíbulo de cristal vacío con piso brillante y luces de riel, con autos afuera, en una guía de web para concesionarios',
+      alt: 'Llave de auto con control remoto, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para concesionarios de autos en Panamá vende cuando el inventario muestra fotos reales de cada unidad del lote, deja filtrar por marca, precio, año y kilometraje, pone el financiamiento ("cuánto pagaría al mes") como botón principal y abre WhatsApp para la prueba de manejo. Así lo estructuramos en Elemento Web, Ciudad de Panamá.',

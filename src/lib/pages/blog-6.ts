@@ -14,7 +14,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Hosting barato caro',
     category: 'Negocio',
     date: '2026-07-10',
-    heroImage: { src: '/images/blog/hosting-panama-evitar-hosting-barato.jpg', alt: 'Servidores de un centro de datos con luces indicando actividad' },
+    heroImage: { src: '/images/blog/hosting-panama-evitar-hosting-barato.jpg', alt: 'Nube sobre un bloque de servidor, en cromo plateado, render 3D sobre fondo gris claro' },
     lead: [
       'Un hosting barato en Panamá casi nunca ahorra dinero: para vender planes de dos dólares al mes, el proveedor mete cientos de sitios en un mismo servidor y recorta soporte, respaldos y seguridad. El costo llega después, en caídas, lentitud y sitios hackeados. En Elemento Web, dominio, hosting y SSL a tu nombre parten de $350 al año.',
     ],
@@ -121,7 +121,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Elegir dominio web',
     category: 'Negocio',
     date: '2026-06-26',
-    heroImage: { src: '/images/blog/como-elegir-el-dominio-web-perfecto.jpg', alt: 'Barra de dirección web con candado y un globo terráqueo que ilustran cómo elegir el dominio de un negocio' },
+    heroImage: { src: '/images/blog/como-elegir-el-dominio-web-perfecto.jpg', alt: 'Globo terráqueo con su base, en cromo plateado, render 3D sobre fondo gris claro' },
     lead: [
       'Para elegir el dominio web de tu negocio en Panamá, toma el .com si está libre, o el .com.pa si tu marca es muy local o el .com ya está tomado. Que sea corto, sin guiones ni números, que se dicte por teléfono sin deletrear y que quede a nombre de tu empresa. En Elemento Web va incluido en la infraestructura desde $350 al año.',
     ],
@@ -326,7 +326,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Medir tu web',
     category: 'Negocio',
     date: '2026-05-29',
-    heroImage: { src: '/images/blog/como-medir-los-resultados-de-tu-pagina-web.jpg', alt: 'Manos arrugando recibos de papel con códigos de barras sobre un mostrador, en una guía para medir los resultados de tu web' },
+    heroImage: { src: '/images/blog/como-medir-los-resultados-de-tu-pagina-web.jpg', alt: 'Gráfico circular con una porción separada, en cromo plateado, render 3D sobre fondo gris claro' },
     lead: [
       'Para medir los resultados de tu página web, cuenta conversiones (clics a WhatsApp, formularios, citas y ventas) y de qué canal llegan, no el total de visitas. Google Analytics y Search Console son gratuitos y, configurados a nombre de tu empresa, muestran cuántos clientes empezaron en tu web. En Panamá, el clic a WhatsApp suele ser la conversión clave.',
     ],

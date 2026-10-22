@@ -15,7 +15,7 @@ export const blog20: PageData[] = [
     date: '2026-08-23',
     heroImage: {
       src: '/images/blog/diseno-web-para-gimnasios-panama.jpg',
-      alt: 'Interior de un gimnasio moderno con máquinas y pesas ordenadas, iluminación natural, sin personas ni logotipos visibles',
+      alt: 'Pesa rusa, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para gimnasios en Panamá vende membresías cuando quita pasos entre "quiero empezar" y "ya pagué": precios de cada plan a la vista, inscripción con pago en línea, reserva de clases desde el celular y fotos reales del local. Así lo construimos en Elemento Web, en Ciudad de Panamá, para gimnasios, estudios boutique y boxes.',

@@ -13,7 +13,7 @@ export const blog15: PageData[] = [
     date: '2026-09-21',
     heroImage: {
       src: '/images/blog/diseno-web-para-dentistas-panama.jpg',
-      alt: 'Consultorio dental moderno y luminoso con sillón dental y colores claros',
+      alt: 'Muela estilizada, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para dentistas en Panamá funciona cuando la web responde lo que el paciente teme antes de llamar: reserva de citas online con recordatorios, una página por especialidad, fotos reales del consultorio y del equipo, los seguros aceptados a la vista y un rango de precio. Es lo que armamos en Elemento Web, en Ciudad de Panamá.',

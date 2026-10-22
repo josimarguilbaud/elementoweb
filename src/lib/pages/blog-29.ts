@@ -15,7 +15,7 @@ export const blog29: PageData[] = [
     date: '2026-09-01',
     heroImage: {
       src: '/images/blog/diseno-web-para-eventos-catering-panama.jpg',
-      alt: 'Mesa de recepción de boda montada con elegancia, vajilla fina y centro de mesa floral, bajo luz cálida y ambiente romántico',
+      alt: 'Dos copas de champán brindando, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para eventos, catering y bodas en Panamá funciona cuando muestra portafolio real organizado por tipo de evento, paquetes con un precio «desde», fechas disponibles a la vista y un formulario que pide fecha, invitados y tipo de evento. En Elemento Web, una landing con portafolio parte desde $550 y una Web empresarial desde $1,250, sin ITBMS.',

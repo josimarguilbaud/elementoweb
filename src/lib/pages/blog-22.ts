@@ -15,7 +15,7 @@ export const blog22: PageData[] = [
     date: '2026-08-25',
     heroImage: {
       src: '/images/blog/diseno-web-para-logistica-transporte-panama.jpg',
-      alt: 'Interior de una bodega logística moderna con contenedores de carga organizados por color y camiones de reparto estacionados bajo luz natural',
+      alt: 'Camión de reparto a escala, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para logística y transporte en Panamá convence a un comprador B2B con evidencia, no con adjetivos: RUC y años de operación visibles, seguro de carga y certificaciones con vigencia, rutas nombradas una por una, flota real y un cotizador que pida origen, destino y tipo de carga. Así lo construimos en Elemento Web, Ciudad de Panamá.',

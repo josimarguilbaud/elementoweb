@@ -15,7 +15,7 @@ export const blog34: PageData[] = [
     date: '2026-09-06',
     heroImage: {
       src: '/images/blog/diseno-web-para-cooperativas-panama.jpg',
-      alt: 'Recepción moderna de una oficina financiera, escritorio de atención limpio, ambiente corporativo de confianza con luz natural suave, sin rostros ni logos visibles',
+      alt: 'Alcancía de cerdito, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para cooperativas en Panamá debe responder lo que un futuro socio revisa: tasas publicadas por tipo de préstamo, un simulador de cuota marcado como estimado, requisitos de afiliación, registro ante el IPACOOP y estados financieros visibles. En Elemento Web, un sitio institucional así entra en la Web empresarial desde $1,250, sin ITBMS.',

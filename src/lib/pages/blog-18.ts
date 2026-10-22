@@ -15,7 +15,7 @@ export const blog18: PageData[] = [
     date: '2026-08-21',
     heroImage: {
       src: '/images/blog/diseno-web-para-educacion-panama.jpg',
-      alt: 'Fachada moderna de un campus escolar con patio verde arbolado, arquitectura limpia y luz natural de día',
+      alt: 'Birrete sobre una pila de libros, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para colegios en Panamá decide matrículas cuando responde rápido lo que el padre compara de noche desde el celular: si hay cupo, cuándo cierra la admisión, cuánto cuesta la mensualidad y cómo es el campus real. En Elemento Web (Ciudad de Panamá) lo resolvemos con admisión online corta, fotos propias y un portal de padres bien definido.',

@@ -16,7 +16,7 @@ export const blog36: PageData[] = [
     date: '2026-09-08',
     heroImage: {
       src: '/images/blog/diseno-web-para-seguridad-vigilancia-panama.jpg',
-      alt: 'Centro de monitoreo de seguridad con varias pantallas de CCTV mostrando distintas vistas de un edificio, sala de control con iluminación ambiental oscura',
+      alt: 'Cámara de vigilancia con su soporte, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para empresas de seguridad y vigilancia en Panamá debe hablarle a dos públicos: al comité que contrata, con licencias, pólizas, cobertura y un documento de credenciales descargable, y al aspirante a guardia, con vacantes por zona y turno. En Elemento Web, esa web parte desde $1,250 en el paquete Web empresarial, sin ITBMS.',

@@ -15,7 +15,7 @@ export const blog14: PageData[] = [
     date: '2026-09-20',
     heroImage: {
       src: '/images/blog/diseno-web-para-clinicas-esteticas-panama.jpg',
-      alt: 'Sala de tratamiento de una clínica estética moderna, minimalista y de líneas limpias',
+      alt: 'Frasco gotero de sérum junto a un espejo compacto, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para clínicas estéticas en Panamá convierte cuando le quita el miedo a la paciente antes de la primera consulta: galería de antes y después con consentimiento escrito para internet, una página por tratamiento, reserva de valoración en línea, un rango o "desde" por tratamiento y un WhatsApp discreto. En Elemento Web, ese formato arranca desde $1,250 más ITBMS.',

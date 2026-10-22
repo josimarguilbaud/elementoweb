@@ -14,7 +14,7 @@ export const blog38: PageData[] = [
     date: '2026-09-23',
     heroImage: {
       src: '/images/blog/mejor-plataforma-para-crear-una-pagina-web.jpg',
-      alt: 'Laptop en un escritorio mostrando el diseño de una página web en construcción',
+      alt: 'Tres pedestales de formas distintas, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'La mejor plataforma para crear una página web depende de tu etapa: Wix o Squarespace para validar una idea en una tarde, WordPress bien mantenido para sitios con mucho contenido, Shopify o WooCommerce para tiendas y desarrollo a medida cuando la web es tu canal de ventas. En Elemento Web, las webs corporativas parten desde $1,250.',

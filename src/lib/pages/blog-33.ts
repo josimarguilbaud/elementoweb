@@ -16,7 +16,7 @@ export const blog33: PageData[] = [
     date: '2026-09-05',
     heroImage: {
       src: '/images/blog/diseno-web-para-navieras-panama.jpg',
-      alt: 'Buque de carga grande atracado en una terminal portuaria, con contenedores apilados y grúas pórtico bajo un cielo despejado',
+      alt: 'Ancla de barco, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para navieras y servicios marítimos en Panamá gana contratos cuando publica credenciales verificables (certificaciones con número y vigencia, flota, puertos, seguros), una página técnica por servicio y una versión en inglés. En Elemento Web, una landing parte desde $550, una Web empresarial desde $1,250 y un proyecto bilingüe a medida desde $2,900.',

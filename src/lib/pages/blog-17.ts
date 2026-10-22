@@ -16,7 +16,7 @@ export const blog17: PageData[] = [
     date: '2026-08-20',
     heroImage: {
       src: '/images/blog/diseno-web-para-turismo-hoteles-panama.jpg',
-      alt: 'Teléfono con calendario de reservas frente a un hotel boutique al atardecer, para hoteles y turismo en Panamá',
+      alt: 'Timbre de recepción junto a una llave de hotel con su etiqueta, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para hoteles y turismo en Panamá sirve para ganar la reserva directa que hoy paga entre 15% y 20% de comisión a Booking o Airbnb. Necesita motor de reservas con precio visible, una razón concreta para reservar directo, fotos reales de cada habitación y contenido de destino. Así lo armamos en Elemento Web, Ciudad de Panamá.',

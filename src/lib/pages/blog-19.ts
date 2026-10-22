@@ -17,7 +17,7 @@ export const blog19: PageData[] = [
     date: '2026-08-22',
     heroImage: {
       src: '/images/blog/diseno-web-para-retail-moda-panama.jpg',
-      alt: 'Interior de una tienda de ropa moderna con racks organizados y luz cálida e invitadora',
+      alt: 'Percha con una camisa doblada, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para retail y moda en Panamá no compite con Instagram: hace lo que un feed no puede. Filtros por talla, color y precio, stock real por variante, checkout propio con Yappy o tarjeta y un catálogo que sigue ahí después de 24 horas. En Elemento Web, Ciudad de Panamá, lo conectamos a Instagram Shopping.',

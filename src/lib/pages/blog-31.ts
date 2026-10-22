@@ -16,7 +16,7 @@ export const blog31: PageData[] = [
     date: '2026-09-03',
     heroImage: {
       src: '/images/blog/diseno-web-para-arquitectos-panama.jpg',
-      alt: 'Sala de estar minimalista y contemporánea con líneas arquitectónicas limpias, materiales naturales, mobiliario elegante y luz natural entrando por ventanales amplios',
+      alt: 'Compás de dibujo y escuadra, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'En el diseño web para arquitectos y diseñadores de interiores en Panamá, el portafolio hace la venta: fotos reales de obras terminadas, una página por proyecto con reto, solución y resultado, y categorías por tipo de encargo. En Elemento Web, una landing parte desde $550 y una Web empresarial con portafolio segmentado desde $1,250, más ITBMS.',

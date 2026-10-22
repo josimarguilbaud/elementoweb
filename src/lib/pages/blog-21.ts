@@ -15,7 +15,7 @@ export const blog21: PageData[] = [
     date: '2026-08-24',
     heroImage: {
       src: '/images/blog/diseno-web-para-belleza-spa-panama.jpg',
-      alt: 'Interior moderno de un salón de belleza con estaciones de peinado y espejos, luz suave y estética minimalista, sin personas visibles',
+      alt: 'Piedras de spa apiladas con una hoja encima, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para salones de belleza y spas en Panamá llena la agenda con tres piezas: reserva en línea que deja elegir a la estilista o terapeuta, no solo el horario; un portafolio de resultados reales por servicio; y recordatorios automáticos contra el ausentismo. Así las armamos en Elemento Web, en Ciudad de Panamá.',

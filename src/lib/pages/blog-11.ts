@@ -13,7 +13,7 @@ export const blog11: PageData[] = [
     date: '2026-09-17',
     heroImage: {
       src: '/images/blog/diseno-web-para-bienes-raices-panama.jpg',
-      alt: 'Fachada de casa moderna de dos pisos con garaje y césped cuidado al atardecer, para el diseño web de bienes raíces',
+      alt: 'Llave con llavero en forma de casa, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para bienes raíces en Panamá convierte cuando hace lo que Encuentra24 o Compreoalquile no hacen: mostrar solo tu inventario, con catálogo filtrable, una ficha por propiedad con precio visible, formulario y WhatsApp con la referencia, y respuesta en minutos. En Elemento Web, un sitio de hasta 6 páginas parte de $1,250 y un catálogo completo, de $1,950, sin ITBMS.',

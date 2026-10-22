@@ -16,7 +16,7 @@ export const blog37: PageData[] = [
     date: '2026-09-09',
     heroImage: {
       src: '/images/blog/diseno-web-para-imprentas-panama.jpg',
-      alt: 'Máquina de imprenta industrial en funcionamiento imprimiendo pliegos a color en un taller de artes gráficas',
+      alt: 'Rodillo de imprenta con mango, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para imprentas en Panamá funciona cuando la cotización llega completa: un formulario que pide producto, material, acabado, cantidad, medida y fecha, las especificaciones de arte publicadas y una página por línea de producción. En Elemento Web, ese formato parte desde $1,250 en el paquete Web empresarial, más ITBMS.',

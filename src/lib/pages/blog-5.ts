@@ -19,7 +19,7 @@ export const blog5: PageData[] = [
     date: '2026-07-12',
     heroImage: {
       src: '/images/blog/chatbots-con-ia-para-negocios-en-panama.jpg',
-      alt: 'Campana de mostrador de latón sobre una mesa de madera en un cuarto vacío, en una nota sobre chatbots con IA para negocios',
+      alt: 'Cabeza de robot con antena, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Un chatbot con IA para negocios en Panamá entiende lo que el cliente escribe con sus propias palabras, responde al instante en tu web y tu WhatsApp, y pasa a una persona lo que requiere criterio. En Elemento Web lo alimentamos con tus precios, horarios y formas de pago, y le enseñamos a derivar en vez de inventar.',
@@ -122,7 +122,7 @@ export const blog5: PageData[] = [
     date: '2026-06-28',
     heroImage: {
       src: '/images/blog/automatizaciones-con-n8n-para-pymes.jpg',
-      alt: 'Diagrama de flujo de trabajo conectando distintas aplicaciones',
+      alt: 'Tres engranajes entrelazados, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Las automatizaciones con n8n para pymes conectan tu formulario web, tu WhatsApp, tu CRM y tu correo para que los datos pasen solos de una herramienta a otra. Si copias 20 leads al día a dos minutos cada uno, son más de tres horas semanales que n8n te devuelve. En Elemento Web montamos estos flujos para negocios en Panamá.',
@@ -224,7 +224,7 @@ export const blog5: PageData[] = [
     date: '2026-06-14',
     heroImage: {
       src: '/images/blog/inteligencia-artificial-para-pequenas-empresas-en-panama.jpg',
-      alt: 'Primer plano de una mujer cosiendo tela con una máquina de coser antigua, en una guía de IA para pequeñas empresas',
+      alt: 'Cerebro con surcos de circuito, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'La inteligencia artificial para pequeñas empresas en Panamá rinde en tres tareas concretas: responder las preguntas repetidas de WhatsApp y la web a cualquier hora, ayudar a redactar contenido que tú revisas y automatizar el paso de datos entre herramientas. No requiere un departamento de tecnología; conviene empezar por una sola tarea, medirla y mantener a una persona supervisando.',
@@ -327,7 +327,7 @@ export const blog5: PageData[] = [
     date: '2026-05-31',
     heroImage: {
       src: '/images/blog/como-atender-clientes-24-7-con-un-asistente-de-ia.jpg',
-      alt: 'Esquina de noche con persiana metálica cerrada y luz bajo ella, sobre atender clientes fuera de horario con IA',
+      alt: 'Reloj despertador de campanas, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Para atender a tus clientes 24/7 con un asistente de IA, el asistente responde al instante en tu web y tu WhatsApp, capta nombre e interés, resuelve dudas frecuentes con tu información real y pasa a un asesor lo que requiere criterio. En Elemento Web lo entrenamos con tus precios, horarios y políticas para que no invente respuestas.',
@@ -430,7 +430,7 @@ export const blog5: PageData[] = [
     date: '2026-05-17',
     heroImage: {
       src: '/images/blog/crm-con-whatsapp-para-vender-mas-en-panama.jpg',
-      alt: 'Tickets de pedido en papel colgados sobre la cocina de un restaurante, en una guía de CRM con WhatsApp para ordenar ventas',
+      alt: 'Tarjetero giratorio, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Un CRM con WhatsApp convierte cada chat en un contacto con etapa, historial y próximo paso, para que ningún cliente de tu negocio en Panamá se pierda entre cientos de conversaciones. Te muestra quién pidió cotización, a quién le toca seguimiento hoy y permite que varios agentes atiendan el mismo número sin pisarse. En Elemento Web lo resolvemos con WazaCRM.',

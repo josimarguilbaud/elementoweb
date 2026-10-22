@@ -15,7 +15,7 @@ export const blog13: PageData[] = [
     date: '2026-09-19',
     heroImage: {
       src: '/images/blog/diseno-web-para-constructoras-panama.jpg',
-      alt: 'Obra de construcción con estructura de acero, grúas de fondo y cielo despejado',
+      alt: 'Casco de obra sobre una viga de acero, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para constructoras en Panamá convence cuando muestra evidencia comprobable: portafolio con fotos fechadas de antes, durante y después de cada obra, idoneidad y permisos a la vista, testimonios con nombre y un cotizador que pida tipo de proyecto, metraje y zona, en vez de prometer un precio exacto sin visitar el sitio.',

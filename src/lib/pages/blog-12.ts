@@ -15,7 +15,7 @@ export const blog12: PageData[] = [
     date: '2026-09-18',
     heroImage: {
       src: '/images/blog/diseno-web-para-contadores-panama.jpg',
-      alt: 'Escritorio de oficina contable con calculadora, documentos financieros y laptop con gráficos en pantalla',
+      alt: 'Ábaco con sus filas de cuentas, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para contadores en Panamá tiene que demostrar seriedad con datos verificables: número de idoneidad del CPA, una página por servicio (renta, planilla, auditoría, asesoría fiscal), HTTPS y la web posicionada meses antes de la temporada de renta del primer trimestre. En Elemento Web, una Web empresarial para una firma contable arranca desde $1,250.',

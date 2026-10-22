@@ -16,7 +16,7 @@ export const blog24: PageData[] = [
     date: '2026-08-27',
     heroImage: {
       src: '/images/blog/diseno-web-para-importadoras-panama.jpg',
-      alt: 'Pasillo de una bodega de distribución mayorista con estanterías industriales llenas de cajas de producto en pallets y un montacargas amarillo al fondo, instalación amplia y bien iluminada',
+      alt: 'Palé con cajas apiladas, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'El diseño web para importadoras y distribuidoras en Panamá vende cuando el catálogo responde "¿tienen esta línea?" sin que el comprador escriba: categorías por línea de producto, buscador por código o referencia, una página por línea con sus marcas y formulario de cotización por cantidad y zona. Así lo armamos en Elemento Web, Ciudad de Panamá.',

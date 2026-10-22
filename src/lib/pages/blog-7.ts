@@ -130,7 +130,7 @@ export const blog7: PageData[] = [
     date: '2026-07-30',
     heroImage: {
       src: '/images/blog/cuando-hacer-rediseno-pagina-web.jpg',
-      alt: 'Fachada deteriorada con puerta de madera descascarada y pintura desprendida, como señal de que un sitio pide rediseño web',
+      alt: 'Bote de pintura con una brocha encima, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Tu sitio necesita un rediseño de página web cuando no se ve bien en el celular, carga lento, no aparece en Google, no genera mensajes ni ventas o no puedes actualizarlo tú. Con tres o más de estas 8 señales, el rediseño deja de ser opcional; bien hecho, conserva el contenido, las URLs y el posicionamiento ganado.',
@@ -229,7 +229,7 @@ export const blog7: PageData[] = [
     date: '2026-07-29',
     heroImage: {
       src: '/images/blog/landing-page-vs-sitio-web-cual-necesitas.jpg',
-      alt: 'Comparación entre una landing page y un sitio web en dos pantallas',
+      alt: 'Diana con un dardo en el centro, en cromo plateado, render 3D sobre fondo gris claro',
     },
     lead: [
       'Landing page vs sitio web: la landing es una sola página con una sola acción, ideal para pauta y ofertas concretas, desde $550. El sitio web completo tiene una página por servicio, posiciona en Google y, como Web empresarial, parte desde $1,250. En Panamá, elige landing para una campaña y sitio para captar clientes continuamente.',

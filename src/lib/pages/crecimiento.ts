@@ -22,14 +22,13 @@ export const crecimiento: PageData[] = [
       ],
     },
     lead: [
-      'Publicar el sitio es el kilómetro cero. El tráfico, las posiciones y la seguridad se construyen mes a mes, con método.',
-      'Estos tres servicios sostienen la inversión que ya hiciste: el SEO trae visitas que no pagas por clic, el SEO local te pone en el mapa donde busca tu vecindario, y el mantenimiento evita que el sitio envejezca hasta romperse.',
+      'Cuatro servicios sostienen la inversión que ya hiciste: el SEO trae visitas que no pagas por clic, el SEO local te pone en el mapa de tu zona, y el mantenimiento y el hosting evitan que el sitio envejezca hasta romperse.',
     ],
     blocks: [
       {
         type: 'answer',
         fecha: '2026-10-14',
-        text: 'Crecimiento digital en Panamá es lo que hacemos después de publicar tu web: SEO para aparecer en Google y en las respuestas de IA, SEO local para el mapa, mantenimiento desde $99 al mes y hosting desde $225 al año. Son servicios recurrentes y cancelables, con reporte de lo que se hizo y de lo que se midió.',
+        text: 'Elemento Web, desde Ciudad de Panamá, hace crecer tu web después de publicarla: SEO para aparecer en Google y en las respuestas de IA, SEO local para el mapa, mantenimiento desde $99 al mes y hosting desde $225 al año. Son servicios recurrentes, sin permanencia, con un reporte de lo que se hizo y de lo que se midió.',
       },
       {
         type: 'tabla',
@@ -64,15 +63,6 @@ export const crecimiento: PageData[] = [
         nota: 'El orden importa: posicionar un sitio que se cae o que nadie mantiene es trabajo perdido.',
       },
       {
-        type: 'cards',
-        h2: 'Los tres motores',
-        items: [
-          { h3: 'SEO y posicionamiento', text: 'Contenido y autoridad para competir por las búsquedas que traen clientes, no solo visitas.', link: { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' } },
-          { h3: 'SEO local y Google Maps', text: 'Aparecer en el mapa cuando buscan tu servicio cerca. Para negocios con puerta abierta, es el canal número uno.', link: { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local' } },
-          { h3: 'Mantenimiento web', text: 'Actualizaciones, respaldos verificados y monitoreo desde $99/mes. Tu sitio no se cae ni envejece.', link: { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' } },
-        ],
-      },
-      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -89,7 +79,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'steps',
         h2: 'Cómo arrancamos contigo',
-        intro: 'Sin diagnósticos genéricos ni planes de escritorio. Primero miramos tu situación real y de ahí sale la prioridad.',
+        intro: 'Primero miramos tu situación real; de ahí sale la prioridad.',
         items: [
           { h3: 'Revisamos lo que ya tienes', text: 'Tu sitio, tu ficha de Google y tu presencia actual. Detectamos qué frena el crecimiento antes de proponer nada.' },
           { h3: 'Definimos la prioridad', text: 'No todo a la vez. Ordenamos por impacto y presupuesto: qué mueve la aguja primero en tu negocio y qué puede esperar.' },
@@ -100,7 +90,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'cards',
         h2: 'Para quién es cada motor',
-        intro: 'No todos los negocios necesitan lo mismo. Estas son las señales de que un servicio te conviene hoy.',
+        intro: 'Las señales de que un servicio te conviene hoy.',
         items: [
           { h3: 'Tu cliente te googlea', text: 'Si la gente busca tu servicio en Google antes de decidir, el SEO orgánico te pone en esa conversación mes a mes sin pagar por clic.', link: { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' } },
           { h3: 'Tienes puerta abierta', text: 'Restaurantes, clínicas, talleres y locales con dirección física viven del "cerca de mí". Ahí el mapa de Google es el buscador.', link: { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local' } },
@@ -111,9 +101,8 @@ export const crecimiento: PageData[] = [
         type: 'prose',
         h2: 'Crecer es sostener, no reinventar',
         paragraphs: [
-          'El error más común después de lanzar una web es tratarla como un cuadro colgado: se admira un mes y se olvida. Pero una web viva compite todos los días contra la de tu competencia, que quizá sí la está trabajando. El crecimiento no es un empujón puntual, es una rutina.',
-          'Por eso estos tres servicios son mensuales y no proyectos que terminan. El <strong>SEO</strong> acumula autoridad con el tiempo, el <strong>SEO local</strong> gana prominencia reseña a reseña, y el <strong>mantenimiento</strong> evita que un descuido de meses se convierta en un sitio hackeado. Todo suma cuando es constante.',
-          'Si no sabes por dónde empezar, escríbenos por WhatsApp y revisamos tu caso sin compromiso. A veces la respuesta honesta es "todavía no necesitas SEO, arregla primero esto otro", y preferimos decírtelo a venderte un plan que no te va a servir. Mira también nuestros <a href="/servicios/">servicios de diseño web</a> si tu sitio aún no está a la altura.',
+          'Una web publicada compite todos los días contra la de tu competencia, que quizá sí la está trabajando. Por eso estos servicios son recurrentes y no proyectos que terminan: el <strong>SEO</strong> acumula autoridad con el tiempo, el <strong>SEO local</strong> gana prominencia reseña a reseña, y el <strong>mantenimiento</strong> evita que un descuido de meses se convierta en un sitio hackeado.',
+          'A veces la respuesta honesta es "todavía no necesitas SEO, arregla primero esto otro". Si tu sitio aún no está a la altura, empieza por los <a href="/servicios/">servicios de diseño web</a>: posicionar una página que vas a rehacer es trabajo perdido.',
         ],
       },
       { type: 'form', h2: 'Revisemos por dónde empezar', intro: 'Pásanos tu web y cuéntanos qué te preocupa: te decimos qué servicio mueve la aguja primero en tu caso.' },
@@ -157,7 +146,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Hacemos SEO en Panamá con un método verificable: auditoría técnica, mapa de palabras clave por intención, una página por cada búsqueda que vale la pena, datos estructurados y contenido que responde de forma directa, para aparecer en Google y en las respuestas de asistentes de IA. Reportamos cada mes consultas, tráfico orgánico y páginas que crecen.',
+        text: 'Elemento Web hace posicionamiento web en Panamá desde Ciudad de Panamá con un método verificable: auditoría técnica antes de cobrar, una palabra clave principal por página, datos estructurados y respuestas directas para aparecer en Google y en asistentes de IA. Plan mensual cancelable; mejoras técnicas en semanas y posiciones competidas en 3 a 6 meses.',
       },
       {
         type: 'receipt',
@@ -208,8 +197,8 @@ export const crecimiento: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye el servicio',
-        intro: 'Arranca con una auditoría: antes de cobrar un solo mes te decimos en qué estás parado. Después, un plan mensual con alcance y precio fijo, cancelable.',
+        h2: 'Qué incluye el posicionamiento web en Panamá',
+        intro: 'Arranca con una auditoría antes de cobrar el primer mes; después, un plan mensual con alcance y precio fijo, cancelable.',
         incluye: [
           { t: 'Auditoría inicial', d: 'Palabras clave reales de tus clientes en Panamá, tus posiciones y las de tu competencia directa.' },
           { t: 'Base técnica', d: 'Velocidad y experiencia en celular, indexación, arquitectura y enlaces internos.' },
@@ -225,23 +214,11 @@ export const crecimiento: PageData[] = [
         medimos: ['Clics e impresiones en Search Console', 'Consultas generadas', 'Páginas con tráfico orgánico', 'Core Web Vitals', 'Menciones en asistentes de IA'],
       },
       {
-        type: 'steps',
-        h2: 'Cómo trabajamos el SEO',
-        items: [
-          { h3: 'Auditoría y palabras clave', text: 'Qué buscan tus clientes en Panamá, qué posiciona hoy tu sitio y contra quién compites.' },
-          { h3: 'Base técnica', text: 'Velocidad, indexación, datos estructurados y arquitectura. Sin esto, el contenido rema contra corriente.' },
-          { h3: 'Contenido mensual', text: 'Páginas y artículos que responden búsquedas con intención de compra, aprobados por ti antes de publicar.' },
-          { h3: 'GEO', text: 'Respuestas directas, comparaciones con criterio y datos coherentes para que los asistentes de IA puedan citarte.' },
-          { h3: 'Medición', text: 'Consultas, tráfico y páginas que crecen. Reporte mensual sin humo.' },
-        ],
-      },
-      {
         type: 'prose',
         h2: 'El SEO para respuestas de IA cambia qué contenido funciona',
         paragraphs: [
-          'Buena parte de las búsquedas ya no terminan en un clic: terminan en un resumen generado por IA, sea en Google, en ChatGPT o en Perplexity. Eso no elimina el SEO, pero sí cambia qué tipo de contenido rinde.',
-          'Un texto que da vueltas antes de responder no se cita. Lo que un motor generativo puede extraer y atribuir es una respuesta directa, cerrada y verificable: una definición clara, una comparación con criterio explícito, un número concreto con su fecha, una regla de decisión. Por eso cada página que trabajamos abre con una respuesta de 40 a 60 palabras y su fecha de actualización.',
-          'Y por eso los datos estructurados dejaron de ser un detalle técnico: son la forma de decirle a una máquina qué es cada cosa en tu página. <strong>Lo que no cambió es lo de fondo:</strong> hay que decir algo que valga la pena citar. El contenido que solo repite lo que ya está en otros diez sitios no lo cita nadie.',
+          'Buena parte de las búsquedas termina en un resumen generado por IA, en Google, ChatGPT o Perplexity, y no en un clic. Un texto que da vueltas antes de responder no se cita; lo que un motor generativo puede extraer y atribuir es una definición clara, una comparación con criterio explícito, un número con su fecha o una regla de decisión. Por eso cada página que trabajamos abre con una respuesta de 40 a 60 palabras y su fecha de actualización.',
+          'Los datos estructurados le dicen a una máquina qué es cada cosa en tu página. <strong>Lo de fondo no cambió:</strong> el contenido que solo repite lo que ya está en otros diez sitios no lo cita nadie.',
         ],
       },
       {
@@ -269,8 +246,7 @@ export const crecimiento: PageData[] = [
         type: 'prose',
         h2: 'Lo que ningún SEO honesto te puede prometer',
         paragraphs: [
-          'Si alguien te garantiza el primer lugar en Google, está vendiendo algo que no controla. Tampoco se puede prometer un plazo exacto: se puede estimar con base en la competencia y el estado del sitio, y explicar en qué se basa esa estimación.',
-          'Lo que sí se puede comprometer es el trabajo y sus señales: qué se va a auditar, qué se va a corregir, cuánto contenido se va a publicar y qué métricas se van a reportar. <strong>La señal de alarma más clara es quien no te explica qué va a hacer</strong>: suele esconder enlaces comprados o contenido generado en masa, que Google termina castigando.',
+          'Nadie fuera de Google controla el primer lugar, y un plazo exacto tampoco se puede prometer: se estima por la competencia y el estado del sitio. Lo que sí se compromete es el trabajo: qué se audita, qué se corrige, cuánto contenido se publica y qué se reporta. <strong>La señal de alarma más clara es quien no te explica qué va a hacer</strong>: suele esconder enlaces comprados o contenido generado en masa, que Google termina castigando.',
         ],
       },
       {
@@ -284,7 +260,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'cards',
         h2: 'Para quién rinde más el SEO',
-        intro: 'El SEO no es para todos por igual. Estos perfiles son los que más lo aprovechan.',
+        intro: 'Los tres perfiles que más lo aprovechan.',
         items: [
           { h3: 'Servicios profesionales', text: 'Abogados, contadores, clínicas: tu cliente investiga en Google antes de escribir. Aparecer con contenido útil genera confianza y consultas.', link: { slug: 'servicios/diseno-web-corporativo-panama', label: 'Web corporativa' } },
           { h3: 'Tiendas online', text: 'Cada producto y categoría es una puerta de entrada desde Google. El SEO de ecommerce trae ventas que no pagas por clic.', link: { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online' } },
@@ -365,7 +341,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Hacemos SEO local en Panamá para que tu negocio aparezca en Google Maps cuando buscan tu servicio cerca: ficha de Google Business Profile completa y verificada, nombre, dirección y teléfono idénticos en toda la web, un flujo semanal para pedir y responder reseñas, fotos reales y una página local en tu sitio. Medimos llamadas, rutas y visitas.',
+        text: 'Elemento Web hace SEO local en Google Maps para negocios de Ciudad de Panamá y el interior: ficha de Google Business Profile completa y verificada, nombre, dirección y teléfono idénticos en toda la web, un flujo semanal de reseñas, fotos reales y una página local en tu sitio. Medimos llamadas, rutas y visitas; las primeras señales llegan en semanas.',
       },
       {
         type: 'receipt',
@@ -438,7 +414,7 @@ export const crecimiento: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué trabajamos en tu presencia local',
+        h2: 'Qué incluye el SEO local en Google Maps',
         intro: 'La puesta a punto se cotiza cerrada tras revisar tu ficha actual; el acompañamiento mensual es opcional y cancelable.',
         incluye: [
           { t: 'Ficha completa y verificada', d: 'Recuperamos el acceso o la creamos, y terminamos la verificación de Google.' },
@@ -457,7 +433,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'steps',
         h2: 'Cómo ponemos tu negocio en el mapa',
-        intro: 'La presencia local se construye por orden. Saltarse pasos es lo que deja fichas a medias que no posicionan.',
+        intro: 'Cuatro pasos, en orden: saltarse uno deja fichas a medias.',
         items: [
           { h3: 'Reclamamos y verificamos la ficha', text: 'Recuperamos el acceso o creamos la ficha desde cero y completamos la verificación de Google, el paso que muchos dejan a medias.' },
           { h3: 'La llenamos completa y correcta', text: 'Categorías, servicios, horario, atributos, fotos reales del local y el equipo. Una ficha completa pesa más que una vacía en el orden del mapa.' },
@@ -478,9 +454,7 @@ export const crecimiento: PageData[] = [
         type: 'prose',
         h2: 'Nombre, dirección y teléfono: los tres datos que no pueden variar',
         paragraphs: [
-          'Es la base del SEO local y el error más común y más silencioso. Tu nombre comercial, tu dirección y tu teléfono tienen que aparecer exactamente iguales en todas partes: tu web, tu ficha de Google, tus redes, los directorios donde estés listado.',
-          'Cuando varían («Av. Balboa» en un lado y «Avenida Balboa» en otro, un teléfono con el código de país en un sitio y sin él en otro) Google no puede confirmar que se trata del mismo negocio, y esa duda le resta confianza a tu ficha frente a competidores cuyos datos sí cuadran.',
-          'El caso peor es el negocio que se mudó o cambió de teléfono y actualizó unos sitios y otros no. Quedan versiones contradictorias circulando durante años, y algunas siguen mandando clientes a una dirección donde ya no estás.',
+          'Tu nombre comercial, tu dirección y tu teléfono tienen que aparecer exactamente iguales en tu web, tu ficha de Google, tus redes y los directorios. Cuando varían («Av. Balboa» en un lado y «Avenida Balboa» en otro, el teléfono con y sin código de país), Google no puede confirmar que es el mismo negocio. El caso peor es el negocio que se mudó y actualizó unos sitios y otros no: algunas versiones siguen mandando clientes a la dirección vieja.',
           '<strong>La corrección es aburrida y barata:</strong> definir una versión oficial de los tres datos y hacer que coincida en todos lados, empezando por tu web y tu ficha de Google.',
         ],
       },
@@ -488,8 +462,7 @@ export const crecimiento: PageData[] = [
         type: 'prose',
         h2: 'El radio real de tu negocio no es la ciudad entera',
         paragraphs: [
-          'La búsqueda local funciona con proximidad: Google le muestra a cada persona lo que está cerca de donde está. Eso significa que no compites contra todos los negocios de Panamá, compites contra los de tu radio.',
-          'Es una buena noticia y una limitación. La buena: un negocio pequeño puede dominar su zona sin pelear contra las cadenas. La limitación: por bien optimizada que esté tu ficha, es muy difícil aparecer para alguien que está a veinte kilómetros y tiene diez opciones más cerca.',
+          'La búsqueda local funciona por proximidad: no compites contra todos los negocios de Panamá, sino contra los de tu radio. Un negocio pequeño puede dominar su zona sin pelear contra las cadenas, pero es muy difícil aparecer para alguien que está a veinte kilómetros y tiene diez opciones más cerca.',
           'De ahí salen dos decisiones prácticas. Si tienes varias sedes, cada una necesita su propia ficha y su propia página con dirección y horario propios; una sola página que las mencione a todas no posiciona en ninguna zona. Y si atiendes a domicilio sin local visitable, conviene configurar el área de servicio en lugar de una dirección.',
           '<strong>El contenido por zona es lo que extiende ese radio.</strong> Páginas que hablen de las zonas donde trabajas atraen búsquedas que la sola proximidad no te daría.',
         ],
@@ -498,9 +471,7 @@ export const crecimiento: PageData[] = [
         type: 'prose',
         h2: 'Las reseñas falsas se notan y salen caras',
         paragraphs: [
-          'La tentación es evidente cuando un competidor tiene cuarenta reseñas y tú seis. Y es de las peores decisiones que puede tomar un negocio local.',
-          'Google detecta patrones: muchas reseñas de golpe, cuentas sin historial, textos parecidos, todas de cinco estrellas sin detalle. La consecuencia va desde eliminar las reseñas hasta suspender la ficha, y una ficha suspendida deja al negocio fuera del mapa mientras se resuelve.',
-          'Lo que sí funciona es pedirlas de forma sistemática y en el momento correcto: justo después de un servicio bien resuelto, con un enlace directo que le ahorre al cliente buscar dónde escribir. La mayoría de la gente contenta no deja reseña simplemente porque nadie se la pidió.',
+          'Google detecta patrones (muchas reseñas de golpe, cuentas sin historial, textos parecidos, todas de cinco estrellas sin detalle) y la consecuencia va desde eliminarlas hasta suspender la ficha, que deja al negocio fuera del mapa mientras se resuelve. Lo que funciona es pedirlas justo después de un servicio bien resuelto, con un enlace directo: la mayoría de la gente contenta no deja reseña porque nadie se la pidió.',
           'Y responderlas todas, sobre todo las malas. <strong>Una respuesta calmada y concreta a una queja legítima convence más que diez reseñas de cinco estrellas</strong>, porque el que compara está midiendo cómo reaccionas cuando algo sale mal.',
         ],
       },
@@ -508,16 +479,14 @@ export const crecimiento: PageData[] = [
         type: 'prose',
         h2: 'Qué medir: llamadas y rutas, no impresiones',
         paragraphs: [
-          'La ficha de Google reporta cuántas veces se mostró, y ese número es el menos accionable de todos. Lo que importa es qué hizo la gente.',
-          'Los tres números que valen son cuántos pulsaron para llamar, cuántos pidieron cómo llegar y cuántos entraron a la web desde la ficha. Los dos primeros son intención de compra casi pura: nadie pide la ruta a un negocio que no piensa visitar.',
-          'El segundo corte es por tipo de búsqueda: cuántos te encontraron buscando tu nombre y cuántos buscando lo que vendes. El primero es gente que ya te conocía; el segundo es cliente nuevo, y es el que dice si el trabajo local está funcionando.',
+          'Cuántas veces se mostró la ficha es el número menos accionable. Los que valen son cuántos pulsaron para llamar, cuántos pidieron cómo llegar y cuántos entraron a la web; los dos primeros son intención de compra casi pura. Después, cuántos te encontraron buscando lo que vendes y no tu nombre: ese es el cliente nuevo, y dice si el trabajo local funciona.',
           'Y el ritmo de reseñas: cuántas entran al mes y cuántas se respondieron. <strong>Es el factor que más mueve la posición en el mapa</strong> y el que más se descuida cuando el negocio está ocupado.',
         ],
       },
       {
         type: 'cards',
         h2: 'Negocios donde el mapa lo es todo',
-        intro: 'Si tu cliente decide «cerca de mí», estás en esta lista y el SEO local es tu mejor inversión.',
+        intro: 'Si tu cliente decide «cerca de mí», el mapa es donde se gana o se pierde la llamada.',
         items: [
           { h3: 'Restaurantes y cafés', text: 'La gente busca dónde comer cerca y decide por fotos y reseñas en segundos. Una ficha cuidada llena mesas.', link: { slug: 'industrias/diseno-web-restaurantes-panama', label: 'Web para Restaurantes' } },
           { h3: 'Clínicas y consultorios', text: 'Pacientes buscan por especialidad y cercanía. Reseñas y datos claros en el mapa generan la primera cita.', link: { slug: 'industrias/diseno-web-clinicas-salud-panama', label: 'Web para Clínicas' } },
@@ -599,7 +568,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-14',
-        text: 'Mantenemos sitios web en Panamá desde $99 al mes: actualizaciones de seguridad con respaldo previo, respaldos con restauración probada, monitoreo de caídas con alerta inmediata, certificado SSL renovado y reporte mensual del estado real. Tres planes según qué tan rápido necesitas respuesta y cuántas horas de cambios al mes, sin permanencia.',
+        text: 'Elemento Web hace mantenimiento web en Panamá desde $99 al mes, desde Ciudad de Panamá: actualizaciones con respaldo previo, respaldos con restauración probada, monitoreo de caídas con alerta inmediata, SSL renovado y reporte mensual. Tres planes que cambian la rapidez de respuesta, del siguiente día hábil al mismo día, y las horas de cambios; sin permanencia.',
       },
       {
         type: 'receipt',
@@ -706,7 +675,7 @@ export const crecimiento: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye el mantenimiento',
+        h2: 'Qué incluye el mantenimiento web en Panamá',
         intro: 'Desde $99 al mes en el plan Básico. Los planes Prioritario y Empresarial suman respuesta más rápida y horas de cambios.',
         incluye: [
           { t: 'Actualizaciones con respaldo previo', d: 'Respaldamos antes de tocar nada y verificamos que todo siga igual.' },
@@ -737,38 +706,23 @@ export const crecimiento: PageData[] = [
         type: 'prose',
         h2: 'Qué pasa exactamente cuando un sitio no se actualiza',
         paragraphs: [
-          'La respuesta corta es que no pasa nada durante meses, y después pasa todo de golpe. Esa demora es la razón por la que tanta gente cancela el mantenimiento justo antes de necesitarlo.',
-          'El mecanismo es conocido: cuando se descubre una vulnerabilidad en WordPress o en un plugin popular, se publica el arreglo. A partir de ese momento, la vulnerabilidad es información pública y hay sistemas automáticos recorriendo internet buscando sitios que todavía no la corrigieron. No te eligen a ti: te encuentran.',
-          'Lo que sigue rara vez es un ataque dramático. Lo habitual es que el sitio empiece a redirigir a páginas de apuestas o farmacias, o que se le inyecten enlaces ocultos. El dueño se entera semanas después, cuando Google ya marcó el sitio como peligroso y el tráfico se desplomó.',
-          '<strong>Y limpiar cuesta más que mantener.</strong> Hay que encontrar todo lo inyectado, cerrar la puerta de entrada, pedirle a Google que revise el sitio y esperar a que el tráfico vuelva, si vuelve.',
+          'Durante meses no pasa nada, y después pasa todo de golpe; por eso tanta gente cancela el mantenimiento justo antes de necesitarlo. Cuando se publica el arreglo de una vulnerabilidad en WordPress o en un plugin popular, la falla se vuelve pública y hay sistemas automáticos buscando sitios que no la corrigieron. No te eligen: te encuentran, sin importar el tamaño de tu negocio.',
+          'Lo habitual no es un ataque dramático: el sitio empieza a redirigir a páginas de apuestas o farmacias, o recibe enlaces ocultos, y el dueño se entera cuando Google ya lo marcó como peligroso y el tráfico cayó. <strong>Limpiar cuesta más que mantener:</strong> hay que encontrar lo inyectado, cerrar la entrada, pedirle a Google que revise el sitio y esperar a que el tráfico vuelva. Por eso no tiene sentido invertir en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a> sobre un sitio sin mantenimiento.',
         ],
       },
       {
         type: 'prose',
         h2: 'Un respaldo que nadie ha restaurado no es un respaldo',
         paragraphs: [
-          'Casi todos los hostings incluyen respaldo automático y casi nadie ha probado restaurarlo. El día que hace falta es un mal día para descubrir que no funciona.',
-          'Los fallos que aparecen en ese momento son siempre los mismos: el respaldo guarda los archivos pero no la base de datos, o al revés. O se guarda en el mismo servidor, así que si el servidor cae se va con él. O existe pero solo del último día, y el problema empezó hace dos semanas sin que nadie lo notara.',
-          '<strong>Un respaldo sin probar es una suposición, no un seguro.</strong> Por eso probamos restauraciones periódicamente y conservamos varias versiones: poder volver más atrás es lo que salva el sitio.',
+          'Casi todos los hostings incluyen respaldo automático y casi nadie ha probado restaurarlo; el día que hace falta es un mal día para descubrir que no funciona. <strong>Un respaldo sin probar es una suposición, no un seguro.</strong> Por eso probamos restauraciones periódicamente y conservamos varias versiones hacia atrás.',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir: tiempo caído y velocidad en celular',
         paragraphs: [
-          'El primer número es el <strong>tiempo caído</strong>: cuántos minutos al mes el sitio no respondió. Sin monitoreo, un sitio puede estar cayéndose cada semana de madrugada y nadie enterarse, mientras el posicionamiento se erosiona en silencio.',
-          'El segundo es la velocidad medida en celular con conexión móvil, no en la computadora de la oficina con fibra. Es como llega la mayoría de los visitantes en Panamá y es la medición que usa Google.',
-          'El tercero, y el que nadie mira hasta que hay problema, es cuándo se restauró un respaldo por última vez a modo de prueba. Es la única forma de saber que el seguro existe.',
-          'Y las actualizaciones aplicadas al mes, con nota de cuáles eran de seguridad. <strong>Ese registro es lo que separa un mantenimiento real de una factura mensual sin trabajo detrás.</strong>',
-        ],
-      },
-      {
-        type: 'prose',
-        h2: 'Recuperar un sitio cuesta más que cuidarlo',
-        paragraphs: [
-          'Un ataque no llega porque tu negocio sea importante. Llega porque un robot escaneó millones de sitios y el tuyo tenía un componente sin actualizar. No es personal, es automático, y por eso ningún negocio es «demasiado pequeño» para que le pase.',
-          'Cuando ocurre, la factura no es solo técnica. Limpiar el sitio, recuperar los datos y pedir a Google que te quite la marca de «sitio peligroso» toma tiempo, y mientras tanto <strong>pierdes el posicionamiento que tardaste meses en ganar y la confianza de quien intentó entrar y vio una alerta roja</strong>.',
-          'El mantenimiento es la base sobre la que se sostiene todo lo demás: no tiene sentido invertir en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a> para traer visitas a un sitio que un día amanece caído o comprometido.',
+          'El <strong>tiempo caído</strong>: cuántos minutos al mes el sitio no respondió, porque sin monitoreo puede caerse cada madrugada sin que nadie se entere. La velocidad medida en celular con conexión móvil, que es como llega la mayoría de los visitantes en Panamá y como mide Google. Y la fecha de la última restauración de prueba.',
+          'Además, las actualizaciones aplicadas al mes, con nota de cuáles eran de seguridad. <strong>Ese registro es lo que separa un mantenimiento real de una factura mensual sin trabajo detrás.</strong>',
         ],
       },
       {
@@ -843,7 +797,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Alojamos sitios web en Panamá desde $225 al año, con dominio y certificado SSL incluidos: hosting compartido, cloud desde $350 o VPS desde $550 según tu tráfico e integraciones, correo empresarial con tu dominio y el dominio siempre a tu nombre. Si ya tienes sitio, lo migramos preparando el servidor nuevo en paralelo.',
+        text: 'Elemento Web, desde Ciudad de Panamá, ofrece hosting e infraestructura web en Panamá desde $225 al año con dominio y certificado SSL incluidos: compartido, cloud desde $350 o VPS desde $550 según tu tráfico e integraciones. El dominio queda siempre a tu nombre y, si ya tienes sitio, lo migramos con el servidor nuevo preparado en paralelo.',
       },
       {
         type: 'receipt',
@@ -858,7 +812,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'extras',
         h2: 'Planes de hosting según tu proyecto',
-        intro: 'El hosting no es único: depende de tu proyecto. Cuánto tráfico esperas, qué integraciones necesita y cuánto control quieres definen el nivel correcto. Todos incluyen dominio y certificado SSL.',
+        intro: 'El nivel correcto lo definen el tráfico que esperas, las integraciones y cuánto control quieres. Todos incluyen dominio y certificado SSL.',
       },
       {
         type: 'ejemplos',
@@ -906,7 +860,7 @@ export const crecimiento: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué incluye la infraestructura',
+        h2: 'Qué incluye el hosting e infraestructura web',
         intro: 'Desde $225 al año en hosting compartido; cloud desde $350 y VPS desde $550. Todos con dominio y certificado SSL.',
         incluye: [
           { t: 'Dominio a tu nombre', d: 'Registrado a nombre tuyo o de tu empresa, nunca al nuestro.' },
@@ -925,7 +879,7 @@ export const crecimiento: PageData[] = [
       {
         type: 'steps',
         h2: 'Cómo migramos tu hosting sin drama',
-        intro: 'Si ya tienes un sitio funcionando, cambiar de hosting es el paso que más miedo da. Así lo hacemos sin que se note.',
+        intro: 'Si ya tienes un sitio funcionando, así lo cambiamos de servidor sin que tus visitantes lo noten.',
         items: [
           { h3: 'Auditamos lo que tienes', text: 'Revisamos tu hosting actual: qué corre ahí, qué integraciones tiene y qué se necesita replicar exacto.' },
           { h3: 'Preparamos el entorno nuevo en paralelo', text: 'Configuramos y probamos todo en el servidor nuevo mientras el sitio actual sigue funcionando normal para tus visitantes.' },
@@ -937,9 +891,7 @@ export const crecimiento: PageData[] = [
         type: 'prose',
         h2: 'El hosting barato no es más lento: es más frágil',
         paragraphs: [
-          'La diferencia real entre un hosting barato y uno decente no está tanto en la velocidad como en qué pasa cuando algo sale mal.',
-          'En el hosting compartido más barato tu sitio convive con cientos de otros en el mismo servidor. Si uno de esos recibe un pico de tráfico o es atacado, tu sitio se ve afectado. Y el soporte, cuando existe, responde en días.',
-          'El costo real aparece en la caída. Un sitio caído un fin de semana largo son tres días sin recibir un solo contacto, y eso suele valer bastante más que la diferencia de precio anual entre un hosting barato y uno decente.',
+          'La diferencia entre un hosting barato y uno decente está en qué pasa cuando algo sale mal. En el compartido más barato tu sitio convive con cientos de otros en el mismo servidor: si uno recibe un pico de tráfico o un ataque, el tuyo lo siente, y el soporte responde en días. Un fin de semana largo caído son tres días sin un solo contacto, y eso suele valer más que la diferencia de precio anual.',
           '<strong>La infraestructura y el monitoreo son dos cosas distintas</strong>, y por separado no sirven de mucho: el servidor es dónde vive tu sitio; el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento</a> es quien se entera y responde cuando se cae.',
         ],
       },

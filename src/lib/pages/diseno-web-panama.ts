@@ -33,12 +33,12 @@ export const disenoWebPanama: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Elemento Web diseña páginas web en Panamá para empresas que quieren conseguir clientes: sitios corporativos desde $1,250, tiendas online desde $1,950 y landing pages desde $550, con SEO técnico, WhatsApp y panel autoadministrable. Cada proyecto arranca con un diagnóstico sin costo y una cotización cerrada por escrito antes de empezar.',
+        text: 'Elemento Web, agencia con sede en Ciudad de Panamá, hace diseño web en Panamá: sitios corporativos desde $1,250, tiendas online desde $1,950 y landing pages desde $550, con SEO técnico, WhatsApp y panel autoadministrable. Se entregan en 1 a 5 semanas según el formato, tras un diagnóstico sin costo y una cotización cerrada por escrito.',
       },
       {
         type: 'cards',
         h2: 'Los cuatro formatos de diseño web',
-        intro: 'No todo negocio necesita lo mismo. Elegimos el formato según tu objetivo, no según lo que sea más cómodo de vender.',
+        intro: 'El formato sale de lo que la web tiene que lograr: cotizaciones, ventas en línea, una campaña o recuperar un sitio que ya existe.',
         items: [
           { h3: 'Diseño web corporativo · desde $1,250', text: 'El sitio institucional que tus clientes revisan antes de firmar: una página por servicio, estructura clara y panel autoadministrable. Para empresas B2B, despachos profesionales y proveedores.', link: { slug: 'servicios/diseno-web-corporativo-panama', label: 'Ver diseño corporativo' } },
           { h3: 'Tienda online · desde $1,950', text: 'Catálogo, carrito, Yappy y pasarelas locales. Una tienda pensada para vender en Panamá, con la logística y los pagos que tus clientes ya usan.', link: { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Ver tiendas online' } },
@@ -87,7 +87,7 @@ export const disenoWebPanama: PageData[] = [
       {
         type: 'includes',
         h2: 'Qué incluye siempre, sin costo extra',
-        intro: 'No son mejoras opcionales que aparecen en la factura al final: vienen en todo proyecto de diseño web que entregamos.',
+        intro: 'Vienen en todo proyecto de diseño web que entregamos; no aparecen como extras en la factura final.',
         incluye: [
           { t: 'Diseño a medida', d: 'Sobre tu marca, sin plantillas revendidas ni constructores pesados.' },
           { t: 'Responsivo de verdad', d: 'Pensado primero para el celular, que es donde te buscan, y revisado en tablet y escritorio.' },
@@ -122,9 +122,9 @@ export const disenoWebPanama: PageData[] = [
         type: 'prose',
         h2: 'Qué es (y qué no es) un buen diseño web en Panamá',
         paragraphs: [
-          'En Panamá abundan las páginas hechas para verse, no para funcionar: se ven modernas, pero no aparecen en Google, no cargan rápido en el celular y no le dicen al visitante qué hacer. El resultado es una web que existe pero no trabaja.',
-          'Un buen diseño web parte de la pregunta correcta: <strong>¿qué necesita lograr tu negocio con este sitio?</strong> Conseguir cotizaciones, vender en línea, llenar una agenda de citas, generar confianza antes de una reunión. La respuesta define la estructura, el contenido y cada botón.',
-          'Por eso todo lo que construimos se sostiene en tres pilares: <strong>que te encuentren</strong> (SEO técnico y contenido para las búsquedas que hace tu cliente), <strong>que entiendan</strong> (mensaje claro en los primeros segundos, jerarquía visual, velocidad) y <strong>que actúen</strong> (un siguiente paso obvio: escribir por WhatsApp, comprar, agendar).',
+          'Una web que se ve moderna pero no aparece en Google, carga lento en el celular y no le dice al visitante qué hacer existe, pero no trabaja.',
+          'Un buen diseño web parte de una pregunta: <strong>¿qué necesita lograr tu negocio con este sitio?</strong> Conseguir cotizaciones, vender en línea, llenar una agenda o generar confianza antes de una reunión. La respuesta define la estructura, el contenido y cada botón.',
+          'Todo lo que construimos se sostiene en tres pilares: <strong>que te encuentren</strong> (SEO técnico y contenido para las búsquedas que hace tu cliente), <strong>que entiendan</strong> (mensaje claro en los primeros segundos, jerarquía visual, velocidad) y <strong>que actúen</strong> (un siguiente paso obvio: escribir por WhatsApp, comprar, agendar).',
         ],
       },
       {
@@ -149,8 +149,7 @@ export const disenoWebPanama: PageData[] = [
         type: 'prose',
         h2: '¿Por qué una agencia panameña con producto propio?',
         paragraphs: [
-          'Cualquiera puede montar un sitio con una plantilla en un fin de semana. Lo difícil, y lo que mueve tu negocio, es la estrategia: qué páginas crear, cómo estructurarlas, qué integrar y cómo posicionarlas.',
-          'Desarrollamos y operamos software propio en producción, como <a href="/saas/wazacrm/">WazaCRM</a> y <a href="/saas/nouscrm/">NousCRM</a>. Eso significa que resolvemos a diario los mismos problemas de rendimiento, integración y escala que tu web podría necesitar mañana. Y hablas con quien construye: las decisiones se toman rápido y el acompañamiento después del lanzamiento es real.',
+          'Desarrollamos y operamos software propio en producción, como <a href="/saas/wazacrm/">WazaCRM</a> y <a href="/saas/nouscrm/">NousCRM</a>: resolvemos a diario los problemas de rendimiento, integración y escala que tu web podría necesitar mañana. Y hablas con quien construye, así que las decisiones sobre páginas, integraciones y posicionamiento se toman rápido.',
           'También diseñamos por rubro: mira cómo cambia una web para <a href="/industrias/diseno-web-clinicas-salud-panama/">clínicas</a>, <a href="/industrias/diseno-web-constructoras-panama/">constructoras</a> o <a href="/industrias/diseno-web-restaurantes-panama/">restaurantes</a> en el <a href="/industrias/">índice de industrias</a>.',
         ],
       },
@@ -168,7 +167,7 @@ export const disenoWebPanama: PageData[] = [
           { q: '¿Cuándo NO necesitas contratar una agencia?', a: 'Si vendes por Instagram, tu ticket es bajo y tu cliente decide en dos mensajes, una página propia no te va a cambiar el negocio todavía. La web se paga cuando el cliente te investiga antes de comprar, cuando compites por búsquedas en Google, o cuando contestar lo mismo veinte veces al día ya te está costando ventas.' },
         ],
       },
-      { type: 'form', h2: 'Cotiza tu página web', intro: 'Cuéntanos qué necesita tu negocio: te damos un diagnóstico honesto y una propuesta con precio cerrado, sin compromiso.' },
+      { type: 'form', h2: 'Cotiza tu página web', intro: 'Dinos qué formato te interesa (landing, sitio corporativo, tienda o rediseño) y si ya tienes textos y fotos: te respondemos con un diagnóstico y una cotización cerrada.' },
       {
         type: 'related',
         h2: 'Explora más',

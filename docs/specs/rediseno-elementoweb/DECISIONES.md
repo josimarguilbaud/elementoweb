@@ -551,6 +551,13 @@ comitea y despliega», con una plantilla común, mockups de fal e imágenes nuev
   (11 del blog y las 18 de `public/images/industrias/`), con sus alt y `CREDITOS-IA.json`. Merge `89ab488`; `verify`
   en verde antes del merge y `check-prod.sh` 39 ok después. Blog e industrias quedan completos. Gasto de la tanda:
   US$ 26,10 de US$ 27.
+- **Secciones en una columna (22-oct-2026, pedido del dueño):** las secciones con título de las páginas de servicio
+  ya no ponen el título solo a la izquierda (0,8 fr) con un vacío debajo y el contenido al lado. Ahora: título arriba
+  (máx. 24ch), introducción debajo (máx. 62ch) y contenido a todo el ancho; los pasos van en columnas desde 768 px con
+  un filete negro arriba, los enlaces relacionados en dos columnas y las FAQ hasta 880 px. En la misma tanda: tintes
+  azul marino que quedaban en maquetas, pies de foto y etiquetas pasados a negro, y nueva imagen para compartir de la
+  portada (`og/home.jpg`, antes mostraba la web de un cliente). Merge `bcc71e2`, `verify` en verde, despliegue
+  39811274075 en verde, `check-prod.sh` 39 ok.
 
 ## 3. Responsables y dependencias humanas
 

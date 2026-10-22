@@ -151,12 +151,10 @@ footer .bg-negro :focus-visible { outline-color: #fff; }
 .ew-sec { padding: 56px 0; }
 @media (min-width: 1024px) { .ew-sec { padding: 80px 0; } }
 .ew-wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); display: grid; gap: 24px 48px; }
-@media (min-width: 1024px) {
-  /* Columna estrecha para el título y ancha para el contenido (0,8 fr y 1,2 fr). */
-  .ew-wrap:has(> .ew-h2) { grid-template-columns: 0.8fr 1.2fr; align-items: start; }
-  .ew-wrap:has(> .ew-h2) > .ew-h2 { grid-column: 1; grid-row: 1 / span 4; }
-  .ew-wrap:has(> .ew-h2) > :not(.ew-h2) { grid-column: 2; }
-}
+/* Sección en una columna (D57, pedido del dueño): título arriba, introducción debajo y el contenido a todo el ancho.
+   Antes el título iba solo a la izquierda (0,8 fr) y dejaba un vacío debajo, con el contenido apretado a la derecha. */
+.ew-wrap:has(> .ew-h2) > .ew-h2 { max-width: 24ch; }
+.ew-wrap:has(> .ew-h2) > .ew-h2 + .ew-intro { margin-top: -12px; max-width: 62ch; }
 .ew-h2 { font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.025em; color: var(--ew-text); }
 .ew-intro { max-width: 62ch; line-height: 1.65; color: var(--ew-muted); }
 /* Voz de datos: etiquetas y fechas. */

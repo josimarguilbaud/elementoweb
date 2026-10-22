@@ -1,0 +1,62 @@
+{
+  "_nota": "Prompts y costos de las imágenes de la portada v3 (D56). Gasto registrado en audit/imagenes-ia-2026-10.json, tanda portada-v3 (mkia-28 a mkia-32), US$ 0,15 por imagen como tope reservado.",
+  "generaciones": [
+    {
+      "fuente": "escultura",
+      "modelo": "google/nano-banana-2.1",
+      "request_id": "01a16226-5291-7422-9d09-82b97496c1a4",
+      "fecha": "2026-10-22",
+      "costo_usd": 0.15,
+      "prompt": "Studio product render of an abstract sculpture made of polished liquid chrome silver: smooth interlocking ribbon loops and a sphere, highly reflective mirror metal with soft gray reflections, floating slightly, centered, on a seamless very light gray #F5F5F5 background, soft diffused studio lighting, subtle contact shadow, monochrome, no color, no text, no logo, premium SaaS hero 3D render, sharp detail.",
+      "archivos": [
+        "escultura-800.webp",
+        "escultura-400.webp"
+      ]
+    },
+    {
+      "fuente": "diptico-marketing",
+      "modelo": "google/nano-banana-2.1",
+      "request_id": "01a16226-528e-7691-9a93-68811e132131",
+      "fecha": "2026-10-22",
+      "costo_usd": 0.15,
+      "prompt": "Realistic photo: a hand holding a smartphone showing an Instagram-style sponsored ad for a small Panamanian bakery (pastries on a wooden counter, generic unbranded app interface, no real logos, no readable brand names), blurred cafe interior in Panama City in the background, natural daylight, shallow depth of field, editorial commercial photography, warm natural colors.",
+      "nota": "Recortada para quitar el pie del anuncio, que traía texto de relleno ilegible.",
+      "archivos": [
+        "diptico-marketing-800.webp"
+      ]
+    },
+    {
+      "fuente": "diptico-ia",
+      "modelo": "google/nano-banana-2.1",
+      "request_id": "01a16226-5290-7391-80aa-ca528e18848e",
+      "fecha": "2026-10-22",
+      "costo_usd": 0.15,
+      "prompt": "Realistic photo: a Latin American professional woman in a modern office in Panama City, sitting at a desk, looking at a laptop screen that shows a chat assistant conversation interface (generic, no logos, text not readable), glass windows with Panama City skyline softly blurred behind, natural daylight, editorial corporate photography, calm and confident, natural colors.",
+      "archivos": [
+        "diptico-ia-800.webp"
+      ]
+    },
+    {
+      "fuente": "bento-anuncio",
+      "modelo": "google/nano-banana-2.1",
+      "request_id": "01a16226-5292-7b51-b3b5-d50295910538",
+      "fecha": "2026-10-22",
+      "costo_usd": 0.15,
+      "prompt": "Clean social media ad creative for a fictional Panamanian coffee brand: a single iced coffee cup with condensation on a pastel neutral background, minimal composition, large empty space at top, professional product photography, natural colors, no text, no logo, no brand names.",
+      "archivos": [
+        "bento-anuncio-600.webp"
+      ]
+    },
+    {
+      "fuente": "bento-videos",
+      "modelo": "google/nano-banana-2.1",
+      "request_id": "01a16226-5294-7ba2-a0b4-7a630d9fdbbe",
+      "fecha": "2026-10-22",
+      "costo_usd": 0.15,
+      "prompt": "Grid of four short-form video thumbnails for social media ads, arranged 2x2 with thin white gaps: a chef plating food, a person unboxing a product, a hotel pool at sunset in Panama, a smiling dentist with patient. Realistic photography, vertical framing feel, natural colors, cinematic lighting, no text, no logos, no play buttons.",
+      "archivos": [
+        "bento-videos-600.webp"
+      ]
+    }
+  ]
+}

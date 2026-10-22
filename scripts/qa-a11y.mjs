@@ -75,7 +75,7 @@ const contrastes = () => {
     if (peor < minimo(cs)) malos.push(`${nombre} «${el.textContent.trim().slice(0, 30)}» ${peor.toFixed(2)}:1 (mínimo ${minimo(cs)})`);
   };
   const conTexto = (el) => [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()) && el.checkVisibility({ opacityProperty: true, visibilityProperty: true }) && el.getBoundingClientRect().width > 1;
-  for (const [nombre, sel] of [['héroe', '.ew-hero *'], ['etapa', '.ew-pasos__n'], ['signo', '.ew-sign'], ['dominio', '.ew-dev__bar span'], ['maqueta', '.pv2-maqueta *'], ['nota', '.pv2-nota, .pv2-nota *'], ['fila de la vitrina', '.pv2-vit__fila *']]) {
+  for (const [nombre, sel] of [['héroe', '.pv3-hero *'], ['maqueta', '.pv3-maqueta *'], ['nota', '.pv3-nota'], ['mitad negra', '.pv3-mitad--negra *'], ['bloque IA', '.pv3-ia *'], ['confianza', '.pv3-confianza *']]) {
     for (const el of document.querySelectorAll(sel)) if (conTexto(el) && !el.closest('.sr-only')) medir(el, getComputedStyle(el), nombre);
   }
   for (const td of document.querySelectorAll('.ew-cmp td')) {
@@ -84,22 +84,20 @@ const contrastes = () => {
   }
   return malos;
 };
-// Objetivos de 44 px: filas de la vitrina (el enlace se estira con ::after), fuentes y fichas de industria.
-const objetivos = () => [...document.querySelectorAll('.pv2-vit__fila, .ew-src, .pv2-ficha')]
+// Objetivos de 44 px (D56): franja, enlaces del díptico, «Ver más» del bento, preguntas y botones de la portada.
+const objetivos = () => [...document.querySelectorAll('.pv3-franja a, .pv3-enlaces a, .pv3-tarjeta__ir, .pv3-pregunta summary, main .pv3-btn')]
   .filter((a) => a.checkVisibility()).filter((a) => a.getBoundingClientRect().height < 44)
   .map((a) => `${a.className || a.textContent.trim().slice(0, 24)} ${Math.round(a.getBoundingClientRect().height)} px`);
-// Vitrina (D54): la fila entera es el blanco del clic. En el número, la línea, «Se mide», la flecha y el centro de cada
-// fila, elementFromPoint devuelve el enlace de la fila (un hijo posicionado taparía el ::after).
-const clicsFila = () => [...document.querySelectorAll('.pv2-vit__fila')].flatMap((f) => {
-  f.scrollIntoView({ block: 'center', behavior: 'instant' });
-  const a = f.querySelector('h3 a');
-  return [['número', '.pv2-vit__num'], ['línea', '.pv2-vit__linea'], ['se mide', '.pv2-vit__mide'], ['flecha', '.pv2-vit__flecha'], ['centro', null]].flatMap(([n, s]) => {
-    const r = (s ? f.querySelector(s) : f).getBoundingClientRect();
-    return document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2) === a ? [] : [`${f.dataset.fila} en ${n}`];
+// Bento: la tarjeta entera es el blanco del clic (el enlace se estira con ::after). En el título, la maqueta y el centro
+// de cada tarjeta, elementFromPoint devuelve su enlace.
+const clicsTarjeta = () => [...document.querySelectorAll('.pv3-tarjeta')].flatMap((t) => {
+  t.scrollIntoView({ block: 'center', behavior: 'instant' });
+  const a = t.querySelector('a.pv3-tarjeta__ir');
+  return [['título', '.pv3-tarjeta__t'], ['maqueta', '.pv3-maqueta'], ['centro', null]].flatMap(([n, sel]) => {
+    const r = (sel ? t.querySelector(sel) : t).getBoundingClientRect();
+    return document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2) === a ? [] : [`${t.querySelector('.pv3-tarjeta__t').textContent} en ${n}`];
   });
 });
-const escenas = () => document.querySelectorAll('.pv2-vit__escena').length;
-const activarEscena = (i) => document.querySelectorAll('.pv2-vit__escena').forEach((e, j) => e.classList.toggle('pv2-vit__escena--activa', j === i));
 
 for (const [w, h] of [[390, 844], [768, 1024], [1280, 800]]) {
   const p = await (await contextoSinGa(b, { viewport: { width: w, height: h } })).newPage();
@@ -109,25 +107,14 @@ for (const [w, h] of [[390, 844], [768, 1024], [1280, 800]]) {
   if (bajos.length) anotar('portada-contraste-calculado', 'Contraste calculado fuera de axe (aria-hidden, héroe, td::before)', `/ (${w})`, bajos);
   const chicos = await p.evaluate(objetivos);
   if (chicos.length) anotar('portada-objetivo-44', 'Objetivos de toque de menos de 44 px', `/ (${w})`, chicos);
-  const sinClic = await p.evaluate(clicsFila);
-  if (sinClic.length) anotar('portada-vitrina-clic', 'Puntos de la fila de la vitrina que no llevan al enlace', `/ (${w})`, sinClic);
-  if (w === 768 || w === 1280) {
-    // Contraste de las 6 escenas: las ocultas no se miden (visibility: hidden), así que se activa una por una.
-    for (let i = 0, n = await p.evaluate(escenas); i < n; i++) {
-      await p.evaluate(activarEscena, i);
-      const malos = (await p.evaluate(contrastes)).filter((m) => /^(maqueta|nota) /.test(m));
-      if (malos.length) anotar('portada-vitrina-contraste', 'Contraste de las escenas de la vitrina', `/ (${w}, escena ${i + 1})`, malos);
-    }
-    await p.evaluate(activarEscena, 0);
-  }
+  const sinClic = await p.evaluate(clicsTarjeta);
+  if (sinClic.length) anotar('portada-bento-clic', 'Puntos de la tarjeta del bento que no llevan a su enlace', `/ (${w})`, sinClic);
   if (w === 1280) {
-    // El menú fijo sobre grafito: axe con la página desplazada hasta #seo y hasta #compara. Desplazado, el menú pasa a
-    // blanco opaco y axe ya puede medir la marca «elemento web», cuyo « web» va al 60 %: es logotipo, exento de
-    // contraste por WCAG 1.4.3, así que se excluye `.brand-tx` y se miden los enlaces del menú.
-    for (const id of ['seo', 'compara']) {
+    // axe con la página desplazada hasta el bloque negro de IA y hasta las preguntas, con el menú fijo encima.
+    for (const id of ['ia', 'preguntas']) {
       await p.evaluate((i) => document.getElementById(i).scrollIntoView(), id);
       await p.waitForTimeout(500);
-      await axePortada(p, `desplazada a #${id}`, ['.brand-tx']);
+      await axePortada(p, `desplazada a #${id}`);
     }
     // Foco visible dentro del formulario blanco: el botón de envío con su anillo y los campos con el suyo.
     await p.focus('#cf-nombre');
@@ -143,8 +130,8 @@ for (const [w, h] of [[390, 844], [768, 1024], [1280, 800]]) {
       return { es: el.matches('#cform button[type="submit"]'), ok: cs.outlineStyle !== 'none' && parseFloat(cs.outlineWidth) >= 2 && r >= 3, detalle: `${cs.outlineStyle} ${cs.outlineWidth} ${cs.outlineColor} (${r.toFixed(2)}:1 sobre blanco)` };
     });
     if (!boton.es || !boton.ok) anotar('portada-foco', 'Foco visible dentro del formulario blanco', '/ (1280)', [`botón de envío: ${boton.es ? boton.detalle : 'el Tab no llegó'}`]);
-    // Orden de tabulación: desde el inicio, el Tab llega a cada «Cotizar» y a cada pregunta. Con la CPU frenada 4 veces,
-    // como un runner de CI: así se vio en CI que los paneles de Servicios devolvían el foco hacia atrás (D53).
+    // Orden de tabulación: desde el inicio, el Tab llega a cada CTA al formulario y a cada pregunta, con la CPU frenada
+    // 4 veces como un runner de CI.
     const cdp = await p.context().newCDPSession(p);
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
     await p.goto(BASE + '/', { waitUntil: 'load' });
@@ -156,8 +143,8 @@ for (const [w, h] of [[390, 844], [768, 1024], [1280, 800]]) {
       const k = await p.evaluate(() => document.activeElement?.dataset?.qaTab);
       if (k) faltan.delete(k);
     }
-    if (faltan.size) anotar('portada-tab', 'El Tab no llega a cada «Cotizar» y a cada pregunta', '/ (1280)', await p.evaluate((ks) => ks.map((k) => document.querySelector(`[data-qa-tab="${k}"]`).textContent.trim().slice(0, 40)), [...faltan]));
-    else console.log(`✓ / (1280): el Tab llega a los ${total} «Cotizar» y preguntas (CPU ×4)`);
+    if (faltan.size) anotar('portada-tab', 'El Tab no llega a cada CTA y a cada pregunta', '/ (1280)', await p.evaluate((ks) => ks.map((k) => document.querySelector(`[data-qa-tab="${k}"]`).textContent.trim().slice(0, 40)), [...faltan]));
+    else console.log(`✓ / (1280): el Tab llega a los ${total} CTA y preguntas (CPU ×4)`);
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 });
   }
 }

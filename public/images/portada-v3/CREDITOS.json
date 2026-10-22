@@ -1,0 +1,53 @@
+{
+  "_nota": "Imágenes de la portada v3 (D56), generadas con IA para esta web; no son fotos de clientes ni de bancos de imágenes. El prompt y el costo están en docs/specs/rediseno-elementoweb/creditos-portada-v3.json.",
+  "imagenes": [
+    {
+      "archivo": "escultura-800.webp",
+      "ancho": 800,
+      "bytes": 31586,
+      "limite_bytes": 60000,
+      "modelo": "google/nano-banana-2.1",
+      "fecha": "2026-10-22"
+    },
+    {
+      "archivo": "escultura-400.webp",
+      "ancho": 400,
+      "bytes": 11730,
+      "limite_bytes": 25000,
+      "modelo": "google/nano-banana-2.1",
+      "fecha": "2026-10-22"
+    },
+    {
+      "archivo": "diptico-marketing-800.webp",
+      "ancho": 800,
+      "bytes": 38746,
+      "limite_bytes": 60000,
+      "modelo": "google/nano-banana-2.1",
+      "fecha": "2026-10-22"
+    },
+    {
+      "archivo": "diptico-ia-800.webp",
+      "ancho": 800,
+      "bytes": 34922,
+      "limite_bytes": 60000,
+      "modelo": "google/nano-banana-2.1",
+      "fecha": "2026-10-22"
+    },
+    {
+      "archivo": "bento-anuncio-600.webp",
+      "ancho": 600,
+      "bytes": 11904,
+      "limite_bytes": 40000,
+      "modelo": "google/nano-banana-2.1",
+      "fecha": "2026-10-22"
+    },
+    {
+      "archivo": "bento-videos-600.webp",
+      "ancho": 600,
+      "bytes": 36768,
+      "limite_bytes": 40000,
+      "modelo": "google/nano-banana-2.1",
+      "fecha": "2026-10-22"
+    }
+  ]
+}

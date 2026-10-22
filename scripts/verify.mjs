@@ -79,6 +79,8 @@ if (sinNavegador) {
   paso('qa-a11y (axe, WCAG 2.x AA)', process.execPath, ['scripts/qa-a11y.mjs', base], { env });
   paso('qa-lcp (sin JavaScript y elemento LCP)', process.execPath, ['scripts/qa-lcp.mjs', base], { env });
   paso('qa-menu (megamenú y menú móvil: teclado, ratón, toque y foco, D56)', process.execPath, ['scripts/qa-menu.mjs', base], { env });
+  // En el CI (CI=true) MOV-05 y MOV-07 (Lighthouse y bloqueo) salen SKIP: son de tiempo; en local corren y su salida va en el PR.
+  paso('qa-movimiento (GSAP diferido, sin JS, reducir movimiento, LCP y TBT, D56)', process.execPath, ['scripts/qa-movimiento.mjs', base], { env });
   paso('qa-responsive (desbordes y barra a 320–1440 px)', process.execPath, ['scripts/qa-responsive.mjs', base], { env });
   paso('qa-sr (encabezados, landmarks y nombres accesibles)', process.execPath, ['scripts/qa-sr.mjs', base], { env });
   // Sirve dist-fixture/ por su cuenta y simula el webhook de n8n: no necesita el preview.

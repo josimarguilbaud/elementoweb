@@ -1,8 +1,8 @@
 {
   "_nota": "Registro de gasto en fal (D46: tope de US$ 10 aprobado por el dueño el 13-oct-2026). Una fila por generación cobrada, con su request_id para rastrearla en el historial de fal. Precios tomados de la API de precios de fal el 13-oct-2026: nano-banana-pro US$ 0,15 y nano-banana-2 US$ 0,08 por imagen a 1K. El tope del archivo pasa a US$ 25 el 20-oct-2026: los 10 de D46 más los 15 de la tanda de IA creativa (D52.4), que se lleva aparte en tandas. Las filas de esa tanda se escriben con scripts/gasto-ia.mjs antes de cobrar (reservado → pendiente → confirmado). El 21-oct-2026 el tope del archivo pasa a US$ 35 por la tanda video-inmobiliario (D55, G4: US$ 10). Sus primeras filas se anotaron después del cobro con «registrar» y el costo por unidad de la API de precios de fal de ese día (el historial de fal no da el costo por pedido); la narración son 4 pedidos de TTS de menos de un centavo, anotados a US$ 0,01 cada uno. Las filas sin tanda de Luxor500 son un demo para un cliente de Ilitch, no la web.",
   "tope": 35,
-  "gastado": 16.12,
-  "tandas": { "marketing-ia": { "tope": 15, "gastado": 1.86 }, "video-inmobiliario": { "tope": 10, "gastado": 4.39 } },
+  "gastado": 16.87,
+  "tandas": { "marketing-ia": { "tope": 15, "gastado": 1.86 }, "video-inmobiliario": { "tope": 10, "gastado": 4.39 }, "portada-v3": { "tope": 3, "gastado": 0.75 } },
   "generaciones": [
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2e71-75c1-a49e-c745a53357fc", "uso": "portada diseno-web-panama" },
     { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2eca-7e42-934f-a8dba3fddcf6", "uso": "portada servicios/diseno-web-corporativo-panama" },
@@ -93,6 +93,11 @@
     { "id": "mkia-24", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:52.639Z", "modelo": "fal-ai/kling-video/v3/pro/image-to-video", "costo": 0.7, "request_id": "01a15f68-6ea3-7260-97e1-3a69d76254cd", "uso": "demo cliente Ilitch (Luxor500), no web", "estado": "confirmado" },
     { "id": "mkia-25", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:52.781Z", "modelo": "fal-ai/kling-video/v3/pro/image-to-video", "costo": 0.7, "request_id": "01a15f68-6edb-7461-b463-f3daf7101534", "uso": "demo cliente Ilitch (Luxor500), no web", "estado": "confirmado" },
     { "id": "mkia-26", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:52.911Z", "modelo": "fal-ai/kling-video/v3/pro/image-to-video", "costo": 0.7, "request_id": "01a15f68-6ed8-7373-bb55-a4042fde1057", "uso": "demo cliente Ilitch (Luxor500), no web", "estado": "confirmado" },
-    { "id": "mkia-27", "fecha": "2026-10-21", "hora": "2026-10-21T21:29:05.426Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1605e-5a5b-7311-9b89-c46e87546881", "uso": "portada video inmobiliario", "tanda": "video-inmobiliario", "estado": "confirmado" }
+    { "id": "mkia-27", "fecha": "2026-10-21", "hora": "2026-10-21T21:29:05.426Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1605e-5a5b-7311-9b89-c46e87546881", "uso": "portada video inmobiliario", "tanda": "video-inmobiliario", "estado": "confirmado" },
+    { "id": "mkia-28", "fecha": "2026-10-22", "hora": "2026-10-22T05:47:01.822Z", "modelo": "google/nano-banana-2.1", "costo": 0.15, "request_id": "01a16226-5291-7422-9d09-82b97496c1a4", "uso": "escultura", "tanda": "portada-v3", "estado": "confirmado" },
+    { "id": "mkia-29", "fecha": "2026-10-22", "hora": "2026-10-22T05:47:01.822Z", "modelo": "google/nano-banana-2.1", "costo": 0.15, "request_id": "01a16226-528e-7691-9a93-68811e132131", "uso": "diptico-marketing", "tanda": "portada-v3", "estado": "confirmado" },
+    { "id": "mkia-30", "fecha": "2026-10-22", "hora": "2026-10-22T05:47:01.822Z", "modelo": "google/nano-banana-2.1", "costo": 0.15, "request_id": "01a16226-5290-7391-80aa-ca528e18848e", "uso": "diptico-ia", "tanda": "portada-v3", "estado": "confirmado" },
+    { "id": "mkia-31", "fecha": "2026-10-22", "hora": "2026-10-22T05:47:01.822Z", "modelo": "google/nano-banana-2.1", "costo": 0.15, "request_id": "01a16226-5292-7b51-b3b5-d50295910538", "uso": "bento-anuncio", "tanda": "portada-v3", "estado": "confirmado" },
+    { "id": "mkia-32", "fecha": "2026-10-22", "hora": "2026-10-22T05:47:01.822Z", "modelo": "google/nano-banana-2.1", "costo": 0.15, "request_id": "01a16226-5294-7ba2-a0b4-7a630d9fdbbe", "uso": "bento-videos", "tanda": "portada-v3", "estado": "confirmado" }
   ]
 }

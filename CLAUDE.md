@@ -45,6 +45,18 @@ npm run dev      # localhost:4600
 npm run build    # obligatorio antes de pushear
 ```
 
+### Portada v3: comandos (D56)
+
+```bash
+npm run build && node --test scripts/portada.test.mjs   # ciclo rápido de la portada
+node scripts/qa-movimiento.mjs http://localhost:4610    # movimiento con el preview levantado
+npm run verify                                          # puerta completa (unos 15 minutos)
+```
+
+`verify` necesita Chrome; el CLI `lighthouse` viene en devDependencies (`npm ci`). En el CI, MOV-05 y MOV-07 de
+`qa-movimiento` salen SKIP: se corren en local y su salida va en el PR. El movimiento se apaga con
+`MOVIMIENTO_ACTIVO = false` en `src/scripts/movimiento.ts` o con `data-mov-off` en `<html>`.
+
 ## Formulario de contacto
 
 Hace POST a un flujo n8n que corre en **Hetzner**, no en Netcup

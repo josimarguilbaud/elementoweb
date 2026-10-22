@@ -28,6 +28,13 @@ test('se extrae LCP, CLS y rendimiento de un informe de Lighthouse y de uno de P
   assert.throws(() => extraerDeLighthouse({ audits: {} }), /largest-contentful-paint/);
 });
 
+test('se extrae el TBT (qa-movimiento y el día P de D56) y falta como null en un informe sin él', () => {
+  const con = lhr(1800);
+  con.audits['total-blocking-time'] = { numericValue: 130 };
+  assert.equal(extraerDeLighthouse(con).tbtMs, 130);
+  assert.equal(extraerDeLighthouse(lhr(1800)).tbtMs, null);
+});
+
 test('la medición lleva la herramienta real, la mediana, la fecha y el método', () => {
   const corridas = [1400, 1900, 1600, 2500, 1700].map((l) => extraerDeLighthouse(lhr(l)));
   const m = construirMedicion({ id: 'corporativo-lcp', url: 'https://elementoweb.com/', metrica: 'lcp', corridas, herramienta: 'Lighthouse', fecha: '2026-10-13', version: '12.8.2' });

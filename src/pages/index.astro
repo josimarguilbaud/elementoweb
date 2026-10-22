@@ -1,511 +1,219 @@
 ---
-/* Portada de agencia, versión corta (D50, tanda B de docs/specs/rediseno-elementoweb/PLAN-PORTADA.md): héroe con un
-   proyecto real, riel de servicios y franja de cifras; respuesta citable; mapa de 6 servicios; proyectos publicados;
-   proceso; industrias; preguntas; formulario. Los datos del mapa, el riel, el ItemList, las preguntas y la respuesta
-   salen de src/lib/portada.ts (una sola fuente). La portada no se anima: no carga effects.ts (DESIGN.md, Motion). */
+/* Portada v3 (D56, docs/specs/rediseno-elementoweb/PLAN-PORTADA-V3.md): agencia de marketing digital + proyectos de IA,
+   en monocromo; solo las fotos, las capturas y la escultura llevan color. Ocho secciones: héroe, díptico, bento, diseño
+   web, IA, respuesta citable, preguntas y formulario. Sin precios ni sección de proyectos (reglas del dueño). Los textos
+   y enlaces salen de src/lib/portada.ts. El movimiento: CSS en portada.css y GSAP diferido en src/scripts/movimiento.ts. */
 import Base from '../layouts/Base.astro';
-import Blocks from '../components/Blocks.astro';
 import ContactForm from '../components/ContactForm.astro';
-import CascadaProyectos from '../components/CascadaProyectos.astro';
-import MarcoCaptura from '../components/MarcoCaptura.astro';
-import Maqueta from '../components/Maqueta.astro';
-import CtaCotizar from '../components/CtaCotizar.astro';
-import Ejemplo from '../components/Ejemplo.astro';
-import TarjetaPrecio from '../components/TarjetaPrecio.astro';
-import { site, industrias, saas, contactForm, marketing, pricing, url, wa, portfolio } from '../lib/site';
+import { site, contactForm, url, wa } from '../lib/site';
 import { ogFor } from '../lib/img';
 import { homeJsonLd } from '../lib/schema';
-import { proyectosDeClientes } from '../lib/portafolio';
 import {
-  H1_PORTADA, filasMapa, itemListPortada, faqsPortada, respuestaPortada, precioDesde, aniosPortafolio, mapaOpciones, opcionDe,
-  industriasDestacadas, desarrolloPortada, CODIGO_PORTADA, modulosMarketing, franjaPrecios, comparaPortada, noHacemosPortada,
+  H1_PORTADA, DISPLAY_PORTADA, BAJADA_PORTADA, FRANJA_PORTADA, DIPTICO_PORTADA, BENTO_PORTADA, WEB_PORTADA, IA_PORTADA,
+  filasMapa, itemListPortada, faqsPortada, respuestaPortada, mapaOpciones, opcionDe,
 } from '../lib/portada';
 import precios from '../data/precios.json';
 import formulario from '../data/formulario.json';
-/* Las hojas del molde y de la portada van en línea solo aquí (como en [...slug].astro): el resto del sitio no las baja. */
-import moldeCss from '../styles/molde-kredit.css?inline';
-import pielCss from '../styles/piel-grafito.css?inline';
+/* La hoja de la portada va en línea solo aquí: el resto del sitio no la baja. */
 import portadaCss from '../styles/portada.css?inline';
 
 const title = 'Agencia de Diseño Web en Panamá | Elemento Web';
 const description = 'Agencia de diseño web en Panamá: sitios corporativos, tiendas online y landing pages, con SEO, Google Ads y WhatsApp. Pide tu cotización.';
-const desde = precioDesde(precios, 'web-landing');
-const bajada = `Diseño y desarrollo web premium, SEO profesional y marketing digital. ${desde.charAt(0).toUpperCase()}${desde.slice(1)}, con cotización cerrada por escrito.`;
-
-const filas = filasMapa(precios);
-const faqs = faqsPortada(precios);
-const plazos = faqs.find((f) => f.q === '¿Cuánto tarda el proyecto?')?.a ?? '';
-if (!plazos) throw new Error('La portada necesita la pregunta «¿Cuánto tarda el proyecto?» para la nota de plazos del proceso');
-const respuesta = respuestaPortada(precios);
-const jsonld = homeJsonLd(faqs, [itemListPortada(site.domain.replace(/\/$/, ''), filas)]);
-
+const faqs = faqsPortada();
+const respuesta = respuestaPortada();
+const jsonld = homeJsonLd(faqs, [itemListPortada(site.domain.replace(/\/$/, ''), filasMapa(precios))]);
 const waCotizar = wa('Hola, quiero cotizar un proyecto con Elemento Web.');
 
-const dominio = (href: string) => new URL(href).hostname.replace(/^www./, '');
-const cascada = [
-  { t: 'San Blas Full', cap: '/portfolio/sanblasfull' },
-  { t: 'Panama International Movers', cap: '/portfolio/panamainternationalmovers-2026' },
-  { t: 'Remodelaciones JG', cap: '/portfolio/remodelacionesjg' },
-  { t: 'CicloFrio', cap: '/portfolio/ciclofrio' },
-].map((p) => {
-  const d = proyectosDeClientes(portfolio).find((x) => x.t === p.t);
-  if (!d) throw new Error(`Proyecto de la cascada sin entrada de cliente en portfolio: ${p.t}`);
-  return { ...p, dominio: dominio(d.href) };
-});
-const movilFrente = { srcset: [['/images/ejemplos/movil-sanblasfull-390.webp', 390], ['/images/ejemplos/movil-sanblasfull-780.webp', 780]] as [string, number][], width: 390, height: 260 };
-const anios = aniosPortafolio(proyectosDeClientes(portfolio));
-
-/* «Cotizar» con clave: la opción del selector del formulario se resuelve aquí; una clave sin opción rompe el build. */
+/* CTA con clave: la opción del selector del formulario se resuelve aquí; una clave sin opción rompe el build. */
 const mapa = mapaOpciones(contactForm.services, formulario.servicios);
-const opcion = (clave: string, loc: string) => opcionDe(mapa, clave, loc);
-
-/* 3. Proyectos: los 4 que no están en la cascada ni en el módulo de diseño; KL Contable no se destaca. */
-const nClientes = proyectosDeClientes(portfolio).length;
-const casos = proyectosDeClientes(portfolio).filter((p) => p.caso);
-const proyectosV2 = [
-  { t: 'Max Impresiones', cap: '/portfolio/maximpresiones' },
-  { t: 'La Vida es Bella', cap: '/portfolio/lavidaesbella' },
-  { t: 'Panamá Worldwide Express', cap: '/portfolio/panamaworldwideexpress' },
-  { t: 'Grupo Viesa', cap: '/portfolio/grupoviesa' },
-].map((p) => {
-  const d = proyectosDeClientes(portfolio).find((x) => x.t === p.t);
-  if (!d) throw new Error(`Proyecto de la portada sin entrada de cliente en portfolio: ${p.t}`);
-  return { ...p, ...d, dominio: dominio(d.href) };
-});
-
-/* 4. Industrias: 8 por evidencia con el héroe de su página; tres usan variantes propias de 40 KB o menos. */
-const { destacadas, resto: industriasResto } = industriasDestacadas(industrias);
-const PROPIAS: Record<string, [string, number, number]> = {
-  'turismo-hoteles': ['-640', 640, 448], constructoras: ['-560', 560, 392], 'logistica-transporte': ['-560', 560, 392],
-};
-const fichas = destacadas.map((i) => {
-  const base = `/images/hero/${i.slug.replace('industrias/', 'industrias--')}`;
-  const propia = Object.entries(PROPIAS).find(([k]) => i.slug === `industrias/diseno-web-${k}-panama`);
-  return propia
-    ? { ...i, src: `${base}${propia[1][0]}.webp`, srcset: undefined, width: propia[1][1], height: propia[1][2] }
-    : { ...i, src: `${base}-480.webp`, srcset: `${base}-480.webp 480w, ${base}-800.webp 800w`, width: 480, height: 336 };
-});
-
-/* 6. SEO: cuatro pilares. 7. Desarrollo: la lista con precios confirmados. */
-const pilaresSeo = [
-  { t: 'SEO técnico.', d: 'Velocidad, indexación y datos estructurados.' },
-  { t: 'Contenido.', d: 'Páginas que responden lo que tu cliente busca.' },
-  { t: 'SEO local.', d: 'Tu negocio visible en Google Maps.' },
-  { t: 'GEO.', d: 'Respuestas que ChatGPT y Perplexity pueden citar.' },
-];
-const desarrollo = desarrolloPortada(precios);
-
-/* 8. Marketing: los 6 servicios de la lista de site.ts, indexados por slug (sin precios: siguen propuestos, D23). */
-const modulosMkt = modulosMarketing(marketing).map((m) => ({ ...m, id: m.slug.split('/')[1] }));
-
-/* 10. Precios: tarjetas con «desde» (D23); la línea es la `ideal` de cada plan y la primera oración de A medida. */
-const tiers = pricing.tiers;
-const tarjetas = [
-  { nombre: 'Landing page', desde: precioDesde(precios, 'web-landing'), linea: tiers[0].ideal, clave: 'landing', destacada: !!tiers[0].featured },
-  { nombre: 'Web empresarial', desde: precioDesde(precios, 'web-empresarial'), linea: tiers[1].ideal, clave: 'pyme', destacada: !!tiers[1].featured },
-  { nombre: 'Tienda online', desde: precioDesde(precios, 'web-ecommerce'), linea: tiers[2].ideal, clave: 'ecommerce', destacada: !!tiers[2].featured },
-  { nombre: 'A medida', desde: precioDesde(precios, 'web-medida'), linea: pricing.custom.text.split(/(?<=\.)\s/)[0], clave: 'medida', destacada: false },
-];
-const franja = franjaPrecios(precios);
-
-/* 11. Compara antes de firmar: cada fila enlaza la página que publica la práctica. */
-const comparar = {
-  type: 'compare' as const,
-  h2: 'Compara antes de firmar',
-  intro: 'Pon tu otra cotización en la columna en blanco y compara punto por punto.',
-  otraCotizacion: true,
-  criterios: comparaPortada().map((c) => ({ criterio: c.texto, nosotros: 'Sí.', fuente: { slug: c.ruta.replace(/^\/|\/$/g, ''), label: 'Fuente' } })),
-};
-const noHacemos = noHacemosPortada();
-
-const pasos = {
-  type: 'steps' as const,
-  h2: 'Cuatro etapas.',
-  intro: 'Cada etapa termina con algo que puedes revisar antes de seguir.',
-  items: [
-    { h3: 'Diagnóstico', text: 'Entendemos tu negocio y lo que quieres lograr, sin costo. <strong>Entregas:</strong> propuesta con alcance, precio y plazo por escrito.' },
-    { h3: 'Diseño', text: 'Estructura y pantallas de las páginas clave. <strong>Entregas:</strong> pantallas que apruebas antes de programar.' },
-    { h3: 'Desarrollo', text: 'Programamos con SEO técnico y velocidad desde el primer día. <strong>Entregas:</strong> demo en línea para revisar y pedir cambios.' },
-    { h3: 'Lanzamiento', text: 'Publicamos y conectamos la medición de contactos. <strong>Entregas:</strong> web en tu dominio, accesos a tu nombre y capacitación.' },
-  ],
-};
+const opcionIa = opcionDe(mapa, 'ia', 'ia');
+const opcionWeb = opcionDe(mapa, 'pyme', 'diseno-web');
+const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('es-PA', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 ---
-<Base title={title} description={description} current="home" image={ogFor('')} jsonld={jsonld} dark pageType="home" efectos={false} cierre={false} navCotizar={{ href: '#formulario', ctaLoc: 'header', service: 'definir' }}>
-  <style slot="head" is:inline set:html={moldeCss + pielCss + portadaCss}></style>
+<Base title={title} description={description} current="home" image={ogFor('')} jsonld={jsonld} pageType="home" efectos={false} cierre={false} navCotizar={{ href: '#formulario', ctaLoc: 'header', service: 'definir' }}>
+  <style slot="head" is:inline set:html={portadaCss}></style>
 
-  <!-- 1. Héroe (grafito): H1 de S5, frase de display, bajada, botones y línea de confianza; a la derecha la cascada de
-       proyectos reales; abajo el riel de los 6 servicios -->
-  <section class="ew-hero ew-hero--home">
-    <div class="ew-hero__grid">
-      <div class="ew-hero__text">
-        <h1 class="ew-hero__h1 pv2-h1--subtitulo">{H1_PORTADA}</h1>
-        <p class="pv2-display">Construimos webs como software.</p>
-        <p class="ew-hero__lead">{bajada}</p>
-        <div class="ew-hero__ctas">
-          <a href="#formulario" class="ew-btn ew-btn--primary" data-cta-loc="hero" data-service="definir">Cotizar mi proyecto</a>
-          <a href={waCotizar} target="_blank" rel="noopener" class="ew-btn ew-btn--ghost" data-cta-loc="hero">Hablar por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
+  <!-- 1. Héroe: el H1 de D50 en la etiqueta, el titular de display (un <p>, candidato a LCP), botones, escultura y franja -->
+  <section id="inicio" class="pv3-hero">
+    <div class="pv3-wrap pv3-hero__grid">
+      <div class="pv3-hero__texto">
+        <h1 class="pv3-etiqueta pv3-entra">{H1_PORTADA}</h1>
+        <p class="pv3-display">{DISPLAY_PORTADA[0]} <span>{DISPLAY_PORTADA[1]}</span></p>
+        <p class="pv3-bajada pv3-entra">{BAJADA_PORTADA}</p>
+        <div class="pv3-botones pv3-entra">
+          <a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="hero" data-service="definir">Empezar proyecto <span aria-hidden="true">→</span></a>
+          <a href="#soluciones" class="pv3-btn pv3-btn--contorno">Ver soluciones</a>
         </div>
-        <a href="/nosotros/" class="pv2-confianza">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></svg>
-          Tech Provider verificado por Meta · Respuesta el mismo día hábil
-        </a>
       </div>
-      <CascadaProyectos proyectos={cascada} anios={anios} movil={movilFrente} />
+      <div class="pv3-hero__escultura" data-mov="gsap" data-efecto="parallax">
+        <img class="pv3-escultura" src="/images/portada-v3/escultura-800.webp" srcset="/images/portada-v3/escultura-400.webp 400w, /images/portada-v3/escultura-800.webp 800w" sizes="(min-width: 1024px) 520px, 280px" width="800" height="800" alt="Escultura abstracta de cromo plateado" fetchpriority="high" loading="eager" decoding="async" />
+      </div>
     </div>
-    <nav aria-label="Servicios">
-      <ul class="ew-rail ew-rail--6">
-        {filas.map((f) => <li><a href={`${url(f.slug)}`}>{f.nombre}</a></li>)}
+    <nav class="pv3-wrap" aria-label="Servicios">
+      <ul class="pv3-franja pv3-entra">
+        {FRANJA_PORTADA.map((f) => <li><a href={url(f.slug)}>{f.label}</a></li>)}
       </ul>
     </nav>
   </section>
 
-  <!-- 3. Respuesta citable con fecha -->
-  <Blocks v2 blocks={[{ type: 'answer', h2: 'En pocas palabras', text: respuesta.text, fecha: respuesta.fecha }]} />
-
-  <!-- 3. Proyectos (claro alterno): sitios de clientes en línea, casos documentados y la firma del CEO -->
-  <section id="proyectos" class="pv2-sec pv2-sec--alt pv2-ancla" aria-labelledby="proyectos-h2">
-    <div class="pv2-wrap">
-      <h2 class="ew-h2" id="proyectos-h2">{nClientes} sitios en línea que puedes visitar hoy.</h2>
-      <p class="pv2-casos"><span class="ew-data">Casos documentados</span>{casos.map((c) => <a href={url(c.caso)}>{c.t}</a>)}</p>
-      <ul class="pv2-proyectos">
-        {proyectosV2.map((p) => (
-          <li>
-            <MarcoCaptura cap={p.cap} dominio={p.dominio} alt={`Web de ${p.t}`} sizes="(min-width: 1024px) 560px, (min-width: 640px) 45vw, 92vw">
-              <Fragment slot="pie"><span class="pv2-proyecto__t">{p.t}</span> <span class="ew-data">{p.tag} · {p.year}</span> <a href={p.href} target="_blank" rel="noopener">Visitar sitio<span class="sr-only"> (se abre en otra pestaña)</span> <span aria-hidden="true">↗</span></a></Fragment>
-            </MarcoCaptura>
-          </li>
+  <!-- 2. Díptico: elegir camino, 3 enlaces por mitad -->
+  <section id="soluciones" class="pv3-sec" aria-labelledby="soluciones-h2">
+    <div class="pv3-wrap">
+      <h2 id="soluciones-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Dos caminos para crecer.</h2>
+      <div class="pv3-diptico">
+        {DIPTICO_PORTADA.map((m, i) => (
+          <article class={`pv3-mitad${i === 1 ? ' pv3-mitad--negra' : ''}`} data-mov="css">
+            <h3 class="pv3-mitad__t"><span class="pv3-num">{m.num}</span> {m.titulo}</h3>
+            <p class="pv3-mitad__l">{m.linea}</p>
+            <ul class="pv3-enlaces">
+              {m.enlaces.map((e) => <li><a href={url(e.slug)}>{e.label} <span aria-hidden="true">→</span></a></li>)}
+            </ul>
+            <img class="pv3-foto" src={m.img.src} width={m.img.width} height={m.img.height} alt={m.img.alt} loading="lazy" decoding="async" />
+          </article>
         ))}
-      </ul>
-      <p class="pv2-ir"><a href="/portafolio/">Ver el portafolio <span aria-hidden="true">→</span></a></p>
-      <p class="ew-firma">Josimar Guilbaud, CEO. Responde por la empresa y por cada proyecto que entregamos. <a href="/nosotros/">Quiénes somos</a></p>
-      <CtaCotizar loc="prueba" servicio="definir" wa={waCotizar} />
+      </div>
+      <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="soluciones" data-service="definir">Empezar proyecto <span aria-hidden="true">→</span></a></p>
     </div>
   </section>
 
-  <!-- 4. Industrias (grafito): 8 por evidencia, el resto como enlaces de texto y el hub -->
-  <section id="industrias" class="pv2-sec pv2-banda--grafito pv2-ancla" aria-labelledby="industrias-h2">
-    <div class="pv2-wrap">
-      <h2 class="ew-h2" id="industrias-h2">Diseño web por industria</h2>
-      <ul class="pv2-fichas">
-        {fichas.map((f) => (
-          <li>
-            <a class="pv2-ficha" href={url(f.slug)}>
-              <img src={f.src} srcset={f.srcset} sizes={f.srcset ? '(min-width: 1024px) 270px, 45vw' : undefined} width={f.width} height={f.height} alt="" loading="lazy" decoding="async" />
-              <span class="pv2-ficha__t">{f.label} <span aria-hidden="true">→</span></span>
-            </a>
-          </li>
-        ))}
-      </ul>
-      <div class="pv2-mas">
-        <p class="ew-data">Más industrias</p>
-        <ul class="pv2-mas__lista">{industriasResto.map((i) => <li><a href={url(i.slug)}>{i.label}</a></li>)}</ul>
-      </div>
-      <p class="pv2-ir"><a href="/industrias/">Ver las {industrias.length} industrias <span aria-hidden="true">→</span></a></p>
-      <CtaCotizar loc="industrias" servicio="definir" wa={waCotizar} />
-    </div>
-  </section>
-
-  <!-- 5. Servicios (claro alterno): los 6 servicios del ItemList en paneles apilados, cada uno con su imagen (D53) -->
-  <section id="servicios" class="pv2-sec pv2-sec--alt pv2-ancla" aria-labelledby="servicios-h2">
-    <div class="pv2-wrap">
-      <h2 class="ew-h2" id="servicios-h2">Seis servicios, un solo proveedor.</h2>
-      {/* Paneles apilados (D53): sin JS, con «reducir movimiento» o con poco alto, una lista; con el efecto, la pila se fija
-         y cada panel tapa al anterior (src/scripts/servicios-apilados.ts, GSAP con import() diferido). */}
-      <div class="pv2-ap-pila">
-        <div class="pv2-ap-escena">
-          {filas.map((f, i) => (
-            <article class="pv2-ap-panel" data-panel={f.id} aria-labelledby={`panel-${f.id}`}>
-              <p class="ew-data pv2-ap-panel__n" aria-hidden="true">{`${String(i + 1).padStart(2, '0')} / ${String(filas.length).padStart(2, '0')}`}</p>
-              <div class="pv2-ap-panel__cuerpo">
-                <h3 id={`panel-${f.id}`}>{f.nombre}</h3>
-                {f.precio && <p class="ew-data pv2-ap-panel__precio">{f.precio}</p>}
-                <p class="pv2-ap-panel__texto" data-revelar>{f.texto}</p>
-                <ul class="pv2-ap-panel__lista">{f.incluye.map((x) => <li>{x}</li>)}</ul>
-                <CtaCotizar loc="servicios" servicio={f.cotizar.servicio} opcion={opcion(f.cotizar.servicio, 'servicios')} texto={f.cotizar.texto} clase="pv2-ap-panel__acciones">
-                  <a class="pv2-ap-panel__enlace" href={url(f.slug)}>{f.ir} <span aria-hidden="true">→</span></a>
-                  {f.secundarios.map((s) => <a class="pv2-ap-panel__enlace" href={url(s.slug)}>{s.label}</a>)}
-                </CtaCotizar>
-              </div>
-              <div class="pv2-ap-panel__vista">
-                <img src={f.imagen.src} srcset={`${f.imagen.src640} 640w, ${f.imagen.src} 960w`} sizes="(min-width: 900px) 560px, 92vw" width={f.imagen.width} height={f.imagen.height} alt={f.imagen.alt} loading="lazy" decoding="async" />
-                {f.imagen.nota && <p class="ew-data pv2-ap-panel__nota">{f.imagen.nota}</p>}
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-      <CtaCotizar loc="servicios" servicio="definir" wa={waCotizar} />
-    </div>
-  </section>
-
-  <!-- 6. SEO profesional (grafito): técnica, contenido, SEO local y GEO -->
-  <section id="seo" class="pv2-sec pv2-banda--grafito pv2-ancla" aria-labelledby="seo-h2">
-    <div class="pv2-wrap pv2-dos">
-      <div>
-        <p class="ew-data pv2-rotulo">SEO profesional</p>
-        <h2 class="ew-h2" id="seo-h2">Que te encuentren en Google, en Maps y en ChatGPT.</h2>
-        <p class="pv2-intro">Técnica, contenido y autoridad para aparecer en Google, Google Maps y en las respuestas de ChatGPT y Perplexity.</p>
-        <ol class="pv2-pilares">
-          {pilaresSeo.map((p, i) => <li><span class="pv2-pilares__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><span><strong>{p.t}</strong> {p.d}</span></li>)}
-        </ol>
-        <p class="pv2-nota-plazo">Búsquedas competidas: de 3 a 6 meses para ver avances claros.</p>
-        <CtaCotizar loc="seo" servicio="revision" opcion={opcion('revision', 'seo')} texto="Pedir revisión de mi web">
-          <a href="/crecimiento/seo-posicionamiento-web-panama/" class="ew-btn ew-btn--ghost">Ver SEO</a>
-        </CtaCotizar>
-      </div>
-      <div class="pv2-lateral">
-        <Maqueta nombre="informe" linea="lo que revisamos primero en una web">
-          <Ejemplo e={{ tipo: 'informe', titulo: 'Revisión SEO', sitio: 'ejemplo.com', filas: [{ k: 'Velocidad en celular', v: 'Bien', estado: 'bien' }, { k: 'Títulos y descripciones', v: 'Revisar', estado: 'ojo' }, { k: 'Ficha de Google Maps', v: 'Falta', estado: 'mal' }, { k: 'Datos estructurados', v: 'Revisar', estado: 'ojo' }], pie: 'Cada punto con su arreglo y su prioridad.' }} />
-        </Maqueta>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. Desarrollo web a medida (claro): la lista con precios confirmados, tres paneles y los SaaS propios -->
-  <section id="desarrollo" class="pv2-sec pv2-sec--surface pv2-ancla" aria-labelledby="desarrollo-h2">
-    <div class="pv2-wrap pv2-dos">
-      <div>
-        <p class="ew-data pv2-rotulo">Desarrollo web a medida</p>
-        <h2 class="ew-h2" id="desarrollo-h2">Cuando una plantilla no alcanza.</h2>
-        <ul class="pv2-lista">
-          {desarrollo.map((d) => <li><a href={url(d.slug)}>{d.label}</a>{d.precio && <span class="ew-data">{d.precio}</span>}</li>)}
-        </ul>
-        <p class="pv2-saas">{saas.length} productos de software propios en producción: {saas.map((s, i) => <>{i > 0 && (i === saas.length - 1 ? ' y ' : ', ')}<a href={url(s.slug)}>{s.label}</a></>)}.</p>
-        <CtaCotizar loc="desarrollo" servicio="medida" opcion={opcion('medida', 'desarrollo')} texto="Cotizar desarrollo a medida" wa={waCotizar} />
-      </div>
-      <div class="pv2-paneles">
-        <div class="pv2-panel">
-          <Maqueta nombre="codigo" linea="el código de un sitio a medida">
-            <pre class="pv2-codigo"><code>{CODIGO_PORTADA.map((linea) => <span>{linea}</span>)}</code></pre>
-          </Maqueta>
-        </div>
-        <div class="pv2-panel pv2-panel--2">
-          <Maqueta nombre="agenda" linea="reservas con depósito en línea">
-            <Ejemplo e={{ tipo: 'agenda', negocio: 'Clínica de ejemplo', servicio: 'Consulta general', dias: [{ d: 'Lun 20' }, { d: 'Mar 21', sel: true }, { d: 'Mié 22' }], horas: [{ h: '9:00', libre: true }, { h: '10:30', libre: false }, { h: '11:00', libre: true, sel: true }, { h: '3:00', libre: true }], boton: 'Confirmar cita' }} />
-          </Maqueta>
-        </div>
-        <div class="pv2-panel pv2-panel--3">
-          <Maqueta nombre="pago" linea="un pago con Yappy o tarjeta">
-            <div class="pv2-pago">
-              <p class="pv2-pago__t">Pagar con</p>
-              <p class="pv2-pago__ops"><span class="pv2-sel">Yappy</span><span>Tarjeta</span><span>Transferencia</span></p>
-              <span class="pv2-pago__btn">Pagar</span>
+  <!-- 3. Bento: cómo se ve el resultado; maquetas en HTML y CSS marcadas «Ejemplo», imágenes a color -->
+  <section id="servicios" class="pv3-sec pv3-sec--humo" aria-labelledby="servicios-h2">
+    <div class="pv3-wrap">
+      <h2 id="servicios-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Todo lo que tu marca necesita para crecer.</h2>
+      <div class="pv3-bento">
+        {BENTO_PORTADA.map((b) => (
+          <article class={`pv3-tarjeta${b.ancha ? ' pv3-tarjeta--ancha' : ''}`} data-mov="css">
+            <h3 class="pv3-tarjeta__t">{b.titulo}</h3>
+            <p class="pv3-tarjeta__l">{b.linea}</p>
+            <div class={`pv3-maqueta pv3-mq-${b.id}`} data-maqueta={b.id} data-nosnippet aria-hidden="true" data-mov="gsap" data-efecto="armar">
+              {b.id === 'publicidad' && <>
+                <div class="pv3-mq-busqueda" data-pieza><span>Patrocinado · cafe-ejemplo.com</span><b>Café frío para llevar en Obarrio</b><i></i></div>
+                <img data-pieza src={b.img!.src} width={b.img!.width} height={b.img!.height} alt="" loading="lazy" decoding="async" />
+              </>}
+              {b.id === 'seo' && <>
+                <div class="pv3-mq-resultado" data-pieza><span>clinica-ejemplo.com</span><b>Clínica dental en San Francisco, Panamá</b><i></i><i></i></div>
+                <div class="pv3-mq-ia" data-pieza><span>Respuesta de IA</span><i></i><i></i><em>Fuente: clinica-ejemplo.com</em></div>
+              </>}
+              {b.id === 'whatsapp' && <>
+                <div class="pv3-mq-burbuja" data-pieza>Hola Ana, tu pedido de esta semana ya está listo. ¿Te lo enviamos mañana?</div>
+                <div class="pv3-mq-burbuja pv3-mq-burbuja--yo" data-pieza>Sí, por favor</div>
+                <div class="pv3-mq-boton" data-pieza>Confirmar envío</div>
+              </>}
+              {b.id === 'agentes' && <>
+                <div class="pv3-mq-burbuja pv3-mq-burbuja--yo" data-pieza>¿Tienen cita el jueves en la tarde?</div>
+                <div class="pv3-mq-burbuja" data-pieza>Sí: 3:00 o 4:30 p. m. ¿Cuál te reservo?</div>
+                <div class="pv3-mq-ok" data-pieza>Cita agendada · pasó al CRM</div>
+              </>}
+              {b.id === 'contenido' && <img data-pieza src={b.img!.src} width={b.img!.width} height={b.img!.height} alt="" loading="lazy" decoding="async" />}
             </div>
-          </Maqueta>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. Marketing digital (claro alterno): garantías, la vitrina (D54) con una escena por servicio y la lista, sin precios -->
-  <section id="marketing" class="pv2-sec pv2-sec--alt pv2-ancla" aria-labelledby="marketing-h2">
-    <div class="pv2-wrap">
-      <div>
-        <p class="ew-data pv2-rotulo">Marketing digital</p>
-        <h2 class="ew-h2" id="marketing-h2">Campañas que se miden hasta la consulta.</h2>
-      </div>
-      <ul class="pv2-garantias">
-        {['La cuenta publicitaria queda a tu nombre', 'Tu inversión va directo a Google y Meta', 'WhatsApp por la API oficial'].map((g) => (
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" /></svg>{g}</li>
+            <p class="pv3-nota">Ejemplo · {b.nota}</p>
+            <a class="pv3-tarjeta__ir" href={url(b.slug)}>Ver más<span class="sr-only"> sobre {b.titulo}</span><span aria-hidden="true"> →</span></a>
+          </article>
         ))}
-      </ul>
-      <div class="pv2-vit">
-        <div class="pv2-vit__escenario">
-          {modulosMkt.map((m, i) => (
-            <div class={`pv2-vit__escena${i === 0 ? ' pv2-vit__escena--activa' : ''}`} data-escena={m.id}>
-              <Maqueta nombre={m.maqueta} linea={m.nota} clase="pv2-vit__tarjeta">
-                <div class="pv2-vit__lienzo">
-                  {m.maqueta === 'google' && (
-                    <div class="pv2-vit__comp pv2-vit__comp--google">
-                      <div class="ew-dev__browser pv2-vit__nav">
-                        <p class="ew-dev__bar"><i></i><i></i><i></i><span>google.com</span></p>
-                        <Ejemplo e={{ tipo: 'google', consulta: 'clínica dental cerca de mí', resultados: [{ clase: 'anuncio', sitio: 'Clínica de ejemplo', url: 'ejemplo.com', titulo: 'Clínica dental en Panamá | Agenda tu cita', texto: 'Limpieza, ortodoncia y urgencias. Escríbenos por WhatsApp.' }, { clase: 'organico', sitio: 'Otro negocio de ejemplo', url: 'otro-ejemplo.com', titulo: 'Odontología general y estética', texto: 'Horarios, ubicación y servicios.' }] }} />
-                      </div>
-                      <div class="pv2-vit__lado">
-                        <p class="ew-data pv2-vit__origen">CRM · Origen: Google Ads</p>
-                        <div class="ew-dev__phone">
-                          <Ejemplo e={{ tipo: 'whatsapp', negocio: 'Clínica de ejemplo', mensajes: [{ de: 'cliente', texto: 'Hola, vi su anuncio. ¿Tienen cita el sábado?', hora: '10:24' }] }} />
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                  {m.maqueta === 'anuncio' && (
-                    <div class="pv2-vit__comp">
-                      <div class="ew-dev__phone">
-                        <div class="pv2-anuncio">
-                          <p class="pv2-anuncio__top"><span class="pv2-anuncio__av"></span><span>Negocio de ejemplo<small>Publicidad</small></span></p>
-                          <div class="pv2-anuncio__arte"><p>Reserva tu cita por WhatsApp</p></div>
-                          <p class="pv2-anuncio__cta"><span>Enviar mensaje</span></p>
-                        </div>
-                      </div>
-                      <div class="ew-dev__phone">
-                        <Ejemplo e={{ tipo: 'whatsapp', negocio: 'Negocio de ejemplo', mensajes: [{ de: 'cliente', texto: 'Hola, vi el anuncio. ¿Tienen cita esta semana?', hora: '6:12' }] }} />
-                      </div>
-                    </div>
-                  )}
-                  {m.maqueta === 'parrilla' && (
-                    <div class="pv2-vit__comp">
-                      <div class="ew-dev__phone">
-                        <ul class="pv2-parrilla">
-                          <li><span class="pv2-parrilla__c"></span><span><b>Lunes</b> Consejo del mes</span></li>
-                          <li><span class="pv2-parrilla__c pv2-parrilla__c--2"></span><span><b>Miércoles</b> Detrás de cámaras</span></li>
-                          <li><span class="pv2-parrilla__c pv2-parrilla__c--3"></span><span><b>Viernes</b> Novedad de la semana</span></li>
-                        </ul>
-                      </div>
-                    </div>
-                  )}
-                  {m.maqueta === 'correo' && (
-                    <div class="pv2-vit__comp">
-                      <div class="ew-dev__browser pv2-vit__nav pv2-vit__nav--correo">
-                        <p class="ew-dev__bar"><i></i><i></i><i></i><span>Bandeja de entrada</span></p>
-                        <Ejemplo e={{ tipo: 'correo', remitente: 'Negocio de ejemplo', asunto: 'Llegaron los nuevos modelos', previa: 'Te los mostramos antes que a nadie', titular: 'Llegaron los nuevos modelos', texto: 'Pasa por la tienda o pide el tuyo por WhatsApp.', boton: 'Ver los modelos' }} />
-                      </div>
-                    </div>
-                  )}
-                  {m.maqueta === 'whatsapp-plantilla' && (
-                    <div class="pv2-vit__comp">
-                      <div class="ew-dev__phone">
-                        <Ejemplo e={{ tipo: 'whatsapp', negocio: 'Negocio de ejemplo', mensajes: [{ de: 'negocio', texto: 'Hola, María. Llegaron los modelos de la temporada.', hora: '9:00', botones: ['Ver catálogo'] }] }} />
-                      </div>
-                    </div>
-                  )}
-                  {m.maqueta === 'flujo' && (
-                    <div class="pv2-vit__comp">
-                      <Ejemplo e={{ tipo: 'flujo', titulo: 'Nueva consulta', pasos: [{ t: 'Formulario', d: 'La persona deja sus datos' }, { t: 'CRM', d: 'Se crea el contacto' }, { t: 'WhatsApp', d: 'Recibe la respuesta' }] }} />
-                    </div>
-                  )}
-                </div>
-              </Maqueta>
-            </div>
-          ))}
+      </div>
+      <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="servicios" data-service="definir">Empezar proyecto <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+
+  <!-- 4. Diseño web: la sección nueva, con capturas reales del portafolio -->
+  <section id="diseno-web" class="pv3-sec" aria-labelledby="web-h2">
+    <div class="pv3-wrap pv3-web">
+      <div>
+        <h2 id="web-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">{WEB_PORTADA.titulo}</h2>
+        <p class="pv3-lead">{WEB_PORTADA.linea}</p>
+        <ul class="pv3-lista">{WEB_PORTADA.items.map((t) => <li>{t}</li>)}</ul>
+        <div class="pv3-botones">
+          <a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="diseno-web" data-service="pyme" data-opcion={opcionWeb}>Cotizar mi web</a>
+          <a href="/diseno-web-panama/" class="pv3-btn pv3-btn--contorno">Ver diseño web <span aria-hidden="true">→</span></a>
         </div>
-        <ul class="pv2-vit__lista" role="list" data-cta-loc="marketing">
-          {modulosMkt.map((m, i) => (
-            <li class={`pv2-vit__fila${i === 0 ? ' pv2-vit__fila--activa' : ''}`} data-fila={m.id}>
-              <span class="pv2-vit__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
-              <div>
-                <h3><a href={url(m.slug)} data-content-id={m.id}>{m.nombre}</a></h3>
-                <p class="pv2-vit__linea">{m.linea}</p>
-                <p class="pv2-vit__mide"><span class="ew-data">Se mide:</span> {m.mide.join(' · ')}</p>
-              </div>
-              <span class="pv2-vit__flecha" aria-hidden="true">→</span>
-            </li>
-          ))}
-        </ul>
-        <CtaCotizar loc="marketing" servicio="pauta" opcion={opcion('pauta', 'marketing')} texto="Cotizar marketing digital" clase="pv2-vit__pie">
-          <a href="/marketing/" class="pv2-enlace">Ver todo el marketing digital <span aria-hidden="true">→</span></a>
-        </CtaCotizar>
+      </div>
+      <div class="pv3-capturas" data-mov="css">
+        {WEB_PORTADA.capturas.map((c) => (
+          <figure class="pv3-marco">
+            <span class="pv3-marco__barra" aria-hidden="true"></span>
+            <img src={`${c.cap}-800.webp`} srcset={`${c.cap}-480.webp 480w, ${c.cap}-800.webp 800w`} sizes="(min-width: 1024px) 420px, 80vw" width="800" height="600" alt={`Web de ${c.t}, hecha por Elemento Web`} loading="lazy" decoding="async" />
+          </figure>
+        ))}
+        <figure class="pv3-movil"><img src={WEB_PORTADA.movil.src} width="390" height="844" alt={`Web de ${WEB_PORTADA.movil.t} en un celular`} loading="lazy" decoding="async" /></figure>
       </div>
     </div>
   </section>
 
-  <script>
-    // Vitrina de Marketing (D54): la escena sigue a la fila con intención de puntero (desde 1024 px) o al foco del teclado.
-    const lista = document.querySelector<HTMLElement>('.pv2-vit__lista');
-    if (lista) {
-      const fino = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 1024px)');
-      const ancho = matchMedia('(min-width: 640px)');
-      let candidata: Element | null = null;
-      let reloj = 0;
-      const activar = (fila: HTMLElement) => {
-        const escena = document.querySelector(`.pv2-vit__escena[data-escena="${fila.dataset.fila}"]`);
-        if (!escena) return;
-        document.querySelector('.pv2-vit__fila--activa')?.classList.remove('pv2-vit__fila--activa');
-        document.querySelector('.pv2-vit__escena--activa')?.classList.remove('pv2-vit__escena--activa');
-        fila.classList.add('pv2-vit__fila--activa');
-        escena.classList.add('pv2-vit__escena--activa');
-      };
-      lista.addEventListener('pointermove', (e) => {
-        if (!fino.matches || (e.pointerType !== 'mouse' && e.pointerType !== 'pen') || !(e.movementX || e.movementY)) return;
-        const fila = (e.target as Element).closest<HTMLElement>('.pv2-vit__fila');
-        if (!fila || fila === candidata) return;
-        candidata = fila;
-        clearTimeout(reloj);
-        reloj = window.setTimeout(() => activar(fila), 100);
-      });
-      lista.addEventListener('pointerout', (e) => {
-        if (candidata && !candidata.contains(e.relatedTarget as Node | null)) { clearTimeout(reloj); candidata = null; }
-      });
-      lista.addEventListener('focusin', (e) => {
-        const fila = (e.target as Element).closest<HTMLElement>('.pv2-vit__fila');
-        let visible = false;
-        try { visible = (e.target as Element).matches(':focus-visible'); } catch { /* sin :focus-visible */ }
-        if (fila && visible && ancho.matches) activar(fila);
-      });
-    }
-  </script>
-
-  <!-- 9. Proceso (grafito): los pasos de hoy en cuatro etapas, plazos y su «Cotizar» -->
-  <div id="proceso" class="pv2-ancla pv2-banda--grafito">
-    <Blocks v2 blocks={[pasos]} />
-    <div class="pv2-wrap pv2-proceso__pie">
-      <p class="pv2-nota-plazo">{plazos}</p>
-      <p class="pv2-ir"><a href="/como-trabajamos/">Ver cómo trabajamos <span aria-hidden="true">→</span></a></p>
-      <CtaCotizar loc="proceso" servicio="definir" wa={waCotizar} />
-    </div>
-  </div>
-
-  <!-- 10. Precios (claro alterno): 4 tarjetas, la franja de planes y la nota de impuestos -->
-  <section id="precios" class="pv2-sec pv2-sec--alt pv2-ancla" aria-labelledby="precios-h2">
-    <div class="pv2-wrap">
-      <h2 class="ew-h2" id="precios-h2">Precios publicados. Sin sorpresas.</h2>
-      <div class="pv2-tarjetas">
-        {tarjetas.map((t) => <TarjetaPrecio nombre={t.nombre} desde={t.desde} linea={t.linea} clave={t.clave} opcion={opcion(t.clave, 'precios')} destacada={t.destacada} />)}
+  <!-- 5. Proyectos de IA: bloque negro con el diagrama y la franja de confianza -->
+  <section id="ia" class="pv3-sec" aria-labelledby="ia-h2">
+    <div class="pv3-wrap">
+      <div class="pv3-ia">
+        <div>
+          <h2 id="ia-h2" class="pv3-h2">{IA_PORTADA.titulo}</h2>
+          <p class="pv3-lead">{IA_PORTADA.linea}</p>
+          <a href="#formulario" class="pv3-btn pv3-btn--blanco" data-cta-loc="ia" data-service="ia" data-opcion={opcionIa}>Agendar diagnóstico <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="pv3-diagrama" data-mov="gsap" data-efecto="trazo">
+          <svg class="pv3-diagrama--h" viewBox="0 0 640 96" role="img" aria-label="Flujo: un mensaje de WhatsApp llega al agente de IA, que lo registra en el CRM y alimenta un reporte">
+            {IA_PORTADA.pasos.slice(1).map((_, i) => <path class="pv3-trazo" d={`M${118 + i * 168} 48 H${172 + i * 168}`} />)}
+            {IA_PORTADA.pasos.map((p, i) => <g class="pv3-nodo"><rect x={i * 168 + 4} y="22" width="114" height="52" rx="10" /><text x={i * 168 + 61} y="53">{p}</text></g>)}
+          </svg>
+          <svg class="pv3-diagrama--v" viewBox="0 0 220 300" aria-hidden="true">
+            {IA_PORTADA.pasos.slice(1).map((_, i) => <path class="pv3-trazo" d={`M110 ${56 + i * 78} V${80 + i * 78}`} />)}
+            {IA_PORTADA.pasos.map((p, i) => <g class="pv3-nodo"><rect x="40" y={i * 78 + 4} width="140" height="52" rx="10" /><text x="110" y={i * 78 + 35}>{p}</text></g>)}
+          </svg>
+        </div>
       </div>
-      <div class="pv2-franja">
-        <ul>
-          {franja.map((f) => <li><span class="pv2-franja__t">{f.nombre} · {f.texto}</span><a href={url(f.slug)}>Ver detalle</a></li>)}
-        </ul>
-        <CtaCotizar loc="precios" servicio="mensual" opcion={opcion('mensual', 'precios')} texto="Cotizar un plan mensual" />
-      </div>
-      <p class="pv2-nota-precios">Precios en dólares, sin ITBMS (7%). Cotización cerrada por escrito antes de empezar. <a href="/precios/">Ver todos los precios <span aria-hidden="true">→</span></a></p>
+      <ul class="pv3-confianza">{IA_PORTADA.confianza.map((c) => <li>{c}</li>)}</ul>
     </div>
   </section>
 
-  <!-- 11. Compara antes de firmar (grafito): la tabla con fuentes y lo que no hacemos -->
-  <div id="compara" class="pv2-ancla pv2-banda--grafito">
-    <Blocks v2 blocks={[comparar]} />
-    <div class="pv2-wrap pv2-compara__pie">
-      <h3 class="pv2-nohacemos__h">Lo que no hacemos</h3>
-      <ul class="pv2-nohacemos">
-        {noHacemos.map((n) => <li><span>{n.texto}</span> <a href={n.ruta} class="ew-src">Fuente</a></li>)}
-      </ul>
-      <!-- Sin este «Cotizar», en compacto el tramo Precios → formulario pasa de 2.110 px (tabla + preguntas ≈ 3.200 px) -->
-      <CtaCotizar loc="compara" servicio="definir" texto="Pedir mi cotización por escrito" />
+  <!-- 6. Respuesta citable con fecha (GEO) -->
+  <section id="resumen" class="pv3-sec pv3-sec--corta" aria-labelledby="resumen-h2">
+    <div class="pv3-wrap pv3-resumen">
+      <h2 id="resumen-h2" class="pv3-rotulo">En resumen</h2>
+      <p class="pv3-respuesta" data-block="answer" data-fecha={respuesta.fecha} set:html={respuesta.text}></p>
+      <p class="pv3-fecha">Actualizado el <time datetime={respuesta.fecha}>{fechaTexto}</time></p>
     </div>
-  </div>
+  </section>
 
-  <!-- 12. Preguntas frecuentes (claro alterno; el mismo texto alimenta el FAQPage) -->
-  <div id="preguntas" class="pv2-ancla pv2-sec--alt">
-    <Blocks v2 blocks={[{ type: 'faq', h2: 'Preguntas frecuentes', items: faqs }]} />
-  </div>
+  <!-- 7. Preguntas: el mismo texto que el FAQPage -->
+  <section id="preguntas" class="pv3-sec pv3-sec--humo" aria-labelledby="preguntas-h2">
+    <div class="pv3-wrap pv3-preguntas">
+      <h2 id="preguntas-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Preguntas frecuentes</h2>
+      <div data-score="faq">
+        {faqs.map((f) => (
+          <details class="pv3-pregunta">
+            <summary data-faq-q>{f.q}</summary>
+            <p data-faq-a set:html={f.a}></p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
 
-  <!-- 13. Contacto (grafito): el formulario en blanco y el contacto directo -->
-  <section class="pv2-sec pv2-banda--grafito pv2-contacto" aria-labelledby="form-h2">
-    <div class="pv2-wrap pv2-dos">
+  <!-- 8. Hablemos: el formulario de contacto que ya está en producción (ServiceForm sigue sin activar, 17-oct) -->
+  <section id="hablemos" class="pv3-sec pv3-hablemos" aria-labelledby="hablemos-h2">
+    <div class="pv3-wrap pv3-hablemos__grid">
       <div>
-        <h2 class="ew-h2" id="form-h2">Cuéntanos qué necesitas resolver primero.</h2>
-        <ul class="ew-apoyo">
-          <li><span class="ew-sign" aria-hidden="true">+</span>Te respondemos el mismo día hábil.</li>
-          <li><span class="ew-sign" aria-hidden="true">+</span>El diagnóstico no tiene costo.</li>
-          <li><span class="ew-sign" aria-hidden="true">+</span>La cotización llega cerrada y por escrito antes de empezar.</li>
+        <h2 id="hablemos-h2" class="pv3-h2">Hablemos.</h2>
+        <p class="pv3-lead">Cuéntanos qué quieres lograr. Respondemos el mismo día hábil.</p>
+        <ul class="pv3-garantias">
+          <li>El diagnóstico no tiene costo.</li>
+          <li>La cotización llega cerrada y por escrito antes de empezar.</li>
         </ul>
-        <p>¿Prefieres directo? <a href={waCotizar} target="_blank" rel="noopener">WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a> o <a href={`mailto:${site.email}`}>{site.email}</a>. También puedes ir a la <a href="/contacto/">página de contacto</a>.</p>
+        <a href="#formulario" class="pv3-btn pv3-btn--negro pv3-hablemos__cta" data-cta-loc="hablemos" data-service="definir">Empezar proyecto <span aria-hidden="true">↓</span></a>
+        <p class="pv3-directo">¿Prefieres directo? <a href={waCotizar} target="_blank" rel="noopener">WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a> o <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
       </div>
       <div>
-        <p id="pv2-servicio-elegido" class="sr-only" aria-live="polite"></p>
+        <p id="pv3-servicio-elegido" class="sr-only" aria-live="polite"></p>
         <ContactForm />
       </div>
     </div>
   </section>
 
   <script>
-    /* «Cotizar» con servicio (portada v2): deja elegida la opción del formulario (data-opcion) y la anuncia. No usa
-       preventDefault ni enfoca campos: el ancla hace el salto y enfoca el contenedor, así que no emite form_start. Si el
-       formulario ya se envió (#cform oculto) o el envío está en curso (botón deshabilitado), no hace nada. */
+    /* CTA con servicio: deja elegida la opción del formulario (data-opcion) y la anuncia. No usa preventDefault ni enfoca
+       campos: el ancla hace el salto y enfoca el contenedor, así que no emite form_start. Si el formulario ya se envió
+       (#cform oculto) o el envío está en curso (botón deshabilitado), no hace nada. */
     const contenedor = document.getElementById('formulario');
     contenedor?.setAttribute('tabindex', '-1');
-    const vivo = document.getElementById('pv2-servicio-elegido');
+    const vivo = document.getElementById('pv3-servicio-elegido');
     document.addEventListener('click', (e) => {
       const a = (e.target as Element | null)?.closest?.('a[href="#formulario"][data-opcion]') as HTMLAnchorElement | null;
       if (!a) return;
@@ -519,20 +227,7 @@ const pasos = {
     });
   </script>
   <script>
-    /* Paneles apilados de Servicios (D53). ScrollTrigger y el módulo del efecto van en un import() aparte, que se pide solo
-       cuando la sección se acerca a menos de 2 pantallas: no entra al JS inicial ni corre durante la carga (pedirlo en el
-       tiempo libre después de la carga subió el TBT de Lighthouse de 92 a 80 en producción y se revirtió). Con «reducir
-       movimiento» o con poco alto no se pide: los paneles quedan como lista. */
-    const raiz = document.getElementById('servicios');
-    if (raiz && matchMedia('(min-height: 560px) and (prefers-reduced-motion: no-preference)').matches) {
-      let pedido = false;
-      const cargar = () => {
-        if (pedido) return;
-        pedido = true;
-        import('../scripts/servicios-apilados').then((m) => m.apilar(raiz)).catch(() => { /* sin el efecto, la lista sigue completa */ });
-      };
-      const io = new IntersectionObserver((e) => { if (e.some((x) => x.isIntersecting)) { io.disconnect(); cargar(); } }, { rootMargin: '200% 0px' });
-      io.observe(raiz);
-    }
+    import { iniciar } from '../scripts/movimiento';
+    iniciar();
   </script>
 </Base>

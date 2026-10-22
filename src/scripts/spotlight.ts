@@ -1,48 +1,45 @@
-/* Movimiento de la luz (y del centro de su máscara radial) del texto «linterna» (D58, src/components/SpotlightText.astro).
-   Ratón: la luz sigue al cursor con un lerp dentro de requestAnimationFrame y se enciende o apaga con suavidad al entrar
-   o salir. El bucle solo corre mientras la luz no llegó a su destino: quieta, no se recalcula el filtro.
-   Táctil (sin hover): la luz recorre el texto sola mientras la franja está a la vista.
-   «Reducir movimiento» o data-mov-off: una luz fija y tenue, sin bucle. */
-const INTENSIDAD = 0.6;
-const SEGUIR = 0.14;
-const ENCENDER = 0.08;
+/* Movimiento de la marca «linterna» (D58, src/components/SpotlightText.astro), como el wordmark de resend.com.
+   Ratón: al entrar, la capa de luz aparece (transición de opacidad en CSS) y el centro de los degradados sigue al
+   cursor con un lerp dentro de requestAnimationFrame; los contornos de aberración se separan con la velocidad. El
+   bucle corre solo mientras algo se mueve: quieto, no se recalcula nada.
+   Táctil (sin hover): la luz recorre la forma sola mientras la franja está a la vista.
+   «Reducir movimiento» o data-mov-off: no se monta; queda la forma tenue. */
+const SEGUIR = 0.18;
+const ABERRACION = 0.5;
 
 export function montar(raiz: HTMLElement) {
-  const svg = raiz.querySelector('svg');
-  const luz = raiz.querySelector('fePointLight');
-  const especular = raiz.querySelector('feSpecularLighting');
-  const foco = raiz.querySelector('.ew-spot__foco');
-  if (!svg || !luz || !especular || !foco) return;
-  const { width: w, height: h } = svg.viewBox.baseVal;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.hasAttribute('data-mov-off')) return;
+  const svg = raiz.querySelector<SVGSVGElement>('.ew-spot__luz');
+  if (!svg) return;
+  const centros = svg.querySelectorAll('radialGradient');
+  const aberracion = svg.querySelectorAll('.ew-spot__aberracion use');
+  const vb = svg.viewBox.baseVal;
 
-  let x = w / 2, y = h / 2, k = 0;
-  let tx = x, ty = y, tk = 0;
+  let x = vb.x + vb.width / 2, y = vb.y + vb.height / 2, tx = x, ty = y;
   let raf = 0, visible = true;
-  const pintar = () => {
-    luz.setAttribute('x', x.toFixed(1));
-    luz.setAttribute('y', y.toFixed(1));
-    foco.setAttribute('cx', x.toFixed(1));
-    foco.setAttribute('cy', y.toFixed(1));
-    especular.setAttribute('specularConstant', k.toFixed(3));
+  const pintar = (vx: number, vy: number) => {
+    for (const g of centros) { g.setAttribute('cx', x.toFixed(2)); g.setAttribute('cy', y.toFixed(2)); }
+    const v = Math.min(Math.hypot(vx, vy), 8);
+    const dx = (vx * ABERRACION).toFixed(2), dy = (vy * ABERRACION).toFixed(2);
+    const ancho = (v * 0.08).toFixed(2);
+    aberracion.forEach((u, i) => {
+      u.setAttribute('stroke-width', ancho);
+      u.setAttribute('transform', i === 0 ? `translate(${dx} ${dy})` : i === 1 ? `translate(${-dx} ${-dy})` : 'translate(0 0)');
+    });
   };
-
-  const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.hasAttribute('data-mov-off');
-  if (quieto) { x = w * 0.32; y = h * 0.45; k = INTENSIDAD * 0.5; pintar(); return; }
 
   const raton = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const paso = (t: number) => {
     raf = 0;
     if (!raton) {
       const s = t / 1000;
-      tx = w * (0.5 + 0.44 * Math.sin(s * 0.32));
-      ty = h * (0.5 + 0.22 * Math.sin(s * 0.55));
-      tk = INTENSIDAD * 0.8;
+      tx = vb.x + vb.width * (0.5 + 0.46 * Math.sin(s * 0.35));
+      ty = vb.y + vb.height * (0.5 + 0.3 * Math.sin(s * 0.9));
     }
-    x += (tx - x) * SEGUIR;
-    y += (ty - y) * SEGUIR;
-    k += (tk - k) * ENCENDER;
-    pintar();
-    const llego = Math.abs(tx - x) < 0.5 && Math.abs(ty - y) < 0.5 && Math.abs(tk - k) < 0.004;
+    const vx = (tx - x) * SEGUIR, vy = (ty - y) * SEGUIR;
+    x += vx; y += vy;
+    const llego = Math.abs(tx - x) < 0.05 && Math.abs(ty - y) < 0.05;
+    pintar(llego ? 0 : vx, llego ? 0 : vy);
     if (visible && (!raton || !llego)) raf = requestAnimationFrame(paso);
   };
   const pedir = () => { if (!raf && visible) raf = requestAnimationFrame(paso); };
@@ -50,14 +47,14 @@ export function montar(raiz: HTMLElement) {
   if (raton) {
     raiz.addEventListener('pointermove', (e) => {
       const r = svg.getBoundingClientRect();
-      tx = ((e.clientX - r.left) * w) / r.width;
-      ty = ((e.clientY - r.top) * h) / r.height;
-      // Apagada, la luz aparece donde está el cursor en vez de cruzar el texto desde el último punto.
-      if (k < 0.02) { x = tx; y = ty; }
-      tk = INTENSIDAD;
+      tx = vb.x + ((e.clientX - r.left) * vb.width) / r.width;
+      ty = vb.y + ((e.clientY - r.top) * vb.height) / r.height;
+      if (!raiz.classList.contains('is-on')) { x = tx; y = ty; raiz.classList.add('is-on'); }
       pedir();
     });
-    raiz.addEventListener('pointerleave', () => { tk = 0; pedir(); });
+    raiz.addEventListener('pointerleave', () => raiz.classList.remove('is-on'));
+  } else {
+    raiz.classList.add('is-on');
   }
 
   new IntersectionObserver(([e]) => {

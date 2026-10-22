@@ -507,7 +507,15 @@ con la respuesta «rec» (corrida main-20261021-231921).
      salida de emergencia es el `workflow_dispatch` con `skip_checks` de `deploy.yml`. Volver a publicar la v3 después
      pide revertir la reversión.
   4. Ensayo: antes del merge, la reversión se prueba en una rama desechable y se anota aquí.
-- **Pendiente:** ensayo de la reversión; medir GSC y GA4 contra la línea base, como en D51.
+- **Cambio de fecha del dueño (22-oct-2026):** «cuando terminemos el rediseño lo montamos a produccion enseguida. el
+  diseño que esta no me gusta». Reemplaza uc2a. Costo aceptado: las lecturas de D51 (Search Console el 29-oct y el
+  12-nov) y de D54 (GA4 el 18-nov) mezclan la v2 y la v3; se leen con el corte de la hora de publicación.
+- **Publicación (22-oct-2026, 06:27 UTC):** merges `80f2bf6` (PR-A) y `7d61092` (PR-B) en `main`, etiqueta `portada-v3`
+  en `7d61092`, despliegue 39734037789 en verde. `check-prod.sh`: 39 ok. Día P a las 06:36–06:37 UTC, 3 corridas de
+  Lighthouse local contra producción (restarlas de GA4): rendimiento móvil 98, LCP 1,4 s, TBT 82 ms; no hace falta
+  revertir. En local, antes del merge: 98, TBT 114 ms.
+- **Pendiente:** el ensayo de la reversión no se hizo antes del merge (se publicó enseguida por pedido del dueño);
+  medir GSC y GA4 contra la línea base, como en D51, con el corte del 22-oct a las 06:27 UTC.
 
 ## 3. Responsables y dependencias humanas
 

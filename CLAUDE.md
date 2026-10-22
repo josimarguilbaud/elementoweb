@@ -21,6 +21,12 @@ falla, el deploy se cae y la web se queda en la versión anterior.
 | `public/demo/<cliente>/` | **Vista previa de la web de un cliente**, HTML suelto con sus imágenes | `/demo/<cliente>/` |
 | `public/propuestas/<cliente-tema>/` | Propuestas, informes y manuales para un cliente | `/propuestas/...` |
 | `public/presentaciones/<x>/` | Presentaciones | `/presentaciones/<x>/` |
+| **Fuera del repo**: volumen del servidor | **Demo para un PROSPECTO** (negocio que no la pidió). Se sube con `node scripts/demo-prospecto.mjs subir <slug> <carpeta>` | `/demo/p/<slug>/` |
+
+**Nunca subir a git la demo de un prospecto.** El repo es público y el historial no
+se borra; la página de baja del prospector promete borrarla. `demo-prospecto.mjs`
+audita antes de subir (noindex, franja «Concepto preparado por Elemento Web.»,
+imágenes dentro de la carpeta, solo el WhatsApp 6190-3007) y verifica después.
 
 Las demos de Kredit (`public/demo/kredit-landings/` y `kredit-web/`) siguen
 `docs/specs/kredit-marketing/DESIGN-kredit.md`; no cambiar tokens ni fuentes sin aprobación.

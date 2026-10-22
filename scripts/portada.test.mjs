@@ -284,7 +284,7 @@ const cierreDelPie = (raiz) => ({
   titular: raiz.querySelectorAll('footer h2').some((h) => h.text.includes('¿Listo para una web')),
   boton: Boolean(raiz.querySelector('footer a[href="/contacto/"][data-magnetic]')),
 });
-const cotizarDelMenu = (raiz) => [raiz.querySelector('#navpill a.cta-pill'), raiz.querySelectorAll('#mnav a').find((a) => /Cotizar/.test(a.text))];
+const cotizarDelMenu = (raiz) => [raiz.querySelector('#navpill a.cta-pill'), raiz.querySelector('#mnav a.m-cta')];
 
 test('pie y menú por defecto: en /contacto/ el pie trae su bloque de cierre y los dos «Cotizar» del menú van a /contacto/', conDist, () => {
   const raiz = pagina('dist/contacto/index.html');

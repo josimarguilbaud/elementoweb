@@ -1,198 +1,194 @@
 ---
-import { cols, marketing, iaCreativa, url } from '../lib/site';
-/* cotizar: destino de los dos «Cotizar» (píldora de escritorio y menú móvil). Por defecto van a /contacto/ sin
-   atributos de medición (track.ts los ubica por <header>); la portada los baja a su formulario y los mide como
-   header/definir (portada v2). */
+import { grupos, url, wa, type Grupo, type IconoGrupo } from '../lib/site';
+/* Menú monocromo (D56): barra blanca fija, cuatro paneles al estilo Stripe y un acordeón en móvil, todo desde
+   `grupos` de site.ts. Sin GSAP: los paneles y el menú móvil abren con transiciones CSS (global.css) y el script
+   solo lleva estados, foco y teclado. Escritorio desde 1200 px (CORTE en el script y min-[1200px] en las clases).
+   cotizar: destino de los dos «Empezar proyecto» (escritorio y móvil). Por defecto van a /contacto/ sin atributos
+   de medición (track.ts los ubica por <header>); la portada los baja a su formulario y los mide como header/definir.
+   dark: lo siguen pasando las páginas con héroe marino; la barra es blanca siempre, así que ya no cambia nada. */
 interface Props { current?: string; dark?: boolean; cotizar?: { href: string; ctaLoc: string; service: string } }
-const { current = '', dark = false, cotizar } = Astro.props;
+const { current = '', cotizar } = Astro.props;
 const cotizarHref = cotizar?.href ?? '/contacto/';
+const ventas = wa('Hola, quiero hablar con ventas.');
+
+/* Íconos de línea propios, 24×24 con trazo de 1,5 (se pintan a 20 px): un solo <path> cada uno, para no sumar
+   elementos al DOM de las ~250 páginas (la portada tiene tope de 1.400). */
+const iconos: Record<IconoGrupo, string> = {
+  anuncio: 'M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1ZM15 9a3 3 0 0 1 0 6M18 6a7 7 0 0 1 0 12',
+  chispa: 'M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18',
+  agente: 'M8 8h8a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3ZM12 4v4M9 13h.01M15 13h.01M9.5 16h5',
+  caja: 'm12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm-8 4.5 8 4.5 8-4.5M12 12v9',
+  ventana: 'M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2ZM3 9h18M7 6.5h.01M10 6.5h.01',
+  codigo: 'm8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14',
+  enchufe: 'M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0V8ZM12 17v4',
+  libro: 'M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5ZM4 19a2 2 0 0 1 2-2h13',
+  brujula: 'M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0ZM15.5 8.5l-2 5-5 2 2-5 5-2Z',
+};
+/* Ancho y columnas de cada panel (plan D56: 560, 560, 820 y 640 px). */
+const forma: Record<Grupo['id'], string> = {
+  marketing: 'w-[560px] grid-cols-2',
+  ia: 'w-[560px] grid-cols-2',
+  web: 'w-[820px] grid-cols-3',
+  recursos: 'w-[640px] grid-cols-2',
+};
 ---
-<header id="nav" data-dark={dark ? '1' : '0'} class="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
-  <div class="relative">
-    <nav id="navpill" class="relative flex items-center gap-1 rounded-full border border-transparent bg-transparent px-2 py-2 transition-all duration-500">
-      <a href="/" class="flex items-center gap-2 rounded-full px-3 py-1.5">
-        <span class="brand-sq grid h-7 w-7 place-items-center rounded-lg bg-night"><svg width="17" height="17" viewBox="0 0 32 32" fill="none"><path d="M16 4 26.4 10V22L16 28 5.6 22V10Z" stroke="#0099cc" stroke-width="2.3" stroke-linejoin="round" /><path d="M16 16 5.6 10M16 16 26.4 10M16 16V28" stroke="#0099cc" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" /><circle cx="16" cy="16" r="1.7" fill="#0099cc" /></svg></span>
-        <span class="brand-tx font-display text-sm font-bold tracking-tight text-ink">elemento<span class="font-medium opacity-60"> web</span></span>
-      </a>
+<header id="nav" class="fixed inset-x-0 top-0 z-50 border-b border-filete bg-white">
+  <nav id="navpill" aria-label="Principal" class="relative mx-auto flex h-[var(--nav-h)] max-w-7xl items-center gap-2 px-4 sm:px-6">
+    <a href="/" class="flex shrink-0 items-center gap-2 rounded-md py-1.5 pr-2">
+      <span class="grid h-7 w-7 place-items-center rounded-lg bg-negro"><svg width="17" height="17" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4 26.4 10V22L16 28 5.6 22V10Z" stroke="#0099cc" stroke-width="2.3" stroke-linejoin="round" /><path d="M16 16 5.6 10M16 16 26.4 10M16 16V28" stroke="#0099cc" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" /><circle cx="16" cy="16" r="1.7" fill="#0099cc" /></svg></span>
+      <span class="font-display text-sm font-bold tracking-tight text-negro">elemento<span class="font-medium text-gris-texto"> web</span></span>
+    </a>
 
-      <div class="nav-links mx-1 hidden items-center gap-0.5 lg:flex">
-        <button type="button" data-menu="servicios" aria-expanded="false" aria-controls="panel-servicios" class="nav-trigger flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm font-medium text-ink/70 transition hover:bg-ink/5 hover:text-ink">
-          Servicios <svg class="chev h-3 w-3 opacity-50 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" /></svg>
-        </button>
-        <button type="button" data-menu="mas" aria-expanded="false" aria-controls="panel-mas" class="nav-trigger flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm font-medium text-ink/70 transition hover:bg-ink/5 hover:text-ink">
-          Más <svg class="chev h-3 w-3 opacity-50 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" /></svg>
-        </button>
-        <a href="/portafolio/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'portafolio' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Proyectos</a>
-        <a href="/precios/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'precios' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Precios</a>
-        <a href="/nosotros/" class={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${current === 'nosotros' ? 'bg-night text-white' : 'text-ink/70 hover:bg-ink/5 hover:text-ink'}`}>Nosotros</a>
-      </div>
-
-      <a href={cotizarHref} data-cta-loc={cotizar?.ctaLoc} data-service={cotizar?.service} data-magnetic="0.4" class="cta-pill ml-1 hidden items-center gap-2 rounded-full bg-night px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-ink/20 transition-colors hover:bg-teal-deep sm:inline-flex">
-        Cotizar
-        <span class="grid h-4 w-4 place-items-center rounded-full bg-teal text-night"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 7 7 1M7 1H2M7 1v5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
-      </a>
-
-      <button id="mnav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnav" class="ml-1 grid h-10 w-10 place-items-center rounded-full text-ink lg:hidden">
-        <span class="relative block h-3.5 w-5"><span class="mline absolute left-0 top-0 h-0.5 w-5 rounded bg-current transition-all duration-300"></span><span class="mline absolute left-0 top-1.5 h-0.5 w-5 rounded bg-current transition-all duration-300"></span><span class="mline absolute left-0 top-3 h-0.5 w-5 rounded bg-current transition-all duration-300"></span></span>
-      </button>
-    </nav>
-
-    <!-- Panel Servicios -->
-    <div data-panel="servicios" id="panel-servicios" inert aria-hidden="true" class="invisible pointer-events-none absolute left-1/2 top-full z-40 mt-3 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300">
-      <div class="menu-panel grid w-[min(95vw,1020px)] grid-cols-2 gap-x-10 gap-y-6 rounded-3xl p-8 lg:grid-cols-4">
-        {cols.map((col) => (
-          <div>
-            <div class="mb-3 flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-teal to-violet"></span><p class="font-display text-xs font-bold uppercase tracking-wide text-ink">{col.title}</p></div>
-            <ul class="flex flex-col gap-1">
-              {col.links.map((l) => <li><a href={url(l.slug)} class="block whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">{l.label}</a></li>)}
-            </ul>
+    <div class="nav-links relative ml-4 hidden items-center min-[1200px]:flex">
+      {grupos.map((g) => (
+        <>
+          <button type="button" data-menu={g.id} aria-expanded="false" aria-controls={`panel-${g.id}`} class="nav-trigger flex h-10 items-center gap-1.5 rounded-md px-3 text-sm font-medium text-gris-texto transition-colors hover:text-negro aria-expanded:text-negro aria-expanded:underline aria-expanded:decoration-2 aria-expanded:underline-offset-[22px]">
+            {g.titulo}
+          </button>
+          <div id={`panel-${g.id}`} data-panel={g.id} data-open="0" inert class="absolute left-1/2 top-full z-40 pt-3">
+            <div class={`menu-panel grid gap-x-8 gap-y-6 rounded-xl p-6 ${forma[g.id]}`}>
+              {g.columnas.map((c) => (
+                <div>
+                  <div class="flex items-start gap-3">
+                    <svg class="mt-0.5 h-5 w-5 shrink-0 text-negro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={iconos[c.icono]} /></svg>
+                    <p class="text-sm font-semibold text-negro">{c.titulo}<span class="mt-0.5 block font-normal leading-snug text-gris-texto">{c.linea}</span></p>
+                  </div>
+                  <div class="mt-3 flex flex-col pl-8">
+                    {c.links.map((l) => <a href={url(l.slug)} class="block rounded-md py-1.5 text-sm text-gris-texto transition-colors hover:text-negro hover:underline focus-visible:text-negro">{l.label}</a>)}
+                  </div>
+                </div>
+              ))}
+              <a href={url(g.destacada.slug)} class="menu-destacada group col-span-full flex items-center justify-between gap-4 rounded-xl bg-humo px-5 py-4">
+                <span class="text-sm font-semibold text-negro">{g.destacada.titulo}<span class="mt-0.5 block font-normal text-gris-texto">{g.destacada.linea}</span></span>
+                <span aria-hidden="true" class="text-negro transition-transform group-hover:translate-x-1">→</span>
+              </a>
+            </div>
           </div>
-        ))}
-      </div>
+        </>
+      ))}
+      <a href="/nosotros/" aria-current={current === 'nosotros' ? 'page' : undefined} class="flex h-10 items-center rounded-md px-3 text-sm font-medium text-gris-texto transition-colors hover:text-negro aria-[current=page]:text-negro">Nosotros</a>
     </div>
 
-    <!-- Panel Marketing -->
-    <div data-panel="mas" id="panel-mas" inert aria-hidden="true" class="invisible pointer-events-none absolute left-1/2 top-full z-40 mt-3 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-300">
-      <div class="menu-panel grid w-[min(92vw,640px)] grid-cols-2 gap-x-6 gap-y-1 rounded-3xl p-6">
-        <p class="col-span-2 px-3 pb-1 font-display text-xs font-bold uppercase tracking-wide text-ink/70">Marketing</p>
-        {marketing.map((l) => <a href={url(l.slug)} class="whitespace-nowrap rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">{l.label}</a>)}
-        <p class="col-span-2 mt-3 px-3 pb-1 font-display text-xs font-bold uppercase tracking-wide text-ink/70">Producción con IA</p>
-        {iaCreativa.map((l) => <a href={url(l.slug)} class="whitespace-nowrap rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">{l.label}</a>)}
-        <p class="col-span-2 mt-3 px-3 pb-1 font-display text-xs font-bold uppercase tracking-wide text-ink/70">Explorar</p>
-        <a href="/saas/" class="rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">SaaS</a>
-        <a href="/industrias/" class="rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">Industrias</a>
-        <a href="/miami/" class="rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">Miami</a>
-        <a href="/blog/" class="rounded-xl px-3 py-2.5 text-sm font-medium text-ink/75 transition-colors hover:bg-teal-deep/10 hover:text-teal-deep">Blog</a>
-      </div>
+    <div class="ml-auto flex items-center gap-2">
+      <a href={ventas} target="_blank" rel="noopener" class="nav-ventas hidden h-10 items-center rounded-md px-3 text-sm font-medium text-negro hover:underline min-[1200px]:inline-flex">Hablar con ventas<span class="sr-only"> (se abre WhatsApp en otra pestaña)</span></a>
+      <a href={cotizarHref} data-cta-loc={cotizar?.ctaLoc} data-service={cotizar?.service} class="cta-pill hidden h-10 items-center gap-2 rounded-full bg-negro px-5 text-sm font-semibold text-white transition-colors hover:bg-grafito sm:inline-flex">
+        Empezar proyecto <span aria-hidden="true">→</span>
+      </a>
+      <button id="mnav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnav" class="grid h-11 w-11 place-items-center rounded-md text-negro min-[1200px]:hidden">
+        <span class="relative block h-3.5 w-5"><span class="mline absolute left-0 top-0 h-0.5 w-5 rounded bg-current transition-all duration-200"></span><span class="mline absolute left-0 top-1.5 h-0.5 w-5 rounded bg-current transition-all duration-200"></span><span class="mline absolute left-0 top-3 h-0.5 w-5 rounded bg-current transition-all duration-200"></span></span>
+      </button>
     </div>
-  </div>
+  </nav>
 </header>
 
-<!-- Overlay móvil -->
-<div id="mnav" role="dialog" aria-modal="true" aria-label="Menú de navegación" class="fixed inset-0 z-40 hidden flex-col overflow-y-auto bg-night px-6 pb-12 pt-24 text-white lg:!hidden" style="clip-path: inset(0 0 100% 0)">
-  <div class="absolute inset-0 mesh-dark opacity-40"></div>
-  <div class="relative flex flex-col gap-7">
-    <div class="m-row">
-      <div class="font-display text-2xl font-bold">Servicios</div>
-      <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-1">
-        {cols.flatMap((c) => c.links).map((l) => <a href={url(l.slug)} class="py-1 text-sm text-white/60">{l.label}</a>)}
-      </div>
-    </div>
-    <div class="m-row">
-      <div class="font-display text-2xl font-bold">Marketing</div>
-      <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-1">
-        {marketing.map((l) => <a href={url(l.slug)} class="py-1 text-sm text-white/60">{l.label}</a>)}
-      </div>
-    </div>
-    <div class="m-row">
-      <div class="font-display text-2xl font-bold">Producción con IA</div>
-      <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-1">
-        {iaCreativa.map((l) => <a href={url(l.slug)} class="py-1 text-sm text-white/60">{l.label}</a>)}
-      </div>
-    </div>
-    <a href="/portafolio/" class="m-row font-display text-2xl font-bold">Proyectos</a>
-    <a href="/precios/" class="m-row font-display text-2xl font-bold">Precios</a>
-    <a href="/nosotros/" class="m-row font-display text-2xl font-bold">Nosotros</a>
-    <a href="/saas/" class="m-row font-display text-2xl font-bold">SaaS</a>
-    <a href="/industrias/" class="m-row font-display text-2xl font-bold">Industrias</a>
-    <a href="/miami/" class="m-row font-display text-2xl font-bold">Miami</a>
-    <a href="/blog/" class="m-row font-display text-2xl font-bold">Blog</a>
-    <a href={cotizarHref} data-cta-loc={cotizar?.ctaLoc} data-service={cotizar?.service} class="m-row mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-4 text-base font-semibold text-night">Cotizar mi proyecto</a>
+<!-- Menú móvil: acordeón por grupo con los mismos enlaces que los paneles de escritorio (sin las tarjetas). -->
+<div id="mnav" role="dialog" aria-modal="true" aria-label="Menú de navegación" data-open="0" class="fixed inset-x-0 bottom-0 top-[var(--nav-h)] z-40 overflow-y-auto bg-white px-4 pb-10 sm:px-6 min-[1200px]:!hidden">
+  <div class="mx-auto max-w-2xl">
+    {grupos.map((g) => (
+      <details data-grupo={g.id} class="border-b border-filete">
+        <summary class="flex min-h-14 cursor-pointer items-center justify-between text-lg font-semibold text-negro">
+          {g.titulo}
+        </summary>
+        <div class="grid gap-5 pb-5 sm:grid-cols-2">
+          {g.columnas.map((c) => (
+            <div>
+              <p class="text-sm font-semibold text-gris-texto">{c.titulo}</p>
+              <div class="mt-1 flex flex-col">
+                {c.links.map((l) => <a href={url(l.slug)} class="flex min-h-11 items-center text-base text-negro">{l.label}</a>)}
+              </div>
+            </div>
+          ))}
+        </div>
+      </details>
+    ))}
+    <a href="/nosotros/" class="m-suelto flex min-h-14 items-center border-b border-filete text-lg font-semibold text-negro">Nosotros</a>
+    <a href={ventas} target="_blank" rel="noopener" class="mt-6 flex min-h-12 items-center justify-center rounded-full border border-negro text-base font-semibold text-negro">Hablar con ventas<span class="sr-only"> (se abre WhatsApp en otra pestaña)</span></a>
+    <a href={cotizarHref} data-cta-loc={cotizar?.ctaLoc} data-service={cotizar?.service} class="m-cta mt-3 flex min-h-12 items-center justify-center gap-2 rounded-full bg-negro text-base font-semibold text-white">Empezar proyecto <span aria-hidden="true">→</span></a>
   </div>
 </div>
 
 <script>
-  import { gsap } from 'gsap';
-  const pill = document.getElementById('navpill');
-  const triggers = document.querySelectorAll<HTMLButtonElement>('.nav-trigger');
-  const panels = document.querySelectorAll<HTMLElement>('[data-panel]');
-  const header = document.getElementById('nav');
-  let closeTimer: ReturnType<typeof setTimeout>;
-  let scrolled = false, openKey: string | null = null;
+  const CORTE = 1200;
+  const ESPERA_ABRIR = 150, ESPERA_CERRAR = 180;
+  const header = document.getElementById('nav')!;
+  const zona = header.querySelector<HTMLElement>('.nav-links')!;
+  const triggers = [...header.querySelectorAll<HTMLButtonElement>('.nav-trigger')];
+  const panelDe = (k: string) => document.getElementById(`panel-${k}`)!;
+  let abierto: string | null = null, porHover = false;
+  let tAbrir: ReturnType<typeof setTimeout> | undefined, tCerrar: ReturnType<typeof setTimeout> | undefined;
+  const parar = () => { clearTimeout(tAbrir); clearTimeout(tCerrar); };
 
-  const isDark = header?.dataset.dark === '1';
-  const applyPill = () => {
-    if (!pill) return;
-    const active = scrolled || openKey || document.getElementById('mnav')?.dataset.open === '1';
-    pill.classList.toggle('glass', !!active);
-    // hero oscuro y sin fondo glass → texto claro para que se lea sobre el hero
-    pill.classList.toggle('nav-light', !!isDark && !active);
-  };
-  const setPanel = (key: string | null) => {
-    openKey = key;
-    triggers.forEach((t) => {
-      const on = t.dataset.menu === key;
+  const setPanel = (k: string | null, hover = false) => {
+    abierto = k; porHover = hover && !!k;
+    for (const t of triggers) {
+      const on = t.dataset.menu === k;
       t.setAttribute('aria-expanded', String(on));
-      t.querySelector('.chev')?.classList.toggle('rotate-180', on);
-    });
-    panels.forEach((p) => {
-      const on = p.dataset.panel === key;
-      p.classList.toggle('opacity-100', on);
-      p.classList.toggle('translate-y-0', on);
-      p.classList.toggle('pointer-events-auto', on);
-      p.classList.toggle('opacity-0', !on);
-      p.classList.toggle('translate-y-2', !on);
-      p.classList.toggle('pointer-events-none', !on);
-      p.classList.toggle('invisible', !on);
+      const p = panelDe(t.dataset.menu!);
+      p.dataset.open = on ? '1' : '0';
       p.toggleAttribute('inert', !on);
-      p.setAttribute('aria-hidden', String(!on));
-    });
-    applyPill();
-  };
-  const open = (k: string) => { clearTimeout(closeTimer); setPanel(k); };
-  const leave = () => { closeTimer = setTimeout(() => setPanel(null), 180); };
-
-  triggers.forEach((t) => {
-    t.addEventListener('mouseenter', () => open(t.dataset.menu!));
-    t.addEventListener('click', () => setPanel(openKey === t.dataset.menu ? null : t.dataset.menu!));
-  });
-  panels.forEach((p) => { p.addEventListener('mouseenter', () => open(p.dataset.panel!)); p.addEventListener('mouseleave', leave); });
-  header?.addEventListener('mouseleave', leave);
-  addEventListener('keydown', (e) => {
-    if (e.key !== 'Escape') return;
-    if (mopen) { closeMobile(true); return; }
-    if (openKey) {
-      const t = document.querySelector<HTMLButtonElement>(`.nav-trigger[data-menu="${openKey}"]`);
-      setPanel(null);
-      t?.focus();
     }
+  };
+
+  for (const t of triggers) {
+    const k = t.dataset.menu!;
+    t.addEventListener('click', () => {
+      parar();
+      // Si el ratón lo acaba de abrir, el clic lo confirma en vez de cerrarlo.
+      if (abierto === k && porHover) { porHover = false; return; }
+      setPanel(abierto === k ? null : k);
+    });
+    // Solo el ratón abre al pasar; un toque llega como click y no abre y cierra a la vez.
+    t.addEventListener('pointerenter', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      parar();
+      if (abierto) setPanel(k, true);
+      else tAbrir = setTimeout(() => setPanel(k, true), ESPERA_ABRIR);
+    });
+  }
+  zona.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') clearTimeout(tCerrar); });
+  zona.addEventListener('pointerleave', (e) => {
+    if (e.pointerType !== 'mouse') return;
+    clearTimeout(tAbrir);
+    if (abierto) tCerrar = setTimeout(() => setPanel(null), ESPERA_CERRAR);
   });
+  // Si el foco sale del menú con Tab, el panel se cierra.
+  zona.addEventListener('focusout', (e) => { if (abierto && !zona.contains(e.relatedTarget as Node | null)) setPanel(null); });
 
-  addEventListener('scroll', () => { scrolled = window.scrollY > 40; applyPill(); }, { passive: true });
-
-  // móvil
+  // Menú móvil
   const mnav = document.getElementById('mnav')!;
   const toggle = document.getElementById('mnav-toggle')!;
-  const lines = toggle.querySelectorAll('.mline');
+  const lines = toggle.querySelectorAll<HTMLElement>('.mline');
   let mopen = false;
-  const outside = () => document.querySelectorAll<HTMLElement>('main, footer, #nav');
-  const setMobile = (on: boolean, restoreFocus = false) => {
+  const fuera = () => [document.querySelector('main'), document.querySelector('footer'), document.querySelector('a[href="#contenido"]')].filter(Boolean) as HTMLElement[];
+  const enfocables = () => [toggle, ...mnav.querySelectorAll<HTMLElement>('summary, a[href]')].filter((el) => el.offsetParent !== null || el === toggle);
+  const setMobile = (on: boolean, devolverFoco = false) => {
     mopen = on; mnav.dataset.open = on ? '1' : '0';
     toggle.setAttribute('aria-expanded', String(on));
     toggle.setAttribute('aria-label', on ? 'Cerrar menú' : 'Abrir menú');
     document.documentElement.style.overflow = on ? 'hidden' : '';
-    outside().forEach((el) => { if (el.id !== 'nav') el.toggleAttribute('inert', on); });
-    (lines[0] as HTMLElement).style.cssText = on ? 'top:6px;transform:rotate(45deg)' : 'top:0';
-    (lines[1] as HTMLElement).style.opacity = on ? '0' : '1';
-    (lines[2] as HTMLElement).style.cssText = on ? 'top:6px;transform:rotate(-45deg)' : 'top:12px';
-    if (on) {
-      gsap.set(mnav, { display: 'flex' });
-      gsap.fromTo(mnav, { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 0.6, ease: 'power4.inOut' });
-      gsap.fromTo(mnav.querySelectorAll('.m-row'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, stagger: 0.05, delay: 0.18, ease: 'power3.out' });
-      mnav.querySelector<HTMLElement>('a')?.focus({ preventScroll: true });
-    } else {
-      gsap.to(mnav, { clipPath: 'inset(0 0 100% 0)', duration: 0.5, ease: 'power4.inOut', onComplete: () => gsap.set(mnav, { display: 'none' }) });
-      if (restoreFocus) toggle.focus();
-    }
-    applyPill();
+    for (const el of fuera()) el.toggleAttribute('inert', on);
+    lines[0].style.cssText = on ? 'top:6px;transform:rotate(45deg)' : 'top:0';
+    lines[1].style.opacity = on ? '0' : '1';
+    lines[2].style.cssText = on ? 'top:6px;transform:rotate(-45deg)' : 'top:12px';
+    if (on) mnav.querySelector<HTMLElement>('summary')?.focus({ preventScroll: true });
+    else if (devolverFoco) toggle.focus();
   };
-  const closeMobile = (restoreFocus = false) => { if (mopen) setMobile(false, restoreFocus); };
-  toggle.addEventListener('click', () => setMobile(!mopen, mopen));
-  // si se agranda la ventana a escritorio con el menú abierto, se libera el scroll
-  matchMedia('(min-width: 1024px)').addEventListener('change', (m) => { if (m.matches) { closeMobile(); gsap.set(mnav, { display: 'none' }); } });
-  mnav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => closeMobile()));
+  const cerrarMovil = (devolverFoco = false) => { if (mopen) setMobile(false, devolverFoco); };
+  toggle.addEventListener('click', () => setMobile(!mopen));
+  mnav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => cerrarMovil()));
+  matchMedia(`(min-width: ${CORTE}px)`).addEventListener('change', (m) => { if (m.matches) cerrarMovil(); else setPanel(null); });
 
-  // estado inicial (importante en internas con hero oscuro y al recargar con scroll)
-  scrolled = window.scrollY > 40;
-  applyPill();
+  addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (mopen) { cerrarMovil(true); return; }
+      if (abierto) { const t = triggers.find((x) => x.dataset.menu === abierto); parar(); setPanel(null); t?.focus(); }
+      return;
+    }
+    // Con el menú móvil abierto, el Tab da la vuelta entre el botón y los enlaces del menú.
+    if (e.key === 'Tab' && mopen) {
+      const lista = enfocables(), i = lista.indexOf(document.activeElement as HTMLElement);
+      if (e.shiftKey && i <= 0) { e.preventDefault(); lista.at(-1)?.focus(); }
+      else if (!e.shiftKey && (i === -1 || i === lista.length - 1)) { e.preventDefault(); lista[0].focus(); }
+    }
+  });
 </script>

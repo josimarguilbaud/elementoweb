@@ -840,7 +840,8 @@ test('el hub y /servicios/ no dicen «El canal con mejor retorno» ni «creativo
 // protects=menú y pie sin utilidades nuevas; fails_when=un enlace de «Producción con IA» lleva otras clases que los de marketing; no_claim=el orden visual
 test('menú y pie: los enlaces de «Producción con IA» llevan las mismas clases que los de marketing', conDist, () => {
   const raiz = parse(htmlDe('marketing'));
-  const clasesDe = (href) => raiz.querySelectorAll(`a[href="${href}"]`).filter((a) => !a.closest('main')).map((a) => a.getAttribute('class')).sort();
+  // La tarjeta destacada del panel de Marketing (D56) repite Videos publicitarios con su propio estilo: no es una lista.
+  const clasesDe = (href) => raiz.querySelectorAll(`a[href="${href}"]`).filter((a) => !a.closest('main') && !a.classList.contains('menu-destacada')).map((a) => a.getAttribute('class')).sort();
   const deMarketing = clasesDe('/marketing/google-ads-panama/');
   assert.ok(deMarketing.length >= 3, 'el menú de escritorio, el móvil y el pie enlazan a Google Ads');
   for (const s of slugsIA) assert.deepEqual(clasesDe(`/${s}/`), deMarketing, `/${s}/ en el menú y el pie`);

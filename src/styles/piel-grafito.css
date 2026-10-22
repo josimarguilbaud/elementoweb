@@ -29,10 +29,6 @@
 /* Enlaces del <noscript> de ContactForm (clase text-teal-deep, ≈ 3,1:1 sobre grafito). */
 .pv2-banda--grafito noscript a { color: var(--ew-accent-on-dark); }
 
-/* ---- Menú fijo: al bajar toma .glass (blanco al 55 %), que sobre grafito deja sus enlaces cerca de 2,6:1. En la
-   portada va opaco. .glass está en @layer utilities, así que esta regla sin capa gana sin pelear especificidad. ---- */
-#navpill.glass { background: var(--ew-raised); }
-
 /* ---- Anclas: el menú fijo no tapa el titular al llegar por ancla (igual que scroll-mt-28). ---- */
 .pv2-ancla { scroll-margin-top: 7rem; }
 

@@ -543,6 +543,13 @@ comitea y despliega», con una plantilla común, mockups de fal e imágenes nuev
 - **SEO congelado:** el schema de las páginas cuya imagen de portada cambió difiere solo en los campos de la imagen
   (comprobado comparando el JSON-LD contra una compilación sin las imágenes nuevas); cada una tiene su permiso con este
   motivo en `scripts/cambios-permitidos.json`.
+- **Publicación (22-oct-2026, 07:41 UTC):** merge `d3582e6` en `main`, etiqueta `internas-v3`, despliegue 39742255060 en
+  verde; `npm run verify` completo en verde antes del merge (Lighthouse móvil local 99, TBT 45 ms). En producción:
+  `check-prod.sh` 39 ok y `/servicios/diseno-web-corporativo-panama/` con rendimiento móvil 96, LCP 1,9 s, TBT 183 ms
+  (3 corridas a las 07:49 UTC, restarlas de GA4).
+- **Pendiente:** 29 portadas siguen con la foto anterior (11 del blog y las 18 de `public/images/industrias/`) porque la
+  cuenta de fal se quedó sin crédito (`403 balance_exhausted`); el objeto y el alt de cada una ya están definidos en el
+  scratchpad de la sesión (`blogimg-data.mjs`, índices 59 a 87). Gasto de la tanda: US$ 21,75 de US$ 27.
 
 ## 3. Responsables y dependencias humanas
 

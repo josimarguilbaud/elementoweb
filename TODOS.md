@@ -431,4 +431,48 @@ Diferidos por la revisión del plan del 21-oct-2026 (`docs/specs/rediseno-elemen
 **Priority:** P2
 **Depends on:** —
 
+## Portada v3 (D56)
+
+### Pasar las páginas de servicio al sistema monocromo (E4)
+
+**What:** Llevar los héroes navy de las páginas de servicio y los hubs a la variante monocromo de la portada v3.
+
+**Why:** Con la v3, la portada, el menú y el pie quedan en monocromo y las páginas de servicio siguen en marino; quien hace clic cambia de sistema visual.
+
+**Context:** Plan `docs/specs/rediseno-elementoweb/PLAN-PORTADA-V3.md`, fuera de alcance por decisión de la revisión de producto del 21-oct-2026. Medir la v3 antes de tocar las páginas que traen las impresiones de Search Console.
+
+**Effort:** L (humano) / M (CC)
+**Priority:** P2
+**Depends on:** la v3 publicada y medida.
+
+### Imagen OG nueva para la portada v3 (E6)
+
+**What:** Una imagen Open Graph de 1200×630 en monocromo con la escultura de cromo, para `/`.
+
+**Why:** La OG de hoy es de la v2 grafito y no dice marketing + IA al compartir el enlace.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P3
+**Depends on:** la escultura de la v3 generada.
+
+### Alinear Node del CI con el del Dockerfile
+
+**What:** El CI de despliegue corre Node 24 y la imagen Docker Node 20; dejar los dos en la misma versión.
+
+**Why:** Un build puede pasar en el CI y fallar en el servidor (o al revés) por una diferencia de Node.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P2
+**Depends on:** —
+
+### Quitar el `npm install -g lighthouse` de los mensajes de `medir.mjs`
+
+**What:** Cuando `lighthouse` entre como devDependency (plan v3), `scripts/medir.mjs` lo llama desde `node_modules/.bin` y su error deja de pedir la instalación global.
+
+**Why:** El CI no tiene el CLI global y el mensaje manda a instalar algo que ya no hace falta.
+
+**Effort:** S (humano) / S (CC)
+**Priority:** P3
+**Depends on:** el PR de la v3 que agrega la dependencia.
+
 ## Completed

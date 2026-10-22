@@ -22,41 +22,39 @@ export const blog5: PageData[] = [
       alt: 'Campana de mostrador de latón sobre una mesa de madera en un cuarto vacío, en una nota sobre chatbots con IA para negocios',
     },
     lead: [
-      'La palabra "chatbot" carga años de mala fama: menús rígidos, respuestas robóticas y clientes que terminaban escribiendo "quiero hablar con un humano". Los chatbots con IA cambiaron esa historia.',
-      'En esta guía te explicamos qué es realmente un chatbot con inteligencia artificial, para qué sirve en un negocio panameño y cómo se conecta con tu página web y tu WhatsApp. Sin bombo: lo que hace bien, lo que no, y cuándo vale la pena.',
+      'Un chatbot con IA para negocios en Panamá entiende lo que el cliente escribe con sus propias palabras, responde al instante en tu web y tu WhatsApp, y pasa a una persona lo que requiere criterio. En Elemento Web lo alimentamos con tus precios, horarios y formas de pago, y le enseñamos a derivar en vez de inventar.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Qué es un chatbot con IA (y en qué se diferencia del viejo bot de botones)',
+        h2: '¿Qué es un chatbot con IA y en qué se diferencia del bot de botones?',
         paragraphs: [
-          'El bot tradicional funcionaba con un árbol de opciones: "Presiona 1 para ventas, 2 para soporte". Si tu pregunta no cabía en ese menú, chocabas contra una pared. Era una recepcionista con un guion de tres frases.',
-          'Un chatbot con IA usa modelos de lenguaje para <strong>entender lo que la persona escribe en sus propias palabras</strong> y responder de forma natural. No necesita que el cliente adivine la palabra mágica: entiende "¿tienen la talla 42 en negro?" igual que "quería saber si les queda el zapato ese oscuro en mi número".',
-          'La diferencia práctica es enorme. El bot de botones frustra; el asistente con IA conversa, resuelve dudas frecuentes y sabe cuándo pasarle la conversación a una persona. No reemplaza a tu equipo: le quita de encima las 30 preguntas repetidas de cada día para que se concentren en las ventas que sí requieren criterio.',
+          'El bot tradicional funciona con un árbol de opciones: "Presiona 1 para ventas, 2 para soporte". Si la pregunta del cliente no cabe en ese menú, la conversación se traba.',
+          'Un chatbot con IA usa modelos de lenguaje para <strong>entender lo que la persona escribe en sus propias palabras</strong> y responder de forma natural. Entiende "¿tienen la talla 42 en negro?" igual que "quería saber si les queda el zapato ese oscuro en mi número".',
+          'En la práctica, el bot de botones frustra; el asistente con IA conversa, resuelve dudas frecuentes y sabe cuándo pasarle la conversación a una persona de tu equipo.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Casos reales: para qué lo usan los negocios en Panamá',
+        h2: '¿Para qué usan los negocios en Panamá un chatbot con IA?',
         paragraphs: [
-          'Un chatbot con IA no es un adorno tecnológico; resuelve tareas concretas que hoy te consumen tiempo. Estos son los usos que más se repiten en el mercado local.',
-          'Una clínica o consultorio lo usa para responder horarios, ubicación y precios de consulta, y para encaminar la solicitud de cita hacia un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas</a> sin que nadie tenga que estar pegado al teléfono. Un restaurante responde el menú, si hay delivery y hasta qué hora atienden. Una tienda contesta tallas, disponibilidad y formas de pago, y encamina hacia el <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">pago con Yappy o tarjeta</a>.',
-          'El patrón es siempre el mismo: hay un puñado de preguntas que representan la mayoría de los mensajes que recibes. El asistente se hace cargo de esas, a cualquier hora, y solo escala a un humano lo que de verdad lo necesita.',
+          'Una clínica o consultorio lo usa para responder horarios, ubicación y precios de consulta, y para encaminar la solicitud de cita hacia un <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistema de reservas</a> sin que nadie esté pegado al teléfono. Un restaurante responde el menú, si hay delivery y hasta qué hora atiende. Una tienda contesta tallas, disponibilidad y formas de pago, y encamina hacia el <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">pago con Yappy o tarjeta</a>.',
+          'El patrón se repite: un puñado de preguntas representa la mayoría de los mensajes que recibe un negocio. El chatbot se hace cargo de esas preguntas a cualquier hora y solo escala a un humano lo que de verdad lo necesita.',
         ],
       },
       {
         type: 'prose',
         h2: 'Atención 24/7: el cliente que escribe a las 10 de la noche',
         paragraphs: [
-          'En Panamá mucha gente decide y escribe fuera del horario de oficina: en la fila del súper, después de acostar a los niños, un domingo por la tarde. Si tu negocio responde al día siguiente, ese cliente ya le escribió a tres competidores más.',
-          'Un chatbot con IA <strong>contesta al instante a cualquier hora</strong>. No para vender a la fuerza, sino para no dejar el mensaje en visto: responde la duda, capta el nombre y el interés, y deja todo ordenado para que tu equipo cierre en la mañana. La primera respuesta rápida es, muchas veces, la que se queda con el cliente.',
-          'Lo tratamos en detalle en <a href="/blog/como-atender-clientes-24-7-con-un-asistente-de-ia/">cómo atender a tus clientes 24/7 con un asistente de IA</a>, pero la idea de fondo es simple: responder a tiempo casi siempre pesa más que responder perfecto tres horas después.',
+          'En Panamá mucha gente decide y escribe fuera del horario de oficina: en la fila del súper, después de acostar a los niños, un domingo por la tarde. Si el negocio responde al día siguiente, ese cliente ya le escribió a otros.',
+          'Un chatbot con IA <strong>contesta al instante a cualquier hora</strong>: responde la duda, capta el nombre y el interés, y deja la conversación ordenada para que tu equipo cierre en la mañana.',
+          'Lo tratamos en detalle en <a href="/blog/como-atender-clientes-24-7-con-un-asistente-de-ia/">cómo atender a tus clientes 24/7 con un asistente de IA</a>: responder a tiempo casi siempre pesa más que responder perfecto tres horas después.',
         ],
       },
       {
         type: 'checklist',
         h2: 'Qué necesita tu negocio para un chatbot que sirva',
-        intro: 'Un asistente con IA es tan bueno como la información con la que lo alimentas. Antes de montarlo, conviene tener esto claro.',
+        intro: 'Un asistente con IA es tan bueno como la información con la que lo alimentas. Antes de montarlo, ten listo esto:',
         items: [
           'Las preguntas frecuentes reales de tus clientes (revisa tu WhatsApp y anótalas)',
           'Precios, horarios, ubicación y formas de pago actualizados y por escrito',
@@ -68,11 +66,11 @@ export const blog5: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cómo se integra con tu web y tu WhatsApp',
+        h2: '¿Cómo se integra un chatbot con IA con tu web y tu WhatsApp?',
         paragraphs: [
-          'Un chatbot con IA vive donde está tu cliente. En la web aparece como una burbuja de chat en la esquina; en <strong>WhatsApp</strong> responde en el mismo número por el que la gente ya te escribe. Lo ideal es que sea el mismo asistente en ambos lados, con la misma información y el mismo tono.',
-          'Nuestra plataforma <a href="/saas/wazacrm/">WazaCRM</a> es un chatbot con IA omnicanal con CRM de WhatsApp incluido: atiende en la web y en WhatsApp, y guarda cada conversación como un contacto con su historial. Así el bot no solo responde: deja el terreno ordenado para dar seguimiento y vender.',
-          'Si quieres los detalles técnicos de la integración en tu sitio, los tienes en <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbots con IA para tu web</a>. Y si aún no tienes una web sólida donde vivir el chat, ahí empieza el trabajo: mira nuestros <a href="/diseno-web-panama/">servicios de diseño web en Panamá</a>.',
+          'En la web, el chatbot aparece como una burbuja de chat en la esquina; en <strong>WhatsApp</strong> responde en el mismo número por el que la gente ya te escribe. Lo ideal es un solo asistente en ambos canales, con la misma información y el mismo tono.',
+          'Nuestra plataforma <a href="/saas/wazacrm/">WazaCRM</a> es un chatbot con IA omnicanal con CRM de WhatsApp incluido: atiende en la web y en WhatsApp, y guarda cada conversación como un contacto con su historial para dar seguimiento.',
+          'Los detalles técnicos de la integración están en <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbots con IA para tu web</a>. Si tu negocio aún no tiene una web sólida donde vivir el chat, el trabajo empieza por nuestros <a href="/diseno-web-panama/">servicios de diseño web en Panamá</a>.',
         ],
       },
       {
@@ -127,32 +125,31 @@ export const blog5: PageData[] = [
       alt: 'Diagrama de flujo de trabajo conectando distintas aplicaciones',
     },
     lead: [
-      'Copiar un dato de un formulario a una hoja de cálculo. Reenviar a mano cada mensaje al vendedor. Mandar el mismo correo de bienvenida uno por uno. Tareas chicas que, sumadas, se comen horas cada semana.',
-      'n8n es la herramienta que conecta tus aplicaciones para que esas tareas se hagan solas. En esta guía te explicamos qué es, con ejemplos concretos para una pyme panameña, y por qué su mayor retorno no es la tecnología: es el tiempo que le devuelve a tu equipo.',
+      'Las automatizaciones con n8n para pymes conectan tu formulario web, tu WhatsApp, tu CRM y tu correo para que los datos pasen solos de una herramienta a otra. Si copias 20 leads al día a dos minutos cada uno, son más de tres horas semanales que n8n te devuelve. En Elemento Web montamos estos flujos para negocios en Panamá.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Qué es n8n y por qué conviene a una pyme',
+        h2: '¿Qué es n8n y por qué le conviene a una pyme?',
         paragraphs: [
-          'n8n es una plataforma de automatización que conecta las herramientas que ya usas (tu formulario web, tu WhatsApp, tu CRM, tu correo, una hoja de cálculo) y hace que la información fluya entre ellas sin que nadie la copie a mano.',
-          'Piénsalo como un empleado invisible que solo sabe hacer una cosa, pero la hace perfecto y sin cansarse: "cada vez que pase A, haz B y luego C". Cuando alguien llena tu formulario, n8n puede <strong>guardarlo en el CRM, avisarte por WhatsApp y enviarle un correo de bienvenida</strong>, todo en segundos y sin intervención humana.',
-          'Para una pyme la ventaja es doble: automatizas procesos que antes solo tenían las empresas grandes, y lo haces sin depender de que un empleado se acuerde de cada paso. Los procesos manuales fallan cuando hay mucho trabajo, justo cuando menos te lo puedes permitir.',
+          'n8n es una plataforma de automatización que conecta las herramientas que ya usas (formulario web, WhatsApp, CRM, correo, hoja de cálculo) y hace que la información fluya entre ellas sin que nadie la copie a mano.',
+          'Funciona con reglas del tipo "cada vez que pase A, haz B y luego C". Cuando alguien llena tu formulario, n8n puede <strong>guardarlo en el CRM, avisarte por WhatsApp y enviarle un correo de bienvenida</strong>, todo en segundos y sin intervención humana.',
+          'Para una pyme, la ventaja es automatizar procesos que antes solo tenían las empresas grandes, sin depender de que un empleado se acuerde de cada paso.',
         ],
       },
       {
         type: 'prose',
         h2: 'Un ejemplo concreto: del formulario al vendedor en segundos',
         paragraphs: [
-          'Tomemos el flujo más común en cualquier negocio que capta clientes por internet. Alguien llena el formulario de contacto de tu web pidiendo una cotización. Sin automatización, ese lead espera en un correo hasta que alguien lo vea, lo copie al sistema y le escriba. Pueden pasar horas.',
-          'Con n8n, en el momento en que se envía el formulario ocurre esto: el contacto <strong>entra al CRM con su nombre y su solicitud</strong>, al vendedor le llega un aviso por WhatsApp con los datos, y al cliente le llega un mensaje automático de "recibimos tu solicitud, te contactamos hoy mismo". El lead se atiende en caliente, no frío.',
-          'Ese mismo esqueleto (lead → CRM → WhatsApp) se adapta a mil casos: una reserva que agenda y confirma sola, una venta que dispara la factura, un cliente inactivo que recibe un recordatorio. La lógica no cambia, cambian las piezas que conectas.',
+          'Alguien llena el formulario de contacto de tu web pidiendo una cotización. Sin automatización, ese lead espera en un correo hasta que alguien lo vea, lo copie al sistema y le escriba. Pueden pasar horas.',
+          'Con n8n, al enviarse el formulario el contacto <strong>entra al CRM con su nombre y su solicitud</strong>, al vendedor le llega un aviso por WhatsApp con los datos y al cliente le llega un mensaje automático de "recibimos tu solicitud, te contactamos hoy mismo". El lead se atiende en caliente.',
+          'El mismo esqueleto (lead → CRM → WhatsApp) sirve para una reserva que se agenda y confirma sola, una venta que dispara la factura o un cliente inactivo que recibe un recordatorio. Cambian las piezas conectadas, no la lógica.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Cómo se arma una automatización, paso a paso',
-        intro: 'No es magia ni es programar de cero. Es identificar una tarea repetitiva y encadenar los pasos que hoy haces a mano.',
+        h2: 'Cómo se arma una automatización con n8n, paso a paso',
+        intro: 'No es programar de cero: es identificar una tarea repetitiva y encadenar los pasos que hoy haces a mano.',
         items: [
           { h3: 'Detectamos la tarea repetitiva', text: 'Buscamos ese proceso que alguien hace varias veces al día, siempre igual: copiar datos, reenviar mensajes, avisar a alguien. Ahí está el ahorro.' },
           { h3: 'Definimos el disparador', text: 'Qué evento inicia todo: un formulario enviado, un mensaje de WhatsApp, una venta, una hora del día. Es el "cada vez que pase esto".' },
@@ -165,18 +162,18 @@ export const blog5: PageData[] = [
         type: 'prose',
         h2: 'Sin código no significa sin criterio',
         paragraphs: [
-          'n8n se arma de forma visual: cajas que representan aplicaciones y flechas que representan el flujo. En ese sentido es "sin código", y por eso es accesible para negocios que no tienen un programador de planta.',
-          'Pero que sea visual no lo hace trivial. La diferencia entre una automatización que te ahorra horas y una que te crea líos está en el <strong>criterio con que se diseña</strong>: qué pasa si un dato llega vacío, cómo evitar mensajes duplicados, cuándo debe detenerse y avisar en vez de seguir. Ahí es donde el trabajo bien hecho se nota.',
-          'Nosotros montamos estos flujos como parte de nuestro servicio de <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones con n8n en Panamá</a>, pensados para que resistan el día a día real de tu negocio y no solo la demo bonita.',
+          'n8n se arma de forma visual: cajas que representan aplicaciones y flechas que representan el flujo. Por eso es accesible para negocios sin un programador de planta.',
+          'Que sea visual no lo hace trivial. La diferencia entre una automatización que ahorra horas y una que crea líos está en el <strong>criterio con que se diseña</strong>: qué pasa si un dato llega vacío, cómo evitar mensajes duplicados, cuándo detenerse y avisar en vez de seguir.',
+          'Montamos estos flujos como parte de nuestro servicio de <a href="/marketing/automatizaciones-n8n-panama/">automatizaciones con n8n en Panamá</a>, probados con casos reales de tu negocio.',
         ],
       },
       {
         type: 'prose',
-        h2: 'El verdadero retorno se mide en horas, no en pesos',
+        h2: '¿Cuánto tiempo ahorra una automatización con n8n?',
         paragraphs: [
-          'Cuando la gente pregunta por el retorno de una automatización, espera un número de dinero. El retorno más honesto es otro: el tiempo que le devuelves a tu equipo y los errores que dejas de cometer.',
-          'Si copiar leads a mano te toma dos minutos por cada uno y recibes veinte al día, son más de tres horas semanales en una sola tarea aburrida y propensa a errores. Automatizada, ese tiempo se va a vender, a atender mejor o simplemente a no quemar a tu gente en trabajo mecánico. <strong>Y el dato deja de perderse, que es el error más caro de todos.</strong>',
-          'La automatización combina muy bien con un <a href="/blog/crm-con-whatsapp-para-vender-mas-en-panama/">CRM con WhatsApp</a>: n8n mete los datos ordenados y el CRM te ayuda a darles seguimiento. Una cosa alimenta a la otra.',
+          'El retorno más medible de una automatización es el tiempo que le devuelve a tu equipo y los errores que deja de cometer.',
+          'Si copiar un lead a mano toma dos minutos y recibes veinte al día, son más de tres horas semanales en una sola tarea mecánica y propensa a errores. Automatizada, ese tiempo se va a vender o a atender mejor. <strong>Y el dato deja de perderse, que es el error más caro.</strong>',
+          'La automatización combina con un <a href="/blog/crm-con-whatsapp-para-vender-mas-en-panama/">CRM con WhatsApp</a>: n8n mete los datos ordenados y el CRM te ayuda a darles seguimiento.',
         ],
       },
       {
@@ -230,32 +227,30 @@ export const blog5: PageData[] = [
       alt: 'Primer plano de una mujer cosiendo tela con una máquina de coser antigua, en una guía de IA para pequeñas empresas',
     },
     lead: [
-      'La inteligencia artificial dejó de ser tema de películas y de grandes corporaciones. Hoy una pyme en Panamá puede usarla para tareas concretas del día a día, sin un departamento de tecnología ni un presupuesto de multinacional.',
-      'Pero entre tanto ruido es difícil saber qué es útil de verdad y qué es puro bombo. En esta guía bajamos la IA a tierra: para qué sirve en un negocio pequeño, por dónde empezar y qué mitos te conviene ignorar.',
+      'La inteligencia artificial para pequeñas empresas en Panamá rinde en tres tareas concretas: responder las preguntas repetidas de WhatsApp y la web a cualquier hora, ayudar a redactar contenido que tú revisas y automatizar el paso de datos entre herramientas. No requiere un departamento de tecnología; conviene empezar por una sola tarea, medirla y mantener a una persona supervisando.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'La IA no es magia: es una herramienta que hace tareas',
+        h2: '¿Qué puede hacer la IA en una pequeña empresa?',
         paragraphs: [
-          'Conviene empezar desinflando el globo. La IA no va a "transformar tu negocio" por sí sola ni piensa por ti. Es una herramienta que hace bien ciertas tareas específicas: entender y responder texto, resumir información, ayudar a redactar, clasificar mensajes, encadenar procesos.',
-          'Vista así, la pregunta correcta no es "¿debería usar IA?", sino <strong>"¿qué tarea concreta me está robando tiempo o clientes y podría hacerse con ayuda de IA?"</strong>. Esa pregunta lleva a decisiones útiles; la otra lleva a comprar humo.',
-          'Lo bueno para una pyme panameña es que muchas de estas herramientas ya son accesibles y no requieren instalar nada raro ni contratar un equipo técnico. El reto no es la tecnología: es elegir bien dónde aplicarla primero.',
+          'La IA no "transforma tu negocio" por sí sola ni piensa por ti. Es una herramienta que hace bien tareas específicas: entender y responder texto, resumir información, ayudar a redactar, clasificar mensajes y encadenar procesos.',
+          'Por eso la pregunta útil no es "¿debería usar IA?", sino <strong>"¿qué tarea concreta me está robando tiempo o clientes y podría hacerse con ayuda de IA?"</strong>.',
+          'Muchas de estas herramientas ya son accesibles para una pyme panameña y no requieren contratar un equipo técnico. El reto es elegir bien dónde aplicarlas primero.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Tres usos prácticos que rinden desde el primer día',
+        h2: 'Tres usos de la inteligencia artificial que rinden desde el primer día',
         paragraphs: [
-          'No hace falta empezar por lo complejo. Estos tres usos son los que más rápido devuelven valor en un negocio pequeño.',
-          'El primero es <strong>atención al cliente</strong>: un asistente con IA que responde las preguntas repetidas de tu WhatsApp y tu web a cualquier hora, y solo te pasa lo que necesita trato humano. El segundo es <strong>contenido</strong>: la IA ayuda a redactar publicaciones, descripciones de productos o correos, siempre con tu revisión y tu criterio, no como reemplazo de tu voz. El tercero es <strong>automatización</strong>: encadenar tareas para que la información fluya sola entre tus herramientas.',
-          'Cada uno tiene su guía propia: la atención en <a href="/blog/chatbots-con-ia-para-negocios-en-panama/">chatbots con IA para negocios</a>, el contenido se apoya en nuestro servicio de <a href="/marketing/contenido-redes-sociales-panama/">contenido para redes sociales</a>, y la automatización la vimos en <a href="/blog/automatizaciones-con-n8n-para-pymes/">automatizaciones con n8n</a>.',
+          'El primero es <strong>atención al cliente</strong>: un asistente con IA que responde las preguntas repetidas de tu WhatsApp y tu web a cualquier hora, y solo te pasa lo que necesita trato humano. El segundo es <strong>contenido</strong>: la IA ayuda a redactar publicaciones, descripciones de productos o correos, siempre con tu revisión y no como reemplazo de tu voz. El tercero es <strong>automatización</strong>: encadenar tareas para que la información fluya sola entre tus herramientas.',
+          'Cada uso tiene su guía: la atención en <a href="/blog/chatbots-con-ia-para-negocios-en-panama/">chatbots con IA para negocios</a>, el contenido en nuestro servicio de <a href="/marketing/contenido-redes-sociales-panama/">contenido para redes sociales</a> y la automatización en <a href="/blog/automatizaciones-con-n8n-para-pymes/">automatizaciones con n8n</a>.',
         ],
       },
       {
         type: 'checklist',
         h2: 'Por dónde empezar con la IA en tu negocio',
-        intro: 'Empezar bien es empezar chico y por lo que duele. Este orden evita gastar en cosas que no vas a usar.',
+        intro: 'Empieza chico y por lo que más te duele. Este orden evita gastar en herramientas que no vas a usar:',
         items: [
           'Anota las tres tareas que más tiempo repetitivo te consumen a la semana',
           'Identifica dónde pierdes clientes: mensajes sin responder, seguimiento que se olvida',
@@ -269,18 +264,18 @@ export const blog5: PageData[] = [
         type: 'prose',
         h2: 'Mitos que te conviene ignorar',
         paragraphs: [
-          'Primer mito: "la IA va a reemplazar a mi equipo". En una pyme, casi nunca. Lo que hace es quitarle a tu gente lo repetitivo para que se dedique a lo que sí requiere criterio. Un local que atendía peor por falta de tiempo empieza a atender mejor, no a tener menos empleados.',
-          'Segundo mito: "la IA no se equivoca". Sí se equivoca, sobre todo si la dejas opinar sobre cosas que no sabe. Por eso se le acota a tu información y se le enseña a decir "eso lo confirma un asesor". <strong>La IA sin supervisión humana es un riesgo; con supervisión, es una gran ayuda.</strong>',
-          'Tercer mito: "es carísimo, es para empresas grandes". Ya no. Muchas soluciones son accesibles para un negocio pequeño, y el costo de no usarlas (mensajes perdidos, seguimiento olvidado) suele ser mayor que el de empezar. Lo caro es hacerlo mal, comprando herramientas que nadie termina de usar.',
+          'Primer mito: "la IA va a reemplazar a mi equipo". En una pyme, casi nunca. Le quita a tu gente lo repetitivo para que se dedique a lo que requiere criterio: el negocio atiende mejor, no con menos empleados.',
+          'Segundo mito: "la IA no se equivoca". Sí se equivoca, sobre todo si opina sobre cosas que no sabe. Por eso se le acota a tu información y se le enseña a decir "eso lo confirma un asesor". <strong>La IA sin supervisión humana es un riesgo; con supervisión, es una ayuda.</strong>',
+          'Tercer mito: "es carísimo, es para empresas grandes". Muchas soluciones ya son accesibles para un negocio pequeño, y el costo de no usarlas (mensajes perdidos, seguimiento olvidado) suele ser mayor que el de empezar. Lo caro es comprar herramientas que nadie termina de usar.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuánto cuesta y cómo no gastar de más',
+        h2: '¿Cuánto cuesta la IA para una pyme y cómo no gastar de más?',
         paragraphs: [
-          'La regla de oro es no comprar tecnología por moda. Antes de invertir, definí qué problema concreto vas a resolver y cómo vas a saber si funcionó. Si no puedes medir el resultado, probablemente no lo necesitas todavía.',
-          'Nuestras plataformas propias están pensadas justo para pymes: <a href="/saas/wazacrm/">WazaCRM</a> para atención con IA en web y WhatsApp, <a href="/saas/nouscrm/">NousCRM</a> para cotizar, facturar y cobrar por WhatsApp, y <a href="/saas/cifrao/">Cifrao</a> para la parte contable completa. La idea no es que uses todo, sino lo que resuelve tu dolor de hoy.',
-          'Si no tienes claro por dónde empezar, esa conversación es gratis. Escríbenos desde <a href="/contacto/">contacto</a> y, con honestidad, a veces la respuesta es "todavía no necesitas IA para esto, arregla primero aquello". Preferimos eso a venderte algo que no vas a aprovechar.',
+          'No compres tecnología por moda. Antes de invertir, define qué problema concreto vas a resolver y cómo vas a saber si funcionó. Si no puedes medir el resultado, probablemente no lo necesitas todavía.',
+          'Nuestras plataformas propias están pensadas para pymes: <a href="/saas/wazacrm/">WazaCRM</a> para atención con IA en web y WhatsApp, <a href="/saas/nouscrm/">NousCRM</a> para cotizar, facturar y cobrar por WhatsApp, y <a href="/saas/cifrao/">Cifrao</a> para la parte contable. Usa solo la que resuelve el problema de hoy.',
+          'Si no sabes por dónde empezar, escríbenos desde <a href="/contacto/">contacto</a>: a veces la respuesta honesta es "todavía no necesitas IA para esto, arregla primero aquello".',
         ],
       },
       {
@@ -335,32 +330,31 @@ export const blog5: PageData[] = [
       alt: 'Esquina de noche con persiana metálica cerrada y luz bajo ella, sobre atender clientes fuera de horario con IA',
     },
     lead: [
-      'El cliente no escribe cuando te queda cómodo. Escribe en la noche, el domingo, en su hora de almuerzo. Y si nadie responde, no espera: le escribe al siguiente.',
-      'Un asistente de IA no duerme ni toma feriados. En esta guía te explicamos cuánto cuesta de verdad no responder a tiempo, cómo un asistente capta a esos clientes fuera de horario y cómo se entrena con tu propia información para que responda como tu negocio respondería.',
+      'Para atender a tus clientes 24/7 con un asistente de IA, el asistente responde al instante en tu web y tu WhatsApp, capta nombre e interés, resuelve dudas frecuentes con tu información real y pasa a un asesor lo que requiere criterio. En Elemento Web lo entrenamos con tus precios, horarios y políticas para que no invente respuestas.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'El costo invisible de no responder a tiempo',
+        h2: '¿Cuánto cuesta no responder a tiempo?',
         paragraphs: [
-          'La venta perdida por no responder a tiempo no aparece en ningún reporte. Nadie te avisa "este cliente te escribió a las 8 de la noche, no le contestaste y compró en otro lado". Simplemente no pasó nada, y ese silencio se siente como si el mercado estuviera flojo.',
-          'Pero la realidad es que <strong>gran parte de las decisiones de compra ocurren fuera del horario de oficina</strong>. La persona investiga, compara y escribe cuando por fin tiene un momento. Si tu respuesta llega al día siguiente, ya perdiste el impulso que la hizo escribir.',
-          'No se trata de contestar perfecto, sino de contestar a tiempo. La primera respuesta, aunque sea para decir "recibimos tu mensaje, dame los detalles y te ayudo", muchas veces es la que se queda con el cliente. El resto es seguimiento.',
+          'La venta perdida por no responder a tiempo no aparece en ningún reporte. Nadie avisa "este cliente te escribió a las 8 de la noche, no le contestaste y compró en otro lado". Ese silencio se confunde con un mercado flojo.',
+          'Muchas personas <strong>investigan, comparan y escriben fuera del horario de oficina</strong>: en la noche, el domingo, en su hora de almuerzo. Si la respuesta llega al día siguiente, el cliente ya le escribió a otro negocio.',
+          'Lo que retiene al cliente es contestar a tiempo, aunque sea para decir "recibimos tu mensaje, dame los detalles y te ayudo". El resto es seguimiento.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cómo un asistente capta al cliente que llega de madrugada',
+        h2: 'Cómo un asistente de IA capta al cliente que escribe de madrugada',
         paragraphs: [
-          'Un asistente de IA responde al instante, a cualquier hora, en tu web y en tu WhatsApp. Cuando alguien escribe a medianoche, no encuentra un vacío: encuentra respuestas a sus dudas frecuentes y una conversación que avanza.',
-          'Lo importante es que el asistente no solo responde: <strong>capta</strong>. Toma el nombre, entiende qué está buscando, resuelve lo que puede y deja el contacto ordenado para que tu equipo cierre en la mañana. En vez de despertar con veinte mensajes en frío, despiertas con veinte conversaciones ya iniciadas y con contexto.',
-          'Y sabe cuándo callarse: si la persona pide algo que requiere criterio humano (una negociación, un caso especial), lo marca para que un asesor lo tome. La meta no es simular que hay alguien despierto, es no dejar al cliente hablando solo.',
+          'Un asistente de IA responde al instante, a cualquier hora, en tu web y en tu WhatsApp. Quien escribe a medianoche encuentra respuestas a sus dudas frecuentes y una conversación que avanza.',
+          'Además de responder, el asistente <strong>capta</strong>: toma el nombre, entiende qué busca la persona, resuelve lo que puede y deja el contacto ordenado para que tu equipo cierre en la mañana. En vez de veinte mensajes en frío, tu equipo encuentra veinte conversaciones iniciadas y con contexto.',
+          'Si la persona pide algo que requiere criterio humano (una negociación, un caso especial), el asistente lo marca para que un asesor lo tome. La meta no es simular que hay alguien despierto, sino no dejar al cliente hablando solo.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Cómo se entrena un asistente con tu información',
-        intro: 'Un asistente de IA no nace sabiendo de tu negocio. Se le enseña, y de eso depende que responda bien o que diga tonterías.',
+        h2: 'Cómo se entrena un asistente de IA con tu información',
+        intro: 'Un asistente de IA no nace sabiendo de tu negocio. De cómo se le enseña depende que responda bien o que invente.',
         items: [
           { h3: 'Recopilamos tu información real', text: 'Precios, servicios, horarios, ubicación, formas de pago, políticas. Todo lo que un buen empleado necesitaría saber para atender.' },
           { h3: 'Le damos el tono de tu negocio', text: 'No suena igual una clínica que una tienda juvenil. Definimos cómo habla el asistente para que represente tu marca, no un robot genérico.' },
@@ -373,18 +367,18 @@ export const blog5: PageData[] = [
         type: 'prose',
         h2: 'Qué SÍ y qué NO debe hacer tu asistente',
         paragraphs: [
-          'Un asistente bien montado tiene claros sus límites. <strong>Sí debe</strong> responder preguntas frecuentes, dar información de precios y horarios, encaminar reservas y ventas, captar datos y responder al instante fuera de horario. Eso lo hace mejor que cualquier persona cansada a las 11 de la noche.',
-          '<strong>No debe</strong> inventar datos que no tiene, cerrar negociaciones delicadas por su cuenta, prometer lo que tu negocio no cumple ni fingir que es humano si le preguntan directamente. Un asistente honesto que deriva a una persona genera más confianza que uno que improvisa para parecer listo.',
-          'Ese equilibrio es justo lo que configura una buena implementación. Si quieres ver cómo se conecta a tu sitio, míralo en <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbots con IA para tu web</a>.',
+          '<strong>Sí debe</strong> responder preguntas frecuentes, dar precios y horarios, encaminar reservas y ventas, captar datos y responder al instante fuera de horario.',
+          '<strong>No debe</strong> inventar datos que no tiene, cerrar negociaciones delicadas por su cuenta, prometer lo que tu negocio no cumple ni fingir que es humano si le preguntan directamente. Un asistente que deriva a una persona genera más confianza que uno que improvisa.',
+          'Cómo se conecta ese asistente a tu sitio lo explicamos en <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbots con IA para tu web</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Web y WhatsApp: el mismo asistente en los dos lados',
+        h2: 'Web y WhatsApp: el mismo asistente en los dos canales',
         paragraphs: [
-          'Tu cliente no distingue canales: a veces te escribe desde la web, a veces por WhatsApp, y espera la misma respuesta en ambos. Lo ideal es un solo asistente con la misma información atendiendo en los dos lugares.',
-          'Con <a href="/saas/wazacrm/">WazaCRM</a> el asistente atiende en tu web y en tu WhatsApp, y guarda cada conversación como un contacto con su historial. Así, cuando tu equipo retoma en la mañana, no empieza de cero: ve todo lo que el cliente ya conversó durante la noche.',
-          'Ese historial es oro para el seguimiento. Un mensaje respondido a tiempo capta al cliente; un buen seguimiento al día siguiente lo cierra. Sobre eso trata nuestra guía de <a href="/blog/crm-con-whatsapp-para-vender-mas-en-panama/">CRM con WhatsApp</a>.',
+          'El cliente a veces escribe desde la web y a veces por WhatsApp, y espera la misma respuesta en ambos. Lo ideal es un solo asistente con la misma información atendiendo los dos canales.',
+          'Con <a href="/saas/wazacrm/">WazaCRM</a> el asistente atiende en tu web y en tu WhatsApp, y guarda cada conversación como un contacto con su historial. Cuando tu equipo retoma en la mañana, ve todo lo que el cliente conversó durante la noche.',
+          'Un mensaje respondido a tiempo capta al cliente; un buen seguimiento al día siguiente lo cierra. Sobre ese seguimiento trata nuestra guía de <a href="/blog/crm-con-whatsapp-para-vender-mas-en-panama/">CRM con WhatsApp</a>.',
         ],
       },
       {
@@ -439,32 +433,31 @@ export const blog5: PageData[] = [
       alt: 'Tickets de pedido en papel colgados sobre la cocina de un restaurante, en una guía de CRM con WhatsApp para ordenar ventas',
     },
     lead: [
-      'En Panamá se vende por WhatsApp: cotizaciones, catálogos, cierres, todo pasa por ahí. El problema empieza cuando los chats se acumulan y ese cliente que iba a comprar se pierde entre cientos de conversaciones sin orden.',
-      'Un CRM le pone estructura a ese caos. En esta guía te explicamos por qué WhatsApp necesita un CRM, cómo armar un embudo de ventas real, cómo dar seguimiento sin que se te olvide nadie y por qué ese orden es la diferencia entre vender y "se me traspapeló".',
+      'Un CRM con WhatsApp convierte cada chat en un contacto con etapa, historial y próximo paso, para que ningún cliente de tu negocio en Panamá se pierda entre cientos de conversaciones. Te muestra quién pidió cotización, a quién le toca seguimiento hoy y permite que varios agentes atiendan el mismo número sin pisarse. En Elemento Web lo resolvemos con WazaCRM.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Por qué WhatsApp solo no alcanza para vender bien',
+        h2: '¿Por qué WhatsApp solo no alcanza para vender bien?',
         paragraphs: [
-          'WhatsApp es excelente para conversar, pero no fue hecho para gestionar ventas. Cuando tienes decenas de chats abiertos, no hay forma de saber de un vistazo quién pidió cotización ayer, a quién prometiste llamar hoy y quién quedó en pensarlo la semana pasada.',
-          'El resultado es predecible: <strong>los clientes se pierden no porque digan que no, sino porque nadie les dio seguimiento</strong>. La conversación bajó en la lista, la tapó otro mensaje, y ese interesado que estaba listo para comprar simplemente se enfrió. No fue una venta perdida por precio; fue por desorden.',
-          'Un CRM resuelve exactamente eso: convierte cada chat en un contacto con estado, historial y próximo paso. Deja de depender de que alguien "se acuerde" y pasa a un sistema donde nada se cae por el olvido.',
+          'WhatsApp es excelente para conversar, pero no fue hecho para gestionar ventas. Con decenas de chats abiertos no hay forma de saber de un vistazo quién pidió cotización ayer, a quién prometiste llamar hoy y quién quedó en pensarlo la semana pasada.',
+          'El resultado: <strong>los clientes se pierden no porque digan que no, sino porque nadie les dio seguimiento</strong>. La conversación bajó en la lista, la tapó otro mensaje y el interesado se enfrió. No fue una venta perdida por precio, sino por desorden.',
+          'Un CRM deja de depender de que alguien "se acuerde": cada chat queda como contacto con estado e historial, y nada se cae por olvido.',
         ],
       },
       {
         type: 'prose',
-        h2: 'El embudo: dónde está cada cliente en tu proceso',
+        h2: 'Cómo armar un embudo de ventas en tu CRM con WhatsApp',
         paragraphs: [
-          'Vender no es un instante, es un recorrido: alguien pregunta, pide cotización, la evalúa, decide y compra. Un CRM te deja ver ese recorrido como un embudo, con cada contacto en su etapa: nuevo, en conversación, cotizado, por cerrar, ganado o perdido.',
-          'Esa foto cambia cómo trabajas. En vez de mirar una lista infinita de chats iguales, ves <strong>cuántos clientes tienes por cerrar hoy y cuáles llevan días sin moverse</strong>. Sabes dónde poner la energía y qué contactos están a punto de enfriarse si no los atiendes.',
-          'También revela dónde se te traba la venta: si muchos quedan en "cotizado" y no avanzan, el problema está en el seguimiento o en la propuesta, no en la falta de clientes. El embudo convierte una sensación ("está flojo") en un dato que puedes atacar.',
+          'Vender es un recorrido: alguien pregunta, pide cotización, la evalúa, decide y compra. Un CRM muestra ese recorrido como un embudo, con cada contacto en su etapa: nuevo, en conversación, cotizado, por cerrar, ganado o perdido.',
+          'En vez de una lista infinita de chats iguales, ves <strong>cuántos clientes tienes por cerrar hoy y cuáles llevan días sin moverse</strong>, y sabes qué contactos se van a enfriar si no los atiendes.',
+          'El embudo también revela dónde se traba la venta: si muchos contactos quedan en "cotizado" y no avanzan, el problema está en el seguimiento o en la propuesta, no en la falta de clientes. La sensación de "está flojo" se vuelve un dato que puedes atacar.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Qué debe tener tu CRM de WhatsApp',
-        intro: 'No todos los CRM sirven para vender por WhatsApp en Panamá. Estas son las funciones que de verdad mueven la aguja.',
+        h2: 'Qué debe tener un CRM con WhatsApp para vender en Panamá',
+        intro: 'Estas son las funciones que separan un CRM útil para vender por WhatsApp de una simple agenda de contactos:',
         items: [
           'Cada conversación guardada como contacto con su historial completo',
           'Etapas del embudo claras: nuevo, en conversación, cotizado, por cerrar, ganado, perdido',
@@ -479,18 +472,18 @@ export const blog5: PageData[] = [
         type: 'prose',
         h2: 'Seguimiento: donde se ganan (y se pierden) las ventas',
         paragraphs: [
-          'La mayoría de las ventas no se cierran en el primer mensaje. El cliente pregunta, lo piensa, compara. Si nadie retoma la conversación en el momento justo, ese interés se apaga solo. El seguimiento no es insistir de más: es estar presente cuando la persona vuelve a estar lista.',
-          'Aquí un CRM hace la diferencia real. Te <strong>recuerda a quién prometiste escribir y cuándo</strong>, te muestra los contactos que llevan días sin respuesta y te deja retomar con todo el contexto a la mano, sin preguntar de nuevo lo que el cliente ya te dijo. Eso, del lado del cliente, se siente como buena atención.',
-          'Combinado con automatización, el seguimiento se vuelve casi automático: un flujo de <a href="/blog/automatizaciones-con-n8n-para-pymes/">n8n</a> puede recordarte los pendientes o disparar un mensaje a quien lleva días sin moverse. La tecnología no reemplaza el trato humano; se asegura de que ese trato ocurra a tiempo.',
+          'La mayoría de las ventas no se cierran en el primer mensaje: el cliente pregunta, lo piensa y compara. Si nadie retoma la conversación en el momento justo, el interés se apaga. Dar seguimiento no es insistir de más, es estar presente cuando la persona vuelve a estar lista.',
+          'Un CRM te <strong>recuerda a quién prometiste escribir y cuándo</strong>, te muestra los contactos que llevan días sin respuesta y te deja retomar con el contexto a la mano, sin preguntar de nuevo lo que el cliente ya te dijo.',
+          'Con automatización, el seguimiento se vuelve casi automático: un flujo de <a href="/blog/automatizaciones-con-n8n-para-pymes/">n8n</a> puede recordarte los pendientes o disparar un mensaje a quien lleva días sin moverse, para que el trato humano ocurra a tiempo.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo dar el paso a un CRM',
+        h2: '¿Cuándo necesita tu negocio un CRM con WhatsApp?',
         paragraphs: [
-          'No todo negocio necesita un CRM desde el día uno. Si atiendes pocos clientes y los tienes todos en la cabeza, quizá aún no. La señal de que ya lo necesitas es clara: cuando empiezas a olvidar seguimientos, cuando dos personas responden al mismo cliente sin saberlo, o cuando la pregunta "¿en qué quedamos con este?" no tiene respuesta rápida.',
-          'Para eso construimos <a href="/saas/wazacrm/">WazaCRM</a>: guarda cada conversación de WhatsApp como un contacto con su historial, permite que varios agentes atiendan el mismo número sin pisarse y escala a tu equipo con todo el contexto cuando el caso lo pide. Y cuando además necesitas cotizar y cobrar, <a href="/saas/nouscrm/">NousCRM</a> arma la cotización con tu logo y la convierte en factura con un clic.',
-          'Si quieres profundizar en el método de venta por chat, tenemos las guías de <a href="/blog/como-vender-por-whatsapp-en-panama/">cómo vender por WhatsApp en Panamá</a>. Y si no sabes cuál herramienta te conviene, escríbenos desde <a href="/contacto/">contacto</a> y lo vemos con calma según tu volumen real.',
+          'Si atiendes pocos clientes y los tienes todos en la cabeza, quizá aún no. Las señales de que ya lo necesitas: olvidas seguimientos, dos personas responden al mismo cliente sin saberlo o la pregunta "¿en qué quedamos con este?" no tiene respuesta rápida.',
+          '<a href="/saas/wazacrm/">WazaCRM</a> guarda cada conversación de WhatsApp como un contacto con su historial, permite que varios agentes atiendan el mismo número sin pisarse y escala a tu equipo con el contexto cuando el caso lo pide. Si además necesitas cotizar y cobrar, <a href="/saas/nouscrm/">NousCRM</a> arma la cotización con tu logo y la convierte en factura con un clic.',
+          'El método de venta por chat está en la guía de <a href="/blog/como-vender-por-whatsapp-en-panama/">cómo vender por WhatsApp en Panamá</a>. Para elegir herramienta según tu volumen real, escríbenos desde <a href="/contacto/">contacto</a>.',
         ],
       },
       {

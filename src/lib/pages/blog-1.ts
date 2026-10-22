@@ -20,35 +20,34 @@ export const blog1: PageData[] = [
       alt: 'Laptop con un sitio web y tres paneles escalonados que representan los niveles de precio de una página web en Panamá',
     },
     lead: [
-      'Es la primera pregunta que nos hace todo el mundo, y la respuesta honesta incomoda un poco: depende. Una página web no es un producto de estante con un precio fijo, sino un proyecto que cambia de precio según lo que necesita tu negocio para vender. Pero eso no significa que estés a ciegas.',
-      'En esta guía te explicamos los rangos reales de precio en Panamá según el tipo de proyecto, qué factores encarecen una web, qué debe incluir cualquier cotización seria y por qué la opción más barata casi siempre termina costando más. La idea es que llegues a tu próxima reunión sabiendo exactamente qué estás pagando y por qué.',
+      'Una página web en Panamá cuesta desde $550 si es una landing page y desde $1,250 si es una Web empresarial de varias secciones; una tienda online parte desde $1,950 y un sitio corporativo a medida desde $2,900. En Elemento Web el precio depende de páginas, funciones y trabajo estratégico, y se entrega cerrado y por escrito antes de empezar.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'De qué depende realmente el precio de una página web',
+        h2: '¿De qué depende el precio de una página web?',
         paragraphs: [
-          'El precio de una web se mueve por tres variables, no por el capricho de quien la cobra. La primera es el <strong>alcance</strong>: cuántas páginas tiene, cuánto contenido hay que estructurar y qué tan compleja es la navegación. No cuesta lo mismo una landing de una sola pantalla que un sitio corporativo con doce servicios, cada uno con su propia página optimizada.',
-          'La segunda es la <strong>funcionalidad</strong>. Un sitio informativo que solo presenta tu negocio y empuja al cliente hacia WhatsApp es un mundo distinto de una tienda con catálogo, carrito, inventario y pagos en línea, o de un sistema de reservas con calendario y confirmaciones automáticas. Cada función que se conecta suma horas de desarrollo y de pruebas.',
-          'La tercera es el <strong>trabajo estratégico</strong>: la investigación de tus clientes, el copy que convierte, el SEO técnico, la arquitectura de contenidos. Es la parte invisible en la pantalla y la que más pesa en el resultado. Una plantilla comprada por veinte dólares no tiene nada de esto, y por eso una web hecha con estrategia cuesta más y rinde infinitamente más.',
+          'El precio de una web se mueve por tres variables. La primera es el <strong>alcance</strong>: cuántas páginas tiene, cuánto contenido hay que estructurar y qué tan compleja es la navegación. Una landing de una sola pantalla no cuesta lo mismo que un sitio corporativo con doce servicios, cada uno con su propia página optimizada.',
+          'La segunda es la <strong>funcionalidad</strong>. Un sitio informativo que lleva al cliente a WhatsApp es distinto de una tienda con catálogo, carrito, inventario y pagos en línea, o de un sistema de reservas con calendario y confirmaciones automáticas. Cada función que se conecta suma horas de desarrollo y de pruebas.',
+          'La tercera es el <strong>trabajo estratégico</strong>: investigación de tus clientes, textos de venta, SEO técnico y arquitectura de contenidos. No se ve en la pantalla, pero decide el resultado. Una plantilla comprada por veinte dólares no incluye nada de eso.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Rangos de precio por tipo de proyecto en Panamá',
+        h2: '¿Cuánto cuesta una página web en Panamá según el tipo de proyecto?',
         paragraphs: [
-          'Con esas variables en mente, estos son los puntos de partida reales que manejamos en <a href="/diseno-web-panama/">diseño web en Panamá</a>. Son precios de partida: cada proyecto se cotiza cerrado y por escrito antes de empezar, según sus páginas e integraciones.',
-          'Una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page de alta conversión</a> parte desde $550. Es una sola página con una oferta y una acción, el destino ideal para tu pauta en Google o Meta. Una <strong>Web empresarial</strong> —el sitio de varias secciones que presenta a un negocio completo— parte desde $1,250, y es el formato que más contratan los comercios y profesionales panameños.',
+          'Estos son los precios de partida de Elemento Web en <a href="/diseno-web-panama/">diseño web en Panamá</a>. Cada proyecto se cotiza cerrado y por escrito antes de empezar, según sus páginas e integraciones.',
+          'Una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page de alta conversión</a> parte desde $550: una sola página con una oferta y una acción, pensada como destino de tu pauta en Google o Meta. Una <strong>Web empresarial</strong> —el sitio de varias secciones que presenta a un negocio completo— parte desde $1,250 y es el formato que más contratan comercios y profesionales.',
           'Una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online o e-commerce</a> parte desde $1,950, porque incluye catálogo, carrito, pasarelas de pago y la logística de venta. Un <strong>sitio corporativo a medida</strong>, con arquitectura amplia y contenido por servicio, se cotiza a medida desde $2,900. A eso se suma la infraestructura anual desde $350 y el mantenimiento desde $99 al mes, que mantienen el sitio en línea, respaldado y actualizado.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué encarece un proyecto (y por qué vale la pena)',
+        h2: 'Qué encarece una página web (y qué devuelve a cambio)',
         paragraphs: [
-          'Hay decisiones que suben el precio con toda razón porque suben el retorno. La primera es el <strong>contenido a medida</strong>: cuando escribimos los textos de venta, producimos las fotos o construimos las descripciones de producto contigo, el proyecto crece, pero también deja de sonar como todos los demás en tu rubro.',
-          'Las <strong>integraciones</strong> son el otro gran factor. Conectar <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy y pasarelas de pago</a>, un chatbot con IA, un sistema de citas o un CRM añade horas de desarrollo, pero cada una de esas piezas es una herramienta que te ahorra trabajo o te trae ventas todos los días. No son adornos: son parte de la máquina.',
-          'También encarece —y con motivo— el <strong>SEO técnico bien hecho</strong> y la optimización de velocidad. Es un trabajo que no se ve en la pantalla pero que decide si Google te muestra y si el cliente se queda o se va. Recortar por ahí es lo mismo que abrir una tienda en un callejón sin luz: bonita por dentro, invisible por fuera.',
+          'El <strong>contenido a medida</strong>: cuando se escriben los textos de venta, se producen las fotos o se construyen las descripciones de producto contigo, el proyecto crece, pero tu web deja de sonar igual que las demás de tu rubro.',
+          'Las <strong>integraciones</strong>: conectar <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy y pasarelas de pago</a>, un chatbot con IA, un sistema de citas o un CRM añade horas de desarrollo. Cada pieza te ahorra trabajo manual o te permite cobrar y agendar sin intermediarios.',
+          'El <strong>SEO técnico y la optimización de velocidad</strong>: no se ven en la pantalla, pero deciden si Google te muestra y si el visitante se queda. Recortar ahí deja una web bonita por dentro e invisible por fuera.',
         ],
       },
       {
@@ -70,11 +69,10 @@ export const blog1: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Por qué lo barato termina saliendo más caro',
+        h2: '¿Por qué una página web barata termina saliendo más cara?',
         paragraphs: [
-          'La tentación de pagar $150 por una web es real, sobre todo cuando alguien te la ofrece lista en tres días. El problema es lo que no ves en ese precio. Casi siempre significa una plantilla genérica, sin SEO, lenta, imposible de administrar y sin nadie que responda cuando algo falla. La web existe, pero no trabaja.',
-          'Al cabo de unos meses el patrón se repite: no aparece en Google, no genera un solo mensaje y toca rehacerla desde cero. Ahí pagas dos veces —lo barato primero y lo bien hecho después— más los meses de clientes que nunca llegaron. Ese costo de oportunidad no aparece en ninguna factura, pero es el más caro de todos.',
-          'Invertir bien de entrada no es gastar más por gusto. Es evitar el ciclo de rehacer, no perder posicionamiento y tener un activo que suma clientes con el tiempo en lugar de uno que hay que reemplazar. Si el presupuesto aprieta, la respuesta no es una web mala barata, sino empezar con un formato más pequeño —una landing sólida— y crecer sobre una base bien construida.',
+          'Una web de $150 lista en tres días casi siempre es una plantilla genérica, sin SEO, lenta, difícil de administrar y sin nadie que responda cuando algo falla. Al cabo de unos meses no aparece en Google, no genera mensajes y toca rehacerla: pagas dos veces, más los meses de clientes que no llegaron.',
+          'Si el presupuesto aprieta, la salida no es una web barata, sino un formato más pequeño —una landing sólida— sobre el que crecer después sin perder el posicionamiento ganado.',
         ],
       },
       {
@@ -84,11 +82,10 @@ export const blog1: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cómo saber cuánto invertir según tu negocio',
+        h2: '¿Cuánto invertir en una página web según tu negocio?',
         paragraphs: [
-          'El monto correcto no depende de una tabla, sino de qué tan central es la web para tus ventas. Si tu negocio vive de que la gente te encuentre en Google y te escriba —consultorios, servicios, comercios locales— la web es tu vendedor principal y merece una inversión acorde. Recortar ahí es recortar en ventas.',
-          'Si vendes en línea, la ecuación es todavía más directa: la tienda es literalmente tu caja registradora, y cada mejora en velocidad, pagos o experiencia se traduce en pedidos completados. Y si apenas estás validando una idea, una landing enfocada te deja probar el mercado con poco riesgo antes de escalar.',
-          'La forma sana de decidirlo es al revés de como suele hacerse: no partas del precio más bajo que encuentres, parte de cuánto vale un cliente nuevo para ti. Si un cliente te deja cientos o miles de dólares al año, una web que te trae varios al mes puede recuperar su costo en poco tiempo. Cuando tengas ese número claro, <a href="/servicios/">explora los servicios</a> o pídenos una <a href="/contacto/">cotización cerrada</a> y compara con datos, no con corazonadas.',
+          'Depende de qué tan central es la web para tus ventas. Si tu negocio vive de que te encuentren en Google y te escriban —consultorios, servicios, comercios locales—, la web es tu vendedor principal. Si vendes en línea, la tienda es tu caja registradora y cada mejora en velocidad o pagos se traduce en pedidos. Si estás validando una idea, una landing enfocada te deja probar el mercado con poco riesgo.',
+          'Para fijar el monto, parte de cuánto vale un cliente nuevo para ti, no del precio más bajo que encuentres: si un cliente te deja cientos o miles de dólares al año, una web que trae varios al mes recupera su costo pronto. Con ese número, compara <a href="/servicios/">los servicios</a> y pide una <a href="/contacto/">cotización cerrada</a>.',
         ],
       },
       {
@@ -154,30 +151,28 @@ export const blog1: PageData[] = [
       alt: 'Ventana de navegador con señales de advertencia por diseño roto, carga lenta y enlace caído, y una llave que lo repara',
     },
     lead: [
-      'Una página web puede estar en línea, verse moderna y aun así estar ahuyentando clientes todos los días sin que lo notes. No hace ruido cuando falla: simplemente la gente entra, no encuentra lo que busca y se va con la competencia. El dinero perdido no aparece en ningún reporte.',
-      'En esta guía repasamos los siete errores de diseño web que vemos una y otra vez en empresas panameñas, por qué cada uno te cuesta clientes reales y qué hacer para corregirlo. La buena noticia es que casi todos tienen arreglo sin empezar de cero.',
+      'Los 7 errores de diseño web que más clientes les cuestan a las empresas en Panamá son no aparecer en Google, cargar lento, no tener botón de WhatsApp, meter todo en una sola página, fallar en el celular, no indicar el siguiente paso y usar contenido genérico. Casi todos se corrigen sin rehacer la web desde cero.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Tu web trabaja para ti o trabaja en tu contra',
+        h2: '¿Por qué los errores de diseño web pasan desapercibidos?',
         paragraphs: [
-          'No existe la web neutral. Cada sitio, en cada visita, o acerca al cliente a escribirte o lo empuja a cerrar la pestaña. La mayoría de las empresas asume que basta con estar en línea, pero estar en línea sin estrategia es como tener una tienda con la puerta cerrada y las luces apagadas: técnicamente existe, pero no vende.',
-          'Lo peligroso de estos errores es que son silenciosos. Nadie te llama para decirte que tu web cargó lento y por eso se fue. Simplemente no llegan los mensajes, y es fácil culpar al mercado o a la temporada cuando la causa está en la pantalla. Identificarlos es el primer paso para taparlos.',
+          'Porque fallan en silencio. Nadie te avisa que se fue porque tu web cargó lento o no encontró cómo escribirte: simplemente no llegan los mensajes, y es fácil culpar al mercado o a la temporada cuando la causa está en la pantalla. Estar en línea sin estrategia es tener una tienda con la puerta cerrada: existe, pero no vende.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Los 7 errores que le cuestan clientes a tu empresa',
-        intro: 'Revísalos uno por uno pensando en tu propia web. Basta con cometer dos o tres para estar dejando ventas sobre la mesa.',
+        h2: 'Los 7 errores de diseño web que le cuestan clientes a tu empresa',
+        intro: 'Revísalos pensando en tu propia web. Con dos o tres ya estás dejando ventas sobre la mesa.',
         items: [
           {
             h3: '1. No aparecer en Google (web sin SEO)',
-            text: 'Si tu cliente busca tu servicio en Panamá y no te encuentra, no existes para él. Una web sin SEO técnico, sin contenido optimizado y sin trabajo de posicionamiento es invisible. Es el error que más clientes cuesta y el más común.',
+            text: 'Si tu cliente busca tu servicio en Panamá y no te encuentra, no existes para él. Una web sin SEO técnico, sin contenido optimizado y sin trabajo de posicionamiento es invisible, y entonces el resto de la web deja de importar.',
           },
           {
             h3: '2. Cargar lento',
-            text: 'En el celular, cada segundo de espera hace que parte de tus visitantes abandone antes de ver nada. Imágenes pesadas, constructores recargados y hosting barato son las causas típicas. La velocidad no es un lujo técnico: es retención de clientes.',
+            text: 'En el celular, cada segundo de espera hace que parte de tus visitantes abandone antes de ver nada. Las causas típicas son imágenes pesadas, constructores recargados y hosting barato.',
           },
           {
             h3: '3. No tener botón de WhatsApp',
@@ -193,7 +188,7 @@ export const blog1: PageData[] = [
           },
           {
             h3: '6. No decirle al visitante qué hacer',
-            text: 'Una web sin un llamado a la acción claro deja al cliente sin siguiente paso. ¿Cotizar? ¿Comprar? ¿Agendar? Si no hay un botón obvio que lo guíe, la mayoría se va sin hacer nada, por más interesada que estuviera.',
+            text: 'Una web sin un llamado a la acción claro deja al cliente sin siguiente paso: ¿cotizar, comprar, agendar? Si no hay un botón obvio en cada pantalla, el visitante interesado se va sin hacer nada.',
           },
           {
             h3: '7. Tener contenido genérico y vacío',
@@ -205,17 +200,15 @@ export const blog1: PageData[] = [
         type: 'prose',
         h2: 'El error de fondo: una web sin objetivo de negocio',
         paragraphs: [
-          'Si miras los siete con calma, todos nacen de la misma raíz: se construyó la web sin preguntarse qué debía lograr. Cuando el objetivo no está definido, el diseñador optimiza para lo que se ve bonito en una presentación, no para lo que mueve tu negocio, y así aparecen las páginas lentas, sin SEO y sin llamados a la acción.',
-          'La pregunta que ordena todo es sencilla: <strong>¿qué necesita conseguir tu negocio con este sitio?</strong> Cotizaciones por WhatsApp, ventas en línea, citas agendadas, confianza antes de una reunión. La respuesta define la estructura, el contenido y cada botón. Cuando el objetivo es claro, los siete errores casi no tienen dónde esconderse.',
-          'Por eso un buen <a href="/blog/como-elegir-agencia-diseno-web-panama/">proceso de diseño</a> empieza por la estrategia, no por el color de fondo. La estética es la consecuencia de una web bien pensada, nunca su punto de partida.',
+          'Los siete errores nacen de la misma raíz: la web se construyó sin definir qué debía lograr. Sin objetivo, el diseño se optimiza para verse bien en una presentación, no para vender, y así aparecen las páginas lentas, sin SEO y sin llamados a la acción.',
+          'La pregunta que ordena todo es <strong>¿qué necesita conseguir tu negocio con este sitio?</strong>: cotizaciones por WhatsApp, ventas en línea, citas agendadas o confianza antes de una reunión. La respuesta define la estructura, el contenido y cada botón. Por eso un buen <a href="/blog/como-elegir-agencia-diseno-web-panama/">proceso de diseño</a> empieza por la estrategia, no por el color de fondo.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Panamá navega en el celular: diséñalo primero para móvil',
+        h2: 'Diseño web para celular: cómo evitar los errores de lentitud, móvil y WhatsApp',
         paragraphs: [
-          'Vale la pena detenerse en el móvil porque es donde se concentran los errores 2, 5 y 3. La gran mayoría de las visitas en Panamá llegan desde un teléfono, muchas veces con datos móviles y en movimiento. Una web pensada primero para la pantalla grande y luego "adaptada" al celular casi siempre falla justo donde más tráfico tiene.',
-          'Diseñar primero para móvil obliga a lo correcto: mensajes cortos y directos, botones grandes que se dejan tocar con el pulgar, imágenes livianas que cargan rápido y el WhatsApp siempre a mano. Lo que funciona bien en celular casi siempre funciona bien en escritorio; al revés rara vez ocurre.',
+          'La mayoría de las visitas en Panamá llegan desde un teléfono, muchas veces con datos móviles. Por eso los errores 2, 3 y 5 se concentran ahí: una web pensada para pantalla grande y luego "adaptada" falla justo donde más tráfico tiene. Diseñar primero para móvil obliga a mensajes cortos, botones grandes que se tocan con el pulgar, imágenes livianas y el WhatsApp siempre a mano; lo que funciona en celular casi siempre funciona en escritorio.',
         ],
       },
       {
@@ -225,11 +218,10 @@ export const blog1: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cómo se ve una web que sí convierte',
+        h2: '¿Cómo es una página web que sí convierte?',
         paragraphs: [
-          'La contraparte de estos errores es sencilla de describir. Una web que convierte aparece en Google para las búsquedas que hacen tus clientes, carga rápido en cualquier celular y deja claro en los primeros segundos qué haces y a quién ayudas. No hace falta adivinar nada.',
-          'Tiene un siguiente paso obvio en cada pantalla —escribir por WhatsApp, cotizar, comprar, agendar— y un contenido que habla del problema real del cliente en lugar de repetir frases de catálogo. Cuando el volumen de consultas empieza a crecer, muchas empresas suman un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> que responde al instante y filtra a los interesados de verdad.',
-          'Si al leer esto reconociste tu propia web en varios de los siete errores, la solución no siempre es empezar de cero. A menudo un <a href="/servicios/redisenio-web-panama/">rediseño</a> ordenado corrige lo que falla y conserva —o recupera— el posicionamiento que ya tenías ganado en Google.',
+          'Aparece en Google para las búsquedas de tus clientes, carga rápido en cualquier celular y deja claro en los primeros segundos qué haces y a quién ayudas. Tiene un siguiente paso obvio en cada pantalla —escribir por WhatsApp, cotizar, comprar, agendar— y un contenido que habla del problema real del cliente. Cuando crecen las consultas, un <a href="/funcionalidades/chatbots-ia-web-wazacrm-panama/">chatbot con IA</a> responde al instante y filtra a los interesados.',
+          'Si reconociste tu web en varios de los siete errores, no siempre hay que empezar de cero: un <a href="/servicios/redisenio-web-panama/">rediseño</a> ordenado corrige lo que falla y conserva —o recupera— el posicionamiento ganado en Google.',
         ],
       },
       {
@@ -293,49 +285,47 @@ export const blog1: PageData[] = [
       alt: 'Dos tarjetas enfrentadas, un constructor de páginas por bloques y una tienda online, para comparar plataformas de diseño web',
     },
     lead: [
-      'WordPress o Shopify es una de las decisiones que más veces nos toca aclarar, y casi siempre viene mal planteada. La pregunta no es cuál es mejor en abstracto, porque no hay un ganador universal: hay una herramienta correcta para tu caso y varias que te complicarían la vida.',
-      'En esta guía comparamos ambas plataformas como lo que son —dos rutas distintas con fortalezas distintas— y te damos criterios claros para decidir según lo que vende tu negocio, tu presupuesto y cuánto control necesitas. Al final debería quedarte obvio cuál es la tuya.',
+      'WordPress vs Shopify en Panamá: elige WordPress si tu web vive del contenido, el SEO y varias páginas de servicio, sin mensualidad de plataforma; elige Shopify si vender productos en línea es el corazón del negocio y no quieres administrar servidores. Ambas se integran con Yappy y WhatsApp, y una tienda online parte desde $1,950 en cualquiera de las dos.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'La pregunta correcta no es cuál es mejor',
+        h2: 'WordPress vs Shopify: tres preguntas para decidir',
         paragraphs: [
-          'WordPress y Shopify resuelven problemas diferentes, y compararlos de frente es como preguntar si es mejor un camión o una moto. Depende de qué cargues y hacia dónde vayas. Uno nació para publicar y organizar contenido de todo tipo; el otro nació con un solo propósito muy claro: vender productos en línea.',
-          'Por eso, en lugar de buscar un veredicto, conviene responder tres preguntas sobre tu negocio: ¿tu web es principalmente una tienda o un sitio de contenido y servicios? ¿Cuánto control técnico quieres tener? ¿Cuánto quieres administrar tú mismo? Con esas respuestas la elección se vuelve casi automática.',
+          'WordPress nació para publicar y organizar contenido de todo tipo; Shopify, para vender productos en línea. Antes de comparar funciones, responde tres preguntas sobre tu negocio: ¿tu web es principalmente una tienda o un sitio de contenido y servicios? ¿Cuánto control técnico quieres tener? ¿Cuánto quieres administrar tú mismo?',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué es WordPress y para quién es',
+        h2: '¿Cuándo conviene WordPress?',
         paragraphs: [
-          'WordPress es la plataforma que mueve una enorme parte de la web mundial. Es un sistema abierto y flexible: te da control total sobre tu sitio, los archivos, la base de datos y hasta el último detalle del diseño. Puedes construir desde un blog hasta un sitio corporativo con decenas de páginas o incluso una tienda con el complemento adecuado.',
-          'Es la ruta correcta cuando el <strong>contenido manda</strong>: empresas de servicios, despachos profesionales, negocios que publican artículos o novedades con frecuencia, sitios corporativos que necesitan una página por cada servicio bien optimizada para SEO. Ahí la flexibilidad de WordPress y su fortaleza para posicionar en Google marcan la diferencia.',
-          'La contraparte de esa libertad es la responsabilidad: WordPress necesita un buen hosting, actualizaciones y mantenimiento para mantenerse rápido y seguro. Bien administrado es imbatible; abandonado, se vuelve lento y vulnerable. Nosotros lo trabajamos con temas propios y ligeros, sin constructores pesados que lo ralenticen. Puedes ver el enfoque completo en <a href="/tecnologias/diseno-web-wordpress-panama/">diseño web con WordPress</a>.',
+          'WordPress es un sistema abierto: te da control sobre el sitio, los archivos, la base de datos y cada detalle del diseño. Sirve para un blog, un sitio corporativo con decenas de páginas o una tienda con el complemento adecuado.',
+          'Conviene cuando el <strong>contenido manda</strong>: empresas de servicios, despachos profesionales, negocios que publican artículos con frecuencia y sitios corporativos que necesitan una página optimizada para SEO por cada servicio.',
+          'Esa libertad exige buen hosting, actualizaciones y mantenimiento; abandonado, WordPress se vuelve lento y vulnerable. En Elemento Web lo trabajamos con temas propios y ligeros, sin constructores pesados. El enfoque completo está en <a href="/tecnologias/diseno-web-wordpress-panama/">diseño web con WordPress</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Qué es Shopify y para quién es',
+        h2: '¿Cuándo conviene Shopify?',
         paragraphs: [
-          'Shopify es una plataforma pensada de principio a fin para vender en línea. Se encarga de toda la infraestructura —servidores, seguridad, actualizaciones, capacidad para picos de tráfico— para que tú solo te ocupes de tus productos y tus ventas. Catálogo, carrito, inventario y checkout vienen resueltos desde el primer día.',
-          'Es la ruta correcta cuando <strong>vender es el corazón del negocio</strong> y quieres arrancar rápido sin administrar aspectos técnicos. Marcas de producto, tiendas que manejan muchos artículos, negocios que quieren escalar sin preocuparse por el servidor. La plataforma te quita de encima justo lo que a un comerciante no le interesa manejar.',
-          'A cambio de esa comodidad cedes algo de flexibilidad y pagas una mensualidad a la plataforma, además de comisiones según el medio de pago. Para muchos negocios ese trueque vale totalmente la pena. Trabajamos ese formato en <a href="/tecnologias/diseno-web-shopify-panama/">diseño web con Shopify</a>, enfocados en que la tienda no solo funcione sino que convierta.',
+          'Shopify se encarga de la infraestructura —servidores, seguridad, actualizaciones, picos de tráfico— y trae resueltos catálogo, carrito, inventario y checkout desde el primer día.',
+          'Conviene cuando <strong>vender es el corazón del negocio</strong> y quieres arrancar rápido sin administrar aspectos técnicos: marcas de producto, tiendas con muchos artículos y negocios que quieren escalar sin ocuparse del servidor.',
+          'A cambio cedes flexibilidad y pagas una mensualidad a la plataforma, más comisiones según el medio de pago. Trabajamos ese formato en <a href="/tecnologias/diseno-web-shopify-panama/">diseño web con Shopify</a>, con foco en que la tienda convierta.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Costos reales de cada plataforma en Panamá',
+        h2: '¿Cuánto cuesta WordPress vs Shopify en Panamá?',
         paragraphs: [
-          'En costos, la diferencia no está tanto en el diseño inicial como en el modelo de gasto continuo. Con WordPress no pagas licencia de plataforma: tu gasto recurrente es el hosting y el mantenimiento. En nuestro caso, la <a href="/crecimiento/hosting-infraestructura-panama/">infraestructura anual parte desde $350</a> y el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento desde $99 al mes</a>. El sitio es tuyo por completo, sin mensualidad a un tercero.',
-          'Con Shopify pagas una suscripción mensual a la plataforma, que incluye el hosting y la seguridad, más comisiones de pago. No administras servidores porque eso ya está cubierto en la cuota. Es un gasto más predecible y despreocupado, a cambio de una dependencia mayor del ecosistema de Shopify.',
-          'El diseño y desarrollo inicial se cotiza aparte en ambos casos y de forma cerrada por escrito. Como referencia general, una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online</a> parte desde $1,950 sin importar la plataforma; lo que cambia después es la estructura de gasto mensual. Si quieres el panorama completo de precios, lo desglosamos en <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a>.',
+          'La diferencia está en el gasto continuo más que en el diseño inicial. Con WordPress no pagas licencia de plataforma: el gasto recurrente es hosting y mantenimiento. En Elemento Web, la <a href="/crecimiento/hosting-infraestructura-panama/">infraestructura anual parte desde $350</a> y el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento desde $99 al mes</a>, y el sitio es tuyo por completo.',
+          'Con Shopify pagas una suscripción mensual que incluye hosting y seguridad, más comisiones de pago. Es un gasto predecible, a cambio de depender más del ecosistema de Shopify.',
+          'El diseño y desarrollo inicial se cotiza aparte, cerrado y por escrito, en ambos casos: una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online</a> parte desde $1,950 sin importar la plataforma. El panorama completo está en <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a>.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Cómo decidir en una lista',
-        intro: 'Marca mentalmente con cuál grupo de frases te identificas más. El que sume más casillas suele ser tu plataforma.',
+        h2: 'WordPress o Shopify: cómo decidir en una lista',
+        intro: 'El grupo de frases con el que más te identifiques suele ser tu plataforma.',
         items: [
           'Elige WordPress si tu web vive del contenido, el SEO y varias páginas de servicio',
           'Elige WordPress si quieres control total y que el sitio sea 100% tuyo, sin mensualidad de plataforma',
@@ -353,11 +343,9 @@ export const blog1: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El factor Panamá: Yappy, WhatsApp y pagos locales',
+        h2: '¿WordPress y Shopify aceptan Yappy y WhatsApp en Panamá?',
         paragraphs: [
-          'Ninguna comparación sirve en Panamá si ignora cómo compra la gente aquí. El cliente panameño quiere pagar con Yappy, tarjeta o los medios que ya usa, y muchas veces cierra la compra por WhatsApp aunque la haya empezado en la web. La plataforma debe adaptarse a esa realidad, no al revés.',
-          'La buena noticia es que ambas plataformas se integran bien con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy y las pasarelas de pago locales</a> y con WhatsApp. La diferencia está en el detalle de la implementación, y ahí es donde entra el trabajo de una agencia que conoce el mercado. Una tienda técnicamente perfecta que no acepta el medio de pago favorito de tu cliente igual pierde la venta.',
-          'Por eso nuestra recomendación nunca sale solo de la ficha técnica. Sale de mirar tu negocio, tu cliente panameño y tu forma de vender, y a partir de ahí decidir. Si dudas entre ambas, cuéntanos tu caso y te decimos con argumentos cuál te conviene, sin empujarte a la que sea más cómoda de vender.',
+          'Sí. El cliente panameño quiere pagar con Yappy, tarjeta o los medios que ya usa, y muchas veces cierra la compra por WhatsApp aunque la empiece en la web. Ambas plataformas se integran con <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy y las pasarelas de pago locales</a> y con WhatsApp; la diferencia está en el detalle de la implementación. Una tienda que no acepta el medio de pago favorito de tu cliente pierde la venta aunque funcione bien en todo lo demás.',
         ],
       },
       {
@@ -420,40 +408,31 @@ export const blog1: PageData[] = [
       alt: 'Lupa sobre tres propuestas de sitio web, una marcada con una palomita, para elegir una agencia de diseño web en Panamá',
     },
     lead: [
-      'Contratar a quien hará tu página web se parece más a elegir socio que a comprar un producto. Vas a depender de esa persona o empresa para uno de tus canales de venta más importantes, y un mal casting se paga con meses perdidos, dinero tirado y un sitio que hay que rehacer.',
-      'En esta guía te damos criterios concretos para distinguir una agencia seria de una promesa barata, las preguntas exactas que debes hacer antes de firmar y las banderas rojas que casi siempre anuncian un proyecto que terminará mal. La meta es que elijas con la cabeza, no con la corazonada.',
+      'Para elegir una agencia de diseño web en Panamá, revisa cuatro señales: que pregunte por tu negocio antes de cotizar, que entregue precio cerrado por escrito, que muestre sitios en línea verificables y que dé soporte después del lanzamiento. Exige también que el dominio, el hosting y los archivos queden a tu nombre.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Por qué esta decisión pesa más de lo que parece',
+        h2: 'Agencia, freelancer o conocido: ¿qué conviene para tu página web?',
         paragraphs: [
-          'Una web mal hecha no solo se ve mal: no aparece en Google, no genera consultas y hay que reemplazarla. Cuando eso pasa, no pierdes únicamente lo que pagaste, sino todos los clientes que no llegaron mientras la web estuvo en línea sin funcionar. Ese costo invisible suele ser el más caro de toda la historia.',
-          'Por eso la decisión de a quién contratar pesa tanto. La diferencia entre una buena elección y una mala no es un sitio más bonito o menos bonito: es tener un canal de clientes que trabaja para ti durante años frente a un gasto que hay que repetir. Vale la pena dedicarle tiempo a elegir bien.',
+          'Un <strong>freelancer</strong> serio puede servir para un proyecto acotado y con presupuesto ajustado, si tiene experiencia real y sigue disponible después de entregar. El riesgo es la continuidad: si desaparece o se satura de trabajo, tu web se queda sin quien la sostenga.',
+          'El <strong>conocido que sabe de computadoras</strong> suele terminar en una plantilla a medias, sin SEO, sin soporte y con una relación personal que hace incómodo reclamar.',
+          'Una <strong>agencia</strong> aporta equipo, proceso y continuidad: estrategia, diseño, SEO técnico e integraciones bajo un mismo techo, y alguien que responde cuando algo falla dentro de un año. Cuesta más que un freelancer barato porque incluye todo eso. Una web mal elegida no solo se ve mal: no aparece en Google, no genera consultas y hay que pagarla dos veces.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Agencia, freelancer o conocido: qué obtienes con cada uno',
+        h2: '¿Cómo saber si una agencia de diseño web es confiable?',
         paragraphs: [
-          'No toda web necesita una agencia, y ser honestos en esto es parte del punto. Un <strong>freelancer</strong> serio puede ser excelente para un proyecto acotado y con presupuesto ajustado, siempre que tenga experiencia real y esté disponible después de entregar. El riesgo es la continuidad: si desaparece o se satura de trabajo, tu web se queda sin quien la sostenga.',
-          'El <strong>conocido que sabe de computadoras</strong> es la ruta que más caro sale disfrazada de barata. Suele terminar en una plantilla a medias, sin SEO, sin soporte y con una relación personal de por medio que hace incómodo reclamar. Es tentador por el precio, pero rara vez entrega algo que venda.',
-          'Una <strong>agencia</strong> aporta equipo, proceso y continuidad: estrategia, diseño, SEO técnico e integraciones bajo un mismo techo, y alguien que responde cuando algo falla dentro de un año. Cuesta más que un freelancer barato porque incluye todo eso. La pregunta no es cuál es más barato, sino cuál encaja con lo que tu negocio necesita de verdad.',
-        ],
-      },
-      {
-        type: 'prose',
-        h2: 'Señales de una agencia en la que puedes confiar',
-        paragraphs: [
-          'La primera señal es que <strong>pregunta antes de cotizar</strong>. Una agencia seria quiere entender tu negocio, tu cliente y tu objetivo antes de darte un número. Quien te suelta un precio en el primer mensaje sin saber qué necesitas está vendiendo una plantilla, no una solución.',
-          'La segunda es la <strong>transparencia</strong>: precio cerrado por escrito antes de empezar, alcance claro y sin cargos que aparecen a mitad del camino. La tercera es que tenga <strong>trabajo real que mostrar</strong> —un <a href="/portafolio/">portafolio</a> de sitios en línea, no solo maquetas bonitas— y que puedas verificar que esos proyectos existen y funcionan.',
-          'La cuarta señal, y una que pesa mucho, es la <strong>continuidad después del lanzamiento</strong>. Preguntar quién mantiene la web, cómo se administra y qué pasa si algo se rompe en seis meses separa a quien entrega y desaparece de quien construye una relación. Puedes conocer nuestro enfoque como <a href="/">agencia de diseño web</a> en <a href="/nosotros/">quiénes somos</a>.',
+          '<strong>Pregunta antes de cotizar.</strong> Una agencia seria quiere entender tu negocio, tu cliente y tu objetivo antes de darte un número. Un precio en el primer mensaje, sin saber qué necesitas, suele ser una plantilla.',
+          '<strong>Es transparente</strong>: precio cerrado por escrito antes de empezar, alcance claro y sin cargos a mitad del camino. Y <strong>tiene trabajo real que mostrar</strong>: un <a href="/portafolio/">portafolio</a> de sitios en línea que puedas abrir y comprobar, no solo maquetas.',
+          '<strong>Sigue ahí después del lanzamiento.</strong> Quién mantiene la web, cómo se administra y qué pasa si algo se rompe en seis meses separa a quien entrega y desaparece de quien sostiene el proyecto. Nuestro enfoque como <a href="/">agencia de diseño web</a> está en <a href="/nosotros/">quiénes somos</a>.',
         ],
       },
       {
         type: 'checklist',
-        h2: 'Preguntas que debes hacer antes de firmar',
-        intro: 'Llévalas a la reunión. Las respuestas —y la comodidad con que las den— te dicen casi todo lo que necesitas saber.',
+        h2: 'Preguntas para una agencia de diseño web antes de firmar',
+        intro: 'Llévalas a la reunión. Las respuestas, y la claridad con que las den, te dicen casi todo.',
         items: [
           '¿El precio es cerrado y por escrito antes de empezar, o puede cambiar en el camino?',
           '¿El diseño será a medida sobre mi marca o parten de una plantilla?',
@@ -467,11 +446,11 @@ export const blog1: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Banderas rojas: cuándo salir corriendo',
+        h2: 'Banderas rojas al contratar una agencia de diseño web',
         paragraphs: [
-          'Hay señales que valen más que cualquier promesa. La primera es el <strong>precio demasiado bajo</strong>: una web completa por cien dólares no es una ganga, es una plantilla sin SEO ni soporte que tendrás que rehacer. Lo barato aquí casi siempre esconde lo que no está incluido.',
-          'La segunda es la <strong>falta de contrato o de claridad en el alcance</strong>. Si no hay nada por escrito, cualquier discusión sobre qué incluía el proyecto la pierdes tú. La tercera es que <strong>no te den acceso</strong> a tu propio dominio, hosting o archivos: si la web no queda a tu nombre, estás rentando algo que creías haber comprado.',
-          'Otras banderas: prometer aparecer de primero en Google en una semana (nadie puede garantizar eso de forma honesta), no tener portafolio verificable, y desaparecer entre mensajes durante la etapa de venta. Si cuesta que te respondan antes de firmar, imagina después. Estos patrones también se repiten en los <a href="/blog/errores-comunes-diseno-web-empresas/">errores más comunes de diseño web</a>.',
+          '<strong>Precio demasiado bajo</strong>: una web completa por cien dólares suele ser una plantilla sin SEO ni soporte que tendrás que rehacer.',
+          '<strong>Sin contrato ni alcance claro</strong>: si no hay nada por escrito, cualquier discusión sobre qué incluía el proyecto la pierdes tú. <strong>Sin acceso a lo tuyo</strong>: si el dominio, el hosting o los archivos no quedan a tu nombre, estás rentando algo que creías haber comprado.',
+          'También: prometer el primer lugar en Google en una semana (nadie puede garantizarlo de forma honesta), no tener portafolio verificable y tardar días en responder durante la venta. Varios de estos patrones reaparecen en los <a href="/blog/errores-comunes-diseno-web-empresas/">errores más comunes de diseño web</a>.',
         ],
       },
       {
@@ -481,11 +460,10 @@ export const blog1: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'El precio no es el criterio (pero tampoco lo ignores)',
+        h2: '¿Cómo comparar propuestas de agencias de diseño web?',
         paragraphs: [
-          'El error más común al elegir es decidir solo por precio, y el segundo es ignorarlo por completo. La verdad está en el medio: el precio importa, pero como parte de la ecuación de valor, no como único filtro. La pregunta útil no es cuánto cuesta, sino qué recibo a cambio y qué me costaría hacerlo mal.',
-          'Compara propuestas por lo que incluyen, no por el número final. Una que cueste más pero traiga estrategia, SEO, integraciones y soporte puede ser mucho más barata en el largo plazo que una barata que hay que rehacer en seis meses. Para tener referencias claras, revisa nuestra guía de <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a>.',
-          'Cuando tengas dos o tres propuestas sobre la mesa, ponlas lado a lado con las preguntas de esta guía. La que responda con claridad, muestre trabajo real y no huya del tema del soporte es, casi siempre, la elección con la que no te arrepentirás. Si quieres, <a href="/contacto/">cuéntanos tu caso</a> y te damos una propuesta con precio cerrado para comparar.',
+          'Compara por lo que incluyen, no por el número final. Una propuesta más cara con estrategia, SEO, integraciones y soporte puede salir más barata que una económica que hay que rehacer en seis meses. Para tener referencias de precio, revisa <a href="/blog/cuanto-cuesta-diseno-web-panama/">cuánto cuesta una página web en Panamá</a>.',
+          'Pon dos o tres propuestas lado a lado con las preguntas de esta guía: la que responda con claridad, muestre trabajo real y detalle el soporte suele ser la correcta. Si quieres una más para comparar, <a href="/contacto/">cuéntanos tu caso</a> y te enviamos una con precio cerrado.',
         ],
       },
       {
@@ -550,31 +528,29 @@ export const blog1: PageData[] = [
       alt: 'Línea de tiempo con cinco etapas, del esquema al lanzamiento, que muestra cuánto tarda en hacerse una página web',
     },
     lead: [
-      'Cuando alguien quiere una web, casi siempre la quiere para ayer. Es comprensible: hay una campaña por lanzar, una temporada que aprovechar o simplemente las ganas de dejar de perder clientes por no tener presencia. Pero prometer una web en tres días suele ser señal de que se va a entregar una plantilla, no una solución.',
-      'En esta guía te damos plazos reales por tipo de proyecto, te mostramos las etapas por las que pasa toda web y —lo más importante— te explicamos qué la retrasa de verdad y cómo puedes acelerarla sin sacrificar calidad. Spoiler: buena parte del reloj lo controlas tú.',
+      'Hacer una página web en Panamá toma alrededor de una semana si es una landing page sencilla, de dos a tres semanas si es un sitio corporativo de varias páginas y de tres a cinco semanas si es una tienda online. En Elemento Web el plazo corre desde que llega el contenido base, que es lo que más retrasa cualquier proyecto.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'La respuesta honesta: depende, pero hay rangos reales',
+        h2: '¿De qué depende cuánto tarda una página web?',
         paragraphs: [
-          'El tiempo de una web depende de su alcance, sus funciones y —sobre todo— de qué tan rápido fluya el contenido y las aprobaciones entre tú y quien la construye. No es lo mismo una landing de una pantalla que un sitio corporativo de doce servicios o una tienda con catálogo, pagos e inventario.',
-          'Aun así, hay rangos confiables que manejamos para el mercado panameño. Y hay un dato que casi nadie te dice de entrada: el reloj no arranca cuando firmas, sino cuando el proyecto tiene lo que necesita para avanzar. Entender eso cambia por completo la expectativa de fecha.',
+          'De su alcance, sus funciones y, sobre todo, de qué tan rápido fluyen el contenido y las aprobaciones entre tú y quien la construye. El reloj no arranca cuando firmas, sino cuando el proyecto tiene lo que necesita para avanzar. Prometer un sitio completo en tres días suele significar una plantilla, no una solución.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Plazos por tipo de proyecto',
+        h2: '¿Cuánto tiempo toma hacer una página web según el tipo de proyecto?',
         paragraphs: [
-          'Una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> sencilla puede estar lista en alrededor de una semana. Al ser una sola página con una oferta y una acción, hay menos contenido que estructurar y menos que aprobar, así que es el formato más rápido de sacar al aire.',
-          'Un <a href="/servicios/diseno-web-corporativo-panama/">sitio corporativo</a> de varias páginas suele tomar entre dos y tres semanas. El tiempo extra no es por el diseño en sí, sino por la cantidad de contenido a organizar: una página por servicio, textos optimizados para SEO y una arquitectura pensada para que Google entienda todo tu negocio.',
-          'Una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online</a> se mueve entre tres y cinco semanas. Además del diseño, hay que cargar el catálogo, configurar pagos con Yappy y pasarelas, definir envíos y probar todo el flujo de compra de punta a punta antes de abrir. Un desarrollo a medida más complejo puede extenderse más, según sus integraciones.',
+          'Una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> sencilla puede estar lista en alrededor de una semana: es una sola página con una oferta y una acción, con poco contenido que estructurar y aprobar.',
+          'Un <a href="/servicios/diseno-web-corporativo-panama/">sitio corporativo</a> de varias páginas suele tomar entre dos y tres semanas. El tiempo extra se va en organizar el contenido: una página por servicio, textos optimizados para SEO y una arquitectura que Google entienda.',
+          'Una <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online</a> toma entre tres y cinco semanas: además del diseño, hay que cargar el catálogo, configurar pagos con Yappy y pasarelas, definir envíos y probar el flujo de compra completo. Un desarrollo a medida puede extenderse más, según sus integraciones.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Las etapas por las que pasa tu web (y cuánto dura cada una)',
-        intro: 'Toda web recorre estas cuatro etapas. Saber en qué punto estás evita la ansiedad de sentir que no avanza cuando en realidad va según lo previsto.',
+        h2: 'Las etapas de una página web y cuánto dura cada una',
+        intro: 'Toda web recorre estas cuatro etapas. Saber en cuál está la tuya te dice si el proyecto va según lo previsto.',
         items: [
           {
             h3: '1. Diagnóstico y estrategia',
@@ -596,20 +572,19 @@ export const blog1: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Lo que realmente retrasa un proyecto: el contenido',
+        h2: '¿Qué retrasa una página web? El contenido y las aprobaciones',
         paragraphs: [
-          'Si le preguntas a cualquier agencia honesta qué atrasa las webs, la respuesta casi nunca es el diseño o el código. Es <strong>el contenido del cliente</strong>: los textos, las fotos, el logo en buena calidad, la lista de servicios con sus precios, las respuestas a preguntas clave sobre el negocio. Sin esos insumos, el proyecto se queda esperando en la etapa dos.',
-          'Es la parte más frecuente de las demoras y, curiosamente, la que menos se anticipa. Se firma el proyecto con entusiasmo, arranca la estrategia, y cuando toca aportar el contenido aparece la vida real: la agenda ocupada, las fotos que hay que tomar, los textos que nadie termina de escribir. Cada día de espera ahí es un día que se suma a la fecha de entrega.',
-          'La segunda causa de demora son las <strong>aprobaciones lentas</strong>. Cada ronda de revisión que tarda en volver alarga el proyecto. Una web no se retrasa por semanas de trabajo extra, sino por días sueltos de espera que se acumulan. Y esos días, a diferencia del alcance, están casi siempre en tu cancha.',
+          'Lo que atrasa una web casi nunca es el diseño o el código, sino <strong>el contenido del cliente</strong>: textos, fotos, logo en buena calidad, la lista de servicios con sus precios y las respuestas a preguntas clave sobre el negocio. Sin esos insumos, el proyecto se queda esperando en la etapa de diseño y contenido, y cada día de espera se suma a la fecha de entrega.',
+          'La segunda causa son las <strong>aprobaciones lentas</strong>: cada ronda de revisión que tarda en volver alarga el proyecto. Una web no se retrasa por semanas de trabajo extra, sino por días sueltos de espera que se acumulan del lado del cliente.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cómo acelerar sin sacrificar calidad',
+        h2: '¿Cómo acelerar una página web sin sacrificar calidad?',
         paragraphs: [
-          'La forma más efectiva de acelerar tu web es tener el contenido listo antes de arrancar, o al menos comprometerte a entregarlo en bloque en los primeros días. Textos aproximados de cada servicio, fotos de buena calidad, logo, datos de contacto y una lista clara de lo que ofreces. Con eso en mano, la etapa dos deja de ser un cuello de botella.',
-          'La segunda palanca es <strong>agilizar las aprobaciones</strong>: designar a una sola persona que decida y revise, en lugar de pasar cada versión por un comité que tarda semanas en ponerse de acuerdo. Un solo interlocutor con capacidad de decisión vale más que cinco opiniones que nunca coinciden.',
-          'Y si de verdad no tienes tiempo para producir el contenido, díselo a tu agencia desde el inicio en vez de dejar el proyecto en pausa. Nosotros ayudamos a producir textos y a estructurar el contenido cuando el cliente no puede, justo para que el reloj no se detenga. Puedes ver cómo trabajamos en <a href="/diseno-web-panama/">diseño web en Panamá</a> o consultar cuánto cuesta cada formato en la <a href="/blog/cuanto-cuesta-diseno-web-panama/">guía de precios</a>.',
+          'Ten el contenido listo antes de arrancar, o entrégalo en bloque en los primeros días: textos aproximados de cada servicio, fotos de buena calidad, logo, datos de contacto y la lista de lo que ofreces.',
+          '<strong>Agiliza las aprobaciones</strong>: designa a una sola persona que revise y decida, en lugar de pasar cada versión por un comité.',
+          'Si no tienes tiempo para producir el contenido, dilo desde el inicio: en Elemento Web ayudamos a redactar textos y estructurar el contenido para que el proyecto no se detenga. Así trabajamos el <a href="/diseno-web-panama/">diseño web en Panamá</a>, y el precio de cada formato está en la <a href="/blog/cuanto-cuesta-diseno-web-panama/">guía de precios</a>.',
         ],
       },
       {

@@ -26,6 +26,13 @@ colors:
   warning: "#a65a00"
   error: "#b42318"
   info: "#00688c"
+  mono-black: "#0a0a0a"
+  mono-hover: "#262626"
+  mono-text: "#525252"
+  mono-muted: "#737373"
+  mono-on-dark-muted: "#a3a3a3"
+  mono-rule: "#e5e5e5"
+  mono-surface: "#f5f5f5"
 typography:
   display:
     fontFamily: Roboto
@@ -176,6 +183,7 @@ Radios 6, 12 y 20 px; la píldora completa queda para la barra de navegación y 
 - **Imagen de héroe:** una foto realista por página de servicio, al estilo de la propuesta de Kredit (personas y lugares de Panamá, luz natural, sin texto ni logos dentro de la imagen), con un pie corto sobre la foto y el comprobante en la misma pantalla. WebP a 1200 px de 60 KB o menos, ancho y alto declarados, alt descriptivo e `ImageObject`. Las fotos de stock de bancos de imágenes no entran (D45 de `docs/specs/rediseno-elementoweb/DECISIONES.md`).
 - **Qué incluye (molde Kredit):** lista de dos columnas; cada elemento lleva el signo «+» en `accent-on-light`, el título en `title` 600 y una línea de explicación en `muted`; filete superior de 1 px, sin tarjeta ni icono en círculo.
 - **Así se vería:** maquetas del entregable hechas en HTML y CSS sobre `raised` con borde de 1 px y radio 20: resultado de Google, anuncio en el feed, publicaciones del mes, navegador y celular con capturas reales del portafolio, conversación de WhatsApp, correo, flujo de automatización, respuesta de un asistente de IA, ficha de producto y resumen de pago de una tienda, los tres negocios del mapa de Google, una reseña con la respuesta del dueño, la pantalla de edición de un panel, una agenda de reservas con horas libres y ocupadas, y ficha de auditoría con estado por fila (verde, ámbar, rojo, siempre con el estado escrito para lector de pantalla). El flujo ocupa la fila entera de la rejilla porque se lee de izquierda a derecha. Cada una lleva la nota «Ejemplo» en voz de datos y nunca afirma un resultado. Son artefactos reales del servicio, por eso sí pueden ser tarjetas.
+- **Menú y pie monocromo (D56):** barra blanca fija de 64 px (`--nav-h`) con filete `mono-rule`, cuatro disparadores (Marketing, Inteligencia artificial, Diseño web, Recursos), «Nosotros», «Hablar con ventas» (WhatsApp, avisa que abre otra pestaña) y botón píldora `mono-black` «Empezar proyecto →» que pasa a `mono-hover`. Paneles blancos de radio 12 con columnas (ícono de línea propio de 20 px y trazo 1,5, título, una línea en `mono-text` y la lista) y una tarjeta destacada en `mono-surface` cuyo enlace también está en la lista. Abren con clic y teclado; con ratón tras 150 ms y cierran 180 ms después de salir. Escritorio desde 1200 px; debajo, acordeón a pantalla completa en blanco con los mismos enlaces y el foco atrapado. El pie va en `mono-surface` con 5 columnas (los 4 grupos y Empresa) y debajo las franjas de Miami, industrias y legales; el bloque de cierre de las páginas internas va en `mono-black` con texto y botón blancos. Texto sobre blanco: `mono-black`, `mono-text` o `mono-muted`; sobre `mono-surface`: `mono-black` o `mono-text`; sobre `mono-black`: blanco o `mono-on-dark-muted`. Anillo de foco de 2 px con 2 px de separación, negro sobre claro y blanco sobre negro. Los enlaces salen de `grupos` en `src/lib/site.ts`, donde cada uno tiene un solo dueño. La portada tiene tope de 1.400 elementos: el menú y el pie no usan listas ni SVG decorativos de más.
 - **Tabla de ejemplo y «cómo lo medimos»:** tabla con encabezados reales en el estilo de la comparación; los indicadores van como lista en línea en voz de datos.
 
 ## Do's and Don'ts
@@ -210,3 +218,4 @@ Radios 6, 12 y 20 px; la píldora completa queda para la barra de navegación y 
 | 2026-10-13 | Secciones de servicio con el molde de la propuesta de Kredit y fotos realistas en la portada | Instrucción del dueño: cada servicio explica qué incluye, cómo se vería el entregable con ejemplos, cómo se mide y qué se entrega. Reemplaza la ilustración 3D de portada (D44 y D45) |
 | 2026-10-15 | Variante «portada grafito» en `/` | El dueño eligió entre los mockups de fal la dirección grafito con el cian de la marca (no la lima del mockup) y aprobó el plan de 13 secciones con cascada de capturas reales; las 6 excepciones quedan escritas en «Layout». Detalle en D51 |
 | 2026-10-21 | Vitrina en Marketing de la portada (D54) | El dueño eligió la variante «Vitrina» entre 4 maquetas de fal y la vitrina completa con las 6 escenas. Reemplaza al módulo bento: ya no queda ningún bento en la portada. Sin transición: la portada sigue sin animarse fuera de D53 |
+| 2026-10-22 | Menú y pie monocromo en todo el sitio (D56, PR-A) | Plan de la portada v3 aprobado en la puerta de /autoplan («rec»): menú y pie al estilo Stripe en negro, blanco y grises, sin GSAP. Las páginas de servicio conservan su héroe marino hasta otro plan (E4 en TODOS.md) |

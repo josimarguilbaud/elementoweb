@@ -1,7 +1,8 @@
 /* npm run verify: la puerta de calidad antes de pushear (D8, D37, R4, R29).
    Un solo punto de entrada, el mismo en local y en CI:
      build → compilación de pruebas → pruebas unitarias → FORMULARIO.md al día → qa-seo → check-links →
-     validador del marcador → presupuesto de JS y CSS → (con navegador) preview en un puerto libre, qa-a11y, qa-lcp y qa-form.
+     validador del marcador → presupuesto de JS y CSS → (con navegador) preview en un puerto libre, qa-a11y, qa-lcp,
+     qa-menu, qa-responsive, qa-sr y qa-form.
    Opciones:  --sin-navegador   omite los pasos con Chrome (solo para una emergencia; el CI no la usa)
               --hoy AAAA-MM-DD  fecha de las comparaciones del validador (por defecto la del último commit)
    Sale con código distinto de cero en cuanto un paso falla. El Dockerfile sigue ejecutando solo `npm run build`. */
@@ -77,6 +78,9 @@ if (sinNavegador) {
   const env = { ...process.env, CHROMIUM_PATH: chrome };
   paso('qa-a11y (axe, WCAG 2.x AA)', process.execPath, ['scripts/qa-a11y.mjs', base], { env });
   paso('qa-lcp (sin JavaScript y elemento LCP)', process.execPath, ['scripts/qa-lcp.mjs', base], { env });
+  paso('qa-menu (megamenú y menú móvil: teclado, ratón, toque y foco, D56)', process.execPath, ['scripts/qa-menu.mjs', base], { env });
+  paso('qa-responsive (desbordes y barra a 320–1440 px)', process.execPath, ['scripts/qa-responsive.mjs', base], { env });
+  paso('qa-sr (encabezados, landmarks y nombres accesibles)', process.execPath, ['scripts/qa-sr.mjs', base], { env });
   // Sirve dist-fixture/ por su cuenta y simula el webhook de n8n: no necesita el preview.
   paso('qa-form (estados del formulario por servicio, eventos y accesibilidad)', process.execPath, ['scripts/qa-form.mjs'], { env });
 }

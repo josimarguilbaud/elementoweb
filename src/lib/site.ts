@@ -214,6 +214,90 @@ export const navExtra: NavLink[] = [
   { slug: 'blog', label: 'Blog' },
 ];
 
+/* GRUPOS del menú y del pie (portada v3, D56): una sola tabla donde cada enlace tiene exactamente un dueño. El
+   megamenú, el acordeón móvil y las 4 primeras columnas del pie salen de aquí; scripts/menu-pie.test.mjs falla si un
+   slug aparece en dos grupos o si se pierde uno de las listas de arriba. WhatsApp Marketing es de Marketing; los
+   chatbots, n8n y la IA empresarial son de Inteligencia artificial (salen de Funcionalidades). El díptico y el bento de
+   la portada no son grupos y pueden enlazar a cualquier dueño. */
+export type IconoGrupo = 'anuncio' | 'chispa' | 'agente' | 'caja' | 'ventana' | 'codigo' | 'enchufe' | 'libro' | 'brujula';
+export type Grupo = {
+  id: 'marketing' | 'ia' | 'web' | 'recursos';
+  titulo: string;
+  columnas: { titulo: string; linea: string; icono: IconoGrupo; links: NavLink[] }[];
+  /** Tarjeta destacada del panel de escritorio (no va en el móvil); su enlace también está en una columna. */
+  destacada: { slug: string; titulo: string; linea: string };
+};
+
+const sinDueno = (links: NavLink[], fuera: string[]) => links.filter((l) => !fuera.includes(l.slug));
+const IA_EMPRESAS = 'inteligencia-artificial-para-empresas-panama';
+const CHATBOTS = 'funcionalidades/chatbots-ia-web-wazacrm-panama';
+const N8N = 'marketing/automatizaciones-n8n-panama';
+const columna = (titulo: string) => cols.find((c) => c.title === titulo)!.links;
+
+export const grupos: Grupo[] = [
+  {
+    id: 'marketing',
+    titulo: 'Marketing',
+    columnas: [
+      { titulo: 'Publicidad y redes', linea: 'Campañas que traen clientes y se miden.', icono: 'anuncio', links: sinDueno(marketing, [N8N]) },
+      { titulo: 'Producción con IA', linea: 'Videos y piezas hechas con IA.', icono: 'chispa', links: iaCreativa },
+    ],
+    destacada: { slug: 'marketing/videos-publicitarios-panama', titulo: 'Videos publicitarios', linea: 'Anuncios en video hechos con IA.' },
+  },
+  {
+    id: 'ia',
+    titulo: 'Inteligencia artificial',
+    columnas: [
+      {
+        titulo: 'Proyectos de IA', linea: 'Agentes y automatizaciones que trabajan por ti.', icono: 'agente',
+        links: [
+          { slug: IA_EMPRESAS, label: 'IA para empresas' },
+          { slug: CHATBOTS, label: 'Chatbot con IA para tu web' },
+          { slug: N8N, label: 'Automatizaciones (n8n)' },
+        ],
+      },
+      { titulo: 'Nuestros SaaS', linea: 'Software propio, listo para usar.', icono: 'caja', links: [{ slug: 'saas', label: 'Todos los SaaS' }, ...saas.map((s) => ({ slug: s.slug, label: s.label }))] },
+    ],
+    destacada: { slug: IA_EMPRESAS, titulo: 'IA para empresas', linea: 'Del diagnóstico al agente en producción.' },
+  },
+  {
+    id: 'web',
+    titulo: 'Diseño web',
+    columnas: [
+      { titulo: 'Diseño web', linea: 'Sitios que trabajan como un vendedor.', icono: 'ventana', links: [...columna('Diseño Web'), { slug: 'industrias', label: 'Por industria' }] },
+      { titulo: 'Tecnologías', linea: 'La plataforma que tu negocio necesita.', icono: 'codigo', links: columna('Tecnologías') },
+      { titulo: 'Funcionalidades', linea: 'Pagos y reservas dentro de tu web.', icono: 'enchufe', links: sinDueno(columna('Funcionalidades'), [IA_EMPRESAS, CHATBOTS]) },
+    ],
+    destacada: { slug: 'diseno-web-panama', titulo: 'Diseño web en Panamá', linea: 'Sitios rápidos, medibles y a tu nombre.' },
+  },
+  {
+    id: 'recursos',
+    titulo: 'Recursos',
+    columnas: [
+      {
+        titulo: 'Aprender', linea: 'Guías y casos para decidir mejor.', icono: 'libro',
+        links: [
+          { slug: 'blog', label: 'Blog' },
+          { slug: 'guias', label: 'Guías' },
+          { slug: 'recursos', label: 'Recursos' },
+          { slug: 'casos-de-exito', label: 'Casos de éxito' },
+          { slug: 'como-trabajamos', label: 'Cómo trabajamos' },
+        ],
+      },
+      {
+        titulo: 'Explorar', linea: 'Proyectos, precios y crecimiento.', icono: 'brujula',
+        links: [
+          { slug: 'portafolio', label: 'Proyectos' },
+          { slug: 'precios', label: 'Precios' },
+          { slug: 'miami', label: 'Miami' },
+          ...columna('Crecimiento'),
+        ],
+      },
+    ],
+    destacada: { slug: 'guias', titulo: 'Guías', linea: 'Lo que conviene saber antes de cotizar.' },
+  },
+];
+
 export const legal: NavLink[] = [
   { slug: 'politica-de-privacidad', label: 'Privacidad' },
   { slug: 'terminos', label: 'Términos' },

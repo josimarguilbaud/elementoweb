@@ -25,6 +25,15 @@
   --color-teal-deep: #00688c;
   --color-violet: #5ec8e8;
   --color-violet-deep: #0077a3;
+  /* Monocromo de la portada v3 (D56): menú, pie y portada. Texto sobre blanco: negro, gris-texto o gris; sobre humo:
+     negro o gris-texto; sobre negro: blanco o gris-claro. gris-claro y filete nunca van en texto sobre fondo claro. */
+  --color-negro: #0a0a0a;
+  --color-grafito: #262626;
+  --color-gris-texto: #525252;
+  --color-gris: #737373;
+  --color-gris-claro: #a3a3a3;
+  --color-filete: #e5e5e5;
+  --color-humo: #f5f5f5;
   --font-display: "Roboto", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Roboto", ui-sans-serif, system-ui, sans-serif;
 }
@@ -77,24 +86,25 @@
   @media (hover: none), (pointer: coarse) { .cursor-ring, .cursor-dot { display: none; } }
 }
 
-/* Nav sobre hero oscuro: texto claro mientras el pill no tiene fondo glass.
-   Al hacer scroll aparece el fondo glass y el nav vuelve a su color oscuro. */
-#navpill.nav-light .brand-tx { color: #fff; }
-#navpill.nav-light .brand-sq { background: rgba(255,255,255,.12); }
-#navpill.nav-light .nav-trigger { color: rgba(255,255,255,.82); }
-#navpill.nav-light .nav-trigger:hover { color: #fff; background: rgba(255,255,255,.1); }
-#navpill.nav-light .nav-links a { color: rgba(255,255,255,.82); }
-#navpill.nav-light .nav-links a:hover { color: #fff; background: rgba(255,255,255,.1); }
-#navpill.nav-light #mnav-toggle { color: #fff; }
-#navpill.nav-light .cta-pill { background: #00688c; color: #ffffff; }
-#navpill.nav-light .cta-pill:hover { background: #fff; color: #14232b; }
-
-/* Nav con scroll: fondo casi sólido para que el contenido de la página no se
-   transparente por detrás del pill (antes se veía el texto del artículo y chocaba). */
-#navpill.glass { background: rgba(255, 255, 255, 0.92); border-color: rgba(51, 51, 51, 0.06); box-shadow: 0 12px 34px -14px rgba(51, 51, 51, 0.22); }
-@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
-  #navpill.glass { background: rgba(255, 255, 255, 0.82); }
+/* Menú monocromo (D56): barra blanca fija de --nav-h de alto. Los anclas de las páginas la usan para no quedar
+   tapadas. Los paneles se ocultan con visibility + inert (no display), para que el cierre tenga transición. */
+:root { --nav-h: 64px; }
+#nav [data-panel] { visibility: hidden; opacity: 0; transform: translate(-50%, 6px); transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s; }
+#nav [data-panel][data-open="1"] { visibility: visible; opacity: 1; transform: translate(-50%, 0); transition: opacity .18s ease, transform .18s ease, visibility 0s; }
+#mnav { visibility: hidden; opacity: 0; transform: translateY(-8px); transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s; }
+#mnav[data-open="1"] { visibility: visible; opacity: 1; transform: none; transition: opacity .2s ease, transform .2s ease, visibility 0s; }
+#mnav details > summary { list-style: none; }
+#mnav details > summary::-webkit-details-marker { display: none; }
+/* Flechas de los disparadores y del acordeón: un borde girado en ::after (sin SVG, para no sumar elementos al DOM). */
+#nav .nav-trigger::after, #mnav summary::after { content: ""; width: 6px; height: 6px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: translateY(-2px) rotate(45deg); opacity: .6; transition: transform .2s ease; }
+#mnav summary::after { width: 8px; height: 8px; margin-right: 6px; }
+#nav .nav-trigger[aria-expanded="true"]::after, #mnav details[open] > summary::after { transform: translateY(1px) rotate(225deg); }
+@media (prefers-reduced-motion: reduce) {
+  #nav [data-panel], #nav [data-panel][data-open="1"], #mnav, #mnav[data-open="1"] { transition: none; }
 }
+/* Anillo de foco monocromo en el menú y el pie: 2 px con 2 px de separación, negro sobre claro y blanco sobre negro. */
+#nav :focus-visible, #mnav :focus-visible, footer :focus-visible { outline: 2px solid var(--color-negro); outline-offset: 2px; }
+footer .bg-negro :focus-visible { outline-color: #fff; }
 
 /* Enlaces dentro del texto de una tarjeta: se elevan por encima del stretched
    link (::after) para seguir siendo clicables, y se ven como enlaces. */

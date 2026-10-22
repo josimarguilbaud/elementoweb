@@ -1,4 +1,4 @@
-/* BLOG — Lote 38: reservas directas para tours, medición de leads de WhatsApp
+/* BLOG — Lote 39: reservas directas para tours, medición de leads de WhatsApp
    y costo de una web para un negocio de Miami contratando desde Panamá.
    PageData con parent { slug: 'blog' }; el listado /blog la recoge por fecha y
    categoría. Enlaces internos solo a slugs reales del sitio. */
@@ -20,35 +20,35 @@ export const blog39: PageData[] = [
     },
     lead: [
       'Para recibir reservas directas, tu web tiene que permitir que el viajero elija el tour, la fecha y el número de personas, pague un depósito y reciba una confirmación, todo sin depender de que alguien le conteste un mensaje. WhatsApp queda para lo que sí necesita conversación: dudas, casos especiales y tranquilidad antes de pagar.',
-      'Esta guía recorre las piezas de ese flujo: el selector de tour, el depósito, los idiomas, el WhatsApp de soporte, las políticas de cancelación y la confirmación. Nos apoyamos en un proyecto que construimos, el sitio de San Blas Full, y también hablamos de cuándo, con honestidad, todavía no conviene montar todo esto.',
+      'Esta guía recorre las piezas de ese flujo —selector de tour, depósito, idiomas, WhatsApp de soporte, políticas de cancelación y confirmación— con el sitio de San Blas Full, un proyecto de Elemento Web, como ejemplo, y explica cuándo todavía no conviene montarlo.',
     ],
     blocks: [
       {
         type: 'prose',
-        h2: 'Por qué una reserva directa cambia la operación de un tour',
+        h2: '¿Por qué una reserva directa cambia la operación de un tour?',
         paragraphs: [
           'Un viajero que decide un tour suele estar en el celular, comparando varias opciones y con poco tiempo. Si para reservar tiene que escribir, esperar respuesta, preguntar disponibilidad y luego coordinar el pago, cada paso es una oportunidad de que se vaya con otro operador que le resolvió más rápido.',
-          'La reserva directa mueve esa fricción a la web: el viajero ve qué tours hay, qué incluye cada uno y cuánto cuesta, y avanza a su ritmo. Para el negocio, además, la reserva llega con los datos ya ordenados (tour, fecha, personas, contacto), en lugar de repartidos entre una docena de chats.',
-          'Trabajamos este flujo en el sitio de <a href="/casos-de-exito/san-blas-full/">San Blas Full</a>, un sitio que construimos para un cliente: un sitio multi-idioma para tours de un día a San Blas, con selector de tour, reserva con depósito y soporte por WhatsApp. No tenemos cifras medidas de su efecto y no las vamos a inventar aquí; lo que sí podemos contarte es cómo está armado y por qué cada pieza existe.',
+          'La reserva directa mueve esa fricción a la web: el viajero ve qué tours hay, qué incluye cada uno y cuánto cuesta, y avanza a su ritmo. Para el negocio, la reserva llega con los datos ordenados (tour, fecha, personas, contacto), no repartidos entre una docena de chats.',
+          'Construimos este flujo en el sitio de <a href="/casos-de-exito/san-blas-full/">San Blas Full</a>: un sitio multi-idioma para tours de un día a San Blas, con selector de tour, reserva con depósito y soporte por WhatsApp. No tenemos cifras medidas de su efecto y no las vamos a inventar; sí podemos contar cómo está armado y por qué existe cada pieza.',
         ],
       },
       {
         type: 'steps',
-        h2: 'Las piezas de un flujo de reserva directa',
+        h2: '¿Qué piezas tiene un flujo de reserva directa para tours?',
         intro: 'No hace falta que todas estén el primer día, pero conviene saber qué papel cumple cada una.',
         items: [
-          { h3: '1. Selector de tour', text: 'Una vista donde el viajero compara los tours disponibles y elige uno sin salir de la página. Cada opción debe decir qué incluye, cuánto dura, desde dónde sale y cuánto cuesta por persona.' },
-          { h3: '2. Fecha y número de personas', text: 'Los dos datos que definen la reserva. Si la disponibilidad se maneja a mano, la web puede recoger la solicitud y el equipo confirma; si se maneja con calendario, el sistema lo valida en el momento.' },
-          { h3: '3. Depósito para asegurar el cupo', text: 'Un pago parcial reduce las reservas que nunca se presentan y le da al viajero una confirmación concreta. El monto y las condiciones se definen con el negocio, y deben estar visibles antes de pagar.' },
-          { h3: '4. Idiomas', text: 'Si tus clientes vienen de otros países, el sitio en su idioma no es un adorno: es lo que permite entender el itinerario y las condiciones sin adivinar. Traducir solo el menú no basta; deben estar traducidos el detalle del tour, el flujo de reserva y las políticas.' },
-          { h3: '5. WhatsApp para dudas', text: 'Un botón visible para preguntar antes de reservar: qué llevar, si aplica para niños, qué pasa si llueve. Sirve como apoyo al flujo, no como reemplazo: la reserva se completa en la web.' },
-          { h3: '6. Confirmación clara', text: 'Al terminar, el viajero necesita ver y recibir por correo el resumen: tour, fecha, personas, depósito pagado, saldo pendiente, punto de encuentro y cómo contactarte.' },
+          { h3: '1. Selector de tour', text: 'Una vista donde el viajero compara los tours disponibles y elige uno sin salir de la página. Cada opción dice qué incluye, cuánto dura, desde dónde sale y cuánto cuesta por persona.' },
+          { h3: '2. Fecha y número de personas', text: 'Los dos datos que definen la reserva. Si la disponibilidad se maneja a mano, la web recoge la solicitud y el equipo confirma; si se maneja con calendario, el sistema la valida en el momento.' },
+          { h3: '3. Depósito para asegurar el cupo', text: 'Un pago parcial reduce las reservas que nunca se presentan y le da al viajero una confirmación concreta. El monto y las condiciones se definen con el negocio y se muestran antes de pagar.' },
+          { h3: '4. Idiomas', text: 'Si tus clientes vienen de otros países, el sitio en su idioma les permite entender el itinerario y las condiciones sin adivinar. Traducir solo el menú no basta: deben estar traducidos el detalle del tour, el flujo de reserva y las políticas.' },
+          { h3: '5. WhatsApp para dudas', text: 'Un botón visible para preguntar antes de reservar: qué llevar, si aplica para niños, qué pasa si llueve. Apoya el flujo, no lo reemplaza: la reserva se completa en la web.' },
+          { h3: '6. Confirmación clara', text: 'Al terminar, el viajero ve y recibe por correo el resumen: tour, fecha, personas, depósito pagado, saldo pendiente, punto de encuentro y cómo contactarte.' },
         ],
       },
       {
         type: 'checklist',
-        h2: 'Políticas que conviene publicar antes de que alguien pregunte',
-        intro: 'Casi todas las discusiones con un cliente vienen de algo que no estaba escrito. Estas son las que más conviene dejar a la vista.',
+        h2: '¿Qué políticas publicar antes de que alguien pregunte?',
+        intro: 'Casi todas las discusiones con un cliente vienen de algo que no estaba escrito.',
         items: [
           'Qué incluye y qué no incluye cada tour (transporte, entradas, comidas, tasas)',
           'Cuánto se paga de depósito y cuándo se paga el saldo',
@@ -61,7 +61,7 @@ export const blog39: PageData[] = [
       },
       {
         type: 'cards',
-        h2: 'Qué resuelve cada canal',
+        h2: '¿Qué resuelve cada canal en una reserva de tour?',
         intro: 'Mezclar todo en WhatsApp es lo que hace lento el proceso. Separar el trabajo de cada canal lo ordena.',
         items: [
           { h3: 'La web', text: 'Muestra los tours, valida la reserva, cobra el depósito y envía la confirmación. Trabaja a cualquier hora, sin que nadie tenga que estar conectado.' },
@@ -71,19 +71,18 @@ export const blog39: PageData[] = [
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene montar reservas directas',
+        h2: '¿Cuándo no conviene montar reservas directas?',
         paragraphs: [
-          'Si vendes pocos tours al mes, casi todos a clientes que ya te conocen o llegan por recomendación, un flujo de reserva con depósito puede ser más maquinaria de la que necesitas. Una página clara con los tours, los precios y un botón de WhatsApp resuelve la mayor parte, y es más barata de mantener.',
-          'Tampoco conviene si tu disponibilidad cambia constantemente y nadie tiene tiempo de mantenerla al día en la web: un sistema que promete cupos que no existen genera más problemas que un mensaje directo. Y si aún no tienes claras tus políticas de cancelación, conviene definirlas primero: la web solo puede mostrar reglas que el negocio ya decidió.',
-          'Si tu caso encaja en alguno de estos, empezar con una web simple y crecer después es una decisión razonable, no una derrota.',
+          'Si vendes pocos tours al mes, casi todos a clientes que ya te conocen o llegan por recomendación, un flujo con depósito puede ser más maquinaria de la que necesitas. Una página clara con los tours, los precios y un botón de WhatsApp resuelve la mayor parte y es más barata de mantener; crecer después es una decisión razonable.',
+          'Tampoco conviene si tu disponibilidad cambia constantemente y nadie la mantendrá al día en la web: un sistema que promete cupos que no existen genera más problemas que un mensaje directo. Y si aún no tienes claras tus políticas de cancelación, defínelas primero: la web solo puede mostrar reglas que el negocio ya decidió.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cómo empezar sin complicarlo',
+        h2: '¿Cómo empezar a recibir reservas directas sin complicarlo?',
         paragraphs: [
-          'Lo primero es escribir, en un documento, los tours que ofreces, qué incluye cada uno, el precio por persona, el depósito y la política de cancelación. Si eso no está claro en papel, no se puede construir bien en la web.',
-          'Con eso, se decide cuánto del flujo se automatiza y cuánto se confirma a mano. Para ver las opciones de agenda y reservas en línea, revisa nuestra página de <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistemas de reservas y citas en línea</a>, y para el enfoque por sector, la de <a href="/industrias/diseno-web-turismo-hoteles-panama/">diseño web para turismo y hoteles</a>. Los precios de referencia están en <a href="/precios/">precios</a>.',
+          'Escribe en un documento los tours que ofreces, qué incluye cada uno, el precio por persona, el depósito y la política de cancelación. Si eso no está claro en papel, no se puede construir bien en la web.',
+          'Con eso se decide cuánto del flujo se automatiza y cuánto se confirma a mano. Las opciones de agenda están en nuestra página de <a href="/funcionalidades/sistemas-reservas-citas-online-panama/">sistemas de reservas y citas en línea</a>, el enfoque por sector en la de <a href="/industrias/diseno-web-turismo-hoteles-panama/">diseño web para turismo y hoteles</a> y los precios de referencia en <a href="/precios/">precios</a>.',
         ],
       },
       {
@@ -128,22 +127,22 @@ export const blog39: PageData[] = [
     },
     lead: [
       'Para medir bien los leads de WhatsApp y de formulario hay que separar cuatro cosas que suelen mezclarse: el clic en el botón, la conversación que realmente empieza, el lead calificado y la venta. GA4 sirve para ver las dos primeras desde la web; el CRM es donde se registran las últimas dos.',
-      'Aquí explicamos qué eventos definir, cuándo dispararlos, qué datos nunca deben viajar a la analítica, cómo deduplicar con un identificador opaco y por qué la atribución siempre será imperfecta. No prometemos cifras: prometemos un método para que los números que tengas signifiquen algo.',
+      'Aquí explicamos qué eventos definir, cuándo dispararlos, qué datos nunca deben viajar a la analítica, cómo deduplicar con un identificador opaco y por qué la atribución siempre será imperfecta. Es un método para que tus números signifiquen algo, no una promesa de cifras.',
     ],
     blocks: [
       {
         type: 'prose',
         h2: 'Un clic en WhatsApp no es una conversación, y una conversación no es una venta',
         paragraphs: [
-          'El error más común es contar cada clic en el botón de WhatsApp como un lead. Alguien puede hacer clic y no enviar nada, enviar un «hola» y desaparecer, o preguntar por algo que tu negocio no ofrece. Ninguno de esos casos es una venta en camino, aunque los tres aparezcan igual en un reporte.',
-          'Lo que sí puedes medir con rigor es una escalera de etapas, cada una más estricta que la anterior: clic en WhatsApp, conversación iniciada, lead calificado y venta. Entre una etapa y la siguiente se pierde gente, y ese es justo el dato útil: te dice dónde mejorar, no solo cuánto ruido entra.',
+          'El error más común es contar cada clic en el botón de WhatsApp como un lead. Alguien puede hacer clic y no enviar nada, enviar un «hola» y desaparecer, o preguntar por algo que tu negocio no ofrece. Los tres aparecen igual en un reporte, y ninguno es una venta en camino.',
+          'Lo que sí puedes medir con rigor es una escalera de etapas, cada una más estricta que la anterior: clic en WhatsApp, conversación iniciada, lead calificado y venta. La gente que se pierde entre una etapa y la siguiente es el dato útil: te dice dónde mejorar.',
           'Si aún estás decidiendo qué medir en tu sitio en general, empieza por nuestra guía de <a href="/blog/como-medir-los-resultados-de-tu-pagina-web/">cómo medir los resultados de tu página web</a>.',
         ],
       },
       {
         type: 'cards',
-        h2: 'Las etapas y dónde se mide cada una',
-        intro: 'Cada etapa tiene un lugar natural donde se registra. Forzar todas en GA4 es lo que produce reportes que nadie cree.',
+        h2: '¿Qué etapas de un lead se miden en GA4 y cuáles en el CRM?',
+        intro: 'Cada etapa tiene un lugar natural donde se registra. Forzarlas todas en GA4 produce reportes que nadie cree.',
         items: [
           { h3: 'click_whatsapp', text: 'Se dispara en la web cuando alguien pulsa el botón. Es una señal de interés, no un lead. Se registra en GA4.' },
           { h3: 'form_start', text: 'Se dispara cuando la persona empieza a llenar el formulario. Sirve para ver cuánta gente abandona antes de enviar. Se registra en GA4.' },
@@ -154,20 +153,20 @@ export const blog39: PageData[] = [
       },
       {
         type: 'steps',
-        h2: 'Cómo implementarlo paso a paso',
+        h2: '¿Cómo medir leads de WhatsApp con GA4 y un CRM, paso a paso?',
         intro: 'No exige herramientas raras: exige disciplina en qué se dispara y cuándo.',
         items: [
-          { h3: '1. Define los eventos por escrito', text: 'Antes de tocar código, anota el nombre, el momento exacto en que se dispara y qué significa. Que el equipo comercial y quien implementa entiendan lo mismo.' },
+          { h3: '1. Define los eventos por escrito', text: 'Antes de tocar código, anota el nombre, el momento exacto en que se dispara y qué significa, para que el equipo comercial y quien implementa entiendan lo mismo.' },
           { h3: '2. Dispara generate_lead solo con confirmación del backend', text: 'Si lo disparas al pulsar «enviar», contarás envíos fallidos, duplicados y spam. Espera a que el servidor confirme la recepción.' },
-          { h3: '3. Genera un ID opaco por consulta', text: 'Un identificador aleatorio, sin significado, que se envía tanto a GA4 como al CRM. Sirve para no contar dos veces la misma consulta y para cruzar el evento de la web con el registro del CRM.' },
-          { h3: '4. Registra el lead en el CRM con su origen', text: 'Guarda la fuente, la página de entrada y ese ID. Añade un campo para que quien atiende marque si el lead fue calificado.' },
-          { h3: '5. Cierra el ciclo con la venta', text: 'Cuando una consulta termina en venta, se marca en el CRM. Con eso puedes mirar, por origen, cuántas consultas terminaron en cliente.' },
+          { h3: '3. Genera un ID opaco por consulta', text: 'Un identificador aleatorio, sin significado, que se envía tanto a GA4 como al CRM. Evita contar dos veces la misma consulta y permite cruzar el evento de la web con el registro del CRM.' },
+          { h3: '4. Registra el lead en el CRM con su origen', text: 'Guarda la fuente, la página de entrada y ese ID, y un campo para que quien atiende marque si el lead fue calificado.' },
+          { h3: '5. Cierra el ciclo con la venta', text: 'Cuando una consulta termina en venta, se marca en el CRM. Con eso ves, por origen, cuántas consultas terminaron en cliente.' },
         ],
       },
       {
         type: 'checklist',
-        h2: 'Qué no debe viajar nunca a la analítica',
-        intro: 'GA4 no es un lugar para datos personales. Además de riesgo legal, es una mala práctica que ensucia los reportes.',
+        h2: '¿Qué datos no deben viajar nunca a GA4?',
+        intro: 'GA4 no es un lugar para datos personales: además del riesgo legal, ensucia los reportes.',
         items: [
           'Nombre de la persona',
           'Correo electrónico',
@@ -181,18 +180,18 @@ export const blog39: PageData[] = [
         type: 'prose',
         h2: 'Compara periodos equivalentes y acepta que la atribución es imperfecta',
         paragraphs: [
-          'Comparar una semana con otra, o un mes con un mes distinto, sin ajustar por lo que cambió, lleva a conclusiones falsas. Compara ventanas equivalentes: mismo número de días, mismos días de la semana y, si tu negocio es estacional, el mismo periodo de otro año. Y anota qué cambió en el sitio o en las campañas en cada ventana.',
-          'La atribución tampoco es exacta. Alguien puede ver tu anuncio en el celular, buscarte después desde la computadora del trabajo y escribirte por WhatsApp una semana más tarde. La analítica verá tráfico directo o de búsqueda de marca, y el crédito quedará mal repartido. No es un error de tu configuración: es una limitación de medir a través de dispositivos, navegadores y bloqueadores.',
-          'Por eso conviene complementar los datos con una pregunta simple al cliente: «¿cómo nos conociste?». Puede ser un campo en el formulario o algo que el equipo pregunta y anota en el CRM. Es un dato subjetivo, pero suele rescatar orígenes que la analítica no ve, como una recomendación o una publicación compartida por un contacto.',
+          'Comparar una semana con otra, o un mes con otro distinto, sin ajustar por lo que cambió lleva a conclusiones falsas. Compara ventanas equivalentes: mismo número de días, mismos días de la semana y, si tu negocio es estacional, el mismo periodo de otro año. Anota qué cambió en el sitio o en las campañas en cada ventana.',
+          'La atribución tampoco es exacta. Alguien puede ver tu anuncio en el celular, buscarte después desde la computadora del trabajo y escribirte por WhatsApp una semana más tarde: la analítica verá tráfico directo o de búsqueda de marca. No es un error de configuración, sino un límite de medir a través de dispositivos, navegadores y bloqueadores.',
+          'Por eso conviene preguntarle al cliente «¿cómo nos conociste?», en un campo del formulario o anotado en el CRM por el equipo. Es un dato subjetivo, pero rescata orígenes que la analítica no ve, como una recomendación o una publicación compartida por un contacto.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene montar todo esto',
+        h2: '¿Cuándo no conviene montar todo esto?',
         paragraphs: [
-          'Si recibes muy pocas consultas al mes, un sistema de eventos, ID y CRM puede ser más trabajo que valor. Con anotar en una hoja de cálculo cada consulta, su origen y si terminó en venta, ya sabes bastante.',
-          'Tampoco conviene si nadie va a revisar los números ni a marcar los leads en el CRM: un dato que no se completa engaña más de lo que ayuda. Y si el sitio todavía cambia cada semana, es mejor estabilizar la estructura antes de definir los eventos, porque cada cambio los rompe.',
-          'Si estás en ese punto, empieza por lo mínimo: un contador de clics, un registro manual y una revisión mensual. Crece cuando el volumen lo justifique.',
+          'Si recibes muy pocas consultas al mes, un sistema de eventos, ID y CRM puede ser más trabajo que valor: una hoja de cálculo con cada consulta, su origen y si terminó en venta ya dice bastante.',
+          'Tampoco conviene si nadie va a revisar los números ni a marcar los leads en el CRM: un dato incompleto engaña más de lo que ayuda. Y si el sitio cambia cada semana, estabiliza la estructura antes de definir los eventos, porque cada cambio los rompe.',
+          'En ese punto, empieza por lo mínimo: un contador de clics, un registro manual y una revisión mensual. Crece cuando el volumen lo justifique.',
         ],
       },
       {
@@ -235,22 +234,14 @@ export const blog39: PageData[] = [
       alt: 'Calculadora, cuaderno y computadora portátil sobre un escritorio mientras se estima el presupuesto de un sitio web',
     },
     lead: [
-      'El costo de una página web para un negocio de Miami contratando a una agencia en Panamá se calcula sumando cinco cosas: la implementación, el hosting y el dominio, el mantenimiento, el contenido y los impuestos que apliquen. Nuestros precios de implementación parten de $550 (Landing), $1,250 (Web empresarial), $1,950 (E-commerce) y $2,900 (a medida), en dólares.',
-      'No vamos a citar rangos de mercado de Miami ni de agencias locales, porque no los tenemos verificados y un número inventado no te sirve para decidir. Sí te damos un método y nuestros precios reales, para que armes tu propio presupuesto y lo compares con cualquier otra cotización.',
+      'El costo de una página web para un negocio de Miami que contrata a una agencia en Panamá se calcula sumando cinco cosas: implementación, hosting y dominio, mantenimiento, contenido e impuestos aplicables. En Elemento Web, la implementación parte de $550 (Landing), $1,250 (Web empresarial), $1,950 (E-commerce) y $2,900 (a medida), en dólares.',
+      'No citamos rangos de mercado de Miami ni de agencias locales, porque no los tenemos verificados y un número inventado no sirve para decidir. Te damos un método y nuestros precios reales, para que armes tu presupuesto y lo compares con cualquier otra cotización.',
     ],
     blocks: [
       {
-        type: 'prose',
-        h2: 'Qué sumar para saber el costo real',
-        paragraphs: [
-          'Cuando alguien pregunta «cuánto cuesta una web», normalmente recibe el precio de construirla. Pero el costo real de tener una web funcionando incluye más cosas, y compararlas por separado es lo que evita sorpresas.',
-          'Estas son las partes que conviene sumar al comparar cotizaciones, sean nuestras o de cualquier otra agencia.',
-        ],
-      },
-      {
         type: 'checklist',
-        h2: 'Los cinco componentes del presupuesto',
-        intro: 'Pide que cada cotización los muestre por separado. Si uno viene «incluido», pregunta qué cubre exactamente.',
+        h2: '¿Qué componentes suma el costo real de una web?',
+        intro: 'El precio de construir el sitio es solo una parte. Pide que cada cotización, nuestra o de otra agencia, muestre estos cinco componentes por separado; si uno viene «incluido», pregunta qué cubre exactamente.',
         items: [
           'Implementación: el diseño y la construcción del sitio, un pago que se hace una vez',
           'Hosting y dominio: la infraestructura donde vive la web y su dirección, con costo recurrente',
@@ -261,7 +252,7 @@ export const blog39: PageData[] = [
       },
       {
         type: 'cards',
-        h2: 'Nuestros precios de implementación',
+        h2: '¿Cuánto cuesta la implementación de una página web para un negocio en Miami?',
         intro: 'Son precios propios, en dólares estadounidenses. Cada proyecto se cotiza según su alcance real.',
         items: [
           { h3: 'Landing: $550', text: 'Una página enfocada en una oferta o servicio, pensada para recibir consultas. Es el punto de partida más sencillo.' },
@@ -274,33 +265,33 @@ export const blog39: PageData[] = [
         type: 'prose',
         h2: 'Infraestructura y mantenimiento: lo que se paga cada año o cada mes',
         paragraphs: [
-          'La implementación se paga una vez, pero una web necesita dónde vivir y alguien que la cuide. Nuestra infraestructura parte desde $350 al año, y el mantenimiento desde $99 al mes. Puedes ver el detalle en las páginas de <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura</a> y de <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento web</a>.',
-          'Al comparar con otra cotización, suma estos costos recurrentes a lo largo de un año. Una implementación barata con mantenimiento caro, o sin mantenimiento definido, puede resultar más costosa que otra opción con el precio inicial más alto.',
+          'Una web necesita dónde vivir y alguien que la cuide. Nuestra infraestructura parte desde $350 al año y el mantenimiento desde $99 al mes. El detalle está en las páginas de <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura</a> y de <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento web</a>.',
+          'Al comparar cotizaciones, suma estos costos recurrentes a lo largo de un año. Una implementación barata con mantenimiento caro, o sin mantenimiento definido, puede salir más cara que una opción con precio inicial más alto.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cómo funciona contratar desde Panamá: facturación en USD e impuestos',
+        h2: '¿Cómo se factura desde Panamá a un negocio de Miami?',
         paragraphs: [
-          'Elemento Web factura desde Panamá y en dólares estadounidenses. Para un negocio de Miami eso significa que no hay conversión de moneda en el precio, y que el trabajo se coordina de forma remota, en español, por videollamada, correo y WhatsApp.',
-          'Sobre los impuestos: no afirmamos ninguna exención ni tratamiento especial de forma general. Cómo aplican los impuestos a tu caso depende de tu situación y de cómo se factura, y lo confirmamos por escrito en la cotización, antes de que pagues nada. Si tu contador necesita revisarlo, mejor que lo haga con la cotización en la mano.',
-          'Si buscas el enfoque para tu ciudad, revisa la página de <a href="/miami/">diseño web para Miami</a> y la de <a href="/miami/diseno-web-en-miami-en-espanol/">diseño web en Miami en español</a>. Los precios completos están en <a href="/precios/">precios</a>.',
+          'Elemento Web factura desde Panamá y en dólares estadounidenses: sin conversión de moneda en el precio. El trabajo se coordina de forma remota, en español, por videollamada, correo y WhatsApp.',
+          'No afirmamos ninguna exención ni tratamiento especial de impuestos de forma general. Cómo aplican a tu caso depende de tu situación y de cómo se factura, y lo confirmamos por escrito en la cotización, antes de que pagues nada. Si tu contador necesita revisarlo, mejor con la cotización en la mano.',
+          'El enfoque para tu ciudad está en las páginas de <a href="/miami/">diseño web para Miami</a> y de <a href="/miami/diseno-web-en-miami-en-espanol/">diseño web en Miami en español</a>. Los precios completos, en <a href="/precios/">precios</a>.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cómo comparar contra otras cotizaciones sin adivinar',
+        h2: '¿Cómo comparar contra otras cotizaciones sin adivinar?',
         paragraphs: [
-          'Con los cinco componentes en una tabla propia, la comparación se vuelve mecánica. Anota, para cada cotización, cuánto cuesta la implementación, cuánto se paga al año por hosting y dominio, cuánto al mes por mantenimiento, qué contenido está incluido y qué impuestos se suman.',
+          'Con los cinco componentes en una tabla propia, la comparación se vuelve mecánica: para cada cotización anota implementación, pago anual de hosting y dominio, pago mensual de mantenimiento, contenido incluido e impuestos que se suman.',
           'Añade dos preguntas que no son de precio pero pesan mucho: quién es el dueño del sitio y del dominio al terminar, y qué pasa si dejas de pagar el mantenimiento. Una cotización que no responde eso con claridad no está lista para compararse.',
         ],
       },
       {
         type: 'prose',
-        h2: 'Cuándo NO conviene contratar a una agencia remota desde Panamá',
+        h2: '¿Cuándo no conviene contratar a una agencia remota desde Panamá?',
         paragraphs: [
-          'Si necesitas reuniones presenciales frecuentes con tu proveedor, o si tu negocio exige que el equipo esté en Estados Unidos por razones contractuales o de cumplimiento, una agencia remota no es la mejor opción.',
-          'Tampoco conviene si tu prioridad es un sitio principalmente en inglés con textos de marketing escritos por un redactor nativo: nuestro punto fuerte es el español. Y si tu presupuesto es muy bajo, quizá empezar con una plataforma de plantillas sea más sensato que una web hecha por una agencia. Preferimos decírtelo antes de cotizar.',
+          'Si necesitas reuniones presenciales frecuentes con tu proveedor, o si tu negocio exige que el equipo esté en Estados Unidos por razones contractuales o de cumplimiento.',
+          'Tampoco si tu prioridad es un sitio principalmente en inglés con textos de marketing de un redactor nativo: nuestro punto fuerte es el español. Y con un presupuesto muy bajo, empezar con una plataforma de plantillas puede ser más sensato que una web hecha por una agencia. Preferimos decírtelo antes de cotizar.',
         ],
       },
       {

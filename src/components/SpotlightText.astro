@@ -1,0 +1,79 @@
+---
+/* Texto «linterna» (D58): un texto grande casi invisible sobre fondo oscuro que, al pasar el ratón, muestra un relieve
+   metálico alrededor del cursor. Sin WebGL: un filtro SVG (máscara del texto → desenfoque → luz especular de un
+   fePointLight → recorte al texto → mezcla con el texto base). Una luz puntual no se apaga con la distancia y hace
+   brillar bordes lejanos, así que la capa iluminada va además bajo una máscara radial centrada en el cursor: esa es la
+   caída suave hacia los bordes.
+   El JS (src/scripts/spotlight.ts) arranca cuando la franja se acerca a la pantalla, mueve la luz y la
+   máscara con requestAnimationFrame y se detiene cuando llegan. Sin JS, con «reducir movimiento» o con data-mov-off
+   el texto queda quieto y tenue. En pantallas táctiles la luz recorre el texto sola mientras está a la vista.
+   Las medidas van en unidades del viewBox: el ancho sale del largo del texto y textLength lo ajusta exacto, así el
+   alto se reserva desde el HTML y no hay salto de diseño. */
+interface Props {
+  text: string;
+  /** Tamaño de letra en unidades del viewBox (el SVG escala al ancho del contenedor). */
+  fontSize?: number;
+  class?: string;
+}
+const { text, fontSize = 200, class: cls = '' } = Astro.props;
+const pad = Math.round(fontSize * 0.12);
+const ancho = Math.round(text.length * fontSize * 0.56);
+const vbW = ancho + pad * 2;
+const vbH = Math.round(fontSize * 1.08);
+const base = Math.round(fontSize * 0.84);
+const radio = Math.round(fontSize * 1.15);
+// Id estable (el build es determinista): sale del texto; dos instancias con el mismo texto comparten un filtro igual.
+const id = `ew-spot-${text.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+---
+<div class={`ew-spot ${cls}`} data-spot>
+  <svg viewBox={`0 0 ${vbW} ${vbH}`} width="100%" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id={id} x="0" y="0" width={vbW} height={vbH} filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        {/* El relleno base es casi transparente: se sube el alfa para tener la forma completa del texto. */}
+        <feComponentTransfer in="SourceAlpha" result="forma"><feFuncA type="linear" slope="40" /></feComponentTransfer>
+        <feGaussianBlur in="forma" stdDeviation={fontSize * 0.018} result="relieve" />
+        <feSpecularLighting in="relieve" surfaceScale="5" specularConstant="0" specularExponent="36" lighting-color="#ffffff" result="brillo">
+          <fePointLight x={vbW / 2} y={vbH / 2} z={fontSize * 0.5} />
+        </feSpecularLighting>
+        <feComposite in="brillo" in2="forma" operator="in" result="brilloTexto" />
+        <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="brilloTexto" /></feMerge>
+      </filter>
+      <radialGradient id={`${id}-caida`}>
+        <stop offset="0" stop-color="#fff" />
+        <stop offset="0.45" stop-color="#fff" stop-opacity="0.55" />
+        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+      </radialGradient>
+      <mask id={`${id}-mascara`} maskUnits="userSpaceOnUse" x="0" y="0" width={vbW} height={vbH}>
+        <circle class="ew-spot__foco" cx={vbW / 2} cy={vbH / 2} r={radio} fill={`url(#${id}-caida)`} />
+      </mask>
+    </defs>
+    <text class="ew-spot__base" x={pad} y={base} textLength={ancho} lengthAdjust="spacingAndGlyphs" font-size={fontSize}>{text}</text>
+    <text class="ew-spot__luz" x={pad} y={base} textLength={ancho} lengthAdjust="spacingAndGlyphs" font-size={fontSize} filter={`url(#${id})`} mask={`url(#${id}-mascara)`}>{text}</text>
+  </svg>
+</div>
+
+<script>
+  /* El efecto (unos 700 B) va en el bundle de la página: pedirlo con import() metía el ayudante de precarga de Vite en
+     cada página y pesaba más que el efecto. Arranca recién cuando la franja se acerca a la pantalla. */
+  import { montar } from '../scripts/spotlight';
+  const raices = document.querySelectorAll<HTMLElement>('[data-spot]');
+  if (raices.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entradas) => {
+      for (const e of entradas) {
+        if (!e.isIntersecting) continue;
+        io.unobserve(e.target);
+        montar(e.target as HTMLElement);
+      }
+    }, { rootMargin: '300px 0px' });
+    raices.forEach((r) => io.observe(r));
+  }
+</script>
+
+<style>
+  .ew-spot { line-height: 0; user-select: none; }
+  .ew-spot svg { display: block; height: auto; overflow: visible; }
+  .ew-spot text { font-family: inherit; font-weight: 800; }
+  /* Sin contorno: Roboto variable tiene trazos que se cruzan dentro de las letras y el stroke los dibuja. */
+  .ew-spot__base { fill: rgba(255, 255, 255, 0.035); }
+  .ew-spot__luz { fill: rgba(255, 255, 255, 0.02); }
+</style>

@@ -28,18 +28,17 @@ export const saasPages: PageData[] = [
       { label: 'Ver servicios web', href: '/servicios/' },
     ],
     lead: [
-      'No solo diseñamos webs: operamos tres productos SaaS con clientes reales. Esa es la vara técnica con la que construimos lo tuyo.',
-      'Una agencia entrega y se va; si la arquitectura era frágil, el costo lo descubre el cliente meses después. Cuando operas tu propio software, cada atajo técnico te cobra factura a ti: el servidor caído, la madrugada de soporte, el cliente molesto. Esa disciplina aprendida a golpes es la que aplicamos en cada proyecto de diseño web.',
+      'Software SaaS hecho en Panamá: operamos tres productos propios con clientes reales. Cuando operas tu propio software, cada atajo técnico te cobra a ti, y esa disciplina es la que aplicamos en cada proyecto de marketing, IA y diseño web.',
     ],
     blocks: [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Operamos tres productos de software propios, hechos en Panamá y en producción: WazaCRM, el CRM para WhatsApp con IA desde $349 al mes; NousCRM, para cotizar, facturar y cobrar por WhatsApp; y Cifrao, software contable con conciliación y cuentas por cobrar. Se contratan por suscripción y sin desarrollo a medida.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, opera tres productos de software propios en producción: WazaCRM, el CRM para WhatsApp con IA desde $349 al mes; NousCRM, para cotizar, facturar y cobrar por WhatsApp; y Cifrao, software contable con conciliación bancaria y cuentas por cobrar. Se contratan por suscripción mensual, sin desarrollo a medida.',
       },
       {
         type: 'tabla',
-        h2: 'Cuál necesitas',
+        h2: 'Software SaaS en Panamá: cuál necesitas',
         intro: 'Se usan por separado o juntos, y se suman cuando el negocio lo pide:',
         columnas: ['Si necesitas…', 'Producto', 'Precio'],
         filas: [
@@ -67,15 +66,6 @@ export const saasPages: PageData[] = [
         nota: 'Muchos negocios empiezan con uno y suman los demás cuando lo necesitan.',
       },
       {
-        type: 'cards',
-        h2: 'Los tres productos',
-        items: [
-          { h3: 'WazaCRM', text: 'CRM de WhatsApp con IA: atiende, cotiza, agenda y cobra dentro del chat, con embudo de ventas y bandeja compartida detrás.', link: { slug: 'saas/wazacrm', label: 'Conocer WazaCRM' } },
-          { h3: 'NousCRM', text: 'Cotizaciones y facturas con tu logo que el cliente abre desde WhatsApp, con abonos y cobros pendientes en una sola lista.', link: { slug: 'saas/nouscrm', label: 'Conocer NousCRM' } },
-          { h3: 'Cifrao', text: 'Software contable para empresas en Panamá: facturación, conciliación y cuentas por cobrar que avisan solas.', link: { slug: 'saas/cifrao', label: 'Conocer Cifrao' } },
-        ],
-      },
-      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -92,26 +82,25 @@ export const saasPages: PageData[] = [
       {
         type: 'cards',
         h2: 'Para quién es cada producto',
-        intro: 'Los tres resuelven problemas distintos. Esta es la forma corta de saber por dónde empezar.',
+        intro: 'Los tres resuelven problemas distintos. Así sabes por dónde empezar.',
         items: [
-          { h3: 'Te escriben más de lo que puedes atender', text: 'Si WhatsApp e Instagram se te llenan de las mismas preguntas y pierdes mensajes, empieza por WazaCRM: la IA responde lo repetitivo y tu equipo atiende lo que vale.', link: { slug: 'saas/wazacrm', label: 'Ver WazaCRM' } },
-          { h3: 'Cotizas en Word y cobras de memoria', text: 'Si armas cada cotización desde cero y no sabes quién te debe, NousCRM la convierte en factura con un clic y ordena los cobros pendientes en una lista.', link: { slug: 'saas/nouscrm', label: 'Ver NousCRM' } },
-          { h3: 'No sabes cuánto ganas ni cómo cierra el mes', text: 'Si la contabilidad completa vive en una hoja de cálculo que nadie concilia, Cifrao pone gastos, conciliación bancaria e informes en un sistema que sí avisa.', link: { slug: 'saas/cifrao', label: 'Ver Cifrao' } },
+          { h3: 'Te escriben más de lo que puedes atender', text: 'Si WhatsApp e Instagram se te llenan de las mismas preguntas y pierdes mensajes, empieza por WazaCRM: la IA responde lo repetitivo dentro del chat, el embudo y la bandeja compartida ordenan el resto, y tu equipo atiende lo que vale.', link: { slug: 'saas/wazacrm', label: 'Ver WazaCRM' } },
+          { h3: 'Cotizas en Word y cobras de memoria', text: 'Si armas cada cotización desde cero y no sabes quién te debe, NousCRM la genera con tu logo, la convierte en factura con un clic, registra abonos y ordena los cobros pendientes en una lista que el cliente ve desde WhatsApp.', link: { slug: 'saas/nouscrm', label: 'Ver NousCRM' } },
+          { h3: 'No sabes cuánto ganas ni cómo cierra el mes', text: 'Si la contabilidad completa vive en una hoja de cálculo que nadie concilia, Cifrao pone facturación, gastos, conciliación bancaria e informes en un sistema que avisa cuando una cuenta por cobrar vence.', link: { slug: 'saas/cifrao', label: 'Ver Cifrao' } },
         ],
       },
       {
         type: 'prose',
         h2: 'Software propio y diseño web: por qué van juntos',
         paragraphs: [
-          'Una web bien hecha capta la atención, pero la atención sin proceso se evapora. El visitante pregunta, nadie responde a tiempo y la venta se enfría. Por eso construimos productos que continúan lo que la web empieza: la página trae al cliente, WazaCRM lo atiende, NousCRM cotiza y cobra, y Cifrao lleva la contabilidad completa.',
-          'Cuando la misma casa diseña tu sitio y opera tu software, las piezas encajan sin parches. El chat de la web habla el mismo idioma que tu CRM, y las integraciones no dependen de un plugin de terceros que se rompe en la próxima actualización.',
-          'No es obligatorio contratarlo todo. Puedes tomar solo el <a href="/servicios/">servicio de diseño web</a>, solo un SaaS, o combinarlos a tu ritmo. Lo que no cambia es la vara: el mismo cuidado técnico con el que mantenemos software en producción es el que va en cada línea de tu proyecto.',
+          'Una web capta la atención, pero sin proceso detrás la venta se enfría: el visitante pregunta y nadie responde a tiempo. Por eso nuestros productos continúan lo que la web empieza: la página trae al cliente, WazaCRM lo atiende, NousCRM cotiza y cobra, y Cifrao lleva la contabilidad.',
+          'Cuando la misma casa diseña tu sitio y opera tu software, el chat de la web habla el mismo idioma que tu CRM y las integraciones no dependen de un plugin de terceros que se rompe en la próxima actualización. Puedes tomar solo el <a href="/servicios/">servicio de diseño web</a>, solo un SaaS, o combinarlos a tu ritmo.',
         ],
       },
       {
         type: 'steps',
         h2: 'Cómo es empezar con nosotros',
-        intro: 'Sin contratos eternos ni sorpresas: primero entendemos tu operación, luego proponemos.',
+        intro: 'Primero entendemos tu operación; luego proponemos.',
         items: [
           { h3: '1. Demostración con tus datos', text: 'Agendas por <a href="/contacto/">contacto</a> y te mostramos el producto con ejemplos de tu rubro, no una demo genérica. Si no calza con lo que necesitas, te lo decimos.' },
           { h3: '2. Configuración y conexión', text: 'Verificamos tu número oficialmente en Meta cuando aplica, entrenamos la IA con tus documentos o migramos tus datos, y conectamos los canales. Tú apruebas cada paso.' },
@@ -161,7 +150,7 @@ export const saasPages: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'WazaCRM es nuestro CRM para WhatsApp con IA, hecho en Panamá: un agente que atiende, cotiza, agenda y cobra con la API oficial de Meta, una bandeja compartida para WhatsApp, Instagram, Facebook y el chat web, y un embudo de ventas que ordena cada oportunidad hasta el pago. Desde $349 al mes, en marcha en unas 2 semanas.',
+        text: 'WazaCRM es el CRM para WhatsApp de Elemento Web, hecho en Ciudad de Panamá: un agente que atiende, cotiza, agenda y cobra con la API oficial de Meta, una bandeja para WhatsApp, Instagram, Facebook y chat web, y un embudo que sigue cada oportunidad hasta el pago. Desde $349 al mes; en marcha en unas 2 semanas.',
       },
       {
         type: 'receipt',
@@ -254,18 +243,15 @@ export const saasPages: PageData[] = [
         type: 'prose',
         h2: 'La IA que admite lo que no sabe',
         paragraphs: [
-          'El asistente responde únicamente desde los documentos que apruebas: precios, requisitos, políticas, preguntas frecuentes. Cuando el dato no está, lo dice con claridad y deriva a tu equipo.',
-          'Ese límite es deliberado. <strong>Un asistente que inventa destruye en una conversación la confianza que costó años construir.</strong> Preferimos que derive de más.',
-          'Y la conexión con WhatsApp e Instagram usa las APIs oficiales de Meta: la verificación de tu número se hace por el canal oficial.',
+          'El asistente de WazaCRM responde únicamente desde los documentos que apruebas: precios, requisitos, políticas, preguntas frecuentes. Cuando el dato no está, lo dice y deriva a tu equipo. <strong>Un asistente que inventa destruye en una conversación la confianza que costó años construir</strong>, así que preferimos que derive de más.',
+          'La conexión con WhatsApp e Instagram usa las APIs oficiales de Meta, y la verificación de tu número se hace por el canal oficial.',
         ],
       },
       {
         type: 'prose',
         h2: 'Cuándo un asistente no es la solución',
         paragraphs: [
-          'Vale más decirlo antes: hay negocios donde montar un asistente de IA no compensa, y conviene reconocerlo para no gastar en la herramienta equivocada.',
-          'Si recibes pocas consultas al mes, el trabajo de armar y mantener el contenido cuesta más que las horas que ahorra. Si cada consulta es distinta y requiere criterio (proyectos a medida, casos técnicos complejos), el asistente va a derivar casi todo a una persona y solo añade un paso.',
-          'Y si tu problema real no es el volumen de preguntas sino que nadie contesta, un asistente lo tapa sin resolverlo: la conversación va a llegar igual a un equipo que no responde.',
+          'Un asistente de IA no compensa con pocas consultas al mes, cuando cada consulta requiere criterio (proyectos a medida, casos técnicos complejos) o cuando el problema real es que nadie contesta: en esos casos solo añade un paso o tapa el problema.',
           '<strong>Donde sí rinde es en el patrón opuesto:</strong> muchas consultas repetidas, con respuestas que ya existen, llegando a toda hora. Ahí un asistente devuelve horas reales desde la primera semana.',
         ],
       },
@@ -273,10 +259,8 @@ export const saasPages: PageData[] = [
         type: 'prose',
         h2: 'Qué hay que preparar antes de encenderlo',
         paragraphs: [
-          'El proyecto no es técnico, es de contenido, y esa parte la conoce el negocio mejor que nadie.',
-          'Hace falta reunir las respuestas a lo que de verdad se pregunta: precios o rangos, horarios, ubicación, qué incluye cada servicio, plazos, formas de pago, cobertura, política de cambios. No en formato de folleto, sino como respuestas directas.',
-          'También hay que definir los límites: qué temas no debe tocar, cuándo debe pasar a una persona, y qué tono usa. Y quién recibe las conversaciones derivadas, con qué horario, porque una derivación que nadie atiende es peor que no derivar.',
-          'La forma más rápida de armar todo eso es revisar las últimas conversaciones reales del negocio. <strong>Ahí está, con las palabras exactas de los clientes, todo lo que el asistente necesita saber.</strong>',
+          'El trabajo previo no es técnico, es de contenido: respuestas directas a lo que de verdad se pregunta (precios o rangos, horarios, ubicación, qué incluye cada servicio, plazos, formas de pago, cobertura, política de cambios) y los límites: qué temas no toca, qué tono usa, cuándo pasa a una persona y quién recibe esas derivaciones, con qué horario.',
+          'La forma más rápida de armarlo es revisar las últimas conversaciones reales del negocio. <strong>Ahí está, con las palabras exactas de los clientes, todo lo que el asistente necesita saber.</strong>',
         ],
       },
       {
@@ -363,7 +347,7 @@ export const saasPages: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'NousCRM es nuestro sistema para cotizar, facturar y cobrar, hecho en Panamá: cotizaciones con tu logo y numeración, factura con un clic al aceptarse, abonos y saldo pendiente calculados solos, y recordatorios de cobro listos para enviar. Tu cliente abre todo desde WhatsApp sin crear cuenta. No emite la factura electrónica de la DGI.',
+        text: 'NousCRM es el sistema de Elemento Web, hecho en Ciudad de Panamá, para cotizar, facturar y cobrar: cotizaciones con tu logo y numeración, factura con un clic al aceptarse, abonos y saldo calculados solos y recordatorios de cobro listos. Tu cliente abre todo desde WhatsApp sin crear cuenta. No emite la factura electrónica de la DGI.',
       },
       {
         type: 'receipt',
@@ -440,25 +424,16 @@ export const saasPages: PageData[] = [
         type: 'prose',
         h2: 'Lo que NousCRM no hace',
         paragraphs: [
-          'Vale más decirlo de entrada: NousCRM lleva tus cotizaciones y tus cobros, pero no emite la factura electrónica que exige la DGI. Esa se sigue emitiendo por un proveedor autorizado (PAC) o por el facturador gratuito de la DGI, y eso es aparte.',
+          'NousCRM lleva tus cotizaciones y tus cobros, pero no emite la factura electrónica que exige la DGI: esa se sigue emitiendo por un proveedor autorizado (PAC) o por el facturador gratuito de la DGI, aparte.',
           'Tampoco reemplaza a tu contador. Ordena la información (cuánto facturaste, quién debe, desde cuándo) para que tu contador o el de <a href="/saas/cifrao/">Cifrao</a> trabajen con datos limpios, no con una carpeta de comprobantes sueltos.',
-          '<strong>Preferimos decir esto antes que prometerlo todo</strong> y que lo descubras en el peor momento: a mitad de una declaración.',
         ],
       },
       {
         type: 'prose',
         h2: 'El cliente no necesita cuenta para pagar',
         paragraphs: [
-          'La mayoría de los sistemas de facturación piden que el cliente cree una cuenta para ver su factura. En Panamá, donde casi todo pasa por WhatsApp, ese paso extra es la razón por la que la gente termina pagando tarde: no por falta de dinero, sino porque abrir el enlace, registrarse y buscar el documento es más trabajo del que vale una factura pequeña.',
+          'Muchos sistemas de facturación piden que el cliente cree una cuenta para ver su factura. En Panamá, donde casi todo pasa por WhatsApp, ese paso extra hace que la gente pague tarde: abrir el enlace, registrarse y buscar el documento es más trabajo del que vale una factura pequeña.',
           'NousCRM manda la cotización o la factura directo al chat. El cliente la abre, la ve con tu logo y tu numeración, y responde sin pasar por ningún formulario. <strong>Menos fricción para pagar es, en la práctica, cobrar más rápido.</strong>',
-        ],
-      },
-      {
-        type: 'prose',
-        h2: 'Para quién tiene más de una empresa',
-        paragraphs: [
-          'Es común en Panamá que un mismo dueño opere dos o tres razones sociales: la empresa de servicios, el negocio aparte, la sociedad para el local nuevo. Llevar cada una en su propia hoja de cálculo multiplica el trabajo y el margen de error.',
-          'NousCRM separa cada empresa con su marca, su numeración y sus propios clientes, pero todo se administra desde una sola cuenta. Cambias de empresa sin cambiar de sistema ni de contraseña.',
         ],
       },
       {
@@ -467,7 +442,7 @@ export const saasPages: PageData[] = [
         intro: 'Para negocios de Panamá que todavía cotizan en Word o Excel y cobran de memoria.',
         items: [
           { h3: 'Negocios que cotizan seguido', text: 'Si armas una cotización nueva cada vez desde cero, NousCRM la genera con tu logo y tu numeración, y la convierte en factura con un clic cuando el cliente acepta.' },
-          { h3: 'Dueños con varias empresas', text: 'Cada razón social con su propia marca y numeración, todas administradas desde una sola cuenta, sin duplicar hojas de cálculo.' },
+          { h3: 'Dueños con varias empresas', text: 'Es común en Panamá operar dos o tres razones sociales. Cada una lleva su marca, su numeración y sus clientes, y todas se administran desde una sola cuenta: cambias de empresa sin cambiar de sistema ni de contraseña.' },
           { h3: 'Quien no sabe quién le debe', text: 'Las facturas pendientes aparecen ordenadas por antigüedad, con el recordatorio de cobro ya escrito para enviar por WhatsApp.' },
         ],
       },
@@ -542,7 +517,7 @@ export const saasPages: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-13',
-        text: 'Cifrao es nuestro software contable para empresas en Panamá: facturación, cuentas por cobrar con antigüedad de saldos y avisos de vencimiento, conciliación bancaria, gastos e informes de resultados, con usuarios por rol y auditoría de cada movimiento. Tu contador entra con su propio acceso. Licencia mensual según usuarios y volumen.',
+        text: 'Cifrao es el software contable de Elemento Web, hecho en Ciudad de Panamá para empresas panameñas: facturación, cuentas por cobrar con antigüedad de saldos y avisos, conciliación bancaria, gastos e informes, con usuarios por rol y auditoría de cada movimiento. Tu contador entra con su propio acceso. Licencia mensual según usuarios y volumen.',
       },
       {
         type: 'receipt',
@@ -610,7 +585,7 @@ export const saasPages: PageData[] = [
       },
       {
         type: 'includes',
-        h2: 'Qué hace Cifrao',
+        h2: 'Qué hace Cifrao, el software contable',
         intro: 'Licencia mensual según usuarios y volumen; la migración inicial de datos se cotiza según el estado de tus registros.',
         incluye: [
           { t: 'Facturas', d: 'Emisión y control.' },
@@ -630,30 +605,24 @@ export const saasPages: PageData[] = [
         type: 'prose',
         h2: 'Lo que un software contable no reemplaza',
         paragraphs: [
-          'Conviene decirlo de entrada porque evita una expectativa que termina en frustración: Cifrao no sustituye a tu contador.',
-          'Un software ordena, registra y calcula. Lo que no hace es interpretar. Decidir cómo se clasifica una operación poco común, cómo se aprovecha un tratamiento fiscal, o qué conviene ante un requerimiento son cosas de criterio profesional, y equivocarse ahí cuesta bastante más que la licencia de cualquier programa.',
-          'Lo que sí cambia es el trabajo que llega al contador. En vez de una caja de facturas y una hoja de cálculo con errores, recibe información ya ordenada y consistente. Eso reduce sus horas, reduce lo que te cobra y reduce los errores que se descubren tarde.',
-          '<strong>La forma correcta de verlo:</strong> el software es para el trabajo repetitivo, el contador para el criterio.',
+          'Cifrao no sustituye a tu contador. Un software ordena, registra y calcula, pero no interpreta: clasificar una operación poco común o responder un requerimiento es criterio profesional, y equivocarse ahí cuesta más que cualquier licencia.',
+          'Lo que cambia es el trabajo que le llega: información ordenada y consistente en vez de una caja de facturas. Eso reduce sus horas, lo que te cobra y los errores que se descubren tarde. <strong>El software es para el trabajo repetitivo; el contador, para el criterio.</strong>',
         ],
       },
       {
         type: 'prose',
         h2: 'La migración de datos es la parte que se subestima',
         paragraphs: [
-          'Cambiar de sistema contable no falla por el sistema nuevo: falla por lo que había en el viejo.',
-          'Los saldos iniciales tienen que cuadrar, el catálogo de cuentas suele necesitar limpieza, y casi siempre aparecen datos históricos incompletos o inconsistentes que nadie había mirado en años. Ese trabajo de ordenamiento es real y hay que contarlo en el plan.',
-          'También hay que decidir cuánta historia se migra. Traer diez años de movimientos suele ser innecesario y caro; lo habitual es migrar saldos y el ejercicio en curso, y dejar lo anterior accesible como archivo de consulta.',
-          'Y el momento importa. <strong>El inicio de un periodo fiscal es el mejor momento para cambiar</strong>; hacerlo a mitad de año obliga a mantener dos sistemas en paralelo y duplica el trabajo justo cuando menos tiempo hay.',
+          'Cambiar de sistema contable no falla por el sistema nuevo, sino por lo que había en el viejo: saldos iniciales que deben cuadrar, un catálogo de cuentas que pide limpieza y datos históricos inconsistentes. Ese ordenamiento hay que contarlo en el plan.',
+          'Traer diez años de movimientos suele ser innecesario y caro; lo habitual es migrar saldos y el ejercicio en curso, y dejar lo anterior como archivo de consulta. <strong>El inicio de un periodo fiscal es el mejor momento para cambiar</strong>: a mitad de año obliga a mantener dos sistemas en paralelo.',
         ],
       },
       {
         type: 'prose',
         h2: 'Qué medir cuando el sistema ya está funcionando',
         paragraphs: [
-          'La pregunta correcta no es cuántas facturas registró, sino cuánto tiempo devolvió y cuántos errores dejaron de ocurrir.',
-          'El primer número es el tiempo de cierre mensual: cuántos días tardaba antes en cerrarse el mes y cuántos tarda ahora. Es la medida más directa del beneficio.',
-          'El segundo son las correcciones: cuántos asientos hubo que corregir después de registrados. Si ese número no baja, el problema no es el sistema, es el proceso de captura o quién lo hace.',
-          'Y el tercero, el más fácil de olvidar: cuánta información se sigue llevando fuera del sistema, en hojas de cálculo paralelas. <strong>Esas hojas son la señal de que algo no está resuelto</strong>, y suelen ser la fuente de las diferencias que aparecen al cierre.',
+          'Tres números dicen si el sistema funciona: los días que tarda el cierre mensual frente a antes, los asientos corregidos después de registrados (si no bajan, el problema es el proceso de captura, no el sistema) y la información que se sigue llevando en hojas de cálculo paralelas.',
+          '<strong>Esas hojas paralelas son la señal de que algo no está resuelto</strong>, y suelen ser la fuente de las diferencias que aparecen al cierre.',
         ],
       },
       {

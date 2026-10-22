@@ -19,8 +19,13 @@ export const casos: PageData[] = [
     ],
     blocks: [
       {
+        type: 'answer',
+        text: 'Elemento Web, agencia de marketing digital y diseño web en Ciudad de Panamá, documenta cuatro proyectos publicados: TramitaPa (visas, 2025), San Blas Full (tours con depósito, 2025), KL Contable (contabilidad, 2026) y Panama International Movers (mudanzas, 2025). Cada caso dice qué medimos; las cifras se publican solo con periodo y fuente.',
+        fecha: '2026-10-22',
+      },
+      {
         type: 'cards',
-        h2: 'Proyectos',
+        h2: 'Casos de éxito de diseño web en Panamá',
         items: [
           { h3: 'TramitaPa', text: 'Trámites de visa · 2025. TramitaPa ofrece trámites y asesoría de visa. Necesitaba una página que explicara el servicio y llevara a la persona a una conversación por WhatsApp sin pasos de más.', link: { slug: 'casos-de-exito/tramitapa', label: 'Ver caso TramitaPa' } },
           { h3: 'San Blas Full', text: 'Turismo · Tours · 2025. San Blas Full vende tours de un día a San Blas a viajeros de distintos países. El sitio tenía que permitirles elegir el tour, reservar y pagar un depósito en pocos minutos.', link: { slug: 'casos-de-exito/san-blas-full', label: 'Ver caso San Blas Full' } },
@@ -32,8 +37,8 @@ export const casos: PageData[] = [
         type: 'prose',
         h2: 'Cómo documentamos un caso',
         paragraphs: [
-          'Cada caso parte del problema del negocio, explica qué construimos y define de antemano qué se mide. Los resultados solo se publican cuando existe una medición con periodo y fuente, con el permiso del cliente.',
-          'Si quieres ver más proyectos, el <a href="/portafolio/">portafolio</a> reúne todos los sitios que hemos publicado, con enlace a cada uno en vivo.',
+          'Cada caso parte del problema del negocio, explica qué construimos y define de antemano qué se mide. Los resultados solo se publican con una medición que tenga periodo y fuente, y con el permiso del cliente.',
+          'El <a href="/portafolio/">portafolio</a> reúne todos los sitios publicados, con enlace a cada uno en vivo.',
         ],
       },
       { type: 'related', items: [{ slug: 'portafolio', label: 'Portafolio' }, { slug: 'precios', label: 'Precios' }, { slug: 'nosotros', label: 'Nosotros' }] },
@@ -50,6 +55,7 @@ export const casos: PageData[] = [
     breadcrumb: 'TramitaPa',
     lead: ['TramitaPa ofrece trámites y asesoría de visa. Necesitaba una página que explicara el servicio y llevara a la persona a una conversación por WhatsApp sin pasos de más.'],
     blocks: [
+      { type: 'answer', text: 'TramitaPa, servicio de trámites y asesoría de visa en Panamá, encargó a Elemento Web, agencia de Ciudad de Panamá, un sitio a medida publicado en 2025 con una sola acción: escribir por WhatsApp. El sitio explica el servicio, resuelve dudas frecuentes antes del contacto y mantiene el botón de WhatsApp visible en todo el recorrido.', fecha: '2026-10-22' },
       { type: 'prose', h2: 'El problema', paragraphs: ['Un servicio de trámites vive de consultas. Quien busca una visa quiere saber rápido si puedes ayudarle y cómo empezar; una web larga o un formulario frío le hace perder el interés.'] },
       {
         type: 'checklist',
@@ -61,8 +67,7 @@ export const casos: PageData[] = [
           'Botón de WhatsApp visible en todo el recorrido',
         ],
       },
-      { type: 'prose', h2: 'El sitio en vivo', paragraphs: ['TramitaPa · Trámites de visa · 2025. <a href="https://tramitapa.com" target="_blank" rel="noopener">Visitar tramitapa.com</a>.'] },
-      { type: 'prose', h2: 'La solución en funcionamiento', paragraphs: ['El sitio está publicado y puedes recorrerlo en el enlace de arriba. Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: consultas calificadas recibidas por WhatsApp. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
+      { type: 'prose', h2: 'El sitio en vivo y qué medimos', paragraphs: ['TramitaPa · Trámites de visa · 2025. <a href="https://tramitapa.com" target="_blank" rel="noopener">Visitar tramitapa.com</a>.', 'Todavía no publicamos cifras de este proyecto. Lo que medimos: consultas calificadas recibidas por WhatsApp. Cuando esté documentado, con periodo y fuente, lo añadimos aquí.'] },
       {
         type: 'related',
         items: [
@@ -85,6 +90,7 @@ export const casos: PageData[] = [
     breadcrumb: 'San Blas Full',
     lead: ['San Blas Full vende tours de un día a San Blas a viajeros de distintos países. El sitio tenía que permitirles elegir el tour, reservar y pagar un depósito en pocos minutos.'],
     blocks: [
+      { type: 'answer', text: 'San Blas Full vende tours de un día a San Blas a viajeros de distintos países. Elemento Web, agencia de Ciudad de Panamá, construyó en 2025 su sitio multi-idioma con selector de tour, reserva con depósito para asegurar el cupo y soporte por WhatsApp, para que el viajero elija y reserve en pocos minutos.', fecha: '2026-10-22' },
       { type: 'prose', h2: 'El problema', paragraphs: ['El viajero compara varias opciones a la vez y decide rápido. Si no entiende qué tour elegir o cómo reservar, se va a otra oferta.'] },
       {
         type: 'checklist',
@@ -96,8 +102,7 @@ export const casos: PageData[] = [
           'Soporte por WhatsApp para resolver dudas antes de reservar',
         ],
       },
-      { type: 'prose', h2: 'El sitio en vivo', paragraphs: ['San Blas Full · Turismo · Tours · 2025. <a href="https://sanblasfull.com" target="_blank" rel="noopener">Visitar sanblasfull.com</a>.'] },
-      { type: 'prose', h2: 'La solución en funcionamiento', paragraphs: ['El sitio está publicado y puedes recorrerlo en el enlace de arriba. Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: reservas con depósito. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
+      { type: 'prose', h2: 'El sitio en vivo y qué medimos', paragraphs: ['San Blas Full · Turismo · Tours · 2025. <a href="https://sanblasfull.com" target="_blank" rel="noopener">Visitar sanblasfull.com</a>.', 'Todavía no publicamos cifras de este proyecto. Lo que medimos: reservas con depósito. Cuando esté documentado, con periodo y fuente, lo añadimos aquí.'] },
       {
         type: 'related',
         items: [
@@ -120,6 +125,7 @@ export const casos: PageData[] = [
     breadcrumb: 'KL Contable',
     lead: ['KL Contable es una firma de contabilidad en Panamá. Su web tenía que explicar con claridad qué servicios ofrece y ayudar a cada tipo de cliente a encontrar el suyo.'],
     blocks: [
+      { type: 'answer', text: 'KL Contable es una firma de contabilidad en Panamá. Elemento Web, agencia de Ciudad de Panamá, diseñó en 2026 su web corporativa con diez servicios explicados por separado, guías por tipo de cliente, una calculadora de Seguro Social y un blog propio para posicionar búsquedas específicas.', fecha: '2026-10-22' },
       { type: 'prose', h2: 'El problema', paragraphs: ['Los servicios contables se parecen entre sí y el cliente rara vez sabe cuál necesita. Una web que solo lista servicios no ayuda a decidir.'] },
       {
         type: 'checklist',
@@ -131,8 +137,7 @@ export const casos: PageData[] = [
           'Blog propio para publicar contenido y posicionar por búsquedas específicas',
         ],
       },
-      { type: 'prose', h2: 'El sitio en vivo', paragraphs: ['KL Contable · Contabilidad · 2026. <a href="https://klcontable.com" target="_blank" rel="noopener">Visitar klcontable.com</a>.'] },
-      { type: 'prose', h2: 'La solución en funcionamiento', paragraphs: ['El sitio está publicado y puedes recorrerlo en el enlace de arriba. Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: consultas por servicio y posicionamiento de las páginas de servicio y del blog. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
+      { type: 'prose', h2: 'El sitio en vivo y qué medimos', paragraphs: ['KL Contable · Contabilidad · 2026. <a href="https://klcontable.com" target="_blank" rel="noopener">Visitar klcontable.com</a>.', 'Todavía no publicamos cifras de este proyecto. Lo que medimos: consultas por servicio y posicionamiento de las páginas de servicio y del blog. Cuando esté documentado, con periodo y fuente, lo añadimos aquí.'] },
       {
         type: 'related',
         items: [
@@ -155,6 +160,7 @@ export const casos: PageData[] = [
     breadcrumb: 'Panama International Movers',
     lead: ['Panama International Movers es una empresa familiar de mudanzas internacionales que opera desde 1990. Su web debía ordenar una oferta amplia y facilitar pedir una cotización.'],
     blocks: [
+      { type: 'answer', text: 'Panama International Movers, empresa familiar de mudanzas internacionales que opera desde 1990, tiene una web de Elemento Web (Ciudad de Panamá, 2025) que ordena más de 30 servicios: marítimo, aéreo, autos, mascotas y oficinas. Incluye un mapa de destinos y cotización por WhatsApp desde cualquier página.', fecha: '2026-10-22' },
       { type: 'prose', h2: 'El problema', paragraphs: ['Con más de 30 servicios, el riesgo es que el cliente se pierda. Una mudanza internacional depende del destino, la carga y el medio de transporte, así que la cotización arranca con esos datos.'] },
       {
         type: 'checklist',
@@ -166,8 +172,7 @@ export const casos: PageData[] = [
           'Diseño responsive para quien cotiza desde el celular',
         ],
       },
-      { type: 'prose', h2: 'El sitio en vivo', paragraphs: ['Panama International Movers · Mudanzas internacionales · 2025. <a href="https://panamainternationalmovers.com" target="_blank" rel="noopener">Visitar panamainternationalmovers.com</a>.'] },
-      { type: 'prose', h2: 'La solución en funcionamiento', paragraphs: ['El sitio está publicado y puedes recorrerlo en el enlace de arriba. Todavía no publicamos cifras de este proyecto. Lo que vamos a medir: cotizaciones recibidas por ruta y tipo de carga. Cuando esté documentado, con su periodo y su fuente, lo añadimos aquí.'] },
+      { type: 'prose', h2: 'El sitio en vivo y qué medimos', paragraphs: ['Panama International Movers · Mudanzas internacionales · 2025. <a href="https://panamainternationalmovers.com" target="_blank" rel="noopener">Visitar panamainternationalmovers.com</a>.', 'Todavía no publicamos cifras de este proyecto. Lo que medimos: cotizaciones recibidas por ruta y tipo de carga. Cuando esté documentado, con periodo y fuente, lo añadimos aquí.'] },
       {
         type: 'related',
         items: [

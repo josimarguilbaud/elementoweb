@@ -15,8 +15,13 @@ export const recursos: PageData[] = [
     ],
     blocks: [
       {
+        type: 'answer',
+        text: 'Elemento Web, agencia de marketing digital y diseño web en Ciudad de Panamá, publica tres recursos gratuitos y sin registro: una calculadora que suma proyecto, infraestructura, mantenimiento e ITBMS a 12 y 36 meses; un checklist de migración SEO en tres fases; y una comparativa entre web a medida y suscripción mensual con nuestras tarifas publicadas.',
+        fecha: '2026-10-22',
+      },
+      {
         type: 'cards',
-        h2: 'Qué puedes usar',
+        h2: 'Recursos para planear tu web en Panamá',
         items: [
           { h3: 'Calculadora de costo total', text: 'Suma proyecto, infraestructura, mantenimiento e impuesto a 12 y 36 meses, y compárala con una suscripción. Todo se calcula en tu navegador.', link: { slug: 'recursos/calculadora-costo-total-web', label: 'Abrir la calculadora' } },
           { h3: 'Checklist de migración SEO', text: 'Qué hacer antes, durante y después de rediseñar o migrar una web para cuidar tu posicionamiento.', link: { slug: 'recursos/checklist-migracion-seo', label: 'Ver el checklist' } },
@@ -36,16 +41,19 @@ export const recursos: PageData[] = [
     breadcrumb: 'Checklist de migración SEO',
     heroImage: { src: '/images/hero/recursos--checklist-migracion-seo.jpg', alt: 'Pared mitad recién pintada de blanco y mitad con yeso viejo y agrietado, metáfora del antes y después de rediseñar una web' },
     lead: [
-      'Una lista por fases para cambiar de diseño, dominio o plataforma cuidando lo que ya tienes en Google.',
-      'Úsala como guía de trabajo: cada punto se marca cuando está hecho. Al final encuentras las preguntas más comunes.',
+      'Un checklist de migración SEO por fases para cambiar de diseño, dominio o plataforma cuidando lo que ya tienes en Google.',
     ],
     blocks: [
       {
+        type: 'answer',
+        text: 'Para migrar o rediseñar una web sin perder posicionamiento, Elemento Web (Ciudad de Panamá) sigue tres fases: antes, inventario de URLs y línea base de Search Console; durante, un mapa de redirecciones 301 de un solo salto hacia contenido equivalente; después, monitoreo de 404 e indexación por varias semanas y redirecciones vigentes al menos un año.',
+        fecha: '2026-10-22',
+      },
+      {
         type: 'prose',
-        h2: 'Antes de empezar',
+        h2: 'Por qué una migración SEO pierde tráfico',
         paragraphs: [
-          'Cuando una web cambia de estructura, Google tiene que volver a entender qué página es cuál. Casi todo lo que se pierde en una migración se pierde por no haber registrado lo que existía o por no haber redirigido bien.',
-          '<strong>Aviso:</strong> ninguna migración está libre de riesgo, y es normal ver fluctuaciones temporales de tráfico en las primeras semanas mientras Google reprocesa el sitio. Esta lista reduce el riesgo; no lo elimina.',
+          'Cuando una web cambia de estructura, Google tiene que volver a entender qué página es cuál. Casi todo lo que se pierde en una migración se pierde por no haber registrado lo que existía o por no haber redirigido bien. Esta lista reduce el riesgo; no lo elimina.',
         ],
       },
       {
@@ -135,16 +143,20 @@ export const recursos: PageData[] = [
     breadcrumb: 'Web a medida vs suscripción',
     heroImage: { src: '/images/hero/comparativas--web-a-medida-vs-suscripcion.jpg', alt: 'Fachada moderna de concreto y vidrio vista desde abajo con palmas en la esquina, al comparar web a medida y suscripción' },
     lead: [
-      'Dos formas de tener un sitio: pagar un proyecto una vez o pagar una cuota cada mes.',
-      'Ninguna es mejor en todos los casos. Esta comparativa muestra en qué se diferencian y cuándo conviene cada una, incluyendo las situaciones en que la suscripción es la mejor opción.',
+      'Web a medida o suscripción mensual: dos formas de tener un sitio, pagar un proyecto una vez o pagar una cuota cada mes. Ninguna es mejor en todos los casos.',
     ],
     blocks: [
       {
+        type: 'answer',
+        text: 'Una web a medida se paga una vez y queda a nombre de tu empresa; una suscripción reparte el costo en cuotas y vive en la plataforma del proveedor. Con las tarifas de Elemento Web (Ciudad de Panamá), una Web empresarial suma $1,600 a 12 meses y $2,300 a 36. La suscripción conviene si hay poco presupuesto inicial.',
+        fecha: '2026-10-22',
+      },
+      {
         type: 'prose',
-        h2: 'Cómo leer esta comparativa',
+        h2: 'Cómo leer esta comparativa de web a medida vs suscripción',
         paragraphs: [
-          'Hablamos de dos modelos. En el primero se paga un proyecto único, como el que ofrece Elemento Web, y después solo la infraestructura anual y, si se quiere, un plan de mantenimiento. En el segundo se paga una cuota mensual por usar un constructor de sitios (del tipo Wix o Squarespace) o un plan mensual de agencia.',
-          'Somos parte interesada: vendemos proyectos únicos. Por eso no citamos precios de otros proveedores ni rangos de mercado, porque no tenemos datos verificables de ellos y cambian con frecuencia. Donde hablamos de suscripciones usamos una variable ilustrativa, y donde hablamos de Elemento Web usamos solo nuestras tarifas publicadas. Antes de decidir, revisa los términos vigentes de cada proveedor.',
+          'En el primer modelo se paga un proyecto único, como el que ofrece Elemento Web, y después solo la infraestructura anual y, si se quiere, un plan de mantenimiento. En el segundo se paga una cuota mensual por usar un constructor de sitios (del tipo Wix o Squarespace) o un plan mensual de agencia.',
+          'Somos parte interesada: vendemos proyectos únicos. Por eso no citamos precios ni rangos de otros proveedores, que cambian con frecuencia y no podemos verificar. Para las suscripciones usamos una variable ilustrativa; para Elemento Web, solo nuestras tarifas publicadas. Revisa los términos vigentes de cada proveedor antes de decidir.',
         ],
       },
       {
@@ -166,7 +178,7 @@ export const recursos: PageData[] = [
         h2: 'La cuenta a 12 y 36 meses',
         paragraphs: [
           '<strong>Suscripción (ejemplo ilustrativo, no es un precio real):</strong> si una suscripción costara X al mes, en 12 meses serían 12×X y en 36 meses serían 36×X. Sustituye X por la cuota real que te cotice el proveedor y suma lo que no venga incluido (dominio, correo, extensiones, comisiones), si aplica.',
-          '<strong>Elemento Web (tarifas publicadas, sin ITBMS del 7%):</strong> proyecto único más infraestructura anual desde $350, que incluye dominio, hosting cloud y certificado SSL. El mantenimiento desde $99/mes es opcional y se suma solo si lo contratas.',
+          '<strong>Elemento Web (tarifas publicadas, sin ITBMS del 7%):</strong> proyecto único más infraestructura anual desde $350 (dominio, hosting cloud y certificado SSL). El mantenimiento es opcional y se suma solo si lo contratas.',
         ],
       },
       {
@@ -205,7 +217,7 @@ export const recursos: PageData[] = [
         h2: 'Qué muestra la cuenta y qué no',
         paragraphs: [
           'Con este método, el punto de equilibrio depende de un solo dato: la cuota real X. Si 12×X es menor que el total a 12 meses del proyecto que te interesa, la suscripción sale más barata el primer año; para saber qué pasa después, compara 36×X con el total a 36 meses. La cuenta solo cubre dinero: no valora la propiedad, la salida ni los límites, que también cuentan.',
-          'Las tarifas de Elemento Web las puedes revisar completas en <a href="/precios/">precios</a>. Recuerda que no incluyen ITBMS (7%).',
+          'Las tarifas completas, sin ITBMS, están en <a href="/precios/">precios</a>.',
         ],
       },
       {

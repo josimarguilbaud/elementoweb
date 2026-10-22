@@ -14,9 +14,10 @@ export const clusters: PageData[] = [
     breadcrumb: 'Guías',
     lead: ['Más de 70 guías ordenadas por tema. Elige el tuyo y sigue de lo general a lo específico.'],
     blocks: [
+      { type: 'answer', text: 'Las guías de Elemento Web, agencia de marketing digital y diseño web en Ciudad de Panamá, reúnen más de 70 artículos en siete temas: diseño web y precios, tiendas online y pagos, SEO, WhatsApp e IA, marketing y pauta, Miami e industrias. Cada tema enlaza primero a su página de servicio y luego a sus guías.', fecha: '2026-10-22' },
       {
         type: 'cards',
-        h2: 'Temas',
+        h2: 'Guías por tema para negocios en Panamá y Miami',
         items: [
           { h3: 'Guías para planear tu web en Panamá: precios y decisiones', text: 'Todas las guías para decidir tu web en Panamá: cuánto cuesta cada tipo de sitio, cuánto tarda, cómo elegir agencia y plataforma, y qué errores evitar.', link: { slug: 'guias/diseno-web-panama', label: 'Ver las guías de diseño web en panamá' } },
           { h3: 'Guías de tiendas online y pagos en Panamá', text: 'Guías para crear y hacer crecer una tienda online en Panamá: cuánto cuesta, Yappy y otros métodos de pago, Shopify o WooCommerce y carritos abandonados.', link: { slug: 'guias/tiendas-online-y-pagos', label: 'Ver las guías de tiendas online y pagos' } },
@@ -40,10 +41,10 @@ export const clusters: PageData[] = [
     breadcrumb: 'Diseño web en Panamá',
     lead: ['Las guías que responden las preguntas de quien está por contratar una web: costo, plazos, plataforma, agencia y errores comunes. Empieza por la página principal y sigue por lo que necesites.'],
     blocks: [
+      { type: 'answer', text: 'Esta sección reúne 17 guías de Elemento Web, agencia de Ciudad de Panamá, para planear una web: cuánto cuesta cada formato (landing desde $550, corporativo desde $1,250, a medida desde $2,900), cuánto tarda, cómo elegir agencia, plataforma, dominio y hosting, y qué errores evitar antes de contratar.', fecha: '2026-10-22' },
       {
         type: 'cards',
         h2: 'Empieza aquí',
-        intro: 'Las páginas principales del tema.',
         items: [
           { h3: 'Diseño Web en Panamá | Páginas que Consiguen Clientes', text: 'Diseño web en Panamá para empresas que quieren vender: sitios corporativos, tiendas online y landing pages. SEO, WhatsApp y precio cerrado desde $1,250.', link: { slug: 'diseno-web-panama', label: 'Ver la página' } },
           { h3: 'Precios de páginas web en Panamá: Landing, PYME y E-commerce', text: 'Precios de diseño web en Panamá: landing desde $550, sitio corporativo desde $1,250 y tienda online desde $1,950. Qué incluye cada uno, qué se paga aparte y cómo se paga.', link: { slug: 'precios', label: 'Ver la página' } },
@@ -53,7 +54,7 @@ export const clusters: PageData[] = [
       },
       {
         type: 'cards',
-        h2: 'Guías del tema',
+        h2: 'Guías de diseño web en Panamá: costo, plazos y decisiones',
         items: [
           { h3: '¿Cuánto cuesta una página web en Panamá? Guía de precios 2026', text: 'Rangos reales de precio para una página web en Panamá según el tipo de proyecto, qué encarece una web y por qué lo barato termina saliendo más caro.', link: { slug: 'blog/cuanto-cuesta-diseno-web-panama', label: 'Leer la guía' } },
           { h3: 'Cuánto cuesta una landing page en Panamá', text: 'Una landing page con Elemento Web cuesta $550 sin ITBMS. Qué incluye, qué se paga aparte y cuándo una landing no es lo que tu negocio necesita.', link: { slug: 'blog/cuanto-cuesta-una-landing-page-panama', label: 'Leer la guía' } },
@@ -87,10 +88,10 @@ export const clusters: PageData[] = [
     breadcrumb: 'Tiendas online y pagos',
     lead: ['Desde crear la tienda hasta cobrar y recuperar ventas: las guías sobre e-commerce y medios de pago que se usan en Panamá.'],
     blocks: [
+      { type: 'answer', text: 'Siete guías de Elemento Web, agencia de Ciudad de Panamá, explican cómo crear y hacer crecer una tienda online en Panamá: cuánto cuesta (desde $1,950 sin ITBMS), cómo cobrar con Yappy y tarjeta, Shopify o WooCommerce, cómo aumentar ventas y cómo recuperar carritos abandonados.', fecha: '2026-10-22' },
       {
         type: 'cards',
         h2: 'Empieza aquí',
-        intro: 'Las páginas principales del tema.',
         items: [
           { h3: 'Tiendas Online en Panamá | E-commerce con Yappy y Pasarelas', text: 'Desarrollo de tiendas online en Panamá: catálogo, carrito, Yappy, pasarelas de pago locales y envíos. E-commerce que sí vende.', link: { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Ver la página' } },
           { h3: 'Integrar Yappy en tu Página Web | Pasarelas de Pago Panamá', text: 'Integramos el Botón de Pago Yappy y pasarelas con tarjeta en tu página web o tienda online. Cobra en línea como pagan los panameños.', link: { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Ver la página' } },
@@ -98,7 +99,7 @@ export const clusters: PageData[] = [
       },
       {
         type: 'cards',
-        h2: 'Guías del tema',
+        h2: 'Guías de tiendas online y pagos en Panamá',
         items: [
           { h3: 'Cómo crear una tienda online en Panamá: guía completa 2026', text: 'Guía paso a paso para crear tu tienda online en Panamá: plataforma, catálogo, pagos con Yappy, envíos y logística local.', link: { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Leer la guía' } },
           { h3: 'Cuánto cuesta una tienda online en Panamá', text: 'Una tienda online con Elemento Web parte desde $1,950 sin ITBMS. Qué define el precio final, qué se paga aparte y cuándo una tienda no te conviene.', link: { slug: 'blog/cuanto-cuesta-tienda-online-panama', label: 'Leer la guía' } },
@@ -122,10 +123,10 @@ export const clusters: PageData[] = [
     breadcrumb: 'SEO y posicionamiento',
     lead: ['Lo que se puede y no se puede prometer en SEO, y cómo trabajarlo con método: palabras clave, SEO local, velocidad y medición.'],
     blocks: [
+      { type: 'answer', text: 'Diez guías de Elemento Web, agencia de Ciudad de Panamá, explican el SEO y posicionamiento web en Panamá sin prometer el primer lugar: cómo funciona el ranking, palabras clave locales, SEO local y Google Business Profile, velocidad y Core Web Vitals, medición de leads con GA4 y un checklist de migración.', fecha: '2026-10-22' },
       {
         type: 'cards',
         h2: 'Empieza aquí',
-        intro: 'Las páginas principales del tema.',
         items: [
           { h3: 'SEO y Posicionamiento Web en Panamá | Tráfico que Compra', text: 'Posicionamiento SEO en Panamá: contenido, técnica y autoridad para aparecer en Google donde busca tu cliente. Sin promesas mágicas.', link: { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'Ver la página' } },
           { h3: 'SEO Local y Google Maps en Panamá | Aparece Donde te Buscan', text: 'SEO local en Panamá: optimizamos tu ficha de Google, reseñas y presencia en Maps para que te encuentren cuando buscan tu servicio cerca.', link: { slug: 'crecimiento/seo-local-google-maps-panama', label: 'Ver la página' } },
@@ -133,7 +134,7 @@ export const clusters: PageData[] = [
       },
       {
         type: 'cards',
-        h2: 'Guías del tema',
+        h2: 'Guías de SEO y posicionamiento web en Panamá',
         items: [
           { h3: 'Cómo aparecer primero en Google en Panamá: guía real de SEO', text: 'Guía honesta para aparecer primero en Google en Panamá: cómo funciona el ranking, qué contenido y autoridad necesitas y en cuánto tiempo esperar resultados.', link: { slug: 'blog/como-aparecer-primero-en-google-en-panama', label: 'Leer la guía' } },
           { h3: 'SEO para pymes en Panamá: guía práctica para empezar', text: 'Guía de SEO para pymes en Panamá: pasos accionables con poco presupuesto, palabras clave locales, contenido útil y tu ficha de Google. Empieza hoy.', link: { slug: 'blog/seo-para-pymes-en-panama-guia', label: 'Leer la guía' } },
@@ -160,10 +161,10 @@ export const clusters: PageData[] = [
     breadcrumb: 'WhatsApp, IA y automatización',
     lead: ['Cómo atender más rápido, no perder consultas y ordenar las ventas con WhatsApp, inteligencia artificial y automatizaciones.'],
     blocks: [
+      { type: 'answer', text: 'Nueve guías de Elemento Web, agencia de marketing digital y proyectos de IA en Ciudad de Panamá, explican cómo vender por WhatsApp, usar chatbots con IA que responden con tu información real, automatizar el seguimiento con n8n y CRM, y hacer campañas masivas con la API oficial de Meta y plantillas aprobadas.', fecha: '2026-10-22' },
       {
         type: 'cards',
         h2: 'Empieza aquí',
-        intro: 'Las páginas principales del tema.',
         items: [
           { h3: 'Inteligencia Artificial para Empresas en Panamá', text: 'Ecosistema de IA privado para tu empresa en Panamá: base de conocimiento (RAG) y automatización de procesos 24/7, siempre con control humano.', link: { slug: 'inteligencia-artificial-para-empresas-panama', label: 'Ver la página' } },
           { h3: 'Chatbot con IA para tu Página Web | WazaCRM Panamá', text: 'Chatbot con inteligencia artificial para tu web: responde con tu información real, capta datos y deriva a WhatsApp. Con WazaCRM, nuestro producto.', link: { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Ver la página' } },
@@ -171,7 +172,7 @@ export const clusters: PageData[] = [
       },
       {
         type: 'cards',
-        h2: 'Guías del tema',
+        h2: 'Guías de WhatsApp, IA y automatización',
         items: [
           { h3: 'Cómo vender por WhatsApp en Panamá y no perder ventas', text: 'Aprende a vender por WhatsApp en Panamá sin perder ventas: WhatsApp Business, catálogo, respuestas rápidas, conectar tu web y automatizar con un chatbot de IA.', link: { slug: 'blog/como-vender-por-whatsapp-en-panama', label: 'Leer la guía' } },
           { h3: 'Chatbots con IA para negocios en Panamá', text: 'Qué es un chatbot con IA, en qué se diferencia del bot de botones, casos reales en Panamá y cómo integrarlo con tu web y tu WhatsApp sin complicarte.', link: { slug: 'blog/chatbots-con-ia-para-negocios-en-panama', label: 'Leer la guía' } },
@@ -197,10 +198,10 @@ export const clusters: PageData[] = [
     breadcrumb: 'Marketing y pauta',
     lead: ['Decisiones de pauta y marketing explicadas sin promesas: dónde conviene invertir, cuánto y cómo medirlo.'],
     blocks: [
+      { type: 'answer', text: 'Cuatro guías de Elemento Web, agencia de marketing digital en Ciudad de Panamá, ayudan a decidir la pauta: Google Ads o Facebook Ads según la intención de compra, cuánto invertir en la fase de prueba, email marketing con lista propia y contenido por pilares para redes, siempre medido con conversiones reales.', fecha: '2026-10-22' },
       {
         type: 'cards',
         h2: 'Empieza aquí',
-        intro: 'Las páginas principales del tema.',
         items: [
           { h3: 'Marketing Digital y Pauta en Panamá | Google, Meta y Más', text: 'Marketing digital en Panamá: Google Ads, Facebook e Instagram Ads, contenido para redes, email marketing y automatizaciones. Fee claro, tu inversión aparte.', link: { slug: 'marketing', label: 'Ver la página' } },
           { h3: 'Agencia de Google Ads en Panamá | Gestión de Campañas', text: 'Gestión de Google Ads en Panamá: búsqueda, display y remarketing. Aparece cuando tu cliente busca. Fee de gestión claro, tu inversión va directo a Google.', link: { slug: 'marketing/google-ads-panama', label: 'Ver la página' } },
@@ -208,7 +209,7 @@ export const clusters: PageData[] = [
       },
       {
         type: 'cards',
-        h2: 'Guías del tema',
+        h2: 'Guías de marketing digital y pauta en Panamá',
         items: [
           { h3: 'Google Ads vs Facebook Ads: cuál conviene en Panamá', text: 'Google Ads vs Facebook Ads en Panamá: intención de compra vs descubrimiento, cuándo usar cada uno, cómo repartir el presupuesto y por qué conviene combinarlos.', link: { slug: 'blog/google-ads-vs-facebook-ads-en-panama', label: 'Leer la guía' } },
           { h3: '¿Cuánto invertir en publicidad digital en Panamá?', text: 'Cómo definir tu presupuesto de publicidad digital en Panamá: costo por lead, fase de prueba y cuánto arriesgar al inicio.', link: { slug: 'blog/cuanto-invertir-en-publicidad-digital-en-panama', label: 'Leer la guía' } },
@@ -229,10 +230,10 @@ export const clusters: PageData[] = [
     breadcrumb: 'Diseño web para Miami',
     lead: ['Para negocios de Miami-Dade que operan en español: costo, cómo elegir agencia y qué debe tener la web. Trabajamos remoto desde Panamá, en dólares.'],
     blocks: [
+      { type: 'answer', text: 'Tres guías de Elemento Web para negocios hispanos de Miami-Dade: cuánto cuesta una web con una agencia remota con sede en Ciudad de Panamá, cómo elegir agencia si operas en español y qué debe tener el sitio: WhatsApp, precio visible, SEO local, versión bilingüe y velocidad en celular. Sin oficina en Miami.', fecha: '2026-10-22' },
       {
         type: 'cards',
         h2: 'Empieza aquí',
-        intro: 'Las páginas principales del tema.',
         items: [
           { h3: 'Diseño Web en Miami en Español', text: 'Agencia de diseño web para negocios hispanos de Miami-Dade. Mismo huso horario, mismo precio en USD, soporte 100% en español. Sede en Panamá, servicio remoto.', link: { slug: 'miami', label: 'Ver la página' } },
           { h3: 'Diseño Web en Miami en Español | Sin Sobreprecio de Agencia de EE.UU.', text: 'Diseño web para negocios hispanos de Miami: mismo huso horario, mismo precio en USD, soporte 100% en español. Sede en Panamá, servicio remoto, sin intermediarios.', link: { slug: 'miami/diseno-web-en-miami-en-espanol', label: 'Ver la página' } },
@@ -242,7 +243,7 @@ export const clusters: PageData[] = [
       },
       {
         type: 'cards',
-        h2: 'Guías del tema',
+        h2: 'Guías de diseño web para negocios hispanos de Miami',
         items: [
           { h3: 'Cuánto cuesta una página web para un negocio en Miami', text: 'Cómo calcular el costo de una web para tu negocio en Miami con una agencia remota en Panamá: qué sumar, precios propios en USD e impuestos.', link: { slug: 'blog/cuanto-cuesta-pagina-web-miami', label: 'Leer la guía' } },
           { h3: 'Agencia de diseño web en Miami en español: cómo elegir', text: 'Criterios y preguntas para elegir agencia de diseño web en Miami si tu negocio opera en español: proceso, dominio, mantenimiento, medición y pagos.', link: { slug: 'blog/agencia-diseno-web-miami-en-espanol', label: 'Leer la guía' } },
@@ -262,17 +263,17 @@ export const clusters: PageData[] = [
     breadcrumb: 'Diseño web por industria',
     lead: ['Cada sector vende distinto. Elige el tuyo para ver qué debe tener su web, y consulta la página de la industria para ver el servicio.'],
     blocks: [
+      { type: 'answer', text: 'Elemento Web, agencia de diseño web en Ciudad de Panamá, publica 32 guías por sector: abogados, clínicas, dentistas, restaurantes, hoteles, constructoras, contadores, logística, cooperativas y más. Cada guía explica qué convierte en ese rubro, qué debe tener la web y cuándo todavía no conviene invertir en ella.', fecha: '2026-10-22' },
       {
         type: 'cards',
         h2: 'Empieza aquí',
-        intro: 'Las páginas principales del tema.',
         items: [
           { h3: 'Diseño Web por Industria en Panamá | 30 Nichos Cubiertos', text: 'Diseño web por industria en Panamá: abogados, contadores, bienes raíces, restaurantes, turismo, clínicas, constructoras, retail y 22 nichos más.', link: { slug: 'industrias', label: 'Ver la página' } },
         ],
       },
       {
         type: 'cards',
-        h2: 'Guías del tema',
+        h2: 'Guías de diseño web por industria en Panamá',
         items: [
           { h3: 'Diseño web para abogados en Panamá: qué genera consultas', text: 'Qué debe tener la web de un abogado en Panamá: credibilidad sin prometer resultados, un formulario que filtra el caso y SEO por área de práctica.', link: { slug: 'blog/diseno-web-para-abogados-panama', label: 'Leer la guía' } },
           { h3: 'Diseño web para agencias de aduana en Panamá: qué capta', text: 'Diseño web para agencias de aduana y Zona Libre en Panamá: cotización clara para el importador primerizo, seguimiento de expediente y cuándo no conviene.', link: { slug: 'blog/diseno-web-para-agencias-aduaneras-panama', label: 'Leer la guía' } },

@@ -1,103 +1,815 @@
 {
-  "_nota": "Registro de gasto en fal (D46: tope de US$ 10 aprobado por el dueño el 13-oct-2026). Una fila por generación cobrada, con su request_id para rastrearla en el historial de fal. Precios tomados de la API de precios de fal el 13-oct-2026: nano-banana-pro US$ 0,15 y nano-banana-2 US$ 0,08 por imagen a 1K. El tope del archivo pasa a US$ 25 el 20-oct-2026: los 10 de D46 más los 15 de la tanda de IA creativa (D52.4), que se lleva aparte en tandas. Las filas de esa tanda se escriben con scripts/gasto-ia.mjs antes de cobrar (reservado → pendiente → confirmado). El 21-oct-2026 el tope del archivo pasa a US$ 35 por la tanda video-inmobiliario (D55, G4: US$ 10). Sus primeras filas se anotaron después del cobro con «registrar» y el costo por unidad de la API de precios de fal de ese día (el historial de fal no da el costo por pedido); la narración son 4 pedidos de TTS de menos de un centavo, anotados a US$ 0,01 cada uno. Las filas sin tanda de Luxor500 son un demo para un cliente de Ilitch, no la web.",
-  "tope": 35,
-  "gastado": 16.87,
-  "tandas": { "marketing-ia": { "tope": 15, "gastado": 1.86 }, "video-inmobiliario": { "tope": 10, "gastado": 4.39 }, "portada-v3": { "tope": 3, "gastado": 0.75 } },
-  "generaciones": [
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2e71-75c1-a49e-c745a53357fc", "uso": "portada diseno-web-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2eca-7e42-934f-a8dba3fddcf6", "uso": "portada servicios/diseno-web-corporativo-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2ec9-7771-90eb-8c2382a9414c", "uso": "portada crecimiento/seo-posicionamiento-web-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2ecd-7d93-84bc-fdf72f6ab075", "uso": "portada marketing/google-ads-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2ecf-7850-940c-6d60bf7ce815", "uso": "portada marketing/facebook-instagram-ads-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1360e-2ec5-7ee0-b2c5-112279b9b984", "uso": "portada marketing/contenido-redes-sociales-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a1360e-2f9e-7942-a963-3494a41cfe92", "uso": "portada marketing/email-marketing-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a1360e-2fa5-7500-b094-92f5462dca68", "uso": "portada marketing/whatsapp-marketing-masivo-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-ed9a-7592-8275-df9d2e0f4296", "uso": "ejemplo anuncio-cafe" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-edd9-7ff1-9239-000232564fd9", "uso": "ejemplo anuncio-clinica" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-eddc-7bb0-b06a-440f30d16e65", "uso": "ejemplo post-latte" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-eddd-70d1-9ffe-865005ab51f7", "uso": "ejemplo post-mesa y correo-cafe" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-edd5-7281-898d-a66ae3302533", "uso": "ejemplo post-barista" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-edd0-7f10-945b-9917693a457a", "uso": "ejemplo post-amigos" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-edd1-7d81-91e4-ac17638da7f8", "uso": "ejemplo post-coldbrew y whatsapp-cafe" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13615-edd5-7a71-929b-c31e30ad0078", "uso": "ejemplo post-fachada" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1362a-d71a-7e83-b017-79e18189c149", "uso": "portada servicios/landing-pages-alta-conversion-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1362a-d714-7391-8340-1a4bd22cfe3a", "uso": "portada servicios/redisenio-web-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a1362a-d7ad-76c3-ae5b-25230bb84602", "uso": "ejemplo producto-bolso y correo-bolso" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a136cd-2e36-7e32-85db-7662770c6344", "uso": "portada crecimiento/seo-local-google-maps-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a136cd-2f36-7063-9f63-8056a3865622", "uso": "portada marketing/automatizaciones-n8n-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a136cd-2f34-7e43-b0a8-684ebe7ca933", "uso": "portada crecimiento/mantenimiento-web-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a136cd-2f6e-7720-88ae-15570ffea2fe", "uso": "portada crecimiento/hosting-infraestructura-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a136fc-2de9-76b1-bb79-7e675083567d", "uso": "portada tecnologias/diseno-web-wordpress-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a136fc-2dec-7b12-9573-eaba3e541912", "uso": "portada funcionalidades/integracion-yappy-pasarelas-pago-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a136fc-2ded-7840-a7de-c130fcdd6a89", "uso": "descartada: texto en el delantal (reservas)" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a136fc-2de3-7102-89ac-c985adb76e24", "uso": "descartada: logo de Apple en la laptop (a medida)" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13701-9666-7b20-b692-d06b6cea0ae1", "uso": "portada funcionalidades/sistemas-reservas-citas-online-panama" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13701-9664-7970-97fa-f82428adfb3f", "uso": "portada tecnologias/desarrollo-web-a-medida-vue-react-panama (recortada para dejar fuera un logo de Apple)" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a1370b-d4f8-76d3-aff6-d871a1a1accf", "uso": "portada saas/nouscrm" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13722-3af8-76f3-9c3d-a26d02f39b63", "uso": "portada servicios (logo de la laptop borrado a mano)" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a13734-04a1-7c51-b580-b5b990c485b9", "uso": "portada precios" },
-    { "fecha": "2026-10-13", "modelo": "fal-ai/nano-banana-2", "costo": 0.08, "request_id": "01a1373f-598d-7983-a7a9-286cb2f57af8", "uso": "portada inteligencia-artificial-para-empresas-panama" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14061-73f2-7ae1-aebb-a2dd5052434f", "uso": "portada v2: dirección de diseño (6 opciones; el dueño eligió fusionar la 3 y la 6)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14061-73ed-7d41-93b5-a0d06f4c8a5f", "uso": "portada v2: dirección de diseño (6 opciones; el dueño eligió fusionar la 3 y la 6)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14061-73f5-7fe2-9456-465870b140fb", "uso": "portada v2: dirección de diseño (6 opciones; el dueño eligió fusionar la 3 y la 6)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14061-73ef-7911-93bb-9787e540d6ba", "uso": "portada v2: dirección de diseño (6 opciones; el dueño eligió fusionar la 3 y la 6)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14061-73b7-7450-8eef-b7fff364d306", "uso": "portada v2: dirección de diseño (6 opciones; el dueño eligió fusionar la 3 y la 6)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14061-73f5-7fe2-9456-466b80809915", "uso": "portada v2: dirección de diseño (6 opciones; el dueño eligió fusionar la 3 y la 6)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14066-78cf-73a0-a29e-3a932302fd91", "uso": "portada v2: secciones 1 a 6 en cian (héroe, servicios, proyectos, proceso, preguntas, contacto)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14066-78ce-75a1-aa55-87cd8d491681", "uso": "portada v2: secciones 1 a 6 en cian (héroe, servicios, proyectos, proceso, preguntas, contacto)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14066-78ce-7d70-9746-3999cadc1676", "uso": "portada v2: secciones 1 a 6 en cian (héroe, servicios, proyectos, proceso, preguntas, contacto)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14066-78ce-7d70-9746-3980aed7679c", "uso": "portada v2: secciones 1 a 6 en cian (héroe, servicios, proyectos, proceso, preguntas, contacto)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14066-78cf-7231-8bd6-e8ef351bf59b", "uso": "portada v2: secciones 1 a 6 en cian (héroe, servicios, proyectos, proceso, preguntas, contacto)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14066-78cc-77f1-bf8b-8f54cd4cd565", "uso": "portada v2: secciones 1 a 6 en cian (héroe, servicios, proyectos, proceso, preguntas, contacto)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14099-2e63-7f70-8558-00e4e47984ec", "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14099-2e5d-71a3-8575-6b67418edcdf", "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14099-2e66-7da1-9f2e-3766feacf3d5", "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14099-2e60-7510-b51b-070398d5efbd", "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14099-2e58-79a0-a70d-a54ffe1b7d3b", "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)" },
-    { "fecha": "2026-10-15", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14099-2e61-72b2-b0dd-6c328fd25cda", "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a149fd-4cd2-71f3-b6bd-5eabb6297085", "uso": "portada v2: estilo A, dos columnas para la sección Servicios (pedido del dueño: está apiñada)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a149fd-4d0f-7bf3-8f3c-0837bf6176fc", "uso": "portada v2: estilo B, índice con vista grande para la sección Servicios (pedido del dueño: está apiñada)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a149fd-4d26-7743-8452-96b16aa4ac5d", "uso": "portada v2: estilo C, filas editoriales para la sección Servicios (pedido del dueño: está apiñada)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14a05-0cf0-7f52-9a53-650ba5485baf", "uso": "portada v2: estilo D, destacado y rejilla para la sección Servicios (segunda tanda, pedido del dueño)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14a05-0d2e-7100-be49-1bc66a8c27b2", "uso": "portada v2: estilo E, dos grupos para la sección Servicios (segunda tanda, pedido del dueño)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro/edit", "costo": 0.15, "request_id": "01a14a05-0d26-7e91-9c6e-85c526cbb0ba", "uso": "portada v2: estilo F, tres por dos con aire para la sección Servicios (segunda tanda, pedido del dueño)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14a19-2e2b-7091-84f4-ac41369ad274", "uso": "portada v2: bodegón 3D del panel de Diseño web (laptop y celular; las pantallas se reemplazan por las capturas reales de TramitaPa) (prototipo de Servicios apilados)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14a19-2e2e-78d2-945b-0053323e5920", "uso": "portada v2: bodegón 3D del panel de Tiendas online (prototipo de Servicios apilados)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14a19-2e2d-7ee0-ac92-35eaa65fd57e", "uso": "portada v2: bodegón 3D del panel de SEO y SEO local (prototipo de Servicios apilados)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14a19-2e48-7d51-a1ee-82935b6d0502", "uso": "portada v2: bodegón 3D del panel de Publicidad en Google y Meta (prototipo de Servicios apilados)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14a19-2e4a-73c1-a6d5-59daa86be6fc", "uso": "portada v2: bodegón 3D del panel de WhatsApp marketing (prototipo de Servicios apilados)" },
-    { "fecha": "2026-10-17", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a14a19-2e6b-76c2-a6b7-38a91788cede", "uso": "portada v2: bodegón 3D del panel de IA y automatización (prototipo de Servicios apilados)" },
-    { "id": "mkia-1", "fecha": "2026-10-20", "hora": "2026-10-20T05:14:04.164Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a157bb-411f-7c32-84fa-50ee83dc7a5b", "uso": "ia-videos-1-partida", "tanda": "marketing-ia", "estado": "confirmado" },
-    { "id": "mkia-2", "fecha": "2026-10-20", "hora": "2026-10-20T05:14:04.164Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a157bb-4128-7070-ba34-e1d74f893bff", "uso": "ia-videos-2-partida", "tanda": "marketing-ia", "estado": "confirmado" },
-    { "id": "mkia-3", "fecha": "2026-10-20", "hora": "2026-10-20T05:14:04.164Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a157bb-4121-7ac3-a213-86768a23d7b6", "uso": "portada-videos-publicitarios", "tanda": "marketing-ia", "estado": "confirmado" },
-    { "id": "mkia-4", "fecha": "2026-10-20", "hora": "2026-10-20T05:15:06.701Z", "modelo": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video", "costo": 0.7, "request_id": "01a157bc-2cf0-7ac2-9766-42a1db947378", "uso": "ia-videos-1-crudo", "tanda": "marketing-ia", "estado": "confirmado" },
-    { "id": "mkia-5", "fecha": "2026-10-20", "hora": "2026-10-20T05:15:06.701Z", "modelo": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video", "costo": 0.7, "request_id": "01a157bc-2d2b-7020-9095-6d93e50e0868", "uso": "ia-videos-2-crudo", "tanda": "marketing-ia", "estado": "confirmado" },
-    { "id": "mkia-6", "fecha": "2026-10-20", "hora": "2026-10-20T05:15:28.937Z", "modelo": "fal-ai/elevenlabs/tts/multilingual-v2", "costo": 0.01, "request_id": "01a157bc-7555-7ee0-bef2-7adb3a41146f", "uso": "ia-videos-1-voz", "tanda": "marketing-ia", "estado": "confirmado" },
-    { "id": "mkia-7", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:51.013Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1600d-76ef-7912-8463-b8aaf4ea5d96", "uso": "mockup variante 1 de la sección", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-8", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:51.094Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1600d-7724-7b93-a769-5fb5aa42a785", "uso": "mockup variante 2 de la sección", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-9", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:51.183Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1600d-772c-7d72-a14f-b816ca2c44dd", "uso": "mockup variante 3 de la sección", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-10", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:51.268Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1600d-7726-76c0-9b6f-07010271a4bf", "uso": "mockup variante 4 de la sección", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-11", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:51.351Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a16014-e02a-72d3-83cb-4a70548b1670", "uso": "render ficticio sala", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-12", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:51.432Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a16014-e028-76c1-8ecf-2c9000e33a81", "uso": "render ficticio cocina", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-13", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:51.533Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a16014-e029-77a3-96a8-4877ee775b64", "uso": "render ficticio habitación", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-14", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:51.622Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a16014-e029-7560-9ad5-edaa8e041ae6", "uso": "render ficticio terraza", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-15", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:51.711Z", "modelo": "fal-ai/kling-video/v3/pro/image-to-video", "costo": 0.7, "request_id": "01a16015-e753-76f2-95fe-b32ea10203a9", "uso": "clip sala 5 s", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-16", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:51.810Z", "modelo": "fal-ai/kling-video/v3/pro/image-to-video", "costo": 0.7, "request_id": "01a16015-e754-73d3-a828-022ddfc37c62", "uso": "clip cocina 5 s", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-17", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:51.894Z", "modelo": "fal-ai/kling-video/v3/pro/image-to-video", "costo": 0.7, "request_id": "01a16015-e750-79f0-8e3b-f36819435edb", "uso": "clip habitación 5 s", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-18", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:52.000Z", "modelo": "fal-ai/kling-video/v3/pro/image-to-video", "costo": 0.7, "request_id": "01a16015-e757-73a0-a9e0-70ba8ac14dd5", "uso": "clip terraza 5 s", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-19", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:52.104Z", "modelo": "elevenlabs/tts/eleven-v4", "costo": 0.01, "request_id": "01a16016-4e69-73d2-9a1d-e95c52485f84", "uso": "narración frase 1", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-20", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:52.191Z", "modelo": "elevenlabs/tts/eleven-v4", "costo": 0.01, "request_id": "01a16016-4e67-7772-b8f5-faed73582011", "uso": "narración frase 2", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-21", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:52.307Z", "modelo": "elevenlabs/tts/eleven-v4", "costo": 0.01, "request_id": "01a16016-4e69-7011-8455-720bcdf64b2b", "uso": "narración frase 3", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-22", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:52.402Z", "modelo": "elevenlabs/tts/eleven-v4", "costo": 0.01, "request_id": "01a16016-4eb9-7181-8fab-794551450369", "uso": "narración frase 4", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-23", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:52.496Z", "modelo": "elevenlabs/music/v2.5", "costo": 0.2, "request_id": "01a16016-4ebb-7320-b865-b685074e91db", "uso": "música 20 s", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-24", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:52.639Z", "modelo": "fal-ai/kling-video/v3/pro/image-to-video", "costo": 0.7, "request_id": "01a15f68-6ea3-7260-97e1-3a69d76254cd", "uso": "demo cliente Ilitch (Luxor500), no web", "estado": "confirmado" },
-    { "id": "mkia-25", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:52.781Z", "modelo": "fal-ai/kling-video/v3/pro/image-to-video", "costo": 0.7, "request_id": "01a15f68-6edb-7461-b463-f3daf7101534", "uso": "demo cliente Ilitch (Luxor500), no web", "estado": "confirmado" },
-    { "id": "mkia-26", "fecha": "2026-10-21", "hora": "2026-10-21T21:25:52.911Z", "modelo": "fal-ai/kling-video/v3/pro/image-to-video", "costo": 0.7, "request_id": "01a15f68-6ed8-7373-bb55-a4042fde1057", "uso": "demo cliente Ilitch (Luxor500), no web", "estado": "confirmado" },
-    { "id": "mkia-27", "fecha": "2026-10-21", "hora": "2026-10-21T21:29:05.426Z", "modelo": "fal-ai/nano-banana-pro", "costo": 0.15, "request_id": "01a1605e-5a5b-7311-9b89-c46e87546881", "uso": "portada video inmobiliario", "tanda": "video-inmobiliario", "estado": "confirmado" },
-    { "id": "mkia-28", "fecha": "2026-10-22", "hora": "2026-10-22T05:47:01.822Z", "modelo": "google/nano-banana-2.1", "costo": 0.15, "request_id": "01a16226-5291-7422-9d09-82b97496c1a4", "uso": "escultura", "tanda": "portada-v3", "estado": "confirmado" },
-    { "id": "mkia-29", "fecha": "2026-10-22", "hora": "2026-10-22T05:47:01.822Z", "modelo": "google/nano-banana-2.1", "costo": 0.15, "request_id": "01a16226-528e-7691-9a93-68811e132131", "uso": "diptico-marketing", "tanda": "portada-v3", "estado": "confirmado" },
-    { "id": "mkia-30", "fecha": "2026-10-22", "hora": "2026-10-22T05:47:01.822Z", "modelo": "google/nano-banana-2.1", "costo": 0.15, "request_id": "01a16226-5290-7391-80aa-ca528e18848e", "uso": "diptico-ia", "tanda": "portada-v3", "estado": "confirmado" },
-    { "id": "mkia-31", "fecha": "2026-10-22", "hora": "2026-10-22T05:47:01.822Z", "modelo": "google/nano-banana-2.1", "costo": 0.15, "request_id": "01a16226-5292-7b51-b3b5-d50295910538", "uso": "bento-anuncio", "tanda": "portada-v3", "estado": "confirmado" },
-    { "id": "mkia-32", "fecha": "2026-10-22", "hora": "2026-10-22T05:47:01.822Z", "modelo": "google/nano-banana-2.1", "costo": 0.15, "request_id": "01a16226-5294-7ba2-a0b4-7a630d9fdbbe", "uso": "bento-videos", "tanda": "portada-v3", "estado": "confirmado" }
-  ]
+ "_nota": "Registro de gasto en fal (D46: tope de US$ 10 aprobado por el dueño el 13-oct-2026). Una fila por generación cobrada, con su request_id para rastrearla en el historial de fal. Precios tomados de la API de precios de fal el 13-oct-2026: nano-banana-pro US$ 0,15 y nano-banana-2 US$ 0,08 por imagen a 1K. El tope del archivo pasa a US$ 25 el 20-oct-2026: los 10 de D46 más los 15 de la tanda de IA creativa (D52.4), que se lleva aparte en tandas. Las filas de esa tanda se escriben con scripts/gasto-ia.mjs antes de cobrar (reservado → pendiente → confirmado). El 21-oct-2026 el tope del archivo pasa a US$ 35 por la tanda video-inmobiliario (D55, G4: US$ 10). Sus primeras filas se anotaron después del cobro con «registrar» y el costo por unidad de la API de precios de fal de ese día (el historial de fal no da el costo por pedido); la narración son 4 pedidos de TTS de menos de un centavo, anotados a US$ 0,01 cada uno. Las filas sin tanda de Luxor500 son un demo para un cliente de Ilitch, no la web.",
+ "tope": 37,
+ "gastado": 16.87,
+ "tandas": {
+  "marketing-ia": {
+   "tope": 15,
+   "gastado": 1.86
+  },
+  "video-inmobiliario": {
+   "tope": 10,
+   "gastado": 4.39
+  },
+  "portada-v3": {
+   "tope": 3,
+   "gastado": 0.75
+  },
+  "internas-v3": {
+   "tope": 20,
+   "gastado": 0
+  }
+ },
+ "generaciones": [
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1360e-2e71-75c1-a49e-c745a53357fc",
+   "uso": "portada diseno-web-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1360e-2eca-7e42-934f-a8dba3fddcf6",
+   "uso": "portada servicios/diseno-web-corporativo-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1360e-2ec9-7771-90eb-8c2382a9414c",
+   "uso": "portada crecimiento/seo-posicionamiento-web-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1360e-2ecd-7d93-84bc-fdf72f6ab075",
+   "uso": "portada marketing/google-ads-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1360e-2ecf-7850-940c-6d60bf7ce815",
+   "uso": "portada marketing/facebook-instagram-ads-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1360e-2ec5-7ee0-b2c5-112279b9b984",
+   "uso": "portada marketing/contenido-redes-sociales-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a1360e-2f9e-7942-a963-3494a41cfe92",
+   "uso": "portada marketing/email-marketing-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a1360e-2fa5-7500-b094-92f5462dca68",
+   "uso": "portada marketing/whatsapp-marketing-masivo-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a13615-ed9a-7592-8275-df9d2e0f4296",
+   "uso": "ejemplo anuncio-cafe"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a13615-edd9-7ff1-9239-000232564fd9",
+   "uso": "ejemplo anuncio-clinica"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a13615-eddc-7bb0-b06a-440f30d16e65",
+   "uso": "ejemplo post-latte"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a13615-eddd-70d1-9ffe-865005ab51f7",
+   "uso": "ejemplo post-mesa y correo-cafe"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a13615-edd5-7281-898d-a66ae3302533",
+   "uso": "ejemplo post-barista"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a13615-edd0-7f10-945b-9917693a457a",
+   "uso": "ejemplo post-amigos"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a13615-edd1-7d81-91e4-ac17638da7f8",
+   "uso": "ejemplo post-coldbrew y whatsapp-cafe"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a13615-edd5-7a71-929b-c31e30ad0078",
+   "uso": "ejemplo post-fachada"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1362a-d71a-7e83-b017-79e18189c149",
+   "uso": "portada servicios/landing-pages-alta-conversion-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1362a-d714-7391-8340-1a4bd22cfe3a",
+   "uso": "portada servicios/redisenio-web-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a1362a-d7ad-76c3-ae5b-25230bb84602",
+   "uso": "ejemplo producto-bolso y correo-bolso"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a136cd-2e36-7e32-85db-7662770c6344",
+   "uso": "portada crecimiento/seo-local-google-maps-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a136cd-2f36-7063-9f63-8056a3865622",
+   "uso": "portada marketing/automatizaciones-n8n-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a136cd-2f34-7e43-b0a8-684ebe7ca933",
+   "uso": "portada crecimiento/mantenimiento-web-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a136cd-2f6e-7720-88ae-15570ffea2fe",
+   "uso": "portada crecimiento/hosting-infraestructura-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a136fc-2de9-76b1-bb79-7e675083567d",
+   "uso": "portada tecnologias/diseno-web-wordpress-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a136fc-2dec-7b12-9573-eaba3e541912",
+   "uso": "portada funcionalidades/integracion-yappy-pasarelas-pago-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a136fc-2ded-7840-a7de-c130fcdd6a89",
+   "uso": "descartada: texto en el delantal (reservas)"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a136fc-2de3-7102-89ac-c985adb76e24",
+   "uso": "descartada: logo de Apple en la laptop (a medida)"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a13701-9666-7b20-b692-d06b6cea0ae1",
+   "uso": "portada funcionalidades/sistemas-reservas-citas-online-panama"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a13701-9664-7970-97fa-f82428adfb3f",
+   "uso": "portada tecnologias/desarrollo-web-a-medida-vue-react-panama (recortada para dejar fuera un logo de Apple)"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a1370b-d4f8-76d3-aff6-d871a1a1accf",
+   "uso": "portada saas/nouscrm"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a13722-3af8-76f3-9c3d-a26d02f39b63",
+   "uso": "portada servicios (logo de la laptop borrado a mano)"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a13734-04a1-7c51-b580-b5b990c485b9",
+   "uso": "portada precios"
+  },
+  {
+   "fecha": "2026-10-13",
+   "modelo": "fal-ai/nano-banana-2",
+   "costo": 0.08,
+   "request_id": "01a1373f-598d-7983-a7a9-286cb2f57af8",
+   "uso": "portada inteligencia-artificial-para-empresas-panama"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a14061-73f2-7ae1-aebb-a2dd5052434f",
+   "uso": "portada v2: dirección de diseño (6 opciones; el dueño eligió fusionar la 3 y la 6)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a14061-73ed-7d41-93b5-a0d06f4c8a5f",
+   "uso": "portada v2: dirección de diseño (6 opciones; el dueño eligió fusionar la 3 y la 6)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a14061-73f5-7fe2-9456-465870b140fb",
+   "uso": "portada v2: dirección de diseño (6 opciones; el dueño eligió fusionar la 3 y la 6)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a14061-73ef-7911-93bb-9787e540d6ba",
+   "uso": "portada v2: dirección de diseño (6 opciones; el dueño eligió fusionar la 3 y la 6)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a14061-73b7-7450-8eef-b7fff364d306",
+   "uso": "portada v2: dirección de diseño (6 opciones; el dueño eligió fusionar la 3 y la 6)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a14061-73f5-7fe2-9456-466b80809915",
+   "uso": "portada v2: dirección de diseño (6 opciones; el dueño eligió fusionar la 3 y la 6)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14066-78cf-73a0-a29e-3a932302fd91",
+   "uso": "portada v2: secciones 1 a 6 en cian (héroe, servicios, proyectos, proceso, preguntas, contacto)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14066-78ce-75a1-aa55-87cd8d491681",
+   "uso": "portada v2: secciones 1 a 6 en cian (héroe, servicios, proyectos, proceso, preguntas, contacto)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14066-78ce-7d70-9746-3999cadc1676",
+   "uso": "portada v2: secciones 1 a 6 en cian (héroe, servicios, proyectos, proceso, preguntas, contacto)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14066-78ce-7d70-9746-3980aed7679c",
+   "uso": "portada v2: secciones 1 a 6 en cian (héroe, servicios, proyectos, proceso, preguntas, contacto)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14066-78cf-7231-8bd6-e8ef351bf59b",
+   "uso": "portada v2: secciones 1 a 6 en cian (héroe, servicios, proyectos, proceso, preguntas, contacto)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14066-78cc-77f1-bf8b-8f54cd4cd565",
+   "uso": "portada v2: secciones 1 a 6 en cian (héroe, servicios, proyectos, proceso, preguntas, contacto)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14099-2e63-7f70-8558-00e4e47984ec",
+   "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14099-2e5d-71a3-8575-6b67418edcdf",
+   "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14099-2e66-7da1-9f2e-3766feacf3d5",
+   "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14099-2e60-7510-b51b-070398d5efbd",
+   "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14099-2e58-79a0-a70d-a54ffe1b7d3b",
+   "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)"
+  },
+  {
+   "fecha": "2026-10-15",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14099-2e61-72b2-b0dd-6c328fd25cda",
+   "uso": "portada v2: bloques nuevos 7 a 12 (marketing, SEO, desarrollo, precios, compara, industrias)"
+  },
+  {
+   "fecha": "2026-10-17",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a149fd-4cd2-71f3-b6bd-5eabb6297085",
+   "uso": "portada v2: estilo A, dos columnas para la sección Servicios (pedido del dueño: está apiñada)"
+  },
+  {
+   "fecha": "2026-10-17",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a149fd-4d0f-7bf3-8f3c-0837bf6176fc",
+   "uso": "portada v2: estilo B, índice con vista grande para la sección Servicios (pedido del dueño: está apiñada)"
+  },
+  {
+   "fecha": "2026-10-17",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a149fd-4d26-7743-8452-96b16aa4ac5d",
+   "uso": "portada v2: estilo C, filas editoriales para la sección Servicios (pedido del dueño: está apiñada)"
+  },
+  {
+   "fecha": "2026-10-17",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14a05-0cf0-7f52-9a53-650ba5485baf",
+   "uso": "portada v2: estilo D, destacado y rejilla para la sección Servicios (segunda tanda, pedido del dueño)"
+  },
+  {
+   "fecha": "2026-10-17",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14a05-0d2e-7100-be49-1bc66a8c27b2",
+   "uso": "portada v2: estilo E, dos grupos para la sección Servicios (segunda tanda, pedido del dueño)"
+  },
+  {
+   "fecha": "2026-10-17",
+   "modelo": "fal-ai/nano-banana-pro/edit",
+   "costo": 0.15,
+   "request_id": "01a14a05-0d26-7e91-9c6e-85c526cbb0ba",
+   "uso": "portada v2: estilo F, tres por dos con aire para la sección Servicios (segunda tanda, pedido del dueño)"
+  },
+  {
+   "fecha": "2026-10-17",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a14a19-2e2b-7091-84f4-ac41369ad274",
+   "uso": "portada v2: bodegón 3D del panel de Diseño web (laptop y celular; las pantallas se reemplazan por las capturas reales de TramitaPa) (prototipo de Servicios apilados)"
+  },
+  {
+   "fecha": "2026-10-17",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a14a19-2e2e-78d2-945b-0053323e5920",
+   "uso": "portada v2: bodegón 3D del panel de Tiendas online (prototipo de Servicios apilados)"
+  },
+  {
+   "fecha": "2026-10-17",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a14a19-2e2d-7ee0-ac92-35eaa65fd57e",
+   "uso": "portada v2: bodegón 3D del panel de SEO y SEO local (prototipo de Servicios apilados)"
+  },
+  {
+   "fecha": "2026-10-17",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a14a19-2e48-7d51-a1ee-82935b6d0502",
+   "uso": "portada v2: bodegón 3D del panel de Publicidad en Google y Meta (prototipo de Servicios apilados)"
+  },
+  {
+   "fecha": "2026-10-17",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a14a19-2e4a-73c1-a6d5-59daa86be6fc",
+   "uso": "portada v2: bodegón 3D del panel de WhatsApp marketing (prototipo de Servicios apilados)"
+  },
+  {
+   "fecha": "2026-10-17",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a14a19-2e6b-76c2-a6b7-38a91788cede",
+   "uso": "portada v2: bodegón 3D del panel de IA y automatización (prototipo de Servicios apilados)"
+  },
+  {
+   "id": "mkia-1",
+   "fecha": "2026-10-20",
+   "hora": "2026-10-20T05:14:04.164Z",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a157bb-411f-7c32-84fa-50ee83dc7a5b",
+   "uso": "ia-videos-1-partida",
+   "tanda": "marketing-ia",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-2",
+   "fecha": "2026-10-20",
+   "hora": "2026-10-20T05:14:04.164Z",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a157bb-4128-7070-ba34-e1d74f893bff",
+   "uso": "ia-videos-2-partida",
+   "tanda": "marketing-ia",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-3",
+   "fecha": "2026-10-20",
+   "hora": "2026-10-20T05:14:04.164Z",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a157bb-4121-7ac3-a213-86768a23d7b6",
+   "uso": "portada-videos-publicitarios",
+   "tanda": "marketing-ia",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-4",
+   "fecha": "2026-10-20",
+   "hora": "2026-10-20T05:15:06.701Z",
+   "modelo": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+   "costo": 0.7,
+   "request_id": "01a157bc-2cf0-7ac2-9766-42a1db947378",
+   "uso": "ia-videos-1-crudo",
+   "tanda": "marketing-ia",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-5",
+   "fecha": "2026-10-20",
+   "hora": "2026-10-20T05:15:06.701Z",
+   "modelo": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+   "costo": 0.7,
+   "request_id": "01a157bc-2d2b-7020-9095-6d93e50e0868",
+   "uso": "ia-videos-2-crudo",
+   "tanda": "marketing-ia",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-6",
+   "fecha": "2026-10-20",
+   "hora": "2026-10-20T05:15:28.937Z",
+   "modelo": "fal-ai/elevenlabs/tts/multilingual-v2",
+   "costo": 0.01,
+   "request_id": "01a157bc-7555-7ee0-bef2-7adb3a41146f",
+   "uso": "ia-videos-1-voz",
+   "tanda": "marketing-ia",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-7",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:51.013Z",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1600d-76ef-7912-8463-b8aaf4ea5d96",
+   "uso": "mockup variante 1 de la sección",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-8",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:51.094Z",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1600d-7724-7b93-a769-5fb5aa42a785",
+   "uso": "mockup variante 2 de la sección",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-9",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:51.183Z",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1600d-772c-7d72-a14f-b816ca2c44dd",
+   "uso": "mockup variante 3 de la sección",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-10",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:51.268Z",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1600d-7726-76c0-9b6f-07010271a4bf",
+   "uso": "mockup variante 4 de la sección",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-11",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:51.351Z",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a16014-e02a-72d3-83cb-4a70548b1670",
+   "uso": "render ficticio sala",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-12",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:51.432Z",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a16014-e028-76c1-8ecf-2c9000e33a81",
+   "uso": "render ficticio cocina",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-13",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:51.533Z",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a16014-e029-77a3-96a8-4877ee775b64",
+   "uso": "render ficticio habitación",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-14",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:51.622Z",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a16014-e029-7560-9ad5-edaa8e041ae6",
+   "uso": "render ficticio terraza",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-15",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:51.711Z",
+   "modelo": "fal-ai/kling-video/v3/pro/image-to-video",
+   "costo": 0.7,
+   "request_id": "01a16015-e753-76f2-95fe-b32ea10203a9",
+   "uso": "clip sala 5 s",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-16",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:51.810Z",
+   "modelo": "fal-ai/kling-video/v3/pro/image-to-video",
+   "costo": 0.7,
+   "request_id": "01a16015-e754-73d3-a828-022ddfc37c62",
+   "uso": "clip cocina 5 s",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-17",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:51.894Z",
+   "modelo": "fal-ai/kling-video/v3/pro/image-to-video",
+   "costo": 0.7,
+   "request_id": "01a16015-e750-79f0-8e3b-f36819435edb",
+   "uso": "clip habitación 5 s",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-18",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:52.000Z",
+   "modelo": "fal-ai/kling-video/v3/pro/image-to-video",
+   "costo": 0.7,
+   "request_id": "01a16015-e757-73a0-a9e0-70ba8ac14dd5",
+   "uso": "clip terraza 5 s",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-19",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:52.104Z",
+   "modelo": "elevenlabs/tts/eleven-v4",
+   "costo": 0.01,
+   "request_id": "01a16016-4e69-73d2-9a1d-e95c52485f84",
+   "uso": "narración frase 1",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-20",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:52.191Z",
+   "modelo": "elevenlabs/tts/eleven-v4",
+   "costo": 0.01,
+   "request_id": "01a16016-4e67-7772-b8f5-faed73582011",
+   "uso": "narración frase 2",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-21",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:52.307Z",
+   "modelo": "elevenlabs/tts/eleven-v4",
+   "costo": 0.01,
+   "request_id": "01a16016-4e69-7011-8455-720bcdf64b2b",
+   "uso": "narración frase 3",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-22",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:52.402Z",
+   "modelo": "elevenlabs/tts/eleven-v4",
+   "costo": 0.01,
+   "request_id": "01a16016-4eb9-7181-8fab-794551450369",
+   "uso": "narración frase 4",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-23",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:52.496Z",
+   "modelo": "elevenlabs/music/v2.5",
+   "costo": 0.2,
+   "request_id": "01a16016-4ebb-7320-b865-b685074e91db",
+   "uso": "música 20 s",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-24",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:52.639Z",
+   "modelo": "fal-ai/kling-video/v3/pro/image-to-video",
+   "costo": 0.7,
+   "request_id": "01a15f68-6ea3-7260-97e1-3a69d76254cd",
+   "uso": "demo cliente Ilitch (Luxor500), no web",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-25",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:52.781Z",
+   "modelo": "fal-ai/kling-video/v3/pro/image-to-video",
+   "costo": 0.7,
+   "request_id": "01a15f68-6edb-7461-b463-f3daf7101534",
+   "uso": "demo cliente Ilitch (Luxor500), no web",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-26",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:25:52.911Z",
+   "modelo": "fal-ai/kling-video/v3/pro/image-to-video",
+   "costo": 0.7,
+   "request_id": "01a15f68-6ed8-7373-bb55-a4042fde1057",
+   "uso": "demo cliente Ilitch (Luxor500), no web",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-27",
+   "fecha": "2026-10-21",
+   "hora": "2026-10-21T21:29:05.426Z",
+   "modelo": "fal-ai/nano-banana-pro",
+   "costo": 0.15,
+   "request_id": "01a1605e-5a5b-7311-9b89-c46e87546881",
+   "uso": "portada video inmobiliario",
+   "tanda": "video-inmobiliario",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-28",
+   "fecha": "2026-10-22",
+   "hora": "2026-10-22T05:47:01.822Z",
+   "modelo": "google/nano-banana-2.1",
+   "costo": 0.15,
+   "request_id": "01a16226-5291-7422-9d09-82b97496c1a4",
+   "uso": "escultura",
+   "tanda": "portada-v3",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-29",
+   "fecha": "2026-10-22",
+   "hora": "2026-10-22T05:47:01.822Z",
+   "modelo": "google/nano-banana-2.1",
+   "costo": 0.15,
+   "request_id": "01a16226-528e-7691-9a93-68811e132131",
+   "uso": "diptico-marketing",
+   "tanda": "portada-v3",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-30",
+   "fecha": "2026-10-22",
+   "hora": "2026-10-22T05:47:01.822Z",
+   "modelo": "google/nano-banana-2.1",
+   "costo": 0.15,
+   "request_id": "01a16226-5290-7391-80aa-ca528e18848e",
+   "uso": "diptico-ia",
+   "tanda": "portada-v3",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-31",
+   "fecha": "2026-10-22",
+   "hora": "2026-10-22T05:47:01.822Z",
+   "modelo": "google/nano-banana-2.1",
+   "costo": 0.15,
+   "request_id": "01a16226-5292-7b51-b3b5-d50295910538",
+   "uso": "bento-anuncio",
+   "tanda": "portada-v3",
+   "estado": "confirmado"
+  },
+  {
+   "id": "mkia-32",
+   "fecha": "2026-10-22",
+   "hora": "2026-10-22T05:47:01.822Z",
+   "modelo": "google/nano-banana-2.1",
+   "costo": 0.15,
+   "request_id": "01a16226-5294-7ba2-a0b4-7a630d9fdbbe",
+   "uso": "bento-videos",
+   "tanda": "portada-v3",
+   "estado": "confirmado"
+  }
+ ]
 }

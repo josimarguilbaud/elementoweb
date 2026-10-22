@@ -223,7 +223,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Necesitas una web',
     category: 'Negocio',
     date: '2026-06-12',
-    heroImage: { src: '/images/blog/por-que-tu-negocio-necesita-una-pagina-web.jpg', alt: 'Local con toldo que se convierte en una ventana de navegador y recibe clientes que llegan desde un mapa' },
+    heroImage: { src: '/images/blog/por-que-tu-negocio-necesita-una-pagina-web.jpg', alt: 'Pequeño local comercial con toldo, en cromo plateado, render 3D sobre fondo gris claro' },
     lead: [
       'Sí, tu negocio en Panamá necesita una página web propia en 2026. Las redes sociales no son tuyas y pueden suspender tu cuenta sin aviso, casi no aparecen en Google cuando alguien busca tu servicio y no dan la confianza de un sitio propio que atiende 24/7. En Elemento Web, una landing parte de $550 y una web PYME de $1,250.',
     ],
@@ -435,7 +435,7 @@ export const blog6: PageData[] = [
     breadcrumb: 'Tendencias 2026',
     category: 'Negocio',
     date: '2026-05-15',
-    heroImage: { src: '/images/blog/tendencias-de-diseno-web-2026-panama.jpg', alt: 'Fachada moderna de concreto y vidrio con balcones curvos y una palmera, para ilustrar tendencias de diseño web en 2026' },
+    heroImage: { src: '/images/blog/tendencias-de-diseno-web-2026-panama.jpg', alt: 'Prisma geométrico facetado, en cromo plateado, render 3D sobre fondo gris claro' },
     lead: [
       'Las tendencias de diseño web 2026 que sí sirven a un negocio en Panamá son cuatro: velocidad, diseño móvil primero, minimalismo funcional y accesibilidad, más IA aplicada con criterio, como chatbots que atienden 24/7. Las animaciones pesadas, las modas estéticas y la complejidad innecesaria se pueden ignorar: ralentizan el sitio en el celular y distraen del botón de WhatsApp.',
     ],

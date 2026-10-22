@@ -15,7 +15,7 @@ export const industrias2a: PageData[] = [
     h1: 'Diseño web para contadores',
     breadcrumb: 'Contadores',
     service: { type: 'Diseño web para firmas contables' },
-    heroImage: { src: '/images/industrias/diseno-web-contadores-panama.jpg', alt: 'Escritorio de un contador con estados financieros, calculadora y documentos fiscales' },
+    heroImage: { src: '/images/industrias/diseno-web-contadores-panama.jpg', alt: 'Libro contable cerrado con una pluma encima, en cromo plateado, render 3D sobre fondo gris claro' },
     lead: [
       'Un cliente te va a entregar sus números, su planilla y su relación con la DGI. No contrata al primero que aparece: contrata al que se ve serio.',
       'El diseño web para contadores en Panamá que hacemos en Elemento Web, desde Ciudad de Panamá, incluye una página por servicio (contabilidad mensual, planilla, ITBMS, renta, constitución de empresas), la idoneidad del CPA, artículos sobre el calendario fiscal de la DGI y un formulario que filtra por tipo de cliente. El formato típico es una web empresarial desde $1,250.',
@@ -160,7 +160,7 @@ export const industrias2a: PageData[] = [
     h1: 'Diseño web para agencias de viajes y tours',
     breadcrumb: 'Agencias de Viajes',
     service: { type: 'Diseño web para agencias de viajes y tour operadores' },
-    heroImage: { src: '/images/industrias/diseno-web-agencias-viajes-tours-panama.jpg', alt: 'Cayos de San Blas con una ruta turística marcada y una tableta con itinerario y botón de reserva para agencias de tours' },
+    heroImage: { src: '/images/industrias/diseno-web-agencias-viajes-tours-panama.jpg', alt: 'Palmera sobre una isla pequeña, en cromo plateado, render 3D sobre fondo gris claro' },
     lead: [
       'El viajero sueña con San Blas o Bocas desde el celular, a las once de la noche. Si en ese momento no puede reservar contigo, mañana reserva con otro.',
       'El diseño web para agencias de viajes y tours en Panamá que hacemos en Elemento Web incluye una página por destino o tour (San Blas, Bocas del Toro, Boquete), reserva online con depósito por Yappy o tarjeta, políticas de cancelación publicadas, paquetes por temporada editables por ti y versión en inglés para el turista que llega.',
@@ -301,7 +301,7 @@ export const industrias2a: PageData[] = [
     h1: 'Diseño web para importadoras y distribuidoras',
     breadcrumb: 'Importadoras',
     service: { type: 'Diseño web para importadoras y distribuidoras B2B' },
-    heroImage: { src: '/images/industrias/diseno-web-importadoras-distribuidoras-panama.jpg', alt: 'Almacén de distribución con estanterías de mercancía y montacargas' },
+    heroImage: { src: '/images/industrias/diseno-web-importadoras-distribuidoras-panama.jpg', alt: 'Montacargas a escala, en cromo plateado, render 3D sobre fondo gris claro' },
     lead: [
       'Panamá es el hub que redistribuye a media región, pero muchas importadoras siguen vendiendo con un catálogo en PDF que se manda por correo y ya nadie abre.',
       'El diseño web para importadoras y distribuidoras en Panamá que hacemos en Elemento Web es un sitio B2B: catálogo por línea y marca representada, fichas con empaque por caja, lista descargable con fecha, precios mayoristas solo para clientes registrados y formulario de apertura de cuenta, con RUC, cobertura y, si aplica, operación en Zona Libre visibles.',
@@ -442,7 +442,7 @@ export const industrias2a: PageData[] = [
     h1: 'Diseño web para dentistas y odontología',
     breadcrumb: 'Dentistas',
     service: { type: 'Diseño web para dentistas y odontología' },
-    heroImage: { src: '/images/industrias/diseno-web-dentistas-odontologia-panama.jpg', alt: 'Consultorio dental moderno con sillón odontológico y equipo limpio' },
+    heroImage: { src: '/images/industrias/diseno-web-dentistas-odontologia-panama.jpg', alt: 'Cepillo de dientes y espejo dental cruzados, en cromo plateado, render 3D sobre fondo gris claro' },
     lead: [
       'El paciente que busca dentista tiene miedo: al dolor, al costo y a caer en malas manos. Tu web es lo que calma ese miedo antes de que agende.',
       'El diseño web para dentistas en Panamá que hacemos en Elemento Web incluye cita online con recordatorios automáticos, una página por tratamiento (ortodoncia, implantes, blanqueamiento, endodoncia) con casos de antes y después autorizados, perfil del odontólogo con idoneidad, seguros aceptados y ficha de Google alineada por barrio. Parte de una web empresarial desde $1,250.',

@@ -1,10 +1,14 @@
 # Elemento Web
 
-> Agencia de diseño web con sede en Ciudad de Panamá. Hace webs pensadas para
-> generar consultas, conectadas a WhatsApp por la API oficial como Tech Provider
-> verificado por Meta, y además SEO, publicidad en Google y Meta, WhatsApp
-> marketing e IA. Atiende empresas en Panamá y, a distancia y en español,
-> negocios de Miami. Landing desde $550, con cotización cerrada por escrito.
+> Agencia de marketing digital, inteligencia artificial y diseño web con sede
+> en Ciudad de Panamá. Hace pauta en Google y Meta, WhatsApp marketing por la API
+> oficial (Tech Provider verificado por Meta), asistentes con IA, automatizaciones
+> con n8n, SEO y webs pensadas para generar consultas. Atiende empresas en Panamá
+> y, a distancia y en español, negocios de Miami. Landing desde $550, con
+> cotización cerrada por escrito.
+
+Versión completa con el texto de respuesta y las preguntas frecuentes de cada
+página: https://elementoweb.com/llms-full.txt
 
 Elemento Web es una agencia con sede en Panamá que atiende al mercado panameño
 y, de forma remota, a negocios hispanos de Miami-Dade (Florida, EE.UU.) y en
@@ -22,7 +26,7 @@ Datos verificables:
 - Ámbito de servicio: Panamá (sede) y Miami-Dade, Florida (remoto), con proyectos en América Latina
 - Idioma del contenido: español de Panamá (es-PA) y español latinoamericano
 - Tech Provider verificado por Meta (API de WhatsApp Business)
-- CEO: Josimar Guilbaud
+- Fundador y CEO: Josimar Guilbaud (Founder & CEO · AI Strategist), más de 20 años trabajando en la web ([perfil](https://elementoweb.com/nosotros/))
 
 ## Qué responde bien este sitio
 
@@ -30,6 +34,10 @@ Estas páginas están escritas para responder preguntas concretas y son las más
 útiles para citar. Todas incluyen preguntas frecuentes con respuestas directas.
 
 - [Diseño web en Panamá](https://elementoweb.com/diseno-web-panama/): qué incluye un proyecto web, cómo se estructura y qué esperar.
+- [Automatizaciones con n8n en Panamá](https://elementoweb.com/marketing/automatizaciones-n8n-panama/): qué se automatiza, cuánto cuesta y en qué plazo.
+- [Chatbot con IA para tu web y WhatsApp](https://elementoweb.com/funcionalidades/chatbots-ia-web-wazacrm-panama/): cómo responde con la información real del negocio y cuándo pasa la conversación a una persona.
+- [WhatsApp marketing masivo](https://elementoweb.com/marketing/whatsapp-marketing-masivo-panama/): campañas por la API oficial de WhatsApp Business, y cómo cobra Meta cada mensaje según su categoría (marketing, utilidad o autenticación).
+- [Inteligencia artificial para empresas](https://elementoweb.com/inteligencia-artificial-para-empresas-panama/): IA privada con los documentos de la empresa, con fuente citada.
 - [Cuánto cuesta una página web en Panamá](https://elementoweb.com/blog/cuanto-cuesta-diseno-web-panama/): rangos reales de precio por tipo de proyecto.
 - [Cuánto tiempo toma hacer una página web](https://elementoweb.com/blog/cuanto-tiempo-toma-hacer-una-pagina-web/): plazos por tipo de proyecto y qué los retrasa.
 - [Métodos de pago online en Panamá](https://elementoweb.com/blog/metodos-de-pago-online-en-panama/): Yappy, tarjetas y transferencias, con pros y contras.

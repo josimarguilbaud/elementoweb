@@ -6,6 +6,7 @@ import type { PageData } from './types';
 import precios from '../data/precios.json';
 
 const ORG_ID = `${site.domain}/#organizacion`;
+const PERSONA_ID = `${site.domain}/nosotros/#josimar-guilbaud`;
 
 /* ImageObject de la portada de una página (para primaryImageOfPage y BlogPosting.image).
    Solo imágenes propias servidas desde /images/: una foto de stock enlazada no es nuestra
@@ -35,6 +36,9 @@ export function orgNode() {
     email: site.email,
     telephone: site.phone.replace(/\s/g, '-'),
     logo: `${site.domain}/marca/favicon.png`,
+    // Una sola frase de marca en todo el sitio (pie, llms.txt, /nosotros/): la entidad se describe igual en cada lugar.
+    description: 'Agencia de marketing digital, inteligencia artificial y diseño web en Panamá.',
+    founder: { '@id': PERSONA_ID },
     areaServed: [{ '@type': 'Country', name: 'Panamá' }, { '@type': 'Place', name: 'América Latina' }, { '@type': 'Place', name: 'Miami-Dade County, Florida' }],
     // sameAs: solo perfiles verificados por el dueño. El Instagram que había aquí no
     // estaba confirmado (el footer tampoco lo publica), así que se quitó. Añadir cada
@@ -175,15 +179,23 @@ function webPageNode(page: PageData) {
 }
 
 /* Persona con nombre y cargo confirmados por el dueño. Añadir más solo con permiso. */
-function personNodes(page: PageData) {
-  if (page.slug !== 'nosotros') return [];
-  return [{
+/* El fundador, con el cargo de su tarjeta de presentación (21-oct-2026). Es el autor del blog y el `founder` de la
+   organización: una persona con nombre detrás del contenido es una señal de E-E-A-T y le da a los asistentes de IA a
+   quién atribuir lo que citan. Su perfil vive en /nosotros/. */
+export function personNode() {
+  return {
     '@type': 'Person',
-    '@id': `${site.domain}/nosotros/#josimar-guilbaud`,
+    '@id': PERSONA_ID,
     name: 'Josimar Guilbaud',
-    jobTitle: 'CEO',
+    jobTitle: 'Founder & CEO · AI Strategist',
+    url: `${site.domain}/nosotros/`,
     worksFor: { '@id': ORG_ID },
-  }];
+    knowsAbout: ['Diseño web', 'Marketing digital', 'Inteligencia artificial', 'SEO', 'WhatsApp Business API', 'Automatización con n8n'],
+  };
+}
+
+function personNodes(page: PageData) {
+  return page.slug === 'nosotros' ? [personNode()] : [];
 }
 
 /* Catálogo de ofertas del servicio. /precios/: los formatos de site.ts y el plan mensual. Cualquier otra página: los ids
@@ -244,7 +256,7 @@ export function pageJsonLd(page: PageData, opts: { localBusiness?: boolean } = {
 /* `a.slug` ya trae el prefijo `blog/` (p. ej. 'blog/cuanto-cuesta-…'), así que
    la URL se arma con url(): concatenar '/blog/' otra vez producía /blog/blog/…
    (404) en el mainEntityOfPage de los 70 artículos. */
-export function articleJsonLd(a: { title: string; description: string; slug: string; date: Date; image?: string; hero?: { src: string; alt: string } }) {
+export function articleJsonLd(a: { title: string; description: string; slug: string; date: Date; updated?: string; image?: string; hero?: { src: string; alt: string } }) {
   const pageUrl = `${site.domain}${url(a.slug)}`;
   /* image: portada con medidas y descripción + la imagen para compartir (1200x630). */
   const heroObj = a.hero ? imageObject(a.hero) : null;
@@ -254,6 +266,7 @@ export function articleJsonLd(a: { title: string; description: string; slug: str
     '@graph': [
       orgNode(),
       webSiteNode(),
+      personNode(),
       {
         '@type': 'BlogPosting',
         '@id': `${pageUrl}#articulo`,
@@ -262,8 +275,9 @@ export function articleJsonLd(a: { title: string; description: string; slug: str
         ...(images.length ? { image: images } : {}),
         description: a.description,
         datePublished: a.date.toISOString().slice(0, 10),
+        ...(a.updated ? { dateModified: a.updated } : {}),
         inLanguage: 'es-PA',
-        author: { '@id': ORG_ID },
+        author: { '@id': PERSONA_ID },
         publisher: { '@id': ORG_ID },
         mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
       },

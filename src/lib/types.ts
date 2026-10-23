@@ -173,5 +173,7 @@ export interface PageData {
   creds?: boolean;
   /** Blog: fecha ISO (YYYY-MM-DD) y categoría, para listado y schema Article. */
   date?: string;
+  /** Blog: última revisión del contenido (YYYY-MM-DD), para dateModified, «Actualizado» y lastmod del sitemap. */
+  updated?: string;
   category?: string;
 }

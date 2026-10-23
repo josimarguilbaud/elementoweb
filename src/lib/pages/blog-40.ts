@@ -192,6 +192,7 @@ export const blog40: PageData[] = [
           { slug: 'blog/cuanto-cuesta-diseno-web-panama', label: 'Guía general de precios' },
           { slug: 'blog/landing-page-vs-sitio-web-cual-necesitas', label: 'Landing page vs sitio web' },
           { slug: 'crecimiento/hosting-infraestructura-panama', label: 'Hosting e infraestructura' },
+          { slug: 'recursos/precios-agencias-panama-2026', label: 'Precios de agencias en Panamá, 2026' },
         ],
       },
       { type: 'form', h2: 'Cuéntanos tu oferta y te cotizamos', intro: 'Dinos qué quieres promover y qué acción esperas del visitante; te respondemos con el alcance por escrito.' },

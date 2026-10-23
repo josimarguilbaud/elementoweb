@@ -243,9 +243,9 @@ export const IA_PORTADA = {
 /** Respuesta citable (40 a 60 palabras, con fecha), reescrita para marketing + IA. Sin cifras: la portada no publica precios. */
 export function respuestaPortada() {
   return {
-    fecha: '2026-10-22',
+    fecha: '2026-10-23',
     text:
-      '<a href="/nosotros/">Elemento Web</a> es una agencia de marketing digital y proyectos de inteligencia artificial con sede en ' +
+      '<a href="/nosotros/">Elemento Web</a> es una agencia de marketing digital e IA en Panamá, con sede en ' +
       'Ciudad de Panamá. Hacemos campañas en Google y Meta, SEO, contenido con IA, agentes de IA y <a href="/diseno-web-panama/">diseño web</a> ' +
       'para empresas en Panamá y <a href="/miami/">negocios de Miami</a>. Somos Tech Provider verificado por Meta para la API oficial de WhatsApp.',
   };

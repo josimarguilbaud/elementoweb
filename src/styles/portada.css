@@ -37,7 +37,18 @@ main :focus-visible { outline: 2px solid #0a0a0a; outline-offset: 2px; border-ra
 @media (min-width: 1024px) { .pv3-hero { padding-top: calc(var(--nav-h) + 72px); } }
 .pv3-hero__grid { display: grid; gap: 24px; align-items: center; }
 @media (min-width: 1024px) { .pv3-hero__grid { grid-template-columns: minmax(0, 1fr) 440px; gap: 48px; } }
-.pv3-etiqueta { max-width: 40ch; font-size: 0.875rem; font-weight: 500; line-height: 1.45; letter-spacing: 0; color: #525252; }
+/* D62: el H1 («agencia de marketing digital e IA en Panamá») se lee como primera línea del héroe, no como nota al pie. */
+.pv3-etiqueta { max-width: 44ch; font-size: clamp(1rem, 0.92rem + 0.35vw, 1.25rem); font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; color: #0a0a0a; }
+/* Sección «agencia» (D62): texto y ficha a la izquierda, seis servicios a la derecha. */
+.pv3-agencia { display: grid; gap: 32px; }
+@media (min-width: 1024px) { .pv3-agencia { grid-template-columns: 1fr 1fr; align-items: start; gap: 64px; } }
+.pv3-ficha { margin-top: 16px; font-size: 0.875rem; color: #525252; }
+.pv3-agencia__lista { display: grid; gap: 0; border-top: 1px solid #e5e5e5; }
+@media (min-width: 640px) { .pv3-agencia__lista { grid-template-columns: 1fr 1fr; column-gap: 24px; } }
+.pv3-agencia__lista a { display: block; padding: 14px 0; border-bottom: 1px solid #e5e5e5; color: #0a0a0a; }
+.pv3-agencia__lista b { display: block; font-weight: 700; }
+.pv3-agencia__lista span { display: block; margin-top: 2px; font-size: 0.9375rem; color: #525252; }
+.pv3-agencia__lista a:hover b { text-decoration: underline; text-underline-offset: 3px; }
 .pv3-display { margin-top: 16px; font-size: clamp(2.5rem, 1.6rem + 4vw, 4.5rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.025em; color: #0a0a0a; }
 .pv3-display span { display: block; color: #737373; }
 @media (min-width: 1280px) { .pv3-display { white-space: nowrap; } }

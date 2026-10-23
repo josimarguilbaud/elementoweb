@@ -1,0 +1,111 @@
+---
+/* Calculadora de ventas perdidas por no responder WhatsApp a tiempo (D62). La persona escribe sus propios números:
+   consultas al mes, cuántas se responden tarde o nunca, cuántas cierra cuando responde a tiempo y su ticket promedio.
+   No usa estadísticas de terceros ni promete retorno: los valores iniciales son un ejemplo marcado como tal. Todo el
+   cálculo ocurre en el navegador y no se envía ni se guarda ningún dato. */
+import Base from '../../../layouts/Base.astro';
+import ContactForm from '../../../components/ContactForm.astro';
+import { pageJsonLd } from '../../../lib/schema';
+
+const slug = 'recursos/calculadora-ventas-perdidas-whatsapp';
+const title = 'Calculadora: cuánto pierdes por no responder WhatsApp';
+const description = 'Calcula cuántas ventas y cuánto dinero pierdes al mes por responder tarde o no responder en WhatsApp, con tus propios números. Gratis y sin registro.';
+const jsonld = pageJsonLd({
+  slug, title, description, h1: 'Calculadora de ventas perdidas por WhatsApp', breadcrumb: 'Ventas perdidas por WhatsApp',
+  lead: [], blocks: [],
+  parent: { slug: 'recursos', label: 'Recursos' },
+});
+const campo = 'w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm text-ink focus:border-teal-deep focus:outline-none focus:ring-2 focus:ring-teal-deep/20';
+---
+<Base title={title} description={description} jsonld={jsonld} dark>
+  <section class="bg-humo pb-14 pt-[calc(var(--nav-h)+40px)] text-negro md:pt-[calc(var(--nav-h)+72px)]">
+    <div class="mx-auto max-w-3xl px-6">
+      <nav aria-label="Ruta de navegación" class="text-sm text-gris-texto"><a href="/" class="underline underline-offset-2 hover:text-negro">Inicio</a> <span aria-hidden="true">/</span> <a href="/recursos/" class="underline underline-offset-2 hover:text-negro">Recursos</a> <span aria-hidden="true">/</span> <span class="text-negro">Ventas perdidas por WhatsApp</span></nav>
+      <h1 class="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] font-extrabold leading-[1.05]">Calculadora de ventas perdidas por WhatsApp</h1>
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-gris-texto">Cada consulta que se responde tarde, o nunca, es una venta que se puede ir a la competencia. Escribe tus números y mira cuánto representa al mes y al año.</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-6 py-14">
+    <form id="calc" class="glass rounded-3xl p-6 sm:p-8" novalidate>
+      <p class="mb-5 text-sm text-ink/70">Los valores iniciales son un ejemplo. Cámbialos por los de tu negocio.</p>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div>
+          <label for="c-consultas" class="mb-1.5 block text-sm font-semibold text-ink">Consultas por WhatsApp al mes</label>
+          <input id="c-consultas" type="number" inputmode="numeric" min="0" step="1" value="200" class={campo} />
+          <p class="mt-1 text-xs text-ink/70">Cuéntalas en tu WhatsApp de un mes normal.</p>
+        </div>
+        <div>
+          <label for="c-tarde" class="mb-1.5 block text-sm font-semibold text-ink">De esas, % que respondes tarde o no respondes</label>
+          <input id="c-tarde" type="number" inputmode="decimal" min="0" max="100" step="1" value="30" class={campo} />
+          <p class="mt-1 text-xs text-ink/70">Por ejemplo, las que llegan de noche o en fin de semana.</p>
+        </div>
+        <div>
+          <label for="c-cierre" class="mb-1.5 block text-sm font-semibold text-ink">% que cierras cuando respondes a tiempo</label>
+          <input id="c-cierre" type="number" inputmode="decimal" min="0" max="100" step="1" value="20" class={campo} />
+          <p class="mt-1 text-xs text-ink/70">De cada 10 consultas que atiendes bien, ¿cuántas compran?</p>
+        </div>
+        <div>
+          <label for="c-ticket" class="mb-1.5 block text-sm font-semibold text-ink">Venta promedio en dólares</label>
+          <input id="c-ticket" type="number" inputmode="decimal" min="0" step="1" value="120" class={campo} />
+          <p class="mt-1 text-xs text-ink/70">Lo que deja en promedio una compra o un servicio.</p>
+        </div>
+      </div>
+    </form>
+
+    <div id="calc-out" role="status" aria-live="polite" class="mt-8 rounded-3xl border border-ink/10 bg-white p-6 sm:p-8">
+      <h2 class="font-display text-2xl font-extrabold text-ink">Resultado</h2>
+      <dl class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div class="rounded-2xl bg-paper p-5"><dt class="text-sm font-semibold text-ink/70">Consultas que se enfrían al mes</dt><dd id="o-perdidas" class="mt-1 font-display text-3xl font-extrabold text-ink">—</dd></div>
+        <div class="rounded-2xl bg-paper p-5"><dt class="text-sm font-semibold text-ink/70">Ventas que podrías no estar cerrando</dt><dd id="o-ventas" class="mt-1 font-display text-3xl font-extrabold text-ink">—</dd></div>
+        <div class="rounded-2xl bg-paper p-5"><dt class="text-sm font-semibold text-ink/70">Ingreso en juego al mes</dt><dd id="o-mes" class="mt-1 font-display text-3xl font-extrabold text-ink">—</dd></div>
+        <div class="rounded-2xl bg-paper p-5"><dt class="text-sm font-semibold text-ink/70">Ingreso en juego al año</dt><dd id="o-anio" class="mt-1 font-display text-3xl font-extrabold text-ink">—</dd></div>
+      </dl>
+      <p id="o-note" class="mt-5 text-sm leading-relaxed text-ink/70"></p>
+      <p class="mt-5"><a href="/funcionalidades/agente-de-ventas-ia-whatsapp-panama/" class="inline-flex min-h-12 items-center gap-2 rounded-full bg-negro px-6 text-sm font-semibold text-white hover:bg-grafito">Ver cómo responder al momento <span aria-hidden="true">→</span></a></p>
+    </div>
+
+    <div class="mt-8 rounded-2xl border border-ink/10 bg-white p-6 text-sm leading-relaxed text-ink/70">
+      <h2 class="font-display text-lg font-bold text-ink">Cómo se calcula y sus límites</h2>
+      <ul class="mt-3 list-disc space-y-1.5 pl-5">
+        <li>Consultas que se enfrían = consultas al mes × % que respondes tarde o no respondes.</li>
+        <li>Ventas en juego = consultas que se enfrían × % que cierras cuando respondes a tiempo.</li>
+        <li>Ingreso en juego = ventas en juego × venta promedio. El anual es el mensual × 12.</li>
+        <li>Supone que esas consultas habrían cerrado al mismo ritmo que las que atiendes a tiempo. Algunas no habrían comprado igual: tómalo como un techo, no como una promesa.</li>
+        <li>No usa datos de terceros. Todo se calcula en tu navegador; no guardamos lo que escribes.</li>
+      </ul>
+      <p class="mt-4">Para atender al momento sin sumar personal existe el <a href="/funcionalidades/agente-de-ventas-ia-whatsapp-panama/" class="font-semibold text-teal-deep underline">agente de ventas con IA en WhatsApp</a>, y el paquete <a href="/soluciones/" class="font-semibold text-teal-deep underline">Clientes por WhatsApp</a> lo junta con anuncios y seguimiento. Lo hace Elemento Web, <a href="/" class="font-semibold text-teal-deep underline">agencia de marketing digital en Panamá</a>.</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-2xl px-6 pb-20">
+    <h2 class="text-center font-display text-[clamp(1.6rem,3.5vw,2.4rem)] font-extrabold text-ink">¿Quieres dejar de perder esas consultas?</h2>
+    <p class="mx-auto mt-3 max-w-xl text-center text-lg text-ink/70">Cuéntanos cómo atiendes hoy y te respondemos el mismo día hábil.</p>
+    <div class="mt-8"><ContactForm /></div>
+  </section>
+</Base>
+
+<script>
+  const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+  const money = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+  const entero = (n: number) => Math.round(n).toLocaleString('en-US');
+  const v = (id: string, max = Infinity) => Math.min(max, Math.max(0, parseFloat($(id).value) || 0));
+  let sent = false;
+  const calc = () => {
+    const consultas = v('c-consultas'), tarde = v('c-tarde', 100) / 100, cierre = v('c-cierre', 100) / 100, ticket = v('c-ticket');
+    const perdidas = consultas * tarde;
+    const ventas = perdidas * cierre;
+    const mes = ventas * ticket;
+    $('o-perdidas').textContent = entero(perdidas);
+    $('o-ventas').textContent = entero(ventas);
+    $('o-mes').textContent = money(mes);
+    $('o-anio').textContent = money(mes * 12);
+    document.getElementById('o-note')!.textContent = mes > 0
+      ? `Con tus números, responder a tiempo esas ${entero(perdidas)} consultas podría significar hasta ${money(mes)} al mes.`
+      : 'Escribe tus números para ver el resultado.';
+    if (!sent) { sent = true; (window as any).gtag?.('event', 'calculator_complete', { page_path: location.pathname }); }
+  };
+  document.getElementById('calc')!.addEventListener('input', calc);
+  document.getElementById('calc')!.addEventListener('submit', (e) => e.preventDefault());
+  calc();
+</script>

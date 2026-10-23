@@ -504,6 +504,7 @@ export const servicios2026: PageData[] = [
           { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones con n8n' },
           { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing pages' },
           { slug: 'precios', label: 'Precios' },
+          { slug: '', label: 'Agencia de marketing digital en Panamá' },
         ],
       },
     ],

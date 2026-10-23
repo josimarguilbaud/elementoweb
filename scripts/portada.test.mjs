@@ -167,9 +167,9 @@ test('dist/ existe y está al día con src/, public/, astro.config.mjs y package
   assert.equal(viejo, null, viejo ?? '');
 });
 
-test('orden: las 8 secciones de la v3, y nada de la v2', conDist, () => {
+test('orden: las 9 secciones de la v3 (con «agencia», D62), y nada de la v2', conDist, () => {
   const ids = home().querySelectorAll('main > section').map((s) => s.getAttribute('id'));
-  assert.deepEqual(ids, ['inicio', 'soluciones', 'servicios', 'diseno-web', 'ia', 'resumen', 'preguntas', 'hablemos']);
+  assert.deepEqual(ids, ['inicio', 'soluciones', 'agencia', 'servicios', 'diseno-web', 'ia', 'resumen', 'preguntas', 'hablemos']);
   const raiz = home();
   for (const sel of ['#proyectos', '#industrias', '#precios', '#desarrollo', '#marketing', '.pv2-sec', '.ew-hero']) assert.equal(raiz.querySelectorAll(sel).length, 0, sel);
 });
@@ -357,8 +357,9 @@ test('general: cada enlace interno de la portada lleva a una página que existe'
   }
 });
 
+/* D62: «marketing digital» deja de estar reservada para la portada, cuya principal es «agencia de marketing digital» desde D60. */
 test('general: los H2 de la portada no usan las palabras reservadas de la regla 2 de KEYWORDS.md', conDist, () => {
-  for (const h of home().querySelectorAll('main h2')) assert.doesNotMatch(textoDe(h), /\bSEO\b|desarrollo web a medida|marketing digital/i, textoDe(h));
+  for (const h of home().querySelectorAll('main h2')) assert.doesNotMatch(textoDe(h), /\bSEO\b|desarrollo web a medida/i, textoDe(h));
 });
 
 test('general: las clases pv3- solo viven dentro de <main>', conDist, () => {

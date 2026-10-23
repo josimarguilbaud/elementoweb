@@ -219,17 +219,13 @@ export const BENTO_PORTADA: TarjetaBento[] = [
   { id: 'contenido', titulo: 'Contenido con IA', linea: 'Videos y piezas para redes, hechos con IA.', slug: 'marketing/videos-publicitarios-panama', img: { src: '/images/portada-v3/bento-videos-600.webp', width: 600, height: 448 }, nota: 'miniaturas de videos para redes' },
 ];
 
-/** Sección de diseño web: lista y tres capturas reales del portafolio (no las del mockup). */
+/** Sección de diseño web: lista y un mockup de laptop y celular con dos webs reales del portafolio. */
 export const WEB_PORTADA = {
   titulo: 'Webs que trabajan como un vendedor.',
   linea: 'La base de todo: rápida, medible y a tu nombre.',
   items: ['Sitios corporativos', 'Landing pages', 'Tiendas online con Yappy', 'Desarrollo a medida'],
-  capturas: [
-    { cap: '/portfolio/sanblasfull', t: 'San Blas Full' },
-    { cap: '/portfolio/panamainternationalmovers-2026', t: 'Panama International Movers' },
-    { cap: '/portfolio/remodelacionesjg', t: 'Remodelaciones JG' },
-  ],
-  movil: { src: '/images/ejemplos/movil-tramitapa.webp', t: 'TramitaPa' },
+  laptop: { cap: '/portfolio/sanblasfull', t: 'San Blas Full' },
+  movil: { src: '/images/ejemplos/movil-tramitapa.webp', src2x: '/images/ejemplos/movil-tramitapa-780.webp', t: 'TramitaPa' },
 };
 
 /** Bloque negro de proyectos de IA: el diagrama y la franja de confianza. */

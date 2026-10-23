@@ -147,15 +147,18 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
           <a href="/diseno-web-panama/" class="pv3-btn pv3-btn--contorno">Ver diseño web <span aria-hidden="true">→</span></a>
         </div>
       </div>
-      <div class="pv3-capturas" data-mov="css">
-        {WEB_PORTADA.capturas.map((c) => (
-          <figure class="pv3-marco">
-            <span class="pv3-marco__barra" aria-hidden="true"></span>
-            <img src={`${c.cap}-800.webp`} srcset={`${c.cap}-480.webp 480w, ${c.cap}-800.webp 800w`} sizes="(min-width: 1024px) 420px, 80vw" width="800" height="600" alt={`Web de ${c.t}, hecha por Elemento Web`} loading="lazy" decoding="async" />
-          </figure>
-        ))}
-        <figure class="pv3-movil"><img src={WEB_PORTADA.movil.src} width="390" height="844" alt={`Web de ${WEB_PORTADA.movil.t} en un celular`} loading="lazy" decoding="async" /></figure>
-      </div>
+      <figure class="pv3-dispositivos" data-mov="css">
+        <div class="pv3-laptop">
+          <div class="pv3-laptop__pantalla">
+            <img src={`${WEB_PORTADA.laptop.cap}-800.webp`} srcset={`${WEB_PORTADA.laptop.cap}-800.webp 800w, ${WEB_PORTADA.laptop.cap}-1200.webp 1200w`} sizes="(min-width: 1024px) 560px, 84vw" width="800" height="600" alt={`Web de ${WEB_PORTADA.laptop.t} en una laptop, hecha por Elemento Web`} loading="lazy" decoding="async" />
+          </div>
+          <span class="pv3-laptop__base" aria-hidden="true"></span>
+        </div>
+        <div class="pv3-telefono">
+          <img src={WEB_PORTADA.movil.src} srcset={`${WEB_PORTADA.movil.src} 390w, ${WEB_PORTADA.movil.src2x} 780w`} sizes="(min-width: 1024px) 150px, 26vw" width="390" height="844" alt={`Web de ${WEB_PORTADA.movil.t} en un celular, hecha por Elemento Web`} loading="lazy" decoding="async" />
+        </div>
+        <figcaption class="pv3-dispositivos__nota">Webs reales: {WEB_PORTADA.laptop.t} y {WEB_PORTADA.movil.t}.</figcaption>
+      </figure>
     </div>
   </section>
 

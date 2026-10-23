@@ -107,9 +107,9 @@ test('bento de 5 tarjetas, una por servicio, y la de Contenido con IA va a Video
 
 test('diseño web: 4 tipos de sitio y 3 capturas reales del portafolio que existen', () => {
   assert.equal(WEB_PORTADA.items.length, 4);
-  assert.equal(WEB_PORTADA.capturas.length, 3);
-  for (const c of WEB_PORTADA.capturas) for (const w of [480, 800]) assert.ok(existsSync(`public${c.cap}-${w}.webp`), `${c.cap}-${w}.webp`);
+  for (const w of [800, 1200]) assert.ok(existsSync(`public${WEB_PORTADA.laptop.cap}-${w}.webp`), `${WEB_PORTADA.laptop.cap}-${w}.webp`);
   assert.ok(existsSync(`public${WEB_PORTADA.movil.src}`));
+  assert.ok(existsSync(`public${WEB_PORTADA.movil.src2x}`));
 });
 
 test('IA: el diagrama tiene 4 pasos y la franja de confianza 3 afirmaciones', () => {
@@ -240,8 +240,8 @@ test('3. bento: 5 tarjetas con una sola flecha, cada una a su página, y maqueta
 test('4. diseño web: 4 tipos de sitio, 3 capturas reales en marco y el botón a /diseno-web-panama/', conDist, () => {
   const s = seccion(home(), 'diseno-web');
   assert.deepEqual(s.querySelectorAll('ul.pv3-lista li').map(textoDe), WEB_PORTADA.items);
-  assert.equal(s.querySelectorAll('.pv3-marco img').length, 3);
-  assert.ok(s.querySelector('.pv3-movil img'));
+  assert.ok(s.querySelector('.pv3-laptop img'), 'laptop con una web real');
+  assert.ok(s.querySelector('.pv3-telefono img'), 'celular con una web real');
   assert.match(textoDe(s.querySelector('a[href="/diseno-web-panama/"]')), /Ver diseño web/);
 });
 

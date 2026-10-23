@@ -1,0 +1,22 @@
+{
+  "_nota": "Material del demo de Praderas de Arraiján (23-oct-2026). Los renders, planos y logos son de Grupo Legacy Inmobiliaria, tomados de praderasdearraijan.com para mostrarles su propia web nueva. Lo generado con IA se hizo en fal.ai.",
+  "renders-del-cliente": {
+    "archivos": ["plano-roble", "plano-cedro", "plano-almendro-baja", "plano-almendro-alta", "sala-unifamiliar", "recamara-unifamiliar", "sala-duplex", "recamara-duplex", "recamara-duplex-2", "casa-modelo-sala", "logo-praderas.png", "logo-legacy.png"],
+    "autor": "Grupo Legacy Inmobiliaria",
+    "fuente": "https://www.praderasdearraijan.com/"
+  },
+  "renders-del-cliente-reiluminados-con-ia": {
+    "archivos": ["aerea-poster", "roble", "cedro", "almendro", "cancha"],
+    "origen": "Renders de Grupo Legacy llevados a luz de atardecer",
+    "modelo": "google/nano-banana-2.1/edit (fal.ai)"
+  },
+  "generadas-con-ia": {
+    "archivos": ["visita-casa-modelo", "familia-parque", "pumptrack", "financiamiento"],
+    "modelo": "google/nano-banana-2.1 (fal.ai)",
+    "nota": "Personas ficticias; no representan clientes ni empleados reales."
+  },
+  "videos": {
+    "archivos": ["../video/aerea.mp4", "../video/roble.mp4", "../video/cedro.mp4", "../video/almendro.mp4", "../video/cancha.mp4", "../video/sala-duplex.mp4"],
+    "modelo": "fal-ai/kling-video/v3/pro/image-to-video (fal.ai), a partir de los renders anteriores"
+  }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lotes disponibles · Praderas de Arraiján</title>
+<meta name="description" content="Vista previa: mapa interactivo de lotes de Praderas de Arraiján con disponibilidad, precio y letra estimada.">
+<link rel="icon" href="../img/logo-praderas.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Martian+Mono:wdth,wght@87.5,500;87.5,600;87.5,700&family=Young+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+  .cifras { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+  .cifras div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); border-radius: 16px; padding: 12px 18px; min-width: 150px; }
+  .cifras b { display: block; font: 400 2rem/1 var(--display); }
+  .cifras span { font-size: 13.5px; color: #cfe0d6; }
+  .cifras .d b { color: #9fe09a; } .cifras .r b { color: var(--guayacan); } .cifras .v b { color: #c9d1cc; }
+  .panel-nota { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; background: var(--papel); border-radius: 20px; padding: 18px 22px; box-shadow: var(--sombra); margin-top: 22px; }
+  .panel-nota i { width: 44px; height: 44px; border-radius: 12px; background: var(--pradera-claro); display: grid; place-items: center; font-style: normal; font-size: 20px; }
+</style>
+</head>
+<body data-base="../">
+
+<div class="franja" role="note">
+  <span><b>Vista previa</b> de Elemento Web para Grupo Legacy · plano ilustrativo, disponibilidad de ejemplo</span>
+  <button type="button" aria-label="Ocultar este aviso">×</button>
+</div>
+
+<header class="nav">
+  <div class="cont">
+    <a class="nav-logo" href="../" aria-label="Praderas de Arraiján, inicio"><img src="../img/logo-praderas.png" alt="Praderas de Arraiján" width="650" height="382"></a>
+    <ul class="nav-links" id="menu">
+      <li><a href="../modelos/">Modelos</a></li>
+      <li><a href="./" aria-current="page">Disponibilidad</a></li>
+      <li><a href="../#financiamiento">Financiamiento</a></li>
+      <li><a href="../#ubicacion">Ubicación</a></li>
+      <li><a href="../#amenidades">Amenidades</a></li>
+    </ul>
+    <a class="btn btn--ambar btn--nav" href="../#visita">Agenda tu visita</a>
+    <button class="nav-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="cab-int">
+    <div class="cont" style="display:grid;gap:16px">
+      <p class="ceja">Disponibilidad</p>
+      <h1>Mapa de lotes</h1>
+      <p class="lead">Así está el proyecto hoy. Filtra por modelo, toca un lote verde y agenda tu visita con ese lote ya apartado en la conversación.</p>
+      <div class="cifras">
+        <div class="d"><b data-cuenta="disponibles">—</b><span>disponibles</span></div>
+        <div class="r"><b data-cuenta="reservados">—</b><span>reservados</span></div>
+        <div class="v"><b data-cuenta="vendidos">—</b><span>vendidos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec mapa-sec" data-mapa aria-label="Mapa interactivo de lotes" style="padding-top:44px">
+    <div class="cont">
+      <div class="mapa">
+        <div>
+          <div class="plano" data-plano data-preseleccion>
+            <div class="plano-barra">
+              <div class="leyenda">
+                <span><i style="background:var(--pradera)"></i>Disponible</span>
+                <span><i style="background:var(--guayacan)"></i>Reservado</span>
+                <span><i style="background:var(--vendido)"></i>Vendido</span>
+              </div>
+              <div class="filtros" role="group" aria-label="Filtrar lotes">
+                <button type="button" class="chip" data-filtro="todos" aria-pressed="true">Todos</button>
+                <button type="button" class="chip" data-filtro="disponibles" aria-pressed="false">Disponibles</button>
+                <button type="button" class="chip" data-filtro="roble" aria-pressed="false">Roble</button>
+                <button type="button" class="chip" data-filtro="cedro" aria-pressed="false">Cedro</button>
+                <button type="button" class="chip" data-filtro="almendro" aria-pressed="false">Almendro</button>
+              </div>
+            </div>
+            <div class="plano-svg-wrap"><svg viewBox="0 0 1000 620" role="group" aria-label="Plano ilustrativo de lotes de Praderas de Arraiján"></svg></div>
+            <div class="plano-tip" aria-hidden="true"></div>
+          </div>
+          <div class="panel-nota">
+            <i aria-hidden="true">⚙</i>
+            <p><b>Siempre al día.</b> El equipo de ventas marca un lote como reservado o vendido desde su panel y el mapa cambia en ese momento, sin esperar a nadie.</p>
+          </div>
+          <h2 style="font-size:1.6rem;margin-top:40px">Lotes disponibles</h2>
+          <div class="lista-lotes" data-lista-lotes aria-label="Lista de lotes disponibles"></div>
+          <p class="nota">*Precio de ejemplo para esta vista previa. Los lotes de esquina llevan un recargo de ejemplo.</p>
+        </div>
+        <aside class="ficha" data-ficha aria-live="polite">
+          <div class="ficha-vacia"><b>Toca un lote verde</b><span>Aquí verás su modelo, su precio y la letra estimada.</span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="cont">
+    <div class="pie-grid">
+      <div>
+        <span class="pie-logo"><img src="../img/logo-praderas.png" alt="Praderas de Arraiján" width="650" height="382"></span>
+        <div class="legacy"><img src="../img/logo-legacy.png" alt="Grupo Legacy Inmobiliaria" width="1021" height="350"><span>Un proyecto de Grupo Legacy Inmobiliaria</span></div>
+      </div>
+      <div><h4>El proyecto</h4><ul><li><a href="../modelos/">Modelos</a></li><li><a href="./">Disponibilidad</a></li><li><a href="../#financiamiento">Financiamiento</a></li><li><a href="../#ubicacion">Ubicación</a></li></ul></div>
+      <div><h4>Oficina de ventas</h4><ul><li>Vía España, PH Domino, planta baja, local #3</li><li><a href="tel:+5073812102">(507) 381-2102</a></li><li><a href="https://wa.me/50760306736" target="_blank" rel="noopener">6030-6736</a> · <a href="https://wa.me/50765326708" target="_blank" rel="noopener">6532-6708</a></li></ul></div>
+      <div><h4>Escríbenos</h4><ul><li><a href="mailto:ventas@glegacypanama.com">ventas@glegacypanama.com</a></li><li><a href="https://www.instagram.com/praderasdearraijan/" target="_blank" rel="noopener">@praderasdearraijan</a></li><li><a href="https://www.instagram.com/grupolegacypty/" target="_blank" rel="noopener">@grupolegacypty</a></li></ul></div>
+    </div>
+    <div class="pie-legal"><span>© <span data-ano>2026</span> Praderas de Arraiján · Grupo Legacy Inmobiliaria</span><span>Vista previa preparada por Elemento Web</span></div>
+  </div>
+</footer>
+
+<a class="wa-flot" href="https://wa.me/50760306736?text=Hola%2C%20vi%20el%20mapa%20de%20lotes%20de%20Praderas%20de%20Arraij%C3%A1n%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+</a>
+
+<script src="../assets/data.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

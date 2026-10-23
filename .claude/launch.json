@@ -14,6 +14,12 @@
       "port": 4602
     },
     {
+      "name": "demos-estaticos",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "4620", "--directory", "public"],
+      "port": 4620
+    },
+    {
       "name": "elementoweb-fixtures",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev:fixtures"],

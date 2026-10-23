@@ -49,15 +49,17 @@ export const disenoWebPanama: PageData[] = [
       {
         type: 'ejemplos',
         h2: 'Webs que ya entregamos',
-        intro: 'Proyectos publicados del portafolio, en escritorio y en celular. Cada uno tiene un trabajo distinto: llevar la consulta a WhatsApp, ordenar muchos servicios o vender un tour en minutos.',
+        intro: 'Proyectos publicados del portafolio, en escritorio y en celular. Cada uno tiene un trabajo distinto: llevar la consulta a WhatsApp, ordenar muchos servicios, cotizar un pedido o reservar una estadía.',
         columnas: 2,
         items: [
           { tipo: 'web', dominio: 'tramitapa.com', escritorio: portafolio('tramitapa', 'TramitaPa'), movil: movil('tramitapa', 'TramitaPa'), pie: 'TramitaPa · sitio a medida enfocado en una sola acción: llevar la consulta de visa a WhatsApp.' },
           { tipo: 'web', dominio: 'panamainternationalmovers.com', escritorio: portafolio('panamainternationalmovers-2026', 'Panama International Movers'), movil: movil('movers', 'Panama International Movers'), pie: 'Panama International Movers · más de 30 servicios y destinos ordenados en un solo sitio, con cotización por WhatsApp.' },
           { tipo: 'web', dominio: 'ciclofrio.com', escritorio: portafolio('ciclofrio', 'CicloFrio'), movil: movil('ciclofrio', 'CicloFrio'), pie: 'CicloFrio · siete servicios de aire acondicionado, pólizas para empresas y cobertura por zona.' },
           { tipo: 'web', dominio: 'sanblasfull.com', escritorio: portafolio('sanblasfull', 'San Blas Full'), movil: movil('sanblasfull', 'San Blas Full'), pie: 'San Blas Full · selector de tours y reserva con depósito, en varios idiomas.' },
+          { tipo: 'web', dominio: 'maximpresiones.com', escritorio: portafolio('maximpresiones', 'Max Impresiones'), movil: movil('maximpresiones', 'Max Impresiones'), pie: 'Max Impresiones · imprenta y bordados con cotizador de ocho servicios y pedidos directo por WhatsApp.' },
+          { tipo: 'web', dominio: 'lavidaesbellapanama.com', escritorio: portafolio('lavidaesbella', 'La Vida es Bella'), movil: movil('lavidaesbella', 'La Vida es Bella'), pie: 'La Vida es Bella · cabaña de montaña con estimador de tarifas y reserva por WhatsApp.' },
         ],
-        nota: 'Capturas reales de proyectos publicados, tomadas el 13 de octubre de 2026. Las cifras de resultados de cada cliente se publican solo con su autorización.',
+        nota: 'Capturas reales de proyectos publicados, tomadas entre el 13 y el 23 de octubre de 2026. Las cifras de resultados de cada cliente se publican solo con su autorización.',
       },
       {
         type: 'receipt',

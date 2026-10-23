@@ -596,6 +596,25 @@ comitea y despliega», con una plantilla común, mockups de fal e imágenes nuev
   ficha solo con la E (96 y 32 px, más 180 px para iPhone), porque WEB no se lee a 16 px. Merge en `main`, `verify` en
   verde, despliegue 39834976112 en verde, `check-prod.sh` 39 ok.
 
+### D59. Fase 1 de la estrategia SEO y GEO (23-oct-2026)
+
+- **Origen:** el dueño pidió un análisis completo de SEO y GEO con la competencia en Google y una estrategia para
+  posicionar en Google y en ChatGPT o Claude. El informe «Estrategia SEO y GEO de Elemento Web» (22-oct-2026) concluyó
+  que lo técnico ya no frena: frenan la autoridad (0 reseñas, sin directorios, casi sin enlaces) y la presencia fuera
+  del sitio. La consulta abierta es chatbots de WhatsApp, IA y n8n. El dueño aprobó empezar por los arreglos del sitio.
+- **Hecho:** los dos H1 de guías que eran el alt de una foto vieja tienen título real, y `scripts/h1.test.mjs` lo
+  vigila (alt de la página o frases de descripción de foto). El blog lleva su fecha de revisión real (22-oct-2026, la
+  reescritura de D57: commits abdf9d8, 7348ea9 y 4c81470) en `dateModified`, `article:modified_time` y una línea visible
+  «Actualizado», y el sitemap la usa como `lastmod` (80 artículos; nada inventado para el resto). `/sitemap.xml`
+  redirige a `/sitemap-index.xml`. Josimar Guilbaud (Founder & CEO · AI Strategist) es el autor del blog y el
+  `founder` de la Organization, con firma visible que enlaza a /nosotros/. Una sola frase de marca: «Agencia de
+  marketing digital, inteligencia artificial y diseño web en Panamá». `llms.txt` al día y `/llms-full.txt` generado en
+  cada build desde las páginas (respuesta directa y FAQ). nginx sirve los .txt y .xml en UTF-8.
+- **Pendiente del dueño:** el foco de la portada (diseño web o marketing digital e IA), reseñas en Google, perfiles en
+  Sortlist, Clutch y GoodFirms, redes propias para `sameAs`, Bing Webmaster Tools, y aclarar la relación con AI Web
+  Studio. La redirección http→https responde 307 en el proxy de Coolify (Traefik), fuera del repo.
+- **Publicación:** merge en `main`, `verify` en verde, despliegue 39910975256 en verde, `check-prod.sh` 39 ok.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

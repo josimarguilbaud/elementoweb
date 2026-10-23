@@ -178,25 +178,34 @@ export const FRANJA_PORTADA: Enlace[] = [
 ];
 
 export interface MitadDiptico { num: string; titulo: string; linea: string; enlaces: Enlace[]; img: { src: string; width: number; height: number; alt: string } }
-/** Díptico (#soluciones): hace elegir camino, 3 enlaces por mitad. */
+/** Recorrido (#soluciones, D61): tres pasos que conectan los servicios, 3 enlaces cada uno. El del medio va en negro. */
 export const DIPTICO_PORTADA: MitadDiptico[] = [
   {
-    num: '01', titulo: 'Marketing digital', linea: 'Campañas y contenido que traen clientes, medidos hasta la consulta.',
+    num: '01', titulo: 'Atraer', linea: 'Que te encuentren en Google, en las redes y en las respuestas de la IA.',
     enlaces: [
       { label: 'Google y Meta Ads', slug: 'marketing' },
-      { label: 'SEO y GEO', slug: 'crecimiento/seo-posicionamiento-web-panama' },
-      { label: 'WhatsApp Marketing', slug: 'marketing/whatsapp-marketing-masivo-panama' },
+      { label: 'SEO y posicionamiento en ChatGPT', slug: 'crecimiento/posicionamiento-en-chatgpt-e-ia-panama' },
+      { label: 'Contenido y videos con IA', slug: 'marketing/videos-publicitarios-panama' },
     ],
     img: { src: '/images/portada-v3/diptico-marketing-800.webp', width: 800, height: 520, alt: 'Una mano sostiene un celular con un anuncio patrocinado de una panadería en un café' },
   },
   {
-    num: '02', titulo: 'Proyectos de IA', linea: 'Agentes y automatizaciones que atienden, cotizan y agendan por ti.',
+    num: '02', titulo: 'Atender', linea: 'Cada consulta se responde al momento por WhatsApp, con un agente de IA y tu equipo detrás.',
     enlaces: [
-      { label: 'Agentes de IA', slug: 'inteligencia-artificial-para-empresas-panama' },
-      { label: 'Chatbots', slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama' },
-      { label: 'Automatización con n8n', slug: 'marketing/automatizaciones-n8n-panama' },
+      { label: 'Agente de ventas con IA en WhatsApp', slug: 'funcionalidades/agente-de-ventas-ia-whatsapp-panama' },
+      { label: 'WhatsApp con la API oficial', slug: 'marketing/whatsapp-marketing-masivo-panama' },
+      { label: 'Reservas y citas online', slug: 'funcionalidades/sistemas-reservas-citas-online-panama' },
     ],
     img: { src: '/images/portada-v3/diptico-ia-800.webp', width: 800, height: 597, alt: 'Una profesional en una oficina de Ciudad de Panamá revisa una conversación con un asistente en su laptop' },
+  },
+  {
+    num: '03', titulo: 'Automatizar', linea: 'El seguimiento se hace solo y la IA trabaja con la información de tu empresa.',
+    enlaces: [
+      { label: 'Automatizaciones con n8n', slug: 'marketing/automatizaciones-n8n-panama' },
+      { label: 'IA para empresas', slug: 'inteligencia-artificial-para-empresas-panama' },
+      { label: 'Paquetes que unen los tres pasos', slug: 'soluciones' },
+    ],
+    img: { src: '/images/portada-v3/diptico-automatizar-800.webp', width: 800, height: 537, alt: 'Una coordinadora de ventas trabaja en su laptop mientras su celular recibe un aviso' },
   },
 ];
 
@@ -250,6 +259,8 @@ export function faqsPortada(): Pregunta[] {
     { q: '¿Siguen haciendo diseño web?', a: 'Sí. Hacemos sitios corporativos, landing pages, tiendas online con Yappy y desarrollo a medida. La web es la base que mide y convierte las campañas. Más en <a href="/diseno-web-panama/">diseño web en Panamá</a>.' },
     { q: '¿Qué es la API oficial de WhatsApp y por qué importa?', a: 'Es la vía que Meta aprueba para que las empresas envíen mensajes y campañas sin arriesgar el número. Somos Tech Provider verificado por Meta y conectamos tu número a la API. Más en <a href="/marketing/whatsapp-marketing-masivo-panama/">WhatsApp marketing</a>.' },
     { q: '¿Trabajan con negocios fuera de Panamá?', a: 'Sí. Desde Ciudad de Panamá trabajamos a distancia y en español con negocios de todo el país y de <a href="/miami/">Miami</a>, por WhatsApp y videollamada. Facturamos en dólares. No tenemos oficina en Miami.' },
+    { q: '¿Cómo funciona el agente de ventas con IA en WhatsApp?', a: 'Corre sobre <a href="/saas/wazacrm/">WazaCRM</a> y la API oficial de WhatsApp: responde con la información de tu negocio, cotiza, agenda y pasa a tu equipo lo que necesita una persona. Te lo entregamos montado y entrenado; el precio publicado está en <a href="/funcionalidades/agente-de-ventas-ia-whatsapp-panama/">la página del agente</a>.' },
+    { q: '¿Tienen paquetes que junten varios servicios?', a: 'Sí, tres: Clientes por WhatsApp, Visible en Google y en la IA, y Empresa con IA. Cada uno conecta atraer, atender y automatizar, con precio de partida publicado en <a href="/soluciones/">Soluciones</a>.' },
     { q: '¿Cómo se cotiza un proyecto?', a: 'Nos cuentas qué quieres lograr en el formulario o por WhatsApp. El diagnóstico no tiene costo y recibes una cotización cerrada por escrito, con alcance, plazo y precio, antes de empezar. Los precios de partida están en <a href="/precios/">precios</a>.' },
     { q: '¿De quién son las cuentas de Google Ads y Meta?', a: 'Tuyas. Nosotros las gestionamos, pero la cuenta publicitaria queda a tu nombre y la inversión se carga ahí directamente. Si algún día cambias de agencia, te llevas el historial.' },
   ];

@@ -8,6 +8,25 @@ import { HERO_SLUGS, OG_SLUGS } from './heroes';
    el fondo, sin relleno de palabras clave. Sin entrada aquí, el alt cae al H1, que repite el título y no describe la
    imagen. Las páginas de IA creativa empiezan por «Foto hecha con IA» (lo exige scripts/marketing-ia.test.mjs). */
 export const HERO_ALTS: Record<string, string> = {
+  /* D61 (23-oct-2026): portadas de las 15 páginas de pregunta y de los 3 servicios nuevos. */
+  'blog/cuanto-cuesta-un-chatbot-de-whatsapp-en-panama': 'Burbuja de chat sobre una pila de monedas, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/whatsapp-business-o-api-cual-necesita-tu-negocio': 'Dos burbujas de chat, una pequeña y otra grande conectada a un cable, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/cuanto-cobra-meta-por-mensaje-de-whatsapp-en-panama': 'Avión de papel con una etiqueta de precio colgando, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/limites-de-mensajes-de-whatsapp-business-api': 'Escalera de cuatro bloques con una burbuja de chat en el escalón más alto, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/por-que-bloquean-un-numero-de-whatsapp-business': 'Celular de pie con un candado cerrado delante, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/quien-hace-chatbots-de-whatsapp-con-ia-en-panama': 'Lupa sobre una burbuja de chat, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/que-es-un-agente-de-ia-para-whatsapp': 'Burbuja de chat con unos audífonos de atención al cliente, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/chatbot-con-reglas-o-con-ia-cual-conviene': 'Árbol de varillas rectas junto a una esfera lisa de metal líquido, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/cuanto-cuesta-implementar-inteligencia-artificial-en-una-empresa': 'Balanza con una escultura de nudo en un plato y monedas en el otro, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/es-seguro-usar-ia-con-los-datos-de-mi-empresa': 'Escudo delante de una pila de documentos, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/ley-81-proteccion-de-datos-chatbots-panama': 'Balanza de la justicia junto a una carpeta cerrada con candado, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/que-es-n8n-y-para-que-sirve': 'Tres bloques conectados por tubos curvos formando un flujo, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/n8n-zapier-o-make-cual-conviene': 'Tres piezas de conexión distintas sobre un podio, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/cuanto-cuesta-automatizar-procesos-con-n8n-en-panama': 'Engranaje sobre una pila de monedas, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/como-conectar-whatsapp-con-n8n': 'Burbuja de chat conectada con un cable a un bloque, en cromo plateado, render 3D sobre fondo gris claro',
+  'crecimiento/posicionamiento-en-chatgpt-e-ia-panama': 'Tarjetas de resultados apiladas con una estrella brillante encima, en cromo plateado, render 3D sobre fondo gris claro',
+  'funcionalidades/agente-de-ventas-ia-whatsapp-panama': 'Burbuja de chat junto a una bolsa de compras, en cromo plateado, render 3D sobre fondo gris claro',
+  'soluciones': 'Tres bloques escalonados unidos por una varilla curva, en cromo plateado, render 3D sobre fondo gris claro',
   'blog': 'Libro abierto con las páginas en abanico, en cromo plateado, render 3D sobre fondo gris claro',
   'blog/cuanto-cuesta-desarrollo-web-a-medida-panama': 'Pila de monedas junto a una ventana de navegador con bloques de diseño, en cromo plateado, render 3D sobre fondo gris claro',
   'blog/cuanto-cuesta-mantenimiento-web-panama': 'Pila de monedas y llave inglesa apoyada en una ventana de navegador, en cromo plateado, render 3D sobre fondo gris claro',

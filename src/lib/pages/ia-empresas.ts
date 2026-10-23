@@ -28,17 +28,17 @@ export const iaEmpresas: PageData[] = [
     blocks: [
       {
         type: 'answer',
-        fecha: '2026-10-13',
-        text: 'Elemento Web, agencia de Ciudad de Panamá, implementa inteligencia artificial para empresas: una IA privada que responde con tus documentos y cita la fuente, conectada a tu CRM, ERP o WhatsApp para ejecutar tareas con aprobación humana en lo sensible. Empieza con un diagnóstico sin costo y un piloto; desde $2,900 más el consumo de los modelos.',
+        fecha: '2026-10-23',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, implementa inteligencia artificial para empresas en dos niveles. La IA privada responde con tus documentos y cita la fuente, desde $2,900. La IA conectada a tu ERP o CRM ejecuta acciones con aprobación humana, desde $6,900. Ambas llevan aparte el consumo de los modelos, y la llamada de diagnóstico inicial no tiene costo.',
       },
       {
         type: 'receipt',
         titulo: 'IA para empresas',
-        fecha: '2026-10-13',
+        fecha: '2026-10-23',
         precio: { estado: 'confirmado', desde: '$2,900', unidad: 'por proyecto, más el consumo de los modelos' },
         plazo: 'Se fija por escrito tras el diagnóstico; se empieza por un piloto de un solo proceso',
         medicionId: 'ia-empresas-lcp',
-        pie: ['El consumo de los modelos de IA se factura por uso, aparte del proyecto.', 'Precios en dólares, sin ITBMS (7%). El diagnóstico inicial no tiene costo.'],
+        pie: ['IA privada desde $2,900; IA conectada a tu ERP o CRM desde $6,900. El consumo de los modelos se factura por uso, aparte.', 'Diagnóstico de IA por escrito opcional: $290, que se descuenta del proyecto si lo contratas.', 'Precios en dólares, sin ITBMS (7%). La llamada de diagnóstico inicial no tiene costo.'],
       },
       { type: 'blank', punto: 'prueba', h2: 'Resultados de clientes' },
       {
@@ -114,9 +114,9 @@ export const iaEmpresas: PageData[] = [
       {
         type: 'includes',
         h2: 'Qué incluye el proyecto',
-        intro: 'Desde $2,900 por proyecto. Sube según cuántos procesos automaticemos y el volumen de tu operación.',
+        intro: 'IA privada desde $2,900 e IA conectada a tus sistemas desde $6,900, por proyecto. Sube según cuántos procesos automaticemos y el volumen de tu operación.',
         incluye: [
-          { t: 'Diagnóstico sin costo', d: 'Mapeamos tus procesos y detectamos dónde una IA ahorra más horas.' },
+          { t: 'Llamada de diagnóstico sin costo', d: 'Mapeamos tus procesos y detectamos dónde una IA ahorra más horas.' },
           { t: 'Base de conocimiento privada (RAG)', d: 'Tus manuales, contratos, listas de precios y procedimientos en PDF, Word o Drive, sincronizados: actualizas un documento y la IA lo asimila.' },
           { t: 'Respuestas con cita', d: 'Cada respuesta dice de qué documento y página sale. Si no está en tus documentos, lo dice en vez de inventar.' },
           { t: 'Permisos por rol', d: 'Cada persona solo obtiene respuestas de lo que ya tiene permiso de ver en tu organización.' },
@@ -130,11 +130,21 @@ export const iaEmpresas: PageData[] = [
         medimos: ['Preguntas respondidas con cita', 'Preguntas sin respuesta en tus documentos', 'Acciones aprobadas y rechazadas', 'Tiempo de respuesta', 'Costo de consumo por mes'],
       },
       {
+        type: 'cards',
+        h2: 'Dos niveles: IA privada o IA conectada a tus sistemas',
+        intro: 'Se empieza por el nivel que pide tu proceso. En los dos, el consumo de los modelos va aparte y por uso. Para sumar automatizaciones en un solo paquete, mira <a href="/soluciones/">Empresa con IA</a>.',
+        items: [
+          { h3: 'IA privada, desde $2,900', text: 'Responde con tus manuales, contratos y políticas, y cita el documento y la página. Es el punto de partida para la mayoría.' },
+          { h3: 'IA conectada a tus sistemas, desde $6,900', text: 'Suma conectores a tu ERP o CRM. Consulta datos reales y propone acciones, como una nota de crédito, que una persona aprueba antes de ejecutarse.' },
+          { h3: 'Diagnóstico de IA por escrito, $290', text: 'Opcional, después de la llamada sin costo. Un informe con tus procesos priorizados y el nivel que conviene. Si contratas el proyecto, se descuenta.' },
+        ],
+      },
+      {
         type: 'steps',
         h2: 'Cómo lo implementamos',
         intro: 'Un proceso primero; se escala cuando el piloto demuestra valor.',
         items: [
-          { h3: '1. Diagnóstico', text: 'Mapeamos tus procesos y detectamos dónde una IA operativa ahorra más horas. Sin costo.' },
+          { h3: '1. Diagnóstico', text: 'Mapeamos tus procesos y detectamos dónde una IA operativa ahorra más horas. La llamada es sin costo; el informe por escrito, opcional, cuesta $290 y se descuenta del proyecto.' },
           { h3: '2. Diseño y piloto', text: 'Definimos la arquitectura y lanzamos un piloto acotado a un proceso concreto y medible.' },
           { h3: '3. Producción', text: 'Con el piloto validado, lo llevamos a producción con sus integraciones y sus controles humanos.' },
           { h3: '4. Mejora continua', text: 'Operamos y afinamos el ecosistema como servicio, sumando procesos con el tiempo.' },
@@ -167,9 +177,9 @@ export const iaEmpresas: PageData[] = [
           { criterio: 'De dónde sale cada respuesta', nosotros: 'Con la cita del documento y la página; si no está, lo dice' },
           { criterio: 'Acciones sensibles', nosotros: 'Esperan la aprobación de una persona' },
           { criterio: 'Tus sistemas actuales', nosotros: 'Se conectan por API o n8n; no tienes que migrar' },
-          { criterio: 'Cómo se empieza', nosotros: 'Diagnóstico sin costo y piloto de un solo proceso' },
+          { criterio: 'Cómo se empieza', nosotros: 'Llamada de diagnóstico sin costo y piloto de un solo proceso' },
           { criterio: 'Quién lo mantiene', nosotros: 'Lo operamos y mantenemos como servicio; tu equipo puede involucrarse' },
-          { criterio: 'Precio', nosotros: 'Desde $2,900 por proyecto; el consumo de los modelos aparte y por uso' },
+          { criterio: 'Precio', nosotros: 'IA privada desde $2,900; conectada a tu ERP o CRM desde $6,900. El consumo de los modelos aparte y por uso' },
         ],
       },
       {
@@ -181,7 +191,7 @@ export const iaEmpresas: PageData[] = [
           { q: '¿Tengo que cambiar los sistemas que ya uso?', a: 'No. El ecosistema se conecta a lo que ya tienes vía API o con automatización (n8n): correo, CRM, ERP, hojas de cálculo, Drive, WhatsApp y más. La idea es potenciar tu operación actual, no obligarte a migrar todo.' },
           { q: '¿Y si la IA se equivoca en algo importante?', a: 'Por diseño, las acciones sensibles (pagos, correos externos, cambios críticos) se detienen y esperan la aprobación de una persona. Es un copiloto, no un piloto automático a ciegas. Tú decides dónde poner esos puntos de control.' },
           { q: '¿Cuánto tarda en implementarse?', a: 'Empezamos con un diagnóstico y un piloto acotado a un proceso concreto, para que veas resultados sin comprometer toda la operación. A partir de ahí escalamos. El tiempo exacto depende del alcance, y lo definimos por escrito antes de empezar.' },
-          { q: '¿Cuánto cuesta?', a: 'Arranca en el rango de proyecto a medida, desde $2,900, porque siempre hay integraciones con lo que ya usas. De ahí sube según cuántos procesos automaticemos y el volumen de tu operación. Aparte van los costos de consumo de los modelos, que se facturan por uso. El pago sigue el mismo esquema del resto: 50% para arrancar, 30% al ver el piloto funcionando y 20% para pasar a producción. Los precios no incluyen ITBMS (7%) y el diagnóstico inicial no tiene costo.' },
+          { q: '¿Cuánto cuesta?', a: 'Hay dos niveles. La IA privada con tus documentos parte de $2,900. La IA conectada a tu ERP o CRM, con acciones que aprueba una persona, parte de $6,900. De ahí sube según cuántos procesos automaticemos y el volumen de tu operación. Aparte van los costos de consumo de los modelos, que se facturan por uso. El pago sigue el mismo esquema del resto: 50% para arrancar, 30% al ver el piloto funcionando y 20% para pasar a producción. La llamada de diagnóstico inicial no tiene costo. Si quieres el diagnóstico por escrito, cuesta $290 y se descuenta del proyecto. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene meter IA en la empresa?', a: 'Cuando la información está desordenada. Una IA que lee documentos contradictorios responde con seguridad cosas equivocadas, y eso es peor que no tenerla: la gente le cree. Tampoco conviene sin un dueño interno, porque alguien tiene que decidir qué es verdad cuando el sistema se equivoca. Si nadie va a hacer ese trabajo, mejor ordenar primero y automatizar después.' },
           { q: '¿Esto funciona en español de Panamá y con nuestros documentos locales?', a: 'Sí. El sistema responde en el español que se habla aquí y trabaja sobre tus propios documentos: manuales, contratos, listas de precios, procedimientos. No inventa a partir de conocimiento general; cita de dónde sacó cada respuesta, y si no está en tus documentos, lo dice en vez de rellenar.' },
           { q: '¿Necesito un equipo técnico interno para mantenerlo?', a: 'No es obligatorio. Somos una software house: construimos, operamos y mantenemos el ecosistema como un servicio. Si tu equipo quiere involucrarse, lo documentamos y los capacitamos.' },
@@ -199,7 +209,7 @@ export const iaEmpresas: PageData[] = [
           { slug: 'marketing/videos-publicitarios-panama', label: 'Videos publicitarios con IA' },
           { slug: 'marketing/video-inmobiliario-panama', label: 'Video inmobiliario con IA' },
           { slug: 'blog/inteligencia-artificial-para-pequenas-empresas-en-panama', label: 'Guía: IA para pequeñas empresas' },
-          { slug: 'soluciones', label: 'Soluciones: paquetes de marketing e IA' },
+          { slug: 'soluciones', label: 'Soluciones: Empresa con IA' },
         ],
       },
     ],

@@ -2,8 +2,8 @@ import type { PageData } from '../types';
 
 /* Servicios que pide el mercado en 2026 (aprobados por el dueño el 23-oct-2026): posicionamiento en ChatGPT e IA
    (GEO), agente de ventas con IA en WhatsApp e Instagram, y la página de soluciones que los une en paquetes.
-   Anatomía v2, molde de las páginas de servicio de marketing.ts y funcionalidades.ts. Ningún precio nuevo: solo
-   se citan los confirmados de src/data/precios.json (R27); lo demás se cotiza. */
+   Anatomía v2, molde de las páginas de servicio de marketing.ts y funcionalidades.ts. Precios fijados por el dueño
+   el 23-oct-2026 (D61): solo se citan los confirmados de src/data/precios.json (R27). */
 
 export const servicios2026: PageData[] = [
   /* ---------- POSICIONAMIENTO EN CHATGPT E IA (GEO, anatomía v2) ---------- */
@@ -16,14 +16,14 @@ export const servicios2026: PageData[] = [
     description: 'Posicionamiento en ChatGPT, Perplexity y Google con IA para empresas en Panamá: auditamos cómo te nombran las IA y trabajamos tu entidad cada mes.',
     h1: 'Posicionamiento en ChatGPT y buscadores con IA',
     breadcrumb: 'Posicionamiento en ChatGPT (GEO)',
-    service: { type: 'Posicionamiento en buscadores y asistentes con IA (GEO)', name: 'Posicionamiento en ChatGPT e IA en Panamá' },
+    service: { type: 'Posicionamiento en buscadores y asistentes con IA (GEO)', name: 'Posicionamiento en ChatGPT e IA en Panamá', catalogo: ['geo-auditoria', 'geo-mensual'] },
     lead: ['Posicionamiento en ChatGPT para empresas en Panamá: cada vez más clientes le preguntan a una IA qué empresa contratar. Trabajamos para que tu nombre aparezca en esa respuesta, y que aparezca bien.'],
     portada: {
       pie: 'Si una IA recomienda tres empresas de tu rubro y la tuya no está, ese cliente nunca llegó a buscarte.',
       riel: [
-        { k: 'Empieza por', v: 'Auditoría de cómo te nombran las IA' },
+        { k: 'Empieza por', v: 'Auditoría de $490' },
         { k: 'Motores', v: 'ChatGPT, Perplexity, Google y Bing' },
-        { k: 'Mensualidad', v: 'Entidad, respuestas y menciones' },
+        { k: 'Mensualidad', v: 'Desde $650 al mes, mínimo 3 meses' },
         { k: 'Medimos', v: 'Las mismas preguntas cada mes' },
       ],
     },
@@ -31,15 +31,15 @@ export const servicios2026: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-23',
-        text: 'Elemento Web, agencia de Ciudad de Panamá, hace posicionamiento en ChatGPT y buscadores con IA (GEO). Audita cómo te nombran ChatGPT, Perplexity, Bing y las respuestas con IA de Google ante preguntas de compra. Cada mes trabaja tu entidad, tus páginas de respuesta y tus menciones externas, y mide con las mismas preguntas. Se cotiza tras la auditoría.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, hace posicionamiento en ChatGPT y buscadores con IA (GEO). Audita cómo te nombran ChatGPT, Perplexity y Google ante preguntas de compra. Cada mes trabaja tu entidad, tus respuestas y tus menciones, y mide con las mismas preguntas. Auditoría: $490. Plan mensual: desde $650.',
       },
       {
         type: 'receipt',
         titulo: 'Posicionamiento en ChatGPT e IA',
         fecha: '2026-10-23',
-        precio: { estado: 'cotizado' },
+        precio: { estado: 'confirmado', desde: '$490', unidad: 'la auditoría; plan mensual desde $650 al mes, mínimo 3 meses' },
         plazo: 'La auditoría lleva fecha de entrega por escrito; los cambios en lo que dicen las IA toman meses',
-        pie: ['La auditoría es un proyecto cerrado; la mensualidad se cotiza con lo que la auditoría encuentre.', 'Ninguna agencia controla lo que responde una IA: medimos y trabajamos las señales que la alimentan.'],
+        pie: ['La auditoría es un proyecto cerrado de $490. El plan mensual parte de $650 al mes, con un mínimo de 3 meses.', 'Precios en dólares, sin ITBMS (7%).', 'Ninguna agencia controla lo que responde una IA: medimos y trabajamos las señales que la alimentan.'],
       },
       { type: 'blank', punto: 'prueba', h2: 'Casos de clientes', texto: 'Todavía no hay casos de clientes publicados: el servicio abrió en octubre de 2026. El método es el mismo que aplicamos a nuestro propio sitio.' },
       {
@@ -94,7 +94,7 @@ export const servicios2026: PageData[] = [
       {
         type: 'includes',
         h2: 'Qué incluye el posicionamiento en ChatGPT e IA',
-        intro: 'Empieza con una auditoría cerrada. Después, una mensualidad que se cotiza según lo que encuentre la auditoría.',
+        intro: 'Empieza con una auditoría cerrada de $490. Después, un plan mensual desde $650 al mes, con un mínimo de 3 meses. Su alcance sale de lo que encuentre la auditoría.',
         incluye: [
           { t: 'Auditoría de presencia', d: 'Preguntas de compra probadas en ChatGPT, Perplexity, Bing y las respuestas con IA de Google, con capturas.' },
           { t: 'Entidad clara', d: 'Datos estructurados (schema) de tu empresa, servicios y sede, y perfiles que se enlazan entre sí.' },
@@ -144,7 +144,7 @@ export const servicios2026: PageData[] = [
         intro: 'Criterios que puedes verificar en esta página y pedirle a cualquier proveedor. Usa la última columna para comparar.',
         otraCotizacion: true,
         criterios: [
-          { criterio: 'Punto de partida', nosotros: 'Auditoría con capturas de cada respuesta, antes de cobrar la mensualidad' },
+          { criterio: 'Punto de partida', nosotros: 'Auditoría de $490 con capturas de cada respuesta, antes de cobrar la mensualidad' },
           { criterio: 'Método de medición', nosotros: 'Lista fija de preguntas, mismos motores, cada mes' },
           { criterio: 'Promesas', nosotros: 'Ninguna garantía de aparecer; sí un plan de tareas medible' },
           { criterio: 'llms.txt', nosotros: 'Lo ponemos y te decimos que su efecto no está probado' },
@@ -157,7 +157,7 @@ export const servicios2026: PageData[] = [
         h2: 'Preguntas frecuentes',
         items: [
           { q: '¿Cómo hago para aparecer en ChatGPT?', a: 'Con tres cosas. Datos claros y coherentes en toda la web, páginas que respondan directo a tu cliente y menciones en fuentes que la IA consulta. Nadie puede garantizar la respuesta, pero esas señales son las que la alimentan.' },
-          { q: '¿Cuánto cuesta el posicionamiento en ChatGPT?', a: 'Se cotiza. Primero hacemos la auditoría, que es un proyecto cerrado. Con lo que encuentre te proponemos la mensualidad por escrito. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuánto cuesta el posicionamiento en ChatGPT?', a: 'La auditoría cuesta $490 y es un proyecto cerrado. El plan mensual parte de $650 al mes, con un mínimo de 3 meses. Con lo que encuentre la auditoría te proponemos su alcance por escrito. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Qué es GEO?', a: 'Son las siglas en inglés de optimización para motores generativos. Es el trabajo para que ChatGPT, Perplexity y las respuestas con IA de Google te nombren, y con datos correctos. En Panamá también se le dice SEO para IA.' },
           { q: '¿El GEO reemplaza al SEO?', a: 'No. Las IA con búsqueda leen la web y en parte se apoyan en Google y Bing. Sin un buen SEO, la IA tiene poco de dónde sacarte. El GEO se suma al SEO.' },
           { q: '¿Sirve el archivo llms.txt?', a: 'Todavía no está probado que los motores lo usen para responder. Lo ponemos porque cuesta poco y ordena tu información, pero no lo vendemos como la solución.' },
@@ -167,7 +167,7 @@ export const servicios2026: PageData[] = [
           { q: '¿Cómo sé si está funcionando?', a: 'Con el informe mensual: en cuántas preguntas te nombran, si los datos son exactos y qué fuentes citan. Y en tu analítica, las visitas que llegan desde chatgpt.com, perplexity.ai y similares, aunque parte de ese tráfico llega sin origen.' },
         ],
       },
-      { type: 'form', h2: 'Pide la auditoría de tu presencia en IA', intro: 'Dinos tu web, tu zona y las búsquedas que quieres ganar: te respondemos con el alcance y la cotización de la auditoría.' },
+      { type: 'form', h2: 'Pide la auditoría de tu presencia en IA', intro: 'Dinos tu web, tu zona y las búsquedas que quieres ganar: te respondemos con el alcance y la fecha de entrega de la auditoría.' },
       {
         type: 'related',
         h2: 'Servicios relacionados',
@@ -194,7 +194,7 @@ export const servicios2026: PageData[] = [
     description: 'Agente de IA para WhatsApp e Instagram que atiende, cotiza, agenda y pasa la venta a tu equipo. Corre sobre WazaCRM y la API oficial de Meta.',
     h1: 'Agente de ventas con IA para WhatsApp e Instagram',
     breadcrumb: 'Agente de ventas con IA',
-    service: { type: 'Implementación de agentes de ventas con IA para WhatsApp e Instagram' },
+    service: { type: 'Implementación de agentes de ventas con IA para WhatsApp e Instagram', catalogo: ['wazacrm', 'agente-integracion'] },
     lead: ['Un agente de IA para WhatsApp que no solo contesta. Atiende, cotiza, agenda, toma los datos del cliente y pasa la venta a una persona cuando hace falta.'],
     portada: {
       pie: 'El cliente que escribe a las 9 de la noche quiere precio y fecha ya. Si nadie contesta, le compra al que sí contestó.',
@@ -209,15 +209,15 @@ export const servicios2026: PageData[] = [
       {
         type: 'answer',
         fecha: '2026-10-23',
-        text: 'Elemento Web, agencia de Ciudad de Panamá y Tech Provider verificado por Meta, implementa agentes de ventas con IA para WhatsApp e Instagram. Responden con la información de tu negocio, cotizan, agendan, toman datos y pasan la venta a tu equipo. Corre sobre WazaCRM, desde $349 al mes; la implementación se cotiza.',
+        text: 'Elemento Web, Tech Provider verificado por Meta en Ciudad de Panamá, implementa agentes de ventas con IA para WhatsApp e Instagram. Responden con tu información, cotizan, agendan y pasan la venta a tu equipo. Corre sobre WazaCRM, desde $349 al mes con la entrega incluida. Integración a medida con tu CRM o ERP: desde $700.',
       },
       {
         type: 'receipt',
         titulo: 'Agente de ventas con IA',
         fecha: '2026-10-23',
-        precio: { estado: 'cotizado' },
+        precio: { estado: 'confirmado', desde: '$349', unidad: 'al mes en WazaCRM, con la entrega incluida' },
         plazo: 'Alrededor de 2 semanas, incluida la verificación de tu número en Meta (sus tiempos no dependen de nosotros)',
-        pie: ['La implementación se cotiza cerrada; la licencia de WazaCRM parte de $349 al mes.', 'Los mensajes de Meta y el consumo del motor de IA se pagan por uso, aparte.'],
+        pie: ['La entrega del agente va incluida en WazaCRM. Una integración a medida con tu CRM, agenda o ERP parte de $700, una vez.', 'Los mensajes de Meta y el consumo del motor de IA se pagan por uso, aparte.', 'Precios en dólares, sin ITBMS (7%).'],
       },
       { type: 'blank', punto: 'prueba', h2: 'Agentes de clientes', texto: 'Todavía no hay casos publicados de este servicio: abrió en octubre de 2026. La conversación de esta página es un ejemplo hecho por nosotros.' },
       {
@@ -267,7 +267,7 @@ export const servicios2026: PageData[] = [
       {
         type: 'includes',
         h2: 'Qué incluye el agente de IA para WhatsApp',
-        intro: 'La implementación se cotiza cerrada. La licencia de WazaCRM es mensual y el consumo de Meta y del motor de IA se paga por uso.',
+        intro: 'WazaCRM parte de $349 al mes y la entrega va incluida. Una integración a medida parte de $700. El consumo de Meta y del motor de IA se paga por uso.',
         incluye: [
           { t: 'Base de conocimiento de ventas', d: 'Productos, precios publicados, zonas, plazos, formas de pago y políticas que tú apruebas.' },
           { t: 'Guion de calificación', d: 'Las preguntas que hace antes de cotizar, en el orden en que las haría tu mejor vendedor.' },
@@ -276,10 +276,11 @@ export const servicios2026: PageData[] = [
           { t: 'Toma de datos', d: 'Nombre, necesidad y contacto, guardados en el embudo de WazaCRM.' },
           { t: 'Traspaso a una persona', d: 'Siempre disponible y con el contexto, para que el cliente no repita nada.' },
           { t: 'Enlace de pago', d: 'Si cobras en línea, el agente envía el enlace al cerrar. Se conecta con tu pasarela.' },
+          { t: 'Integración a medida, opcional', d: 'Conexión con tu CRM, tu agenda o tu ERP cuando el agente debe leer o escribir ahí. Desde $700, una vez.' },
           { t: 'API oficial de Meta', d: 'Montada por nosotros como Tech Provider verificado por Meta, sin apps no oficiales.' },
         ],
         entregables: ['Agente atendiendo en WhatsApp e Instagram', 'Base de conocimiento aprobada por ti', 'Reglas de traspaso y límites por escrito', 'Embudo de WazaCRM con tu equipo'],
-        noIncluye: ['Licencia mensual de WazaCRM (desde $349 al mes)', 'Mensajes de Meta y consumo del motor de IA, por uso', 'Negociar descuentos fuera de lo publicado', 'Atender las conversaciones que pasan a tu equipo'],
+        noIncluye: ['Mensajes de Meta y consumo del motor de IA, por uso', 'Negociar descuentos fuera de lo publicado', 'Atender las conversaciones que pasan a tu equipo'],
         medimos: ['Tiempo de primera respuesta', 'Conversaciones que llegan a cotización', 'Citas agendadas', 'Ventas tras el traspaso'],
       },
       {
@@ -322,7 +323,8 @@ export const servicios2026: PageData[] = [
           { criterio: 'Producto', nosotros: 'WazaCRM es nuestro: lo operamos, no lo revendemos' },
           { criterio: 'De dónde salen los precios', nosotros: 'Solo de la información que tú apruebas' },
           { criterio: 'Traspaso a una persona', nosotros: 'Siempre disponible y con el contexto' },
-          { criterio: 'Licencia', nosotros: 'WazaCRM desde $349 al mes', fuente: { slug: 'saas/wazacrm', label: 'ver WazaCRM' } },
+          { criterio: 'Licencia', nosotros: 'WazaCRM desde $349 al mes, con la entrega incluida', fuente: { slug: 'saas/wazacrm', label: 'ver WazaCRM' } },
+          { criterio: 'Integración a medida', nosotros: 'Con tu CRM, agenda o ERP, desde $700' },
           { criterio: 'Plazo', nosotros: 'Alrededor de 2 semanas, incluida la verificación del número' },
         ],
       },
@@ -330,7 +332,7 @@ export const servicios2026: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta un agente de IA para WhatsApp?', a: 'La implementación se cotiza cerrada según lo que el agente deba hacer. La licencia de WazaCRM parte de $349 al mes. Los mensajes de Meta y el consumo del motor de IA se pagan por uso, aparte. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuánto cuesta un agente de IA para WhatsApp?', a: 'WazaCRM parte de $349 al mes y la entrega del agente va incluida. Si debe conectarse a tu CRM, agenda o ERP, esa integración a medida parte de $700. Los mensajes de Meta y el consumo del motor de IA se pagan por uso, aparte. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Qué diferencia hay con un chatbot de WhatsApp?', a: 'Un chatbot con reglas sigue un menú de opciones. Un agente de ventas con IA entiende lo que escribe el cliente, cotiza, agenda y registra la venta en el CRM. Lo comparamos en <a href="/blog/chatbot-con-reglas-o-con-ia-cual-conviene/">chatbot con reglas o con IA</a>.' },
           { q: '¿Funciona también en Instagram?', a: 'Sí. El agente atiende los mensajes directos de Instagram y los de WhatsApp en la misma bandeja de WazaCRM, con un historial por cliente.' },
           { q: '¿El cliente sabe que habla con una IA?', a: 'Sí. El agente se identifica como asistente virtual y ofrece pasar a una persona. Ocultarlo genera desconfianza cuando el cliente lo descubre.' },
@@ -341,7 +343,7 @@ export const servicios2026: PageData[] = [
           { q: '¿Cómo sé si el agente vende?', a: 'Por el tiempo de primera respuesta, las conversaciones que llegan a cotización y las citas agendadas. Y por las ventas que cierra tu equipo después del traspaso. Todo queda en el embudo de WazaCRM.' },
         ],
       },
-      { type: 'form', h2: 'Cuéntanos cómo vendes por WhatsApp', intro: 'Dinos qué te preguntan tus clientes y qué debería hacer el agente: te respondemos con el alcance y la cotización de la implementación.' },
+      { type: 'form', h2: 'Cuéntanos cómo vendes por WhatsApp', intro: 'Dinos qué te preguntan tus clientes y qué debería hacer el agente: te respondemos con el plan de WazaCRM que conviene y, si hace falta, la cotización de la integración.' },
       {
         type: 'related',
         h2: 'Servicios relacionados',
@@ -367,7 +369,7 @@ export const servicios2026: PageData[] = [
     description: 'Soluciones de marketing digital e IA en Panamá: tres paquetes que unen web, anuncios, WhatsApp, SEO, GEO e IA para atraer, atender y automatizar.',
     h1: 'Soluciones de marketing digital e IA',
     breadcrumb: 'Soluciones',
-    service: { type: 'Paquetes de marketing digital, diseño web e inteligencia artificial', name: 'Soluciones de marketing digital e IA en Panamá' },
+    service: { type: 'Paquetes de marketing digital, diseño web e inteligencia artificial', name: 'Soluciones de marketing digital e IA en Panamá', catalogo: ['paquete-whatsapp-arranque', 'paquete-whatsapp-mensual', 'paquete-visible-arranque', 'paquete-visible-mensual', 'paquete-empresa-ia'] },
     lead: ['Soluciones de marketing digital e IA para empresas en Panamá: tres paquetes que conectan nuestros servicios en un solo recorrido. Atraer al cliente, atenderlo y automatizar lo que se repite.'],
     portada: {
       pie: 'Un anuncio que trae clientes a un WhatsApp que nadie contesta es dinero tirado. Las piezas tienen que ir conectadas.',
@@ -375,28 +377,28 @@ export const servicios2026: PageData[] = [
         { k: 'Atraer', v: 'Web, anuncios, SEO y GEO' },
         { k: 'Atender', v: 'Agente de ventas con IA' },
         { k: 'Automatizar', v: 'n8n e IA privada' },
-        { k: 'Precio', v: 'Se cotiza por paquete' },
+        { k: 'Precio', v: 'Paquetes desde $850' },
       ],
     },
     blocks: [
       {
         type: 'answer',
         fecha: '2026-10-23',
-        text: 'Elemento Web, agencia de Ciudad de Panamá, ofrece tres soluciones de marketing digital e IA. «Clientes por WhatsApp» une landing, anuncios, agente de ventas con IA y seguimiento con n8n. «Visible en Google y en la IA» une web, SEO local, GEO y contenido mensual. «Empresa con IA» une diagnóstico, IA privada y automatizaciones. Cada paquete se cotiza.',
+        text: 'Elemento Web, agencia de Ciudad de Panamá, ofrece tres paquetes de marketing digital e IA. «Clientes por WhatsApp»: anuncios, agente con IA y seguimiento, desde $850 y $649 al mes. «Visible en Google y en la IA»: web, SEO local y GEO, desde $1,250 y $850 al mes. «Empresa con IA»: desde $3,200 más consumo.',
       },
       {
         type: 'receipt',
         titulo: 'Soluciones de marketing digital e IA',
         fecha: '2026-10-23',
-        precio: { estado: 'cotizado' },
+        precio: { estado: 'confirmado', desde: '$850', unidad: 'de arranque más $649 al mes (Clientes por WhatsApp)' },
         plazo: 'Cada paquete lleva su calendario por fases, por escrito, antes de empezar',
-        pie: ['El paquete se cotiza completo; las partes con precio publicado conservan ese precio de partida.', 'La pauta, los mensajes de Meta y el consumo de los modelos de IA se pagan aparte.'],
+        pie: ['Clientes por WhatsApp: arranque desde $850 y desde $649 al mes. Visible en Google y en la IA: arranque desde $1,250 y desde $850 al mes.', 'Empresa con IA: desde $3,200 por proyecto, más el consumo de los modelos.', 'La pauta, los mensajes de Meta y el consumo de los modelos de IA se pagan aparte. Precios sin ITBMS (7%).'],
       },
       { type: 'blank', punto: 'prueba', h2: 'Casos de clientes', texto: 'Todavía no hay casos publicados de estos paquetes: se lanzaron en octubre de 2026. Cada parte tiene su propia página con su método.' },
       {
         type: 'cards',
         h2: 'Clientes por WhatsApp',
-        intro: 'Para negocios que venden por chat y quieren más conversaciones, mejor atendidas. Del anuncio a la venta en un solo recorrido.',
+        intro: 'Para negocios que venden por chat y quieren más conversaciones, mejor atendidas. <strong>Arranque desde $850 y desde $649 al mes.</strong> El arranque monta la landing, las campañas y los flujos de seguimiento. La mensualidad cubre WazaCRM con el agente y la gestión de los anuncios. La inversión en pauta se paga aparte.',
         items: [
           { h3: 'Landing page', text: 'Una página enfocada en una oferta, con el botón que abre tu WhatsApp. Desde $550.', link: { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing pages' } },
           { h3: 'Anuncios que abren chat', text: 'Campañas en Facebook e Instagram que llevan directo a una conversación en WhatsApp.', link: { slug: 'marketing/facebook-instagram-ads-panama', label: 'Facebook e Instagram Ads' } },
@@ -407,7 +409,7 @@ export const servicios2026: PageData[] = [
       {
         type: 'cards',
         h2: 'Visible en Google y en la IA',
-        intro: 'Para empresas que quieren que las encuentren cuando el cliente busca en Google o le pregunta a una IA.',
+        intro: 'Para empresas que quieren que las encuentren cuando el cliente busca en Google o le pregunta a una IA. <strong>Arranque desde $1,250 y desde $850 al mes.</strong> El arranque es la web empresarial. La mensualidad cubre el SEO local, el trabajo de GEO y el contenido mensual.',
         items: [
           { h3: 'Web empresarial', text: 'Rápida, clara y con las páginas que responden lo que pregunta tu cliente. Desde $1,250.', link: { slug: 'servicios/diseno-web-corporativo-panama', label: 'Web empresarial' } },
           { h3: 'SEO local', text: 'Tu ficha de Google Business Profile completa, reseñas y los mismos datos en toda la web.', link: { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO local en Google Maps' } },
@@ -418,9 +420,9 @@ export const servicios2026: PageData[] = [
       {
         type: 'cards',
         h2: 'Empresa con IA',
-        intro: 'Para empresas que quieren usar la IA en su operación, con sus datos y con una persona aprobando lo sensible.',
+        intro: 'Para empresas que quieren usar la IA en su operación, con sus datos y con una persona aprobando lo sensible. <strong>Desde $3,200 por proyecto, más el consumo de los modelos.</strong> Incluye el diagnóstico por escrito y la IA privada; las automatizaciones se dimensionan en el diagnóstico.',
         items: [
-          { h3: 'Diagnóstico de IA', text: 'Revisamos tus procesos y elegimos el primero que conviene llevar a la IA. Sin costo.', link: { slug: 'inteligencia-artificial-para-empresas-panama', label: 'IA para empresas' } },
+          { h3: 'Diagnóstico de IA', text: 'Revisamos tus procesos y elegimos el primero que conviene llevar a la IA. La llamada es sin costo; el informe por escrito ($290 suelto) entra en el paquete.', link: { slug: 'inteligencia-artificial-para-empresas-panama', label: 'IA para empresas' } },
           { h3: 'IA privada con tus documentos', text: 'Responde con tus manuales y políticas, y cita la fuente. Desde $2,900 más el consumo de los modelos.', link: { slug: 'inteligencia-artificial-para-empresas-panama', label: 'IA privada' } },
           { h3: 'Automatizaciones', text: 'Flujos con n8n que conectan tu CRM, tu correo y tus hojas de cálculo, con aviso de fallo.', link: { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones con n8n' } },
         ],
@@ -441,14 +443,14 @@ export const servicios2026: PageData[] = [
       {
         type: 'includes',
         h2: 'Qué incluye cada paquete',
-        intro: 'Cada paquete se cotiza completo según tu punto de partida. Estas condiciones aplican a los tres.',
+        intro: 'Cada paquete tiene un precio de partida publicado; el monto final sale de tu punto de partida. Estas condiciones aplican a los tres.',
         incluye: [
           { t: 'Diagnóstico de arranque', d: 'Dónde estás hoy y qué pieza va primero.' },
           { t: 'Plan por fases', d: 'Qué se entrega en cada fase y en qué fecha, por escrito.' },
           { t: 'Piezas conectadas', d: 'La web, el chat, el CRM y las automatizaciones se pasan los datos entre sí.' },
           { t: 'Un responsable', d: 'Una sola persona de contacto para todo el paquete.' },
           { t: 'Medición común', d: 'Un informe que sigue al cliente desde el anuncio o la búsqueda hasta la venta.' },
-          { t: 'Precios publicados respetados', d: 'Las partes con precio publicado conservan ese precio de partida dentro del paquete.' },
+          { t: 'Precio de partida publicado', d: 'Clientes por WhatsApp desde $850 y $649 al mes; Visible desde $1,250 y $850 al mes; Empresa con IA desde $3,200.' },
         ],
         entregables: ['Plan por fases con fechas', 'Cada pieza funcionando y conectada', 'Informe mensual de resultados', 'Documentación de lo que se montó'],
         noIncluye: ['La inversión en pauta, que se paga directo a Meta o Google', 'Mensajes de Meta y consumo de los modelos de IA', 'Licencias de herramientas de terceros', 'Garantías de resultados de venta'],
@@ -471,7 +473,7 @@ export const servicios2026: PageData[] = [
         intro: 'Criterios que puedes verificar en esta página y pedirle a cualquier proveedor. Usa la última columna para comparar.',
         otraCotizacion: true,
         criterios: [
-          { criterio: 'Precios de partida', nosotros: 'Publicados en cada servicio', fuente: { slug: 'precios', label: 'ver precios' } },
+          { criterio: 'Precios de partida', nosotros: 'Publicados en cada paquete y en cada servicio', fuente: { slug: 'precios', label: 'ver precios' } },
           { criterio: 'WhatsApp', nosotros: 'Tech Provider verificado por Meta, con la API oficial' },
           { criterio: 'Producto propio', nosotros: 'WazaCRM, el CRM de WhatsApp con agente de IA, es nuestro' },
           { criterio: 'Orden de trabajo', nosotros: 'Por fases, empezando por la pieza que más rinde' },
@@ -482,7 +484,7 @@ export const servicios2026: PageData[] = [
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
-          { q: '¿Cuánto cuesta un paquete?', a: 'Se cotiza según tu punto de partida. Las partes con precio publicado lo conservan. Landing desde $550, web empresarial desde $1,250, WazaCRM desde $349 al mes e IA desde $2,900. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Cuánto cuesta un paquete?', a: 'Clientes por WhatsApp parte de $850 de arranque y $649 al mes, sin contar la pauta. Visible en Google y en la IA parte de $1,250 y $850 al mes. Empresa con IA parte de $3,200 más el consumo de los modelos. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Tengo que contratar el paquete completo?', a: 'No. Puedes tomar una sola pieza. El paquete conviene cuando las piezas tienen que pasarse datos, como el anuncio, el chat y el CRM.' },
           { q: '¿Por dónde empiezo?', a: 'Por donde hoy se te escapan más clientes. Si te escriben y no das abasto, por el agente de ventas. Si no te encuentran, por SEO y GEO. Si tu equipo copia datos a mano, por las automatizaciones.' },
           { q: '¿Qué son las soluciones de marketing digital e IA?', a: 'Son combinaciones de servicios que atacan un problema completo, no una pieza suelta. Por ejemplo, traer clientes por WhatsApp necesita anuncio, landing, atención y seguimiento.' },

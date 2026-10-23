@@ -641,6 +641,28 @@ comitea y despliega», con una plantilla común, mockups de fal e imágenes nuev
 - **Pendiente del dueño:** precios del GEO, del agente (instalación) y de los paquetes; reseñas en Google; perfiles en
   Sortlist, Clutch y GoodFirms; redes propias para `sameAs`; Bing Webmaster Tools; portadas para las páginas nuevas.
 
+### D61. Precios de los servicios nuevos y el resto del documento de servicios (23-oct-2026)
+
+- **Pedido del dueño:** «Haz todo lo que falta. Y ponle precios que recomiendes», con fal para imágenes que expliquen
+  cada servicio, y desplegarlo.
+- **Precios fijados (recomendados en el punto medio del mercado observado; `precios.json`, confirmados):** auditoría GEO
+  $490 y plan GEO desde $650/mes (Lima: KOM $600–1,320/mes); integración a medida del agente desde $700 (Panamá:
+  Automatiza $600, Puente AI $800); diagnóstico de IA por escrito $290, que se descuenta del proyecto; IA conectada a ERP
+  o CRM desde $6,900 (EE. UU.: $8,000–30,000); plan mensual de anuncios con IA desde $650/mes (4 videos y 8 piezas,
+  mínimo 3 meses); paquetes: Clientes por WhatsApp desde $850 + $649/mes, Visible en Google y en la IA desde $1,250 +
+  $850/mes, Empresa con IA desde $3,200 más consumo. Las 3 páginas nuevas pasan a precio confirmado.
+- **Contenido:** WazaCRM se presenta como agente de ventas con IA en WhatsApp (title y H1 nuevos); WhatsApp marketing se
+  vende con el agente; n8n se empaqueta como «Seguimiento automático de clientes»; IA para empresas en dos niveles; las
+  15 páginas de pregunta enlazan a su paquete en /soluciones/.
+- **Recorrido:** cada página de servicio cierra con una tarjeta a la etapa siguiente (`src/lib/etapas.ts`: atraer →
+  atender → automatizar → paquetes). Tecnologías pasa a la última columna del menú de diseño web.
+- **Portada:** «Dos caminos para crecer» pasa a «Tres pasos para crecer» (atraer, atender, automatizar), con foto nueva
+  para automatizar, enlace a los paquetes y dos preguntas de compra sin cifras (la portada no publica precios). En
+  celular los pasos van en carrusel y el bloque de preguntas suma un CTA, por la regla de 2.110 px entre CTA.
+- **Imágenes (tanda d61, US$ 3,60 de 6):** 18 portadas cromadas para las páginas de D60, 1 foto para la portada y 5 fotos
+  en zigzag para GEO y el agente.
+- **Publicación:** `verify` en verde; snapshot de SEO reescrito al cerrar la fase.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

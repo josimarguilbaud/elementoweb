@@ -625,7 +625,8 @@ for (const ia of IA) {
     // Cada página con su orden (EV2): el de ia-creativa.json, o el de Videos si no lo declara.
     assert.deepEqual(p.blocks.map((b) => b.type), ia.orden ?? ORDEN_BLOQUES);
     // Con planes, el catálogo son sus claves (SR4); sin planes, la clave única de la página.
-    assert.deepEqual(p.service?.catalogo, planesDe(p) ? planesDe(p).map((x) => x.clave) : [ia.precio]);
+    // `extras` (D61): precios confirmados adicionales que la página publica, como el plan mensual de Videos.
+    assert.deepEqual(p.service?.catalogo, planesDe(p) ? planesDe(p).map((x) => x.clave) : [ia.precio, ...(ia.extras ?? [])]);
     for (const v of videosDe(p)) {
       if (!v.voz) continue;
       assert.ok(v.guion, `${v.src}: un video con voz lleva guion`);
@@ -688,12 +689,13 @@ for (const ia of IA) {
         tab.remove();
       }
     }
-    for (const m of main.text.matchAll(/\$\s?([\d,]+)/g)) assert.equal(Number(m[1].replace(/,/g, '')), monto, `cifra $${m[1]} en el <main>`);
+    const permitidos = new Set([monto, ...(ia.extras ?? []).map((k) => precios.confirmados[k].monto)]);
+    for (const m of main.text.matchAll(/\$\s?([\d,]+)/g)) assert.ok(permitidos.has(Number(m[1].replace(/,/g, ''))), `cifra $${m[1]} en el <main>`);
     const servicio = a.jsonld.find((n) => n['@type'] === 'Service');
     const minimos = [];
     const buscar = (o) => { if (o && typeof o === 'object') for (const [k, v] of Object.entries(o)) k === 'minPrice' ? minimos.push(v) : buscar(v); };
     buscar(servicio);
-    const catalogo = planes ? planes.map((x) => precios.confirmados[x.clave].monto) : [monto];
+    const catalogo = planes ? planes.map((x) => precios.confirmados[x.clave].monto) : [monto, ...(ia.extras ?? []).map((k) => precios.confirmados[k].monto)];
     assert.deepEqual(minimos, [monto, ...catalogo], 'offers con el monto de la página y hasOfferCatalog con el de cada plan');
   });
 

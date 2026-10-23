@@ -56,10 +56,10 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
     </nav>
   </section>
 
-  <!-- 2. Díptico: elegir camino, 3 enlaces por mitad -->
+  <!-- 2. Recorrido (D61): atraer, atender y automatizar, 3 enlaces por paso; el del medio en negro -->
   <section id="soluciones" class="pv3-sec" aria-labelledby="soluciones-h2">
     <div class="pv3-wrap">
-      <h2 id="soluciones-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Dos caminos para crecer.</h2>
+      <h2 id="soluciones-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Tres pasos para crecer.</h2>
       <div class="pv3-diptico">
         {DIPTICO_PORTADA.map((m, i) => (
           <article class={`pv3-mitad${i === 1 ? ' pv3-mitad--negra' : ''}`} data-mov="css">
@@ -72,7 +72,7 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
           </article>
         ))}
       </div>
-      <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="soluciones" data-service="definir">Empezar proyecto <span aria-hidden="true">→</span></a></p>
+      <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="soluciones" data-service="definir">Empezar proyecto <span aria-hidden="true">→</span></a> <a href={url('soluciones')} class="pv3-btn pv3-btn--contorno">Ver los paquetes</a></p>
     </div>
   </section>
 
@@ -184,6 +184,7 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
           </details>
         ))}
       </div>
+      <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="preguntas" data-service="definir">Hacer otra pregunta <span aria-hidden="true">→</span></a></p>
     </div>
   </section>
 

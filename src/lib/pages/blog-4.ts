@@ -107,6 +107,7 @@ export const blog4: PageData[] = [
         
           { slug: 'industrias/diseno-web-clinicas-esteticas-panama', label: 'Diseño web para clínicas estéticas' },
           { slug: 'industrias/diseno-web-concesionarios-autos-panama', label: 'Diseño web para concesionarios' },
+          { slug: '', label: 'Agencia de marketing digital en Panamá' },
         ],
       },
     ],
@@ -213,6 +214,7 @@ export const blog4: PageData[] = [
         
           { slug: 'industrias/diseno-web-clinicas-esteticas-panama', label: 'Diseño web para clínicas estéticas' },
           { slug: 'industrias/diseno-web-concesionarios-autos-panama', label: 'Diseño web para concesionarios' },
+          { slug: '', label: 'Agencia de marketing digital en Panamá' },
         ],
       },
     ],
@@ -523,6 +525,7 @@ export const blog4: PageData[] = [
           { slug: 'industrias/diseno-web-eventos-catering-bodas-panama', label: 'Diseño web para eventos y catering' },
         
           { slug: 'industrias/diseno-web-imprentas-publicidad-panama', label: 'Diseño web para imprentas' },
+          { slug: '', label: 'Agencia de marketing digital en Panamá' },
         ],
       },
     ],

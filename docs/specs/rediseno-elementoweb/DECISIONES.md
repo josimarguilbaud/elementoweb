@@ -663,6 +663,30 @@ comitea y despliega», con una plantilla común, mockups de fal e imágenes nuev
   en zigzag para GEO y el agente.
 - **Publicación:** `verify` en verde; snapshot de SEO reescrito al cerrar la fase.
 
+### D62. Portada para «agencia de marketing digital», enlaces internos y recursos que atraen enlaces (23-oct-2026)
+
+- **Pedido del dueño:** aplicar lo recomendado para la palabra clave nueva de la portada y el resto de mejoras que no
+  necesitan datos suyos, creando secciones si hace falta, y desplegar.
+- **Medición previa:** en 2.251 palabras de la portada, «marketing digital» salía 5 veces frente a 10 de «diseño web» y 27
+  de «WhatsApp»; ningún H2 la usaba; 190 páginas enlazaban a la portada solo como «Inicio» y una con «agencia de diseño
+  web».
+- **Portada:** el H1 se ve como primera línea del héroe (antes era una nota pequeña); dos H2 con la palabra («Tres pasos
+  para crecer con marketing digital e IA», «Marketing digital e IA para tu marca, en un solo equipo»); sección nueva
+  `#agencia` «Qué hace una agencia de marketing digital e IA» con texto, ficha (nombre, dirección, Tech Provider) para no
+  confundirse con marcas de nombre parecido, seis servicios enlazados y su CTA; el resumen abre con «agencia de marketing
+  digital e IA en Panamá». La regla de H2 reservados deja libre «marketing digital» para la portada (su principal desde
+  D60). La portada sigue sin cifras de precio.
+- **Enlaces internos:** 11 páginas enlazan a la portada con «agencia de marketing digital en Panamá» (nosotros,
+  marketing, soluciones, guías, 5 artículos y la guía nueva en el texto); el viejo enlace «agencia de diseño web» apunta
+  ahora a la pilar.
+- **Páginas nuevas:** guía `blog/como-elegir-agencia-de-marketing-digital-panama`; calculadora
+  `recursos/calculadora-ventas-perdidas-whatsapp` (con los números del negocio, sin datos de terceros); estudio
+  `recursos/precios-agencias-panama-2026` con 43 precios publicados por 18 agencias, cada uno enlazado (nofollow) y con
+  fecha, schema Dataset; con menos de 5 agencias no se publica mediana. Revisar cada trimestre.
+- **Quedan del dueño:** casos con cifras, fotos reales para /nosotros/, reseñas, categoría principal «Agencia de
+  marketing» en la ficha de Google.
+- **Publicación:** `verify` en verde; snapshot de SEO con las 3 URL nuevas (195).
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

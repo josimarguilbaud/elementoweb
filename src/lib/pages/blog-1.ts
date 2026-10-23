@@ -127,6 +127,7 @@ export const blog1: PageData[] = [
           { slug: 'industrias/diseno-web-contadores-panama', label: 'Diseño web para contadores' },
         
           { slug: 'industrias/diseno-web-seguridad-vigilancia-panama', label: 'Diseño web para empresas de seguridad' },
+          { slug: 'recursos/precios-agencias-panama-2026', label: 'Precios de agencias en Panamá, 2026' },
         ],
       },
     ],
@@ -426,7 +427,7 @@ export const blog1: PageData[] = [
         paragraphs: [
           '<strong>Pregunta antes de cotizar.</strong> Una agencia seria quiere entender tu negocio, tu cliente y tu objetivo antes de darte un número. Un precio en el primer mensaje, sin saber qué necesitas, suele ser una plantilla.',
           '<strong>Es transparente</strong>: precio cerrado por escrito antes de empezar, alcance claro y sin cargos a mitad del camino. Y <strong>tiene trabajo real que mostrar</strong>: un <a href="/portafolio/">portafolio</a> de sitios en línea que puedas abrir y comprobar, no solo maquetas.',
-          '<strong>Sigue ahí después del lanzamiento.</strong> Quién mantiene la web, cómo se administra y qué pasa si algo se rompe en seis meses separa a quien entrega y desaparece de quien sostiene el proyecto. Nuestro enfoque como <a href="/">agencia de diseño web</a> está en <a href="/nosotros/">quiénes somos</a>.',
+          '<strong>Sigue ahí después del lanzamiento.</strong> Quién mantiene la web, cómo se administra y qué pasa si algo se rompe en seis meses separa a quien entrega y desaparece de quien sostiene el proyecto. Nuestro enfoque como <a href="/diseno-web-panama/">agencia de diseño web</a> está en <a href="/nosotros/">quiénes somos</a>.',
         ],
       },
       {
@@ -505,6 +506,7 @@ export const blog1: PageData[] = [
           { slug: 'industrias/diseno-web-consultoras-servicios-profesionales-panama', label: 'Diseño web para consultoras' },
         
           { slug: 'industrias/diseno-web-navieras-servicios-maritimos-panama', label: 'Diseño web para navieras' },
+          { slug: '', label: 'Agencia de marketing digital en Panamá' },
         ],
       },
     ],

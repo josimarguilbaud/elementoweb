@@ -809,6 +809,7 @@ export const blog7: PageData[] = [
           { slug: 'industrias/diseno-web-seguros-corredores-panama', label: 'Diseño web para corredores de seguros' },
 
           { slug: 'industrias/diseno-web-cooperativas-financieras-panama', label: 'Diseño web para cooperativas' },
+          { slug: '', label: 'Agencia de marketing digital en Panamá' },
         ],
       },
     ],

@@ -140,6 +140,7 @@ export const marketingPages: PageData[] = [
           { slug: 'saas/wazacrm', label: 'WazaCRM' },
           { slug: 'blog/marketing-de-contenidos-para-redes-sociales-panama', label: 'Marketing de contenidos' },
           { slug: 'soluciones', label: 'Soluciones: paquetes de marketing e IA' },
+          { slug: '', label: 'Agencia de marketing digital en Panamá' },
         ],
       },
     ],

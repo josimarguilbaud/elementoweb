@@ -240,6 +240,7 @@ export const core: PageData[] = [
           { slug: 'saas', label: 'Nuestros SaaS' },
           { slug: 'portafolio', label: 'Portafolio' },
           { slug: 'servicios', label: 'Servicios' },
+          { slug: '', label: 'Agencia de marketing digital en Panamá' },
         ],
       },
     ],

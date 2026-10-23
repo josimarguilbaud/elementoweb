@@ -24,6 +24,8 @@ export const recursos: PageData[] = [
         h2: 'Recursos para planear tu web en Panamá',
         items: [
           { h3: 'Calculadora de costo total', text: 'Suma proyecto, infraestructura, mantenimiento e impuesto a 12 y 36 meses, y compárala con una suscripción. Todo se calcula en tu navegador.', link: { slug: 'recursos/calculadora-costo-total-web', label: 'Abrir la calculadora' } },
+          { h3: 'Calculadora de ventas perdidas por WhatsApp', text: 'Con tus propios números, calcula cuántas consultas, ventas e ingresos pierdes al mes por responder tarde o no responder en WhatsApp.', link: { slug: 'recursos/calculadora-ventas-perdidas-whatsapp', label: 'Abrir la calculadora' } },
+          { h3: 'Precios de agencias en Panamá, 2026', text: 'Los precios que publican 18 agencias de Panamá por landing, web, tienda, SEO, pauta, chatbots y mantenimiento, con fuente y fecha.', link: { slug: 'recursos/precios-agencias-panama-2026', label: 'Ver el estudio' } },
           { h3: 'Checklist de migración SEO', text: 'Qué hacer antes, durante y después de rediseñar o migrar una web para cuidar tu posicionamiento.', link: { slug: 'recursos/checklist-migracion-seo', label: 'Ver el checklist' } },
           { h3: 'Web a medida vs suscripción', text: 'Comparativa neutral: propiedad, costo a 12 y 36 meses, soporte, salida y límites, incluyendo cuándo conviene la suscripción.', link: { slug: 'comparativas/web-a-medida-vs-suscripcion', label: 'Leer la comparativa' } },
         ],

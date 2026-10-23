@@ -59,7 +59,7 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
   <!-- 2. Recorrido (D61): atraer, atender y automatizar, 3 enlaces por paso; el del medio en negro -->
   <section id="soluciones" class="pv3-sec" aria-labelledby="soluciones-h2">
     <div class="pv3-wrap">
-      <h2 id="soluciones-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Tres pasos para crecer.</h2>
+      <h2 id="soluciones-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Tres pasos para crecer con marketing digital e IA.</h2>
       <div class="pv3-diptico">
         {DIPTICO_PORTADA.map((m, i) => (
           <article class={`pv3-mitad${i === 1 ? ' pv3-mitad--negra' : ''}`} data-mov="css">
@@ -76,10 +76,30 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
     </div>
   </section>
 
+  <!-- 2b. Agencia (D62): qué hace una agencia de marketing digital e IA, con un enlace por servicio y la ficha de la empresa -->
+  <section id="agencia" class="pv3-sec pv3-sec--corta" aria-labelledby="agencia-h2">
+    <div class="pv3-wrap pv3-agencia">
+      <div>
+        <h2 id="agencia-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Qué hace una agencia de marketing digital e IA.</h2>
+        <p class="pv3-lead">Elemento Web es una agencia de marketing digital e IA en Ciudad de Panamá. Trabajamos para pymes y empresas que venden por chat, por cita o por cotización: traemos al cliente, lo atendemos al momento y automatizamos el seguimiento, con todo medido hasta la consulta.</p>
+        <p class="pv3-ficha">Elemento Web · Vía Grecia, PH Ventury Plaza, Ciudad de Panamá · Tech Provider verificado por Meta</p>
+        <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="agencia" data-service="definir">Pedir mi plan de marketing <span aria-hidden="true">→</span></a></p>
+      </div>
+      <ul class="pv3-agencia__lista">
+        <li><a href={url('marketing/google-ads-panama')}><b>Publicidad en Google y Meta</b><span>Campañas que se miden hasta la consulta, con la cuenta a tu nombre.</span></a></li>
+        <li><a href={url('marketing/contenido-redes-sociales-panama')}><b>Contenido y redes</b><span>Publicaciones, Reels y videos con IA revisados a mano.</span></a></li>
+        <li><a href={url('crecimiento/posicionamiento-en-chatgpt-e-ia-panama')}><b>SEO y posicionamiento en ChatGPT</b><span>Que te encuentren en Google y te nombren las IA.</span></a></li>
+        <li><a href={url('marketing/whatsapp-marketing-masivo-panama')}><b>WhatsApp con la API oficial</b><span>Campañas y un agente de ventas que responde al momento.</span></a></li>
+        <li><a href={url('marketing/automatizaciones-n8n-panama')}><b>Automatización e IA</b><span>Seguimiento automático y una IA con la información de tu empresa.</span></a></li>
+        <li><a href={url('diseno-web-panama')}><b>Web y medición</b><span>La web que convierte las campañas y mide cada contacto.</span></a></li>
+      </ul>
+    </div>
+  </section>
+
   <!-- 3. Bento: cómo se ve el resultado; maquetas en HTML y CSS marcadas «Ejemplo», imágenes a color -->
   <section id="servicios" class="pv3-sec pv3-sec--humo" aria-labelledby="servicios-h2">
     <div class="pv3-wrap">
-      <h2 id="servicios-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Todo lo que tu marca necesita para crecer.</h2>
+      <h2 id="servicios-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Marketing digital e IA para tu marca, en un solo equipo.</h2>
       <div class="pv3-bento">
         {BENTO_PORTADA.map((b) => (
           <article class={`pv3-tarjeta${b.ancha ? ' pv3-tarjeta--ancha' : ''}`} data-mov="css">

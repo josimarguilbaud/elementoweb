@@ -93,9 +93,9 @@ test('respuesta citable de 40 a 60 palabras, con fecha, enlaces a /nosotros/, di
   assert.deepEqual(cifras(sinHtml(r.text)), []);
 });
 
-test('franja de 6 servicios con su URL, y díptico con 3 enlaces por mitad', () => {
+test('franja de 6 servicios con su URL, y recorrido de 3 pasos con 3 enlaces cada uno (D61)', () => {
   assert.deepEqual(FRANJA_PORTADA.map((f) => f.label), ['Google Ads', 'Meta Ads', 'SEO y GEO', 'WhatsApp API', 'Agentes IA', 'Diseño web']);
-  assert.deepEqual(DIPTICO_PORTADA.map((m) => m.titulo), ['Marketing digital', 'Proyectos de IA']);
+  assert.deepEqual(DIPTICO_PORTADA.map((m) => m.titulo), ['Atraer', 'Atender', 'Automatizar']);
   for (const m of DIPTICO_PORTADA) assert.equal(m.enlaces.length, 3, m.titulo);
 });
 
@@ -208,10 +208,10 @@ test('1. héroe: la franja de 6 servicios enlaza cada página', conDist, () => {
   assert.deepEqual(enlaces.map((a) => [textoDe(a), a.getAttribute('href')]), FRANJA_PORTADA.map((f) => [f.label, url(f.slug)]));
 });
 
-test('2. díptico: #soluciones con dos mitades, 3 enlaces y una foto cada una', conDist, () => {
+test('2. recorrido: #soluciones con tres pasos, 3 enlaces y una foto cada uno (D61)', conDist, () => {
   const s = seccion(home(), 'soluciones');
   const mitades = s.querySelectorAll('.pv3-mitad');
-  assert.equal(mitades.length, 2);
+  assert.equal(mitades.length, 3);
   mitades.forEach((m, i) => {
     assert.match(textoDe(m.querySelector('h3')), new RegExp(DIPTICO_PORTADA[i].titulo));
     assert.deepEqual(m.querySelectorAll('ul a').map((a) => a.getAttribute('href')), DIPTICO_PORTADA[i].enlaces.map((e) => url(e.slug)));

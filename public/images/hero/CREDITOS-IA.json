@@ -1,86 +1,500 @@
 {
   "nota_general": "Renders 3D generados con IA para las portadas de las páginas internas de elementoweb.com (22-oct-2026): un objeto de cromo plateado sobre fondo gris claro #F5F5F5, a juego con la escultura de la portada v3. Sustituyen a las fotos del 13-oct-2026. No hay personas, texto, logos ni marcas dentro de la imagen. Una generación por imagen a 1K (4:3), con el fondo nivelado a #F5F5F5, recortada a 10:7 y llevada a 1600x1120 con las mismas variantes que scripts/portadas-fotos.mjs.",
   "imagenes": [
-    { "archivo": "blog.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Libro abierto con las páginas en abanico, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "blog--cuanto-cuesta-desarrollo-web-a-medida-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Pila de monedas junto a una ventana de navegador con bloques de diseño, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "blog--cuanto-cuesta-mantenimiento-web-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Pila de monedas y llave inglesa apoyada en una ventana de navegador, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "como-trabajamos.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Escalera de tres peldaños redondeados con una esfera en el más alto, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "comparativas--web-a-medida-vs-suscripcion.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Balancín nivelado con un cubo facetado en un extremo y un aro en el otro, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "contacto.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Auricular de teléfono junto a una burbuja de conversación, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "crecimiento.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Gráfico de barras ascendentes con una flecha que sube, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "crecimiento--hosting-infraestructura-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Torre de servidores con unidades ventiladas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "crecimiento--mantenimiento-web-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Llave inglesa cruzada sobre un engranaje, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "crecimiento--seo-local-google-maps-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Marcador de ubicación sobre un mapa plegado de paneles metálicos, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "crecimiento--seo-posicionamiento-web-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Lupa sobre tres barras ascendentes, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "diseno-web-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Laptop abierta con bloques de diseño en relieve en la pantalla, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "funcionalidades.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Cuatro piezas de rompecabezas encajadas, una levantada, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "funcionalidades--chatbots-ia-web-wazacrm-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Burbuja de conversación con un destello de cuatro puntas encima, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "funcionalidades--integracion-cybersource-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Tarjeta bancaria lisa con un escudo protector delante, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "funcionalidades--integracion-yappy-pasarelas-pago-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Celular con una moneda y ondas de pago sin contacto, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "funcionalidades--sistemas-reservas-citas-online-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Calendario de escritorio con una marca de verificación, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "guias.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Brújula de bolsillo con la tapa abierta, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "guias--diseno-web-miami.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Palmera estilizada junto a una ventana de navegador, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "guias--diseno-web-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Grupo de rascacielos de distintas alturas sobre una base redonda, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "guias--diseno-web-por-industria.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Panal de losetas hexagonales, algunas elevadas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "guias--marketing-y-pauta.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Megáfono apuntando hacia arriba, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "guias--seo-y-posicionamiento.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Lupa sobre un marcador de ubicación, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "guias--tiendas-online-y-pagos.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Carrito de compras, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "guias--whatsapp-ia-y-automatizacion.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Dos burbujas de conversación unidas a un engranaje, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Fábrica en miniatura con techo de diente de sierra, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias--diseno-web-abogados-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Balanza de la justicia con dos platillos, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias--diseno-web-belleza-spa-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Flor de loto de pétalos en capas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias--diseno-web-bienes-raices-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Casa de techo a dos aguas con una llave apoyada, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias--diseno-web-clinicas-salud-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Estetoscopio enrollado, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias--diseno-web-constructoras-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Casco de construcción, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias--diseno-web-educacion-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Birrete de graduación con borla, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias--diseno-web-gimnasios-fitness-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Pesa rusa junto a una mancuerna, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias--diseno-web-logistica-transporte-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Contenedor de carga corrugado, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias--diseno-web-restaurantes-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Campana de servir sobre un plato, con la tapa entreabierta, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias--diseno-web-retail-moda-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Gancho de ropa con una etiqueta en blanco, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias--diseno-web-talleres-automotriz-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Rin de auto de pie con una llave inglesa al lado, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "industrias--diseno-web-turismo-hoteles-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Maleta de viaje con asa extensible, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "inteligencia-artificial-para-empresas-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Esfera formada por una red de nodos conectados, como una red neuronal, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "marketing.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Diana con una flecha en el centro, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "marketing--automatizaciones-n8n-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Cadena de nodos unidos por tubos con un engranaje en medio, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "marketing--contenido-redes-sociales-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Cámara de fotos sin marca con su lente, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "marketing--email-marketing-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Sobre cerrado del que despega un avión de papel, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "marketing--facebook-instagram-ads-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Celular de pie con un corazón y una estrella flotando a su lado, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "marketing--google-ads-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Flecha del cursor haciendo clic en una barra de búsqueda, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "marketing--video-inmobiliario-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "cámara de video en un trípode pequeño apuntando a una casa en miniatura, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "marketing--videos-publicitarios-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "claqueta de cine entreabierta con un botón de reproducción, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "marketing--whatsapp-marketing-masivo-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Tres burbujas de conversación superpuestas de distintos tamaños, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-brickell.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Tres rascacielos esbeltos y torcidos, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-coral-gables.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Arco mediterráneo con columnas y una fuente escalonada, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-cutler-bay.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Caracol marino en espiral, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-doral.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Pelota de golf sobre su tee, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-en-miami-en-espanol.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Forma abstracta de palmera con hojas curvas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-hialeah.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Figura de caballo de carreras al galope, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-hialeah-gardens.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Flor de hibisco abierta, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-homestead.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Piña, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-kendall.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Medio sol con rayos que sale de una base plana, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-miami-lakes.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Cisne sobre un disco plano como agua quieta, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-north-miami.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Flamenco parado en una pata, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-sweetwater.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Gota de agua con una pequeña corona de salpicadura, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "miami--diseno-web-westchester.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Abanico de rayos estilo art déco, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "nosotros.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Tres aros entrelazados, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "politica-de-privacidad.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Candado cerrado, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "portafolio.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Marcos de cuadro vacíos en abanico, de distintos tamaños, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "precios.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Etiqueta de precio en blanco con su cordel, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "recursos.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Caja de herramientas cerrada con asa, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "recursos--checklist-migracion-seo.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Portapapeles con tres casillas marcadas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "saas.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Nube redondeada sobre tres capas apiladas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "saas--cifrao.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Calculadora de teclas lisas con un recibo de papel enrollado, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "saas--nouscrm.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Tarjetero giratorio con fichas de contacto en blanco, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "saas--wazacrm.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Diadema con micrófono junto a una burbuja de conversación, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "servicios.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Navaja multiuso sin marca con varias herramientas abiertas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "servicios--diseno-web-corporativo-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Maletín ejecutivo, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "servicios--landing-pages-alta-conversion-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Cohete pequeño despegando, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "servicios--redisenio-web-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Rodillo de pintura sobre una ventana de navegador, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "servicios--tiendas-online-ecommerce-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Bolsa de compras con asas de cordón, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "tecnologias.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Microchip con sus patillas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "tecnologias--desarrollo-web-a-medida-vue-react-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Cubos modulares que encajan, algunos separados, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "tecnologias--diseno-web-shopify-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Canasta de compras con asas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "tecnologias--diseno-web-wordpress-panama.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Tres losas redondeadas apiladas como capas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" },
-    { "archivo": "terminos.jpg", "modelo": "google/nano-banana-2.1", "descripcion": "Pluma estilográfica y su capuchón sobre una hoja en blanco, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)" }
+    {
+      "archivo": "blog.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Libro abierto con las páginas en abanico, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "blog--cuanto-cuesta-desarrollo-web-a-medida-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Pila de monedas junto a una ventana de navegador con bloques de diseño, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "blog--cuanto-cuesta-mantenimiento-web-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Pila de monedas y llave inglesa apoyada en una ventana de navegador, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "como-trabajamos.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Escalera de tres peldaños redondeados con una esfera en el más alto, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "comparativas--web-a-medida-vs-suscripcion.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Balancín nivelado con un cubo facetado en un extremo y un aro en el otro, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "contacto.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Auricular de teléfono junto a una burbuja de conversación, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "crecimiento.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Gráfico de barras ascendentes con una flecha que sube, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "crecimiento--hosting-infraestructura-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Torre de servidores con unidades ventiladas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "crecimiento--mantenimiento-web-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Llave inglesa cruzada sobre un engranaje, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "crecimiento--seo-local-google-maps-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Marcador de ubicación sobre un mapa plegado de paneles metálicos, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "crecimiento--seo-posicionamiento-web-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Lupa sobre tres barras ascendentes, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "diseno-web-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Laptop abierta con bloques de diseño en relieve en la pantalla, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "funcionalidades.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Cuatro piezas de rompecabezas encajadas, una levantada, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "funcionalidades--chatbots-ia-web-wazacrm-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Burbuja de conversación con un destello de cuatro puntas encima, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "funcionalidades--integracion-cybersource-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Tarjeta bancaria lisa con un escudo protector delante, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "funcionalidades--integracion-yappy-pasarelas-pago-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Celular con una moneda y ondas de pago sin contacto, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "funcionalidades--sistemas-reservas-citas-online-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Calendario de escritorio con una marca de verificación, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "guias.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Brújula de bolsillo con la tapa abierta, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "guias--diseno-web-miami.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Palmera estilizada junto a una ventana de navegador, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "guias--diseno-web-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Grupo de rascacielos de distintas alturas sobre una base redonda, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "guias--diseno-web-por-industria.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Panal de losetas hexagonales, algunas elevadas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "guias--marketing-y-pauta.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Megáfono apuntando hacia arriba, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "guias--seo-y-posicionamiento.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Lupa sobre un marcador de ubicación, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "guias--tiendas-online-y-pagos.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Carrito de compras, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "guias--whatsapp-ia-y-automatizacion.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Dos burbujas de conversación unidas a un engranaje, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Fábrica en miniatura con techo de diente de sierra, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias--diseno-web-abogados-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Balanza de la justicia con dos platillos, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias--diseno-web-belleza-spa-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Flor de loto de pétalos en capas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias--diseno-web-bienes-raices-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Casa de techo a dos aguas con una llave apoyada, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias--diseno-web-clinicas-salud-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Estetoscopio enrollado, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias--diseno-web-constructoras-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Casco de construcción, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias--diseno-web-educacion-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Birrete de graduación con borla, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias--diseno-web-gimnasios-fitness-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Pesa rusa junto a una mancuerna, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias--diseno-web-logistica-transporte-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Contenedor de carga corrugado, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias--diseno-web-restaurantes-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Campana de servir sobre un plato, con la tapa entreabierta, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias--diseno-web-retail-moda-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Gancho de ropa con una etiqueta en blanco, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias--diseno-web-talleres-automotriz-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Rin de auto de pie con una llave inglesa al lado, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "industrias--diseno-web-turismo-hoteles-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Maleta de viaje con asa extensible, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "inteligencia-artificial-para-empresas-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Esfera formada por una red de nodos conectados, como una red neuronal, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "marketing.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Diana con una flecha en el centro, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "marketing--automatizaciones-n8n-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Cadena de nodos unidos por tubos con un engranaje en medio, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "marketing--contenido-redes-sociales-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Cámara de fotos sin marca con su lente, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "marketing--email-marketing-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Sobre cerrado del que despega un avión de papel, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "marketing--facebook-instagram-ads-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Celular de pie con un corazón y una estrella flotando a su lado, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "marketing--google-ads-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Flecha del cursor haciendo clic en una barra de búsqueda, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "marketing--video-inmobiliario-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "cámara de video en un trípode pequeño apuntando a una casa en miniatura, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "marketing--videos-publicitarios-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "claqueta de cine entreabierta con un botón de reproducción, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "marketing--whatsapp-marketing-masivo-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Tres burbujas de conversación superpuestas de distintos tamaños, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-brickell.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Tres rascacielos esbeltos y torcidos, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-coral-gables.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Arco mediterráneo con columnas y una fuente escalonada, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-cutler-bay.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Caracol marino en espiral, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-doral.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Pelota de golf sobre su tee, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-en-miami-en-espanol.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Forma abstracta de palmera con hojas curvas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-hialeah.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Figura de caballo de carreras al galope, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-hialeah-gardens.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Flor de hibisco abierta, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-homestead.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Piña, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-kendall.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Medio sol con rayos que sale de una base plana, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-miami-lakes.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Cisne sobre un disco plano como agua quieta, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-north-miami.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Flamenco parado en una pata, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-sweetwater.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Gota de agua con una pequeña corona de salpicadura, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "miami--diseno-web-westchester.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Abanico de rayos estilo art déco, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "nosotros.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Tres aros entrelazados, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "politica-de-privacidad.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Candado cerrado, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "portafolio.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Marcos de cuadro vacíos en abanico, de distintos tamaños, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "precios.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Etiqueta de precio en blanco con su cordel, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "recursos.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Caja de herramientas cerrada con asa, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "recursos--checklist-migracion-seo.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Portapapeles con tres casillas marcadas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "saas.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Nube redondeada sobre tres capas apiladas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "saas--cifrao.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Calculadora de teclas lisas con un recibo de papel enrollado, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "saas--nouscrm.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Tarjetero giratorio con fichas de contacto en blanco, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "saas--wazacrm.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Diadema con micrófono junto a una burbuja de conversación, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "servicios.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Navaja multiuso sin marca con varias herramientas abiertas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "servicios--diseno-web-corporativo-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Maletín ejecutivo, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "servicios--landing-pages-alta-conversion-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Cohete pequeño despegando, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "servicios--redisenio-web-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Rodillo de pintura sobre una ventana de navegador, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "servicios--tiendas-online-ecommerce-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Bolsa de compras con asas de cordón, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "tecnologias.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Microchip con sus patillas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "tecnologias--desarrollo-web-a-medida-vue-react-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Cubos modulares que encajan, algunos separados, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "tecnologias--diseno-web-shopify-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Canasta de compras con asas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "tecnologias--diseno-web-wordpress-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Tres losas redondeadas apiladas como capas, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "terminos.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Pluma estilográfica y su capuchón sobre una hoja en blanco, en cromo plateado, render 3D sobre fondo gris claro (22-oct-2026)"
+    },
+    {
+      "archivo": "blog--cuanto-cuesta-un-chatbot-de-whatsapp-en-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a rounded speech bubble resting on top of a small neat stack of plain coins, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--whatsapp-business-o-api-cual-necesita-tu-negocio.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of two rounded speech bubbles side by side, one small and one large, the large one connected to a thick cable, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--cuanto-cobra-meta-por-mensaje-de-whatsapp-en-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a folded paper plane with a blank price tag hanging from it on a string, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--limites-de-mensajes-de-whatsapp-business-api.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a staircase of four rising rectangular blocks with a small rounded speech bubble on the top step, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--por-que-bloquean-un-numero-de-whatsapp-business.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a smartphone standing upright with a closed padlock in front of it, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--quien-hace-chatbots-de-whatsapp-con-ia-en-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a magnifying glass leaning over a rounded speech bubble, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--que-es-un-agente-de-ia-para-whatsapp.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a rounded speech bubble wearing a small call-center headset, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--chatbot-con-reglas-o-con-ia-cual-conviene.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a rigid branching tree of straight rods beside a smooth flowing liquid-metal sphere, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--cuanto-cuesta-implementar-inteligencia-artificial-en-una-empresa.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a classic balance scale with an abstract smooth knot sculpture on one pan and a few plain coins on the other, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--es-seguro-usar-ia-con-los-datos-de-mi-empresa.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a rounded shield standing in front of a neat stack of blank document sheets, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--ley-81-proteccion-de-datos-chatbots-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a scale of justice standing beside a closed folder with a small padlock, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--que-es-n8n-y-para-que-sirve.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of three rounded node blocks connected in a row by curved tubes forming a flow, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--n8n-zapier-o-make-cual-conviene.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of three different abstract connector pieces standing side by side on a low podium, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--cuanto-cuesta-automatizar-procesos-con-n8n-en-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a large gear resting on top of a neat stack of plain coins, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "blog--como-conectar-whatsapp-con-n8n.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a rounded speech bubble plugged by a thick cable into a rounded node block, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "crecimiento--posicionamiento-en-chatgpt-e-ia-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a short stack of blank rounded result cards with a four-pointed sparkle star floating above them, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "funcionalidades--agente-de-ventas-ia-whatsapp-panama.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of a rounded speech bubble beside a small shopping bag with handles, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    },
+    {
+      "archivo": "soluciones.jpg",
+      "modelo": "google/nano-banana-2.1",
+      "descripcion": "Premium 3D studio product render of three stacked rounded blocks forming ascending steps, joined by a smooth curved rod, made entirely of polished chrome and brushed silver metal. The object is centered in the frame, floating slightly above the floor with a soft blurred contact shadow beneath it. Seamless, very light gray (#F5F5F5) studio background with no horizon line, soft diffused studio lighting, gentle reflections. Strictly monochrome silver, white and gray palette, minimalist, clean, high-end SaaS website hero aesthetic. The object fills about half of the frame height with generous empty space around it, nothing cropped. No text, no letters, no numbers, no logos, no brand marks, no people, no hands."
+    }
   ]
 }

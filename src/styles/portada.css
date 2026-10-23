@@ -57,7 +57,7 @@ main :focus-visible { outline: 2px solid #0a0a0a; outline-offset: 2px; border-ra
 
 /* ---- 2. Díptico ---- */
 .pv3-diptico { margin-top: 40px; display: grid; gap: 16px; }
-@media (min-width: 1024px) { .pv3-diptico { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .pv3-diptico { grid-template-columns: repeat(3, 1fr); } }
 .pv3-mitad { display: flex; flex-direction: column; padding: 32px; border: 1px solid #e5e5e5; border-radius: 16px; background: #fff; }
 .pv3-mitad--negra { border-color: #0a0a0a; background: #0a0a0a; color: #fff; }
 .pv3-mitad__t { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.015em; }
@@ -111,6 +111,9 @@ main :focus-visible { outline: 2px solid #0a0a0a; outline-offset: 2px; border-ra
   /* Carrusel horizontal con scroll-snap: el orden del DOM y del Tab no cambia. */
   .pv3-bento { grid-auto-flow: column; grid-auto-columns: 84%; overflow-x: auto; scroll-snap-type: x mandatory; margin-right: -16px; padding-right: 16px; padding-bottom: 8px; overscroll-behavior-x: contain; }
   .pv3-tarjeta { scroll-snap-align: start; }
+  /* Los tres pasos (D61), igual que el bento: carrusel horizontal para que el siguiente CTA no quede lejos. */
+  .pv3-diptico { grid-auto-flow: column; grid-auto-columns: 84%; overflow-x: auto; scroll-snap-type: x mandatory; margin-right: -16px; padding-right: 16px; padding-bottom: 8px; overscroll-behavior-x: contain; }
+  .pv3-mitad { scroll-snap-align: start; padding: 20px; }
   .pv3-tarjeta { padding: 20px; }
   .pv3-maqueta { min-height: 0; margin-top: 14px; padding: 12px; gap: 8px; }
   .pv3-mq-publicidad img { width: 40%; }

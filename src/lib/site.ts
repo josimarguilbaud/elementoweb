@@ -269,8 +269,9 @@ export const grupos: Grupo[] = [
     titulo: 'Diseño web',
     columnas: [
       { titulo: 'Diseño web', linea: 'Sitios que trabajan como un vendedor.', icono: 'ventana', links: [...columna('Diseño Web'), { slug: 'industrias', label: 'Por industria' }] },
-      { titulo: 'Tecnologías', linea: 'La plataforma que tu negocio necesita.', icono: 'codigo', links: columna('Tecnologías') },
       { titulo: 'Funcionalidades', linea: 'Pagos y reservas dentro de tu web.', icono: 'enchufe', links: sinDueno(columna('Funcionalidades'), [IA_EMPRESAS, CHATBOTS, AGENTE]) },
+      /* D61: Tecnologías pasa al final; es parte de la web, no un servicio que se elija por separado. */
+      { titulo: 'Tecnologías', linea: 'La plataforma que tu negocio necesita.', icono: 'codigo', links: columna('Tecnologías') },
     ],
     destacada: { slug: 'diseno-web-panama', titulo: 'Diseño web en Panamá', linea: 'Sitios rápidos, medibles y a tu nombre.' },
   },

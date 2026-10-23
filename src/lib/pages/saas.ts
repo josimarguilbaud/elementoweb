@@ -131,12 +131,12 @@ export const saasPages: PageData[] = [
     parent,
     anatomia: 'v2',
     serviceKey: 'ia',
-    title: 'WazaCRM | El CRM para WhatsApp que Vende en Piloto Automático',
-    description: 'WazaCRM no es un chatbot: es un agente de IA que atiende, cotiza, agenda y cobra dentro de tu WhatsApp, con el embudo de ventas y la bandeja compartida de un CRM de verdad detrás. Producto de Elemento Web.',
-    h1: 'WazaCRM',
+    title: 'WazaCRM | Agente de Ventas con IA para WhatsApp',
+    description: 'WazaCRM es tu agente de ventas con IA en WhatsApp: atiende, cotiza, agenda y cobra, con el embudo y la bandeja compartida de un CRM detrás. Desde $349 al mes.',
+    h1: 'WazaCRM, tu agente de ventas con IA en WhatsApp',
     breadcrumb: 'WazaCRM',
     service: { type: 'CRM para WhatsApp con agente de IA (software como servicio)' },
-    lead: ['No es un chatbot: es un agente de IA que atiende, cotiza, agenda y cobra dentro de tu WhatsApp, con el embudo de ventas y la bandeja compartida de un CRM de verdad detrás.'],
+    lead: ['No es un chatbot: es tu agente de ventas con IA. Atiende, cotiza, agenda y cobra dentro de tu WhatsApp, con el embudo y la bandeja compartida de un CRM detrás.'],
     portada: {
       pie: 'Para tu cliente es una sola conversación; para tu equipo eran tres pantallas. WazaCRM las une y ordena cada oportunidad hasta que paga.',
       riel: [
@@ -149,8 +149,8 @@ export const saasPages: PageData[] = [
     blocks: [
       {
         type: 'answer',
-        fecha: '2026-10-13',
-        text: 'WazaCRM es el CRM para WhatsApp de Elemento Web, hecho en Ciudad de Panamá: un agente que atiende, cotiza, agenda y cobra con la API oficial de Meta, una bandeja para WhatsApp, Instagram, Facebook y chat web, y un embudo que sigue cada oportunidad hasta el pago. Desde $349 al mes; en marcha en unas 2 semanas.',
+        fecha: '2026-10-23',
+        text: 'WazaCRM es tu agente de ventas con IA en WhatsApp, hecho por Elemento Web en Ciudad de Panamá. Atiende, cotiza, agenda y cobra con la API oficial de Meta. Detrás tiene un CRM con bandeja compartida y un embudo que sigue cada oportunidad hasta el pago. Desde $349 al mes; en marcha en unas 2 semanas.',
       },
       {
         type: 'receipt',
@@ -241,6 +241,14 @@ export const saasPages: PageData[] = [
       },
       {
         type: 'prose',
+        h2: 'El agente de ventas y el CRM, en una sola cuenta',
+        paragraphs: [
+          'El agente de ventas es la parte que conversa: atiende al instante, cotiza con tus precios, agenda en tu calendario y deja el enlace de pago. El CRM es la parte que ordena: cada conversación queda en el embudo, con su ficha y su historial.',
+          'Si quieres ver cómo trabaja el agente paso a paso, lo explicamos en <a href="/funcionalidades/agente-de-ventas-ia-whatsapp-panama/">agente de ventas con IA en WhatsApp</a>. Si además necesitas los anuncios y las campañas que llenan la bandeja, mira el paquete «Clientes por WhatsApp» en <a href="/soluciones/">Soluciones</a>.',
+        ],
+      },
+      {
+        type: 'prose',
         h2: 'La IA que admite lo que no sabe',
         paragraphs: [
           'El asistente de WazaCRM responde únicamente desde los documentos que apruebas: precios, requisitos, políticas, preguntas frecuentes. Cuando el dato no está, lo dice y deriva a tu equipo. <strong>Un asistente que inventa destruye en una conversación la confianza que costó años construir</strong>, así que preferimos que derive de más.',
@@ -317,6 +325,7 @@ export const saasPages: PageData[] = [
           { slug: 'saas', label: 'Todos los SaaS' },
           { slug: 'blog/como-hacer-campanas-de-whatsapp-masivo-en-panama', label: 'Guía: campañas de WhatsApp' },
           { slug: 'funcionalidades/agente-de-ventas-ia-whatsapp-panama', label: 'Agente de ventas con IA en WhatsApp' },
+          { slug: 'soluciones', label: 'Soluciones: paquete Clientes por WhatsApp' },
         ],
       },
     ],

@@ -48,6 +48,14 @@
       "limite_bytes": 40000,
       "modelo": "google/nano-banana-2.1",
       "fecha": "2026-10-22"
+    },
+    {
+      "archivo": "diptico-automatizar-800.webp",
+      "ancho": 800,
+      "bytes": 40256,
+      "limite_bytes": 60000,
+      "modelo": "google/nano-banana-2.1",
+      "fecha": "2026-10-23"
     }
   ]
 }

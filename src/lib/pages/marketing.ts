@@ -940,6 +940,15 @@ export const marketingPages: PageData[] = [
       },
       {
         type: 'prose',
+        h2: 'La campaña abre la conversación; el agente de ventas la cierra',
+        paragraphs: [
+          'Una campaña que funciona devuelve decenas de respuestas en la misma hora. Si nadie las atiende rápido, la venta se enfría antes de que tu equipo llegue.',
+          'Por eso la vendemos junto con el <a href="/funcionalidades/agente-de-ventas-ia-whatsapp-panama/">agente de ventas con IA</a>. La campaña abre la conversación; el agente responde, cotiza con tus precios y agenda dentro de la ventana de 24 horas. Después, n8n sigue: registra al cliente en el CRM y programa el próximo contacto.',
+          '<strong>Campaña, agente y seguimiento van juntos en el paquete «Clientes por WhatsApp»</strong>, que puedes ver en <a href="/soluciones/">Soluciones</a>.',
+        ],
+      },
+      {
+        type: 'prose',
         h2: 'El consentimiento no es un trámite: es lo que evita el reporte',
         paragraphs: [
           'Cuando alguien recibe un mensaje que no pidió, lo reporta; suficientes reportes y el número queda restringido, sin importar cuán bueno fuera el contenido. El consentimiento válido es explícito: una casilla en tu formulario, un mensaje del propio cliente pidiendo información o una compra donde se indicó que se le escribiría.',
@@ -1145,6 +1154,15 @@ export const marketingPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: 'Seguimiento automático de clientes: nadie queda sin respuesta',
+        paragraphs: [
+          'Es la automatización que más se pide, armada como un solo resultado. Cada consulta, venga de la web, de un anuncio o de WhatsApp, entra al CRM con su origen.',
+          'La IA la califica, por ejemplo por presupuesto, urgencia y servicio, y n8n dispara el seguimiento que le toca. El interesado recibe respuesta, el vendedor recibe el aviso y nadie queda sin contestar.',
+          'Se cotiza por flujo, con la referencia de esta página; se confirma en la cotización. Si además quieres que un <a href="/funcionalidades/agente-de-ventas-ia-whatsapp-panama/">agente de ventas con IA</a> atienda en WhatsApp, todo junto es el paquete «Empresa con IA» de <a href="/soluciones/">Soluciones</a>.',
+        ],
+      },
+      {
         type: 'cards',
         h2: 'Automatizaciones que más se piden',
         intro: 'Casi todo proceso repetitivo es candidato, pero estos son los que más retorno dejan en la práctica.',
@@ -1214,7 +1232,7 @@ export const marketingPages: PageData[] = [
     description: 'Videos publicitarios con IA en Panamá: 4 videos verticales de 15 a 30 s para Reels y anuncios, con guion, voz y subtítulos, revisados a mano.',
     h1: 'Videos publicitarios con IA para tu negocio',
     breadcrumb: 'Videos publicitarios',
-    service: { type: 'Producción de videos publicitarios con IA', catalogo: ['videos-ia'] },
+    service: { type: 'Producción de videos publicitarios con IA', catalogo: ['videos-ia', 'anuncios-ia-mensual'] },
     lead: ['Cuatro videos verticales para tus anuncios y Reels, hechos con IA desde tu producto, con guion, voz y subtítulos.'],
     portada: {
       pie: 'La dueña de un café graba su producto; en la pantalla, el video de ejemplo con su subtítulo.',
@@ -1238,7 +1256,7 @@ export const marketingPages: PageData[] = [
         precio: { estado: 'confirmado', desde: '$500', unidad: 'por paquete de 4 videos' },
         plazo: '7 días hábiles desde que apruebas el guion',
         medicionId: 'videos-ia-lcp',
-        pie: ['La pauta no está incluida: se paga aparte, directo a Meta o Google.', 'La licencia de uso comercial no es exclusiva: una IA puede generar piezas parecidas para otros.'],
+        pie: ['La pauta no está incluida: se paga aparte, directo a Meta o Google.', 'La licencia de uso comercial no es exclusiva: una IA puede generar piezas parecidas para otros.', 'Si pautas todos los meses, existe el Plan mensual de anuncios con IA: 4 videos y 8 piezas gráficas al mes, desde $650 al mes, mínimo 3 meses, revisados a mano.'],
       },
       {
         type: 'ejemplos',
@@ -1333,7 +1351,7 @@ export const marketingPages: PageData[] = [
           { q: '¿Qué no hace bien la IA?', a: 'Le cuesta el texto dentro de la imagen, las manos en movimiento y copiar al detalle una etiqueta o un logo. Por eso revisamos cada video a mano, rehacemos lo que sale mal y ponemos el texto en los subtítulos, no dentro de la escena.' },
           { q: '¿Qué voz lleva?', a: 'Una voz generada en español, que eliges entre varias opciones. No clonamos la voz ni la cara de nadie sin su permiso por escrito.' },
           { q: '¿En qué se diferencia del plan de Contenido para redes?', a: 'El <a href="/marketing/contenido-redes-sociales-panama/">plan de Contenido para redes</a> maneja tus publicaciones de todos los meses y edita el video que grabas tú o producimos contigo. Este paquete hace 4 videos de una vez, con IA y sin rodaje, para una campaña o un lanzamiento.' },
-          { q: '¿También como plan mensual?', a: 'Sí: si pautas todos los meses, los videos se pueden producir cada mes junto con tu pauta. Ese plan se cotiza aparte, según cuántos videos necesites.' },
+          { q: '¿También como plan mensual?', a: 'Sí. El Plan mensual de anuncios con IA trae 4 videos y 8 piezas gráficas al mes, desde $650 al mes. Pide un mínimo de 3 meses y revisamos cada pieza a mano. La pauta va aparte.' },
         ],
       },
       { type: 'form', h2: 'Cotiza tus videos publicitarios', intro: 'Cuéntanos qué vendes y dónde vas a pautar: te respondemos con la propuesta de los 4 videos.' },

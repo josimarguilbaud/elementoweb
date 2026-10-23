@@ -9,9 +9,9 @@
     { "slug": "servicios/diseno-web-corporativo-panama", "tipo": "servicio", "fase": "2a", "precio": "confirmado" },
     { "slug": "crecimiento/seo-posicionamiento-web-panama", "tipo": "servicio", "fase": "2a", "precio": "cotizado" },
     { "slug": "marketing/google-ads-panama", "tipo": "servicio", "fase": "2a", "precio": "propuesto" },
-    { "slug": "crecimiento/posicionamiento-en-chatgpt-e-ia-panama", "tipo": "servicio", "fase": "2b", "precio": "cotizado" },
-    { "slug": "funcionalidades/agente-de-ventas-ia-whatsapp-panama", "tipo": "servicio", "fase": "2b", "precio": "cotizado" },
-    { "slug": "soluciones", "tipo": "servicio", "fase": "2b", "precio": "cotizado" },
+    { "slug": "crecimiento/posicionamiento-en-chatgpt-e-ia-panama", "tipo": "servicio", "fase": "2b", "precio": "confirmado" },
+    { "slug": "funcionalidades/agente-de-ventas-ia-whatsapp-panama", "tipo": "servicio", "fase": "2b", "precio": "confirmado" },
+    { "slug": "soluciones", "tipo": "servicio", "fase": "2b", "precio": "confirmado" },
     { "slug": "marketing/videos-publicitarios-panama", "tipo": "servicio", "fase": "2b", "precio": "confirmado" },
     { "slug": "marketing/video-inmobiliario-panama", "tipo": "servicio", "fase": "2b", "precio": "confirmado" },
 

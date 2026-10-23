@@ -90,13 +90,13 @@ n8n y automatización:
 - [Tecnologías](https://elementoweb.com/tecnologias/): WordPress, Shopify y desarrollo a medida con Vue o React.
 - [Funcionalidades](https://elementoweb.com/funcionalidades/): chatbots con IA, reservas y citas, pasarelas de pago.
 - [Integración de CyberSource](https://elementoweb.com/funcionalidades/integracion-cybersource-panama/): qué es Unified Checkout y tres alcances con precio cerrado: Esencial desde $1,050 (cobro directo), Profesional $2,150 (webhook verificado, registro en base de datos y 3-D Secure 2) y Avanzado $3,850 (reembolsos desde tu panel, tarjetas guardadas y conexión con ERP o CRM). USD, sin ITBMS (7%). Alcance PCI-DSS SAQ A: el servidor del comercio nunca ve el número de tarjeta.
-- [Inteligencia artificial para empresas](https://elementoweb.com/inteligencia-artificial-para-empresas-panama/): IA privada que responde con los documentos de la empresa y cita la fuente (RAG), conectada a CRM, ERP y WhatsApp con aprobación humana en las acciones sensibles. Proyectos desde $2,900 más el consumo de los modelos, que se factura por uso; diagnóstico inicial sin costo.
+- [Inteligencia artificial para empresas](https://elementoweb.com/inteligencia-artificial-para-empresas-panama/): IA privada que responde con los documentos de la empresa y cita la fuente (RAG), conectada a CRM, ERP y WhatsApp con aprobación humana en las acciones sensibles. Dos niveles: IA privada desde $2,900 e IA conectada a ERP o CRM desde $6,900, más el consumo de los modelos, que se factura por uso. Diagnóstico inicial sin costo; diagnóstico por escrito $290, que se descuenta del proyecto.
 
 ## Soluciones y servicios nuevos (2026)
 
-- [Soluciones](https://elementoweb.com/soluciones/): tres paquetes que conectan los servicios en un recorrido (atraer, atender, automatizar): Clientes por WhatsApp, Visible en Google y en la IA, y Empresa con IA. Se cotizan; cada parte enlaza a su servicio con su precio de partida.
-- [Posicionamiento en ChatGPT y la IA (GEO)](https://elementoweb.com/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/): auditoría de cómo nombran a una empresa ChatGPT, Perplexity y Google con IA, y trabajo mensual de entidad, respuestas y menciones. Se cotiza.
-- [Agente de ventas con IA en WhatsApp](https://elementoweb.com/funcionalidades/agente-de-ventas-ia-whatsapp-panama/): atiende, cotiza, agenda y pasa a una persona, sobre WazaCRM y la API oficial de WhatsApp Business (Tech Provider verificado por Meta). WazaCRM desde $349 al mes.
+- [Soluciones](https://elementoweb.com/soluciones/): tres paquetes que conectan los servicios en un recorrido (atraer, atender, automatizar): Clientes por WhatsApp, Visible en Google y en la IA, y Empresa con IA. Clientes por WhatsApp desde $850 de arranque y $649 al mes; Visible en Google y en la IA desde $1,250 y $850 al mes; Empresa con IA desde $3,200 más el consumo de los modelos.
+- [Posicionamiento en ChatGPT y la IA (GEO)](https://elementoweb.com/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/): auditoría de cómo nombran a una empresa ChatGPT, Perplexity y Google con IA, y trabajo mensual de entidad, respuestas y menciones. Auditoría $490; plan mensual desde $650 (mínimo 3 meses).
+- [Agente de ventas con IA en WhatsApp](https://elementoweb.com/funcionalidades/agente-de-ventas-ia-whatsapp-panama/): atiende, cotiza, agenda y pasa a una persona, sobre WazaCRM y la API oficial de WhatsApp Business (Tech Provider verificado por Meta). WazaCRM desde $349 al mes con la entrega incluida; integración a medida con CRM, agenda o ERP desde $700.
 
 ## Mapa de servicios
 
@@ -121,7 +121,7 @@ Marketing:
 - [Email marketing](https://elementoweb.com/marketing/email-marketing-panama/): newsletters, automatizaciones y recuperación de clientes.
 - [WhatsApp marketing masivo](https://elementoweb.com/marketing/whatsapp-marketing-masivo-panama/): campañas con la API oficial de WhatsApp Business.
 - [Automatizaciones con n8n](https://elementoweb.com/marketing/automatizaciones-n8n-panama/): flujos que conectan herramientas y eliminan trabajo manual repetitivo.
-- [Videos publicitarios con IA](https://elementoweb.com/marketing/videos-publicitarios-panama/): 4 videos verticales de 15 a 30 s con guion, voz y subtítulos, revisados a mano; desde $500 por paquete de 4 videos.
+- [Videos publicitarios con IA](https://elementoweb.com/marketing/videos-publicitarios-panama/): 4 videos verticales de 15 a 30 s con guion, voz y subtítulos, revisados a mano; desde $500 por paquete de 4 videos, o plan mensual de anuncios con IA (4 videos y 8 piezas al mes) desde $650 al mes.
 - [Video inmobiliario con IA](https://elementoweb.com/marketing/video-inmobiliario-panama/): recorridos de 20 a 60 s hechos con IA a partir de los renders o fotos de un proyecto, en horizontal y vertical, revisados a mano; desde $550 por el video de una unidad.
 
 Tecnologías:

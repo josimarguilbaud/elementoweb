@@ -57,6 +57,18 @@
       "archivos": [
         "bento-videos-600.webp"
       ]
+    },
+    {
+      "fuente": "diptico-automatizar",
+      "modelo": "google/nano-banana-2.1",
+      "request_id": "01a16945-1e81-7e01-b710-5411695ab521",
+      "fecha": "2026-10-23",
+      "costo_usd": 0.15,
+      "prompt": "Documentary photograph in a bright Panama City office: a Latina sales coordinator in her thirties looks at a laptop showing a softly blurred sales pipeline board whose cards move by themselves, while her smartphone on the desk lights up with an out-of-focus notification. Natural window light, warm wood desk, plants, vivid but true colors, shallow depth of field, eye-level medium shot, 3:2 landscape. Photorealistic, natural colors. Absolutely no readable text, letters, numbers, logos or watermarks anywhere.",
+      "archivos": [
+        "diptico-automatizar-800.webp"
+      ],
+      "nota": "D61, tanda d61 (mkia-319). Logo diminuto de la tapa de la laptop desenfocado antes de codificar."
     }
   ]
 }

@@ -66,7 +66,7 @@ export function localBusinessNode() {
   return {
     '@type': 'ProfessionalService',
     '@id': `${site.domain}/#negocio`,
-    name: `${site.name}: Diseño Web en Panamá y Miami`,
+    name: `${site.name}: Marketing Digital, IA y Diseño Web en Panamá`,
     url: site.domain,
     parentOrganization: { '@id': ORG_ID },
     telephone: site.phone.replace(/\s/g, '-'),

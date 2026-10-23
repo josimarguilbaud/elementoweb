@@ -3,6 +3,9 @@
   "limites": { "respuesta": 300, "mensaje": 2000, "campo": 500 },
   "_paginas": "Mapa planeado página a clave (D10). La clave se pasa a PageData.serviceKey cuando cada página se migra a la plantilla nueva (fases 2a, 4 y 5); mientras tanto el test comprueba que las páginas que ya tienen serviceKey coinciden con este mapa, salvo las de 'transitorias'. Una página sin clave propia usa 'definir'.",
   "paginas": {
+    "crecimiento/posicionamiento-en-chatgpt-e-ia-panama": "seo",
+    "funcionalidades/agente-de-ventas-ia-whatsapp-panama": "ia",
+    "soluciones": "definir",
     "servicios/diseno-web-corporativo-panama": "pyme",
     "servicios/tiendas-online-ecommerce-panama": "ecommerce",
     "servicios/landing-pages-alta-conversion-panama": "landing",

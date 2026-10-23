@@ -20,12 +20,12 @@ for (const s of slugs) (porTipo[kindOf({ slug: s })] ??= []).push(s);
 test('se leyeron las páginas del registro', () => assert.ok(slugs.length >= 170, `solo ${slugs.length} páginas`));
 
 test('las páginas existentes se clasifican en los tipos esperados', () => {
-  assert.equal(porTipo.service.length, 27, 'las 26 páginas de servicio de los hubs (con CyberSource, Videos publicitarios y Video inmobiliario) más IA para empresas, que vive en la raíz');
+  assert.equal(porTipo.service.length, 30, 'las 28 páginas de servicio de los hubs (con CyberSource, Videos publicitarios, Video inmobiliario, GEO y el agente de WhatsApp, D60) más IA para empresas y Soluciones, que viven en la raíz');
   assert.deepEqual([...porTipo.hub].sort(), [...HUBS].sort());
   assert.deepEqual(porTipo.pillar, ['diseno-web-panama']);
   assert.deepEqual(porTipo.pricing, ['precios']);
   assert.equal(porTipo.industry.length, 31);
-  assert.equal(porTipo.location.length, 14);
+  assert.equal(porTipo.location.length, 2, 'Miami y su página ancla en español: las 12 de zona se fusionaron en /miami/ (D60)');
   assert.ok(porTipo.blog.length >= 79);
 });
 

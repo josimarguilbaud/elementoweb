@@ -138,6 +138,7 @@ export const cols: { title: string; hub: string; links: NavLink[] }[] = [
       { slug: 'inteligencia-artificial-para-empresas-panama', label: 'Ecosistema de IA Empresarial' },
       { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Yappy y Pasarelas de Pago' },
       { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA para tu Web' },
+      { slug: 'funcionalidades/agente-de-ventas-ia-whatsapp-panama', label: 'Agente de Ventas con IA en WhatsApp' },
       { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas y Citas Online' },
     ],
   },
@@ -146,6 +147,7 @@ export const cols: { title: string; hub: string; links: NavLink[] }[] = [
     hub: 'crecimiento',
     links: [
       { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
+      { slug: 'crecimiento/posicionamiento-en-chatgpt-e-ia-panama', label: 'Posicionamiento en ChatGPT (GEO)' },
       { slug: 'crecimiento/seo-local-google-maps-panama', label: 'SEO Local y Google Maps' },
       { slug: 'crecimiento/mantenimiento-web-panama', label: 'Mantenimiento Web' },
       { slug: 'crecimiento/hosting-infraestructura-panama', label: 'Hosting e Infraestructura' },
@@ -232,6 +234,7 @@ const sinDueno = (links: NavLink[], fuera: string[]) => links.filter((l) => !fue
 const IA_EMPRESAS = 'inteligencia-artificial-para-empresas-panama';
 const CHATBOTS = 'funcionalidades/chatbots-ia-web-wazacrm-panama';
 const N8N = 'marketing/automatizaciones-n8n-panama';
+const AGENTE = 'funcionalidades/agente-de-ventas-ia-whatsapp-panama';
 const columna = (titulo: string) => cols.find((c) => c.title === titulo)!.links;
 
 export const grupos: Grupo[] = [
@@ -252,6 +255,7 @@ export const grupos: Grupo[] = [
         titulo: 'Proyectos de IA', linea: 'Agentes y automatizaciones que trabajan por ti.', icono: 'agente',
         links: [
           { slug: IA_EMPRESAS, label: 'IA para empresas' },
+          { slug: AGENTE, label: 'Agente de ventas en WhatsApp' },
           { slug: CHATBOTS, label: 'Chatbot con IA para tu web' },
           { slug: N8N, label: 'Automatizaciones (n8n)' },
         ],
@@ -266,7 +270,7 @@ export const grupos: Grupo[] = [
     columnas: [
       { titulo: 'Diseño web', linea: 'Sitios que trabajan como un vendedor.', icono: 'ventana', links: [...columna('Diseño Web'), { slug: 'industrias', label: 'Por industria' }] },
       { titulo: 'Tecnologías', linea: 'La plataforma que tu negocio necesita.', icono: 'codigo', links: columna('Tecnologías') },
-      { titulo: 'Funcionalidades', linea: 'Pagos y reservas dentro de tu web.', icono: 'enchufe', links: sinDueno(columna('Funcionalidades'), [IA_EMPRESAS, CHATBOTS]) },
+      { titulo: 'Funcionalidades', linea: 'Pagos y reservas dentro de tu web.', icono: 'enchufe', links: sinDueno(columna('Funcionalidades'), [IA_EMPRESAS, CHATBOTS, AGENTE]) },
     ],
     destacada: { slug: 'diseno-web-panama', titulo: 'Diseño web en Panamá', linea: 'Sitios rápidos, medibles y a tu nombre.' },
   },
@@ -287,6 +291,7 @@ export const grupos: Grupo[] = [
       {
         titulo: 'Explorar', linea: 'Proyectos, precios y crecimiento.', icono: 'brujula',
         links: [
+          { slug: 'soluciones', label: 'Soluciones' },
           { slug: 'portafolio', label: 'Proyectos' },
           { slug: 'precios', label: 'Precios' },
           { slug: 'miami', label: 'Miami' },

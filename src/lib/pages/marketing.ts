@@ -139,6 +139,7 @@ export const marketingPages: PageData[] = [
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento' },
           { slug: 'saas/wazacrm', label: 'WazaCRM' },
           { slug: 'blog/marketing-de-contenidos-para-redes-sociales-panama', label: 'Marketing de contenidos' },
+          { slug: 'soluciones', label: 'Soluciones: paquetes de marketing e IA' },
         ],
       },
     ],
@@ -868,7 +869,7 @@ export const marketingPages: PageData[] = [
       {
         type: 'ejemplos',
         h2: 'Así se vería tu campaña',
-        intro: 'Una plantilla de marketing para la cafetería de ejemplo, enviada a clientes que aceptaron recibir mensajes. Cuando el cliente responde, se abre la ventana de 24 horas y la conversación sigue sin costo.',
+        intro: 'Una plantilla de marketing para la cafetería de ejemplo, enviada a clientes que aceptaron recibir mensajes. Cuando el cliente responde, se abre la ventana de 24 horas y la conversación sigue: las primeras 1,000 respuestas del mes por número no se cobran.',
         columnas: 2,
         items: [
           {
@@ -901,7 +902,7 @@ export const marketingPages: PageData[] = [
           ['Utilidad', 'Avisos que el cliente espera', 'Tu pedido está listo para retirar'],
           ['Servicio', 'Responder a quien te escribió, dentro de las 24 horas', '¿Abren el sábado? Sí, de 8 a 2'],
         ],
-        nota: 'Meta cobra cada plantilla entregada según su categoría y el país; responder dentro de la ventana de 24 horas que abre el cliente no tiene costo. Te armamos el estimado según tu volumen antes de arrancar.',
+        nota: 'Meta cobra cada plantilla entregada según su categoría y el país. Desde el 1 de octubre de 2026 también cobra las respuestas dentro de la ventana de 24 horas a partir de la 1,001 del mes por número. Te armamos el estimado según tu volumen antes de arrancar.',
       },
       {
         type: 'includes',
@@ -933,7 +934,7 @@ export const marketingPages: PageData[] = [
         type: 'prose',
         h2: 'La ventana de 24 horas y por qué existen las plantillas',
         paragraphs: [
-          'Cuando un cliente te escribe, se abre una <strong>ventana de 24 horas</strong> en la que puedes responderle lo que quieras, sin costo. Fuera de esa ventana, o cuando tú inicias el contacto, solo puedes enviar <strong>plantillas aprobadas</strong> por Meta, y cada una tiene costo.',
+          'Cuando un cliente te escribe, se abre una <strong>ventana de 24 horas</strong> en la que puedes responderle lo que quieras; las primeras 1,000 respuestas del mes por número no se cobran y, desde el 1 de octubre de 2026, Meta cobra a partir de la 1,001. Fuera de esa ventana, o cuando tú inicias el contacto, solo puedes enviar <strong>plantillas aprobadas</strong> por Meta, y cada una tiene costo.',
           'De ahí sale la estrategia que funciona: usar la plantilla para abrir la conversación y resolver la venta dentro de la ventana. Por eso las plantillas se aprueban antes de la campaña: <strong>una plantilla rechazada a último momento deja la campaña sin salida.</strong>',
         ],
       },
@@ -978,9 +979,9 @@ export const marketingPages: PageData[] = [
           { q: '¿Puedo mandar promociones a toda mi lista?', a: 'Solo a quienes aceptaron recibir mensajes tuyos. Parte de nuestro trabajo es ayudarte a construir esa lista de forma correcta, que además es la que mejor responde.' },
           { q: '¿Qué es una plantilla aprobada y por qué la necesito?', a: 'Es un mensaje que Meta revisa y autoriza antes de que puedas enviarlo. Toda campaña que inicia una conversación debe usar una plantilla aprobada; no puedes escribir texto libre a una lista. Redactamos y gestionamos esa aprobación como parte del servicio.' },
           { q: '¿En qué se diferencia de las difusiones de WhatsApp normal?', a: 'La lista de difusión del WhatsApp común solo llega a quien te tiene guardado, no escala y, en volumen, activa las alarmas de Meta. La API oficial está hecha para envíos masivos con plantillas, métricas e integración con tu CRM.' },
-          { q: '¿Cuánto cobra Meta por los mensajes?', a: 'Meta cobra cada plantilla entregada, y la tarifa depende de la categoría (marketing, utilidad o autenticación) y del país. Responder dentro de la ventana de 24 horas que abre el cliente no tiene costo. Ese consumo se paga desde tu cuenta, aparte de nuestro fee.' },
+          { q: '¿Cuánto cobra Meta por los mensajes?', a: 'Meta cobra cada plantilla entregada, y la tarifa depende de la categoría (marketing, utilidad o autenticación) y del país. Responder dentro de la ventana de 24 horas que abre el cliente no se cobra en las primeras 1,000 respuestas del mes por número; desde el 1 de octubre de 2026 se cobra a partir de la 1,001. Ese consumo se paga desde tu cuenta, aparte de nuestro fee.' },
           { q: '¿Puedo usar una app para enviar masivos desde mi celular?', a: 'Puedes, y terminas con el número bloqueado. Esas apps se conectan de una forma que WhatsApp prohíbe. Si el número es el de tu negocio, el ahorro se paga quedándote sin canal de ventas.' },
-          { q: '¿Qué es la ventana de 24 horas?', a: 'Cuando un cliente te escribe, se abre una ventana de 24 horas en la que puedes responderle lo que quieras sin costo. Fuera de ella, o cuando tú inicias, solo puedes enviar plantillas aprobadas por Meta, y cada una tiene costo.' },
+          { q: '¿Qué es la ventana de 24 horas?', a: 'Cuando un cliente te escribe, se abre una ventana de 24 horas en la que puedes responderle lo que quieras; las primeras 1,000 respuestas del mes por número no se cobran. Fuera de ella, o cuando tú inicias, solo puedes enviar plantillas aprobadas por Meta, y cada una tiene costo.' },
           { q: '¿Sirve mi lista de clientes antiguos para una campaña?', a: 'Solo si dieron permiso explícito. Ser cliente no es consentimiento: quien recibe un mensaje que no pidió lo reporta, y suficientes reportes restringen el número.' },
           { q: '¿Cuándo NO conviene el WhatsApp masivo?', a: 'Cuando la lista no dio permiso, y cuando nadie va a responder: una campaña masiva devuelve conversaciones, y una conversación sin respuesta hace más daño que el mensaje que nunca mandaste.' },
         ],
@@ -995,6 +996,7 @@ export const marketingPages: PageData[] = [
           { slug: 'marketing/email-marketing-panama', label: 'Email marketing' },
           { slug: 'marketing', label: 'Marketing digital' },
           { slug: 'blog/como-hacer-campanas-de-whatsapp-masivo-en-panama', label: 'Guía: campañas de WhatsApp' },
+          { slug: 'funcionalidades/agente-de-ventas-ia-whatsapp-panama', label: 'Agente de ventas con IA en WhatsApp' },
         ],
       },
     ],
@@ -1193,6 +1195,7 @@ export const marketingPages: PageData[] = [
           { slug: 'saas/wazacrm', label: 'WazaCRM' },
           { slug: 'tecnologias/desarrollo-web-a-medida-vue-react-panama', label: 'Desarrollo a Medida' },
           { slug: 'blog/automatizar-seguimiento-clientes-panama', label: 'Automatizar el seguimiento' },
+          { slug: 'soluciones', label: 'Soluciones: paquetes de marketing e IA' },
         ],
       },
     ],

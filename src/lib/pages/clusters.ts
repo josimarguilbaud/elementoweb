@@ -75,6 +75,27 @@ export const clusters: PageData[] = [
           { h3: 'Hosting en Panamá: por qué el hosting barato te sale caro', text: 'Un hosting barato ahorra unos dólares al mes y cuesta caídas, lentitud y sustos de seguridad. Qué mirar al elegir hosting para tu negocio en Panamá.', link: { slug: 'blog/hosting-panama-evitar-hosting-barato', label: 'Leer la guía' } },
         ],
       },
+      {
+        type: 'cards',
+        h2: 'Preguntas frecuentes de WhatsApp, IA y n8n',
+        items: [
+          { h3: '¿Cuánto cuesta un chatbot de WhatsApp en Panamá?', text: 'Cuánto cuesta un chatbot de WhatsApp en Panamá: plataforma, implementación, mensajes de Meta e IA. Precios publicados y un ejemplo para estimar tu mes.', link: { slug: 'blog/cuanto-cuesta-un-chatbot-de-whatsapp-en-panama', label: 'Leer la respuesta' } },
+          { h3: 'WhatsApp Business o API: diferencias y cuál necesitas', text: 'Diferencias entre la app WhatsApp Business y la API oficial: quién responde, volumen, IA, envíos y costo. Señales para saber cuál necesita tu negocio.', link: { slug: 'blog/whatsapp-business-o-api-cual-necesita-tu-negocio', label: 'Leer la respuesta' } },
+          { h3: '¿Cuánto cobra Meta por mensaje de WhatsApp en Panamá?', text: 'Tarifas de Meta por mensaje de WhatsApp en Panamá desde el 1 de octubre de 2026: marketing, utilidad, autenticación y servicio, con ejemplos de cálculo.', link: { slug: 'blog/cuanto-cobra-meta-por-mensaje-de-whatsapp-en-panama', label: 'Leer la respuesta' } },
+          { h3: 'Límites de mensajes de la API de WhatsApp Business', text: 'Cuántos mensajes permite la API de WhatsApp Business al día: de 250 a 2,000, 10,000, 100,000 e ilimitado. Cómo subir de nivel y cómo verlo en tu cuenta.', link: { slug: 'blog/limites-de-mensajes-de-whatsapp-business-api', label: 'Leer la respuesta' } },
+          { h3: '¿Por qué bloquean un número de WhatsApp Business?', text: 'Por qué WhatsApp restringe o bloquea un número de empresa: mensajes sin permiso, bloqueos y reportes, apps no oficiales. Cómo evitarlo y qué hacer si pasa.', link: { slug: 'blog/por-que-bloquean-un-numero-de-whatsapp-business', label: 'Leer la respuesta' } },
+          { h3: '¿Quién hace chatbots de WhatsApp con IA en Panamá?', text: 'Qué tipos de proveedor hacen chatbots de WhatsApp con IA en Panamá, qué criterios usar para elegir, qué preguntar antes de firmar y dónde encaja Elemento Web.', link: { slug: 'blog/quien-hace-chatbots-de-whatsapp-con-ia-en-panama', label: 'Leer la respuesta' } },
+          { h3: '¿Qué es un agente de IA para WhatsApp y qué hace?', text: 'Qué es un agente de IA para WhatsApp, en qué se diferencia de un chatbot, qué tareas puede hacer, qué no debe hacer y qué reglas de Meta debes conocer.', link: { slug: 'blog/que-es-un-agente-de-ia-para-whatsapp', label: 'Leer la respuesta' } },
+          { h3: 'Chatbot con reglas o con IA: cuál conviene a tu negocio', text: 'Diferencias entre un chatbot con reglas y uno con IA: cómo entiende, cuánto cuesta operarlo, qué riesgos tiene y cuándo conviene cada uno o los dos juntos.', link: { slug: 'blog/chatbot-con-reglas-o-con-ia-cual-conviene', label: 'Leer la respuesta' } },
+          { h3: '¿Cuánto cuesta implementar IA en una empresa en Panamá?', text: 'Cuánto cuesta implementar IA en una empresa en Panamá: de qué se compone el precio, qué lo sube, cómo se cobra el consumo de los modelos y cómo se paga.', link: { slug: 'blog/cuanto-cuesta-implementar-inteligencia-artificial-en-una-empresa', label: 'Leer la respuesta' } },
+          { h3: '¿Es seguro usar IA con los datos de mi empresa?', text: 'Cuándo es seguro usar IA con los datos de tu empresa: qué es RAG, qué hacen los proveedores con tus datos, los riesgos reales y qué preguntar al contratar.', link: { slug: 'blog/es-seguro-usar-ia-con-los-datos-de-mi-empresa', label: 'Leer la respuesta' } },
+          { h3: 'Ley 81 de protección de datos: chatbots y CRM en Panamá', text: 'Qué exige la Ley 81 de 2019 y su Decreto Ejecutivo 285 a un chatbot o CRM en Panamá: consentimiento, derechos ARCO, seguridad, filtraciones y sanciones.', link: { slug: 'blog/ley-81-proteccion-de-datos-chatbots-panama', label: 'Leer la respuesta' } },
+          { h3: '¿Qué es n8n y para qué sirve en una pyme?', text: 'Qué es n8n, cómo funciona por dentro (disparadores, nodos, ejecuciones), dónde se instala y para qué lo usa una pyme en ventas, operación y administración.', link: { slug: 'blog/que-es-n8n-y-para-que-sirve', label: 'Leer la respuesta' } },
+          { h3: 'n8n, Zapier o Make: cuál conviene y cuánto cuesta', text: 'Comparamos n8n, Zapier y Make con sus planes y precios publicados (consulta del 23-oct-2026), cómo cobra cada uno y cuál conviene según tu volumen.', link: { slug: 'blog/n8n-zapier-o-make-cual-conviene', label: 'Leer la respuesta' } },
+          { h3: '¿Cuánto cuesta automatizar procesos con n8n en Panamá?', text: 'Qué pagas al automatizar con n8n en Panamá: el montaje de cada flujo, la plataforma (nube o servidor propio), las herramientas conectadas y el mantenimiento.', link: { slug: 'blog/cuanto-cuesta-automatizar-procesos-con-n8n-en-panama', label: 'Leer la respuesta' } },
+          { h3: 'Cómo conectar WhatsApp con n8n: opciones y pasos', text: 'Cómo conectar WhatsApp con n8n por la API oficial: el nodo WhatsApp Business Cloud, el disparador de mensajes, el webhook, lo que pide Meta y errores comunes.', link: { slug: 'blog/como-conectar-whatsapp-con-n8n', label: 'Leer la respuesta' } },
+        ],
+      },
       { type: 'related', items: [{ slug: 'guias', label: 'Todas las guías' }, { slug: 'precios', label: 'Precios' }, { slug: 'casos-de-exito', label: 'Casos de éxito' }, { slug: 'contacto', label: 'Contacto' }] },
       { type: 'form', h2: '¿Quieres que lo veamos contigo?', intro: 'Cuéntanos tu caso y te respondemos el mismo día hábil.' },
     ],
@@ -161,7 +182,7 @@ export const clusters: PageData[] = [
     breadcrumb: 'WhatsApp, IA y automatización',
     lead: ['Cómo atender más rápido, no perder consultas y ordenar las ventas con WhatsApp, inteligencia artificial y automatizaciones.'],
     blocks: [
-      { type: 'answer', text: 'Nueve guías de Elemento Web, agencia de marketing digital y proyectos de IA en Ciudad de Panamá, explican cómo vender por WhatsApp, usar chatbots con IA que responden con tu información real, automatizar el seguimiento con n8n y CRM, y hacer campañas masivas con la API oficial de Meta y plantillas aprobadas.', fecha: '2026-10-22' },
+      { type: 'answer', text: 'Veinticuatro guías de Elemento Web, agencia de marketing digital y proyectos de IA en Ciudad de Panamá, explican cómo vender por WhatsApp, usar chatbots con IA que responden con tu información real, automatizar el seguimiento con n8n y CRM, y hacer campañas masivas con la API oficial de Meta y plantillas aprobadas.', fecha: '2026-10-23' },
       {
         type: 'cards',
         h2: 'Empieza aquí',
@@ -237,8 +258,8 @@ export const clusters: PageData[] = [
         items: [
           { h3: 'Diseño Web en Miami en Español', text: 'Agencia de diseño web para negocios hispanos de Miami-Dade. Mismo huso horario, mismo precio en USD, soporte 100% en español. Sede en Panamá, servicio remoto.', link: { slug: 'miami', label: 'Ver la página' } },
           { h3: 'Diseño Web en Miami en Español | Sin Sobreprecio de Agencia de EE.UU.', text: 'Diseño web para negocios hispanos de Miami: mismo huso horario, mismo precio en USD, soporte 100% en español. Sede en Panamá, servicio remoto, sin intermediarios.', link: { slug: 'miami/diseno-web-en-miami-en-espanol', label: 'Ver la página' } },
-          { h3: 'Diseño Web en Doral, Miami | Empresas y Comercio Internacional', text: 'Diseño web para empresas de Doral: importadoras, bienes raíces, clínicas y servicios profesionales. Sede en Panamá, servicio remoto, precios en USD.', link: { slug: 'miami/diseno-web-doral', label: 'Ver la página' } },
-          { h3: 'Diseño Web en Hialeah, Miami | Negocios y Comercio Local', text: 'Diseño web para negocios de Hialeah: retail, servicios y comercio de barrio. Sede en Panamá, servicio remoto, en español, precios en USD.', link: { slug: 'miami/diseno-web-hialeah', label: 'Ver la página' } },
+          { h3: 'Diseño Web en Doral, Miami | Empresas y Comercio Internacional', text: 'Diseño web para empresas de Doral: importadoras, bienes raíces, clínicas y servicios profesionales. Sede en Panamá, servicio remoto, precios en USD.' },
+          { h3: 'Diseño Web en Hialeah, Miami | Negocios y Comercio Local', text: 'Diseño web para negocios de Hialeah: retail, servicios y comercio de barrio. Sede en Panamá, servicio remoto, en español, precios en USD.' },
         ],
       },
       {

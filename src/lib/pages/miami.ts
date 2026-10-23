@@ -29,18 +29,18 @@ export const miamiPages: PageData[] = [
         h2: 'Dónde trabajamos en Miami-Dade',
         items: [
           { h3: 'Miami en general', text: 'Diseño web para negocios hispanos de todo el condado: qué esperar, cómo se cobra y por qué no hace falta una agencia local.', link: { slug: 'miami/diseno-web-en-miami-en-espanol', label: 'Diseño web en Miami' } },
-          { h3: 'Doral', text: 'El corredor corporativo y de comercio internacional cerca de MIA: importadoras, bienes raíces, clínicas y servicios profesionales.', link: { slug: 'miami/diseno-web-doral', label: 'Diseño web en Doral' } },
-          { h3: 'Hialeah', text: 'La ciudad con más densidad de pequeños negocios cubanoamericanos de Florida: retail, servicios y comercio de barrio.', link: { slug: 'miami/diseno-web-hialeah', label: 'Diseño web en Hialeah' } },
-          { h3: 'Kendall', text: 'Negocios y consultorios profesionales del suroeste de Miami-Dade.', link: { slug: 'miami/diseno-web-kendall', label: 'Diseño web en Kendall' } },
-          { h3: 'Westchester', text: 'Alta concentración de negocios y familias cubanoamericanas.', link: { slug: 'miami/diseno-web-westchester', label: 'Diseño web en Westchester' } },
-          { h3: 'Brickell', text: 'Distrito financiero: bancos, legal y real estate con cliente latinoamericano.', link: { slug: 'miami/diseno-web-brickell', label: 'Diseño web en Brickell' } },
-          { h3: 'Coral Gables', text: 'Boutiques, despachos y marcas de alto poder adquisitivo.', link: { slug: 'miami/diseno-web-coral-gables', label: 'Diseño web en Coral Gables' } },
-          { h3: 'Homestead', text: 'Comercio local y agroindustria en el extremo sur del condado.', link: { slug: 'miami/diseno-web-homestead', label: 'Diseño web en Homestead' } },
-          { h3: 'Sweetwater', text: 'Una de las comunidades hispanas más densas de Miami-Dade.', link: { slug: 'miami/diseno-web-sweetwater', label: 'Diseño web en Sweetwater' } },
-          { h3: 'Hialeah Gardens', text: 'Comercio, logística y pequeña industria.', link: { slug: 'miami/diseno-web-hialeah-gardens', label: 'Diseño web en Hialeah Gardens' } },
-          { h3: 'Miami Lakes', text: 'Comunidad planificada con fuerte presencia corporativa.', link: { slug: 'miami/diseno-web-miami-lakes', label: 'Diseño web en Miami Lakes' } },
-          { h3: 'Cutler Bay', text: 'Comercio y servicios de barrio en el sur de Miami-Dade.', link: { slug: 'miami/diseno-web-cutler-bay', label: 'Diseño web en Cutler Bay' } },
-          { h3: 'North Miami', text: 'Comercio diverso con fuerte presencia hispana y caribeña.', link: { slug: 'miami/diseno-web-north-miami', label: 'Diseño web en North Miami' } },
+          { h3: 'Doral', text: 'El corredor corporativo y de comercio internacional cerca de MIA: importadoras, bienes raíces, clínicas y servicios profesionales.' },
+          { h3: 'Hialeah', text: 'La ciudad con más densidad de pequeños negocios cubanoamericanos de Florida: retail, servicios y comercio de barrio.' },
+          { h3: 'Kendall', text: 'Negocios y consultorios profesionales del suroeste de Miami-Dade.' },
+          { h3: 'Westchester', text: 'Alta concentración de negocios y familias cubanoamericanas.' },
+          { h3: 'Brickell', text: 'Distrito financiero: bancos, legal y real estate con cliente latinoamericano.' },
+          { h3: 'Coral Gables', text: 'Boutiques, despachos y marcas de alto poder adquisitivo.' },
+          { h3: 'Homestead', text: 'Comercio local y agroindustria en el extremo sur del condado.' },
+          { h3: 'Sweetwater', text: 'Una de las comunidades hispanas más densas de Miami-Dade.' },
+          { h3: 'Hialeah Gardens', text: 'Comercio, logística y pequeña industria.' },
+          { h3: 'Miami Lakes', text: 'Comunidad planificada con fuerte presencia corporativa.' },
+          { h3: 'Cutler Bay', text: 'Comercio y servicios de barrio en el sur de Miami-Dade.' },
+          { h3: 'North Miami', text: 'Comercio diverso con fuerte presencia hispana y caribeña.' },
         ],
       },
       {
@@ -144,8 +144,6 @@ export const miamiPages: PageData[] = [
       {
         type: 'related',
         items: [
-          { slug: 'miami/diseno-web-doral', label: 'Diseño web en Doral' },
-          { slug: 'miami/diseno-web-hialeah', label: 'Diseño web en Hialeah' },
           { slug: 'servicios', label: 'Servicios de diseño web' },
           { slug: 'portafolio', label: 'Portafolio' },
         ],
@@ -154,109 +152,7 @@ export const miamiPages: PageData[] = [
     cta: { h2: '¿Empezamos tu proyecto en Miami?', wa: 'Hola, tengo un negocio en Miami y quiero cotizar una página web.' },
   },
 
-  /* ---------- DORAL ---------- */
-  {
-    slug: 'miami/diseno-web-doral',
-    parent,
-    title: 'Diseño Web en Doral, Miami | Empresas y Comercio Internacional',
-    description: 'Diseño web para empresas de Doral: importadoras, bienes raíces, clínicas y servicios profesionales. Sede en Panamá, servicio remoto, precios en USD.',
-    h1: 'Diseño web en Doral',
-    breadcrumb: 'Doral',
-    lead: [
-      'Doral se construyó alrededor del comercio internacional y el aeropuerto de Miami: aquí operan importadoras, oficinas regionales y profesionales que ya piensan en varios países a la vez.',
-      'Elemento Web hace diseño web para empresas de Doral desde Ciudad de Panamá, sin oficina en Miami: sitios bilingües español/inglés, catálogo por línea de producto o servicio, credenciales a la vista y un contacto que filtra la consulta B2B antes de la llamada. Se cobra en USD, sin ITBMS, con demo antes de publicar y pago por etapas.',
-    ],
-    blocks: [
-      {
-        type: 'checklist',
-        h2: '¿Qué necesita el diseño web de una empresa en Doral?',
-        items: [
-          'Versión en español y en inglés pensada desde el inicio, para clientes de Latinoamérica y de EE.UU.',
-          'Licencias, certificaciones y años de operación visibles: el comprador B2B decide con papeles',
-          'Catálogo o líneas de servicio por página, para quien compara tres proveedores a la vez',
-          'Formulario o WhatsApp que pregunte volumen, origen y destino antes de la llamada',
-          'Cobertura explícita: qué países atiendes, desde qué bodega o puerto y en qué plazos',
-        ],
-      },
-      {
-        type: 'prose',
-        h2: '¿Por qué una empresa de Doral puede trabajar su web con una agencia en Panamá?',
-        paragraphs: [
-          'Doral concentra importadoras, freight forwarders y oficinas regionales cerca del aeropuerto de Miami, muchas con dueños venezolanos, colombianos o centroamericanos. Son empresas que ya coordinan proveedores en varios países; un proveedor de diseño web en Panamá, a cero o una hora de diferencia, es el mismo modelo con el que operan.',
-          'El rubro decide la estructura más que la ciudad. Lo que aplicamos a una importadora o a una empresa de carga está detallado en <a href="/industrias/diseno-web-importadoras-distribuidoras-panama/">diseño web para importadoras</a> y <a href="/industrias/diseno-web-logistica-transporte-panama/">diseño web para logística</a>; el formato habitual es una <a href="/servicios/diseno-web-corporativo-panama/">web corporativa</a> bilingüe.',
-        ],
-      },
-      {
-        type: 'faq',
-        h2: 'Preguntas frecuentes',
-        items: [
-          { q: '¿Manejan proyectos bilingües español/inglés?', a: 'Sí, es de lo más común en Doral. Construimos la estructura pensando en ambos idiomas desde el inicio, no como una traducción pegada después.' },
-          { q: '¿Sirve para una oficina regional o solo para pymes locales?', a: 'Para ambas. El mismo proceso aplica si eres una pyme local de Doral o la oficina regional de una empresa que opera en varios países: lo que cambia es el alcance del sitio, no el método.' },
-          { q: '¿Cómo se paga desde una empresa en Doral?', a: 'Tarjeta o transferencia internacional, en dólares, sin ITBMS (ese impuesto es panameño y no aplica a un cliente facturado en EE.UU.).' },
-        ],
-      },
-      {
-        type: 'related',
-        items: [
-          { slug: 'miami/diseno-web-en-miami-en-espanol', label: 'Diseño web en Miami' },
-          { slug: 'miami/diseno-web-hialeah', label: 'Diseño web en Hialeah' },
-          { slug: 'industrias', label: 'Diseño web por industria' },
-        ],
-      },
-    ],
-    cta: { h2: '¿Empezamos tu proyecto en Doral?', wa: 'Hola, tengo una empresa en Doral y quiero cotizar una página web.' },
-  },
+  /* ---------- DORAL ---------- */
 
-  /* ---------- HIALEAH ---------- */
-  {
-    slug: 'miami/diseno-web-hialeah',
-    parent,
-    title: 'Diseño Web en Hialeah, Miami | Negocios y Comercio Local',
-    description: 'Diseño web para negocios de Hialeah: retail, servicios y comercio de barrio. Sede en Panamá, servicio remoto, en español, precios en USD.',
-    h1: 'Diseño web en Hialeah',
-    breadcrumb: 'Hialeah',
-    lead: [
-      'Hialeah es una de las ciudades con más pequeños negocios por habitante de Florida, y el día a día se vive casi enteramente en español.',
-      'Elemento Web hace diseño web para negocios de Hialeah desde Ciudad de Panamá, sin oficina en Miami: sitios en español, rápidos en el celular, con WhatsApp visible, precios a la vista y fotos reales del local. Una landing parte desde $550 y un sitio de varias páginas desde $1,250, cobrados en USD y sin ITBMS.',
-    ],
-    blocks: [
-      {
-        type: 'checklist',
-        h2: '¿Qué necesita el diseño web de un negocio en Hialeah?',
-        items: [
-          'Todo en español, escrito como habla tu cliente, sin plantilla traducida',
-          'Botón de WhatsApp visible desde la primera pantalla',
-          'Precios o rangos a la vista: aquí se decide rápido si el número está claro',
-          'Dirección, horario y mapa del local, coherentes con tu ficha de Google',
-          'Fotos reales del negocio, no imágenes de stock que podrían ser de cualquier local',
-        ],
-      },
-      {
-        type: 'prose',
-        h2: '¿Qué web le sirve a un comercio de barrio en Hialeah?',
-        paragraphs: [
-          'Una corta y directa. El cliente de Hialeah busca en español y desde el celular («taller cerca de mí», «cake para cumpleaños en Hialeah») y decide en segundos entre los negocios que salen en el mapa. La web tiene que confirmar lo que vio ahí y llevarlo a un mensaje de WhatsApp.',
-          'Para la mayoría basta una <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> con servicios, precios y ubicación; si vendes varias líneas o tienes más de un local, un sitio de varias páginas. Es el mismo tipo de pyme y comercio local con el que trabajamos en Panamá.',
-        ],
-      },
-      {
-        type: 'faq',
-        h2: 'Preguntas frecuentes',
-        items: [
-          { q: '¿La web queda solo en español o también en inglés?', a: 'Para la mayoría de negocios en Hialeah, español es suficiente porque es el idioma en el que ya opera el cliente. Si además atiendes clientes angloparlantes, agregamos inglés sin problema.' },
-          { q: '¿Cuánto cuesta una web para un negocio pequeño en Hialeah?', a: 'Los mismos rangos que en Panamá: landing desde $550, sitio de varias páginas desde $1,250. Sin ITBMS, porque ese impuesto es panameño y no aplica facturando a un cliente en EE.UU.' },
-          { q: '¿Cómo nos comunicamos durante el proyecto?', a: 'Por WhatsApp, en español, con la diferencia horaria de cero a una hora entre Panamá y Miami. El mismo canal que ya usas para hablar con tus propios clientes.' },
-        ],
-      },
-      {
-        type: 'related',
-        items: [
-          { slug: 'miami/diseno-web-en-miami-en-espanol', label: 'Diseño web en Miami' },
-          { slug: 'miami/diseno-web-doral', label: 'Diseño web en Doral' },
-          { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing pages de conversión' },
-        ],
-      },
-    ],
-    cta: { h2: '¿Empezamos tu proyecto en Hialeah?', wa: 'Hola, tengo un negocio en Hialeah y quiero cotizar una página web.' },
-  },
+  /* ---------- HIALEAH ---------- */
 ];

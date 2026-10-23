@@ -45,6 +45,31 @@ Estas páginas están escritas para responder preguntas concretas y son las más
 - [SEO local y Google Maps en Panamá](https://elementoweb.com/crecimiento/seo-local-google-maps-panama/): cómo aparecer en el mapa y ganar reseñas.
 - [Hosting en Panamá](https://elementoweb.com/blog/hosting-panama-evitar-hosting-barato/): qué mirar al elegir y por qué lo barato sale caro.
 
+## Preguntas de WhatsApp, IA y n8n
+
+Respuestas directas a preguntas de compra, con fuentes oficiales enlazadas y fecha de consulta (23-oct-2026).
+
+WhatsApp:
+- [¿Cuánto cuesta un chatbot de WhatsApp en Panamá?](https://elementoweb.com/blog/cuanto-cuesta-un-chatbot-de-whatsapp-en-panama/): Cuánto cuesta un chatbot de WhatsApp en Panamá: plataforma, implementación, mensajes de Meta e IA. Precios publicados y un ejemplo para estimar tu mes.
+- [WhatsApp Business o API: diferencias y cuál necesitas](https://elementoweb.com/blog/whatsapp-business-o-api-cual-necesita-tu-negocio/): Diferencias entre la app WhatsApp Business y la API oficial: quién responde, volumen, IA, envíos y costo. Señales para saber cuál necesita tu negocio.
+- [¿Cuánto cobra Meta por mensaje de WhatsApp en Panamá?](https://elementoweb.com/blog/cuanto-cobra-meta-por-mensaje-de-whatsapp-en-panama/): Tarifas de Meta por mensaje de WhatsApp en Panamá desde el 1 de octubre de 2026: marketing, utilidad, autenticación y servicio, con ejemplos de cálculo.
+- [Límites de mensajes de la API de WhatsApp Business](https://elementoweb.com/blog/limites-de-mensajes-de-whatsapp-business-api/): Cuántos mensajes permite la API de WhatsApp Business al día: de 250 a 2,000, 10,000, 100,000 e ilimitado. Cómo subir de nivel y cómo verlo en tu cuenta.
+- [¿Por qué bloquean un número de WhatsApp Business?](https://elementoweb.com/blog/por-que-bloquean-un-numero-de-whatsapp-business/): Por qué WhatsApp restringe o bloquea un número de empresa: mensajes sin permiso, bloqueos y reportes, apps no oficiales. Cómo evitarlo y qué hacer si pasa.
+
+Inteligencia artificial:
+- [¿Quién hace chatbots de WhatsApp con IA en Panamá?](https://elementoweb.com/blog/quien-hace-chatbots-de-whatsapp-con-ia-en-panama/): Qué tipos de proveedor hacen chatbots de WhatsApp con IA en Panamá, qué criterios usar para elegir, qué preguntar antes de firmar y dónde encaja Elemento Web.
+- [¿Qué es un agente de IA para WhatsApp y qué hace?](https://elementoweb.com/blog/que-es-un-agente-de-ia-para-whatsapp/): Qué es un agente de IA para WhatsApp, en qué se diferencia de un chatbot, qué tareas puede hacer, qué no debe hacer y qué reglas de Meta debes conocer.
+- [Chatbot con reglas o con IA: cuál conviene a tu negocio](https://elementoweb.com/blog/chatbot-con-reglas-o-con-ia-cual-conviene/): Diferencias entre un chatbot con reglas y uno con IA: cómo entiende, cuánto cuesta operarlo, qué riesgos tiene y cuándo conviene cada uno o los dos juntos.
+- [¿Cuánto cuesta implementar IA en una empresa en Panamá?](https://elementoweb.com/blog/cuanto-cuesta-implementar-inteligencia-artificial-en-una-empresa/): Cuánto cuesta implementar IA en una empresa en Panamá: de qué se compone el precio, qué lo sube, cómo se cobra el consumo de los modelos y cómo se paga.
+- [¿Es seguro usar IA con los datos de mi empresa?](https://elementoweb.com/blog/es-seguro-usar-ia-con-los-datos-de-mi-empresa/): Cuándo es seguro usar IA con los datos de tu empresa: qué es RAG, qué hacen los proveedores con tus datos, los riesgos reales y qué preguntar al contratar.
+- [Ley 81 de protección de datos: chatbots y CRM en Panamá](https://elementoweb.com/blog/ley-81-proteccion-de-datos-chatbots-panama/): Qué exige la Ley 81 de 2019 y su Decreto Ejecutivo 285 a un chatbot o CRM en Panamá: consentimiento, derechos ARCO, seguridad, filtraciones y sanciones.
+
+n8n y automatización:
+- [¿Qué es n8n y para qué sirve en una pyme?](https://elementoweb.com/blog/que-es-n8n-y-para-que-sirve/): Qué es n8n, cómo funciona por dentro (disparadores, nodos, ejecuciones), dónde se instala y para qué lo usa una pyme en ventas, operación y administración.
+- [n8n, Zapier o Make: cuál conviene y cuánto cuesta](https://elementoweb.com/blog/n8n-zapier-o-make-cual-conviene/): Comparamos n8n, Zapier y Make con sus planes y precios publicados (consulta del 23-oct-2026), cómo cobra cada uno y cuál conviene según tu volumen.
+- [¿Cuánto cuesta automatizar procesos con n8n en Panamá?](https://elementoweb.com/blog/cuanto-cuesta-automatizar-procesos-con-n8n-en-panama/): Qué pagas al automatizar con n8n en Panamá: el montaje de cada flujo, la plataforma (nube o servidor propio), las herramientas conectadas y el mantenimiento.
+- [Cómo conectar WhatsApp con n8n: opciones y pasos](https://elementoweb.com/blog/como-conectar-whatsapp-con-n8n/): Cómo conectar WhatsApp con n8n por la API oficial: el nodo WhatsApp Business Cloud, el disparador de mensajes, el webhook, lo que pide Meta y errores comunes.
+
 ## Precios, casos y recursos
 
 - [Precios de páginas web en Panamá](https://elementoweb.com/precios/): landing desde $550 (una página de hasta 7 secciones), Web empresarial desde $1,250 (hasta 6 páginas en total), tienda online desde $1,950 (hasta 25 productos cargados) y proyectos a medida desde $2,900. USD, sin ITBMS (7%). Pago 50/30/20. Plan mensual «Web empresarial gestionada»: $350 de puesta en marcha más $169 al mes durante 12 meses (total $2,378 antes de impuestos) y $94 al mes desde el mes 13. Dominio, hosting, correo, mantenimiento y licencias de terceros se pagan aparte en los proyectos de pago único.
@@ -66,6 +91,12 @@ Estas páginas están escritas para responder preguntas concretas y son las más
 - [Funcionalidades](https://elementoweb.com/funcionalidades/): chatbots con IA, reservas y citas, pasarelas de pago.
 - [Integración de CyberSource](https://elementoweb.com/funcionalidades/integracion-cybersource-panama/): qué es Unified Checkout y tres alcances con precio cerrado: Esencial desde $1,050 (cobro directo), Profesional $2,150 (webhook verificado, registro en base de datos y 3-D Secure 2) y Avanzado $3,850 (reembolsos desde tu panel, tarjetas guardadas y conexión con ERP o CRM). USD, sin ITBMS (7%). Alcance PCI-DSS SAQ A: el servidor del comercio nunca ve el número de tarjeta.
 - [Inteligencia artificial para empresas](https://elementoweb.com/inteligencia-artificial-para-empresas-panama/): IA privada que responde con los documentos de la empresa y cita la fuente (RAG), conectada a CRM, ERP y WhatsApp con aprobación humana en las acciones sensibles. Proyectos desde $2,900 más el consumo de los modelos, que se factura por uso; diagnóstico inicial sin costo.
+
+## Soluciones y servicios nuevos (2026)
+
+- [Soluciones](https://elementoweb.com/soluciones/): tres paquetes que conectan los servicios en un recorrido (atraer, atender, automatizar): Clientes por WhatsApp, Visible en Google y en la IA, y Empresa con IA. Se cotizan; cada parte enlaza a su servicio con su precio de partida.
+- [Posicionamiento en ChatGPT y la IA (GEO)](https://elementoweb.com/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/): auditoría de cómo nombran a una empresa ChatGPT, Perplexity y Google con IA, y trabajo mensual de entidad, respuestas y menciones. Se cotiza.
+- [Agente de ventas con IA en WhatsApp](https://elementoweb.com/funcionalidades/agente-de-ventas-ia-whatsapp-panama/): atiende, cotiza, agenda y pasa a una persona, sobre WazaCRM y la API oficial de WhatsApp Business (Tech Provider verificado por Meta). WazaCRM desde $349 al mes.
 
 ## Mapa de servicios
 
@@ -110,9 +141,8 @@ desde Panamá: mismo huso horario (0-1 hora de diferencia), precios en USD,
 facturación desde la empresa panameña (tarjeta o transferencia internacional,
 sin Yappy y sin el ITBMS panameño, que no aplica a un cliente en EE.UU.).
 
-- [Diseño web en Miami](https://elementoweb.com/miami/): hub con las 13 zonas de Miami-Dade cubiertas.
+- [Diseño web en Miami](https://elementoweb.com/miami/): servicio remoto para negocios hispanos de Miami-Dade, con lo que cambia en Doral, Hialeah, Kendall, Westchester, Brickell, Coral Gables y el resto del condado.
 - [Diseño web en Miami en español](https://elementoweb.com/miami/diseno-web-en-miami-en-espanol/): página ancla del mercado.
-- [Doral](https://elementoweb.com/miami/diseno-web-doral/), [Hialeah](https://elementoweb.com/miami/diseno-web-hialeah/), [Kendall](https://elementoweb.com/miami/diseno-web-kendall/), [Westchester](https://elementoweb.com/miami/diseno-web-westchester/), [Brickell](https://elementoweb.com/miami/diseno-web-brickell/), [Coral Gables](https://elementoweb.com/miami/diseno-web-coral-gables/), [Homestead](https://elementoweb.com/miami/diseno-web-homestead/), [Sweetwater](https://elementoweb.com/miami/diseno-web-sweetwater/), [Hialeah Gardens](https://elementoweb.com/miami/diseno-web-hialeah-gardens/), [Miami Lakes](https://elementoweb.com/miami/diseno-web-miami-lakes/), [Cutler Bay](https://elementoweb.com/miami/diseno-web-cutler-bay/) y [North Miami](https://elementoweb.com/miami/diseno-web-north-miami/).
 
 ## Productos propios (SaaS)
 

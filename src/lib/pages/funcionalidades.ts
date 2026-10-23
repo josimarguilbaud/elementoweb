@@ -546,6 +546,7 @@ export const funcionalidades: PageData[] = [
           { slug: 'marketing/whatsapp-marketing-masivo-panama', label: 'WhatsApp marketing' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas Online' },
           { slug: 'saas/nouscrm', label: 'NousCRM' },
+          { slug: 'funcionalidades/agente-de-ventas-ia-whatsapp-panama', label: 'Agente de ventas con IA en WhatsApp' },
         ],
       },
     ],

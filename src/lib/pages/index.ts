@@ -62,6 +62,10 @@ import { blog38 } from './blog-38';
 import { blog39 } from './blog-39';
 import { blog40 } from './blog-40';
 import { blog41 } from './blog-41';
+import { preguntasWhatsapp } from './preguntas-whatsapp';
+import { preguntasIa } from './preguntas-ia';
+import { preguntasN8n } from './preguntas-n8n';
+import { servicios2026 } from './servicios-2026';
 
 export const pages: PageData[] = [
   ...core,
@@ -125,6 +129,12 @@ export const pages: PageData[] = [
   ...blog39,
   ...blog40,
   ...blog41,
+  /* Páginas de pregunta de WhatsApp, IA y n8n (fase 2 de la estrategia SEO y GEO, 23-oct-2026). */
+  ...preguntasWhatsapp,
+  ...preguntasIa,
+  ...preguntasN8n,
+  /* Servicios de 2026 (D60): posicionamiento en ChatGPT (GEO), agente de ventas con IA en WhatsApp y los paquetes de /soluciones/. */
+  ...servicios2026,
 ];
 
 /* Guardia de build: slugs duplicados rompen la compilación aquí mismo. */

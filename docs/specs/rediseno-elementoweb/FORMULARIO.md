@@ -142,6 +142,9 @@ Una página sin clave propia usa `definir`. El mapa se pasa a `PageData.serviceK
 
 | Página | Clave |
 |---|---|
+| `crecimiento/posicionamiento-en-chatgpt-e-ia-panama` | `seo` |
+| `funcionalidades/agente-de-ventas-ia-whatsapp-panama` | `ia` |
+| `soluciones` | `definir` |
 | `servicios/diseno-web-corporativo-panama` | `pyme` |
 | `servicios/tiendas-online-ecommerce-panama` | `ecommerce` |
 | `servicios/landing-pages-alta-conversion-panama` | `landing` |

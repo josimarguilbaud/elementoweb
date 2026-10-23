@@ -32,8 +32,9 @@ const imagenPanel = (id: string, alt: string, height: number, nota?: string) =>
 
 export interface Pregunta { q: string; a: string }
 
-/** H1 elegido tras S5 (audit/s5-agencia-diseno-web-2026-10.md, D50). */
-export const H1_PORTADA = 'Agencia de diseño web en Panamá: web, SEO, publicidad y WhatsApp';
+/** H1 de la portada (D60, 23-oct-2026): agencia de marketing digital e IA. «Agencia de diseño web» pasó a la pilar
+   /diseno-web-panama/ (antes, D50: «Agencia de diseño web en Panamá: web, SEO, publicidad y WhatsApp»). */
+export const H1_PORTADA = 'Agencia de marketing digital e IA en Panamá: web, publicidad, WhatsApp y automatización';
 
 /** «desde $1,950», leído por clave de `confirmados` (D23). Una clave que no está confirmada rompe el build. */
 export function precioDesde(precios: Precios, clave: string): string {

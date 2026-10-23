@@ -96,8 +96,6 @@ export const blog41: PageData[] = [
         items: [
           { slug: 'miami', label: 'Diseño web en Miami, en español' },
           { slug: 'miami/diseno-web-en-miami-en-espanol', label: 'Páginas web para negocios hispanos de Miami' },
-          { slug: 'miami/diseno-web-doral', label: 'Diseño web en Doral' },
-          { slug: 'miami/diseno-web-hialeah', label: 'Diseño web en Hialeah' },
           { slug: 'blog/cuanto-cuesta-pagina-web-miami', label: 'Cuánto cuesta una página web en Miami' },
           { slug: 'precios', label: 'Precios' },
         ],
@@ -185,8 +183,6 @@ export const blog41: PageData[] = [
         items: [
           { slug: 'miami', label: 'Diseño web en Miami, en español' },
           { slug: 'miami/diseno-web-en-miami-en-espanol', label: 'Páginas web para negocios hispanos de Miami' },
-          { slug: 'miami/diseno-web-doral', label: 'Diseño web en Doral' },
-          { slug: 'miami/diseno-web-hialeah', label: 'Diseño web en Hialeah' },
           { slug: 'blog/cuanto-cuesta-pagina-web-miami', label: 'Cuánto cuesta una página web en Miami' },
           { slug: 'precios', label: 'Precios' },
         ],

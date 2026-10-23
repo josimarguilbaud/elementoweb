@@ -70,7 +70,7 @@ test('mapa clave → opción del formulario: cada CTA resuelve su opción y una 
 });
 
 test('el H1 sigue siendo el de D50 (decisión uc1a de la puerta del 22-oct)', () => {
-  assert.equal(H1_PORTADA, 'Agencia de diseño web en Panamá: web, SEO, publicidad y WhatsApp');
+  assert.equal(H1_PORTADA, 'Agencia de marketing digital e IA en Panamá: web, publicidad, WhatsApp y automatización');
   assert.deepEqual(DISPLAY_PORTADA, ['Marketing que vende.', 'IA que trabaja.']);
 });
 

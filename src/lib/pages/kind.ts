@@ -22,7 +22,7 @@ export function pageTypeOf(page: Pick<PageData, 'slug' | 'kind' | 'anatomia' | '
 export const HUBS = ['servicios', 'crecimiento', 'marketing', 'tecnologias', 'funcionalidades', 'saas'] as const;
 
 /** Páginas de servicio que viven en la raíz del sitio, fuera de los hubs. */
-export const SERVICIOS_EN_RAIZ = ['inteligencia-artificial-para-empresas-panama'] as const;
+export const SERVICIOS_EN_RAIZ = ['inteligencia-artificial-para-empresas-panama', 'soluciones'] as const;
 
 export function kindOf(page: Pick<PageData, 'slug' | 'kind'>): PageKind {
   if (page.kind) return page.kind;

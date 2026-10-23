@@ -424,6 +424,7 @@ export const blog3: PageData[] = [
         
           { slug: 'industrias/diseno-web-talleres-automotriz-panama', label: 'Diseño web para talleres' },
           { slug: 'industrias/diseno-web-belleza-spa-panama', label: 'Diseño web para belleza y spas' },
+          { slug: 'crecimiento/posicionamiento-en-chatgpt-e-ia-panama', label: 'Posicionamiento en ChatGPT y la IA' },
         ],
       },
     ],

@@ -316,6 +316,7 @@ export const saasPages: PageData[] = [
           { slug: 'saas/nouscrm', label: 'NousCRM' },
           { slug: 'saas', label: 'Todos los SaaS' },
           { slug: 'blog/como-hacer-campanas-de-whatsapp-masivo-en-panama', label: 'Guía: campañas de WhatsApp' },
+          { slug: 'funcionalidades/agente-de-ventas-ia-whatsapp-panama', label: 'Agente de ventas con IA en WhatsApp' },
         ],
       },
     ],

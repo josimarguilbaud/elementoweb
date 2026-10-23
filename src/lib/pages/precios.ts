@@ -164,6 +164,7 @@ export const precios: PageData[] = [
           { slug: 'comparativas/web-a-medida-vs-suscripcion', label: 'Web a medida vs suscripción' },
           { slug: 'casos-de-exito', label: 'Casos de éxito' },
           { slug: 'portafolio', label: 'Portafolio' },
+          { slug: 'soluciones', label: 'Soluciones: paquetes de marketing e IA' },
         ],
       },
     ],

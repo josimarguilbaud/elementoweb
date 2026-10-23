@@ -615,6 +615,32 @@ comitea y despliega», con una plantilla común, mockups de fal e imágenes nuev
   Studio. La redirección http→https responde 307 en el proxy de Coolify (Traefik), fuera del repo.
 - **Publicación:** merge en `main`, `verify` en verde, despliegue 39910975256 en verde, `check-prod.sh` 39 ok.
 
+### D60. Fase 2 de SEO y GEO, servicios de 2026 y portada de marketing digital e IA (23-oct-2026)
+
+- **Pedido del dueño:** seguir con la fase 2 (páginas de pregunta de WhatsApp, IA y n8n); analizar los servicios, qué
+  falta y cómo conectarlos; y luego «procede con lo que recomiendas y no pares hasta terminar». El análisis está en el
+  documento «Servicios y portada de Elemento Web 2026».
+- **Páginas de pregunta (15, en /blog/):** WhatsApp (precio de un chatbot, Business o API, tarifas de Meta, límites,
+  bloqueos), IA (quién hace chatbots, agente de IA, reglas o IA, precio de implementar IA, seguridad de datos, Ley 81) y
+  n8n (qué es, n8n/Zapier/Make, precio, conectar WhatsApp). Respuesta directa arriba, fuentes oficiales enlazadas con
+  fecha de consulta, solo precios confirmados en la respuesta (R27). Una revisión independiente contrastó cada cifra con
+  su fuente y corrigió ocho detalles. La guía de WhatsApp, IA y automatización las agrupa y `llms.txt` las lista.
+- **Corrección en WhatsApp marketing:** desde el 1-oct-2026 Meta cobra las respuestas de servicio a partir de la 1.001
+  del mes por número; la página decía que eran gratis.
+- **Servicios nuevos:** `/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/` (GEO, se cotiza),
+  `/funcionalidades/agente-de-ventas-ia-whatsapp-panama/` (sobre WazaCRM, desde $349 al mes) y `/soluciones/` (tres
+  paquetes: Clientes por WhatsApp, Visible en Google y en la IA, Empresa con IA; se cotizan). Entran al manifiesto (39
+  páginas), a KEYWORDS.md, al menú y reciben 3 o más enlaces de contenido. El diagnóstico de IA sin costo y el plan
+  mensual de videos ya existían en sus páginas.
+- **Portada:** title, H1 y descripción pasan a «Agencia de marketing digital e IA en Panamá»; «agencia de diseño web»
+  queda como secundaria de la pilar `/diseno-web-panama/`. El diseño de la portada no cambia. El dueño pidió proceder sin
+  esperar la lectura de Search Console del 29-oct: esa lectura mezclará el efecto de D56 y de este cambio.
+- **Miami:** las 12 páginas de zona (sin impresiones en Search Console) se fusionaron en `/miami/` con 301 en nginx;
+  quedan el índice y la página en español.
+- **SEO congelado:** snapshot reescrito (192 URLs) y lista de permisos vaciada al cerrar la fase.
+- **Pendiente del dueño:** precios del GEO, del agente (instalación) y de los paquetes; reseñas en Google; perfiles en
+  Sortlist, Clutch y GoodFirms; redes propias para `sameAs`; Bing Webmaster Tools; portadas para las páginas nuevas.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

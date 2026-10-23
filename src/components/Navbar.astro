@@ -1,4 +1,5 @@
 ---
+import { readFileSync } from 'node:fs';
 import { grupos, url, wa, type Grupo, type IconoGrupo } from '../lib/site';
 /* Menú monocromo (D56): barra blanca fija, cuatro paneles al estilo Stripe y un acordeón en móvil, todo desde
    `grupos` de site.ts. Sin GSAP: los paneles y el menú móvil abren con transiciones CSS (global.css) y el script
@@ -10,6 +11,13 @@ interface Props { current?: string; dark?: boolean; cotizar?: { href: string; ct
 const { current = '', cotizar } = Astro.props;
 const cotizarHref = cotizar?.href ?? '/contacto/';
 const ventas = wa('Hola, quiero hablar con ventas.');
+/* Logo de la tarjeta (D58) incrustado en el HTML: como archivos aparte, el navegador a veces los pedía antes que la
+   escultura de la portada (su LCP) y qa-lcp fallaba en el CI. La ficha va como WebP de 78x84 en data URI (unos 2,7 KB)
+   y el wordmark como SVG en línea. El pie usa los archivos de public/marca/web/, con carga diferida. */
+const fichaUri = `data:image/webp;base64,${readFileSync('src/assets/ficha-84.webp').toString('base64')}`;
+const wordmarkSvg = readFileSync('public/marca/web/wordmark.svg', 'utf8')
+  .replace('<svg ', '<svg aria-hidden="true" focusable="false" width="142" height="17" class="h-[17px] w-auto" ')
+  .trim();
 
 /* Íconos de línea propios, 24×24 con trazo de 1,5 (se pintan a 20 px): un solo <path> cada uno, para no sumar
    elementos al DOM de las ~250 páginas (la portada tiene tope de 1.400). */
@@ -34,8 +42,8 @@ const forma: Record<Grupo['id'], string> = {
 ---
 <header id="nav" class="fixed inset-x-0 top-0 z-50 border-b border-filete bg-white">
   <nav id="navpill" aria-label="Principal" class="relative mx-auto flex h-[var(--nav-h)] max-w-7xl items-center gap-2 px-4 sm:px-6">
-    <a href="/" class="flex shrink-0 items-center gap-2 rounded-md py-1.5 pr-2">
-      <img src="/marca/web/ficha-120.png" width="26" height="28" alt="" class="h-7 w-auto" /><img src="/marca/web/wordmark.svg" width="142" height="17" alt="Elemento Web" class="h-[17px] w-auto" />
+    <a href="/" aria-label="Elemento Web, inicio" class="flex shrink-0 items-center gap-2 rounded-md py-1.5 pr-2">
+      <img src={fichaUri} width="26" height="28" alt="" class="h-7 w-auto" /><Fragment set:html={wordmarkSvg} />
     </a>
 
     <div class="nav-links relative ml-4 hidden items-center min-[1200px]:flex">

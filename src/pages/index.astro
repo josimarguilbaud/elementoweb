@@ -195,8 +195,11 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
   <!-- 7. Preguntas: el mismo texto que el FAQPage -->
   <section id="preguntas" class="pv3-sec pv3-sec--humo" aria-labelledby="preguntas-h2">
     <div class="pv3-wrap pv3-preguntas">
-      <h2 id="preguntas-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Preguntas frecuentes</h2>
-      <div data-score="faq">
+      <div class="pv3-preguntas__cab">
+        <h2 id="preguntas-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Preguntas frecuentes</h2>
+        <p class="pv3-lead">Lo que más nos preguntan antes de empezar. Si tu duda no está aquí, escríbenos y te respondemos el mismo día hábil.</p>
+      </div>
+      <div data-score="faq" class="pv3-preguntas__lista">
         {faqs.map((f) => (
           <details class="pv3-pregunta">
             <summary data-faq-q>{f.q}</summary>
@@ -204,7 +207,7 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
           </details>
         ))}
       </div>
-      <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="preguntas" data-service="definir">Hacer otra pregunta <span aria-hidden="true">→</span></a></p>
+      <p class="pv3-cierre pv3-preguntas__cta"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="preguntas" data-service="definir">Hacer otra pregunta <span aria-hidden="true">→</span></a></p>
     </div>
   </section>
 

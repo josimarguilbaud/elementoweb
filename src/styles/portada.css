@@ -179,7 +179,14 @@ main :focus-visible { outline: 2px solid #0a0a0a; outline-offset: 2px; border-ra
 
 /* ---- 7. Preguntas ---- */
 .pv3-preguntas { display: grid; gap: 32px; }
-@media (min-width: 1024px) { .pv3-preguntas { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 64px; } }
+/* Escritorio: título, texto y botón juntos a la izquierda, preguntas a la derecha. En móvil el botón sigue
+   debajo de las preguntas (orden del DOM), así no cambia la distancia entre CTA. */
+@media (min-width: 1024px) {
+  .pv3-preguntas { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); grid-template-rows: auto 1fr; column-gap: 64px; row-gap: 0; }
+  .pv3-preguntas__cab { grid-column: 1; grid-row: 1; }
+  .pv3-preguntas__lista { grid-column: 2; grid-row: 1 / span 2; }
+  .pv3-preguntas__cta { grid-column: 1; grid-row: 2; align-self: start; }
+}
 .pv3-pregunta { border-bottom: 1px solid #e5e5e5; }
 .pv3-pregunta:first-child { border-top: 1px solid #e5e5e5; }
 .pv3-pregunta summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; padding: 12px 0; cursor: pointer; list-style: none; font-size: 1.0625rem; font-weight: 600; color: #0a0a0a; }

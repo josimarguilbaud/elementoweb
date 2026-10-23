@@ -205,7 +205,7 @@ export const core: PageData[] = [
         h2: 'Quién está detrás',
         intro: 'Elemento Web tiene responsable con nombre y apellido.',
         items: [
-          { h3: 'Josimar Guilbaud, CEO', text: 'Al frente de Elemento Web. Responde por la empresa y por cada proyecto que entregamos.' },
+          { h3: 'Josimar Guilbaud, Founder & CEO · AI Strategist', text: 'Fundó Elemento Web y está al frente. Lleva más de 20 años trabajando en la web y firma los artículos del blog. Responde por la empresa y por cada proyecto que entregamos.' },
         ],
       },
       {
@@ -228,8 +228,8 @@ export const core: PageData[] = [
           { q: '¿Qué significa ser Tech Provider verificado por Meta?', a: 'Tech Provider es el programa de Meta para las empresas que conectan la API de WhatsApp Business en nombre de sus clientes. Para entrar, Meta verifica el negocio y revisa la aplicación. Para ti significa que tu número se conecta por el canal oficial de Meta, y no por herramientas no autorizadas que ponen en riesgo la línea.' },
           { q: '¿Qué no hacen?', a: 'Registro de marca, fotografía y video de estudio. Si tu proyecto los necesita, te lo decimos desde la propuesta y te referimos con especialistas.' },
           { q: '¿Dónde están ubicados?', a: 'En Ciudad de Panamá, con trabajo remoto para todo el país y la región. Las reuniones presenciales se coordinan según el proyecto.' },
-          { q: '¿Qué es Elemento Web?', a: 'Una agencia de diseño web y software house con sede en Ciudad de Panamá. Diseñamos sitios corporativos, tiendas online y landing pages, desarrollamos software a medida y operamos marketing digital, SEO y automatización con IA.' },
-          { q: '¿Quién dirige Elemento Web?', a: 'Josimar Guilbaud es el CEO de Elemento Web.' },
+          { q: '¿Qué es Elemento Web?', a: 'Una agencia de marketing digital, inteligencia artificial y diseño web en Panamá, con sede en Ciudad de Panamá. Hacemos pauta, contenido, SEO, WhatsApp marketing y automatización con IA; diseñamos sitios corporativos, tiendas online y landing pages, y desarrollamos software a medida.' },
+          { q: '¿Quién dirige Elemento Web?', a: 'Josimar Guilbaud, fundador y CEO (Founder & CEO · AI Strategist). Lleva más de 20 años trabajando en la web.' },
           { q: '¿Trabajan con negocios de Miami?', a: 'Sí, de forma remota desde Panamá y en español. Facturamos en dólares. No tenemos oficina en Miami; coordinamos por WhatsApp y videollamada. Más detalle en <a href="/miami/">diseño web para Miami</a>.' },
           { q: '¿Cuánto cuesta una página web con Elemento Web?', a: 'Landing desde $550, sitio corporativo desde $1,250 (hasta 6 páginas en total), tienda online desde $1,950 y proyectos a medida desde $2,900. Sin ITBMS (7%). Todo el detalle está en <a href="/precios/">precios</a>.' },
         ],

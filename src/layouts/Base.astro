@@ -20,6 +20,8 @@ interface Props {
   ogType?: 'website' | 'article';
   /** Fecha de publicación ISO (solo artículos). */
   published?: string;
+  /** Blog: última revisión (YYYY-MM-DD). Sale en article:modified_time y de ahí la lee el lastmod del sitemap. */
+  modified?: string;
   /** Contrato del marcador (D7): tipo de página que lee el validador en <main data-page-type>.
    *  Solo lo emiten las páginas que ya usan la anatomía nueva; las demás no llevan el atributo. */
   pageType?: string;
@@ -32,7 +34,7 @@ interface Props {
   /** Destino y medición de los dos «Cotizar» del menú; sin él van a /contacto/ como hoy. */
   navCotizar?: { href: string; ctaLoc: string; service: string };
 }
-const { title, description, current = '', jsonld, dark = false, image, noindex = false, ogType = 'website', published, pageType, service, efectos = true, cierre = true, navCotizar } = Astro.props;
+const { title, description, current = '', jsonld, dark = false, image, noindex = false, ogType = 'website', published, modified, pageType, service, efectos = true, cierre = true, navCotizar } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.domain).href;
 const schemas = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
 /* og:image: usa la imagen de la página; si no, una por defecto. Siempre absoluta. */
@@ -68,6 +70,7 @@ const ogImage = rawImage.startsWith('http') ? rawImage : new URL(rawImage, site.
     <!-- Open Graph -->
     <meta property="og:type" content={ogType} />
     {ogType === 'article' && published && <meta property="article:published_time" content={published} />}
+    {ogType === 'article' && modified && <meta property="article:modified_time" content={modified} />}
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

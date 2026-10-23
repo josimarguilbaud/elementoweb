@@ -157,7 +157,7 @@ export const clusters: PageData[] = [
     parent,
     title: 'Guías de WhatsApp, IA y automatización para tu negocio',
     description: 'Guías para vender por WhatsApp, usar IA y automatizar el seguimiento de clientes en Panamá: chatbots, CRM, n8n, campañas y embudos de venta.',
-    h1: 'Render 3D abstracto con letras azules sobre hexágonos y líneas negras enredadas, en una guía de IA y automatización',
+    h1: 'Guías de WhatsApp, IA y automatización para tu negocio',
     breadcrumb: 'WhatsApp, IA y automatización',
     lead: ['Cómo atender más rápido, no perder consultas y ordenar las ventas con WhatsApp, inteligencia artificial y automatizaciones.'],
     blocks: [
@@ -226,7 +226,7 @@ export const clusters: PageData[] = [
     parent,
     title: 'Guías de diseño web para negocios hispanos de Miami',
     description: 'Guías para negocios hispanos de Miami que quieren una web: cuánto cuesta, cómo elegir agencia y qué necesita el sitio. Servicio remoto desde Panamá.',
-    h1: 'Un hombre y una mujer chocan las manos riendo ante una laptop y papeles, en una guía de diseño web para negocios',
+    h1: 'Guías de diseño web para negocios hispanos de Miami',
     breadcrumb: 'Diseño web para Miami',
     lead: ['Para negocios de Miami-Dade que operan en español: costo, cómo elegir agencia y qué debe tener la web. Trabajamos remoto desde Panamá, en dólares.'],
     blocks: [

@@ -136,3 +136,11 @@ for (const p of pages) {
   /* D34: el serviceKey de una página existe en el esquema único del formulario. */
   if (p.serviceKey && !claves.has(p.serviceKey)) throw new Error(`serviceKey "${p.serviceKey}" de "${p.slug}" no existe en src/data/formulario.json`);
 }
+
+/* Fecha de actualización del blog (dateModified en el schema, «Actualizado» visible y lastmod del sitemap). D57 reescribió
+   los artículos del blog el 22-oct-2026 (commits abdf9d8, 7348ea9 y 4c81470): esa es su última revisión salvo que el
+   artículo declare otra. Al cambiar el contenido de un artículo, se pone su `updated` en la página. */
+const REVISION_BLOG = '2026-10-22';
+for (const p of pages) {
+  if (p.parent?.slug === 'blog' && p.date && !p.updated) p.updated = p.date > REVISION_BLOG ? p.date : REVISION_BLOG;
+}

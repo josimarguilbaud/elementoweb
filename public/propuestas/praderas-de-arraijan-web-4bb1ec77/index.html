@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
         :root { --brand: #3b82f6; --brand-deep: #1e3a8a; --violet: #7c3aed; --ink: #0f172a; }
         * { -webkit-font-smoothing: antialiased; }
@@ -273,6 +274,20 @@
         .obj b { display:block; font-family:'Bricolage Grotesque', Inter, sans-serif; font-size:17px; color:#0f172a; margin-bottom:4px; }
         .obj p { font-size:13.5px; color:#475569; line-height:1.55; }
         @media print { .vids video, .vid-ancho video { display:none; } .hv-phone { transform:none; } }
+        /* piezas de anuncio con la marca de Praderas (variante de .kp) */
+        .kp--pr { background:#3a1c13; font-family:'Montserrat', Inter, sans-serif; }
+        .kp--pr .kp-shade { background:linear-gradient(180deg, rgba(58,28,19,.92) 0%, rgba(58,28,19,.72) 30%, rgba(58,28,19,.28) 50%, rgba(58,28,19,0) 64%); }
+        .kp--pr .kp-h { font-family:'Playfair Display', Georgia, serif; font-weight:600; }
+        .kp--pr .kp-h em { font-style:italic; color:#ffb27a; }
+        .kp--pr .kp-pill { background:rgba(255,255,255,.16); border-color:rgba(255,255,255,.3); }
+        .kp--pr .kp-btn { background:#fff; color:#6b3626; }
+        .kp--pr .kp-foot { background:rgba(58,28,19,.9); color:#f3dcd0; }
+        .kp--pr .kp-logo { font-family:'Playfair Display', Georgia, serif; font-weight:600; font-size:clamp(9px, 4.6cqi, 15px); letter-spacing:0; }
+        .kp--pr.kp--light .kp-shade { background:linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.88) 34%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 64%); }
+        .kp--pr.kp--light .kp-h { color:#3a1c13; }
+        .kp--pr.kp--light .kp-h em { color:#6b3626; }
+        .kp--pr.kp--light .kp-btn { background:#6b3626; color:#fff; }
+        .kp--pr .kp-play { color:#6b3626; font-size:clamp(10px, 6cqi, 20px); }
     </style>
 </head>
 <body class="text-slate-800 selection:bg-violet-200 selection:text-violet-900">
@@ -326,7 +341,7 @@
                 </div>
                 <nav class="toc mt-10 pt-6 border-t border-white/15" aria-label="Contenido de la propuesta">
                     <p class="text-[11px] font-semibold uppercase tracking-[.14em] text-blue-200/80 mb-3">En esta cotización</p>
-                    <ul class="flex flex-wrap gap-2"><li><a href="#brief"><i style="background:#94a3b8"></i>Su brief, punto por punto</a></li><li><a href="#vista-previa"><i style="background:#4f46e5"></i>La web nueva</a></li><li><a href="#por-dentro"><i style="background:#0891b2"></i>Zoho, agenda y panel</a></li><li><a href="#cotizacion"><i style="background:#7c3aed"></i>Cotización desglosada</a></li><li><a href="#cronograma"><i style="background:#2563eb"></i>Cronograma</a></li><li><a href="#soporte"><i style="background:#16a34a"></i>Soporte y garantía</a></li></ul>
+                    <ul class="flex flex-wrap gap-2"><li><a href="#brief"><i style="background:#94a3b8"></i>Su brief, punto por punto</a></li><li><a href="#vista-previa"><i style="background:#4f46e5"></i>La web nueva</a></li><li><a href="#por-dentro"><i style="background:#0891b2"></i>Zoho, agenda y panel</a></li><li><a href="#cotizacion"><i style="background:#7c3aed"></i>Cotización desglosada</a></li><li><a href="#ads"><i style="background:#db2777"></i>Google y Meta Ads</a></li><li><a href="#cronograma"><i style="background:#2563eb"></i>Cronograma</a></li><li><a href="#soporte"><i style="background:#16a34a"></i>Soporte y garantía</a></li></ul>
                 </nav>
                 <div class="mt-6 no-print"><a href="https://elementoweb.com/demo/praderas-de-arraijan-8bc892d1/" target="_blank" rel="noopener" class="btn-primary inline-flex text-white font-semibold rounded-xl px-6 py-3.5 text-sm">Recorrer la web nueva →</a></div>
             </div>
@@ -441,12 +456,140 @@
                 </div>
                 <div class="reveal"><div class="bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto"><table class="tbl"><thead><tr><th>Servicio</th><th>Quién lo da</th><th class="n">Costo</th></tr></thead><tbody>
                     <tr><td><b>Servidor VPS dedicado, dominio y SSL</b><small>Incluye la renovación de praderasdearraijan.com y respaldos diarios</small></td><td>Elemento Web</td><td class="n">US$ 550 / año</td></tr>
-                    <tr><td><b>Mantenimiento web</b><small>Desde el mes siguiente a la publicación</small></td><td>Elemento Web</td><td class="n">US$ 99 / mes</td></tr>
+                    <tr><td><b>Mantenimiento web · obligatorio</b><small>Mínimo 12 meses desde la publicación. Cuida el panel, la conexión con Zoho y la seguridad del sitio</small></td><td>Elemento Web</td><td class="n">US$ 99 / mes</td></tr>
                     <tr><td><b>Zoho CRM</b><small>Su plan debe permitir conexión por API; lo confirmamos en el arranque</small></td><td>Su licencia actual</td><td class="n">Sin costo adicional nuestro</td></tr>
                     <tr><td><b>Calendario de visitas</b><small>Si prefieren Zoho Bookings, su licencia la paga Grupo Legacy</small></td><td>Incluido en la web</td><td class="n">Sin licencia</td></tr>
                     <tr><td><b>Google Maps, YouTube y recorridos 3D</b><small>Mapa insertado, videos de YouTube y recorridos de su proveedor actual</small></td><td>Servicios externos</td><td class="n">Sin costo</td></tr>
                     <tr><td><b>Wix</b><small>La suscripción actual se puede cancelar al publicar la web nueva</small></td><td>—</td><td class="n">Ahorro</td></tr>
                 </tbody></table></div></div>
+            </section>
+
+            <!-- ============ SERVICIOS LIGADOS: GOOGLE Y META ADS ============ -->
+            <section id="ads" class="mb-6">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Servicios ligados</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Llevar compradores a la web nueva</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal text-sm sm:text-[15px] text-slate-600 leading-relaxed max-w-2xl mb-6">La web convierte; la pauta trae a quien está buscando casa. Estos servicios se conectan a lo mismo que ya construimos: cada anuncio lleva a una página pensada para él y cada prospecto entra a Zoho CRM con la campaña que lo trajo. Son opcionales y van aparte del total de la web.</p>
+                <div class="reveal figure bg-white/70 rounded-2xl border border-slate-100 p-4 overflow-x-auto mb-12">
+                    <svg viewBox="0 0 760 196" role="img" aria-labelledby="t-flujo-ads">
+                        <title id="t-flujo-ads">Recorrido: anuncio en Google o Meta, landing o formulario, Zoho CRM, vendedor por WhatsApp, visita a la casa modelo, y la conversión vuelve a las plataformas</title>
+                        <defs><marker id="fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#94a3b8"/></marker></defs>
+                        <g font-family="Inter, sans-serif">
+                            <rect x="6" y="30" width="120" height="90" rx="14" fill="#eff6ff"/><text x="66" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">Anuncio</text><text x="66" y="82" text-anchor="middle" font-size="10" fill="#475569">Google: "casas en</text><text x="66" y="95" text-anchor="middle" font-size="10" fill="#475569">Arraiján" · Meta: feed</text>
+                            <line x1="128" y1="75" x2="150" y2="75" stroke="#94a3b8" stroke-width="2" marker-end="url(#fa)"/>
+                            <rect x="152" y="30" width="130" height="90" rx="14" fill="#f5f3ff"/><text x="217" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#4c1d95">Landing o</text><text x="217" y="77" text-anchor="middle" font-size="12" font-weight="700" fill="#4c1d95">formulario</text><text x="217" y="98" text-anchor="middle" font-size="10" fill="#475569">precalifica en 3 pasos</text>
+                            <line x1="284" y1="75" x2="306" y2="75" stroke="#94a3b8" stroke-width="2" marker-end="url(#fa)"/>
+                            <rect x="308" y="30" width="130" height="90" rx="14" fill="#ecfdf5"/><text x="373" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">Zoho CRM</text><text x="373" y="82" text-anchor="middle" font-size="10" fill="#475569">modelo · ingreso</text><text x="373" y="95" text-anchor="middle" font-size="10" fill="#475569">campaña · búsqueda</text>
+                            <line x1="440" y1="75" x2="462" y2="75" stroke="#94a3b8" stroke-width="2" marker-end="url(#fa)"/>
+                            <rect x="464" y="30" width="130" height="90" rx="14" fill="#dcfce7"/><text x="529" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#14532d">Vendedor</text><text x="529" y="82" text-anchor="middle" font-size="10" fill="#166534">aviso por WhatsApp</text><text x="529" y="95" text-anchor="middle" font-size="10" fill="#166534">en minutos</text>
+                            <line x1="596" y1="75" x2="618" y2="75" stroke="#94a3b8" stroke-width="2" marker-end="url(#fa)"/>
+                            <rect x="620" y="30" width="134" height="90" rx="14" fill="#1e3a8a"/><text x="687" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Visita a la</text><text x="687" y="82" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">casa modelo</text><text x="687" y="102" text-anchor="middle" font-size="10" fill="#bfdbfe">y reserva</text>
+                            <path d="M687 124 C 687 170, 66 170, 66 124" fill="none" stroke="#7c3aed" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#fa)"/>
+                            <text x="380" y="186" text-anchor="middle" font-size="10.5" fill="#6d28d9">La visita y la reserva vuelven a Google y Meta como conversión: invierten en personas parecidas a quienes sí compran.</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Google Ads -->
+                <div id="svc-google" class="svc mb-16" style="--svc:#2563eb">
+                    <div class="reveal svc-head">
+                        <div class="p-7 sm:p-9 flex flex-col">
+                            <p class="svc-tag"><i></i>Google Ads · landing dedicada</p>
+                            <h3 class="display text-[1.55rem] sm:text-[1.85rem] font-bold text-slate-900 leading-[1.12] mt-3 mb-3">Aparecer cuando alguien busca "casas en Arraiján"</h3>
+                            <p class="text-slate-600 text-[15px] leading-relaxed mb-6">Campañas de búsqueda que llevan a una landing propia, sin menú ni distracciones: precio, cuota y precalificación en 3 pasos. El prospecto entra a Zoho CRM con la palabra que buscó.</p>
+                            <div class="mt-auto flex flex-wrap gap-2"><span class="price-chip"><b>US$ 750</b><span>Landing conectada a Zoho</span></span><span class="price-chip"><b>US$ 450</b><span>Armado de campañas</span></span><span class="price-chip"><b>US$ 400 / mes</b><span>Gestión · mínimo 3 meses</span></span></div>
+                        </div>
+                        <figure class="svc-media"><img src="img/ad-financiamiento.webp" alt="Pareja revisando en la laptop cuánto pagaría al mes por su casa" width="1000" height="671" loading="lazy"><figcaption>Quien busca en Google ya está decidiendo: la landing le responde precio, cuota y visita en una sola pantalla.</figcaption></figure>
+                    </div>
+                    <p class="svc-sub reveal">Qué incluye</p>
+                    <ul class="inc reveal">
+                        <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Landing dedicada</b>Precalificación en 3 pasos (modelo, ingreso y cuándo piensa comprar), cuota estimada y acceso directo a la agenda.</span></li>
+                        <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Conectada a Zoho CRM</b>Cada prospecto llega con modelo, ingreso, plazo de compra, campaña, búsqueda y clic de Google; el vendedor recibe el aviso.</span></li>
+                        <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Campañas de búsqueda</b>Palabras clave por modelo y zona, palabras negativas, anuncios y extensiones (modelos, cuota, visita, ubicación).</span></li>
+                        <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Conversiones reales</b>Formulario, WhatsApp y visita agendada; cuando Zoho marca la visita o la reserva, la conversión vuelve a Google.</span></li>
+                        <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Gestión mensual</b>Optimización semanal, pruebas de anuncios, ajuste de palabras y presupuesto, e informe mensual con costo por visita agendada.</span></li>
+                        <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Las cuentas son suyas</b>La cuenta de Google Ads queda a nombre de Grupo Legacy y la pauta se paga directo a Google.</span></li>
+                    </ul>
+                    <p class="svc-sub reveal">Así se vería el anuncio</p>
+                    <div class="reveal grid md:grid-cols-[1.15fr_.85fr] gap-6 items-start">
+                        <div class="serp avoid">
+                            <div class="serp-q"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>casas en arraiján</div>
+                            <p class="serp-sp">Patrocinado</p>
+                            <div class="serp-site"><span class="serp-fav" style="background:#6b3626;color:#fff">P</span><p>Praderas de Arraiján<small>praderasdearraijan.com › casas-en-arraijan</small></p></div>
+                            <p class="serp-h">Casas en Arraiján | Desde $88,997 | Agenda tu Visita Hoy</p>
+                            <p class="serp-d">Comunidad cercada cerca de la Línea 3. Calcula tu cuota y visita la casa modelo. Modelos de 2 y 3 recámaras: Roble, Cedro y Almendro dúplex.</p>
+                            <div class="serp-links"><span>Modelos y precios</span><span>Calcula tu cuota</span><span>Agenda tu visita</span><span>Ubicación</span></div>
+                        </div>
+                        <div>
+                            <p class="svc-tag mb-2"><i></i>Búsquedas de inicio</p>
+                            <div class="kpis"><span>casas en arraiján</span><span>casas en venta en arraiján</span><span>casas en panamá oeste</span><span>casas en ciudad futuro</span><span>proyectos de casas en arraiján</span><span>casas con interés preferencial</span></div>
+                            <p class="svc-tag mt-4 mb-2"><i></i>Palabras negativas</p>
+                            <div class="kpis"><span>alquiler</span><span>renta</span><span>empleo</span><span>gratis</span></div>
+                            <p class="mock-note">Titulares de 30 caracteres o menos, como exige Google. Las búsquedas se ajustan con los datos del primer mes.</p>
+                        </div>
+                    </div>
+                    <p class="svc-sub reveal">La landing dedicada</p>
+                    <div class="reveal grid md:grid-cols-[1.4fr_1fr] gap-6 items-center">
+                        <figure class="m-0"><div class="dev"><div class="dev-browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>praderasdearraijan.com/casas-en-arraijan</span></div><img src="img/web-landing.webp" alt="Landing de Google Ads con precalificación en 3 pasos y la ficha que llega a Zoho CRM" width="1440" height="900" loading="lazy"></div><div class="dev-phone"><img src="img/movil-landing.webp" alt="La landing en el celular" width="780" height="1688" loading="lazy"></div></div></figure>
+                        <div><p class="text-sm text-slate-600 leading-relaxed mb-4">Sin menú, con una sola acción. Al enviar, muestra la ficha que entra a Zoho CRM: nombre, modelo, ingreso, plazo de compra, campaña y búsqueda.</p>
+                            <a href="https://elementoweb.com/demo/praderas-de-arraijan-8bc892d1/casas-en-arraijan/?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=casas-arraijan&amp;utm_term=casas+en+arraijan" target="_blank" rel="noopener" class="btn-primary inline-flex text-white font-semibold rounded-xl px-5 py-3 text-sm no-print">Probar la landing</a></div>
+                    </div>
+                </div>
+
+                <!-- Meta Ads -->
+                <div id="svc-meta" class="svc mb-16" style="--svc:#7c3aed">
+                    <div class="reveal svc-head">
+                        <div class="p-7 sm:p-9 flex flex-col">
+                            <p class="svc-tag"><i></i>Meta Ads · Facebook e Instagram</p>
+                            <h3 class="display text-[1.55rem] sm:text-[1.85rem] font-bold text-slate-900 leading-[1.12] mt-3 mb-3">Llegar a las familias de Panamá Oeste antes de que busquen</h3>
+                            <p class="text-slate-600 text-[15px] leading-relaxed mb-6">Anuncios con sus renders, sus videos y su marca para quien todavía no busca, y remarketing para quien ya vio un modelo o usó la calculadora. Los formularios llegan a Zoho CRM.</p>
+                            <div class="mt-auto flex flex-wrap gap-2"><span class="price-chip"><b>US$ 450</b><span>Armado de campañas</span></span><span class="price-chip"><b>US$ 500 / mes</b><span>Gestión con 8 artes · mínimo 3 meses</span></span></div>
+                        </div>
+                        <figure class="svc-media"><img src="../../demo/praderas-de-arraijan-8bc892d1/img/familia-parque.webp" alt="Familia de picnic en las áreas verdes de la comunidad" width="1400" height="939" loading="lazy"><figcaption>En Instagram la casa se elige por cómo se vive: familia, áreas verdes y amenidades primero.</figcaption></figure>
+                    </div>
+                    <p class="svc-sub reveal">Qué incluye</p>
+                    <ul class="inc reveal">
+                        <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Públicos por zona e interés</b>Panamá Oeste y Ciudad de Panamá, interés en vivienda y públicos parecidos a sus compradores.</span></li>
+                        <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Remarketing</b>A quien vio modelos, usó la calculadora o empezó a agendar y no terminó.</span></li>
+                        <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Formularios conectados</b>Formularios de Meta que llegan a Zoho CRM, o tráfico a la landing, según rinda mejor.</span></li>
+                        <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>8 artes al mes</b>Estáticos, carruseles y 2 reels con los videos de sus renders, con su paleta y su tipografía.</span></li>
+                        <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Pruebas y reporte</b>Pruebas A/B de piezas y textos, e informe mensual con costo por prospecto y por visita.</span></li>
+                        <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Reglas de vivienda</b>Meta puede pedir la categoría especial de vivienda, que limita la segmentación por edad, género y código postal; las campañas se diseñan para funcionar con esa regla.</span></li>
+                    </ul>
+                    <p class="svc-sub reveal">Así se vería en Instagram</p>
+                    <div class="reveal grid md:grid-cols-[.8fr_1.2fr] gap-6 items-start">
+                        <div class="igad avoid">
+                            <div class="igad-top"><span class="igav" style="background:#6b3626;color:#fff">P</span><p>praderasdearraijan<small>Publicidad</small></p></div>
+                            <div class="kp kp--pr"><img src="../../demo/praderas-de-arraijan-8bc892d1/img/roble.webp" alt="" width="1200" height="1200" loading="lazy"><div class="kp-shade"></div><div class="kp-txt"><span class="kp-pill">Ciudad Futuro · Arraiján</span><p class="kp-h">Tu casa propia <em>desde $88,997</em></p><p class="kp-s">2 y 3 recámaras en comunidad cercada.</p><span class="kp-btn">Agenda tu visita</span></div><div class="kp-foot"><span class="kp-logo">Praderas de Arraiján</span><span>Cuota desde $534*</span></div></div>
+                            <div class="igad-cta"><span>Agendar visita</span><span aria-hidden="true">›</span></div>
+                            <p class="igad-cap"><b>praderasdearraijan</b> Tu primera casa, con patio y parque a la vuelta. Calcula tu cuota en 1 minuto y conoce la casa modelo. 🏡</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">Ejemplos de piezas del primer mes, hechas con sus renders y con la paleta de su guía. Cada una lleva su objetivo y su público.</p>
+                            <div class="posts">
+                                <div class="post avoid"><div class="kp kp--pr"><img src="../../demo/praderas-de-arraijan-8bc892d1/img/cedro-700.webp" alt="" width="700" height="700" loading="lazy"><div class="kp-shade"></div><div class="kp-txt"><p class="kp-h">3 recámaras <em>en una planta</em></p></div><div class="kp-foot"><span class="kp-logo">Praderas</span><span>Modelo Cedro</span></div></div><dl><dt>Formato</dt><dd>Carrusel</dd><dt>Objetivo</dt><dd>Prospectos</dd></dl></div>
+                                <div class="post avoid"><div class="kp kp--pr"><img src="../../demo/praderas-de-arraijan-8bc892d1/img/almendro-700.webp" alt="" width="700" height="700" loading="lazy"><div class="kp-shade"></div><div class="kp-txt"><p class="kp-h">Dúplex con <em>2 estacionamientos</em></p></div><div class="kp-foot"><span class="kp-logo">Praderas</span><span>Modelo Almendro</span></div></div><dl><dt>Formato</dt><dd>Imagen</dd><dt>Objetivo</dt><dd>Prospectos</dd></dl></div>
+                                <div class="post avoid"><div class="kp kp--pr kp--light"><img src="img/ad-financiamiento.webp" alt="" width="1000" height="671" loading="lazy"><div class="kp-shade"></div><div class="kp-txt"><p class="kp-h">¿Cuánto pagarías <em>al mes?</em></p><span class="kp-btn">Calcula tu cuota</span></div><div class="kp-foot"><span class="kp-logo">Praderas</span><span>1 minuto</span></div></div><dl><dt>Formato</dt><dd>Imagen</dd><dt>Objetivo</dt><dd>Remarketing</dd></dl></div>
+                                <div class="post avoid"><div class="kp kp--pr"><img src="../../demo/praderas-de-arraijan-8bc892d1/img/almendro-700.webp" alt="" width="700" height="700" loading="lazy" style="object-position:30% 50%"><div class="kp-shade"></div><div class="kp-txt"><span class="kp-pill">Reel · 15 s</span><p class="kp-h">Recorre <em>el Almendro</em></p></div><span class="kp-play" aria-hidden="true">▶</span><div class="kp-foot"><span class="kp-logo">Praderas</span><span>Video de sus renders</span></div></div><dl><dt>Formato</dt><dd>Reel 9:16</dd><dt>Objetivo</dt><dd>Alcance</dd></dl></div>
+                                <div class="post avoid"><div class="kp kp--pr"><img src="../../demo/praderas-de-arraijan-8bc892d1/img/pumptrack-800.webp" alt="" width="800" height="537" loading="lazy"><div class="kp-shade"></div><div class="kp-txt"><p class="kp-h">Pumptrack y canchas <em>en casa</em></p></div><div class="kp-foot"><span class="kp-logo">Praderas</span><span>Amenidades</span></div></div><dl><dt>Formato</dt><dd>Imagen</dd><dt>Objetivo</dt><dd>Prospectos</dd></dl></div>
+                                <div class="post avoid"><div class="kp kp--pr kp--light"><img src="img/ad-llaves.webp" alt="" width="1000" height="671" loading="lazy"><div class="kp-shade"></div><div class="kp-txt"><p class="kp-h">Tu casa, <em>paso a paso</em></p><span class="kp-btn">Ver el proceso</span></div><div class="kp-foot"><span class="kp-logo">Praderas</span><span>6 pasos</span></div></div><dl><dt>Formato</dt><dd>Imagen</dd><dt>Objetivo</dt><dd>Prospectos</dd></dl></div>
+                            </div>
+                            <p class="mock-note">*Cuota con abono del 5 %, 30 años y tasa de referencia del 6.5 %. Los textos finales de precio y cuota se validan con su equipo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- precios de los servicios ligados -->
+                <div class="reveal"><div class="bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto"><table class="tbl"><thead><tr><th>Servicio ligado</th><th class="n">Pago único</th><th class="n">Mensual</th></tr></thead><tbody>
+                    <tr><td><b>Landing dedicada conectada a Zoho CRM</b><small>Para Google Ads; también sirve para Meta</small></td><td class="n">US$ 750</td><td class="n">—</td></tr>
+                    <tr><td><b>Armado de campañas de Google Ads</b><small>Búsqueda, palabras clave, anuncios, extensiones y conversiones</small></td><td class="n">US$ 450</td><td class="n">—</td></tr>
+                    <tr><td><b>Gestión de Google Ads</b><small>Mínimo 3 meses</small></td><td class="n">—</td><td class="n">US$ 400</td></tr>
+                    <tr><td><b>Armado de campañas de Meta Ads</b><small>Públicos, remarketing, formularios conectados y primeros creativos</small></td><td class="n">US$ 450</td><td class="n">—</td></tr>
+                    <tr><td><b>Gestión de Meta Ads con 8 artes al mes</b><small>Mínimo 3 meses</small></td><td class="n">—</td><td class="n">US$ 500</td></tr>
+                    <tr class="total"><td><b>Con Google y Meta Ads</b></td><td class="n">US$ 1,650</td><td class="n">US$ 900</td></tr>
+                </tbody></table></div></div>
+                <p class="reveal text-xs text-slate-500 mt-3 max-w-2xl">La inversión en anuncios no está incluida: se paga directo a Google y a Meta desde las cuentas de Grupo Legacy. Para empezar sugerimos alrededor de US$ 600 al mes en Google y US$ 500 en Meta (estimado), y se ajusta con los resultados del primer mes.</p>
             </section>
 
             <!-- ============ EXTRAS ============ -->
@@ -461,7 +604,6 @@
                     <tr><td><b>Video inmobiliario con IA</b><small>Proyecto de 4 tipos</small></td><td>Recorridos de 20 a 60 s de la vista aérea y los tres modelos, en horizontal y vertical, con licencia comercial, para redes y anuncios.</td><td class="n">US$ 1,450</td></tr>
                     <tr><td><b>Asistente de IA en WhatsApp</b></td><td>Responde modelos, precios y requisitos a toda hora, agenda la visita y pasa la conversación al vendedor.</td><td class="n">US$ 700 + US$ 349/mes</td></tr>
                     <tr><td><b>SEO y GEO mensual</b></td><td>Contenido nuevo y trabajo para aparecer en Google y en ChatGPT cuando buscan casas en Panamá Oeste. Mínimo 3 meses.</td><td class="n">Desde US$ 650/mes</td></tr>
-                    <tr><td><b>Anuncios con IA cada mes</b></td><td>4 videos y 8 piezas al mes a partir de sus renders, para Instagram, Facebook y anuncios. Mínimo 3 meses.</td><td class="n">Desde US$ 650/mes</td></tr>
                 </tbody></table></div></div>
                 <p class="reveal text-sm text-slate-600 leading-relaxed mt-6 mb-4">Una muestra: estos clips los hicimos con inteligencia artificial a partir de sus renders para la vista previa. Las versiones cortas para la web se entregan con el sitio sin costo.</p>
                 <figure class="reveal vid-ancho avoid"><img src="../../demo/praderas-de-arraijan-8bc892d1/img/aerea-poster.webp" alt="Toma aérea del proyecto al atardecer" width="1600" height="891" loading="lazy"><video muted playsinline loop preload="none" data-src="../../demo/praderas-de-arraijan-8bc892d1/video/aerea.mp4" aria-hidden="true"></video><figcaption>Toma aérea · portada de la web</figcaption></figure>
@@ -497,7 +639,7 @@
                 </div>
                 <div class="reveal grid md:grid-cols-3 gap-4">
                     <div class="item-card avoid bg-white/80 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1">Garantía</p><h3 class="display text-base font-bold text-slate-900 mb-1.5">30 días sin costo</h3><p class="text-sm text-slate-600 leading-relaxed">Corregimos sin costo cualquier falla técnica que aparezca en los 30 días siguientes a la publicación.</p></div>
-                    <div class="item-card avoid bg-white/80 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1">Mantenimiento</p><h3 class="display text-base font-bold text-slate-900 mb-1.5">US$ 99 al mes</h3><p class="text-sm text-slate-600 leading-relaxed">Actualizaciones de seguridad y del panel, respaldos diarios, monitoreo, revisión de la conexión con Zoho y ajustes menores de contenido.</p></div>
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1">Mantenimiento</p><h3 class="display text-base font-bold text-slate-900 mb-1.5">US$ 99 al mes, obligatorio</h3><p class="text-sm text-slate-600 leading-relaxed">Mínimo 12 meses. Actualizaciones de seguridad y del panel, respaldos diarios, monitoreo, revisión de la conexión con Zoho y ajustes menores de contenido.</p></div>
                     <div class="item-card avoid bg-white/80 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1">Soporte</p><h3 class="display text-base font-bold text-slate-900 mb-1.5">Por WhatsApp y correo</h3><p class="text-sm text-slate-600 leading-relaxed">Respuesta en un día hábil; si la web o un formulario dejan de funcionar, lo atendemos el mismo día. Funciones nuevas se cotizan aparte.</p></div>
                 </div>
             </section>
@@ -519,9 +661,9 @@
                         <div>
                             <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Pago mensual</h4>
                             <div class="space-y-0.5 text-sm">
-                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Mantenimiento web</span><span class="font-semibold whitespace-nowrap">US$ 99</span></div>
+                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Mantenimiento web (obligatorio)</span><span class="font-semibold whitespace-nowrap">US$ 99</span></div>
                                 <div class="flex justify-between items-center gap-4 py-3 mt-1"><span class="font-bold text-blue-200">Subtotal mensual</span><span class="text-xl font-bold text-blue-300 whitespace-nowrap">US$ 99 <span class="text-xs font-normal text-blue-300/70">/mes</span></span></div>
-                                <p class="text-[11px] text-blue-300/70">Empieza el mes siguiente a la publicación.</p>
+                                <p class="text-[11px] text-blue-300/70">Obligatorio, con un mínimo de 12 meses. Empieza el mes siguiente a la publicación.</p>
                             </div>
                         </div>
                     </div>
@@ -538,7 +680,7 @@
                         <div class="rounded-xl p-4 border border-white/15" style="background:rgba(255,255,255,.06)"><p class="text-blue-300 text-xs uppercase tracking-wider mb-1">2 · Demo final</p><p class="font-bold text-lg">30% · US$ 1,605</p><p class="text-blue-200 text-xs mt-1">Con el demo final en línea y su información final.</p></div>
                         <div class="rounded-xl p-4 border border-white/15" style="background:rgba(255,255,255,.06)"><p class="text-blue-300 text-xs uppercase tracking-wider mb-1">3 · Entrega</p><p class="font-bold text-lg">20% · US$ 1,070</p><p class="text-blue-200 text-xs mt-1">Al entregar la web en su dominio final.</p></div>
                     </div>
-                    <p class="text-[11px] text-blue-300/70 mt-3">Precios en USD, sin ITBMS (7%); se aplicará según corresponda. Los porcentajes se calculan sobre el subtotal inicial (US$ 5,350). Las funciones con costo adicional no están en este resumen.</p>
+                    <p class="text-[11px] text-blue-300/70 mt-3">Precios en USD, sin ITBMS (7%); se aplicará según corresponda. Los porcentajes se calculan sobre el subtotal inicial (US$ 5,350). Si suman Google y Meta Ads: US$ 1,650 de pago único y US$ 900 al mes, más la inversión en anuncios. Las demás funciones con costo adicional no están en este resumen.</p>
                 </div>
             </div>
 
@@ -575,6 +717,8 @@
                 <div class="terms grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-700">
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Pago:</strong> 50% para iniciar (US$ 2,675), 30% con el demo final en línea y su información final (US$ 1,605) y 20% al entregar en su dominio final (US$ 1,070). Tarjeta, transferencia bancaria o Yappy.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Cotización a nombre de:</strong> Praderas de Arraiján.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Mantenimiento:</strong> obligatorio, US$ 99 al mes con un mínimo de 12 meses desde la publicación. Mantiene al día el panel, la conexión con Zoho CRM y la seguridad del sitio.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Google y Meta Ads:</strong> opcionales; la gestión tiene un mínimo de 3 meses y la inversión en anuncios se paga directo a cada plataforma desde sus cuentas.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Propiedad:</strong> el dominio, la web, los textos y el contenido son de Praderas de Arraiján al completar el pago.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Datos:</strong> los datos de los prospectos se tratan conforme a la Ley 81 de 2019 y viven en su Zoho CRM.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Cambios de alcance:</strong> secciones o funciones fuera de esta cotización se cotizan aparte antes de hacerlas.</span></p>

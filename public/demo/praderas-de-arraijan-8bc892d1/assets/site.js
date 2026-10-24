@@ -250,6 +250,46 @@
     });
   }
 
+  /* ---------- landing de Google Ads: precalificación en 3 pasos y origen de campaña ---------- */
+  var lp = $('[data-landing]');
+  if (lp) {
+    var fl = $('form', lp), pasosLp = $$('.lp-paso', lp), barrasLp = $$('.lp-barra i', lp), iLp = 0, sel = {};
+    var q = new URLSearchParams(location.search);
+    var origen = q.get('utm_source') ? [q.get('utm_source'), q.get('utm_medium'), q.get('utm_campaign')].filter(Boolean).join(' / ') : 'Visita directa';
+    function irLp(n) {
+      iLp = n;
+      pasosLp.forEach(function (p, k) { p.classList.toggle('activo', k === n); });
+      barrasLp.forEach(function (b, k) { b.classList.toggle('hecho', k <= n); });
+    }
+    lp.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-campo]');
+      if (b) {
+        var c = b.getAttribute('data-campo');
+        $$('[data-campo="' + c + '"]', lp).forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', 'true'); sel[c] = b.getAttribute('data-valor');
+        if (c === 'modelo') irLp(1);
+        return;
+      }
+      if (e.target.closest('[data-sig]')) irLp(Math.min(iLp + 1, pasosLp.length - 1));
+      if (e.target.closest('[data-ant]')) irLp(Math.max(iLp - 1, 0));
+    });
+    fl.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var err = $('[data-error]', fl);
+      if (!fl.nombre.value.trim() || !fl.telefono.value.trim()) { err.textContent = 'Escribe tu nombre y tu WhatsApp para que un asesor te contacte.'; err.hidden = false; (fl.nombre.value.trim() ? fl.telefono : fl.nombre).focus(); return; }
+      if (!fl.privacidad.checked) { err.textContent = 'Acepta la política de privacidad para enviar tus datos.'; err.hidden = false; return; }
+      var ok = $('[data-ok]', lp), filas = [
+        ['Nombre', fl.nombre.value.trim()], ['WhatsApp', fl.telefono.value.trim()], ['Modelo', sel.modelo || 'Sin elegir'],
+        ['Ingreso familiar', fl.ingreso.value], ['Piensa comprar', sel.plazo || 'Sin respuesta'],
+        ['Origen', origen], ['Búsqueda', q.get('utm_term') || '—'], ['Clic de Google (gclid)', q.get('gclid') ? 'registrado' : '—'],
+        ['Vendedor', 'Asignación automática']
+      ];
+      $('[data-zoho]', ok).innerHTML = filas.map(function (f) { return '<dt>' + f[0] + '</dt><dd>' + f[1].replace(/</g, '&lt;') + '</dd>'; }).join('');
+      $('[data-ok-nombre]', ok).textContent = fl.nombre.value.trim().split(' ')[0];
+      fl.hidden = true; ok.hidden = false; $('h2', ok).focus();
+    });
+  }
+
   /* ---------- formulario de contacto ---------- */
   $$('[data-contacto]').forEach(function (f) {
     var q = new URLSearchParams(location.search).get('motivo');

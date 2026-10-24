@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Agenda tu visita · Praderas de Arraiján</title>
+<meta name="description" content="Vista previa: agenda de visitas a la casa modelo con calendario y horarios.">
+<link rel="icon" href="../img/logo-praderas.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-base="../" data-pagina="agenda">
+<div id="cabecera"></div>
+<main>
+  <section class="cab-int"><div class="cont"><p class="migas"><a href=".././">Inicio</a> › Agenda tu visita</p><p class="ceja">Praderas de Arraiján</p><h1 style="margin-top:12px">Agenda <em>tu visita</em></h1><p class="lead">Vive la experiencia de recorrer nuestras casas modelo. Elige el día y el horario que mejor se adapten a ti.</p></div></section>
+  <section class="sec" style="padding-top:40px"><div class="cont agenda" data-agenda>
+    <div class="paso-ag"><h3><i>1</i>Selecciona la fecha</h3>
+      <div class="cal-cab"><button type="button" data-mes-ant aria-label="Mes anterior">‹</button><span data-mes></span><button type="button" data-mes-sig aria-label="Mes siguiente">›</button></div>
+      <div class="cal" data-cal></div>
+    </div>
+    <div class="paso-ag"><h3><i>2</i>Selecciona un horario</h3>
+      <p class="sel-fecha" data-fecha-txt></p>
+      <div class="horas" data-horas></div>
+      <div class="horario"><b>Horario de la casa modelo</b>Lunes a viernes, 9:00 a. m. a 5:00 p. m. · Sábados, 9:00 a. m. a 1:00 p. m. <span class="marca-ej">ejemplo</span></div>
+      <div class="horario"><b>Ubicación del proyecto</b>Praderas de Arraiján, Ciudad Futuro, Nuevo Arraiján. <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Praderas+de+Arraij%C3%A1n%2C+Arraij%C3%A1n%2C+Panam%C3%A1" target="_blank" rel="noopener">Cómo llegar</a></div>
+    </div>
+    <div class="paso-ag"><h3><i>3</i>Tus datos de contacto</h3>
+      <form novalidate style="display:grid;gap:12px">
+        <div class="dos"><div class="campo"><label for="a-nombre">Nombre*</label><input id="a-nombre" name="nombre" type="text" autocomplete="given-name"></div><div class="campo"><label for="a-apellido">Apellido</label><input id="a-apellido" name="apellido" type="text" autocomplete="family-name"></div></div>
+        <div class="campo"><label for="a-correo">Correo electrónico</label><input id="a-correo" name="correo" type="email" autocomplete="email"></div>
+        <div class="campo"><label for="a-tel">Teléfono*</label><input id="a-tel" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="6000-0000"></div>
+        <div class="campo"><label for="a-modelo">Modelo de interés</label><select id="a-modelo" name="modelo"><option value="">Aún no sé</option><option value="roble">Roble</option><option value="cedro">Cedro</option><option value="almendro">Almendro</option></select></div>
+        <div class="campo"><label for="a-ingreso">Ingreso mensual</label><select id="a-ingreso" name="ingreso"><option>Menos de $1,500</option><option selected>$1,500 a $2,500</option><option>$2,500 a $3,500</option><option>Más de $3,500</option></select></div>
+        <p class="error" data-error hidden></p>
+        <button class="btn btn--cafe" type="submit">Agendar mi visita</button>
+        <p class="aviso">Al enviar aceptas la <a href="../privacidad/">política de privacidad</a>.</p>
+      </form>
+      <div data-ok hidden style="display:grid;gap:12px">
+        <h3 tabindex="-1" style="font-family:var(--display);font-size:1.6rem">¡Visita agendada!</h3>
+        <p data-ok-txt></p>
+        <a class="btn btn--linea" data-ok-ics href="#" download="visita-praderas.ics">Añadir a mi calendario</a>
+        <a class="btn btn--wa" data-ok-wa href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+        <p class="aviso">Vista previa: en la web publicada, la cita entra al calendario del equipo de ventas y se registra en Zoho CRM.</p>
+      </div>
+    </div>
+  </div></section>
+</main>
+<div id="pie"></div>
+<div class="visor" role="dialog" aria-modal="true" aria-label="Imagen ampliada"><button type="button" aria-label="Cerrar">×</button></div>
+<script src="../assets/data.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

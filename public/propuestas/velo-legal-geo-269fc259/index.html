@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuesta GEO · Veló Legal — elementoweb.com</title>
+    <title>Propuesta GEO · Veló Legal — Evolution PMC × Elemento Web</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root { --brand: #3b82f6; --brand-deep: #1e3a8a; --violet: #7c3aed; --ink: #0f172a; }
+        :root { --brand: #3b82f6; --brand-deep: #1e3a8a; --violet: #7c3aed; --ink: #0f172a; --evo: #fd710f; --evo-deep: #c2570a; }
         * { -webkit-font-smoothing: antialiased; }
         body {
             font-family: 'Inter', sans-serif;
             color: #1e293b;
             background: #eef2fb;
             background-image:
-                radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,0.10), transparent 60%),
+                radial-gradient(60rem 60rem at 110% -10%, rgba(253,113,15,0.09), transparent 60%),
                 radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,0.12), transparent 55%),
                 radial-gradient(45rem 45rem at 50% 120%, rgba(37,99,235,0.08), transparent 60%);
             background-attachment: fixed;
         }
         h1, h2, h3, h4, .display { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; letter-spacing: -0.02em; }
         .gradient-text {
-            background: linear-gradient(100deg, #60a5fa, #3b82f6 45%, #7c3aed);
+            background: linear-gradient(100deg, #3b82f6, #7c3aed 50%, #fd710f);
             -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
         }
         .glass {
@@ -36,7 +36,7 @@
         .service-card { position: relative; transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; overflow: hidden; }
         .service-card::before {
             content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
-            background: linear-gradient(135deg, rgba(96,165,250,.6), rgba(124,58,237,.5));
+            background: linear-gradient(135deg, rgba(96,165,250,.6), rgba(124,58,237,.5) 55%, rgba(253,113,15,.6));
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor; mask-composite: exclude;
             opacity: 0; transition: opacity .35s ease; pointer-events: none;
@@ -46,7 +46,7 @@
         .service-card.is-rec::before { opacity: 1; padding: 2px; }
         .item-card { position: relative; transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; overflow: hidden; }
         .item-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -28px rgba(30,58,138,0.35); }
-        .num-badge { background: linear-gradient(135deg, #60a5fa, #3b82f6 55%, #7c3aed); box-shadow: 0 10px 22px -8px rgba(59,130,246,0.7); }
+        .num-badge { background: linear-gradient(135deg, #3b82f6, #7c3aed 55%, #fd710f); box-shadow: 0 10px 22px -8px rgba(124,58,237,0.6); }
         .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
         .reveal.in { opacity: 1; transform: none; }
         @keyframes float1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(20px,-16px) scale(1.08);} }
@@ -55,7 +55,7 @@
         .orb2 { animation: float2 14s ease-in-out infinite; }
         @keyframes shine { to { background-position: 200% center; } }
         .shine {
-            background: linear-gradient(90deg,#93c5fd,#e0e7ff,#93c5fd,#c4b5fd);
+            background: linear-gradient(90deg,#93c5fd,#e0e7ff,#fdba74,#c4b5fd,#93c5fd);
             background-size: 200% auto;
             -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
             animation: shine 5s linear infinite;
@@ -66,7 +66,7 @@
         @keyframes waPulse { 0%{ box-shadow:0 0 0 0 rgba(34,197,94,.5);} 70%{ box-shadow:0 0 0 16px rgba(34,197,94,0);} 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);} }
         .wa-pulse { animation: waPulse 2.4s infinite; }
         .btn-primary {
-            background: linear-gradient(135deg,#3b82f6,#7c3aed);
+            background: linear-gradient(135deg,#3b82f6,#7c3aed 55%,#fd710f);
             transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
             box-shadow: 0 14px 28px -10px rgba(59,130,246,0.7);
         }
@@ -82,7 +82,7 @@
         .figure svg { display: block; width: 100%; height: auto; min-width: 620px; }
         /* ---------- hero ---------- */
         .hero-eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#bfdbfe; }
-        .hero-eyebrow::before { content:""; width:22px; height:1px; background:#93c5fd; }
+        .hero-eyebrow::before { content:""; width:22px; height:2px; background:linear-gradient(90deg,#93c5fd,#fd710f); }
         .doc-meta > div { background:rgba(11,18,32,.45); padding:12px 14px; }
         .doc-meta dt { font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#93c5fd; margin-bottom:3px; }
         .doc-meta dd { font-size:13px; font-weight:600; color:#fff; line-height:1.3; }
@@ -96,7 +96,7 @@
         .ai-top i { width:8px; height:8px; border-radius:50%; background:#cbd5e1; display:block; }
         .ai-q { margin:14px 14px 12px 3.2rem; background:#eef2ff; color:#1e293b; border-radius:14px 14px 4px 14px; padding:10px 12px; line-height:1.45; }
         .ai-a { padding:0 14px 12px; line-height:1.6; color:#334155; }
-        .ai-a mark { background:linear-gradient(135deg,#dbeafe,#ede9fe); color:#1e3a8a; font-weight:700; padding:1px 6px; border-radius:6px; }
+        .ai-a mark { background:linear-gradient(135deg,#dbeafe,#ffedd5); color:#1e3a8a; font-weight:700; padding:1px 6px; border-radius:6px; }
         .ai-src { display:flex; flex-wrap:wrap; gap:6px; padding:0 14px 14px; }
         .ai-src span { font-size:11px; font-weight:500; background:#f1f5f9; color:#475569; border-radius:999px; padding:4px 9px; }
         /* bloques propios */
@@ -119,6 +119,8 @@
         .lista li { display:flex; gap:10px; font-size:13.5px; line-height:1.5; color:#475569; }
         .lista li::before { content:"▸"; color:#3b82f6; flex:none; margin-top:1px; }
         .lista li b { color:#0f172a; font-weight:600; }
+        .lista.evo li::before { color:#fd710f; }
+        .co-x { font-size:22px; font-weight:300; line-height:1; color:rgba(191,219,254,.55); }
         .lista.no li::before { content:"✕"; color:#dc2626; font-weight:700; }
         .lista.si li::before { content:"✓"; color:#16a34a; font-weight:700; }
         .flujo { background:rgba(255,255,255,.8); border:1px solid #eef2f7; border-radius:18px; padding:16px; text-align:center; }
@@ -130,7 +132,7 @@
         .flujo-src span { display:flex; align-items:center; gap:7px; background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:9px 10px; font-size:12.5px; font-weight:600; color:#0f172a; text-align:left; line-height:1.25; }
         .flujo-src i { width:9px; height:9px; border-radius:3px; flex:none; display:block; }
         .flujo-a { background:#0b1220; border-radius:14px; padding:14px; }
-        .flujo-a b { display:inline-block; color:#fff; font-size:14px; background:linear-gradient(135deg,#3b82f6,#7c3aed); border-radius:8px; padding:5px 14px; }
+        .flujo-a b { display:inline-block; color:#fff; font-size:14px; background:linear-gradient(135deg,#3b82f6,#7c3aed 55%,#fd710f); border-radius:8px; padding:5px 14px; }
         .flujo-a small { color:#93c5fd; margin-top:8px; }
         .linea-tiempo { list-style:none; margin:0; padding:0; display:grid; }
         .linea-tiempo li { display:grid; grid-template-columns:132px 1fr; gap:18px; padding:16px 0; border-top:1px solid #e2e8f0; font-size:14px; color:#475569; line-height:1.55; }
@@ -176,6 +178,11 @@
             .pilares div { padding: 12px 14px; font-size: 12.5px; }
             .stats, .pilares, .flujo { break-inside: avoid; }
             .keep { break-after: avoid; break-inside: avoid; }
+            .terms { font-size: 12px !important; row-gap: 8px !important; }
+            .terms p { line-height: 1.4; }
+            .terms-box { padding: 20px 24px !important; margin-bottom: 16px !important; }
+            .terms-box h3 { margin-bottom: 12px !important; }
+            .cta-box p.text-sm { margin-bottom: 6px !important; }
         }
     </style>
 </head>
@@ -186,29 +193,31 @@
         <!-- ============ HEADER ============ -->
         <header class="relative overflow-hidden text-white px-7 sm:px-10 pt-8 pb-10"
                 style="background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);">
-            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.55),transparent 70%);"></div>
+            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(253,113,15,.45),transparent 70%);"></div>
             <div class="orb2 absolute -bottom-24 -left-10 w-72 h-72 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(59,130,246,.5),transparent 70%);"></div>
             <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:32px 32px;"></div>
 
             <div class="relative z-10">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-8 border-b border-white/15">
-                    <div class="flex items-center gap-3">
-                        <div class="w-11 h-11 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);">
-                            <svg width="26" height="26" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/><circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/></svg>
-                        </div>
-                        <div class="leading-tight">
-                            <p class="display text-lg font-bold tracking-tight">elementoweb<span class="text-violet-300">.com</span></p>
-                            <p class="text-[11px] text-blue-200/80 tracking-wide">Desarrollo Web · IA · Automatización</p>
+                    <div class="flex items-center gap-2.5 sm:gap-5">
+                        <img src="evolution-pmc-blanco.png" alt="Evolution PMC · Project Management Consulting" width="640" height="171" class="h-7 sm:h-12 w-auto">
+                        <span class="co-x" aria-hidden="true">×</span>
+                        <div class="flex items-center gap-2.5 sm:gap-3">
+                            <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);"><svg width="24" height="24" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/><circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/></svg></div>
+                            <div class="leading-tight">
+                                <p class="display text-[15px] sm:text-lg font-bold tracking-tight">elementoweb<span class="text-violet-300">.com</span></p>
+                                <p class="hidden sm:block text-[11px] text-blue-200/80 tracking-wide">Desarrollo Web · IA · Automatización</p>
+                            </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm sm:justify-end">
-                        <a href="mailto:info@elementoweb.com" class="text-blue-100 hover:text-white transition">info@elementoweb.com</a>
-                        <a href="https://wa.me/50761903007" target="_blank" rel="noopener" class="text-blue-100 hover:text-white transition">WhatsApp 6190-3007</a>
+                        <span class="text-blue-200/80">Contacto: <b class="text-white font-semibold">Nicole Castaño</b></span>
+                        <a href="https://wa.me/50762916485" target="_blank" rel="noopener" class="text-blue-100 hover:text-white transition">WhatsApp 6291-6485</a>
                     </div>
                 </div>
 
                 <div class="pt-9">
-                    <p class="hero-eyebrow mb-4">Propuesta · Posicionamiento en ChatGPT y la IA (GEO)</p>
+                    <p class="hero-eyebrow mb-4">Propuesta conjunta · Posicionamiento en ChatGPT y la IA (GEO)</p>
                     <p class="text-sm text-blue-100/90 mb-3">Para <b class="text-white tracking-wide">VELÓ LEGAL</b> · Adriana Grimaldo, Legal Ops y Marketing</p>
                     <h1 class="display text-[2.3rem] sm:text-[3.15rem] font-extrabold leading-[1.03] tracking-tight max-w-[760px]">Que la IA <span class="shine">nombre a Veló Legal</span></h1>
                 </div>
@@ -220,6 +229,8 @@
                             <div><dt>Referencia</dt><dd>EW-VEL-2026-01</dd></div>
                             <div><dt>Fecha</dt><dd>28 oct 2026</dd></div>
                             <div><dt>Válida hasta</dt><dd>27 nov 2026</dd></div>
+                            <div><dt>Preparada por</dt><dd>Evolution PMC y Elemento Web</dd></div>
+                            <div><dt>Su contacto</dt><dd>Nicole Castaño</dd></div>
                         </dl>
                     </div>
                     <div>
@@ -234,7 +245,7 @@
                 </div>
                 <nav class="toc mt-10 pt-6 border-t border-white/15 no-print" aria-label="Contenido de la propuesta">
                     <p class="text-[11px] font-semibold uppercase tracking-[.14em] text-blue-200/80 mb-3">En esta propuesta</p>
-                    <ul class="flex flex-wrap gap-2"><li><a href="#reunion"><i style="background:#94a3b8"></i>Lo que hablamos</a></li><li><a href="#como-funciona"><i style="background:#0891b2"></i>Cómo elige la IA</a></li><li><a href="#sin-atajos"><i style="background:#16a34a"></i>Sin atajos</a></li><li><a href="#propuesta"><i style="background:#7c3aed"></i>Auditoría y planes</a></li><li><a href="#cronograma"><i style="background:#2563eb"></i>Cronograma 2027</a></li><li><a href="#medicion"><i style="background:#db2777"></i>Cómo medimos</a></li><li><a href="#inversion"><i style="background:#f59e0b"></i>Inversión</a></li></ul>
+                    <ul class="flex flex-wrap gap-2"><li><a href="#reunion"><i style="background:#94a3b8"></i>Lo que hablamos</a></li><li><a href="#equipo"><i style="background:#fd710f"></i>El equipo</a></li><li><a href="#como-funciona"><i style="background:#0891b2"></i>Cómo elige la IA</a></li><li><a href="#sin-atajos"><i style="background:#16a34a"></i>Sin atajos</a></li><li><a href="#propuesta"><i style="background:#7c3aed"></i>Auditoría y planes</a></li><li><a href="#cronograma"><i style="background:#2563eb"></i>Cronograma 2027</a></li><li><a href="#medicion"><i style="background:#db2777"></i>Cómo medimos</a></li><li><a href="#inversion"><i style="background:#f59e0b"></i>Inversión</a></li></ul>
                 </nav>
             </div>
         </header>
@@ -261,10 +272,10 @@
             </section>
 
             <!-- ============ VENTAJA ============ -->
-            <div class="reveal avoid mb-14 rounded-[24px] p-7 sm:p-9 relative overflow-hidden border-2" style="background:linear-gradient(135deg,#fffbeb,#fff7ed);border-color:#fcd34d;">
-                <div class="absolute top-0 right-0 text-white text-[11px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-2xl" style="background:linear-gradient(135deg,#d97706,#b45309);">La ventaja que ya tienen</div>
+            <div class="reveal avoid mb-14 rounded-[24px] p-7 sm:p-9 relative overflow-hidden border-2" style="background:linear-gradient(135deg,#fff7ed,#fbf9f5);border-color:#fdba74;">
+                <div class="absolute top-0 right-0 text-white text-[11px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-2xl" style="background:linear-gradient(135deg,#fd710f,#c2570a);">La ventaja que ya tienen</div>
                 <div class="flex flex-col md:flex-row gap-6 items-start">
-                    <div class="w-14 h-14 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#fbbf24,#d97706);box-shadow:0 10px 22px -8px rgba(217,119,6,.6);">
+                    <div class="w-14 h-14 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#fd710f,#c2570a);box-shadow:0 10px 22px -8px rgba(253,113,15,.6);">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     </div>
                     <div>
@@ -274,6 +285,40 @@
                     </div>
                 </div>
             </div>
+
+            <!-- ============ EQUIPO ============ -->
+            <section id="equipo" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">El equipo</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Dos empresas aliadas, un solo equipo</h2><div class="flex-1 h-px bg-gradient-to-r from-orange-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal keep text-sm text-slate-600 mb-6 max-w-2xl">Evolution PMC y Elemento Web trabajamos juntos en este proyecto. Cada una pone lo que mejor hace, y ustedes tienen un solo contacto, un solo informe y una sola factura.</p>
+                <div class="reveal grid md:grid-cols-2 gap-4">
+                    <div class="item-card avoid rounded-2xl p-6 border bg-white/80" style="border-color:#fed7aa;">
+                        <img src="evolution-pmc-color.png" alt="Evolution PMC · Project Management Consulting" width="640" height="171" class="h-11 w-auto mb-5">
+                        <p class="text-[11px] font-bold uppercase tracking-wider mb-3" style="color:#c2570a">Marketing y marca · Nicole Castaño</p>
+                        <ul class="lista evo">
+                            <li><span><b>Su contacto único</b>: coordina el proyecto y las aprobaciones con usted.</span></li>
+                            <li><span><b>Estrategia de marca</b> y mensajes para cada público.</span></li>
+                            <li><span><b>Contenido</b>: páginas de respuesta, artículos de los socios en LinkedIn y propuestas a prensa legal.</span></li>
+                            <li><span><b>Directorios y rankings</b>: postulaciones y perfiles al día.</span></li>
+                        </ul>
+                    </div>
+                    <div class="item-card avoid rounded-2xl p-6 border border-blue-100 bg-white/80">
+                        <div class="flex items-center gap-3 mb-5 h-11">
+                            <div class="w-9 h-9 rounded-xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);"><svg width="22" height="22" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/><circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/></svg></div>
+                            <p class="display text-lg font-bold tracking-tight text-slate-900">elementoweb<span class="text-violet-600">.com</span></p>
+                        </div>
+                        <p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-3">Tecnología e IA</p>
+                        <ul class="lista">
+                            <li><span><b>Auditoría y medición</b> mensual en los seis asistentes de IA, con capturas.</span></li>
+                            <li><span><b>La parte técnica de su web</b>: marcado de datos, rastreadores de IA, Search Console y Bing.</span></li>
+                            <li><span><b>Publicación y bitácora</b> de cada cambio, auditable.</span></li>
+                            <li><span><b>Informe mensual</b> en lenguaje claro, sin jerga técnica.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
             <!-- ============ CÓMO ELIGE LA IA ============ -->
             <section id="como-funciona" class="mb-14">
@@ -288,7 +333,7 @@
                         <desc id="dgD">Una persona hace una pregunta; la IA busca y cruza cuatro tipos de fuentes (la web de la firma, directorios y rankings, prensa legal y perfiles); y responde nombrando a las firmas que aparecen claras y confirmadas.</desc>
                         <defs>
                             <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#93c5fd"/></marker>
-                            <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+                            <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset=".55" stop-color="#7c3aed"/><stop offset="1" stop-color="#fd710f"/></linearGradient>
                         </defs>
                         <g font-size="11" font-weight="700" fill="#64748b" letter-spacing=".06em">
                             <text x="95" y="20" text-anchor="middle">1 · ALGUIEN PREGUNTA</text>
@@ -383,7 +428,7 @@
                             <li><span>Todo se publica bajo el nombre de Veló Legal y con su aprobación previa.</span></li>
                             <li><span>Contenido informativo, sin promesas de resultados, revisado por un socio, conforme a las normas de ética que rigen la publicidad de los abogados.</span></li>
                             <li><span>Una bitácora de cada cambio: qué se tocó, dónde y cuándo. Auditable en cualquier momento.</span></li>
-                            <li><span>Accesos con usuarios propios de Elemento Web, que ustedes retiran cuando quieran.</span></li>
+                            <li><span>Accesos con usuarios propios del equipo, que ustedes retiran cuando quieran.</span></li>
                             <li><span>Sin chatbot: lo apagaron por impersonal y estamos de acuerdo. Aquí la IA trabaja afuera, no habla en su nombre.</span></li>
                         </ul>
                     </div>
@@ -559,7 +604,7 @@
 
             <!-- ============ RESUMEN ============ -->
             <div id="inversion" class="reveal avoid sumblock rounded-[24px] p-7 sm:p-9 text-white shadow-2xl mb-14 relative overflow-hidden" style="background:linear-gradient(150deg,#0b1220,#15254d 55%,#1e3a8a);">
-                <div class="orb2 absolute -bottom-20 -right-16 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.4),transparent 70%);"></div>
+                <div class="orb2 absolute -bottom-20 -right-16 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(253,113,15,.35),transparent 70%);"></div>
                 <div class="relative z-10">
                     <h2 class="display text-2xl font-bold mb-6">Resumen de Inversión</h2>
                     <div class="grid md:grid-cols-2 gap-8">
@@ -588,14 +633,14 @@
                             <p class="display text-4xl font-extrabold shine">US$ 490</p>
                             <p class="text-blue-200 text-xs mt-1 max-w-md">Con el informe en la mano deciden el plan y lo llevan a su presupuesto 2027 con datos, no con promesas.</p>
                         </div>
-                        <a href="https://wa.me/50761903007?text=Hola%2C%20vimos%20la%20propuesta%20EW-VEL-2026-01%20de%20posicionamiento%20en%20IA%20para%20Vel%C3%B3%20Legal%20y%20queremos%20arrancar%20con%20la%20auditor%C3%ADa." target="_blank" rel="noopener" class="btn-primary text-white font-semibold rounded-xl px-6 py-3.5 text-sm text-center whitespace-nowrap no-print">Aprobar la auditoría →</a>
+                        <a href="https://wa.me/50762916485?text=Hola%20Nicole%2C%20vimos%20la%20propuesta%20EW-VEL-2026-01%20de%20posicionamiento%20en%20IA%20para%20Vel%C3%B3%20Legal%20y%20queremos%20arrancar%20con%20la%20auditor%C3%ADa." target="_blank" rel="noopener" class="btn-primary text-white font-semibold rounded-xl px-6 py-3.5 text-sm text-center whitespace-nowrap no-print">Aprobar la auditoría →</a>
                     </div>
                     <p class="text-[11px] text-blue-300/70 mt-3">Precios en USD, sin ITBMS (7%); se aplicará según corresponda. No incluye inversión en anuncios, porque este servicio no usa pauta pagada.</p>
                 </div>
             </div>
 
             <!-- ============ CONDICIONES ============ -->
-            <div class="reveal glass rounded-2xl p-7 sm:p-8 avoid mb-8">
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 avoid terms-box mb-8">
                 <h3 class="display text-lg font-bold text-slate-900 mb-5">Condiciones Comerciales</h3>
                 <div class="terms grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-700">
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Auditoría:</strong> se paga al aprobarla y se entrega en 10 días hábiles desde que recibimos los accesos.</span></p>
@@ -604,9 +649,10 @@
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Cambio de plan:</strong> pueden pasar de Esencial a Autoridad, o al revés, avisando 15 días antes del mes siguiente.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Sin garantía de aparición:</strong> nos comprometemos con el método, la transparencia y la medición; ninguna agencia controla lo que responde una IA.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Confidencialidad:</strong> firmamos acuerdo de confidencialidad si lo requieren. No publicamos nada sin su aprobación.</span></p>
-                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Propiedad:</strong> el contenido, los perfiles y las cuentas son de Veló Legal. Los accesos de Elemento Web se retiran cuando ustedes quieran.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Propiedad:</strong> el contenido, los perfiles y las cuentas son de Veló Legal. Los accesos del equipo se retiran cuando ustedes quieran.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Formas de pago:</strong> transferencia bancaria, tarjeta o Yappy. Precios en USD, sin ITBMS.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Validez:</strong> 30 días desde su emisión.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Un solo contacto:</strong> Nicole Castaño (Evolution PMC) coordina el proyecto. Reciben un solo informe al mes y una sola factura por cada pago.</span></p>
                 </div>
             </div>
 
@@ -615,31 +661,35 @@
                 <h3 class="display text-2xl font-bold text-slate-900 mb-2">¿Empezamos por la auditoría?</h3>
                 <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">En diez días hábiles sabrán qué dice hoy la IA de Veló Legal, quién aparece en su lugar y qué haría falta para cambiarlo. Con eso deciden el plan para 2027.</p>
                 <div class="flex flex-col sm:flex-row flex-wrap gap-3 justify-center no-print">
-                    <a href="https://wa.me/50761903007?text=Hola%2C%20vimos%20la%20propuesta%20EW-VEL-2026-01%20de%20posicionamiento%20en%20IA%20para%20Vel%C3%B3%20Legal%20y%20queremos%20arrancar%20con%20la%20auditor%C3%ADa." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">Aprobar por WhatsApp</a>
-                    <a href="mailto:info@elementoweb.com?subject=Propuesta%20EW-VEL-2026-01%3A%20posicionamiento%20en%20IA%20para%20Vel%C3%B3%20Legal&amp;body=Hola%2C%20queremos%20avanzar%20con%20la%20auditor%C3%ADa%20GEO%20de%20la%20propuesta%20EW-VEL-2026-01." class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">Responder por correo</a>
+                    <a href="https://wa.me/50762916485?text=Hola%20Nicole%2C%20vimos%20la%20propuesta%20EW-VEL-2026-01%20de%20posicionamiento%20en%20IA%20para%20Vel%C3%B3%20Legal%20y%20queremos%20arrancar%20con%20la%20auditor%C3%ADa." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">Aprobar por WhatsApp</a>
+                    <a href="mailto:info@evolutionpmc.com?cc=info@elementoweb.com&amp;subject=Propuesta%20EW-VEL-2026-01%3A%20posicionamiento%20en%20IA%20para%20Vel%C3%B3%20Legal&amp;body=Hola%2C%20queremos%20avanzar%20con%20la%20auditor%C3%ADa%20GEO%20de%20la%20propuesta%20EW-VEL-2026-01." class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">Responder por correo</a>
                     <a href="propuesta-velo-legal-geo.pdf" download class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">Descargar PDF</a>
                 </div>
-                <p class="hidden print:block text-sm text-slate-600 mt-2">WhatsApp +507 6190-3007 · info@elementoweb.com</p>
+                <p class="hidden print:block text-sm text-slate-600 mt-2">Nicole Castaño · WhatsApp +507 6291-6485 · info@evolutionpmc.com · info@elementoweb.com</p>
             </div>
-            <div class="reveal avoid sources text-[11px] text-slate-500 leading-relaxed border-t border-slate-200 pt-5 mt-10"><strong class="text-slate-600">Fuentes y supuestos.</strong> Reunión con Adriana Grimaldo (Legal Ops y Marketing) e información pública sobre la firma: LexLatin, "Nace Veló Legal, la primera firma NewLaw en Panamá" (2019) y "Veló Legal y Hoyos &amp; Asociados unen fuerzas en Panamá" (2020); The Latin American Lawyer (2020); y el perfil de la firma en LexLatin, que menciona a Chambers and Partners en FinTech. Las áreas de práctica y los reconocimientos se confirman con ustedes; la revisión a fondo de velo-legal.com es parte de la auditoría. Los nombres de asistentes, directorios y medios son marcas de sus dueños. Precios de Elemento Web en dólares, sin ITBMS.</div>
+            <div class="reveal avoid sources text-[11px] text-slate-500 leading-relaxed border-t border-slate-200 pt-5 mt-10"><strong class="text-slate-600">Fuentes y supuestos.</strong> Reunión de Nicole Castaño (Evolution PMC) con Adriana Grimaldo (Legal Ops y Marketing) e información pública sobre la firma: LexLatin, "Nace Veló Legal, la primera firma NewLaw en Panamá" (2019) y "Veló Legal y Hoyos &amp; Asociados unen fuerzas en Panamá" (2020); The Latin American Lawyer (2020); y el perfil de la firma en LexLatin, que menciona a Chambers and Partners en FinTech. Las áreas de práctica y los reconocimientos se confirman con ustedes; la revisión a fondo de velo-legal.com es parte de la auditoría. Los nombres de asistentes, directorios y medios son marcas de sus dueños. Precios en dólares, sin ITBMS.</div>
         </div>
 
         <!-- ============ FOOTER ============ -->
         <footer class="fullbleed-footer px-7 sm:px-10 py-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#122043);">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-5 relative z-10">
                 <div>
-                    <p class="display font-bold">elementoweb<span class="text-violet-300">.com</span></p>
-                    <p class="text-[11px] text-blue-200/70">Documento confidencial · Propuesta para Veló Legal · EW-VEL-2026-01</p>
+                    <div class="flex items-center gap-3 flex-wrap">
+                        <img src="evolution-pmc-blanco.png" alt="Evolution PMC" width="640" height="171" class="h-9 w-auto">
+                        <span class="co-x" aria-hidden="true">×</span>
+                        <p class="display font-bold">elementoweb<span class="text-violet-300">.com</span></p>
+                    </div>
+                    <p class="text-[11px] text-blue-200/70 mt-2">Documento confidencial · Propuesta conjunta para Veló Legal · EW-VEL-2026-01</p>
                 </div>
-                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-blue-100">
-                    <a href="mailto:info@elementoweb.com" class="hover:text-white transition">info@elementoweb.com</a>
-                    <a href="https://wa.me/50761903007" target="_blank" rel="noopener" class="hover:text-white transition">+507 6190-3007</a>
+                <div class="grid gap-1 text-sm text-blue-100">
+                    <p><span class="text-orange-300 font-semibold">Evolution PMC</span> · <a href="mailto:info@evolutionpmc.com" class="hover:text-white transition">info@evolutionpmc.com</a> · <a href="https://wa.me/50762916485" target="_blank" rel="noopener" class="hover:text-white transition whitespace-nowrap">+507 6291-6485</a></p>
+                    <p><span class="text-violet-300 font-semibold">Elemento Web</span> · <a href="mailto:info@elementoweb.com" class="hover:text-white transition">info@elementoweb.com</a> · <a href="https://wa.me/50761903007" target="_blank" rel="noopener" class="hover:text-white transition whitespace-nowrap">+507 6190-3007</a></p>
                 </div>
             </div>
         </footer>
     </main>
 
-    <a href="https://wa.me/50761903007?text=Hola%2C%20tengo%20una%20consulta%20sobre%20la%20propuesta%20EW-VEL-2026-01%20de%20posicionamiento%20en%20IA%20para%20Vel%C3%B3%20Legal." target="_blank" rel="noopener" class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse" aria-label="Escríbanos por WhatsApp">
+    <a href="https://wa.me/50762916485?text=Hola%20Nicole%2C%20tengo%20una%20consulta%20sobre%20la%20propuesta%20EW-VEL-2026-01%20de%20posicionamiento%20en%20IA%20para%20Vel%C3%B3%20Legal." target="_blank" rel="noopener" class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse" aria-label="Escribir a Nicole Castaño por WhatsApp">
         <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
     </a>
 

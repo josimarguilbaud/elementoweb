@@ -140,6 +140,7 @@ export const cols: { title: string; hub: string; links: NavLink[] }[] = [
       { slug: 'funcionalidades/chatbots-ia-web-wazacrm-panama', label: 'Chatbot con IA para tu Web' },
       { slug: 'funcionalidades/agente-de-ventas-ia-whatsapp-panama', label: 'Agente de Ventas con IA en WhatsApp' },
       { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Reservas y Citas Online' },
+      { slug: 'funcionalidades/integracion-cybersource-panama', label: 'Pagos con Tarjeta (CyberSource)' },
     ],
   },
   {
@@ -221,7 +222,7 @@ export const navExtra: NavLink[] = [
    slug aparece en dos grupos o si se pierde uno de las listas de arriba. WhatsApp Marketing es de Marketing; los
    chatbots, n8n y la IA empresarial son de Inteligencia artificial (salen de Funcionalidades). El díptico y el bento de
    la portada no son grupos y pueden enlazar a cualquier dueño. */
-export type IconoGrupo = 'anuncio' | 'chispa' | 'agente' | 'caja' | 'ventana' | 'codigo' | 'enchufe' | 'libro' | 'brujula';
+export type IconoGrupo = 'anuncio' | 'chispa' | 'agente' | 'caja' | 'ventana' | 'codigo' | 'enchufe' | 'libro' | 'brujula' | 'lupa';
 export type Grupo = {
   id: 'marketing' | 'ia' | 'web' | 'recursos';
   titulo: string;
@@ -236,6 +237,11 @@ const CHATBOTS = 'funcionalidades/chatbots-ia-web-wazacrm-panama';
 const N8N = 'marketing/automatizaciones-n8n-panama';
 const AGENTE = 'funcionalidades/agente-de-ventas-ia-whatsapp-panama';
 const columna = (titulo: string) => cols.find((c) => c.title === titulo)!.links;
+/* Crecimiento se reparte (28-oct-2026): SEO, GEO y SEO local van a Marketing como «Posicionamiento» (traen los leads
+   y estaban escondidos en Recursos); mantenimiento y hosting van a Diseño web, junto a la plataforma. */
+const POSICIONAMIENTO = ['crecimiento/seo-posicionamiento-web-panama', 'crecimiento/posicionamiento-en-chatgpt-e-ia-panama', 'crecimiento/seo-local-google-maps-panama'];
+const posicionamiento = columna('Crecimiento').filter((l) => POSICIONAMIENTO.includes(l.slug));
+const soporte = sinDueno(columna('Crecimiento'), POSICIONAMIENTO);
 
 export const grupos: Grupo[] = [
   {
@@ -244,6 +250,7 @@ export const grupos: Grupo[] = [
     columnas: [
       { titulo: 'Publicidad y redes', linea: 'Campañas que traen clientes y se miden.', icono: 'anuncio', links: sinDueno(marketing, [N8N]) },
       { titulo: 'Producción con IA', linea: 'Videos y piezas hechas con IA.', icono: 'chispa', links: iaCreativa },
+      { titulo: 'Posicionamiento', linea: 'Que te encuentren en Google y en la IA.', icono: 'lupa', links: posicionamiento },
     ],
     destacada: { slug: 'marketing/videos-publicitarios-panama', titulo: 'Videos publicitarios', linea: 'Anuncios en video hechos con IA.' },
   },
@@ -269,9 +276,9 @@ export const grupos: Grupo[] = [
     titulo: 'Diseño web',
     columnas: [
       { titulo: 'Diseño web', linea: 'Sitios que trabajan como un vendedor.', icono: 'ventana', links: [...columna('Diseño Web'), { slug: 'industrias', label: 'Por industria' }] },
-      { titulo: 'Funcionalidades', linea: 'Pagos y reservas dentro de tu web.', icono: 'enchufe', links: sinDueno(columna('Funcionalidades'), [IA_EMPRESAS, CHATBOTS, AGENTE]) },
+      { titulo: 'Funcionalidades', linea: 'Pagos, tarjetas y reservas en tu web.', icono: 'enchufe', links: sinDueno(columna('Funcionalidades'), [IA_EMPRESAS, CHATBOTS, AGENTE]) },
       /* D61: Tecnologías pasa al final; es parte de la web, no un servicio que se elija por separado. */
-      { titulo: 'Tecnologías', linea: 'La plataforma que tu negocio necesita.', icono: 'codigo', links: columna('Tecnologías') },
+      { titulo: 'Tecnologías', linea: 'La plataforma, el hosting y quien la cuida.', icono: 'codigo', links: [...columna('Tecnologías'), ...soporte] },
     ],
     destacada: { slug: 'diseno-web-panama', titulo: 'Diseño web en Panamá', linea: 'Sitios rápidos, medibles y a tu nombre.' },
   },
@@ -290,13 +297,12 @@ export const grupos: Grupo[] = [
         ],
       },
       {
-        titulo: 'Explorar', linea: 'Proyectos, precios y crecimiento.', icono: 'brujula',
+        titulo: 'Explorar', linea: 'Proyectos, precios y mercados.', icono: 'brujula',
         links: [
           { slug: 'soluciones', label: 'Soluciones' },
           { slug: 'portafolio', label: 'Proyectos' },
           { slug: 'precios', label: 'Precios' },
           { slug: 'miami', label: 'Miami' },
-          ...columna('Crecimiento'),
         ],
       },
     ],

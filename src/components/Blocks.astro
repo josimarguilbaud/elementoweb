@@ -41,6 +41,7 @@ if (v2) {
     if (b.type === 'planes-tabs' && (!b.planes.length || !b.media.length || !b.checklist.length || !b.nota.trim())) falla('sin planes, sin videos, sin checklist o sin la nota de ejemplo');
     if (b.type === 'tabla' && (!b.filas.length || b.filas.some((f) => f.length !== b.columnas.length))) falla('tabla vacía o con filas que no tienen todas las columnas');
     if (b.type === 'faq' && !b.items.length) falla('sin preguntas');
+    if (b.type === 'capas' && b.pisos.length < 2) falla('menos de dos pisos');
   }
 }
 ---
@@ -300,6 +301,25 @@ if (v2) {
               ))}
             </tbody>
           </table>
+          {b.nota && <p class="ew-note" set:html={b.nota}></p>}
+        </div>
+      </section>
+    )}
+
+    {b.type === 'capas' && (
+      <section class="ew-sec ew-sec--alt" data-block="capas">
+        <div class="ew-wrap">
+          <h2 class="ew-h2">{b.h2}</h2>
+          {b.intro && <p class="rt ew-intro" set:html={b.intro}></p>}
+          <ol class="ew-capas" reversed>
+            {b.pisos.map((p, i) => (
+              <li class={`ew-capas__piso${i === 0 ? ' ew-capas__piso--cima' : ''}`} style={`--ew-ancho: ${100 - (b.pisos.length - 1 - i) * 7}%`}>
+                <span class="ew-capas__n" aria-hidden="true">{String(b.pisos.length - i).padStart(2, '0')}</span>
+                <div><h3>{p.t}</h3><p class="rt" set:html={p.d}></p></div>
+                <span class="ew-capas__area">{p.area}</span>
+              </li>
+            ))}
+          </ol>
           {b.nota && <p class="ew-note" set:html={b.nota}></p>}
         </div>
       </section>

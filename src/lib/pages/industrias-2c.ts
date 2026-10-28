@@ -110,6 +110,15 @@ export const industrias2c: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un cliente a la IA antes de ir a una ferretería en Panamá?',
+        paragraphs: [
+          'El maestro de obra y el que repara su casa también le preguntan al celular, y a veces a un asistente de IA: «¿qué ferretería en La Chorrera tiene bloques y cemento con entrega?», «¿dónde compro pintura para exteriores cerca de Villa Lucre?» o «¿qué ferretería en Panamá cotiza una lista de materiales por WhatsApp?». La respuesta nombra pocas tiendas, y el cliente va o escribe a esas.',
+          'Para aparecer ahí, la IA tiene que encontrar en tu web qué categorías y marcas vendes, a qué zonas entregas y cómo se cotiza, una ficha de Google Business Profile completa y con reseñas, el mismo nombre, teléfono y dirección en la web, la ficha y los directorios, y respuestas a esas preguntas escritas en tu sitio. <strong>Una ferretería sin web le deja esa respuesta a la que sí tiene.</strong>',
+          'Eso no garantiza que te nombre, pero sube las probabilidades, y se apoya en el SEO local de siempre. Lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -123,6 +132,8 @@ export const industrias2c: PageData[] = [
           { q: '¿Cómo atiendo al contratista y al cliente de fin de semana a la vez?', a: 'Con dos entradas, no dos webs. Una por categoría de producto para el que sabe qué busca, y otra por problema —"reparar una fuga", "instalar un abanico"— que lleve a la lista de lo que hace falta. Esa segunda casi ninguna ferretería la tiene y convierte muy bien.' },
           { q: '¿Qué es lo más útil que puedo medir?', a: 'Qué buscó la gente en tu catálogo y no encontró. Cada búsqueda sin resultado es una venta que se fue, y esa lista es mejor guía de compra de inventario que cualquier intuición.' },
           { q: '¿Conviene vender en línea o solo mostrar el catálogo?', a: 'Si vas a vender en línea con carrito y pagos, es proyecto de tienda desde $1,950, e incluye Yappy y pasarelas locales. Si prefieres catálogo para consultar y que la venta se cierre por WhatsApp o en mostrador, un sitio de hasta 6 páginas desde $1,250 alcanza. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Una ferretería de barrio puede aparecer en ChatGPT?', a: 'Sí, si tiene una web que diga qué vende, dónde está y a qué zonas entrega, y una ficha de Google completa con reseñas. Nadie puede garantizar que la IA te nombre, pero sin esa base no tiene de dónde sacarte. Más en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.' },
+          { q: '¿Qué necesita saber la IA de mi ferretería para nombrarla?', a: 'Qué vendes, dónde estás, a qué zonas entregas y cómo se cotiza. Si eso está en tu web y coincide con tu ficha de Google, el asistente tiene datos verificables para responderle a quien busca materiales cerca.' },
         ],
       },
       {
@@ -235,6 +246,15 @@ export const industrias2c: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta una pareja a ChatGPT antes de contratar su boda en Panamá?',
+        paragraphs: [
+          'Las parejas y las empresas que organizan un evento ya no solo buscan en Instagram. También le preguntan a un asistente de IA: «¿qué empresa de catering en Panamá atiende bodas de 150 personas?», «¿quién organiza bodas en la playa en Coronado?» o «¿qué catering hace eventos corporativos con estaciones en Ciudad de Panamá?». Con esos nombres arman la lista para cotizar.',
+          'Para entrar en esa lista, la IA tiene que encontrar una página por tipo de evento, un portafolio con texto (lugar, invitados, qué serviste), las zonas que cubres, una ficha de Google Business Profile completa y con reseñas, el mismo nombre, teléfono y dirección en la web, la ficha y los directorios, y respuestas a esas preguntas escritas en tu sitio. <strong>Las fotos enamoran a la pareja, pero la IA se apoya en el texto.</strong>',
+          'Eso no asegura que te recomiende, pero sube las probabilidades, y todo empieza por el SEO. Lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -249,6 +269,8 @@ export const industrias2c: PageData[] = [
           { q: '¿Qué debo medir además de las consultas?', a: 'La ocupación del calendario por mes. Ver en septiembre que noviembre está a media capacidad permite hacer algo; verlo en noviembre, no. Y la conversión de consulta a depósito, que dice si el problema está en captar o en la propuesta.' },
           { q: '¿Cuándo NO conviene una web de eventos o catering?', a: 'Si tu agenda del año ya está cerrada y trabajas por recomendación de wedding planners, la web es portafolio, no captación: con algo simple y bien fotografiado cumples. Se vuelve inversión el día que quieres que la novia te encuentre directo y dejar de depender de quién te recomiende.' },
           { q: '¿Cómo se paga y qué hay que renovar cada año?', a: 'El pago va 50% para arrancar, 30% al ver el sitio funcionando en demo y 20% para publicar, con 30 días de garantía por fallas técnicas. Cada año se renueva la infraestructura, desde $350, que cubre dominio, hosting y certificado. El mantenimiento arranca en $99 al mes. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Puede ChatGPT recomendar mi empresa de eventos o catering?', a: 'Puede, si encuentra información clara: tipos de evento, capacidad, zonas que cubres, portafolio descrito y reseñas en Google. Nadie puede garantizar que te mencione, pero esa base sube las probabilidades. Más en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.' },
+          { q: '¿Las fotos del portafolio ayudan a aparecer en la IA?', a: 'Ayudan si van con texto: tipo de evento, lugar, número de invitados, qué serviste. El asistente se apoya sobre todo en ese texto, así que un portafolio con descripciones le da algo concreto para mencionarte.' },
         ],
       },
       {
@@ -360,6 +382,15 @@ export const industrias2c: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un gerente a ChatGPT antes de contratar una consultora en Panamá?',
+        paragraphs: [
+          'Antes de pedir propuestas, el gerente que necesita apoyo externo arma una lista corta, y cada vez más la empieza con un asistente de IA: «¿qué consultoras en Panamá ayudan a implementar ISO 9001?», «¿qué firma hace estudios de mercado para empresas que entran a Panamá?» o «¿quién asesora en recursos humanos a una empresa mediana en Panamá?». Esa lista es la que después pasa por el comité.',
+          'Para estar en ella, la IA tiene que encontrar una página por servicio con el problema que resuelve, los perfiles de los socios con su experiencia, casos publicados sin datos confidenciales, una ficha de Google Business Profile completa y con reseñas, el mismo nombre, teléfono y dirección en la web, la ficha y LinkedIn, y respuestas a esas preguntas escritas en tu sitio. <strong>La autoridad que no está publicada no la puede citar nadie.</strong>',
+          'Eso no garantiza que te nombre, pero sube las probabilidades, y la base es el SEO. Lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -373,6 +404,8 @@ export const industrias2c: PageData[] = [
           { q: 'Mi comprador no es quien decide, ¿eso cambia la web?', a: 'Bastante. Quien te contacta va a tener que defender la contratación ante su jefe o un comité. Necesita material reenviable: casos con números, credenciales del equipo y una propuesta de valor en una frase. Esa página trabaja en reuniones donde tú no estás.' },
           { q: '¿Vale la pena un blog en consultoría?', a: 'Es el mecanismo de captación principal del rubro, siempre que se mida. Un artículo técnico que genere tres consultas calificadas al año es el activo más rentable de la empresa; sin medir de qué contenido viene cada consulta, se escribe por intuición y se abandona a los seis meses.' },
           { q: '¿Cómo se paga y qué hay que sostener después?', a: 'El pago va 50% al inicio, 30% al ver el sitio funcionando en demo y 20% para publicar, con 30 días de garantía por fallas técnicas. Después queda lo recurrente: infraestructura desde $350 al año y mantenimiento desde $99 al mes. Si tu venta depende de publicar análisis, el mantenimiento no es opcional: un blog abandonado dice más de lo que crees. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Puede ChatGPT recomendar mi consultora?', a: 'Puede, si encuentra información clara y verificable: servicios con página propia, socios con su trayectoria, casos y reseñas. Nadie puede garantizar que te mencione, pero sin esa base es difícil que lo haga. Más en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.' },
+          { q: '¿Sirven los casos confidenciales para aparecer en la IA?', a: 'Sí, si los publicas sin datos del cliente: industria, problema, enfoque y lo que cambió, sin cifras privadas. Ese contenido demuestra en qué eres experto y le da al asistente algo concreto para relacionarte con esas preguntas.' },
         ],
       },
       {
@@ -490,6 +523,15 @@ export const industrias2c: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un cliente a ChatGPT antes de contratar un arquitecto en Panamá?',
+        paragraphs: [
+          'Quien va a construir o remodelar investiga mucho antes de llamar, y parte de esa investigación ya la hace con un asistente de IA: «¿qué arquitecto en Panamá diseña casas de playa en Coronado?», «¿qué estudio de diseño interior en Ciudad de Panamá remodela apartamentos pequeños?» o «¿cuánto cobra un arquitecto en Panamá por los planos de una casa?». Los estudios que salen en esa respuesta son los que reciben la consulta.',
+          'Para estar ahí, la IA tiene que encontrar un portafolio con texto (tipo de obra, zona, qué se resolvió), una página por servicio, la idoneidad visible, cómo cobras explicado, una ficha de Google Business Profile completa y con reseñas, el mismo nombre, teléfono y dirección en la web, la ficha y los directorios, y respuestas a esas preguntas escritas en tu sitio. <strong>Las fotos venden el estudio, pero el texto es lo que la IA puede leer.</strong>',
+          'Eso no asegura que te recomiende, pero sube las probabilidades, y todo se apoya en el SEO. Lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -504,6 +546,8 @@ export const industrias2c: PageData[] = [
           { q: '¿Cómo hago para que no me lleguen proyectos demasiado pequeños?', a: 'Publicar una referencia de escala mínima y curar el portafolio hacia arriba. En un rubro que se elige por afinidad estética, parecer especialista en cierto tipo y tamaño de encargo vale más que parecer versátil.' },
           { q: '¿Cuándo se justifica pasar del portafolio a un proyecto a medida?', a: 'Aquí el sitio es el portafolio, así que pesa la calidad de las imágenes más que la cantidad de páginas: un sitio de hasta 6 páginas desde $1,250 alcanza para proyectos, servicios y estudio. Si quieres recorridos, planos interactivos o portal de cliente, es proyecto a medida desde $2,900. La infraestructura arranca en $350 al año y los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene lanzar la web de tu estudio?', a: 'Cuando todavía no tienes fotografía profesional de tus obras. Un portafolio de arquitectura con fotos de celular resta en vez de sumar: mejor esperar dos meses, fotografiar bien tres proyectos y salir con eso. El sitio no compensa material flojo, lo amplifica.' },
+          { q: '¿Puede ChatGPT recomendar mi estudio de arquitectura?', a: 'Puede, si encuentra información clara y verificable: proyectos descritos, servicios, idoneidad, ubicación y reseñas en Google. Nadie puede garantizar que te nombre, pero esa base sube las probabilidades. Más en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.' },
+          { q: '¿Basta con un portafolio de fotos para aparecer en la IA?', a: 'No. Cada proyecto necesita texto: tipo de obra, zona, qué se resolvió y qué servicio diste. Esa descripción es lo que un asistente puede leer y relacionar con la pregunta de un cliente.' },
         ],
       },
       {

@@ -140,6 +140,31 @@ export const iaEmpresas: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Cómo se conecta a tu empresa, explicado en un dibujo',
+        svg: 'ia-conectada',
+        paragraphs: [
+          'Tu equipo pregunta desde donde ya trabaja: WhatsApp, Slack, Teams o el correo. El asistente busca la respuesta en tus documentos, la da con la cita del documento y la página, y si no la encuentra lo dice.',
+          'Cuando la tarea pide actuar, como crear una nota de crédito o mover una oportunidad en el CRM, el asistente prepara la acción y <strong>una persona la aprueba antes de que toque tus sistemas</strong>. Tú decides qué acciones necesitan ese visto bueno.',
+        ],
+        pie: 'La IA privada llega hasta tus documentos. La IA conectada suma el paso de aprobación y tus sistemas.',
+      },
+      {
+        type: 'tabla',
+        h2: 'IA privada o cada quien con su ChatGPT',
+        intro: 'Muchos equipos ya usan asistentes públicos por su cuenta. La diferencia aparece cuando la respuesta tiene que salir de la empresa y no de internet:',
+        columnas: ['', 'Cada quien con su cuenta', 'IA privada de la empresa'],
+        filas: [
+          ['Con qué responde', 'Conocimiento general y lo que cada persona pegue en el chat', 'Tus documentos, con la cita del documento y la página'],
+          ['Si no sabe', 'Puede responder igual, con seguridad', 'Dice que no está en tus documentos'],
+          ['Permisos', 'No conoce tu organización', 'Cada persona ve solo lo que ya puede ver'],
+          ['Actuar en tus sistemas', 'No', 'Con aprobación humana, en la IA conectada'],
+          ['Registro', 'Cada historial en la cuenta de cada persona', 'Auditoría central de consultas y acciones'],
+          ['Tus datos', 'Dependen del plan y la configuración de cada cuenta', 'Entorno privado; no entrenan modelos públicos'],
+        ],
+        nota: 'Los asistentes públicos son útiles para redactar y pensar. El problema es usarlos como fuente de verdad sobre tu empresa.',
+      },
+      {
         type: 'steps',
         h2: 'Cómo lo implementamos',
         intro: 'Un proceso primero; se escala cuando el piloto demuestra valor.',
@@ -165,6 +190,32 @@ export const iaEmpresas: PageData[] = [
         h2: 'Un asistente de IA también necesita infraestructura',
         paragraphs: [
           'Un asistente de IA es un sistema que tiene que seguir respondiendo bien el día 200, no solo en la demostración del día uno. Por eso vigilamos algo que un hosting normal no mide: si el modelo empieza a responder mal o más lento, no solo si el servidor sigue encendido. Cada conversación, documento consultado y acción ejecutada queda respaldado, y si algo falla se recupera el estado exacto de antes. Es la misma disciplina con la que operamos el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento de los sitios web</a> de nuestros clientes.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Por dónde empezar: el proceso que más horas te quita',
+        paragraphs: [
+          'El primer proyecto de IA no debería ser el más ambicioso, sino el más repetido. La pregunta que tu equipo contesta veinte veces al día, la factura que alguien copia a mano al sistema, el correo de seguimiento que nadie tiene tiempo de escribir.',
+          'Un buen candidato tiene tres rasgos: pasa muchas veces por semana, sigue reglas que se pueden escribir y hoy depende de una o dos personas que se vuelven cuello de botella. <strong>Si el proceso cumple los tres, el piloto se paga solo en horas devueltas.</strong>',
+          'Lo que no conviene como primer paso es un proceso que cambia cada mes o que nadie sabe explicar. Ahí la IA solo hereda el desorden.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Lo que tiene que estar en orden antes de encenderla',
+        paragraphs: [
+          'Una IA que responde con tus documentos es tan buena como esos documentos. Si el manual dice una cosa y la lista de precios otra, el asistente va a citar una de las dos con total seguridad, y tu equipo le va a creer.',
+          'Por eso el diagnóstico revisa tres cosas antes de construir: qué documentos son la versión vigente, quién es el dueño de cada uno y qué pasa cuando alguien detecta un error. <strong>Sin un dueño interno que decida qué es verdad, ningún sistema de IA se mantiene confiable.</strong>',
+          'No hace falta tener todo perfecto. Hace falta que el proceso del piloto tenga sus documentos al día y alguien que responda por ellos.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Cómo se sabe si la IA está funcionando',
+        paragraphs: [
+          'La señal no es que la gente diga que le gusta. Son cuatro números que el panel muestra cada mes: cuántas preguntas se respondieron con cita, cuántas quedaron sin respuesta porque no estaban en tus documentos, cuántas acciones se aprobaron o rechazaron y cuánto costó el consumo de los modelos.',
+          'Las preguntas sin respuesta son la lista de trabajo más valiosa: dicen qué documento falta o qué proceso nadie escribió. Las acciones rechazadas dicen dónde la IA todavía no entiende tus reglas. <strong>Un sistema que mejora es uno donde esas dos listas bajan mes a mes.</strong>',
         ],
       },
       {
@@ -194,6 +245,9 @@ export const iaEmpresas: PageData[] = [
           { q: '¿Cuánto cuesta?', a: 'Hay dos niveles. La IA privada con tus documentos parte de $2,900. La IA conectada a tu ERP o CRM, con acciones que aprueba una persona, parte de $6,900. De ahí sube según cuántos procesos automaticemos y el volumen de tu operación. Aparte van los costos de consumo de los modelos, que se facturan por uso. El pago sigue el mismo esquema del resto: 50% para arrancar, 30% al ver el piloto funcionando y 20% para pasar a producción. La llamada de diagnóstico inicial no tiene costo. Si quieres el diagnóstico por escrito, cuesta $290 y se descuenta del proyecto. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene meter IA en la empresa?', a: 'Cuando la información está desordenada. Una IA que lee documentos contradictorios responde con seguridad cosas equivocadas, y eso es peor que no tenerla: la gente le cree. Tampoco conviene sin un dueño interno, porque alguien tiene que decidir qué es verdad cuando el sistema se equivoca. Si nadie va a hacer ese trabajo, mejor ordenar primero y automatizar después.' },
           { q: '¿Esto funciona en español de Panamá y con nuestros documentos locales?', a: 'Sí. El sistema responde en el español que se habla aquí y trabaja sobre tus propios documentos: manuales, contratos, listas de precios, procedimientos. No inventa a partir de conocimiento general; cita de dónde sacó cada respuesta, y si no está en tus documentos, lo dice en vez de rellenar.' },
+          { q: '¿Qué proceso conviene automatizar primero?', a: 'El más repetido, no el más ambicioso: una pregunta que se contesta muchas veces al día, una carga de datos manual o un seguimiento que se olvida. Si pasa muchas veces por semana, sigue reglas que se pueden escribir y depende de pocas personas, es buen candidato para el piloto.' },
+          { q: '¿La IA reemplaza a mi equipo?', a: 'No es el objetivo. Le quita a tu equipo el trabajo repetitivo (buscar en manuales, copiar datos, redactar el mismo correo) para que dedique ese tiempo a lo que pide criterio. Las decisiones sensibles siguen en manos de una persona por diseño.' },
+          { q: '¿Qué pasa cuando cambian mis documentos?', a: 'La base de conocimiento se sincroniza con tus carpetas: actualizas el documento y el asistente responde con la versión nueva. Lo importante es que cada documento tenga un dueño que lo mantenga al día, porque la IA cita lo que encuentra.' },
           { q: '¿Necesito un equipo técnico interno para mantenerlo?', a: 'No es obligatorio. Somos una software house: construimos, operamos y mantenemos el ecosistema como un servicio. Si tu equipo quiere involucrarse, lo documentamos y los capacitamos.' },
         ],
       },

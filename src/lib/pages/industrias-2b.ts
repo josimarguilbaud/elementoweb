@@ -116,6 +116,15 @@ export const industrias2b: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta tu cliente a la IA antes de escoger un corredor de seguros?',
+        paragraphs: [
+          'Quien necesita un seguro y no tiene corredor ya no siempre pide referencias. Le pregunta a ChatGPT: «¿qué corredor de seguros en Panamá me cotiza un seguro de auto con varias aseguradoras?», «¿qué seguro de salud me conviene si trabajo como independiente en Panamá?» o «¿quién me tramita una fianza de cumplimiento para una licitación?». La respuesta trae pocos nombres, y esos reciben la llamada.',
+          'Para estar entre ellos, la IA tiene que encontrar una página por ramo, tu licencia de corredor visible, con qué aseguradoras trabajas, una ficha de Google Business Profile completa y con reseñas de asegurados, el mismo nombre, teléfono y dirección en la web, la ficha y los directorios, y respuestas a esas dudas escritas en tu sitio. <strong>Un asistente no recomienda a un corredor que no puede verificar.</strong>',
+          'Eso no asegura que te nombre, pero sube las probabilidades, y el punto de partida es el SEO de siempre. Lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -130,6 +139,8 @@ export const industrias2b: PageData[] = [
           { q: '¿Qué pasa con los datos que pide el cotizador?', a: 'Cédula, edad y a veces condición de salud caen bajo la Ley 81 de 2019, y los de salud con más exigencia. Conviene pedir el mínimo para una primera conversación y que lleguen a un buzón de la corredora con acceso controlado, no a un correo personal.' },
           { q: '¿Cuándo NO conviene la web de un corredor?', a: 'Si toda tu cartera es de renovaciones y referidos y no buscas clientes nuevos, con una página de contacto cumples. La web trabaja cuando quieres captar a quien busca «seguro de auto en Panamá» sin tener corredor todavía, y ahí sí conviene una página por ramo.' },
           { q: '¿Cómo se paga y qué queda como gasto fijo?', a: 'Tres pagos: 50% al inicio, 30% al ver el sitio funcionando en demo y 20% para publicar, con 30 días de garantía por fallas técnicas. Como gasto fijo quedan la infraestructura, desde $350 al año, y el mantenimiento, desde $99 al mes. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Puede un asistente de IA recomendar a un corredor de seguros?', a: 'Sí, cuando encuentra datos claros y consistentes: ramos explicados, licencia visible, aseguradoras con las que trabajas y reseñas en Google. Nadie puede garantizar que te mencione, pero sin esa base es difícil que lo haga. Más en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.' },
+          { q: '¿Qué contenido de seguros ayuda a aparecer en ChatGPT?', a: 'Respuestas claras a dudas reales: qué cubre un seguro de auto completo frente a uno de daños a terceros, qué necesita un independiente para asegurarse, cómo se tramita una fianza. Escritas en tu web, ramo por ramo, le dan a la IA material para citarte.' },
         ],
       },
       {
@@ -259,6 +270,15 @@ export const industrias2b: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un comprador de auto a ChatGPT antes de ir al salón?',
+        paragraphs: [
+          'El comprador llega al salón con la tarea hecha, y parte de esa tarea ya la hace con un asistente de IA: «¿qué concesionario en Panamá tiene SUV usadas con financiamiento?», «¿dónde puedo entregar mi carro usado como inicial para uno nuevo en Ciudad de Panamá?» o «¿qué agencia tiene taller autorizado cerca de la Vía España?». Los concesionarios que aparecen en esa respuesta son los que visita.',
+          'La IA necesita encontrar tu inventario con ficha propia por unidad, una página por marca y modelo, el financiamiento explicado, una ficha de Google Business Profile completa y con reseñas por cada sucursal, el mismo nombre, teléfono y dirección en la web, las fichas y los directorios, y respuestas a esas preguntas escritas en tu sitio. <strong>Un inventario que solo vive en fotos de redes no le da a la IA nada que citar.</strong>',
+          'Con eso suben las probabilidades de que te nombre, sin garantías de nadie, y todo se sostiene en el SEO. Te lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -273,6 +293,8 @@ export const industrias2b: PageData[] = [
           { q: '¿Vale la pena una sección de postventa?', a: 'Es donde está el negocio recurrente. La venta ocurre una vez cada varios años; el taller y los repuestos, varias veces al año durante toda la vida del carro. Y el cliente que vuelve al taller es al que le puedes ofrecer el cambio de unidad cuando llegue el momento.' },
           { q: '¿Cuándo se justifica un inventario que se actualiza solo?', a: 'Un inventario navegable con fichas por vehículo, filtros y solicitud de prueba de manejo es proyecto a medida desde $2,900, porque el inventario tiene que actualizarse solo. Si vendes pocas unidades y las publicas a mano, un sitio de hasta 6 páginas desde $1,250 te sirve. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene el sitio propio con inventario?', a: 'Si tu rotación es baja y publicas dos o tres autos al mes, mantener un inventario en línea cuesta más trabajo del que devuelve: publica en los portales y usa la web para presentarte. El inventario propio se paga cuando el volumen hace que actualizar a mano sea imposible.' },
+          { q: '¿Puede ChatGPT recomendar mi concesionario?', a: 'Puede, si encuentra información concreta y verificable: inventario publicado, sucursales con su ficha de Google, reseñas y datos de contacto consistentes. Nadie puede asegurar que te mencione, pero esa base sube las probabilidades. Más en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.' },
+          { q: '¿Publicar el inventario ayuda a aparecer en la IA?', a: 'Ayuda, porque cada unidad con su ficha (modelo, año, kilometraje, precio o cuota) es información que un asistente puede leer. Un inventario que solo existe en un PDF o en historias de Instagram no le sirve para responderle a nadie.' },
         ],
       },
       {
@@ -403,6 +425,15 @@ export const industrias2b: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta una paciente a ChatGPT antes de elegir una clínica estética?',
+        paragraphs: [
+          'Un tratamiento estético se investiga con calma, y cada vez más esa investigación empieza en un asistente de IA: «¿qué clínica en Panamá aplica bótox con médico idóneo?», «¿dónde me hago depilación láser en Ciudad de Panamá con buenas reseñas?» o «¿qué clínica en Obarrio hace valoración para rellenos faciales?». La paciente agenda en las que aparecen.',
+          'Para que tu clínica esté ahí, la IA necesita una página por procedimiento con el médico responsable y su idoneidad, qué esperar en la recuperación, una ficha de Google Business Profile completa y con reseñas, el mismo nombre, teléfono y dirección en la web, la ficha y los directorios, y respuestas prudentes a esas preguntas escritas en tu sitio. <strong>En salud, la IA busca respaldo antes de mencionar a alguien.</strong>',
+          'Nada de esto garantiza que te recomiende, pero sube las probabilidades, y empieza por el SEO. Lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -417,6 +448,8 @@ export const industrias2b: PageData[] = [
           { q: '¿Conviene una página por procedimiento?', a: 'Sí, al menos para los cuatro o cinco de mayor margen. El paciente de estética busca el procedimiento por su nombre, no la clínica, y una lista de viñetas no compite en esas búsquedas.' },
           { q: '¿Cuándo NO conviene invertir en la web de la clínica?', a: 'Si tu agenda está llena tres semanas por delante, primero resuelve capacidad. Traer más consultas a una agenda saturada solo genera pacientes molestos. Tampoco conviene si no tienes material propio: en estética, fotos genéricas de banco de imágenes le dicen al paciente que no tienes resultados que mostrar.' },
           { q: '¿Cómo se paga y qué incluye el precio de la web de la clínica?', a: 'El pago va en tres partes: 50% para arrancar, 30% cuando ya viste el sitio funcionando en un demo en línea y 20% para publicarlo en tu dominio. Incluye diseño, contenido estructurado por tratamiento y 30 días de garantía por fallas técnicas. Aparte y recurrente: infraestructura desde $350 al año y mantenimiento desde $99 al mes. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Puede ChatGPT recomendar mi clínica estética?', a: 'Puede, si encuentra información clara y verificable: procedimientos con página propia, médicos con su idoneidad, ficha de Google y reseñas. Nadie puede garantizar que te nombre, pero esa base sube las probabilidades. Más en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.' },
+          { q: '¿Qué dudas de pacientes conviene responder en la web para aparecer en la IA?', a: 'Las de antes de la valoración: cuántas sesiones suele llevar un tratamiento, cómo es la recuperación, quién lo aplica. Respondidas con prudencia médica y sin prometer resultados, le dan al asistente información confiable para mencionar tu clínica.' },
         ],
       },
       {
@@ -547,6 +580,15 @@ export const industrias2b: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un dueño de mascota a ChatGPT antes de escoger veterinaria?',
+        paragraphs: [
+          'Con el perro enfermo o el gato recién adoptado, mucha gente le pregunta a un asistente de IA antes de llamar: «¿qué veterinaria en Condado del Rey atiende urgencias de noche?», «¿dónde vacunan a un cachorro en Ciudad de Panamá un sábado?» o «¿qué clínica veterinaria en Panamá atiende conejos y aves?». La respuesta nombra pocas clínicas, y el dueño va a la primera que le queda cerca.',
+          'Para estar en esa respuesta, la IA tiene que encontrar una página por servicio, las especies que atiendes, el horario de urgencias claro, una ficha de Google Business Profile completa y con reseñas, el mismo nombre, teléfono y dirección en la web, la ficha y los directorios, y respuestas a esas preguntas escritas en tu sitio. <strong>Lo que no está publicado, la IA no lo puede afirmar.</strong>',
+          'No hay garantía de que te recomiende, pero esa base sube las probabilidades, y es el mismo SEO que te pone en Google Maps. Lo detallamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -560,6 +602,8 @@ export const industrias2b: PageData[] = [
           { q: '¿Qué hago con el WhatsApp de la clínica?', a: 'Sacarlo del celular personal de quien atiende. Un número de empresa con varios usuarios evita perder el historial cuando esa persona se va, y permite que otro conteste mientras ella está en consulta.' },
           { q: '¿Publico precios de consulta y procedimientos?', a: 'Al menos el de la consulta y un "desde" en los procedimientos más buscados, como esterilización. Es la pregunta que más llega por WhatsApp, y publicarla filtra al que nunca iba a agendar y te ahorra horas de equipo.' },
           { q: '¿Cuándo NO conviene invertir en la web de la veterinaria?', a: 'Si tu clientela es del barrio y llega caminando, tu prioridad es la ficha de Google Business Profile, que es gratis, no el sitio. La web se paga cuando vendes servicios que la gente busca y compara antes de ir: cirugía, hospedaje de mascotas, planes de vacunación o urgencias 24 horas.' },
+          { q: '¿Puede ChatGPT recomendar mi veterinaria?', a: 'Puede, si encuentra datos claros: servicios, especies que atiendes, horario, ubicación y reseñas en Google, todo consistente entre tu web y tu ficha. Nadie puede asegurar que te nombre, pero esa base sube las probabilidades. Más en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.' },
+          { q: '¿Publicar el horario de urgencias ayuda a salir en la IA?', a: 'Sí. Cuando alguien pregunta por una veterinaria abierta de noche, el asistente solo puede nombrar las que publican ese horario de forma clara en su web y en su ficha de Google. Si el horario cambia, hay que actualizarlo en los dos lugares.' },
         ],
       },
       {

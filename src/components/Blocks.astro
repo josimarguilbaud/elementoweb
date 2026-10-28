@@ -11,6 +11,8 @@ const ctaLabel = (n: string) => ({ landing: 'Cotizar mi landing', pyme: 'Cotizar
 import InfraReliability from './InfraReliability.astro';
 import SeoMomentum from './SeoMomentum.astro';
 import prosaImagenes from '../data/prosa-imagenes.json';
+const diagramas = import.meta.glob<string>('../diagramas/*.svg', { query: '?raw', import: 'default', eager: true });
+const svgDe = (nombre: string) => diagramas[`../diagramas/${nombre}.svg`];
 /* `v2` = la página usa la anatomía nueva (PageData.anatomia): los bloques existentes emiten además el contrato
    data-* que lee el validador. Sin `v2` el HTML de las páginas actuales no cambia ni un byte. */
 interface Props { blocks: Block[]; v2?: boolean; servicio?: string; slug?: string }
@@ -42,6 +44,7 @@ if (v2) {
     if (b.type === 'tabla' && (!b.filas.length || b.filas.some((f) => f.length !== b.columnas.length))) falla('tabla vacía o con filas que no tienen todas las columnas');
     if (b.type === 'faq' && !b.items.length) falla('sin preguntas');
     if (b.type === 'capas' && b.pisos.length < 2) falla('menos de dos pisos');
+    if (b.type === 'diagrama' && !svgDe(b.svg)) falla(`no existe src/diagramas/${b.svg}.svg`);
   }
 }
 ---
@@ -67,6 +70,21 @@ if (v2) {
         )}
       </section>
     ))(fotoProsa())}
+
+    {b.type === 'diagrama' && v2 && (
+      <section class="ew-sec" data-block="diagrama">
+        <div class="ew-wrap ew-zz">
+          <div class="ew-zz__texto">
+            <h2 class="ew-h2">{b.h2}</h2>
+            <div class="ew-prosa rt">{b.paragraphs.map((p) => <p set:html={p}></p>)}</div>
+          </div>
+          <figure class="ew-diagrama">
+            <Fragment set:html={svgDe(b.svg)} />
+            {b.pie && <figcaption>{b.pie}</figcaption>}
+          </figure>
+        </div>
+      </section>
+    )}
 
     {b.type === 'steps' && v2 && (
       <section class="ew-sec ew-sec--alt" data-block="pasos">
@@ -127,12 +145,17 @@ if (v2) {
       </section>
     )}
 
-    {b.type === 'prose' && !v2 && (
+    {b.type === 'prose' && !v2 && ((foto) => (
       <section class="reveal mx-auto max-w-3xl px-6 py-14">
         <h2 class="font-display text-[clamp(1.7rem,3.6vw,2.6rem)] font-extrabold text-ink">{b.h2}</h2>
         <div class="rt mt-6 flex flex-col gap-5">{b.paragraphs.map((p) => <p class="text-lg leading-relaxed text-ink/70" set:html={p}></p>)}</div>
+        {foto && (
+          <figure class="mt-8">
+            <Pic src={`/images/prosa/${foto.id}.jpg`} alt={foto.alt} width={foto.width} height={foto.height} sizes="(min-width: 800px) 720px, 100vw" class="block h-auto w-full rounded-2xl object-cover" />
+          </figure>
+        )}
       </section>
-    )}
+    ))(fotoProsa())}
 
     {b.type === 'cards' && !v2 && (
       <section class="mx-auto max-w-7xl px-6 py-16">

@@ -442,6 +442,17 @@ export const servicios2026: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Qué hace el agente con cada mensaje',
+        svg: 'agente-ventas-flujo',
+        paragraphs: [
+          'Cada conversación pasa por la misma pregunta: ¿lo que pide el cliente está en la información que tú aprobaste? Si está, el agente cotiza con tus precios y agenda con tu disponibilidad.',
+          'Si no está (un descuento, un reclamo, un pedido fuera de catálogo), <strong>no improvisa: pasa la conversación a tu equipo con todo el contexto</strong>, para que el cliente no tenga que repetir nada.',
+          'En los dos caminos, los datos del cliente y la etapa de la venta quedan en WazaCRM. Así nadie se pierde entre el chat y el seguimiento.',
+        ],
+        pie: 'Las reglas de qué cotiza y qué pasa a una persona las defines tú, por escrito, antes de encenderlo.',
+      },
+      {
         type: 'prose',
         h2: 'Qué agrega frente al asistente básico de Meta',
         paragraphs: [
@@ -457,6 +468,24 @@ export const servicios2026: PageData[] = [
           'El agente busca en los documentos que tú aprobaste antes de responder. Si un precio no está ahí, no lo calcula: lo dice y pasa a ventas.',
           '<strong>Preferimos un agente que pase de más a uno que cotice mal.</strong> Un precio equivocado en un chat se convierte en un reclamo. Por eso los descuentos y las ventas fuera de catálogo siempre van a una persona.',
           'Si quieres entender cómo funciona por dentro, lo explicamos en <a href="/blog/que-es-un-agente-de-ia-para-whatsapp/">qué es un agente de IA para WhatsApp</a>.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Las ventas que se pierden después de las 6 de la tarde',
+        paragraphs: [
+          'Buena parte de los mensajes llega cuando la tienda ya cerró: el cliente salió del trabajo, está en el tranque o ya acostó a los niños, y por fin tiene tiempo de averiguar. Si su mensaje espera hasta el día siguiente, muchas veces ya le compró a otro.',
+          'El agente contesta en ese momento, con tu precio, y deja la cita o la visita agendada. <strong>Tu equipo llega en la mañana a conversaciones avanzadas, no a una bandeja llena de «¿precio?».</strong>',
+          'Y los fines de semana igual: el agente no reemplaza al vendedor del lunes, le entrega el trabajo adelantado.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Cuándo NO conviene un agente de ventas',
+        paragraphs: [
+          'Si recibes pocos mensajes y los contestas tú mismo en minutos, un agente no te va a cambiar el negocio: las respuestas automáticas de WhatsApp Business te bastan por ahora.',
+          'Tampoco conviene si tus precios no están definidos o cambian en cada conversación. El agente necesita información aprobada para cotizar; sin ella, todo termina pasando a una persona. <strong>Primero se ordenan los precios y las reglas, después se automatiza.</strong>',
+          'Donde rinde es en el negocio que recibe muchas preguntas repetidas, pierde mensajes fuera de horario y tiene un catálogo o una tabla de precios que se puede escribir.',
         ],
       },
       {
@@ -486,6 +515,9 @@ export const servicios2026: PageData[] = [
           { q: '¿Necesito la API oficial de WhatsApp?', a: 'Sí. El agente corre sobre la API oficial de WhatsApp Business, que montamos como Tech Provider verificado por Meta. Te explicamos la diferencia en <a href="/blog/whatsapp-business-o-api-cual-necesita-tu-negocio/">WhatsApp Business o API</a>.' },
           { q: '¿Qué pasa con las ventas difíciles?', a: 'Pasan a tu equipo. Descuentos, reclamos y pedidos fuera de catálogo van a una persona con la conversación completa. El agente filtra; tu equipo cierra.' },
           { q: '¿Cuánto tarda en estar listo?', a: 'Alrededor de 2 semanas, incluida la verificación de tu número en Meta. Esos tiempos dependen de Meta, por eso los iniciamos primero.' },
+          { q: '¿Qué pasa si el agente no sabe la respuesta?', a: 'Lo dice y pasa la conversación a una persona de tu equipo. Esas preguntas sin respuesta se revisan en el ajuste: si se repiten, se agrega la información aprobada para que la próxima vez sí pueda contestar.' },
+          { q: '¿Mi equipo puede tomar una conversación?', a: 'Sí. Las conversaciones del agente están en la misma bandeja de WazaCRM que usa tu equipo, con el historial completo, así que cualquier vendedor puede seguirla donde quedó.' },
+          { q: '¿Qué necesito tener listo para empezar?', a: 'Tu catálogo o tabla de precios, las zonas y plazos de entrega, las formas de pago y las respuestas a las preguntas que más te hacen. Si no lo tienes por escrito, lo armamos juntos a partir de tus conversaciones de WhatsApp.' },
           { q: '¿Cómo sé si el agente vende?', a: 'Por el tiempo de primera respuesta, las conversaciones que llegan a cotización y las citas agendadas. Y por las ventas que cierra tu equipo después del traspaso. Todo queda en el embudo de WazaCRM.' },
         ],
       },

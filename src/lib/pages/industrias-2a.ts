@@ -121,6 +121,15 @@ export const industrias2a: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta tu cliente a ChatGPT antes de elegir un contador en Panamá?',
+        paragraphs: [
+          'Cada vez más empresarios le preguntan a un asistente de IA antes de abrir Google. Preguntas como «¿qué contador en Panamá me lleva la planilla y el ITBMS de una PYME?», «¿cuánto cobra un contador por la declaración de renta de una persona natural?» o «¿qué firma contable en Ciudad de Panamá atiende empresas de Zona Libre?». La respuesta trae dos o tres nombres, y el cliente llama a esos.',
+          'Para que tu firma salga ahí, la IA tiene que encontrar y verificar lo que haces: una página clara por servicio, la idoneidad del CPA visible, una ficha de Google Business Profile completa y con reseñas, el mismo nombre, teléfono y dirección en la web, la ficha y los directorios, y respuestas escritas a esas mismas preguntas en tu sitio. <strong>Una IA solo recomienda lo que puede comprobar en más de un lugar.</strong>',
+          'Nada de eso garantiza que te nombre, pero sube las probabilidades, y todo se apoya en un buen SEO. Lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>; la parte de la ficha y las reseñas está en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -135,6 +144,8 @@ export const industrias2a: PageData[] = [
           { q: '¿Sirve la web si la firma capta por referidos?', a: 'Sí, por dos motivos. El referido igual te busca antes de llamar y compara lo que ve. Y el contenido de calendario fiscal capta al que no tiene quién lo refiera, que en las semanas de vencimiento es mucha gente.' },
           { q: '¿Cuándo NO conviene la web de un contador?', a: 'Si tu cartera está llena y solo atiendes por recomendación, con una página sobria de presentación cumples. La web trabaja de verdad cuando quieres captar al emprendedor que busca «cuánto cuesta llevar la contabilidad de una empresa en Panamá» y todavía no sabe a quién llamar.' },
           { q: '¿Cómo se paga la web y qué gastos quedan después?', a: 'Tres pagos: 50% para arrancar, 30% al ver el sitio funcionando en demo y 20% para publicar, con 30 días de garantía por fallas técnicas. Lo recurrente, que conviene presupuestar desde el principio: infraestructura desde $350 al año y mantenimiento desde $99 al mes. Los precios no incluyen ITBMS (7%), que ya sabes mejor que nosotros cómo se declara.' },
+          { q: '¿Puede ChatGPT recomendar mi firma contable?', a: 'Puede, si encuentra datos claros y consistentes sobre ti: servicios con página propia, idoneidad visible, ficha de Google completa y reseñas de clientes. Nadie puede garantizar que te nombre, pero sin esa base es muy difícil que lo haga. El enfoque completo está en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.' },
+          { q: '¿Qué preguntas de clientes conviene responder en la web para aparecer en la IA?', a: 'Las que ya te hacen por WhatsApp: cuánto cuesta llevar la contabilidad de una PYME, qué documentos piden para la renta, cuándo vence el ITBMS. Escritas en tu web con lenguaje sencillo, le dan al asistente una respuesta que puede citar con el nombre de tu firma.' },
         ],
       },
       {
@@ -263,6 +274,15 @@ export const industrias2a: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un viajero a ChatGPT antes de reservar un tour en Panamá?',
+        paragraphs: [
+          'El turista que planifica desde afuera, y cada vez más el panameño que arma su feriado, le pregunta primero a un asistente de IA: «¿qué agencia organiza tours a San Blas con transporte desde Ciudad de Panamá?», «¿qué tour de un día me recomiendas para ver el Canal y el Casco Antiguo?» o «¿quién arma paquetes a Bocas del Toro para un fin de semana largo?». La respuesta menciona pocos operadores, y la reserva se va con ellos.',
+          'La IA necesita encontrar cada tour explicado en su propia página (qué incluye, punto de salida, duración, depósito y cancelación), una ficha de Google Business Profile completa con reseñas de viajeros, el mismo nombre, teléfono y dirección en la web, la ficha y las plataformas donde vendes, y respuestas a esas preguntas escritas en tu sitio, también en inglés si atiendes turistas. <strong>Si tus tours solo existen en Instagram y en el WhatsApp, la IA no tiene qué citar.</strong>',
+          'Ordenar eso no asegura que te recomiende, pero sube las probabilidades, y la base sigue siendo el SEO. Te contamos cómo en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -276,6 +296,8 @@ export const industrias2a: PageData[] = [
           { q: '¿Vale la pena tener la web en inglés?', a: 'Para el receptivo, que es el de mayor margen. El turista que viene a Panamá busca en inglés y hoy suele llegar a través de un operador extranjero que revende tu producto con margen encima. No hace falta traducir todo: bastan las páginas de los tours que vendes a extranjeros.' },
           { q: '¿Por qué tengo el WhatsApp lleno y cierro poco?', a: 'Casi siempre porque lo que decide —qué incluye, depósito, cancelación, fechas de salida— no está publicado, y el cliente pregunta, espera y se enfría. Publicarlo convierte consultas en reservas con depósito, que es la única métrica que cuenta.' },
           { q: '¿Cuándo NO conviene tener web propia si vendes tours?', a: 'Si toda tu venta viene de una plataforma como Viator o Airbnb Experiences y estás cómodo con su comisión, la web propia es un proyecto paralelo, no urgente. Se vuelve urgente el día que quieres vender directo y dejar de pagar esa comisión: ahí la web deja de ser gasto y empieza a ser margen.' },
+          { q: '¿Los turistas usan ChatGPT para elegir tours en Panamá?', a: 'Cada vez más viajeros planifican conversando con un asistente de IA, en su idioma. Si tu web explica cada tour, también en inglés, y tus reseñas están en Google, tienes más opciones de aparecer en esas respuestas. Lo detallamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.' },
+          { q: '¿Las reseñas en Google y en plataformas de viaje ayudan a salir en la IA?', a: 'Ayudan, porque son señales que un asistente puede usar para comprobar que el operador existe y cumple. Lo que más pesa es que todo coincida: mismo nombre de agencia, mismos tours y mismos datos de contacto en tu web, tu ficha de Google y las plataformas donde vendes.' },
         ],
       },
       {
@@ -404,6 +426,15 @@ export const industrias2a: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un comprador a la IA antes de escoger un distribuidor en Panamá?',
+        paragraphs: [
+          'El jefe de compras que necesita un proveedor nuevo ya no solo busca en Google. También le pregunta a ChatGPT o a Perplexity: «¿qué distribuidores en Panamá venden insumos de limpieza institucional al por mayor?», «¿quién es el distribuidor autorizado de esta marca en Panamá?» o «¿qué importadora en Zona Libre despacha a Centroamérica?». Con esa lista corta arma sus solicitudes de cotización.',
+          'Para entrar en esa lista, la IA tiene que encontrar en tu web las marcas y líneas que manejas, cada una con su página, la cobertura de despacho y el tipo de cliente que atiendes; una ficha de Google Business Profile completa y con reseñas; la misma razón social, teléfono y dirección en todas partes; y respuestas claras a esas preguntas. <strong>Un catálogo que solo circula por correo no existe para la IA.</strong>',
+          'Con esa base suben las probabilidades de que te nombre, aunque nadie puede garantizarlo, y todo empieza por el SEO. El detalle está en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -417,6 +448,8 @@ export const industrias2a: PageData[] = [
           { q: '¿Vale la pena mencionar la Zona Libre y el stock local?', a: 'Es tu ventaja competitiva y casi nadie la comunica. Para el comprador regional que evalúa entre importar directo o comprarte, lo que decide es el tiempo y el riesgo. Ponlo con números: cuánto tarda un pedido a la ciudad, al interior y a la región.' },
           { q: '¿Qué dato de la web cambia decisiones de negocio?', a: 'Las consultas por línea de producto. Si una marca que apenas promocionas concentra un tercio de las consultas, conviene ampliarla o negociar mejores condiciones con ese proveedor. Y el origen geográfico, que suele revelar demanda de países que no estabas trabajando.' },
           { q: '¿Cuándo NO conviene la web de una importadora?', a: 'Si vendes solo a una red cerrada de distribuidores que ya te conoce, un catálogo público te expone precios sin traerte clientes nuevos. Ahí conviene un portal privado, que es proyecto a medida desde $2,900. La web abierta se justifica cuando buscas nuevos puntos de venta o representar marcas nuevas.' },
+          { q: '¿Una importadora B2B puede aparecer en las respuestas de ChatGPT?', a: 'Sí, si su web dice con claridad qué marcas representa, qué líneas maneja y a quién despacha. Los asistentes de IA responden con lo que pueden comprobar en la web y en Google, así que esa información tiene que estar publicada y ser consistente. Más en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.' },
+          { q: '¿Tengo que publicar precios mayoristas para que la IA me recomiende?', a: 'No. Lo que necesita es saber qué vendes, a quién y dónde: marcas, líneas, cobertura y cómo pedir cotización. El precio mayorista puede seguir detrás de una solicitud, como explicamos más arriba.' },
         ],
       },
       {
@@ -545,6 +578,15 @@ export const industrias2a: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un paciente a ChatGPT antes de escoger dentista en Panamá?',
+        paragraphs: [
+          'Antes de llamar, muchos pacientes ya le preguntaron a un asistente de IA: «¿qué dentista en San Francisco hace implantes y ofrece financiamiento?», «¿qué odontopediatra en Costa del Este atiende niños con miedo al dentista?» o «¿dónde hacen un buen blanqueamiento en Ciudad de Panamá?». La respuesta nombra pocos consultorios, y el paciente empieza por esos.',
+          'Para que el tuyo sea uno de ellos, la IA necesita una página por tratamiento que diga quién lo hace y cómo, la idoneidad de cada odontólogo, una ficha de Google Business Profile completa y con reseñas de pacientes, el mismo nombre, teléfono y dirección en la web, la ficha y los directorios médicos, y respuestas a esas preguntas escritas en tu sitio. <strong>El barrio y el tratamiento tienen que estar escritos, no supuestos.</strong>',
+          'Hacerlo no garantiza que te recomiende, pero sube las probabilidades, y descansa sobre el mismo SEO que te pone en Google. Lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -559,6 +601,8 @@ export const industrias2a: PageData[] = [
           { q: '¿Debo poner precios en la web?', a: 'Un rango o un "desde" suele traer más pacientes de los que espanta: filtra al que nunca iba a agendar y le da seguridad al que sí. Esconderlo del todo hace que el paciente asuma lo peor y siga buscando. Si tu estructura varía mucho por caso, funciona bien publicar el precio de la valoración inicial.' },
           { q: '¿Qué suma al precio: las sedes o la agenda por doctor?', a: 'Una página por tratamiento, con precios orientativos y solicitud de cita: hasta 6 páginas desde $1,250. Con varias sedes, agenda por doctor y recordatorios automáticos, pasa a proyecto a medida desde $2,900. El mantenimiento arranca en $99 al mes y los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene invertir en la web dental?', a: 'Si tu agenda ya está copada, la web te va a generar solicitudes que no puedes atender, y una cita pedida y no respondida es una reseña mala esperando. Primero resuelve quién contesta y en cuánto tiempo; después abre la puerta.' },
+          { q: '¿Puede ChatGPT recomendar mi consultorio dental?', a: 'Puede, si encuentra información clara y verificable: tratamientos con página propia, odontólogos con su idoneidad, ubicación y una ficha de Google con reseñas. Nadie puede prometer que te nombre, pero esa base sube las probabilidades. Lo detallamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.' },
+          { q: '¿Las reseñas de Google influyen en lo que la IA dice de un dentista?', a: 'Son una de las señales que un asistente puede usar, junto con tu web y tu ficha. Pedirle la reseña al paciente al terminar el tratamiento, y responderlas todas, ayuda en Google Maps y en las respuestas de la IA a la vez.' },
         ],
       },
       {

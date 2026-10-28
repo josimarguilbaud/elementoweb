@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 432" role="img" aria-labelledby="seo-local-factores-title seo-local-factores-desc" font-family="Roboto, system-ui, sans-serif">
+  <title id="seo-local-factores-title">Los tres factores que ordenan Google Maps</title>
+  <desc id="seo-local-factores-desc">Google ordena el mapa por relevancia, distancia y prominencia; quien reúne las tres entra entre los tres primeros. La distancia no se controla; la relevancia y la prominencia se trabajan.</desc>
+  <defs><marker id="flecha" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#737373"/></marker></defs>
+  <circle cx="140" cy="140" r="108" fill="#0a0a0a" fill-opacity="0.04" stroke="#0a0a0a" stroke-width="1.5"/>
+  <circle cx="260" cy="140" r="108" fill="#0a0a0a" fill-opacity="0.04" stroke="#737373" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <circle cx="200" cy="244" r="108" fill="#0a0a0a" fill-opacity="0.04" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="88" y="84" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Relevancia</text>
+  <text x="88" y="103" fill="#525252" font-size="13" text-anchor="middle">categoría y servicios</text>
+  <text x="312" y="84" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Distancia</text>
+  <text x="312" y="103" fill="#525252" font-size="13" text-anchor="middle">quién busca y dónde</text>
+  <text x="200" y="304" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Prominencia</text>
+  <text x="200" y="323" fill="#525252" font-size="13" text-anchor="middle">reseñas y menciones</text>
+  <rect x="148" y="160" width="104" height="30" rx="15" fill="#0a0a0a"/>
+  <text x="200" y="180" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">Top 3 del mapa</text>
+  <line x1="16" y1="372" x2="384" y2="372" stroke="#d4d4d4" stroke-width="1"/>
+  <rect x="16" y="386" width="16" height="12" rx="3" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="40" y="396" fill="#525252" font-size="13">se trabaja</text>
+  <rect x="138" y="386" width="16" height="12" rx="3" fill="#fff" stroke="#737373" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="162" y="396" fill="#525252" font-size="13">no se controla</text>
+</svg>

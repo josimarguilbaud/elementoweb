@@ -748,6 +748,34 @@ export const servicios: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'El camino de una campaña, de un vistazo',
+        svg: 'landing-embudo',
+        paragraphs: [
+          'Cada paso del embudo deja gente en el camino. El anuncio atrae, la landing convence, el WhatsApp o el formulario recoge el contacto y tu equipo cierra.',
+          'La landing es el paso donde más se pierde, y el que más fácil se arregla: <strong>si repite la promesa del anuncio y muestra un solo botón, el que hizo clic no tiene dónde distraerse</strong>. Por eso la medimos aparte de la pauta.',
+        ],
+        pie: 'Cada paso se mide por separado: clics al anuncio, clics al botón y conversaciones que terminan en venta.',
+      },
+      {
+        type: 'prose',
+        h2: 'Por qué tu página de inicio no sirve como destino de un anuncio',
+        paragraphs: [
+          'La página de inicio está hecha para alguien que todavía no sabe qué quiere: muestra todos tus servicios, tu historia, el menú, las redes. Quien llega desde un anuncio ya sabe qué quiere, porque hizo clic en una oferta concreta.',
+          'Si lo mandas al inicio, tiene que volver a buscar la oferta entre todo lo demás. Muchos no lo hacen: cierran y siguen con su día. <strong>Cada clic que pagaste y no encontró lo prometido es presupuesto perdido.</strong>',
+          'La landing resuelve eso con una regla simple: lo primero que ve la persona es lo mismo que le prometió el anuncio, y lo único que puede hacer es el paso siguiente.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué mirar en la primera semana de campaña',
+        paragraphs: [
+          'La primera semana no es para juzgar si la campaña sirve, sino para ver dónde se cae la gente. Tres números lo dicen: cuántos llegan a la landing, cuántos tocan el botón y cuántos de esos mensajes terminan en una conversación real.',
+          'Si llegan muchos y casi nadie toca el botón, el problema está en la landing: la promesa no coincide con el anuncio o la oferta no convence. Si tocan el botón pero nadie avanza en WhatsApp, el problema está en la respuesta. <strong>Saber en qué paso se cae la gente evita cambiar todo a ciegas.</strong>',
+          'Con esos datos hacemos el ajuste de textos y orden que va incluido.',
+        ],
+      },
+      {
         type: 'cards',
         h2: 'Tipos de landing que construimos',
         intro: 'La estructura cambia según lo que la campaña tiene que conseguir.',
@@ -781,6 +809,8 @@ export const servicios: PageData[] = [
           { q: '¿Cuántas conversiones debería esperar?', a: 'Depende de tu oferta, tu tráfico y tu mercado, así que sería deshonesto prometer un número. Lo que sí garantizamos es una página construida sobre principios de conversión probados y medición configurada, para que optimices con datos reales desde la primera semana.' },
           { q: '¿Puedo tener varias landings para distintas campañas?', a: 'Sí, y es lo recomendable. Cada oferta, público o canal merece su propia landing con un mensaje alineado. Ofrecemos precio preferencial al desarrollar varias landings juntas sobre la misma base.' },
           { q: '¿Qué necesitan de mí para empezar?', a: 'Tu oferta clara, logo, y cualquier material o testimonio que tengas. El resto (estructura, orden de la oferta y diseño) lo trabajamos nosotros; si necesitas que escribamos los textos desde cero, lo cotizamos aparte. Si no tienes contenido, te guiamos con preguntas para extraerlo.' },
+          { q: '¿Una landing page sale en Google?', a: 'Puede, pero no es para eso. Una landing está hecha para recibir tráfico de un anuncio con una sola oferta; para aparecer en búsquedas orgánicas conviene un sitio con una página por servicio y trabajo de <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a>. Muchas veces se usan las dos.' },
+          { q: '¿Por qué no mandar el anuncio a mi página de inicio?', a: 'Porque quien hizo clic en una oferta concreta tiene que volver a buscarla entre todo lo demás, y muchos se van antes de encontrarla. La landing le muestra primero lo que prometió el anuncio y un solo botón para seguir.' },
           { q: '¿Cuándo NO te conviene una landing page?', a: 'Cuando el cliente necesita investigarte antes de decidir. Una firma legal o una constructora se evalúan leyendo: ahí una sola página no alcanza y conviene el sitio de hasta 6 páginas desde $1,250. La landing brilla cuando hay una sola oferta, tráfico dirigido y una sola acción posible.' },
         ],
       },

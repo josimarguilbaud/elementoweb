@@ -250,6 +250,15 @@ export const industriasPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta tu cliente a ChatGPT antes de elegir abogado en Panamá?',
+        paragraphs: [
+          'Cada vez más gente le cuenta su problema legal a un asistente de IA antes que a un abogado. Pregunta cosas como "¿qué abogado laboral en Panamá me ayuda si me despidieron sin pagarme la liquidación?", "¿quién me tramita la residencia permanente en Ciudad de Panamá?" o "¿qué firma constituye una sociedad anónima y atiende en inglés?".',
+          'Para nombrar a tu firma en la respuesta, la IA tiene que encontrar y comprobar varias cosas: una página clara por área de práctica, un perfil de Google Business completo y con reseñas, el mismo nombre, teléfono y dirección en la web, la ficha y los directorios, y la respuesta a esas preguntas escrita en tu sitio. <strong>Si tu web no responde la pregunta, la IA cita a quien sí la responde.</strong>',
+          'Nada de esto garantiza que la IA te recomiende, pero sube las probabilidades, y todo se apoya en un buen SEO: una IA solo puede recomendar lo que encuentra y verifica. Lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -265,6 +274,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Sirve una web si la firma capta por referidos?', a: 'El referido igual te busca antes de llamar: quiere ver quién eres, tu idoneidad y tu área. Una web floja no impide la llamada, pero le quita fuerza a la recomendación. Y el contenido de trámites capta a quien no tiene quién lo refiera.' },
           { q: '¿Qué diferencia hay entre el sitio de un abogado solo y el de una firma?', a: 'Una firma necesita una página por área de práctica, y eso es un sitio de hasta 6 páginas: desde $1,250. Si además quieres portal de clientes o intranet para expedientes, se va a proyecto a medida, desde $2,900. Súmale la infraestructura, desde $350 al año, y mantenimiento desde $99 al mes. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO le conviene una web a un abogado?', a: 'Si toda tu cartera llega por referidos de colegas y no piensas atender público nuevo, la web es tarjeta de presentación, no motor de clientes: con una landing de $550 cumples. La inversión completa se justifica cuando quieres que te encuentren por área de práctica, que es cuando el cliente busca «abogado de familia en Panamá» sin conocerte.' },
+          { q: '¿ChatGPT puede recomendar a mi firma cuando alguien busca abogado?', a: 'Puede, si encuentra información clara y verificable sobre ella: áreas de práctica explicadas, idoneidad visible, ficha de Google con reseñas y datos de contacto iguales en todos lados. No hay forma de garantizarlo, pero una firma que responde por escrito las dudas de sus clientes tiene más opciones de aparecer que una con una sola página de servicios.' },
+          { q: '¿Qué tiene que ver el SEO con aparecer en las respuestas de la IA?', a: 'Casi todo. Los asistentes de IA arman su respuesta con lo que encuentran en la web y en Google, así que una firma que no aparece en búsquedas difícilmente aparece en ellos. Primero se trabaja la base (páginas por área, ficha de Google, artículos de trámites) y sobre eso la visibilidad en IA.' },
         ],
       },
       {
@@ -390,6 +401,15 @@ export const industriasPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un comprador a ChatGPT antes de elegir inmobiliaria en Panamá?',
+        paragraphs: [
+          'El comprador ya no solo filtra en portales: también le pregunta a la IA. "¿Qué corredor vende apartamentos en Costa del Este con vista al mar?", "¿puede un extranjero comprar en Coronado y quién lo guía en el proceso?" o "¿qué inmobiliaria alquila apartamentos amueblados cerca de Punta Pacífica?".',
+          'Para que la respuesta incluya tu nombre, la IA necesita encontrar páginas por zona con tu inventario, una página que explique el proceso de compra, un perfil de Google Business completo y con reseñas de clientes, y tu nombre, teléfono y dirección iguales en la web, los portales y la ficha. <strong>La IA cita al corredor cuya información puede comprobar, no al del anuncio más vistoso.</strong>',
+          'Eso no asegura que te nombre, pero aumenta las probabilidades, y la base sigue siendo el SEO: la IA solo recomienda lo que puede encontrar y comprobar. El detalle está en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -405,6 +425,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Qué debe llevar una ficha de propiedad?', a: 'Precio visible, metraje desglosado, piso, orientación, cuota de mantenimiento, amenidades, estado de entrega, plano y muchas fotos con buena luz. La cuota de mantenimiento es la pregunta silenciosa de todo comprador de PH y casi nunca aparece.' },
           { q: '¿Qué diferencia hay entre la web de un corredor y la de una inmobiliaria?', a: 'Un corredor independiente con propiedades destacadas y captación de contactos resuelve con un sitio de hasta 6 páginas desde $1,250. Una inmobiliaria con catálogo real, buscador por zona y precio, y fichas que se actualizan solas es proyecto a medida desde $2,900. El pago va 50/30/20 y los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene una web propia en bienes raíces?', a: 'Si publicas en Encuentra24 o Compreoalquile y de ahí te llega todo, la web no te va a traer más listados de inmediato. Se justifica cuando quieres que el comprador te busque a ti por nombre en vez de comparar tu anuncio contra veinte iguales, y cuando ya tienes cartera que mostrar.' },
+          { q: '¿Sirve aparecer en ChatGPT si soy corredor independiente?', a: 'Sí, porque las preguntas a la IA suelen ser muy concretas: una zona, un tipo de propiedad, un comprador extranjero. Un corredor con páginas claras sobre su zona y reseñas en Google tiene con qué ser citado. No se garantiza, pero sube las probabilidades.' },
+          { q: '¿Mis anuncios en los portales cuentan para la IA?', a: 'Ayudan a confirmar que existes y que tu nombre y teléfono son los mismos en todos lados. Pero en el portal compites contra todos los anuncios; tu web es donde explicas la zona, el proceso de compra y tu forma de trabajar, que es lo que la IA necesita para nombrarte.' },
         ],
       },
       {
@@ -537,6 +559,15 @@ export const industriasPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un comensal a ChatGPT antes de elegir dónde comer en Panamá?',
+        paragraphs: [
+          'Además de Maps, la gente ya le pide recomendaciones a la IA: "¿dónde almorzar en el Casco Antiguo con opción vegetariana?", "¿qué restaurante en Costa del Este tiene salón privado para veinte personas?" o "¿dónde comer pescado fresco cerca de la Cinta Costera que acepte Yappy?".',
+          'Para que tu restaurante salga en esa respuesta, la IA tiene que encontrar el menú en página real con precios, una página de grupos y eventos, el perfil de Google Business completo con fotos, horario y reseñas respondidas, y el mismo nombre, teléfono y dirección en la web, Maps e Instagram. <strong>Un menú en PDF le dice poco a la IA, igual que a Google.</strong>',
+          'No hay forma de garantizar la recomendación, pero sí de subir las probabilidades, y empieza por un buen SEO: lo que la IA no encuentra ni verifica, no lo recomienda. Lo contamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -552,6 +583,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Vale la pena una página para grupos y eventos?', a: 'Es donde está el ticket alto sin comisión. Ese cliente busca "restaurante para grupos" y necesita saber capacidad, si hay salón privado, menús cerrados con precio por persona y si hay depósito. Casi ningún restaurante lo publica, y esas reservas se van a quien sí.' },
           { q: '¿Cuándo NO conviene montar delivery propio?', a: 'Si tu volumen no paga a alguien que reparta, las plataformas te salen más baratas aunque cobren comisión: ellas ponen la flota y la demanda. El delivery propio empieza a convenir cuando ya tienes clientes que te piden directo y la comisión que pagas al mes supera lo que costaría manejarlo tú.' },
           { q: '¿Cómo se paga y qué hay que mantener después?', a: 'El pago va 50% para arrancar, 30% al ver el sitio funcionando en demo y 20% para publicar, con 30 días de garantía por fallas técnicas. Después, infraestructura desde $350 al año y mantenimiento desde $99 al mes, que en un restaurante importa porque el menú y los precios cambian. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿ChatGPT puede recomendar mi restaurante?', a: 'Puede, cuando encuentra información clara y coherente: menú en la web, horario, ubicación, opciones especiales y reseñas en Google. No depende de pagar ni hay forma de asegurarlo, pero un restaurante con todo eso publicado tiene más probabilidades de aparecer que uno que solo vive en Instagram.' },
+          { q: '¿Qué pongo en la web para las preguntas que la gente le hace a la IA?', a: 'Lo que hoy te preguntan por WhatsApp: si hay opciones vegetarianas o sin gluten, estacionamiento, salón privado y para cuántos, si aceptan Yappy y si se puede llevar torta. Escrito en la web, le sirve al cliente, a Google y a la IA al mismo tiempo.' },
         ],
       },
       {
@@ -683,6 +716,15 @@ export const industriasPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un viajero a ChatGPT antes de reservar un hotel o un tour en Panamá?',
+        paragraphs: [
+          'Muchos viajeros arman el viaje conversando con la IA: "¿qué tour a San Blas sale desde Ciudad de Panamá e incluye el transporte?", "¿qué hotel en Boquete me recomiendas para ir en pareja?" o "¿cómo llego a Isla Grande y dónde me quedo una noche?". La respuesta trae nombres, y con esa lista corta empieza a comparar.',
+          'Para estar en esa lista, la IA necesita encontrar páginas claras por tour o tipo de habitación con lo que incluye, horarios y punto de salida, contenido del destino que responda esas dudas, un perfil de Google Business completo con reseñas recientes, y los mismos datos de contacto en la web, Google y las OTA. <strong>El que mejor explica el destino es el que la IA tiene a mano para citar.</strong>',
+          'Nada de esto garantiza que la IA te recomiende, pero sube las probabilidades, y todo se apoya en un buen SEO: una IA solo puede recomendar lo que encuentra y verifica. Lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -698,6 +740,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Cuándo publico las promociones de temporada?', a: 'Semanas antes, no durante. El viajero panameño del fin de semana largo busca con dos o tres semanas de anticipación, y publicar la promoción de carnaval en carnaval llega cuando el posicionamiento ya tenía que estar hecho.' },
           { q: '¿Qué le agrega el motor de reservas propio?', a: 'Habitaciones, servicios, galería y solicitud de reserva: hasta 6 páginas desde $1,250. Con motor de reservas propio, calendario de disponibilidad y cobro anticipado, es proyecto a medida desde $2,900, y ahí es donde dejas de pagar comisión por cada noche. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene el motor de reservas propio?', a: 'Si llenas por Booking y tu ocupación depende de esa visibilidad, quitarte de ahí te cuesta más de lo que ahorras en comisión. El motor propio se paga cuando ya tienes huéspedes que vuelven y te escriben directo: ahí cada reserva sin comisión es margen limpio.' },
+          { q: '¿La IA solo recomienda los hoteles y tours que están en Booking o TripAdvisor?', a: 'Puede nombrarlos desde ahí, y entonces el viajero termina reservando por la plataforma y pagas la comisión. Si tu web explica el tour o el hotel con detalle y tu ficha de Google tiene reseñas, suben las probabilidades de que la IA te nombre con tu propio sitio, donde la reserva es directa.' },
+          { q: '¿Conviene tener el contenido en inglés para aparecer en la IA?', a: 'Sí, si atiendes turistas extranjeros: muchos le preguntan a la IA en inglés y la respuesta se arma con fuentes en ese idioma. Una versión en inglés de las páginas de tours, habitaciones y preguntas frecuentes te deja entrar a esas respuestas.' },
         ],
       },
       {
@@ -821,6 +865,15 @@ export const industriasPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un paciente a ChatGPT antes de elegir clínica en Panamá?',
+        paragraphs: [
+          'Antes de llamar, muchos pacientes le describen el problema a un asistente de IA y le piden un nombre: "¿qué dermatólogo en Ciudad de Panamá atiende con seguro?", "¿dónde hacen una resonancia en San Francisco sin esperar semanas?" o "¿qué pediatra en Brisas del Golf atiende los sábados?".',
+          'Para que tu clínica aparezca, la IA tiene que encontrar una página por especialidad con los médicos, horarios y seguros aceptados, un perfil de Google Business completo y con reseñas, y el mismo nombre, teléfono y dirección en la web, la ficha y los directorios médicos. <strong>Lo que el paciente pregunta por teléfono es justo lo que la IA busca escrito en tu web.</strong>',
+          'Eso no asegura que te nombre, pero aumenta las probabilidades, y la base sigue siendo el SEO: la IA solo recomienda lo que puede encontrar y comprobar. El detalle está en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -836,6 +889,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Debemos publicar los precios de consulta?', a: 'Al menos el de la consulta inicial y la lista de seguros aceptados. Es la primera pregunta que hace el paciente panameño y esconderla hace que asuma lo peor y siga buscando. Los tratamientos que varían por caso pueden ir con un "desde".' },
           { q: '¿Qué cambia entre la web de un consultorio y la de una clínica?', a: 'Un consultorio con especialidades, equipo médico y solicitud de cita entra en un sitio de hasta 6 páginas desde $1,250. Una clínica con varias especialidades, agenda por médico y recordatorios automáticos es proyecto a medida desde $2,900. Infraestructura desde $350 al año, mantenimiento desde $99 al mes, y los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene la web de una clínica?', a: 'Si atiendes solo por seguro y tu volumen te lo manda la aseguradora, la web es respaldo institucional, no captación. Ahí basta con algo simple y correcto. La inversión completa se paga cuando buscas paciente privado, que sí llega buscando en Google y compara antes de llamar.' },
+          { q: '¿Puede ChatGPT recomendar mi clínica o a un médico de mi equipo?', a: 'Puede, si encuentra información verificable: especialidad, horario, seguros, ubicación y reseñas. No se puede garantizar ni comprar, pero una clínica con una página por especialidad y su ficha de Google al día tiene más probabilidades de ser nombrada que una con una cuadrícula de fotos.' },
+          { q: '¿Hay algo que una clínica no deba publicar para aparecer en la IA?', a: 'Datos de pacientes, nunca, ni casos con detalles que identifiquen a alguien. Lo que sirve es información general: qué atiende cada especialidad, cómo prepararse para un estudio, horarios y seguros. Eso responde las preguntas del paciente sin tocar su privacidad.' },
         ],
       },
       {
@@ -958,6 +1013,15 @@ export const industriasPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un comprador a ChatGPT antes de elegir un proyecto en preventa?',
+        paragraphs: [
+          'El comprador de preventa investiga a la promotora tanto como al apartamento, y ahora también lo hace con la IA: "¿qué proyectos de vivienda en preventa hay en Panamá Pacífico?", "¿qué constructora en Panamá Oeste ha entregado sus proyectos a tiempo?" o "¿qué preventa en Ciudad de Panamá permite pagar el abono en cuotas durante la obra?".',
+          'Para que tu proyecto entre en la respuesta, la IA necesita encontrar una página por proyecto con ubicación, modelos y plan de pagos, el historial de obras entregadas, un perfil de Google Business con reseñas de propietarios, y los mismos datos de la empresa en la web, la ficha y los portales. <strong>Una constructora con obras entregadas y documentadas le da a la IA algo concreto que citar.</strong>',
+          'No hay forma de garantizar la recomendación, pero sí de subir las probabilidades, y empieza por un buen SEO: lo que la IA no encuentra ni verifica, no lo recomienda. Lo contamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -973,6 +1037,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Vale la pena tener contenido para el comprador extranjero?', a: 'Es el de mayor ticket en playa y zonas premium, y decide entero desde la web. Necesita video del avance, plano descargable, plan de pagos y una explicación del marco: compra a nombre propio, fideicomiso, financiamiento para no residentes y traspaso.' },
           { q: '¿Cuándo NO le urge la web a una constructora?', a: 'Si trabajas solo por licitación pública, tu cliente te evalúa por expediente, no por página. Ahí la web es respaldo de seriedad y con algo sobrio cumples. Se vuelve importante cuando vas por obra privada, donde el dueño sí te busca, te compara y decide en buena parte por lo que ve.' },
           { q: '¿Cómo se paga el proyecto y qué queda incluido?', a: 'Igual que una obra: por avance. 50% para arrancar, 30% al ver el sitio completo funcionando en demo y 20% para publicar. Incluye la estructura institucional y las páginas de proyecto, con 30 días de garantía por fallas técnicas. La infraestructura corre desde $350 al año y el mantenimiento desde $99 al mes. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Puede la IA recomendar un proyecto en preventa?', a: 'Puede mencionarlo si encuentra información clara: ubicación, modelos, precio desde, plan de pagos y quién lo desarrolla. No hay forma de asegurarlo, pero un proyecto con su propia página y una promotora con historial verificable tiene más probabilidades de aparecer que uno que solo existe en un anuncio de redes.' },
+          { q: '¿Sirve que las obras entregadas tengan su página aunque ya no vendan?', a: 'Sí. Son la prueba de que la empresa cumple, y eso es justo lo que un comprador de preventa le pregunta a la IA. Una página por proyecto entregado, con fecha y fotos, sigue trabajando a favor de los proyectos nuevos.' },
         ],
       },
       {
@@ -1096,6 +1162,15 @@ export const industriasPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le preguntan los padres a ChatGPT antes de elegir colegio en Panamá?',
+        paragraphs: [
+          'Muchas familias empiezan la búsqueda de colegio conversando con la IA: "¿qué colegios bilingües hay en Panamá Oeste con mensualidad accesible?", "¿qué colegio en Clayton tiene bachillerato internacional?" o "¿cuándo abren admisiones los colegios privados de Ciudad de Panamá?".',
+          'Para que tu colegio aparezca en esa respuesta, la IA tiene que encontrar el proceso de admisión con fechas, la propuesta académica explicada, la mensualidad o al menos su rango, un perfil de Google Business completo con reseñas de familias, y los mismos datos de contacto en la web, la ficha y las redes. <strong>El colegio que publica lo que los padres preguntan es el que la IA puede nombrar con base.</strong>',
+          'Nada de esto garantiza que la IA te recomiende, pero sube las probabilidades, y todo se apoya en un buen SEO: una IA solo puede recomendar lo que encuentra y verifica. Lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -1111,6 +1186,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Conviene decir para qué tipo de familia es el colegio?', a: 'Sí, aunque asuste. Ser claro sobre el proyecto educativo atrae a las familias que encajan y evita las matrículas que se caen en el segundo trimestre, que salen mucho más caras que la que nunca llegó.' },
           { q: '¿Qué le agrega al proyecto un portal de padres?', a: 'Oferta académica, admisiones, calendario y contacto: un sitio de hasta 6 páginas desde $1,250 cubre a la mayoría de los colegios. Si necesitas portal de padres, pago de matrícula en línea o inscripción con documentos, es proyecto a medida desde $2,900. El pago va 50% para arrancar, 30% al verlo en demo y 20% para publicar. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene rehacer la web del colegio?', a: 'A mitad del período de admisiones. Mover URLs justo cuando los padres están buscando es el peor momento posible: hazlo en temporada baja. Y si el problema es que la información está vieja, eso se arregla actualizando, no rediseñando.' },
+          { q: '¿Los padres de verdad le preguntan a ChatGPT por colegios?', a: 'Cada vez más, sobre todo para armar la primera lista antes de visitar. La IA no reemplaza la visita, pero influye en qué colegios entran a esa lista. Que el tuyo esté depende de qué tan clara y verificable sea la información que publicas.' },
+          { q: '¿Qué páginas ayudan más a que un colegio aparezca en la IA?', a: 'Las que responden dudas concretas: admisiones paso a paso con fechas, niveles y programa académico, horario y transporte, y la mensualidad o su rango. Son también las páginas que más pesan en Google, así que el trabajo sirve para los dos.' },
         ],
       },
       {
@@ -1220,6 +1297,15 @@ export const industriasPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta una clienta a ChatGPT antes de comprar ropa en Panamá?',
+        paragraphs: [
+          'La compra de moda también empieza en la IA: "¿qué tienda en Panamá vende vestidos de fiesta con envío a David?", "¿dónde compro ropa de playa de marca panameña?" o "¿qué tienda online en Panamá acepta Yappy y hace cambios de talla?".',
+          'Para que tu tienda salga en esa respuesta, la IA necesita encontrar un catálogo con categorías claras, la guía de tallas y la política de cambios escritas, las zonas y costos de envío, un perfil de Google Business con reseñas si tienes tienda física, y el mismo nombre y contacto en la web e Instagram. <strong>Un perfil de Instagram no le da a la IA las respuestas que sí da una tienda con páginas propias.</strong>',
+          'Eso no asegura que te nombre, pero aumenta las probabilidades, y la base sigue siendo el SEO: la IA solo recomienda lo que puede encontrar y comprobar. El detalle está en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -1235,6 +1321,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Qué hago con el costo de envío?', a: 'Mostrarlo antes del checkout, nunca al final. El envío que aparece de sorpresa en el último paso es una de las principales causas de carrito abandonado en Panamá, sobre todo en entregas a provincias sin plazo especificado.' },
           { q: '¿Conviene arrancar con tienda completa o con catálogo?', a: 'Catálogo, carrito, Yappy, pasarelas locales, inventario y envíos: desde $1,950. Si tu catálogo es chico y vendes por Instagram, una landing con catálogo y botón de pago desde $550 te deja vendiendo antes. A eso súmale la infraestructura desde $350 al año. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene abrir tienda en línea?', a: 'Si no tienes fotos propias de producto ni quién despache los pedidos el mismo día, la tienda te va a generar reclamos, no ventas. Primero resuelve foto y logística; el carrito es la parte fácil.' },
+          { q: '¿Puede ChatGPT recomendar mi tienda si solo vendo por Instagram?', a: 'Es difícil. La IA arma la respuesta con lo que puede leer y comprobar, y un perfil de Instagram tiene poco texto y casi nada sobre envíos, cambios o tallas. Una tienda online con esas páginas tiene más probabilidades de aparecer.' },
+          { q: '¿Qué debo escribir en la tienda para que la IA la entienda?', a: 'Categorías con los nombres que usa la gente, descripciones de producto con material y uso, guía de tallas, política de cambios, métodos de pago y zonas de envío. Es la misma información que te ahorra los mensajes de WhatsApp preguntando lo mismo.' },
         ],
       },
       {
@@ -1352,6 +1440,15 @@ export const industriasPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta alguien a ChatGPT antes de inscribirse en un gimnasio en Panamá?',
+        paragraphs: [
+          'Quien busca gimnasio también le pregunta a la IA: "¿qué gimnasio en El Dorado abre a las cinco de la mañana?", "¿dónde hay clases de spinning en Costa del Este con pase de prueba?" o "¿qué gimnasio cerca de Albrook no cobra inscripción ni pide contrato de un año?".',
+          'Para que tu gimnasio aparezca, la IA tiene que encontrar el horario real, el calendario de clases, los planes con sus condiciones de cancelación y el pase de prueba explicados en la web, un perfil de Google Business completo con fotos y reseñas, y el mismo nombre, teléfono y dirección en todos lados. <strong>Las condiciones claras que retienen socios son las mismas que la IA necesita para nombrarte.</strong>',
+          'No hay forma de garantizar la recomendación, pero sí de subir las probabilidades, y empieza por un buen SEO: lo que la IA no encuentra ni verifica, no lo recomienda. Lo contamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -1366,6 +1463,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Cuándo hay que preparar la temporada de enero?', a: 'En noviembre. Una página publicada el 2 de enero no compite en la búsqueda del 3: el posicionamiento tarda. El contenido que esa gente busca —planes, precios, cómo empezar sin experiencia— tiene que estar arriba antes de que arranque la temporada.' },
           { q: '¿Qué mido además de las inscripciones?', a: 'La permanencia a tres y seis meses, y el motivo de cancelación. Si la gente cancela por horario de clases o congestión a hora pico, eso se arregla operativamente y vale más que cualquier campaña. El negocio no está en captar, está en el mes seis.' },
           { q: '¿Cuándo NO conviene la web del gimnasio?', a: 'Si tu captación es 100% del barrio y de gente que pasa por el frente, la web no te va a cambiar el mes: te sirve más una ficha de Google bien trabajada, que es gratis. El sitio se paga cuando vendes planes anuales, corporativos, o cuando compites contra cadenas por la misma búsqueda.' },
+          { q: '¿Puede la IA recomendar mi gimnasio a alguien de mi zona?', a: 'Puede, cuando encuentra horario, clases, planes, ubicación y reseñas de forma clara y coherente. No se garantiza, pero un gimnasio con todo eso en su web y su ficha de Google al día tiene más probabilidades que uno que solo publica en Instagram.' },
+          { q: '¿Publicar precios ayuda a aparecer en las respuestas de la IA?', a: 'Ayuda, porque mucha gente pregunta por la mensualidad, la inscripción o la permanencia mínima. Si tu web lo dice, la IA tiene una respuesta concreta que dar; si no lo dice, puede nombrar a quien sí lo publica.' },
         ],
       },
       {
@@ -1484,6 +1583,15 @@ export const industriasPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un conductor a ChatGPT antes de llevar su carro a un taller?',
+        paragraphs: [
+          'Con el carro fallando, mucha gente le pregunta a la IA antes de llamar: "¿qué taller en Juan Díaz repara cajas automáticas de Toyota?", "¿dónde hacen el revisado en Ciudad de Panamá sin cita?" o "¿qué taller en La Chorrera da garantía por escrito en frenos?".',
+          'Para que tu taller salga en la respuesta, la IA necesita encontrar una página por servicio o marca, los precios de referencia y la garantía explicados, un perfil de Google Business con fotos del taller y reseñas respondidas, y el mismo nombre, teléfono y dirección en la web, Maps y WhatsApp. <strong>En un rubro que arrastra desconfianza, la transparencia publicada es lo que la IA puede citar.</strong>',
+          'Nada de esto garantiza que la IA te recomiende, pero sube las probabilidades, y todo se apoya en un buen SEO: una IA solo puede recomendar lo que encuentra y verifica. Lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -1498,6 +1606,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Publico la garantía del trabajo?', a: 'Si la das y no la dices, estás regalando tu mejor argumento. Tiempo o kilometraje, y qué cubre exactamente. Es de las cosas que más separan a un taller serio de uno informal a ojos del cliente.' },
           { q: '¿Me conviene decir que atiendo todas las marcas?', a: 'Nadie busca "mecánica general". Buscan "taller Toyota Panamá", "especialista en cajas automáticas", "mecánico de diésel". Una página por especialidad captura esas búsquedas y trae clientes que comparan menos por precio, sin que dejes de atender todo lo demás.' },
           { q: '¿Conviene una landing o un sitio con página por servicio?', a: 'La mayoría de los talleres resuelve con una landing enfocada en la llamada y la ubicación, desde $550. Si tienes varias especialidades (mecánica, latonería, aire, llantas) y quieres posicionar cada una, conviene el sitio de hasta 6 páginas desde $1,250, con una página por servicio. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿ChatGPT puede recomendar mi taller?', a: 'Puede, si encuentra información clara: qué reparas, para qué marcas, dónde estás, qué garantía das y qué opinan tus clientes en Google. No se puede asegurar, pero un taller con esas páginas tiene más probabilidades que uno con solo un número de teléfono.' },
+          { q: '¿Las reseñas de Google influyen en lo que dice la IA de mi taller?', a: 'Pesan, porque son una de las fuentes públicas sobre tu negocio. Pedirle reseña a cada cliente satisfecho y responder las malas con calma mejora la ficha de Maps y le da a la IA opiniones reales que considerar.' },
         ],
       },
       {
@@ -1615,6 +1725,15 @@ export const industriasPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta una clienta a ChatGPT antes de reservar en un salón o spa?',
+        paragraphs: [
+          '"¿Qué salón en Obarrio hace balayage y tiene buenas reseñas?", "¿dónde hay un spa en Ciudad de Panamá para regalar un día de masajes?" o "¿qué barbería en Condado del Rey atiende sin cita los domingos?". Son preguntas que cada vez más gente le hace a la IA antes de abrir Instagram.',
+          'Para que tu salón aparezca en la respuesta, la IA tiene que encontrar una página por servicio con lo que incluye, duración y precio desde, el equipo con sus especialidades, un perfil de Google Business completo con fotos y reseñas, y el mismo nombre, teléfono y dirección en la web, Maps e Instagram. <strong>El portafolio en Instagram enamora a la clienta, pero la IA necesita texto que pueda leer y comprobar.</strong>',
+          'Eso no asegura que te nombre, pero aumenta las probabilidades, y la base sigue siendo el SEO: la IA solo recomienda lo que puede encontrar y comprobar. El detalle está en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -1630,6 +1749,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Conviene reservar por estilista o solo por servicio?', a: 'Por estilista siempre que se pueda: en belleza la clienta vuelve por la persona, no por el local. Poder elegir a quién la atiende sube la recurrencia y hace mucho más difícil que se vaya si esa persona tiene agenda llena.' },
           { q: '¿Qué cambia el precio: las reservas o la cantidad de sedes?', a: 'Un sitio con servicios, precios y agenda en línea entra en un sitio de hasta 6 páginas desde $1,250. Si tienes varias sedes o profesionales con horarios distintos y cobro anticipado, es proyecto a medida desde $2,900. El mantenimiento arranca en $99 al mes, y los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO te conviene poner reservas en línea?', a: 'Si tu agenda ya se llena por WhatsApp y tu clienta prefiere escribirte, la reserva automática le agrega un paso que no pidió. La agenda en línea gana cuando pierdes citas fuera de horario, o cuando el ir y venir de mensajes para cuadrar una hora te está comiendo el día.' },
+          { q: '¿Puede la IA recomendar mi salón si tengo buenas reseñas en Google?', a: 'Las reseñas ayudan, pero solas no bastan: la IA también necesita saber qué servicios haces, dónde estás y cómo se reserva. Con reseñas, páginas por servicio y datos coherentes, suben las probabilidades de que te nombre.' },
+          { q: '¿Sirven las páginas por servicio para aparecer en ChatGPT?', a: 'Sí, porque las preguntas a la IA suelen ser por servicio y zona: alisado, uñas acrílicas, masaje relajante, en tal barrio. Una página para cada uno responde esa pregunta concreta, igual que lo hace en Google.' },
         ],
       },
       {
@@ -1748,6 +1869,15 @@ export const industriasPages: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: '¿Qué le pregunta un comprador B2B a ChatGPT antes de elegir operador logístico?',
+        paragraphs: [
+          'El gerente de compras o de operaciones también usa la IA para armar su lista corta: "¿qué empresa en Panamá mueve contenedores refrigerados desde el puerto de Manzanillo?", "¿qué operador logístico ofrece almacenaje en la Zona Libre de Colón?" o "¿quién hace carga consolidada de Panamá a Costa Rica por tierra?".',
+          'Para que tu empresa entre en esa lista, la IA tiene que encontrar una página por servicio y por ruta, la cobertura y la flota descritas, las certificaciones y el seguro de carga explicados, un perfil de Google Business completo, y el mismo nombre, teléfono y dirección en la web, LinkedIn y los directorios del sector. <strong>El comprador B2B verifica antes de confiar su carga, y la IA también necesita verificar antes de nombrarte.</strong>',
+          'No hay forma de garantizar la recomendación, pero sí de subir las probabilidades, y empieza por un buen SEO: lo que la IA no encuentra ni verifica, no lo recomienda. Lo contamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a> y en <a href="/crecimiento/seo-local-google-maps-panama/">SEO local y Google Maps</a>.',
+        ],
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes',
         items: [
@@ -1763,6 +1893,8 @@ export const industriasPages: PageData[] = [
           { q: '¿Cuál es el número más importante que puedo medir?', a: 'El tiempo hasta la primera respuesta de una cotización. En flete, responder en cuatro horas contra veinticuatro cambia la tasa de cierre de forma dramática, porque el comprador decide con las primeras cotizaciones que recibe.' },
           { q: '¿Qué le agrega al proyecto el rastreo de envío?', a: 'Servicios, cobertura, flota y contacto: hasta 6 páginas desde $1,250. Si necesitas rastreo de envío, cotizador por peso y destino o conexión con tu sistema de operaciones, es proyecto a medida desde $2,900. El pago va 50/30/20 con 30 días de garantía por fallas técnicas. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene invertir en la web logística?', a: 'Si operas B2B con contratos anuales y tu venta es de relación y licitación, la web es respaldo de seriedad, no canal de entrada. Se vuelve canal cuando quieres carga suelta, mudanzas o última milla, donde el cliente sí busca y compara en Google.' },
+          { q: '¿Un comprador B2B de verdad usa ChatGPT para buscar proveedores logísticos?', a: 'Cada vez más lo usa para la primera lista, antes de pedir cotizaciones. La decisión final sigue pasando por llamadas y visitas, pero si tu empresa no está en esa lista inicial, no llega a competir.' },
+          { q: '¿Qué contenido ayuda a que la IA entienda qué hace mi empresa logística?', a: 'Páginas por servicio (transporte, almacenaje, aduana, última milla), rutas y cobertura concretas, el tipo de carga que manejas y certificaciones verificables. Cuanto más específico, más fácil que la IA te relacione con la pregunta exacta del comprador.' },
         ],
       },
       {

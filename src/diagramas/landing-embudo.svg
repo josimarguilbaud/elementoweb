@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 312" role="img" aria-labelledby="landing-embudo-title landing-embudo-desc" font-family="Roboto, system-ui, sans-serif">
+  <title id="landing-embudo-title">El recorrido de una campaña con landing page</title>
+  <desc id="landing-embudo-desc">Embudo de cuatro pasos: el anuncio atrae a la persona, la landing repite la oferta con un solo botón, WhatsApp o el formulario recibe el mensaje ya escrito y tu equipo cierra la venta.</desc>
+  <defs><marker id="flecha" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#737373"/></marker></defs>
+  <polygon points="8,16 392,16 360,80 40,80" fill="#fff" stroke="#0a0a0a" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="200" y="45" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Anuncio</text>
+  <text x="200" y="64" fill="#525252" font-size="13" text-anchor="middle">Google o Meta, una sola oferta</text>
+  <polygon points="40,88 360,88 328,152 72,152" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="200" y="117" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Landing page</text>
+  <text x="200" y="136" fill="#d4d4d4" font-size="13" text-anchor="middle">la misma promesa y un botón</text>
+  <polygon points="72,160 328,160 296,224 104,224" fill="#fff" stroke="#0a0a0a" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="200" y="189" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">WhatsApp</text>
+  <text x="200" y="208" fill="#525252" font-size="13" text-anchor="middle">con el mensaje ya escrito</text>
+  <polygon points="104,232 296,232 264,296 136,296" fill="#fff" stroke="#0a0a0a" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="200" y="261" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Venta</text>
+  <text x="200" y="280" fill="#525252" font-size="13" text-anchor="middle">tu equipo cierra</text>
+</svg>

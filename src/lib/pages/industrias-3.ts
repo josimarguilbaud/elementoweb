@@ -57,6 +57,17 @@ export const industrias3: PageData[] = [
         ],
       },
       {
+        type: 'steps',
+        h2: 'Cómo trabajamos tu web de agencia de aduana',
+        intro: 'Partimos de cómo opera tu agencia, no de una plantilla.',
+        items: [
+          { h3: 'Mapa de trámites y puntos de entrada', text: 'Listamos lo que despachas cada semana (importación, exportación, tránsito, reexportación) y por dónde entra: puertos, Tocumen, Zona Libre o frontera. Cada combinación que se busca por separado lleva página propia, escrita como pregunta el importador.' },
+          { h3: 'Cotización que llega completa', text: 'Definimos contigo los datos mínimos para dar un número y a dónde cae cada solicitud: correo, WhatsApp o tu sistema. El plazo de respuesta que publiques tiene que ser uno que tu equipo cumpla un lunes de mucho movimiento.' },
+          { h3: 'Credenciales a la vista', text: 'Licencia de corredor, años de operación, tipo de mercancía que manejas y cobertura. Lo que el importador revisa antes de confiarte una carga queda a un clic, en español y, para Zona Libre, en inglés.' },
+          { h3: 'Ficha de Google alineada', text: 'Completamos tu perfil de Google Business con el mismo nombre, dirección, teléfono y horario de la web, y dejamos la medición de cotizaciones por trámite funcionando desde el primer día.' },
+        ],
+      },
+      {
         type: 'cards',
         h2: 'A quién le habla la web de tu agencia',
         items: [
@@ -72,6 +83,15 @@ export const industrias3: PageData[] = [
           'La Zona Libre de Colón es una de las zonas francas más grandes del hemisferio, y casi ninguna agencia que opera ahí la comunica: aparece como una línea en la lista de servicios.',
           'El comprador regional que decide desde dónde distribuir a Centroamérica y el Caribe mira tres cosas: reexportar rápido, mantener inventario sin nacionalizar y consolidar carga. Si tu agencia hace eso, merece una página propia que lo explique, no una viñeta.',
           '<strong>Ese cliente busca en inglés.</strong> Una versión en inglés de las páginas de reexportación y logística de Zona Libre abre un mercado donde la competencia local es casi nula.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Qué le pregunta tu cliente a ChatGPT antes de elegir una agencia de aduana en Panamá?',
+        paragraphs: [
+          'Cada vez más importadores le preguntan primero a un asistente de IA. Preguntas como "¿qué agencia de aduana en Panamá me ayuda a nacionalizar un contenedor que viene de China?", "¿quién hace reexportación desde Zona Libre de Colón hacia Centroamérica?" o "¿qué documentos necesito para desaduanar una carga en Tocumen?". La respuesta trae dos o tres nombres, y el importador escribe a esos.',
+          'Para que tu agencia aparezca, la IA necesita encontrar y comprobar lo mismo que un importador cuidadoso: una página clara por trámite, un perfil de Google Business completo con reseñas de clientes reales, el mismo nombre, teléfono y dirección en la web, en Google y en los directorios del gremio, y respuestas escritas a esas preguntas exactas. Si tu web solo dice "servicios aduaneros integrales", no tiene con qué citarte.',
+          'Nada de eso garantiza que te recomiende, pero sube las probabilidades, y se apoya en la misma base que el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Google Maps</a>, como explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.',
         ],
       },
       {
@@ -94,6 +114,10 @@ export const industrias3: PageData[] = [
           { q: '¿Sirve la web si trabajo por referidos del gremio?', a: 'El referido igual te busca antes de llamar y compara lo que ve: licencia, años, cobertura. Y el contenido de trámites capta al importador primerizo, que no tiene quién lo refiera y que se queda años con quien le explica.' },
           { q: '¿Cuánto cuesta la web de una agencia de aduanas o de Zona Libre?', a: 'El sitio institucional con servicios, cobertura y contacto entra en un sitio de hasta 6 páginas, desde $1,250. Si necesitas consulta de estatus de carga o conexión con tu sistema aduanero, es proyecto a medida desde $2,900, porque hay integración de por medio. El pago va 50% para arrancar, 30% al verlo funcionando en demo y 20% para publicar. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene invertir en la web de la agencia?', a: 'Si trabajas con tres o cuatro clientes grandes de siempre y no buscas nuevos, la web no te va a mover la aguja: con una página de presentación basta. Se justifica cuando quieres que un importador que no te conoce te encuentre buscando en Google, o cuando estás cansado de explicar por WhatsApp lo mismo que podría estar escrito.' },
+          { q: '¿Puede ChatGPT recomendar mi agencia de aduana?', a: 'Puede, si encuentra con qué. Los asistentes de IA arman sus respuestas con lo que hay publicado: tu web, tu ficha de Google, las reseñas y las menciones en otros sitios. Si tu web explica cada trámite y tus datos coinciden en todas partes, suben las probabilidades de que te nombre. Nadie puede garantizarlo.' },
+          { q: '¿Qué tiene que ver el SEO con aparecer en las respuestas de una IA?', a: 'Casi todo. Una IA solo recomienda lo que puede encontrar y verificar, y lo encuentra por los mismos caminos que Google: páginas claras, ficha completa y reseñas. Sin una base de SEO, el trabajo para la IA no tiene de dónde agarrarse.' },
+          { q: '¿Qué pongo en la página de cada trámite?', a: 'Qué es el trámite, para quién aplica, qué documentos pide, cuánto suele tardar según el punto de entrada y qué errores frenan una carga. Termina con el formulario de cotización de ese trámite ya marcado, para que el importador no tenga que explicarlo de nuevo.' },
+          { q: '¿Qué necesito tener listo para arrancar el proyecto?', a: 'La lista de trámites que haces, los puntos de entrada donde operas, el número de licencia de corredor y, si las tienes, fotos reales de tu oficina y tu equipo. Con eso armamos la estructura; tú revisas los textos para que lo técnico quede exacto.' },
         ],
       },
       {
@@ -158,6 +182,17 @@ export const industrias3: PageData[] = [
         ],
       },
       {
+        type: 'steps',
+        h2: 'Cómo trabajamos tu web de empresa marítima',
+        intro: 'Se construye para un comprador que decide desde otro país sin llamarte primero.',
+        items: [
+          { h3: 'Servicios en el vocabulario del sector', text: 'Listamos cada línea que vendes (agenciamiento, bunkering, crew change, suministros, servicios submarinos) y la escribimos con la terminología que usa el comprador, en inglés y en español, cada idioma con su propia URL.' },
+          { h3: 'Cobertura por puerto y océano', text: 'Una sección que dice dónde operas: Balboa, Cristóbal, Colón, Manzanillo y fondeaderos, con qué servicio en cada uno. Es lo primero que filtra un operador con un buque en tránsito.' },
+          { h3: 'Credenciales para la aprobación de proveedor', text: 'Licencias de la Autoridad Marítima de Panamá, registros, certificaciones y seguros con número y vigencia, más un documento descargable que el cliente pueda adjuntar a su aprobación interna.' },
+          { h3: 'Contacto que funciona a cualquier hora', text: 'Canal de emergencia 24/7 visible en cada página, formulario que pide los datos del buque y de la escala, y medición de solicitudes por país, servicio e idioma desde el inicio.' },
+        ],
+      },
+      {
         type: 'cards',
         h2: 'Quién evalúa tu web antes de escribirte',
         items: [
@@ -173,6 +208,15 @@ export const industrias3: PageData[] = [
           'Buena parte de las contrataciones marítimas pasan por una aprobación de proveedor: alguien dentro de la empresa cliente documenta por qué te eligió, con lo que encuentre publicado. Licencias, registros, certificaciones de calidad y seguros deben estar en una página propia, con número y vigencia.',
           'Lo mismo con el seguro de responsabilidad: publicar hasta qué monto respondes y qué cubre no ahuyenta clientes, ahuyenta a los que iban a descubrirlo después y generar un conflicto.',
           '<strong>Fotos propias de lanchas, equipos, bodegas o talleres separan a un operador con activos de un intermediario</strong>, una distinción que el cliente internacional busca activamente.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Qué le pregunta un armador a ChatGPT antes de elegir un proveedor en Panamá?',
+        paragraphs: [
+          'El operador que coordina una escala desde otro país ya no solo busca en Google: le pregunta a un asistente de IA, casi siempre en inglés. Preguntas como "who can arrange a crew change in Balboa this week?", "¿qué empresa hace bunkering en Cristóbal?" o "which ship agents in Panama handle husbandry for tankers?". La respuesta trae pocos nombres, y con esos arranca la conversación.',
+          'Para que tu empresa esté entre ellos, la IA tiene que encontrar y verificar lo que ya pide el comprador: una página clara por servicio en inglés, la cobertura por puerto escrita, un perfil de Google Business completo con reseñas, el mismo nombre, teléfono y dirección en la web, en Google y en los directorios del sector, y respuestas directas a esas preguntas. Un párrafo genérico de "soluciones marítimas integrales" no le da nada que citar.',
+          'Hacerlo bien no garantiza que te nombre, pero sube las probabilidades, y descansa sobre el mismo SEO de siempre, desde el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Google Maps</a> hasta el <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.',
         ],
       },
       {
@@ -195,6 +239,10 @@ export const industrias3: PageData[] = [
           { q: '¿Qué dato me sorprenderá al medir?', a: 'El origen geográfico de las consultas. Muchos proveedores panameños descubren interés de países que no estaban trabajando comercialmente, información que ningún vendedor iba a traer por su cuenta.' },
           { q: '¿Cuánto cuesta la web de una naviera o de servicios marítimos?', a: 'Un sitio institucional en español e inglés, con servicios y cobertura, entra en un sitio de hasta 6 páginas desde $1,250, y el segundo idioma suele llevarlo a proyecto a medida desde $2,900. Si además conectas con sistemas de agenciamiento o consulta de recaladas, es a medida sin discusión. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene la web de una naviera?', a: 'Si tu cliente es un armador extranjero que te contrata por relación y por agencia, la web no te trae contratos: te confirma que existes y que eres serio. Con un sitio institucional sobrio, en inglés, cumples. La inversión mayor se justifica cuando quieres captar clientes nuevos que no te conocen.' },
+          { q: '¿Puede una IA recomendar mi empresa a un armador extranjero?', a: 'Puede, si tiene con qué. ChatGPT, Perplexity y las respuestas de IA de Google arman la recomendación con lo que hay publicado: tu web en inglés, tu ficha de Google, reseñas y menciones en directorios del sector. Si eso está claro y coincide, suben las probabilidades de que te nombre. Nadie puede prometerlo.' },
+          { q: '¿Necesito una web distinta para aparecer en ChatGPT?', a: 'No. Es la misma web bien hecha: páginas por servicio con el vocabulario correcto, cobertura por puerto y credenciales verificables. Una IA solo recomienda lo que puede encontrar y comprobar, así que el SEO es la base del trabajo para la IA.' },
+          { q: '¿Qué pongo en la página de cada servicio?', a: 'Qué haces exactamente, en qué puertos y fondeaderos, con qué equipo propio, en qué horario y cómo se solicita. Si hay requisitos del lado del buque o del agente, también. El comprador internacional decide con esa página sin llamarte primero.' },
+          { q: '¿Qué hago si casi todo mi trabajo llega por agentes internacionales?', a: 'Entonces la web le habla sobre todo a ese agente: credenciales, trazabilidad, rapidez de respuesta y calidad del inglés. Es quien te subcontrata y quien tiene que justificar ante su cliente por qué eligió a un socio local en Panamá.' },
         ],
       },
       {
@@ -259,6 +307,17 @@ export const industrias3: PageData[] = [
         ],
       },
       {
+        type: 'steps',
+        h2: 'Cómo trabajamos tu web de cooperativa',
+        intro: 'Primero las preguntas que hoy se responden en la sucursal, después todo lo demás.',
+        items: [
+          { h3: 'Productos con sus condiciones', text: 'Una página por tipo de préstamo y de ahorro, con tasa, plazo, requisitos y para quién es. Escrita para el que pregunta desde el celular, no para el comité de crédito.' },
+          { h3: 'Simulador que responde la pregunta de siempre', text: 'Monto, plazo y tipo de préstamo, con la cuota estimada en pantalla y una nota clara de que es referencial. Lo conectamos con la solicitud para que el interesado no repita los datos.' },
+          { h3: 'Afiliación y solicitud con datos mínimos', text: 'Primer paso corto, aviso de privacidad visible y solicitudes que llegan a un buzón institucional con registro de quién atendió cada una, no al WhatsApp personal de un ejecutivo.' },
+          { h3: 'Transparencia y sucursales', text: 'Estados financieros, memorias y convocatorias en una sección fácil de encontrar, y cada sucursal con su página, dirección, horario y ficha de Google con los mismos datos.' },
+        ],
+      },
+      {
         type: 'cards',
         h2: 'A quién le habla la web de tu cooperativa',
         items: [
@@ -274,6 +333,15 @@ export const industrias3: PageData[] = [
           'Una solicitud de crédito recoge cédula, ingresos, lugar de trabajo y a veces referencias personales: datos personales bajo la <strong>Ley 81 de 2019 de Protección de Datos Personales</strong>.',
           'La primera decisión es de diseño: pedir el mínimo en el primer paso. Nombre, monto, plazo y contacto bastan para iniciar; el resto se pide cuando ya hay conversación. La segunda es dónde aterriza: en un buzón institucional con acceso controlado y registro de quién atendió cada solicitud, no en un correo compartido ni en el WhatsApp personal de un ejecutivo.',
           'Nosotros montamos la parte técnica: certificado, formularios con aviso de privacidad y almacenamiento con acceso controlado. <strong>El texto legal y las políticas los revisa el asesor de la cooperativa</strong>, que conoce su marco regulatorio.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Qué le pregunta un futuro socio a ChatGPT antes de pedir un préstamo en Panamá?',
+        paragraphs: [
+          'Mucha gente ya no empieza en Google: le pregunta a un asistente de IA. Preguntas como "¿qué cooperativa en Panamá da préstamos personales a funcionarios?", "¿qué requisitos piden para afiliarse a una cooperativa en David?" o "¿me conviene más un préstamo en una cooperativa o en una financiera?". La respuesta menciona pocas entidades, y el interesado suele empezar por esas.',
+          'Para que tu cooperativa aparezca, la IA necesita encontrar y verificar datos concretos: una página por producto con requisitos y condiciones, el registro ante el ente supervisor visible, un perfil de Google Business completo por sucursal con reseñas de socios, el mismo nombre, teléfono y dirección en todas partes, y respuestas escritas a esas preguntas exactas. Si tus tasas y requisitos viven en un PDF escaneado o solo en la sucursal, no tiene qué citar.',
+          'Eso no garantiza una recomendación, pero sube las probabilidades, y descansa sobre un buen SEO, desde el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Google Maps</a> hasta el <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.',
         ],
       },
       {
@@ -296,6 +364,10 @@ export const industrias3: PageData[] = [
           { q: '¿La web sirve también para el socio actual?', a: 'Es a quien menos atienden las webs del rubro y el que más la usaría: consultar estado, pagar, ver convocatorias y resolver trámites sin ir a la sucursal. Cada trámite resuelto en línea es tiempo de ejecutivo liberado.' },
           { q: '¿Cuánto cuesta la web de una cooperativa de ahorro y crédito?', a: 'Un sitio institucional con productos, requisitos y afiliación entra en un sitio de hasta 6 páginas desde $1,250. Si necesitas simulador de préstamos, consulta de saldo o conexión con tu core financiero, es proyecto a medida desde $2,900. Infraestructura desde $350 al año y mantenimiento desde $99 al mes, que en una entidad financiera no es opcional. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene rehacer la web de la cooperativa?', a: 'Si el sitio actual funciona y lo que falta es que los requisitos estén claros y actualizados, eso es contenido, no rediseño: cuesta menos y rinde más. Rehacerlo se justifica cuando el asociado no encuentra lo que busca, cuando no se ve bien en celular, o cuando el sitio ya no se puede actualizar sin ayuda técnica.' },
+          { q: '¿Puede ChatGPT recomendar mi cooperativa?', a: 'Puede, si encuentra información clara y verificable: productos con requisitos, condiciones publicadas, fichas de Google de cada sucursal con reseñas y datos que coinciden en todas partes. Con eso suben las probabilidades de que la nombre cuando alguien pregunta dónde pedir un préstamo. Nadie puede garantizarlo.' },
+          { q: '¿Qué pasa si una IA da información vieja de mi cooperativa?', a: 'Suele pasar cuando la web tiene tasas o requisitos desactualizados, o cuando cada sitio dice algo distinto. La IA repite lo que encuentra. Mantener la web al día y la ficha de Google con los mismos datos es la forma más directa de que lo que diga sea correcto.' },
+          { q: '¿Puede el socio hacer su solicitud completa en línea?', a: 'Depende de tu proceso y de tu core financiero. Lo que siempre se puede es iniciar en línea: datos básicos, monto y plazo, y que un ejecutivo continúe. La solicitud completa, con documentos y respuesta en línea, es proyecto a medida porque toca la integración.' },
+          { q: '¿Cada sucursal necesita su propia página?', a: 'Si tienes más de una, sí: dirección, horario, teléfono, cómo llegar y su ficha de Google con los mismos datos. Es lo que alguien busca cuando escribe "cooperativa cerca de mí" y lo que una IA usa para saber dónde estás.' },
         ],
       },
       {
@@ -360,6 +432,17 @@ export const industrias3: PageData[] = [
         ],
       },
       {
+        type: 'steps',
+        h2: 'Cómo trabajamos tu web de aire acondicionado',
+        intro: 'Dos objetivos en el mismo sitio: que te llamen en la emergencia y que firmen el mantenimiento después.',
+        items: [
+          { h3: 'La llamada primero', text: 'Teléfono y WhatsApp tocables arriba en cada página, horario de emergencias y precio de diagnóstico a la vista. El cliente con el equipo dañado tiene que poder llamarte sin buscar nada.' },
+          { h3: 'Una página por servicio y por equipo', text: 'Instalación, mantenimiento, reparación, cuartos fríos y chillers, cada uno con su página, sus marcas y su zona de cobertura. Residencial y comercial, cada uno con su propio vocabulario.' },
+          { h3: 'El plan de mantenimiento como producto', text: 'Qué incluye cada visita, cada cuánto se hace y cómo se contrata, en una página propia. Si lo quieres, conectamos el recordatorio a los clientes de reparación para ofrecerles el plan cuando ya no tienen calor.' },
+          { h3: 'Ficha de Google y zonas', text: 'Completamos tu perfil de Google Business con fotos de trabajos reales, categorías correctas y las zonas que atiendes, con los mismos datos que la web. En una emergencia, muchas llamadas salen de ahí.' },
+        ],
+      },
+      {
         type: 'cards',
         h2: 'Con qué llega cada cliente',
         items: [
@@ -375,6 +458,15 @@ export const industrias3: PageData[] = [
           'El aire acondicionado es la mayor parte de la factura eléctrica en casi cualquier casa u oficina de Panamá, y casi ninguna empresa del rubro lo usa como argumento.',
           'Lo que la gente busca es concreto: cuánto consume un equipo según su capacidad, qué diferencia hay entre uno convencional y uno inverter, cuánto se ahorra de verdad, cada cuánto limpiar para no gastar de más. Son búsquedas con mucho volumen y poca competencia bien hecha.',
           'Ese contenido vende el mantenimiento sin parecer venta, y sirve a los dos clientes: <strong>el dueño de casa que quiere bajar la factura y el gerente que tiene que justificar el gasto ante su jefe</strong> usan el mismo argumento.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Qué le pregunta tu cliente a ChatGPT antes de llamar a una empresa de aire acondicionado?',
+        paragraphs: [
+          'Cada vez más gente le pregunta a un asistente de IA antes de buscar un número. Preguntas como "¿quién repara aire acondicionado hoy en San Miguelito?", "¿cada cuánto hay que darle mantenimiento a un split en Panamá?" o "¿qué empresa da mantenimiento a cuartos fríos de restaurante en Ciudad de Panamá?". La respuesta nombra a pocas empresas, y la llamada va para una de esas.',
+          'Para que la tuya esté ahí, la IA necesita encontrar y comprobar lo básico: páginas claras por servicio y por zona, un perfil de Google Business completo con reseñas recientes, el mismo nombre, teléfono y dirección en la web, en Google y en directorios, y respuestas escritas a esas preguntas, como cada cuánto limpiar un equipo o qué incluye el mantenimiento. Una web que solo dice "servicio de A/C" deja a la IA sin nada que decir de ti.',
+          'Eso no asegura una recomendación, pero sube las probabilidades, y todo parte del <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Google Maps</a>, que es la base del <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.',
         ],
       },
       {
@@ -397,6 +489,10 @@ export const industrias3: PageData[] = [
           { q: '¿Cuál es la métrica más importante?', a: 'Qué porcentaje de los clientes de emergencia terminó firmando un contrato de mantenimiento. Casi nadie la tiene, y cuando es baja el problema casi nunca es el precio del plan: es que nadie volvió a contactar al cliente después de la reparación.' },
           { q: '¿Cuánto cuesta la web de una empresa de aire acondicionado?', a: 'Este rubro se decide por urgencia: el cliente busca, llama y contrata. Para eso una landing enfocada en la llamada resuelve, desde $550. Si vendes equipos además del servicio, o das mantenimiento por contrato a empresas, conviene el sitio de hasta 6 páginas desde $1,250 con una página por tipo de servicio. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO te conviene la web todavía?', a: 'Si no puedes atender más trabajos de los que ya tienes, no abras la llave: vas a generar llamadas que no contestas y reseñas malas de gente que nunca fue tu cliente. Primero capacidad, después visibilidad.' },
+          { q: '¿Puede ChatGPT recomendar mi empresa de aire acondicionado?', a: 'Puede, si encuentra con qué: páginas claras por servicio y zona, una ficha de Google completa con reseñas y los mismos datos de contacto en todas partes. Con eso suben las probabilidades de que te nombre cuando alguien pregunta quién repara un equipo cerca. Nadie puede garantizarlo.' },
+          { q: '¿Las reseñas de Google influyen en lo que dice la IA?', a: 'Son una de las fuentes que los asistentes de IA consultan para decidir a quién nombrar, junto con tu web y tus datos de contacto. Pedirle la reseña al cliente justo después de resolver su emergencia, cuando está agradecido, es el hábito que más rinde.' },
+          { q: '¿Conviene una página por zona?', a: 'Si atiendes zonas que la gente busca por nombre, como Costa del Este, Arraiján o La Chorrera, sí, siempre que cada página diga algo real de esa zona: en cuánto tiempo llegas, qué tipo de edificios atiendes, si hay recargo. Copiar la misma página cambiando el nombre del barrio no ayuda.' },
+          { q: '¿Puedo agendar visitas de mantenimiento desde la web?', a: 'Sí, para los clientes de plan: un formulario o calendario donde eligen día y franja, y te llega con la dirección y el equipo. La emergencia, en cambio, se resuelve mejor por llamada o WhatsApp, porque el cliente quiere una respuesta ya.' },
         ],
       },
       {
@@ -462,6 +558,17 @@ export const industrias3: PageData[] = [
         ],
       },
       {
+        type: 'steps',
+        h2: 'Cómo trabajamos tu web de empresa de seguridad',
+        intro: 'Dos públicos en el mismo sitio, cada uno con su camino: el que contrata y el que busca trabajo.',
+        items: [
+          { h3: 'Página de credenciales', text: 'Permiso del Ministerio de Seguridad Pública, póliza, años de operación y procedimiento de selección y supervisión, en una página fácil de enlazar y con un documento descargable para el expediente del cliente.' },
+          { h3: 'Servicios separados por comprador', text: 'Vigilancia física, monitoreo, escolta y tecnología, cada uno con su página. El administrador de PH, el gerente de planta y el dueño de un comercio llegan buscando cosas distintas.' },
+          { h3: 'Solicitud de propuesta con lo necesario', text: 'Tipo de instalación, puestos, turnos y ubicación. La solicitud llega ordenada a quien arma las propuestas, con la fecha en que entró, para medir cuánto se tarda en responder.' },
+          { h3: 'Empleo por zona', text: 'Vacantes con requisitos, zona y forma de aplicar desde el celular, en una sección que el aspirante encuentra buscando trabajo. Las aplicaciones llegan separadas de las solicitudes comerciales.' },
+        ],
+      },
+      {
         type: 'cards',
         h2: 'Quién llega a la web de una empresa de seguridad',
         items: [
@@ -476,6 +583,15 @@ export const industrias3: PageData[] = [
         paragraphs: [
           'Cámaras, control de acceso, alarmas y monitoreo remoto suelen aparecer como una línea más dentro de la vigilancia física. Es otro negocio, con otro comprador, otro ticket y una decisión más rápida: quien busca "instalación de cámaras de seguridad Panamá" o "monitoreo de alarmas" muchas veces no busca guardias.',
           'Una página propia con las tecnologías que instalas, qué incluye el monitoreo, si hay centro propio y el tiempo de respuesta ante una alarma abre esa línea de captación. Y <strong>el cliente que entra por cámaras suele terminar contratando vigilancia física</strong>, y al revés.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Qué le pregunta un administrador a ChatGPT antes de contratar seguridad en Panamá?',
+        paragraphs: [
+          'Antes de pedir propuestas, muchos compradores ya le preguntan a un asistente de IA. Preguntas como "¿qué empresas de seguridad con permiso vigente atienden PH en Costa del Este?", "¿quién instala cámaras y da monitoreo para un local en Ciudad de Panamá?" o "¿cómo se calcula el costo de un puesto de vigilancia 24 horas?". La respuesta trae pocos nombres, y la lista corta de invitados a cotizar muchas veces sale de ahí.',
+          'Para entrar en esa respuesta, la IA tiene que encontrar y verificar lo mismo que el comité: credenciales publicadas, una página clara por servicio, un perfil de Google Business completo con reseñas de clientes, el mismo nombre, teléfono y dirección en la web, en Google y en directorios, y respuestas escritas a esas preguntas, incluida cómo se estructura el costo de un puesto. Si tu web no dice qué haces ni dónde, la IA nombra a otro.',
+          'Nada de eso garantiza la recomendación, pero sube las probabilidades, y la base es la misma del <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Google Maps</a>, como explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.',
         ],
       },
       {
@@ -498,6 +614,10 @@ export const industrias3: PageData[] = [
           { q: '¿Qué mido si tengo dos negocios en la misma web?', a: 'Dos embudos separados: solicitudes de propuesta por tipo de cliente, y aplicaciones de empleo por zona. Si tienes plazas descubiertas y la web no genera aplicaciones, eso cuesta contratos, no solo tiempo de recursos humanos.' },
           { q: '¿Cuánto cuesta la web de una empresa de seguridad?', a: 'Servicios, cobertura, certificaciones y contacto: hasta 6 páginas desde $1,250. Si quieres portal de cliente para reportes de ronda o monitoreo, es proyecto a medida desde $2,900. Infraestructura desde $350 al año y mantenimiento desde $99 al mes. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene la web de vigilancia?', a: 'Si trabajas solo con contratos corporativos ganados por licitación, la web es respaldo, no captación: con un sitio institucional serio y actualizado cumples. Se vuelve canal de venta cuando buscas residenciales, comercios pequeños o servicios de custodia puntual, que sí se buscan en Google.' },
+          { q: '¿Puede ChatGPT recomendar mi empresa de seguridad?', a: 'Puede, si encuentra información clara y verificable: servicios, cobertura, credenciales, ficha de Google con reseñas y datos de contacto que coinciden en todas partes. Con eso suben las probabilidades de que te nombre cuando un administrador pregunta a quién invitar a cotizar. Nadie puede garantizarlo.' },
+          { q: '¿Ayuda publicar credenciales para aparecer en respuestas de IA?', a: 'Ayuda, porque una IA busca datos verificables antes de nombrar a alguien, sobre todo en un rubro de confianza. Permiso, años de operación, servicios y cobertura escritos con claridad le dan con qué responder. Lo que solo vive en una carpeta de presentación no lo puede leer.' },
+          { q: '¿Conviene una página para propiedades horizontales?', a: 'Si atiendes PH, sí. La junta directiva busca cosas concretas: cómo se supervisa al personal, qué pasa cuando un oficial falta, cómo se reportan los incidentes y quién responde de noche. Una página que lo explique te pone en la lista de propuestas.' },
+          { q: '¿Puedo mostrar a mis clientes actuales en la web?', a: 'Solo con su permiso por escrito, y en este rubro muchos prefieren no aparecer. Funciona bien describir el tipo de instalación que atiendes (edificios residenciales, plantas, comercios) sin nombres, y ofrecer referencias que el comprador pueda pedir durante la evaluación.' },
         ],
       },
       {
@@ -562,6 +682,17 @@ export const industrias3: PageData[] = [
         ],
       },
       {
+        type: 'steps',
+        h2: 'Cómo trabajamos tu web de imprenta',
+        intro: 'El objetivo es que la cotización llegue completa y el arte llegue bien a la primera.',
+        items: [
+          { h3: 'Catálogo por línea de producción', text: 'Gran formato, offset, digital, sublimación y rotulación, cada línea con sus productos, medidas estándar, materiales y tiempos reales de entrega.' },
+          { h3: 'Cotizador guiado', text: 'Un formulario que pregunta lo que cambia el precio (producto, medida, cantidad, material, acabado y fecha) y llega completo al vendedor, con el arte adjunto si el cliente ya lo tiene.' },
+          { h3: 'Carga de archivos y especificaciones', text: 'Enlace de carga para archivos pesados ligado a cada solicitud, y una página de especificaciones de arte a la que el vendedor puede mandar al cliente en lugar de explicarlo cada vez.' },
+          { h3: 'Trabajos reales y ficha de Google', text: 'Galería por categoría con fotos de trabajos tuyos, y tu perfil de Google Business con las mismas categorías, horario y dirección que la web, para quien busca una imprenta cerca.' },
+        ],
+      },
+      {
         type: 'cards',
         h2: 'A quién le vende la web de tu imprenta',
         items: [
@@ -577,6 +708,15 @@ export const industrias3: PageData[] = [
           'Muchas imprentas panameñas hacen gran formato, offset, digital, sublimación, bordado y rotulación, y lo publican todo en una lista, con lo que no compiten en ninguna búsqueda concreta.',
           'Cada línea se busca con palabras distintas: "impresión de vallas Panamá", "impresión de factureras", "rotulación de vehículos", "banderolas para evento". Una página por línea, con las medidas, materiales y tiempos reales de esa línea, basta para competir donde hoy no compites.',
           '<strong>La instalación merece página propia.</strong> Si tienes cuadrilla para montar vallas o rotular flotas, eso te separa de la imprenta que solo entrega el material, y es lo que busca un cliente corporativo que no quiere coordinar dos proveedores.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: '¿Qué le pregunta tu cliente a ChatGPT antes de elegir una imprenta en Panamá?',
+        paragraphs: [
+          'El que necesita material para un evento o una campaña ya no solo busca en Google: le pregunta a un asistente de IA. Preguntas como "¿qué imprenta en Ciudad de Panamá imprime banderolas para mañana?", "¿quién rotula flotas de vehículos en Panamá?" o "¿dónde imprimo factureras con numeración?". La respuesta nombra a pocas imprentas, y a esas les pide precio.',
+          'Para que tu imprenta esté ahí, la IA necesita encontrar y verificar datos concretos: una página por línea de producción con medidas, materiales y tiempos, un perfil de Google Business completo con fotos de trabajos y reseñas, el mismo nombre, teléfono y dirección en todas partes, y respuestas escritas a esas preguntas, como si haces entregas urgentes o instalación. Una lista de servicios sin detalle no le da nada que decir de ti.',
+          'Eso no garantiza que te recomiende, pero sube las probabilidades, y se sostiene sobre un buen SEO, empezando por el <a href="/crecimiento/seo-local-google-maps-panama/">SEO local en Google Maps</a>, como explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT e IA</a>.',
         ],
       },
       {
@@ -599,6 +739,10 @@ export const industrias3: PageData[] = [
           { q: '¿Qué me diferencia de otra imprenta?', a: 'Si tienes cuadrilla de instalación, eso. Un cliente corporativo que necesita vallas montadas o una flota rotulada prefiere no coordinar dos proveedores, y casi ninguna imprenta lo comunica en su web.' },
           { q: '¿Cuánto cuesta la web de una imprenta o agencia de publicidad?', a: 'Catálogo de productos con cotización en línea: si el cliente compra directo, es tienda desde $1,950. Si todo se cotiza a la medida (tirajes, materiales, acabados), un sitio de hasta 6 páginas desde $1,250 con formulario de cotización te resuelve mejor. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene poner precios en la web?', a: 'Cuando cada trabajo depende del tiraje y del material: publicar un precio suelto te obliga a explicar después por qué el real es otro. Publica rangos o «desde», o pide los datos mínimos para cotizar en el formulario. Precios cerrados solo donde de verdad son cerrados.' },
+          { q: '¿Puede ChatGPT recomendar mi imprenta?', a: 'Puede, si encuentra con qué: páginas por línea de producción con detalle, ficha de Google completa con fotos y reseñas, y los mismos datos de contacto en todas partes. Con eso suben las probabilidades de que te nombre cuando alguien pregunta dónde imprimir algo. Nadie puede garantizarlo.' },
+          { q: '¿Qué tiene que ver mi ficha de Google con lo que responde una IA?', a: 'Mucho. La ficha confirma dónde estás, qué haces y qué opinan tus clientes, y los asistentes de IA usan esa información para decidir a quién nombrar. Si la ficha dice una dirección y la web otra, le das motivos para dudar.' },
+          { q: '¿Debo publicar los tiempos de entrega?', a: 'Sí, por tipo de trabajo, y los que cumples de verdad. El cliente puntual decide muchas veces por fecha, no por precio. Si haces trabajos urgentes con recargo, dilo también: es justo lo que busca el que tiene un evento mañana.' },
+          { q: '¿Sirve la web para conseguir clientes corporativos recurrentes?', a: 'Sí, si les muestra lo que evalúan: capacidad, trabajos de volumen, cumplimiento de plazos e instalación. Una página para empresas con un formulario de cotización recurrente separa esa conversación de las consultas sueltas.' },
         ],
       },
       {

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 432" role="img" aria-labelledby="hosting-capas-title hosting-capas-desc" font-family="Roboto, system-ui, sans-serif">
+  <title id="hosting-capas-title">Dónde vive tu sitio web</title>
+  <desc id="hosting-capas-desc">El visitante escribe tu dominio, registrado a tu nombre, que apunta al servidor donde vive el sitio con su certificado SSL; el respaldo fuera del servidor y el monitoreo de caídas van con el plan de mantenimiento.</desc>
+  <defs><marker id="flecha" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#737373"/></marker></defs>
+  <path d="M200 64 V94" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M200 152 V182" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <rect x="207" y="160" width="32.2" height="17" fill="#fff"/>
+  <text x="212" y="172" fill="#737373" font-size="11" font-weight="500" letter-spacing="0.08em" text-anchor="start">DNS</text>
+  <path d="M160 248 V272 Q160 280 152 280 H108 Q100 280 100 288 V310" fill="none" stroke="#737373" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#flecha)"/>
+  <rect x="50" y="290" width="47" height="17" fill="#fff"/>
+  <text x="92" y="302" fill="#737373" font-size="11" font-weight="500" letter-spacing="0.08em" text-anchor="end">COPIA</text>
+  <path d="M240 248 V272 Q240 280 248 280 H292 Q300 280 300 288 V310" fill="none" stroke="#737373" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#flecha)"/>
+  <rect x="303" y="290" width="54.400000000000006" height="17" fill="#fff"/>
+  <text x="308" y="302" fill="#737373" font-size="11" font-weight="500" letter-spacing="0.08em" text-anchor="start">VIGILA</text>
+  <rect x="100" y="16" width="200" height="48" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="45" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Visitante</text>
+  <rect x="100" y="96" width="200" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="121" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Tu dominio</text>
+  <text x="200" y="140" fill="#525252" font-size="13" text-anchor="middle">registrado a tu nombre</text>
+  <rect x="100" y="184" width="200" height="64" rx="8" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="213" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Servidor</text>
+  <text x="200" y="232" fill="#d4d4d4" font-size="13" text-anchor="middle">con certificado SSL</text>
+  <rect x="16" y="312" width="168" height="64" rx="8" fill="#fff" stroke="#737373" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="100" y="341" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Respaldo diario</text>
+  <text x="100" y="360" fill="#525252" font-size="13" text-anchor="middle">fuera del servidor</text>
+  <rect x="216" y="312" width="168" height="64" rx="8" fill="#fff" stroke="#737373" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="300" y="341" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Monitoreo</text>
+  <text x="300" y="360" fill="#525252" font-size="13" text-anchor="middle">avisa si se cae</text>
+  <line x1="16" y1="396" x2="384" y2="396" stroke="#d4d4d4" stroke-width="1"/>
+  <rect x="16" y="410" width="16" height="12" rx="3" fill="#fff" stroke="#737373" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="40" y="420" fill="#525252" font-size="13">va con el plan de mantenimiento</text>
+</svg>

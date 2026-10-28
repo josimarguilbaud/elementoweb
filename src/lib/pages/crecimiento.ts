@@ -222,6 +222,17 @@ export const crecimiento: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Tu SEO también es lo que lee ChatGPT',
+        svg: 'seo-a-ia',
+        paragraphs: [
+          'Un asistente de IA no tiene una lista propia de negocios panameños. Cuando alguien le pregunta por un servicio, busca en índices de la web, los mismos que rastrean Google y Bing, y arma la respuesta con lo que encuentra ahí.',
+          'Por eso el trabajo es uno solo. La página que Google entiende, que carga rápido y que responde de forma directa es la misma que un asistente puede leer y citar. <strong>Si Google no te encuentra, la IA casi nunca te va a nombrar.</strong>',
+          'Encima de esa base va el trabajo propio de las respuestas de IA, que explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT (GEO)</a>.',
+        ],
+        pie: 'Simplificado: cada asistente combina fuentes distintas, pero todos dependen de páginas que se puedan encontrar y verificar.',
+      },
+      {
         type: 'prose',
         h2: 'SEO o pauta: la cuenta que importa',
         paragraphs: [
@@ -256,6 +267,28 @@ export const crecimiento: PageData[] = [
           'La posición en Google es la métrica más pedida y la más engañosa: varía por dispositivo, por ubicación y por historial de quien busca. Lo que hay que mirar es el tráfico orgánico y qué hizo esa gente: cuántos contactaron, de qué página vinieron y cuántos terminaron en cliente.',
           'El segundo dato es cuántas páginas distintas reciben visitas: si todo entra por dos páginas, el sitio es frágil; si entra por cuarenta, es un activo. Y las búsquedas por las que apareces sin haberlas trabajado: <strong>suelen revelar demanda que nadie en el negocio sospechaba</strong>.',
         ],
+      },
+      {
+        type: 'prose',
+        h2: 'Cómo elegimos las búsquedas que valen la pena',
+        paragraphs: [
+          'No todas las búsquedas traen clientes. «Qué es una auditoría contable» la escribe un estudiante; «contador para sociedad anónima en Panamá» la escribe alguien que va a pagar. Las dos pueden tener tráfico, pero solo una llena tu agenda.',
+          'Por eso el mapa de palabras clave empieza por la intención: quién busca, en qué momento de la compra está y qué espera encontrar. Las búsquedas con precio, zona o urgencia («cuánto cuesta», «en Costa del Este», «hoy») van primero, porque están más cerca de la llamada.',
+          'Después se revisa a quién tienes enfrente en esa búsqueda. <strong>Una palabra donde salen directorios y páginas flojas se gana antes que una donde salen tres agencias con años de contenido</strong>, y ese orden decide en qué se invierte el primer trimestre.',
+        ],
+      },
+      {
+        type: 'tabla',
+        h2: 'Las señales de avance, en el orden en que aparecen',
+        intro: 'El SEO no se ve de golpe. Estas son las señales que llegan primero y dónde las revisas tú:',
+        columnas: ['Cuándo', 'Qué cambia', 'Dónde lo ves'],
+        filas: [
+          ['Primeras semanas', 'Páginas corregidas e indexadas, velocidad en celular mejor', 'Informes de indexación y Core Web Vitals en Search Console'],
+          ['Mes 2 y 3', 'Más impresiones: Google empieza a mostrarte en más búsquedas', 'Consultas nuevas en el informe de rendimiento'],
+          ['Mes 3 a 6', 'Clics y contactos desde búsquedas con intención de compra', 'Analytics y el origen de cada consulta'],
+          ['Desde el mes 4', 'Menciones en respuestas de asistentes de IA para tus preguntas clave', 'El panel mensual de 10 preguntas'],
+        ],
+        nota: 'Plazos orientativos: dependen de la edad del dominio, la competencia de cada búsqueda y el estado técnico del sitio.',
       },
       {
         type: 'cards',
@@ -297,6 +330,9 @@ export const crecimiento: PageData[] = [
           { q: '¿Debo medir mi posición en Google?', a: 'Es la métrica más engañosa: varía por dispositivo, ubicación e historial de quien busca. Mide tráfico orgánico, de qué página vino cada contacto y cuántas páginas distintas reciben visitas.' },
           { q: '¿Qué gastos fijos hay que sostener además del SEO?', a: 'La infraestructura desde $350 al año y el mantenimiento desde $99 al mes, que es la base sobre la que el SEO se sostiene. Los precios no incluyen ITBMS (7%).' },
           { q: '¿Cuándo NO conviene contratar SEO?', a: 'Cuando necesitas ventas este mes: para eso está la pauta, que compra visibilidad hoy. Tampoco conviene sobre un sitio que vas a rehacer, ni cuando el negocio no puede atender más volumen del que ya tiene.' },
+          { q: '¿El SEO me ayuda a salir en ChatGPT?', a: 'Es la base. Los asistentes de IA buscan en índices de la web y citan páginas que pueden encontrar y verificar, así que un sitio bien posicionado tiene más probabilidad de aparecer. Lo que se suma encima es el <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">GEO</a>: respuestas directas, tu entidad coherente en la web y un panel que mide las menciones.' },
+          { q: '¿Qué es la intención de búsqueda?', a: 'Lo que la persona quiere lograr cuando escribe en Google: informarse, comparar o comprar. «Qué es el SEO» es informativa; «agencia SEO en Panamá precio» es de compra. Cada página se arma para una intención, porque una página que mezcla las dos no convence a ninguna.' },
+          { q: '¿Necesito una página por cada servicio?', a: 'Sí, si quieres aparecer por cada uno. Google posiciona páginas, no empresas: una sola página de «servicios» con diez viñetas compite flojo en las diez búsquedas. Una página por servicio, con su precio, su proceso y sus preguntas, puede ganar la suya.' },
         ],
       },
       { type: 'form', h2: 'Solicita tu auditoría SEO', intro: 'Pásanos tu web y las búsquedas que te importan: te respondemos con lo que encontramos y una propuesta de alcance.' },
@@ -443,6 +479,16 @@ export const crecimiento: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Los tres factores que ordenan el mapa',
+        svg: 'seo-local-factores',
+        paragraphs: [
+          'Google decide qué tres negocios mostrar en el mapa con tres criterios. La <strong>relevancia</strong> es qué tan bien coincide tu ficha con lo que se buscó: categoría, servicios, descripción. La <strong>distancia</strong> es dónde está quien busca. La <strong>prominencia</strong> es qué tan conocido y bien valorado es tu negocio: reseñas, menciones y tu web.',
+          'La distancia no se puede mover. Las otras dos sí, y ahí está todo el trabajo: la relevancia se deja bien una vez y la prominencia se construye cada semana.',
+        ],
+        pie: 'Google publica estos tres criterios en su ayuda de Perfil de Negocio. El peso de cada uno no lo publica.',
+      },
+      {
         type: 'prose',
         h2: 'Las reseñas son la moneda del mapa',
         paragraphs: [
@@ -485,6 +531,32 @@ export const crecimiento: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: 'Tu ficha de Google también le contesta a la IA',
+        paragraphs: [
+          'Cada vez más gente le pregunta a su teléfono en vez de escribir en el buscador: «¿qué taller abre los sábados cerca de El Dorado?», «¿dónde hay una clínica dental con buenas reseñas en San Francisco?». Para contestar, los asistentes de IA se apoyan en los mismos datos que alimentan el mapa: categoría, horario, dirección, reseñas.',
+          'Una ficha incompleta o con datos que no coinciden con tu web es una ficha que el asistente no puede usar con confianza. <strong>El mismo trabajo que te pone en el mapa te deja listo para que una IA te pueda nombrar.</strong>',
+          'Lo que se hace encima para aparecer en ChatGPT, Gemini y Perplexity lo explicamos en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT (GEO)</a>.',
+        ],
+      },
+      {
+        type: 'checklist',
+        h2: 'Revisa tu ficha en 10 minutos',
+        intro: 'Búscate en Google Maps desde el celular, como lo haría un cliente, y marca lo que tu ficha ya tiene:',
+        items: [
+          'La categoría principal describe lo que más vendes, no algo genérico',
+          'El horario está al día, incluidos feriados',
+          'El teléfono contesta y es el mismo que aparece en tu web',
+          'La dirección y el pin del mapa llevan al lugar correcto',
+          'Hay fotos reales recientes del local, del equipo y del producto',
+          'Tiene reseñas de los últimos tres meses',
+          'Todas las reseñas tienen respuesta, también las malas',
+          'Los servicios están cargados con nombres que tu cliente usaría',
+          'El enlace a tu web funciona y lleva a la página correcta',
+          'Hay alguna publicación del último mes',
+        ],
+      },
+      {
         type: 'cards',
         h2: 'Negocios donde el mapa lo es todo',
         intro: 'Si tu cliente decide «cerca de mí», el mapa es donde se gana o se pierde la llamada.',
@@ -523,6 +595,9 @@ export const crecimiento: PageData[] = [
           { q: '¿Puedo aparecer en el mapa en toda la ciudad?', a: 'Es muy difícil: la búsqueda local funciona por proximidad y compites contra los de tu radio, no contra todos. Si tienes varias sedes, cada una necesita ficha y página propias. Lo que extiende el radio es el contenido por zona.' },
           { q: '¿Sirve comprar reseñas?', a: 'No. Google detecta los patrones (muchas de golpe, cuentas sin historial, textos parecidos) y la consecuencia va desde borrarlas hasta suspender la ficha, lo que te deja fuera del mapa. Lo que funciona es pedirlas justo después de un servicio bien resuelto, con enlace directo.' },
           { q: '¿Qué mido en Google Business Profile?', a: 'Llamadas, solicitudes de ruta y clics a la web: los dos primeros son intención casi pura, porque nadie pide cómo llegar a un negocio que no piensa visitar. Y cuántos te encontraron buscando lo que vendes en vez de tu nombre, que es el cliente nuevo.' },
+          { q: '¿Google Maps influye en lo que responde ChatGPT?', a: 'Las preguntas con «cerca de mí» o con una zona suelen responderse con datos de negocios locales: categoría, horario, dirección y reseñas. Una ficha completa y coherente con tu web es la base para que un asistente te pueda mencionar, aunque ninguna agencia controla lo que responde.' },
+          { q: '¿Qué categoría elijo para mi ficha?', a: 'La que describe lo que más vendes, lo más específica posible: «clínica dental» rinde más que «servicio de salud». La categoría principal decide para qué búsquedas compites en el mapa; las secundarias suman servicios relacionados sin diluir la principal.' },
+          { q: '¿Sirven las publicaciones en la ficha?', a: 'Ayudan a que la ficha se vea activa y le dan al cliente una razón más para escribir: una oferta, un horario especial, un servicio nuevo. No reemplazan a las reseñas, que pesan más, pero una ficha sin movimiento en meses transmite abandono.' },
           { q: '¿Cuándo NO te sirve el SEO local?', a: 'Si vendes en línea a todo el país o al exterior y no te importa de qué barrio viene el cliente, el mapa no es tu pelea: te conviene SEO orgánico y pauta. Tampoco funciona sin dirección física verificable o sin alguien que atienda el teléfono: Google Maps manda llamadas, y una llamada sin responder es peor que no aparecer.' },
         ],
       },
@@ -890,11 +965,39 @@ export const crecimiento: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Dónde vive tu sitio, pieza por pieza',
+        svg: 'hosting-capas',
+        paragraphs: [
+          'Cuando alguien escribe tu dirección, el <strong>dominio</strong> le dice al navegador en qué servidor está tu sitio. El <strong>servidor</strong> es donde vive la web, con su certificado SSL para que el navegador la marque como segura.',
+          'Esas dos piezas hacen que el sitio exista. Las otras dos hacen que sobreviva a un mal día: un respaldo guardado fuera del servidor y alguien que se entere cuando se cae. Esas van con el <a href="/crecimiento/mantenimiento-web-panama/">plan de mantenimiento</a>.',
+        ],
+        pie: 'Un respaldo guardado en el mismo servidor cae con él. Por eso va fuera.',
+      },
+      {
         type: 'prose',
         h2: 'El hosting barato no es más lento: es más frágil',
         paragraphs: [
           'La diferencia entre un hosting barato y uno decente está en qué pasa cuando algo sale mal. En el compartido más barato tu sitio convive con cientos de otros en el mismo servidor: si uno recibe un pico de tráfico o un ataque, el tuyo lo siente, y el soporte responde en días. Un fin de semana largo caído son tres días sin un solo contacto, y eso suele valer más que la diferencia de precio anual.',
           '<strong>La infraestructura y el monitoreo son dos cosas distintas</strong>, y por separado no sirven de mucho: el servidor es dónde vive tu sitio; el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento</a> es quien se entera y responde cuando se cae.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'El dominio a tu nombre importa más que el hosting',
+        paragraphs: [
+          'El hosting se cambia en una tarde. El dominio no: es tu dirección en internet, la que está en tus tarjetas, tu correo y cada enlace que Google ya conoce. Si está registrado a nombre de un proveedor o de un empleado que ya no está, tu marca depende de que esa persona conteste.',
+          'Es uno de los problemas más comunes cuando un negocio cambia de proveedor: la web se puede rehacer, pero el dominio está atrapado. <strong>Por eso lo registramos siempre a nombre de tu empresa</strong> y te dejamos los accesos por escrito.',
+          'Si no sabes a nombre de quién está el tuyo, se puede consultar en el registrador. Si no es tuyo, conviene resolverlo antes de cualquier rediseño.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Por qué tu correo cae en spam',
+        paragraphs: [
+          'Un correo con tu dominio que llega a la carpeta de spam casi nunca es culpa del texto. Es que el servidor que lo recibe no puede comprobar que de verdad lo mandaste tú.',
+          'Esa comprobación depende de tres registros en tu dominio: SPF dice qué servidores pueden enviar en tu nombre, DKIM firma cada mensaje y DMARC le indica al receptor qué hacer si algo no cuadra. <strong>Si falta alguno, tus cotizaciones y facturas compiten con el spam para llegar.</strong>',
+          'Configurarlos va incluido en el hosting, uses nuestro correo, Google Workspace o Microsoft 365.',
         ],
       },
       {
@@ -921,6 +1024,8 @@ export const crecimiento: PageData[] = [
           { q: '¿El correo empresarial cuesta aparte?', a: 'Sí, desde $60 al año por dominio con las cuentas que necesites. Va aparte porque no todos los proyectos lo piden: algunos ya tienen Google Workspace o Microsoft 365 y solo necesitan que apuntemos los registros.' },
           { q: '¿Puedo traer mi hosting actual o tengo que migrar?', a: 'Puedes traer el tuyo si funciona bien: no te obligamos a migrar. Si migramos, lo hacemos sin caída perceptible: preparamos el entorno nuevo, probamos que todo funcione igual, y solo entonces apuntamos el dominio.' },
           { q: '¿Cuándo NO conviene el VPS?', a: 'Si tu sitio es una landing page o una web corporativa de tráfico moderado, el VPS es gastar de más: el hosting cloud rinde igual por una fracción del precio. El VPS se justifica con tráfico alto, integraciones pesadas o necesidad de control total del servidor.' },
+          { q: '¿El hosting afecta mi posicionamiento en Google?', a: 'Sí, de forma indirecta. Un servidor lento empeora la experiencia en celular, que Google mide, y un sitio que se cae seguido pierde visitas y confianza. Un buen hosting no te posiciona solo, pero uno malo frena todo el trabajo de <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a>.' },
+          { q: '¿Por qué mis correos llegan a spam?', a: 'Casi siempre porque faltan los registros SPF, DKIM o DMARC en tu dominio, y el servidor que recibe no puede comprobar que el correo es tuyo. Configurarlos va incluido en el hosting, uses nuestro correo, Google Workspace o Microsoft 365.' },
           { q: '¿Qué pasa si mi sitio se cae?', a: 'La infraestructura (dónde vive tu sitio) y el monitoreo de caídas son dos cosas distintas, y por separado no sirven de mucho. Nosotros las vendemos juntas: ve los <a href="/crecimiento/mantenimiento-web-panama/">planes de mantenimiento</a> para el detalle de tiempos de respuesta.' },
         ],
       },

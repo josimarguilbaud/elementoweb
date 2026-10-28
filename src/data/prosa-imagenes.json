@@ -503,5 +503,360 @@
   "alt": "Un gerente de ventas revisa la lista de precios aprobada que usa el agente antes de responder",
   "width": 1200,
   "height": 800
+ },
+ "industrias--diseno-web-abogados-panama-1": {
+  "alt": "Abogada revisando expedientes de distintas áreas de práctica en su despacho de Ciudad de Panamá.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-abogados-panama-3": {
+  "alt": "Abogado escribiendo en su laptop una explicación de un trámite para la web de su firma.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-bienes-raices-panama-1": {
+  "alt": "Corredora de bienes raíces mostrando la zona a una pareja frente a edificios residenciales de Costa del Este.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-bienes-raices-panama-3": {
+  "alt": "Corredor fotografiando con buena luz la sala de un apartamento en venta para su ficha.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-restaurantes-panama-1": {
+  "alt": "Comensal revisando el menú en su celular en la mesa de un restaurante del Casco Antiguo.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-restaurantes-panama-3": {
+  "alt": "Dueña de restaurante empacando un pedido para llevar en el mostrador de su local.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-turismo-hoteles-panama-1": {
+  "alt": "Guía turístico mostrando a viajeros una isla de San Blas desde la lancha.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-turismo-hoteles-panama-3": {
+  "alt": "Recepcionista de un hotel boutique en Boquete atendiendo a huéspedes que reservaron directo.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-clinicas-salud-panama-1": {
+  "alt": "Paciente agendando su cita desde el celular en la sala de espera de una clínica.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-clinicas-salud-panama-3": {
+  "alt": "Pediatra atendiendo a una madre y su hijo en un consultorio de su especialidad.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-constructoras-panama-1": {
+  "alt": "Ingeniero de obra registrando el avance de un edificio en construcción en Panamá Oeste.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-constructoras-panama-3": {
+  "alt": "Asesora de ventas mostrando a una familia la maqueta de un proyecto en preventa.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-educacion-panama-1": {
+  "alt": "Padres conversando con la encargada de admisiones de un colegio en Ciudad de Panamá.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-educacion-panama-3": {
+  "alt": "Familia recorriendo el patio de un colegio mientras compara opciones para su hija.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-retail-moda-panama-1": {
+  "alt": "Dueña de una tienda de ropa preparando un pedido online junto a sus percheros.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-retail-moda-panama-3": {
+  "alt": "Clienta probándose una prenda frente al espejo de una boutique para elegir su talla.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-gimnasios-fitness-panama-1": {
+  "alt": "Socios en una clase grupal de spinning en un gimnasio de Ciudad de Panamá.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-gimnasios-fitness-panama-3": {
+  "alt": "Entrenadora recibiendo a una persona nueva que viene a su día de prueba en el gimnasio.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-talleres-automotriz-panama-1": {
+  "alt": "Mecánico atendiendo a un cliente que llegó a su taller en Juan Díaz.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-talleres-automotriz-panama-3": {
+  "alt": "Mecánico mostrando al cliente la pieza de freno que va a reemplazar.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-belleza-spa-panama-1": {
+  "alt": "Estilista atendiendo a una clienta habitual en un salón de belleza de Obarrio.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-belleza-spa-panama-3": {
+  "alt": "Dueña de un salón respondiendo mensajes de clientas en su celular entre citas.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-logistica-transporte-panama-1": {
+  "alt": "Gerente de operaciones de un operador logístico revisando la carga con un cliente en su bodega.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-logistica-transporte-panama-3": {
+  "alt": "Despachador coordinando la salida de un camión con contenedor en el patio de carga.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-contadores-panama-1": {
+  "alt": "Contadora panameña revisa estados financieros con un cliente en su oficina, una reunión que se gana con seriedad y datos claros.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-contadores-panama-3": {
+  "alt": "Contador trabaja en las declaraciones de varios clientes en plena temporada de vencimientos fiscales.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-agencias-viajes-tours-panama-1": {
+  "alt": "Guía de tours atiende en el muelle a viajeros que ya reservaron su salida a San Blas.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-agencias-viajes-tours-panama-3": {
+  "alt": "Asesora de viajes conversa con una pareja que todavía decide a dónde ir en su próximo feriado.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-importadoras-distribuidoras-panama-1": {
+  "alt": "Gerente de una distribuidora recorre su bodega con un comprador corporativo que evalúa la seriedad del proveedor.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-importadoras-distribuidoras-panama-3": {
+  "alt": "Ejecutiva de ventas de una importadora prepara la lista de productos que pidió un cliente mayorista.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-dentistas-odontologia-panama-1": {
+  "alt": "Recepcionista de un consultorio dental confirma la cita de una paciente que reservó en línea.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-dentistas-odontologia-panama-3": {
+  "alt": "Odontólogo explica a un paciente el tratamiento que le va a hacer, paso por paso.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-seguros-corredores-panama-1": {
+  "alt": "Corredora de seguros explica a un cliente las opciones de un ramo específico de seguro.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-seguros-corredores-panama-3": {
+  "alt": "Corredor de seguros llama a un asegurado para recordarle que su póliza está por renovarse.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-concesionarios-autos-panama-1": {
+  "alt": "Asesor de ventas recibe en el salón a una familia que ya vio en línea el auto que quiere probar.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-concesionarios-autos-panama-3": {
+  "alt": "Comprador revisa de cerca un auto usado en el patio del concesionario antes de decidir.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-clinicas-esteticas-panama-1": {
+  "alt": "Médica estética conversa con una paciente durante la valoración previa a su tratamiento.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-clinicas-esteticas-panama-3": {
+  "alt": "Especialista prepara la sala para un procedimiento estético concreto que la paciente ya eligió.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-veterinarias-panama-1": {
+  "alt": "Veterinaria revisa a un perro mientras su dueña observa en la consulta.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-veterinarias-panama-3": {
+  "alt": "Equipo de una veterinaria atiende de noche una urgencia con un gato.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-ferreterias-materiales-panama-1": {
+  "alt": "Dependiente de una ferretería de barrio atiende a un cliente en el mostrador.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-ferreterias-materiales-panama-3": {
+  "alt": "Cliente busca en el pasillo de una ferretería lo que necesita para resolver una reparación en casa.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-eventos-catering-bodas-panama-1": {
+  "alt": "Equipo de catering monta las mesas de una boda al aire libre, el tipo de trabajo que luego se muestra en el portafolio.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-eventos-catering-bodas-panama-3": {
+  "alt": "Organizadora de eventos revisa con una pareja las fechas disponibles para su boda.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-consultoras-servicios-profesionales-panama-1": {
+  "alt": "Consultor presenta su análisis a la gerencia de una empresa cliente en una sala de juntas.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-consultoras-servicios-profesionales-panama-3": {
+  "alt": "Comité de una empresa discute la propuesta de una consultora antes de aprobarla.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-arquitectos-diseno-interiores-panama-1": {
+  "alt": "Arquitecta revisa en su estudio los planos y la maqueta de un proyecto terminado.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-arquitectos-diseno-interiores-panama-3": {
+  "alt": "Diseñador de interiores visita con su cliente la obra de un apartamento en remodelación.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-agencias-aduana-zona-libre-panama-1": {
+  "alt": "Una agente de aduana le explica a un importador los documentos de su carga en una oficina de Ciudad de Panamá.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-agencias-aduana-zona-libre-panama-3": {
+  "alt": "Trabajadores revisan pallets de mercancía en una bodega de la Zona Libre de Colón.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-navieras-servicios-maritimos-panama-1": {
+  "alt": "Un coordinador de operaciones marítimas atiende una llamada frente al puerto de Balboa.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-navieras-servicios-maritimos-panama-3": {
+  "alt": "Tripulantes de una lancha de servicio se acercan a un buque fondeado en la bahía de Panamá.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-cooperativas-financieras-panama-1": {
+  "alt": "Una mujer revisa en su celular la cuota de un préstamo sentada en la sala de su casa.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-cooperativas-financieras-panama-3": {
+  "alt": "Un ejecutivo de una cooperativa atiende a un socio en un escritorio de sucursal en Panamá.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-aire-acondicionado-refrigeracion-panama-1": {
+  "alt": "Un técnico limpia la unidad interior de un aire acondicionado tipo split en un apartamento de Ciudad de Panamá.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-aire-acondicionado-refrigeracion-panama-3": {
+  "alt": "Dos técnicos revisan condensadoras de aire acondicionado en la azotea de un edificio en Panamá.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-seguridad-vigilancia-panama-1": {
+  "alt": "Una gerente de administración revisa propuestas de seguridad con un supervisor en una oficina de Ciudad de Panamá.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-seguridad-vigilancia-panama-3": {
+  "alt": "Un operador de monitoreo observa varias pantallas de cámaras en un centro de control en Panamá.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-imprentas-publicidad-panama-1": {
+  "alt": "Un vendedor de imprenta revisa una muestra de banderola con un cliente en el mostrador.",
+  "width": 1200,
+  "height": 800
+ },
+ "industrias--diseno-web-imprentas-publicidad-panama-3": {
+  "alt": "Un instalador aplica vinil de rotulación en la puerta de una camioneta de reparto en Panamá.",
+  "width": 1200,
+  "height": 800
+ },
+ "crecimiento--seo-posicionamiento-web-panama-6": {
+  "alt": "Dueño de una ferretería en Ciudad de Panamá revisa con una consultora, en una laptop, qué búsquedas traen clientes que sí compran",
+  "width": 1200,
+  "height": 800
+ },
+ "crecimiento--seo-local-google-maps-panama-6": {
+  "alt": "Conductor estacionado en Ciudad de Panamá le pregunta a su teléfono por un taller abierto cerca antes de arrancar",
+  "width": 1200,
+  "height": 800
+ },
+ "inteligencia-artificial-para-empresas-panama-2": {
+  "alt": "Asistente administrativa de una empresa panameña con una pila de facturas en papel junto a su computador, el trabajo repetitivo que conviene automatizar primero",
+  "width": 1200,
+  "height": 800
+ },
+ "inteligencia-artificial-para-empresas-panama-3": {
+  "alt": "Gerente de operaciones y su equipo ordenan manuales y procedimientos en una sala de reuniones antes de cargarlos a la IA privada",
+  "width": 1200,
+  "height": 800
+ },
+ "inteligencia-artificial-para-empresas-panama-4": {
+  "alt": "Directora de una empresa revisa con su consultor un panel de uso del asistente de IA en una pantalla grande",
+  "width": 1200,
+  "height": 800
+ },
+ "funcionalidades--agente-de-ventas-ia-whatsapp-panama-3": {
+  "alt": "Mujer escribe por WhatsApp a una tienda desde el sofá de su casa en la noche, la hora en que muchas ventas se pierden",
+  "width": 1200,
+  "height": 800
+ },
+ "funcionalidades--agente-de-ventas-ia-whatsapp-panama-4": {
+  "alt": "Dueño de una tienda pequeña en Panamá atiende él mismo los mensajes de su teléfono detrás del mostrador",
+  "width": 1200,
+  "height": 800
+ },
+ "servicios--landing-pages-alta-conversion-panama-2": {
+  "alt": "Joven en una parada de bus de Ciudad de Panamá mira un anuncio en su teléfono, el momento en que decide si sigue o cierra",
+  "width": 1200,
+  "height": 800
+ },
+ "servicios--landing-pages-alta-conversion-panama-3": {
+  "alt": "Recepcionista de una clínica dental en Panamá responde por WhatsApp a pacientes que llegaron desde la campaña",
+  "width": 1200,
+  "height": 800
+ },
+ "crecimiento--hosting-infraestructura-panama-2": {
+  "alt": "Dueña de un negocio panameño revisa con su contador los documentos de registro del dominio de su empresa",
+  "width": 1200,
+  "height": 800
+ },
+ "crecimiento--hosting-infraestructura-panama-3": {
+  "alt": "Vendedor de una empresa en Panamá revisa en su laptop la carpeta de correo no deseado buscando una cotización que nunca llegó",
+  "width": 1200,
+  "height": 800
  }
 }

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" role="img" aria-labelledby="agente-ventas-flujo-title agente-ventas-flujo-desc" font-family="Roboto, system-ui, sans-serif">
+  <title id="agente-ventas-flujo-title">Qué hace el agente con cada mensaje</title>
+  <desc id="agente-ventas-flujo-desc">El cliente escribe por WhatsApp o Instagram y el agente responde con tu información aprobada; si el precio o el caso están aprobados cotiza y agenda, si no pasa la conversación a una persona, y todo queda registrado en WazaCRM.</desc>
+  <defs><marker id="flecha" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#737373"/></marker></defs>
+  <path d="M200 64 V94" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M200 152 V182" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M104 220 H96 Q88 220 88 228 V286" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <rect x="58.2" y="250" width="24.8" height="17" fill="#fff"/>
+  <text x="78" y="262" fill="#737373" font-size="11" font-weight="500" letter-spacing="0.08em" text-anchor="end">SÍ</text>
+  <path d="M296 220 H304 Q312 220 312 228 V286" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <rect x="317" y="250" width="24.8" height="17" fill="#fff"/>
+  <text x="322" y="262" fill="#737373" font-size="11" font-weight="500" letter-spacing="0.08em" text-anchor="start">NO</text>
+  <path d="M88 352 V376 Q88 384 96 384 H152 Q160 384 160 392 V406" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M312 352 V376 Q312 384 304 384 H248 Q240 384 240 392 V406" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <rect x="100" y="16" width="200" height="48" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="45" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Cliente escribe</text>
+  <rect x="100" y="96" width="200" height="56" rx="8" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="121" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">El agente responde</text>
+  <text x="200" y="140" fill="#d4d4d4" font-size="13" text-anchor="middle">con tu información aprobada</text>
+  <polygon points="200,184 296,220 200,256 104,220" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="216" fill="#0a0a0a" font-size="13" font-weight="700" text-anchor="middle">¿Precio o caso</text>
+  <text x="200" y="233" fill="#0a0a0a" font-size="13" font-weight="700" text-anchor="middle">aprobado?</text>
+  <rect x="16" y="288" width="144" height="64" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="88" y="317" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Cotiza y agenda</text>
+  <text x="88" y="336" fill="#525252" font-size="13" text-anchor="middle">con tus precios</text>
+  <rect x="240" y="288" width="144" height="64" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="312" y="317" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Pasa a tu equipo</text>
+  <text x="312" y="336" fill="#525252" font-size="13" text-anchor="middle">con todo el contexto</text>
+  <rect x="100" y="408" width="200" height="56" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="200" y="433" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Queda en WazaCRM</text>
+  <text x="200" y="452" fill="#525252" font-size="13" text-anchor="middle">datos, etapa y seguimiento</text>
+</svg>

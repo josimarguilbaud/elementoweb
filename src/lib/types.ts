@@ -34,6 +34,8 @@ export type Block =
   /* Pisos de un edificio, de la cima a la base: cada uno dice si es trabajo de SEO, de GEO o de ambos. En HTML y no en
      imagen, para que buscadores e IA lean el texto. */
   | { type: 'capas'; h2: string; intro?: string; pisos: { t: string; d: string; area: 'SEO' | 'GEO' | 'SEO y GEO' }[]; nota?: string }
+  /* Texto con un diagrama SVG al lado (src/diagramas/<svg>.svg). No cuenta en el orden de las fotos de prosa. */
+  | { type: 'diagrama'; h2: string; paragraphs: string[]; svg: string; pie?: string }
   /* `texto` reemplaza el aviso fijo cuando no hay clientes esperando permiso (un servicio nuevo, D52). */
   | { type: 'blank'; punto: 'prueba'; h2?: string; texto?: string }
   /* Formulario por servicio (D10). Existe pero NINGUNA página lo usa hasta la fase 3: reemplaza al bloque `form` cuando n8n acepte el contrato v2. */

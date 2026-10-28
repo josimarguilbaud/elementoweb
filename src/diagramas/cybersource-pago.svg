@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" role="img" aria-labelledby="cybersource-pago-title cybersource-pago-desc" font-family="Roboto, system-ui, sans-serif">
+  <title id="cybersource-pago-title">Cómo se cobra con tarjeta usando CyberSource</title>
+  <desc id="cybersource-pago-desc">El cliente paga en el formulario seguro Unified Checkout de CyberSource, su banco lo autentica con 3-D Secure 2, el pago se aprueba y un webhook avisa a tu servidor para confirmar la orden aunque el cliente cierre la pestaña; la tarjeta nunca pasa por tu web.</desc>
+  <defs><marker id="flecha" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#737373"/></marker></defs>
+  <rect x="84" y="84" width="232" height="168" rx="10" fill="none" stroke="#737373" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <path d="M200 64 V94" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M200 152 V182" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M200 240 V270" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M200 320 V350" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <rect x="100" y="16" width="200" height="48" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="45" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Tu cliente paga</text>
+  <rect x="100" y="96" width="200" height="56" rx="8" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="121" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Unified Checkout</text>
+  <text x="200" y="140" fill="#d4d4d4" font-size="13" text-anchor="middle">formulario de CyberSource</text>
+  <rect x="100" y="184" width="200" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="209" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">3-D Secure 2</text>
+  <text x="200" y="228" fill="#525252" font-size="13" text-anchor="middle">el banco confirma al titular</text>
+  <rect x="100" y="272" width="200" height="48" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="301" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Pago aprobado</text>
+  <rect x="100" y="352" width="200" height="56" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="200" y="377" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Webhook a tu servidor</text>
+  <text x="200" y="396" fill="#525252" font-size="13" text-anchor="middle">la orden se confirma sola</text>
+  <line x1="16" y1="424" x2="384" y2="424" stroke="#d4d4d4" stroke-width="1"/>
+  <rect x="16" y="438" width="16" height="12" rx="3" fill="#fff" stroke="#737373" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="40" y="448" fill="#525252" font-size="13">la tarjeta no pasa por tu web</text>
+</svg>

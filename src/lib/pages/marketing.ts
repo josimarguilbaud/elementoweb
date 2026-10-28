@@ -1317,6 +1317,44 @@ export const marketingPages: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'De tu oferta a los 4 videos',
+        svg: 'video-ia-proceso',
+        paragraphs: [
+          'Todo arranca con tu oferta: qué vendes y dónde vas a pautar. Con eso escribimos los 4 guiones, con el texto de la voz y la idea de cada escena, y no producimos nada hasta que los apruebas tú.',
+          'Después viene la producción con IA: las escenas, la voz en español y los subtítulos de cada video. <strong>Antes de entregarte nada, revisamos cada video a mano</strong>: el producto, las manos, las caras y cada palabra.',
+          'Al final recibes 4 videos verticales de 15 a 30 segundos, listos para subir, en 7 días hábiles desde que apruebas los guiones.',
+        ],
+        pie: 'El único paso que espera por ti es la aprobación de los guiones; el resto corre por nuestra cuenta.',
+      },
+      {
+        type: 'prose',
+        h2: 'Por qué vertical: así se ven los Reels y las historias',
+        paragraphs: [
+          'Reels, historias y Shorts se ven con el celular en la mano, a pantalla completa y en vertical. Un video horizontal en ese espacio queda como una franja en medio de la pantalla, con espacio vacío arriba y abajo.',
+          'Por eso los 4 videos del paquete se piensan en vertical desde el guion: el producto se encuadra para la pantalla del celular y los subtítulos también. <strong>No es un video horizontal recortado al final</strong>, que suele dejar el producto a medias.',
+          'El mismo archivo sirve para Reels e historias si pautas en Meta, y para Shorts si pautas en YouTube.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Los primeros segundos deciden si alguien sigue mirando',
+        paragraphs: [
+          'En Reels e historias la gente pasa de un video a otro con el dedo. Si los primeros segundos no dicen de qué se trata, el video se va antes de llegar a tu oferta.',
+          'Por eso cada guion pone el gancho al principio: el producto a la vista, un beneficio concreto o la pregunta que tu cliente ya se hace. <strong>El llamado a comprar va después, cuando ya hay alguien mirando.</strong>',
+          'Y como buena parte de la gente mira sin sonido, la idea tiene que entenderse también con los subtítulos solos. Por eso van quemados en el video y fieles al guion.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué necesitamos que nos mandes',
+        paragraphs: [
+          'Lo mínimo es tu oferta: qué vendes, a quién le hablas y dónde vas a pautar. Con eso ya se pueden escribir los guiones.',
+          'Si tienes fotos de tu producto, mándalas. <strong>Con fotos buenas el resultado se parece más a lo que vendes</strong>, porque la IA parte de tu producto real y no solo de una descripción.',
+          'Si quieres que aparezca una persona o su voz, necesitamos su permiso por escrito: no clonamos la voz ni la cara de nadie sin él. Y el texto importante, como precios o nombres, va en los subtítulos y no dentro de la escena, porque a la IA todavía le cuesta escribirlo bien.',
+        ],
+      },
+      {
         type: 'tabla',
         h2: '¿Cuándo te basta la herramienta gratis?',
         intro: 'Las herramientas de Canva y de Google Ads ya hacen videos sencillos sin costo. Úsalas cuando alcanzan; el paquete es para cuando no.',
@@ -1353,6 +1391,9 @@ export const marketingPages: PageData[] = [
           { q: '¿Qué voz lleva?', a: 'Una voz generada en español, que eliges entre varias opciones. No clonamos la voz ni la cara de nadie sin su permiso por escrito.' },
           { q: '¿En qué se diferencia del plan de Contenido para redes?', a: 'El <a href="/marketing/contenido-redes-sociales-panama/">plan de Contenido para redes</a> maneja tus publicaciones de todos los meses y edita el video que grabas tú o producimos contigo. Este paquete hace 4 videos de una vez, con IA y sin rodaje, para una campaña o un lanzamiento.' },
           { q: '¿También como plan mensual?', a: 'Sí. El Plan mensual de anuncios con IA trae 4 videos y 8 piezas gráficas al mes, desde $650 al mes. Pide un mínimo de 3 meses y revisamos cada pieza a mano. La pauta va aparte.' },
+          { q: '¿En cuánto tiempo recibo los videos?', a: 'En 7 días hábiles desde que apruebas los guiones. El plazo corre desde tu aprobación, así que mientras antes los revises, antes tienes los videos.' },
+          { q: '¿Puedo cambiar los guiones antes de producir?', a: 'Sí. Te enviamos los 4 guiones con el texto de la voz y la idea de cada escena; los ajustas y los apruebas. No producimos ningún video antes de esa aprobación.' },
+          { q: '¿En qué formato me los entregan?', a: 'Cuatro archivos MP4 verticales de 15 a 30 segundos, listos para subir a Reels, historias, Shorts o tus anuncios. Van con el guion y el texto de los subtítulos de cada video, y con la licencia de uso comercial por escrito.' },
         ],
       },
       { type: 'form', h2: 'Cotiza tus videos publicitarios', intro: 'Cuéntanos qué vendes y dónde vas a pautar: te respondemos con la propuesta de los 4 videos.' },
@@ -1488,6 +1529,44 @@ export const marketingPages: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Del render al recorrido, paso a paso',
+        svg: 'video-inmobiliario-flujo',
+        paragraphs: [
+          'Partimos de tus renders, uno por ambiente. Con ellos te proponemos el recorrido: el orden de los ambientes y el movimiento de cada toma. Lo ajustas y lo apruebas antes de animar nada.',
+          'La IA pone el movimiento de cámara sobre cada render, sin agregar muebles ni ambientes. <strong>Después revisamos cada toma a mano</strong> para que los muebles, las ventanas y la fachada sigan iguales al render; la que se deforma se rehace.',
+          'Del mismo trabajo salen dos archivos: el horizontal 16:9 para tu web y YouTube, y el vertical 9:16 para Reels e historias.',
+        ],
+        pie: 'Las dos versiones salen de las mismas tomas revisadas: el recorrido es el mismo en tu web y en tus redes.',
+      },
+      {
+        type: 'prose',
+        h2: 'Vender en preventa, antes de que exista el edificio',
+        paragraphs: [
+          'En preventa no hay nada que grabar: la torre es un terreno o una obra a medias, y lo único que existe del apartamento son los renders. El comprador tiene que imaginarse el espacio a partir de imágenes fijas.',
+          'Un recorrido con movimiento de cámara le ayuda a entender cómo se conectan los ambientes: de la sala a la cocina, de la habitación a la terraza. <strong>El video sale de los renders que ya tienes, sin esperar la obra.</strong>',
+          'Para una torre completa existe el plan Preventa: un video de hasta 60 segundos con los 6 tipos, amenidades y fachada, más un corte vertical de 15 segundos por cada tipo.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Dónde usar cada formato',
+        paragraphs: [
+          'El horizontal 16:9 es para pantallas anchas: la página del proyecto en tu web, tu canal de YouTube y la pantalla de la sala de ventas.',
+          'El vertical 9:16 es para el celular: Reels, historias y los anuncios que pautas en esos espacios. <strong>Cada plan incluye las dos versiones</strong>, así que no tienes que elegir una.',
+          'En el plan Preventa, los cortes verticales de 15 segundos muestran un tipo de apartamento cada uno, así que puedes pautar cada tipo por separado.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Por qué cada video dice «Imágenes ilustrativas»',
+        paragraphs: [
+          'Un render muestra cómo se planea que quede el proyecto, no cómo va a quedar con certeza. Acabados, muebles y vistas pueden cambiar durante la obra.',
+          'Por eso cada video cierra con «Imágenes ilustrativas, sujetas a cambios», como corresponde a un proyecto que aún no existe. <strong>El comprador sabe desde el principio qué está viendo</strong>, y la promotora no promete en video lo que todavía puede cambiar.',
+          'Por la misma razón la IA solo mueve la cámara: no agrega muebles ni ambientes que no estén en tu render. Si algo se deforma, sobre todo agua, reflejos o detalles finos, la toma se rehace antes de entregar.',
+        ],
+      },
+      {
         type: 'tabla',
         h2: '¿Cuándo te basta la herramienta gratis?',
         intro: 'No siempre hace falta este servicio. Esto es lo que resuelve cada opción.',
@@ -1524,6 +1603,9 @@ export const marketingPages: PageData[] = [
           { q: '¿Cuánto cuesta la narración?', a: 'Se suma por video en los planes Unidad y Proyecto, y va incluida en Preventa; la cifra de cada plan está en su pestaña. En <a href="/marketing/videos-publicitarios-panama/">Videos publicitarios</a> la voz va incluida porque son reels cortos para anuncios; aquí son recorridos más largos y no todos los llevan.' },
           { q: '¿Las piezas son exclusivas?', a: 'Los videos son tuyos para usarlos en tu proyecto, con licencia de uso comercial por escrito. No es una licencia exclusiva: una IA puede generar escenas parecidas para otras personas, y no podemos garantizar lo contrario.' },
           { q: '¿Sirve para un apartamento que ya está construido?', a: 'Sí, si tienes buenas fotos de cada ambiente. Si el apartamento ya existe y está amueblado, un recorrido grabado con cámara también es buena opción.' },
+          { q: '¿Cuánto tarda la entrega?', a: 'Depende del plan: 5 días hábiles para una unidad, 10 para un proyecto y 15 para una preventa completa, contados desde que recibimos los renders.' },
+          { q: '¿Puedo pedir cambios?', a: 'Sí, 2 rondas de cambios por video. Una ronda más, o un cambio de render después de aprobar el guion, se cotiza aparte.' },
+          { q: '¿Lleva música?', a: 'Sí. Todos los planes incluyen una pista instrumental hecha para el video. La narración con subtítulos se suma aparte en Unidad y Proyecto, y va incluida en Preventa.' },
         ],
       },
       { type: 'form', h2: 'Cotiza tu video inmobiliario', intro: 'Cuéntanos del proyecto y cuántos tipos de apartamento tiene: te respondemos con la propuesta.' },

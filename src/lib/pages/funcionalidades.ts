@@ -978,6 +978,17 @@ export const funcionalidades: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Qué recorre un pago con tarjeta en tu web',
+        svg: 'cybersource-pago',
+        paragraphs: [
+          'Tu cliente paga en tu página, pero los campos de la tarjeta los sirve Unified Checkout, el formulario seguro de CyberSource. <strong>El número de tarjeta nunca pasa por tu web ni por tu servidor</strong>, y por eso tu cumplimiento queda en PCI-DSS SAQ A.',
+          'Antes de aprobar, el banco emisor confirma que quien paga es el titular con 3-D Secure 2. Muchas veces lo hace sin pedirle nada; otras, con un código al celular.',
+          'Con el pago aprobado, CyberSource avisa a tu servidor por webhook y la orden se confirma sola, aunque el cliente haya cerrado la pestaña. El webhook entra desde el alcance Profesional.',
+        ],
+        pie: 'Simplificado: antes de todo esto, tu servidor firma el monto con HMAC-SHA256 para que nadie lo cambie desde el navegador.',
+      },
+      {
         type: 'steps',
         h2: 'Cómo se ejecuta, día por día',
         intro: 'El cronograma del alcance Profesional. Los otros dos se acortan o se alargan sobre esta misma secuencia, y en todos los casos apruebas en sandbox antes de que se toque producción.',
@@ -986,6 +997,24 @@ export const funcionalidades: PageData[] = [
           { h3: '02 · Servidor y seguridad (días 3 a 6)', text: 'La firma HMAC, la generación del capture context y el endpoint que recibe y verifica los webhooks de CyberSource.' },
           { h3: '03 · Checkout y pruebas (días 7 a 9)', text: 'El checkout embebido en tu página de cobro, las pantallas de respuesta y la batería de tarjetas de prueba, incluidas las que deben fallar.' },
           { h3: '04 · Paso a producción (días 10 a 12)', text: 'Cambio a credenciales reales, primer cobro de verdad con monto mínimo, y te entregamos accesos y guía de operación.' },
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Cómo se pierde una orden sin webhook',
+        paragraphs: [
+          'Sin webhook, tu web se entera del pago solo por el navegador: el cliente paga, CyberSource responde y la página de confirmación registra la orden. Mientras todo va bien, no se nota la diferencia.',
+          'El problema aparece cuando esa respuesta no llega: el cliente cierra la pestaña, pierde la señal o deja el celular justo después de pagar. <strong>El cobro queda hecho en CyberSource y la orden no existe en tu sistema.</strong>',
+          'Ahí empieza el trabajo manual: el cliente escribe preguntando si quedó, alguien busca el cobro en el portal y registra la orden a mano. El webhook evita ese paso porque la confirmación va de servidor a servidor, sin depender del navegador.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué te pide el banco y qué te pedimos nosotros',
+        paragraphs: [
+          'La integración empieza cuando tu banco adquirente ya aprobó tu cuenta de comercio. Ese trámite lo lleva el banco, no nosotros, y va primero.',
+          'Con la cuenta aprobada, recibes el merchant ID y las llaves de sandbox y de producción. <strong>Esas llaves viven en el servidor, nunca en el código del navegador</strong>, y con ellas se firma cada petición.',
+          'De tu lado necesitamos además acceso al servidor o al repositorio del sitio. Antes de cotizar hacemos una revisión técnica sin costo: si tu sitio no da para hacerlo bien, te lo decimos antes de facturarte.',
         ],
       },
       {
@@ -1029,6 +1058,9 @@ export const funcionalidades: PageData[] = [
           { q: '¿Qué es 3-D Secure y me conviene activarlo?', a: 'Es la verificación que hace el banco que emitió la tarjeta, normalmente un código al celular del cliente. Suma un paso al pago, y en cambio traslada al emisor la responsabilidad del contracargo por fraude cuando la autenticación se aprueba. Con la versión 2 ese paso muchas veces es invisible, porque el banco decide no pedir nada si la operación le parece de bajo riesgo. Para vender en línea en Panamá, sí conviene.' },
           { q: '¿Cuándo NO conviene esta integración?', a: 'Cuatro casos. Si tu banco no te ofreció CyberSource, hay que integrar la pasarela que sí te dio. Si tu volumen es bajo y el ticket alto, cobrar por Yappy o transferencia te sale gratis y funciona. Si tu tienda es Shopify o WooCommerce y existe un módulo oficial de tu pasarela, ese módulo puede alcanzarte sin desarrollo a medida. Y si todavía no tienes cuenta de comercio, primero el banco. Te lo decimos antes de cotizar, no después.' },
           { q: '¿Funciona sobre la web que ya tengo?', a: 'Sí, siempre que tenga un servidor donde podamos correr la firma y recibir los webhooks. Trabajamos sobre WordPress, WooCommerce, desarrollos en Vue o React y sitios a medida. Lo primero es una revisión técnica sin costo: si tu sitio actual no da para hacerlo bien, te lo decimos antes de facturarte, no a mitad del proyecto.' },
+          { q: '¿Cuánto tarda la integración?', a: 'De 5 a 7 días hábiles en el alcance Esencial, de 10 a 14 en el Profesional y de 18 a 25 en el Avanzado. En todos apruebas la demostración en sandbox antes de pasar a producción.' },
+          { q: '¿Cómo se paga la integración?', a: 'En tres partes: 50% para arrancar, 30% al aprobar la demostración en sandbox y 20% al pasar a producción. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Qué pasa si algo falla después del lanzamiento?', a: 'Todos los alcances tienen 30 días de garantía por fallas técnicas, más el período de soporte de cada uno: 15 días en Esencial, 30 en Profesional y 60, prioritario, en Avanzado.' },
         ],
       },
       { type: 'form', h2: 'Cotiza la integración', intro: 'Cuéntanos qué plataforma tiene tu sitio y qué te pidió el banco. Te decimos qué alcance necesitas y qué va a costar, por escrito y antes de arrancar. La revisión técnica no tiene costo.' },

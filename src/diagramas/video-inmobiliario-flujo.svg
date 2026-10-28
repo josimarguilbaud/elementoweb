@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 456" role="img" aria-labelledby="video-inmobiliario-flujo-title video-inmobiliario-flujo-desc" font-family="Roboto, system-ui, sans-serif">
+  <title id="video-inmobiliario-flujo-title">De tus renders a un recorrido en video</title>
+  <desc id="video-inmobiliario-flujo-desc">Nos mandas un render por ambiente, te proponemos el recorrido, animamos el movimiento de cámara con IA sin rodaje, revisamos cada toma contra el render y entregamos el video en horizontal 16:9 y en vertical 9:16.</desc>
+  <defs><marker id="flecha" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#737373"/></marker></defs>
+  <path d="M200 72 V102" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M200 160 V190" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M200 248 V278" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M160 336 V352 Q160 360 152 360 H108 Q100 360 100 368 V382" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M240 336 V352 Q240 360 248 360 H292 Q300 360 300 368 V382" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <rect x="100" y="16" width="200" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="41" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Tus renders</text>
+  <text x="200" y="60" fill="#525252" font-size="13" text-anchor="middle">uno por ambiente</text>
+  <rect x="100" y="104" width="200" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="129" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Recorrido propuesto</text>
+  <text x="200" y="148" fill="#525252" font-size="13" text-anchor="middle">lo apruebas tú</text>
+  <rect x="100" y="192" width="200" height="56" rx="8" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="217" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Movimiento de cámara</text>
+  <text x="200" y="236" fill="#d4d4d4" font-size="13" text-anchor="middle">con IA, sin rodaje</text>
+  <rect x="100" y="280" width="200" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="305" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Revisión toma a toma</text>
+  <text x="200" y="324" fill="#525252" font-size="13" text-anchor="middle">igual al render</text>
+  <rect x="16" y="384" width="168" height="56" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="100" y="409" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Horizontal 16:9</text>
+  <text x="100" y="428" fill="#525252" font-size="13" text-anchor="middle">web y YouTube</text>
+  <rect x="216" y="384" width="168" height="56" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="300" y="409" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Vertical 9:16</text>
+  <text x="300" y="428" fill="#525252" font-size="13" text-anchor="middle">Reels e historias</text>
+</svg>

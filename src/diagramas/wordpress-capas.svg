@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 344" role="img" aria-labelledby="wordpress-capas-title wordpress-capas-desc" font-family="Roboto, system-ui, sans-serif">
+  <title id="wordpress-capas-title">Las capas de un sitio en WordPress</title>
+  <desc id="wordpress-capas-desc">Un sitio en WordPress tiene cinco capas: tu contenido, el tema, los plugins, el núcleo de WordPress y el hosting; los plugins son la capa que más se actualiza.</desc>
+  <defs><marker id="flecha" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#737373"/></marker></defs>
+  <rect x="16" y="16" width="280" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="156" y="41" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Tu contenido</text>
+  <text x="156" y="60" fill="#525252" font-size="13" text-anchor="middle">páginas, blog y fotos</text>
+  <rect x="16" y="80" width="280" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="156" y="105" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Tema</text>
+  <text x="156" y="124" fill="#525252" font-size="13" text-anchor="middle">el diseño</text>
+  <rect x="16" y="144" width="280" height="56" rx="8" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="156" y="169" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Plugins</text>
+  <text x="156" y="188" fill="#d4d4d4" font-size="13" text-anchor="middle">formularios, SEO, caché</text>
+  <rect x="16" y="208" width="280" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="156" y="233" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">WordPress</text>
+  <text x="156" y="252" fill="#525252" font-size="13" text-anchor="middle">el núcleo</text>
+  <rect x="16" y="272" width="280" height="56" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="156" y="297" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Hosting</text>
+  <text x="156" y="316" fill="#525252" font-size="13" text-anchor="middle">servidor y base de datos</text>
+  <line x1="296" y1="172" x2="308" y2="172" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="314" y="167" fill="#0a0a0a" font-size="13" font-weight="700">lo que más</text>
+  <text x="314" y="184" fill="#0a0a0a" font-size="13" font-weight="700">se actualiza</text>
+</svg>

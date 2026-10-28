@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 408" role="img" aria-labelledby="web-centro-title web-centro-desc" font-family="Roboto, system-ui, sans-serif">
+  <title id="web-centro-title">Tu web en el centro de cómo te encuentran</title>
+  <desc id="web-centro-desc">Google, Google Maps, los asistentes de IA y los anuncios llevan al cliente a tu web, que tiene una página por servicio; desde ahí escribe por WhatsApp o llena el formulario y tu equipo responde y cierra.</desc>
+  <defs><marker id="flecha" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#737373"/></marker></defs>
+  <path d="M50 72 V96 Q50 104 58 104 H132 Q140 104 140 112 V134" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M150 72 V96 Q150 104 158 104 H172 Q180 104 180 112 V134" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M250 72 V96 Q250 104 242 104 H228 Q220 104 220 112 V134" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M350 72 V96 Q350 104 342 104 H268 Q260 104 260 112 V134" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M160 200 V216 Q160 224 152 224 H108 Q100 224 100 232 V246" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M240 200 V216 Q240 224 248 224 H292 Q300 224 300 232 V246" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M100 296 V312 Q100 320 108 320 H152 Q160 320 160 328 V334" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M300 296 V312 Q300 320 292 320 H248 Q240 320 240 328 V334" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <rect x="6" y="16" width="88" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="50" y="41" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Google</text>
+  <text x="50" y="60" fill="#525252" font-size="13" text-anchor="middle">búsqueda</text>
+  <rect x="106" y="16" width="88" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="150" y="41" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Maps</text>
+  <text x="150" y="60" fill="#525252" font-size="13" text-anchor="middle">tu ficha</text>
+  <rect x="206" y="16" width="88" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="250" y="41" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">IA</text>
+  <text x="250" y="60" fill="#525252" font-size="13" text-anchor="middle">asistentes</text>
+  <rect x="306" y="16" width="88" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="350" y="41" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Anuncios</text>
+  <text x="350" y="60" fill="#525252" font-size="13" text-anchor="middle">pauta</text>
+  <rect x="100" y="136" width="200" height="64" rx="8" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="165" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Tu web</text>
+  <text x="200" y="184" fill="#d4d4d4" font-size="13" text-anchor="middle">una página por servicio</text>
+  <rect x="16" y="248" width="168" height="48" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="100" y="277" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">WhatsApp</text>
+  <rect x="216" y="248" width="168" height="48" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="300" y="277" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Formulario</text>
+  <rect x="100" y="336" width="200" height="56" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="200" y="361" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Tu equipo</text>
+  <text x="200" y="380" fill="#525252" font-size="13" text-anchor="middle">responde y cierra</text>
+</svg>

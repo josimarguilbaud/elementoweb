@@ -431,6 +431,17 @@ export const saasPages: PageData[] = [
         medimos: ['Días promedio de cobro', 'Saldo vencido', 'Cotizaciones aceptadas'],
       },
       {
+        type: 'diagrama',
+        h2: 'De la cotización al cobro, en un solo ciclo',
+        svg: 'nouscrm-ciclo',
+        paragraphs: [
+          'Todo empieza con la cotización, con tu logo y tu numeración. Cuando el cliente la acepta, la conviertes en factura con un clic, sin copiar y pegar.',
+          'Si el cliente paga en partes, registras cada abono y <strong>el saldo se calcula solo</strong>. El estado de la factura, al día, parcial o vencida, también se calcula según el saldo y la fecha.',
+          'Lo que falta cobrar aparece en la lista de cobros pendientes, por antigüedad, con el recordatorio ya redactado para enviar por WhatsApp. Y ese mismo cliente es el de tu siguiente cotización.',
+        ],
+        pie: 'Cotizaciones, facturas y abonos de cada cliente quedan en un solo lugar, venta tras venta.',
+      },
+      {
         type: 'prose',
         h2: 'Lo que NousCRM no hace',
         paragraphs: [
@@ -444,6 +455,24 @@ export const saasPages: PageData[] = [
         paragraphs: [
           'Muchos sistemas de facturación piden que el cliente cree una cuenta para ver su factura. En Panamá, donde casi todo pasa por WhatsApp, ese paso extra hace que la gente pague tarde: abrir el enlace, registrarse y buscar el documento es más trabajo del que vale una factura pequeña.',
           'NousCRM manda la cotización o la factura directo al chat. El cliente la abre, la ve con tu logo y tu numeración, y responde sin pasar por ningún formulario. <strong>Menos fricción para pagar es, en la práctica, cobrar más rápido.</strong>',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Saber quién te debe sin preguntarle a nadie',
+        paragraphs: [
+          'En muchos negocios la lista de quién debe vive en la cabeza del dueño o en una hoja que nadie actualiza. Funciona mientras son pocos clientes; cuando crecen, los saldos viejos se olvidan.',
+          'En NousCRM las facturas con saldo pendiente aparecen en una lista ordenada por antigüedad. <strong>Nadie tiene que marcar a mano si una factura está vencida</strong>: el estado se calcula solo con el saldo y la fecha.',
+          'Desde esa lista mandas por WhatsApp el recordatorio, que ya viene redactado. El cliente abre la factura desde el enlace, sin crear cuenta, ve su saldo y responde en el mismo chat.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Pasar de Word y Excel sin un proyecto de implementación',
+        paragraphs: [
+          'Cambiar de sistema asusta porque suena a semanas de configuración. NousCRM no tiene proyecto de implementación: se activa la suscripción y se cotiza el mismo día.',
+          'Para empezar necesitas tu logo, tu RUC y tu lista de clientes o servicios. <strong>Tu cuenta queda activa con tu marca y con tus clientes y servicios cargados</strong>, así que la primera cotización ya sale con tu numeración.',
+          'Tu contador tampoco tiene que cambiar su forma de trabajar: entra con acceso de solo lectura y exporta a Excel lo que necesita. Si manejas varias empresas, cada una lleva su marca y su numeración en la misma cuenta.',
         ],
       },
       {
@@ -484,6 +513,9 @@ export const saasPages: PageData[] = [
           { q: '¿En qué se diferencia de Cifrao?', a: '<a href="/saas/cifrao/">Cifrao</a> es la contabilidad completa de tu empresa: conciliación bancaria, gastos, informes de resultados. NousCRM es la parte de cotizar, facturar y cobrar. Muchos negocios chicos arrancan solo con NousCRM y suman Cifrao cuando la contabilidad completa se vuelve necesaria.' },
           { q: '¿Qué necesito para empezar a cotizar?', a: 'Tu logo, tu RUC y tu lista de clientes o servicios. No hay proyecto de implementación: se activa la suscripción y se cotiza el mismo día.' },
           { q: '¿Cuándo NO conviene NousCRM?', a: 'Si ya facturas electrónicamente con un sistema que te funciona y solo te falta el registro contable completo, probablemente te conviene ir directo a <a href="/saas/cifrao/">Cifrao</a>. NousCRM rinde más cuando hoy cotizas en Word o Excel y el cobro vive en la cabeza de alguien.' },
+          { q: '¿Qué pasa con la cotización cuando el cliente la acepta?', a: 'La conviertes en factura con un clic, sin volver a escribir los datos. La factura lleva tu logo y tu numeración, y tu cliente la abre desde WhatsApp sin crear cuenta.' },
+          { q: '¿Una cotización puede llevar varias opciones de precio?', a: 'Sí. La cotización puede llevar más de una opción de precio, como se ve en las capturas de esta página, y se envía por WhatsApp desde el mismo sistema.' },
+          { q: '¿Tengo que escribir yo el recordatorio de cobro?', a: 'No. Cada factura con saldo pendiente trae el recordatorio ya redactado, listo para enviar por WhatsApp desde la lista de cobros.' },
         ],
       },
       { type: 'form', h2: 'Pide una demo de NousCRM', intro: 'Cuéntanos cuántas cotizaciones haces al mes y si manejas más de una empresa: te mostramos NousCRM con un caso como el tuyo.' },

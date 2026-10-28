@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-labelledby="shopify-reparto-title shopify-reparto-desc" font-family="Roboto, system-ui, sans-serif">
+  <title id="shopify-reparto-title">Qué resuelve Shopify y qué hacemos nosotros</title>
+  <desc id="shopify-reparto-desc">Shopify resuelve el servidor y la seguridad, el carrito y el cobro y el panel de pedidos; nosotros hacemos el diseño de la tienda, las fichas que posicionan en Google y la configuración de pagos y envíos para Panamá.</desc>
+  <defs><marker id="flecha" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#737373"/></marker></defs>
+  <rect x="12" y="16" width="180" height="48" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="102" y="45" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Lo resuelve Shopify</text>
+  <rect x="208" y="16" width="180" height="48" rx="8" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="298" y="45" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Lo hacemos nosotros</text>
+  <rect x="12" y="80" width="180" height="56" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="102" y="105" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Servidor</text>
+  <text x="102" y="124" fill="#525252" font-size="13" text-anchor="middle">y seguridad</text>
+  <rect x="12" y="144" width="180" height="56" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="102" y="169" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Checkout</text>
+  <text x="102" y="188" fill="#525252" font-size="13" text-anchor="middle">carrito y cobro</text>
+  <rect x="12" y="208" width="180" height="56" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="102" y="233" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Panel</text>
+  <text x="102" y="252" fill="#525252" font-size="13" text-anchor="middle">de pedidos</text>
+  <rect x="208" y="80" width="180" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="298" y="105" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Diseño</text>
+  <text x="298" y="124" fill="#525252" font-size="13" text-anchor="middle">de tu tienda</text>
+  <rect x="208" y="144" width="180" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="298" y="169" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Fichas</text>
+  <text x="298" y="188" fill="#525252" font-size="13" text-anchor="middle">que posicionan en Google</text>
+  <rect x="208" y="208" width="180" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="298" y="233" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Pagos y envíos</text>
+  <text x="298" y="252" fill="#525252" font-size="13" text-anchor="middle">configurados para Panamá</text>
+</svg>

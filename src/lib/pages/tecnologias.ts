@@ -235,6 +235,17 @@ export const tecnologias: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Las cinco capas de un WordPress',
+        svg: 'wordpress-capas',
+        paragraphs: [
+          'Un sitio en WordPress se arma en capas. Abajo está el <strong>hosting</strong>, con el servidor y la base de datos. Encima va WordPress, el núcleo. Sobre él, los plugins que agregan formularios, SEO o caché; luego el tema, que es el diseño; y arriba de todo tu contenido: páginas, blog y fotos.',
+          'Cada capa recibe actualizaciones por su cuenta. La que más se actualiza es la de los plugins, y es también por donde entra la mayoría de los problemas de seguridad. Por eso usamos pocos y auditados, y por eso en WordPress el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento</a> no es opcional.',
+          'Tu equipo trabaja en la capa de arriba desde el panel. Las otras cuatro necesitan a alguien que las revise cada mes.',
+        ],
+        pie: 'Simplificado: un plugin desactualizado puede comprometer todo el sitio aunque las demás capas estén al día.',
+      },
+      {
         type: 'prose',
         h2: 'Por qué no usamos constructores visuales',
         paragraphs: [
@@ -270,6 +281,24 @@ export const tecnologias: PageData[] = [
         h2: 'Qué medir en un WordPress',
         paragraphs: [
           'La velocidad en celular, medida cada cierto tiempo y no solo al lanzar, porque los sitios se degradan al sumar plugins e imágenes sin optimizar. El número de plugins activos y desactualizados, el mejor indicador anticipado de riesgo en esta plataforma. Y los intentos de acceso fallidos: un pico repentino avisa que alguien está probando entrar.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Cómo elegimos un plugin cuando sí hace falta',
+        paragraphs: [
+          'Hay cosas que conviene resolver con un plugin, como un formulario complejo o la caché. Antes de instalar uno revisamos tres cosas: que se haya actualizado hace poco, que su autor responda los reportes de fallas y que venga del directorio oficial de WordPress o del sitio de su autor.',
+          'Después miramos qué carga. <strong>Un buen plugin hace una sola cosa y solo carga sus archivos donde se usa</strong>, no en todas las páginas del sitio. Si para un detalle trae un panel entero de opciones, buscamos otro o lo resolvemos con código.',
+          'Lo que importa es poder explicar cada plugin: para qué está y si tiene licencia de pago. Un sitio con plugins que nadie recuerda haber instalado es un sitio que nadie se atreve a actualizar.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Tu web es la base para Google y para los asistentes de IA',
+        paragraphs: [
+          'Cuando alguien busca un servicio en Google o le pregunta a ChatGPT, la respuesta sale de páginas que se pueden leer y verificar. Un WordPress liviano, con datos estructurados y un blog que responde preguntas reales, es ese tipo de página.',
+          'Sobre esa base se trabaja el <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a>, y encima el <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT (GEO)</a>. <strong>Ninguno de los dos rinde si la web carga lenta o no dice con claridad qué haces y dónde.</strong>',
+          'Nadie puede garantizar un primer lugar ni que una IA te recomiende. Lo que sí se controla es que tu sitio esté listo para que te encuentren: rápido en celular, ordenado y con contenido que tu equipo actualiza desde el panel.',
         ],
       },
       {
@@ -311,6 +340,9 @@ export const tecnologias: PageData[] = [
           { q: '¿Por qué hackean los sitios de WordPress?', a: 'Casi nunca es dirigido: son sistemas automáticos probando lo mismo en millones de sitios. Entran por plugins desactualizados con vulnerabilidad publicada, contraseñas débiles, y temas de pago descargados gratis de sitios dudosos, que suelen venir con código malicioso.' },
           { q: '¿Qué debo vigilar en mi WordPress?', a: 'La velocidad en celular medida cada cierto tiempo, porque los sitios se degradan al sumar plugins e imágenes sin optimizar. El número de plugins desactualizados, que es el mejor indicador anticipado de riesgo. Y los intentos de acceso fallidos.' },
           { q: '¿Cuánto cuesta mantener un WordPress al año?', a: 'Lo que la gente subestima es lo de después de construirlo: hosting desde $225 al año y mantenimiento desde $99 al mes, que en WordPress no es opcional. Un WordPress sin actualizar termina comprometido, y limpiarlo cuesta más que el año entero de mantenimiento. Los precios no incluyen ITBMS (7%).' },
+          { q: '¿Qué es un tema propio en WordPress?', a: 'Es el código que define cómo se ve tu sitio, escrito para tu diseño en lugar de comprado en un catálogo. Solo trae lo que tu web usa, por eso pesa menos, y queda documentado para que cualquier desarrollador de WordPress competente pueda mantenerlo.' },
+          { q: '¿Cuánto tarda un sitio en WordPress?', a: 'Entre 2 y 3 semanas desde que recibimos tu contenido, para un sitio de hasta 6 páginas. El plazo arranca con el contenido porque el tema se construye para él.' },
+          { q: '¿Qué pasa si un plugin deja de actualizarse?', a: 'Se reemplaza por otro que sí se mantenga o por unas líneas de código en el tema. Un plugin abandonado es una puerta abierta: si aparece una vulnerabilidad, nadie la corrige. Revisarlo es parte del <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento</a>.' },
         ],
       },
       { type: 'form', h2: 'Cotiza tu sitio en WordPress', intro: 'Cuéntanos cuántas páginas necesitas y si ya tienes un WordPress: te respondemos con una propuesta cerrada.' },
@@ -453,6 +485,16 @@ export const tecnologias: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Qué pone Shopify y qué ponemos nosotros',
+        svg: 'shopify-reparto',
+        paragraphs: [
+          'Shopify pone la infraestructura: el servidor y la seguridad, el carrito con su checkout y el panel donde gestionas los pedidos. Eso va en la suscripción y no tienes que mantenerlo.',
+          'Lo que hace que la tienda venda en Panamá no viene en la suscripción. El diseño de tu tienda alineado a tu marca, <strong>fichas de producto que responden las dudas y que Google puede encontrar</strong>, y los pagos y envíos configurados para aquí: <a href="/funcionalidades/integracion-yappy-pasarelas-pago-panama/">Yappy</a> y tarjeta, zonas e ITBMS. Esa es nuestra parte.',
+        ],
+        pie: 'Una plantilla recién activada tiene la columna de Shopify completa y la nuestra vacía.',
+      },
+      {
         type: 'prose',
         h2: 'Cuándo Shopify es la decisión correcta',
         paragraphs: [
@@ -486,6 +528,24 @@ export const tecnologias: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: 'La ficha de producto hace el trabajo del vendedor',
+        paragraphs: [
+          'En una tienda física alguien te responde si la camisa encoge, si hay talla M o cuánto tarda el envío. En la tienda en línea esa respuesta tiene que estar en la ficha, o el cliente se va a preguntar por WhatsApp o no vuelve.',
+          '<strong>Una ficha que vende tiene fotos que muestran el producto de verdad, tallas o medidas claras y la respuesta a las dudas que frenan la compra.</strong> El costo de envío y la forma de pago se ven antes del último paso, no en él.',
+          'Esa misma ficha es la que Google muestra cuando alguien busca el producto. Un título claro y una descripción propia, no la copiada del proveedor, le dan a la página algo que mostrar.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué necesitamos de ti para abrir la tienda',
+        paragraphs: [
+          'El plazo de 3 a 5 semanas corre desde que recibimos tu catálogo, así que conviene tenerlo listo: nombre, precio, variantes y fotos de cada producto. La carga inicial incluye hasta 25 productos; si tienes más, va en la cotización.',
+          'También hay que decidir dónde entregas y a qué costo, y si ofreces retiro en tienda. <strong>Las cuentas de Shopify y de los medios de pago van a nombre de tu negocio</strong>, porque cada proveedor te cobra directo a ti.',
+          'Con eso armamos la tienda, probamos los pagos con compras reales y te capacitamos para gestionar pedidos antes de publicar.',
+        ],
+      },
+      {
         type: 'compare',
         h2: 'Por qué con nosotros',
         intro: 'Criterios que puedes verificar en esta página y pedirle a cualquier proveedor. Usa la última columna para comparar.',
@@ -513,6 +573,9 @@ export const tecnologias: PageData[] = [
           { q: '¿Puedo salirme de Shopify si un día quiero?', a: 'Puedes llevarte los datos (productos, clientes, pedidos) pero no el diseño ni las personalizaciones hechas con apps. Lo delicado son las URLs: Shopify impone su estructura y al migrar cambia. Sin un mapa de redirecciones se pierde el posicionamiento acumulado.' },
           { q: '¿Qué mido en mi tienda?', a: 'El embudo, no las ventas totales. La caída entre iniciar el pago y terminarlo es la más cara y casi siempre se explica por el envío o por faltar la forma de pago esperada. Y el costo real por venta sumando comisión y apps, recalculado cada año.' },
           { q: '¿Cuándo NO conviene Shopify?', a: 'Cuando tu venta no es un carrito: si cobras por cotización, por proyecto o con precios distintos por cliente, Shopify te queda apretado y peleas contra la plataforma. Tampoco si necesitas integrar tu inventario o tu ERP de una forma que la plataforma no contempla; ahí conviene un desarrollo a medida.' },
+          { q: '¿Cuánto tarda en estar lista una tienda Shopify?', a: 'Entre 3 y 5 semanas desde que recibimos tu catálogo, con hasta 25 productos en la carga inicial. Antes de publicar probamos los pagos con compras reales.' },
+          { q: '¿Shopify ya incluye el diseño de mi tienda?', a: 'Trae plantillas, pero una plantilla activada no es una tienda. Shopify pone el servidor, el carrito y el panel de pedidos. El diseño de tu marca, las fichas y los pagos y envíos para Panamá se configuran aparte, y esa es nuestra parte.' },
+          { q: '¿A nombre de quién queda la tienda?', a: 'De tu negocio. La cuenta de Shopify y las de los medios de pago van a tu nombre, y cada proveedor te cobra directo. Así la tienda no depende de nosotros para seguir vendiendo.' },
         ],
       },
       { type: 'form', h2: 'Cotiza tu tienda Shopify', intro: 'Cuéntanos qué vendes, cuántos productos tienes y cuánto vendes al mes: te respondemos con la propuesta y la cuenta mensual de Shopify.' },
@@ -664,6 +727,17 @@ export const tecnologias: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Cómo se arma una plataforma a medida',
+        svg: 'a-medida-arquitectura',
+        paragraphs: [
+          'Tus usuarios entran desde el navegador o el celular a una <strong>interfaz en Vue o React</strong>. Esa interfaz no guarda las reglas de tu negocio: se las pide a una API, que en nuestro stack corre en Laravel, y la API es la única que lee y escribe en la base de datos.',
+          'Separarlas tiene una ventaja práctica: la interfaz se puede rediseñar sin tocar cómo se calculan precios, permisos o estados.',
+          'Las integraciones con pagos, CRM o WhatsApp también se conectan a la API, no a cada pantalla. Así cualquier pantalla nueva usa las mismas reglas y los mismos datos.',
+        ],
+        pie: 'Simplificado: en un proyecto real la API también maneja autenticación, colas y auditoría.',
+      },
+      {
         type: 'prose',
         h2: 'Nuestro stack y por qué',
         paragraphs: [
@@ -692,6 +766,24 @@ export const tecnologias: PageData[] = [
         paragraphs: [
           'Un desarrollo a medida se mide en si resolvió el problema que lo justificó, y ese número se define antes de empezar: qué proceso se acorta, cuántas horas se devuelven al mes, cuántos errores manuales se evitan.',
           'En operación se vigilan los errores que registra el sistema, qué funciones se usan de verdad (la lista de las que nadie tocó suele ser larga) y el tiempo de respuesta ante un fallo, que en software propio depende del acuerdo de mantenimiento que tengas.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Cómo se cotiza un proyecto por etapas',
+        paragraphs: [
+          'El diagnóstico es sin costo: una sesión para entender tu operación y anotar la línea base. De ahí sale la división en entregas funcionales y un rango realista para el proyecto completo.',
+          '<strong>Cada etapa se cotiza cerrada por escrito antes de arrancarla</strong>, con lo que incluye y su fecha. Si a mitad de camino aparece algo nuevo, se cotiza aparte y tú decides si entra ahora, en la siguiente etapa o nunca.',
+          'El pago va 50% al inicio, 30% al ver el sistema funcionando en demo y 20% para publicar. Después de la entrega hay 30 días de garantía por fallas técnicas, y el mantenimiento se acuerda aparte.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué traer a la sesión de diagnóstico',
+        paragraphs: [
+          'No hace falta llegar con un documento técnico. Sirve más contar cómo se hace hoy el proceso que quieres resolver, paso por paso, y con qué herramientas: hojas de cálculo, correos, suscripciones, el sistema contable.',
+          'Ayuda tener a mano los números que duelen: cuántas llamadas recibes preguntando por un estado, cuántas horas se van copiando datos de un lado a otro. <strong>Esos números son la línea base contra la que se mide cada etapa.</strong>',
+          'Y conviene decir con qué sistemas tiene que conversar la plataforma, porque cada integración cambia el alcance y el precio. A veces la sesión termina en que no hace falta código a medida, y también te lo decimos.',
         ],
       },
       {
@@ -732,6 +824,9 @@ export const tecnologias: PageData[] = [
           { q: '¿Qué costo se olvida presupuestar?', a: 'El mantenimiento. Un desarrollo no acaba al entregarse: las dependencias se actualizan, los navegadores cambian y cada cambio del negocio es trabajo de desarrollo. Sin plan de mantenimiento, funciona dos años y se vuelve un problema.' },
           { q: '¿De quién es el código que me desarrollan?', a: 'Hay que dejarlo por escrito antes de empezar. Si es tuyo, puedes cambiar de proveedor o ampliarlo con otro. Si solo tienes licencia de uso, dependes de él para siempre. Pregunta también dónde vive el repositorio, quién controla servidores y dominios, y qué documentación se entrega.' },
           { q: '¿Cómo mido si el desarrollo valió la pena?', a: 'Definiendo la línea base antes de empezar: qué proceso se acorta, cuántas horas se devuelven al mes, cuántos errores manuales se evitan. Sin eso, al final la discusión es de opinión. Después, qué funciones se usan de verdad: la lista de las que nadie tocó suele ser larga.' },
+          { q: '¿Por qué separan la interfaz de la API?', a: 'Para que cada parte cambie sin romper la otra. La interfaz en Vue o React se puede rediseñar sin tocar las reglas del negocio, y las integraciones con pagos, CRM o WhatsApp se conectan a la API, no a cada pantalla.' },
+          { q: '¿Vue o React?', a: 'Trabajamos con los dos. La elección depende del proyecto y de quién lo va a mantener después: si tu equipo o tu próximo proveedor ya conoce uno, ese suele ser el correcto.' },
+          { q: '¿Qué pasa en la sesión de diagnóstico?', a: 'Nos cuentas cómo funciona hoy el proceso que quieres resolver y con qué herramientas trabajas. Anotamos la línea base, vemos si de verdad hace falta código a medida y, si hace falta, sale el alcance con un rango realista. Es sin costo.' },
         ],
       },
       { type: 'form', h2: 'Agenda un diagnóstico técnico', intro: 'Cuéntanos qué proceso quieres resolver y con qué herramientas trabajas hoy: te proponemos una sesión de diagnóstico sin costo.' },

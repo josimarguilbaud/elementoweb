@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 328" role="img" aria-labelledby="rediseno-301-title rediseno-301-desc" font-family="Roboto, system-ui, sans-serif">
+  <title id="rediseno-301-title">Un rediseño con mapa de redirecciones</title>
+  <desc id="rediseno-301-desc">Cada dirección vieja del sitio apunta con una redirección 301 a su dirección nueva, o a la página más parecida si la vieja desaparece; así Google conserva el posicionamiento ganado.</desc>
+  <defs><marker id="flecha" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#737373"/></marker></defs>
+  <text x="90" y="24" fill="#737373" font-size="11" font-weight="500" letter-spacing="0.08em" text-anchor="middle">DIRECCIÓN VIEJA</text>
+  <text x="310" y="24" fill="#737373" font-size="11" font-weight="500" letter-spacing="0.08em" text-anchor="middle">DIRECCIÓN NUEVA</text>
+  <path d="M168 64 H230" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <rect x="182.9" y="40" width="32.2" height="17" fill="#fff"/>
+  <text x="199" y="52" fill="#737373" font-size="11" font-weight="500" letter-spacing="0.08em" text-anchor="middle">301</text>
+  <path d="M168 132 H230" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <rect x="182.9" y="108" width="32.2" height="17" fill="#fff"/>
+  <text x="199" y="120" fill="#737373" font-size="11" font-weight="500" letter-spacing="0.08em" text-anchor="middle">301</text>
+  <path d="M168 200 H230" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <rect x="182.9" y="176" width="32.2" height="17" fill="#fff"/>
+  <text x="199" y="188" fill="#737373" font-size="11" font-weight="500" letter-spacing="0.08em" text-anchor="middle">301</text>
+  <rect x="12" y="36" width="156" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="90" y="61" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Servicios</text>
+  <text x="90" y="80" fill="#525252" font-size="13" text-anchor="middle">/servicios.html</text>
+  <rect x="232" y="36" width="156" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="310" y="61" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Servicios</text>
+  <text x="310" y="80" fill="#525252" font-size="13" text-anchor="middle">/diseno-web/</text>
+  <rect x="12" y="104" width="156" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="90" y="129" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Contacto</text>
+  <text x="90" y="148" fill="#525252" font-size="13" text-anchor="middle">/contacto.php</text>
+  <rect x="232" y="104" width="156" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="310" y="129" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Contacto</text>
+  <text x="310" y="148" fill="#525252" font-size="13" text-anchor="middle">/contacto/</text>
+  <rect x="12" y="172" width="156" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="90" y="197" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Promoción vieja</text>
+  <text x="90" y="216" fill="#525252" font-size="13" text-anchor="middle">/promo-2019</text>
+  <rect x="232" y="172" width="156" height="56" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="310" y="197" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Lo más parecido</text>
+  <text x="310" y="216" fill="#525252" font-size="13" text-anchor="middle">la que la reemplaza</text>
+  <line x1="12" y1="248" x2="388" y2="248" stroke="#d4d4d4" stroke-width="1"/>
+  <rect x="12" y="260" width="376" height="52" rx="8" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="291" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Google conserva tu posición</text>
+</svg>

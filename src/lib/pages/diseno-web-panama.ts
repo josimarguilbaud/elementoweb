@@ -116,6 +116,17 @@ export const disenoWebPanama: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Todo camino termina en tu web',
+        svg: 'web-centro',
+        paragraphs: [
+          'Tu cliente te puede encontrar por cuatro puertas: una búsqueda en Google, el mapa de Google Maps, la respuesta de un asistente de IA o un anuncio. Las cuatro llevan al mismo lugar: tu web, con una página por servicio.',
+          'Desde ahí, la persona da el paso siguiente por WhatsApp o por el formulario, y la consulta le llega a tu equipo, que responde y cierra. <strong>Si la web no explica bien lo que haces, las cuatro puertas pierden fuerza a la vez.</strong>',
+          'Por eso el SEO, la ficha de Maps, las respuestas de IA y la pauta trabajan sobre la misma base. Arreglar la web primero le da a cada canal un destino claro.',
+        ],
+        pie: 'Simplificado: cada canal tiene sus reglas, pero todos mandan a la persona a una página tuya para decidir.',
+      },
+      {
         type: 'pricing',
         h2: 'Precios de diseño web en Panamá',
         intro: 'Precios de partida transparentes. Cada proyecto se cotiza cerrado según páginas, funciones e integraciones, siempre por escrito antes de empezar.',
@@ -156,6 +167,40 @@ export const disenoWebPanama: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: 'Tu web es la base para Google, Maps y la IA',
+        paragraphs: [
+          'Google, Google Maps y los asistentes de IA como ChatGPT, Gemini o Perplexity hacen algo parecido cuando alguien busca un servicio: revisan lo que hay publicado sobre los negocios y eligen qué mostrar. De todo lo que hay publicado sobre ti, tu web es la única fuente que tú controlas.',
+          'Una ficha de Maps que enlaza a un sitio con una página por servicio, la dirección clara y los horarios iguales en ambos lados le da a Google más motivos para entender qué haces y dónde. Un asistente de IA necesita lo mismo: <strong>páginas que respondan de forma directa qué ofreces, a quién, dónde y desde qué precio</strong>. Si eso no está escrito en ningún lado, no tiene de dónde sacarlo.',
+          'Por eso el diseño web va antes que el resto. Sobre esa base se trabaja el <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a> para las búsquedas en Google y el <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT (GEO)</a> para las respuestas de IA. Ninguno garantiza un lugar fijo, pero sin una web clara los dos parten de cero.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué llevar a la primera reunión',
+        paragraphs: [
+          'Lo que más acelera un proyecto web no es el presupuesto: es llegar con el contenido ordenado. El plazo empieza a correr cuando recibimos tu contenido base, y casi todos los retrasos vienen de ahí, no del diseño ni de la programación.',
+          'Sirve llevar la lista de servicios con lo que incluye cada uno, el logo en buena calidad, fotos reales de tu equipo y de tus trabajos, y los accesos al dominio si ya lo tienes. <strong>Lo más valioso son las preguntas que tus clientes te hacen por WhatsApp</strong>: cada una es un texto que la web puede responder antes de que te escriban.',
+          'Si no tienes nada de eso, no es un problema. Lo trabajamos contigo en la etapa de diseño y contenido, y si hace falta redacción desde cero o fotografía, se cotizan aparte con precio cerrado.',
+        ],
+      },
+      {
+        type: 'tabla',
+        h2: 'Qué revisar antes de contratar diseño web en Panamá',
+        intro: 'Siete preguntas para hacerle a cualquier proveedor, con la respuesta que te protege y la que debería hacerte dudar:',
+        columnas: ['Qué preguntar', 'Respuesta que te protege', 'Señal de alerta'],
+        filas: [
+          ['¿El precio es cerrado?', 'Cotización por escrito con páginas, funciones e integraciones', 'Un precio que se define sobre la marcha'],
+          ['¿A nombre de quién queda el dominio?', 'A tu nombre, con tus accesos', 'Registrado a nombre del proveedor'],
+          ['¿Quién es dueño de Analytics y Search Console?', 'Tú, desde el día uno', 'No los configuran o no te dan acceso'],
+          ['¿Cuántas páginas de servicio tendrá?', 'Una por servicio, cada una para su búsqueda', 'Una sola página de "Servicios" con una lista'],
+          ['¿Puedo cambiar textos y fotos yo mismo?', 'Panel autoadministrable y capacitación grabada', 'Cada cambio pasa por la agencia'],
+          ['¿Qué no incluye?', 'Una lista escrita: dominio, hosting, mantenimiento, redacción, fotografía', 'Extras que aparecen en la factura final'],
+          ['¿Cómo sabré si funciona?', 'Consultas por WhatsApp y formulario, búsquedas y velocidad en celular', 'Solo "visitas", sin saber de dónde vienen'],
+        ],
+        nota: 'Son las mismas preguntas que respondemos en esta página. Úsalas con cualquier proveedor, incluidos nosotros.',
+      },
+      {
         type: 'faq',
         h2: 'Preguntas frecuentes sobre diseño web en Panamá',
         items: [
@@ -167,6 +212,11 @@ export const disenoWebPanama: PageData[] = [
           { q: '¿Incluye el dominio y el hosting?', a: 'Te asesoramos y configuramos ambos: ve <a href="/crecimiento/hosting-infraestructura-panama/">hosting e infraestructura</a> para los planes. Aparte, el <a href="/crecimiento/mantenimiento-web-panama/">mantenimiento desde $99 al mes</a> mantiene tu sitio actualizado, respaldado y monitoreado.' },
           { q: '¿Qué pasa si ya tengo una web pero no funciona?', a: 'Ese es el caso de nuestro servicio de <a href="/servicios/redisenio-web-panama/">rediseño web</a>: auditamos lo que tienes, reconstruimos lo que no funciona y planificamos las redirecciones para cuidar el posicionamiento que ya ganaste.' },
           { q: '¿Cuándo NO necesitas contratar una agencia?', a: 'Si vendes por Instagram, tu ticket es bajo y tu cliente decide en dos mensajes, una página propia no te va a cambiar el negocio todavía. La web se paga cuando el cliente te investiga antes de comprar, cuando compites por búsquedas en Google, o cuando contestar lo mismo veinte veces al día ya te está costando ventas.' },
+          { q: '¿Qué formato me conviene: landing, sitio corporativo o tienda?', a: 'Una oferta y una campaña, <a href="/servicios/landing-pages-alta-conversion-panama/">landing page</a> desde $550. Varios servicios que el cliente investiga antes de contratarte, <a href="/servicios/diseno-web-corporativo-panama/">sitio corporativo</a> desde $1,250. Producto con inventario y cobro en línea, <a href="/servicios/tiendas-online-ecommerce-panama/">tienda online</a> desde $1,950. Si ya tienes un sitio que no funciona, un <a href="/servicios/redisenio-web-panama/">rediseño</a>.' },
+          { q: '¿Mi web me ayuda a salir en Google Maps?', a: 'Lo que aparece en el mapa es tu ficha de Google Business Profile, y tu web la respalda: servicios, dirección y horarios iguales en los dos lados. Te ayudamos con la ficha como parte del <a href="/crecimiento/seo-local-google-maps-panama/">SEO local</a>.' },
+          { q: '¿Mi web puede aparecer en las respuestas de ChatGPT?', a: 'Puede, pero nadie lo puede garantizar. Lo que sí depende de ti es que tu web explique de forma directa qué haces, dónde y desde qué precio, que es lo que un asistente necesita leer. Sobre esa base va el trabajo de <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT (GEO)</a>.' },
+          { q: '¿Qué necesito tener listo antes de empezar?', a: 'La lista de tus servicios, el logo, fotos reales y las preguntas que más te hacen tus clientes. Si te falta algo, te ayudamos a producirlo; la redacción desde cero y la fotografía se cotizan aparte.' },
+          { q: '¿Las cuentas de la web quedan a mi nombre?', a: 'Sí. Google Analytics y Search Console se configuran a tu nombre, y te entregamos por escrito los accesos y la lista de páginas. El dominio y el hosting los configuramos contigo.' },
         ],
       },
       { type: 'form', h2: 'Cotiza tu página web', intro: 'Dinos qué formato te interesa (landing, sitio corporativo, tienda o rediseño) y si ya tienes textos y fotos: te respondemos con un diagnóstico y una cotización cerrada.' },

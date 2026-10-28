@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" role="img" aria-labelledby="video-ia-proceso-title video-ia-proceso-desc" font-family="Roboto, system-ui, sans-serif">
+  <title id="video-ia-proceso-title">Cómo hacemos tus videos publicitarios con IA</title>
+  <desc id="video-ia-proceso-desc">Nos cuentas tu oferta, te enviamos cuatro guiones que apruebas, producimos con IA las escenas, la voz y los subtítulos, revisamos cada video a mano y entregamos cuatro videos verticales de 15 a 30 segundos.</desc>
+  <defs><marker id="flecha" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#737373"/></marker></defs>
+  <path d="M200 72 V102" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M200 160 V190" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M200 248 V278" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M200 336 V366" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <rect x="100" y="16" width="200" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="41" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Tu oferta</text>
+  <text x="200" y="60" fill="#525252" font-size="13" text-anchor="middle">qué vendes y dónde pautas</text>
+  <rect x="100" y="104" width="200" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="129" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">4 guiones</text>
+  <text x="200" y="148" fill="#525252" font-size="13" text-anchor="middle">los apruebas tú</text>
+  <rect x="100" y="192" width="200" height="56" rx="8" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="217" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Producción con IA</text>
+  <text x="200" y="236" fill="#d4d4d4" font-size="13" text-anchor="middle">escenas, voz y subtítulos</text>
+  <rect x="100" y="280" width="200" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="200" y="305" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Revisión humana</text>
+  <text x="200" y="324" fill="#525252" font-size="13" text-anchor="middle">cada video, a mano</text>
+  <rect x="100" y="368" width="200" height="56" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="200" y="393" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">4 videos verticales</text>
+  <text x="200" y="412" fill="#525252" font-size="13" text-anchor="middle">15 a 30 segundos</text>
+</svg>

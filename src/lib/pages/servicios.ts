@@ -283,6 +283,17 @@ export const servicios: PageData[] = [
         medimos: ['Consultas por página de servicio', 'Origen de cada visita', 'Velocidad en celular (LCP)', 'Búsquedas en Search Console'],
       },
       {
+        type: 'diagrama',
+        h2: 'El mapa de un sitio corporativo',
+        svg: 'corporativo-mapa',
+        paragraphs: [
+          'Un sitio corporativo arranca en la página de inicio y se abre en páginas con un trabajo cada una. Tres páginas de servicio, cada una pensada para su propia búsqueda; Nosotros, que cuenta quién está detrás; y Contacto, con WhatsApp y formulario.',
+          'Son hasta 6 páginas en el formato desde $1,250. <strong>Lo que importa no es cuántas, sino que cada servicio tenga una página propia</strong> donde Google y tu cliente encuentren justo eso.',
+          'Si ofreces más servicios, se suman páginas con la misma lógica y se cotizan según alcance.',
+        ],
+        pie: 'Ejemplo con tres servicios; la estructura final sale de la etapa de estrategia y arquitectura.',
+      },
+      {
         type: 'prose',
         h2: 'Por qué una página por servicio',
         paragraphs: [
@@ -330,6 +341,24 @@ export const servicios: PageData[] = [
         ],
       },
       {
+        type: 'prose',
+        h2: 'Tu sitio es lo que leen Google, Maps y la IA',
+        paragraphs: [
+          'Antes de llamarte, tu cliente busca tu servicio en Google, mira tu ficha en Google Maps o le pregunta a un asistente como ChatGPT, Gemini o Perplexity qué empresas hacen lo que necesita. Las tres vías terminan revisando lo que hay publicado sobre ti, y tu web es la fuente que tú controlas.',
+          'Una página por servicio, con qué incluye, para quién es y en qué zona trabajas, le da a Google algo concreto que mostrar y a un asistente algo concreto que citar. <strong>Si tu sitio solo dice que ofreces "soluciones integrales", nadie tiene de dónde sacar qué haces.</strong>',
+          'Sobre esa base se trabaja el <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a> y el <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT (GEO)</a>. Ninguno de los dos garantiza un lugar, pero los dos dependen de que la web diga lo correcto.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué poner en Nosotros para que sume confianza',
+        paragraphs: [
+          'En una venta entre empresas, la página de Nosotros es donde el cliente confirma que hay gente real detrás. No busca una historia larga: busca saber con quién va a tratar.',
+          'Lo que suma: fotos reales del equipo y de los trabajos, la dirección de la oficina, quién responde las consultas y desde cuándo operan. <strong>Una foto real del equipo dice más que un párrafo sobre misión y valores.</strong>',
+          'Lo que resta: fotos de stock con gente que no trabaja ahí, cifras sin fuente y textos que podría firmar cualquier empresa. Si tienes clientes que aceptan aparecer, sus casos rinden más en las páginas de servicio, donde el lector los conecta con lo que busca.',
+        ],
+      },
+      {
         type: 'compare',
         h2: 'Por qué con nosotros',
         intro: 'Criterios que puedes verificar en esta página y pedirle a cualquier proveedor. Usa la última columna para comparar.',
@@ -358,6 +387,9 @@ export const servicios: PageData[] = [
           { q: '¿Qué encarece más un sitio corporativo?', a: 'En orden: la cantidad de páginas de servicio, si hay que redactar el contenido desde cero, el panel autoadministrable, las integraciones con CRM o sistemas internos, y la versión en otro idioma.' },
           { q: '¿Qué es lo que más retrasa un proyecto web?', a: 'El contenido, no el diseño ni la programación. Un proyecto con textos, fotos y logos listos avanza según lo previsto; uno donde el contenido se escribe sobre la marcha se alarga. Es la causa número uno de retraso y no depende de la agencia.' },
           { q: '¿Cómo sé si mi sitio actual está bien hecho?', a: 'Se puede verificar sin ser técnico: una página por servicio en vez de una lista, títulos escritos uno por uno, velocidad medida en el celular con datos móviles, formularios que llegan a un buzón de la empresa y no a un correo personal, y enlaces internos entre páginas relacionadas.' },
+          { q: '¿Cuántas páginas necesita mi sitio corporativo?', a: 'Una por cada servicio con el que quieres que te encuentren, más inicio, nosotros y contacto. El formato desde $1,250 llega hasta 6 páginas; si tienes más servicios, se suman con la misma lógica y se cotizan según alcance.' },
+          { q: '¿Mi sitio me ayuda a aparecer en Google Maps o en ChatGPT?', a: 'Es la base, no una garantía. Tu ficha de Maps y los asistentes de IA revisan lo que hay publicado sobre ti, y la web es la fuente que tú controlas. Sobre ella se trabaja el <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO</a> y el <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT (GEO)</a>.' },
+          { q: '¿Qué pongo en la página de Nosotros?', a: 'Fotos reales del equipo y de los trabajos, la dirección de la oficina, quién responde las consultas y desde cuándo operan. Evita fotos de stock y cifras sin fuente: restan confianza en lugar de sumarla.' },
         ],
       },
       {
@@ -517,6 +549,17 @@ export const servicios: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Los cinco pasos de una compra',
+        svg: 'tienda-compra',
+        paragraphs: [
+          'La compra empieza en una búsqueda o un anuncio y llega a la ficha de producto, donde el cliente ve fotos, precio y envío. De ahí pasa al carrito y al pago, con Yappy o tarjeta, y termina en el pedido confirmado, con su aviso por correo y por WhatsApp.',
+          'En cada paso se puede perder la venta. <strong>La ficha pierde al que no encuentra el precio o el envío, y el pago pierde al que no ve Yappy.</strong> El aviso final es lo que evita el mensaje de "¿y mi pedido?".',
+          'Por eso medimos el embudo paso por paso: dice en cuál se cae la gente y qué hay que arreglar primero.',
+        ],
+        pie: 'El aviso por correo va incluido; el aviso por WhatsApp necesita WhatsApp Business API, que es opcional y va aparte.',
+      },
+      {
         type: 'prose',
         h2: 'Cobrar en línea en Panamá: lo que hay que resolver antes de vender',
         paragraphs: [
@@ -553,6 +596,24 @@ export const servicios: PageData[] = [
         paragraphs: [
           'La métrica que manda es el embudo: cuántos vieron un producto, agregaron al carrito, llegaron al pago y terminaron. Si abandonan al ver el envío, el problema es el envío y ninguna campaña lo arregla; si nadie agrega al carrito, el problema está en la ficha o en el precio.',
           'Después, qué productos reciben visitas sin venta (casi siempre por tallas, fotos o una duda sin responder) y el ticket promedio, que dice si conviene vender más por pedido antes que buscar más pedidos. Todo queda medido desde el lanzamiento.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué tiene una ficha de producto que vende',
+        paragraphs: [
+          'La ficha es donde el cliente decide. Tiene que responder, sin buscar de más, lo que preguntaría por WhatsApp: cuánto cuesta con ITBMS, en qué tallas o colores viene, si hay en existencia y cuándo le llega.',
+          'Las fotos hacen el trabajo del vendedor: varios ángulos, el producto en uso y una referencia de tamaño. <strong>Una duda sin responder en la ficha es una venta que se va al mensaje directo o no vuelve.</strong>',
+          'La descripción va después: para qué sirve, de qué está hecho y cómo se cuida, en frases cortas. Escrita para quien compra, y no copiada del proveedor, también le da a Google un texto propio que mostrar.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Confianza para comprarle a una tienda que no conocen',
+        paragraphs: [
+          'Quien llega a tu tienda desde un anuncio muchas veces no te conoce. Antes de pagar quiere saber tres cosas: que existes, que vas a entregar y qué pasa si algo sale mal.',
+          'Lo que lo resuelve tiene que estar a la vista: la política de cambios y devoluciones publicada, el costo y el plazo de envío para ciudad e interior, el retiro en tienda si lo tienes y un WhatsApp visible para dudas. <strong>Pagar con Yappy o tarjeta dentro de la tienda, con confirmación al instante, da más tranquilidad que mandar la captura de una transferencia.</strong>',
+          'Después de la compra, el correo de confirmación y el aviso de envío cierran el círculo. Un cliente que sabe dónde está su pedido no escribe para preguntar, y le cuesta menos volver a comprar.',
         ],
       },
       {
@@ -595,6 +656,9 @@ export const servicios: PageData[] = [
           { q: '¿Por qué se abandonan los carritos en Panamá?', a: 'La causa más común es el costo de envío que aparece de sorpresa en el último paso, sobre todo en entregas a provincias sin plazo especificado. Después: obligar a crear cuenta, no tener Yappy y no publicar la política de cambios.' },
           { q: '¿Qué debo medir en una tienda online?', a: 'El embudo completo: cuántos vieron producto, agregaron al carrito, llegaron al pago y terminaron. Ese desglose señala el problema con precisión. Si abandonan al ver el envío, ninguna campaña lo va a arreglar.' },
           { q: '¿Cuándo NO te conviene una tienda en línea?', a: 'Cuando tu catálogo son tres productos y toda la venta ya pasa por WhatsApp: ahí una <a href="/servicios/landing-pages-alta-conversion-panama/">landing de $550</a> con catálogo y botón de pago te resuelve, y la tienda completa sería infraestructura de más. Tampoco conviene si no tienes resuelta la logística: una tienda que vende y no entrega a tiempo genera reclamos, no clientes.' },
+          { q: '¿Cuántas fotos debe tener cada producto?', a: 'Al menos cuatro: varios ángulos, el producto en uso y una referencia de tamaño. Con menos, el cliente se queda con dudas que termina preguntando por mensaje, o se va sin comprar.' },
+          { q: '¿Qué pasa si tengo más de 25 productos?', a: 'El precio desde $1,950 incluye la carga inicial de hasta 25 productos. Si tu catálogo es más grande, la carga adicional se cotiza según la cantidad, o tu equipo carga el resto desde el panel con la capacitación grabada.' },
+          { q: '¿Cómo genero confianza si mi tienda es nueva?', a: 'Con todo a la vista antes de pagar: política de cambios publicada, costo y plazo de envío para ciudad e interior, un WhatsApp para dudas y pago con Yappy o tarjeta dentro de la tienda. Después, el correo de confirmación y el aviso de envío.' },
         ],
       },
       { type: 'form', h2: 'Cotiza tu tienda online', intro: 'Cuéntanos qué vendes, cuántos productos tienes y cómo entregas: te respondemos con una propuesta cerrada.' },
@@ -974,6 +1038,17 @@ export const servicios: PageData[] = [
         ],
       },
       {
+        type: 'diagrama',
+        h2: 'Qué hace una redirección 301',
+        svg: 'rediseno-301',
+        paragraphs: [
+          'Cada dirección vieja se conecta con su equivalente nueva mediante una redirección 301, que es permanente. /servicios.html pasa a /servicios/diseno-web/, /contacto.php pasa a /contacto/, y una promoción vencida como /promo-2019 va a la página más parecida que exista hoy.',
+          'Así, quien llega desde un enlace viejo o desde Google cae en la página correcta y no en un error. <strong>Google entiende que la página se mudó y no que desapareció</strong>, y eso es lo que reduce el riesgo de perder la posición ganada.',
+          'La promoción vencida no va al inicio: mandar todo a la página de inicio es el error más común, y Google lo trata como una página que ya no existe.',
+        ],
+        pie: 'Direcciones de ejemplo; en tu rediseño el mapa sale del inventario de tu sitio actual.',
+      },
+      {
         type: 'checklist',
         h2: 'Qué revisar antes de tocar el sitio actual',
         intro: 'Sin este inventario, un rediseño es una apuesta. Con él, es un proyecto.',
@@ -994,6 +1069,24 @@ export const servicios: PageData[] = [
         paragraphs: [
           'Antes de tocar nada se anotan visitas mensuales, visitas desde buscadores, contactos al mes, velocidad en celular y páginas indexadas; sin esa línea base no hay forma de demostrar si el rediseño mejoró. Después, la señal de las primeras semanas es que el tráfico de buscadores no caiga: una bajada sostenida casi siempre es una redirección mal hecha, y se vigila desde el primer día.',
           '<strong>El objetivo del rediseño no es verse mejor: es convertir más.</strong> Si el sitio quedó precioso y los contactos bajaron, el rediseño salió mal aunque a todo el mundo le guste.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Qué contenido vale la pena conservar',
+        paragraphs: [
+          'No todo lo que tiene el sitio viejo merece mudarse. Se conservan las páginas que reciben visitas desde Google, las que tienen enlaces de otros sitios y las que responden preguntas que tus clientes siguen haciendo. Eso sale del inventario, no de la memoria.',
+          'Lo demás se decide caso por caso: noticias de hace años, promociones vencidas y páginas duplicadas se unen con la más parecida y se redirigen. <strong>Una página que posiciona se mejora sin cambiarle el tema</strong>: se actualizan datos, se ordena el texto y se agrega lo que falta, pero sigue respondiendo la misma búsqueda.',
+          'Reescribirla entera para que suene más moderna, o cambiarle el enfoque, puede costarte la posición que ya tenía.',
+        ],
+      },
+      {
+        type: 'prose',
+        h2: 'Lo que se rompe sin que nadie lo vea',
+        paragraphs: [
+          'Un rediseño muchas veces cambia también el hosting. Si al mover el dominio no se copian bien los registros del correo, los mensajes de la empresa dejan de llegar y nadie lo nota hasta que un cliente reclama.',
+          'Pasa lo mismo con lo que no se ve en pantalla: formularios que siguen enviando a un correo viejo, el código de Google Analytics o de la pauta que se quedó en la plantilla anterior, o un botón de WhatsApp con un número que ya no se usa. <strong>El sitio se ve perfecto y las consultas se pierden en silencio.</strong>',
+          'Por eso formularios y WhatsApp se revisan de punta a punta antes del cambio, y conviene confirmar con quien administra tu correo que sus registros pasen intactos al nuevo hosting.',
         ],
       },
       {
@@ -1035,6 +1128,9 @@ export const servicios: PageData[] = [
           { q: '¿Por qué cae el tráfico después de un rediseño?', a: 'Casi siempre por redirecciones mal hechas. Si las direcciones de las páginas cambian y nadie le indica a Google dónde viven ahora, cada enlace muere y el posicionamiento de esa página se pierde entero. Se previene con un mapa de redirecciones aplicado el mismo día del lanzamiento.' },
           { q: '¿Cómo sé si el rediseño funcionó?', a: 'Comparando con números anotados antes: visitas, tráfico de buscadores, contactos al mes, velocidad en celular y páginas indexadas. Si el sitio quedó precioso y los contactos bajaron, el rediseño salió mal aunque guste.' },
           { q: '¿Cuándo NO conviene rediseñar todavía?', a: 'Cuando el sitio funciona y lo que falta es contenido o difusión: rediseñar por aburrimiento reinicia tu posicionamiento sin ganar nada. Tampoco cuando estás en temporada alta: el rediseño mueve URLs y conviene hacerlo en un mes tranquilo, no la semana antes de tu pico de ventas.' },
+          { q: '¿Qué es una redirección 301?', a: 'Es una instrucción permanente que manda cada dirección vieja a su equivalente nueva. Quien llega desde un enlace viejo o desde Google cae en la página correcta, y Google entiende que la página se mudó en lugar de desaparecer.' },
+          { q: '¿Qué contenido del sitio viejo se conserva?', a: 'Las páginas que reciben visitas desde Google, las que tienen enlaces de otros sitios y las que responden preguntas vigentes. Se mejoran sin cambiarles el tema. Lo vencido o duplicado se une con la página más parecida y se redirige.' },
+          { q: '¿El rediseño puede afectar el correo de mi empresa?', a: 'El rediseño en sí no toca el correo, pero un cambio de hosting sí puede afectarlo si los registros del correo no pasan intactos. Por eso los accesos al dominio y al hosting se revisan antes del cambio, no a última hora.' },
         ],
       },
       { type: 'form', h2: 'Solicita la auditoría de tu sitio', intro: 'Pásanos la dirección de tu web y qué te molesta de ella: te respondemos con lo que encontramos y el alcance del rediseño.' },

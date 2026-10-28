@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 344" role="img" aria-labelledby="a-medida-arquitectura-title a-medida-arquitectura-desc" font-family="Roboto, system-ui, sans-serif">
+  <title id="a-medida-arquitectura-title">Cómo se arma una aplicación a medida</title>
+  <desc id="a-medida-arquitectura-desc">Tus usuarios entran a una interfaz hecha en Vue o React, que habla con una API donde viven las reglas de tu negocio; la API guarda en la base de datos y se conecta con pagos, CRM y WhatsApp.</desc>
+  <defs><marker id="flecha" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#737373"/></marker></defs>
+  <path d="M112 72 V102" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M112 160 V190" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M112 248 V278" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <path d="M208 220 H238" fill="none" stroke="#737373" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <rect x="16" y="16" width="192" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="112" y="41" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Tus usuarios</text>
+  <text x="112" y="60" fill="#525252" font-size="13" text-anchor="middle">navegador o celular</text>
+  <rect x="16" y="104" width="192" height="56" rx="8" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="112" y="129" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Interfaz</text>
+  <text x="112" y="148" fill="#d4d4d4" font-size="13" text-anchor="middle">en Vue o React</text>
+  <rect x="16" y="192" width="192" height="56" rx="8" fill="#fff" stroke="#0a0a0a" stroke-width="1.5"/>
+  <text x="112" y="217" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">API</text>
+  <text x="112" y="236" fill="#525252" font-size="13" text-anchor="middle">las reglas de tu negocio</text>
+  <rect x="16" y="280" width="192" height="48" rx="8" fill="#f5f5f5" stroke="#737373" stroke-width="1.5"/>
+  <text x="112" y="309" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Base de datos</text>
+  <rect x="240" y="188" width="148" height="64" rx="8" fill="#fff" stroke="#737373" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="314" y="217" fill="#0a0a0a" font-size="16" font-weight="700" text-anchor="middle">Integraciones</text>
+  <text x="314" y="236" fill="#525252" font-size="13" text-anchor="middle">pagos, CRM, WhatsApp</text>
+</svg>

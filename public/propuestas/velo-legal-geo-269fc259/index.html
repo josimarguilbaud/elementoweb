@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta GEO · Veló Legal — elementoweb.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand: #3b82f6; --brand-deep: #1e3a8a; --violet: #7c3aed; --ink: #0f172a; }
+        * { -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background: #eef2fb;
+            background-image:
+                radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,0.10), transparent 60%),
+                radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,0.12), transparent 55%),
+                radial-gradient(45rem 45rem at 50% 120%, rgba(37,99,235,0.08), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1, h2, h3, h4, .display { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; letter-spacing: -0.02em; }
+        .gradient-text {
+            background: linear-gradient(100deg, #60a5fa, #3b82f6 45%, #7c3aed);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .glass {
+            background: rgba(255,255,255,0.72);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 20px 40px -24px rgba(30,58,138,0.28);
+        }
+        .service-card { position: relative; transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; overflow: hidden; }
+        .service-card::before {
+            content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+            background: linear-gradient(135deg, rgba(96,165,250,.6), rgba(124,58,237,.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            opacity: 0; transition: opacity .35s ease; pointer-events: none;
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(30,58,138,0.45); }
+        .service-card:hover::before { opacity: 1; }
+        .service-card.is-rec::before { opacity: 1; padding: 2px; }
+        .item-card { position: relative; transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; overflow: hidden; }
+        .item-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -28px rgba(30,58,138,0.35); }
+        .num-badge { background: linear-gradient(135deg, #60a5fa, #3b82f6 55%, #7c3aed); box-shadow: 0 10px 22px -8px rgba(59,130,246,0.7); }
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+        .reveal.in { opacity: 1; transform: none; }
+        @keyframes float1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(20px,-16px) scale(1.08);} }
+        @keyframes float2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-24px,14px) scale(1.12);} }
+        .orb1 { animation: float1 11s ease-in-out infinite; }
+        .orb2 { animation: float2 14s ease-in-out infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .shine {
+            background: linear-gradient(90deg,#93c5fd,#e0e7ff,#93c5fd,#c4b5fd);
+            background-size: 200% auto;
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+        .price-pill { background: linear-gradient(135deg,#eff6ff,#eef2ff); border:1px solid #dbeafe; }
+        .wa-float { box-shadow: 0 14px 30px -8px rgba(22,163,74,0.6); transition: transform .25s ease, box-shadow .25s ease; }
+        .wa-float:hover { transform: translateY(-3px) scale(1.04); }
+        @keyframes waPulse { 0%{ box-shadow:0 0 0 0 rgba(34,197,94,.5);} 70%{ box-shadow:0 0 0 16px rgba(34,197,94,0);} 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+        .wa-pulse { animation: waPulse 2.4s infinite; }
+        .btn-primary {
+            background: linear-gradient(135deg,#3b82f6,#7c3aed);
+            transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+            box-shadow: 0 14px 28px -10px rgba(59,130,246,0.7);
+        }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 20px 34px -10px rgba(124,58,237,0.6); }
+        .section-tag { background: linear-gradient(135deg,#0b1220,#1e3a8a); }
+        .tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+        .tbl th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #64748b; background: #f8fafc; padding: 10px 14px; border-bottom: 1px solid #e2e8f0; }
+        .tbl td { padding: 11px 14px; border-top: 1px solid #f1f5f9; vertical-align: top; color: #475569; line-height: 1.5; }
+        .tbl td b { color: #0f172a; font-weight: 600; }
+        .tbl td small { display: block; color: #64748b; font-size: 12.5px; margin-top: 2px; }
+        .tbl .en { color: #64748b; font-style: italic; }
+        @media (min-width: 640px) { .tbl td small.en-m { display: none; } }
+        .figure svg { display: block; width: 100%; height: auto; min-width: 620px; }
+        /* ---------- hero ---------- */
+        .hero-eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#bfdbfe; }
+        .hero-eyebrow::before { content:""; width:22px; height:1px; background:#93c5fd; }
+        .doc-meta > div { background:rgba(11,18,32,.45); padding:12px 14px; }
+        .doc-meta dt { font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#93c5fd; margin-bottom:3px; }
+        .doc-meta dd { font-size:13px; font-weight:600; color:#fff; line-height:1.3; }
+        .toc a { display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; color:#e0e7ff; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:999px; padding:7px 13px; transition:background .2s, border-color .2s; }
+        .toc a:hover { background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.3); }
+        .toc a:focus-visible { outline:2px solid #93c5fd; outline-offset:2px; }
+        .toc i { width:7px; height:7px; border-radius:2px; display:block; }
+        /* respuesta de un asistente (ilustración) */
+        .ai-card { background:#fff; color:#0f172a; border-radius:18px; overflow:hidden; box-shadow:0 34px 70px -24px rgba(2,6,23,.85), 0 0 0 1px rgba(255,255,255,.14); font-size:13px; }
+        .ai-top { display:flex; align-items:center; gap:8px; padding:10px 14px; background:#f8fafc; border-bottom:1px solid #eef2f7; font-size:11px; font-weight:600; color:#64748b; letter-spacing:.03em; }
+        .ai-top i { width:8px; height:8px; border-radius:50%; background:#cbd5e1; display:block; }
+        .ai-q { margin:14px 14px 12px 3.2rem; background:#eef2ff; color:#1e293b; border-radius:14px 14px 4px 14px; padding:10px 12px; line-height:1.45; }
+        .ai-a { padding:0 14px 12px; line-height:1.6; color:#334155; }
+        .ai-a mark { background:linear-gradient(135deg,#dbeafe,#ede9fe); color:#1e3a8a; font-weight:700; padding:1px 6px; border-radius:6px; }
+        .ai-src { display:flex; flex-wrap:wrap; gap:6px; padding:0 14px 14px; }
+        .ai-src span { font-size:11px; font-weight:500; background:#f1f5f9; color:#475569; border-radius:999px; padding:4px 9px; }
+        /* bloques propios */
+        .obj { display:grid; gap:12px; }
+        @media (min-width: 768px) { .obj { grid-template-columns: repeat(3, 1fr); } }
+        .obj div { background:rgba(255,255,255,.75); border:1px solid #eef2f7; border-radius:18px; padding:16px 18px; }
+        .obj b { display:block; font-family:'Bricolage Grotesque', Inter, sans-serif; font-size:17px; color:#0f172a; margin-bottom:4px; }
+        .obj p { font-size:13.5px; color:#475569; line-height:1.55; }
+        .stats { display:grid; grid-template-columns: repeat(2, 1fr); gap:1px; background:#e2e8f0; border-radius:20px; overflow:hidden; border:1px solid #e2e8f0; }
+        @media (min-width: 768px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+        .stats div { background:#fff; padding:18px 18px 16px; }
+        .stats b { display:block; font-family:'Bricolage Grotesque', Inter, sans-serif; font-size:30px; line-height:1; font-weight:800; color:#1e3a8a; margin-bottom:6px; }
+        .stats span { font-size:12.5px; color:#64748b; line-height:1.4; display:block; }
+        .pilares { display:grid; gap:12px; }
+        @media (min-width: 768px) { .pilares { grid-template-columns: repeat(4, 1fr); } }
+        .pilares div { background:rgba(255,255,255,.8); border:1px solid #eef2f7; border-radius:16px; padding:14px 16px; font-size:13px; color:#475569; line-height:1.5; }
+        .pilares b { display:block; color:#0f172a; font-size:14.5px; margin-bottom:3px; font-family:'Bricolage Grotesque', Inter, sans-serif; }
+        .pilares em { font-style:normal; font-family:'Geist Mono', monospace; font-size:11px; font-weight:600; color:#4338ca; display:block; margin-bottom:6px; }
+        .lista { list-style:none; padding:0; display:grid; gap:9px; }
+        .lista li { display:flex; gap:10px; font-size:13.5px; line-height:1.5; color:#475569; }
+        .lista li::before { content:"▸"; color:#3b82f6; flex:none; margin-top:1px; }
+        .lista li b { color:#0f172a; font-weight:600; }
+        .lista.no li::before { content:"✕"; color:#dc2626; font-weight:700; }
+        .lista.si li::before { content:"✓"; color:#16a34a; font-weight:700; }
+        .flujo { background:rgba(255,255,255,.8); border:1px solid #eef2f7; border-radius:18px; padding:16px; text-align:center; }
+        .flujo-et { font-size:10.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#64748b; margin-bottom:8px; }
+        .flujo-q { background:#eff6ff; border:1px solid #bfdbfe; border-radius:14px; padding:12px 14px; font-size:13.5px; color:#1e3a8a; line-height:1.45; }
+        .flujo small { display:block; font-size:11px; color:#64748b; margin-top:4px; }
+        .flujo-fl { color:#93c5fd; font-size:20px; line-height:1; margin:8px 0; }
+        .flujo-src { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+        .flujo-src span { display:flex; align-items:center; gap:7px; background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:9px 10px; font-size:12.5px; font-weight:600; color:#0f172a; text-align:left; line-height:1.25; }
+        .flujo-src i { width:9px; height:9px; border-radius:3px; flex:none; display:block; }
+        .flujo-a { background:#0b1220; border-radius:14px; padding:14px; }
+        .flujo-a b { display:inline-block; color:#fff; font-size:14px; background:linear-gradient(135deg,#3b82f6,#7c3aed); border-radius:8px; padding:5px 14px; }
+        .flujo-a small { color:#93c5fd; margin-top:8px; }
+        .linea-tiempo { list-style:none; margin:0; padding:0; display:grid; }
+        .linea-tiempo li { display:grid; grid-template-columns:132px 1fr; gap:18px; padding:16px 0; border-top:1px solid #e2e8f0; font-size:14px; color:#475569; line-height:1.55; }
+        .linea-tiempo li b { color:#0f172a; display:block; font-size:15px; margin-bottom:2px; }
+        .linea-tiempo .sem { font-family:'Geist Mono', monospace; font-size:11.5px; font-weight:600; color:#1e3a8a; background:#eff6ff; border-radius:8px; padding:6px 10px; align-self:start; text-align:center; line-height:1.35; }
+        .linea-tiempo .sem.opc { color:#92400e; background:#fffbeb; }
+        @media (max-width: 520px) { .linea-tiempo li { grid-template-columns: 1fr; gap:8px; } .linea-tiempo .sem { justify-self:start; } }
+        @page { size: Letter; margin: 12mm 0; }
+        @page :first { margin-top: 0; }
+        @media print {
+            body { background: #fff; }
+            .no-print { display: none !important; }
+            .reveal { opacity:1 !important; transform:none !important; transition:none !important; }
+            main { box-shadow:none !important; margin: 0 !important; max-width: none !important; border-radius: 0 !important; border: 0 !important; background: #fff !important; }
+            .glass { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: #fff !important; box-shadow: none !important; border-color: #e2e8f0 !important; }
+            .service-card, .item-card { box-shadow: none !important; }
+            .orb1, .orb2, .shine { animation: none !important; }
+            .avoid, .service-card, .item-card, figure, .tbl tr, .terms p, .linea-tiempo li, .pilares div, .obj div { break-inside: avoid; }
+            .sec-head { break-inside: avoid; break-after: avoid; }
+            .sec-head + * { break-before: avoid; }
+            .shine { background: none !important; -webkit-text-fill-color: #c7d2fe !important; color: #c7d2fe !important; }
+            .gradient-text { background: none !important; -webkit-text-fill-color: #4338ca !important; color: #4338ca !important; }
+            section.mb-14 { margin-bottom: 36px !important; }
+            .py-12 { padding-top: 32px !important; padding-bottom: 32px !important; }
+            .sumblock { padding: 22px 26px !important; }
+            .sumblock .py-2\.5 { padding-top: 5px !important; padding-bottom: 5px !important; }
+            .sumblock .mt-8 { margin-top: 16px !important; }
+            .sumblock .text-4xl { font-size: 28px !important; }
+            .newpage { break-before: page; }
+            .figure svg { min-width: 0; }
+            .figure { overflow: visible !important; }
+            .fullbleed-footer { break-inside: avoid; padding-top: 16px !important; padding-bottom: 16px !important; }
+            .cta-box { padding: 22px 26px !important; }
+            .cta-box h3 { font-size: 20px !important; }
+            .sources { margin-top: 20px !important; padding-top: 12px !important; }
+            .service-card::before { display: none !important; }
+            .service-card.is-rec { border: 2px solid #c4b5fd !important; }
+            .service-card.can-break { break-inside: auto; }
+            .lista li { break-inside: avoid; }
+            .obj div { padding: 12px 14px; }
+            .obj b { font-size: 15px; }
+            .obj p { font-size: 12.5px; line-height: 1.45; }
+            .pilares div { padding: 12px 14px; font-size: 12.5px; }
+            .stats, .pilares, .flujo { break-inside: avoid; }
+            .keep { break-after: avoid; break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 selection:bg-violet-200 selection:text-violet-900">
+
+    <main class="max-w-4xl mx-auto my-6 sm:my-10 glass rounded-[28px] overflow-hidden">
+
+        <!-- ============ HEADER ============ -->
+        <header class="relative overflow-hidden text-white px-7 sm:px-10 pt-8 pb-10"
+                style="background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);">
+            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.55),transparent 70%);"></div>
+            <div class="orb2 absolute -bottom-24 -left-10 w-72 h-72 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(59,130,246,.5),transparent 70%);"></div>
+            <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:32px 32px;"></div>
+
+            <div class="relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-8 border-b border-white/15">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);">
+                            <svg width="26" height="26" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/><circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/></svg>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="display text-lg font-bold tracking-tight">elementoweb<span class="text-violet-300">.com</span></p>
+                            <p class="text-[11px] text-blue-200/80 tracking-wide">Desarrollo Web · IA · Automatización</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm sm:justify-end">
+                        <a href="mailto:info@elementoweb.com" class="text-blue-100 hover:text-white transition">info@elementoweb.com</a>
+                        <a href="https://wa.me/50761903007" target="_blank" rel="noopener" class="text-blue-100 hover:text-white transition">WhatsApp 6190-3007</a>
+                    </div>
+                </div>
+
+                <div class="pt-9">
+                    <p class="hero-eyebrow mb-4">Propuesta · Posicionamiento en ChatGPT y la IA (GEO)</p>
+                    <p class="text-sm text-blue-100/90 mb-3">Para <b class="text-white tracking-wide">VELÓ LEGAL</b> · Adriana Grimaldo, Legal Ops y Marketing</p>
+                    <h1 class="display text-[2.3rem] sm:text-[3.15rem] font-extrabold leading-[1.03] tracking-tight max-w-[760px]">Que la IA <span class="shine">nombre a Veló Legal</span></h1>
+                </div>
+                <div class="mt-7 grid md:grid-cols-[1fr_1.05fr] gap-8 md:gap-7 items-center">
+                    <div>
+                        <p class="text-blue-100/90 text-[15px] leading-relaxed mb-6">Cuando un gerente general, el abogado interno de un banco o una multinacional que llega a Panamá le pregunta a ChatGPT, Claude o Copilot qué firma le conviene, la IA responde con unos pocos nombres. Esta propuesta es para que Veló Legal sea uno de ellos, sin atajos y midiendo cada mes.</p>
+                        <dl class="doc-meta grid grid-cols-2 gap-px rounded-2xl overflow-hidden border border-white/15 bg-white/15">
+                            <div><dt>Propuesta para</dt><dd>Veló Legal</dd></div>
+                            <div><dt>Referencia</dt><dd>EW-VEL-2026-01</dd></div>
+                            <div><dt>Fecha</dt><dd>28 oct 2026</dd></div>
+                            <div><dt>Válida hasta</dt><dd>27 nov 2026</dd></div>
+                        </dl>
+                    </div>
+                    <div>
+                        <div class="ai-card" aria-label="Ilustración: respuesta de un asistente de IA que menciona a Veló Legal">
+                            <div class="ai-top"><i></i><i></i><i></i><span class="ml-1">Asistente de IA</span></div>
+                            <div class="ai-q">¿Qué firma de abogados en Panamá asesora a empresas reguladas en protección de datos y licencias?</div>
+                            <div class="ai-a">Varias firmas trabajan estos temas. <mark>Veló Legal</mark>, fundada en 2019 como la primera firma NewLaw de Panamá, tiene práctica en privacidad y protección de datos y en registros, permisos y licencias…</div>
+                            <div class="ai-src"><span>velo-legal.com</span><span>chambers.com</span><span>lexlatin.com</span></div>
+                        </div>
+                        <p class="text-[11px] text-blue-200/80 mt-2.5 text-right">Ilustración del objetivo, no es una respuesta real.</p>
+                    </div>
+                </div>
+                <nav class="toc mt-10 pt-6 border-t border-white/15 no-print" aria-label="Contenido de la propuesta">
+                    <p class="text-[11px] font-semibold uppercase tracking-[.14em] text-blue-200/80 mb-3">En esta propuesta</p>
+                    <ul class="flex flex-wrap gap-2"><li><a href="#reunion"><i style="background:#94a3b8"></i>Lo que hablamos</a></li><li><a href="#como-funciona"><i style="background:#0891b2"></i>Cómo elige la IA</a></li><li><a href="#sin-atajos"><i style="background:#16a34a"></i>Sin atajos</a></li><li><a href="#propuesta"><i style="background:#7c3aed"></i>Auditoría y planes</a></li><li><a href="#cronograma"><i style="background:#2563eb"></i>Cronograma 2027</a></li><li><a href="#medicion"><i style="background:#db2777"></i>Cómo medimos</a></li><li><a href="#inversion"><i style="background:#f59e0b"></i>Inversión</a></li></ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="px-7 sm:px-10 py-12">
+
+            <!-- ============ LO QUE HABLAMOS ============ -->
+            <section id="reunion" class="mb-14">
+                <div class="reveal text-center max-w-2xl mx-auto mb-7">
+                    <h2 class="display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Marca ante quien decide, <span class="gradient-text">no volumen</span></h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Gracias por el tiempo en la reunión. Resumimos lo que entendimos, porque de ahí sale todo lo que proponemos.</p>
+                </div>
+                <div class="reveal obj mb-6">
+                    <div><b>El objetivo es la marca</b><p>No buscan más formularios llenos: buscan que el nombre de Veló Legal aparezca cuando alguien con poder de decisión pregunta por una firma.</p></div>
+                    <div><b>Para quien decide</b><p>Gerentes generales y tomadores de decisión, abogados internos de bancos y aseguradoras, y multinacionales. Muchas de esas preguntas se hacen en inglés.</p></div>
+                    <div><b>Sin repetir el pasado</b><p>Hace cinco años un proveedor usó técnicas que terminaron en una penalización de Google. Esta vez, todo limpio, a su nombre y verificable.</p></div>
+                </div>
+                <div class="reveal stats">
+                    <div><b>6</b><span>asistentes de IA medidos: ChatGPT, Claude, Perplexity, Gemini, Copilot y las respuestas con IA de Google</span></div>
+                    <div><b>ES + EN</b><span>preguntas en español y en inglés, como pregunta su cliente</span></div>
+                    <div><b>40</b><span>palabras clave que su blog ya posiciona en Google: no empezamos de cero</span></div>
+                    <div><b>6 meses</b><span>recomendados, de enero a junio de 2027, para su presupuesto</span></div>
+                </div>
+            </section>
+
+            <!-- ============ VENTAJA ============ -->
+            <div class="reveal avoid mb-14 rounded-[24px] p-7 sm:p-9 relative overflow-hidden border-2" style="background:linear-gradient(135deg,#fffbeb,#fff7ed);border-color:#fcd34d;">
+                <div class="absolute top-0 right-0 text-white text-[11px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-2xl" style="background:linear-gradient(135deg,#d97706,#b45309);">La ventaja que ya tienen</div>
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-14 h-14 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#fbbf24,#d97706);box-shadow:0 10px 22px -8px rgba(217,119,6,.6);">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="display text-xl sm:text-2xl font-bold text-slate-900 mb-2">La IA ya tiene de dónde sacar a Veló Legal</h2>
+                        <p class="text-slate-700 text-sm leading-relaxed mb-3">Los asistentes de IA arman sus respuestas con lo que encuentran publicado y confirmado por otros. Veló Legal ya tiene buena parte de eso: un blog que ganó 40 palabras clave en Google, una historia que la prensa legal ya contó (la primera firma NewLaw de Panamá, en 2019, y la integración con Hoyos &amp; Asociados en 2020) y reconocimientos de terceros, como la mención de Chambers and Partners en FinTech que aparece en su perfil público.</p>
+                        <p class="text-slate-800 text-sm leading-relaxed font-medium">El trabajo es ordenar, completar y conectar eso para que la IA lo entienda y lo cite. Y como ustedes ya usan Claude, ChatGPT, Perplexity y Gemini, cada informe lo pueden comprobar ustedes mismos, haciendo las mismas preguntas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ CÓMO ELIGE LA IA ============ -->
+            <section id="como-funciona" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Cómo funciona</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Cómo decide una IA a quién nombrar</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal keep text-sm text-slate-600 mb-6 max-w-2xl">Nadie le paga a ChatGPT para salir en sus respuestas. La IA busca, cruza fuentes y nombra a las firmas que encuentra descritas con claridad y confirmadas por terceros en los que confía. Sobre eso se trabaja.</p>
+                <figure class="reveal figure hidden sm:block bg-white/80 rounded-2xl border border-slate-100 p-4 sm:p-6 mb-6 overflow-x-auto">
+                    <svg viewBox="0 0 760 290" role="img" aria-labelledby="dgT dgD" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+                        <title id="dgT">Cómo decide una IA a quién nombrar</title>
+                        <desc id="dgD">Una persona hace una pregunta; la IA busca y cruza cuatro tipos de fuentes (la web de la firma, directorios y rankings, prensa legal y perfiles); y responde nombrando a las firmas que aparecen claras y confirmadas.</desc>
+                        <defs>
+                            <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#93c5fd"/></marker>
+                            <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+                        </defs>
+                        <g font-size="11" font-weight="700" fill="#64748b" letter-spacing=".06em">
+                            <text x="95" y="20" text-anchor="middle">1 · ALGUIEN PREGUNTA</text>
+                            <text x="370" y="20" text-anchor="middle">2 · LA IA BUSCA Y CRUZA FUENTES</text>
+                            <text x="657" y="20" text-anchor="middle">3 · RESPONDE CON NOMBRES</text>
+                        </g>
+                        <rect x="10" y="92" width="170" height="122" rx="14" fill="#eff6ff" stroke="#bfdbfe"/>
+                        <g font-size="12.5" fill="#1e3a8a">
+                            <text x="26" y="124">“¿Qué firma en</text>
+                            <text x="26" y="143">Panamá asesora a</text>
+                            <text x="26" y="162">bancos en protección</text>
+                            <text x="26" y="181">de datos?”</text>
+                        </g>
+                        <text x="26" y="202" font-size="11" fill="#64748b">en español o en inglés</text>
+                        <g fill="none" stroke="#93c5fd" stroke-width="1.6" marker-end="url(#ar)">
+                            <path d="M180,153 C218,153 214,61 252,61"/>
+                            <path d="M180,153 C218,153 214,121 252,121"/>
+                            <path d="M180,153 C218,153 214,181 252,181"/>
+                            <path d="M180,153 C218,153 214,241 252,241"/>
+                            <path d="M486,61 C526,61 522,153 562,153"/>
+                            <path d="M486,121 C526,121 522,153 562,153"/>
+                            <path d="M486,181 C526,181 522,153 562,153"/>
+                            <path d="M486,241 C526,241 522,153 562,153"/>
+                        </g>
+                        <g>
+                            <rect x="255" y="38" width="230" height="46" rx="12" fill="#fff" stroke="#e2e8f0"/>
+                            <rect x="269" y="54" width="10" height="10" rx="3" fill="#3b82f6"/>
+                            <text x="289" y="59" font-size="13" font-weight="700" fill="#0f172a">Su web</text>
+                            <text x="289" y="75" font-size="11" fill="#64748b">páginas que la responden</text>
+                            <rect x="255" y="98" width="230" height="46" rx="12" fill="#fff" stroke="#e2e8f0"/>
+                            <rect x="269" y="114" width="10" height="10" rx="3" fill="#7c3aed"/>
+                            <text x="289" y="119" font-size="13" font-weight="700" fill="#0f172a">Directorios y rankings</text>
+                            <text x="289" y="135" font-size="11" fill="#64748b">Chambers, Legal 500, IFLR1000</text>
+                            <rect x="255" y="158" width="230" height="46" rx="12" fill="#fff" stroke="#e2e8f0"/>
+                            <rect x="269" y="174" width="10" height="10" rx="3" fill="#db2777"/>
+                            <text x="289" y="179" font-size="13" font-weight="700" fill="#0f172a">Prensa legal</text>
+                            <text x="289" y="195" font-size="11" fill="#64748b">LexLatin, Latin Lawyer, medios</text>
+                            <rect x="255" y="218" width="230" height="46" rx="12" fill="#fff" stroke="#e2e8f0"/>
+                            <rect x="269" y="234" width="10" height="10" rx="3" fill="#0891b2"/>
+                            <text x="289" y="239" font-size="13" font-weight="700" fill="#0f172a">Perfiles</text>
+                            <text x="289" y="255" font-size="11" fill="#64748b">Google, LinkedIn, socios</text>
+                        </g>
+                        <rect x="565" y="82" width="185" height="142" rx="14" fill="#0b1220"/>
+                        <text x="581" y="108" font-size="11" font-weight="600" fill="#93c5fd">Respuesta</text>
+                        <rect x="581" y="120" width="150" height="7" rx="3.5" fill="#334155"/>
+                        <rect x="581" y="134" width="120" height="7" rx="3.5" fill="#334155"/>
+                        <rect x="581" y="150" width="104" height="26" rx="8" fill="url(#chip)"/>
+                        <text x="633" y="167" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">Veló Legal</text>
+                        <rect x="581" y="186" width="140" height="7" rx="3.5" fill="#334155"/>
+                        <text x="581" y="212" font-size="10.5" fill="#93c5fd">+ las fuentes que citó</text>
+                    </svg>
+                </figure>
+                <div class="reveal sm:hidden flujo mb-6" aria-hidden="true">
+                    <p class="flujo-et">1 · Alguien pregunta</p>
+                    <div class="flujo-q">“¿Qué firma en Panamá asesora a bancos en protección de datos?”<small>en español o en inglés</small></div>
+                    <p class="flujo-fl">↓</p>
+                    <p class="flujo-et">2 · La IA busca y cruza fuentes</p>
+                    <div class="flujo-src"><span><i style="background:#3b82f6"></i>Su web</span><span><i style="background:#7c3aed"></i>Directorios y rankings</span><span><i style="background:#db2777"></i>Prensa legal</span><span><i style="background:#0891b2"></i>Perfiles</span></div>
+                    <p class="flujo-fl">↓</p>
+                    <p class="flujo-et">3 · Responde con nombres</p>
+                    <div class="flujo-a"><b>Veló Legal</b><small>+ las fuentes que citó</small></div>
+                </div>
+                <div class="reveal pilares">
+                    <div><em>01 · Entidad</em><b>Una identidad clara</b>Los mismos datos de la firma, sus áreas y sus socios en su web, Google, LinkedIn y directorios, con el marcado técnico que leen las máquinas.</div>
+                    <div><em>02 · Respuestas</em><b>Páginas que responden</b>Contenido que contesta, con criterio de abogado, las preguntas reales que hace un director antes de contratar una firma.</div>
+                    <div><em>03 · Terceros</em><b>Otros que lo confirman</b>Rankings, directorios, prensa legal y los perfiles de los socios: la IA cree más en lo que otros dicen de ustedes.</div>
+                    <div><em>04 · Medición</em><b>Las mismas preguntas, cada mes</b>Una lista fija de preguntas en seis asistentes, con capturas, para ver qué se movió y qué no.</div>
+                </div>
+            </section>
+
+            <!-- ============ SIN ATAJOS ============ -->
+            <section id="sin-atajos" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Nuestro compromiso</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Sin atajos, y todo a su nombre</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal keep text-sm text-slate-600 mb-6 max-w-2xl">Lo que pasó hace cinco años es justo lo que este servicio no puede repetir. Quien le garantice aparecer en ChatGPT le está vendiendo humo: nadie controla lo que responde una IA. Lo que sí controlamos es cómo trabajamos.</p>
+                <div class="reveal grid md:grid-cols-2 gap-4">
+                    <div class="item-card avoid rounded-2xl p-6 border" style="background:linear-gradient(135deg,#fef2f2,#fff);border-color:#fecaca;">
+                        <p class="text-[11px] font-bold text-red-700 uppercase tracking-wider mb-3">Lo que no vamos a hacer</p>
+                        <ul class="lista no">
+                            <li><span>Comprar enlaces, menciones o notas pagadas disfrazadas de noticia.</span></li>
+                            <li><span>Reseñas, perfiles o testimonios inventados.</span></li>
+                            <li><span>Crear o editar artículos de Wikipedia sobre la firma (sus normas lo desaconsejan y suele terminar borrado).</span></li>
+                            <li><span>Páginas masivas hechas con IA para "llenar" Google, ni texto oculto.</span></li>
+                            <li><span>Prometerles que van a aparecer en una respuesta concreta.</span></li>
+                        </ul>
+                    </div>
+                    <div class="item-card avoid rounded-2xl p-6 border" style="background:linear-gradient(135deg,#ecfdf5,#fff);border-color:#bbf7d0;">
+                        <p class="text-[11px] font-bold text-emerald-700 uppercase tracking-wider mb-3">Lo que sí</p>
+                        <ul class="lista si">
+                            <li><span>Todo se publica bajo el nombre de Veló Legal y con su aprobación previa.</span></li>
+                            <li><span>Contenido informativo, sin promesas de resultados, revisado por un socio, conforme a las normas de ética que rigen la publicidad de los abogados.</span></li>
+                            <li><span>Una bitácora de cada cambio: qué se tocó, dónde y cuándo. Auditable en cualquier momento.</span></li>
+                            <li><span>Accesos con usuarios propios de Elemento Web, que ustedes retiran cuando quieran.</span></li>
+                            <li><span>Sin chatbot: lo apagaron por impersonal y estamos de acuerdo. Aquí la IA trabaja afuera, no habla en su nombre.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ PROPUESTA ============ -->
+            <section id="propuesta" class="mb-10">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Paso 1</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Primero, saber dónde están hoy</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+
+                <div class="reveal service-card can-break bg-white/70 rounded-2xl p-6 sm:p-7 mb-6 border border-slate-100">
+                    <div class="avoid flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">1</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Auditoría GEO: qué dice hoy la IA de Veló Legal</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">La línea base contra la que se mide todo lo demás</p>
+                            </div>
+                        </div>
+                        <div class="md:text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">US$ 490</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">Pago único</p>
+                        </div>
+                    </div>
+                    <ul class="lista mb-5">
+                        <li><span><b>30 preguntas de compra</b> (15 en español y 15 en inglés) como las haría un gerente, un abogado interno o una multinacional, hechas en los seis asistentes, con capturas.</span></li>
+                        <li><span><b>Qué dice la IA de la firma</b>: si la nombra, si acierta con sus áreas, su historia y sus socios, y qué datos viejos o equivocados repite.</span></li>
+                        <li><span><b>Qué fuentes cita y quién aparece en su lugar</b>: las firmas que la IA nombra cuando no nombra a Veló Legal.</span></li>
+                        <li><span><b>Revisión técnica de su web</b>: marcado de datos de la firma y de los socios, acceso de los rastreadores de IA, Search Console, Bing (la base de Copilot y una de las fuentes de ChatGPT) y llms.txt.</span></li>
+                        <li><span><b>Salud después de la penalización</b>: acciones manuales en Search Console, enlaces que quedaron del proveedor anterior y si hace falta limpiar algo antes de publicar.</span></li>
+                        <li><span><b>Perfiles externos</b>: Google Business Profile, LinkedIn de la firma y de los socios, directorios y rankings donde están o deberían estar.</span></li>
+                    </ul>
+                    <p class="text-sm font-semibold text-slate-800 mb-2">Ejemplos de preguntas que mediríamos</p>
+                    <div class="bg-white/80 rounded-xl border border-slate-100 overflow-x-auto mb-3">
+                        <table class="tbl">
+                            <thead><tr><th>Área</th><th>En español<span class="sm:hidden"> e inglés</span></th><th class="hidden sm:table-cell">En inglés</th></tr></thead>
+                            <tbody>
+                                <tr><td><b>Protección de datos</b></td><td>¿Qué firma en Panamá ayuda a una empresa a cumplir la ley de protección de datos?<small class="en en-m">Which law firm in Panama helps companies comply with data protection law?</small></td><td class="en hidden sm:table-cell">Which law firm in Panama helps companies comply with data protection law?</td></tr>
+                                <tr><td><b>Permisos y licencias</b></td><td>¿Quién tramita licencias y permisos para operar en Panamá?<small class="en en-m">Who can help a foreign company get licenses and permits in Panama?</small></td><td class="en hidden sm:table-cell">Who can help a foreign company get licenses and permits in Panama?</td></tr>
+                                <tr><td><b>Propiedad intelectual</b></td><td>Mejores abogados de propiedad intelectual en Panamá<small class="en en-m">Best intellectual property law firm in Panama</small></td><td class="en hidden sm:table-cell">Best intellectual property law firm in Panama</td></tr>
+                                <tr><td><b>Fintech y tecnología</b></td><td>Firma de abogados en Panamá para una fintech<small class="en en-m">Panama law firm for fintech regulation</small></td><td class="en hidden sm:table-cell">Panama law firm for fintech regulation</td></tr>
+                                <tr><td><b>Litigios y recuperación</b></td><td>Firma en Panamá para litigios y recuperación de activos de un banco<small class="en en-m">Panama law firm for litigation and asset recovery</small></td><td class="en hidden sm:table-cell">Panama law firm for litigation and asset recovery</td></tr>
+                                <tr><td><b>La firma</b></td><td>¿Qué firma de abogados en Panamá usa tecnología e IA?<small class="en en-m">Most innovative law firm in Panama</small></td><td class="en hidden sm:table-cell">Most innovative law firm in Panama</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-4">Son ejemplos con las áreas de su perfil público. La lista final de 30 la definimos con ustedes, según las áreas que quieran empujar en 2027.</p>
+                    <div class="rounded-xl p-4 price-pill text-sm text-slate-700"><b class="text-slate-900">Entregables:</b> informe con capturas y hallazgos priorizados, la lista fija de preguntas que se usará para medir y el plan de trabajo para 2027. Listo en 10 días hábiles desde que recibimos los accesos.</div>
+                </div>
+            </section>
+
+            <section class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Paso 2</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Después, el trabajo de cada mes</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal keep text-sm text-slate-600 mb-6 max-w-2xl">Todo el contenido lo producimos nosotros, como conversamos en la reunión; ustedes revisan y aprueban. Dos niveles, según cuánto quieran empujar el inglés y las fuentes de terceros.</p>
+
+                <div class="reveal grid md:grid-cols-2 gap-5 items-stretch">
+                    <div class="service-card avoid bg-white/70 rounded-2xl p-6 border border-slate-100 flex flex-col">
+                        <div class="flex justify-between items-start gap-3 mb-1">
+                            <div class="flex gap-3 items-center">
+                                <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold shrink-0">2</div>
+                                <h3 class="display text-lg font-bold text-slate-900">Plan Esencial</h3>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-2xl font-bold text-slate-900">US$ 650</span>
+                                <p class="text-[11px] text-slate-500 uppercase tracking-wide">/ mes</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 font-medium mb-4">Las bases, en español</p>
+                        <ul class="lista">
+                            <li><span><b>Identidad de la firma</b> igual en todas partes: web, Google, LinkedIn y directorios, con el marcado técnico de la firma y de cada socio.</span></li>
+                            <li><span><b>2 páginas de respuesta al mes</b> en español, sobre las preguntas que hacen sus clientes, revisadas por un socio.</span></li>
+                            <li><span><b>Ajustes técnicos</b> para los rastreadores de IA, Search Console y Bing.</span></li>
+                            <li><span><b>Medición mensual</b> de las 30 preguntas en los seis asistentes, con capturas e informe.</span></li>
+                        </ul>
+                    </div>
+                    <div class="service-card is-rec avoid bg-white rounded-2xl p-6 border border-violet-200 flex flex-col relative">
+                        <div class="absolute top-0 right-0 num-badge text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl">RECOMENDADO</div>
+                        <div class="flex justify-between items-start gap-3 mb-1 pt-3">
+                            <div class="flex gap-3 items-center">
+                                <div class="num-badge w-10 h-10 rounded-xl grid place-items-center text-white font-bold shrink-0">3</div>
+                                <h3 class="display text-lg font-bold text-slate-900">Plan Autoridad</h3>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="text-2xl font-bold text-slate-900">US$ 950</span>
+                                <p class="text-[11px] text-slate-500 uppercase tracking-wide">/ mes</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 font-medium mb-4">Todo lo del Esencial, más inglés y terceros</p>
+                        <ul class="lista">
+                            <li><span><b>Versión en inglés</b> de cada página: las multinacionales preguntan en inglés.</span></li>
+                            <li><span><b>2 artículos al mes en LinkedIn</b> para los socios: los escribimos nosotros, ellos los firman y aprueban.</span></li>
+                            <li><span><b>Directorios y rankings</b>: preparamos las postulaciones (Chambers, Legal 500, IFLR1000, Leaders League) y mantenemos los perfiles al día.</span></li>
+                            <li><span><b>Prensa legal</b>: una propuesta de nota o caso por trimestre a medios especializados. Publicarla lo decide el medio.</span></li>
+                            <li><span><b>Reunión mensual</b> de 30 minutos con usted para revisar el informe.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="reveal text-xs text-slate-500 mt-4">Por qué recomendamos Autoridad: su público incluye multinacionales y bancos, y la IA confía más en lo que dicen rankings y prensa que en lo que dice la propia web. No les proponemos nuestro paquete de SEO más IA porque su blog ya posiciona en Google; partimos de ese trabajo.</p>
+            </section>
+
+            <!-- ============ CRONOGRAMA ============ -->
+            <section id="cronograma" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Cronograma</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Seis meses, de enero a junio de 2027</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <ol class="reveal linea-tiempo max-w-3xl">
+                    <li><span class="sem opc">Diciembre 2026<br>opcional</span><span><b>Auditoría y línea base</b>Si la hacemos antes de cerrar el año, entran a 2027 con el diagnóstico y los números para defender la partida. Si prefieren todo en 2027, se hace en las dos primeras semanas de enero.</span></li>
+                    <li><span class="sem">Mes 1<br>enero</span><span><b>Bases</b>Identidad de la firma en web, Google, LinkedIn y directorios; marcado de la firma y los socios; Search Console y Bing; rastreadores de IA. Si la auditoría encuentra restos de la penalización, se limpian aquí.</span></li>
+                    <li><span class="sem">Mes 2<br>febrero</span><span><b>Primeras respuestas</b>Primeras páginas de respuesta, biografías de socios renovadas y arranque en LinkedIn.</span></li>
+                    <li><span class="sem">Mes 3<br>marzo</span><span><b>Primera comparación</b>Primera medición completa contra la línea base, ajuste de prioridades y postulaciones a directorios.</span></li>
+                    <li><span class="sem">Meses 4 y 5<br>abril y mayo</span><span><b>Contenido y terceros</b>Más páginas en español e inglés, artículos de los socios, propuestas a prensa legal y perfiles al día.</span></li>
+                    <li><span class="sem">Mes 6<br>junio</span><span><b>Informe semestral</b>Qué se movió, en qué asistentes y en qué preguntas, y la recomendación para el segundo semestre.</span></li>
+                </ol>
+                <p class="reveal text-xs text-slate-500 mt-3">Los asistentes de IA tardan semanas o meses en reflejar cambios: por eso hablamos de 4 a 6 meses como mínimo y recomendamos 6. El plan mensual tiene un mínimo de 3 meses.</p>
+            </section>
+
+            <!-- ============ MEDICIÓN ============ -->
+            <section id="medicion" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Medición</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Qué ve usted cada mes</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <div class="reveal bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto">
+                    <table class="tbl">
+                        <thead><tr><th>Indicador</th><th>Cómo se mide</th></tr></thead>
+                        <tbody>
+                            <tr><td><b>Presencia</b></td><td>En cuántas de las 30 preguntas fijas aparece Veló Legal, por asistente y por idioma. Cada pregunta se repite, porque la IA no siempre responde igual.</td></tr>
+                            <tr><td><b>Exactitud</b></td><td>Si lo que dice la IA de la firma es correcto: áreas, sede, historia y socios.</td></tr>
+                            <tr><td><b>Fuentes citadas</b></td><td>Qué páginas usa la IA para hablar de ustedes: las suyas o las de terceros.</td></tr>
+                            <tr><td><b>Competencia</b></td><td>Qué firmas aparecen en las preguntas donde Veló Legal todavía no.</td></tr>
+                            <tr><td><b>Búsquedas de la marca</b></td><td>Cuánta gente busca "Veló Legal" y a sus socios en Google (Search Console).</td></tr>
+                            <tr><td><b>Visitas desde la IA</b></td><td>Visitas que llegan a su web desde ChatGPT, Perplexity, Gemini o Copilot (Google Analytics).</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="reveal text-xs text-slate-500 mt-3">No medimos el éxito en contactos, porque el objetivo es la marca. Si llegan contactos que vienen de la IA, los reportamos aparte.</p>
+            </section>
+
+            <!-- ============ LO QUE NECESITAMOS ============ -->
+            <section class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Para avanzar</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Lo que necesitamos de su equipo</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <div class="reveal grid md:grid-cols-3 gap-4">
+                    <div class="item-card avoid bg-white/70 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Accesos</p><h3 class="display text-base font-bold text-slate-900 mb-2">Con usuario propio</h3><ul class="space-y-2 text-sm text-slate-600"><li>▸ Su web (usuario de editor)</li><li>▸ Google Search Console</li><li>▸ Google Analytics</li><li>▸ Perfil de empresa en Google</li><li>▸ Página de LinkedIn de la firma</li></ul></div>
+                    <div class="item-card avoid bg-white/70 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Información</p><h3 class="display text-base font-bold text-slate-900 mb-2">Para no adivinar</h3><ul class="space-y-2 text-sm text-slate-600"><li>▸ Áreas a empujar en 2027 y el socio de cada una</li><li>▸ Rankings y directorios actuales, y postulaciones anteriores</li><li>▸ Las 40 palabras clave del blog</li><li>▸ Qué pasó con la penalización: fecha y qué se hizo</li><li>▸ 3 a 5 firmas que consideran su competencia</li></ul></div>
+                    <div class="item-card avoid bg-white/70 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Personas</p><h3 class="display text-base font-bold text-slate-900 mb-2">Poco tiempo, bien usado</h3><ul class="space-y-2 text-sm text-slate-600"><li>▸ Usted, como responsable del proyecto</li><li>▸ Un socio revisor por área, unos 30 minutos al mes</li><li>▸ Casos o transacciones que se puedan publicar, con permiso del cliente</li><li>▸ Biografías y fotos actuales de los socios</li></ul></div>
+                </div>
+            </section>
+
+            <!-- ============ EXPECTATIVAS ============ -->
+            <section class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Expectativas claras</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Lo que puede pasar y cómo lo manejamos</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <div class="reveal"><div class="bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto"><table class="tbl"><thead><tr><th>Puede pasar</th><th>Cómo lo manejamos</th></tr></thead><tbody>
+                    <tr><td>Un asistente no los nombra en algunas preguntas, aun después de seis meses</td><td>Medimos siempre las mismas preguntas y reportamos lo que se movió y lo que no, con capturas. Sin maquillar el informe.</td></tr>
+                    <tr><td>La aprobación del contenido se atrasa</td><td>Calendario fijo y 5 días hábiles para revisar. Nada se publica sin visto bueno; si un mes no se aprueba, se reprograma.</td></tr>
+                    <tr><td>Los asistentes cambian cómo eligen sus fuentes</td><td>La medición mensual lo detecta y movemos las prioridades del mes siguiente.</td></tr>
+                    <tr><td>Quedan restos de la penalización anterior</td><td>Se revisan en la auditoría y, si hay algo, se limpian antes de publicar contenido nuevo.</td></tr>
+                    <tr><td>Un contenido roza las normas de ética profesional</td><td>Contenido informativo, sin promesas de resultados ni comparaciones con otras firmas, y siempre aprobado por un socio.</td></tr>
+                </tbody></table></div></div>
+            </section>
+
+            <!-- ============ RESUMEN ============ -->
+            <div id="inversion" class="reveal avoid sumblock rounded-[24px] p-7 sm:p-9 text-white shadow-2xl mb-14 relative overflow-hidden" style="background:linear-gradient(150deg,#0b1220,#15254d 55%,#1e3a8a);">
+                <div class="orb2 absolute -bottom-20 -right-16 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.4),transparent 70%);"></div>
+                <div class="relative z-10">
+                    <h2 class="display text-2xl font-bold mb-6">Resumen de Inversión</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Pago único</h4>
+                            <div class="space-y-0.5 text-sm">
+                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Auditoría GEO y línea base</span><span class="font-semibold whitespace-nowrap">US$ 490</span></div>
+                                <p class="text-[11px] text-blue-300/70 pt-2">Puede ir en el presupuesto de 2026 (diciembre) o en el de 2027 (enero).</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Plan mensual · 6 meses recomendados</h4>
+                            <div class="space-y-0.5 text-sm">
+                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Esencial · US$ 650 al mes</span><span class="font-semibold whitespace-nowrap">US$ 3,900</span></div>
+                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Autoridad · US$ 950 al mes (recomendado)</span><span class="font-semibold whitespace-nowrap">US$ 5,700</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-3 mt-6 text-sm">
+                        <div class="rounded-xl p-4 border border-white/15" style="background:rgba(255,255,255,.06)"><p class="text-blue-300 text-xs uppercase tracking-wider mb-1">Total 6 meses · Esencial</p><p class="font-bold text-lg">US$ 4,390</p><p class="text-blue-200 text-xs mt-1">Auditoría más 6 meses de plan.</p></div>
+                        <div class="rounded-xl p-4 border border-white/25" style="background:rgba(124,58,237,.18)"><p class="text-blue-300 text-xs uppercase tracking-wider mb-1">Total 6 meses · Autoridad · recomendado</p><p class="font-bold text-lg">US$ 6,190</p><p class="text-blue-200 text-xs mt-1">Auditoría más 6 meses de plan.</p></div>
+                    </div>
+                    <div class="mt-8 rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" style="background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(124,58,237,.25));border:1px solid rgba(255,255,255,.18);">
+                        <div>
+                            <p class="text-blue-200 text-xs uppercase tracking-wider mb-1">Para arrancar · la auditoría</p>
+                            <p class="display text-4xl font-extrabold shine">US$ 490</p>
+                            <p class="text-blue-200 text-xs mt-1 max-w-md">Con el informe en la mano deciden el plan y lo llevan a su presupuesto 2027 con datos, no con promesas.</p>
+                        </div>
+                        <a href="https://wa.me/50761903007?text=Hola%2C%20vimos%20la%20propuesta%20EW-VEL-2026-01%20de%20posicionamiento%20en%20IA%20para%20Vel%C3%B3%20Legal%20y%20queremos%20arrancar%20con%20la%20auditor%C3%ADa." target="_blank" rel="noopener" class="btn-primary text-white font-semibold rounded-xl px-6 py-3.5 text-sm text-center whitespace-nowrap no-print">Aprobar la auditoría →</a>
+                    </div>
+                    <p class="text-[11px] text-blue-300/70 mt-3">Precios en USD, sin ITBMS (7%); se aplicará según corresponda. No incluye inversión en anuncios, porque este servicio no usa pauta pagada.</p>
+                </div>
+            </div>
+
+            <!-- ============ CONDICIONES ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 avoid mb-8">
+                <h3 class="display text-lg font-bold text-slate-900 mb-5">Condiciones Comerciales</h3>
+                <div class="terms grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-700">
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Auditoría:</strong> se paga al aprobarla y se entrega en 10 días hábiles desde que recibimos los accesos.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Plan mensual:</strong> se factura por adelantado cada mes, con un mínimo de 3 meses. Recomendamos 6, de enero a junio de 2027.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Presupuesto 2027:</strong> si aprueban la propuesta antes del 31 de diciembre de 2026, mantenemos estos precios para arrancar hasta el 31 de marzo de 2027.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Cambio de plan:</strong> pueden pasar de Esencial a Autoridad, o al revés, avisando 15 días antes del mes siguiente.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Sin garantía de aparición:</strong> nos comprometemos con el método, la transparencia y la medición; ninguna agencia controla lo que responde una IA.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Confidencialidad:</strong> firmamos acuerdo de confidencialidad si lo requieren. No publicamos nada sin su aprobación.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Propiedad:</strong> el contenido, los perfiles y las cuentas son de Veló Legal. Los accesos de Elemento Web se retiran cuando ustedes quieran.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Formas de pago:</strong> transferencia bancaria, tarjeta o Yappy. Precios en USD, sin ITBMS.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Validez:</strong> 30 días desde su emisión.</span></p>
+                </div>
+            </div>
+
+            <!-- ============ CTA ============ -->
+            <div class="reveal avoid cta-box text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden" style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #e0e7ff;">
+                <h3 class="display text-2xl font-bold text-slate-900 mb-2">¿Empezamos por la auditoría?</h3>
+                <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">En diez días hábiles sabrán qué dice hoy la IA de Veló Legal, quién aparece en su lugar y qué haría falta para cambiarlo. Con eso deciden el plan para 2027.</p>
+                <div class="flex flex-col sm:flex-row flex-wrap gap-3 justify-center no-print">
+                    <a href="https://wa.me/50761903007?text=Hola%2C%20vimos%20la%20propuesta%20EW-VEL-2026-01%20de%20posicionamiento%20en%20IA%20para%20Vel%C3%B3%20Legal%20y%20queremos%20arrancar%20con%20la%20auditor%C3%ADa." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">Aprobar por WhatsApp</a>
+                    <a href="mailto:info@elementoweb.com?subject=Propuesta%20EW-VEL-2026-01%3A%20posicionamiento%20en%20IA%20para%20Vel%C3%B3%20Legal&amp;body=Hola%2C%20queremos%20avanzar%20con%20la%20auditor%C3%ADa%20GEO%20de%20la%20propuesta%20EW-VEL-2026-01." class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">Responder por correo</a>
+                    <a href="propuesta-velo-legal-geo.pdf" download class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">Descargar PDF</a>
+                </div>
+                <p class="hidden print:block text-sm text-slate-600 mt-2">WhatsApp +507 6190-3007 · info@elementoweb.com</p>
+            </div>
+            <div class="reveal avoid sources text-[11px] text-slate-500 leading-relaxed border-t border-slate-200 pt-5 mt-10"><strong class="text-slate-600">Fuentes y supuestos.</strong> Reunión con Adriana Grimaldo (Legal Ops y Marketing) e información pública sobre la firma: LexLatin, "Nace Veló Legal, la primera firma NewLaw en Panamá" (2019) y "Veló Legal y Hoyos &amp; Asociados unen fuerzas en Panamá" (2020); The Latin American Lawyer (2020); y el perfil de la firma en LexLatin, que menciona a Chambers and Partners en FinTech. Las áreas de práctica y los reconocimientos se confirman con ustedes; la revisión a fondo de velo-legal.com es parte de la auditoría. Los nombres de asistentes, directorios y medios son marcas de sus dueños. Precios de Elemento Web en dólares, sin ITBMS.</div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="fullbleed-footer px-7 sm:px-10 py-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#122043);">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                <div>
+                    <p class="display font-bold">elementoweb<span class="text-violet-300">.com</span></p>
+                    <p class="text-[11px] text-blue-200/70">Documento confidencial · Propuesta para Veló Legal · EW-VEL-2026-01</p>
+                </div>
+                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-blue-100">
+                    <a href="mailto:info@elementoweb.com" class="hover:text-white transition">info@elementoweb.com</a>
+                    <a href="https://wa.me/50761903007" target="_blank" rel="noopener" class="hover:text-white transition">+507 6190-3007</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <a href="https://wa.me/50761903007?text=Hola%2C%20tengo%20una%20consulta%20sobre%20la%20propuesta%20EW-VEL-2026-01%20de%20posicionamiento%20en%20IA%20para%20Vel%C3%B3%20Legal." target="_blank" rel="noopener" class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse" aria-label="Escríbanos por WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    </a>
+
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = Math.min(i * 40, 200) + 'ms';
+            io.observe(el);
+        });
+    </script>
+</body>
+</html>

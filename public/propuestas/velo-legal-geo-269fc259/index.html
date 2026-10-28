@@ -125,6 +125,16 @@
         .p2 { margin-inline:2%; } .p2 .piso-n { background:#1d4ed8; }
         .p1 .piso-n { background:#1e3a8a; }
         @media (max-width: 640px) { .piso { grid-template-columns:36px 1fr; } .piso-t { grid-column:2; justify-self:start; } .piso-n { grid-row:span 2; align-self:start; } .p5,.p4,.p3,.p2 { margin-inline:0; } }
+        .faq { display:grid; gap:12px; }
+        .faq-i { background:rgba(255,255,255,.85); border:1px solid #e2e8f0; border-radius:18px; padding:18px 20px; }
+        .faq-i h3 { display:flex; gap:12px; align-items:flex-start; font-size:16px; font-weight:700; color:#0f172a; line-height:1.35; margin-bottom:10px; }
+        .faq-i h3 span { flex:none; width:26px; height:26px; border-radius:8px; display:grid; place-items:center; color:#fff; font-size:12.5px; font-family:Inter, sans-serif; }
+        .faq-a { padding-left:38px; }
+        .faq-a p { font-size:13.5px; color:#475569; line-height:1.6; margin-bottom:8px; }
+        .faq-a p:last-child { margin-bottom:0; }
+        .faq-a .lista { margin-bottom:8px; }
+        .faq-a .lista li { font-size:13.5px; }
+        @media (max-width: 640px) { .faq-a { padding-left:0; } }
         .lista { list-style:none; padding:0; display:grid; gap:9px; }
         .lista li { display:flex; gap:10px; font-size:13.5px; line-height:1.5; color:#475569; }
         .lista li::before { content:"▸"; color:#3b82f6; flex:none; margin-top:1px; }
@@ -186,6 +196,8 @@
             .obj b { font-size: 15px; }
             .obj p { font-size: 12.5px; line-height: 1.45; }
             .stats, .flujo, .pisos { break-inside: avoid; }
+            .faq-i { break-inside: avoid; padding: 12px 16px; }
+            .faq-a p, .faq-a .lista li { font-size: 12px; line-height: 1.45; }
             .piso { padding: 7px 12px; gap: 10px; }
             .piso b { font-size: 13.5px; margin-bottom: 0; }
             .piso p { font-size: 11.5px; line-height: 1.35; }
@@ -255,14 +267,14 @@
                             <div class="ai-top"><i></i><i></i><i></i><span class="ml-1">Asistente de IA</span></div>
                             <div class="ai-q">¿Qué firma de abogados en Panamá asesora a empresas reguladas en protección de datos y licencias?</div>
                             <div class="ai-a">Varias firmas trabajan estos temas. <mark>Veló Legal</mark>, fundada en 2019 como la primera firma NewLaw de Panamá, tiene práctica en privacidad y protección de datos y en registros, permisos y licencias…</div>
-                            <div class="ai-src"><span>velo-legal.com</span><span>chambers.com</span><span>lexlatin.com</span></div>
+                            <div class="ai-src"><span>velo-legal.com</span><span>linkedin.com</span><span>lexlatin.com</span></div>
                         </div>
                         <p class="text-[11px] text-blue-200/80 mt-2.5 text-right">Ilustración del objetivo, no es una respuesta real.</p>
                     </div>
                 </div>
                 <nav class="toc mt-10 pt-6 border-t border-white/15 no-print" aria-label="Contenido de la propuesta">
                     <p class="text-[11px] font-semibold uppercase tracking-[.14em] text-blue-200/80 mb-3">En esta propuesta</p>
-                    <ul class="flex flex-wrap gap-2"><li><a href="#reunion"><i style="background:#94a3b8"></i>Lo que hablamos</a></li><li><a href="#equipo"><i style="background:#fd710f"></i>El equipo</a></li><li><a href="#como-funciona"><i style="background:#0891b2"></i>Cómo elige la IA</a></li><li><a href="#sin-atajos"><i style="background:#16a34a"></i>Sin atajos</a></li><li><a href="#propuesta"><i style="background:#7c3aed"></i>Auditoría y planes</a></li><li><a href="#cronograma"><i style="background:#2563eb"></i>Cronograma 2027</a></li><li><a href="#medicion"><i style="background:#db2777"></i>Cómo medimos</a></li><li><a href="#inversion"><i style="background:#f59e0b"></i>Inversión</a></li></ul>
+                    <ul class="flex flex-wrap gap-2"><li><a href="#reunion"><i style="background:#94a3b8"></i>Lo que hablamos</a></li><li><a href="#equipo"><i style="background:#fd710f"></i>El equipo</a></li><li><a href="#como-funciona"><i style="background:#0891b2"></i>Cómo elige la IA</a></li><li><a href="#sin-atajos"><i style="background:#16a34a"></i>Sin atajos</a></li><li><a href="#propuesta"><i style="background:#7c3aed"></i>Auditoría y planes</a></li><li><a href="#cronograma"><i style="background:#2563eb"></i>Cronograma 2027</a></li><li><a href="#medicion"><i style="background:#db2777"></i>Cómo medimos</a></li><li><a href="#preguntas"><i style="background:#0ea5e9"></i>Preguntas frecuentes</a></li><li><a href="#inversion"><i style="background:#f59e0b"></i>Inversión</a></li></ul>
                 </nav>
             </div>
         </header>
@@ -303,7 +315,7 @@
                             <li><span><b>Su contacto único</b>: coordina el proyecto y las aprobaciones con usted.</span></li>
                             <li><span><b>Estrategia de marca</b> y mensajes para cada público.</span></li>
                             <li><span><b>Contenido</b>: páginas de respuesta y artículos de los socios en LinkedIn.</span></li>
-                            <li><span><b>Directorios y rankings</b>: perfiles al día y, si lo desean, apoyo con las postulaciones.</span></li>
+                            <li><span><b>Directorios</b>: perfiles al día y coherentes con su web.</span></li>
                         </ul>
                     </div>
                     <div class="item-card avoid rounded-2xl p-6 border border-blue-100 bg-white/80">
@@ -368,7 +380,7 @@
                             <rect x="255" y="98" width="230" height="46" rx="12" fill="#fff" stroke="#e2e8f0"/>
                             <rect x="269" y="114" width="10" height="10" rx="3" fill="#7c3aed"/>
                             <text x="289" y="119" font-size="13" font-weight="700" fill="#0f172a">Directorios y rankings</text>
-                            <text x="289" y="135" font-size="11" fill="#64748b">Chambers, Legal 500, IFLR1000</text>
+                            <text x="289" y="135" font-size="11" fill="#64748b">guías jurídicas y directorios</text>
                             <rect x="255" y="158" width="230" height="46" rx="12" fill="#fff" stroke="#e2e8f0"/>
                             <rect x="269" y="174" width="10" height="10" rx="3" fill="#db2777"/>
                             <text x="289" y="179" font-size="13" font-weight="700" fill="#0f172a">Prensa legal</text>
@@ -404,7 +416,7 @@
                 </div>
                 <div class="reveal pisos">
                     <div class="piso p5"><span class="piso-n">5</span><div><b>La IA los nombra y los recomienda</b><p>ChatGPT, Claude, Copilot o la respuesta con IA de Google incluyen a Veló Legal con datos correctos y un enlace a su web. Es el resultado de los pisos de abajo; no se compra.</p></div><span class="piso-t geo">GEO</span></div>
-                    <div class="piso p4"><span class="piso-n">4</span><div><b>Menciones y reputación</b><p>Rankings y directorios (Chambers, Legal 500), prensa legal y los perfiles de los socios. La IA cruza fuentes: si solo la firma habla de sí misma, pesa poco.</p></div><span class="piso-t mix">SEO y GEO</span></div>
+                    <div class="piso p4"><span class="piso-n">4</span><div><b>Menciones y reputación</b><p>Rankings y directorios jurídicos, prensa legal y los perfiles de los socios. La IA cruza fuentes: si solo la firma habla de sí misma, pesa poco.</p></div><span class="piso-t mix">SEO y GEO</span></div>
                     <div class="piso p3"><span class="piso-n">3</span><div><b>Datos iguales en todas partes</b><p>Perfil de empresa en Google, Bing Places, LinkedIn y directorios con el mismo nombre, dirección, áreas y socios.</p></div><span class="piso-t seo">SEO</span></div>
                     <div class="piso p2"><span class="piso-n">2</span><div><b>Contenido que responde</b><p>Páginas por área que contestan en un párrafo directo lo que pregunta un director o un abogado interno, en español y en inglés. La IA cita frases claras, no eslóganes.</p></div><span class="piso-t seo">SEO</span></div>
                     <div class="piso p1"><span class="piso-n">1</span><div><b>Web técnica sana</b><p>Que Google y Bing puedan leer e indexar velo-legal.com: rápida en el celular, con datos estructurados y sin restos de la penalización anterior. Si este piso falla, lo de arriba se cae.</p></div><span class="piso-t seo">SEO</span></div>
@@ -531,16 +543,15 @@
                                 <p class="text-[11px] text-slate-500 uppercase tracking-wide">/ mes</p>
                             </div>
                         </div>
-                        <p class="text-sm text-slate-500 font-medium mb-4">Todo lo del Esencial, más inglés y terceros</p>
+                        <p class="text-sm text-slate-500 font-medium mb-4">Todo lo del Esencial, más inglés y LinkedIn</p>
                         <ul class="lista">
                             <li><span><b>Versión en inglés</b> de cada página: las multinacionales preguntan en inglés.</span></li>
                             <li><span><b>2 artículos al mes en LinkedIn</b> para los socios: los escribimos nosotros, ellos los firman y aprueban.</span></li>
-                            <li><span><b>Directorios y rankings</b>: revisamos en cuáles aparecen (Chambers, Legal 500, IFLR1000, Leaders League), mantenemos los perfiles al día y, si lo desean, apoyamos sus postulaciones. Si ya las gestionan ustedes, no lo duplicamos. La clasificación la decide cada guía.</span></li>
                             <li><span><b>Reunión mensual</b> de 30 minutos con usted para revisar el informe.</span></li>
                         </ul>
                     </div>
                 </div>
-                <p class="reveal text-xs text-slate-500 mt-4">Por qué recomendamos Autoridad: su público incluye multinacionales y bancos, y la IA confía más en lo que dicen rankings y directorios que en lo que dice la propia web. No incluimos un plan de SEO aparte porque su blog ya posiciona en Google: partimos de esa base. Si la auditoría encuentra que algún piso necesita más trabajo, lo verán con evidencia antes de decidir.</p>
+                <p class="reveal text-xs text-slate-500 mt-4">Por qué recomendamos Autoridad: su público incluye multinacionales, que preguntan en inglés, y los artículos de los socios en LinkedIn suman fuentes fuera de su web, que la IA valora más que lo que la firma dice de sí misma. No incluimos un plan de SEO aparte porque su blog ya posiciona en Google: partimos de esa base. Si la auditoría encuentra que algún piso necesita más trabajo, lo verán con evidencia antes de decidir.</p>
             </section>
 
             <!-- ============ CRONOGRAMA ============ -->
@@ -590,7 +601,7 @@
                 </div>
                 <div class="reveal grid md:grid-cols-3 gap-4">
                     <div class="item-card avoid bg-white/70 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Accesos</p><h3 class="display text-base font-bold text-slate-900 mb-2">Con usuario propio</h3><ul class="space-y-2 text-sm text-slate-600"><li>▸ Su web (usuario de editor)</li><li>▸ Google Search Console</li><li>▸ Google Analytics</li><li>▸ Perfil de empresa en Google</li><li>▸ Página de LinkedIn de la firma</li></ul></div>
-                    <div class="item-card avoid bg-white/70 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Información</p><h3 class="display text-base font-bold text-slate-900 mb-2">Para no adivinar</h3><ul class="space-y-2 text-sm text-slate-600"><li>▸ Áreas a empujar en 2027 y el socio de cada una</li><li>▸ Rankings y directorios actuales, y postulaciones anteriores</li><li>▸ Las 40 palabras clave del blog</li><li>▸ Qué pasó con la penalización: fecha y qué se hizo</li><li>▸ 3 a 5 firmas que consideran su competencia</li></ul></div>
+                    <div class="item-card avoid bg-white/70 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Información</p><h3 class="display text-base font-bold text-slate-900 mb-2">Para no adivinar</h3><ul class="space-y-2 text-sm text-slate-600"><li>▸ Áreas a empujar en 2027 y el socio de cada una</li><li>▸ Directorios y rankings donde aparecen hoy</li><li>▸ Las 40 palabras clave del blog</li><li>▸ Qué pasó con la penalización: fecha y qué se hizo</li><li>▸ 3 a 5 firmas que consideran su competencia</li></ul></div>
                     <div class="item-card avoid bg-white/70 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Personas</p><h3 class="display text-base font-bold text-slate-900 mb-2">Poco tiempo, bien usado</h3><ul class="space-y-2 text-sm text-slate-600"><li>▸ Usted, como responsable del proyecto</li><li>▸ Un socio revisor por área, unos 30 minutos al mes</li><li>▸ Casos o transacciones que se puedan publicar, con permiso del cliente</li><li>▸ Biografías y fotos actuales de los socios</li></ul></div>
                 </div>
             </section>
@@ -608,6 +619,61 @@
                     <tr><td>Quedan restos de la penalización anterior</td><td>Se revisan en la auditoría y, si hay algo, se limpian antes de publicar contenido nuevo.</td></tr>
                     <tr><td>Un contenido roza las normas de ética profesional</td><td>Contenido informativo, sin promesas de resultados ni comparaciones con otras firmas, y siempre aprobado por un socio.</td></tr>
                 </tbody></table></div></div>
+            </section>
+
+            <!-- ============ PREGUNTAS FRECUENTES ============ -->
+            <section id="preguntas" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Preguntas frecuentes</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Sus preguntas, respondidas</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal keep text-sm text-slate-600 mb-6 max-w-2xl">Las dudas que nos hicieron llegar al revisar la propuesta, con nuestras respuestas, para que las tengan a mano con los socios.</p>
+                <div class="reveal faq">
+                    <div class="faq-i"><h3><span class="num-badge">1</span>¿Por qué aparecen directorios como Chambers o Legal 500 y qué harían con ellos?</h3><div class="faq-a">
+                        <p>Son guías internacionales que clasifican a las firmas por área a partir de su propia investigación. Las mencionamos porque, cuando alguien le pregunta a una IA por las mejores firmas de un área en Panamá, suelen estar entre las fuentes que consulta y cita: lo que dicen terceros pesa más que lo que la firma dice de sí misma.</p>
+                        <p>Lo que hacemos: revisar en la auditoría en cuáles aparece Veló Legal y con qué información, y mantener esos perfiles al día y coherentes con su web. La preparación de postulaciones no está incluida en esta propuesta; la clasificación la deciden los investigadores de cada guía y no se compra ni se garantiza.</p>
+                    </div></div>
+                    <div class="faq-i"><h3><span class="num-badge">2</span>¿Qué significa "datos de la firma iguales en todas partes"? ¿Hay que cambiar algo de la web?</h3><div class="faq-a">
+                        <p>No se trata de cambiar la identidad ni la imagen de la firma, sino de que sus datos sean los mismos en todos los lugares donde la IA los busca: nombre oficial, dirección, teléfono, áreas de práctica y nombre y cargo de cada socio, en su web, su perfil de empresa en Google, LinkedIn y los directorios. Cuando un dato cambia de un sitio a otro, la IA duda o lo repite mal.</p>
+                        <p>Los datos estructurados son un código que el visitante no ve y que le dice a Google y a las IA qué es la firma, dónde está, qué áreas atiende y quiénes son sus socios. No cambia el diseño ni los textos. Cualquier otro ajuste que recomiende la auditoría, como una página que falte para un área, se lo proponemos y lo deciden ustedes.</p>
+                    </div></div>
+                    <div class="faq-i"><h3><span class="num-badge">3</span>¿Cómo definen las preguntas que hacen los clientes a la IA?</h3><div class="faq-a">
+                        <p>Las IA no publican lo que pregunta la gente, así que la lista es una muestra representativa que armamos con cuatro fuentes:</p>
+                        <ul class="lista">
+                            <li><span>Lo que ustedes nos cuenten: las preguntas que les hacen los clientes en las primeras reuniones y por correo.</span></li>
+                            <li><span>Su Search Console: las búsquedas reales en Google que hoy les traen visitas, incluidas las del blog.</span></li>
+                            <li><span>Las búsquedas relacionadas y las preguntas frecuentes que muestran Google y Bing para cada área.</span></li>
+                            <li><span>Las áreas que quieran impulsar en 2027.</span></li>
+                        </ul>
+                        <p>Con eso redactamos 30 preguntas, 15 en español y 15 en inglés, como las haría un gerente general, el abogado interno de un banco o una multinacional. Ustedes las aprueban antes de medir y la lista queda fija, para comparar cada mes con lo mismo.</p>
+                    </div></div>
+                    <div class="faq-i"><h3><span class="num-badge">4</span>¿Qué harían en LinkedIn?</h3><div class="faq-a">
+                        <ul class="lista">
+                            <li><span>Revisar la página de la firma y los perfiles de los socios para que áreas, cargos y datos coincidan con la web. Cada socio decide qué cambia en su perfil y no necesitamos sus contraseñas.</span></li>
+                            <li><span>En el Plan Autoridad, dos artículos al mes firmados por los socios: proponemos el tema, el socio nos da 15 minutos o sus notas, redactamos el borrador, el socio lo corrige y lo publica desde su perfil.</span></li>
+                        </ul>
+                    </div></div>
+                    <div class="faq-i"><h3><span class="num-badge">5</span>¿Qué contenido crean, quién lo redacta y usan IA para escribirlo?</h3><div class="faq-a">
+                        <p>Páginas de respuesta en su web y, en el Plan Autoridad, su versión en inglés y los artículos de LinkedIn. Cada página contesta una pregunta concreta de un cliente, por ejemplo qué necesita una empresa extranjera para obtener una licencia de operación en Panamá, con un tono claro e informativo y sin promesas de resultados.</p>
+                        <p>Lo redacta nuestro equipo y un socio lo revisa y aprueba antes de publicar: nada sale sin su visto bueno. Usamos IA como apoyo para investigar, ordenar ideas y preparar borradores y traducciones, pero cada texto lo edita una persona y lo valida un abogado de la firma. No introducimos información confidencial de sus clientes en herramientas de IA.</p>
+                    </div></div>
+                    <div class="faq-i"><h3><span class="num-badge">6</span>¿Qué indicadores usan y qué es razonable esperar a los 3 y a los 6 meses?</h3><div class="faq-a">
+                        <p>Los indicadores están en la sección <a href="#medicion" class="text-blue-700 font-semibold">Qué ve usted cada mes</a>: presencia en las 30 preguntas, exactitud, fuentes citadas, competencia, base SEO y visitas desde la IA.</p>
+                        <ul class="lista">
+                            <li><span><b>A los 3 meses:</b> la base corregida (datos, código, Bing y perfiles), las primeras páginas publicadas y la primera comparación contra la auditoría. Las primeras señales suelen verse en los asistentes que buscan en la web al momento (Perplexity, Copilot y ChatGPT con búsqueda): datos corregidos y páginas nuevas citadas.</span></li>
+                            <li><span><b>A los 6 meses:</b> un cambio medible en la presencia frente a la línea base y en las impresiones de la marca en Google.</span></li>
+                        </ul>
+                        <p>La meta numérica la fijamos con ustedes después de la auditoría, cuando sepamos de dónde arrancan y qué firmas compiten en cada pregunta. Preferimos no dar un porcentaje antes de medir: nadie controla lo que responde una IA.</p>
+                    </div></div>
+                    <div class="faq-i"><h3><span class="num-badge">7</span>¿Tienen casos de éxito?</h3><div class="faq-a">
+                        <p>El posicionamiento en IA es un servicio nuevo en el mercado y todavía no tenemos un caso de seis meses cerrado con una firma de abogados. Sí tenemos resultados en la base de la que depende, el posicionamiento en Google, con clientes de Elemento Web:</p>
+                        <ul class="lista">
+                            <li><span><b>Panama International Movers</b>, mudanzas internacionales desde 1990: web con más de 30 servicios y sus destinos, hoy en el primer lugar de Google en Panamá en búsquedas clave de su servicio. <a href="https://elementoweb.com/casos-de-exito/panama-international-movers/" target="_blank" rel="noopener" class="text-blue-700 font-semibold">Ver caso</a></span></li>
+                            <li><span><b>San Blas Full</b>, tours de un día a San Blas: sitio en varios idiomas con reserva en línea, hoy en el primer lugar de Google en búsquedas clave de su servicio. <a href="https://elementoweb.com/casos-de-exito/san-blas-full/" target="_blank" rel="noopener" class="text-blue-700 font-semibold">Ver caso</a></span></li>
+                        </ul>
+                        <p>No son firmas legales, pero muestran el trabajo que sostiene todo lo demás: una web que Google entiende y pone primero es la que la IA encuentra y cita. Además, en una sesión de 30 minutos hacemos en vivo algunas de sus preguntas en ChatGPT, Copilot y Perplexity, y la auditoría les deja ver el método antes de decidir el plan.</p>
+                    </div></div>
+                </div>
             </section>
 
             <!-- ============ RESUMEN ============ -->
@@ -675,7 +741,7 @@
                 </div>
                 <p class="hidden print:block text-sm text-slate-600 mt-2">Nicole Castaño · WhatsApp +507 6291-6485 · info@evolutionpmc.com · info@elementoweb.com</p>
             </div>
-            <div class="reveal avoid sources text-[11px] text-slate-500 leading-relaxed border-t border-slate-200 pt-5 mt-10"><strong class="text-slate-600">Fuentes y supuestos.</strong> Reunión de Nicole Castaño (Evolution PMC) con Adriana Grimaldo (Legal Ops y Marketing) e información pública sobre la firma: LexLatin, "Nace Veló Legal, la primera firma NewLaw en Panamá" (2019) y "Veló Legal y Hoyos &amp; Asociados unen fuerzas en Panamá" (2020); The Latin American Lawyer (2020); y el perfil de la firma en LexLatin, que menciona a Chambers and Partners en FinTech. Las áreas de práctica y los reconocimientos se confirman con ustedes; la revisión a fondo de velo-legal.com es parte de la auditoría. Los nombres de asistentes, directorios y medios son marcas de sus dueños. Precios en dólares, sin ITBMS.</div>
+            <div class="reveal avoid sources text-[11px] text-slate-500 leading-relaxed border-t border-slate-200 pt-5 mt-10"><strong class="text-slate-600">Fuentes y supuestos.</strong> Reunión de Nicole Castaño (Evolution PMC) con Adriana Grimaldo (Legal Ops y Marketing) e información pública sobre la firma: LexLatin, "Nace Veló Legal, la primera firma NewLaw en Panamá" (2019) y "Veló Legal y Hoyos &amp; Asociados unen fuerzas en Panamá" (2020); The Latin American Lawyer (2020); y el perfil de la firma en LexLatin. Las áreas de práctica y los reconocimientos se confirman con ustedes; la revisión a fondo de velo-legal.com es parte de la auditoría. Los nombres de asistentes, directorios y medios son marcas de sus dueños. Precios en dólares, sin ITBMS.</div>
         </div>
 
         <!-- ============ FOOTER ============ -->

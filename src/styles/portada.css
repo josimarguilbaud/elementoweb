@@ -224,3 +224,31 @@ main :focus-visible { outline: 2px solid #0a0a0a; outline-offset: 2px; border-ra
 }
 @keyframes pv3-entra { from { transform: translateY(8px); } }
 @keyframes pv3-sube { from { transform: translateY(16px); } }
+
+/* Posicionamiento (29-oct-2026): texto y lista a la izquierda, el recorrido atraer, atender y automatizar a la derecha. */
+.pv3-pos { display: grid; gap: 40px; }
+@media (min-width: 1024px) { .pv3-pos { grid-template-columns: 1fr 1.1fr; align-items: center; gap: 64px; } }
+.pv3-pos__lista { margin-top: 24px; border-top: 1px solid #e5e5e5; }
+.pv3-pos__lista a { display: block; padding: 14px 0; border-bottom: 1px solid #e5e5e5; color: #0a0a0a; }
+.pv3-pos__lista b { display: block; font-weight: 700; }
+.pv3-pos__lista span { display: block; margin-top: 2px; font-size: 0.9375rem; color: #525252; }
+.pv3-pos__lista a:hover b { text-decoration: underline; text-underline-offset: 3px; }
+.pv3-recorrido { margin: 0; padding: 24px; background: #fff; border: 1px solid #e5e5e5; border-radius: 16px; }
+.pv3-recorrido svg { display: block; width: 100%; height: auto; overflow: visible; }
+.pv3-recorrido--h { display: none !important; }
+/* El horizontal solo entre 768 y 1023 px, cuando la figura ocupa todo el ancho; en dos columnas es muy chico y va el vertical. */
+@media (min-width: 768px) and (max-width: 1023px) { .pv3-recorrido--h { display: block !important; } .pv3-recorrido--v { display: none !important; } }
+.pv3-recorrido--v { max-width: 300px; margin: 0 auto; }
+.pv3-recorrido rect { fill: #fff; stroke: #0a0a0a; stroke-width: 1.5; }
+.pv3-recorrido .pv3-recorrido__foco rect { fill: #0a0a0a; }
+.pv3-recorrido text { text-anchor: middle; dominant-baseline: middle; }
+.pv3-recorrido__t { fill: #0a0a0a; font-size: 19px; font-weight: 700; }
+.pv3-recorrido__l { fill: #525252; font-size: 13px; }
+.pv3-recorrido__foco .pv3-recorrido__t { fill: #fff; }
+.pv3-recorrido__foco .pv3-recorrido__l { fill: #d4d4d4; }
+.pv3-recorrido__linea { fill: none; stroke: #737373; stroke-width: 1.5; }
+.pv3-recorrido__linea--vuelta { stroke-dasharray: 5 4; }
+.pv3-recorrido marker path { fill: #737373; }
+.pv3-recorrido rect.pv3-recorrido__mascara { fill: #fff; stroke: none; }
+.pv3-recorrido__nota { fill: #525252; font-size: 12px; font-weight: 600; }
+.pv3-recorrido figcaption { margin-top: 16px; font-size: 0.875rem; color: #525252; }

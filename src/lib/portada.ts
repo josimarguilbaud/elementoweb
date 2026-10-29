@@ -236,6 +236,24 @@ export const IA_PORTADA = {
   confianza: ['API oficial de WhatsApp', 'Tech Provider verificado por Meta', 'Respuesta el mismo día hábil'],
 };
 
+/** Posicionamiento (29-oct-2026): sección propia para SEO, GEO y SEO local, con el recorrido atraer, atender y
+    automatizar dibujado en SVG. Los plazos son los mismos que publican las páginas de SEO y SEO local. */
+export const POSICIONAMIENTO_PORTADA = {
+  titulo: 'Posicionamiento en Google y en ChatGPT.',
+  linea:
+    'Tu cliente busca en Google, mira el mapa y cada vez más le pregunta a ChatGPT, Gemini o Perplexity. Trabajamos los tres frentes con un mismo método: una web técnicamente limpia, respuestas claras con fecha, datos estructurados y una ficha de Google con reseñas al día.',
+  items: [
+    { slug: 'crecimiento/seo-posicionamiento-web-panama', t: 'SEO y posicionamiento web', l: 'Aparecer en Google por lo que vendes. Mejoras técnicas en semanas; posiciones competidas en 3 a 6 meses.' },
+    { slug: 'crecimiento/posicionamiento-en-chatgpt-e-ia-panama', t: 'Posicionamiento en ChatGPT (GEO)', l: 'Que las IA nombren tu negocio y citen tu web cuando alguien pregunta por tu servicio.' },
+    { slug: 'crecimiento/seo-local-google-maps-panama', t: 'SEO local y Google Maps', l: 'Salir en el mapa cuando buscan cerca de ti. Las primeras señales llegan en semanas.' },
+  ],
+  pasos: [
+    { t: 'Atraer', l: 'Google, ChatGPT y anuncios' },
+    { t: 'Atender', l: 'WhatsApp y agente de IA' },
+    { t: 'Automatizar', l: 'CRM y seguimiento' },
+  ],
+};
+
 /** Respuesta citable (40 a 60 palabras, con fecha), reescrita para marketing + IA. Sin cifras: la portada no publica precios. */
 export function respuestaPortada() {
   return {
@@ -258,6 +276,9 @@ export function faqsPortada(): Pregunta[] {
     { q: '¿Cómo funciona el agente de ventas con IA en WhatsApp?', a: 'Corre sobre <a href="/saas/wazacrm/">WazaCRM</a> y la API oficial de WhatsApp: responde con la información de tu negocio, cotiza, agenda y pasa a tu equipo lo que necesita una persona. Te lo entregamos montado y entrenado; el precio publicado está en <a href="/funcionalidades/agente-de-ventas-ia-whatsapp-panama/">la página del agente</a>.' },
     { q: '¿Tienen paquetes que junten varios servicios?', a: 'Sí, tres: Clientes por WhatsApp, Visible en Google y en la IA, y Empresa con IA. Cada uno conecta atraer, atender y automatizar, con precio de partida publicado en <a href="/soluciones/">Soluciones</a>.' },
     { q: '¿Cómo se cotiza un proyecto?', a: 'Nos cuentas qué quieres lograr en el formulario o por WhatsApp. El diagnóstico no tiene costo y recibes una cotización cerrada por escrito, con alcance, plazo y precio, antes de empezar. Los precios de partida están en <a href="/precios/">precios</a>.' },
+    { q: '¿Qué es el posicionamiento en ChatGPT o GEO?', a: 'Es preparar tu web para que ChatGPT, Gemini y Perplexity la entiendan y la citen: respuestas directas con fecha, datos estructurados, información consistente en todo internet y menciones en sitios que las IA consultan. Más en <a href="/crecimiento/posicionamiento-en-chatgpt-e-ia-panama/">posicionamiento en ChatGPT</a>.' },
+    { q: '¿Cuánto tarda el SEO en dar resultados?', a: 'Las mejoras técnicas se notan en semanas; las posiciones competidas toman de 3 a 6 meses de trabajo constante. El mapa de Google suele moverse antes. Quien promete la primera página en 30 días te vende humo. Más en <a href="/crecimiento/seo-posicionamiento-web-panama/">SEO y posicionamiento</a>.' },
+    { q: '¿El GEO reemplaza al SEO?', a: 'No, se apoya en él. Las IA leen sobre todo páginas que ya están bien indexadas en los buscadores, así que una web sin SEO técnico casi nunca aparece citada. Por eso trabajamos los dos juntos, junto con <a href="/crecimiento/seo-local-google-maps-panama/">la ficha de Google Maps</a>.' },
     { q: '¿De quién son las cuentas de Google Ads y Meta?', a: 'Tuyas. Nosotros las gestionamos, pero la cuenta publicitaria queda a tu nombre y la inversión se carga ahí directamente. Si algún día cambias de agencia, te llevas el historial.' },
   ];
 }

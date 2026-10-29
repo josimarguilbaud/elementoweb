@@ -169,7 +169,7 @@ test('dist/ existe y está al día con src/, public/, astro.config.mjs y package
 
 test('orden: las 9 secciones de la v3 (con «agencia», D62), y nada de la v2', conDist, () => {
   const ids = home().querySelectorAll('main > section').map((s) => s.getAttribute('id'));
-  assert.deepEqual(ids, ['inicio', 'soluciones', 'agencia', 'servicios', 'diseno-web', 'ia', 'resumen', 'preguntas', 'hablemos']);
+  assert.deepEqual(ids, ['inicio', 'soluciones', 'agencia', 'servicios', 'diseno-web', 'ia', 'posicionamiento', 'resumen', 'preguntas', 'hablemos']);
   const raiz = home();
   for (const sel of ['#proyectos', '#industrias', '#precios', '#desarrollo', '#marketing', '.pv2-sec', '.ew-hero']) assert.equal(raiz.querySelectorAll(sel).length, 0, sel);
 });

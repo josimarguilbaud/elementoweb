@@ -1,7 +1,7 @@
 ---
 /* Portada v3 (D56, docs/specs/rediseno-elementoweb/PLAN-PORTADA-V3.md): agencia de marketing digital + proyectos de IA,
-   en monocromo; solo las fotos, las capturas y la escultura llevan color. Ocho secciones: héroe, díptico, bento, diseño
-   web, IA, respuesta citable, preguntas y formulario. Sin precios ni sección de proyectos (reglas del dueño). Los textos
+   en monocromo; solo las fotos, las capturas y la escultura llevan color. Secciones: héroe, díptico, agencia, bento,
+   diseño web, IA, posicionamiento, respuesta citable, preguntas y formulario. Sin precios ni sección de proyectos (reglas del dueño). Los textos
    y enlaces salen de src/lib/portada.ts. El movimiento: CSS en portada.css y GSAP diferido en src/scripts/movimiento.ts. */
 import Base from '../layouts/Base.astro';
 import ContactForm from '../components/ContactForm.astro';
@@ -9,7 +9,7 @@ import { site, contactForm, url, wa } from '../lib/site';
 import { ogFor } from '../lib/img';
 import { homeJsonLd } from '../lib/schema';
 import {
-  H1_PORTADA, DISPLAY_PORTADA, BAJADA_PORTADA, FRANJA_PORTADA, DIPTICO_PORTADA, BENTO_PORTADA, WEB_PORTADA, IA_PORTADA,
+  H1_PORTADA, DISPLAY_PORTADA, BAJADA_PORTADA, FRANJA_PORTADA, DIPTICO_PORTADA, BENTO_PORTADA, WEB_PORTADA, IA_PORTADA, POSICIONAMIENTO_PORTADA,
   filasMapa, itemListPortada, faqsPortada, respuestaPortada, mapaOpciones, opcionDe,
 } from '../lib/portada';
 import precios from '../data/precios.json';
@@ -28,6 +28,8 @@ const waCotizar = wa('Hola, quiero cotizar un proyecto con Elemento Web.');
 const mapa = mapaOpciones(contactForm.services, formulario.servicios);
 const opcionIa = opcionDe(mapa, 'ia', 'ia');
 const opcionWeb = opcionDe(mapa, 'pyme', 'diseno-web');
+const opcionSeo = opcionDe(mapa, 'pauta', 'posicionamiento');
+const pasos = POSICIONAMIENTO_PORTADA.pasos;
 const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('es-PA', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 ---
 <Base title={title} description={description} current="home" image={ogFor('')} jsonld={jsonld} pageType="home" efectos={false} cierre={false} navCotizar={{ href: '#formulario', ctaLoc: 'header', service: 'definir' }}>
@@ -183,6 +185,39 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
         </div>
       </div>
       <ul class="pv3-confianza">{IA_PORTADA.confianza.map((c) => <li>{c}</li>)}</ul>
+    </div>
+  </section>
+
+  <!-- 5b. Posicionamiento (29-oct-2026): SEO, GEO y SEO local, con el recorrido atraer, atender y automatizar -->
+  <section id="posicionamiento" class="pv3-sec pv3-sec--humo" aria-labelledby="posicionamiento-h2">
+    <div class="pv3-wrap pv3-pos">
+      <div>
+        <h2 id="posicionamiento-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">{POSICIONAMIENTO_PORTADA.titulo}</h2>
+        <p class="pv3-lead">{POSICIONAMIENTO_PORTADA.linea}</p>
+        <ul class="pv3-pos__lista">
+          {POSICIONAMIENTO_PORTADA.items.map((it) => <li><a href={url(it.slug)}><b>{it.t}</b><span>{it.l}</span></a></li>)}
+        </ul>
+        <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="posicionamiento" data-service="pauta" data-opcion={opcionSeo}>Pedir auditoría de posicionamiento <span aria-hidden="true">→</span></a></p>
+      </div>
+      <figure class="pv3-recorrido">
+        <svg class="pv3-recorrido--h" viewBox="0 0 640 150" role="img" aria-label="Recorrido: atraer con Google, ChatGPT y anuncios; atender por WhatsApp con un agente de IA; automatizar el seguimiento en el CRM; y medir para volver a empezar">
+          <defs><marker id="pv3-flecha-h" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0 8 3 0 6Z" /></marker></defs>
+          <path class="pv3-recorrido__linea" d="M180 58 H226" marker-end="url(#pv3-flecha-h)" />
+          <path class="pv3-recorrido__linea" d="M408 58 H454" marker-end="url(#pv3-flecha-h)" />
+          <path class="pv3-recorrido__linea pv3-recorrido__linea--vuelta" d="M548 96 V120 a8 8 0 0 1 -8 8 H100 a8 8 0 0 1 -8 -8 V102" marker-end="url(#pv3-flecha-h)" />
+          <rect class="pv3-recorrido__mascara" x="262" y="120" width="116" height="16" />
+          <text class="pv3-recorrido__nota" x="320" y="129">Medir y ajustar</text>
+          {pasos.map((p, i) => <g class={i === 0 ? 'pv3-recorrido__foco' : undefined}><rect x={4 + i * 228} y="20" width="176" height="76" rx="10" /><text class="pv3-recorrido__t" x={92 + i * 228} y="49">{p.t}</text><text class="pv3-recorrido__l" x={92 + i * 228} y="73">{p.l}</text></g>)}
+        </svg>
+        <svg class="pv3-recorrido--v" viewBox="0 0 300 330" role="img" aria-label="Recorrido: atraer con Google, ChatGPT y anuncios; atender por WhatsApp con un agente de IA; automatizar el seguimiento en el CRM; y medir para volver a empezar">
+          <defs><marker id="pv3-flecha-v" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0 8 3 0 6Z" /></marker></defs>
+          <path class="pv3-recorrido__linea" d="M140 78 V114" marker-end="url(#pv3-flecha-v)" />
+          <path class="pv3-recorrido__linea" d="M140 194 V230" marker-end="url(#pv3-flecha-v)" />
+          <path class="pv3-recorrido__linea pv3-recorrido__linea--vuelta" d="M252 274 H276 a8 8 0 0 0 8 -8 V50 a8 8 0 0 0 -8 -8 H258" marker-end="url(#pv3-flecha-v)" />
+          {pasos.map((p, i) => <g class={i === 0 ? 'pv3-recorrido__foco' : undefined}><rect x="28" y={4 + i * 116} width="224" height="74" rx="10" /><text class="pv3-recorrido__t" x="140" y={33 + i * 116}>{p.t}</text><text class="pv3-recorrido__l" x="140" y={57 + i * 116}>{p.l}</text></g>)}
+        </svg>
+        <figcaption>El posicionamiento es el primer paso. Lo que se mide al final decide dónde se invierte en la siguiente vuelta.</figcaption>
+      </figure>
     </div>
   </section>
 

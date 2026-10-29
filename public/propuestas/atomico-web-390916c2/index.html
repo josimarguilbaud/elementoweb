@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta web · Atómico — elementoweb.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand: #3b82f6; --brand-deep: #1e3a8a; --violet: #7c3aed; --ink: #0f172a; }
+        * { -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background: #eef2fb;
+            background-image:
+                radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,0.10), transparent 60%),
+                radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,0.12), transparent 55%),
+                radial-gradient(45rem 45rem at 50% 120%, rgba(37,99,235,0.08), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1, h2, h3, h4, .display { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; letter-spacing: -0.02em; }
+        .gradient-text {
+            background: linear-gradient(100deg, #60a5fa, #3b82f6 45%, #7c3aed);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .glass {
+            background: rgba(255,255,255,0.72);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.9);
+            box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 20px 40px -24px rgba(30,58,138,0.28);
+        }
+        .service-card { position: relative; transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; overflow: hidden; }
+        .service-card::before {
+            content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+            background: linear-gradient(135deg, rgba(96,165,250,.6), rgba(124,58,237,.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            opacity: 0; transition: opacity .35s ease; pointer-events: none;
+        }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(30,58,138,0.45); }
+        .service-card:hover::before { opacity: 1; }
+        .item-card { position: relative; transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; overflow: hidden; }
+        .item-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -28px rgba(30,58,138,0.35); }
+        .num-badge { background: linear-gradient(135deg, #60a5fa, #3b82f6 55%, #7c3aed); box-shadow: 0 10px 22px -8px rgba(59,130,246,0.7); }
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+        .reveal.in { opacity: 1; transform: none; }
+        @keyframes float1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(20px,-16px) scale(1.08);} }
+        @keyframes float2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-24px,14px) scale(1.12);} }
+        .orb1 { animation: float1 11s ease-in-out infinite; }
+        .orb2 { animation: float2 14s ease-in-out infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .shine {
+            background: linear-gradient(90deg,#93c5fd,#e0e7ff,#93c5fd,#c4b5fd);
+            background-size: 200% auto;
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+        .price-pill { background: linear-gradient(135deg,#eff6ff,#eef2ff); border:1px solid #dbeafe; }
+        .wa-float { box-shadow: 0 14px 30px -8px rgba(22,163,74,0.6); transition: transform .25s ease, box-shadow .25s ease; }
+        .wa-float:hover { transform: translateY(-3px) scale(1.04); }
+        @keyframes waPulse { 0%{ box-shadow:0 0 0 0 rgba(34,197,94,.5);} 70%{ box-shadow:0 0 0 16px rgba(34,197,94,0);} 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+        .wa-pulse { animation: waPulse 2.4s infinite; }
+        .btn-primary {
+            background: linear-gradient(135deg,#3b82f6,#7c3aed);
+            transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+            box-shadow: 0 14px 28px -10px rgba(59,130,246,0.7);
+        }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 20px 34px -10px rgba(124,58,237,0.6); }
+        .section-tag { background: linear-gradient(135deg,#0b1220,#1e3a8a); }
+        .tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+        .tbl th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #64748b; background: #f8fafc; padding: 10px 14px; border-bottom: 1px solid #e2e8f0; }
+        .tbl td { padding: 11px 14px; border-top: 1px solid #f1f5f9; vertical-align: top; color: #475569; line-height: 1.5; }
+        .tbl td b { color: #0f172a; font-weight: 600; }
+        .tbl td small { display: block; color: #64748b; font-size: 12.5px; margin-top: 2px; }
+        .tbl code { font-family: 'Geist Mono', monospace; font-size: 12px; background: #f1f5f9; color: #1e3a8a; border-radius: 6px; padding: 1px 6px; white-space: nowrap; }
+        .ok { display:inline-grid; place-items:center; width:20px; height:20px; border-radius:6px; background:#dcfce7; color:#166534; font-size:12px; font-weight:800; margin-right:6px; vertical-align:-4px; }
+        /* ---------- hero ---------- */
+        .hero-eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#bfdbfe; }
+        .hero-eyebrow::before { content:""; width:22px; height:1px; background:#93c5fd; }
+        .doc-meta > div { background:rgba(11,18,32,.45); padding:12px 14px; }
+        .doc-meta dt { font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#93c5fd; margin-bottom:3px; }
+        .doc-meta dd { font-size:13px; font-weight:600; color:#fff; line-height:1.3; }
+        .toc a { display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; color:#e0e7ff; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:999px; padding:7px 13px; transition:background .2s, border-color .2s; }
+        .toc a:hover { background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.3); }
+        .toc a:focus-visible { outline:2px solid #93c5fd; outline-offset:2px; }
+        .toc i { width:7px; height:7px; border-radius:2px; display:block; }
+        /* ficha de equipo (ilustración) */
+        .eq { position:relative; }
+        .eq-card { background:#fff; color:#0f172a; border-radius:18px; overflow:hidden; box-shadow:0 34px 70px -24px rgba(2,6,23,.85), 0 0 0 1px rgba(255,255,255,.14); }
+        .eq-img { position:relative; aspect-ratio: 16/8; background:
+            radial-gradient(circle, rgba(255,255,255,.85) 0.9px, transparent 1.4px) 0 0 / 6px 6px,
+            linear-gradient(120deg, #1d4ed8 0%, #7c3aed 45%, #db2777 75%, #f59e0b 100%); }
+        .eq-img::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 55%, rgba(2,6,23,.35)); }
+        .eq-img span { position:absolute; left:12px; top:12px; z-index:1; font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:rgba(2,6,23,.45); border:1px solid rgba(255,255,255,.3); border-radius:999px; padding:4px 9px; }
+        .eq-body { padding:14px 16px 16px; }
+        .eq-cat { font-size:11px; font-weight:600; color:#64748b; letter-spacing:.04em; }
+        .eq-body h3 { font-size:17px; font-weight:700; margin:2px 0 10px; }
+        .eq-specs { display:grid; grid-template-columns:1fr 1fr; gap:6px 14px; margin-bottom:12px; }
+        .eq-specs dt { font-size:10.5px; color:#64748b; text-transform:uppercase; letter-spacing:.06em; }
+        .eq-specs dd { font-size:13px; font-weight:600; color:#0f172a; }
+        .eq-btn { display:flex; justify-content:center; align-items:center; gap:8px; width:100%; border-radius:12px; padding:10px; font-size:13px; font-weight:700; color:#fff; background:linear-gradient(135deg,#3b82f6,#7c3aed); }
+        .eq-toast { position:absolute; right:-12px; top:-18px; display:flex; gap:10px; align-items:flex-start; background:rgba(255,255,255,.97); color:#0f172a; border-radius:14px; padding:10px 13px; box-shadow:0 20px 40px -16px rgba(2,6,23,.75); font-size:12px; line-height:1.35; max-width:250px; }
+        .eq-toast .dot { width:9px; height:9px; border-radius:50%; background:#22c55e; margin-top:4px; flex:none; box-shadow:0 0 0 4px rgba(34,197,94,.18); }
+        @media (max-width: 640px) { .eq-toast { position:static; margin-top:10px; max-width:none; } }
+        /* bloques propios */
+        .obj { display:grid; gap:12px; }
+        @media (min-width: 768px) { .obj { grid-template-columns: repeat(3, 1fr); } }
+        .obj div { background:rgba(255,255,255,.75); border:1px solid #eef2f7; border-radius:18px; padding:16px 18px; }
+        .obj b { display:block; font-family:'Bricolage Grotesque', Inter, sans-serif; font-size:17px; color:#0f172a; margin-bottom:4px; }
+        .obj p { font-size:13.5px; color:#475569; line-height:1.55; }
+        .paginas { display:grid; gap:12px; }
+        @media (min-width: 640px) { .paginas { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 900px) { .paginas { grid-template-columns: repeat(3, 1fr); } }
+        .paginas div { background:rgba(255,255,255,.8); border:1px solid #eef2f7; border-radius:16px; padding:15px 17px; font-size:13px; color:#475569; line-height:1.5; }
+        .paginas b { display:block; color:#0f172a; font-size:15px; margin-bottom:3px; font-family:'Bricolage Grotesque', Inter, sans-serif; }
+        .paginas em { font-style:normal; font-family:'Geist Mono', monospace; font-size:11px; font-weight:600; color:#4338ca; display:block; margin-bottom:6px; }
+        .pasos { display:grid; gap:10px; counter-reset: paso; }
+        @media (min-width: 768px) { .pasos { grid-template-columns: repeat(4, 1fr); } }
+        .pasos div { position:relative; background:#fff; border:1px solid #e2e8f0; border-radius:16px; padding:16px 16px 15px; font-size:13px; color:#475569; line-height:1.5; }
+        .pasos div::before { counter-increment: paso; content: counter(paso); display:grid; place-items:center; width:28px; height:28px; border-radius:9px; color:#fff; font-weight:800; font-size:13px; margin-bottom:10px; background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed); }
+        .pasos b { display:block; color:#0f172a; font-size:14.5px; margin-bottom:3px; font-family:'Bricolage Grotesque', Inter, sans-serif; }
+        .lista { list-style:none; padding:0; display:grid; gap:9px; }
+        .lista li { display:flex; gap:10px; font-size:13.5px; line-height:1.5; color:#475569; }
+        .lista li::before { content:"▸"; color:#3b82f6; flex:none; margin-top:1px; }
+        .lista li b { color:#0f172a; font-weight:600; }
+        .lista.si li::before { content:"✓"; color:#16a34a; font-weight:700; }
+        .chips { display:flex; flex-wrap:wrap; gap:6px; }
+        .chips span { font-size:12px; font-weight:500; color:#1e3a8a; background:#eff6ff; border:1px solid #dbeafe; border-radius:999px; padding:5px 10px; }
+        .nota { background:linear-gradient(135deg,#eff6ff,#f5f3ff); border:1px solid #e0e7ff; border-radius:16px; padding:14px 18px; font-size:13.5px; color:#334155; line-height:1.6; }
+        .linea-tiempo { list-style:none; margin:0; padding:0; display:grid; }
+        .linea-tiempo li { display:grid; grid-template-columns:132px 1fr; gap:18px; padding:16px 0; border-top:1px solid #e2e8f0; font-size:14px; color:#475569; line-height:1.55; }
+        .linea-tiempo li b { color:#0f172a; display:block; font-size:15px; margin-bottom:2px; }
+        .linea-tiempo .sem { font-family:'Geist Mono', monospace; font-size:11.5px; font-weight:600; color:#1e3a8a; background:#eff6ff; border-radius:8px; padding:6px 10px; align-self:start; text-align:center; line-height:1.35; }
+        .linea-tiempo .sem.feb { color:#5b21b6; background:#f5f3ff; }
+        @media (max-width: 520px) { .linea-tiempo li { grid-template-columns: 1fr; gap:8px; } .linea-tiempo .sem { justify-self:start; } }
+        @page { size: Letter; margin: 12mm 0; }
+        @page :first { margin-top: 0; }
+        @media print {
+            body { background: #fff; }
+            .no-print { display: none !important; }
+            .reveal { opacity:1 !important; transform:none !important; transition:none !important; }
+            main { box-shadow:none !important; margin: 0 !important; max-width: none !important; border-radius: 0 !important; border: 0 !important; background: #fff !important; }
+            .glass { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: #fff !important; box-shadow: none !important; border-color: #e2e8f0 !important; }
+            .service-card, .item-card { box-shadow: none !important; }
+            .service-card::before { display: none !important; }
+            .orb1, .orb2, .shine { animation: none !important; }
+            .avoid, .service-card, .item-card, figure, .tbl tr, .terms p, .linea-tiempo li, .obj div, .paginas div, .pasos div, .lista li { break-inside: avoid; }
+            .sec-head { break-inside: avoid; break-after: avoid; }
+            .sec-head + * { break-before: avoid; }
+            .keep { break-after: avoid; break-inside: avoid; }
+            .shine { background: none !important; -webkit-text-fill-color: #c7d2fe !important; color: #c7d2fe !important; }
+            .gradient-text { background: none !important; -webkit-text-fill-color: #4338ca !important; color: #4338ca !important; }
+            section.mb-14 { margin-bottom: 36px !important; }
+            .py-12 { padding-top: 32px !important; padding-bottom: 32px !important; }
+            .sumblock { padding: 22px 26px !important; }
+            .sumblock .py-2\.5 { padding-top: 5px !important; padding-bottom: 5px !important; }
+            .sumblock .mt-8 { margin-top: 16px !important; }
+            .sumblock .text-4xl { font-size: 28px !important; }
+            .terms { font-size: 12px !important; row-gap: 8px !important; }
+            .terms p { line-height: 1.4; }
+            .terms-box { padding: 20px 24px !important; margin-bottom: 16px !important; }
+            .terms-box h3 { margin-bottom: 12px !important; }
+            .fullbleed-footer { break-inside: avoid; padding-top: 16px !important; padding-bottom: 16px !important; }
+            .cta-box { padding: 22px 26px !important; }
+            .cta-box h3 { font-size: 20px !important; }
+            .cta-box p.text-sm { margin-bottom: 6px !important; }
+            .sources { margin-top: 20px !important; padding-top: 12px !important; }
+            .eq-toast { right: 0; top: -10px; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 selection:bg-violet-200 selection:text-violet-900">
+
+    <main class="max-w-4xl mx-auto my-6 sm:my-10 glass rounded-[28px] overflow-hidden">
+
+        <!-- ============ HEADER ============ -->
+        <header class="relative overflow-hidden text-white px-7 sm:px-10 pt-8 pb-10"
+                style="background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);">
+            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.55),transparent 70%);"></div>
+            <div class="orb2 absolute -bottom-24 -left-10 w-72 h-72 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(59,130,246,.5),transparent 70%);"></div>
+            <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:32px 32px;"></div>
+
+            <div class="relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-8 border-b border-white/15">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);">
+                            <svg width="26" height="26" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/><circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/></svg>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="display text-lg font-bold tracking-tight">elementoweb<span class="text-violet-300">.com</span></p>
+                            <p class="text-[11px] text-blue-200/80 tracking-wide">Desarrollo Web · IA · Automatización</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm sm:justify-end">
+                        <a href="mailto:info@elementoweb.com" class="text-blue-100 hover:text-white transition">info@elementoweb.com</a>
+                        <a href="https://wa.me/50761903007" target="_blank" rel="noopener" class="text-blue-100 hover:text-white transition">WhatsApp 6190-3007</a>
+                    </div>
+                </div>
+
+                <div class="pt-9">
+                    <p class="hero-eyebrow mb-4">Propuesta · Web con CMS, SEO e integración con IA (MCP)</p>
+                    <p class="text-sm text-blue-100/90 mb-3">Para <b class="text-white tracking-wide">ATÓMICO</b> · Pantallas LED y alquiler de equipos audiovisuales</p>
+                    <h1 class="display text-[2.3rem] sm:text-[3.15rem] font-extrabold leading-[1.03] tracking-tight max-w-[760px]">Atómico en línea ya, <span class="shine">listo para febrero</span></h1>
+                </div>
+                <div class="mt-7 grid md:grid-cols-[1fr_1fr] gap-10 md:gap-8 items-center">
+                    <div>
+                        <p class="text-blue-100/90 text-[15px] leading-relaxed mb-6">Una web que se publica primero en un dominio provisional, empieza a posicionarse en Google desde el lanzamiento y pasa a su dominio definitivo en febrero sin reconstruirse. Con un panel para administrar el catálogo, cotizaciones que llegan con los datos del evento y un conector MCP para que las herramientas de IA consulten su catálogo real.</p>
+                        <dl class="doc-meta grid grid-cols-2 gap-px rounded-2xl overflow-hidden border border-white/15 bg-white/15">
+                            <div><dt>Propuesta para</dt><dd>Atómico</dd></div>
+                            <div><dt>Referencia</dt><dd>EW-ATO-2026-01</dd></div>
+                            <div><dt>Fecha</dt><dd>29 oct 2026</dd></div>
+                            <div><dt>Válida hasta</dt><dd>28 nov 2026</dd></div>
+                        </dl>
+                    </div>
+                    <div class="eq pt-4">
+                        <div class="eq-card" aria-label="Ilustración: ficha de un equipo del catálogo con botón para agregarlo a la cotización">
+                            <div class="eq-img"><span>Exterior</span></div>
+                            <div class="eq-body">
+                                <p class="eq-cat">Pantallas LED · Exterior</p>
+                                <h3>Pantalla LED P3.9 para exterior</h3>
+                                <dl class="eq-specs">
+                                    <div><dt>Pixel pitch</dt><dd>3.9 mm</dd></div>
+                                    <div><dt>Brillo</dt><dd>5,000 nits</dd></div>
+                                    <div><dt>Módulo</dt><dd>50 × 50 cm</dd></div>
+                                    <div><dt>Ideal para</dt><dd>Conciertos y ferias</dd></div>
+                                </dl>
+                                <span class="eq-btn">+ Agregar a mi cotización</span>
+                            </div>
+                        </div>
+                        <div class="eq-toast"><span class="dot wa-pulse"></span><span><b>Solicitud de cotización recibida</b><br><span style="color:#64748b">3 equipos · evento al aire libre · 14 de noviembre</span></span></div>
+                    </div>
+                </div>
+                <p class="text-[11px] text-blue-200/80 mt-5 md:text-right">Ilustración con datos de ejemplo: el catálogo real se arma con sus equipos.</p>
+                <nav class="toc mt-8 pt-6 border-t border-white/15 no-print" aria-label="Contenido de la propuesta">
+                    <p class="text-[11px] font-semibold uppercase tracking-[.14em] text-blue-200/80 mb-3">En esta propuesta</p>
+                    <ul class="flex flex-wrap gap-2"><li><a href="#requerimiento"><i style="background:#94a3b8"></i>Su requerimiento</a></li><li><a href="#web"><i style="background:#4f46e5"></i>La web</a></li><li><a href="#catalogo"><i style="background:#db2777"></i>Catálogo y cotización</a></li><li><a href="#panel"><i style="background:#0891b2"></i>Panel (CMS)</a></li><li><a href="#seo"><i style="background:#16a34a"></i>SEO y medición</a></li><li><a href="#mcp"><i style="background:#7c3aed"></i>MCP</a></li><li><a href="#migracion"><i style="background:#f59e0b"></i>Migración de febrero</a></li><li><a href="#cronograma"><i style="background:#2563eb"></i>Cronograma</a></li><li><a href="#inversion"><i style="background:#e11d48"></i>Inversión</a></li></ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="px-7 sm:px-10 py-12">
+
+            <!-- ============ INTRO ============ -->
+            <section class="mb-14">
+                <div class="reveal text-center max-w-2xl mx-auto mb-7">
+                    <h2 class="display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Lanzar ya, <span class="gradient-text">crecer sin reconstruir</span></h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Su requerimiento deja clara la prioridad. Así la ordenamos:</p>
+                </div>
+                <div class="reveal obj">
+                    <div><b>Primero, publicar</b><p>Una primera versión en el dominio provisional en unos 10 días hábiles, con lo esencial: inicio, servicios, catálogo inicial, nosotros y contacto.</p></div>
+                    <div><b>Posicionar desde el día uno</b><p>Palabras clave investigadas, SEO técnico, Search Console y Analytics configurados antes de publicar, para que Google empiece a conocer a Atómico cuanto antes.</p></div>
+                    <div><b>Febrero sin sorpresas</b><p>El dominio es un ajuste de configuración, no parte del diseño. La migración se prepara desde el inicio y está incluida en el proyecto.</p></div>
+                </div>
+            </section>
+
+            <!-- ============ REQUERIMIENTO ============ -->
+            <section id="requerimiento" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Su requerimiento</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Su requerimiento, punto por punto</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal keep text-sm text-slate-600 leading-relaxed max-w-2xl mb-5">Los ocho puntos que nos enviaron y cómo los resolvemos. El detalle de cada uno está más abajo.</p>
+                <div class="reveal"><div class="bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto"><table class="tbl"><thead><tr><th>Lo que pidieron</th><th>Cómo lo resolvemos</th></tr></thead><tbody>
+                    <tr><td><b><span class="ok">✓</span>1 · Desarrollo y plataforma</b></td><td>Web rápida con un panel de administración (CMS) en su propio servidor. Se publica en el dominio provisional en la primera fase; en febrero el dominio se cambia sin reconstruir. Accesos de administrador, base de datos, imágenes y contenidos quedan a nombre de Atómico.</td></tr>
+                    <tr><td><b><span class="ok">✓</span>2 · Estructura</b></td><td>Inicio, Servicios (una página por servicio), Catálogo de equipos, Proyectos realizados, Nosotros y Contacto. Las categorías se definen con su catálogo real.</td></tr>
+                    <tr><td><b><span class="ok">✓</span>3 · Diseño y experiencia</b></td><td>Diseño a medida, adaptable a celular, tablet y computadora; imágenes optimizadas automáticamente; botón de cotizar siempre visible; WhatsApp y formularios probados antes de publicar.</td></tr>
+                    <tr><td><b><span class="ok">✓</span>4 · SEO y posicionamiento</b></td><td>Investigación de palabras clave, mapa de palabras por página, títulos, descripciones, encabezados y URLs, datos estructurados, Search Console, sitemap, robots.txt, SEO local y Google Business Profile.</td></tr>
+                    <tr><td><b><span class="ok">✓</span>5 · Analítica y seguimiento</b></td><td>Google Analytics 4 y Search Console con medición de clics en WhatsApp, llamadas, formularios y solicitudes de cotización. Cada solicitud queda en el panel con su origen y su estado.</td></tr>
+                    <tr><td><b><span class="ok">✓</span>6 · Integración con MCP</b></td><td>Un conector MCP que deja consultar el catálogo y los servicios desde herramientas de IA y registrar solicitudes de cotización, con acceso público de solo lectura y acceso privado para su equipo.</td></tr>
+                    <tr><td><b><span class="ok">✓</span>7 · Migración en febrero</b></td><td>Plan desde el inicio: respaldo completo, redirecciones 301, canónicas, sitemap, HTTPS, Search Console y verificación de formularios, WhatsApp, analítica e indexación. Incluida en el proyecto.</td></tr>
+                    <tr><td><b><span class="ok">✓</span>8 · Entregables</b></td><td>Web publicada, panel con accesos, diseño adaptable, formularios, SEO técnico, analítica, conector MCP, documentación técnica, respaldos y plan de migración.</td></tr>
+                </tbody></table></div></div>
+            </section>
+
+            <!-- ============ LA WEB ============ -->
+            <section id="web" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">La web</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Seis secciones, cada una con su trabajo</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal keep text-sm text-slate-600 leading-relaxed max-w-2xl mb-5">Cada sección está pensada para que un organizador de eventos encuentre lo que necesita y pida su cotización sin dar vueltas.</p>
+                <div class="reveal paginas">
+                    <div><em>01 · Inicio</em><b>Quiénes son y qué alquilan</b>Presentación de Atómico, servicios destacados, proyectos recientes y llamados a cotizar por formulario o WhatsApp.</div>
+                    <div><em>02 · Servicios</em><b>Una página por servicio</b>Alquiler de pantallas LED, equipos audiovisuales y los que definan: qué incluye, para qué eventos y cómo se cotiza. Cada página puede posicionarse por separado en Google.</div>
+                    <div><em>03 · Catálogo</em><b>Equipos con ficha propia</b>Fotos, características técnicas, usos recomendados y botón para agregarlo a la cotización. Categorías según su catálogo real.</div>
+                    <div><em>04 · Proyectos</em><b>Galería de eventos y montajes</b>Cada proyecto con fotos, tipo de evento y los equipos usados, enlazados a su ficha del catálogo.</div>
+                    <div><em>05 · Nosotros</em><b>Experiencia y propuesta de valor</b>Trayectoria, equipo técnico, forma de trabajo y lo que diferencia a Atómico.</div>
+                    <div><em>06 · Contacto</em><b>Cotizar en un minuto</b>Formulario de cotización, correo, teléfono, WhatsApp y zonas de servicio.</div>
+                </div>
+                <p class="reveal text-xs text-slate-500 mt-4">Además, un blog listo en el panel para publicar guías y novedades que ayuden al posicionamiento; la redacción de artículos se cotiza aparte.</p>
+            </section>
+
+            <!-- ============ CATÁLOGO ============ -->
+            <section id="catalogo" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Catálogo y cotización</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Del equipo a la cotización, sin llamadas de ida y vuelta</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal keep text-sm text-slate-600 leading-relaxed max-w-2xl mb-5">En lugar de un formulario genérico, el cliente arma su lista de equipos y les envía, de una vez, los datos que su equipo necesita para cotizar.</p>
+                <div class="reveal pasos mb-5">
+                    <div><b>Elige equipos</b>Recorre el catálogo por categoría o tipo de evento y abre la ficha de cada equipo.</div>
+                    <div><b>Arma su cotización</b>Agrega equipos y cantidades a "Mi cotización", como un carrito sin pagos.</div>
+                    <div><b>Cuenta su evento</b>Fecha, lugar, tipo de evento, interior o exterior, duración y datos de contacto.</div>
+                    <div><b>Les llega completa</b>Por correo y en el panel, con la lista de equipos. Si prefiere, la envía por WhatsApp con el mensaje ya escrito.</div>
+                </div>
+                <div class="reveal nota">Los precios y la disponibilidad por fecha los confirma su equipo al cotizar: la web no muestra precios ni reserva en línea. Si más adelante quieren reservas con calendario y pagos, se cotiza aparte y la base ya lo permite.</div>
+            </section>
+
+            <!-- ============ PANEL ============ -->
+            <section id="panel" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Panel (CMS)</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Ustedes administran, sin depender de nosotros</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal keep text-sm text-slate-600 leading-relaxed max-w-2xl mb-5">La web se construye con Astro, que genera páginas muy rápidas, y un panel de administración sobre Payload, un CMS de código abierto. Es la misma base con la que trabajamos los sitios de nuestros clientes con blog y contenido propio.</p>
+                <div class="reveal grid md:grid-cols-2 gap-4">
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-6 border border-slate-100">
+                        <p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-3">Lo que editan desde el panel</p>
+                        <ul class="lista">
+                            <li><span><b>Equipos y categorías</b>: fotos, características, usos y orden en el catálogo.</span></li>
+                            <li><span><b>Servicios, proyectos y páginas</b>: textos e imágenes; páginas simples nuevas sin programar.</span></li>
+                            <li><span><b>SEO de cada página</b>: título, descripción e imagen para compartir.</span></li>
+                            <li><span><b>Solicitudes de cotización</b>: cada una con su origen y su estado (nueva, cotizada, ganada o perdida).</span></li>
+                            <li><span><b>Usuarios</b> con permisos distintos para administración y ventas.</span></li>
+                        </ul>
+                    </div>
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-6 border border-slate-100">
+                        <p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-3">Lo que queda resuelto</p>
+                        <ul class="lista si">
+                            <li><span>Las imágenes se comprimen y adaptan solas al subirlas.</span></li>
+                            <li><span>Respaldos diarios de la base de datos y de las imágenes.</span></li>
+                            <li><span>Si el panel tuviera un problema, la web sigue en línea.</span></li>
+                            <li><span>Capacitación grabada para su equipo.</span></li>
+                            <li><span>Accesos de administrador, base de datos, imágenes y contenidos a nombre de Atómico, con copia completa para moverlos a otro servidor si algún día lo desean.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ SEO ============ -->
+            <section id="seo" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">SEO y medición</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Posicionar desde el lanzamiento</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal keep text-sm text-slate-600 leading-relaxed max-w-2xl mb-5">Quien busca alquilar una pantalla LED suele tener fecha y urgencia. El SEO de lanzamiento pone cada servicio y cada equipo frente a esas búsquedas.</p>
+                <div class="reveal grid md:grid-cols-2 gap-4 mb-5">
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-6 border border-slate-100">
+                        <p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-3">SEO de lanzamiento</p>
+                        <ul class="lista">
+                            <li><span><b>Investigación de palabras clave</b> y un mapa con la palabra principal de cada página.</span></li>
+                            <li><span><b>Títulos, descripciones, encabezados y URLs</b> pensados desde la estructura, para que no cambien en febrero.</span></li>
+                            <li><span><b>Datos estructurados</b> de la empresa, los servicios y los equipos, que Google y las IA leen.</span></li>
+                            <li><span><b>Técnica</b>: velocidad en celular, sitemap XML, robots.txt e indexación solicitada.</span></li>
+                            <li><span><b>SEO local</b> por las zonas donde operan y Google Business Profile configurado.</span></li>
+                        </ul>
+                    </div>
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-6 border border-slate-100">
+                        <p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-3">Búsquedas de ejemplo</p>
+                        <div class="chips mb-4">
+                            <span>alquiler de pantallas LED</span><span>pantalla LED para eventos</span><span>renta de pantalla gigante</span><span>alquiler de equipo audiovisual</span><span>pantalla LED exterior</span><span>alquiler de sonido para eventos</span>
+                        </div>
+                        <p class="text-xs text-slate-500">Son ejemplos para orientar. La lista final sale de la investigación, con el volumen de búsqueda y la competencia de cada una, y se combina con las zonas donde operan.</p>
+                    </div>
+                </div>
+                <div class="reveal"><div class="bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto"><table class="tbl"><thead><tr><th>Qué medimos</th><th>Dónde se ve</th></tr></thead><tbody>
+                    <tr><td><b>Clics en WhatsApp</b></td><td>Google Analytics 4, por página de origen</td></tr>
+                    <tr><td><b>Llamadas</b></td><td>Clics en el teléfono desde el celular, en Google Analytics 4</td></tr>
+                    <tr><td><b>Formularios de contacto</b></td><td>Google Analytics 4 y el panel</td></tr>
+                    <tr><td><b>Solicitudes de cotización</b></td><td>Google Analytics 4, con la cantidad de equipos y la categoría, y el panel, con el origen (Google, redes, directo) y el estado de cada una</td></tr>
+                    <tr><td><b>Búsquedas e impresiones</b></td><td>Search Console: con qué búsquedas aparece Atómico y cuántos clics recibe</td></tr>
+                </tbody></table></div></div>
+            </section>
+
+            <!-- ============ MCP ============ -->
+            <section id="mcp" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Integración con IA</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Su catálogo, disponible para la IA con MCP</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal keep text-sm text-slate-600 leading-relaxed max-w-2xl mb-5">MCP (Model Context Protocol) es el estándar abierto con el que Claude, ChatGPT y otros asistentes se conectan a sistemas externos. Con el conector, la IA consulta el catálogo real de Atómico, con los datos que ustedes mantienen al día en el panel, en vez de adivinar.</p>
+                <div class="reveal"><div class="bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto mb-5"><table class="tbl"><thead><tr><th>Herramienta</th><th>Qué hace</th><th>Acceso</th></tr></thead><tbody>
+                    <tr><td><code>buscar_equipos</code></td><td>Encuentra equipos por categoría, tipo de evento, interior o exterior y características</td><td>Público, solo lectura</td></tr>
+                    <tr><td><code>ver_equipo</code></td><td>Devuelve la ficha completa: características, usos y enlace a la página</td><td>Público, solo lectura</td></tr>
+                    <tr><td><code>ver_servicios</code> · <code>ver_proyectos</code></td><td>Servicios que ofrecen y proyectos realizados</td><td>Público, solo lectura</td></tr>
+                    <tr><td><code>solicitar_cotizacion</code></td><td>Registra una solicitud con los equipos y los datos del evento; llega al panel y por correo, igual que desde la web</td><td>Público, con límite de uso</td></tr>
+                    <tr><td><code>ver_solicitudes</code></td><td>Lista las solicitudes recibidas y su estado</td><td>Privado, para su equipo</td></tr>
+                    <tr><td><code>actualizar_equipo</code></td><td>Cambia características, textos o el orden de un equipo desde Claude</td><td>Privado, para su equipo</td></tr>
+                </tbody></table></div></div>
+                <div class="reveal grid md:grid-cols-2 gap-4 mb-5">
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-6 border border-slate-100">
+                        <p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-3">Para qué sirve</p>
+                        <ul class="lista">
+                            <li><span><b>Su equipo de ventas</b> consulta fichas y solicitudes desde Claude o ChatGPT, y prepara respuestas con datos reales.</span></li>
+                            <li><span><b>Futuras automatizaciones</b>: un asistente de WhatsApp o un flujo de cotización pueden usar el mismo catálogo sin duplicarlo.</span></li>
+                            <li><span><b>Clientes y aliados</b> que trabajen con IA pueden conectar el catálogo a su asistente.</span></li>
+                        </ul>
+                    </div>
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-6 border border-slate-100">
+                        <p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-3">Seguridad</p>
+                        <ul class="lista si">
+                            <li><span>Lo público solo lee lo que ya está publicado en la web.</span></li>
+                            <li><span>Lo privado exige una llave de acceso por persona, que se revoca desde el panel.</span></li>
+                            <li><span>Cada uso queda registrado.</span></li>
+                            <li><span>Un interruptor apaga el conector sin afectar la web.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="reveal nota"><b class="text-slate-900">Una aclaración importante:</b> el conector no hace que ChatGPT recomiende a Atómico por sí solo. Para aparecer cuando alguien le pregunta a una IA por alquiler de pantallas LED cuentan el SEO y los datos estructurados, que ya van en el proyecto. El MCP sirve para que quien se conecte trabaje con su catálogo real. Ya tenemos un conector MCP sobre esta misma base en producción con otro cliente desde octubre de 2026.</div>
+            </section>
+
+            <!-- ============ MIGRACIÓN ============ -->
+            <section id="migracion" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Migración de febrero</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Preparada desde el día uno</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal keep text-sm text-slate-600 leading-relaxed max-w-2xl mb-5">En esta arquitectura el dominio es una variable de configuración: cambiarlo no toca el diseño, el panel ni los contenidos. Lo que sí se cuida es que Google traspase al dominio nuevo lo ganado en el provisional.</p>
+                <div class="reveal grid md:grid-cols-2 gap-4 mb-5">
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-6 border border-slate-100">
+                        <p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-3">Desde el lanzamiento</p>
+                        <ul class="lista">
+                            <li><span><b>URLs definitivas</b> desde el principio: en febrero solo cambia el dominio, no las rutas.</span></li>
+                            <li><span><b>Canónicas y sitemap</b> generados desde la configuración del dominio.</span></li>
+                            <li><span><b>Search Console y Analytics</b> a nombre de Atómico, listos para añadir el dominio nuevo.</span></li>
+                            <li><span><b>Respaldos diarios</b> y un plan de migración escrito.</span></li>
+                        </ul>
+                    </div>
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-6 border border-slate-100">
+                        <p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-3">El día de la migración</p>
+                        <ul class="lista si">
+                            <li><span>Respaldo completo de la web y de la base de datos.</span></li>
+                            <li><span>Dominio definitivo con HTTPS y redirecciones 301 de cada URL del provisional a la misma ruta del definitivo.</span></li>
+                            <li><span>Canónicas, sitemap y enlaces actualizados; aviso de cambio de dirección en Search Console.</span></li>
+                            <li><span>Formularios, WhatsApp, analítica, conector MCP y Google Business Profile verificados.</span></li>
+                            <li><span>Seguimiento de la indexación durante las semanas siguientes.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="reveal nota"><b class="text-slate-900">Dos recomendaciones:</b> que el dominio provisional esté registrado a nombre de Atómico, para que las redirecciones de febrero queden bajo su control; y mantenerlo activo, con las redirecciones, al menos un año después de la migración. Es normal que las posiciones se muevan unas semanas mientras Google procesa el cambio; con redirecciones bien hechas, lo ganado se traspasa.</div>
+            </section>
+
+            <!-- ============ CRONOGRAMA ============ -->
+            <section id="cronograma" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Cronograma</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">En línea en dos semanas, completa en cinco</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <ol class="reveal linea-tiempo max-w-3xl">
+                    <li><span class="sem">Semana 1</span><span><b>Arranque y diseño</b>Reunión de arranque, inventario del catálogo y de las fotos, investigación de palabras clave y diseño de la portada y de la ficha de equipo para su aprobación.</span></li>
+                    <li><span class="sem">Semana 2</span><span><b>Lanzamiento en el dominio provisional</b>Inicio, Servicios, Nosotros, Contacto y las primeras categorías del catálogo, con SEO técnico, Search Console y Analytics. La web queda publicada y Google empieza a indexarla.</span></li>
+                    <li><span class="sem">Semanas 3 a 5</span><span><b>Catálogo completo, proyectos y MCP</b>Resto del catálogo, galería de proyectos, cotización con lista de equipos, Google Business Profile, conector MCP, capacitación y documentación técnica.</span></li>
+                    <li><span class="sem">Dic a ene</span><span><b>Ajustes con datos reales</b>Revisión de las búsquedas en Search Console y de las cotizaciones recibidas; corrección de lo que haga falta antes de migrar.</span></li>
+                    <li><span class="sem feb">Febrero</span><span><b>Migración al dominio definitivo</b>En la fecha que ustedes elijan, con el plan de la sección anterior y seguimiento de la indexación durante las semanas siguientes.</span></li>
+                </ol>
+                <p class="reveal text-xs text-slate-500 mt-3">Las semanas cuentan desde el anticipo y la reunión de arranque. Para publicar en la semana 2 necesitamos el logo, los textos base o sus notas y las fotos de los primeros equipos durante la semana 1. Los feriados de noviembre pueden mover la entrega unos días.</p>
+            </section>
+
+            <!-- ============ INVERSIÓN ============ -->
+            <section id="inversion" class="mb-10">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Inversión</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Qué incluye cada parte</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-5 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-3">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">1</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Web a medida con panel y catálogo</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Diseño, desarrollo, panel, catálogo con cotización, analítica y migración de febrero</p>
+                            </div>
+                        </div>
+                        <div class="md:text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">US$ 2,900</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">Pago único</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">Las seis secciones, el panel de administración, hasta 40 equipos cargados por nosotros con la información y las fotos que nos entreguen (los siguientes los agregan ustedes desde el panel), cotización con lista de equipos, formularios y WhatsApp, Google Analytics 4 con la medición descrita, SEO inicial en cada página, capacitación grabada y la migración al dominio definitivo en febrero.</p>
+                </div>
+
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-5 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-3">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">2</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">SEO de lanzamiento</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Para empezar a posicionar desde el primer día</p>
+                            </div>
+                        </div>
+                        <div class="md:text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">US$ 450</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">Pago único</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">Investigación de palabras clave y mapa por página, datos estructurados de empresa, servicios y equipos, SEO local por zonas, Google Business Profile, Search Console con sitemap e indexación solicitada, y un primer informe al mes de publicar.</p>
+                </div>
+
+                <div class="reveal service-card bg-white/70 rounded-2xl p-6 sm:p-7 mb-5 border border-slate-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-3">
+                        <div class="flex gap-4">
+                            <div class="num-badge w-11 h-11 rounded-xl grid place-items-center text-white font-bold text-lg shrink-0">3</div>
+                            <div>
+                                <h3 class="display text-lg font-bold text-slate-900">Conector MCP del catálogo</h3>
+                                <p class="text-sm text-slate-500 font-medium mt-0.5">Catálogo, servicios y cotizaciones disponibles para herramientas de IA</p>
+                            </div>
+                        </div>
+                        <div class="md:text-right shrink-0">
+                            <span class="text-2xl font-bold text-slate-900">US$ 850</span>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-wide">Pago único</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">Las herramientas descritas, llaves de acceso para su equipo, registro de uso, pruebas con Claude y ChatGPT, y una guía para conectarlo. Si prefieren dejarlo para más adelante, la web queda preparada y el conector se activa después sin tocarla.</p>
+                </div>
+
+                <div class="reveal grid md:grid-cols-2 gap-4 mb-5">
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1">Infraestructura</p><h3 class="display text-base font-bold text-slate-900 mb-1.5">Servidor VPS · US$ 550 al año</h3><p class="text-sm text-slate-600 leading-relaxed">Servidor propio para la web, el panel, la base de datos y el conector, con SSL y respaldos. Incluye un dominio; si el provisional y el definitivo son dos dominios distintos, el segundo se paga aparte.</p></div>
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1">Mantenimiento</p><h3 class="display text-base font-bold text-slate-900 mb-1.5">US$ 99 al mes, obligatorio</h3><p class="text-sm text-slate-600 leading-relaxed">Mínimo 12 meses desde la publicación. Actualizaciones de seguridad del panel y del servidor, respaldos diarios, monitoreo, revisión del conector MCP y ajustes menores de contenido.</p></div>
+                </div>
+
+                <div class="reveal avoid rounded-2xl p-6 border border-slate-200 bg-white/60">
+                    <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-3">Opcionales</p>
+                    <div class="grid md:grid-cols-2 gap-x-8 gap-y-3 text-sm text-slate-600">
+                        <p><b class="text-slate-900">Redacción de contenido con IA · US$ 350.</b> Textos de toda la web, revisados por una persona y aprobados por ustedes, si no los tienen listos.</p>
+                        <p><b class="text-slate-900">SEO mensual · desde US$ 450 al mes.</b> Contenido, mejoras y un informe cada mes para seguir subiendo después del lanzamiento. Mínimo 3 meses.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ RESUMEN ============ -->
+            <div class="reveal avoid sumblock rounded-[24px] p-7 sm:p-9 text-white shadow-2xl mb-14 relative overflow-hidden" style="background:linear-gradient(150deg,#0b1220,#15254d 55%,#1e3a8a);">
+                <div class="orb2 absolute -bottom-20 -right-16 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.4),transparent 70%);"></div>
+                <div class="relative z-10">
+                    <h2 class="display text-2xl font-bold mb-6">Resumen de Inversión</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Pagos iniciales</h4>
+                            <div class="space-y-0.5 text-sm">
+                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Web a medida con panel y catálogo</span><span class="font-semibold whitespace-nowrap">US$ 2,900</span></div>
+                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">SEO de lanzamiento</span><span class="font-semibold whitespace-nowrap">US$ 450</span></div>
+                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Conector MCP del catálogo</span><span class="font-semibold whitespace-nowrap">US$ 850</span></div>
+                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Servidor VPS (primer año)</span><span class="font-semibold whitespace-nowrap">US$ 550</span></div>
+                                <div class="flex justify-between items-center gap-4 py-3 mt-1"><span class="font-bold text-blue-200">Subtotal inicial</span><span class="text-xl font-bold text-blue-300 whitespace-nowrap">US$ 4,750</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Pagos recurrentes</h4>
+                            <div class="space-y-0.5 text-sm">
+                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Mantenimiento (obligatorio)</span><span class="font-semibold whitespace-nowrap">US$ 99 <span class="text-xs font-normal text-blue-300/70">/mes</span></span></div>
+                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Servidor VPS, desde el segundo año</span><span class="font-semibold whitespace-nowrap">US$ 550 <span class="text-xs font-normal text-blue-300/70">/año</span></span></div>
+                                <p class="text-[11px] text-blue-300/70 pt-2">El mantenimiento empieza el mes siguiente a la publicación, con un mínimo de 12 meses.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" style="background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(124,58,237,.25));border:1px solid rgba(255,255,255,.18);">
+                        <div>
+                            <p class="text-blue-200 text-xs uppercase tracking-wider mb-1">Para iniciar · anticipo 50%</p>
+                            <p class="display text-4xl font-extrabold shine">US$ 2,375</p>
+                            <p class="text-blue-200 text-xs mt-1 max-w-md">Después, 30% (US$ 1,425) con la web publicada en el dominio provisional y 20% (US$ 950) con el catálogo completo y el conector MCP entregados.</p>
+                        </div>
+                        <a href="https://wa.me/50761903007?text=Hola%2C%20vimos%20la%20propuesta%20EW-ATO-2026-01%20de%20la%20web%20de%20At%C3%B3mico%20y%20queremos%20arrancar." target="_blank" rel="noopener" class="btn-primary text-white font-semibold rounded-xl px-6 py-3.5 text-sm text-center whitespace-nowrap no-print">Aceptar y comenzar →</a>
+                    </div>
+                    <div class="grid sm:grid-cols-3 gap-3 mt-4 text-sm">
+                        <div class="rounded-xl p-4 border border-white/15" style="background:rgba(255,255,255,.06)"><p class="text-blue-300 text-xs uppercase tracking-wider mb-1">1 · Para iniciar</p><p class="font-bold text-lg">50% · US$ 2,375</p><p class="text-blue-200 text-xs mt-1">Al aprobar la propuesta.</p></div>
+                        <div class="rounded-xl p-4 border border-white/15" style="background:rgba(255,255,255,.06)"><p class="text-blue-300 text-xs uppercase tracking-wider mb-1">2 · Lanzamiento</p><p class="font-bold text-lg">30% · US$ 1,425</p><p class="text-blue-200 text-xs mt-1">Con la web publicada en el dominio provisional.</p></div>
+                        <div class="rounded-xl p-4 border border-white/15" style="background:rgba(255,255,255,.06)"><p class="text-blue-300 text-xs uppercase tracking-wider mb-1">3 · Entrega</p><p class="font-bold text-lg">20% · US$ 950</p><p class="text-blue-200 text-xs mt-1">Con el catálogo completo y el conector MCP.</p></div>
+                    </div>
+                    <p class="text-[11px] text-blue-300/70 mt-3">Precios en USD, sin ITBMS (7%); se aplicará según corresponda. Los porcentajes se calculan sobre el subtotal inicial (US$ 4,750). Si dejan el conector MCP para después, el subtotal inicial baja a US$ 3,900. Los opcionales no están en este resumen.</p>
+                </div>
+            </div>
+
+            <!-- ============ LO QUE NECESITAMOS ============ -->
+            <section class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Para avanzar</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Lo que necesitamos de su equipo</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <div class="reveal grid md:grid-cols-3 gap-4">
+                    <div class="item-card avoid bg-white/70 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Marca y textos</p><h3 class="display text-base font-bold text-slate-900 mb-2">Su identidad</h3><ul class="space-y-2 text-sm text-slate-600"><li>▸ Logo en vector y colores</li><li>▸ Textos base o sus notas: quiénes son, servicios y diferenciales</li><li>▸ Zonas donde operan</li><li>▸ Marcas o clientes que se puedan mencionar</li></ul></div>
+                    <div class="item-card avoid bg-white/70 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Catálogo y proyectos</p><h3 class="display text-base font-bold text-slate-900 mb-2">Su material</h3><ul class="space-y-2 text-sm text-slate-600"><li>▸ Lista de equipos con características técnicas</li><li>▸ Fotos de cada equipo</li><li>▸ Fotos de eventos y montajes, con permiso para publicarlas</li><li>▸ Categorías como las ven sus clientes</li></ul></div>
+                    <div class="item-card avoid bg-white/70 rounded-2xl p-5 border border-slate-100"><p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1.5">Accesos</p><h3 class="display text-base font-bold text-slate-900 mb-2">Cuentas</h3><ul class="space-y-2 text-sm text-slate-600"><li>▸ Dominio provisional y definitivo (o los registramos a su nombre)</li><li>▸ Cuenta de Google para Analytics, Search Console y Business Profile</li><li>▸ Correo que recibe las cotizaciones</li><li>▸ Número de WhatsApp</li></ul></div>
+                </div>
+            </section>
+
+            <!-- ============ RIESGOS ============ -->
+            <section class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Riesgos</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Lo que puede retrasar el proyecto</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <div class="reveal"><div class="bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto"><table class="tbl"><thead><tr><th>Riesgo</th><th>Cómo lo evitamos</th></tr></thead><tbody>
+                    <tr><td>El material llega tarde o incompleto</td><td>Publicamos en la semana 2 con lo que esté listo y marcamos lo pendiente; el resto del catálogo entra en la fase 2 sin frenar el lanzamiento.</td></tr>
+                    <tr><td>Equipos sin fotos propias</td><td>Usamos fotos del fabricante solo si su licencia lo permite y las reemplazamos por las de ustedes en cuanto las tengan.</td></tr>
+                    <tr><td>Bajar posiciones al migrar en febrero</td><td>URLs definitivas desde el inicio, redirecciones 301 una por una, aviso de cambio de dirección y seguimiento de la indexación.</td></tr>
+                    <tr><td>Esperar del MCP lo que hace el SEO</td><td>Lo dejamos claro desde ahora: el MCP conecta su catálogo con la IA; para que la IA los recomiende cuentan el SEO y los datos estructurados.</td></tr>
+                </tbody></table></div></div>
+            </section>
+
+            <!-- ============ CONDICIONES ============ -->
+            <div class="reveal glass rounded-2xl p-7 sm:p-8 avoid terms-box mb-8">
+                <h3 class="display text-lg font-bold text-slate-900 mb-5">Condiciones Comerciales</h3>
+                <div class="terms grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-slate-700">
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Pago:</strong> 50% para iniciar (US$ 2,375), 30% con la web publicada en el dominio provisional (US$ 1,425) y 20% con el catálogo completo y el conector MCP (US$ 950). Transferencia, tarjeta o Yappy.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Migración:</strong> incluida, en la fecha de febrero que ustedes elijan, con el dominio definitivo listo y apuntado a nuestro servidor.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Mantenimiento:</strong> obligatorio, US$ 99 al mes con un mínimo de 12 meses desde la publicación. Mantiene al día la seguridad del panel, el servidor y el conector.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Propiedad:</strong> el dominio, los contenidos, las imágenes, la base de datos y las cuentas de Google son de Atómico al completar el pago, con accesos de administrador.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Garantía:</strong> corregimos sin costo cualquier falla técnica que aparezca en los 30 días siguientes a la publicación y a la migración.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>SEO:</strong> nos comprometemos con el trabajo y su medición, no con una posición: nadie puede garantizar un lugar en Google.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Cambios de alcance:</strong> secciones o funciones fuera de esta propuesta, como reservas en línea o pagos, se cotizan aparte antes de hacerlas.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Validez:</strong> 30 días desde su emisión.</span></p>
+                </div>
+            </div>
+
+            <!-- ============ CTA ============ -->
+            <div class="reveal avoid cta-box text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden" style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #e0e7ff;">
+                <h3 class="display text-2xl font-bold text-slate-900 mb-2">¿Arrancamos esta semana?</h3>
+                <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">Con el anticipo y la reunión de arranque, en dos semanas Atómico está en línea y Google empieza a conocerlo.</p>
+                <div class="flex flex-col sm:flex-row flex-wrap gap-3 justify-center no-print">
+                    <a href="https://wa.me/50761903007?text=Hola%2C%20vimos%20la%20propuesta%20EW-ATO-2026-01%20de%20la%20web%20de%20At%C3%B3mico%20y%20queremos%20arrancar." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">Aceptar por WhatsApp</a>
+                    <a href="mailto:info@elementoweb.com?subject=Propuesta%20EW-ATO-2026-01%3A%20web%20de%20At%C3%B3mico&amp;body=Hola%2C%20queremos%20avanzar%20con%20la%20propuesta%20EW-ATO-2026-01." class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">Responder por correo</a>
+                    <a href="propuesta-atomico-web.pdf" download class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">Descargar PDF</a>
+                </div>
+                <p class="hidden print:block text-sm text-slate-600 mt-2">WhatsApp +507 6190-3007 · info@elementoweb.com</p>
+            </div>
+            <div class="reveal avoid sources text-[11px] text-slate-500 leading-relaxed border-t border-slate-200 pt-5 mt-10"><strong class="text-slate-600">Fuentes y supuestos.</strong> Documento "Requerimientos para el desarrollo web de Atómico" recibido el 29 de octubre de 2026. La ficha de la portada y las búsquedas son ejemplos: el catálogo, las categorías, las zonas y las palabras clave definitivas salen de la información de Atómico y de la investigación. Precios de Elemento Web en dólares, sin ITBMS.</div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="fullbleed-footer px-7 sm:px-10 py-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#122043);">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                <div>
+                    <p class="display font-bold">elementoweb<span class="text-violet-300">.com</span></p>
+                    <p class="text-[11px] text-blue-200/70">Documento confidencial · Propuesta para Atómico · EW-ATO-2026-01</p>
+                </div>
+                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-blue-100">
+                    <a href="mailto:info@elementoweb.com" class="hover:text-white transition">info@elementoweb.com</a>
+                    <a href="https://wa.me/50761903007" target="_blank" rel="noopener" class="hover:text-white transition whitespace-nowrap">+507 6190-3007</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <a href="https://wa.me/50761903007?text=Hola%2C%20tengo%20una%20consulta%20sobre%20la%20propuesta%20EW-ATO-2026-01%20de%20la%20web%20de%20At%C3%B3mico." target="_blank" rel="noopener" class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse" aria-label="Escríbanos por WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    </a>
+
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = Math.min(i * 40, 200) + 'ms';
+            io.observe(el);
+        });
+    </script>
+</body>
+</html>

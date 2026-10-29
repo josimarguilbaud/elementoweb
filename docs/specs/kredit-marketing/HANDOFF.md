@@ -21,8 +21,8 @@ con `origin/main` (no se tocó).
 
 | Qué | URL | Fuente |
 |---|---|---|
-| Propuesta cobranza con IA (EW-KRE-2026-01) | elementoweb.com/propuestas/kredit-cobranza-ia-19bfe5dc/ (+ PDF) | `scripts/propuestas-kredit/gen_kredit.py` |
-| Propuesta marketing digital (EW-KRE-2026-02) | elementoweb.com/propuestas/kredit-marketing-digital-4a6a12dc/ (+ PDF) | `scripts/propuestas-kredit/gen_kredit_mkt.py` |
+| Propuesta cobranza con IA (EW-KRE-2026-01) | **Fuera de línea desde el 29-oct-2026** (antes /propuestas/kredit-cobranza-ia-19bfe5dc/) | `scripts/propuestas-kredit/gen_kredit.py` |
+| Propuesta marketing digital (EW-KRE-2026-02) | **Fuera de línea desde el 29-oct-2026** (antes /propuestas/kredit-marketing-digital-4a6a12dc/) | `scripts/propuestas-kredit/gen_kredit_mkt.py` |
 | Demo «Recupera» (cobranza) | elementoweb.com/demo/kredit/ | `public/demo/kredit/`, pruebas `scripts/test-demo-kredit.mjs` |
 | Landing personas | elementoweb.com/demo/kredit-landings/prestamos/ | `public/demo/kredit-landings/` |
 | Landing empresas (B2B) | elementoweb.com/demo/kredit-landings/empresas/ | pruebas `scripts/test-landings-kredit.mjs` |
@@ -35,6 +35,10 @@ con `origin/main` (no se tocó).
   Josimar el 12-oct). Investigación de mercado: `investigacion-landings-panama.md`. Fotos con IA
   (fal · nano-banana-2, US$ 1.44) en `public/demo/kredit-web/img/` con `CREDITOS.json`;
   `portal-celular` salió defectuosa y no se usa.
+
+**29-oct-2026: las dos propuestas se quitaron de elementoweb.com** por pedido de Josimar. Los
+generadores siguen en `scripts/propuestas-kredit/`: correrlos vuelve a crear las carpetas en
+`public/propuestas/`, así que no se commitean sin su visto bueno. Los demos siguen en línea.
 
 ## 3. Decisiones del 12-oct
 

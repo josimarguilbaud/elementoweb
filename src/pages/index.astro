@@ -197,7 +197,6 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
         <ul class="pv3-agencia__lista pv3-pos__lista">
           {POSICIONAMIENTO_PORTADA.items.map((it) => <li><a href={url(it.slug)}><b>{it.t}</b><span>{it.l}</span></a></li>)}
         </ul>
-        <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="posicionamiento" data-service="pauta" data-opcion={opcionSeo}>Pedir auditoría de posicionamiento <span aria-hidden="true">→</span></a></p>
       </div>
       <figure class="pv3-recorrido">
         <svg class="pv3-recorrido--h" viewBox="0 0 640 150" role="img" aria-label="Recorrido: atraer con Google, ChatGPT y anuncios; atender por WhatsApp con un agente de IA; automatizar el seguimiento en el CRM; y medir para volver a empezar">
@@ -218,6 +217,8 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
         </svg>
         <figcaption>El posicionamiento es el primer paso. Lo que se mide al final decide dónde se invierte en la siguiente vuelta.</figcaption>
       </figure>
+      <!-- El botón va después del diagrama: en móvil deja los tramos entre CTA bajo 2.110 px (qa-lcp). -->
+      <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="posicionamiento" data-service="pauta" data-opcion={opcionSeo}>Pedir auditoría de posicionamiento <span aria-hidden="true">→</span></a></p>
     </div>
   </section>
 

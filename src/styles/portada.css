@@ -227,7 +227,7 @@ main :focus-visible { outline: 2px solid #0a0a0a; outline-offset: 2px; border-ra
 
 /* Posicionamiento (29-oct-2026): la lista reusa la de «agencia» en una columna; el recorrido vertical salvo de 768 a 1023 px. */
 .pv3-pos { display: grid; gap: 40px; }
-@media (min-width: 1024px) { .pv3-pos { grid-template-columns: 1fr 1.1fr; align-items: center; gap: 64px; } }
+@media (min-width: 1024px) { .pv3-pos { grid-template-columns: 1fr 1.1fr; column-gap: 64px; row-gap: 0; } .pv3-pos .pv3-recorrido { grid-column: 2; grid-row: 1 / 3; align-self: center; } }
 .pv3-agencia__lista.pv3-pos__lista { grid-template-columns: none; margin-top: 24px; }
 .pv3-recorrido { margin: 0; padding: 24px; background: #fff; border: 1px solid #e5e5e5; border-radius: 16px; font-size: .875rem; color: #525252; }
 .pv3-recorrido svg { display: block; width: 100%; height: auto; margin: 0 auto 16px; }

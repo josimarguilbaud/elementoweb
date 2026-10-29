@@ -194,7 +194,7 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
       <div>
         <h2 id="posicionamiento-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">{POSICIONAMIENTO_PORTADA.titulo}</h2>
         <p class="pv3-lead">{POSICIONAMIENTO_PORTADA.linea}</p>
-        <ul class="pv3-pos__lista">
+        <ul class="pv3-agencia__lista pv3-pos__lista">
           {POSICIONAMIENTO_PORTADA.items.map((it) => <li><a href={url(it.slug)}><b>{it.t}</b><span>{it.l}</span></a></li>)}
         </ul>
         <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="posicionamiento" data-service="pauta" data-opcion={opcionSeo}>Pedir auditoría de posicionamiento <span aria-hidden="true">→</span></a></p>

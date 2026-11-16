@@ -137,6 +137,7 @@
         .linea-tiempo .sem { font-family:'Geist Mono', monospace; font-size:11.5px; font-weight:600; color:#1e3a8a; background:#eff6ff; border-radius:8px; padding:6px 10px; align-self:start; text-align:center; line-height:1.35; }
         .linea-tiempo .sem.feb { color:#5b21b6; background:#f5f3ff; }
         @media (max-width: 520px) { .linea-tiempo li { grid-template-columns: 1fr; gap:8px; } .linea-tiempo .sem { justify-self:start; } }
+        @media (min-width: 640px) { .paginas.exp4 { grid-template-columns: repeat(2, 1fr); } }
         @page { size: Letter; margin: 12mm 0; }
         @page :first { margin-top: 0; }
         @media print {
@@ -534,9 +535,10 @@
                     <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Experiencia</span></div>
                     <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Lo hemos construido antes</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
                 </div>
-                <div class="reveal paginas">
+                <div class="reveal paginas exp4">
                     <div><em>nouscrm.app</em><b>NousCRM</b>Nuestro CRM de cotizaciones, facturas y contratos, en Next.js y PostgreSQL. Con generación de PDF, varias empresas por cuenta y un conector de IA en producción.</div>
-                    <div><em>chatmantis.com</em><b>ChatMantis</b>CRM de WhatsApp propio, en Next.js y PostgreSQL. Integra la API de Meta y procesa colas de trabajo en segundo plano, como la que usará el sincronizador.</div>
+                    <div><em>wazacrm.com</em><b>WazaCRM</b>CRM de WhatsApp con IA propio: atiende, cotiza, agenda y cobra. Integra la API de WhatsApp de Meta y procesa trabajos en segundo plano, como lo hará el sincronizador.</div>
+                    <div><em>mboca.app</em><b>Mboca</b>Menú en línea, carrito y pedidos por WhatsApp para restaurantes en Panamá, en Next.js y PostgreSQL. Es la misma idea de la lista de cotización: elegir productos, ajustar cantidades y enviar sin registrarse.</div>
                     <div><em>mrcomputerpanama.com</em><b>Mr. Computer Panamá</b>Rediseño de un comercio de tecnología en Panamá, con formulario conectado a un flujo automatizado.</div>
                 </div>
                 <p class="reveal text-xs text-slate-500 mt-4">Con gusto les mostramos en una llamada el panel de un proyecto en producción y el código de un sincronizador similar.</p>

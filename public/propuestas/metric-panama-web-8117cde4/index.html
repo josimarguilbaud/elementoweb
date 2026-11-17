@@ -283,7 +283,7 @@
                     <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Stack recomendado</span></div>
                     <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Lo que recomendamos y por qué</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
                 </div>
-                <p class="reveal keep text-sm text-slate-600 leading-relaxed max-w-2xl mb-5">Nos quedamos dentro de sus preferencias. Las únicas piezas que agregamos son las que exige su RFP: un proxy para la IP fija y un servicio de correo transaccional.</p>
+                <p class="reveal keep text-sm text-slate-600 leading-relaxed max-w-2xl mb-5">Nos quedamos dentro de sus preferencias. Las únicas piezas que agregamos son las que exige su RFP: un proxy para la IP fija y un servicio de correo transaccional. Si prefieren un servidor propio (VPS), lo presentamos como Opción B en los costos mensuales.</p>
                 <div class="reveal"><div class="bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto mb-5"><table class="tbl"><thead><tr><th>Pieza</th><th>Elección</th><th>Por qué</th></tr></thead><tbody>
                     <tr><td><b>Web</b></td><td>Next.js</td><td>Páginas rápidas y bien indexadas. Es el mismo marco con el que construimos nuestros propios productos en producción.</td></tr>
                     <tr><td><b>Panel (CMS)</b></td><td>Payload CMS</td><td>De código abierto, con el panel en español y dentro de la misma aplicación Next.js: no es otro servidor ni otra cuenta por mantener. Sin plugins frágiles: cada función es código del proyecto.</td></tr>
@@ -474,10 +474,10 @@
                         <div>
                             <h4 class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Después del lanzamiento</h4>
                             <div class="space-y-0.5 text-sm">
-                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Terceros, directo a cada proveedor</span><span class="font-semibold whitespace-nowrap">US$ 80–120 <span class="text-xs font-normal text-blue-300/70">/mes</span></span></div>
+                                <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Terceros con Render (Opción A)</span><span class="font-semibold whitespace-nowrap">US$ 80–120 <span class="text-xs font-normal text-blue-300/70">/mes</span></span></div>
                                 <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Garantía de corrección de errores</span><span class="font-semibold whitespace-nowrap">60 días</span></div>
                                 <div class="flex justify-between items-center gap-4 py-2.5 border-b border-white/10"><span class="text-blue-100">Soporte bajo demanda</span><span class="font-semibold whitespace-nowrap">US$ 50 <span class="text-xs font-normal text-blue-300/70">/hora</span></span></div>
-                                <p class="text-[11px] text-blue-300/70 pt-2">Sin mensualidad obligatoria con Elemento Web.</p>
+                                <p class="text-[11px] text-blue-300/70 pt-2">Opción A (Render): sin mensualidad con Elemento Web. Opción B (VPS): US$ 25 al mes aprox. de servidor más US$ 199 al mes de mantenimiento; ver costos de terceros.</p>
                             </div>
                         </div>
                     </div>
@@ -502,7 +502,7 @@
             <section id="terceros" class="mb-14">
                 <div class="reveal sec-head mb-6">
                     <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Costos de terceros</span></div>
-                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Lo que Metric paga directo cada mes</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Costos mensuales: dos opciones</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
                 </div>
                 <p class="reveal keep text-sm text-slate-600 leading-relaxed max-w-2xl mb-5">Las cuentas se abren a nombre de Metric Panamá y se pagan con su tarjeta: nosotros no revendemos ni cobramos margen sobre estos servicios.</p>
                 <div class="reveal"><div class="bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto mb-4"><table class="tbl"><thead><tr><th>Servicio</th><th>Para qué</th><th style="text-align:right">Costo mensual</th></tr></thead><tbody>
@@ -515,6 +515,31 @@
                     <tr><td></td><td><b>Total estimado</b></td><td style="text-align:right;white-space:nowrap"><b>US$ 80 a 120</b></td></tr>
                 </tbody></table></div></div>
                 <p class="reveal text-xs text-slate-500">Estimado con los precios publicados por cada proveedor al 16 de noviembre de 2026; se confirman al abrir las cuentas. El dominio y los correos corporativos actuales no cambian de proveedor.</p>
+                <div class="reveal grid md:grid-cols-2 gap-4 mt-6">
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-6 border-2 border-blue-200">
+                        <p class="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1">Opción A · recomendada</p>
+                        <h3 class="display text-lg font-bold text-slate-900 mb-1">Plataforma administrada (Render)</h3>
+                        <p class="display text-2xl font-extrabold text-slate-900 mb-3">US$ 80–120 <span class="text-sm font-medium text-slate-500">/mes</span></p>
+                        <ul class="lista si">
+                            <li><span>Es lo que pide su RFP: sin servidores propios que administrar.</span></li>
+                            <li><span>La plataforma se encarga de los parches, los respaldos de la base y la disponibilidad.</span></li>
+                            <li><span>Sin mensualidad con Elemento Web: soporte solo cuando lo pidan.</span></li>
+                            <li><span>IP fija mediante QuotaGuard (incluida en el total).</span></li>
+                        </ul>
+                    </div>
+                    <div class="item-card avoid bg-white/80 rounded-2xl p-6 border border-slate-200">
+                        <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Opción B · alternativa</p>
+                        <h3 class="display text-lg font-bold text-slate-900 mb-1">Servidor VPS con mantenimiento</h3>
+                        <p class="display text-2xl font-extrabold text-slate-900 mb-3">US$ 225–250 <span class="text-sm font-medium text-slate-500">/mes</span></p>
+                        <ul class="lista">
+                            <li><span><b>Servidor VPS</b> a nombre de Metric, con respaldos: aprox. US$ 20–30 al mes. Web, panel, base de datos y ambiente de pruebas en un solo servidor.</span></li>
+                            <li><span><b>IP fija propia</b> que se registra en InterFuerza: no hace falta proxy.</span></li>
+                            <li><span><b>Mantenimiento Elemento Web · US$ 199 al mes</b>, obligatorio en esta opción y con un mínimo de 12 meses: parches de seguridad, respaldos diarios con restauración verificada, monitoreo, actualizaciones menores de Next.js y Payload, 3 horas de cambios al mes y respuesta el mismo día hábil.</span></li>
+                            <li><span>Cloudflare R2 y Resend, igual que en la Opción A.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="reveal text-xs text-slate-500 mt-3">El precio del proyecto (US$ 11,200) es el mismo en las dos opciones. La Opción B pone un responsable fijo del servidor; la Opción A deja esa tarea a la plataforma y no los ata a una mensualidad.</p>
             </section>
 
             <!-- ============ SOPORTE ============ -->
@@ -578,7 +603,7 @@
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Pago:</strong> 50% para iniciar (US$ 5,600), 30% al aprobar el sitio completo en el ambiente de pruebas (US$ 3,360) y 20% al publicar (US$ 2,240). Transferencia, tarjeta o Yappy.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Propiedad:</strong> todas las cuentas de infraestructura, dominio y servicios son de Metric Panamá, S.A. Al cierre se entregan el código fuente completo y los archivos editables del diseño.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Garantía:</strong> 60 días después de la publicación para corregir sin costo cualquier error del sistema.</span></p>
-                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Sin mensualidad obligatoria:</strong> después de la garantía, el soporte es bajo demanda o por bloques, como prefieran.</span></p>
+                    <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Sin mensualidad obligatoria (Opción A):</strong> después de la garantía, el soporte es bajo demanda o por bloques. Si eligen el VPS (Opción B), el mantenimiento de US$ 199 al mes es obligatorio, con un mínimo de 12 meses.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Contenidos:</strong> Metric entrega los textos comerciales, los logotipos y el acceso a InterFuerza; nosotros redactamos los textos legales base para su revisión final.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>SEO:</strong> nos comprometemos con la base técnica y su medición, no con una posición: nadie puede garantizar un lugar en Google.</span></p>
                     <p class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 shrink-0" aria-hidden="true">◆</span><span><strong>Cambios de alcance:</strong> la Fase 2 y cualquier función fuera de esta propuesta se cotizan aparte antes de hacerlas.</span></p>

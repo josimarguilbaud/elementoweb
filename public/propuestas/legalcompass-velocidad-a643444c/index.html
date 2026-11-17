@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Velocidad de legalcompass.co · elementoweb</title>
+<link rel="preload" href="/fonts/roboto-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{
+    font-family:"Roboto"; src:url("/fonts/roboto-latin-wght-normal.woff2") format("woff2");
+    font-weight:100 900; font-style:normal; font-display:swap;
+  }
+  :root{
+    --paper:#f8f9fa; --card:#ffffff; --ink:#2b3338; --ink-soft:#5b666d;
+    --night:#14232b; --night-2:#0e1a20; --teal:#0099cc; --teal-deep:#00688c;
+    --line:#e4e6e8; --bad:#c2410c; --bad-bg:#fff4ed; --ok:#047857; --ok-bg:#ecfdf5;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; background:var(--paper); color:var(--ink); }
+  body{ font-family:"Roboto", ui-sans-serif, system-ui, sans-serif; line-height:1.6; padding:0 16px 64px; }
+  .doc{ max-width:780px; margin-inline:auto; }
+  h1,h2,h3{ color:var(--night); margin:0; letter-spacing:-0.015em; }
+  .num{ font-variant-numeric:tabular-nums; }
+
+  .letterhead{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; padding-block:28px 22px; border-bottom:1px solid var(--line); }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .brand-sq{ display:grid; place-items:center; width:34px; height:34px; border-radius:9px; background:var(--night); flex-shrink:0; }
+  .brand-tx{ font-size:16px; font-weight:700; color:var(--night); }
+  .brand-tx span{ font-weight:500; opacity:.55; }
+  .doc-meta{ font-size:12.5px; color:var(--ink-soft); text-align:right; }
+
+  h1{ font-size:clamp(1.7rem,4.5vw,2.4rem); line-height:1.12; margin:30px 0 10px; font-weight:800; text-wrap:balance; }
+  .subtitle{ font-size:1.05rem; color:var(--ink-soft); max-width:60ch; margin:0 0 28px; }
+
+  .scores{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:14px; }
+  .score{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .score .k{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); font-weight:600; }
+  .score .v{ font-size:2rem; font-weight:800; line-height:1.1; margin-top:4px; }
+  .score .v small{ font-size:.95rem; font-weight:500; color:var(--ink-soft); }
+  .score .t{ font-size:13px; color:var(--ink-soft); margin-top:4px; }
+  .score.bad .v{ color:var(--bad); }
+  .score.mid .v{ color:#b45309; }
+  .note{ font-size:12.5px; color:var(--ink-soft); margin:0 0 40px; }
+
+  section.step{ margin-bottom:42px; }
+  .step-head{ display:flex; gap:14px; align-items:center; margin-bottom:14px; }
+  .step-num{ font-size:13px; color:#fff; background:var(--night); border-radius:999px; width:30px; height:30px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:700; }
+  h2{ font-size:1.25rem; font-weight:700; }
+  .step-body{ padding-left:44px; }
+  .step-body > p{ color:var(--ink-soft); margin:0 0 14px; max-width:64ch; }
+
+  .finding{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin-bottom:12px; }
+  .finding h3{ font-size:1rem; font-weight:700; margin-bottom:4px; display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; }
+  .finding p{ margin:0; font-size:14.5px; color:var(--ink-soft); }
+  .tag{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; padding:2px 8px; border-radius:999px; background:var(--bad-bg); color:var(--bad); }
+  .tag.med{ background:#fffbeb; color:#b45309; }
+
+  table.spec{ width:100%; border-collapse:collapse; font-size:14.5px; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  table.spec th{ text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); font-weight:600; padding:12px 14px; border-bottom:1px solid var(--line); background:#fbfbfc; }
+  table.spec td{ padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.spec tr:last-child td{ border-bottom:none; }
+  table.spec td:first-child{ font-weight:600; color:var(--night); white-space:nowrap; }
+  .act{ font-size:12px; font-weight:700; padding:2px 8px; border-radius:999px; white-space:nowrap; }
+  .act.out{ background:var(--bad-bg); color:var(--bad); }
+  .act.on{ background:var(--ok-bg); color:var(--ok); }
+  .act.rev{ background:#eef8fb; color:var(--teal-deep); }
+
+  ul.plain{ margin:0; padding:0; list-style:none; display:grid; gap:10px; }
+  ul.plain li{ display:flex; gap:10px; align-items:flex-start; font-size:14.5px; }
+  ul.plain li::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--teal); margin-top:9px; flex-shrink:0; }
+  ul.plain b{ color:var(--night); }
+
+  .callout{ border:1px solid #cfe9f3; background:#eef8fb; border-radius:10px; padding:12px 16px; font-size:14px; margin-top:14px; }
+  .callout b{ color:var(--teal-deep); }
+
+  .price{ background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+  .price-row{ display:flex; justify-content:space-between; gap:16px; padding:16px 20px; border-bottom:1px solid var(--line); }
+  .price-row:last-child{ border-bottom:none; }
+  .price-row .d b{ display:block; color:var(--night); font-size:15px; }
+  .price-row .d span{ font-size:13.5px; color:var(--ink-soft); }
+  .price-row .p{ font-weight:700; color:var(--night); white-space:nowrap; font-size:16px; }
+  .price-row.total{ background:var(--night); }
+  .price-row.total .d b, .price-row.total .p{ color:#fff; }
+  .price-row.total .d span{ color:#cfe6ee; }
+
+  .plans{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:14px; }
+  .plan{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .plan.rec{ border:2px solid var(--teal); }
+  .plan .n{ font-weight:700; color:var(--night); display:flex; justify-content:space-between; gap:8px; align-items:center; }
+  .plan .n em{ font-style:normal; font-size:11px; font-weight:700; color:var(--teal-deep); background:#eef8fb; padding:2px 8px; border-radius:999px; }
+  .plan .m{ font-size:1.5rem; font-weight:800; color:var(--night); margin:4px 0; }
+  .plan .m small{ font-size:.85rem; font-weight:500; color:var(--ink-soft); }
+  .plan p{ margin:0; font-size:13.5px; color:var(--ink-soft); }
+
+  .cta{ background:var(--night); color:#fff; border-radius:14px; padding:24px 26px; }
+  .cta h2{ color:#fff; margin-bottom:6px; }
+  .cta p{ margin:0 0 16px; color:#cfe6ee; font-size:14.5px; }
+  .cta a.btn{ display:inline-block; background:var(--teal); color:#fff; text-decoration:none; font-weight:700; padding:11px 20px; border-radius:10px; }
+  .cta a.btn:hover{ background:var(--teal-deep); }
+
+  footer.sign{ margin-top:44px; padding-top:20px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:13px; color:var(--ink-soft); }
+
+  @media (max-width:600px){
+    .step-body{ padding-left:0; }
+    table.spec, table.spec tbody, table.spec tr, table.spec td{ display:block; width:100%; }
+    table.spec thead{ display:none; }
+    table.spec tr{ padding:12px 14px; border-bottom:1px solid var(--line); }
+    table.spec tr:last-child{ border-bottom:none; }
+    table.spec td{ padding:2px 0; border:none; white-space:normal !important; }
+    .price-row{ flex-direction:column; gap:4px; }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <header class="letterhead">
+    <a href="https://elementoweb.com" class="brand">
+      <span class="brand-sq"><svg width="17" height="17" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4 26.4 10V22L16 28 5.6 22V10Z" stroke="#0099cc" stroke-width="2.3" stroke-linejoin="round" /><path d="M16 16 5.6 10M16 16 26.4 10M16 16V28" stroke="#0099cc" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" /><circle cx="16" cy="16" r="1.7" fill="#0099cc" /></svg></span>
+      <span class="brand-tx">elemento<span>web</span></span>
+    </a>
+    <div class="doc-meta">Legal Compass · Cotización COT-1012<br>16 de noviembre de 2026</div>
+  </header>
+
+  <h1>Cómo hacer que legalcompass.co cargue rápido</h1>
+  <p class="subtitle">Medimos la web, revisamos su instalación por dentro y encontramos por qué tarda tanto. Aquí están los problemas, qué vamos a hacer con cada uno y cuánto cuesta. El diseño y los textos no cambian.</p>
+
+  <div class="scores">
+    <div class="score bad"><div class="k">Velocidad en celular</div><div class="v num">55<small>/100</small></div><div class="t">Portada. Consulta Online: 59.</div></div>
+    <div class="score bad"><div class="k">Contenido principal</div><div class="v num">12,4<small> s</small></div><div class="t">Google pide menos de 2,5 s.</div></div>
+    <div class="score mid"><div class="k">Respuesta del servidor</div><div class="v num">2,1<small> s</small></div><div class="t">En cada visita, antes de empezar a cargar.</div></div>
+    <div class="score mid"><div class="k">Velocidad en computadora</div><div class="v num">80<small>/100</small></div><div class="t">Portada.</div></div>
+  </div>
+  <p class="note">Medición con Google Lighthouse el 16 de noviembre de 2026, en celular y computadora, sin sesión iniciada. La mayoría de las visitas a una web de servicios llegan desde el celular, y es donde peor sale.</p>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">1</span><h2>Lo que encontramos</h2></div>
+    <div class="step-body">
+      <div class="finding">
+        <h3>La web no guarda copias de sus páginas <span class="tag">El más grave</span></h3>
+        <p>El servidor arma cada página desde cero en cada visita y eso toma unos 2 segundos. El hosting trae un sistema de caché (LiteSpeed) pensado justo para esto, pero está instalado y apagado.</p>
+      </div>
+      <div class="finding">
+        <h3>Seis paquetes de complementos haciendo lo mismo <span class="tag">Grave</span></h3>
+        <p>La web usa seis paquetes de complementos para Elementor: Essential Addons, Happy Addons, Ultimate Addons, Premium Addons, Qi Addons y Royal Addons. Cada uno carga su propio código en todas las páginas, aunque solo se use uno o dos de sus elementos. Por eso la portada pide 140 archivos al abrirse: 78 de estilos y 88 de código.</p>
+      </div>
+      <div class="finding">
+        <h3>Una base de datos inflada <span class="tag med">Medio</span></h3>
+        <p>Cada vez que se guarda una página, WordPress guarda una copia. Ya hay 885 copias, 323 de ellas de la portada, y la base de datos llega a unos 200 MB cuando una web de este tamaño debería pesar una fracción de eso. Eso hace más lentas las consultas y los respaldos.</p>
+      </div>
+      <div class="finding">
+        <h3>WordPress y 23 plugins sin actualizar <span class="tag med">Seguridad</span></h3>
+        <p>Hay versiones nuevas pendientes, varias con arreglos de seguridad. En una web que cobra en línea y recibe datos de clientes, esto no debería esperar.</p>
+      </div>
+      <div class="finding">
+        <h3>Archivos que se cargan sin necesidad <span class="tag med">Medio</span></h3>
+        <p>La tipografía Poppins se descarga en 14 grosores aunque se usan dos o tres. Además se carga completo el paquete de íconos Font Awesome y, para todos los visitantes, los íconos del panel de administración de WordPress.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">2</span><h2>Plugins que sobran</h2></div>
+    <div class="step-body">
+      <p>Hay 29 plugins activos y 11 desactivados. Un plugin desactivado no pesa, pero sigue siendo una puerta de entrada si tiene una falla de seguridad.</p>
+      <table class="spec">
+        <thead><tr><th>Plugin</th><th>Qué pasa</th><th>Qué hacemos</th></tr></thead>
+        <tbody>
+          <tr><td>LiteSpeed Cache</td><td>Está apagado. Es el que más velocidad aporta.</td><td><span class="act on">Activar y configurar</span></td></tr>
+          <tr><td>WooPayments</td><td>No funciona en Panamá, pero carga código en el pago y le envía el correo del cliente a un servidor externo.</td><td><span class="act out">Retirar</span></td></tr>
+          <tr><td>PagueloFácil</td><td>El cobro ya va por la pasarela del banco.</td><td><span class="act out">Retirar</span></td></tr>
+          <tr><td>Copy &amp; Delete Posts</td><td>Es una herramienta de administración y aun así carga archivos en la web.</td><td><span class="act out">Retirar</span></td></tr>
+          <tr><td>Mailchimp for WooCommerce</td><td>Carga código en todas las páginas.</td><td><span class="act rev">Retirar si no se usa</span></td></tr>
+          <tr><td>4 o 5 de los 6 complementos de Elementor</td><td>Repiten funciones entre sí.</td><td><span class="act rev">Dejar 1 o 2</span></td></tr>
+          <tr><td>Los 11 desactivados</td><td>GTranslate, SureForms, SureMail, Starter Templates, Calendly, Fonts Plugin y los de Hostinger repetidos.</td><td><span class="act out">Borrar</span></td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><b>Lo que no se toca:</b> las reservas (LatePoint), el pago con tarjeta, el formulario de contacto, el SEO (Rank Math), Google Site Kit, los dos idiomas (Polylang) ni los respaldos.</div>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">3</span><h2>Lo que vamos a hacer</h2></div>
+    <div class="step-body">
+      <ul class="plain">
+        <li><span><b>Respaldo completo antes de empezar.</b> Si algo no queda igual, se vuelve atrás en minutos.</span></li>
+        <li><span><b>Caché de página</b> con LiteSpeed y la red de distribución (CDN) de Hostinger, ajustada para que las reservas y el pago siempre muestren datos al día.</span></li>
+        <li><span><b>Dejar uno o dos paquetes de complementos.</b> Revisamos página por página qué elemento usa cada sección; si alguno dependía de un paquete que sale, lo rehacemos igual.</span></li>
+        <li><span><b>Imágenes</b> convertidas a WebP y al tamaño en que se muestran, con carga diferida de las que no se ven al abrir la página.</span></li>
+        <li><span><b>Tipografía e íconos:</b> solo los grosores y los íconos que se usan, servidos desde el mismo hosting.</span></li>
+        <li><span><b>Estilos y código</b> que no hacen falta para la primera pantalla se cargan después.</span></li>
+        <li><span><b>Limpieza de la base de datos</b> y un límite de copias por página para que no se vuelva a inflar.</span></li>
+        <li><span><b>Actualización de WordPress y de los plugins</b> por grupos, probando la reserva y el pago después de cada grupo.</span></li>
+        <li><span><b>Medición antes y después</b> con la misma herramienta, para que vean el resultado en números.</span></li>
+      </ul>
+      <div class="callout"><b>Meta:</b> 85 o más en celular y el contenido principal en menos de 2,5 segundos.</div>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">4</span><h2>Inversión</h2></div>
+    <div class="step-body">
+      <div class="price">
+        <div class="price-row"><div class="d"><b>Optimización de velocidad y limpieza técnica</b><span>Caché, complementos, plugins, imágenes, tipografía, código y base de datos.</span></div><div class="p num">US$ 750</div></div>
+        <div class="price-row"><div class="d"><b>Actualización segura de WordPress y plugins</b><span>WordPress 6.9 a 7.1 y los 23 plugins pendientes, con respaldo y pruebas.</span></div><div class="p num">US$ 150</div></div>
+        <div class="price-row total"><div class="d"><b>Total del trabajo</b><span>Más 7% de ITBMS (US$ 63): US$ 963. Pago único.</span></div><div class="p num">US$ 900</div></div>
+      </div>
+
+      <p style="margin-top:22px">Para que la web no vuelva a ponerse lenta ni quede desactualizada, ofrecemos mantenimiento mensual a partir del mes siguiente. Es opcional.</p>
+      <div class="plans">
+        <div class="plan"><div class="n">Básico</div><div class="m num">US$ 59<small>/mes</small></div><p>Actualizaciones de seguridad, respaldos con restauración verificada, monitoreo de caídas, SSL y reporte mensual.</p></div>
+        <div class="plan rec"><div class="n">Prioritario <em>Recomendado</em></div><div class="m num">US$ 99<small>/mes</small></div><p>Todo lo del Básico, con respuesta el mismo día, 1 hora de cambios al mes y revisión de velocidad en cada reporte.</p></div>
+        <div class="plan"><div class="n">Empresarial</div><div class="m num">US$ 189<small>/mes</small></div><p>Todo lo del Prioritario, con atención fuera de horario si la web se cae, 3 horas de cambios y una llamada mensual.</p></div>
+      </div>
+      <p style="margin-top:12px;font-size:13px">Los planes mensuales se cobran por adelantado y llevan ITBMS.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step-head"><span class="step-num">5</span><h2>Condiciones</h2></div>
+    <div class="step-body">
+      <ul class="plain">
+        <li><span><b>Pago:</b> 50% para empezar y 50% a la entrega.</span></li>
+        <li><span><b>Plazo:</b> 5 días hábiles desde la aprobación.</span></li>
+        <li><span><b>Sin interrupciones:</b> el trabajo pesado se hace en horario de bajo tráfico y la web sigue recibiendo reservas.</span></li>
+        <li><span><b>Validez:</b> esta propuesta vale hasta el 1 de diciembre de 2026.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>¿Empezamos?</h2>
+    <p>Respóndanos por WhatsApp para aprobar la propuesta o resolver cualquier duda. Arrancamos el mismo día que recibimos el primer pago.</p>
+    <a class="btn" href="https://wa.me/50761622787?text=Hola%2C%20quiero%20aprobar%20la%20propuesta%20de%20velocidad%20de%20legalcompass.co%20(COT-1012)">Aprobar por WhatsApp</a>
+  </div>
+
+  <footer class="sign">
+    <span>Elemento Web · Ciudad de Panamá · +507 6162-2787</span>
+    <span>elementoweb.com</span>
+  </footer>
+
+</div>
+</body>
+</html>

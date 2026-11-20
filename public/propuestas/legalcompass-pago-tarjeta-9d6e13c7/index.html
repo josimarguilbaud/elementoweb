@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de pago con tarjeta · Legal Compass — elementoweb.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background: #eef2fb;
+            background-image:
+                radial-gradient(60rem 60rem at 110% -10%, rgba(124,58,237,0.10), transparent 60%),
+                radial-gradient(50rem 50rem at -15% 10%, rgba(59,130,246,0.12), transparent 55%),
+                radial-gradient(45rem 45rem at 50% 120%, rgba(37,99,235,0.08), transparent 60%);
+            background-attachment: fixed;
+        }
+        h1, h2, h3, h4, .display { font-family: 'Bricolage Grotesque', 'Inter', sans-serif; letter-spacing: -0.02em; }
+        .gradient-text { background: linear-gradient(100deg, #60a5fa, #3b82f6 45%, #7c3aed); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass { background: rgba(255,255,255,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 20px 40px -24px rgba(30,58,138,0.28); }
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1); }
+        .reveal.in { opacity: 1; transform: none; }
+        @keyframes float1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(20px,-16px) scale(1.08);} }
+        @keyframes float2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-24px,14px) scale(1.12);} }
+        .orb1 { animation: float1 11s ease-in-out infinite; }
+        .orb2 { animation: float2 14s ease-in-out infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .shine { background: linear-gradient(90deg,#93c5fd,#e0e7ff,#93c5fd,#c4b5fd); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; }
+        .wa-float { box-shadow: 0 14px 30px -8px rgba(22,163,74,0.6); transition: transform .25s ease; }
+        .wa-float:hover { transform: translateY(-3px) scale(1.04); }
+        @keyframes waPulse { 0%{ box-shadow:0 0 0 0 rgba(34,197,94,.5);} 70%{ box-shadow:0 0 0 16px rgba(34,197,94,0);} 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+        .wa-pulse { animation: waPulse 2.4s infinite; }
+        .section-tag { background: linear-gradient(135deg,#0b1220,#1e3a8a); }
+        .tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+        .tbl th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #64748b; background: #f8fafc; padding: 10px 14px; border-bottom: 1px solid #e2e8f0; }
+        .tbl td { padding: 11px 14px; border-top: 1px solid #f1f5f9; vertical-align: top; color: #475569; line-height: 1.5; }
+        .tbl td b { color: #0f172a; font-weight: 600; }
+        .tbl td small { display: block; color: #64748b; font-size: 12.5px; margin-top: 2px; }
+        .act { display:inline-block; font-size:11.5px; font-weight:700; border-radius:999px; padding:3px 9px; white-space:nowrap; }
+        .act.on { background:#dcfce7; color:#166534; }
+        .act.rev { background:#eff6ff; color:#1e3a8a; }
+        .act.pend { background:#fef3c7; color:#92400e; }
+        .hero-eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#bfdbfe; }
+        .hero-eyebrow::before { content:""; width:22px; height:1px; background:#93c5fd; }
+        .doc-meta > div { background:rgba(11,18,32,.45); padding:12px 14px; }
+        .doc-meta dt { font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#93c5fd; margin-bottom:3px; }
+        .doc-meta dd { font-size:13px; font-weight:600; color:#fff; line-height:1.3; }
+        .toc a { display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; color:#e0e7ff; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:999px; padding:7px 13px; transition:background .2s, border-color .2s; }
+        .toc a:hover { background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.3); }
+        .toc a:focus-visible { outline:2px solid #93c5fd; outline-offset:2px; }
+        .toc i { width:7px; height:7px; border-radius:2px; display:block; }
+        /* tarjeta de cobro (ilustración) */
+        .pay-card { background:#fff; color:#0f172a; border-radius:18px; overflow:hidden; box-shadow:0 34px 70px -24px rgba(2,6,23,.85), 0 0 0 1px rgba(255,255,255,.14); }
+        .pay-top { padding:14px 16px 10px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f1f5f9; }
+        .pay-top span { font-size:11px; font-weight:600; color:#64748b; letter-spacing:.04em; }
+        .pay-top em { font-style:normal; font-family:'Geist Mono', monospace; font-size:10.5px; font-weight:600; color:#166534; background:#dcfce7; border-radius:999px; padding:3px 8px; }
+        .pay-rows { padding:10px 16px 16px; display:grid; gap:7px; }
+        .pay-rows div { display:flex; justify-content:space-between; gap:12px; font-size:12.5px; color:#475569; border-top:1px solid #f1f5f9; padding-top:7px; }
+        .pay-rows div:first-child { border-top:0; padding-top:0; }
+        .pay-rows b { font-family:'Geist Mono', monospace; font-size:12px; color:#0f172a; text-align:right; }
+        .pay-rows .good { color:#15803d; }
+        .pay-total { display:flex; justify-content:space-between; align-items:baseline; padding:12px 16px; background:#f8fafc; border-top:1px solid #e2e8f0; }
+        .pay-total span { font-size:12px; font-weight:600; color:#64748b; }
+        .pay-total b { font-family:'Bricolage Grotesque', Inter, sans-serif; font-size:22px; color:#0f172a; }
+        .pay-toast { position:absolute; right:-12px; top:-18px; display:flex; gap:10px; align-items:flex-start; background:rgba(255,255,255,.97); color:#0f172a; border-radius:14px; padding:10px 13px; box-shadow:0 20px 40px -16px rgba(2,6,23,.75); font-size:12px; line-height:1.35; max-width:240px; }
+        .pay-toast .dot { width:9px; height:9px; border-radius:50%; background:#22c55e; margin-top:4px; flex:none; box-shadow:0 0 0 4px rgba(34,197,94,.18); }
+        @media (max-width: 640px) { .pay-toast { position:static; margin-top:10px; max-width:none; } }
+        .obj { display:grid; gap:12px; }
+        @media (min-width: 768px) { .obj { grid-template-columns: repeat(4, 1fr); } }
+        .obj div { background:rgba(255,255,255,.75); border:1px solid #eef2f7; border-radius:18px; padding:16px 18px; }
+        .obj em { font-style:normal; font-family:'Geist Mono', monospace; font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:#64748b; display:block; margin-bottom:6px; }
+        .obj b { display:block; font-family:'Bricolage Grotesque', Inter, sans-serif; font-size:30px; line-height:1; color:#0f172a; margin-bottom:6px; }
+        .obj b small { font-size:14px; font-weight:600; color:#64748b; }
+        .obj b.green { color:#15803d; }
+        .obj p { font-size:13px; color:#475569; line-height:1.5; }
+        .pasos { display:grid; gap:10px; counter-reset: paso; }
+        @media (min-width: 640px) { .pasos { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 900px) { .pasos { grid-template-columns: repeat(3, 1fr); } }
+        .pasos div { position:relative; background:#fff; border:1px solid #e2e8f0; border-radius:16px; padding:16px 16px 15px; font-size:13px; color:#475569; line-height:1.5; }
+        .pasos div::before { counter-increment: paso; content: counter(paso); display:grid; place-items:center; width:28px; height:28px; border-radius:9px; color:#fff; font-weight:800; font-size:13px; margin-bottom:10px; background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed); }
+        .pasos b { display:block; color:#0f172a; font-size:14.5px; margin-bottom:3px; font-family:'Bricolage Grotesque', Inter, sans-serif; }
+        .pasos small { display:block; font-family:'Geist Mono', monospace; font-size:10.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:#64748b; margin-top:8px; }
+        .recos { display:grid; gap:12px; }
+        @media (min-width: 640px) { .recos { grid-template-columns: repeat(2, 1fr); } }
+        .recos div { background:rgba(255,255,255,.8); border:1px solid #eef2f7; border-radius:16px; padding:16px 18px; font-size:13.5px; color:#475569; line-height:1.55; }
+        .recos b { display:block; color:#0f172a; font-size:16px; margin-bottom:4px; font-family:'Bricolage Grotesque', Inter, sans-serif; }
+        .recos em { font-style:normal; font-family:'Geist Mono', monospace; font-size:10.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; display:inline-block; border-radius:999px; padding:3px 8px; margin-bottom:8px; }
+        .p-ya { color:#991b1b; background:#fee2e2; }
+        .p-mes { color:#92400e; background:#fef3c7; }
+        .p-luego { color:#1e3a8a; background:#eff6ff; }
+        .nota { background:linear-gradient(135deg,#eff6ff,#f5f3ff); border:1px solid #e0e7ff; border-radius:16px; padding:14px 18px; font-size:13.5px; color:#334155; line-height:1.6; }
+        @media (max-width: 640px) {
+            .tbl-stack thead { display:none; }
+            .tbl-stack, .tbl-stack tbody, .tbl-stack tr, .tbl-stack td { display:block; width:100%; }
+            .tbl-stack tr { border-top:1px solid #f1f5f9; padding:10px 14px; }
+            .tbl-stack td { border:0; padding:2px 0; }
+        }
+        @page { size: Letter; margin: 12mm 0; }
+        @page :first { margin-top: 0; }
+        @media print {
+            body { background: #fff; }
+            .no-print { display: none !important; }
+            .reveal { opacity:1 !important; transform:none !important; transition:none !important; }
+            main { box-shadow:none !important; margin: 0 !important; max-width: none !important; border-radius: 0 !important; border: 0 !important; background: #fff !important; }
+            .glass { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: #fff !important; box-shadow: none !important; border-color: #e2e8f0 !important; }
+            .orb1, .orb2, .shine { animation: none !important; }
+            .avoid, .tbl tr, .obj div, .recos div, .pasos div { break-inside: avoid; }
+            .sec-head { break-inside: avoid; break-after: avoid; }
+            .shine { background: none !important; -webkit-text-fill-color: #c7d2fe !important; color: #c7d2fe !important; }
+            .gradient-text { background: none !important; -webkit-text-fill-color: #4338ca !important; color: #4338ca !important; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 selection:bg-violet-200 selection:text-violet-900">
+
+    <main class="max-w-4xl mx-auto my-6 sm:my-10 glass rounded-[28px] overflow-hidden">
+
+        <!-- ============ HEADER ============ -->
+        <header class="relative overflow-hidden text-white px-7 sm:px-10 pt-8 pb-10"
+                style="background: linear-gradient(135deg,#0b1220 0%,#122043 45%,#1e3a8a 100%);">
+            <div class="orb1 absolute -top-16 -right-10 w-64 h-64 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(124,58,237,.55),transparent 70%);"></div>
+            <div class="orb2 absolute -bottom-24 -left-10 w-72 h-72 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(59,130,246,.5),transparent 70%);"></div>
+            <div class="absolute inset-0 opacity-[0.06]" style="background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:32px 32px;"></div>
+
+            <div class="relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-8 border-b border-white/15">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,#60a5fa,#3b82f6 55%,#7c3aed);box-shadow:0 10px 24px -8px rgba(59,130,246,.7);">
+                            <svg width="26" height="26" viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 38 L25 15 L35 38" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.6 30 H31.4" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="15" r="3.2" fill="#fff"/><circle cx="37.5" cy="13" r="2.3" fill="#c4b5fd"/></svg>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="display text-lg font-bold tracking-tight">elementoweb<span class="text-violet-300">.com</span></p>
+                            <p class="text-[11px] text-blue-200/80 tracking-wide">Desarrollo Web · IA · Automatización</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm sm:justify-end">
+                        <a href="mailto:info@elementoweb.com" class="text-blue-100 hover:text-white transition">info@elementoweb.com</a>
+                        <a href="https://wa.me/50761903007" target="_blank" rel="noopener" class="text-blue-100 hover:text-white transition">WhatsApp 6190-3007</a>
+                    </div>
+                </div>
+
+                <div class="pt-9">
+                    <p class="hero-eyebrow mb-4">Informe · Pago con tarjeta en la web</p>
+                    <p class="text-sm text-blue-100/90 mb-3">Para <b class="text-white tracking-wide">LEGAL COMPASS</b> · legalcompass.co</p>
+                    <h1 class="display text-[2.3rem] sm:text-[3.15rem] font-extrabold leading-[1.03] tracking-tight max-w-[760px]">Su web ya cobra con tarjeta, <span class="shine">certificada por Banco General</span></h1>
+                </div>
+                <div class="mt-7 grid md:grid-cols-[1fr_1fr] gap-10 md:gap-8 items-center">
+                    <div>
+                        <p class="text-blue-100/90 text-[15px] leading-relaxed mb-6">Conectamos legalcompass.co con la pasarela de Banco General (CyberSource), con verificación 3D Secure y el ITBMS desglosado como lo exige el banco. Pasamos la certificación completa y el 20 de noviembre hicimos el primer cobro real. Desde ese día, sus clientes pueden pagar las consultas con Visa o Mastercard.</p>
+                        <dl class="doc-meta grid grid-cols-2 gap-px rounded-2xl overflow-hidden border border-white/15 bg-white/15">
+                            <div><dt>Informe para</dt><dd>Legal Compass</dd></div>
+                            <div><dt>Referencia</dt><dd>EW-LGC-2026-02</dd></div>
+                            <div><dt>Fecha</dt><dd>20 nov 2026</dd></div>
+                            <div><dt>Estado</dt><dd>En producción</dd></div>
+                        </dl>
+                    </div>
+                    <div class="relative pt-4 no-print">
+                        <div class="pay-card" aria-label="Ilustración: resumen del primer cobro real en la web">
+                            <div class="pay-top"><span>Primer cobro real · 20 nov 2026</span><em>APROBADO</em></div>
+                            <div class="pay-rows">
+                                <div><span>Pasarela</span><b>Banco General · CyberSource</b></div>
+                                <div><span>Verificación</span><b class="good">3D Secure 2.2 ✓</b></div>
+                                <div><span>Subtotal</span><b>US$ 3.00</b></div>
+                                <div><span>ITBMS (7%) en la línea</span><b>US$ 0.21</b></div>
+                            </div>
+                            <div class="pay-total"><span>Total cobrado</span><b>US$ 3.21</b></div>
+                        </div>
+                        <div class="pay-toast"><span class="dot wa-pulse"></span><span><b>Certificación aprobada</b><br><span style="color:#64748b">Banco General · 19 nov 2026</span></span></div>
+                    </div>
+                </div>
+                <p class="no-print text-[11px] text-blue-200/80 mt-5 md:text-right">La tarjeta muestra el cobro de prueba en producción que pidió el banco; se reembolsa cuando el banco lo valide.</p>
+                <nav class="toc mt-8 pt-6 border-t border-white/15 no-print" aria-label="Contenido del informe">
+                    <p class="text-[11px] font-semibold uppercase tracking-[.14em] text-blue-200/80 mb-3">En este informe</p>
+                    <ul class="flex flex-wrap gap-2"><li><a href="#resultado"><i style="background:#22c55e"></i>Resultado</a></li><li><a href="#trabajo"><i style="background:#2563eb"></i>Lo que hicimos</a></li><li><a href="#certificacion"><i style="background:#7c3aed"></i>Certificación</a></li><li><a href="#configuracion"><i style="background:#0f766e"></i>Cómo quedó</a></li><li><a href="#pendientes"><i style="background:#f59e0b"></i>Para cerrar</a></li><li><a href="#recomendaciones"><i style="background:#e11d48"></i>Recomendaciones</a></li></ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="px-7 sm:px-10 py-12">
+
+            <!-- ============ RESULTADO ============ -->
+            <section id="resultado" class="mb-14">
+                <div class="reveal text-center max-w-2xl mx-auto mb-7">
+                    <h2 class="display text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Certificado y <span class="gradient-text">cobrando de verdad</span></h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Banco General revisa cada integración antes de entregar las llaves de producción. Nos pidió doce escenarios de 3D Secure y una prueba con el impuesto desglosado. Todo salió aprobado.</p>
+                </div>
+                <div class="reveal obj">
+                    <div><em>Escenarios 3DS</em><b class="green">12<small>/12</small></b><p>Seis con Visa y seis con Mastercard, aprobados por el banco.</p></div>
+                    <div><em>ITBMS</em><b class="green">OK</b><p>El impuesto viaja desglosado en cada línea de la compra.</p></div>
+                    <div><em>Cobro real</em><b class="green">00</b><p>Código de aprobación del primer pago en producción.</p></div>
+                    <div><em>Tarjetas</em><b>2</b><p>Visa y Mastercard, las dos que certificó el banco.</p></div>
+                </div>
+            </section>
+
+            <!-- ============ TRABAJO ============ -->
+            <section id="trabajo" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Lo que hicimos</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Del botón a la certificación</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <div class="reveal pasos">
+                    <div><b>Pasarela del banco</b>Instalamos y configuramos el plugin oficial de Visa Acceptance Solutions (CyberSource) sobre WooCommerce, con las llaves que entregó Banco General.<small>Integración</small></div>
+                    <div><b>Formulario seguro</b>Usamos el formulario de pago alojado por CyberSource (Unified Checkout). Los datos de la tarjeta van directo al banco y nunca pasan por el servidor de la web.<small>Seguridad</small></div>
+                    <div><b>3D Secure 2.2</b>Activamos la verificación del banco emisor: según el riesgo, el cliente confirma con un código o el pago pasa sin interrupción.<small>Antifraude</small></div>
+                    <div><b>ITBMS desglosado</b>Ajustamos WooCommerce para que el impuesto se calcule con la dirección de la empresa y viaje línea por línea, como pide el banco.<small>Impuestos</small></div>
+                    <div><b>Certificación</b>Corrimos los doce escenarios del banco y la prueba de ITBMS, con la matriz completa de identificadores y tramas que solicitaron.<small>Banco General</small></div>
+                    <div><b>Paso a producción</b>Configuramos las llaves de producción, dejamos solo Visa y Mastercard y verificamos un cobro real de US$ 3.21 con el ITBMS en la línea.<small>20 nov 2026</small></div>
+                </div>
+                <div class="reveal nota mt-5"><b class="text-slate-900">También desactivamos PagueloFácil.</b> El cobro con tarjeta ahora va por la pasarela del banco, así que sus clientes ven una sola opción de pago clara al reservar.</div>
+            </section>
+
+            <!-- ============ CERTIFICACIÓN ============ -->
+            <section id="certificacion" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Certificación</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Los escenarios que pidió el banco</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <p class="reveal text-sm text-slate-600 leading-relaxed max-w-2xl mb-5">Cada escenario simula una situación real con tarjetas de prueba: un cliente verificado, uno rechazado por su banco, un emisor que no responde... La web tiene que comportarse bien en todos. Se corrió cada uno con Visa y con Mastercard.</p>
+                <div class="reveal"><div class="bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto mb-5"><table class="tbl tbl-stack"><thead><tr><th>Escenario</th><th>Qué simula</th><th>Resultado</th></tr></thead><tbody>
+                    <tr><td><b>2.1</b></td><td>Cliente verificado sin pedirle código.</td><td><span class="act on">Cobro aprobado</span></td></tr>
+                    <tr><td><b>2.2</b></td><td>El banco emisor rechaza la verificación.</td><td><span class="act on">Cobro bloqueado</span></td></tr>
+                    <tr><td><b>2.3</b></td><td>El emisor no participa y la red responde por él.</td><td><span class="act on">Cobro aprobado</span></td></tr>
+                    <tr><td><b>2.6</b></td><td>La verificación no está disponible.</td><td><span class="act on">Manejado</span></td></tr>
+                    <tr><td><b>2.9</b></td><td>Se pide el código al cliente y lo confirma.</td><td><span class="act on">Cobro aprobado</span></td></tr>
+                    <tr><td><b>2.10</b></td><td>Se pide el código y la verificación falla.</td><td><span class="act on">Cobro bloqueado</span></td></tr>
+                    <tr><td><b>ITBMS</b></td><td>Compra con impuesto desglosado por línea.</td><td><span class="act on">Aprobado</span></td></tr>
+                </tbody></table></div></div>
+                <div class="reveal nota"><b class="text-slate-900">Por qué importa el 3D Secure:</b> cuando un pago pasa la verificación, el riesgo de un contracargo por fraude («yo no hice esta compra») deja de recaer en el comercio y lo asume el banco emisor de la tarjeta.</div>
+            </section>
+
+            <!-- ============ CONFIGURACIÓN ============ -->
+            <section id="configuracion" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Cómo quedó</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">La configuración en producción</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <div class="reveal"><div class="bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto"><table class="tbl tbl-stack"><thead><tr><th>Elemento</th><th>Cómo quedó</th></tr></thead><tbody>
+                    <tr><td><b>Pasarela</b></td><td>Banco General vía CyberSource, ambiente de producción.<small>Las llaves están guardadas en WordPress y no se comparten por correo ni chat.</small></td></tr>
+                    <tr><td><b>Tarjetas aceptadas</b></td><td>Visa y Mastercard.</td></tr>
+                    <tr><td><b>Verificación</b></td><td>3D Secure 2.2 activo en todos los pagos.</td></tr>
+                    <tr><td><b>Tipo de cobro</b></td><td>Cobro inmediato: el dinero se captura en el momento del pago.</td></tr>
+                    <tr><td><b>Servicios a la venta</b></td><td>Consulta de 60 minutos (US$ 100) y consulta de 30 minutos (US$ 50).<small>Hoy se cobran sin ITBMS; ver recomendaciones.</small></td></tr>
+                    <tr><td><b>Datos de tarjeta</b></td><td>Los captura el formulario de CyberSource. La web no los ve ni los guarda.</td></tr>
+                </tbody></table></div></div>
+            </section>
+
+            <!-- ============ PENDIENTES ============ -->
+            <section id="pendientes" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Para cerrar</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Lo que falta, y quién lo hace</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <div class="reveal"><div class="bg-white/70 rounded-2xl border border-slate-100 overflow-x-auto"><table class="tbl tbl-stack"><thead><tr><th>Tarea</th><th>Quién</th><th>Estado</th></tr></thead><tbody>
+                    <tr><td><b>Validación final del banco</b><small>Banco General revisa el cobro real de US$ 3.21.</small></td><td>Banco General</td><td><span class="act pend">En espera</span></td></tr>
+                    <tr><td><b>Reembolso del cobro de prueba</b><small>Se hace desde la orden en WooCommerce cuando el banco lo valide.</small></td><td>Elemento Web</td><td><span class="act pend">Tras la validación</span></td></tr>
+                    <tr><td><b>Limpieza de pruebas</b><small>Cancelar las órdenes de prueba, retirar el producto y el impuesto de prueba y apagar el registro técnico.</small></td><td>Elemento Web</td><td><span class="act pend">Tras la validación</span></td></tr>
+                    <tr><td><b>Decidir el ITBMS de las consultas</b><small>Confirmar con su contador si las consultas llevan el 7 %.</small></td><td>Legal Compass</td><td><span class="act rev">Por decidir</span></td></tr>
+                </tbody></table></div></div>
+            </section>
+
+            <!-- ============ RECOMENDACIONES ============ -->
+            <section id="recomendaciones" class="mb-14">
+                <div class="reveal sec-head mb-6">
+                    <div class="mb-3"><span class="section-tag text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Recomendaciones</span></div>
+                    <div class="flex items-center gap-3"><h2 class="display text-2xl font-bold text-slate-900">Para que el cobro siga funcionando bien</h2><div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent min-w-[2rem]"></div></div>
+                </div>
+                <div class="reveal recos">
+                    <div><em class="p-ya">Ahora</em><b>Definir el ITBMS de las consultas</b>Hoy las consultas se cobran sin impuesto. Si su contador confirma que llevan el 7 %, lo activamos en minutos y el banco lo recibirá desglosado, como en la certificación. Conviene decidirlo antes de que entren más pagos.</div>
+                    <div><em class="p-ya">Ahora</em><b>Políticas visibles en la web</b>Visa y Mastercard piden que el comercio publique sus políticas de cancelación, reembolso y reprogramación, y que el cliente las acepte al pagar. Además de cumplir, reduce los contracargos.</div>
+                    <div><em class="p-mes">Este mes</em><b>Retirar los plugins de pago que sobran</b>PagueloFácil quedó desactivado y WooPayments no funciona en Panamá. Retirarlos evita conflictos en el checkout y cierra puertas de seguridad.</div>
+                    <div><em class="p-mes">Este mes</em><b>Conciliar los pagos cada semana</b>Comparar las órdenes pagadas de WooCommerce con el estado de cuenta del comercio en Banco General. Así se detecta a tiempo cualquier reserva sin pago o pago sin reserva.</div>
+                    <div><em class="p-mes">Este mes</em><b>Actualizar con cuidado</b>WordPress y varios plugins tienen actualizaciones pendientes. El plugin de pago no debe actualizarse sin hacer después una compra de prueba: un cambio de versión puede afectar el cobro. Lo ideal es actualizar con respaldo previo.</div>
+                    <div><em class="p-mes">Este mes</em><b>Seguridad del panel</b>Una web que cobra debe tener verificación en dos pasos para todos los administradores y solo las cuentas necesarias. Quien tenga acceso al panel puede ver órdenes y datos de clientes.</div>
+                    <div><em class="p-luego">Próximo paso</em><b>Velocidad en el celular</b>La web tarda más de 12 segundos en mostrar su contenido en el celular, y una página lenta hace que se abandonen reservas antes de llegar al pago. Ya enviamos la propuesta de optimización (EW-LGC-2026-01).</div>
+                    <div><em class="p-luego">Próximo paso</em><b>Mantenimiento mensual</b>Respaldos, actualizaciones probadas con una compra de prueba, monitoreo de caídas y revisión del cobro cada mes. Es la forma más simple de que el botón de pago no falle en silencio.</div>
+                </div>
+            </section>
+
+            <!-- ============ CTA ============ -->
+            <div class="reveal avoid text-center rounded-2xl p-8 sm:p-10 relative overflow-hidden" style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #e0e7ff;">
+                <h3 class="display text-2xl font-bold text-slate-900 mb-2">¿Dudas sobre el cobro o los próximos pasos?</h3>
+                <p class="text-sm text-slate-600 max-w-lg mx-auto mb-6">Escríbanos por WhatsApp o por correo. Si deciden el ITBMS de las consultas, avísennos y lo dejamos activo el mismo día.</p>
+                <div class="flex flex-col sm:flex-row flex-wrap gap-3 justify-center no-print">
+                    <a href="https://wa.me/50761903007?text=Hola%2C%20le%C3%AD%20el%20informe%20del%20pago%20con%20tarjeta%20de%20legalcompass.co." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl px-6 py-3.5 text-sm transition shadow-lg shadow-green-500/30">Escribir por WhatsApp</a>
+                    <a href="mailto:info@elementoweb.com?subject=Informe%20EW-LGC-2026-02%3A%20pago%20con%20tarjeta%20de%20legalcompass.co" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 font-semibold rounded-xl px-6 py-3.5 text-sm transition border border-slate-200">Responder por correo</a>
+                </div>
+                <p class="hidden print:block text-sm text-slate-600 mt-2">WhatsApp +507 6190-3007 · info@elementoweb.com</p>
+            </div>
+            <div class="reveal avoid text-[11px] text-slate-500 leading-relaxed border-t border-slate-200 pt-5 mt-10"><strong class="text-slate-600">Fuentes.</strong> Registros de la pasarela en WooCommerce y respuestas de CyberSource entre el 17 y el 20 de noviembre de 2026. Aprobación de la certificación comunicada por Banco General el 19 de noviembre de 2026. Los escenarios de prueba se corrieron con tarjetas de prueba en el ambiente de pruebas del banco, sin dinero real; el único cobro real es el de US$ 3.21 del 20 de noviembre.</div>
+        </div>
+
+        <!-- ============ FOOTER ============ -->
+        <footer class="px-7 sm:px-10 py-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0b1220,#122043);">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative z-10">
+                <div>
+                    <p class="display font-bold">elementoweb<span class="text-violet-300">.com</span></p>
+                    <p class="text-[11px] text-blue-200/70">Documento confidencial · Informe para Legal Compass · EW-LGC-2026-02</p>
+                </div>
+                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-blue-100">
+                    <a href="mailto:info@elementoweb.com" class="hover:text-white transition">info@elementoweb.com</a>
+                    <a href="https://wa.me/50761903007" target="_blank" rel="noopener" class="hover:text-white transition whitespace-nowrap">+507 6190-3007</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <a href="https://wa.me/50761903007?text=Hola%2C%20tengo%20una%20consulta%20sobre%20el%20informe%20del%20pago%20con%20tarjeta%20de%20legalcompass.co." target="_blank" rel="noopener" class="wa-float no-print fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 grid place-items-center wa-pulse" aria-label="Escríbanos por WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.46-.15-.65.15-.19.28-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.23-.45-2.35-1.44-.87-.78-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.78 1.17 2.97.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.25-1.24A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+    </a>
+
+    <script>
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = Math.min(i * 40, 200) + 'ms';
+            io.observe(el);
+        });
+    </script>
+</body>
+</html>

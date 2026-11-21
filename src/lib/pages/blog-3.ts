@@ -417,6 +417,7 @@ export const blog3: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/seo-para-tiendas-online-en-panama', label: 'SEO para tiendas online' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y Posicionamiento Web en Panamá' },
           { slug: 'blog/que-es-el-seo-local-y-google-maps-panama', label: 'Qué es el SEO local y Google Maps' },
           { slug: 'blog/como-aparecer-primero-en-google-en-panama', label: 'Cómo aparecer primero en Google' },

@@ -9,6 +9,14 @@ import { HERO_SLUGS, OG_SLUGS } from './heroes';
    imagen. Las páginas de IA creativa empiezan por «Foto hecha con IA» (lo exige scripts/marketing-ia.test.mjs). */
 export const HERO_ALTS: Record<string, string> = {
   /* D61 (23-oct-2026): portadas de las 15 páginas de pregunta y de los 3 servicios nuevos. */
+  'blog/cuanto-cuesta-una-pagina-web-wordpress-en-panama': 'Tres losas redondeadas apiladas con una etiqueta de precio colgando, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/que-hace-una-agencia-web-y-cuando-contratarla': 'Caja de herramientas abierta con un cursor de flecha dentro, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/cuanto-cuesta-google-ads-en-panama': 'Lupa de búsqueda apoyada sobre una pila de monedas, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/alternativas-a-yappy-para-cobrar-en-panama': 'Tarjeta de crédito, celular y moneda dispuestos en abanico, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/seo-para-tiendas-online-en-panama': 'Bolsa de compras con una lupa apoyada encima, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/cuanto-cuesta-administrar-instagram-en-panama': 'Cámara instantánea con un calendario pequeño apoyado al lado, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/marketing-digital-para-dentistas-en-panama': 'Diente estilizado junto a un megáfono pequeño, en cromo plateado, render 3D sobre fondo gris claro',
+  'blog/cuanto-cuesta-email-marketing-en-panama': 'Sobre de carta con una etiqueta de precio colgando, en cromo plateado, render 3D sobre fondo gris claro',
   'blog/cuanto-cuesta-un-chatbot-de-whatsapp-en-panama': 'Burbuja de chat sobre una pila de monedas, en cromo plateado, render 3D sobre fondo gris claro',
   'blog/whatsapp-business-o-api-cual-necesita-tu-negocio': 'Dos burbujas de chat, una pequeña y otra grande conectada a un cable, en cromo plateado, render 3D sobre fondo gris claro',
   'blog/cuanto-cobra-meta-por-mensaje-de-whatsapp-en-panama': 'Avión de papel con una etiqueta de precio colgando, en cromo plateado, render 3D sobre fondo gris claro',

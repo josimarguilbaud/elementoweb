@@ -299,6 +299,7 @@ export const blog6: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/que-hace-una-agencia-web-y-cuando-contratarla', label: 'Qué hace una agencia web' },
           { slug: 'diseno-web-panama', label: 'Diseño Web en Panamá' },
           { slug: 'blog/como-aparecer-primero-en-google-en-panama', label: 'Aparecer primero en Google' },
           { slug: 'blog/cuanto-cuesta-diseno-web-panama', label: 'Cuánto cuesta una web' },

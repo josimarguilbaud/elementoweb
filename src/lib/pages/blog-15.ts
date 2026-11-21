@@ -87,6 +87,7 @@ export const blog15: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/marketing-digital-para-dentistas-en-panama', label: 'Marketing digital para dentistas' },
           { slug: 'industrias/diseno-web-dentistas-odontologia-panama', label: 'Diseño web para dentistas y odontología' },
           { slug: 'funcionalidades/sistemas-reservas-citas-online-panama', label: 'Sistemas de reservas y citas online' },
           { slug: 'crecimiento/seo-posicionamiento-web-panama', label: 'SEO y posicionamiento web' },

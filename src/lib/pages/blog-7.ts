@@ -404,6 +404,7 @@ export const blog7: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/seo-para-tiendas-online-en-panama', label: 'SEO para tiendas online' },
           { slug: 'blog/como-integrar-yappy-tu-tienda-online', label: 'Cómo integrar Yappy' },
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },

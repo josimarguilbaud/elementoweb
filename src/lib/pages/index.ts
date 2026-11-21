@@ -63,6 +63,8 @@ import { blog39 } from './blog-39';
 import { blog40 } from './blog-40';
 import { blog41 } from './blog-41';
 import { blog42 } from './blog-42';
+import { blog43 } from './blog-43';
+import { blog44 } from './blog-44';
 import { preguntasWhatsapp } from './preguntas-whatsapp';
 import { preguntasIa } from './preguntas-ia';
 import { preguntasN8n } from './preguntas-n8n';
@@ -131,6 +133,8 @@ export const pages: PageData[] = [
   ...blog40,
   ...blog41,
   ...blog42,
+  ...blog43,
+  ...blog44,
   /* Páginas de pregunta de WhatsApp, IA y n8n (fase 2 de la estrategia SEO y GEO, 23-oct-2026). */
   ...preguntasWhatsapp,
   ...preguntasIa,

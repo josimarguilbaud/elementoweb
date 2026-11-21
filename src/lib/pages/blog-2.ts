@@ -83,6 +83,7 @@ export const blog2: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/alternativas-a-yappy-para-cobrar-en-panama', label: 'Alternativas a Yappy para cobrar' },
           { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Integración de Yappy y pasarelas de pago' },
           { slug: 'blog/metodos-de-pago-online-en-panama', label: 'Métodos de pago online en Panamá' },
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online en Panamá' },
@@ -495,6 +496,7 @@ export const blog2: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/alternativas-a-yappy-para-cobrar-en-panama', label: 'Alternativas a Yappy para cobrar' },
           { slug: 'funcionalidades/integracion-yappy-pasarelas-pago-panama', label: 'Integración de Yappy y pasarelas de pago' },
           { slug: 'blog/como-integrar-yappy-tu-tienda-online', label: 'Cómo integrar Yappy en tu tienda' },
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online en Panamá' },

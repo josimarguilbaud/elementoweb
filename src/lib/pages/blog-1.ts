@@ -117,6 +117,7 @@ export const blog1: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/cuanto-cuesta-una-pagina-web-wordpress-en-panama', label: 'Cuánto cuesta una web en WordPress' },
           { slug: 'blog/mejor-plataforma-para-crear-una-pagina-web', label: 'Wix, WordPress o a medida: cuál conviene' },
           { slug: 'blog/como-elegir-agencia-diseno-web-panama', label: 'Cómo elegir una agencia de diseño web' },
           { slug: 'blog/cuanto-tiempo-toma-hacer-una-pagina-web', label: '¿Cuánto tiempo toma hacer una web?' },
@@ -378,6 +379,7 @@ export const blog1: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/cuanto-cuesta-una-pagina-web-wordpress-en-panama', label: 'Cuánto cuesta una web en WordPress' },
           { slug: 'blog/mejor-plataforma-para-crear-una-pagina-web', label: 'Wix, WordPress o a medida: cuál conviene' },
           { slug: 'blog/como-crear-una-tienda-online-en-panama', label: 'Cómo crear una tienda online en Panamá' },
           { slug: 'blog/shopify-vs-woocommerce-panama', label: 'Shopify vs WooCommerce en Panamá' },
@@ -496,6 +498,7 @@ export const blog1: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/que-hace-una-agencia-web-y-cuando-contratarla', label: 'Qué hace una agencia web' },
           { slug: 'blog/mejor-plataforma-para-crear-una-pagina-web', label: 'Wix, WordPress o a medida: cuál conviene' },
           { slug: 'blog/cuanto-cuesta-diseno-web-panama', label: '¿Cuánto cuesta una página web?' },
           { slug: 'blog/errores-comunes-diseno-web-empresas', label: '7 errores de diseño web' },

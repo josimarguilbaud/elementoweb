@@ -100,6 +100,7 @@ export const blog4: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/cuanto-cuesta-google-ads-en-panama', label: 'Cuánto cuesta Google Ads en Panamá' },
           { slug: 'blog/cuanto-invertir-en-publicidad-digital-en-panama', label: 'Cuánto invertir en publicidad digital en Panamá' },
           { slug: 'marketing/google-ads-panama', label: 'Google Ads en Panamá' },
           { slug: 'marketing/facebook-instagram-ads-panama', label: 'Facebook e Instagram Ads' },
@@ -207,6 +208,7 @@ export const blog4: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/cuanto-cuesta-google-ads-en-panama', label: 'Cuánto cuesta Google Ads en Panamá' },
           { slug: 'blog/google-ads-vs-facebook-ads-en-panama', label: 'Google Ads vs Facebook Ads en Panamá' },
           { slug: 'blog/como-medir-los-resultados-de-tu-pagina-web', label: 'Cómo medir los resultados de tu web' },
           { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing pages de alta conversión' },
@@ -415,6 +417,7 @@ export const blog4: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/cuanto-cuesta-email-marketing-en-panama', label: 'Cuánto cuesta el email marketing' },
           { slug: 'marketing/email-marketing-panama', label: 'Email marketing en Panamá' },
           { slug: 'marketing/automatizaciones-n8n-panama', label: 'Automatizaciones con n8n' },
           { slug: 'servicios/tiendas-online-ecommerce-panama', label: 'Tiendas online y e-commerce' },
@@ -516,6 +519,7 @@ export const blog4: PageData[] = [
       {
         type: 'related',
         items: [
+          { slug: 'blog/cuanto-cuesta-administrar-instagram-en-panama', label: 'Cuánto cuesta administrar Instagram' },
           { slug: 'marketing/contenido-redes-sociales-panama', label: 'Contenido para redes sociales' },
           { slug: 'marketing/facebook-instagram-ads-panama', label: 'Facebook e Instagram Ads' },
           { slug: 'servicios/landing-pages-alta-conversion-panama', label: 'Landing pages de alta conversión' },

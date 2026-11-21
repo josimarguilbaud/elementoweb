@@ -15,6 +15,14 @@
   "robots": "index, follow, max-image-preview:large",
   "schema": "537ca8d219"
  },
+ "/blog/alternativas-a-yappy-para-cobrar-en-panama/": {
+  "title": "Alternativas a Yappy en Panamá para cobrar en tu negocio",
+  "description": "Tarjeta con CyberSource, PagueloFacil, Tilopay, PayPal, ACH y otras billeteras: las alternativas a Yappy en Panamá y por qué conviene sumarlas, no reemplazar.",
+  "h1": "Alternativas a Yappy para cobrar en Panamá: cuáles hay y cuándo usar cada una",
+  "canonical": "https://elementoweb.com/blog/alternativas-a-yappy-para-cobrar-en-panama/",
+  "robots": "index, follow, max-image-preview:large",
+  "schema": "fe0cec4c53"
+ },
  "/blog/automatizaciones-con-n8n-para-pymes/": {
   "title": "Automatizaciones con n8n para pymes: ahorra horas cada semana",
   "description": "Qué es n8n y cómo automatizar tareas repetitivas sin programar: del formulario al CRM y a WhatsApp, sin copiar datos a mano.",
@@ -191,6 +199,14 @@
   "robots": "index, follow, max-image-preview:large",
   "schema": "f95050734d"
  },
+ "/blog/cuanto-cuesta-administrar-instagram-en-panama/": {
+  "title": "Administración de Instagram en Panamá: cuánto cuesta",
+  "description": "Qué incluye la administración de Instagram en Panamá, qué no (la pauta va aparte a Meta), cómo se cobra y qué revisar al comparar dos propuestas.",
+  "h1": "Administración de Instagram en Panamá: cuánto cuesta y qué debe incluir",
+  "canonical": "https://elementoweb.com/blog/cuanto-cuesta-administrar-instagram-en-panama/",
+  "robots": "index, follow, max-image-preview:large",
+  "schema": "8ad2e35894"
+ },
  "/blog/cuanto-cuesta-automatizar-procesos-con-n8n-en-panama/": {
   "title": "¿Cuánto cuesta automatizar procesos con n8n en Panamá?",
   "description": "Qué pagas al automatizar con n8n en Panamá: el montaje de cada flujo, la plataforma (nube o servidor propio), las herramientas conectadas y el mantenimiento.",
@@ -214,6 +230,22 @@
   "canonical": "https://elementoweb.com/blog/cuanto-cuesta-diseno-web-panama/",
   "robots": "index, follow, max-image-preview:large",
   "schema": "394c6626e7"
+ },
+ "/blog/cuanto-cuesta-email-marketing-en-panama/": {
+  "title": "Email marketing en Panamá: cuánto cuesta y qué incluye",
+  "description": "Cuánto cuesta el email marketing en Panamá: la herramienta (Brevo gratis hasta 300 correos al día) y la gestión aparte. Listas, SPF, DKIM y qué medir.",
+  "h1": "Email marketing en Panamá: cuánto cuesta la herramienta, cuánto la gestión y qué debe incluir",
+  "canonical": "https://elementoweb.com/blog/cuanto-cuesta-email-marketing-en-panama/",
+  "robots": "index, follow, max-image-preview:large",
+  "schema": "398a8bb251"
+ },
+ "/blog/cuanto-cuesta-google-ads-en-panama/": {
+  "title": "Cuánto cuesta Google Ads en Panamá: inversión y gestión",
+  "description": "Google Ads no tiene gasto mínimo: tú fijas el presupuesto diario. Cómo funciona la subasta, qué se le paga a Google y qué a la agencia, y qué medir.",
+  "h1": "Cuánto cuesta Google Ads en Panamá: lo que pagas a Google y lo que pagas a la agencia",
+  "canonical": "https://elementoweb.com/blog/cuanto-cuesta-google-ads-en-panama/",
+  "robots": "index, follow, max-image-preview:large",
+  "schema": "ba23d09d81"
  },
  "/blog/cuanto-cuesta-implementar-inteligencia-artificial-en-una-empresa/": {
   "title": "¿Cuánto cuesta implementar IA en una empresa en Panamá?",
@@ -270,6 +302,14 @@
   "canonical": "https://elementoweb.com/blog/cuanto-cuesta-una-landing-page-panama/",
   "robots": "index, follow, max-image-preview:large",
   "schema": "d46b89915a"
+ },
+ "/blog/cuanto-cuesta-una-pagina-web-wordpress-en-panama/": {
+  "title": "Cuánto cuesta una página web WordPress en Panamá en 2026",
+  "description": "Una web WordPress en Panamá parte de US$ 1,250 con tema propio. Qué sube o baja el precio, cuánto cuestan hosting y mantenimiento y cómo elegir empresa.",
+  "h1": "Cuánto cuesta una página web en WordPress en Panamá y cómo elegir quién la hace",
+  "canonical": "https://elementoweb.com/blog/cuanto-cuesta-una-pagina-web-wordpress-en-panama/",
+  "robots": "index, follow, max-image-preview:large",
+  "schema": "ddb03260d4"
  },
  "/blog/cuanto-invertir-en-publicidad-digital-en-panama/": {
   "title": "¿Cuánto invertir en publicidad digital en Panamá?",
@@ -647,6 +687,14 @@
   "robots": "index, follow, max-image-preview:large",
   "schema": "91a5f64363"
  },
+ "/blog/marketing-digital-para-dentistas-en-panama/": {
+  "title": "Marketing digital para dentistas en Panamá: guía 2026",
+  "description": "Estrategia digital dental en Panamá: ficha de Google, reseñas, web con citas, WhatsApp, contenido por tratamiento y pauta local, sin promesas clínicas.",
+  "h1": "Marketing digital para dentistas en Panamá: la estrategia completa para llenar la agenda",
+  "canonical": "https://elementoweb.com/blog/marketing-digital-para-dentistas-en-panama/",
+  "robots": "index, follow, max-image-preview:large",
+  "schema": "1e9de63f39"
+ },
  "/blog/medir-leads-whatsapp-ga4-crm/": {
   "title": "Medir leads de WhatsApp con GA4 y CRM: guía práctica",
   "description": "Cómo medir consultas de WhatsApp y formulario: qué eventos registrar en GA4, qué guardar en el CRM y por qué un clic no es una venta.",
@@ -735,6 +783,14 @@
   "robots": "index, follow, max-image-preview:large",
   "schema": "a41c0a23fa"
  },
+ "/blog/que-hace-una-agencia-web-y-cuando-contratarla/": {
+  "title": "Agencia web: qué hace y cuándo contratarla en Panamá",
+  "description": "Qué hace una agencia web, qué no hace y en qué se diferencia de un freelancer o de Wix. Cuándo te conviene contratarla y cuánto cuesta en Panamá.",
+  "h1": "Qué hace una agencia web y cuándo te conviene contratarla",
+  "canonical": "https://elementoweb.com/blog/que-hace-una-agencia-web-y-cuando-contratarla/",
+  "robots": "index, follow, max-image-preview:large",
+  "schema": "17ab382553"
+ },
  "/blog/quien-hace-chatbots-de-whatsapp-con-ia-en-panama/": {
   "title": "¿Quién hace chatbots de WhatsApp con IA en Panamá?",
   "description": "Qué tipos de proveedor hacen chatbots de WhatsApp con IA en Panamá, qué criterios usar para elegir, qué preguntar antes de firmar y dónde encaja Elemento Web.",
@@ -758,6 +814,14 @@
   "canonical": "https://elementoweb.com/blog/seo-para-pymes-en-panama-guia/",
   "robots": "index, follow, max-image-preview:large",
   "schema": "375fb01ca7"
+ },
+ "/blog/seo-para-tiendas-online-en-panama/": {
+  "title": "SEO para ecommerce en Panamá: guía para tiendas online",
+  "description": "Estrategias de SEO para ecommerce en Panamá: fichas únicas, categorías que posicionan, datos Product, filtros que duplican URL y cómo te recomienda la IA.",
+  "h1": "SEO para ecommerce en Panamá: estrategias para que tu tienda online aparezca en Google y en la IA",
+  "canonical": "https://elementoweb.com/blog/seo-para-tiendas-online-en-panama/",
+  "robots": "index, follow, max-image-preview:large",
+  "schema": "84662f94ae"
  },
  "/blog/shopify-vs-woocommerce-panama/": {
   "title": "Shopify vs WooCommerce en Panamá: cuál te conviene",

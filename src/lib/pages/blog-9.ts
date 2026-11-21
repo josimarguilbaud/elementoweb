@@ -7,8 +7,8 @@ export const blog9: PageData[] = [
   {
     slug: 'blog/diseno-web-para-clinicas-salud-panama',
     parent: { slug: 'blog', label: 'Blog' },
-    title: 'Diseño web para clínicas y centros de salud en Panamá',
-    description: 'Qué debe tener la web de una clínica en Panamá: citas online, especialidades claras, confianza real y cuándo no conviene invertir aún.',
+    title: 'Qué debe tener la web de una clínica en Panamá: guía 2026',
+    description: 'Guía para la web de una clínica o consultorio en Panamá: citas online, especialidades claras, confianza real y cuándo no conviene invertir aún.',
     h1: 'Diseño web para clínicas y centros de salud: qué de verdad importa',
     breadcrumb: 'Diseño web para clínicas',
     category: 'Diseño web',
@@ -47,7 +47,7 @@ export const blog9: PageData[] = [
         type: 'prose',
         h2: 'Diseño web para clínicas: una página por especialidad',
         paragraphs: [
-          'Nadie busca en Google "clínica". Busca "pediatra en San Francisco", "cardiólogo cerca de Vía España" o "ginecólogo que atienda los sábados". Cada especialidad tiene su propio paciente, su urgencia y su momento de búsqueda; es la lógica de nuestra <a href="/industrias/diseno-web-clinicas-salud-panama/">página de diseño web para clínicas y salud</a>. Una cuadrícula con los ocho médicos de la clínica intenta responder a todos y no aparece para ninguna búsqueda concreta.',
+          'Nadie busca en Google "clínica". Busca "pediatra en San Francisco", "cardiólogo cerca de Vía España" o "ginecólogo que atienda los sábados". Cada especialidad tiene su propio paciente, su urgencia y su momento de búsqueda; es la lógica de nuestra <a href="/industrias/diseno-web-clinicas-salud-panama/">página de diseño web para clínicas y médicos</a>. Una cuadrícula con los ocho médicos de la clínica intenta responder a todos y no aparece para ninguna búsqueda concreta.',
           'Una página por especialidad explica qué se atiende, qué señales llevan a consultar, cómo es la primera cita y con qué seguros se trabaja, y de paso ahorra a recepción buena parte de las llamadas de "¿ustedes atienden esto?". Nadie puede prometer el primer lugar en una búsqueda competida, pero sin esa página propia la clínica ni siquiera compite.',
         ],
       },

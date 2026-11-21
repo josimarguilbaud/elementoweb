@@ -761,8 +761,8 @@ export const industriasPages: PageData[] = [
   {
     slug: 'industrias/diseno-web-clinicas-salud-panama',
     parent,
-    title: 'Diseño Web para Clínicas y Salud en Panamá | Citas Online',
-    description: 'Diseño web para clínicas, consultorios y profesionales de la salud en Panamá: citas online, contenido confiable por especialidad y privacidad.',
+    title: 'Diseño Web para Clínicas y Médicos en Panamá | Citas Online',
+    description: 'Diseño web para clínicas, consultorios y médicos en Panamá: citas online por WhatsApp, contenido confiable por especialidad y privacidad del paciente.',
     h1: 'Diseño web para clínicas y salud',
     breadcrumb: 'Clínicas y Salud',
     heroImage: { src: 'https://picsum.photos/seed/clinica-salud-panama/1200/675', alt: 'Sala de espera moderna de una clínica de salud' },

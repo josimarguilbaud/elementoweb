@@ -398,8 +398,8 @@ export const blog1: PageData[] = [
   {
     slug: 'blog/como-elegir-agencia-diseno-web-panama',
     parent: { slug: 'blog', label: 'Blog' },
-    title: 'Cómo elegir una agencia de diseño web en Panamá',
-    description: 'Señales de una buena agencia de diseño web en Panamá, qué preguntar antes de firmar y las banderas rojas que anuncian problemas.',
+    title: 'Cómo elegir una agencia de diseño web en Panamá (checklist 2026)',
+    description: 'Checklist para elegir agencia de diseño web en Panamá: qué debe entregarte, qué preguntar antes de firmar y las banderas rojas que anuncian problemas.',
     h1: 'Cómo elegir una agencia de diseño web en Panamá sin arrepentirte',
     breadcrumb: 'Elegir agencia web',
     category: 'Diseño web',

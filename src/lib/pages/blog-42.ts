@@ -10,7 +10,7 @@ export const blog42: PageData[] = [
     slug: 'blog/como-elegir-agencia-de-marketing-digital-panama',
     parent: { slug: 'blog', label: 'Blog' },
     title: 'Cómo elegir una agencia de marketing digital en Panamá',
-    description: 'Qué debe hacer una agencia de marketing digital en Panamá en 2026, cómo elegirla, banderas rojas, preguntas para la primera reunión y cómo se cobra.',
+    description: 'Siete criterios, ocho banderas rojas y las preguntas para la primera reunión: cómo elegir una agencia de marketing digital en Panamá y cómo se cobra.',
     h1: 'Cómo elegir una agencia de marketing digital en Panamá en 2026',
     breadcrumb: 'Elegir agencia de marketing digital',
     category: 'Marketing',

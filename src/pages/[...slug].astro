@@ -10,6 +10,7 @@ import { pageJsonLd, articleJsonLd, faqNode } from '../lib/schema';
 import { heroFor, ogFor } from '../lib/img';
 import formulario from '../data/formulario.json';
 import { pageTypeOf } from '../lib/pages/kind';
+import { cierreDe } from '../lib/cierre';
 /* La hoja del molde Kredit va en línea y solo en las páginas v2: una hoja importada aquí la bajarían las ~180
    páginas de esta ruta (Astro agrupa el CSS por ruta, no por componente renderizado). */
 import moldeCss from '../styles/molde-kredit.css?inline';
@@ -54,13 +55,18 @@ const CHAIN_SECTIONS = ['servicios', 'crecimiento', 'tecnologias', 'funcionalida
 const showNext = CHAIN_SECTIONS.includes(page.slug.split('/')[0]);
 /* D61: la primera tarjeta lleva a la etapa siguiente del recorrido (atraer → atender → automatizar → paquetes). */
 const siguiente = SIGUIENTE[etapaDe(page.slug)];
+/* Plan cta-blog-2026-11 (fase A): cierre del pie según el tema de la página y, en el blog, un CTA a mitad del artículo
+   (después del segundo bloque) que lleva a la página de servicio del tema y al diagnóstico sin costo. */
+const cierre = cierreDe(page);
+const medio = cierre ? cierre.medio : undefined;
+const corte = medio ? Math.min(2, page.blocks.length) : page.blocks.length;
 const fechaLarga = (iso: string) => new Date(iso + 'T12:00:00').toLocaleDateString('es-PA', { day: 'numeric', month: 'long', year: 'numeric' });
 const updatedLabel = isBlog && page.updated && page.updated !== page.date ? fechaLarga(page.updated) : null;
 const dateLabel = page.date
   ? new Date(page.date + 'T12:00:00').toLocaleDateString('es-PA', { day: 'numeric', month: 'long', year: 'numeric' })
   : '';
 ---
-<Base title={page.title} description={page.description} dark image={ogFor(page.slug)} jsonld={jsonld} ogType={isBlog ? 'article' : 'website'} published={isBlog ? page.date : undefined} modified={isBlog ? page.updated : undefined} pageType={pageTypeOf(page)} service={page.anatomia === 'v2' ? page.serviceKey : undefined}>
+<Base title={page.title} description={page.description} dark image={ogFor(page.slug)} jsonld={jsonld} ogType={isBlog ? 'article' : 'website'} published={isBlog ? page.date : undefined} modified={isBlog ? page.updated : undefined} pageType={pageTypeOf(page)} service={page.anatomia === 'v2' ? page.serviceKey : undefined} cierre={cierre}>
   {v2 && <style slot="head" is:inline set:html={moldeCss}></style>}
   {usaMedia && <style slot="head" is:inline set:html={mediaCss}></style>}
   {usaPlanes && <style slot="head" is:inline set:html={planesCss}></style>}
@@ -109,7 +115,20 @@ const dateLabel = page.date
     </section>
   )}
 
-  <Blocks blocks={page.blocks} v2={page.anatomia === 'v2'} servicio={page.serviceKey} slug={page.slug} />
+  <Blocks blocks={page.blocks.slice(0, corte)} v2={page.anatomia === 'v2'} servicio={page.serviceKey} slug={page.slug} />
+  {medio && cierre && (
+    <aside class="mx-auto max-w-3xl px-6 py-6" aria-label="Te ayudamos con esto" data-cta-loc="medio">
+      <div class="rounded-2xl border border-filete bg-humo p-6 md:p-8">
+        <p class="font-display text-lg font-bold text-negro">¿Prefieres que lo hagamos por ti?</p>
+        <p class="mt-2 text-base leading-relaxed text-gris-texto">{medio.texto} Mira nuestro servicio de <a href={url(medio.slug)} class="font-semibold text-negro underline underline-offset-2">{/^.[a-záéíóúñ]/.test(medio.label) ? medio.label.charAt(0).toLowerCase() + medio.label.slice(1) : medio.label}</a>.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href={cierre.href} data-service={cierre.servicio} class="inline-flex min-h-12 items-center gap-2 rounded-full bg-negro px-6 text-sm font-semibold text-white transition-colors hover:bg-grafito">{cierre.boton} <span aria-hidden="true">→</span></a>
+          <a href={wa(cierre.wa)} target="_blank" rel="noopener" class="inline-flex min-h-12 items-center gap-2 rounded-full border-[1.5px] border-negro bg-white px-6 text-sm font-semibold text-negro transition-colors hover:bg-humo">Escribir por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
+        </div>
+      </div>
+    </aside>
+  )}
+  {corte < page.blocks.length && <Blocks blocks={page.blocks.slice(corte)} v2={page.anatomia === 'v2'} servicio={page.serviceKey} slug={page.slug} />}
   {showNext && (
     <section class="mx-auto max-w-7xl px-6 pb-16" aria-labelledby="siguiente-paso">
       <div class="rounded-2xl border border-filete bg-white p-7 md:p-9">

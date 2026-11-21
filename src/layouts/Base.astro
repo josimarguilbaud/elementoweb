@@ -29,8 +29,9 @@ interface Props {
   service?: string;
   /** Carga los efectos de movimiento (effects.ts y el cursor). La portada no se anima (D50) y pasa false. */
   efectos?: boolean;
-  /** Bloque de cierre del pie (titular y botón que vuelven a pedir la consulta). La portada v2 pasa false. */
-  cierre?: boolean;
+  /** Bloque de cierre del pie (titular y botones que vuelven a pedir la consulta). La portada pasa false; las páginas
+   *  del registro pasan el cierre de su tema (src/lib/cierre.ts); sin nada sale el cierre general. */
+  cierre?: boolean | import('../lib/cierre').Cierre;
   /** Destino y medición de los dos «Cotizar» del menú; sin él van a /contacto/ como hoy. */
   navCotizar?: { href: string; ctaLoc: string; service: string };
 }

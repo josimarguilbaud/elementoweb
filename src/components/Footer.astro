@@ -23,16 +23,25 @@ const industryLinks = [
 const enlace = 'text-sm leading-snug text-gris-texto transition-colors hover:text-negro hover:underline';
 /* cierre: el bloque que vuelve a pedir la consulta (titular, texto y botón). La portada lo apaga porque termina en su
    propio formulario; las demás páginas lo conservan, ahora en negro. */
-interface Props { cierre?: boolean }
-const { cierre = true } = Astro.props;
+import { CIERRE_GENERAL, type Cierre } from '../lib/cierre';
+interface Props { cierre?: boolean | Cierre }
+const { cierre: prop = true } = Astro.props;
+/* Plan cta-blog-2026-11: el cierre ya no es genérico. Cada página trae el de su tema (diagnóstico con su servicio y
+   WhatsApp); las que no lo pasan usan el general. */
+const cierre: Cierre | null = prop === false ? null : prop === true ? CIERRE_GENERAL : prop;
 ---
 <footer class="relative">
-  {cierre && <div class="bg-negro px-6 py-20 text-center text-white">
-    <h2 class="reveal mx-auto max-w-3xl font-display text-[clamp(2rem,5vw,3.6rem)] font-extrabold leading-[1.04]">¿Listo para una web que trabaje por tu negocio?</h2>
-    <p class="reveal mx-auto mt-6 max-w-xl text-lg text-gris-claro">Diagnóstico sin costo. Propuesta con precio cerrado, por escrito.</p>
-    <a href="/contacto/" data-magnetic="0.4" class="reveal mt-9 inline-flex min-h-12 items-center gap-3 rounded-full bg-white px-8 text-base font-semibold text-negro transition-colors hover:bg-filete">
-      Empezar mi proyecto <span aria-hidden="true">→</span>
-    </a>
+  {cierre && <div class="bg-negro px-6 py-20 text-center text-white" data-cta-loc="cierre">
+    <h2 class="reveal mx-auto max-w-3xl font-display text-[clamp(2rem,5vw,3.6rem)] font-extrabold leading-[1.04]">{cierre.h2}</h2>
+    <p class="reveal mx-auto mt-6 max-w-xl text-lg text-gris-claro">{cierre.texto}</p>
+    <div class="reveal mt-9 flex flex-wrap items-center justify-center gap-3">
+      <a href={cierre.href} data-service={cierre.servicio} data-magnetic="0.4" class="inline-flex min-h-12 items-center gap-3 rounded-full bg-white px-8 text-base font-semibold text-negro transition-colors hover:bg-filete">
+        {cierre.boton} <span aria-hidden="true">→</span>
+      </a>
+      <a href={wa(cierre.wa)} target="_blank" rel="noopener" class="inline-flex min-h-12 items-center gap-2 rounded-full border-[1.5px] border-white px-8 text-base font-semibold text-white transition-colors hover:bg-white hover:text-negro">
+        Escribir por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span>
+      </a>
+    </div>
   </div>}
 
   {/* Marca «linterna» antes de las columnas (D58): el wordmark de la tarjeta, casi invisible sobre el gris del pie. */}

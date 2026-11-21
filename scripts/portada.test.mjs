@@ -301,9 +301,11 @@ test('(f) cada @id del ItemList de la portada existe como Service en su página'
 
 // ---- Pie y menú compartidos: valores por defecto en las demás páginas y los de la portada ----
 const pagina = (ruta) => parse(readFileSync(ruta, 'utf8'));
+/* Desde el plan cta-blog-2026-11 el titular cambia según el tema de la página y el botón lleva el servicio
+   (/contacto/?servicio=…#formulario); se reconoce por su contenedor data-cta-loc="cierre". */
 const cierreDelPie = (raiz) => ({
-  titular: raiz.querySelectorAll('footer h2').some((h) => h.text.includes('¿Listo para una web')),
-  boton: Boolean(raiz.querySelector('footer a[href="/contacto/"][data-magnetic]')),
+  titular: Boolean(raiz.querySelector('footer [data-cta-loc="cierre"] h2')),
+  boton: raiz.querySelectorAll('footer [data-cta-loc="cierre"] a[data-magnetic]').some((a) => /^\/contacto\/\?servicio=[a-z]+#formulario$/.test(a.getAttribute('href') || '')),
 });
 const cotizarDelMenu = (raiz) => [raiz.querySelector('#navpill a.cta-pill'), raiz.querySelector('#mnav a.m-cta')];
 

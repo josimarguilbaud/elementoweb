@@ -687,6 +687,21 @@ comitea y despliega», con una plantilla común, mockups de fal e imágenes nuev
   marketing» en la ficha de Google.
 - **Publicación:** `verify` en verde; snapshot de SEO con las 3 URL nuevas (195).
 
+### D63. Vida en la portada: acento cian, textura y trabajos reales (21-nov-2026)
+
+- **Pedido del dueño:** «darle un poco de vida al landing principal». Eligió en tarjeta color, contenido real y
+  textura (no más movimiento) y aprobó el plan `docs/specs/portada-vida-2026-11/PLAN.md`.
+- **Revierte de D56:** «UI en mono-*» (vuelve el cian del logo como único acento: texto `#00688C` sobre claro y
+  `#5EC8E8` sobre negro; `#0099CC` solo en filetes, trazos y bordes) y «sin sección de proyectos» (entra `#trabajos`).
+  Sigue sin precios.
+- **Cambios:** segunda línea del display en cian; números de los tres pasos, flechas, «+» y subrayados en cian; sello
+  «Tech Provider verificado por Meta» con check; `#agencia` en franja negra; cuadrícula de puntos y tinte cian en el héroe
+  y en el bloque de IA (CSS, sin imágenes); diagrama de IA y recorrido con trazos cian; el humo baja a blanco.
+- **`#trabajos`:** 6 capturas reales de `public/portfolio/` (Grupo Viesa, La Vida es Bella, Max Impresiones, Panama
+  International Movers, Remodelaciones JG, TramitaPa), enlazadas a su caso o a /portafolio/. Fuera KL Contable (vínculo
+  familiar) y las marcas propias. Sin cifras. Testimonios solo si el dueño manda textos reales.
+- **Pruebas:** `portada.test.mjs` suma trabajos, franja negra con sello y la regla de color de texto del acento.
+
 ## 3. Responsables y dependencias humanas
 
 | Dependencia | Responsable | Cuándo |

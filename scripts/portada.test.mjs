@@ -12,7 +12,7 @@ import { parse } from 'node-html-parser';
 import { guardaDist } from './lib/dist-guard.mjs';
 import {
   precioDesde, filasMapa, itemListPortada, faqsPortada, respuestaPortada, H1_PORTADA, precioTexto, mapaOpciones, opcionDe,
-  DISPLAY_PORTADA, FRANJA_PORTADA, DIPTICO_PORTADA, BENTO_PORTADA, WEB_PORTADA, IA_PORTADA,
+  DISPLAY_PORTADA, FRANJA_PORTADA, DIPTICO_PORTADA, BENTO_PORTADA, WEB_PORTADA, IA_PORTADA, TRABAJOS_PORTADA,
 } from '../src/lib/portada.ts';
 
 const precios = JSON.parse(readFileSync('src/data/precios.json', 'utf8'));
@@ -112,6 +112,23 @@ test('diseño web: 4 tipos de sitio y 3 capturas reales del portafolio que exist
   assert.ok(existsSync(`public${WEB_PORTADA.movil.src2x}`));
 });
 
+/* Plan portada-vida-2026-11 (D63): vuelve una franja de trabajos reales. Solo clientes: sin la firma familiar ni las marcas propias. */
+test('trabajos: 6 webs reales del portafolio, sin KL Contable ni marcas propias, con capturas locales de 480 y 800', () => {
+  assert.deepEqual(TRABAJOS_PORTADA.map((t) => t.t), ['Grupo Viesa', 'La Vida es Bella', 'Max Impresiones', 'Panama International Movers', 'Remodelaciones JG', 'TramitaPa']);
+  for (const t of TRABAJOS_PORTADA) {
+    for (const w of [480, 800]) assert.ok(existsSync(`public${t.cap}-${w}.webp`), `${t.cap}-${w}.webp`);
+    assert.match(t.slug, /^(portafolio|casos-de-exito\/[a-z-]+)$/, t.t);
+    assert.ok(t.rubro.length > 3, t.t);
+  }
+});
+
+test('acento cian (D63): en portada.css el texto cian usa solo #00688c (sobre claro) o #5ec8e8 (sobre negro)', () => {
+  const css = readFileSync('src/styles/portada.css', 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+  const colores = [...css.matchAll(/(?:^|[;{\s])color:\s*(#[0-9a-f]{6})/gi)].map((m) => m[1].toLowerCase());
+  assert.ok(colores.includes('#00688c') && colores.includes('#5ec8e8'), 'faltan los dos tonos de texto del acento');
+  for (const c of colores) assert.ok(!['#0099cc', '#aee8ff'].includes(c), `${c} no alcanza AA como color de texto`);
+});
+
 test('IA: el diagrama tiene 4 pasos y la franja de confianza 3 afirmaciones', () => {
   assert.deepEqual(IA_PORTADA.pasos, ['WhatsApp', 'Agente IA', 'CRM', 'Reporte']);
   assert.equal(IA_PORTADA.confianza.length, 3);
@@ -167,9 +184,9 @@ test('dist/ existe y está al día con src/, public/, astro.config.mjs y package
   assert.equal(viejo, null, viejo ?? '');
 });
 
-test('orden: las 9 secciones de la v3 (con «agencia», D62), y nada de la v2', conDist, () => {
+test('orden: las secciones de la v3 (con «agencia», D62, y «trabajos», D63), y nada de la v2', conDist, () => {
   const ids = home().querySelectorAll('main > section').map((s) => s.getAttribute('id'));
-  assert.deepEqual(ids, ['inicio', 'soluciones', 'agencia', 'servicios', 'diseno-web', 'ia', 'posicionamiento', 'resumen', 'preguntas', 'hablemos']);
+  assert.deepEqual(ids, ['inicio', 'soluciones', 'agencia', 'servicios', 'diseno-web', 'trabajos', 'ia', 'posicionamiento', 'resumen', 'preguntas', 'hablemos']);
   const raiz = home();
   for (const sel of ['#proyectos', '#industrias', '#precios', '#desarrollo', '#marketing', '.pv2-sec', '.ew-hero']) assert.equal(raiz.querySelectorAll(sel).length, 0, sel);
 });
@@ -243,6 +260,27 @@ test('4. diseño web: 4 tipos de sitio, 3 capturas reales en marco y el botón a
   assert.ok(s.querySelector('.pv3-laptop img'), 'laptop con una web real');
   assert.ok(s.querySelector('.pv3-telefono img'), 'celular con una web real');
   assert.match(textoDe(s.querySelector('a[href="/diseno-web-panama/"]')), /Ver diseño web/);
+});
+
+test('2b. agencia en franja negra (D63) con el sello de Meta y su botón blanco', conDist, () => {
+  const s = seccion(home(), 'agencia');
+  assert.ok(s.classList.contains('pv3-sec--negra'));
+  assert.match(textoDe(s.querySelector('.pv3-sello')), /Tech Provider verificado por Meta/);
+  assert.ok(s.querySelector('a[href="#formulario"]').classList.contains('pv3-btn--blanco'));
+});
+
+test('4b. trabajos: 6 capturas reales con carga diferida, nombre, rubro y enlace a su caso o al portafolio', conDist, () => {
+  const s = seccion(home(), 'trabajos');
+  const items = s.querySelectorAll('.pv3-trabajo');
+  assert.deepEqual(items.map((a) => a.getAttribute('href')), TRABAJOS_PORTADA.map((t) => url(t.slug)));
+  items.forEach((a, i) => {
+    const img = a.querySelector('img');
+    assert.equal(img.getAttribute('loading'), 'lazy');
+    assert.ok(img.getAttribute('width') && img.getAttribute('height') && img.getAttribute('srcset'));
+    assert.match(img.getAttribute('alt'), new RegExp(TRABAJOS_PORTADA[i].t));
+    assert.match(textoDe(a), new RegExp(TRABAJOS_PORTADA[i].rubro));
+  });
+  assert.ok(s.querySelector('a[href="/portafolio/"]'), 'enlace al portafolio completo');
 });
 
 test('5. IA: bloque negro, diagrama SVG con nombre, «Agendar diagnóstico» a IA y la franja de confianza', conDist, () => {

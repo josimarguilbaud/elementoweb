@@ -9,7 +9,7 @@ import { site, contactForm, url, wa } from '../lib/site';
 import { ogFor } from '../lib/img';
 import { homeJsonLd } from '../lib/schema';
 import {
-  H1_PORTADA, DISPLAY_PORTADA, BAJADA_PORTADA, FRANJA_PORTADA, DIPTICO_PORTADA, BENTO_PORTADA, WEB_PORTADA, IA_PORTADA, POSICIONAMIENTO_PORTADA,
+  H1_PORTADA, DISPLAY_PORTADA, BAJADA_PORTADA, FRANJA_PORTADA, DIPTICO_PORTADA, BENTO_PORTADA, WEB_PORTADA, IA_PORTADA, POSICIONAMIENTO_PORTADA, TRABAJOS_PORTADA,
   filasMapa, itemListPortada, faqsPortada, respuestaPortada, mapaOpciones, opcionDe,
 } from '../lib/portada';
 import precios from '../data/precios.json';
@@ -79,13 +79,14 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
   </section>
 
   <!-- 2b. Agencia (D62): qué hace una agencia de marketing digital e IA, con un enlace por servicio y la ficha de la empresa -->
-  <section id="agencia" class="pv3-sec pv3-sec--corta" aria-labelledby="agencia-h2">
+  <section id="agencia" class="pv3-sec pv3-sec--corta pv3-sec--negra" aria-labelledby="agencia-h2">
     <div class="pv3-wrap pv3-agencia">
       <div>
         <h2 id="agencia-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Qué hace una agencia de marketing digital e IA.</h2>
         <p class="pv3-lead">Elemento Web es una agencia de marketing digital e IA en Ciudad de Panamá. Trabajamos para pymes y empresas que venden por chat, por cita o por cotización: traemos al cliente, lo atendemos al momento y automatizamos el seguimiento, con todo medido hasta la consulta.</p>
-        <p class="pv3-ficha">Elemento Web · Vía Grecia, PH Ventury Plaza, Ciudad de Panamá · Tech Provider verificado por Meta</p>
-        <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--negro" data-cta-loc="agencia" data-service="definir">Pedir mi plan de marketing <span aria-hidden="true">→</span></a></p>
+        <p class="pv3-ficha">Elemento Web · Vía Grecia, PH Ventury Plaza, Ciudad de Panamá</p>
+        <p class="pv3-sello"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5 6.5 12 13 4.5" /></svg>Tech Provider verificado por Meta</p>
+        <p class="pv3-cierre"><a href="#formulario" class="pv3-btn pv3-btn--blanco" data-cta-loc="agencia" data-service="definir">Pedir mi plan de marketing <span aria-hidden="true">→</span></a></p>
       </div>
       <ul class="pv3-agencia__lista">
         <li><a href={url('marketing/google-ads-panama')}><b>Publicidad en Google y Meta</b><span>Campañas que se miden hasta la consulta, con la cuenta a tu nombre.</span></a></li>
@@ -161,6 +162,27 @@ const fechaTexto = new Date(`${respuesta.fecha}T12:00:00Z`).toLocaleDateString('
         </div>
         <figcaption class="pv3-dispositivos__nota">Webs reales: {WEB_PORTADA.laptop.t} y {WEB_PORTADA.movil.t}.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- 4b. Trabajos (D63): capturas reales de webs de clientes; en celular, carrusel horizontal como el bento -->
+  <section id="trabajos" class="pv3-sec pv3-sec--humo" aria-labelledby="trabajos-h2">
+    <div class="pv3-wrap">
+      <div class="pv3-trabajos__cab">
+        <h2 id="trabajos-h2" class="pv3-h2" data-mov="gsap" data-efecto="lineas">Webs que hicimos para negocios de Panamá.</h2>
+        <a href="/portafolio/" class="pv3-trabajos__todo">Ver el portafolio <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="pv3-trabajos">
+        {TRABAJOS_PORTADA.map((t) => (
+          <li data-mov="css">
+            <a class="pv3-trabajo" href={url(t.slug)}>
+              <span class="pv3-trabajo__marco"><img src={`${t.cap}-480.webp`} srcset={`${t.cap}-480.webp 480w, ${t.cap}-800.webp 800w`} sizes="(min-width: 1024px) 376px, (min-width: 768px) 46vw, 80vw" width="480" height="360" alt={`Web de ${t.t} hecha por Elemento Web`} loading="lazy" decoding="async" /></span>
+              <b>{t.t}</b>
+              <span class="pv3-trabajo__rubro">{t.rubro}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 

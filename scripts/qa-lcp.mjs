@@ -112,16 +112,16 @@ for (const [w, h] of [[1440, 900], [390, 844]]) {
   await sinJs.close(); await conJs.close();
 }
 
-// Portada (v3, D56): estilo calculado de los fondos (monocromo) y del bloque negro de IA, porque global.css llega después
+// Portada (v3, D56; D63 suma la franja negra de #agencia y #trabajos): estilo calculado de los fondos (monocromo) y del bloque negro de IA, porque global.css llega después
 // del CSS en línea y a igual especificidad gana.
 {
   const ctx = await contextoSinGa(b, { viewport: { width: 1440, height: 900 } });
   const pg = await ctx.newPage();
   await pg.goto(BASE + '/', { waitUntil: 'load' });
-  const fondos = await pg.evaluate(() => Object.fromEntries([['héroe', '#inicio'], ['soluciones', '#soluciones'], ['servicios', '#servicios'], ['diseño web', '#diseno-web'], ['bloque IA', '.pv3-ia'], ['mitad negra', '.pv3-mitad--negra'], ['resumen', '#resumen'], ['preguntas', '#preguntas'], ['hablemos', '#hablemos'], ['formulario', '#hablemos #formulario']]
+  const fondos = await pg.evaluate(() => Object.fromEntries([['héroe', '#inicio'], ['soluciones', '#soluciones'], ['agencia', '#agencia'], ['servicios', '#servicios'], ['trabajos', '#trabajos'], ['diseño web', '#diseno-web'], ['bloque IA', '.pv3-ia'], ['mitad negra', '.pv3-mitad--negra'], ['resumen', '#resumen'], ['preguntas', '#preguntas'], ['hablemos', '#hablemos'], ['formulario', '#hablemos #formulario']]
     .map(([n, s]) => [n, document.querySelector(s) ? getComputedStyle(document.querySelector(s)).backgroundColor : 'falta'])));
   const BLANCO = 'rgb(255, 255, 255)', HUMO = 'rgb(245, 245, 245)', NEGRO = 'rgb(10, 10, 10)';
-  const mapa = { 'héroe': HUMO, soluciones: BLANCO, servicios: HUMO, 'diseño web': BLANCO, 'bloque IA': NEGRO, 'mitad negra': NEGRO, resumen: BLANCO, preguntas: HUMO, hablemos: BLANCO, formulario: BLANCO };
+  const mapa = { 'héroe': HUMO, soluciones: BLANCO, agencia: NEGRO, servicios: HUMO, trabajos: HUMO, 'diseño web': BLANCO, 'bloque IA': NEGRO, 'mitad negra': NEGRO, resumen: BLANCO, preguntas: HUMO, hablemos: BLANCO, formulario: BLANCO };
   const malos = Object.entries(mapa).filter(([n, v]) => fondos[n] !== v).map(([n, v]) => `${n} ${fondos[n]} (va ${v})`);
   if (malos.length) linea(true, `1440 /: fondos fuera del monocromo: ${malos.join(', ')}`);
   else console.log(`✓ 1440 /: los ${Object.keys(mapa).length} fondos siguen el monocromo (blanco, #F5F5F5 y negro)`);

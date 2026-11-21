@@ -228,6 +228,18 @@ export const WEB_PORTADA = {
   movil: { src: '/images/ejemplos/movil-tramitapa.webp', src2x: '/images/ejemplos/movil-tramitapa-780.webp', t: 'TramitaPa' },
 };
 
+/** Franja «Webs que hicimos» (D63, plan portada-vida-2026-11): capturas reales de public/portfolio/, solo de clientes.
+    Fuera KL Contable (vínculo familiar) y las marcas propias (CicloFrio, WazaCRM); San Blas Full ya sale en la laptop.
+    Enlaza al caso de éxito cuando existe y, si no, al portafolio. Sin cifras ni resultados. */
+export const TRABAJOS_PORTADA: { t: string; rubro: string; cap: string; slug: string }[] = [
+  { t: 'Grupo Viesa', rubro: 'Consultoría', cap: '/portfolio/grupoviesa', slug: 'portafolio' },
+  { t: 'La Vida es Bella', rubro: 'Hospedaje en Chame', cap: '/portfolio/lavidaesbella', slug: 'portafolio' },
+  { t: 'Max Impresiones', rubro: 'Imprenta y bordados', cap: '/portfolio/maximpresiones', slug: 'portafolio' },
+  { t: 'Panama International Movers', rubro: 'Mudanzas internacionales', cap: '/portfolio/panamainternationalmovers-2026', slug: 'casos-de-exito/panama-international-movers' },
+  { t: 'Remodelaciones JG', rubro: 'Remodelación y construcción', cap: '/portfolio/remodelacionesjg', slug: 'portafolio' },
+  { t: 'TramitaPa', rubro: 'Trámites de visa', cap: '/portfolio/tramitapa', slug: 'casos-de-exito/tramitapa' },
+];
+
 /** Bloque negro de proyectos de IA: el diagrama y la franja de confianza. */
 export const IA_PORTADA = {
   titulo: 'Un agente que atiende mientras tú vendes.',
